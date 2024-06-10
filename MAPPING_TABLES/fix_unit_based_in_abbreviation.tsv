@@ -1,0 +1,6 @@
+TEST_NAME_ABBREVIATION	source_unit_valid	source_unit_valid_fix
+p-tt-inr	form	inr
+u-ph	form	ph
+du-prot	g	g/24h
+du-na	mmol	mmol/24h
+du-kors-v	nmol	nmol/24h

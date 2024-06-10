@@ -5,7 +5,7 @@
 ## activate renv and install usethis
 renv::init()
 renv::install("usethis")
-renv::install("devtools")
+renv::install("tidyverse")
 
 usethis::use_mit_license()
 
