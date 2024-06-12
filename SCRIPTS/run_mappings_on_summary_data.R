@@ -4,7 +4,7 @@ library(tidyverse)
 source('R/fct_modify_usagi.R')
 source('R/fct_values.R')
 
-  summary_data <- read_tsv('INPUT_SUMMARY_DATA/finregistry_summary_data.tsv') |>
+  summary_data <- read_tsv('INPUT_SUMMARY_DATA/synthetic_summary_data.tsv') |>
   mutate(status = NA_character_)
 
 # checks
