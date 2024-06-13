@@ -16,13 +16,13 @@ graph TD
 
     units_usage_table[[
         <b>UNITSfi.usagi.csv</b>
-        <p style="text-align:left;" >- sourceCode : g</p>
+        <p style="text-align:left;" >- sourceCode : mg</p>
     ]]
 
     unit_harmonisation_table[[
         <b>unit_mapping.txt</b>
-        <p style="text-align:left;" >- tutkimustulosyksikko : gramaa
-            - source_unit_valid : g
+        <p style="text-align:left;" >- tutkimustulosyksikko : mgramaa
+            - source_unit_valid : mg
         </p>
     ]]
 
