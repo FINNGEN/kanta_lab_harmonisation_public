@@ -123,6 +123,8 @@ Velocity (distance/time)	mm/h	mm/h	1
 Viscosity	mpas	mpas	1
 Volume	l	ml	1000
 Volume	ml	ml	1
+Volume Fraction	ratio	ratio	1
+Volume Fraction	%	ratio	0.01
 Volume Fraction	%	%	1
 Volume Fraction	%	ml/dl	1
 Volume Fraction	ml/dl	ml/dl	1
