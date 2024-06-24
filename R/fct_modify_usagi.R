@@ -37,7 +37,7 @@ check_lab_usagi_file <- function(
     )|>
     left_join(
       quantity_unit  |> mutate(quantity_correct = TRUE),
-      by = c('omop_quantity' = 'omop_quantity', `ADD_INFO:sourceUnit` = 'source_unit_valid')
+      by = c('omop_quantity' = 'omop_quantity', `ADD_INFO:measurementUnit` = 'source_unit_valid')
     ) |>
     mutate(
       status = case_when(
@@ -48,8 +48,11 @@ check_lab_usagi_file <- function(
       )
     ) |>
     mutate(
-      mappingStatus = if_else(status == '' | conceptId == 0, mappingStatus, 'FLAGGED'),
-      comment = status,
+      mappingStatus = case_when(
+        status != ''  ~ 'FLAGGED',
+        status == '' & conceptId != 0 ~ 'APPROVED',
+        TRUE ~ mappingStatus
+      ),
       `ADD_INFO:omopQuantity` = omop_quantity
     ) |>
     select(-omop_quantity, -status, -quantity_correct) |>
