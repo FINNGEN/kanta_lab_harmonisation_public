@@ -3,6 +3,7 @@
 library(tidyverse)
 source('R/fct_modify_usagi.R')
 source('R/fct_values.R')
+source('R/fct_dashboard.R')
 
   summary_data <- read_tsv('INPUT_SUMMARY_DATA/synthetic_summary_data.tsv') |>
   mutate(status = NA_character_)
@@ -209,92 +210,11 @@ summary_data_5 <- summary_data_4 |>
 #   view()
 
 
+#
+# PLOT status and table
+#
 
-
-summary_data_5 |>
-  mutate(
-    status = if_else(is.na(status), 'SUCCESFUL', status)
-  ) |>
-  group_by(status) |>
-  summarise(n_codes = n(), n_records = sum(n_records), .groups = 'drop') |>
-  mutate(
-    per_codes = n_codes / sum(n_codes) * 100,
-    per_records = n_records / sum(n_records) * 100
-    ) |>
-  arrange(desc(per_records))
-
-
-
-
-
-
-aaa   <- function(data) {
-  if(length(data)<1) return(NA)
-  if(length(data) == 1) return(NA)
-  sparkline::sparkline(data, type = 'line', barColor = 'blue', barWidth = 5, barSpacing = 2, height = 20)
-}
-
-
-tictoc::tic()
-summary_data_5 |>
- # filter(measurement_concept_id == 3023602)  |>
-  mutate(
-    perplot= pmap(list(to_value_percentiles_tibble, group_value_min, group_value_max), ~{
-      if (is.null(..1) | is.na(..2) | is.na(..3)) return(NA_real_)
-      a <- ..1  |> distinct(value, .keep_all = T)
-      if(nrow(a) < 2) return(NA_real_)
-      #browser()
-      new_percentiles_value <- seq(..2, ..3, length.out = 100)
-      new_percentiles_points_a  <- approx(x = a$value, y = a$percentile, xout = new_percentiles_value, yleft = 0, yright = 1)$y
-      new_percentiles_points_a
-    })
-  ) |>
-  #
-  transmute(
-    measurement_concept_id,
-    concept_name,
-    concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
-    n_records,
-    to_value_percentiles,
-    ref_value_percentiles,
-    KS_test,
-    perplot,
-    status) |>
-  #
-  reactable::reactable(
-    filterable = TRUE,
-    sortable = TRUE,
-    searchable = TRUE,
-    defaultPageSize = 30,
-    showPageSizeOptions = TRUE,
-    columns = list(
-      perplot = reactable::colDef(
-        name = "perplot",
-        cell = aaa
-      )
-    )
-  )
-tictoc::toc()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# dashboard <-  buildStatusDashboard(summary_data_5)
+# browseURL(dashboard)
 
 
