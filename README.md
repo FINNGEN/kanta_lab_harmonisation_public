@@ -40,3 +40,5 @@ Details of this mode in and [doc/harmonisation.md](doc/harmonisation.md)
 
 The following link shows the current status of the mappings: 
 
+[MappingStatusDashboard](https://finngen.github.io/kanta_lab_harmonisation_public/MappingStatusDashboard.html)
+
