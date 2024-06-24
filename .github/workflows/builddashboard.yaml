@@ -35,7 +35,7 @@ jobs:
       - uses: r-lib/actions/setup-renv@v2
 
       - name: Build site
-        run: source('SCRIPTS/run_mappings_on_summary_data.R');buildStatusDashboard(summary_data_5, output_file_html = 'docs/MappingStatusDashboard.html')
+        run: source('SCRIPTS/run_mappings_on_summary_data.R');buildStatusDashboard(summary_data_5, gh_pages = TRUE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀

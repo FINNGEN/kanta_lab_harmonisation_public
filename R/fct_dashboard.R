@@ -21,8 +21,18 @@
 #' @export
 buildStatusDashboard <- function(
     summary_data_5,
-    output_file_html = file.path(tempdir(), "MappingStatusDashboard.html")) {
+    output_file_html = file.path(tempdir(), "MappingStatusDashboard.html"),
+    gh_pages = FALSE) {
 
+  if (gh_pages) {
+    # if dir exist remove all contents if not create it
+    if (dir.exists(here::here("docs"))) {
+      fs::dir_delete(here::here("docs"), recursive = TRUE)
+    } else {
+      dir.create(here::here("docs"))
+    }
+    output_file_html <- here::here("docs", "MappingStatusDashboard.html")
+  }
 
 
   #
