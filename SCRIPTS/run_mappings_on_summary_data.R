@@ -214,6 +214,7 @@ summary_data_5 <- summary_data_4 |>
 # PLOT status and table
 #
 
+# ATM keep this commented to not colide with github actions
 # dashboard <-  buildStatusDashboard(summary_data_5)
 # browseURL(dashboard)
 
