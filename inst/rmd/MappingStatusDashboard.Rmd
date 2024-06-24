@@ -1,0 +1,153 @@
+---
+title: "Mapping status Kanta lab"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+params: 
+  summary_data_5: NULL
+---
+
+
+```{r}
+library(flexdashboard)
+library(tidyverse)
+```
+
+```{r}
+summary_data_5 <- params$summary_data_5
+```
+
+
+Column {.tabset}
+-------------------------------------
+   
+### Status summary 
+
+```{r}
+
+
+
+toplot  <- summary_data_5 |>
+  mutate(
+    status = if_else(is.na(status), 'SUCCESFUL', status)
+  ) |>
+  group_by(status) |>
+  summarise(n_codes = n(), n_records = sum(n_records), .groups = 'drop') |>
+  mutate(
+    per_codes = n_codes / sum(n_codes) ,
+    per_records = n_records / sum(n_records) 
+    ) |>
+  arrange(desc(per_records)) 
+
+toplot |> 
+  reactable::reactable(
+    columns = list(
+      status = reactable::colDef(
+        name = "Status",
+        sortable = TRUE, 
+        minWidth = 250
+      ),
+      n_codes = reactable::colDef(
+        name = "Number of test+unit combinations",
+        sortable = TRUE
+      ),
+      n_records = reactable::colDef(
+        name = "Number of events",
+        sortable = TRUE
+      ),
+      per_codes = reactable::colDef(
+        name = "per_codes",
+        format = reactable::colFormat(percent = TRUE, digits = 1)
+      ),
+      per_records = reactable::colDef(
+        name = "per_records",
+        format = reactable::colFormat(percent = TRUE, digits = 1)
+      )
+    ), 
+    # rows color conditional on status, success is green, warning is yellow, error is red
+    rowStyle = function(index) {
+      if (toplot$status[[index]] == 'SUCCESFUL') {
+        list(background = '#d8f8d8', color = 'black')
+      } else if (toplot$status[[index]]  |> stringr::str_detect('WARNING')) {
+        list(background = '#f8f8d8', color = 'black')
+      } else {
+        list(background = '#f8d8d8', color = 'black')
+      }
+    }
+  )
+
+
+```   
+ 
+### Codes mapping status
+    
+```{r}
+
+aaa   <- function(data) {
+  if(length(data)<1) return(NA)
+  if(length(data) == 1) return(NA)
+  sparkline::sparkline(data, type = 'line', barColor = 'blue', barWidth = 5, barSpacing = 2, height = 20)
+}
+
+toplot  <- summary_data_5 |>
+ # filter(measurement_concept_id == 3023602)  |>
+  mutate(
+    perplot= pmap(list(to_value_percentiles_tibble, group_value_min, group_value_max), ~{
+      if (is.null(..1) | is.na(..2) | is.na(..3)) return(NA_real_)
+      a <- ..1  |> distinct(value, .keep_all = T)
+      if(nrow(a) < 2) return(NA_real_)
+      #browser()
+      new_percentiles_value <- seq(..2, ..3, length.out = 100)
+      new_percentiles_points_a  <- approx(x = a$value, y = a$percentile, xout = new_percentiles_value, yleft = 0, yright = 1)$y
+      new_percentiles_points_a
+    })
+  )  |> 
+  #
+  transmute(
+    measurement_concept_id,
+    concept_name,
+    concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
+    n_records,
+    to_value_percentiles,
+    ref_value_percentiles,
+    KS_test,
+    perplot,
+    status
+    ) |>
+  mutate(
+    report_error = paste0(
+      'https://github.com/FINNGEN/kanta_lab_harmonisation_public/issues/new?title= Auto repor for ', concept_code,
+      '&body=Automatic report for ', concept_code, '
+      ', 'status: ', status, '
+      ', 'KS_test: ', KS_test, '
+      ', 'to_value_percentiles: ', to_value_percentiles, '
+      ', 'ref_value_percentiles: ', ref_value_percentiles, '
+      Please describe the error here:'
+      ) |> URLencode()
+  ) |> 
+  arrange(desc(n_records))
+
+
+toplot |> 
+  reactable::reactable(
+    filterable = TRUE,
+    sortable = TRUE,
+    searchable = TRUE,
+    defaultPageSize = 30,
+    showPageSizeOptions = TRUE,
+    columns = list(
+      perplot = reactable::colDef(
+        name = "perplot",
+        cell = aaa
+      ), 
+      report_error = reactable::colDef(
+        name = "report_error",
+        cell = function(value) {
+          sprintf('<a href="%s" target="_blank">Report error</a>', value)
+        }, 
+        html = TRUE
+      )
+    )
+  )
+
+```
