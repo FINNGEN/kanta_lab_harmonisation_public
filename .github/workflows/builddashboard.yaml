@@ -32,10 +32,7 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: any::pkgdown, local::.
-          needs: website
+      - uses: r-lib/actions/setup-renv@v2
 
       - name: Build site
         run: source('SCRIPTS/run_mappings_on_summary_data.R');buildStatusDashboard(summary_data_5, output_file_html = 'docs/MappingStatusDashboard.html')
