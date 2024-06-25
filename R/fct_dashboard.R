@@ -31,7 +31,7 @@ buildStatusDashboard <- function(
     } else {
       dir.create(here::here("docs"))
     }
-    output_file_html <- here::here("docs", "MappingStatusDashboard.html")
+    output_file_html <- here::here("docs", "index.html")
   }
 
 
