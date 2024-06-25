@@ -108,8 +108,8 @@ toplot  <- summary_data_5 |>
     concept_name,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     n_records,
+    value_percentiles,
     to_value_percentiles,
-    ref_value_percentiles,
     KS_test,
     perplot,
     status
@@ -120,8 +120,8 @@ toplot  <- summary_data_5 |>
       '&body=Automatic report for ', concept_code, '
       ', 'status: ', status, '
       ', 'KS_test: ', KS_test, '
+      ', 'value_percentiles: ', value_percentiles, '
       ', 'to_value_percentiles: ', to_value_percentiles, '
-      ', 'ref_value_percentiles: ', ref_value_percentiles, '
       Please describe the error here:'
       ) |> URLencode()
   ) |> 
@@ -136,16 +136,49 @@ toplot |>
     defaultPageSize = 30,
     showPageSizeOptions = TRUE,
     columns = list(
+      measurement_concept_id = reactable::colDef(
+        name = "ConceptId", 
+        maxWidth = 100
+      ),
+      concept_name = reactable::colDef(
+        name = "Omop Name"
+      ),
+      concept_code = reactable::colDef(
+        name = "TestCode [Unit]"
+      ),
+      n_records = reactable::colDef(
+        name = "Number of events", 
+        maxWidth = 80
+      ),
+      value_percentiles = reactable::colDef(
+        name = "Value percentiles", 
+        minWidth = 150
+      ),
+      to_value_percentiles = reactable::colDef(
+        name = "Harmonised value percentiles", 
+        minWidth = 150
+      ),
+      KS_test = reactable::colDef(
+        name = "KS test", 
+        format = reactable::colFormat(digits = 2),
+        maxWidth = 50
+      ),
       perplot = reactable::colDef(
         name = "perplot",
-        cell = aaa
+        cell = aaa, 
+        maxWidth = 150
       ), 
+      status = reactable::colDef(
+        name = "Status", 
+        minWidth = 150
+      ),
       report_error = reactable::colDef(
         name = "report_error",
         cell = function(value) {
           sprintf('<a href="%s" target="_blank">Report error</a>', value)
         }, 
-        html = TRUE
+        html = TRUE, 
+        maxWidth = 100
       )
     )
   )
