@@ -108,8 +108,8 @@ toplot  <- summary_data_5 |>
     concept_name,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     n_records,
-    value_percentiles,
-    to_value_percentiles,
+    value_percentiles = paste0(value_percentiles, " [", source_unit_valid, "]"),
+    to_value_percentiles = paste0(to_value_percentiles, " [", to_source_unit_valid, "]"),
     KS_test,
     perplot,
     status
