@@ -4,3 +4,9 @@ u-ph	form	ph
 du-prot	g	g/24h
 du-na	mmol	mmol/24h
 du-kors-v	nmol	nmol/24h
+b-hkr 	osuus 	ratio
+b-erytrosyytit,tilavuusosuus 	osuus 	ratio
+b-pvk+tkd,hkr 	osuus 	ratio
+b-retind 	osuus 	%
+b-erytrosyyttientilavuusosuus 	osuus 	%
+erytrosyytit,tilavuusosuus 	osuus 	ratio
