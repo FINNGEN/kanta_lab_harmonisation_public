@@ -29,7 +29,6 @@ check_lab_usagi_file <- function(
 
   lab_usagi <- read_csv(pathInputFile)
 
-
   lab_usagi_checked <- lab_usagi |>
     left_join(
       quantity,
@@ -53,7 +52,8 @@ check_lab_usagi_file <- function(
         status == '' & conceptId != 0 ~ 'APPROVED',
         TRUE ~ mappingStatus
       ),
-      `ADD_INFO:omopQuantity` = omop_quantity
+      `ADD_INFO:omopQuantity` = omop_quantity,
+      comment = status
     ) |>
     select(-omop_quantity, -status, -quantity_correct) |>
     arrange(desc(sourceFrequency))
