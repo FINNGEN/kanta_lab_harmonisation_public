@@ -107,9 +107,11 @@ toplot  <- summary_data_5 |>
     measurement_concept_id,
     concept_name,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
+    unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
     n_records,
     value_percentiles = paste0(value_percentiles, " [", source_unit_valid, "]"),
     to_value_percentiles = paste0(to_value_percentiles, " [", to_source_unit_valid, "]"),
+    p_missing_values = paste0('~', p_missing_values, '%'),
     KS_test,
     perplot,
     status
@@ -146,6 +148,9 @@ toplot |>
       concept_code = reactable::colDef(
         name = "TestCode [Unit]"
       ),
+      unit_fix = reactable::colDef(
+        name = "Unit fix"
+      ),
       n_records = reactable::colDef(
         name = "Number of events", 
         maxWidth = 80
@@ -157,6 +162,10 @@ toplot |>
       to_value_percentiles = reactable::colDef(
         name = "Harmonised value percentiles", 
         minWidth = 150
+      ),
+      p_missing_values = reactable::colDef(
+        name = "Missing values", 
+        maxWidth = 60
       ),
       KS_test = reactable::colDef(
         name = "KS test", 
