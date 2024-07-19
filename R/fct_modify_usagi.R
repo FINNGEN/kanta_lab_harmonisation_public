@@ -126,14 +126,24 @@ check_lab_usagi_file <- function(
     domainId = domainId,
     mappingType = NA_character_,
     comment = if_else(nConcepts==1, '',
-                      paste('ERROR; Mapping: cannot map with our unit, multiple targets:', conceptIds)
+                      paste('ERROR; Mapping: cannot map without unit, multiple targets')
     ),
     createdBy = 'AUTO',
     createdOn = statusSetOn,
     assignedReviewer = NA_character_
   )
 
+  # remove all the codes with no units
+  n_codes_no_units <- lab_usagi_checked |>
+    filter(is.na(`ADD_INFO:measurementUnit`)) |>
+    nrow()
+
+  lab_usagi_checked <- lab_usagi_checked |>
+    filter(!is.na(`ADD_INFO:measurementUnit`))
+
   lab_usagi_checked <- bind_rows(lab_usagi_checked, new_mappings)
+
+  warning(paste('Removed', n_codes_no_units, 'codes with no units, added', nrow(new_mappings), 'codes with no units'))
 
   # update mapping status and write file
   lab_usagi_checked |>
