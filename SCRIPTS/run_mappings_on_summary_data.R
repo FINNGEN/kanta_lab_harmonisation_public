@@ -9,7 +9,8 @@ summary_data <- read_tsv('INPUT_SUMMARY_DATA/finngen_summary_data.tsv') |>
   mutate(
     source_unit_clean = if_else(is.na(source_unit_clean), '', source_unit_clean),
     value_percentiles = str_replace_all(value_percentiles, ',  \\]', ' ]')
-  )
+  ) |>
+  filter(!is.na(TEST_NAME_ABBREVIATION))
 
 # if missing p_missing_values column add it
 if (!'p_missing_values' %in% colnames(summary_data)) {
@@ -86,7 +87,7 @@ if (FALSE) {
 # Optionaly, if mappings in the usagi file have change, these changes must be checked if correct
 if (FALSE) {
   check_lab_usagi_file(
-    pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv',
+    pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv.test',
     pathValidQuantityFile = 'MAPPING_TABLES/LOINC_has_property.csv',
     pathValidQuantityUnitsFile = 'MAPPING_TABLES/quantity_source_unit_conversion.tsv'
   )
@@ -96,7 +97,6 @@ labfi_usagi <- read_csv('MAPPING_TABLES/LABfi_ALL.usagi.csv')|>
   transmute(
     TEST_NAME_ABBREVIATION = str_remove(sourceCode, '\\[.*\\]'),
     source_unit_valid = str_remove_all(str_extract(sourceCode, '\\[.*\\]'), '\\[|\\]'),
-    source_unit_valid = if_else(source_unit_valid == '', NA_character_, source_unit_valid),
     omop_quantity = `ADD_INFO:omopQuantity`,
     measurement_concept_id = if_else(mappingStatus == 'APPROVED', conceptId, 0),
     error_message = if_else(mappingStatus == 'FLAGGED', comment, NA_character_),
@@ -111,7 +111,8 @@ summary_data_3  <- summary_data_2 |>
   mutate(
     status = if_else(is.na(status) & is.na(measurement_concept_id), 'ERROR: Mapping: unknown abbreviation+unit', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 &  is.na(error_message), 'ERROR: Mapping: missing mapping', status),
-    status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status)
+    status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status),
+    status = if_else(is.na(status) & source_unit_valid == '', 'SUCCESSFUL: missing unit', status)
   ) |>
   select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status,omop_quantity, measurement_concept_id,
          concept_name)
