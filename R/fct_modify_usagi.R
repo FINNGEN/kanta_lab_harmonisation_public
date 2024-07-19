@@ -133,13 +133,12 @@ check_lab_usagi_file <- function(
     assignedReviewer = NA_character_
   )
 
-  # remove all the codes with no units
-  n_codes_no_units <- lab_usagi_checked |>
-    filter(is.na(`ADD_INFO:measurementUnit`)) |>
-    nrow()
+  # remove all the codes that will be modified
+  n_codes_no_units <- union(lab_usagi_checked$sourceCode , new_mappings$sourceCode) |>
+    length()
 
   lab_usagi_checked <- lab_usagi_checked |>
-    filter(!is.na(`ADD_INFO:measurementUnit`))
+    anti_join(new_mappings, by = 'sourceCode')
 
   lab_usagi_checked <- bind_rows(lab_usagi_checked, new_mappings)
 
