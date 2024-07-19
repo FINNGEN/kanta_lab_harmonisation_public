@@ -112,7 +112,7 @@ summary_data_3  <- summary_data_2 |>
     status = if_else(is.na(status) & is.na(measurement_concept_id), 'ERROR: Mapping: unknown abbreviation+unit', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 &  is.na(error_message), 'ERROR: Mapping: missing mapping', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status),
-    status = if_else(is.na(status) & source_unit_valid == '', 'SUCCESSFUL: missing unit', status)
+    status = if_else(is.na(status) & source_unit_valid == '', 'SUCCESFUL: no unit', status)
   ) |>
   select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status,omop_quantity, measurement_concept_id,
          concept_name)
