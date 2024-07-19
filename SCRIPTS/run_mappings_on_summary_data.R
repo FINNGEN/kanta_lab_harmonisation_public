@@ -1,62 +1,74 @@
 
-
 library(tidyverse)
 source('R/fct_modify_usagi.R')
 source('R/fct_values.R')
 source('R/fct_dashboard.R')
 
-  summary_data <- read_tsv('INPUT_SUMMARY_DATA/synthetic_summary_data.tsv') |>
-  mutate(status = NA_character_)
+summary_data <- read_tsv('INPUT_SUMMARY_DATA/finngen_summary_data.tsv') |>
+  mutate(status = NA_character_) |>
+  mutate(
+    source_unit_clean = if_else(is.na(source_unit_clean), '', source_unit_clean),
+    value_percentiles = str_replace_all(value_percentiles, ',  \\]', ' ]')
+  )
+
+# if missing p_missing_values column add it
+if (!'p_missing_values' %in% colnames(summary_data)) {
+  summary_data <- summary_data |>
+    mutate(p_missing_values = NA_real_)
+}
 
 # checks
 summary_data |> count(TEST_NAME_ABBREVIATION,source_unit_clean)  |> filter(n > 1) |> nrow() |>
   testthat::expect_equal(0)
 
-
-
 #
-# STEP 1: validate units
-# - check if the units in the source exist in the list of valid units UNITSfi.usagi.csv file
-#
-
-usagi_units <- read_csv('MAPPING_TABLES/UNITSfi.usagi.csv') |>
-  transmute(
-    source_unit_clean = sourceCode,
-    source_unit_valid = sourceCode
-  )
-
-summary_data_1  <- summary_data |>
-  left_join(usagi_units, by = c('source_unit_clean')) |>
-  mutate(
-    status = if_else(is.na(status) & is.na(source_unit_valid), 'ERROR: Units: invalid source_unit_clean', status)
-  ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_valid, n_records, value_percentiles, status)
-
-# summary_data_1 |> filter(!is.na(status))  |> count(source_unit_clean, sort=TRUE)
-
-#
-# STEP 2: fix units within abbreviations context
+# STEP 1: fix units within abbreviations context
 # - we can see that some units do not agree with the abbreviation, these are fixed based on the table in fix_unit_based_in_abbreviation.tsv
 #
 
 fix_unit_based_on_abbreviation  <- read_tsv('MAPPING_TABLES/fix_unit_based_in_abbreviation.tsv')
 
-summary_data_2  <- summary_data_1 |>
-  left_join(fix_unit_based_on_abbreviation, by = c('TEST_NAME_ABBREVIATION', 'source_unit_valid')) |>
+summary_data_1  <- summary_data |>
+  left_join(fix_unit_based_on_abbreviation, by = c('TEST_NAME_ABBREVIATION', 'source_unit_clean')) |>
   mutate(
-    source_unit_valid = if_else(is.na(source_unit_valid_fix), source_unit_valid, source_unit_valid_fix)
-  ) |>
-  select(-source_unit_valid_fix)
+    source_unit_clean_fix = if_else(is.na(source_unit_clean_fix), source_unit_clean, source_unit_clean_fix)
+  )  |>
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, n_records, value_percentiles, p_missing_values, status)
 
 
 #check if units are comparable,
 # plot changes units with the similar ones, check similarity in value distribution
-summary_data_2 |> semi_join(
-  summary_data_2  |> filter(source_unit_clean != source_unit_valid),
-  by = c('TEST_NAME_ABBREVIATION', 'source_unit_valid')
-)
+summary_data |>
+  left_join(fix_unit_based_on_abbreviation, by = c('TEST_NAME_ABBREVIATION', 'source_unit_clean')) |>
+  semi_join(fix_unit_based_on_abbreviation, by = c('TEST_NAME_ABBREVIATION')) # |>View()
 
 # summary_data_2 |> filter(!is.na(status))  |> count(source_unit_clean, sort=TRUE)
+
+
+#
+# STEP 2: validate units
+# - check if the units in the source exist in the list of valid units UNITSfi.usagi.csv file
+#
+usagi_units <- read_csv('MAPPING_TABLES/UNITSfi.usagi.csv') |>
+  transmute(
+    source_unit_clean_fix = sourceCode,
+    source_unit_valid = sourceCode
+  ) |>
+  # add no unit to be valid
+  add_row(source_unit_clean_fix = '', source_unit_valid = '')
+
+summary_data_2  <- summary_data_1 |>
+  left_join(usagi_units, by = c('source_unit_clean_fix')) |>
+  mutate(
+    status = if_else(is.na(status) & is.na(source_unit_valid), 'ERROR: Units: invalid source_unit_clean', status)
+  ) |>
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status)
+
+# CHECKS
+summary_data_2 |> filter(!is.na(status))  |>
+  group_by(source_unit_clean)  |>
+  summarise(n = n(), n_records = sum(n_records), .groups = 'drop')  |>
+  arrange(desc(n_records))
 
 #
 # STEP 3: Harmonize abbreviation unit pairs
@@ -101,7 +113,7 @@ summary_data_3  <- summary_data_2 |>
     status = if_else(is.na(status) & measurement_concept_id == 0 &  is.na(error_message), 'ERROR: Mapping: missing mapping', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status)
   ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_valid, n_records, value_percentiles, status,omop_quantity, measurement_concept_id,
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status,omop_quantity, measurement_concept_id,
          concept_name)
 
 # summary_data_3 |> filter(!is.na(status))  |> count(source_unit_clean, sort=TRUE)

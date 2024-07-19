@@ -29,6 +29,8 @@ check_lab_usagi_file <- function(
 
   lab_usagi <- read_csv(pathInputFile)
 
+
+  # check if wrong mapping or units dont match quantity
   lab_usagi_checked <- lab_usagi |>
     left_join(
       quantity,
@@ -39,26 +41,121 @@ check_lab_usagi_file <- function(
       by = c('omop_quantity' = 'omop_quantity', `ADD_INFO:measurementUnit` = 'source_unit_valid')
     ) |>
     mutate(
-      status = case_when(
+      comment = case_when(
         conceptId == 0 ~ '',
         is.na(omop_quantity) ~ 'ERROR; Mapping: Wrong mapping',
         is.na(quantity_correct) ~ 'ERROR; Units: Units dont match quantity',
         TRUE ~ ''
-      )
+      ),
+      `ADD_INFO:omopQuantity` = omop_quantity
+    )|>
+    select(-omop_quantity, -quantity_correct)
+
+  # check if wrong group mapping
+  valid_test_quantity_conceptId   <-  lab_usagi  |>
+    filter(mappingStatus == 'APPROVED') |>
+    group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
+    summarise(
+      conceptIds = paste(unique(conceptId), collapse = ','),
+      nConcepts = n_distinct(conceptId),
+    )
+
+  ambiguous_mappings <- valid_test_quantity_conceptId |>
+    filter(nConcepts > 1)
+
+  if (nrow(ambiguous_mappings) > 0) {
+    lab_usagi_checked <- lab_usagi_checked |>
+      left_join(
+        ambiguous_mappings,
+        by = c('ADD_INFO:testNameAbbreviation', 'ADD_INFO:omopQuantity')
+      ) |>
+      mutate(
+        comment = if_else(
+          !is.na(nConcepts),
+          paste('ERROR; Mapping: Ambiguous mapping, same abbrebiation',`ADD_INFO:testNameAbbreviation`,
+                ' and ', `ADD_INFO:omopQuantity`,
+                'maps to different concepts',conceptIds),
+          comment)
+      ) |>
+      select(-conceptIds, -nConcepts)
+  }
+
+  # create mapping to abbreviations with no units
+
+  valid_test_one_quantity_conceptid <- valid_test_quantity_conceptId  |>
+    filter(nConcepts == 1) |>
+    mutate(conceptId = as.numeric(conceptIds)) |>
+    group_by(`ADD_INFO:testNameAbbreviation`) |>
+    summarise(
+      conceptIds = paste(unique(conceptId), collapse = ','),
+      nConcepts = n_distinct(conceptId),
+      .groups = 'drop'
     ) |>
+    arrange(desc(nConcepts)) |>
+    mutate(conceptId = suppressWarnings(as.numeric(conceptIds)))
+
+  new_mappings <- valid_test_one_quantity_conceptid |>
+    # add info from usagi file
+    left_join(
+      lab_usagi |> distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
+      by = c('conceptId')
+    ) |>
+  #
+  transmute(
+    sourceCode = paste0(`ADD_INFO:testNameAbbreviation`, '[]'),
+    sourceName = sourceCode,
+    sourceFrequency = 0,
+    sourceAutoAssignedConceptIds = NA_integer_,
+    `ADD_INFO:measurementUnit` = '',
+    `ADD_INFO:sourceConceptId` = 2002410000+row_number(),
+    `ADD_INFO:sourceName_fi` = '',
+    `ADD_INFO:sourceConceptClass` =  'LABfi_ALL Level 0',
+    `ADD_INFO:sourceDomain` =  'Measurement',
+    `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
+    `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
+    `ADD_INFO:Valuepercentiles` = NA_character_,
+    `ADD_INFO:omopQuantity` = `ADD_INFO:omopQuantity`,
+    `ADD_INFO:testNameAbbreviation` = `ADD_INFO:testNameAbbreviation`,
+    matchScore = 0,
+    mappingStatus = if_else(nConcepts==1, 'APPROVED', 'FLAGGED'),
+    equivalence = NA_character_,
+    statusSetBy = 'AUTO',
+    statusSetOn = as.integer(as_datetime(now()))*1000,
+    conceptId = if_else(nConcepts==1, conceptId, 0),
+    conceptName = conceptName,
+    domainId = domainId,
+    mappingType = NA_character_,
+    comment = if_else(nConcepts==1, '',
+                      paste('ERROR; Mapping: cannot map without unit, multiple targets')
+    ),
+    createdBy = 'AUTO',
+    createdOn = statusSetOn,
+    assignedReviewer = NA_character_
+  )
+
+  # remove all the codes with no units
+  n_codes_no_units <- lab_usagi_checked |>
+    filter(is.na(`ADD_INFO:measurementUnit`)) |>
+    nrow()
+
+  lab_usagi_checked <- lab_usagi_checked |>
+    filter(!is.na(`ADD_INFO:measurementUnit`))
+
+  lab_usagi_checked <- bind_rows(lab_usagi_checked, new_mappings)
+
+  warning(paste('Removed', n_codes_no_units, 'codes with no units, added', nrow(new_mappings), 'codes with no units'))
+
+  # update mapping status and write file
+  lab_usagi_checked |>
     mutate(
       mappingStatus = case_when(
-        status != ''  ~ 'FLAGGED',
-        status == '' & conceptId != 0 ~ 'APPROVED',
+        comment != ''  ~ 'FLAGGED',
+        comment == '' & conceptId != 0 ~ 'APPROVED',
         TRUE ~ mappingStatus
       ),
-      `ADD_INFO:omopQuantity` = omop_quantity,
-      comment = status
-    ) |>
-    select(-omop_quantity, -status, -quantity_correct) |>
-    arrange(desc(sourceFrequency))
-
-  lab_usagi_checked |> write_csv(pathOutputFile, na = '')
+    )  |>
+    arrange(desc(sourceFrequency)) |>
+    write_csv(pathOutputFile, na = '')
 }
 
 
@@ -105,21 +202,5 @@ update_usagi_counts_values <- function(
   labfi_usagi |> write_csv(pathOutputFile, na = '')
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
