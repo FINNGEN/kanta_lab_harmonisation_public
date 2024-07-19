@@ -58,6 +58,7 @@ check_lab_usagi_file <- function(
     summarise(
       conceptIds = paste(unique(conceptId), collapse = ','),
       nConcepts = n_distinct(conceptId),
+      .groups = 'drop'
     )
 
   ambiguous_mappings <- valid_test_quantity_conceptId |>
@@ -81,8 +82,18 @@ check_lab_usagi_file <- function(
   }
 
   # create mapping to abbreviations with no units
+  stop('not run is breaking the existing mappins to code with no units FIX')
+  valid_test_quantity_conceptId_with_units   <-  lab_usagi  |>
+    filter(mappingStatus == 'APPROVED') |>
+    filter(!str_detect(sourceCode, '\\[\\]')) |>
+    group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
+    summarise(
+      conceptIds = paste(unique(conceptId), collapse = ','),
+      nConcepts = n_distinct(conceptId),
+      .groups = 'drop'
+    )
 
-  valid_test_one_quantity_conceptid <- valid_test_quantity_conceptId  |>
+    valid_test_one_quantity_conceptid <- valid_test_quantity_conceptId_with_units  |>
     filter(nConcepts == 1) |>
     mutate(conceptId = as.numeric(conceptIds)) |>
     group_by(`ADD_INFO:testNameAbbreviation`) |>
@@ -95,7 +106,7 @@ check_lab_usagi_file <- function(
     mutate(conceptId = suppressWarnings(as.numeric(conceptIds)))
 
   new_mappings <- valid_test_one_quantity_conceptid |>
-    # add info from usagi file
+    # add info from usagi file witn units
     left_join(
       lab_usagi |> distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
       by = c('conceptId')
@@ -134,7 +145,7 @@ check_lab_usagi_file <- function(
   )
 
   # remove all the codes that will be modified
-  n_codes_no_units <- union(lab_usagi_checked$sourceCode , new_mappings$sourceCode) |>
+  n_codes_no_units <- intersect(lab_usagi_checked$sourceCode , new_mappings$sourceCode) |>
     length()
 
   lab_usagi_checked <- lab_usagi_checked |>

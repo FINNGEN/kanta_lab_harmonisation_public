@@ -66,7 +66,7 @@ toplot |>
     ), 
     # rows color conditional on status, success is green, warning is yellow, error is red
     rowStyle = function(index) {
-      if (toplot$status[[index]] == 'SUCCESFUL') {
+      if (toplot$status[[index]]  |> stringr::str_detect('SUCCESFUL')) {
         list(background = '#d8f8d8', color = 'black')
       } else if (toplot$status[[index]]  |> stringr::str_detect('WARNING')) {
         list(background = '#f8f8d8', color = 'black')
