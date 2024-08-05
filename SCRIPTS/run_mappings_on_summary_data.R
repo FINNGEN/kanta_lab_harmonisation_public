@@ -87,7 +87,7 @@ if (FALSE) {
 # Optionaly, if mappings in the usagi file have change, these changes must be checked if correct
 if (FALSE) {
   check_lab_usagi_file(
-    pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv.test',
+    pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv',
     pathValidQuantityFile = 'MAPPING_TABLES/LOINC_has_property.csv',
     pathValidQuantityUnitsFile = 'MAPPING_TABLES/quantity_source_unit_conversion.tsv'
   )
