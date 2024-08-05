@@ -82,9 +82,9 @@ check_lab_usagi_file <- function(
   }
 
   # create mapping to abbreviations with no units
-                          #stop('not run is breaking the existing mappins to code with no units FIX')
+  #stop('not run is breaking the existing mappins to code with no units FIX')
   valid_test_quantity_conceptId_with_units   <-  lab_usagi  |>
-    filter(mappingStatus == 'APPROVED') |>
+    #filter(mappingStatus == 'APPROVED') |>
     filter(!str_detect(sourceCode, '\\[\\]')) |>
     group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
     summarise(
