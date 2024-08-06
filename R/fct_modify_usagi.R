@@ -29,7 +29,6 @@ check_lab_usagi_file <- function(
 
   lab_usagi <- read_csv(pathInputFile)
 
-
   # check if wrong mapping or units dont match quantity
   lab_usagi_checked <- lab_usagi |>
     left_join(
@@ -84,7 +83,7 @@ check_lab_usagi_file <- function(
   # create mapping to abbreviations with no units
   #stop('not run is breaking the existing mappins to code with no units FIX')
   valid_test_quantity_conceptId_with_units   <-  lab_usagi  |>
-    #filter(mappingStatus == 'APPROVED') |>
+    filter(mappingStatus == 'APPROVED') |>
     filter(!str_detect(sourceCode, '\\[\\]')) |>
     group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
     summarise(
@@ -108,7 +107,9 @@ check_lab_usagi_file <- function(
   new_mappings <- valid_test_one_quantity_conceptid |>
     # add info from usagi file witn units
     left_join(
-      lab_usagi |> distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
+      lab_usagi |>
+        filter(!is.na(conceptId)) |> filter(conceptId!=0) |>
+        distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
       by = c('conceptId')
     ) |>
   #
@@ -212,5 +213,71 @@ update_usagi_counts_values <- function(
   labfi_usagi |> write_csv(pathOutputFile, na = '')
 
 }
+
+
+
+# append missing no unit abbreviations
+#
+# new  <- summary_data_5  |>
+#   filter(status == 'ERROR: Mapping: unknown abbreviation+unit') |> filter(source_unit_clean=='') |>
+#   transmute(
+#     sourceCode = paste0(TEST_NAME_ABBREVIATION, '[]'),
+#     sourceName = sourceCode,
+#     sourceFrequency = n_records,
+#     sourceAutoAssignedConceptIds = NA_integer_,
+#     `ADD_INFO:measurementUnit` = '',
+#     `ADD_INFO:sourceConceptId` = 2002420000+row_number(),
+#     `ADD_INFO:sourceName_fi` = '',
+#     `ADD_INFO:sourceConceptClass` =  'LABfi_ALL Level 0',
+#     `ADD_INFO:sourceDomain` =  'Measurement',
+#     `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
+#     `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
+#     `ADD_INFO:Valuepercentiles` = NA_character_,
+#     `ADD_INFO:omopQuantity` = omop_quantity,
+#     `ADD_INFO:testNameAbbreviation` = TEST_NAME_ABBREVIATION,
+#     matchScore = 0,
+#     mappingStatus =  'UNCHECKED',
+#     equivalence = NA_character_,
+#     statusSetBy = 'AUTO',
+#     statusSetOn = as.integer(as_datetime(now()))*1000,
+#     conceptId = 0,
+#     conceptName =  '',
+#     domainId = '',
+#     mappingType = NA_character_,
+#     comment = '',
+#     createdBy = 'AUTO',
+#     createdOn = statusSetOn,
+#     assignedReviewer = NA_character_
+#   )
+#
+# pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv'
+# lab_usagi <- read_csv(pathInputFile)
+#
+# lab_usagi_new <- bind_rows(lab_usagi, new) |>
+#   distinct(sourceCode, .keep_all = TRUE)
+#
+# lab_usagi_new |> write_csv(pathInputFile, na = '')
+#
+#
+#
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

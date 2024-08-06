@@ -73,7 +73,7 @@ summary_data_2 |> filter(!is.na(status))  |>
 
 #
 # STEP 3: Harmonize abbreviation unit pairs
-# - check if the abbreviation+unit pairs are in the MAPPING_TABLES/LABfi_ALL.usagi.csv file
+# - check if the abbreviation+unit pairs are in the MAPPING_TABLES/LABfi_ALL.usagi.csv file a
 #
 
 # Optionaly, usagi file can be updated with current counts and values
