@@ -106,6 +106,7 @@ toplot  <- summary_data_5 |>
   transmute(
     measurement_concept_id,
     concept_name,
+    omop_quantity = omop_quantity,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
     n_records,
@@ -145,11 +146,17 @@ toplot |>
       concept_name = reactable::colDef(
         name = "Omop Name"
       ),
+      omop_quantity = reactable::colDef(
+        name = "Omop Quantity", 
+        maxWidth = 150
+      ),
       concept_code = reactable::colDef(
-        name = "TestCode [Unit]"
+        name = "TestCode [Unit]", 
+        maxWidth = 150
       ),
       unit_fix = reactable::colDef(
-        name = "Unit fix"
+        name = "Unit fix", 
+        maxWidth = 150
       ),
       n_records = reactable::colDef(
         name = "Number of events", 

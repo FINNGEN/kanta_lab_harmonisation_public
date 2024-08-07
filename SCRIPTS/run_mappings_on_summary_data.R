@@ -27,7 +27,10 @@ summary_data |> count(TEST_NAME_ABBREVIATION,source_unit_clean)  |> filter(n > 1
 # - we can see that some units do not agree with the abbreviation, these are fixed based on the table in fix_unit_based_in_abbreviation.tsv
 #
 
-fix_unit_based_on_abbreviation  <- read_tsv('MAPPING_TABLES/fix_unit_based_in_abbreviation.tsv')
+fix_unit_based_on_abbreviation  <- read_tsv('MAPPING_TABLES/fix_unit_based_in_abbreviation.tsv') |>
+  mutate(
+    source_unit_clean = if_else(is.na(source_unit_clean), '', source_unit_clean)
+  )
 
 summary_data_1  <- summary_data |>
   left_join(fix_unit_based_on_abbreviation, by = c('TEST_NAME_ABBREVIATION', 'source_unit_clean')) |>
@@ -124,7 +127,11 @@ summary_data_3  <- summary_data_2 |>
 # - For each omop group, the most common unit is chosen, the other units are converted to this unit using quantity_source_unit_conversion.tsv table
 #
 
-unit_conversion <- read_tsv('MAPPING_TABLES/quantity_source_unit_conversion.tsv')
+unit_conversion <- read_tsv('MAPPING_TABLES/quantity_source_unit_conversion.tsv') |>
+  mutate(
+    source_unit_valid = if_else(is.na(source_unit_valid), '', source_unit_valid),
+    to_source_unit_valid = if_else(is.na(to_source_unit_valid), '', to_source_unit_valid)
+  )
 
 summary_data_4  <- summary_data_3 |>
   # get most common unit for the group
@@ -133,7 +140,7 @@ summary_data_4  <- summary_data_3 |>
   nest() |>
   mutate(
     to_source_unit_valid = map_chr(data, ~{
-      .x |> pull(source_unit_valid) |> first()
+      .x |> filter(source_unit_valid!='') |> pull(source_unit_valid) |> first()
     }),
     to_source_unit_valid = if_else(is.na(measurement_concept_id) | measurement_concept_id==1, NA_character_, to_source_unit_valid),
     ref_value_percentiles = map_chr(data, ~{

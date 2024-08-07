@@ -1,3 +1,18 @@
+# Kanta Harmonisation v1.3.0
+
+Major changes :
+
+- Added abbreviation with no unit combinations from FinnGen missing in LABfi_ALL.usagi.csv
+- Accept all the classes of the LOINC as far as they are measurement domain
+- Accept quantities 'Finding', 'Presence or identity' and 'Presense or threshold' to have NA units
+- Accept 'Presense or threshold' estimate unit to be interchangeable with NA unit
+
+Minor changes:
+
+- Added few new mappings for panes from Elisa 
+- change 'u/field' to 'hpf'  in UNITSfi.usagi.csv
+- unit conversion to the top test with unit
+
 # Kanta Harmonisation v1.2.0
 
 - Added new mappings from FinOMOP for the missing code with no unis
