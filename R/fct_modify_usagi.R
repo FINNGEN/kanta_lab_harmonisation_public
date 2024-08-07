@@ -43,7 +43,7 @@ check_lab_usagi_file <- function(
       comment = case_when(
         conceptId == 0 ~ '',
         is.na(omop_quantity) ~ 'ERROR; Mapping: Wrong mapping',
-        is.na(quantity_correct) ~ 'ERROR; Units: Units dont match quantity',
+        is.na(quantity_correct) & !is.na(`ADD_INFO:measurementUnit`) ~ 'ERROR; Units: Units dont match quantity',
         TRUE ~ ''
       ),
       `ADD_INFO:omopQuantity` = omop_quantity
