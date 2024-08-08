@@ -111,9 +111,18 @@ toplot  <- summary_data_5 |>
     unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
     n_records,
     p_NA_AA_A_LL_L_N_H_HH = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
-    value_percentiles = paste0(value_percentiles, " [", source_unit_valid, "]"),
-    to_value_percentiles = paste0(to_value_percentiles, " [", to_source_unit_valid, "]"),
-    p_missing_values = paste0('~', p_missing_values, '%'),
+    value_percentiles = if_else(
+      is.na(value_percentiles) | p_missing_values > 90, '',
+      paste0(value_percentiles, " [", source_unit_valid, "]")
+    ),
+    to_value_percentiles = if_else(
+      is.na(to_value_percentiles), '',
+      paste0(to_value_percentiles, " [", to_source_unit_valid, "]")
+    ),
+    p_missing_values = if_else(
+      is.na(p_missing_values), '',
+      paste0('~', p_missing_values, '%')
+    ),
     KS_test,
     perplot,
     status
