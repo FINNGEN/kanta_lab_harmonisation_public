@@ -106,9 +106,11 @@ toplot  <- summary_data_5 |>
   transmute(
     measurement_concept_id,
     concept_name,
+    omop_quantity = omop_quantity,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
     n_records,
+    p_NA_AA_A_LL_L_N_H_HH = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
     value_percentiles = paste0(value_percentiles, " [", source_unit_valid, "]"),
     to_value_percentiles = paste0(to_value_percentiles, " [", to_source_unit_valid, "]"),
     p_missing_values = paste0('~', p_missing_values, '%'),
@@ -145,15 +147,25 @@ toplot |>
       concept_name = reactable::colDef(
         name = "Omop Name"
       ),
+      omop_quantity = reactable::colDef(
+        name = "Omop Quantity", 
+        maxWidth = 150
+      ),
       concept_code = reactable::colDef(
-        name = "TestCode [Unit]"
+        name = "TestCode [Unit]", 
+        maxWidth = 150
       ),
       unit_fix = reactable::colDef(
-        name = "Unit fix"
+        name = "Unit fix", 
+        maxWidth = 150
       ),
       n_records = reactable::colDef(
         name = "Number of events", 
         maxWidth = 80
+      ),
+      p_NA_AA_A_LL_L_N_H_HH = reactable::colDef(
+        name = "[NA][AA, A, LL, L, N, H, HH]", 
+        minWidth = 100
       ),
       value_percentiles = reactable::colDef(
         name = "Value percentiles", 
@@ -164,8 +176,8 @@ toplot |>
         minWidth = 150
       ),
       p_missing_values = reactable::colDef(
-        name = "Missing values", 
-        maxWidth = 60
+        name = "Missing values %",
+        maxWidth = 65
       ),
       KS_test = reactable::colDef(
         name = "KS test", 
@@ -180,15 +192,15 @@ toplot |>
       status = reactable::colDef(
         name = "Status", 
         minWidth = 150
-      ),
-      report_error = reactable::colDef(
-        name = "report_error",
-        cell = function(value) {
-          sprintf('<a href="%s" target="_blank">Report error</a>', value)
-        }, 
-        html = TRUE, 
-        maxWidth = 100
       )
+      # report_error = reactable::colDef(
+      #   name = "report_error",
+      #   cell = function(value) {
+      #     sprintf('<a href="%s" target="_blank">Report error</a>', value)
+      #   }, 
+      #   html = TRUE, 
+      #   maxWidth = 100
+      # )
     )
   )
 

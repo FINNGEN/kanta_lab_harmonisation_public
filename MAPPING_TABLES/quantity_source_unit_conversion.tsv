@@ -1,8 +1,5 @@
 omop_quantity	source_unit_valid	to_source_unit_valid	conversion
--	%	%	1
--	%g	%	1
--	%l	%	1
--	%m	%	1
+-		1
 Arbitrary Concentration	au/ml	au/ml	1
 Arbitrary Concentration	eliau/ml	eliau/ml	1
 Arbitrary Concentration	eliau/ml	u/ml	1
@@ -37,6 +34,7 @@ Catalytic Ratio	%	%	1
 Entitic mass	pg	pg	1
 Entitic mass	pg/cell	pg	1
 Entitic volume	fl	fl	1
+Finding	NA	NA	1
 Length fraction	%	%	1
 Log molar concentration	ph	ph	1
 Mass	g	g	1
@@ -81,6 +79,10 @@ Osmolality	mosm/kgh2o	mosm/kgh2o	1
 Partial pressure	%	%	1
 Partial pressure	kpa	kpa	1
 Presence or Threshold	estimate	estimate	1
+Presence or Threshold	estimate	NA	1
+Presence or Threshold	NA	estimate	1
+Presence or Threshold	NA	NA	1
+Presence or Identity	NA	NA	1
 Ratio	%	%	1
 Ratio	g/mol	g/mol	1
 Ratio	g/mol	mg/mmol	1
@@ -125,6 +127,7 @@ Volume	l	ml	1000
 Volume	ml	ml	1
 Volume Fraction	ratio	ratio	1
 Volume Fraction	%	ratio	0.01
+Volume Fraction	ratio	%	100
 Volume Fraction	%	%	1
 Volume Fraction	%	ml/dl	1
 Volume Fraction	ml/dl	ml/dl	1

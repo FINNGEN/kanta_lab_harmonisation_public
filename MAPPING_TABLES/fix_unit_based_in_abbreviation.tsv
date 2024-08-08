@@ -1,4 +1,5 @@
 TEST_NAME_ABBREVIATION	source_unit_clean	source_unit_clean_fix
+p-tt-inr		inr
 p-tt-inr	form	inr
 u-ph	form	ph
 du-prot	g	g/24h
@@ -10,3 +11,5 @@ b-pvk+tkd,hkr	osuus	ratio
 b-retind	osuus	%
 b-erytrosyyttientilavuusosuus	osuus	%
 erytrosyytit,tilavuusosuus	osuus	ratio
+p-krea		umol/l
+ab-ph		ph
