@@ -12,6 +12,7 @@ Minor changes:
 - Added few new mappings for panes from Elisa 
 - change 'u/field' to 'hpf'  in UNITSfi.usagi.csv
 - unit conversion to the top test with unit
+- added abnormaliy colum distribution to viewer
 
 # Kanta Harmonisation v1.2.0
 

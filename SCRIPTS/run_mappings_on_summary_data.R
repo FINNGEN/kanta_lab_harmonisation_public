@@ -17,6 +17,10 @@ if (!'p_missing_values' %in% colnames(summary_data)) {
   summary_data <- summary_data |>
     mutate(p_missing_values = NA_real_)
 }
+if (!'p_NA_AA_A_LL_L_N_H_HH' %in% colnames(summary_data)) {
+  summary_data <- summary_data |>
+    mutate(p_NA_AA_A_LL_L_N_H_HH = NA_real_)
+}
 
 # checks
 summary_data |> count(TEST_NAME_ABBREVIATION,source_unit_clean)  |> filter(n > 1) |> nrow() |>
@@ -37,7 +41,7 @@ summary_data_1  <- summary_data |>
   mutate(
     source_unit_clean_fix = if_else(is.na(source_unit_clean_fix), source_unit_clean, source_unit_clean_fix)
   )  |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, n_records, value_percentiles, p_missing_values, status)
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH,  status)
 
 
 #check if units are comparable,
@@ -66,7 +70,7 @@ summary_data_2  <- summary_data_1 |>
   mutate(
     status = if_else(is.na(status) & is.na(source_unit_valid), 'ERROR: Units: invalid source_unit_clean', status)
   ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status)
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status)
 
 # CHECKS
 summary_data_2 |> filter(!is.na(status))  |>
@@ -117,7 +121,7 @@ summary_data_3  <- summary_data_2 |>
     status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status),
     status = if_else(is.na(status) & source_unit_valid == '', 'SUCCESFUL: no unit', status)
   ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, status,omop_quantity, measurement_concept_id,
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status,omop_quantity, measurement_concept_id,
          concept_name)
 
 # summary_data_3 |> filter(!is.na(status))  |> count(source_unit_clean, sort=TRUE)
