@@ -192,15 +192,15 @@ toplot |>
       status = reactable::colDef(
         name = "Status", 
         minWidth = 150
+      ),
+      report_error = reactable::colDef(
+        name = "report_error",
+        cell = function(value) {
+          sprintf('<a href="%s" target="_blank">Report error</a>', value)
+        },
+        html = TRUE,
+        maxWidth = 100
       )
-      # report_error = reactable::colDef(
-      #   name = "report_error",
-      #   cell = function(value) {
-      #     sprintf('<a href="%s" target="_blank">Report error</a>', value)
-      #   }, 
-      #   html = TRUE, 
-      #   maxWidth = 100
-      # )
     )
   )
 
