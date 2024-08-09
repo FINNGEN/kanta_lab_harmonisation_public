@@ -4,6 +4,9 @@ Major changes :
 - Accept all codes in measurement domain even if they are SNOMED
 - Codes with 'ERROR; Mapping: cannot map without unit, multiple targets' are mapped to the most common unit, for codes with n events over 5000
 
+Minor changes:
+- Added mappings made by MP with Claude AI
+
 # Kanta Harmonisation v1.3.0
 
 Major changes :

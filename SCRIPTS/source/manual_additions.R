@@ -109,6 +109,73 @@ lab_usagi_new_formated_save |> write_csv(pathInputFile, na = '')
 
 
 
+# corrections by mp and the AI
+# from https://docs.google.com/spreadsheets/d/1oenvypDfAeK4NitB8WHYaXmfNB7j__0WzZCoCCeiiuQ/edit?usp=sharing
+fixes <- read_csv('~/Downloads/Copy of missing kanta mappings v3 - missing kanta mappings v4.csv')|>
+  filter(measurement_concept_id != 0 & !is.na(measurement_concept_id)) |>
+  filter(is.na(COMMENTS)) |>
+  mutate(concept_code = str_remove_all(concept_code, ' '))
+
+pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv'
+lab_usagi <- read_csv(pathInputFile)
+
+lab_usagi_new <- lab_usagi  |>
+  filter(mappingStatus=='UNCHECKED')|>
+  inner_join(fixes  |> select(concept_code, measurement_concept_id, COMMENTS), by = c('sourceCode' = 'concept_code'))
+
+path_OMOP_vocabulary_folder <- '~/Documents/REPOS/FinOMOP/FinOMOP_OMOP_vocabulary/OMOP_VOCABULARIES/input_omop_vocabulary/'
+concept <- read_tsv(file.path(path_OMOP_vocabulary_folder, 'CONCEPT.csv'))
+
+lab_usagi_new_formated  <- lab_usagi_new  |> left_join(concept, by = c('measurement_concept_id' = 'concept_id')) |>
+  transmute(
+    sourceCode = sourceCode,
+    sourceName = sourceCode,
+    sourceFrequency = sourceFrequency,
+    sourceAutoAssignedConceptIds = sourceAutoAssignedConceptIds,
+    `ADD_INFO:measurementUnit` = `ADD_INFO:measurementUnit`,
+    `ADD_INFO:sourceConceptId` = `ADD_INFO:sourceConceptId`,
+    `ADD_INFO:sourceName_fi` = `ADD_INFO:sourceName_fi`,
+    `ADD_INFO:sourceConceptClass` =  `ADD_INFO:sourceConceptClass`,
+    `ADD_INFO:sourceDomain` =  `ADD_INFO:sourceDomain`,
+    `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
+    `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
+    `ADD_INFO:Valuepercentiles` = `ADD_INFO:Valuepercentiles`,
+    `ADD_INFO:omopQuantity` = NA_character_,
+    `ADD_INFO:testNameAbbreviation` = `ADD_INFO:testNameAbbreviation`,
+    matchScore = 0,
+    mappingStatus =  'APPROVED',
+    equivalence = NA_character_,
+    statusSetBy = 'MP&AIClaude',
+    statusSetOn = as.integer(as_datetime(now()))*1000,
+    conceptId = if_else(is.na(measurement_concept_id), 0, measurement_concept_id),
+    conceptName = concept_name,
+    domainId = domain_id,
+    mappingType = NA_character_,
+    comment = COMMENTS,
+    createdBy = 'AUTO',
+    createdOn = statusSetOn,
+    assignedReviewer = NA_character_
+  )
 
 
 
+lab_usagi_new_formated_save <- bind_rows(
+  lab_usagi  |> anti_join(lab_usagi_new_formated, by = 'sourceCode'),
+  lab_usagi_new_formated) |>
+  distinct(sourceCode, .keep_all = TRUE)
+
+lab_usagi_new_formated_save |> write_csv(pathInputFile, na = '')
+
+
+
+# reset usagi source concept ids
+
+pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv'
+lab_usagi <- read_csv(pathInputFile)
+
+
+lab_usagi |>
+  mutate(
+    `ADD_INFO:sourceConceptId` = 2002400000+row_number(),
+  ) |>
+  write_csv(pathInputFile, na = '')
