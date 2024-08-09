@@ -107,7 +107,8 @@ labfi_usagi <- read_csv('MAPPING_TABLES/LABfi_ALL.usagi.csv')|>
     omop_quantity = `ADD_INFO:omopQuantity`,
     measurement_concept_id = if_else(mappingStatus == 'APPROVED', conceptId, 0),
     error_message = if_else(mappingStatus == 'FLAGGED', comment, NA_character_),
-    concept_name = conceptName
+    concept_name = conceptName,
+    mappingStatus = mappingStatus
   )
 
 summary_data_3  <- summary_data_2 |>
@@ -116,6 +117,7 @@ summary_data_3  <- summary_data_2 |>
     by = c('TEST_NAME_ABBREVIATION', 'source_unit_valid')
   ) |>
   mutate(
+    status = if_else(is.na(status) & measurement_concept_id==0 & mappingStatus=='APPROVED', 'IGNORED: Mapping not found', status),
     status = if_else(is.na(status) & is.na(measurement_concept_id), 'ERROR: Mapping: unknown abbreviation+unit', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 &  is.na(error_message), 'ERROR: Mapping: missing mapping', status),
     status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status),

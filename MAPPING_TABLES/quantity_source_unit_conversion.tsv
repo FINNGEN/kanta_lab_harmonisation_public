@@ -31,13 +31,16 @@ Catalytic Concentration	iu/l	u/l	1
 Catalytic Concentration	u/l	u/l	1
 Catalytic Fraction	%	%	1
 Catalytic Ratio	%	%	1
+Decimal number fraction	%	%	1
 Entitic mass	pg	pg	1
 Entitic mass	pg/cell	pg	1
 Entitic volume	fl	fl	1
 Finding	NA	NA	1
 Length fraction	%	%	1
+Length	mm	mm	1
 Log molar concentration	ph	ph	1
 Mass	g	g	1
+Mass	mg	mg	1
 Mass Concentration	g/l	g/l	1
 Mass Concentration	g/l	mg/l	1000
 Mass Concentration	mg/l	g/l	0.001
@@ -60,7 +63,7 @@ Mass Rate	ug/min	ug/min	1
 Mass Ratio	%	%	1
 Mass Ratio	ratio	ratio	1
 Mass fraction	%	%	1
-Mass fraction	%	mmol/mol	NA
+Mass fraction	%	mmol/mol	10
 Mass fraction	mmol/mol	mmol/mol	1
 Mass or Substance Rate	mmol/24h	mmol/24h	1
 Number Areic (per area)	u/field	u/field	1
@@ -84,6 +87,9 @@ Presence or Threshold	NA	estimate	1
 Presence or Threshold	NA	NA	1
 Presence or Identity	NA	NA	1
 Ratio	%	%	1
+Ratio	ratio	ratio	1
+Ratio	ratio	%	100
+Ratio	%	ratio	0.01
 Ratio	g/mol	g/mol	1
 Ratio	g/mol	mg/mmol	1
 Ratio	mg/mmol	g/mol	1
@@ -117,6 +123,7 @@ Substance Rate	mmol/24h	mmol/24h	1
 Substance Rate	nmol/24h	nmol/24h	1
 Substance Rate	umol/24h	umol/24h	1
 Substance Ratio	%	%	1
+Temperature	°c	°c	1
 Time (e.g. seconds)	min	min	1
 Time (e.g. seconds)	s	min	0.01666667
 Time (e.g. seconds)	s	s	1

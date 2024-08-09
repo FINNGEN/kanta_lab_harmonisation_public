@@ -80,81 +80,81 @@ check_lab_usagi_file <- function(
       select(-conceptIds, -nConcepts)
   }
 
-  # create mapping to abbreviations with no units
-  #stop('not run is breaking the existing mappins to code with no units FIX')
-  valid_test_quantity_conceptId_with_units   <-  lab_usagi  |>
-    filter(mappingStatus == 'APPROVED') |>
-    filter(!str_detect(sourceCode, '\\[\\]')) |>
-    group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
-    summarise(
-      conceptIds = paste(unique(conceptId), collapse = ','),
-      nConcepts = n_distinct(conceptId),
-      .groups = 'drop'
-    )
-
-    valid_test_one_quantity_conceptid <- valid_test_quantity_conceptId_with_units  |>
-    filter(nConcepts == 1) |>
-    mutate(conceptId = as.numeric(conceptIds)) |>
-    group_by(`ADD_INFO:testNameAbbreviation`) |>
-    summarise(
-      conceptIds = paste(unique(conceptId), collapse = ','),
-      nConcepts = n_distinct(conceptId),
-      .groups = 'drop'
-    ) |>
-    arrange(desc(nConcepts)) |>
-    mutate(conceptId = suppressWarnings(as.numeric(conceptIds)))
-
-  new_mappings <- valid_test_one_quantity_conceptid |>
-    # add info from usagi file witn units
-    left_join(
-      lab_usagi |>
-        filter(!is.na(conceptId)) |> filter(conceptId!=0) |>
-        distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
-      by = c('conceptId')
-    ) |>
+  # # create mapping to abbreviations with no units
+  # #stop('not run is breaking the existing mappins to code with no units FIX')
+  # valid_test_quantity_conceptId_with_units   <-  lab_usagi_checked  |>
+  #   filter(mappingStatus == 'APPROVED' & conceptId != 0) |>
+  #   filter(!str_detect(sourceCode, '\\[\\]')) |>
+  #   group_by(`ADD_INFO:testNameAbbreviation`, `ADD_INFO:omopQuantity`) |>
+  #   summarise(
+  #     conceptIds = paste(unique(conceptId), collapse = ','),
+  #     nConcepts = n_distinct(conceptId),
+  #     .groups = 'drop'
+  #   )
   #
-  transmute(
-    sourceCode = paste0(`ADD_INFO:testNameAbbreviation`, '[]'),
-    sourceName = sourceCode,
-    sourceFrequency = 0,
-    sourceAutoAssignedConceptIds = NA_integer_,
-    `ADD_INFO:measurementUnit` = '',
-    `ADD_INFO:sourceConceptId` = 2002410000+row_number(),
-    `ADD_INFO:sourceName_fi` = '',
-    `ADD_INFO:sourceConceptClass` =  'LABfi_ALL Level 0',
-    `ADD_INFO:sourceDomain` =  'Measurement',
-    `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
-    `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
-    `ADD_INFO:Valuepercentiles` = NA_character_,
-    `ADD_INFO:omopQuantity` = `ADD_INFO:omopQuantity`,
-    `ADD_INFO:testNameAbbreviation` = `ADD_INFO:testNameAbbreviation`,
-    matchScore = 0,
-    mappingStatus = if_else(nConcepts==1, 'APPROVED', 'FLAGGED'),
-    equivalence = NA_character_,
-    statusSetBy = 'AUTO',
-    statusSetOn = as.integer(as_datetime(now()))*1000,
-    conceptId = if_else(nConcepts==1, conceptId, 0),
-    conceptName = conceptName,
-    domainId = domainId,
-    mappingType = NA_character_,
-    comment = if_else(nConcepts==1, '',
-                      paste('ERROR; Mapping: cannot map without unit, multiple targets')
-    ),
-    createdBy = 'AUTO',
-    createdOn = statusSetOn,
-    assignedReviewer = NA_character_
-  )
-
-  # remove all the codes that will be modified
-  n_codes_no_units <- intersect(lab_usagi_checked$sourceCode , new_mappings$sourceCode) |>
-    length()
-
-  lab_usagi_checked <- lab_usagi_checked |>
-    anti_join(new_mappings, by = 'sourceCode')
-
-  lab_usagi_checked <- bind_rows(lab_usagi_checked, new_mappings)
-
-  warning(paste('Removed', n_codes_no_units, 'codes with no units, added', nrow(new_mappings), 'codes with no units'))
+  #   valid_test_one_quantity_conceptid <- valid_test_quantity_conceptId_with_units  |>
+  #   filter(nConcepts == 1) |>
+  #   mutate(conceptId = as.numeric(conceptIds)) |>
+  #   group_by(`ADD_INFO:testNameAbbreviation`) |>
+  #   summarise(
+  #     conceptIds = paste(unique(conceptId), collapse = ','),
+  #     nConcepts = n_distinct(conceptId),
+  #     .groups = 'drop'
+  #   ) |>
+  #   arrange(desc(nConcepts)) |>
+  #   mutate(conceptId = suppressWarnings(as.numeric(conceptIds)))
+  #
+  # new_mappings <- valid_test_one_quantity_conceptid |>
+  #   # add info from usagi file witn units
+  #   left_join(
+  #     lab_usagi_checked |>
+  #       filter(!is.na(conceptId)) |> filter(conceptId!=0) |>
+  #       distinct(conceptId, conceptName, domainId, `ADD_INFO:omopQuantity`),
+  #     by = c('conceptId')
+  #   ) |>
+  # #
+  # transmute(
+  #   sourceCode = paste0(`ADD_INFO:testNameAbbreviation`, '[]'),
+  #   sourceName = sourceCode,
+  #   sourceFrequency = 0,
+  #   sourceAutoAssignedConceptIds = NA_integer_,
+  #   `ADD_INFO:measurementUnit` = '',
+  #   `ADD_INFO:sourceConceptId` = 2002410000+row_number(),
+  #   `ADD_INFO:sourceName_fi` = '',
+  #   `ADD_INFO:sourceConceptClass` =  'LABfi_ALL Level 0',
+  #   `ADD_INFO:sourceDomain` =  'Measurement',
+  #   `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
+  #   `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
+  #   `ADD_INFO:Valuepercentiles` = NA_character_,
+  #   `ADD_INFO:omopQuantity` = `ADD_INFO:omopQuantity`,
+  #   `ADD_INFO:testNameAbbreviation` = `ADD_INFO:testNameAbbreviation`,
+  #   matchScore = 0,
+  #   mappingStatus = if_else(nConcepts==1, 'APPROVED', 'FLAGGED'),
+  #   equivalence = NA_character_,
+  #   statusSetBy = 'AUTO',
+  #   statusSetOn = as.integer(as_datetime(now()))*1000,
+  #   conceptId = if_else(nConcepts==1, conceptId, 0),
+  #   conceptName = conceptName,
+  #   domainId = domainId,
+  #   mappingType = NA_character_,
+  #   comment = if_else(nConcepts==1, '',
+  #                     paste('ERROR; Mapping: cannot map without unit, multiple targets')
+  #   ),
+  #   createdBy = 'AUTO',
+  #   createdOn = statusSetOn,
+  #   assignedReviewer = NA_character_
+  # )
+  #
+  #   # remove all the codes that will be modified
+  #   n_codes_no_units <- intersect(lab_usagi_checked$sourceCode , new_mappings$sourceCode) |>
+  #     length()
+  #
+  #   lab_usagi_checked <- lab_usagi_checked |>
+  #     anti_join(new_mappings, by = 'sourceCode')
+  #
+  #   lab_usagi_checked <- bind_rows(lab_usagi_checked, new_mappings)
+  #
+  #   warning(paste('Removed', n_codes_no_units, 'codes with no units, added', nrow(new_mappings), 'codes with no units'))
 
   # update mapping status and write file
   lab_usagi_checked |>
@@ -213,57 +213,6 @@ update_usagi_counts_values <- function(
   labfi_usagi |> write_csv(pathOutputFile, na = '')
 
 }
-
-
-
-# append missing no unit abbreviations
-#
-# new  <- summary_data_5  |>
-#   filter(status == 'ERROR: Mapping: unknown abbreviation+unit') |> filter(source_unit_clean=='') |>
-#   transmute(
-#     sourceCode = paste0(TEST_NAME_ABBREVIATION, '[]'),
-#     sourceName = sourceCode,
-#     sourceFrequency = n_records,
-#     sourceAutoAssignedConceptIds = NA_integer_,
-#     `ADD_INFO:measurementUnit` = '',
-#     `ADD_INFO:sourceConceptId` = 2002420000+row_number(),
-#     `ADD_INFO:sourceName_fi` = '',
-#     `ADD_INFO:sourceConceptClass` =  'LABfi_ALL Level 0',
-#     `ADD_INFO:sourceDomain` =  'Measurement',
-#     `ADD_INFO:sourceValidStartDate` =  as_datetime(ymd('1970-01-01')),
-#     `ADD_INFO:sourceValidEndDate` = as_datetime(ymd('2099-12-31')),
-#     `ADD_INFO:Valuepercentiles` = NA_character_,
-#     `ADD_INFO:omopQuantity` = omop_quantity,
-#     `ADD_INFO:testNameAbbreviation` = TEST_NAME_ABBREVIATION,
-#     matchScore = 0,
-#     mappingStatus =  'UNCHECKED',
-#     equivalence = NA_character_,
-#     statusSetBy = 'AUTO',
-#     statusSetOn = as.integer(as_datetime(now()))*1000,
-#     conceptId = 0,
-#     conceptName =  '',
-#     domainId = '',
-#     mappingType = NA_character_,
-#     comment = '',
-#     createdBy = 'AUTO',
-#     createdOn = statusSetOn,
-#     assignedReviewer = NA_character_
-#   )
-#
-# pathInputFile = 'MAPPING_TABLES/LABfi_ALL.usagi.csv'
-# lab_usagi <- read_csv(pathInputFile)
-#
-# lab_usagi_new <- bind_rows(lab_usagi, new) |>
-#   distinct(sourceCode, .keep_all = TRUE)
-#
-# lab_usagi_new |> write_csv(pathInputFile, na = '')
-#
-#
-#
-#
-
-
-
 
 
 
