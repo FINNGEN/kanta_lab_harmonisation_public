@@ -191,7 +191,6 @@ suolis-is	u/l	578	525	0	[ 1, 2, 3, 4, 6, 8, 10, 13, 19, 30, 102,  ]	[ 65][  0, 3
 s-prot	g/l	71495	27931	0	[ 21.9, 57, 61, 63, 65, 67, 69, 71, 73, 76.6, 141,  ]	[ 58][  0, 24,  0,  5, 11,  1,  0]
 b-leukosyytit,erittelylaskenta	NA	2410	1479	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 29][  0,  0,  0,  0, 71,  0,  0]
 u-albumiininjakreatiniininsuhde	NA	299	289	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-NA	g/l	27917	2756	0	[ 0, 1.4, 1.9, 2.8, 4.1, 5.1, 6.7, 8.7, 32.8, 45.6, 341,  ]	[ 72][  0, 28,  0,  0,  0,  0,  0]
 ab-shco3	NA	249	190	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 sy-neut	%	1428	1025	0	[ 0, 6, 15, 33, 52, 67, 78, 85, 90, 94, 100,  ]	[ 85][  0, 15,  0,  0,  1,  0,  0]
 crpvieri	mg/l	4626	2347	0	[ 0, 4.4, 6.4, 10, 14, 21, 29, 42, 62, 94, 256,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
@@ -1059,7 +1058,6 @@ pf-l/yksit	NA	99	79	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 pf-laktteh	NA	64	55	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 bl-baktvi	NA	297	263	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 f-norogi	NA	234	196	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-NA	mg	366	245	0	[ 21, 95.5, 134, 167, 218, 310, 480, 966.5, 1660, 3020, 11200,  ]	NA
 s-vedol	NA	218	118	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-ustekab	NA	212	133	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 ghbpika	NA	159	43	NA	NA	NA
@@ -1517,7 +1515,6 @@ p-hbcfdna	NA	340	244	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 u-osmolaliteettilaskennallinenosatutkuf1000	mosm/kgh2o	38	30	NA	NA	NA
 s-raiheie	NA	56	53	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-mit	NA	23	23	NA	NA	NA
-NA	iu/ml	27	23	NA	NA	NA
 arseeni,epäorgaaninen	NA	14	13	NA	NA	NA
 s-hbsagkv	NA	29	26	NA	NA	NA
 resgns-seulonta	NA	26	10	NA	NA	NA
@@ -1904,7 +1901,6 @@ s-kefakle	NA	27	27	NA	NA	NA
 s-allige,ovomukoidiosatutkimus	NA	21	21	NA	NA	NA
 s-rarah8eosatutkimus	NA	17	17	NA	NA	NA
 s-soija,nglym5(varastoproteiini,soijapapu)osa	NA	19	19	NA	NA	NA
-u–kreintp	NA	57	56	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 p-prostataspesifinenantigeeni,vapaa,osuus	NA	39	37	NA	NA	NA
 infcvag	NA	6	6	NA	NA	NA
 tintnho	NA	13	11	NA	NA	NA
@@ -2095,7 +2091,6 @@ s-karbae	NA	20	16	NA	NA	NA
 dna,eristys	NA	10	10	NA	NA	NA
 albumiini,virtsa	NA	9	9	NA	NA	NA
 p-fibriinind-dimeerit	NA	28	28	NA	NA	NA
-u–epit	e6/l	13	13	NA	NA	NA
 karmiini	u/ml	11	11	NA	NA	NA
 hoimor	NA	17	15	NA	NA	NA
 s-inhbb	NA	10	8	NA	NA	NA
@@ -2487,7 +2482,6 @@ eo	NA	114	60	0	[ 0, 1.1, 1.46, 1.9, 2.3, 2.8, 3.48, 3.92, 5.34, 7.27, 16.2,  ]	N
 u-pienep	e6/l	63642	29246	0	[ 0, 0, 0, 0, 0, 0, 0.9, 1, 2, 4, 1600,  ]	[ 89][  0,  7,  0,  0,  4,  0,  0]
 happi	NA	1747	503	97	[ 21, 30, 35, 40, 44.6, 46.5, 50, 55, 62.6, 85.5, 100,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 ab-o2-vol	vol%	1492	427	0	[ 4.2, 11.91, 13.12, 14.1, 15, 15.7, 16.5, 17.4, 18.4, 19.7, 24.3,  ]	NA
-NA	NA	136555	34581	81	[ 0.1, 7.35, 7.38, 7.39, 7.41, 7.42, 7.43, 7.44, 7.46, 7.48, 13408,  ]	[ 96][  0,  4,  0,  0,  0,  0,  0]
 b-hb-co.	%	1009	238	0	[ 0, 1, 1.4, 1.6, 1.8, 1.9, 2.1, 2.3, 2.5, 2.9, 10.2,  ]	NA
 b-cyp2c19	NA	394	391	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-havabm	NA	7697	7145	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 80][  0,  0,  0,  0, 20,  0,  0]
@@ -2544,7 +2538,6 @@ s-kardabg	gpl	223	188	29	[ 1, 6, 7, 8, 9, 11, 14, 18, 24.6, 39.3, 385,  ]	NA
 s-b2gpabg	NA	2080	1865	100	[ 1, 1, 1, 1, 1.4, 2, 2, 2.6, 4.4, 12.6, 24,  ]	[ 98][  0,  1,  0,  0,  1,  0,  0]
 p-luakptt	NA	2014	1812	26	[ 0.83, 0.98, 1, 1.02, 1.03, 1.05, 1.06, 1.08, 1.12, 1.18, 2.88,  ]	[ 89][  0, 10,  0,  0,  0,  1,  0]
 -infaag	NA	8081	7409	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
-NA	%	3254	1722	0	[ 0, 11, 13, 14.2, 19, 35, 55, 75, 88, 96, 1591,  ]	[ 74][  0,  1,  0,  0, 25,  0,  0]
 sy-eryt	e6/l	3350	2476	0	[ 0, 30, 100, 270, 613.000000000001, 1400, 3700, 8611.99999999999, 20000, 69000, 6860000,  ]	[ 49][  0, 32,  0,  0,  1, 12,  7]
 lymph	%	7969	1530	0	[ 0.5, 16.6, 21.7, 25, 28, 30.7, 33, 36, 39.5, 44.4, 90.3,  ]	[ 75][  0, 25,  0,  0,  0,  0,  0]
 fp-afos	u/l	595	339	0	[ 26, 48, 55, 60, 64, 68, 74, 82, 90, 106, 179,  ]	NA
@@ -2760,7 +2753,6 @@ u-gran	u/field	518	431	5	[ 0, 0, 0, 0, 1, 1, 1, 1, 2, 6, 28,  ]	NA
 u-hyalier	u/field	109	104	8	[ 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 10,  ]	NA
 hoicrp	NA	3687	2523	49	[ 1, 7, 9, 12, 17, 23, 31, 43, 60, 94, 224,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 f-baktjvi	NA	195	178	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-NA	nmol/l	824	621	0	[ 0.01, 0.1, 0.2, 0.3, 0.4, 0.7, 3.43999999999999, 46.0999999999999, 84.4000000000001, 131.4, 3702,  ]	[ 65][  0, 35,  0,  0,  0,  0,  0]
 s-prostataspesifinenantigeeni,kokonais	ug/l	578	494	0	[ 0.1, 0.37, 0.6, 0.8, 1.1, 1.6, 2.3, 3.3, 5.4, 8.2, 245.4,  ]	NA
 p-troponiinii,herkkä	ng/l	176	135	0	[ 0, 1, 2, 4, 6, 7.5, 10, 12.5, 26, 52, 3004,  ]	NA
 fp-lipaas	u/l	1926	437	0	[ 4, 23, 29, 33, 36, 39, 43, 47.5, 55, 72, 3309,  ]	NA
@@ -2912,7 +2904,6 @@ pf-mononuk	NA	178	144	91	[ 0.04, 0.365, 0.75, 0.825, 0.95, 6.995, 64, 85, 93, 96
 pf-leuk	NA	1884	1352	99	[ 28, 111.8, 328, 374.4, 470, 822, 1164.4, 1590, 2058.8, 2542.4, 13933,  ]	[ 17][  0,  0,  0,  0, 83,  0,  0]
 pf-ld	NA	280	259	99	[ 83, 90.1, 97.2, 104.3, 111.4, 118.5, 125.6, 132.7, 139.8, 146.9, 154,  ]	NA
 pf-ada	NA	295	261	92	[ 1, 3, 3, 3.2, 4, 5, 6.4, 7.8, 9.2, 10.6, 16,  ]	NA
-NA	ml/min/173m2	889	521	0	[ 6, 19, 26, 32, 38, 45, 52, 62, 72, 87, 132,  ]	[ 19][  0, 81,  0,  0,  0,  0,  0]
 -vzvnho	NA	2267	1941	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 70][  0,  7,  0,  0, 24,  0,  0]
 li-stpnnho	NA	191	180	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 influenssab-virus,nukleiinihappo(kval),osatutkimus	NA	254	190	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
@@ -3127,7 +3118,6 @@ monosyytit,absol.arvot,osatutkimus(b-monos)	e9/l	82	69	0	[ 0.21, 0.361, 0.402, 0
 s-rarah1e	u/ml	312	298	7	[ 0, 0, 0, 0, 0.01, 0.01, 0.01, 0.02, 0.07, 0.53, 268,  ]	NA
 s-rarah8e	u/ml	243	227	3	[ 0, 0, 0.03, 0.34, 0.952000000000001, 2.22, 3.75, 7.7, 12.26, 25, 142,  ]	NA
 s-nglym5e	u/ml	263	238	0	[ 0, 0, 0, 0, 0.01, 0.02, 0.0419999999999999, 0.11, 0.36, 1.77, 181,  ]	NA
-NA	u/ml	669	496	6	[ 0, 0, 0.02, 0.03, 0.05, 0.1, 0.15, 0.36, 1, 6.64300000000002, 1380,  ]	NA
 s-hivagabt	NA	667	508	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 pt-polambs	NA	670	669	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 94][  0,  0,  0,  0,  6,  0,  0]
 -ervr	NA	185	157	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
@@ -3361,7 +3351,6 @@ ts-gasttk	NA	172	167	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 snabb-crp	NA	2034	626	41	[ 1, 4, 7, 10, 16, 22, 31, 42, 56.8000000000001, 84, 209,  ]	[  0][  0, 46,  0,  0, 54,  0,  0]
 pt-gluk-r2,tk	NA	287	275	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 gluk0min	NA	364	349	2	[ 4, 4.9, 5.3, 5.6, 5.8, 5.9, 6, 6.2, 6.6, 7.06, 10.3,  ]	NA
-NA	°c	1422	910	0	[ 24.6, 36.11, 36.6, 37, 37, 37, 37, 37, 37, 37.4, 40.4,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 oma-strept	NA	121	103	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 lepnnho	NA	77	72	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 rnp-70k-ib	NA	104	100	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
@@ -3830,7 +3819,6 @@ pt-notsd	NA	226	211	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 uv-ph	NA	153	148	29	[ 6.76, 7.198, 7.27, 7.31, 7.33, 7.35, 7.36, 7.38, 7.39, 7.41, 7.48,  ]	NA
 vb-o2hb	NA	26	15	NA	NA	NA
 p-vad	NA	47	35	NA	NA	NA
-b–biomamd	NA	14	14	NA	NA	NA
 hepatiittia-virus,kokonaisvasta-aineet	NA	21	21	NA	NA	NA
 s-se	umol/l	43	35	NA	NA	NA
 s-k/l-ex	ratio	15	13	NA	NA	NA
@@ -3949,7 +3937,6 @@ p-tt-inrqc	NA	280	96	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 pölyryhmä(phadiatop),ige-va:t(s-)	u/ml	38	38	NA	NA	NA
 multistix-,alb	NA	93	68	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 u-sakka,leuk	u/field	85	64	0	[ 0, 0, 0, 0, 0, 0, 1, 1, 2, 5, 40,  ]	NA
-b–neut	e9/l	133	82	0	[ 1.05, 1.692, 2.02, 2.406, 2.646, 3.04, 3.44, 3.814, 4.27, 5.158, 8.76,  ]	NA
 alfa-amyla	NA	7	7	NA	NA	NA
 ohra,ruoka	NA	55	53	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 kaura,ruok	NA	50	49	NA	NA	NA
@@ -4839,7 +4826,6 @@ fp-kol-ldl	NA	309125	115125	98	[ 0.25, 1.7, 2.1, 2.4, 2.662, 2.9, 3.2, 3.5, 3.9,
 s-tygl	ug/l	7484	1617	3	[ 0.05, 0.3, 0.5, 0.7, 1.2, 1.9, 3.4, 7, 17.0400000000001, 66.4, 29000,  ]	[ 75][  0,  8,  0,  0, 14,  3,  0]
 -cv19nho	NA	863738	273869	100	[ 1, 4.2, 7.4, 10.6, 13.8, 17, 33, 49, 65, 81, 97,  ]	[ 84][  0,  4,  0,  0, 11,  0,  0]
 s-b12-tc2	pmol/l	135703	85351	0	[ 3, 52, 65, 76, 86, 95, 104, 114, 124, 138, 924,  ]	[ 75][  0,  2,  0,  1, 22,  0,  0]
-NA	ng/l	266	249	0	[ 8.23, 84, 2467, 4785, 5852, 6820, 7637, 8670, 9768, 11533, 20366,  ]	NA
 li-fostau	ng/l	1636	1604	0	[ 7.5, 12, 16, 20, 25, 31, 38, 46.5999999999999, 58, 81.2, 1402,  ]	[ 61][  0, 18,  0,  0, 14,  7,  0]
 s-borrabm	NA	27410	22615	100	[ 6.2, 9.32, 12.44, 14.62, 15.86, 17.1, 19.06, 21.02, 22.6, 23.8, 25,  ]	[ 80][  0,  1,  0,  0, 13,  6,  0]
 ly-cd8	%	3286	1625	1	[ 0, 15, 19, 23, 27, 31, 35, 40, 47, 56, 87,  ]	[ 61][  0, 39,  0,  0,  0,  0,  0]
@@ -5172,7 +5158,6 @@ s-p-ancif	NA	3522	3033	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 69][  0,  1, 
 b-trombos	e9/l	2809	641	0	[ 29, 169, 192, 212, 230, 246, 261.8, 283, 305, 344, 719,  ]	[ 38][  0,  5,  0,  3, 49,  4,  0]
 ps-nieluag	NA	2334	2111	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 ps-adenag	NA	1520	1407	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
-NA	umol/l	502	353	0	[ 0.03, 0.05, 0.1, 0.143, 0.22, 0.35, 0.526, 0.84, 1.268, 3.003, 56,  ]	NA
 li-ecolnho	NA	593	501	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 s-clahere	u/ml	1247	1186	0	[ 0, 0, 0, 0.01, 0.01, 0.02, 0.03, 0.06, 0.13, 0.43, 32.5,  ]	[ 30][  0,  2,  0,  0, 59,  9,  0]
 ly-tcd4/8.	NA	1886	940	39	[ 0.1, 0.5, 0.8, 1, 1.2, 1.4, 1.7, 2, 2.5, 3.29000000000001, 40,  ]	[ 47][  0, 17,  0,  4, 30,  2,  0]
@@ -5871,7 +5856,6 @@ p-krea+gfrviitasaar,p-krea	umol/l	251	167	0	[ 42, 61, 66, 69, 73, 79, 84, 92, 10
 p-krea+gfrviitasaar	NA	14	14	NA	NA	NA
 b-k-vt	mmol/l	103	87	0	[ 3, 3.5, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.5, 5.5,  ]	NA
 am-kelk-d	NA	6	6	NA	NA	NA
-NA	titre	80	52	16	[ 10, 20, 40, 40, 80, 160, 160, 160, 320, 640, 2500,  ]	NA
 s-infbcf	titre	581	506	0	[ 8, 8, 8, 8, 8, 8, 16, 16, 16, 32, 512,  ]	[ 99][  0,  0,  0,  0,  1,  1,  0]
 sw-cl	mmol/l	44	37	NA	NA	NA
 s-hevonene	NA	48	48	NA	NA	NA
@@ -6299,7 +6283,6 @@ uv-pco2	kpa	130	125	0	[ 3.7, 4.59, 4.9, 5.2, 5.36, 5.7, 5.9, 6.1, 6.74, 7.91, 14
 uv-po2	kpa	129	124	0	[ 1.4, 2.58, 3.12, 3.5, 3.72, 4, 4.2, 4.46, 4.8, 5.42, 6.7,  ]	NA
 uv-shco3	mmol/l	72	67	0	[ 14.5, 18.19, 19.94, 20.43, 20.9, 21.6, 22.2, 22.7, 23.18, 23.79, 25.9,  ]	NA
 s-serto	mg/l	91	78	0	[ 0.8, 12, 18, 22, 25, 28, 30, 32, 38, 47, 99,  ]	NA
-b–biomam	NA	18	18	NA	NA	NA
 du-aldos	nmol/24h	30	25	NA	NA	NA
 p-monab-o	NA	135	130	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-lamotr	umol/l	25	16	NA	NA	NA
@@ -6491,7 +6474,6 @@ s-legboab	NA	18	17	NA	NA	NA
 s-varizella-zostervirus,igm-vasta-aineet	NA	87	86	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-b12-vitamiini(ko)	pmol/l	38	36	NA	NA	NA
 li-borrelia,vasta-ainetutkimus,laaja	NA	18	18	NA	NA	NA
-NA	au/ml	95	79	0	[ 0, 2.58, 4, 5.02, 10, 12, 18, 24.08, 67.76, 251.02, 2773.5,  ]	NA
 pt-luuspeq	NA	61	59	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 p-vwf-ag	NA	154	127	98	[ 85, 89.2, 93.4, 97.6, 101.8, 106, 113.4, 120.8, 128.2, 135.6, 143,  ]	NA
 s-infaabg	u/ml	28	24	NA	NA	NA
@@ -6949,7 +6931,6 @@ happamuusaste,valtimoveri	ph	15	13	NA	NA	NA
 u-veripik	NA	35	31	NA	NA	NA
 u-ketpik	NA	35	31	NA	NA	NA
 transferriininrautakyllästeisyys	NA	9	8	NA	NA	NA
-p–vwf-akt	%	6	6	NA	NA	NA
 zb-verikaasuanalyysi,perus	NA	50	10	NA	NA	NA
 s-ro214e	u/ml	13	13	NA	NA	NA
 s-rapim5e	u/ml	12	12	NA	NA	NA
@@ -7414,7 +7395,6 @@ b-ph	ph	36258	9179	2	[ 6.79, 7.35, 7.38, 7.4, 7.41, 7.42, 7.43, 7.44, 7.46, 7.48
 erytroblastit	e9/l	13614	6117	0	[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.01,  ]	[ 32][  0,  1,  0,  0, 67,  0,  0]
 lipidit,plasma	NA	6171	4390	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 81][  0,  0,  0,  0, 19,  0,  0]
 -ctgcnho,gcnho	NA	23	22	NA	NA	NA
-NA	ug/l	27222	2482	0	[ 0.003, 0.29, 4.3, 5.7, 6.7, 7.6, 8.7, 9.8, 11.4880000000002, 15.318, 1900,  ]	[ 95][  0,  5,  0,  0,  0,  0,  0]
 cp-gluk-lb	mmol/l	10493	591	0	[ 1.8, 5, 5.6, 6.2, 6.8, 7.4, 8.4, 9.7, 11.3, 14, 31.7,  ]	[ 77][  0, 23,  0,  0,  0,  0,  0]
 f-calpro	NA	26471	17861	99	[ 4.7, 24, 33.4, 47, 71, 120, 149, 294.6, 475, 952.2, 5663,  ]	[ 66][  0, 20,  0,  0, 10,  5,  0]
 u-kemseul,prot	NA	6359	2185	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
@@ -8307,7 +8287,6 @@ s-pincf	titre	693	594	0	[ 8, 8, 8, 8, 16, 16, 16, 32, 32, 64, 512,  ]	[ 98][  0,
 la-cd34-os	%	314	234	0	[ 0.07, 0.23, 0.326, 0.409, 0.51, 0.605, 0.698, 0.871, 1.21, 1.747, 8.06,  ]	NA
 la-cd34-ks	NA	336	246	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 la-cd34	e9/l	183	136	0	[ 0.012, 0.4178, 0.56, 0.7226, 0.84, 1.02, 1.2612, 1.778, 2.3658, 3.2022, 17.998,  ]	NA
-NA	u/l	440	261	0	[ 0, 0, 0, 1, 3.60000000000002, 7, 13, 28, 71, 128.5, 2893,  ]	NA
 -koronavirus229e,nho	NA	100	78	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-proteinaasi3,vasta-aineet	NA	32	31	NA	NA	NA
 s-proteiinifraktioidenbeeta-2-fraktio	g/l	84	34	NA	NA	NA
@@ -8445,7 +8424,6 @@ u-opiaact	NA	204	143	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 fb-gluk	mmol/l	323	162	0	[ 2.6, 5, 5.5, 6, 6.58, 7.1, 7.72, 8.8, 10, 12.78, 33.3,  ]	NA
 u-muuta1	NA	53	42	NA	NA	NA
 1hgh	ug/l	13	9	NA	NA	NA
-–gardnerellavaginalis,nukleiinihappo	NA	217	194	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 hoicanna-o	NA	38	28	NA	NA	NA
 s-adeabcf	NA	78	69	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-toxabcf	NA	107	95	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
@@ -8892,8 +8870,6 @@ multistix-,eryt	NA	93	68	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 pt-keliakiatutkimus,seulonta(sis.s-iga,s-ttgaba)	NA	103	103	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 takrolimuusi,massaspektrometrinen,verestä	ug/l	66	24	NA	NA	NA
 -bopevip	NA	80	78	99	[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  ]	NA
-u–osmest	mosm/kgh2o	6	6	NA	NA	NA
-b–eos	e9/l	131	81	0	[ 0, 0.04, 0.07, 0.1, 0.12, 0.14, 0.17, 0.19, 0.24, 0.3, 0.5,  ]	NA
 s-pölyryhmäjatarvittaessaerittely,igevasta-aineet(ko)	u/ml	47	47	NA	NA	NA
 s-ema-abg	NA	31	31	NA	NA	NA
 s-afos1ma	u/l	76	67	0	[ 6, 28, 42, 51, 54, 72, 80, 97, 111, 160, 399,  ]	NA
@@ -11781,7 +11757,6 @@ alfa-1-fetoproteiini	u/ml	31	17	NA	NA	NA
 s-l.bifl	NA	15	15	NA	NA	NA
 s-l.i.pom	NA	15	15	NA	NA	NA
 s-l.i.bra	NA	15	15	NA	NA	NA
-s–ebnaab	NA	13	13	NA	NA	NA
 cb-ghb-a1c	%	21	7	NA	NA	NA
 am-tag-d	NA	49	33	NA	NA	NA
 s-sydlab	NA	14	13	NA	NA	NA
@@ -12895,7 +12870,6 @@ p-kreatiniinitykslab	umol/l	868	789	0	[ 41, 55, 60, 63, 66, 69, 72, 76, 80, 86, 
 f-heliag	NA	61	52	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 b-hemoglobiini-a1c,glykoitunut	mmol/mol	260	188	0	[ 23, 32, 34, 35, 36, 38, 39, 41, 43, 49, 85,  ]	NA
 u-osmolaliteetti,estimoitu	NA	142	119	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-s–hepatiittic-virus,vasta-aineet	NA	194	113	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-tyglab	u/ml	474	301	0	[ 1, 2, 3, 5, 14, 22.05, 32.9, 69.81, 125.4, 315, 4040,  ]	NA
 f-bacevi	NA	114	111	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 -crppika	NA	245	134	85	[ 5, 6.5, 19, 24.5, 30, 42, 63, 71.5, 95, 121, 160,  ]	NA
@@ -12927,7 +12901,6 @@ u-näytk10	NA	380	123	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 e-aborh-t	NA	801	415	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 -hpvpapa	NA	1034	994	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 annosvoim	NA	182	78	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-u–kreintp	mmol/l	536	380	0	[ 0.7, 2.3, 3.3, 4, 4.8, 5.9, 6.9, 8.5, 10.5, 13.35, 25.2,  ]	NA
 u-intp	NA	879	541	100	[ 16, 22, 28, 34, 40, 46, 46.2, 46.4, 46.6, 46.8, 47,  ]	[ 12][  0,  2,  0,  3, 62, 21,  0]
 s-kors/r	nmol/l	815	719	0	[ 20, 25, 30, 36, 41, 48, 59, 75, 99.2, 207.6, 3649,  ]	[ 99][  0,  0,  0,  0,  1,  0,  0]
 u-chlamydiatrachomatisjaneisseriagonorrhoeae,nukleiinihappo(kval)	NA	176	165	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
@@ -13656,7 +13629,6 @@ s-sitrulliinipeptidi,vasta-aineet	u/ml	150	145	0	[ 0.4, 0.6, 0.7, 0.8, 0.9, 1.1,
 c26:0/22:0	NA	9	9	NA	NA	NA
 c24:0/22:0	NA	9	9	NA	NA	NA
 pt-enmgbo1	NA	178	62	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-NA	pmol/l	13	13	NA	NA	NA
 timoteinsiitepöly,igevasta-aineet	u/ml	7	7	NA	NA	NA
 pika-na	mmol/l	145	90	0	[ 121, 131.4, 135, 137, 138, 139, 140, 141, 142, 144, 154,  ]	NA
 di-eos	%	130	18	NA	NA	NA
@@ -14228,7 +14200,6 @@ fp-gluk120	mmol/l	19	18	NA	NA	NA
 sinkkipunasoluista	umol/l	47	45	NA	NA	NA
 s-tyreoglobuliini,vasta-aineet	iu/ml	75	52	0	[ 12, 12.4, 13, 14, 16, 18, 25.2, 95.3999999999998, 146.4, 274.000000000001, 4297,  ]	NA
 penicilliu	NA	15	13	NA	NA	NA
-NA	mu/l	12	9	NA	NA	NA
 spirom-tth	NA	9	9	NA	NA	NA
 bor-it-abm	index	18	15	NA	NA	NA
 l-metamy	NA	51	41	NA	NA	NA
@@ -14384,7 +14355,6 @@ s-maksa-jamunuaismikrosomi,vasta-aineet	NA	16	16	NA	NA	NA
 bentsodiatsepiinit,u-huume-oosatutkimus	NA	55	6	NA	NA	NA
 vatsa	NA	23	23	NA	NA	NA
 s-kryopre	NA	33	24	NA	NA	NA
-u–eryt	e6/l	13	13	NA	NA	NA
 hmpva	NA	6	6	NA	NA	NA
 immunoglobuliini,kevyetketjut,kappa-lambda-suhde,osatutk.	NA	7	6	NA	NA	NA
 s-metnefriini	NA	9	8	NA	NA	NA
@@ -14861,13 +14831,11 @@ l-metamye	%	16763	4580	2	[ 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 85,  ]	[ 59][  0, 34,  
 p-ttinrsp	inr	476	441	0	[ 0.7, 0.9, 0.9, 0.9, 1, 1, 1, 1, 1.1, 1.1, 2.9,  ]	NA
 psa-v/psa	NA	20616	10280	99	[ 5.7, 7.96, 10.72, 13.9, 17.46, 20.6, 21.94, 24.06, 28.8, 32.2, 54.7,  ]	[ 54][  0,  0,  0, 45,  1,  0,  0]
 s-piiinp	u/ml	31	30	NA	NA	NA
-–canho	NA	201	190	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 pt-ekg/päi	NA	1556	987	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 s-t3-v	NA	1739	1000	100	[ 3, 3.84, 4.408, 4.432, 4.464, 4.5, 4.92, 5.26, 5.44, 5.54, 5.6,  ]	[ 79][  0, 11,  0,  2,  5,  3,  0]
 b-perusverenkuvajatrombosyytit	NA	8425	4519	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 71][  0,  0,  0,  0, 29,  0,  0]
 u-kemiallinenseulonta	NA	7190	4957	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 46][  0,  0,  0,  0, 54,  0,  0]
 b-eos	%	25525	13933	0	[ 0, 1, 1.4, 2, 2.2, 2.9, 3.1, 4, 4.9, 6.2, 70,  ]	[ 77][  0,  5,  0,  6,  2,  9,  0]
-NA	e9/l	79971	9776	0	[ 0, 1.01, 1.68, 2.21, 2.71, 3.22, 3.82, 4.59, 5.75, 8.03, 241.85,  ]	[ 69][  0, 31,  0,  0,  0,  0,  0]
 cb-vekaas	NA	32972	9234	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 -rsvag	NA	1594	1398	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 99][  0,  1,  0,  0,  0,  0,  0]
 p-ld	NA	8185	4586	98	[ 59, 162, 180, 193, 205.2, 222, 240.8, 260, 311.6, 379.2, 1707,  ]	[ 60][  0, 32,  0,  0,  2,  6,  0]
@@ -14917,7 +14885,6 @@ s-psa-v	ug/l	17871	8497	0	[ 0.01, 0.38, 0.48, 0.57, 0.65, 0.75, 0.85, 0.99, 1.2,
 kipa	NA	81	73	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 f-shignho	NA	1133	923	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 91][  0,  0,  0,  0,  9,  0,  0]
 f-plesnho	NA	1214	998	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 91][  0,  0,  0,  0,  8,  0,  0]
-NA	mmol/l	52131	7770	0	[ 0, 1.13, 1.19, 1.21, 1.24, 1.26, 1.27, 1.3, 1.33, 1.43, 139,  ]	[ 79][  0, 21,  0,  0,  0,  0,  0]
 sienvi	NA	4853	4008	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 95][  0,  5,  0,  0,  0,  0,  0]
 ap-ca-ion	mmol/l	1484	747	0	[ 0.57, 1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23, 1.84,  ]	[ 39][  0, 61,  0,  0,  0,  0,  0]
 s-äit-seul	NA	6733	3925	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 98][  0,  0,  0,  0,  2,  0,  0]
@@ -15253,7 +15220,6 @@ s-s-keliakia,seulonta	NA	82	82	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-kudos,vasta-aineet	NA	61	60	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 tb2antigen-putki	NA	90	87	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 crp(vo:nyhteydessäotettu),tth	NA	996	491	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-e–rdw	%	2146	832	0	[ 11, 12, 13, 13, 13, 13, 13, 14, 14, 15, 25,  ]	[  0][  0,  6,  0,  0, 94,  0,  0]
 s-ictp	ug/l	684	510	0	[ 1.3, 2.7, 3.2, 3.8, 4.4, 4.9, 5.8, 6.6, 8, 11.3, 51,  ]	[ 54][  0, 45,  0,  0,  0,  0,  0]
 rsvbnho	NA	3179	1586	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	[ 98][  0,  2,  0,  0,  0,  0,  0]
 -kalsium,ionisoitunut,korjattuph7,40	mmol/l	36	33	NA	NA	NA
@@ -15386,7 +15352,6 @@ kalsium,osatutkimus(p-ca)	mmol/l	167	140	0	[ 2.15, 2.26, 2.3, 2.32, 2.34, 2.37, 
 s-treponeemapallidum,vasta-aineet	NA	41	34	NA	NA	NA
 s-adr-ab	NA	9	9	NA	NA	NA
 pt-gluk-2h	mmol/l	1507	1096	0	[ 2, 4.5, 5, 5.4, 5.8, 6.3, 6.7, 7.4, 8.2, 9.8, 33.4,  ]	[ 99][  0,  1,  0,  0,  0,  0,  0]
-NA	s	751	647	0	[ 27, 31, 33, 34, 35, 37, 38, 41, 45, 57, 164,  ]	[100][  0,  0,  0,  0,  0,  0,  0]
 pt-kons-1	NA	186	182	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 oma-inr	NA	6312	361	67	[ 0.9, 1.9, 2.1, 2.2, 2.4, 2.5, 2.6, 2.8, 3, 3.3, 36,  ]	NA
 pt-bmi	kg/m2	325	317	0	[ 17.6, 22.1, 23.66, 25.52, 26.7, 28.2, 29.7, 31.28, 33.42, 35.9, 54.6,  ]	NA
@@ -15525,7 +15490,6 @@ p-tnt-o	ng/l	1269	752	0	[ 0, 43, 45, 48, 53, 58, 65, 76, 108, 205.4, 1868,  ]	[ 
 -cv19agl	NA	391	364	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 covid-19,vieritesti	NA	256	230	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 p-inr-avh	NA	257	156	5	[ 0.9, 1, 1, 1, 1, 1.1, 2, 2.41, 2.8, 3.2, 6.5,  ]	NA
-b–farml-d	NA	32	32	NA	NA	NA
 ab-o2-sis	ml/l	413	284	0	[ 10.2, 119.2, 136, 147.6, 156, 164, 170, 179.4, 188, 201.8, 245,  ]	NA
 -infrsvnho	NA	173	159	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 angap	NA	155	73	1	[ 10.3, 14.83, 15.9, 16.9, 17.9, 18.6, 19.38, 19.92, 21, 22.5, 34.8,  ]	NA
@@ -15812,7 +15776,6 @@ s-bor-abm	ru/ml	37	31	NA	NA	NA
 -bentulos	NA	90	75	44	[ 0.5, 1.78, 2.88, 3.77, 6.5, 12, 23.08, 49.83, 117.72, 183.79, 893.7,  ]	NA
 -cantulos	NA	90	75	87	[ 1, 2.4, 7.4, 35.5, 88, 89.5, 92.2, 93.7, 94, 101.2, 102,  ]	NA
 u-buprect	NA	1657	213	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-pt-agr-psg(aktigrafia2japsg-amb–tutkimukset)	NA	29	29	NA	NA	NA
 pt-pulssi	NA	28	28	NA	NA	NA
 tk-pisteet	NA	38	38	NA	NA	NA
 b-igshm-d	NA	46	42	NA	NA	NA
@@ -15971,7 +15934,6 @@ u-hb-o	form	57	41	NA	NA	NA
 krea-pika	NA	16	14	NA	NA	NA
 s-allcome	NA	99	97	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 s-fusariummoniliformae,igevasta-aineet	u/ml	9	9	NA	NA	NA
-e–rdw	NA	82	62	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 b-blapcr	NA	136	101	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
 bm-aso-qd	NA	178	35	NA	NA	NA
 pt-icg-r	%	74	69	1	[ 3, 7, 9, 11, 12.8, 18, 20.2, 25, 35.2, 53.6, 90,  ]	NA
@@ -16123,7 +16085,6 @@ l-mdx	%	125	118	0	[ 1, 4.58, 5.8, 7, 8, 9, 10, 11, 12, 15, 63,  ]	NA
 s-gq1babm	index	20	20	NA	NA	NA
 s-sertoab	au/ml	19	16	NA	NA	NA
 am-kromos	NA	143	138	100	[ _, _, _, _, _, _, _, _, _, _, _,  ]	NA
-s–biomam	NA	15	15	NA	NA	NA
 b-inrvieri	NA	1014	43	NA	NA	NA
 l-lymfo	%	47	30	NA	NA	NA
 valionpaketti-9	NA	29	27	NA	NA	NA
@@ -16779,7 +16740,6 @@ b-acylkarn	NA	10	8	NA	NA	NA
 s-infliksimabi,paketti	NA	13	13	NA	NA	NA
 b-hnpcc-d	NA	10	10	NA	NA	NA
 p-prokalsitoniini	NA	6	6	NA	NA	NA
-s–stroab	NA	17	16	NA	NA	NA
 s-tocaab.	NA	48	45	NA	NA	NA
 u-protpik	NA	34	30	NA	NA	NA
 s-persile	u/ml	11	11	NA	NA	NA
@@ -16829,7 +16789,6 @@ p-inrviitasaari	inr	98	18	NA	NA	NA
 s-bordetellapertussis,igavasta-aineet	iu/ml	11	10	NA	NA	NA
 s-kryopre	g/l	8	8	NA	NA	NA
 -frtunho	NA	15	15	NA	NA	NA
-u–leuk	e6/l	13	13	NA	NA	NA
 s-gabapen	NA	11	11	NA	NA	NA
 s-derp10e	u/ml	9	9	NA	NA	NA
 s-alboys	g/l	7	7	NA	NA	NA
@@ -17405,7 +17364,6 @@ cannabis	NA	22	22	NA	NA	NA
 opiaatit	NA	34	23	NA	NA	NA
 amfetamiini	NA	22	22	NA	NA	NA
 s-pujoe	u/ml	3813	3536	0	[ 0, 0.01, 0.02, 0.04, 0.07, 0.125, 0.21, 0.39, 0.82, 2.049, 75.7,  ]	[ 46][  0, 13,  0,  0, 23, 18,  0]
-NA	mg/l	438	354	0	[ 0.02, 6.1, 12.76, 17, 21, 26, 32, 38, 47.812, 67.279, 428.83,  ]	NA
 p-etoh	promillea	97	85	0	[ 0.1, 1.36, 1.8, 2.08, 2.3, 2.5, 2.7, 3, 3.2, 3.8, 4.6,  ]	NA
 -liik.pr	%	3775	1200	0	[ 0, 16, 27, 36, 44, 53, 62, 74, 88, 96, 100,  ]	[ 35][  0, 10,  0, 14, 42,  0,  0]
 vp-gluk-2h	mmol/l	711	570	0	[ 2.9, 5, 5.6, 6, 6.6, 7.2, 8, 8.7, 10.1, 12.5, 32.3,  ]	[ 19][  0,  0,  0,  0, 81,  0,  0]
@@ -17992,7 +17950,6 @@ s-suolist	u/l	43	43	NA	NA	NA
 s-luusto	NA	73	72	3	[ 16, 26, 32, 37, 42, 48, 55, 67, 80, 89, 556,  ]	NA
 s-trspab.	od	98	92	0	[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  ]	NA
 s-filaab.	od	98	92	0	[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.363, 1.76,  ]	NA
-NA	mosm/kgh2o	465	259	0	[ 146, 295.8, 346.8, 388.4, 421.2, 453, 489, 527.8, 602.2, 669.2, 1150,  ]	NA
 u-virtsanominaispaino	form	22	20	NA	NA	NA
 u-virtsanph	form	24	21	NA	NA	NA
 f-elastaasi-1	NA	8	7	NA	NA	NA
@@ -19304,8 +19261,6 @@ s-keliakia,vasta-ainetutkimus,seerumista	NA	68	67	100	[ _, _, _, _, _, _, _, _, 
 mutaatiotutkimukset,perinnöllistensairauksiengeenitutkimukset,veri	NA	14	14	NA	NA	NA
 p-fviiit	NA	35	15	NA	NA	NA
 du-adr	NA	12	11	NA	NA	NA
-u–lieriöt	e6/l	13	13	NA	NA	NA
-u–bakt	NA	12	12	NA	NA	NA
 u-amylp	NA	13	13	NA	NA	NA
 huumetestids6virtsa	NA	7	7	NA	NA	NA
 prostataspesif.antig,vap.tot.suh.	%	31	26	NA	NA	NA
@@ -19475,7 +19430,6 @@ u-albmipi	NA	9	9	NA	NA	NA
 bakteeriviljely,virtsasta	NA	15	15	NA	NA	NA
 cv-dnamut	form	10	10	NA	NA	NA
 fp-gluk/0	NA	21	19	NA	NA	NA
-NA	index	9	9	NA	NA	NA
 covid-19	NA	9	7	NA	NA	NA
 s-allergeeni,koivu(siitepöly)/björk(pollen)	u/ml	13	13	NA	NA	NA
 äitiseulanosatutkimus	NA	10	10	NA	NA	NA

@@ -41,6 +41,7 @@ toplot  <- summary_data_5 |>
 
 toplot |> 
   reactable::reactable(
+    defaultPageSize = 20,
     columns = list(
       status = reactable::colDef(
         name = "Status",
@@ -70,8 +71,10 @@ toplot |>
         list(background = '#d8f8d8', color = 'black')
       } else if (toplot$status[[index]]  |> stringr::str_detect('WARNING')) {
         list(background = '#f8f8d8', color = 'black')
-      } else {
+      } else if (toplot$status[[index]]  |> stringr::str_detect('ERROR')) {
         list(background = '#f8d8d8', color = 'black')
+      } else if (toplot$status[[index]]  |> stringr::str_detect('IGNORED')) {
+        list(background = '#d8d8d8', color = 'black')
       }
     }
   )
@@ -146,7 +149,7 @@ toplot |>
     filterable = TRUE,
     sortable = TRUE,
     searchable = TRUE,
-    defaultPageSize = 30,
+    defaultPageSize = 15,
     showPageSizeOptions = TRUE,
     columns = list(
       measurement_concept_id = reactable::colDef(

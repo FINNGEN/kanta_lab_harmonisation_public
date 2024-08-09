@@ -8,7 +8,7 @@ concept_relationship <- read_tsv(file.path(path_OMOP_vocabulary_folder, 'CONCEPT
 
 
 LOINC_has_property  <- concept  |>
-  filter(vocabulary_id == 'LOINC') |>
+  filter(vocabulary_id == 'LOINC' | vocabulary_id == 'SNOMED') |>
   filter(standard_concept == 'S') |>
   filter(domain_id == 'Measurement') |>
   #filter(concept_class_id == 'Lab Test') |>
