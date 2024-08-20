@@ -20,7 +20,7 @@ summary_data_5 <- params$summary_data_5
 
 Column {.tabset}
 -------------------------------------
-   
+
 ### Status summary 
 
 ```{r}
@@ -36,7 +36,7 @@ toplot  <- summary_data_5 |>
   mutate(
     per_codes = n_codes / sum(n_codes) ,
     per_records = n_records / sum(n_records) 
-    ) |>
+  ) |>
   arrange(desc(per_records)) 
 
 toplot |> 
@@ -81,9 +81,9 @@ toplot |>
 
 
 ```   
- 
+
 ### Codes mapping status
-    
+
 ```{r}
 
 aaa   <- function(data) {
@@ -93,7 +93,7 @@ aaa   <- function(data) {
 }
 
 toplot  <- summary_data_5 |>
- # filter(measurement_concept_id == 3023602)  |>
+  # filter(measurement_concept_id == 3023602)  |>
   mutate(
     perplot= pmap(list(to_value_percentiles_tibble, group_value_min, group_value_max), ~{
       if (is.null(..1) | is.na(..2) | is.na(..3)) return(NA_real_)
@@ -129,7 +129,7 @@ toplot  <- summary_data_5 |>
     KS_test,
     perplot,
     status
-    ) |>
+  ) |>
   mutate(
     report_error = paste0(
       'https://github.com/FINNGEN/kanta_lab_harmonisation_public/issues/new?title= Auto repor for ', concept_code,
@@ -139,81 +139,91 @@ toplot  <- summary_data_5 |>
       ', 'value_percentiles: ', value_percentiles, '
       ', 'to_value_percentiles: ', to_value_percentiles, '
       Please describe the error here:'
-      ) |> URLencode()
+    ) |> URLencode()
   ) |> 
   arrange(desc(n_records))
 
 
-toplot |> 
-  reactable::reactable(
-    filterable = TRUE,
-    sortable = TRUE,
-    searchable = TRUE,
-    defaultPageSize = 15,
-    showPageSizeOptions = TRUE,
-    columns = list(
-      measurement_concept_id = reactable::colDef(
-        name = "ConceptId", 
-        maxWidth = 100
-      ),
-      concept_name = reactable::colDef(
-        name = "Omop Name"
-      ),
-      omop_quantity = reactable::colDef(
-        name = "Omop Quantity", 
-        maxWidth = 150
-      ),
-      concept_code = reactable::colDef(
-        name = "TestCode [Unit]", 
-        maxWidth = 150
-      ),
-      unit_fix = reactable::colDef(
-        name = "Unit fix", 
-        maxWidth = 150
-      ),
-      n_records = reactable::colDef(
-        name = "Number of events", 
-        maxWidth = 80
-      ),
-      p_NA_AA_A_LL_L_N_H_HH = reactable::colDef(
-        name = "[NA][AA, A, LL, L, N, H, HH]", 
-        minWidth = 100
-      ),
-      value_percentiles = reactable::colDef(
-        name = "Value percentiles", 
-        minWidth = 150
-      ),
-      to_value_percentiles = reactable::colDef(
-        name = "Harmonised value percentiles", 
-        minWidth = 150
-      ),
-      p_missing_values = reactable::colDef(
-        name = "Missing values %",
-        maxWidth = 65
-      ),
-      KS_test = reactable::colDef(
-        name = "KS test", 
-        format = reactable::colFormat(digits = 2),
-        maxWidth = 50
-      ),
-      perplot = reactable::colDef(
-        name = "perplot",
-        cell = aaa, 
-        maxWidth = 150
-      ), 
-      status = reactable::colDef(
-        name = "Status", 
-        minWidth = 150
-      ),
-      report_error = reactable::colDef(
-        name = "report_error",
-        cell = function(value) {
-          sprintf('<a href="%s" target="_blank">Report error</a>', value)
-        },
-        html = TRUE,
-        maxWidth = 100
+htmltools::browsable(
+  htmltools::tagList(
+    htmltools::tags$button(
+      htmltools::tagList(fontawesome::fa("download"), "Download as CSV"),
+      onclick = "Reactable.downloadDataCSV('cars-download-table', 'kanta_to_omop_mappings_status.csv')"
+    ),
+    
+    toplot |> 
+      reactable::reactable(
+        filterable = TRUE,
+        sortable = TRUE,
+        searchable = TRUE,
+        defaultPageSize = 15,
+        showPageSizeOptions = TRUE,
+        elementId = "cars-download-table",
+        columns = list(
+          measurement_concept_id = reactable::colDef(
+            name = "ConceptId", 
+            maxWidth = 100
+          ),
+          concept_name = reactable::colDef(
+            name = "Omop Name"
+          ),
+          omop_quantity = reactable::colDef(
+            name = "Omop Quantity", 
+            maxWidth = 150
+          ),
+          concept_code = reactable::colDef(
+            name = "TestCode [Unit]", 
+            maxWidth = 150
+          ),
+          unit_fix = reactable::colDef(
+            name = "Unit fix", 
+            maxWidth = 150
+          ),
+          n_records = reactable::colDef(
+            name = "Number of events", 
+            maxWidth = 80
+          ),
+          p_NA_AA_A_LL_L_N_H_HH = reactable::colDef(
+            name = "[NA][AA, A, LL, L, N, H, HH]", 
+            minWidth = 100
+          ),
+          value_percentiles = reactable::colDef(
+            name = "Value percentiles", 
+            minWidth = 150
+          ),
+          to_value_percentiles = reactable::colDef(
+            name = "Harmonised value percentiles", 
+            minWidth = 150
+          ),
+          p_missing_values = reactable::colDef(
+            name = "Missing values %",
+            maxWidth = 65
+          ),
+          KS_test = reactable::colDef(
+            name = "KS test", 
+            format = reactable::colFormat(digits = 2),
+            maxWidth = 50
+          ),
+          perplot = reactable::colDef(
+            name = "perplot",
+            cell = aaa, 
+            maxWidth = 150
+          ), 
+          status = reactable::colDef(
+            name = "Status", 
+            minWidth = 150
+          ),
+          report_error = reactable::colDef(
+            name = "report_error",
+            cell = function(value) {
+              sprintf('<a href="%s" target="_blank">Report error</a>', value)
+            },
+            html = TRUE,
+            maxWidth = 100
+          )
+        )
       )
-    )
   )
+)
 
 ```
