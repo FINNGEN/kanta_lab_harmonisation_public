@@ -5,6 +5,8 @@ output:
     orientation: rows
 params: 
   summary_data_5: NULL
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -21,11 +23,9 @@ summary_data_5 <- params$summary_data_5
 Column {.tabset}
 -------------------------------------
 
-### Status summary 
+### Mapping status summary
 
 ```{r}
-
-
 
 toplot  <- summary_data_5 |>
   mutate(
@@ -82,7 +82,7 @@ toplot |>
 
 ```   
 
-### Codes mapping status
+### Mapping status per test+unit combination
 
 ```{r}
 
@@ -225,5 +225,70 @@ htmltools::browsable(
       )
   )
 )
+
+```
+
+
+### Mapping status per OMOP conceptId
+
+```{r}
+
+# calculate the n_records_with_value
+# group by measurement_concept_id and sum the n_records and   n_records_with_value
+htmltools::browsable(
+  htmltools::tagList(
+    htmltools::tags$button(
+      htmltools::tagList(fontawesome::fa("download"), "Download as CSV"),
+      onclick = "Reactable.downloadDataCSV('cars-download-table2', 'kanta_omop_mappings_counts.csv')"
+    ),
+    
+    summary_data_5 |> 
+      filter(!is.na(measurement_concept_id)) |> filter(measurement_concept_id!=0)  |> 
+      mutate(
+        p_missing_values = if_else(is.na(p_missing_values), 100, p_missing_values),
+        n_records_with_value = n_records * (1 - p_missing_values / 100) |> round()
+      ) |>
+      select(measurement_concept_id, concept_name, n_records, n_records_with_value, p_missing_values) |>
+      group_by(measurement_concept_id, concept_name) |>
+      summarise(
+        n_records = sum(n_records),
+        n_records_with_value = sum(n_records_with_value),
+        n_codes = n(),
+        .groups = 'drop'
+      ) |>
+      arrange(desc(n_records)) |>
+      reactable::reactable(
+        filterable = TRUE,
+        sortable = TRUE,
+        searchable = TRUE,
+        defaultPageSize = 15,
+        showPageSizeOptions = TRUE,
+        elementId = "cars-download-table2",
+        columns = list(
+          measurement_concept_id = reactable::colDef(
+            name = "ConceptId", 
+            maxWidth = 100
+          ),
+          concept_name = reactable::colDef(
+            name = "Omop Name"
+          ),
+          n_records_with_value = reactable::colDef(
+            name = "Number of events with value", 
+            maxWidth = 80
+          ),
+          n_records = reactable::colDef(
+            name = "Number of events", 
+            maxWidth = 80
+          ),
+          n_codes = reactable::colDef(
+            name = "Number of test+unit combinations", 
+            maxWidth = 80
+          )
+        )
+      )
+    
+  )
+)
+
 
 ```
