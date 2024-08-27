@@ -1,3 +1,6 @@
+# Kanta Harmonisation v1.4.1
+- hotfix empty value in `LABfi_ALL.usagi.csv` for `ADD_INFO:measurementUnit` for 2 rows
+
 # Kanta Harmonisation v1.4.0
 
 Major changes :
