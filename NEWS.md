@@ -1,4 +1,7 @@
-# Kanta Harmonisation v1.4.0
+# Kanta Harmonisation v2.0.1
+- hotfix empty value in `LABfi_ALL.usagi.csv` for `ADD_INFO:measurementUnit` for 2 rows
+
+# Kanta Harmonisation v2.0.0
 
 Major changes :
 - Accept all codes in measurement domain even if they are SNOMED
