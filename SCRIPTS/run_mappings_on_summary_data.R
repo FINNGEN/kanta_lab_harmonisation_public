@@ -240,6 +240,21 @@ summary_data_5 <- summary_data_4 |>
 # PLOT status and table
 #
 
+# append the lab id
+testuunit_to_id <- read_tsv('INPUT_SUMMARY_DATA/kanta_testunit_to_id.csv')  |>
+  select(TEST_NAME_ABBREVIATION=TEST_NAME, source_unit_clean=MEASUREMENT_UNIT, TEST_ID) |>
+  group_by(TEST_NAME_ABBREVIATION, source_unit_clean)  |>
+  summarise(
+    TEST_IDs = paste0(unique(TEST_ID), collapse = ', '),
+    #n_distinct = n_distinct(TEST_ID),
+    .groups = 'drop'
+  )
+
+summary_data_5 <- summary_data_5 |>
+  left_join(
+    testuunit_to_id, by = c('TEST_NAME_ABBREVIATION', 'source_unit_clean')
+  )
+
 # ATM keep this commented to not colide with github actions
 dashboard <-  buildStatusDashboard(summary_data_5)
 browseURL(dashboard)
