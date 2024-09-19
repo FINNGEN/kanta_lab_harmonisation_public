@@ -260,3 +260,29 @@ dashboard <-  buildStatusDashboard(summary_data_5)
 browseURL(dashboard)
 
 
+# export
+summary_data_5 |>
+  transmute(
+    concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
+    test_ids = TEST_IDs,
+    n_records = n_records,
+    value_percentiles = if_else(
+      is.na(value_percentiles) | p_missing_values > 90, '',
+      paste0(value_percentiles, " [", source_unit_valid, "]")
+    ),
+    `[NA][AA, A, LL, L, N, H, HH]` = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
+    p_missing_values = if_else(
+      is.na(p_missing_values), '',
+      paste0('~', p_missing_values, '%')
+    ),
+    measurement_concept_id = measurement_concept_id,
+    concept_name = concept_name,
+    status_short = case_when(
+      status == 'ERROR: Mapping: missing mapping' ~ 'missing mapping',
+      status == 'SUCCESFUL: no unit' | is.na(status) ~ 'mapped',
+      TRUE ~ 'wrong mapping'
+    ),
+    status = status
+
+  )
+

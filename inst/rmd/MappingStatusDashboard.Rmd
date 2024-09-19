@@ -93,11 +93,11 @@ show_limited_testids <- function(ids, limit = 3) {
   hidden_ids <- paste(ids_split, collapse = ", ")
   
   # Create a div with a title attribute for hover, display truncated text and hidden full content
-  div(
+  shiny::div(
     style = "cursor: pointer;", # Change the cursor to indicate hoverable content
     title = hidden_ids,          # Tooltip will show the full list
     paste(truncated_ids, "..."), # Display the truncated IDs with ellipsis
-    span(hidden_ids, style = "display: none;") # Hidden span for full searchability
+    shiny::span(hidden_ids, style = "display: none;") # Hidden span for full searchability
   )
 }
 
