@@ -41,7 +41,7 @@ summary_data_1  <- summary_data |>
   mutate(
     source_unit_clean_fix = if_else(is.na(source_unit_clean_fix), source_unit_clean, source_unit_clean_fix)
   )  |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH,  status)
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, n_records, n_subjects, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH,  status)
 
 
 #check if units are comparable,
@@ -70,7 +70,7 @@ summary_data_2  <- summary_data_1 |>
   mutate(
     status = if_else(is.na(status) & is.na(source_unit_valid), 'ERROR: Units: invalid source_unit_clean', status)
   ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status)
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, n_subjects, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status)
 
 # CHECKS
 summary_data_2 |> filter(!is.na(status))  |>
@@ -123,7 +123,7 @@ summary_data_3  <- summary_data_2 |>
     status = if_else(is.na(status) & measurement_concept_id == 0 & !is.na(error_message), error_message, status),
     status = if_else(is.na(status) & source_unit_valid == '', 'SUCCESFUL: no unit', status)
   ) |>
-  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status,omop_quantity, measurement_concept_id,
+  select(TEST_NAME_ABBREVIATION, source_unit_clean, source_unit_clean_fix, source_unit_valid, n_records, n_subjects, value_percentiles, p_missing_values, p_NA_AA_A_LL_L_N_H_HH, status,omop_quantity, measurement_concept_id,
          concept_name)
 
 # summary_data_3 |> filter(!is.na(status))  |> count(source_unit_clean, sort=TRUE)
@@ -259,6 +259,32 @@ summary_data_5 <- summary_data_5 |>
 dashboard <-  buildStatusDashboard(summary_data_5)
 browseURL(dashboard)
 
+ 
+# # export
+# summary_data_5 |>
+#   transmute(
+#     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
+#     test_ids = TEST_IDs,
+#     n_records = n_records,
+#     value_percentiles = if_else(
+#       is.na(value_percentiles) | p_missing_values > 90, '',
+#       paste0(value_percentiles, " [", source_unit_valid, "]")
+#     ),
+#     `[NA][AA, A, LL, L, N, H, HH]` = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
+#     p_missing_values = if_else(
+#       is.na(p_missing_values), '',
+#       paste0('~', p_missing_values, '%')
+#     ),
+#     measurement_concept_id = measurement_concept_id,
+#     concept_name = concept_name,
+#     status_short = case_when(
+#       status == 'ERROR: Mapping: missing mapping' ~ 'missing mapping',
+#       str_detect(status, 'SUCCESFUL') | str_detect(status, 'WARNING') | is.na(status) ~ 'mapped',
+#       TRUE ~ 'wrong mapping'
+#     ),
+#     status = if_else(is.na(status), 'SUCCESFUL', status),
+#   ) |>
+#   write_tsv('~/Downloads/kanta_to_map_v2_1.tsv')
 
 # export
 summary_data_5 |>

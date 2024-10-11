@@ -32,7 +32,7 @@ toplot  <- summary_data_5 |>
     status = if_else(is.na(status), 'SUCCESFUL', status)
   ) |>
   group_by(status) |>
-  summarise(n_codes = n(), n_records = sum(n_records), .groups = 'drop') |>
+  summarise(n_codes = n(), n_subjects = sum(n_subjects), n_records = sum(n_records), .groups = 'drop') |>
   mutate(
     per_codes = n_codes / sum(n_codes) ,
     per_records = n_records / sum(n_records) 
@@ -50,6 +50,10 @@ toplot |>
       ),
       n_codes = reactable::colDef(
         name = "Number of test+unit combinations",
+        sortable = TRUE
+      ),
+      n_subjects = reactable::colDef(
+        name = "Number of subjects",
         sortable = TRUE
       ),
       n_records = reactable::colDef(
@@ -128,6 +132,7 @@ toplot  <- summary_data_5 |>
     omop_quantity = omop_quantity,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
+    n_subjects,
     n_records,
     p_NA_AA_A_LL_L_N_H_HH = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
     value_percentiles = if_else(
@@ -190,6 +195,10 @@ htmltools::browsable(
           unit_fix = reactable::colDef(
             name = "Unit fix", 
             maxWidth = 150
+          ),
+          n_subjects = reactable::colDef(
+            name = "Number of subjects", 
+            maxWidth = 80
           ),
           n_records = reactable::colDef(
             name = "Number of events", 
