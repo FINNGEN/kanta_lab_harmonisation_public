@@ -261,9 +261,10 @@ htmltools::browsable(
         p_missing_values = if_else(is.na(p_missing_values), 100, p_missing_values),
         n_records_with_value = n_records * (1 - p_missing_values / 100) |> round()
       ) |>
-      select(measurement_concept_id, concept_name, n_records, n_records_with_value, p_missing_values) |>
+      select(measurement_concept_id, concept_name, n_records, n_subjects, n_records_with_value, p_missing_values) |>
       group_by(measurement_concept_id, concept_name) |>
       summarise(
+        n_subjects = sum(n_subjects),
         n_records = sum(n_records),
         n_records_with_value = sum(n_records_with_value),
         n_codes = n(),
@@ -284,6 +285,10 @@ htmltools::browsable(
           ),
           concept_name = reactable::colDef(
             name = "Omop Name"
+          ),
+          n_subjects = reactable::colDef(
+            name = "Number of subjects", 
+            maxWidth = 80
           ),
           n_records_with_value = reactable::colDef(
             name = "Number of events with value", 
