@@ -1,3 +1,6 @@
+# Kanta Harmonisation v2.1.0
+- Fixing errors reported in KANTA LAB DATA CORRECTIONS LOG (snapshot 17.1.2024) #38
+
 # Kanta Harmonisation v2.0.1
 - hotfix empty value in `LABfi_ALL.usagi.csv` for `ADD_INFO:measurementUnit` for 2 rows
 
