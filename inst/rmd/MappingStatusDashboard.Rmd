@@ -90,6 +90,21 @@ toplot |>
 
 ```{r}
 
+# Function to display first N items with ellipsis and show full content on hover
+show_limited_testids <- function(ids, limit = 3) {
+  ids_split <- unlist(strsplit(ids, ", "))
+  truncated_ids <- paste(ids_split[1:limit], collapse = ", ")
+  hidden_ids <- paste(ids_split, collapse = ", ")
+  
+  # Create a div with a title attribute for hover, display truncated text and hidden full content
+  shiny::div(
+    style = "cursor: pointer;", # Change the cursor to indicate hoverable content
+    title = hidden_ids,          # Tooltip will show the full list
+    paste(truncated_ids, "..."), # Display the truncated IDs with ellipsis
+    shiny::span(hidden_ids, style = "display: none;") # Hidden span for full searchability
+  )
+}
+
 aaa   <- function(data) {
   if(length(data)<1) return(NA)
   if(length(data) == 1) return(NA)
@@ -113,6 +128,7 @@ toplot  <- summary_data_5 |>
   transmute(
     measurement_concept_id,
     concept_name,
+    TEST_IDs,
     omop_quantity = omop_quantity,
     concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
     unit_fix = if_else(source_unit_clean == source_unit_clean_fix, '', paste0(source_unit_clean, ' -> ', source_unit_clean_fix)),
@@ -134,17 +150,6 @@ toplot  <- summary_data_5 |>
     KS_test,
     perplot,
     status
-  ) |>
-  mutate(
-    report_error = paste0(
-      'https://github.com/FINNGEN/kanta_lab_harmonisation_public/issues/new?title= Auto repor for ', concept_code,
-      '&body=Automatic report for ', concept_code, '
-      ', 'status: ', status, '
-      ', 'KS_test: ', KS_test, '
-      ', 'value_percentiles: ', value_percentiles, '
-      ', 'to_value_percentiles: ', to_value_percentiles, '
-      Please describe the error here:'
-    ) |> URLencode()
   ) |> 
   arrange(desc(n_records))
 
@@ -179,6 +184,13 @@ htmltools::browsable(
           concept_code = reactable::colDef(
             name = "TestCode [Unit]", 
             maxWidth = 150
+          ),
+          TEST_IDs = reactable::colDef(
+            cell = function(value) {
+              show_limited_testids(value, limit = 3) 
+            },
+            name = "TestIds", 
+            maxWidth = 100
           ),
           unit_fix = reactable::colDef(
             name = "Unit fix", 
@@ -221,14 +233,6 @@ htmltools::browsable(
           status = reactable::colDef(
             name = "Status", 
             minWidth = 150
-          ),
-          report_error = reactable::colDef(
-            name = "report_error",
-            cell = function(value) {
-              sprintf('<a href="%s" target="_blank">Report error</a>', value)
-            },
-            html = TRUE,
-            maxWidth = 100
           )
         )
       )

@@ -240,6 +240,21 @@ summary_data_5 <- summary_data_4 |>
 # PLOT status and table
 #
 
+# append the lab id
+testuunit_to_id <- read_tsv('INPUT_SUMMARY_DATA/kanta_testunit_to_id.csv')  |>
+  select(TEST_NAME_ABBREVIATION=TEST_NAME, source_unit_clean=MEASUREMENT_UNIT, TEST_ID) |>
+  group_by(TEST_NAME_ABBREVIATION, source_unit_clean)  |>
+  summarise(
+    TEST_IDs = paste0(unique(TEST_ID), collapse = ', '),
+    #n_distinct = n_distinct(TEST_ID),
+    .groups = 'drop'
+  )
+
+summary_data_5 <- summary_data_5 |>
+  left_join(
+    testuunit_to_id, by = c('TEST_NAME_ABBREVIATION', 'source_unit_clean')
+  )
+
 # ATM keep this commented to not colide with github actions
 dashboard <-  buildStatusDashboard(summary_data_5)
 browseURL(dashboard)
@@ -270,4 +285,30 @@ browseURL(dashboard)
 #     status = if_else(is.na(status), 'SUCCESFUL', status),
 #   ) |>
 #   write_tsv('~/Downloads/kanta_to_map_v2_1.tsv')
+
+# export
+summary_data_5 |>
+  transmute(
+    concept_code = paste0(TEST_NAME_ABBREVIATION, ' [', source_unit_clean, ']'),
+    test_ids = TEST_IDs,
+    n_records = n_records,
+    value_percentiles = if_else(
+      is.na(value_percentiles) | p_missing_values > 90, '',
+      paste0(value_percentiles, " [", source_unit_valid, "]")
+    ),
+    `[NA][AA, A, LL, L, N, H, HH]` = paste0(p_NA_AA_A_LL_L_N_H_HH, '%'),
+    p_missing_values = if_else(
+      is.na(p_missing_values), '',
+      paste0('~', p_missing_values, '%')
+    ),
+    measurement_concept_id = measurement_concept_id,
+    concept_name = concept_name,
+    status_short = case_when(
+      status == 'ERROR: Mapping: missing mapping' ~ 'missing mapping',
+      status == 'SUCCESFUL: no unit' | is.na(status) ~ 'mapped',
+      TRUE ~ 'wrong mapping'
+    ),
+    status = status
+
+  )
 

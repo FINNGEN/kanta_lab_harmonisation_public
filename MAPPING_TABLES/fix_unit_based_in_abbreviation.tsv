@@ -37,4 +37,9 @@ p-tromboplastiiniaika,inr-tulostus		inr
 b-crp		mg/l
 du-ca	mmol	mmol/24h
 u-keto-o	l	estimate
-eryt	e6/l	e12/l
+eryt    e6/l	e12/l
+p-uraat mmol/l  umol/l
+s-uraat mmol/l  umol/l
+kreatiniini mmol/l  umol/l
+p-krea mmol/l   umol/l
+s-krea mmol/l   umol/l
