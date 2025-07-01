@@ -1,5 +1,13 @@
 # Kanta Harmonisation v2.1.0
-- Fixing errors reported in KANTA LAB DATA CORRECTIONS LOG (snapshot 17.1.2024) #38
+- Changed 19 SNOMED codes to LOINC (Auli)
+- Marked b-trombot (Thrombophilia screening test) as having no mapping (Elisa)
+- Corrected values originally reported as mmol/l to harmonized umol/l (Mitja)
+- Mapped all INR measurements to 3032080 instead of 3022217 (Elisa)
+- Investigated mapping issue for myasthenia gravis Rarer autoantibody code; lacked enough rows to choose between 3041276 and 40760548 (MP Researcher)
+- Consolidated two OMOP codes (42870588, 40760892) for complete blood count under 40760892 (Elisa/Sam)
+- Fixed incorrect creatinine units (mmol/l instead of umol/l); transformed values by multiplying by 1000 (Sanni/Mitja)
+
+Details: Fixing errors reported in KANTA LAB DATA CORRECTIONS LOG (snapshot 17.1.2024) #38
 
 # Kanta Harmonisation v2.0.1
 - hotfix empty value in `LABfi_ALL.usagi.csv` for `ADD_INFO:measurementUnit` for 2 rows
