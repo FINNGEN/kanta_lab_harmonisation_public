@@ -1,5 +1,5 @@
 omop_quantity	source_unit_valid	to_source_unit_valid	conversion
--		1
+-			1
 Arbitrary Concentration	au/ml	au/ml	1
 Arbitrary Concentration	eliau/ml	eliau/ml	1
 Arbitrary Concentration	eliau/ml	u/ml	1
