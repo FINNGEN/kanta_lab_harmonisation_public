@@ -92,28 +92,33 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
 
     message("Append usagi file messages")
     usagiFile <- ROMOPMappingTools::readUsagiFile(pathToValidatedUsagiFile)
-    approvedUsagiFile <- usagiFile |>
-        dplyr::filter(mappingStatus == "APPROVED") |>
+    usagiFile <- usagiFile |>
         dplyr::select(
-            OMOP_CONCEPT_ID = conceptId,
             TEST_NAME = `ADD_INFO:testNameAbbreviation`,
             MEASUREMENT_UNIT = `ADD_INFO:measurementUnit`,
             message = `ADD_INFO:validationMessages`, 
-            mappingStatus = mappingStatus
-        )
+            mappingStatus = mappingStatus, 
+            ignoreReason = `ADD_INFO:ignoreReason`
+        ) |> 
+        dplyr::distinct(TEST_NAME, MEASUREMENT_UNIT, .keep_all = TRUE)
+
+    summary <- summary |>
+        dplyr::left_join(usagiFile, by = c("TEST_NAME", "MEASUREMENT_UNIT"))
 
     # set status
     summary <- summary |>
         dplyr::mutate(
             status = dplyr::case_when(
                 mappingStatus == "APPROVED" ~ "APPROVED",
-                mappingStatus == "REJECTED" ~ "REJECTED",
-                TRUE ~ "PENDING"
-            )
+                !is.na(ignoreReason) ~ "IGNORED",
+                !is.na(mappingStatus) ~ mappingStatus,
+                TRUE ~ "NOT-FOUND"
+            ),
+            message = dplyr::if_else(is.na(ignoreReason), message, paste0("IGNORED: ", ignoreReason, "; ", message))
         )
     
     message("Building summary table")
-    .summaryToSummaryTable(summary, pathToDashboardFolder, devMode = TRUE)
+    .summaryToSummaryTable(summary, pathToDashboardFolder)
 
     #message("Building CSV file")
     #buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))

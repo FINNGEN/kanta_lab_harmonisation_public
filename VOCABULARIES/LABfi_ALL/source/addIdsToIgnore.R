@@ -4,7 +4,7 @@
 usagi <- readr::read_csv(
     "VOCABULARIES/LABfi_ALL/LABfi_ALL.usagi.csv",
     col_types = readr::cols(.default = readr::col_character())
-)
+) 
 
 idsToRemove <- readr::read_delim(
     "VOCABULARIES/LABfi_ALL/source/KantaIDsToRemove.csv",
@@ -23,10 +23,11 @@ usagiWithIdsToRemove <- usagi |>
 dplyr::left_join(
     idsToRemove,
     by = c("ADD_INFO:testNameAbbreviation" = "TEST_NAME")
-) 
+) |>  
+dplyr::rename(`ADD_INFO:ignoreReason` = REASON)
 
 usagiWithIdsToRemove |> 
-dplyr::filter(!is.na(REASON)) |>
+dplyr::filter(!is.na(`ADD_INFO:ignoreReason`)) |>
 dplyr::filter(mappingStatus == "APPROVED")   |> 
 nrow() |> 
 testthat::expect_equal(0)

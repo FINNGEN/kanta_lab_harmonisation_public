@@ -19,7 +19,7 @@
         "Source" = "#0000FF"
     )
 
-    if (devMode) {
+    if (devMode == TRUE) {
         summary <- summary |>
         dplyr::sample_n(size = 100)
     }
@@ -35,6 +35,7 @@
         ) |>
         dplyr::select(-tmpMU, -tmpMUHarmonized) |>
         dplyr::transmute(
+            status = status,
             conceptId = OMOP_CONCEPT_ID,
             conceptName = concept_name,
             omopQuantity = omopQuantity,
@@ -62,6 +63,13 @@
             showPageSizeOptions = TRUE,
             resizable = TRUE,
             columns = list(
+                status = reactable::colDef(
+                    name = "Status",
+                    minWidth = 100,
+                    cell = function(value) {
+                        .renderStatus(value)
+                    }
+                ),
                 conceptId = reactable::colDef(
                     name = "OMOP Concept ID",
                     maxWidth = 100
@@ -155,6 +163,30 @@
     pathToHtmlFile <- file.path(pathToDashboardFolder, "index.html")
     plot_with_tooltips |> htmltools::save_html(file = pathToHtmlFile)
     return(pathToHtmlFile)
+}
+
+.renderStatus <- function(status) {
+    checkmate::assert_character(status, len = 1)
+    checkmate::assert_choice(status, c("APPROVED", "IGNORED", "UNCHECKED", "FLAGGED", "INVALID_TARGET", "NOT-FOUND"))
+
+    statusToColor <- c(
+        "APPROVED" = "#74de74",
+        "IGNORED" = "#7b7b7b",
+        "UNCHECKED" = "#cccccc",
+        "FLAGGED" = "#d75e5e",
+        "INVALID_TARGET" = "#fffecc",
+        "NOT-FOUND" = "#deb074"
+    )
+
+    color <- statusToColor[[status]]
+
+    htmltools::span(
+        style = paste0(
+            "display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: bold; ",
+            "color: ", color, ";"
+        ),
+        status
+    )
 }
 
 .renderKSTest <- function(ksTest) {

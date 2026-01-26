@@ -42,6 +42,6 @@ browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
 source("dev/R/buildStatusDashboardLab.R")
-.summaryToSummaryTable(summary, pathToDashboardFolder, devMode = TRUE)
+.summaryToSummaryTable(summary, pathToDashboardFolder)
 browseURL(file.path(pathToDashboardFolder, "index.html"))
 
