@@ -10,7 +10,7 @@ validationsSummary <- ROMOPMappingTools::validateUsagiFile(
     pathToUsagiFile,
     connection,
     vocabularyDatabaseSchema,
-    pathToValidatedUsagiFile,
+    pathToUsagiFile,
     sourceConceptIdOffset,
     pathToValidUnitsFile,
     pathToUnitConversionFile,
