@@ -34,3 +34,14 @@ testthat::expect_equal(0)
 
 usagiWithIdsToRemove |> 
 readr::write_csv("VOCABULARIES/LABfi_ALL/LABfi_ALL.usagi.csv", na = "")
+
+
+
+
+
+
+usagi |> 
+dplyr::mutate(
+    mappingStatus = dplyr::if_else(mappingStatus %in% c("FLAGGED", "INVALID_TARGET"), "UNCHECKED", mappingStatus)
+ ) |> 
+    readr::write_csv("VOCABULARIES/LABfi_ALL/LABfi_ALL.usagi.csv", na = "")

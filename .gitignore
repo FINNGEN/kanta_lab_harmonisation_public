@@ -8,3 +8,6 @@ renv.lock
 
 
 output_data/*
+
+
+*.bck
