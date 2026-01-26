@@ -5,3 +5,6 @@
 renv/
 renv.lock
 .Rprofile
+
+
+output_data/*
