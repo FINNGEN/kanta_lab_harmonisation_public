@@ -1,4 +1,4 @@
-.summaryToSummaryTable <- function(summary, pathToDashboardFolder, devMode = FALSE) {
+.summaryTable <- function(summary, devMode = FALSE, localMode = TRUE) {
     summary |> checkmate::assert_tibble()
 
     # Define color mapping for test outcomes
@@ -21,24 +21,53 @@
 
     if (devMode == TRUE) {
         summary <- summary |>
-        dplyr::sample_n(size = 100)
+            dplyr::sample_n(size = 100)
+    }
+
+    # select local or remote columns
+    if (localMode == TRUE) {
+        summary <- summary |>
+            dplyr::rename(
+                OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
+                OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
+                OMOP_QUANTITY = local_OMOP_QUANTITY,
+                MEASUREMENT_UNIT_HARMONIZED = local_MEASUREMENT_UNIT_HARMONIZED,
+                CONVERSION_FACTOR = local_CONVERSION_FACTOR,
+                decile_MEASUREMENT_VALUE_HARMONIZED = local_decile_MEASUREMENT_VALUE_HARMONIZED
+            )
+    } else {
+        summary <- summary |>
+            dplyr::rename(
+                OMOP_CONCEPT_ID = remote_OMOP_CONCEPT_ID,
+                OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
+                OMOP_QUANTITY = remote_OMOP_QUANTITY,
+                MEASUREMENT_UNIT_HARMONIZED = remote_MEASUREMENT_UNIT_HARMONIZED,
+                CONVERSION_FACTOR = remote_CONVERSION_FACTOR,
+                decile_MEASUREMENT_VALUE_HARMONIZED = remote_decile_MEASUREMENT_VALUE_HARMONIZED
+            )
     }
 
     toplot <- summary |>
         dplyr::mutate(
-            tmpMU = dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT),
-            tmpMUHarmonized = dplyr::if_else(is.na(MEASUREMENT_UNIT_HARMONIZED), "", MEASUREMENT_UNIT_HARMONIZED),
+            tmpMU = dplyr::coalesce(MEASUREMENT_UNIT, ""),
+            tmpMUPrefix = dplyr::coalesce(MEASUREMENT_UNIT_PREFIX, ""),
+            tmpMUHarmonized = dplyr::coalesce(MEASUREMENT_UNIT_HARMONIZED, ""),
+            tmpMUHarmonizedTarget = dplyr::coalesce(local_MEASUREMENT_UNIT_HARMONIZED_target, ""),
             valueUnitChange = paste0(
-                dplyr::if_else(tmpMU!=tmpMUHarmonized, paste0(tmpMU, " -> ", tmpMUHarmonized), ""),
-                "<br>",
-                dplyr::if_else(is.na(CONVERSION_FACTOR), "", paste0("* ", CONVERSION_FACTOR)))
+                dplyr::if_else(tmpMUHarmonized == tmpMUHarmonizedTarget, "", '<span style="color: red;">MISSING:</span> <br>'),
+                dplyr::if_else(tmpMU == tmpMUHarmonizedTarget, "", paste0(tmpMU, " -> ", tmpMUHarmonizedTarget, "<br>")),
+                dplyr::if_else(is.na(CONVERSION_FACTOR), "", paste0("*", CONVERSION_FACTOR))
+            ),
+            valueUnitChange = dplyr::if_else(is.na(decile_MEASUREMENT_VALUE_HARMONIZED), "", valueUnitChange),
+            unitChange = dplyr::if_else(tmpMUPrefix == tmpMU, "", paste0(tmpMUPrefix, " -> ", tmpMU)),
         ) |>
-        dplyr::select(-tmpMU, -tmpMUHarmonized) |>
+        dplyr::select(-tmpMU, -tmpMUHarmonized, -tmpMUPrefix, -tmpMUHarmonizedTarget    ) |>
         dplyr::transmute(
             status = status,
             conceptId = OMOP_CONCEPT_ID,
-            conceptName = concept_name,
-            omopQuantity = omopQuantity,
+            conceptName = OMOP_CONCEPT_NAME,
+            omopQuantity = OMOP_QUANTITY,
+            unitChange = unitChange,
             testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]"),
             nPeople = n_subjects,
             nRecords = n_records,
@@ -49,7 +78,8 @@
             valueUnitChange = valueUnitChange,
             dMeasurementValueHarmonized = purrr::map_chr(decile_MEASUREMENT_VALUE_HARMONIZED, .decileText),
             ksTestHarmonized = ksTestHarmonized,
-            message = message
+            message = message,
+            differences = differences
         ) |>
         dplyr::arrange(dplyr::desc(nRecords))
 
@@ -81,6 +111,10 @@
                 omopQuantity = reactable::colDef(
                     name = "Omop Quantity",
                     maxWidth = 150
+                ),
+                unitChange = reactable::colDef(
+                    name = "Unit change",
+                    maxWidth = 100
                 ),
                 testId = reactable::colDef(
                     name = "TestCode [Unit]",
@@ -129,7 +163,7 @@
                     filterMethod = .numericRangeFilter
                 ),
                 valueUnitChange = reactable::colDef(
-                    name = "Value unit change",
+                    name = "Value unit<br>harmonisation",
                     html = TRUE,
                     minWidth = 50
                 ),
@@ -149,6 +183,11 @@
                 message = reactable::colDef(
                     name = "Message",
                     minWidth = 150
+                ),
+                differences = reactable::colDef(
+                    name = "Differences",
+                    html = TRUE,
+                    minWidth = 150
                 )
             )
         )
@@ -160,9 +199,7 @@
         plot
     )
 
-    pathToHtmlFile <- file.path(pathToDashboardFolder, "index.html")
-    plot_with_tooltips |> htmltools::save_html(file = pathToHtmlFile)
-    return(pathToHtmlFile)
+    return(plot_with_tooltips)
 }
 
 .renderStatus <- function(status) {
@@ -193,10 +230,12 @@
     if (is.null(ksTest)) {
         return(htmltools::span(style = "color: #999; font-style: italic;", "NA"))
     }
-    ks <- ksTest  |> dplyr::pull(KS) |> round(digits = 2)
-    pValue <- ksTest  |> dplyr::pull(pValue) 
+    ks <- ksTest |>
+        dplyr::pull(KS) |>
+        round(digits = 2)
+    pValue <- ksTest |> dplyr::pull(pValue)
     mplog10pValue <- -log10(pValue) |>
-     round(digits = 2)
+        round(digits = 2)
     bg_color <- ""
     if (!is.null(ks)) {
         if (ks > 0.5) {
@@ -535,114 +574,9 @@
     ')
 )
 
-
-.calcualteKStest <- function(summary) {
-    # find reference distribution
-    referenceDistribution <- summary |>
-        dplyr::filter(!is.na(MEASUREMENT_UNIT)) |>
-        dplyr::arrange(dplyr::desc(n_records)) |>
-        dplyr::distinct(OMOP_CONCEPT_ID, .keep_all = TRUE) |>
-        dplyr::transmute(
-            OMOP_CONCEPT_ID,
-            n_values_reference = n_values,
-            decile_MEASUREMENT_VALUE_reference = decile_MEASUREMENT_VALUE,
-            decile_MEASUREMENT_VALUE_HARMONIZED_reference = decile_MEASUREMENT_VALUE_HARMONIZED,
-            MEASUREMENT_UNIT_reference = MEASUREMENT_UNIT
-        )
-
-    # calculate KS test for each OMOP_CONCEPT_ID
-    summary <- summary |>
-        dplyr::left_join(referenceDistribution, by = "OMOP_CONCEPT_ID") |> 
-        dplyr::mutate(
-            n_values = n_values,
-            ksTest = purrr::pmap(
-                list(
-                    decile_MEASUREMENT_VALUE, decile_MEASUREMENT_VALUE_reference,
-                    n_values, n_values_reference
-                ),
-                .ksTest
-            ),
-            ksTestHarmonized = purrr::pmap(
-                list(
-                    decile_MEASUREMENT_VALUE_HARMONIZED, decile_MEASUREMENT_VALUE_HARMONIZED_reference,
-                    n_values, n_values_reference
-                ),
-                .ksTest
-            )
-        )
-
-    return(summary)
-}
-
-
-.ksTest <- function(deciles1, deciles2, n1, n2) {
-    n1  <- as.double(n1)
-    n2  <- as.double(n2)
-    # Validate input parameters with checkmate
-    if (is.null(deciles1) || is.null(deciles2)) {
-        return(NULL)
-    }
-    checkmate::assert_tibble(deciles1, min.rows = 9, null.ok = FALSE)
-    checkmate::assert_tibble(deciles2, min.rows = 9, null.ok = FALSE)
-    checkmate::assert_subset(c("decile", "value"), names(deciles1))
-    checkmate::assert_subset(c("decile", "value"), names(deciles2))
-    if (!all(deciles1$decile == deciles2$decile)) stop("deciles1 and deciles2 must have the same deciles")
-
-    if (n1 < 2 || n2 < 2) {
-        return(NULL)
-    }
-
-    deciles <- deciles1$decile
-    v1 <- deciles1$value
-    v2 <- deciles2$value
-
-    # CDF from deciles
-    cdf <- function(x, p, v) {
-        sapply(x, function(z) {
-            if (z < min(v)) {
-                0
-            } else {
-                max(p[v <= z])
-            }
-        })
-    }
-
-    # Evaluation grid
-    x_all <- sort(unique(c(v1, v2)))
-
-    # CDF values
-    F1 <- cdf(x_all, deciles, v1)
-    F2 <- cdf(x_all, deciles, v2)
-
-    # KS statistic (lower bound)
-    D_hat <- max(abs(F1 - F2))
-
-    # Effective sample size
-    n_eff <- (n1 * n2) / (n1 + n2)
-
-    # KS p-value approximation
-    lambda <- sqrt(n_eff) * D_hat
-
-    p_value <- 2 * sum(
-        sapply(1:100, function(k) {
-            (-1)^(k - 1) * exp(-2 * k^2 * lambda^2)
-        })
-    )
-
-    # Clamp to [0,1]
-    p_value <- max(min(p_value, 1), 0)
-
-    return(
-        tibble::tibble(
-            KS = D_hat,
-            pValue = p_value
-        )
-    )
-}
-
 # JS function to filter by regular expression
 .regexFilter <- htmlwidgets::JS(
-  "function(rows, columnId, filterValue) {
+    "function(rows, columnId, filterValue) {
     try {
       const re = new RegExp(filterValue, 'i');
       return rows.filter(function(row) {
@@ -659,22 +593,22 @@
 # Supports ranges (e.g., -2--0.5, 1-4), comparison operators (>=, <=, >, <, ==), and bare numbers.
 # Returns a list of rows that match the filter.
 .numericRangeFilter <- htmlwidgets::JS(
-  "function(rows, columnId, filterValue) {
+    "function(rows, columnId, filterValue) {
       if (!filterValue) return rows;
       const val = filterValue.trim().toLowerCase();
       if (!val) return rows;
-      
+
       return rows.filter(row => {
         let rawValue = row.values[columnId];
-        
+
         //  check if KS is missing (Null, Undefined, or Empty Strings)
         const isMissing = (
-            rawValue === null || 
-            rawValue === undefined || 
-            rawValue === '' || 
+            rawValue === null ||
+            rawValue === undefined ||
+            rawValue === '' ||
             (typeof rawValue === 'object' && (rawValue.KS === undefined || rawValue.KS === null))
         );
-        
+
         // If user types 'null' or 'na', show ONLY the missing rows
         if (val === 'null' || val === 'na') {
             return isMissing;
@@ -691,7 +625,7 @@
         const cleanFilter = val.replace(/\\s+/g, '');
         const EPS = 1e-9;
         const NUM = '-?\\\\d+(?:\\\\.\\\\d+)?(?:[eE][+-]?\\\\d+)?';
-        
+
         let m;
         // Range: e.g. 0.1-0.5
         if (m = cleanFilter.match(new RegExp(`^(${NUM})-(${NUM})$`))) {
@@ -707,22 +641,8 @@
         if (m = cleanFilter.match(new RegExp(`^=(${NUM})$`)) || cleanFilter.match(new RegExp(`^${NUM}$`))) {
            return Math.abs(v - parseFloat(m[1] || m[0])) < EPS;
         }
-        
+
         return true;
       });
   }"
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-

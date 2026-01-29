@@ -40,8 +40,31 @@ source("dev/SCRIPTS/runAllBase.R")
 browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
+devMode <- TRUE
+pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
+browseURL(pathToHtmlFile)
 
-source("dev/R/buildStatusDashboardLab.R")
-.summaryToSummaryTable(summary, pathToDashboardFolder)
-browseURL(file.path(pathToDashboardFolder, "index.html"))
+source("dev/R/buildSummaryTable.R")
+devMode <- F
+summaryTable <- .summaryTable(summary , devMode)
+pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
+htmltools::save_html(summaryTable, pathHtmlFile)
+browseURL(pathHtmlFile)
+    
+
+
+source("dev/R/buildCSVLab.R")
+buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
+
+summary |> dplyr::filter(TEST_NAME == "p-krea", MEASUREMENT_UNIT == "umol/l")
+
+
+
+
+source("dev/R/buildSummaryTable.R")
+devMode <- F
+summaryTable <- .summaryTable(summary  |> filter(local_OMOP_CONCEPT_ID == 40763527) , devMode)
+pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
+htmltools::save_html(summaryTable, pathHtmlFile)
+browseURL(pathHtmlFile)
 

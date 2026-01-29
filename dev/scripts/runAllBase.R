@@ -8,13 +8,8 @@ if (!dir.exists(pathToValidatedVocabularyLabFolder)) {
     dir.create(pathToValidatedVocabularyLabFolder, showWarnings = FALSE, recursive = TRUE)
 }
 
-pathToUsagiFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv")
-pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "quantity_source_unit_conversion.tsv")
-pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder, "UNITSfi", "UNITSfi.usagi.csv")
-
-pathToValidatedUsagiFile <- file.path(pathToValidatedVocabularyLabFolder, "LABfi_ALL", "LABfi_ALL.usagi.csv")
-pathToValidatedUnitConversionFile <- file.path(pathToValidatedVocabularyLabFolder, "LABfi_ALL", "quantity_source_unit_conversion.tsv")
-
+pathToLabFolder <- file.path(pathToVocabularyLabFolder,"LABfi_ALL")
+pathToUnitsFolder <- file.path(pathToLabFolder, "UNITSfi")
 sourceConceptIdOffset <- 2002400000
 
 # create a temporary copy of the OMOP vocabulary duckdb file
@@ -65,60 +60,16 @@ DatabaseConnector::disconnect(connection)
 #
 if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     source("dev/R/labDataSummary.R")
-    source("dev/R/buildStatusDashboardLab.R")
-    source("dev/R/buildCSVLab.R")
+    source("dev/R/buildStatusDasboard.R")
 
     message("Creating dashboard")
     dir.create(pathToDashboardFolder, showWarnings = FALSE, recursive = TRUE)
 
-    message("Reading code counts lab folder")
-    summary <- .readCodeCountsLabFolder(pathToCodeCountsLabFolder)
-    
-    message("Calculating KStest")
-    summary <- .calcualteKStest(summary)
+    message("Processing lab data summary")
+    summary <- processLabDataSummary(pathToCodeCountsLabFolder, pathToValidatedUsagiFile)
 
-    message("Appending concept names")
-    connection <- DatabaseConnector::connect(
-        dbms = "duckdb",
-        server = pathToOMOPVocabularyDuckDBfile
-    )
-    concept <- dplyr::tbl(connection, "CONCEPT") |>
-        dplyr::filter(concept_id %in% summary$OMOP_CONCEPT_ID) |>
-        dplyr::select(concept_id, concept_name) |>
-        dplyr::collect()
-    summary <- summary |>
-        dplyr::left_join(concept, by = c("OMOP_CONCEPT_ID" = "concept_id"))
-    DatabaseConnector::disconnect(connection)
-
-    message("Append usagi file messages")
-    usagiFile <- ROMOPMappingTools::readUsagiFile(pathToValidatedUsagiFile)
-    usagiFile <- usagiFile |>
-        dplyr::select(
-            TEST_NAME = `ADD_INFO:testNameAbbreviation`,
-            MEASUREMENT_UNIT = `ADD_INFO:measurementUnit`,
-            message = `ADD_INFO:validationMessages`, 
-            mappingStatus = mappingStatus, 
-            ignoreReason = `ADD_INFO:ignoreReason`
-        ) |> 
-        dplyr::distinct(TEST_NAME, MEASUREMENT_UNIT, .keep_all = TRUE)
-
-    summary <- summary |>
-        dplyr::left_join(usagiFile, by = c("TEST_NAME", "MEASUREMENT_UNIT"))
-
-    # set status
-    summary <- summary |>
-        dplyr::mutate(
-            status = dplyr::case_when(
-                mappingStatus == "APPROVED" ~ "APPROVED",
-                !is.na(ignoreReason) ~ "IGNORED",
-                !is.na(mappingStatus) ~ mappingStatus,
-                TRUE ~ "NOT-FOUND"
-            ),
-            message = dplyr::if_else(is.na(ignoreReason), message, paste0("IGNORED: ", ignoreReason, "; ", message))
-        )
-    
     message("Building summary table")
-    .summaryToSummaryTable(summary, pathToDashboardFolder)
+    buildStatusDashboard(summary, pathToDashboardFolder)
 
     #message("Building CSV file")
     #buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
@@ -148,3 +99,7 @@ if (any(validationLogTibble$type == "ERROR")) {
 message("FINAL_STATUS: ", FINAL_STATUS)
 
 writeLines(FINAL_STATUS, "/tmp/FINAL_STATUS.txt")
+
+
+
+

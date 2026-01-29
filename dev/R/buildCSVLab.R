@@ -12,6 +12,7 @@ buildCSVLab <- function(summary, pathToOutputFile) {
             ksTestHarmonized_KS = purrr::map_dbl(ksTestHarmonized, .ksTestToKS),
         ) |>
         dplyr::select(
+            status,
             OMOP_CONCEPT_ID,
             concept_name,
             omopQuantity,

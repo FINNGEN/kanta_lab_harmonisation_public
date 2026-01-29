@@ -2,10 +2,11 @@
 
 **Table: summaryTest**
 
-Summary for the kanta `TEST_NAME` + `MEASUREMENT_UNIT` pairs
+Summary for the kanta `TEST_NAME` + `MEASUREMENT_UNIT` + `MEASUREMENT_UNIT_PREFIX` pairs
 
-* `OMOP_CONCEPT_ID`: Integer, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
-* `TEST_NAME`: Character, lab test name
+* `OMOP_CONCEPT_ID`: Intege, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
+* `TEST_NAME`: Character,  lab test name
+* `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
 * `MEASUREMENT_UNIT_HARMONIZED`: Character, lab test unit harmonised unit
 * `omopQuantity`: Character, quantity related to OMOP measurements
@@ -18,20 +19,21 @@ Summary for the kanta `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 
 Value source distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 
-* `OMOP_CONCEPT_ID`: Integer, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
+* `OMOP_CONCEPT_ID`: Intege, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
 * `TEST_NAME`: Character, lab test name
+* `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
 * `value_source`: Character, values coming from source or extracted
 * `n_subjects`: Integer, number of subjects (removed if <=5)
 * `n_records`: Integer, number of records
 
-
 **Table: summaryValues**
 
 Value distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 
-* `OMOP_CONCEPT_ID`: Integer, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
+* `OMOP_CONCEPT_ID`: Intege, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
 * `TEST_NAME`: Character, lab test name
+* `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
 * `n_subjects`: Integer, number of subjects (removed if <=5)
 * `n_records`: Integer, number of records
@@ -44,8 +46,9 @@ Value distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 
 Outcome distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 
-* `OMOP_CONCEPT_ID`: Integer, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
+* `OMOP_CONCEPT_ID`: Intege, OMOP concept ID mapped to the `TEST_NAME` + `MEASUREMENT_UNIT` pair
 * `TEST_NAME`: Character, lab test name
+* `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
 * `TEST_OUTCOME`: Character, test outcome
 * `n_TEST_OUTCOME`: Integer, number of test outcomes

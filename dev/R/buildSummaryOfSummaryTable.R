@@ -1,9 +1,16 @@
-.summaryOfSummaryTable <- function(summary, pathToSummaryOfSummaryTableFile) {
+summaryOfMappingStatus <- function(summary, pathToSummaryOfSummaryTableFile, environment = "development") {
     summary |> checkmate::assert_tibble()
+    environment |> checkmate::assert_choice(c("development", "production"))
+
+    if (environment == "production") {
+        summary <- summary |>
+            mutate()
+    }
 
     toplot <- summary |>
         dplyr::group_by(status) |>
         dplyr::summarise(
+            n_warnings = sum(stringr::str_detect(message, "WARNING"), na.rm = TRUE),
             n_tests = dplyr::n(),
             n_subjects = sum(n_subjects),
             n_records = sum(n_records),
@@ -22,6 +29,10 @@
                 cell = function(value) {
                     .renderStatus(value)
                 }
+            ),
+            n_warnings = reactable::colDef(
+                name = "Number of warnings",
+                minWidth = 100
             ),
             n_tests = reactable::colDef(
                 name = "Number of test+unit combinations",
@@ -46,5 +57,32 @@
                 format = reactable::colFormat(digits = 2, percent = TRUE)
             )
         )
+    )
+}
+
+
+.summaryOfValueSource <- function(summary) {
+
+    summary |>
+    dplyr::select(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT, n_subjects, n_records, distribution_values) |>
+    tidyr::unnest(distribution_values) |>
+    tidyr::pivot_wider(
+        names_from = value,
+        values_from = n
+    ) |>
+    dplyr::rename(
+        n_values_extracted = Extracted,
+        n_values_missing = Missing,
+        n_values = Source
+    ) |>
+    dplyr::group_by(OMOP_CONCEPT_ID) |>
+    dplyr::summarise(
+        n_tests = dplyr::n(),
+        n_subjects = sum(n_subjects),
+        n_records = sum(n_records),
+        n_values_missing = sum(n_values_missing, na.rm = TRUE),
+        n_values = sum(n_values, na.rm = TRUE),
+        n_values_extracted = sum(n_values_extracted, na.rm = TRUE),
+        .groups = "drop"
     )
 }
