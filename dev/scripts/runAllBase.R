@@ -43,14 +43,14 @@ connection <- DatabaseConnector::connect(
 )
 
 validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
-    pathToUsagiFile,
+    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv"),
     connection,
     vocabularyDatabaseSchema,
-    pathToUsagiFile,
+    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv"),
     sourceConceptIdOffset,
-    pathToValidUnitsFile,
-    pathToUnitConversionFile,
-    pathToValidatedUnitConversionFile
+    file.path(pathToVocabularyLabFolder,"UNITSfi", "UNITSfi.usagi.csv"),
+    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion.tsv"),
+    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion_validated.tsv")
 )
 
 DatabaseConnector::disconnect(connection)
@@ -66,7 +66,7 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     dir.create(pathToDashboardFolder, showWarnings = FALSE, recursive = TRUE)
 
     message("Processing lab data summary")
-    summary <- processLabDataSummary(pathToCodeCountsLabFolder, pathToValidatedUsagiFile)
+    summary <- processLabDataSummary(pathToCodeCountsLabFolder, file.path(pathToVocabularyLabFolder,"LABfi_ALL", "fix_unit_based_in_abbreviation.tsv"))
 
     message("Building summary table")
     buildStatusDashboard(summary, pathToDashboardFolder)

@@ -406,7 +406,12 @@ processLabDataSummary <- function(pathToCodeCountsLabFolder, pathToUnitFixFile) 
 
     # calculate KS test for each OMOP_CONCEPT_ID
     summary <- summary |>
-        dplyr::left_join(referenceDistribution, by = c("local_OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT", "MEASUREMENT_UNIT_PREFIX")) |>
+        dplyr::left_join(referenceDistribution, by = c(
+            "local_OMOP_CONCEPT_ID" = "local_OMOP_CONCEPT_ID", 
+            "local_REFERENCE_TEST_NAME" = "TEST_NAME", 
+            "local_MEASUREMENT_UNIT_HARMONIZED" = "MEASUREMENT_UNIT", 
+            "local_REFERENCE_UNIT_PREFIX" = "MEASUREMENT_UNIT_PREFIX")
+        ) |> 
         dplyr::mutate(
             n_values = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value != "Missing"])),
             n_values_harmonized = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value == "Source"])),
@@ -442,6 +447,7 @@ processLabDataSummary <- function(pathToCodeCountsLabFolder, pathToUnitFixFile) 
     if (is.null(deciles1) || is.null(deciles2)) {
         return(NULL)
     }
+
     checkmate::assert_tibble(deciles1, min.rows = 9, null.ok = FALSE)
     checkmate::assert_tibble(deciles2, min.rows = 9, null.ok = FALSE)
     checkmate::assert_subset(c("decile", "value"), names(deciles1))
@@ -455,6 +461,10 @@ processLabDataSummary <- function(pathToCodeCountsLabFolder, pathToUnitFixFile) 
     deciles <- deciles1$decile
     v1 <- deciles1$value
     v2 <- deciles2$value
+
+    if (any(is.na(v1)) || any(is.na(v2))) {
+        return(NULL)
+    }
 
     # CDF from deciles
     cdf <- function(x, p, v) {

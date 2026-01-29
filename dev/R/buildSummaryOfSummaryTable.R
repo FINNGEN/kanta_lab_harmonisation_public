@@ -1,11 +1,5 @@
-summaryOfMappingStatus <- function(summary, pathToSummaryOfSummaryTableFile, environment = "development") {
+summaryOfMappingStatus <- function(summary, pathToSummaryOfSummaryTableFile) {
     summary |> checkmate::assert_tibble()
-    environment |> checkmate::assert_choice(c("development", "production"))
-
-    if (environment == "production") {
-        summary <- summary |>
-            mutate()
-    }
 
     toplot <- summary |>
         dplyr::group_by(status) |>
