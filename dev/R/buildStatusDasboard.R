@@ -8,8 +8,6 @@ buildStatusDashboard <- function(summary, pathToDashboardFolder, devMode = FALSE
     pathToDashboardFolder |> checkmate::assertDirectoryExists()
 
     pathToHtmlFile <- file.path(pathToDashboardFolder, "index.html")
-    pathToHtmlFile  <- here::here(pathToHtmlFile)
-
 
     #
     # Function
