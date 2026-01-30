@@ -42,15 +42,20 @@ connection <- DatabaseConnector::connect(
     server = pathToOMOPVocabularyDuckDBfile
 )
 
+pathToUsagiFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv")
+pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion.tsv")
+pathToUnitFixFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "fix_unit_based_in_abbreviation.tsv")
+pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder,"UNITSfi", "UNITSfi.usagi.csv")
+
 validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
-    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv"),
+    pathToUsagiFile,
     connection,
     vocabularyDatabaseSchema,
-    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv"),
+    pathToUsagiFile,
     sourceConceptIdOffset,
-    file.path(pathToVocabularyLabFolder,"UNITSfi", "UNITSfi.usagi.csv"),
-    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion.tsv"),
-    file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion_validated.tsv")
+    pathToValidUnitsFile,
+    pathToUnitConversionFile,
+    pathToUnitFixFile
 )
 
 DatabaseConnector::disconnect(connection)
@@ -61,15 +66,16 @@ DatabaseConnector::disconnect(connection)
 if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     source("dev/R/labDataSummary.R")
     source("dev/R/buildStatusDasboard.R")
+    source("dev/R/buildSummaryTable.R")
 
     message("Creating dashboard")
     dir.create(pathToDashboardFolder, showWarnings = FALSE, recursive = TRUE)
 
     message("Processing lab data summary")
-    summary <- processLabDataSummary(pathToCodeCountsLabFolder, file.path(pathToVocabularyLabFolder,"LABfi_ALL", "fix_unit_based_in_abbreviation.tsv"))
+    summary <- processLabDataSummary(pathToCodeCountsLabFolder, pathToUnitFixFile)
 
     message("Building summary table")
-    buildStatusDashboard(summary, pathToDashboardFolder)
+    buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
 
     #message("Building CSV file")
     #buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))

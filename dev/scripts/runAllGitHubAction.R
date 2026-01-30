@@ -22,13 +22,15 @@ if (is.null(githubWorkspace)) {
     stop("GITHUB_WORKSPACE is not set")
 }
 
+devMode <- TRUE
+
 #
 # Setting environment
 #
 pathToOMOPVocabularyCSVsFolder <- file.path(githubWorkspace, "input_data/input_omop_vocabulary")
 pathToOMOPVocabularyCSVsFolderOutput <- file.path(githubWorkspace, "output_data")
-pathToMappingTablesFolder <- file.path(githubWorkspace, "MAPPING_TABLES")
-pathToValidatedMappingTablesFolder <- file.path(githubWorkspace, "MAPPING_TABLES")
+pathToVocabularyLabFolder <- file.path(githubWorkspace, "VOCABULARIES")
+pathToValidatedVocabularyLabFolder <- file.path(githubWorkspace, "VOCABULARIES")
 pathToCodeCountsLabFolder <- file.path(githubWorkspace, "CODE_COUNTS/databases/LABfi_FinnGenDF13")
 pathToDashboardFolder <- file.path(githubWorkspace, "output_data/public")
 

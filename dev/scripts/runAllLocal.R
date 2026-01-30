@@ -21,6 +21,7 @@ if (library("ROMOPMappingTools", logical.return = TRUE, quietly = TRUE) == FALSE
 #
 # Setting environment
 #
+devMode <- TRUE
 createDashboard <- TRUE
 pathToOMOPVocabularyCSVsFolder <- "../../FinOMOP/OMOP_vocabularies/data/input_omop_vocabulary" # SET TO LOCAL PATH
 pathToOMOPVocabularyCSVsFolderOutput <- tempdir()
@@ -40,9 +41,9 @@ source("dev/SCRIPTS/runAllBase.R")
 browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
-devMode <- TRUE
-pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
-browseURL(pathToHtmlFile)
+# devMode <- TRUE
+# pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
+# browseURL(pathToHtmlFile)
 
 
 
@@ -50,17 +51,17 @@ browseURL(pathToHtmlFile)
 
 
 
-source("dev/R/buildSummaryTable.R")
-devMode <- F
-summaryTable <- .summaryTable(summary , devMode)
-pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
-htmltools::save_html(summaryTable, pathHtmlFile)
-browseURL(pathHtmlFile)
+# source("dev/R/buildSummaryTable.R")
+# devMode <- F
+# summaryTable <- .summaryTable(summary , devMode)
+# pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
+# htmltools::save_html(summaryTable, pathHtmlFile)
+# browseURL(pathHtmlFile)
 
 
 
-source("dev/R/buildSummaryTable.R")
-summaryTable <- .summaryTable(summary  |> filter(local_OMOP_CONCEPT_ID == 3000963) , devMode)
-pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
-htmltools::save_html(summaryTable, pathHtmlFile)
-browseURL(pathHtmlFile)
+# source("dev/R/buildSummaryTable.R")
+# summaryTable <- .summaryTable(summary  |> filter(local_OMOP_CONCEPT_ID == 3000963) , devMode)
+# pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
+# htmltools::save_html(summaryTable, pathHtmlFile)
+# browseURL(pathHtmlFile)
