@@ -28,7 +28,7 @@ pathToOMOPVocabularyCSVsFolderOutput <- tempdir()
 pathToVocabularyLabFolder <- "VOCABULARIES"
 pathToValidatedVocabularyLabFolder <- "VOCABULARIES"
 pathToCodeCountsLabFolder <- "CODE_COUNTS/databases/LABfi_FinnGenDF13"
-pathToDashboardFolder <- "output_data/public"
+pathToDashboardFolder <- here::here("output_data/public")
 
 #
 # Run function
