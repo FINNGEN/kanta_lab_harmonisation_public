@@ -22,7 +22,7 @@ if (is.null(githubWorkspace)) {
     stop("GITHUB_WORKSPACE is not set")
 }
 
-devMode <- TRUE
+devMode <- FALSE
 
 #
 # Setting environment
