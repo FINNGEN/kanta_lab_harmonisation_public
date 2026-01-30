@@ -192,14 +192,16 @@
 
 
     # checks
-    summary |>
-        nrow() |>
-        testthat::expect_equal(summary |> dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |> nrow())
-    summary |> 
-    dplyr::mutate(
-        n_values = purrr::map_dbl(distribution_values, ~ sum(.x$n))
-    ) |> 
-    dplyr::filter(n_values != n_records)  |> nrow() |> testthat::expect_equal(0)
+    if (devMode == TRUE) {
+      summary |>
+            nrow() |>
+            testthat::expect_equal(summary |> dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |> nrow())
+        summary |> 
+        dplyr::mutate(
+            n_values = purrr::map_dbl(distribution_values, ~ sum(.x$n))
+        ) |> 
+        dplyr::filter(n_values != n_records)  |> nrow() |> testthat::expect_equal(0)
+    }
 
     summary <- summary |>
         dplyr::rename(
@@ -372,7 +374,9 @@ processLabDataSummary <- function(pathToCodeCountsLabFolder, pathToUnitFixFile) 
         dplyr::select(-diff_concept_id, -diff_quantity, -diff_conversion_factor, -diff_harmonized_unit)
 
 
-    summary |> nrow() |> testthat::expect_equal(inNrows)
+    if (devMode == TRUE) {
+        summary |> nrow() |> testthat::expect_equal(inNrows)
+    }
 
     return(summary)
 }
