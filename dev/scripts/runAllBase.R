@@ -8,10 +8,6 @@ if (!dir.exists(pathToValidatedVocabularyLabFolder)) {
     dir.create(pathToValidatedVocabularyLabFolder, showWarnings = FALSE, recursive = TRUE)
 }
 
-pathToLabFolder <- file.path(pathToVocabularyLabFolder,"LABfi_ALL")
-pathToUnitsFolder <- file.path(pathToLabFolder, "UNITSfi")
-sourceConceptIdOffset <- 2002400000
-
 # create a temporary copy of the OMOP vocabulary duckdb file
 message("Creating temporary copy of the OMOP vocabulary duckdb file")
 pathToOMOPVocabularyDuckDBfile <- tempfile(fileext = ".duckdb")
@@ -42,20 +38,30 @@ connection <- DatabaseConnector::connect(
     server = pathToOMOPVocabularyDuckDBfile
 )
 
+sourceConceptIdOffset <- 2002400000
 pathToUsagiFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv")
 pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion.tsv")
 pathToUnitFixFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "fix_unit_based_in_abbreviation.tsv")
 pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder,"UNITSfi", "UNITSfi.usagi.csv")
 
+ROMOPMappingTools::updateUsagiFile(
+ pathToUsagiFile,
+  connection,
+  vocabularyDatabaseSchema,
+  pathToUpdatedUsagiFile = pathToUsagiFile,
+  appendOrClearAutoUpdatingInfo = "append",
+  skipValidation = TRUE
+)
+
 validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
-    pathToUsagiFile,
-    connection,
-    vocabularyDatabaseSchema,
-    pathToUsagiFile,
-    sourceConceptIdOffset,
-    pathToValidUnitsFile,
-    pathToUnitConversionFile,
-    pathToUnitFixFile
+  pathToUsagiFile,
+  connection,
+  vocabularyDatabaseSchema,
+  pathToValidatedUsagiFile = pathToUsagiFile,
+  sourceConceptIdOffset,
+  pathToValidUnitsFile = pathToValidUnitsFile,
+  pathToUnitConversionFile = pathToUnitConversionFile,
+  pathToValidatedUnitConversionFile = pathToUnitConversionFile
 )
 
 DatabaseConnector::disconnect(connection)
@@ -72,7 +78,12 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     dir.create(pathToDashboardFolder, showWarnings = FALSE, recursive = TRUE)
 
     message("Processing lab data summary")
-    summary <- processLabDataSummary(pathToCodeCountsLabFolder, pathToUnitFixFile)
+    summary <- processLabDataSummary(
+        pathToCodeCountsLabFolder, 
+        pathToUsagiFile,
+        pathToUnitConversionFile,
+        pathToUnitFixFile
+    )
 
     message("Building summary table")
     buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
