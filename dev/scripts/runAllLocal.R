@@ -65,3 +65,9 @@ browseURL(file.path(pathToDashboardFolder, "index.html"))
 # pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
 # htmltools::save_html(summaryTable, pathHtmlFile)
 # browseURL(pathHtmlFile)
+
+
+# a <- readr::read_csv(pathToUsagiFile, col_types = readr::cols(.default = readr::col_character()), na = "")
+# a |> dplyr::mutate(
+#     conceptId = dplyr::if_else(mappingStatus == "APPROVED" & conceptId==3019069 & stringr::str_detect(sourceCode, "basofii"), '3022096', conceptId)
+# ) |> readr::write_csv(pathToUsagiFile, na = "")
