@@ -224,16 +224,14 @@
 processLabDataSummary <- function(
     pathToCodeCountsLabFolder, 
     pathToUsagiFile,
-    pathToUnitConversionFile,
-    pathToUnitFixFile
+    pathToUnitConversionFile
 ) {
-    pathToLabFolder |> checkmate::assertDirectoryExists()
+pathToCodeCountsLabFolder |> checkmate::assert_directory()
     pathToUsagiFile |> checkmate::assertFileExists()
     pathToUnitConversionFile |> checkmate::assertFileExists()
     pathToUnitFixFile |> checkmate::assertFileExists()
 
-    pathToUnitFixFile  |> names() |> checkmate::assert_names(must_include = c("TEST_NAME_ABBREVIATION", "source_unit_clean", "source_unit_clean_fix"))
-
+   
     # Reading code counts lab folder
     summary <- .readCodeCountsLabFolder(pathToCodeCountsLabFolder)
 
