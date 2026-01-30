@@ -221,18 +221,17 @@
 }
 
 
-processLabDataSummary <- function(pathToCodeCountsLabFolder, pathToUnitFixFile) {
-    pathToLabFolder |> checkmate::assertDirectoryExists()
-    pathToUnitFixFile |> checkmate::assertFileExists()
-
-    pathToUsagiFile <- pathToLabFolder |> file.path("LABfi_ALL.usagi.csv")
-    pathToUnitConversionFile <- pathToLabFolder |> file.path("quantity_source_unit_conversion.tsv")
-    pathToUnitFixFile <- pathToLabFolder |> file.path("fix_unit_based_in_abbreviation.tsv")
-
+processLabDataSummary <- function(
+    pathToCodeCountsLabFolder, 
+    pathToUsagiFile,
+    pathToUnitConversionFile
+) {
+pathToCodeCountsLabFolder |> checkmate::assert_directory()
     pathToUsagiFile |> checkmate::assertFileExists()
     pathToUnitConversionFile |> checkmate::assertFileExists()
     pathToUnitFixFile |> checkmate::assertFileExists()
 
+   
     # Reading code counts lab folder
     summary <- .readCodeCountsLabFolder(pathToCodeCountsLabFolder)
 

@@ -8,10 +8,6 @@ if (!dir.exists(pathToValidatedVocabularyLabFolder)) {
     dir.create(pathToValidatedVocabularyLabFolder, showWarnings = FALSE, recursive = TRUE)
 }
 
-pathToLabFolder <- file.path(pathToVocabularyLabFolder,"LABfi_ALL")
-pathToUnitsFolder <- file.path(pathToLabFolder, "UNITSfi")
-sourceConceptIdOffset <- 2002400000
-
 # create a temporary copy of the OMOP vocabulary duckdb file
 message("Creating temporary copy of the OMOP vocabulary duckdb file")
 pathToOMOPVocabularyDuckDBfile <- tempfile(fileext = ".duckdb")
@@ -42,20 +38,30 @@ connection <- DatabaseConnector::connect(
     server = pathToOMOPVocabularyDuckDBfile
 )
 
-pathToUsagiFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "LABfi_ALL.usagi.csv")
-pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "quantity_source_unit_conversion.tsv")
-pathToUnitFixFile <- file.path(pathToVocabularyLabFolder,"LABfi_ALL", "fix_unit_based_in_abbreviation.tsv")
-pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder,"UNITSfi", "UNITSfi.usagi.csv")
+sourceConceptIdOffset <- 2002400000
+pathToUsagiFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "LABfi_ALL.usagi.csv")
+pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "quantity_source_unit_conversion.tsv")
+pathToUnitFixFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "fix_unit_based_in_abbreviation.tsv")
+pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder, "UNITSfi", "UNITSfi.usagi.csv")
+
+ROMOPMappingTools::updateUsagiFile(
+    pathToUsagiFile,
+    connection,
+    vocabularyDatabaseSchema,
+    pathToUpdatedUsagiFile = pathToUsagiFile,
+    appendOrClearAutoUpdatingInfo = "append",
+    skipValidation = TRUE
+)
 
 validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
     pathToUsagiFile,
     connection,
     vocabularyDatabaseSchema,
-    pathToUsagiFile,
+    pathToValidatedUsagiFile = pathToUsagiFile,
     sourceConceptIdOffset,
-    pathToValidUnitsFile,
-    pathToUnitConversionFile,
-    pathToUnitFixFile
+    pathToValidUnitsFile = pathToValidUnitsFile,
+    pathToUnitConversionFile = pathToUnitConversionFile,
+    pathToValidatedUnitConversionFile = pathToUnitConversionFile
 )
 
 DatabaseConnector::disconnect(connection)
@@ -72,13 +78,17 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     dir.create(pathToDashboardFolder, showWarnings = FALSE, recursive = TRUE)
 
     message("Processing lab data summary")
-    summary <- processLabDataSummary(pathToCodeCountsLabFolder, pathToUnitFixFile)
+    summary <- processLabDataSummary(
+        pathToCodeCountsLabFolder,
+        pathToUsagiFile,
+        pathToUnitConversionFile
+    )
 
     message("Building summary table")
     buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
 
-    #message("Building CSV file")
-    #buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
+    # message("Building CSV file")
+    # buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
 }
 
 message("Building validation status markdown file")
@@ -105,7 +115,3 @@ if (any(validationLogTibble$type == "ERROR")) {
 message("FINAL_STATUS: ", FINAL_STATUS)
 
 writeLines(FINAL_STATUS, "/tmp/FINAL_STATUS.txt")
-
-
-
-
