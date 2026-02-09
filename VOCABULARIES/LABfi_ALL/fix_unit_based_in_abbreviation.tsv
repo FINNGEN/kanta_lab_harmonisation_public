@@ -1,63 +1,171 @@
-TEST_NAME_ABBREVIATION	source_unit_clean	source_unit_clean_fix
-p-tt-inr		inr
-p-tt-inr	form	inr
-u-ph	form	ph
-u-ph		ph
-s-ph		ph
-fs-ph		ph
-ph		ph
-u-ph-o		ph
-vb-ph		ph
-cb-ph		ph
-du-prot	g	g/24h
-du-na	mmol	mmol/24h
-du-kors-v	nmol	nmol/24h
-b-hkr	osuus	ratio
-b-hkr		ratio
-b-erytrosyytit,tilavuusosuus	osuus	ratio
-b-pvk+tkd,hkr	osuus	ratio
-b-retind	osuus	%
-b-erytrosyyttientilavuusosuus	osuus	%
-erytrosyytit,tilavuusosuus	osuus	ratio
-erytrosyytit,tilavuusosuus		ratio
-p-krea		umol/l
-ab-ph		ph
-pt-gfreepi	form	ml/min/173m2
-pt-gfreepi		ml/min/173m2
-u-osmoest	mosm/l	mosm/kgh2o
-u-suhti	g/ml	kg/l
-p-tsh	mlu/l	miu/l
-b-xkoe	form	
-p-inr		inr
-u-suhtih		kg/l
-s-k/l-s-v		ratio
-u-osmole		mosm/kgh2o
-p-crp		mg/l
-fp-krea		umol/l
-p-tromboplastiiniaika,inr-tulostus		inr
-b-crp		mg/l
-du-ca	mmol	mmol/24h
-u-keto-o	l	estimate
-eryt	e6/l	e12/l
-p-uraat	mmol/l	umol/l
-s-uraat	mmol/l	umol/l
-kreatiniini	mmol/l	umol/l
-p-krea	mmol/l	umol/l
-s-krea	mmol/l	umol/l
-u-alb		ug/l
-albumiini	g/l	mg/l
-album	g/l	mg/l
-kol/hdlsuhde		ratio
-kol/hdl-su		ratio
-kol/hdl		ratio
-kolesterolinjahdl-kolest.suhde		ratio
-u-suhti		mg/l
-u-suhteellinentiheys		ratio
-u-ominp-h		ratio
-non-hdl		mmol/l
-p-hb	g/l	mg/l
-p-hb		mg/l
-fp-gluk	nmol/l	mmol/l
-fp-glukoosi	nmol/l	mmol/l
-s-b12-vit		pmol/l
-p-b12-vit		pmol/l
+TEST_NAME_ABBREVIATION	source_unit_clean	source_unit_clean_fix	notes
+p-tt-inr		inr	
+p-tt-inr	form	inr	
+u-ph	form	ph	
+u-ph		ph	
+s-ph		ph	
+fs-ph		ph	
+ph		ph	
+u-ph-o		ph	
+vb-ph		ph	
+cb-ph		ph	
+du-prot	g	g/24h	
+du-na	mmol	mmol/24h	
+du-kors-v	nmol	nmol/24h	
+b-hkr	osuus	ratio	
+b-hkr		ratio	
+b-erytrosyytit,tilavuusosuus	osuus	ratio	
+b-pvk+tkd,hkr	osuus	ratio	
+b-retind	osuus	%	
+b-erytrosyyttientilavuusosuus	osuus	%	
+erytrosyytit,tilavuusosuus	osuus	ratio	
+erytrosyytit,tilavuusosuus		ratio	
+p-krea		umol/l	
+ab-ph		ph	
+pt-gfreepi	form	ml/min/173m2	
+pt-gfreepi		ml/min/173m2	
+u-osmoest	mosm/l	mosm/kgh2o	
+u-suhti	g/ml	kg/l	
+p-tsh	mlu/l	miu/l	
+b-xkoe	form		
+p-inr		inr	
+u-suhtih		kg/l	
+s-k/l-s-v		ratio	
+u-osmole		mosm/kgh2o	
+p-crp		mg/l	
+fp-krea		umol/l	
+p-tromboplastiiniaika,inr-tulostus		inr	
+b-crp		mg/l	
+du-ca	mmol	mmol/24h	
+u-keto-o	l	estimate	
+eryt	e6/l	e12/l	
+p-uraat	mmol/l	umol/l	
+s-uraat	mmol/l	umol/l	
+kreatiniini	mmol/l	umol/l	
+p-krea	mmol/l	umol/l	
+s-krea	mmol/l	umol/l	
+u-alb		ug/l	
+albumiini	g/l	mg/l	
+album	g/l	mg/l	
+kol/hdlsuhde		ratio	
+kol/hdl-su		ratio	
+kol/hdl		ratio	
+kolesterolinjahdl-kolest.suhde		ratio	
+u-suhti		mg/l	
+u-suhteellinentiheys		ratio	
+u-ominp-h		ratio	
+non-hdl		mmol/l	
+p-hb	g/l	mg/l	
+p-hb		mg/l	
+fp-gluk	nmol/l	mmol/l	
+fp-glukoosi	nmol/l	mmol/l	
+s-b12-vit		pmol/l	
+p-b12-vit		pmol/l	
+pt-gfre		ml/min/173m2	
+kol/hdlsuh		ratio	Unitless ratio since it's a ratio between total cholester and HDL
+u-suhti-o		ratio	Unitless ratio since it's a ratio of denities
+b-eryt		e12/l	
+b-leuk		e9/l	
+u-ph.		ph	
+b-hb		g/l	
+u-suhti.		ratio	Unitless ratio since it's a ratio of denities
+-h-ind		index	index
+oma-gluk		mmol/l	
+p-inr-hy		inr	
+pappakmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have
+ntkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have
+hcgbvkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have
+fs-trfesat		ratio	It's ratio. target is % ATM. will flip once unit is injected btw
+-l-ind		index	No harmonized reference data in this OMOP ID
+u-nitr-o		estimate	
+-i-ind		index	No harmonized reference data in this OMOP ID
+u-prot-o		estimate	
+u-leuk-o		estimate	
+oma-crp		mg/l	
+inr-vieri		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place
+u-gluk-o		estimate	
+b-erytrosyytit,tilavuusosuus		ratio	
+p-tromboplastiiniaika,inr-tulos		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place
+oma-p-crp		mg/l	
+crp		mg/l	
+b-hba1c,tk		mmol/mol	For this omop id values in range [40,60] are mmol/mol
+b-la		mm/h	
+snabb-inr		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place
+u-eryt-o		estimate	
+crp,tk		mg/l	
+u-ph-huu		ph	
+fp-kol-ldl		mmol/l	
+p-inr-vt		inr	
+u-keto-o		estimate	
+b-ghb-a1c,tk		%	For this omop id values in range [4,6] are %
+p-ph		ph	
+vp-ph		ph	
+cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID
+crp-pika		mg/l	
+ab-ph(t)		ph	
+l-lymf		%	
+fp-gluk		mmol/l	
+b-inr-pik		inr	
+zb-ph		ph	
+inr-pika		inr	No harmonized reference data in this OMOP ID
+cb-inrc-c		inr	No harmonized reference data in this OMOP ID
+u-gluk-0		estimate	
+b-erybla		e9/l	
+e-mcv		fl	
+u-krea		mmol/l	
+p-psa-suh		ratio	Target unit is %, factor 100x required
+cd4/cd8		ratio	No harmonized reference data
+e-mch		pg	
+p-gluk,tk		mmol/l	
+b-ph		ph	
+p-inr-pika		inr	Distributions differ
+u-kemseul,ph		ph	
+b-crp-o		mg/l	
+p-inr-pi		inr	No harmonized reference data
+l-eos		%	
+b-trom		e9/l	
+ly-cd4/cd8		ratio	No harmonized reference data
+s-apob/a1		ratio	No harmonized reference data
+u-tutk-1,ph		ph	
+u-veri-o		estimate	For this id the concept quantity isPresence or Threshold and we've been using estimate for them
+fp-kol-ind		mmol/l	Manually checked from thl
+p-crp-vt		mg/l	
+b-neut		e9/l	
+b-hba1cvt		mmol/mol	For this omop id values in range [40,60] are mmol/mol
+l-mono		%	
+vp-happamuusaste		ph	Distributions differ
+pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava		ml/min/173m2	Distributions differ
+u-lieriö		e6/l	
+vb-happamuusaste		ph	
+s-mypnabm		estimate	Presence or Threshold --> estimate
+p-gt		u/l	
+pf-ph		ph	
+p-crp-o		mg/l	
+li-igg-ind		ratio	Distributions differ
+l-neutr		%	
+u-ph-hy		ph	
+e-rdw		%	
+u-ph-0		ph	
+cb-phpika		ph	
+p-luakptt		ratio	
+b-crp-vt		mg/l	
+paastoseeruminph		ph	
+hba1c-pika		mmol/mol	For this omop id values in range [40,60] are mmol/mol
+b-hba1c		mmol/mol	For this omop id values in range [40,60] are mmol/mol
+happamuusaste,virtsasta		ph	
+p-gluk-vt		mmol/l	Distributions differ
+pikau-stix,u-ph		ph	
+s-mypnabg		au/ml	
+s-chpnabm		Presence or Threshold	Presence or Threshold --> estimate
+tromboplastiiniaika,inr-tulostus,plasmasta		inr	
+b-ba/abs		e9/l	
+b-ly/abs		e9/l	
+p-crp-hy		mg/l	
+ph,seerumista,osatutk		ph	
+p-gfreepi		ml/min/173m2	Distributions differ
+u-epitel		u/field	
+s-crp-o		mg/l	
+fs-kol-ldl		mmol/l	
+b-hb-vt		g/l	
+fs-kol		mmol/l	
+cb-crp		mg/l	
