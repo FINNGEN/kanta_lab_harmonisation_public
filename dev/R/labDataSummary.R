@@ -36,6 +36,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             MEASUREMENT_UNIT_HARMONIZED = "c",
             omopQuantity = "c",
             CONVERSION_FACTOR = "c",
@@ -54,7 +55,8 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
-            value_source = "c",
+            IS_EXTRACTED = "l",
+            MEASUREMENT_VALUE_TYPE = "c",
             n_subjects = "i",
             n_records = "i"
         ),
@@ -70,6 +72,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             n_subjects = "i",
             n_records = "i",
             decile = "d",
@@ -78,7 +81,7 @@
         ),
         show_col_types = FALSE,
         na = ""
-    )
+    ) 
 
     # Read summaryOutcomes.tsv
     summaryOutcomes <- readr::read_tsv(
@@ -88,6 +91,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             TEST_OUTCOME = "c",
             n_TEST_OUTCOME = "i",
             n_subjects = "i"
