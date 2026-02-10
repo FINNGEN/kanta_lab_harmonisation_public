@@ -38,23 +38,22 @@ p-tromboplastiiniaika,inr-tulostus		inr
 b-crp		mg/l		
 du-ca	mmol	mmol/24h		
 u-keto-o	l	estimate		
-eryt	e6/l	e12/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 p-uraat	mmol/l	umol/l		
 s-uraat	mmol/l	umol/l		
 kreatiniini	mmol/l	umol/l		
 p-krea	mmol/l	umol/l		
 s-krea	mmol/l	umol/l		
-u-alb		ug/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+u-alb		mg/l		
 albumiini	g/l	mg/l		
 album	g/l	mg/l		
-kol/hdlsuhde		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-kol/hdl-su		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-kol/hdl		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-kolesterolinjahdl-kolest.suhde		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-u-suhti		mg/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-u-suhteellinentiheys		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-u-ominp-h		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
-non-hdl		mmol/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+kol/hdlsuh		ratio		
+kol/hdl-su		ratio		
+kol/hdl		ratio		
+kolesterolinjahdl-kolest.suhde		ratio		
+u-suhti		kg/l		
+u-suhteellinentiheys		kg/l		
+u-ominp-h		ratio		
+non-hdl		mmol/l		
 p-hb	g/l	mg/l		
 p-hb		mg/l		
 fp-gluk	nmol/l	mmol/l		
