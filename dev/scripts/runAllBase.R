@@ -86,6 +86,7 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
 
     message("Building summary table")
     # buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
+    summaryTable <- .summaryTable(summary , devMode)
     pathHtmlFile <- file.path(pathToDashboardFolder, "index.html")
     htmltools::save_html(summaryTable, pathHtmlFile)
 
