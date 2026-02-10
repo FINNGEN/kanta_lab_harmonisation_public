@@ -8,6 +8,7 @@ Summary for the kanta `TEST_NAME` + `MEASUREMENT_UNIT` + `MEASUREMENT_UNIT_PREFI
 * `TEST_NAME`: Character,  lab test name
 * `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
+* `IS_EXTRACTED`: Lab Value comes from extracted text
 * `MEASUREMENT_UNIT_HARMONIZED`: Character, lab test unit harmonised unit
 * `omopQuantity`: Character, quantity related to OMOP measurements
 * `CONVERSION_FACTOR`: Character, conversion factors for values to harmonized value
@@ -23,7 +24,8 @@ Value source distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 * `TEST_NAME`: Character, lab test name
 * `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
-* `value_source`: Character, values coming from source or extracted
+* `IS_EXTRACTED`: Lab Value comes from extracted text
+* `MEASUREMENT_VALUE_TYPE`: Character, values coming from source or extracted or QCOut
 * `n_subjects`: Integer, number of subjects (removed if <=5)
 * `n_records`: Integer, number of records
 
@@ -35,6 +37,7 @@ Value distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 * `TEST_NAME`: Character, lab test name
 * `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
+* `IS_EXTRACTED`: Lab Value comes from extracted text
 * `n_subjects`: Integer, number of subjects (removed if <=5)
 * `n_records`: Integer, number of records
 * `decile`: Numeric, decile value
@@ -50,6 +53,7 @@ Outcome distributions for the `TEST_NAME` + `MEASUREMENT_UNIT` pairs
 * `TEST_NAME`: Character, lab test name
 * `MEASUREMENT_UNIT_PREFIX`: Character,  lab test unit pre fixing  
 * `MEASUREMENT_UNIT`: Character, lab test unit
+* `IS_EXTRACTED`: Lab Value comes from extracted text
 * `TEST_OUTCOME`: Character, test outcome
 * `n_TEST_OUTCOME`: Integer, number of test outcomes
 * `n_subjects`: Integer, number of subjects (removed if <=5)

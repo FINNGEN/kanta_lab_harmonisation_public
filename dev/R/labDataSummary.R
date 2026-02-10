@@ -36,6 +36,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             MEASUREMENT_UNIT_HARMONIZED = "c",
             omopQuantity = "c",
             CONVERSION_FACTOR = "c",
@@ -54,7 +55,8 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
-            value_source = "c",
+            IS_EXTRACTED = "l",
+            MEASUREMENT_VALUE_TYPE = "c",
             n_subjects = "i",
             n_records = "i"
         ),
@@ -70,6 +72,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             n_subjects = "i",
             n_records = "i",
             decile = "d",
@@ -78,7 +81,7 @@
         ),
         show_col_types = FALSE,
         na = ""
-    )
+    ) 
 
     # Read summaryOutcomes.tsv
     summaryOutcomes <- readr::read_tsv(
@@ -88,6 +91,7 @@
             TEST_NAME = "c",
             MEASUREMENT_UNIT_PREFIX = "c",
             MEASUREMENT_UNIT = "c",
+            IS_EXTRACTED = "l",
             TEST_OUTCOME = "c",
             n_TEST_OUTCOME = "i",
             n_subjects = "i"
@@ -100,14 +104,14 @@
     # summaryValuesSource
     # - calculate distribution of values
     totalRecords <- summaryTest |>
-        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, n_records)
+        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED, n_records)
     totalValues <- summaryValuesSource |>
-        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
+        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
         dplyr::summarise(n_values = sum(n_records), .groups = "drop")
     missingValues <- totalRecords |>
-        dplyr::left_join(totalValues, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT")) |>
+        dplyr::left_join(totalValues, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED")) |>
         dplyr::transmute(
-            OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT,
+            OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED,
             n_records = dplyr::coalesce(n_records, 0L) - dplyr::coalesce(n_values, 0L)
         ) 
 
@@ -116,15 +120,15 @@
         summaryValuesSource |>
             dplyr::select(-n_subjects),
         missingValues |>
-            dplyr::mutate(value_source = "Missing")
+            dplyr::mutate(MEASUREMENT_VALUE_TYPE = "Missing")
     )
 
     summaryValuesSourceToJoin <- summaryValuesSourceToJoin |>
-        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
-        tidyr::crossing(value_source = summaryValuesSourceToJoin |> dplyr::pull(value_source) |> unique()) |>
-        dplyr::left_join(summaryValuesSourceToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "value_source")) |>
+        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
+        tidyr::crossing(MEASUREMENT_VALUE_TYPE = summaryValuesSourceToJoin |> dplyr::pull(MEASUREMENT_VALUE_TYPE) |> unique()) |>
+        dplyr::left_join(summaryValuesSourceToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "MEASUREMENT_VALUE_TYPE", "IS_EXTRACTED")) |>
         dplyr::mutate(n_records = dplyr::if_else(is.na(n_records), 0L, n_records)) |>
-        dplyr::rename(value = value_source, n = n_records) |>
+        dplyr::rename(value = MEASUREMENT_VALUE_TYPE, n = n_records) |>
         tidyr::nest(distribution_values = c(value, n))
 
 
@@ -132,7 +136,7 @@
     # - calculate distribution of deciles
     summaryValuesA <- summaryValues |>
         dplyr::filter(!is.na(decile_MEASUREMENT_VALUE)) |>
-        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
+        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
         dplyr::summarise(
             decile_MEASUREMENT_VALUE = list(tibble::tibble(
                 decile = decile,
@@ -142,7 +146,7 @@
         )
     summaryValuesB <- summaryValues |>
         dplyr::filter(!is.na(decile_MEASUREMENT_VALUE_HARMONIZED)) |>
-        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
+        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
         dplyr::summarise(
             decile_MEASUREMENT_VALUE_HARMONIZED = list(tibble::tibble(
                 decile = decile,
@@ -150,25 +154,25 @@
             )),
             .groups = "drop"
         )
-    summaryValuesToJoin <- dplyr::left_join(summaryValuesA, summaryValuesB, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT"))
+    summaryValuesToJoin <- dplyr::left_join(summaryValuesA, summaryValuesB, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED"))
 
 
     #
     # summaryOutcomes
     # - calculate distribution of outcomes
     totalRecords <- summaryTest |>
-        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, n_records)
+        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED, n_records)
     totalOutcomes <- summaryOutcomes |>
-        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
+        dplyr::group_by(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
         dplyr::summarise(n_outcomes = sum(n_TEST_OUTCOME), .groups = "drop")
     missingOutcomes <- totalRecords |>
-        dplyr::left_join(totalOutcomes, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT")) |>
+        dplyr::left_join(totalOutcomes, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED")) |>
         dplyr::mutate(
             n_records = dplyr::if_else(is.na(n_records), 0L, n_records),
             n_outcomes = dplyr::if_else(is.na(n_outcomes), 0L, n_outcomes),
             n_missing = n_records - n_outcomes
         ) |>
-        dplyr::select(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, n_TEST_OUTCOME = n_missing)
+        dplyr::select(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED, n_TEST_OUTCOME = n_missing)
 
     summaryOutcomesToJoin <- dplyr::bind_rows(
         summaryOutcomes |>
@@ -177,26 +181,26 @@
             dplyr::mutate(TEST_OUTCOME = "NA")
     )
     summaryOutcomesToJoin <- summaryOutcomesToJoin |>
-        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |>
+        dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |>
         tidyr::crossing(TEST_OUTCOME = summaryOutcomesToJoin |> dplyr::pull(TEST_OUTCOME) |> unique()) |>
-        dplyr::left_join(summaryOutcomesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "TEST_OUTCOME")) |>
+        dplyr::left_join(summaryOutcomesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "TEST_OUTCOME", "IS_EXTRACTED")) |>
         dplyr::mutate(n_TEST_OUTCOME = dplyr::if_else(is.na(n_TEST_OUTCOME), 0L, n_TEST_OUTCOME)) |>
         dplyr::rename(value = TEST_OUTCOME, n = n_TEST_OUTCOME) |>
         tidyr::nest(distribution_outcomes = c(value, n))
 
 
     summary <- summaryTest |>
-        dplyr::left_join(summaryValuesSourceToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT")) |>
-        dplyr::left_join(summaryValuesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT")) |>
-        dplyr::left_join(summaryOutcomesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT"))
+        dplyr::left_join(summaryValuesSourceToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED")) |>
+        dplyr::left_join(summaryValuesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED")) |>
+        dplyr::left_join(summaryOutcomesToJoin, by = c("OMOP_CONCEPT_ID", "TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "MEASUREMENT_UNIT", "IS_EXTRACTED"))
 
 
     # checks
     if (devMode == TRUE) {
       summary |>
             nrow() |>
-            testthat::expect_equal(summary |> dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT) |> nrow())
-        summary |> 
+            testthat::expect_equal(summary |> dplyr::distinct(OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT_PREFIX, MEASUREMENT_UNIT, IS_EXTRACTED) |> nrow())
+      summary |> 
         dplyr::mutate(
             n_values = purrr::map_dbl(distribution_values, ~ sum(.x$n))
         ) |> 
@@ -208,15 +212,13 @@
             remote_OMOP_CONCEPT_ID = OMOP_CONCEPT_ID,
             TEST_NAME = TEST_NAME,
             MEASUREMENT_UNIT_PREFIX = MEASUREMENT_UNIT_PREFIX,
-            MEASUREMENT_UNIT = MEASUREMENT_UNIT,
+            IS_EXTRACTED = IS_EXTRACTED,
+            remote_MEASUREMENT_UNIT = MEASUREMENT_UNIT,
             remote_MEASUREMENT_UNIT_HARMONIZED = MEASUREMENT_UNIT_HARMONIZED,
             remote_OMOP_QUANTITY = omopQuantity,
             remote_CONVERSION_FACTOR = CONVERSION_FACTOR, 
             remote_decile_MEASUREMENT_VALUE_HARMONIZED = decile_MEASUREMENT_VALUE_HARMONIZED
-        ) |>
-        dplyr::mutate(
-            remote_REFERENCE_TEST_NAME = ""
-        )
+        ) 
     return(summary)
 }
 
@@ -238,27 +240,28 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
     inNrows <- summary |> nrow()
 
     # Append unit fix info
-    # unitFixTibble <- readr::read_tsv(pathToUnitFixFile, col_types = readr::cols(
-    #     TEST_NAME_ABBREVIATION = "c",
-    #     source_unit_clean = "c",
-    #     source_unit_clean_fix = "c"
-    # )) |> dplyr::rename(
-    #     TEST_NAME = TEST_NAME_ABBREVIATION,
-    #     MEASUREMENT_UNIT_PREFIX = source_unit_clean,
-    #     local_MEASUREMENT_UNIT = source_unit_clean_fix
-    # )
-    #
-    # summary <- summary |>
-    #     dplyr::left_join(unitFixTibble, by = c("TEST_NAME", "MEASUREMENT_UNIT_PREFIX")) |>
-    #     dplyr::mutate(
-    #         local_MEASUREMENT_UNIT = dplyr::if_else(is.na(local_MEASUREMENT_UNIT), MEASUREMENT_UNIT_PREFIX, local_MEASUREMENT_UNIT)
-    #     )
+    unitFixTibble <- readr::read_tsv(pathToUnitFixFile, col_types = readr::cols(
+        TEST_NAME_ABBREVIATION = "c",
+        source_unit_clean = "c",
+        source_unit_clean_fix = "c"
+    )) |> dplyr::transmute(
+        TEST_NAME = TEST_NAME_ABBREVIATION,
+        MEASUREMENT_UNIT_PREFIX = source_unit_clean,
+        IS_EXTRACTED = FALSE,
+        local_MEASUREMENT_UNIT = source_unit_clean_fix
+    )
+    
+    summary <- summary |>
+        dplyr::left_join(unitFixTibble, by = c("TEST_NAME", "MEASUREMENT_UNIT_PREFIX", "IS_EXTRACTED")) |>
+        dplyr::mutate(
+            local_MEASUREMENT_UNIT = dplyr::if_else(is.na(local_MEASUREMENT_UNIT), MEASUREMENT_UNIT_PREFIX, local_MEASUREMENT_UNIT)
+        )
 
     # Append usagi info
     usagiTibble <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |>
         dplyr::select(
             TEST_NAME = `ADD_INFO:testNameAbbreviation`,
-            MEASUREMENT_UNIT = `ADD_INFO:measurementUnit`,
+            local_MEASUREMENT_UNIT = `ADD_INFO:measurementUnit`,
             local_OMOP_CONCEPT_ID = conceptId,
             local_OMOP_CONCEPT_NAME = conceptName,
             local_OMOP_QUANTITY = `ADD_INFO:omopQuantity`,
@@ -266,10 +269,10 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
             mappingStatus = mappingStatus,
             ignoreReason = `ADD_INFO:ignoreReason`
         ) |>
-        dplyr::distinct(TEST_NAME, MEASUREMENT_UNIT, .keep_all = TRUE)
+        dplyr::distinct(TEST_NAME, local_MEASUREMENT_UNIT, .keep_all = TRUE)
 
     summary <- summary |>
-        dplyr::left_join(usagiTibble, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
+        dplyr::left_join(usagiTibble, by = c("TEST_NAME", "local_MEASUREMENT_UNIT")) |>
         dplyr::mutate(
             status = dplyr::case_when(
                 mappingStatus == "APPROVED" ~ "APPROVED",
@@ -284,53 +287,44 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
     # Calculate the local_MEASUREMENT_UNIT_HARMONIZED 
     mostCommonUnitPerConceptId <- summary |>
         dplyr::filter(status == "APPROVED") |>
-        dplyr::filter(!is.na(MEASUREMENT_UNIT)) |>
-        dplyr::group_by(local_OMOP_CONCEPT_ID, MEASUREMENT_UNIT) |>
+        dplyr::filter(!is.na(local_MEASUREMENT_UNIT)) |>
+        dplyr::group_by(local_OMOP_CONCEPT_ID, local_MEASUREMENT_UNIT) |>
         dplyr::summarise(n_records = sum(n_records), .groups = "drop") |>
         dplyr::arrange(dplyr::desc(n_records)) |>
         dplyr::distinct(local_OMOP_CONCEPT_ID, .keep_all = TRUE) |>
         dplyr::transmute(
             local_OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
-            local_MEASUREMENT_UNIT_HARMONIZED = MEASUREMENT_UNIT
+            local_MEASUREMENT_UNIT_HARMONIZED = local_MEASUREMENT_UNIT
         )
 
     summary <- summary |>
         dplyr::left_join(mostCommonUnitPerConceptId, by = c("local_OMOP_CONCEPT_ID"))
     
-    # calculate local_REFERENCE_TEST_NAME and local_REFERENCE_UNIT_PREFIX
-    referenceDistribution <- summary |>
-        dplyr::filter(status == "APPROVED") |>
-        dplyr::filter(!is.na(MEASUREMENT_UNIT)) |>
-        dplyr::arrange(dplyr::desc(n_records)) |>
-        dplyr::distinct(local_OMOP_CONCEPT_ID, .keep_all = TRUE) |>
-        dplyr::transmute(
-            local_OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
-            local_REFERENCE_TEST_NAME = TEST_NAME,
-            local_REFERENCE_UNIT_PREFIX = MEASUREMENT_UNIT_PREFIX
-        )
-
-    summary <- summary |>
-        dplyr::left_join(referenceDistribution, by = c("local_OMOP_CONCEPT_ID"))
-
     # Calculate conversion factor and harmonize unit
     quantityConversionTibble <- ROMOPMappingTools::readUnitConversionFile(pathToUnitConversionFile) |> 
-    # tmp
+    # TEMP
     dplyr::filter(!is.na(source_unit_valid) & !is.na(to_source_unit_valid)) |>
-    # end tmp
+    # end TEMP
         dplyr::rename(
             local_OMOP_QUANTITY = omop_quantity,
-            MEASUREMENT_UNIT = source_unit_valid,
+            local_MEASUREMENT_UNIT = source_unit_valid,
             local_MEASUREMENT_UNIT_HARMONIZED = to_source_unit_valid,
             local_CONVERSION_FACTOR = conversion
         ) |>
         dplyr::select(-validation_messages)
 
     summary <- summary |>
-        dplyr::left_join(quantityConversionTibble, by = c("local_OMOP_QUANTITY", "MEASUREMENT_UNIT", "local_MEASUREMENT_UNIT_HARMONIZED")) |>
+        dplyr::left_join(quantityConversionTibble, by = c("local_OMOP_QUANTITY", "local_MEASUREMENT_UNIT", "local_MEASUREMENT_UNIT_HARMONIZED")) |>
         dplyr::mutate(
             local_CONVERSION_FACTOR = dplyr::if_else(!is.na(only_to_omop_concepts) & only_to_omop_concepts != local_OMOP_CONCEPT_ID, NA_character_, local_CONVERSION_FACTOR),
-            local_MEASUREMENT_UNIT_HARMONIZED_target = dplyr::if_else(is.na(MEASUREMENT_UNIT) , NA_character_, local_MEASUREMENT_UNIT_HARMONIZED), 
+            local_MEASUREMENT_UNIT_HARMONIZED_target = dplyr::if_else(is.na(local_MEASUREMENT_UNIT) , NA_character_, local_MEASUREMENT_UNIT_HARMONIZED), 
             local_MEASUREMENT_UNIT_HARMONIZED = dplyr::if_else(is.na(local_CONVERSION_FACTOR), NA_character_, local_MEASUREMENT_UNIT_HARMONIZED)
+        ) |> 
+    # Pietro not apply if not values 
+        dplyr::mutate(
+            allMissing = purrr::map_lgl(distribution_values, ~{ .x |> dplyr::filter(value == "Missing") |> dplyr::pull(n) == .x |> dplyr::pull(n) |> sum()}),
+            local_CONVERSION_FACTOR = dplyr::if_else(allMissing, NA_character_, local_CONVERSION_FACTOR),
+            local_MEASUREMENT_UNIT_HARMONIZED = dplyr::if_else(allMissing, NA_character_, local_MEASUREMENT_UNIT_HARMONIZED)
         )
 
     # calculate local_decile_MEASUREMENT_VALUE_HARMONIZED
@@ -359,6 +353,7 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
     # Calculate Differences between remote and local
     summary <- summary |>
         dplyr::mutate(
+            diff_measurement_unit = dplyr::if_else(status == "APPROVED" & dplyr::coalesce(remote_MEASUREMENT_UNIT, "") != dplyr::coalesce(local_MEASUREMENT_UNIT, ""), paste0("Unit: ", remote_MEASUREMENT_UNIT), NA_character_),
             diff_concept_id = dplyr::if_else(status == "APPROVED" & local_OMOP_CONCEPT_ID != remote_OMOP_CONCEPT_ID, paste0("Concept ID: ", remote_OMOP_CONCEPT_ID), NA_character_),
             diff_quantity = dplyr::if_else(status == "APPROVED" & dplyr::coalesce(local_OMOP_QUANTITY, "") != dplyr::coalesce(remote_OMOP_QUANTITY, ""), paste0("Quantity: ", remote_OMOP_QUANTITY), NA_character_),
             diff_conversion_factor = dplyr::if_else(status == "APPROVED" & dplyr::coalesce(local_CONVERSION_FACTOR, "") != dplyr::coalesce(remote_CONVERSION_FACTOR, ""), paste0("Conversion Factor: ", remote_CONVERSION_FACTOR), NA_character_),
@@ -384,21 +379,28 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
 .calcualteKStest <- function(summary) {
     summary |> checkmate::assert_tibble()
 
-    referenceConcepts <- summary |>
-        dplyr::filter(!is.na(local_OMOP_CONCEPT_ID) & !is.na(local_REFERENCE_TEST_NAME) & !is.na(local_MEASUREMENT_UNIT_HARMONIZED)) |>
-        dplyr::distinct(local_OMOP_CONCEPT_ID, local_REFERENCE_TEST_NAME, local_MEASUREMENT_UNIT_HARMONIZED, local_REFERENCE_UNIT_PREFIX)
+    # calculate local_REFERENCE_rowID
+    summary <- summary  |> 
+        dplyr::mutate(rowId = dplyr::row_number())
 
-    # keys to join are local_OMOP_CONCEPT_ID, TEST_NAME, MEASUREMENT_UNIT, MEASUREMENT_UNIT_PREFIX
-    referenceDistribution <- summary |>
-        dplyr::semi_join(
-            referenceConcepts,
-            by = c("local_OMOP_CONCEPT_ID", "TEST_NAME" = "local_REFERENCE_TEST_NAME", "MEASUREMENT_UNIT" = "local_MEASUREMENT_UNIT_HARMONIZED", "MEASUREMENT_UNIT_PREFIX" = "local_REFERENCE_UNIT_PREFIX")
-        ) |>
+    referenceRowId <- summary |>
+        dplyr::filter(status == "APPROVED") |>
+        dplyr::filter(!is.na(local_MEASUREMENT_UNIT)) |>
+        dplyr::arrange(dplyr::desc(n_records)) |>
+        dplyr::distinct(local_OMOP_CONCEPT_ID, .keep_all = TRUE) |>
         dplyr::transmute(
-            local_OMOP_CONCEPT_ID,
-            TEST_NAME,
-            MEASUREMENT_UNIT,
-            MEASUREMENT_UNIT_PREFIX,
+            local_OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
+            local_REFERENCE_rowID = rowId
+        )
+    
+    summary <- summary |>
+        dplyr::left_join(referenceRowId, by = c("local_OMOP_CONCEPT_ID"))
+
+    # keys to join are local_OMOP_CONCEPT_ID, TEST_NAME, local_MEASUREMENT_UNIT, MEASUREMENT_UNIT_PREFIX
+    referenceDistribution <- summary |>
+        dplyr::filter( rowId %in% referenceRowId$local_REFERENCE_rowID) |>
+        dplyr::transmute(
+            local_REFERENCE_rowID = rowId,
             #
             decile_MEASUREMENT_VALUE_reference = decile_MEASUREMENT_VALUE,
             local_decile_MEASUREMENT_VALUE_HARMONIZED_reference = local_decile_MEASUREMENT_VALUE_HARMONIZED, 
@@ -409,12 +411,7 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
 
     # calculate KS test for each OMOP_CONCEPT_ID
     summary <- summary |>
-        dplyr::left_join(referenceDistribution, by = c(
-            "local_OMOP_CONCEPT_ID" = "local_OMOP_CONCEPT_ID", 
-            "local_REFERENCE_TEST_NAME" = "TEST_NAME", 
-            "local_MEASUREMENT_UNIT_HARMONIZED" = "MEASUREMENT_UNIT", 
-            "local_REFERENCE_UNIT_PREFIX" = "MEASUREMENT_UNIT_PREFIX")
-        ) |> 
+        dplyr::left_join(referenceDistribution, by = c("local_REFERENCE_rowID")) |>
         dplyr::mutate(
             n_values = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value != "Missing"])),
             n_values_harmonized = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value == "Source"])),

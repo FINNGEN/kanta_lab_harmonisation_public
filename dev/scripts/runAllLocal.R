@@ -22,7 +22,7 @@ if (library("ROMOPMappingTools", logical.return = TRUE, quietly = TRUE) == FALSE
 # Setting environment
 #
 devMode <- FALSE
-createDashboard <- FALSE
+createDashboard <- TRUE
 pathToOMOPVocabularyCSVsFolder <- "../../FinOMOP/OMOP_vocabularies/data/input_omop_vocabulary" # SET TO LOCAL PATH
 pathToOMOPVocabularyCSVsFolderOutput <- tempdir()
 pathToVocabularyLabFolder <- "VOCABULARIES"
@@ -41,9 +41,9 @@ source("dev/SCRIPTS/runAllBase.R")
 browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
-# devMode <- TRUE
-# pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
-# browseURL(pathToHtmlFile)
+devMode <- TRUE
+pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
+browseURL(pathToHtmlFile)
 
 
 
