@@ -5,7 +5,11 @@
 #
 
 if (!dir.exists(pathToValidatedVocabularyLabFolder)) {
-    dir.create(pathToValidatedVocabularyLabFolder, showWarnings = FALSE, recursive = TRUE)
+    dir.create(
+        pathToValidatedVocabularyLabFolder,
+        showWarnings = FALSE,
+        recursive = TRUE
+    )
 }
 
 # create a temporary copy of the OMOP vocabulary duckdb file
@@ -39,10 +43,26 @@ connection <- DatabaseConnector::connect(
 )
 
 sourceConceptIdOffset <- 2002400000
-pathToUsagiFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "LABfi_ALL.usagi.csv")
-pathToUnitConversionFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "quantity_source_unit_conversion.tsv")
-pathToUnitFixFile <- file.path(pathToVocabularyLabFolder, "LABfi_ALL", "fix_unit_based_in_abbreviation.tsv")
-pathToValidUnitsFile <- file.path(pathToVocabularyLabFolder, "UNITSfi", "UNITSfi.usagi.csv")
+pathToUsagiFile <- file.path(
+    pathToVocabularyLabFolder,
+    "LABfi_ALL",
+    "LABfi_ALL.usagi.csv"
+)
+pathToUnitConversionFile <- file.path(
+    pathToVocabularyLabFolder,
+    "LABfi_ALL",
+    "quantity_source_unit_conversion.tsv"
+)
+pathToUnitFixFile <- file.path(
+    pathToVocabularyLabFolder,
+    "LABfi_ALL",
+    "fix_unit_based_in_abbreviation.tsv"
+)
+pathToValidUnitsFile <- file.path(
+    pathToVocabularyLabFolder,
+    "UNITSfi",
+    "UNITSfi.usagi.csv"
+)
 
 ROMOPMappingTools::updateUsagiFile(
     pathToUsagiFile,
@@ -64,11 +84,27 @@ validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
     pathToValidatedUnitConversionFile = pathToUnitConversionFile
 )
 
-# usagiFile <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |> 
-#     dplyr::transmute(
-#         test_name = `ADD_INFO:testNameAbbreviation`,
-#         measurement_unit = `ADD_INFO:measurementUnit`
-#     ) |> dplyr::distinct()
+
+
+
+# TEMP; validate fix unit file
+fixUnitTibble <- ROMOPMappingTools::readFixUnitFile(pathToUnitFixFile)
+
+validNameUnitsTibble <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |>
+    dplyr::transmute(
+        test_name = `ADD_INFO:testNameAbbreviation`,
+        measurement_unit = `ADD_INFO:measurementUnit`
+    ) |>
+    dplyr::distinct()
+
+result <- ROMOPMappingTools::validateFixUnitTibble(
+    fixUnitTibble,
+    validNameUnitsTibble 
+)
+
+result$fixUnitTibble |> readr::write_tsv(pathToUnitFixFile, na = "")
+validationLogTibble <- dplyr::bind_rows(validationLogTibble, result$validationLogR6$logTibble)
+# END TEMP
 
 DatabaseConnector::disconnect(connection)
 
@@ -92,7 +128,7 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
 
     message("Building summary table")
     # buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
-    summaryTable <- .summaryTable(summary , devMode)
+    summaryTable <- .summaryTable(summary, devMode)
     pathHtmlFile <- file.path(pathToDashboardFolder, "index.html")
     htmltools::save_html(summaryTable, pathHtmlFile)
 
@@ -107,7 +143,10 @@ validationLogTibble <- validationLogTibble |>
 
 ROMOPMappingTools::buildValidationStatusMd(
     validationLogTibble = validationLogTibble,
-    pathToValidationStatusMdFile = file.path(pathToVocabularyLabFolder, "VOCABULARIES_VALIDATION_STATUS.md")
+    pathToValidationStatusMdFile = file.path(
+        pathToVocabularyLabFolder,
+        "VOCABULARIES_VALIDATION_STATUS.md"
+    )
 )
 
 #
