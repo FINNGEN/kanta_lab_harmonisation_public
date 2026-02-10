@@ -1,0 +1,234 @@
+TEST_NAME;ORIGINAL_NAME;MEASUREMENT_UNIT;CATEGORY;REASON;HAD_LEADING_DASH;ENGLISH_TRANSLATION
+ottotapa;ottotapa;NA;Administrative;Non-test metadata/admin field;N;taking
+rakkoaika;rakkoaika;h;Patient_Metadata;Patient characteristic/vital sign;N;"bladder; time"
+pt-näytteenottomaksu(oletus);pt-näytteenottomaksu(oletus);NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; default; collection/taking; fee/payment; sample; own/self"
+nlaatu;nlaatu;NA;Administrative;Non-test metadata/admin field;N;quality
+otettujenpurkkien/putkienlkm;otettujenpurkkien/putkienlkm;NA;Sample_Handling;Sample collection/processing code;N;"taken; container/jar; tube; count/number"
+linkkiweblabiin;linkkiweblabiin;NA;Administrative;Non-test metadata/admin field;N;"link; web lab"
+poikkeavalämpötila;poikkeavalämpötila;C;Patient_Metadata;Patient characteristic/vital sign;N;"temperature; abnormal/deviant"
+vb-temp;vb-temp;C;Patient_Metadata;Patient characteristic/vital sign;N;"[Venous blood]; temperature"
+sydäninfarktiriski;sydäninfarktiriski;NA;Risk_Score;Calculated risk index, not measured;N;"heart attack; risk"
+tyypin2diabetesriski;tyypin2diabetesriski;NA;Risk_Score;Calculated risk index, not measured;N;diabetes risk
+krooninenmunuaistenvajaatoimintariski;krooninenmunuaistenvajaatoimintariski;NA;Risk_Score;Calculated risk index, not measured;N;"kidney failure; chronic; risk"
+keuhkosyöpäriski(tupakoivilla);keuhkosyöpäriski(tupakoivilla);NA;Risk_Score;Calculated risk index, not measured;N;"lung cancer; risk"
+keuhkoahtaumatautiriski(tupakoivilla);keuhkoahtaumatautiriski(tupakoivilla);NA;Risk_Score;Calculated risk index, not measured;N;"COPD; risk"
+alkoholimaksasairausriski;alkoholimaksasairausriski;NA;Risk_Score;Calculated risk index, not measured;N;"alcohol; liver; risk"
+sydän-javerisuonitautiriski;sydän-javerisuonitautiriski;NA;Risk_Score;Calculated risk index, not measured;N;"vascular disease; heart; risk"
+tark2b;tark2b;NA;Screening_Package;Bundled test package;N;check
+maksanfibroosijakirroosiriski;maksanfibroosijakirroosiriski;NA;Risk_Score;Calculated risk index, not measured;N;"cirrhosis; liver; risk"
+u-menetel;u-menetel;NA;Administrative;Non-test metadata/admin field;N;"[Urine]; method"
+pt-nottono;pt-nottono;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; collection/taking"
+lisävast;lisävast;NA;Administrative;Non-test metadata/admin field;N;additional
+pt-meeting;pt-meeting;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+pt-ekg-24h;pt-ekg-24h;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+pt-kiire;pt-kiire;NA;Administrative;Non-test metadata/admin field;N;"[Procedure]; urgent/rush"
+pt-lisälau;pt-lisälau;NA;Administrative;Non-test metadata/admin field;N;"[Procedure]; additional"
+pt-enmg-2;pt-enmg-2;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; EMG"
+neuvola1;neuvola1;NA;Screening_Package;Bundled test package;N;prenatal clinic
+ts-padendo;ts-padendo;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+näyt.ot.;näyt.ot.;NA;Sample_Handling;Sample collection/processing code;N;sample
+ras.aika;ras.aika;NA;Patient_Metadata;Patient characteristic/vital sign;N;"time; pregnancy"
+ekg,12kytkentäälevossa(asi;ekg,12kytkentäälevossa(asi;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-notto3;pt-notto3;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; collection/taking"
+tark2b(eipaasto);tark2b(eipaasto);NA;Screening_Package;Bundled test package;N;check
+ts-padkolp;ts-padkolp;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; cholesterol; pathology"
+muut;muut;%;Administrative;Non-test metadata/admin field;N;other
+pt-pef-pa;pt-pef-pa;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+na;na;NA;Administrative;Non-test metadata/admin field;N;
+sprv-lelau;sprv-lelau;NA;Pathology;Histology/pathology procedure;N;
+näytt.otto;näytt.otto;NA;Sample_Handling;Sample collection/processing code;N;"sample; taking"
+perustutkimus,esitiedot;perustutkimus,esitiedot;NA;Administrative;Non-test metadata/admin field;N;"preliminary info; examination/test; basic"
+ekg,12kytkentäälevossa;ekg,12kytkentäälevossa;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-näysaap;pt-näysaap;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; arrival"
+raskauksienmäärä,g;raskauksienmäärä,g;NA;Patient_Metadata;Patient characteristic/vital sign;N;"amount/quantity; pregnancy"
+ts-pad-bio;ts-pad-bio;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ts-pad-pnb;ts-pad-pnb;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+oma-inr;oma-inr;NA;Self_Measurement;Patient home/self-test;N;"own/self; INR"
+oma-p-gluk;oma-p-gluk;NA;Self_Measurement;Patient home/self-test;N;"glucose; own/self"
+oma-hb;oma-hb;NA;Self_Measurement;Patient home/self-test;N;"own/self; hemoglobin"
+synnytystenmäärä,p;synnytystenmäärä,p;NA;Patient_Metadata;Patient characteristic/vital sign;N;"delivery/birth; amount/quantity"
+pt-kt/v1;pt-kt/v1;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+pt-notto4;pt-notto4;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; collection/taking"
+pt-rr;pt-rr;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+sprv-laus;sprv-laus;NA;Pathology;Histology/pathology procedure;N;statement
+näyt.otto;näyt.otto;NA;Sample_Handling;Sample collection/processing code;N;"sample; taking"
+br-pad-4;br-pad-4;NA;Pathology;Histology/pathology procedure;N;"[Breast]; pathology"
+ts-pad-5;ts-pad-5;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+pt-näytteenotto,normaali;pt-näytteenotto,normaali;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; normal; collection/taking; sample"
+pt-dcosb1;pt-dcosb1;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+ts-värj;ts-värj;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; staining"
+ts-pad-4tu;ts-pad-4tu;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+pt-ekg-mon;pt-ekg-mon;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+ug-pad-4;ug-pad-4;NA;Pathology;Histology/pathology procedure;N;"[Urogenital]; pathology"
+aika/ed.virt;aika/ed.virt;h;Patient_Metadata;Patient characteristic/vital sign;N;"time; urine"
+pika-inr;pika-inr;NA;POCT;Point-of-care rapid test;N;"quick/rapid; INR"
+pt-enmg-3;pt-enmg-3;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; EMG"
+sk-pad-if;sk-pad-if;NA;Pathology;Histology/pathology procedure;N;"[Skin]; pathology"
+nlt;nlt;%;Administrative;Non-test metadata/admin field;N;neutrophil to lymphocyte %?
+tark2;tark2;NA;Screening_Package;Bundled test package;N;check
+oma-ghb-a1c;oma-ghb-a1c;NA;Self_Measurement;Patient home/self-test;N;"own/self; hemoglobin; growth hormone"
+gi-pad-4;gi-pad-4;NA;Pathology;Histology/pathology procedure;N;"[GI tract]; pathology"
+pt-ekg,sisältäätietokoneanalyysin;pt-ekg,sisältäätietokoneanalyysin;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; analysis; ECG/EKG"
+pituus(cm);pituus(cm);NA;Patient_Metadata;Patient characteristic/vital sign;N;height
+notto;notto;NA;Sample_Handling;Sample collection/processing code;N;collection/taking
+kiirelisä;kiirelisä;NA;Administrative;Non-test metadata/admin field;N;"urgent/rush; additional"
+oma-hba1c;oma-hba1c;NA;Self_Measurement;Patient home/self-test;N;"own/self; hemoglobin"
+ts-pad-1co;ts-pad-1co;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ekg-12;ekg-12;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+cp-glukoosi,ihopistosn,vieritestihoitoyksikössä;cp-glukoosi,ihopistosn,vieritestihoitoyksikössä;NA;POCT;Point-of-care rapid test;N;"[Capillary]; glucose; care/treatment; bedside/point-of-care; skin"
+pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus;pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; capacity; standard; diffusion; method; measurement"
+nottopkl;nottopkl;NA;Sample_Handling;Sample collection/processing code;N;collection/taking
+down-riski;down-riski;NA;Risk_Score;Calculated risk index, not measured;N;"risk; Down syndrome"
+t18-riski;t18-riski;NA;Risk_Score;Calculated risk index, not measured;N;"risk; trisomy 18"
+kudosnäytteenhistologinentutkimus,pienikudosnäyte;kudosnäytteenhistologinentutkimus,pienikudosnäyte;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample; tissue; small"
+pt-ekg-48l;pt-ekg-48l;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+pt-ekg-tk;pt-ekg-tk;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+pt-ekg,12kytkentäälevossa,omarekisteröintimuseen;pt-ekg,12kytkentäälevossa,omarekisteröintimuseen;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; own/self; lymph; ECG/EKG"
+ts-padmakr;ts-padmakr;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ts-kudosnäytteenhistol.tutk.(1-3näyt.);ts-kudosnäytteenhistol.tutk.(1-3näyt.);NA;Pathology;Histology/pathology procedure;N;"[Tissue]; tissue; sample; test; histology"
+ts-kudosnäytteenhistologinentutkimus,pieni;ts-kudosnäytteenhistologinentutkimus,pieni;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; tissue; small; sample"
+pt-ekg12os;pt-ekg12os;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+paino;paino;kg;Patient_Metadata;Patient characteristic/vital sign;N;weight
+näyte;näyte;NA;Sample_Handling;Sample collection/processing code;N;sample
+painonmuutoskg;painonmuutoskg;kg;Patient_Metadata;Patient characteristic/vital sign;N;"weight; other"
+pt-ekg-6tk;pt-ekg-6tk;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+oma-u-tutk,u-ph;oma-u-tutk,u-ph;NA;Self_Measurement;Patient home/self-test;N;"test; own/self; pH"
+ekg(päiv.hoitaja);ekg(päiv.hoitaja);NA;Procedure;Diagnostic procedure, not lab test;N;"emergency; ECG/EKG"
+oma-u-tutk;oma-u-tutk;NA;Self_Measurement;Patient home/self-test;N;"test; own/self"
+pt-kt/v;pt-kt/v;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+oma-p-tnt;oma-p-tnt;NA;Self_Measurement;Patient home/self-test;N;"own/self; troponin T"
+ekg-12kytkentäälevossa;ekg-12kytkentäälevossa;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-dcosb-x;pt-dcosb-x;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+ekg,12kytkentäälevossa(asiakkaanottama);ekg,12kytkentäälevossa(asiakkaanottama);NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pituus;pituus;cm;Patient_Metadata;Patient characteristic/vital sign;N;height
+oma-crp-pi;oma-crp-pi;NA;Self_Measurement;Patient home/self-test;N;"own/self; CRP"
+painonmitt;painonmitt;kg;Patient_Metadata;Patient characteristic/vital sign;N;weight
+pt-ekg,tk;pt-ekg,tk;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+oma-crp-pika;oma-crp-pika;NA;Self_Measurement;Patient home/self-test;N;"quick/rapid; own/self; CRP"
+ekg;ekg;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+oma-ghb-a1;oma-ghb-a1;NA;Self_Measurement;Patient home/self-test;N;"own/self; hemoglobin; growth hormone"
+tark1;tark1;NA;Screening_Package;Bundled test package;N;check
+ts-pad-1tu;ts-pad-1tu;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä;cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä;mg/l;POCT;Point-of-care rapid test;N;"[Capillary]; C-reactive; protein; care/treatment; skin"
+pt-ekg-os;pt-ekg-os;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+nottoverikoe;nottoverikoe;NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; blood"
+oma-ghba1c;oma-ghba1c;NA;Self_Measurement;Patient home/self-test;N;"own/self; hemoglobin; growth hormone"
+nottocovid;nottocovid;NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; COVID"
+gyn.notto;gyn.notto;NA;Sample_Handling;Sample collection/processing code;N;collection/taking
+ts-gastroskopianäytteidenhistologinentutkimus;ts-gastroskopianäytteidenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; sample"
+oma-fp-gluk;oma-fp-gluk;NA;Self_Measurement;Patient home/self-test;N;"glucose; own/self"
+pt-ekg15;pt-ekg15;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+ts-pad-3tu;ts-pad-3tu;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ts-kudosnäytteenhistologinentutkimus,pienikudosnäyte;ts-kudosnäytteenhistologinentutkimus,pienikudosnäyte;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; sample; tissue; small"
+pt-ekg/päi;pt-ekg/päi;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+pt-biops-l;pt-biops-l;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; biopsy"
+ts-padgas2;ts-padgas2;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+oma-u-tutk,u-gluk;oma-u-tutk,u-gluk;NA;Self_Measurement;Patient home/self-test;N;"test; glucose; own/self"
+oma-u-tutk,u-leuk;oma-u-tutk,u-leuk;NA;Self_Measurement;Patient home/self-test;N;"test; leukocyte; own/self"
+oma-u-tutk,u-nitr;oma-u-tutk,u-nitr;NA;Self_Measurement;Patient home/self-test;N;"test; nitrite; own/self"
+oma-u-tutk,u-alb;oma-u-tutk,u-alb;NA;Self_Measurement;Patient home/self-test;N;"test; own/self; albumin"
+oma-u-tutk,u-eryt;oma-u-tutk,u-eryt;NA;Self_Measurement;Patient home/self-test;N;"test; erythrocyte; own/self"
+näytteenotto;näytteenotto;NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; sample"
+ts-padpak2;ts-padpak2;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+oma-covid-o;oma-covid-o;NA;Self_Measurement;Patient home/self-test;N;"COVID; own/self"
+kudosnäyte1-3biopsiaa;kudosnäyte1-3biopsiaa;NA;Pathology;Histology/pathology procedure;N;"biopsy; sample; tissue"
+patonäyte;patonäyte;NA;Sample_Handling;Sample collection/processing code;N;sample
+pt-ekg-24a;pt-ekg-24a;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+kolposkopianäytteidenhistologinentutkimus;kolposkopianäytteidenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample; cholesterol"
+ekg-atk;ekg-atk;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-näytteensaapuminenjakäsittely;pt-näytteensaapuminenjakäsittely;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; arrival; handling/processing; sample"
+kolonoskopianäytteidenhistologinentutkimus;kolonoskopianäytteidenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample; cholesterol"
+ekg,12kytkentäälevossa(asiakkanottama);ekg,12kytkentäälevossa(asiakkanottama);NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-ekg,tavallinen12kytkentää;pt-ekg,tavallinen12kytkentää;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; standard; ECG/EKG"
+pt-ekgkons;pt-ekgkons;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+kudosnäyte,immunohistokemiallinentutkimus;kudosnäyte,immunohistokemiallinentutkimus;NA;Pathology;Histology/pathology procedure;N;"immunohistochemistry; chemical; examination/test; sample; tissue"
+pt-ekg-te;pt-ekg-te;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+ts-padcns;ts-padcns;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ts-pad-0;ts-pad-0;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+pt-virtaustilavuus-spirometriajabronkodilataatiokoeilmanlausuntoa;pt-virtaustilavuus-spirometriajabronkodilataatiokoeilmanlausuntoa;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry; statement/report; volume; urine"
+oma-trop-2;oma-trop-2;NA;Self_Measurement;Patient home/self-test;N;"troponin; own/self"
+ts-kolonoskopianäytteidenhistologinentutkimus;ts-kolonoskopianäytteidenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; sample; cholesterol"
+pt-pef-vrk;pt-pef-vrk;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+tark2(paasto);tark2(paasto);NA;Screening_Package;Bundled test package;N;check
+pt-spirob,tk;pt-spirob,tk;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry"
+oma-u-tutk,u-leuk-o;oma-u-tutk,u-leuk-o;NA;Self_Measurement;Patient home/self-test;N;"test; leukocyte; own/self"
+oma-u-tutk,u-nitr-o;oma-u-tutk,u-nitr-o;NA;Self_Measurement;Patient home/self-test;N;"test; nitrite; own/self"
+oma-inr-pi;oma-inr-pi;NA;Self_Measurement;Patient home/self-test;N;"own/self; INR"
+oma-u-tutk,u-alb-o;oma-u-tutk,u-alb-o;NA;Self_Measurement;Patient home/self-test;N;"test; own/self; albumin"
+oma-u-tutk,u-keto-o;oma-u-tutk,u-keto-o;NA;Self_Measurement;Patient home/self-test;N;"test; own/self; ketone"
+oma-u-tutk,u-gluk-o;oma-u-tutk,u-gluk-o;NA;Self_Measurement;Patient home/self-test;N;"test; glucose; own/self"
+oma-u-tutk,u-eryt-o;oma-u-tutk,u-eryt-o;NA;Self_Measurement;Patient home/self-test;N;"test; erythrocyte; own/self"
+pika-tropt;pika-tropt;NA;POCT;Point-of-care rapid test;N;"quick/rapid; troponin"
+ts-histologinentutkimus,1-3näytettä;ts-histologinentutkimus,1-3näytettä;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; sample"
+ts-kudosnäytteenhist.tutk.,suppealeikkauspreparaatti;ts-kudosnäytteenhist.tutk.,suppealeikkauspreparaatti;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; specimen/preparation; surgery/section; limited/narrow; tissue; sample"
+ts-kudosnäytteenhistologinenerikois-/lisävärjäys;ts-kudosnäytteenhistologinenerikois-/lisävärjäys;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; staining; special; tissue; sample"
+pt-pef;pt-pef;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+pt-enmg-1;pt-enmg-1;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; EMG"
+s-näytteenotto,veriviljely;s-näytteenotto,veriviljely;NA;Sample_Handling;Sample collection/processing code;N;"[Serum]; culture; collection/taking; sample; blood"
+kudoksenhistologinentutkimus,pienikudosnäyte;kudoksenhistologinentutkimus,pienikudosnäyte;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample; tissue; small"
+pika-ekg;pika-ekg;NA;Procedure;Diagnostic procedure, not lab test;N;"quick/rapid; ECG/EKG"
+ts-pad4-hn;ts-pad4-hn;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+oma-ekg;oma-ekg;NA;Self_Measurement;Patient home/self-test;N;"own/self; ECG/EKG"
+ts-pad1;ts-pad1;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+pt-glukoosikoe,oraalinen,lyhyt(0,2h);pt-glukoosikoe,oraalinen,lyhyt(0,2h);NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; glucose"
+pt-virtaustilavuus-spirometriajabronkodilataatio;pt-virtaustilavuus-spirometriajabronkodilataatio;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry; volume; urine"
+pt-spiromd;pt-spiromd;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry"
+pt-spiro-x;pt-spiro-x;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry"
+s-prkäsit;s-prkäsit;NA;Sample_Handling;Sample collection/processing code;N;"[Serum]; handling"
+oma-u-kems;oma-u-kems;NA;Self_Measurement;Patient home/self-test;N;"own/self; chemical"
+pt-spirob,;pt-spirob,;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; spirometry"
+gastroskopianäytteidenhistologinentutkimus;gastroskopianäytteidenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample"
+sprv-neula;sprv-neula;NA;Pathology;Histology/pathology procedure;N;
+kiire;#NAME?;NA;Administrative;Non-test metadata/admin field;Y;urgent/rush
+ts-kiire;ts-kiire;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; urgent/rush"
+biopankkinäyte,veri,helsinginbiobankki;biopankkinäyte,veri,helsinginbiobankki;NA;Sample_Handling;Sample collection/processing code;N;"sample; blood; biopsy"
+ekg,24hrekisteröinti;ekg,24hrekisteröinti;NA;Procedure;Diagnostic procedure, not lab test;N;ECG/EKG
+pt-näytott;pt-näytott;NA;Sample_Handling;Sample collection/processing code;N;"[Procedure]; sample"
+perustutkimus,esitiedot(u-tutkesi);perustutkimus,esitiedot(u-tutkesi);NA;Administrative;Non-test metadata/admin field;N;"preliminary info; examination/test; basic"
+ts-kudosnäytteenhistologinentutkimus,suppeaprepar;ts-kudosnäytteenhistologinentutkimus,suppeaprepar;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; specimen; limited/narrow; tissue"
+notto,neuv;notto,neuv;NA;Sample_Handling;Sample collection/processing code;N;collection/taking
+oma-strag;oma-strag;NA;Self_Measurement;Patient home/self-test;N;own/self
+pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne;pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; screening; additional; supervised; ECG/EKG"
+sk-ihottumanäytteenhistologinentutkimus;sk-ihottumanäytteenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"[Skin]; histology; examination/test; sample; skin"
+pt-ekg/päiv;pt-ekg/päiv;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; emergency; ECG/EKG"
+tark1(eipaasto);tark1(eipaasto);NA;Screening_Package;Bundled test package;N;check
+p-crp-hy,osoitushoitoyksikössä;p-crp-hy,osoitushoitoyksikössä;mg/l;POCT;Point-of-care rapid test;N;"[Plasma]; care/treatment; CRP"
+näytteenotto(nordlab);näytteenotto(nordlab);NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; sample"
+tupakka;tupakka;Kpl/vrk;Patient_Metadata;Patient characteristic/vital sign;N;tobacco/cigarette
+ts-kudosnäytteenhistologinentutkimus,laajaleik;ts-kudosnäytteenhistologinentutkimus,laajaleik;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; tissue; comprehensive/extended; sample"
+pt-ada-ind;pt-ada-ind;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+ts-padlis1;ts-padlis1;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+ts-basave;ts-basave;NA;Pathology;Histology/pathology procedure;N;[Tissue]
+lisämaksukiireellisenäpyydetyllenäytteelle;#NAME?;NA;Sample_Handling;Sample collection/processing code;Y;"urgent/rush; fee/payment; sample; additional"
+ts-cc;ts-cc;NA;Pathology;Histology/pathology procedure;N;[Tissue]
+ts-tupa15;ts-tupa15;NA;Pathology;Histology/pathology procedure;N;[Tissue]
+neuvola1;#NAME?;NA;Screening_Package;Bundled test package;Y;prenatal clinic
+potilasmittaringlukoosi,sensori;potilasmittaringlukoosi,sensori;NA;Patient_Metadata;Patient characteristic/vital sign;N;"glucose; patient; meter/gauge; sensor"
+ihottumanäytteenhistologinentutkimus;ihottumanäytteenhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; sample; skin"
+mittaustulos(mmol/l);mittaustulos(mmol/l);NA;Patient_Metadata;Patient characteristic/vital sign;N;"measurement; result"
+näytteenottoislab;näytteenottoislab;NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; sample"
+vb-lämpöti;vb-lämpöti;C;Patient_Metadata;Patient characteristic/vital sign;N;"[Venous blood]; temperature"
+ts-lisähis;ts-lisähis;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; additional"
+pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona;pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; polysomnography; at home; limited/narrow; insulin"
+vieri-crp;vieri-crp;NA;POCT;Point-of-care rapid test;N;"bedside/point-of-care; CRP"
+oma-fp-glu;oma-fp-glu;NA;Self_Measurement;Patient home/self-test;N;own/self
+pt-virtaustilavuus-spirometriajabronkodilaatiokoe,eilausuntoa;pt-virtaustilavuus-spirometriajabronkodilaatiokoe,eilausuntoa;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; bronchodilation; spirometry; statement/report; volume; urine"
+ts-pad-lau;ts-pad-lau;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+lisävast2;lisävast2;NA;Administrative;Non-test metadata/admin field;N;additional
+työt;työt;NA;Administrative;Non-test metadata/admin field;N;work/jobs
+ts-pad-1tk;ts-pad-1tk;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; pathology"
+mmse;mmse;NA;Procedure;Non-test metadata/admin field;N;Mini-mental state exam
+pt-tk-ekg;pt-tk-ekg;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; ECG/EKG"
+näyt.käsit;näyt.käsit;NA;Sample_Handling;Sample collection/processing code;N;"handling; sample"
+ts-yksinkertainenhistologinentutkimus(perusterv;ts-yksinkertainenhistologinentutkimus(perusterv;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; basic"
+pt-tutkn-2;pt-tutkn-2;NA;Procedure;Diagnostic procedure, not lab test;N;"[Procedure]; test"
+oma-tnt;oma-tnt;NA;Self_Measurement;Patient home/self-test;N;"own/self; troponin T"
+ts-panel-l;ts-panel-l;NA;Pathology;Histology/pathology procedure;N;[Tissue]
+ts-kudosnäytteenhistologinentutkimus1-3n;ts-kudosnäytteenhistologinentutkimus1-3n;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; histology; examination/test; tissue; sample"
+pt-psmapet;pt-psmapet;NA;Procedure;Diagnostic procedure, not lab test;N;[Procedure]
+rinnanpaksuneulabiopsianhistologinentutkimus;rinnanpaksuneulabiopsianhistologinentutkimus;NA;Pathology;Histology/pathology procedure;N;"histology; examination/test; biopsy"
+kiire;kiire;NA;Administrative;Non-test metadata/admin field;N;urgent/rush
+pt-selvit;pt-selvit;NA;Administrative;Non-test metadata/admin field;N;"[Procedure]; clarification"
+ts-brcamut;ts-brcamut;NA;Pathology;Histology/pathology procedure;N;"[Tissue]; mutation"
+valv.notto;valv.notto;NA;Sample_Handling;Sample collection/processing code;N;"collection/taking; supervised"
+pikagluk;pikagluk;NA;POCT;Point-of-care rapid test;N;"quick/rapid; glucose"

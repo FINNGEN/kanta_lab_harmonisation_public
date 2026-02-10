@@ -1,3 +1,10 @@
+# Kanta Harmonisation v3.0.0
+- Refactoring of the codebase
+    - New dashboard
+    - Connected to CDM db
+- Updated Usagi Files
+- Updated the Kanta summary to the updated release of data (this introduces new missing mappings)
+
 # Kanta Harmonisation v2.1.0
 - Changed 19 SNOMED codes to LOINC 
 - Marked b-trombot (Thrombophilia screening test) as having no mapping 

@@ -1,0 +1,38 @@
+---
+title: "Mapping status Kanta lab"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+params: 
+  summary: NULL
+  devMode: FALSE
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r}
+library(flexdashboard)
+```
+
+```{r}
+summary<- params$summary
+devMode <- params$devMode
+```
+
+
+Column {.tabset}
+-------------------------------------
+
+### Mapping status summary
+
+```{r}
+summaryOfMappingStatus(summary)
+```
+
+
+### Mapping status table
+
+```{r}
+.summaryTable(summary, devMode)
+```
