@@ -22,7 +22,7 @@ if (library("ROMOPMappingTools", logical.return = TRUE, quietly = TRUE) == FALSE
 # Setting environment
 #
 devMode <- FALSE
-createDashboard <- FALSE
+createDashboard <- TRUE
 pathToOMOPVocabularyCSVsFolder <- "../../FinOMOP/OMOP_vocabularies/data/input_omop_vocabulary" # SET TO LOCAL PATH
 pathToOMOPVocabularyCSVsFolderOutput <- tempdir()
 pathToVocabularyLabFolder <- "VOCABULARIES"
@@ -42,10 +42,11 @@ browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
 devMode <- TRUE
-pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
-browseURL(pathToHtmlFile)
-
-
+source("dev/R/buildSummaryTable.R")
+summaryTable <- .summaryTable(summary , devMode)
+pathHtmlFile <- file.path(pathToDashboardFolder, "summary_table.html")
+htmltools::save_html(summaryTable, pathHtmlFile)
+browseURL(pathHtmlFile)
 
 
 
