@@ -11,6 +11,7 @@ on:
     branches: [development]
     paths:
       - 'VOCABULARIES/**'
+      - 'dev/**'
   workflow_dispatch:
 
 name: validateVocabularies

@@ -13,7 +13,6 @@ editor_options:
 
 ```{r}
 library(flexdashboard)
-library(tidyverse)
 ```
 
 ```{r}
