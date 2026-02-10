@@ -12,3 +12,5 @@ output_data/*
 
 *.bck
 *.knit.md
+
+.DS_Store

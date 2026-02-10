@@ -8,7 +8,7 @@ ROMOPMappingTools version: 2.1.2
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
-|LABfi_ALL |      28|       4|     0|
+|LABfi_ALL |      31|       4|     1|
 
 ### Full log
 
@@ -46,5 +46,9 @@ ROMOPMappingTools version: 2.1.2
 |LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab quantity                             |                                                                                          |
 |LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 515 not APPROVED lab source codes where test unit does not agree with omop_quantity |
 |LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 2 codes with testName with same quantity maps to different concept ids              |
+|LABfi_ALL |SUCCESS |Missing required columns                                       |                                                                                          |
+|LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean is unique             |                                                                                          |
+|LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION is empty                                |                                                                                          |
+|LABfi_ALL |ERROR   |TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid        |Number of failed rules:  10                                                               |
 
 
