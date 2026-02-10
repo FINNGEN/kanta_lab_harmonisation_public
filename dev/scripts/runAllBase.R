@@ -64,6 +64,12 @@ validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
     pathToValidatedUnitConversionFile = pathToUnitConversionFile
 )
 
+# usagiFile <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |> 
+#     dplyr::transmute(
+#         test_name = `ADD_INFO:testNameAbbreviation`,
+#         measurement_unit = `ADD_INFO:measurementUnit`
+#     ) |> dplyr::distinct()
+
 DatabaseConnector::disconnect(connection)
 
 #

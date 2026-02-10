@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUILD_DASHBOARD: FALSE
-      BUILD_VOCABULARIES: FALSE
       #
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       #

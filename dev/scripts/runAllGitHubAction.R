@@ -32,7 +32,7 @@ pathToOMOPVocabularyCSVsFolderOutput <- file.path(githubWorkspace, "output_data"
 pathToVocabularyLabFolder <- file.path(githubWorkspace, "VOCABULARIES")
 pathToValidatedVocabularyLabFolder <- file.path(githubWorkspace, "VOCABULARIES")
 pathToCodeCountsLabFolder <- file.path(githubWorkspace, "CODE_COUNTS/databases/LABfi_FinnGenDF13")
-pathToDashboardFolder <- file.path(githubWorkspace, "output_data/public")
+pathToDashboardFolder <- file.path(githubWorkspace, "public")
 
 #
 # Run function

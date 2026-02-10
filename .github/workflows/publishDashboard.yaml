@@ -6,17 +6,16 @@
 #
 on:
   push:
-    branches: [main]
+    branches: [main, development]
   workflow_dispatch:
 
-name: validateVocabulariesAndDashboard
+name: publishDashboard
 
 jobs:
   validateVocabulariesAndDashboard:
     runs-on: ubuntu-latest
     env:
       BUILD_DASHBOARD: TRUE
-      BUILD_VOCABULARIES: FALSE
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
@@ -70,3 +69,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          destination_dir: ${{ github.ref_name }}
