@@ -5,12 +5,8 @@
 # - Check the dashboard build with no errors
 #
 on:
-  pull_request:
+  push:
     branches: [main]
-    paths:
-      - 'VOCABULARIES/**'
-      - 'CODE_COUNTS/**'
-      - 'dev/**'
   workflow_dispatch:
 
 name: validateVocabulariesAndDashboard

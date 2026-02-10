@@ -70,7 +70,7 @@
             conceptName = OMOP_CONCEPT_NAME,
             omopQuantity = OMOP_QUANTITY,
             unitChange = unitChange,
-            testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]", if_else(IS_EXTRACTED, " (Extracted)", "")),
+            testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]", dplyr::if_else(IS_EXTRACTED, " (Extracted)", "")),
             nPeople = n_subjects,
             nRecords = n_records,
             dValuesSource = distribution_values,
