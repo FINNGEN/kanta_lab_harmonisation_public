@@ -78,10 +78,11 @@
             dMeasurementValue = purrr::map_chr(decile_MEASUREMENT_VALUE, .decileText),
             ksTest = ksTest,
             valueUnitChange = valueUnitChange,
-            dMeasurementValueHarmonized = purrr::map_chr(decile_MEASUREMENT_VALUE_HARMONIZED, .decileText),
+            dMeasurementValueHarmonized = purrr::map2_chr(decile_MEASUREMENT_VALUE_HARMONIZED, isNotHarmonised, .decileText),
             ksTestHarmonized = ksTestHarmonized,
             message = message,
-            differences = differences
+            differences = differences,
+            isNotHarmonised = isNotHarmonised
         ) |>
         dplyr::arrange(dplyr::desc(nRecords))
 
@@ -171,14 +172,15 @@
                 ),
                 dMeasurementValueHarmonized = reactable::colDef(
                     name = "Decile of harmonized measurement value",
+                    html = TRUE,
                     minWidth = 150
                 ),
                 ksTestHarmonized = reactable::colDef(
                     name = "KS(mpl) harmonized",
                     html = TRUE,
                     minWidth = 50,
-                    cell = function(value) {
-                        .renderKSTest(value)
+                    cell = function(value, index) {
+                        .renderKSTest(value, toplot$isNotHarmonised[index])
                     },
                     filterMethod = .numericRangeFilter
                 ),
@@ -190,6 +192,9 @@
                     name = "Differences",
                     html = TRUE,
                     minWidth = 150
+                ),
+                isNotHarmonised = reactable::colDef(
+                    show = FALSE
                 )
             )
         )
@@ -228,7 +233,10 @@
     )
 }
 
-.renderKSTest <- function(ksTest) {
+.renderKSTest <- function(ksTest, grey = FALSE) {
+    if(is.na(grey)) {
+        grey <- FALSE
+    }
     if (is.null(ksTest)) {
         return(htmltools::span(style = "color: #999; font-style: italic;", "NA"))
     }
@@ -248,6 +256,17 @@
             bg_color <- "#ccffcc" # green
         }
     }
+    if (grey) { 
+        if (!is.null(ks)) {
+            if (ks > 0.5) {
+                bg_color <- "#dac3c3ff" # red
+            } else if (ks > 0.2) {
+                bg_color <- "#c6c6b0ff" # yellow
+            } else {
+                bg_color <- "#c2d9c2ff" # green
+            }
+        }
+    }
     htmltools::HTML(
         htmltools::HTML(
             paste0(
@@ -259,7 +278,7 @@
     )
 }
 
-.decileText <- function(decileTibble) {
+.decileText <- function(decileTibble, grey = FALSE) {
     if (is.null(decileTibble) || (tibble::is_tibble(decileTibble) && nrow(decileTibble) == 0)) {
         return("")
     }
@@ -270,7 +289,11 @@
         round(digits = 2) |>
         paste0(collapse = ", ")
 
-    paste0("[ ", values, " ]")
+    if (grey) {
+        paste0('<span style="color: #b0b0b0;">[ ', values, ' ]</span>')
+    } else {
+        paste0('[ ', values, ' ]')
+    }
 }
 
 .proportionBarHTML <- function(proportionsTibble, color_map) {

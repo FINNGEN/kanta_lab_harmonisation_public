@@ -348,7 +348,7 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
         )
 
     # Calculate KS test for each OMOP_CONCEPT_ID
-    summary <- .calcualteKStest(summary)
+    summary <- .calcualteKStest(summary, includeNotHarmonised = TRUE)
 
     # Calculate Differences between remote and local
     summary <- summary |>
@@ -376,7 +376,7 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
 }
 
 
-.calcualteKStest <- function(summary) {
+.calcualteKStest <- function(summary, includeNotHarmonised = FALSE) {
     summary |> checkmate::assert_tibble()
 
     # calculate local_REFERENCE_rowID
@@ -407,7 +407,16 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
             n_values_reference = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value != "Missing"])),
             n_values_harmonized_reference = purrr::map_dbl(distribution_values, ~ sum(.x$n[.x$value == "Source"]))
         )
-
+    
+    # include the not harmonised 
+    summary <- summary |> dplyr::mutate(isNotHarmonised = NA) 
+    if (includeNotHarmonised == TRUE) {
+        summary <- summary |>
+        dplyr::mutate(
+            isNotHarmonised = purrr::map_lgl(local_decile_MEASUREMENT_VALUE_HARMONIZED, ~ is.null(.x)),
+            local_decile_MEASUREMENT_VALUE_HARMONIZED = dplyr::if_else(isNotHarmonised, decile_MEASUREMENT_VALUE, local_decile_MEASUREMENT_VALUE_HARMONIZED)
+        )
+    }
 
     # calculate KS test for each OMOP_CONCEPT_ID
     summary <- summary |>

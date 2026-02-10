@@ -80,3 +80,18 @@ summaryOfMappingStatus <- function(summary, pathToSummaryOfSummaryTableFile) {
         .groups = "drop"
     )
 }
+
+
+summaryOfValues <- function(summary) {
+    summary |>
+        dplyr::group_by(OMOP_CONCEPT_ID) |>
+        dplyr::summarise(
+            n_tests = dplyr::n(),
+            n_subjects = sum(n_subjects),
+            n_records = sum(n_records),
+            n_values_missing = sum(stringr::str_detect(message, "Missing value"), na.rm = TRUE),
+            n_values_extracted = sum(stringr::str_detect(message, "Extracted value"), na.rm = TRUE),
+            n_values = sum(stringr::str_detect(message, "Source value"), na.rm = TRUE),
+            .groups = "drop"
+        )
+}
