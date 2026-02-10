@@ -85,7 +85,9 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     )
 
     message("Building summary table")
-    buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
+    # buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
+    pathHtmlFile <- file.path(pathToDashboardFolder, "index.html")
+    htmltools::save_html(summaryTable, pathHtmlFile)
 
     # message("Building CSV file")
     # buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
