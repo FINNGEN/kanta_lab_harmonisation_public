@@ -29,7 +29,7 @@ toMatchSummary <- summary |>
     dplyr::filter(is.na(as.numeric(TEST_NAME))) |>
     dplyr::filter(n_records > 500) |>
     dplyr::mutate(testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]")) |>
-    select(OMOP_CONCEPT_ID, testId, n_records)
+    dplyr::select(OMOP_CONCEPT_ID, testId, n_records)
 
 
 YESmapped <- toMatchSummary |>
@@ -103,7 +103,7 @@ dplyr::mutate(
 pathToClosestOMOPIdsCSV <- file.path("~/Downloads", "closest_omop_ids.csv")
 
 NOmappedClosest |>
- select(testId, n_records, closest_google) |>
+ dplyr::select(testId, n_records, closest_google) |>
  tidyr::unnest(closest_google, keep_empty = TRUE) |>
  dplyr::group_by(testId, n_records) |>
  dplyr::mutate(row_num = dplyr::row_number()) |>
