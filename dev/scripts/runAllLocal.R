@@ -41,9 +41,9 @@ source("dev/SCRIPTS/runAllBase.R")
 browseURL(file.path(pathToDashboardFolder, "index.html"))
 
 
-# devMode <- TRUE
-# pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
-# browseURL(pathToHtmlFile)
+devMode <- TRUE
+pathToHtmlFile <- buildStatusDashboard(summary, pathToDashboardFolder, devMode)
+browseURL(pathToHtmlFile)
 
 
 

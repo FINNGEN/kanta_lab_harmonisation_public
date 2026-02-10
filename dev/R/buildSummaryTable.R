@@ -31,6 +31,7 @@
                 OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
                 OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
                 OMOP_QUANTITY = local_OMOP_QUANTITY,
+                MEASUREMENT_UNIT = local_MEASUREMENT_UNIT,
                 MEASUREMENT_UNIT_HARMONIZED = local_MEASUREMENT_UNIT_HARMONIZED,
                 CONVERSION_FACTOR = local_CONVERSION_FACTOR,
                 decile_MEASUREMENT_VALUE_HARMONIZED = local_decile_MEASUREMENT_VALUE_HARMONIZED
@@ -41,6 +42,7 @@
                 OMOP_CONCEPT_ID = remote_OMOP_CONCEPT_ID,
                 OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
                 OMOP_QUANTITY = remote_OMOP_QUANTITY,
+                MEASUREMENT_UNIT = remote_MEASUREMENT_UNIT,
                 MEASUREMENT_UNIT_HARMONIZED = remote_MEASUREMENT_UNIT_HARMONIZED,
                 CONVERSION_FACTOR = remote_CONVERSION_FACTOR,
                 decile_MEASUREMENT_VALUE_HARMONIZED = remote_decile_MEASUREMENT_VALUE_HARMONIZED
@@ -68,7 +70,7 @@
             conceptName = OMOP_CONCEPT_NAME,
             omopQuantity = OMOP_QUANTITY,
             unitChange = unitChange,
-            testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]"),
+            testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]", if_else(IS_EXTRACTED, " (Extracted)", "")),
             nPeople = n_subjects,
             nRecords = n_records,
             dValuesSource = distribution_values,
