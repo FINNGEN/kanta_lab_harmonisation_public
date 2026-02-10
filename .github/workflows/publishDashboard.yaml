@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUILD_DASHBOARD: TRUE
-      BUILD_VOCABULARIES: FALSE
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
