@@ -62,6 +62,15 @@
             ),
             valueUnitChange = dplyr::if_else(is.na(decile_MEASUREMENT_VALUE_HARMONIZED), "", valueUnitChange),
             unitChange = dplyr::if_else(tmpMUPrefix == tmpMU, "", paste0(tmpMUPrefix, " -> ", tmpMU)),
+            message = dplyr::if_else(
+                grepl("#\\d+", message),
+                gsub(
+                    "#(\\d+)",
+                    '<a href="https://github.com/FINNGEN/kanta_lab_harmonisation_public/issues/\\1" target="_blank">#\\1</a>',
+                    message
+                ),
+                message
+            )
         ) |>
         dplyr::select(-tmpMU, -tmpMUHarmonized, -tmpMUPrefix, -tmpMUHarmonizedTarget    ) |>
         dplyr::transmute(
@@ -186,6 +195,7 @@
                 ),
                 message = reactable::colDef(
                     name = "Message",
+                    html = TRUE,
                     minWidth = 150
                 ),
                 differences = reactable::colDef(
