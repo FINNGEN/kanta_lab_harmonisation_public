@@ -89,6 +89,7 @@ Mass fraction	%	mmol/mol	10.93*X-23.50	3004410
 Mass fraction	mmol/mol	mmol/mol	1		
 Mass or Substance Rate	mmol/24h	mmol/24h	1		
 Multiple of the median	mom	mom	1		
+Multiple of the median	ratio	ratio	1		
 Number Areic (per area)	u/field	u/field	1		
 Number Concentration	%	%	1		
 Number Concentration	e12/l	e12/l	1		
@@ -129,6 +130,7 @@ Relative catalytic concentration	%	%	1
 Relative time	%	%	1		
 Relative time	inr	inr	1		
 Relative time	ratio	ratio	1		
+Specific gravity	ratio	ratio	1		
 Substance Concentration	%	%	1		
 Substance Concentration	mmol/l	mmol/l	1		
 Substance Concentration	mmol/l	nmol/l	1000000		
