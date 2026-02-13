@@ -49,7 +49,7 @@ Entitic mass	pg	pg	1
 Entitic mass	pg/cell	pg	1		
 Entitic mass	pg	pg/cell	1		
 Entitic mean volume	fl	fl	1		
-Entitic Mass/volume	g/l	g/l	0.001		
+Entitic Mass/volume	g/l	g/l	1		
 Finding			1		
 Length fraction	%	%	1		
 Length	mm	mm	1		
