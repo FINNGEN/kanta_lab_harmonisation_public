@@ -1,5 +1,6 @@
 omop_quantity	source_unit_valid	to_source_unit_valid	conversion	only_to_omop_concepts	validation_messages
 -			1		
+Arbitrary Concentration	index	index	1		
 Arbitrary Concentration	au/ml	au/ml	1		
 Arbitrary Concentration	eliau/ml	eliau/ml	1		
 Arbitrary Concentration	eliau/ml	u/ml	1		
@@ -105,9 +106,11 @@ Number Fraction	%	%	1
 Number Fraction	%	%/lymf	1		
 Number Fraction	%/lymf	%	1		
 Number Fraction	%/lymf	%/lymf	1		
+Number Ratio	ratio	ratio	1		
 Osmolality	mosm/kgh2o	mosm/kgh2o	1		
 Partial pressure	%	%	1		
 Partial pressure	kpa	kpa	1		
+Percentile	ratio	ratio	1		
 Presence or Threshold	estimate	estimate	1		
 Presence or Threshold	estimate		1		
 Presence or Threshold		estimate	1		
