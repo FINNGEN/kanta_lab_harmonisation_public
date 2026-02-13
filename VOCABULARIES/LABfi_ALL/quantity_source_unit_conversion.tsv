@@ -1,5 +1,6 @@
 omop_quantity	source_unit_valid	to_source_unit_valid	conversion	only_to_omop_concepts	validation_messages
 -			1		
+Arbitrary Concentration	index	index	1		
 Arbitrary Concentration	au/ml	au/ml	1		
 Arbitrary Concentration	eliau/ml	eliau/ml	1		
 Arbitrary Concentration	eliau/ml	u/ml	1		
@@ -89,6 +90,7 @@ Mass fraction	%	mmol/mol	10.93*X-23.50	3004410
 Mass fraction	mmol/mol	mmol/mol	1		
 Mass or Substance Rate	mmol/24h	mmol/24h	1		
 Multiple of the median	mom	mom	1		
+Multiple of the median	ratio	ratio	1		
 Number Areic (per area)	u/field	u/field	1		
 Number Concentration	%	%	1		
 Number Concentration	e12/l	e12/l	1		
@@ -104,9 +106,11 @@ Number Fraction	%	%	1
 Number Fraction	%	%/lymf	1		
 Number Fraction	%/lymf	%	1		
 Number Fraction	%/lymf	%/lymf	1		
+Number Ratio	ratio	ratio	1		
 Osmolality	mosm/kgh2o	mosm/kgh2o	1		
 Partial pressure	%	%	1		
 Partial pressure	kpa	kpa	1		
+Percentile	ratio	ratio	1		
 Presence or Threshold	estimate	estimate	1		
 Presence or Threshold	estimate		1		
 Presence or Threshold		estimate	1		
@@ -129,6 +133,7 @@ Relative catalytic concentration	%	%	1
 Relative time	%	%	1		
 Relative time	inr	inr	1		
 Relative time	ratio	ratio	1		
+Specific gravity	ratio	ratio	1		
 Substance Concentration	%	%	1		
 Substance Concentration	mmol/l	mmol/l	1		
 Substance Concentration	mmol/l	nmol/l	1000000		

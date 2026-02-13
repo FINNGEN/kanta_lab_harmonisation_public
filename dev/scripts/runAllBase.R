@@ -85,8 +85,6 @@ validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
 )
 
 
-
-
 # TEMP; validate fix unit file
 fixUnitTibble <- ROMOPMappingTools::readFixUnitFile(pathToUnitFixFile)
 
