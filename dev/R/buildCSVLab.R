@@ -1,21 +1,69 @@
-buildCSVLab <- function(summary, pathToOutputFile) {
+buildCSVLab <- function(summary, pathToOutputFile, localMode = TRUE) {
+    if (localMode == TRUE) {
+        summary <- summary |>
+            dplyr::rename(
+                OMOP_CONCEPT_ID = local_OMOP_CONCEPT_ID,
+                OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
+                OMOP_QUANTITY = local_OMOP_QUANTITY,
+                MEASUREMENT_UNIT = local_MEASUREMENT_UNIT,
+                MEASUREMENT_UNIT_HARMONIZED = local_MEASUREMENT_UNIT_HARMONIZED,
+                CONVERSION_FACTOR = local_CONVERSION_FACTOR,
+                decile_MEASUREMENT_VALUE_HARMONIZED = local_decile_MEASUREMENT_VALUE_HARMONIZED
+            )
+    } else {
+        summary <- summary |>
+            dplyr::rename(
+                OMOP_CONCEPT_ID = remote_OMOP_CONCEPT_ID,
+                OMOP_CONCEPT_NAME = local_OMOP_CONCEPT_NAME,
+                OMOP_QUANTITY = remote_OMOP_QUANTITY,
+                MEASUREMENT_UNIT = remote_MEASUREMENT_UNIT,
+                MEASUREMENT_UNIT_HARMONIZED = remote_MEASUREMENT_UNIT_HARMONIZED,
+                CONVERSION_FACTOR = remote_CONVERSION_FACTOR,
+                decile_MEASUREMENT_VALUE_HARMONIZED = remote_decile_MEASUREMENT_VALUE_HARMONIZED
+            )
+    }
+
     summary |>
         dplyr::mutate(
-            testId = paste0(TEST_NAME, " [", dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT), "]"),
-            p_values_missing_extracted_source = purrr::map_chr(distribution_values, .distributionToString, order = c("Missing", "Extracted", "Source")),
-            p_outcomes_NA_N_A_AA_L_LL_H_HH = purrr::map_chr(distribution_outcomes, .distributionToString, order = c("NA", "N", "A", "AA", "L", "LL", "H", "HH")),
-            decile_MEASUREMENT_VALUE = purrr::map2_chr(decile_MEASUREMENT_VALUE, MEASUREMENT_UNIT, .decilesToString),
+            testId = paste0(
+                TEST_NAME,
+                " [",
+                dplyr::if_else(is.na(MEASUREMENT_UNIT), "", MEASUREMENT_UNIT),
+                "]"
+            ),
+            p_values_missing_extracted_source = purrr::map_chr(
+                distribution_values,
+                .distributionToString,
+                order = c("Missing", "Extracted", "Source")
+            ),
+            p_outcomes_NA_N_A_AA_L_LL_H_HH = purrr::map_chr(
+                distribution_outcomes,
+                .distributionToString,
+                order = c("NA", "N", "A", "AA", "L", "LL", "H", "HH")
+            ),
+            decile_MEASUREMENT_VALUE = purrr::map2_chr(
+                decile_MEASUREMENT_VALUE,
+                MEASUREMENT_UNIT,
+                .decilesToString
+            ),
             ksTest_pValue = purrr::map_dbl(ksTest, .ksTestToPValue),
             ksTest_KS = purrr::map_dbl(ksTest, .ksTestToKS),
-            decile_MEASUREMENT_VALUE_HARMONIZED = purrr::map2_chr(decile_MEASUREMENT_VALUE_HARMONIZED, MEASUREMENT_UNIT_HARMONIZED, .decilesToString),
-            ksTestHarmonized_pValue = purrr::map_dbl(ksTestHarmonized, .ksTestToPValue),
+            decile_MEASUREMENT_VALUE_HARMONIZED = purrr::map2_chr(
+                decile_MEASUREMENT_VALUE_HARMONIZED,
+                MEASUREMENT_UNIT_HARMONIZED,
+                .decilesToString
+            ),
+            ksTestHarmonized_pValue = purrr::map_dbl(
+                ksTestHarmonized,
+                .ksTestToPValue
+            ),
             ksTestHarmonized_KS = purrr::map_dbl(ksTestHarmonized, .ksTestToKS),
         ) |>
         dplyr::select(
             status,
             OMOP_CONCEPT_ID,
-            concept_name,
-            omopQuantity,
+            local_OMOP_CONCEPT_NAME,
+            OMOP_QUANTITY,
             testId,
             n_subjects,
             n_records,
@@ -30,7 +78,7 @@ buildCSVLab <- function(summary, pathToOutputFile) {
             ksTestHarmonized_pValue,
             ksTestHarmonized_KS,
             message
-        ) |> 
+        ) |>
         readr::write_tsv(pathToOutputFile, na = "")
 }
 
@@ -81,7 +129,3 @@ buildCSVLab <- function(summary, pathToOutputFile) {
         round(digits = 2)
     return(pValue)
 }
-
-
-
-
