@@ -23,7 +23,7 @@ if (library("ROMOPMappingTools", logical.return = TRUE, quietly = TRUE) == FALSE
 #
 devMode <- FALSE
 createDashboard <- TRUE
-createCSVFile <- TRUE
+createCSVFile <- FALSE
 pathToOMOPVocabularyCSVsFolder <- "../../FinOMOP/OMOP_vocabularies/data/input_omop_vocabulary" # SET TO LOCAL PATH
 pathToOMOPVocabularyCSVsFolderOutput <- tempdir()
 pathToVocabularyLabFolder <- "VOCABULARIES"

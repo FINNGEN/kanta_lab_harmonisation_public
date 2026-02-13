@@ -1,7 +1,7 @@
 # take paths from runAllLocal.R
 
 unitInjection <- readr::read_tsv(
-  "tmp.tsv",
+  "dev/helpers/tmp.tsv",
   col_types = readr::cols(.default = readr::col_character()),
   na = "NA"
 )
@@ -26,6 +26,8 @@ res <- ROMOPMappingTools::validateFixUnitTibble(
   newFixUnitTibble,
   validNameUnitsTibble
 )
+
+res$fixUnitTibble |> readr::write_tsv(pathToUnitFixFile, na = "")
 
 
 # Append to usagi file these that are not there 
