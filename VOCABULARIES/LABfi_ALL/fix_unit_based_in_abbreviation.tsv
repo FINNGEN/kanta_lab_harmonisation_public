@@ -19,7 +19,6 @@ b-pvk+tkd,hkr	osuus	ratio
 b-retind	osuus	%		
 b-erytrosyyttientilavuusosuus	osuus	%		
 erytrosyytit,tilavuusosuus	osuus	ratio		
-erytrosyytit,tilavuusosuus		ratio		
 p-krea		umol/l		
 ab-ph		ph		
 pt-gfreepi	form	ml/min/173m2		
@@ -41,7 +40,6 @@ u-keto-o	l	estimate
 p-uraat	mmol/l	umol/l		
 s-uraat	mmol/l	umol/l		
 p-krea	mmol/l	umol/l		
-s-krea	mmol/l	umol/l		
 u-alb		mg/l		
 kol/hdlsuh		ratio		
 kol/hdl-su		ratio		
@@ -70,13 +68,9 @@ ntkmom		ratio	This is a statistical value. It's a deviation from the median. rat
 hcgbvkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	
 fs-trfesat		ratio	It's ratio. target is % ATM. will flip once unit is injected btw	
 -l-ind		index	No harmonized reference data in this OMOP ID	
-u-nitr-o		estimate		
 -i-ind		index	No harmonized reference data in this OMOP ID	
-u-prot-o		estimate		
-u-leuk-o		estimate		
 oma-crp		mg/l		
 inr-vieri		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	
-u-gluk-o		estimate		
 b-erytrosyytit,tilavuusosuus		ratio		
 p-tromboplastiiniaika,inr-tulos		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	
 oma-p-crp		mg/l		
@@ -84,12 +78,10 @@ crp		mg/l
 b-hba1c,tk		mmol/mol	For this omop id values in range [40,60] are mmol/mol	
 b-la		mm/h		
 snabb-inr		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	
-u-eryt-o		estimate		
 crp,tk		mg/l		
 u-ph-huu		ph		
 fp-kol-ldl		mmol/l		
 p-inr-vt		inr		
-u-keto-o		estimate		
 b-ghb-a1c,tk		%	For this omop id values in range [4,6] are %	
 p-ph		ph		
 vp-ph		ph		
@@ -102,7 +94,6 @@ b-inr-pik		inr
 zb-ph		ph		
 inr-pika		inr	No harmonized reference data in this OMOP ID	
 cb-inrc-c		inr	No harmonized reference data in this OMOP ID	
-u-gluk-0		estimate		
 b-erybla		e9/l		
 e-mcv		fl		
 u-krea		mmol/l		
@@ -120,7 +111,6 @@ b-trom		e9/l
 ly-cd4/cd8		ratio	No harmonized reference data	
 s-apob/a1		ratio	No harmonized reference data	
 u-tutk-1,ph		ph		
-u-veri-o		estimate	For this id the concept quantity isPresence or Threshold and we've been using estimate for them	
 fp-kol-ind		mmol/l	Manually checked from thl	
 p-crp-vt		mg/l		
 b-neut		e9/l		
@@ -130,7 +120,6 @@ vp-happamuusaste		ph	Distributions differ
 pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava		ml/min/173m2	Distributions differ	
 u-lieriö		e6/l		
 vb-happamuusaste		ph		
-s-mypnabm		estimate	Presence or Threshold --> estimate	
 p-gt		u/l		
 pf-ph		ph		
 p-crp-o		mg/l		
