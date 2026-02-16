@@ -77,7 +77,7 @@ Mass Concentration	ug/l	mg/l	0.001
 Mass Concentration	ug/l	ng/l	1000		
 Mass Concentration	ng/l	ug/l	0.001		
 Mass Concentration	ug/l	ug/l	1		
-Mass Concentration	mg/l	mg/l	0.703	44816559	
+Mass Concentration	mg/l	mg/l	0.703*X+0	44816559	
 Mass Content	ug/g	ug/g	1		
 Mass Rate	g/24h	g/24h	1		
 Mass Rate	mg/24h	g/24h	0.001		
