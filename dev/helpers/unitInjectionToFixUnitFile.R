@@ -41,8 +41,8 @@ lastSourceConceptId <- usagiTibble |> dplyr::pull(`ADD_INFO:sourceConceptId`) |>
 toAppend <- usagiTibble  |> 
   dplyr::inner_join(missing, by = c("ADD_INFO:testNameAbbreviation" = "TEST_NAME_ABBREVIATION", "ADD_INFO:measurementUnit" = "source_unit_clean")) |> 
   dplyr::mutate(
-    sourceCode = sourceCode |> stringr::str_remove("\\[\\]") |> paste0(" [", source_unit_clean_fix, "]"),
-    sourceName = sourceName |> stringr::str_remove("\\[\\]") |> paste0(" [", source_unit_clean_fix, "]"), 
+    sourceCode = sourceCode |> stringr::str_remove("\\[\\]") |> paste0("[", source_unit_clean_fix, "]"),
+    sourceName = sourceName |> stringr::str_remove("\\[\\]") |> paste0("[", source_unit_clean_fix, "]"), 
     `ADD_INFO:measurementUnit` = source_unit_clean_fix
   ) |> 
   dplyr::select( -source_unit_clean_fix)

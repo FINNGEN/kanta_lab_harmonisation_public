@@ -89,6 +89,7 @@ validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
 fixUnitTibble <- ROMOPMappingTools::readFixUnitFile(pathToUnitFixFile)
 
 validNameUnitsTibble <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |>
+    dplyr::filter(mappingStatus == "APPROVED") |>
     dplyr::transmute(
         test_name = `ADD_INFO:testNameAbbreviation`,
         measurement_unit = `ADD_INFO:measurementUnit`
