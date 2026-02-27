@@ -47,7 +47,7 @@ kol/hdl		ratio
 kolesterolinjahdl-kolest.suhde		ratio		
 u-suhti		kg/l		
 u-suhteellinentiheys		kg/l		
-u-ominp-h		kg/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+u-ominp-h		kg/l		
 non-hdl		mmol/l		
 fp-gluk	nmol/l	mmol/l		
 fp-glukoosi	nmol/l	mmol/l		
