@@ -8,7 +8,7 @@ ROMOPMappingTools version: 2.1.2
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
-|LABfi_ALL |      32|       4|     0|
+|LABfi_ALL |      31|       4|     1|
 
 ### Full log
 
@@ -49,6 +49,6 @@ ROMOPMappingTools version: 2.1.2
 |LABfi_ALL |SUCCESS |Missing required columns                                       |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean is unique             |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION is empty                                |                                                                                          |
-|LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid        |                                                                                          |
+|LABfi_ALL |ERROR   |TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid        |Number of failed rules:  1                                                                |
 
 
