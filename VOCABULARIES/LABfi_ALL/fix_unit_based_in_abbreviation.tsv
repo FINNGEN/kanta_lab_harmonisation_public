@@ -155,6 +155,6 @@ b-hkr(erytrosyytit,tilavuusosuus)	osuus	ratio
 s-tsh	u/l	mu/l		
 s-tsh	mlu/l	mu/l		
 s-tsh-abr	mu/l	iu/l		
-kolesteroli/hdl-suhde		ratio		
-fs-kalsium,ionisoitunut		mmol/l		
-p-tromboplastiiniaika,inr,tt		inr		
+kolesteroli/hdl-suhde		ratio		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+fs-kalsium,ionisoitunut		mmol/l		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+p-tromboplastiiniaika,inr,tt		inr		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
