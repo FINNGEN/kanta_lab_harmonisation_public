@@ -160,6 +160,8 @@ Substance Rate	nmol/24h	nmol/24h	1
 Substance Rate	umol/24h	umol/24h	1		
 Substance Ratio	%	%	1		
 Substance Ratio	ratio	ratio	1		
+Substance Ratio	ratio	%	100		
+Substance Ratio	%	ratio	0.01		
 Temperature	°c	°c	1		
 Time (e.g. seconds)	min	min	1		
 Time (e.g. seconds)	s	min	0.01666667		
