@@ -1,0 +1,3 @@
+source_vocabulary_id,source_vocabulary_name,source_concept_id_offset,path_to_usagi_file,path_to_news_file,ignore
+LABfi_ALL,Laboratory Finnish All,2002400000,./LABfi_ALL/LABfi_ALL.usagi.csv,./LABfi_ALL/NEWS.md,FALSE
+UNITfi,Unit Finnish,2001800000,./UNITfi/UNITfi.usagi.csv,./UNITfi/NEWS.md,FALSE

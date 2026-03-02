@@ -145,7 +145,8 @@ ROMOPMappingTools::buildValidationStatusMd(
     pathToValidationStatusMdFile = file.path(
         pathToVocabularyLabFolder,
         "VOCABULARIES_VALIDATION_STATUS.md"
-    )
+    ),
+    pathToVocabularyFolder = pathToVocabularyLabFolder
 )
 
 #
@@ -162,3 +163,4 @@ if (any(validationLogTibble$type == "ERROR")) {
 message("FINAL_STATUS: ", FINAL_STATUS)
 
 writeLines(FINAL_STATUS, "/tmp/FINAL_STATUS.txt")
+

@@ -4,7 +4,13 @@ This is an automatically generated log file by ROMOPMappingTools to detect chang
 
 ROMOPMappingTools version: 2.1.2
 
-### Summary
+### Mapping summary
+
+|vocabulary | APPROVED| IGNORE| UNCHECKED|
+|:----------|--------:|------:|---------:|
+|LABfi_ALL  |     7114|    231|     15885|
+
+### Validation Summary
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
