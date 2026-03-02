@@ -6,15 +6,15 @@ ROMOPMappingTools version: 2.1.2
 
 ### Mapping summary
 
-|vocabulary | APPROVED| FLAGGED| IGNORE| UNCHECKED|
-|:----------|--------:|-------:|------:|---------:|
-|LABfi_ALL  |     7307|       8|    231|     15699|
+|vocabulary | APPROVED| IGNORE| UNCHECKED|
+|:----------|--------:|------:|---------:|
+|LABfi_ALL  |     7307|    231|     15706|
 
 ### Validation Summary
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
-|LABfi_ALL |      30|       4|     2|
+|LABfi_ALL |      32|       4|     0|
 
 ### Full log
 
@@ -46,11 +46,11 @@ ROMOPMappingTools version: 2.1.2
 |LABfi_ALL |SUCCESS |Missing parent columns                                         |                                                                                          |
 |LABfi_ALL |SUCCESS |Invalid parent concept code                                    |                                                                                          |
 |LABfi_ALL |SUCCESS |LAB: Invalid lab source name format                            |                                                                                          |
-|LABfi_ALL |ERROR   |LAB: APPROVED Invalid lab unit                                 |Found 1 APPROVED lab source codes where unit is not in validUnitsList or is NA            |
+|LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab unit                                 |                                                                                          |
 |LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab unit                             |Found 621 not APPROVED lab source codes where unit is not in validUnitsList or is NA      |
 |LABfi_ALL |WARNING |LAB: Invalid lab mapped domain                                 |Found 10 mapped lab source codes where domain is not 'Measurement'                        |
-|LABfi_ALL |ERROR   |LAB: APPROVED Invalid lab quantity                             |Found 8 APPROVED lab source codes where test unit does not agree with omop_quantity       |
-|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 507 not APPROVED lab source codes where test unit does not agree with omop_quantity |
+|LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab quantity                             |                                                                                          |
+|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 514 not APPROVED lab source codes where test unit does not agree with omop_quantity |
 |LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 4 codes with testName with same quantity maps to different concept ids              |
 |LABfi_ALL |SUCCESS |Missing required columns                                       |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean is unique             |                                                                                          |
