@@ -71,4 +71,4 @@ Given the issue description.
 3. Plan the edits needed to accomplish the intend of the issue. This includes identifying which file(s) need to be edited, which lines need to be changed or added, and what the new values should be based on the issue description and the rules described above.
 4. Edit the corresponding file(s) accordingly to the plan and the rules described above.
 5. If the issue description is not clear, ask for clarification before making any edits.
-6. Show a summary of the plan and the edits you made. 
+6. Show a summary of the plan and the edits you made.
