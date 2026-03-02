@@ -158,4 +158,4 @@ s-tsh	mlu/l	mu/l
 s-tsh-abr	mu/l	iu/l		
 kolesteroli/hdl-suhde		ratio		
 fs-kalsium,ionisoitunut		mmol/l		
-p-tromboplastiiniaika,inr,tt		inre		
+p-tromboplastiiniaika,inr,tt		inre		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
