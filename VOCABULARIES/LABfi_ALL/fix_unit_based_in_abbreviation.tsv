@@ -56,6 +56,7 @@ p-b12-vit		pmol/l
 pt-gfre		ml/min/173m2		
 u-suhti-o		ratio	Unitless ratio since it's a ratio of denities	
 b-eryt		e12/l		
+b-eryt	e9/l	e12/l		
 b-leuk		e9/l		
 u-ph.		ph		
 b-hb		g/l		
