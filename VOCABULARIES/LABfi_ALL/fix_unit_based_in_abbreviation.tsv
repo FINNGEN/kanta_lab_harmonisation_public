@@ -27,7 +27,7 @@ u-osmoest	mosm/l	mosm/kgh2o
 u-suhti	g/ml	kg/l		
 p-tsh	mlu/l	miu/l		
 b-xkoe	form			
-p-inr		inr		
+p-inr		inr		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 u-suhtih		kg/l		
 s-k/l-s-v		ratio		
 u-osmole		mosm/kgh2o		
@@ -62,7 +62,7 @@ b-hb		g/l
 u-suhti.		ratio	Unitless ratio since it's a ratio of denities.N.B this is not suhti (kg/l!) OMOP ID	
 -h-ind		index	index	
 oma-gluk		mmol/l		
-p-inr-hy		inr		
+p-inr-hy		inr		 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 pappakmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	
 ntkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	
 hcgbvkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	
@@ -85,15 +85,15 @@ p-inr-vt		inr
 b-ghb-a1c,tk		%	For this omop id values in range [4,6] are %	
 p-ph		ph		
 vp-ph		ph		
-cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID	
+cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID	 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 crp-pika		mg/l		
 ab-ph(t)		ph		
 l-lymf		%		
 fp-gluk		mmol/l		
 b-inr-pik		inr		
 zb-ph		ph		
-inr-pika		inr	No harmonized reference data in this OMOP ID	
-cb-inrc-c		inr	No harmonized reference data in this OMOP ID	
+inr-pika		inr	No harmonized reference data in this OMOP ID	 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
+cb-inrc-c		inr	No harmonized reference data in this OMOP ID	 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 b-erybla		e9/l		
 e-mcv		fl		
 u-krea		mmol/l		
@@ -105,7 +105,7 @@ b-ph		ph
 p-inr-pika		inr	Distributions differ	
 u-kemseul,ph		ph		
 b-crp-o		mg/l		
-p-inr-pi		inr	No harmonized reference data	
+p-inr-pi		inr	No harmonized reference data	 | ERROR: TEST_NAME_ABBREVIATION source_unit_clean_fix pair valid
 l-eos		%		
 b-trom		e9/l		
 ly-cd4/cd8		ratio	No harmonized reference data	
