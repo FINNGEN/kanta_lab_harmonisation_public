@@ -6,15 +6,15 @@ ROMOPMappingTools version: 2.1.2
 
 ### Mapping summary
 
-|vocabulary | APPROVED| IGNORE| UNCHECKED|
-|:----------|--------:|------:|---------:|
-|LABfi_ALL  |     7105|    231|     15897|
+|vocabulary | APPROVED| FLAGGED| IGNORE| UNCHECKED|
+|:----------|--------:|-------:|------:|---------:|
+|LABfi_ALL  |     7105|       7|    231|     15885|
 
 ### Validation Summary
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
-|LABfi_ALL |      31|       4|     1|
+|LABfi_ALL |      30|       4|     2|
 
 ### Full log
 
@@ -22,7 +22,7 @@ ROMOPMappingTools version: 2.1.2
 |:---------|:-------|:--------------------------------------------------------------|:-----------------------------------------------------------------------------------------|
 |LABfi_ALL |SUCCESS |Missing default columns                                        |                                                                                          |
 |LABfi_ALL |SUCCESS |SourceCode is empty                                            |                                                                                          |
-|LABfi_ALL |SUCCESS |SourceCode and conceptId are not unique                        |                                                                                          |
+|LABfi_ALL |ERROR   |SourceCode and conceptId are not unique                        |Number of failed rules:  12                                                               |
 |LABfi_ALL |SUCCESS |SourceCode is more than 50 characters                          |                                                                                          |
 |LABfi_ALL |SUCCESS |SourceName is empty                                            |                                                                                          |
 |LABfi_ALL |SUCCESS |SourceName is more than 255 characters                         |                                                                                          |
