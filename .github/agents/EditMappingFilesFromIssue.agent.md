@@ -11,6 +11,7 @@ The description of the tables are as follows:
 
 ## LABfi_ALL.usagi.csv
 This is the main mapping file that contains the mappings for local laboratory test (sourceCode) and unit to the standardized omop vocabularies (conceptId). 
+NA must be encode as '' and never as 'NA' or 'na'.
 
 Your allow actions on this file are: 
 1. **Change an existing mapping**  For a given sourceCode change the conceptId. Only edit the folowing columns:
@@ -19,7 +20,7 @@ Your allow actions on this file are:
   - The statusSetOn column with the current datetime in milliseconds as integer.
   - The statusSetBy column with the current issue number as #<issue_number>.
 2. **Append a new mapping** For a new sourceCode add a new line with the corresponding conceptId and the following column values:
-  - sourceCode: sourceCode with the format <testId>[<unit>] where testId and unit are extracted from the issue description. If the unit is not provided this is empty.
+  - sourceCode: sourceCode with the format <testId>[<unit>] where testId and unit are extracted from the issue description. If the unit is not provided this is empty, meaning no text **do not use NA as empty**. 
   - sourceName: same as sourceCode
   - sourceFrequency: 0
   - matchScore: 0
@@ -44,6 +45,8 @@ Your allow actions on this file are:
 ## fix_unit_based_in_abbreviation.tsv
 This file contains instructions to replace some of the units in the data prior to applying the mappings in the LABfi_ALL.usagi.csv file.
 Very often this file is refered as unit injection, or units fix. 
+NA must be encode as '' and never as 'NA' or 'na'.
+
  The columns are:
 
 Your allow action on this file are:
@@ -55,6 +58,7 @@ In both cases check that:
 
 ## quantity_source_unit_conversion.tsv
 This file contains instructions to convert the units in the data after the mappings in the LABfi_ALL.usagi.csv file have been applied.
+NA must be encode as '' and never as 'NA' or 'na'.
 
 Your allow action on this file are:
 1. **Change an existing conversion** For a given omop_quantity and source_unit_valid you may need to change the to_source_unit_valid and	conversion columns, and occasionallyh the only_to_omop_concepts column. 
@@ -72,3 +76,5 @@ Given the issue description.
 4. Edit the corresponding file(s) accordingly to the plan and the rules described above.
 5. If the issue description is not clear, ask for clarification before making any edits.
 6. Show a summary of the plan and the edits you made.
+
+
