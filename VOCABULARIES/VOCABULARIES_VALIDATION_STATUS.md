@@ -8,7 +8,7 @@ ROMOPMappingTools version: 2.1.2
 
 |vocabulary | APPROVED| IGNORE| UNCHECKED|
 |:----------|--------:|------:|---------:|
-|LABfi_ALL  |     7305|    231|     15708|
+|LABfi_ALL  |     7308|    231|     15706|
 
 ### Validation Summary
 
@@ -51,7 +51,7 @@ ROMOPMappingTools version: 2.1.2
 |LABfi_ALL |WARNING |LAB: Invalid lab mapped domain                                 |Found 10 mapped lab source codes where domain is not 'Measurement'                        |
 |LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab quantity                             |                                                                                          |
 |LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 514 not APPROVED lab source codes where test unit does not agree with omop_quantity |
-|LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 4 codes with testName with same quantity maps to different concept ids              |
+|LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 8 codes with testName with same quantity maps to different concept ids              |
 |LABfi_ALL |SUCCESS |Missing required columns                                       |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean is unique             |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION is empty                                |                                                                                          |
