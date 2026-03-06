@@ -2,7 +2,7 @@
 title: "Mapping status Kanta lab"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
+    orientation: columns
 params: 
   summary: NULL
   devMode: FALSE
@@ -21,18 +21,19 @@ devMode <- params$devMode
 ```
 
 
-Column {.tabset}
--------------------------------------
 
-### Mapping status summary
+
+### Mapping summary
+
 
 ```{r}
 summaryOfMappingStatus(summary)
 ```
 
-
-### Mapping status table
-
+### Values summary
 ```{r}
-.summaryTable(summary, devMode)
+summaryOfValues(summary)
 ```
+
+### Full Table
+** Link to the dashboard: [summaryTable.html](summaryTable.html) **

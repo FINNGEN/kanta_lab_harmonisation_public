@@ -313,8 +313,17 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
         ) |>
         dplyr::select(-validation_messages)
 
-    summary <- summary |>
-        dplyr::left_join(quantityConversionTibble, by = c("local_OMOP_QUANTITY", "local_MEASUREMENT_UNIT", "local_MEASUREMENT_UNIT_HARMONIZED")) |>
+    summary <- summary|> #filter(local_OMOP_CONCEPT_ID==44816559) |>
+        dplyr::left_join(
+            quantityConversionTibble, 
+            by = c("local_OMOP_QUANTITY", "local_MEASUREMENT_UNIT", "local_MEASUREMENT_UNIT_HARMONIZED"), 
+            relationship = "many-to-many"
+        ) |>
+        # apply only_to_omop_concepts
+        dplyr::filter(is.na(only_to_omop_concepts) | local_OMOP_CONCEPT_ID == only_to_omop_concepts) |>
+        dplyr::arrange(only_to_omop_concepts) |> 
+        dplyr::distinct(across(-c(local_CONVERSION_FACTOR, only_to_omop_concepts)), .keep_all = TRUE) |>
+        #
         dplyr::mutate(
             local_CONVERSION_FACTOR = dplyr::if_else(!is.na(only_to_omop_concepts) & only_to_omop_concepts != local_OMOP_CONCEPT_ID, NA_character_, local_CONVERSION_FACTOR),
             local_MEASUREMENT_UNIT_HARMONIZED_target = dplyr::if_else(is.na(local_MEASUREMENT_UNIT) , NA_character_, local_MEASUREMENT_UNIT_HARMONIZED), 
@@ -368,9 +377,11 @@ pathToCodeCountsLabFolder |> checkmate::assert_directory()
         dplyr::select(-diff_concept_id, -diff_quantity, -diff_conversion_factor, -diff_harmonized_unit)
 
 
-    if (devMode == TRUE) {
-        summary |> nrow() |> testthat::expect_equal(inNrows)
+    
+    if(nrow(summary)!=inNrows){
+        stop(paste0("Number of rows in summary has changed after processing. Before: ", inNrows, ", after: ", nrow(summary)))
     }
+    
 
     return(summary)
 }
