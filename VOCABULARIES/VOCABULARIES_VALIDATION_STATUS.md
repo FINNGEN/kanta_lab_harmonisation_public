@@ -8,7 +8,7 @@ ROMOPMappingTools version: 2.1.2
 
 |vocabulary | APPROVED| IGNORE| UNCHECKED|
 |:----------|--------:|------:|---------:|
-|LABfi_ALL  |     7307|    231|     15706|
+|LABfi_ALL  |     7308|    231|     15706|
 
 ### Validation Summary
 
