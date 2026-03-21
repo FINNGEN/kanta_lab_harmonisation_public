@@ -4,7 +4,13 @@ This is an automatically generated log file by ROMOPMappingTools to detect chang
 
 ROMOPMappingTools version: 2.1.2
 
-### Summary
+### Mapping summary
+
+|vocabulary | APPROVED| IGNORE| UNCHECKED|
+|:----------|--------:|------:|---------:|
+|LABfi_ALL  |     7308|    231|     15706|
+
+### Validation Summary
 
 |context   | SUCCESS| WARNING| ERROR|
 |:---------|-------:|-------:|-----:|
@@ -41,11 +47,11 @@ ROMOPMappingTools version: 2.1.2
 |LABfi_ALL |SUCCESS |Invalid parent concept code                                    |                                                                                          |
 |LABfi_ALL |SUCCESS |LAB: Invalid lab source name format                            |                                                                                          |
 |LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab unit                                 |                                                                                          |
-|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab unit                             |Found 622 not APPROVED lab source codes where unit is not in validUnitsList or is NA      |
+|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab unit                             |Found 621 not APPROVED lab source codes where unit is not in validUnitsList or is NA      |
 |LABfi_ALL |WARNING |LAB: Invalid lab mapped domain                                 |Found 10 mapped lab source codes where domain is not 'Measurement'                        |
 |LABfi_ALL |SUCCESS |LAB: APPROVED Invalid lab quantity                             |                                                                                          |
-|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 517 not APPROVED lab source codes where test unit does not agree with omop_quantity |
-|LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 4 codes with testName with same quantity maps to different concept ids              |
+|LABfi_ALL |WARNING |LAB: not APPROVED Invalid lab quantity                         |Found 514 not APPROVED lab source codes where test unit does not agree with omop_quantity |
+|LABfi_ALL |WARNING |LAB: TestName with same quantity maps to different concept ids |Found 8 codes with testName with same quantity maps to different concept ids              |
 |LABfi_ALL |SUCCESS |Missing required columns                                       |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION source_unit_clean is unique             |                                                                                          |
 |LABfi_ALL |SUCCESS |TEST_NAME_ABBREVIATION is empty                                |                                                                                          |

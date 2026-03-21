@@ -85,12 +85,11 @@ validationLogTibble <- ROMOPMappingTools::validateUsagiFile(
 )
 
 
-
-
 # TEMP; validate fix unit file
 fixUnitTibble <- ROMOPMappingTools::readFixUnitFile(pathToUnitFixFile)
 
 validNameUnitsTibble <- ROMOPMappingTools::readUsagiFile(pathToUsagiFile) |>
+    dplyr::filter(mappingStatus == "APPROVED") |>
     dplyr::transmute(
         test_name = `ADD_INFO:testNameAbbreviation`,
         measurement_unit = `ADD_INFO:measurementUnit`
@@ -129,8 +128,11 @@ if (createDashboard == TRUE & any(validationLogTibble$type != "ERROR")) {
     message("Building summary table")
     # buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
     summaryTable <- .summaryTable(summary, devMode)
-    pathHtmlFile <- file.path(pathToDashboardFolder, "index.html")
+    pathHtmlFile <- file.path(pathToDashboardFolder, "summaryTable.html")
     htmltools::save_html(summaryTable, pathHtmlFile)
+
+    message("Building status dashboard")
+    buildStatusDashboard(summary, pathToDashboardFolder, devMode = devMode)
 
     # message("Building CSV file")
     # buildCSVLab(summary, file.path(pathToDashboardFolder, "lab_data_summary.csv"))
@@ -146,7 +148,8 @@ ROMOPMappingTools::buildValidationStatusMd(
     pathToValidationStatusMdFile = file.path(
         pathToVocabularyLabFolder,
         "VOCABULARIES_VALIDATION_STATUS.md"
-    )
+    ),
+    pathToVocabularyFolder = pathToVocabularyLabFolder
 )
 
 #
@@ -163,3 +166,4 @@ if (any(validationLogTibble$type == "ERROR")) {
 message("FINAL_STATUS: ", FINAL_STATUS)
 
 writeLines(FINAL_STATUS, "/tmp/FINAL_STATUS.txt")
+

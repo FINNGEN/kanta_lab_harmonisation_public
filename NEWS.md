@@ -1,3 +1,15 @@
+# Kanta Harmonisation v3.0.1
+- #42
+- #100
+- #103
+- #105
+- #107
+- #110
+- #111
+- #125
+- #127
+- #129
+
 # Kanta Harmonisation v3.0.0
 - Refactoring of the codebase
     - New dashboard
