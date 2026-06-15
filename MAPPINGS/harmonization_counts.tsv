@@ -1,0 +1,1520 @@
+harmonization_omop::OMOP_ID	harmonization_omop::omopQuantity	harmonization_omop::MEASUREMENT_UNIT	UNIT_SOURCE	NOTES	PREV_SOURCE	PREV_INJECTED
+3009542	Volume Fraction	%	MANUAL	MANUAL MAPPING (locked) - Current data suggests: ratio	{'%': 0.4315, 'NA': 0.1651, 'osuus': 0.4034}	{'%': 0.4321, 'NA': 0.0882, 'ratio': 0.4797}
+3000963	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0877, 'g/l': 0.9123}	{'NA': 0.0858, 'g/l': 0.9142}
+3010813	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.2496, 'e6/l': 0.0001, 'e9/l': 0.7504}	{'NA': 0.2477, 'e6/l': 0.0001, 'e9/l': 0.7523}
+3007461	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.2341, 'e9/l': 0.7659}	{'%': 0.0, 'NA': 0.2339, 'e9/l': 0.7661}
+3026361	Number Concentration	e12/l	SOURCE	Injected matches Source	{'%': 0.0001, 'NA': 0.2499, 'e12/l': 0.75, 'e9/l': 0.0}	{'%': 0.0001, 'NA': 0.2472, 'e12/l': 0.7527}
+3024731	Entitic mean volume	fl	SOURCE	Injected matches Source	{'NA': 0.0855, 'fl': 0.9145}	{'NA': 0.0851, 'fl': 0.9149}
+3035941	Entitic mass	pg	SOURCE	Injected matches Source	{'NA': 0.0852, 'pg': 0.9129, 'pg/cell': 0.0019}	{'NA': 0.0849, 'pg': 0.9132, 'pg/cell': 0.0019}
+3020564	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0808, 'mmol/l': 0.0, 'umol/l': 0.9192}	{'NA': 0.0804, 'mmol/l': 0.0, 'umol/l': 0.9196}
+3023103	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1028, 'mmol/l': 0.8972}	{'NA': 0.1028, 'mmol/l': 0.8972}
+3019550	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0907, 'mmol/l': 0.9093, 'mol/l': 0.0}	{'NA': 0.0907, 'mmol/l': 0.9093, 'mol/l': 0.0}
+3003338	Entitic Mass/volume	g/l	SOURCE	Injected matches Source	{'NA': 0.0505, 'g/l': 0.9495}	{'NA': 0.0505, 'g/l': 0.9495}
+3002385	DistWidth	%	SOURCE	Injected matches Source	{'%': 0.924, 'NA': 0.076}	{'%': 0.9242, 'NA': 0.0758}
+3020460	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.372, 'g/l': 0.0, 'mg/l': 0.628, 'mg/ml': 0.0}	{'NA': 0.3651, 'g/l': 0.0, 'mg/l': 0.6349, 'mg/ml': 0.0}
+40761511	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40764999	Volume Rate/Area	ml/min/173m2	SOURCE	Injected matches Source	{'NA': 0.4014, 'form': 0.0028, 'ml/min/173m2': 0.5958}	{'NA': 0.3284, 'ml/min/173m2': 0.6716}
+3006923	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1165, 'iu/l': 0.0, 'u/l': 0.8835}	{'NA': 0.1165, 'iu/l': 0.0, 'u/l': 0.8835}
+3032080	Relative time	inr	SOURCE	Injected matches Source	{'%': 0.0003, 'NA': 0.8232, 'form': 0.0086, 'inr': 0.1679}	{'%': 0.0003, 'NA': 0.3359, 'inr': 0.6638}
+3035995	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0757, 'iu/l': 0.0001, 'u/l': 0.9242}	{'NA': 0.0757, 'iu/l': 0.0001, 'u/l': 0.9242}
+3013650	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.2835, 'e9/l': 0.7165}	{'NA': 0.2826, 'e9/l': 0.7174}
+3004410	Mass fraction	mmol/mol	SOURCE	Injected matches Source	{'%': 0.0452, 'NA': 0.2462, 'mmol/mol': 0.7086}	{'%': 0.0473, 'NA': 0.2393, 'mmol/mol': 0.7134}
+3001308	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1755, 'mmol/l': 0.8245}	{'NA': 0.1726, 'mmol/l': 0.8274}
+3021589	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.2666, 'e9/l': 0.7334}	{'NA': 0.2649, 'e9/l': 0.7351}
+3009201	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.2018, 'miu/l': 0.0592, 'mlu/l': 0.0022, 'mu/l': 0.7367, 'u/l': 0.0001}	{'NA': 0.2018, 'miu/l': 0.0614, 'mu/l': 0.7368}
+3019900	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1636, 'mmol/l': 0.8364}	{'NA': 0.1619, 'mmol/l': 0.8381}
+3023602	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1781, 'mmol/l': 0.8219}	{'NA': 0.1781, 'mmol/l': 0.8219}
+3018251	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2069, 'mmol/l': 0.7928, 'nmol/l': 0.0003}	{'NA': 0.2047, 'mmol/l': 0.7953}
+3048773	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1577, 'mmol/l': 0.8423}	{'NA': 0.1577, 'mmol/l': 0.8423}
+3013115	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0007, 'NA': 0.2634, 'e6/l': 0.0001, 'e9/l': 0.7357}	{'%': 0.0007, 'NA': 0.2634, 'e6/l': 0.0001, 'e9/l': 0.7357}
+3016431	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2307, 'mmol/l': 0.7693}	{'NA': 0.2307, 'mmol/l': 0.7693}
+3019198	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.2431, 'e9/l': 0.7569}	{'NA': 0.2423, 'e9/l': 0.7577}
+3008486	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1746, 'pmol/l': 0.8254}	{'NA': 0.1746, 'pmol/l': 0.8254}
+3006315	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0008, 'NA': 0.2635, 'e9/l': 0.7357}	{'%': 0.0008, 'NA': 0.2627, 'e9/l': 0.7366}
+3001604	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0008, 'NA': 0.2618, 'e9/l': 0.7374}	{'%': 0.0008, 'NA': 0.2618, 'e9/l': 0.7374}
+3006140	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0664, 'umol/l': 0.9336}	{'NA': 0.0664, 'umol/l': 0.9336}
+3002030	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9279, 'NA': 0.0721}	{'%': 0.9309, 'NA': 0.0691}
+3019069	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9086, 'NA': 0.0914}	{'%': 0.9101, 'NA': 0.0899}
+3022096	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9112, 'NA': 0.0888}	{'%': 0.9112, 'NA': 0.0888}
+3006504	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9186, 'NA': 0.0814}	{'%': 0.9206, 'NA': 0.0794}
+3013707	Velocity (distance/time)	mm/h	SOURCE	Injected matches Source	{'NA': 0.1229, 'mm/h': 0.8771}	{'NA': 0.1185, 'mm/h': 0.8815}
+3018010	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9383, 'NA': 0.0617}	{'%': 0.9396, 'NA': 0.0604}
+3037467	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3031040	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.9855, 'e6/l': 0.0145}	{'NA': 0.9855, 'e6/l': 0.0145}
+3013826	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.0948, 'mmol/l': 0.9051}	{'%': 0.0, 'NA': 0.0782, 'mmol/l': 0.9218}
+3021347	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.0951, 'mmol/l': 0.9049}	{'%': 0.0, 'NA': 0.0951, 'mmol/l': 0.9049}
+3044889	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3026910	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1176, 'iu/l': 0.0002, 'u/l': 0.8822}	{'NA': 0.1157, 'iu/l': 0.0002, 'u/l': 0.8841}
+42870588	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024561	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0794, 'g/l': 0.9206}	{'NA': 0.0794, 'g/l': 0.9206}
+706163	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009261	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.8513, 'estimate': 0.1487}	{'NA': 0.8513, 'estimate': 0.1487}
+3035350	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.8285, 'estimate': 0.1644, 'l': 0.0071}	{'NA': 0.8285, 'estimate': 0.1715}
+3021601	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.8434, 'estimate': 0.1566}	{'NA': 0.8434, 'estimate': 0.1566}
+40758558	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001122	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0977, 'ug/l': 0.9023}	{'NA': 0.0977, 'ug/l': 0.9023}
+40763086	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.8436, 'estimate': 0.1564}	{'NA': 0.8436, 'estimate': 0.1564}
+3018095	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.4749, 'e6/l': 0.5251}	{'NA': 0.4749, 'e6/l': 0.5251}
+3013603	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.2475, 'mg/l': 0.0, 'ug/l': 0.7525}	{'NA': 0.2475, 'mg/l': 0.0, 'ug/l': 0.7525}
+3015736	Log molar concentration	ph	INJECTED	INJECTION CHANGE: Source mode was 'form'	{'NA': 0.9728, 'form': 0.0269, 'ph': 0.0003}	{'NA': 0.5496, 'ph': 0.4504}
+3001079	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.9823, 'estimate': 0.0177}	{'NA': 0.9823, 'estimate': 0.0177}
+3019800	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.2922, 'ng/l': 0.7076, 'ug/l': 0.0002}	{'NA': 0.2922, 'ng/l': 0.7076, 'ug/l': 0.0002}
+3020682	Ratio	mg/mmol	SOURCE	Injected matches Source	{'NA': 0.5321, 'g/mol': 0.0003, 'mg/mmol': 0.4676}	{'NA': 0.5321, 'g/mol': 0.0003, 'mg/mmol': 0.4676}
+3018418	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.8186, 'ph': 0.1814}	{'NA': 0.3711, 'ph': 0.6289}
+3029287	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.9997, 'e6/l': 0.0003}	{'NA': 0.9997, 'e6/l': 0.0003}
+3029937	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.7442, 'estimate': 0.2558}	{'NA': 0.7442, 'estimate': 0.2558}
+3009508	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.203, 'mmol/l': 0.789, 'umol/l': 0.008}	{'NA': 0.1959, 'mmol/l': 0.7961, 'umol/l': 0.008}
+3023368	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1761868	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015377	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0764, 'mmol/l': 0.9236}	{'NA': 0.0764, 'mmol/l': 0.9236}
+3013721	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0713, 'iu/l': 0.0005, 'u/l': 0.9282}	{'NA': 0.0713, 'iu/l': 0.0005, 'u/l': 0.9282}
+40771025	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1149, 'mmol/l': 0.0, 'nmol/l': 0.8851}	{'NA': 0.1149, 'mmol/l': 0.0, 'nmol/l': 0.8851}
+3013512	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002582	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3525, 'e6/l': 0.6475}	{'NA': 0.3525, 'e6/l': 0.6475}
+40760892	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033658	Relative time	%	SOURCE	Injected matches Source	{'%': 0.9771, 'NA': 0.0229}	{'%': 0.9771, 'NA': 0.0229}
+3012516	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4545, 'mg/l': 0.5455, 'mg/ml': 0.0}	{'NA': 0.4494, 'mg/l': 0.5506, 'mg/ml': 0.0}
+3014576	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.0002, 'mmol/l': 0.9998}	{'%': 0.0, 'NA': 0.0002, 'mmol/l': 0.9998}
+3001784	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.3663, 'NA': 0.6337, 'ratio': 0.0}	{'%': 0.3663, 'NA': 0.6252, 'ratio': 0.0085}
+3041096	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.7455, 'estimate': 0.2545}	{'NA': 0.7455, 'estimate': 0.2545}
+3019150	Specific gravity	kg/l	SOURCE	Injected matches Source	{'NA': 0.8851, 'g/ml': 0.0072, 'kg/l': 0.1077}	{'NA': 0.4919, 'kg/l': 0.5081}
+3026008	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030467	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3994, 'e6/l': 0.6006}	{'NA': 0.3944, 'e6/l': 0.6056}
+3011397	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019977	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.9927, 'ph': 0.0073}	{'NA': 0.7015, 'ph': 0.2985}
+3027946	Partial pressure	kpa	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.033, 'kpa': 0.9669}	{'%': 0.0, 'NA': 0.033, 'kpa': 0.9669}
+3027801	Partial pressure	kpa	SOURCE	Injected matches Source	{'%': 0.0, 'NA': 0.0332, 'kpa': 0.9668}	{'%': 0.0, 'NA': 0.0332, 'kpa': 0.9668}
+43054903	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.5629, 'pmol/l': 0.4371}	{'NA': 0.5629, 'pmol/l': 0.4371}
+3003396	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1487, 'mmol/l': 0.8513}	{'NA': 0.1487, 'mmol/l': 0.8513}
+3016771	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0813, 'u/l': 0.9187}	{'NA': 0.0813, 'u/l': 0.9187}
+36304419	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.964, 'estimate': 0.036}	{'NA': 0.964, 'estimate': 0.036}
+3029187	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.1607, 'ng/l': 0.8393}	{'NA': 0.1607, 'ng/l': 0.8393}
+3014051	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003458	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0541, 'mmol/l': 0.9459}	{'NA': 0.0541, 'mmol/l': 0.9459}
+3016502	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9704, 'NA': 0.0296}	{'%': 0.9704, 'NA': 0.0296}
+40768804	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000991	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002173	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0251, 'g/l': 0.9749}	{'NA': 0.0251, 'g/l': 0.9749}
+3044640	-	NA	INJECTED	INJECTION CHANGE: Source mode was 'form'	{'NA': 0.9917, 'form': 0.0083}	{'NA': 1.0}
+3025839	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1856, 'mmol/l': 0.8144}	{'NA': 0.1856, 'mmol/l': 0.8144}
+3045783	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014111	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0128, 'mmol/l': 0.9872}	{'NA': 0.0128, 'mmol/l': 0.9872}
+3021337	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.23, 'ng/l': 0.6906, 'ug/l': 0.0794}	{'NA': 0.23, 'ng/l': 0.6906, 'ug/l': 0.0794}
+3020779	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.048, 'mmol/l': 0.952}	{'NA': 0.048, 'mmol/l': 0.952}
+3026493	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.133, 'mmol/l': 0.0093, 'umol/l': 0.8577}	{'NA': 0.133, 'umol/l': 0.867}
+3007220	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0751, 'u/l': 0.9249}	{'NA': 0.0751, 'u/l': 0.9249}
+3014007	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9988, 'NA': 0.0012}	{'%': 0.9988, 'NA': 0.0012}
+3028653	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9977, 'NA': 0.0023}	{'%': 0.9977, 'NA': 0.0023}
+3006217	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9982, 'NA': 0.0018}	{'%': 0.9982, 'NA': 0.0018}
+3015399	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1936, 'mg/l': 0.8064}	{'NA': 0.1936, 'mg/l': 0.8064}
+3000850	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.1124, 'e6/l': 0.8876}	{'NA': 0.1124, 'e6/l': 0.8876}
+3012095	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.054, 'mmol/l': 0.946}	{'NA': 0.054, 'mmol/l': 0.946}
+3016293	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.005, 'mmol/l': 0.995}	{'NA': 0.005, 'mmol/l': 0.995}
+46236098	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014218	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.011, 'mmol/l': 0.989}	{'NA': 0.011, 'mmol/l': 0.989}
+40762366	Volume Fraction	%	SOURCE	Injected matches Source	{'%': 0.9584, 'NA': 0.0358, 'vol%': 0.0058}	{'%': 0.9584, 'NA': 0.0358, 'vol%': 0.0058}
+3026782	Osmolality	mosm/kgh2o	SOURCE	Injected matches Source	{'NA': 0.1667, 'mosm/kgh2o': 0.7767, 'mosm/l': 0.0566}	{'NA': 0.1498, 'mosm/kgh2o': 0.8502}
+3020059	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2248, 'mmol/l': 0.7752}	{'NA': 0.2248, 'mmol/l': 0.7752}
+3030306	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.6161, 'e6/l': 0.3839}	{'NA': 0.6161, 'e6/l': 0.3839}
+42868674	Substance Ratio	%	SOURCE	Injected matches Source	{'%': 0.5601, 'NA': 0.4387, 'ratio': 0.0012}	{'%': 0.5601, 'NA': 0.4387, 'ratio': 0.0012}
+3005013	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.4181, 'ug/l': 0.5819}	{'NA': 0.4181, 'ug/l': 0.5819}
+3022250	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.039, 'u/l': 0.961}	{'NA': 0.039, 'u/l': 0.961}
+3029879	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.6408, 'e6/l': 0.3592}	{'NA': 0.6408, 'e6/l': 0.3592}
+46235355	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021960	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1894, 'nmol/l': 0.8106}	{'NA': 0.1894, 'nmol/l': 0.8106}
+3022948	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0687, 'mmol/l': 0.0, 'umol/l': 0.9313}	{'NA': 0.0687, 'mmol/l': 0.0, 'umol/l': 0.9313}
+3003694	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012544	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.9939, 'ph': 0.0061}	{'NA': 0.4699, 'ph': 0.5301}
+3021447	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.031, 'kpa': 0.969}	{'NA': 0.031, 'kpa': 0.969}
+3004789	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0774, 'g/l': 0.9226}	{'NA': 0.0774, 'g/l': 0.9226}
+3002032	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2546, 'mmol/l': 0.7454}	{'NA': 0.2546, 'mmol/l': 0.7454}
+3025159	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.1998, 'NA': 0.8002}	{'%': 0.1998, 'NA': 0.8002}
+3008152	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0554, 'mmol/l': 0.9446}	{'NA': 0.0554, 'mmol/l': 0.9446}
+3051714	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.2525, 'mg/l': 0.7475}	{'NA': 0.2525, 'mg/l': 0.7475}
+3017181	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.2362, 'NA': 0.7638}	{'%': 0.2362, 'NA': 0.7638}
+40763571	Ratio	%	SOURCE	Injected matches Source	{'%': 0.8555, 'NA': 0.1445}	{'%': 0.8555, 'NA': 0.0866, 'ratio': 0.058}
+3017732	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0113, 'NA': 0.1154, 'e9/l': 0.8733}	{'%': 0.0113, 'NA': 0.1154, 'e9/l': 0.8733}
+3003785	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.2195, 'ug/l': 0.7805}	{'NA': 0.2195, 'ug/l': 0.7805}
+3021440	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.2138, 'NA': 0.7862}	{'%': 0.2138, 'NA': 0.7862}
+3002179	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.2497, 'NA': 0.7503}	{'%': 0.2497, 'NA': 0.7503}
+3019225	Log molar concentration	ph	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.3005, 'ph': 0.6995}
+3048689	Mass Content	ug/g	SOURCE	Injected matches Source	{'NA': 0.1913, 'ug/g': 0.8087}	{'NA': 0.1913, 'ug/g': 0.8087}
+3024135	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009035	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.2256, 'mmol/l': 0.0033, 'pmol/l': 0.7711}	{'NA': 0.2252, 'mmol/l': 0.0033, 'pmol/l': 0.7715}
+3024950	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019050	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7533, 'eliau/ml': 0.018, 'u/ml': 0.2288}	{'NA': 0.7533, 'eliau/ml': 0.018, 'u/ml': 0.2288}
+3005772	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1274, 'umol/l': 0.8726}	{'NA': 0.1274, 'umol/l': 0.8726}
+3018677	Time (e.g. seconds)	s	SOURCE	Injected matches Source	{'NA': 0.033, 's': 0.967}	{'NA': 0.033, 's': 0.967}
+3019284	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019902	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007164	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.3883, 'g/l': 0.6117, 'mg/l': 0.0, 'ug/l': 0.0}	{'NA': 0.3883, 'g/l': 0.6117, 'mg/l': 0.0, 'ug/l': 0.0}
+40761536	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3044938	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024354	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.0352, 'kpa': 0.9648}	{'NA': 0.0352, 'kpa': 0.9648}
+3000067	Mass Concentration	ng/l	SOURCE	Injected matches Source | NEW MAPPING	{'NA': 0.1094, 'ng/l': 0.8906}	{'NA': 0.1094, 'ng/l': 0.8906}
+3027945	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8991, 'NA': 0.1009}	{'%': 0.8991, 'NA': 0.1009}
+3003510	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3048816	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1349, 'mmol/l': 0.8651}	{'NA': 0.1349, 'mmol/l': 0.8651}
+3042936	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4034850	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019309	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3857, 'nmol/l': 0.6143}	{'NA': 0.3857, 'nmol/l': 0.6143}
+3007628	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0118, 'mmol/l': 0.9882}	{'NA': 0.0118, 'mmol/l': 0.9882}
+3019060	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023024	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.0874, 'kpa': 0.9126}	{'NA': 0.0874, 'kpa': 0.9126}
+3009343	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.9189, 'ph': 0.0811}	{'NA': 0.2496, 'ph': 0.7504}
+3021614	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.7218, 'iu/l': 0.0001, 'iu/ml': 0.2289, 'kiu/l': 0.0391, 'u/ml': 0.0101}	{'NA': 0.7218, 'iu/l': 0.0001, 'iu/ml': 0.2289, 'kiu/l': 0.0391, 'u/ml': 0.0101}
+3018006	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016417	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1896, 'u/l': 0.8104}	{'NA': 0.1896, 'u/l': 0.8104}
+40761535	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003031	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.8325, 'NA': 0.1675}	{'%': 0.8325, 'NA': 0.1675}
+3019832	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3026989	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1062, 'pmol/l': 0.8938}	{'NA': 0.1062, 'pmol/l': 0.8938}
+3023520	Number Concentration	e9/l	SOURCE	Injected matches Source	{'%': 0.0004, 'NA': 0.3356, 'e9/l': 0.664}	{'%': 0.0004, 'NA': 0.3356, 'e9/l': 0.664}
+3041942	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6258, 'eliau/ml': 0.0548, 'u/ml': 0.3194}	{'NA': 0.6258, 'eliau/ml': 0.0548, 'u/ml': 0.3194}
+3036481	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0702, 'nmol/l': 0.9298}	{'NA': 0.0702, 'nmol/l': 0.9298}
+3005719	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0779, 'g/l': 0.9221}	{'NA': 0.0779, 'g/l': 0.9221}
+3002109	Mass Ratio	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.3349, 'ratio': 0.6651}
+3013742	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0908, 'g/l': 0.5348, 'mg/l': 0.3745}	{'NA': 0.0908, 'g/l': 0.5348, 'mg/l': 0.3745}
+43055554	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.372, 'mmol/l': 0.628}	{'NA': 0.372, 'mmol/l': 0.628}
+3017143	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3043924	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011960	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.096, 'ng/l': 0.9038, 'ng/ml': 0.0001}	{'NA': 0.096, 'ng/l': 0.9038, 'ng/ml': 0.0001}
+3007853	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004119	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0353, 'g/l': 0.9647, 'mg/l': 0.0}	{'NA': 0.0353, 'g/l': 0.9647, 'mg/l': 0.0}
+46236952	Volume Rate/Area	ml/min/173m2	SOURCE	Injected matches Source	{'NA': 0.6021, 'ml/min/173m2': 0.3979}	{'NA': 0.6021, 'ml/min/173m2': 0.3979}
+3026250	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0424, 'ug/l': 0.9576}	{'NA': 0.0424, 'ug/l': 0.9576}
+3023081	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9019, 'NA': 0.0981}	{'%': 0.9019, 'NA': 0.0981}
+3038288	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020630	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0668, 'g/l': 0.9332}	{'NA': 0.0668, 'g/l': 0.9332}
+3017446	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1407, 'nmol/l': 0.8577, 'pmol/l': 0.0015}	{'NA': 0.1407, 'nmol/l': 0.8577, 'pmol/l': 0.0015}
+3020891	Temperature	°c	SOURCE	Injected matches Source	{'NA': 0.0062, '\u00b0c': 0.9938}	{'NA': 0.0062, '\u00b0c': 0.9938}
+3022621	Log molar concentration	ph	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.2865, 'ph': 0.7135}
+43054914	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037522	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.8016, 'titre': 0.1984}	{'NA': 0.8016, 'titre': 0.1984}
+3030981	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.0504, 'e6/l': 0.9496}	{'NA': 0.0504, 'e6/l': 0.9496}
+3007930	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9005, 'NA': 0.0995}	{'%': 0.9005, 'NA': 0.0995}
+3006093	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004529	Partial pressure	%	SOURCE	Injected matches Source	{'%': 0.9728, 'NA': 0.0272}	{'%': 0.9728, 'NA': 0.0272}
+3045414	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.8408, 'estimate': 0.1592}	{'NA': 0.8408, 'estimate': 0.1592}
+3022313	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033319	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000494	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005785	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.12, 'ng/ml': 0.0002, 'ug/l': 0.8798}	{'NA': 0.12, 'ng/ml': 0.0002, 'ug/l': 0.8798}
+3008230	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9422, 'au/ml': 0.0578}	{'NA': 0.9422, 'au/ml': 0.0578}
+3037551	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.036, 'u/ml': 0.964}	{'NA': 0.036, 'u/ml': 0.964}
+3002256	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40768797	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010517	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9933, 'NA': 0.0067}	{'%': 0.9933, 'NA': 0.0067}
+3024889	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9956, 'NA': 0.0044}	{'%': 0.9956, 'NA': 0.0044}
+3047181	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1409, 'mmol/l': 0.8591}	{'NA': 0.1409, 'mmol/l': 0.8591}
+3004490	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1142, 'mmol/l': 0.8858}	{'NA': 0.1142, 'mmol/l': 0.8858}
+3022145	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000330	Specific gravity	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.1408, 'ratio': 0.8592}
+3011371	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027273	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0379, 'mmol/l': 0.9621}	{'NA': 0.0379, 'mmol/l': 0.9621}
+3000492	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004588	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000081	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2428, 'nmol/l': 0.6159, 'umol/l': 0.1413}	{'NA': 0.2428, 'nmol/l': 0.6159, 'umol/l': 0.1413}
+42868678	Substance Concentration	mmol/l	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.4291, 'mmol/l': 0.5709}
+21494755	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030366	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0589, 'mg/l': 0.9411}	{'NA': 0.0589, 'mg/l': 0.9411}
+3010375	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0397, 'ug/l': 0.9603}	{'NA': 0.0397, 'ug/l': 0.9603}
+43055120	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.8563, 'iu/ml': 0.1192, 'u/ml': 0.0245}	{'NA': 0.8563, 'iu/ml': 0.1192, 'u/ml': 0.0245}
+3021879	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018572	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1359, 'mmol/l': 0.8641}	{'NA': 0.1359, 'mmol/l': 0.8641}
+3039000	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1378, 'mmol/l': 0.8622}	{'NA': 0.1378, 'mmol/l': 0.8622}
+3018405	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'%': 0.0001, 'NA': 0.0114, 'mmol/l': 0.9884}	{'%': 0.0001, 'NA': 0.0114, 'mmol/l': 0.9884}
+3051552	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018171	Arbitrary Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.5967, 'iu/l': 0.0498, 'u/l': 0.3535}	{'NA': 0.5967, 'iu/l': 0.0498, 'u/l': 0.3535}
+3028026	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0943, 'g/l': 0.9057}	{'NA': 0.0943, 'g/l': 0.9057}
+3022914	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1488, 'u/ml': 0.8512}	{'NA': 0.1488, 'u/ml': 0.8512}
+3028300	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000764	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011288	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027008	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037121	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4764, 'g/l': 0.2367, 'mg/l': 0.2869}	{'NA': 0.4653, 'g/l': 0.2478, 'mg/l': 0.2869}
+4035726	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016251	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028626	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.0433, 'kpa': 0.9567}	{'NA': 0.0433, 'kpa': 0.9567}
+3043409	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0042, 'mmol/l': 0.9958}	{'NA': 0.0042, 'mmol/l': 0.9958}
+4010399	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027944	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010421	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.0844, 'ph': 0.9156}	{'NA': 0.0253, 'ph': 0.9747}
+3016879	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034860	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.183, 'mg/l': 0.817}	{'NA': 0.183, 'mg/l': 0.817}
+3047169	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1855, 'mg/l': 0.8145}	{'NA': 0.1855, 'mg/l': 0.8145}
+3008832	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0644, 'nmol/l': 0.7565, 'umol/l': 0.1791}	{'NA': 0.0644, 'nmol/l': 0.7565, 'umol/l': 0.1791}
+3015235	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0288, 'mmol/l': 0.9712}	{'NA': 0.0288, 'mmol/l': 0.9712}
+3020427	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.4757, 'iu/ml': 0.2916, 'u/ml': 0.2327}	{'NA': 0.4757, 'iu/ml': 0.2916, 'u/ml': 0.2327}
+36660697	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045424	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.7453, 'estimate': 0.2547}	{'NA': 0.7453, 'estimate': 0.2547}
+36031861	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021584	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.1933, 'mu/l': 0.8067}	{'NA': 0.1933, 'mu/l': 0.8067}
+1001926	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005322	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0734, 'u/l': 0.0002, 'u/ml': 0.9264}	{'NA': 0.0734, 'u/l': 0.0002, 'u/ml': 0.9264}
+3027238	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.625, 'iu/ml': 0.1712, 'u/ml': 0.2038}	{'NA': 0.625, 'iu/ml': 0.1712, 'u/ml': 0.2038}
+3016407	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.049, 'g/l': 0.951}	{'NA': 0.049, 'g/l': 0.951}
+3024928	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9785, 'NA': 0.0215}	{'%': 0.9785, 'NA': 0.0215}
+3007778	Mass Ratio	ratio	SOURCE	Injected matches Source	{'NA': 0.935, 'ratio': 0.065}	{'NA': 0.4621, 'ratio': 0.5379}
+3049717	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036489	Time (e.g. seconds)	s	SOURCE	Injected matches Source	{'NA': 0.1096, 's': 0.8904}	{'NA': 0.1096, 's': 0.8904}
+1761482	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024666	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1575, 'mmol/l': 0.8425}	{'NA': 0.1575, 'mmol/l': 0.8425}
+3005229	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0656, 'g/l': 0.9344}	{'NA': 0.0656, 'g/l': 0.9344}
+3052851	Arbitrary Concentration	index	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.4932, 'index': 0.5068}
+3043723	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0651, 'g/l': 0.9349}	{'NA': 0.0651, 'g/l': 0.9349}
+3043747	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0652, 'g/l': 0.9348}	{'NA': 0.0652, 'g/l': 0.9348}
+3000515	Relative catalytic concentration	%	SOURCE	Injected matches Source	{'%': 0.974, 'NA': 0.026}	{'%': 0.974, 'NA': 0.026}
+3034780	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1023, 'u/l': 0.8977}	{'NA': 0.1023, 'u/l': 0.8977}
+3001019	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013139	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005715	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1062, 'mg/l': 0.8938}	{'NA': 0.1062, 'mg/l': 0.8938}
+3019250	Relative time	%	SOURCE	Injected matches Source	{'%': 0.9242, 'NA': 0.0758}	{'%': 0.9242, 'NA': 0.0758}
+3014162	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016888	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9377, 'au/ml': 0.0601, 'u/ml': 0.0022}	{'NA': 0.9377, 'au/ml': 0.0601, 'u/ml': 0.0022}
+1616796	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015322	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0682, 'g/l': 0.9318}	{'NA': 0.0682, 'g/l': 0.9318}
+4024509	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023323	Arbitrary Concentration	iu/l	SOURCE	Injected matches Source	{'NA': 0.1929, 'iu/l': 0.4064, 'u/l': 0.4007}	{'NA': 0.1929, 'iu/l': 0.4064, 'u/l': 0.4007}
+3009466	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'%': 0.0009, 'NA': 0.1569, 'umol/l': 0.8422}	{'%': 0.0009, 'NA': 0.1569, 'umol/l': 0.8422}
+3040151	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.3691, 'mmol/l': 0.6309}	{'NA': 0.3691, 'mmol/l': 0.6309}
+3005895	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0533, 'ug/l': 0.9467}	{'NA': 0.0533, 'ug/l': 0.9467}
+3027315	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.0337, 'kpa': 0.9663}	{'NA': 0.0337, 'kpa': 0.9663}
+3013290	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.0339, 'kpa': 0.9661}	{'NA': 0.0339, 'kpa': 0.9661}
+3012501	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.4461, 'mmol/l': 0.5539}	{'NA': 0.4461, 'mmol/l': 0.5539}
+44816559	Mass Concentration	mg/l	INJECTED	INJECTION CHANGE: Source mode was 'umol/l'	{'NA': 0.5037, 'umol/l': 0.4963}	{'NA': 0.5008, 'mg/l': 0.4992}
+3028286	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0894, 'g/l': 0.8928, 'mg/l': 0.0177}	{'NA': 0.0894, 'g/l': 0.8928, 'mg/l': 0.0177}
+3023420	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.759, 'iu/ml': 0.1099, 'kiu/l': 0.0743, 'u/ml': 0.0568}	{'NA': 0.759, 'iu/ml': 0.1099, 'kiu/l': 0.0743, 'u/ml': 0.0568}
+3029713	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.1538, 'g/l': 0.8462}	{'NA': 0.1538, 'g/l': 0.8462}
+3012336	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2086, 'g/l': 0.7914}	{'NA': 0.2086, 'g/l': 0.7914}
+586526	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46235759	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035933	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.994, 'NA': 0.006}	{'%': 0.994, 'NA': 0.006}
+3023465	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0812, 'g/l': 0.9188}	{'NA': 0.0812, 'g/l': 0.9188}
+3019230	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.998, 'NA': 0.002}	{'%': 0.998, 'NA': 0.002}
+3046279	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.1309, 'ng/ml': 0.0443, 'ug/l': 0.8248}	{'NA': 0.1309, 'ng/ml': 0.0443, 'ug/l': 0.8248}
+3021387	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.1102, 'miu/l': 0.049, 'mu/l': 0.8407}	{'NA': 0.1102, 'miu/l': 0.049, 'mu/l': 0.8407}
+3004716	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008037	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0316, 'mmol/l': 0.9684}	{'NA': 0.0316, 'mmol/l': 0.9684}
+3025941	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36032419	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760888	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028707	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010566	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'pmol/l': 1.0}	{'pmol/l': 1.0}
+3051387	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4613, 'mg/l': 0.5387}	{'NA': 0.4283, 'mg/l': 0.5717}
+3009445	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.8964, 'iu/ml': 0.0768, 'u/ml': 0.0267}	{'NA': 0.8964, 'iu/ml': 0.0768, 'u/ml': 0.0267}
+3003327	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42529201	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0739, 'u/ml': 0.9261}	{'NA': 0.0739, 'u/ml': 0.9261}
+3004248	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0253, 'nmol/l': 0.9747}	{'NA': 0.0253, 'nmol/l': 0.9747}
+3044254	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035797	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0809, 'g/l': 0.9191}	{'NA': 0.0809, 'g/l': 0.9191}
+3017895	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7202, 'u/ml': 0.2798}	{'NA': 0.7202, 'u/ml': 0.2798}
+3021901	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9565, 'NA': 0.0435}	{'%': 0.9565, 'NA': 0.0435}
+3003191	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010156	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.2443, 'mg/l': 0.7557}	{'NA': 0.2443, 'mg/l': 0.7557}
+3038515	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0281, 'mmol/l': 0.9719}	{'NA': 0.0281, 'mmol/l': 0.9719}
+3035715	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.0099, 'e9/l': 0.9901}	{'NA': 0.0099, 'e9/l': 0.9901}
+3029338	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0951, 'g/l': 0.9049}	{'NA': 0.0951, 'g/l': 0.9049}
+43534045	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3046870	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.987, 'eliau/ml': 0.0012, 'u/ml': 0.0118}	{'NA': 0.987, 'eliau/ml': 0.0012, 'u/ml': 0.0118}
+3029379	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0542, 'g/l': 0.9458}	{'NA': 0.0542, 'g/l': 0.9458}
+3023183	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0897, 'umol/l': 0.9103}	{'NA': 0.0897, 'umol/l': 0.9103}
+3050129	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020961	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9656, 'titre': 0.0344}	{'NA': 0.9656, 'titre': 0.0344}
+3017044	Arbitrary Concentration	iu/l	SOURCE	Injected matches Source	{'NA': 0.5912, 'iu/l': 0.2712, 'iu/ml': 0.0008, 'mu/l': 0.0907, 'u/l': 0.046}	{'NA': 0.5912, 'iu/l': 0.3617, 'iu/ml': 0.0008, 'mu/l': 0.0002, 'u/l': 0.046}
+3000620	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0485, 'g/l': 0.9515}	{'NA': 0.0485, 'g/l': 0.9515}
+3017766	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0601, 'g/l': 0.9397, 'mg/l': 0.0002}	{'NA': 0.0601, 'g/l': 0.9397, 'mg/l': 0.0002}
+3012110	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0509, 'mg/l': 0.9491}	{'NA': 0.0509, 'mg/l': 0.9491}
+3027456	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.271, 'nmol/l': 0.729}	{'NA': 0.271, 'nmol/l': 0.729}
+3006184	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2035, 'g/l': 0.7965}	{'NA': 0.1627, 'g/l': 0.8373}
+1002224	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40767503	Volume Fraction	%	SOURCE	Injected matches Source	{'%': 0.611, 'NA': 0.032, 'ml/dl': 0.357}	{'%': 0.611, 'NA': 0.032, 'ml/dl': 0.357}
+36304997	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.8751, 'iu/l': 0.0047, 'iu/ml': 0.1202}	{'NA': 0.8751, 'iu/l': 0.0047, 'iu/ml': 0.1202}
+3004809	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.895, 'NA': 0.105}	{'%': 0.895, 'NA': 0.105}
+3043849	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9407, 'iu/ml': 0.0295, 'u/ml': 0.0298}	{'NA': 0.9407, 'iu/ml': 0.0295, 'u/ml': 0.0298}
+40768443	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006588	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0342, 'u/ml': 0.9658}	{'NA': 0.0342, 'u/ml': 0.9658}
+46237023	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029511	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019145	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.216, 'ug/l': 0.784}	{'NA': 0.216, 'ug/l': 0.784}
+3009214	Arbitrary Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.2511, 'iu/l': 0.2437, 'u/l': 0.5052}	{'NA': 0.2511, 'iu/l': 0.2437, 'u/l': 0.5052}
+21492888	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015171	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9256, 'u/ml': 0.0744}	{'NA': 0.9256, 'u/ml': 0.0744}
+3023421	Arbitrary Concentration	miu/ml	SOURCE	Injected matches Source	{'NA': 0.5682, 'iu/l': 0.0743, 'miu/ml': 0.2989, 'u/l': 0.0586}	{'NA': 0.5682, 'iu/l': 0.0743, 'miu/ml': 0.2989, 'u/l': 0.0586}
+3050449	Mass Rate	ug/min	SOURCE	Injected matches Source	{'NA': 0.5155, 'ug/min': 0.4845}	{'NA': 0.5155, 'ug/min': 0.4845}
+36032269	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1173, 'pmol/l': 0.8827}	{'NA': 0.1173, 'pmol/l': 0.8827}
+3048929	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014791	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0085, 'g/l': 0.9915}	{'NA': 0.0085, 'g/l': 0.9915}
+3050380	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020321	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36305247	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40763531	Multiple of the median	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.4834, 'ratio': 0.5166}
+46235831	Multiple of the median	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.4787, 'ratio': 0.5213}
+3008714	Multiple of the median	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.4847, 'ratio': 0.5153}
+3001334	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025547	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source | REF DIFF: ref was iu/ml	{'NA': 0.8075, 'iu/ml': 0.0947, 'u/ml': 0.0978}	{'NA': 0.8075, 'iu/ml': 0.0947, 'u/ml': 0.0978}
+3049207	Likelihood	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008364	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0042, 'g/l': 0.9958}	{'NA': 0.0042, 'g/l': 0.9958}
+3032836	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1278, 'nmol/l': 0.8722}	{'NA': 0.1278, 'nmol/l': 0.8722}
+3027545	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011831	Percentile	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.8664, 'ratio': 0.1336}
+3043238	Likelihood	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040853	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000570	Mass Content	ug/g	SOURCE	Injected matches Source	{'NA': 0.4188, 'ug/g': 0.5812}	{'NA': 0.4188, 'ug/g': 0.5812}
+3049804	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.9299, 'iu/ml': 0.0693, 'u/ml': 0.0008}	{'NA': 0.9299, 'iu/ml': 0.0693, 'u/ml': 0.0008}
+3008898	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036535	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.5232, 'ug/l': 0.4768}	{'NA': 0.5232, 'ug/l': 0.4768}
+3042194	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015916	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3027450	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9372, 'u/ml': 0.0628}	{'NA': 0.9372, 'u/ml': 0.0628}
+3047352	Likelihood	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000475	Number Concentration	e6/l	SOURCE	Injected matches Source	{'%': 0.0548, 'NA': 0.2968, 'e6/l': 0.6467, 'e9/l': 0.0016}	{'%': 0.0548, 'NA': 0.2968, 'e6/l': 0.6467, 'e9/l': 0.0016}
+3005033	Length	mm	SOURCE	Injected matches Source	{'NA': 0.337, 'mm': 0.663}	{'NA': 0.337, 'mm': 0.663}
+3006999	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.836, 'u/ml': 0.164}	{'NA': 0.836, 'u/ml': 0.164}
+37019628	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016921	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9009, 'u/ml': 0.0991}	{'NA': 0.9009, 'u/ml': 0.0991}
+3034274	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.2407, 'umol/l': 0.7593}	{'NA': 0.2407, 'umol/l': 0.7593}
+3008909	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013527	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007566	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9115, 'titre': 0.0885}	{'NA': 0.9115, 'titre': 0.0885}
+3019897	DistWidth	%	SOURCE	Injected matches Source	{'%': 0.9893, 'NA': 0.0107}	{'%': 0.9893, 'NA': 0.0107}
+3050238	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014702	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0342, 'nmol/l': 0.9658}	{'NA': 0.0342, 'nmol/l': 0.9658}
+42529200	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0081, 'u/ml': 0.9919}	{'NA': 0.0081, 'u/ml': 0.9919}
+3019473	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0447, 'g/l': 0.014, 'mg/l': 0.9412}	{'NA': 0.0447, 'g/l': 0.014, 'mg/l': 0.9412}
+3034770	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9691, 'titre': 0.0309}	{'NA': 0.9691, 'titre': 0.0309}
+3029634	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9441, 'titre': 0.0559}	{'NA': 0.9441, 'titre': 0.0559}
+3027475	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.2375, 'e6/l': 0.7625}	{'NA': 0.2375, 'e6/l': 0.7625}
+3008757	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1002102	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3017354	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8453, 'NA': 0.1547}	{'%': 0.8453, 'NA': 0.1547}
+3027544	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024403	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011648	Substance Concentration	%	SOURCE	Injected matches Source	{'%': 0.998, 'NA': 0.002}	{'%': 0.998, 'NA': 0.002}
+3010838	Substance Rate	mmol/24h	INJECTED	INJECTION CHANGE: Source mode was 'mmol'	{'NA': 0.1927, 'mmol': 0.7939, 'mmol/24h': 0.0134}	{'NA': 0.1927, 'mmol/24h': 0.8073}
+36033641	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016543	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.2623, 'e6/l': 0.7377}	{'NA': 0.2623, 'e6/l': 0.7377}
+3017918	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015635	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9848, 'u/ml': 0.0152}	{'NA': 0.9848, 'u/ml': 0.0152}
+3024891	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3051611	Arbitrary Concentration	index	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.3139, 'index': 0.6861}
+3023511	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010521	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036086	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.987, 'u/ml': 0.013}	{'NA': 0.987, 'u/ml': 0.013}
+3002482	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42529406	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013180	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8903, 'u/ml': 0.1097}	{'NA': 0.8903, 'u/ml': 0.1097}
+3014765	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006418	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037756	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025130	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40769539	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3044290	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042631	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014959	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.9583, 'iu/ml': 0.0417}	{'NA': 0.9583, 'iu/ml': 0.0417}
+3010130	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.5611, 'au/ml': 0.2452, 'u/ml': 0.1937}	{'NA': 0.5611, 'au/ml': 0.2452, 'u/ml': 0.1937}
+3045716	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0164, 'mmol/l': 0.9836}	{'NA': 0.0164, 'mmol/l': 0.9836}
+3020044	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.061, 'mmol/l': 0.939}	{'NA': 0.061, 'mmol/l': 0.939}
+40758310	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.03, 'pmol/l': 0.97}	{'NA': 0.03, 'pmol/l': 0.97}
+3025245	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.929, 'u/ml': 0.071}	{'NA': 0.929, 'u/ml': 0.071}
+40766189	Arbitrary Concentration	eliau/ml	SOURCE	Injected matches Source	{'NA': 0.8701, 'eliau/ml': 0.0727, 'u/ml': 0.0572}	{'NA': 0.8701, 'eliau/ml': 0.0727, 'u/ml': 0.0572}
+3023419	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005702	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007844	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9867, 'u/ml': 0.0133}	{'NA': 0.9867, 'u/ml': 0.0133}
+3043109	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40768793	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023939	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8913, 'u/ml': 0.1087}	{'NA': 0.8913, 'u/ml': 0.1087}
+3007080	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4166, 'u/ml': 0.5834}	{'NA': 0.4166, 'u/ml': 0.5834}
+3023351	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4565, 'u/ml': 0.5435}	{'NA': 0.4565, 'u/ml': 0.5435}
+3000012	Number Fraction	%	INJECTED	INJECTION CHANGE: Source mode was 'osuus'	{'NA': 0.3074, 'osuus': 0.6926}	{'%': 0.6926, 'NA': 0.3074}
+40765161	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028271	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0246, 'mmol/l': 0.9754}	{'NA': 0.0246, 'mmol/l': 0.9754}
+4094501	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021788	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024980	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2179, 'g/l': 0.7821}	{'NA': 0.2179, 'g/l': 0.7821}
+3026725	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2154, 'nmol/l': 0.7846}	{'NA': 0.2154, 'nmol/l': 0.7846}
+4268621	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029080	Entitic mass	pg	SOURCE	Injected matches Source	{'NA': 0.0218, 'pg': 0.9782}	{'NA': 0.0218, 'pg': 0.9782}
+44806420	NA	ml/min/173m2	SOURCE	Injected matches Source | REF DIFF: ref was NA	{'NA': 0.1843, 'ml/min/173m2': 0.8157}	{'NA': 0.1843, 'ml/min/173m2': 0.8157}
+3031478	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4146454	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012477	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3046524	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3043362	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020876	Mass Rate	g/24h	INJECTED	INJECTION CHANGE: Source mode was 'g'	{'NA': 0.5512, 'g': 0.4186, 'g/24h': 0.0125, 'mg/24h': 0.0176}	{'NA': 0.5512, 'g/24h': 0.4312, 'mg/24h': 0.0176}
+3003181	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2286, 'mmol/l': 0.7714}	{'NA': 0.2286, 'mmol/l': 0.7714}
+3042111	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039443	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019539	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9221, 'titre': 0.0779}	{'NA': 0.9221, 'titre': 0.0779}
+3003888	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4518, 'u/ml': 0.5482}	{'NA': 0.4518, 'u/ml': 0.5482}
+3003129	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0503, 'mmol/l': 0.9497}	{'NA': 0.0503, 'mmol/l': 0.9497}
+3011412	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.1289, 'e6/l': 0.4555, 'e9/l': 0.4156}	{'NA': 0.1289, 'e6/l': 0.4555, 'e9/l': 0.4156}
+3044941	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041354	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0159, 'mmol/l': 0.9841}	{'NA': 0.0159, 'mmol/l': 0.9841}
+3035285	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0158, 'mmol/l': 0.9842}	{'NA': 0.0158, 'mmol/l': 0.9842}
+3033705	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0158, 'mmol/l': 0.9842}	{'NA': 0.0158, 'mmol/l': 0.9842}
+3047826	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.1304, 'ug/l': 0.8696}	{'NA': 0.1304, 'ug/l': 0.8696}
+3011985	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.1158, 'mu/l': 0.8842}	{'NA': 0.1158, 'mu/l': 0.8842}
+3023601	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002523	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003740	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008401	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5392, 'u/ml': 0.4608}	{'NA': 0.5392, 'u/ml': 0.4608}
+3010726	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.469, 'u/ml': 0.531}	{'NA': 0.469, 'u/ml': 0.531}
+44816844	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.1955, 'mu/l': 0.8045}	{'NA': 0.1955, 'mu/l': 0.8045}
+3016244	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.0371, 'mu/l': 0.9629}	{'NA': 0.0371, 'mu/l': 0.9629}
+42870365	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.7763, 'mg/l': 0.2237}	{'NA': 0.5878, 'mg/l': 0.4122}
+3023150	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9192, 'iu/ml': 0.0254, 'u/ml': 0.0553}	{'NA': 0.9192, 'iu/ml': 0.0254, 'u/ml': 0.0553}
+3000034	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3973, 'mg/l': 0.6027}	{'NA': 0.3973, 'mg/l': 0.6027}
+42529215	Arbitrary Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1997, 'u/l': 0.8003}	{'NA': 0.1997, 'u/l': 0.8003}
+3030136	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0146, 'nmol/l': 0.9854}	{'NA': 0.0146, 'nmol/l': 0.9854}
+3000855	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004383	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9684, 'titre': 0.0316}	{'NA': 0.9684, 'titre': 0.0316}
+3003284	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9059, 'titre': 0.0941}	{'NA': 0.9059, 'titre': 0.0941}
+3028531	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0204, 'ug/l': 0.9796}	{'NA': 0.0204, 'ug/l': 0.9796}
+3042206	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014326	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0361, 'nmol/l': 0.9639}	{'NA': 0.0361, 'nmol/l': 0.9639}
+3017817	Mass	mg	SOURCE	Injected matches Source	{'NA': 0.0041, 'g': 0.0034, 'mg': 0.9925}	{'NA': 0.0041, 'g': 0.0034, 'mg': 0.9925}
+3035637	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'ng/l': 1.0}	{'ng/l': 1.0}
+3044355	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6058, 'u/ml': 0.3942}	{'NA': 0.6058, 'u/ml': 0.3942}
+3051651	Arbitrary Concentration	index	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.0064, 'index': 0.9936}
+3022806	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9908, 'NA': 0.0092}	{'%': 0.9908, 'NA': 0.0092}
+3009041	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5196, 'u/ml': 0.4804}	{'NA': 0.5196, 'u/ml': 0.4804}
+3018387	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.8812, 'au/ml': 0.1188}	{'NA': 0.7422, 'au/ml': 0.2578}
+3024172	Arbitrary Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1287, 'iu/l': 0.2782, 'u/l': 0.5931}	{'NA': 0.1287, 'iu/l': 0.2782, 'u/l': 0.5931}
+3020565	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035320	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4007, 'mg/l': 0.5993}	{'NA': 0.4007, 'mg/l': 0.5993}
+21494815	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9861, 'NA': 0.0139}	{'%': 0.9861, 'NA': 0.0139}
+3026389	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3038177	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40768800	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022493	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0874, 'g/l': 0.0036, 'mg/l': 0.9089}	{'NA': 0.0874, 'g/l': 0.0036, 'mg/l': 0.9089}
+3014133	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4786, 'u/ml': 0.5214}	{'NA': 0.4786, 'u/ml': 0.5214}
+44790047	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+44790048	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+44790049	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+44806118	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021513	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.1154, 'kpa': 0.8846}	{'NA': 0.1154, 'kpa': 0.8846}
+3042596	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016650	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021952	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.9923, 'u/l': 0.0077}	{'NA': 0.9923, 'u/l': 0.0077}
+3028772	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0008, 'g/l': 0.4904, 'mg/l': 0.5031, 'ug/l': 0.0057}	{'NA': 0.0008, 'g/l': 0.4904, 'mg/l': 0.5031, 'ug/l': 0.0057}
+3025271	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.1444, 'e6/l': 0.664, 'e9/l': 0.1917}	{'NA': 0.1444, 'e6/l': 0.664, 'e9/l': 0.1917}
+3013327	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494890	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030692	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023430	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5273, 'u/ml': 0.4727}	{'NA': 0.5273, 'u/ml': 0.4727}
+3047007	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006576	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1371, 'mmol/l': 0.8629}	{'NA': 0.1371, 'mmol/l': 0.8629}
+42868544	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030408	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.88, 'nmol/l': 0.12}	{'NA': 0.88, 'nmol/l': 0.12}
+3026179	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.038, 'nmol/l': 0.9609, 'umol/l': 0.0012}	{'NA': 0.038, 'nmol/l': 0.9609, 'umol/l': 0.0012}
+3001788	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1493, 'pmol/l': 0.8507}	{'NA': 0.1493, 'pmol/l': 0.8507}
+3020148	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.795, 'iu/ml': 0.2011, 'u/l': 0.001, 'u/ml': 0.003}	{'NA': 0.795, 'iu/ml': 0.2011, 'u/l': 0.001, 'u/ml': 0.003}
+3012568	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016701	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1118, 'mmol/l': 0.8882}	{'NA': 0.1118, 'mmol/l': 0.8882}
+3016018	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014043	Number Fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+4195642	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001405	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.1714, 'e6/l': 0.6112, 'e9/l': 0.2174}	{'NA': 0.1714, 'e6/l': 0.6112, 'e9/l': 0.2174}
+3006571	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.6659, 'NA': 0.3341}	{'%': 0.6659, 'NA': 0.3341}
+3005570	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.9944, 'mmol/l': 0.0056}	{'NA': 0.9944, 'mmol/l': 0.0056}
+3014148	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012220	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003434	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.1058, 'g/l': 0.8942}	{'NA': 0.1058, 'g/l': 0.8942}
+3024522	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3038071	Partial pressure	kpa	SOURCE	Injected matches Source	{'kpa': 1.0}	{'kpa': 1.0}
+42868716	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028167	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.0209, 'e6/l': 0.4781, 'e9/l': 0.501}	{'NA': 0.0209, 'e6/l': 0.4781, 'e9/l': 0.501}
+3023410	Appearance	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042733	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015816	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000924	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1175426	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9522, 'NA': 0.0478}	{'%': 0.9522, 'NA': 0.0478}
+40762119	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9588, 'u/ml': 0.0412}	{'NA': 0.9588, 'u/ml': 0.0412}
+3020287	Relative time	%	SOURCE	Injected matches Source	{'%': 0.9025, 'NA': 0.0975}	{'%': 0.9025, 'NA': 0.0975}
+3016881	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005988	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036432	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004616	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21493466	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21493690	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025468	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005136	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6816, 'u/ml': 0.3184}	{'NA': 0.6816, 'u/ml': 0.3184}
+1175715	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027831	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9671, 'NA': 0.0329}	{'%': 0.9671, 'NA': 0.0329}
+3042602	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0318, 'mmol/l': 0.9682}	{'NA': 0.0318, 'mmol/l': 0.9682}
+3039162	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9309, 'u/ml': 0.0691}	{'NA': 0.9309, 'u/ml': 0.0691}
+40766183	Arbitrary Concentration	eliau/ml	SOURCE	Injected matches Source	{'NA': 0.536, 'eliau/ml': 0.3332, 'u/ml': 0.1308}	{'NA': 0.536, 'eliau/ml': 0.3332, 'u/ml': 0.1308}
+3025023	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023199	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3208, 'e6/l': 0.6725, 'e9/l': 0.0066}	{'NA': 0.3208, 'e6/l': 0.6725, 'e9/l': 0.0066}
+3014037	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.4725, 'NA': 0.5275}	{'%': 0.4725, 'NA': 0.5275}
+3007847	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.012, 'u/ml': 0.988}	{'NA': 0.012, 'u/ml': 0.988}
+3032155	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2279, 'nmol/l': 0.7721}	{'NA': 0.2279, 'nmol/l': 0.7721}
+3008295	Osmolality	mosm/kgh2o	SOURCE	Injected matches Source	{'NA': 0.2233, 'mosm/kgh2o': 0.7767}	{'NA': 0.2233, 'mosm/kgh2o': 0.7767}
+3002148	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019601	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009340	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.8614, 'nmol/l': 0.1386}	{'NA': 0.8614, 'nmol/l': 0.1386}
+3026285	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0878, 'g/l': 0.9122}	{'NA': 0.0878, 'g/l': 0.9122}
+3005757	Relative time	%	SOURCE	Injected matches Source	{'%': 0.9633, 'NA': 0.0367}	{'%': 0.9633, 'NA': 0.0367}
+3004775	Volume	ml	SOURCE	Injected matches Source	{'NA': 0.2574, 'ml': 0.7426}	{'NA': 0.2574, 'ml': 0.7426}
+3042299	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.2546, 'mg/l': 0.7454}	{'NA': 0.2546, 'mg/l': 0.7454}
+3027135	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.289, 'g/l': 0.711}	{'NA': 0.289, 'g/l': 0.711}
+3028192	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2897, 'g/l': 0.7103}	{'NA': 0.2897, 'g/l': 0.7103}
+3024139	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2879, 'g/l': 0.7121}	{'NA': 0.2879, 'g/l': 0.7121}
+3028369	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4062490	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016914	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010503	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.0248, 'e6/l': 0.5612, 'e9/l': 0.414}	{'NA': 0.0248, 'e6/l': 0.5612, 'e9/l': 0.414}
+3027529	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9996, 'au/ml': 0.0004}	{'NA': 0.9996, 'au/ml': 0.0004}
+3051014	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.589, 'u/field': 0.411}	{'NA': 0.4206, 'u/field': 0.5794}
+3015024	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0457, 'mmol/l': 0.9543}	{'NA': 0.0457, 'mmol/l': 0.9543}
+3028308	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.4569, 'e6/l': 0.5424, 'e9/l': 0.0008}	{'NA': 0.4569, 'e6/l': 0.5424, 'e9/l': 0.0008}
+3012413	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0402, 'mmol/l': 0.9598}	{'NA': 0.0402, 'mmol/l': 0.9598}
+40768806	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4211845	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3048821	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.988, 'nmol/l': 0.012}	{'NA': 0.988, 'nmol/l': 0.012}
+3012441	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045142	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020191	Substance Concentration	promille	SOURCE	Injected matches Source	{'mmol/l': 0.1793, 'promille': 0.8207}	{'mmol/l': 0.1793, 'promille': 0.8207}
+3003329	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.6583, 'NA': 0.3417}	{'%': 0.6583, 'NA': 0.3417}
+4198724	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013201	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0685, 'mg/l': 0.9315}	{'NA': 0.0685, 'mg/l': 0.9315}
+43055361	Decimal number fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3020629	Relative Mass Concentration	%	SOURCE	Injected matches Source	{'%': 0.9281, 'NA': 0.0719}	{'%': 0.9281, 'NA': 0.0719}
+3032700	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9468, 'iu/ml': 0.0015, 'u/ml': 0.0518}	{'NA': 0.9468, 'iu/ml': 0.0015, 'u/ml': 0.0518}
+40759040	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1156, 'nmol/l': 0.8844}	{'NA': 0.1156, 'nmol/l': 0.8844}
+3034603	Genotype	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045788	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3038546	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040359	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041642	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006462	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40766800	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.9796, 'iu/ml': 0.0204}	{'NA': 0.9796, 'iu/ml': 0.0204}
+3003265	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9981, 'titre': 0.0019}	{'NA': 0.9981, 'titre': 0.0019}
+3036603	Volume	ml	SOURCE	Injected matches Source	{'NA': 0.0254, 'l': 0.0095, 'ml': 0.9651}	{'NA': 0.0254, 'l': 0.0095, 'ml': 0.9651}
+3041067	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9439, 'u/ml': 0.0561}	{'NA': 0.9439, 'u/ml': 0.0561}
+43055246	Ratio	%	SOURCE	Injected matches Source	{'%': 0.7864, 'NA': 0.2136}	{'%': 0.7864, 'NA': 0.2136}
+3010144	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3727, 'e6/l': 0.6212, 'e9/l': 0.0061}	{'NA': 0.3727, 'e6/l': 0.6212, 'e9/l': 0.0061}
+3020491	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1834, 'mmol/l': 0.8166}	{'NA': 0.1834, 'mmol/l': 0.8166}
+3001467	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1206, 'u/l': 0.8794}	{'NA': 0.1206, 'u/l': 0.8794}
+3018559	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014271	Susceptibility (microorganisms)	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000504	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.927, 'iu/ml': 0.0462, 'u/ml': 0.0268}	{'NA': 0.927, 'iu/ml': 0.0462, 'u/ml': 0.0268}
+3014973	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9933, 'au/ml': 0.0067}	{'NA': 0.9933, 'au/ml': 0.0067}
+3019497	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.7975, 'pmol/l': 0.2025}	{'NA': 0.7975, 'pmol/l': 0.2025}
+3017115	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1221, 'umol/l': 0.8779}	{'NA': 0.1221, 'umol/l': 0.8779}
+40759812	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494670	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036782	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0808, 'mmol/l': 0.9192}	{'NA': 0.0808, 'mmol/l': 0.9192}
+3010380	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9886, 'au/ml': 0.0113, 'u/ml': 0.0002}	{'NA': 0.9886, 'au/ml': 0.0113, 'u/ml': 0.0002}
+3043405	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012447	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009595	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40768795	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016436	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0071, 'u/l': 0.9929}	{'NA': 0.0071, 'u/l': 0.9929}
+4281824	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032773	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9965, 'titre': 0.0035}	{'NA': 0.9965, 'titre': 0.0035}
+3016750	Time (e.g. seconds)	min	SOURCE	Injected matches Source	{'NA': 0.217, 'min': 0.5021, 's': 0.2809}	{'NA': 0.217, 'min': 0.5021, 's': 0.2809}
+3037534	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.0027, 'ng/l': 0.9973}	{'NA': 0.0027, 'ng/l': 0.9973}
+3020485	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.4815, 'umol/l': 0.5185}	{'NA': 0.4815, 'umol/l': 0.5185}
+40763082	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0656, 'u/l': 0.9344}	{'NA': 0.0656, 'u/l': 0.9344}
+3017569	Substance Concentration	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3029396	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041423	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.96, 'u/ml': 0.04}	{'NA': 0.96, 'u/ml': 0.04}
+3048469	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1593, 'umol/l': 0.8407}	{'NA': 0.1593, 'umol/l': 0.8407}
+40764126	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011951	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.297, 'u/ml': 0.703}	{'NA': 0.297, 'u/ml': 0.703}
+3005791	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0411, 'mg/l': 0.0022, 'ug/l': 0.9567}	{'NA': 0.0411, 'mg/l': 0.0022, 'ug/l': 0.9567}
+3006245	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8055, 'NA': 0.1945}	{'%': 0.8055, 'NA': 0.1945}
+1001509	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3026470	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.2019, 'ug/l': 0.7981}	{'NA': 0.2019, 'ug/l': 0.7981}
+3000093	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021125	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40759850	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011166	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1175556	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.9149, 'au/ml': 0.0851}	{'NA': 0.9149, 'au/ml': 0.0851}
+40759836	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21492711	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760848	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7247, 'u/ml': 0.2753}	{'NA': 0.7247, 'u/ml': 0.2753}
+3034037	Volume Fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3035999	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.089, 'mmol/l': 0.911}	{'NA': 0.089, 'mmol/l': 0.911}
+3025577	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.3066, 'ug/l': 0.6934}	{'NA': 0.3066, 'ug/l': 0.6934}
+40759844	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013005	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0652, 'umol/l': 0.9348}	{'NA': 0.0652, 'umol/l': 0.9348}
+40759843	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016724	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0579, 'umol/l': 0.9421}	{'NA': 0.0579, 'umol/l': 0.9421}
+40768441	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40757494	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.902, 'umol/l': 0.098}	{'NA': 0.902, 'umol/l': 0.098}
+3043453	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.8383, 'titre': 0.1617}	{'NA': 0.8383, 'titre': 0.1617}
+40770918	Relative Ratio	%	SOURCE	Injected matches Source	{'%': 0.9274, 'NA': 0.0726}	{'%': 0.9274, 'NA': 0.0726}
+3046294	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9654, 'titre': 0.0346}	{'NA': 0.9654, 'titre': 0.0346}
+3018301	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.0006, 'nmol/l': 0.0011, 'pmol/l': 0.9983}	{'NA': 0.0006, 'nmol/l': 0.0011, 'pmol/l': 0.9983}
+3007368	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1527, 'g/l': 0.0079, 'mg/l': 0.8394}	{'NA': 0.1527, 'g/l': 0.0079, 'mg/l': 0.8394}
+3011391	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'pmol/l': 1.0}	{'pmol/l': 1.0}
+3012565	Volume	ml	SOURCE	Injected matches Source	{'NA': 0.1051, 'ml': 0.8949}	{'NA': 0.1051, 'ml': 0.8949}
+3021197	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3013727	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9758, 'NA': 0.0242}	{'%': 0.9758, 'NA': 0.0242}
+3044927	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40759842	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40759849	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040370	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1292, 'nmol/l': 0.8708}	{'NA': 0.1292, 'nmol/l': 0.8708}
+3050898	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005082	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0819, 'nmol/l': 0.9181}	{'NA': 0.0819, 'nmol/l': 0.9181}
+3018980	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.2407, 'umol/l': 0.7593}	{'NA': 0.2407, 'umol/l': 0.7593}
+3023709	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0182, 'ug/l': 0.9818}	{'NA': 0.0182, 'ug/l': 0.9818}
+3022803	Partial pressure	kpa	SOURCE	Injected matches Source	{'kpa': 1.0}	{'kpa': 1.0}
+3045156	Partial pressure	kpa	SOURCE	Injected matches Source	{'kpa': 1.0}	{'kpa': 1.0}
+3044242	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3006442	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0009, 'umol/l': 0.9991}	{'NA': 0.0009, 'umol/l': 0.9991}
+3018333	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034092	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9939, 'NA': 0.0061}	{'%': 0.9939, 'NA': 0.0061}
+3019420	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0826, 'ug/l': 0.9174}	{'NA': 0.0826, 'ug/l': 0.9174}
+3052649	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0588, 'u/l': 0.9412}	{'NA': 0.0588, 'u/l': 0.9412}
+3000208	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0433, 'umol/l': 0.9567}	{'NA': 0.0433, 'umol/l': 0.9567}
+3007449	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9427, 'NA': 0.0573}	{'%': 0.9427, 'NA': 0.0573}
+3020717	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0765, 'umol/l': 0.9235}	{'NA': 0.0765, 'umol/l': 0.9235}
+3038026	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9333, 'u/ml': 0.0667}	{'NA': 0.9333, 'u/ml': 0.0667}
+21494434	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024474	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1192, 'g/l': 0.008, 'mg/l': 0.8728}	{'NA': 0.1192, 'g/l': 0.008, 'mg/l': 0.8728}
+3002670	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5825, 'u/ml': 0.4175}	{'NA': 0.5825, 'u/ml': 0.4175}
+3042975	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006922	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025018	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9998, 'titre': 0.0002}	{'NA': 0.9998, 'titre': 0.0002}
+40761995	Number Concentration	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3040363	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029536	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.921, 'iu/ml': 0.079}	{'NA': 0.921, 'iu/ml': 0.079}
+3016616	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.129, 'umol/l': 0.871}	{'NA': 0.129, 'umol/l': 0.871}
+36305771	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027923	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2146, 'nmol/l': 0.7854}	{'NA': 0.2146, 'nmol/l': 0.7854}
+3020013	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1362, 'u/l': 0.8638}	{'NA': 0.1362, 'u/l': 0.8638}
+3011363	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+37020937	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004905	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0052, 'u/l': 0.9948}	{'NA': 0.0052, 'u/l': 0.9948}
+3025634	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006262	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022756	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0946, 'g/l': 0.3637, 'mg/l': 0.5416}	{'NA': 0.0946, 'g/l': 0.3637, 'mg/l': 0.5416}
+3012158	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3038297	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004915	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5874, 'au/ml': 0.0022, 'u/ml': 0.4104}	{'NA': 0.5874, 'au/ml': 0.0022, 'u/ml': 0.4104}
+40757349	Number Ratio	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.0712, 'ratio': 0.9288}
+3048402	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.3212, 'u/field': 0.6788}	{'NA': 0.3212, 'u/field': 0.6788}
+40759883	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016038	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1143, 'mmol/l': 0.8857}	{'NA': 0.1143, 'mmol/l': 0.8857}
+3025149	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.7315, 'iu/ml': 0.2685}	{'NA': 0.7315, 'iu/ml': 0.2685}
+3049506	Mass Rate	ug/min	SOURCE	Injected matches Source	{'NA': 0.8504, 'ug/min': 0.1496}	{'NA': 0.8504, 'ug/min': 0.1496}
+44786774	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.226, 'mg/l': 0.774}	{'NA': 0.226, 'mg/l': 0.774}
+3049539	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032699	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027953	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1538, 'u/l': 0.8462}	{'NA': 0.1538, 'u/l': 0.8462}
+3036428	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0933, 'u/l': 0.9067}	{'NA': 0.0933, 'u/l': 0.9067}
+3006270	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1528, 'nmol/l': 0.8472}	{'NA': 0.1528, 'nmol/l': 0.8472}
+3020874	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6192, 'u/ml': 0.3808}	{'NA': 0.6192, 'u/ml': 0.3808}
+4027681	Ratio	ratio	SOURCE	Injected matches Source	{'NA': 0.9799, 'ratio': 0.0201}	{'NA': 0.5097, 'ratio': 0.4903}
+44813793	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039429	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1822, 'nmol/l': 0.8178}	{'NA': 0.1822, 'nmol/l': 0.8178}
+3041145	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42869457	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033386	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037875	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+37020957	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494814	Number Fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3014599	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6837, 'u/ml': 0.3163}	{'NA': 0.6837, 'u/ml': 0.3163}
+3049714	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0346, 'ug/l': 0.9654}	{'NA': 0.0346, 'ug/l': 0.9654}
+3024263	Appearance	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018461	Mass Rate	ug/min	SOURCE	Injected matches Source	{'NA': 0.6276, 'ug/min': 0.3724}	{'NA': 0.6276, 'ug/min': 0.3724}
+3000060	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.4988, 'e9/l': 0.5012}	{'NA': 0.4988, 'e9/l': 0.5012}
+3017704	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40764127	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016228	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9706, 'NA': 0.0294}	{'%': 0.9706, 'NA': 0.0294}
+3051101	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3002222	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029023	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760847	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.914, 'titre': 0.086}	{'NA': 0.914, 'titre': 0.086}
+3036035	Relative Mass Concentration	%	SOURCE	Injected matches Source	{'%': 0.9529, 'NA': 0.0471}	{'%': 0.9529, 'NA': 0.0471}
+40758897	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40758895	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035400	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1431, 'u/l': 0.8569}	{'NA': 0.1431, 'u/l': 0.8569}
+3028679	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40768446	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045462	Ratio	mg/mmol	SOURCE	Injected matches Source	{'NA': 0.1883, 'g/mol': 0.2836, 'mg/mmol': 0.5281}	{'NA': 0.1883, 'g/mol': 0.2836, 'mg/mmol': 0.5281}
+40771527	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42870308	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9271, 'titre': 0.0729}	{'NA': 0.9271, 'titre': 0.0729}
+3048518	Relative time	ratio	SOURCE	Injected matches Source	{'NA': 0.6261, 'ratio': 0.3739}	{'NA': 0.173, 'ratio': 0.827}
+3045684	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1555, 'u/l': 0.8445}	{'NA': 0.1555, 'u/l': 0.8445}
+3007821	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0585, 'mmol/l': 0.9415}	{'NA': 0.0585, 'mmol/l': 0.9415}
+3047189	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015076	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7128, 'u/ml': 0.2872}	{'NA': 0.7128, 'u/ml': 0.2872}
+21493195	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029075	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005156	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000108	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3053028	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034891	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.3121, 'NA': 0.6879}	{'%': 0.3121, 'NA': 0.6879}
+3041806	Number Concentration	e9/l	SOURCE	Injected matches Source	{'e9/l': 1.0}	{'e9/l': 1.0}
+3007302	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
+1617658	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006653	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3023487	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3131, 'e6/l': 0.6869}	{'NA': 0.3131, 'e6/l': 0.6869}
+3004451	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045683	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006257	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.8021, 'nmol/l': 0.1979}	{'NA': 0.8021, 'nmol/l': 0.1979}
+3045781	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.4739, 'ng/l': 0.5261}	{'NA': 0.4739, 'ng/l': 0.5261}
+3026515	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009871	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.8985, 'titre': 0.1015}	{'NA': 0.8985, 'titre': 0.1015}
+3009991	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.5844, 'u/l': 0.4156}	{'NA': 0.5844, 'u/l': 0.4156}
+3017315	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.065, 'u/l': 0.935}	{'NA': 0.065, 'u/l': 0.935}
+46235128	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033306	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.2659, 'NA': 0.7341}	{'%': 0.2659, 'NA': 0.7341}
+3008733	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030558	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8391, 'iu/ml': 0.0645, 'u/ml': 0.0964}	{'NA': 0.8391, 'iu/ml': 0.0645, 'u/ml': 0.0964}
+3022575	Arbitrary Concentration	miu/ml	SOURCE	Injected matches Source	{'iu/l': 0.4696, 'miu/ml': 0.5105, 'u/l': 0.0193, 'u/ml': 0.0007}	{'iu/l': 0.4696, 'miu/ml': 0.5105, 'u/l': 0.0193, 'u/ml': 0.0007}
+40760543	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012202	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035062	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1125, 'u/l': 0.8875}	{'NA': 0.1125, 'u/l': 0.8875}
+3002079	Substance Rate	mmol/24h	INJECTED	INJECTION CHANGE: Source mode was 'mmol'	{'mmol': 0.9789, 'mmol/24h': 0.0211}	{'mmol/24h': 1.0}
+3036185	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1124, 'u/l': 0.8876}	{'NA': 0.1124, 'u/l': 0.8876}
+43055225	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.2853, 'ng/l': 0.7147}	{'NA': 0.2853, 'ng/l': 0.7147}
+3042810	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.2979, 'ng/l': 0.7021}	{'NA': 0.2979, 'ng/l': 0.7021}
+3000242	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.2729, 'ng/l': 0.7271}	{'NA': 0.2729, 'ng/l': 0.7271}
+37021247	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+37020445	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020073	Number Ratio	ratio	INJECTED	INJECTION CHANGE: Source mode was 'NA'	{'NA': 1.0}	{'NA': 0.0451, 'ratio': 0.9549}
+3035880	Log molar concentration	ph	SOURCE	Injected matches Source	{'NA': 0.9894, 'ph': 0.0106}	{'NA': 0.29, 'ph': 0.71}
+3015183	Velocity (distance/time)	mm/h	SOURCE	Injected matches Source	{'mm/h': 1.0}	{'mm/h': 1.0}
+43055089	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3031309	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9561, 'NA': 0.0439}	{'%': 0.9561, 'NA': 0.0439}
+21491979	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.0441, 'mu/l': 0.9559}	{'NA': 0.0441, 'mu/l': 0.9559}
+3016894	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760109	Ratio	%	SOURCE	Injected matches Source	{'%': 0.0015, 'NA': 0.9985}	{'%': 0.0015, 'NA': 0.9985}
+3009550	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.805, 'titre': 0.195}	{'NA': 0.805, 'titre': 0.195}
+3029856	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.3056, 'e6/l': 0.6944}	{'NA': 0.3056, 'e6/l': 0.6944}
+3020650	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'estimate': 1.0}	{'estimate': 1.0}
+3033799	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035947	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.906, 'iu/ml': 0.0901, 'u/ml': 0.004}	{'NA': 0.906, 'iu/ml': 0.0901, 'u/ml': 0.004}
+3009306	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3018658	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8462, 'u/ml': 0.1538}	{'NA': 0.8462, 'u/ml': 0.1538}
+3044007	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037826	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3020911	Substance Rate	nmol/24h	INJECTED	INJECTION CHANGE: Source mode was 'nmol'	{'nmol': 0.9652, 'nmol/24h': 0.0348}	{'nmol/24h': 1.0}
+3009613	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.4887, 'e6/l': 0.5113}	{'NA': 0.4887, 'e6/l': 0.5113}
+3021236	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'iu/ml': 0.8335, 'u/ml': 0.1665}	{'iu/ml': 0.8335, 'u/ml': 0.1665}
+36304052	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.893, 'au/ml': 0.107}	{'NA': 0.893, 'au/ml': 0.107}
+3001684	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+37020300	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868414	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868691	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1727, 'pmol/l': 0.8273}	{'NA': 0.1727, 'pmol/l': 0.8273}
+4015189	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032567	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.961, 'iu/ml': 0.039}	{'NA': 0.961, 'iu/ml': 0.039}
+3018133	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0825, 'mmol/l': 0.9175}	{'NA': 0.0825, 'mmol/l': 0.9175}
+3043410	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003245	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2273, 'g/l': 0.7727}	{'NA': 0.2273, 'g/l': 0.7727}
+3039602	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0982, 'mmol/l': 0.9018}	{'NA': 0.0982, 'mmol/l': 0.9018}
+3052318	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.8392, 'mg/l': 0.1608}	{'NA': 0.8392, 'mg/l': 0.1608}
+3025443	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.831, 'u/ml': 0.169}	{'NA': 0.831, 'u/ml': 0.169}
+3034988	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1184, 'mmol/l': 0.8816}	{'NA': 0.1184, 'mmol/l': 0.8816}
+44816808	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.7279, 'ng/l': 0.2721}	{'NA': 0.7279, 'ng/l': 0.2721}
+3018921	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036669	Relative time	%	SOURCE	Injected matches Source	{'%': 0.7845, 'NA': 0.2155}	{'%': 0.7845, 'NA': 0.2155}
+3037692	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022689	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0086, 'mmol/l': 0.9914}	{'NA': 0.0086, 'mmol/l': 0.9914}
+3045066	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1034, 'u/l': 0.8966}	{'NA': 0.1034, 'u/l': 0.8966}
+3042517	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028334	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023659	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.8841, 'NA': 0.1159}	{'%': 0.8841, 'NA': 0.1159}
+44816752	Entitic number	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42869547	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3011547	Relative time	%	SOURCE	Injected matches Source	{'%': 0.9016, 'NA': 0.0984}	{'%': 0.9016, 'NA': 0.0984}
+3048879	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21491868	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.8609, 'g/l': 0.1391}	{'NA': 0.8609, 'g/l': 0.1391}
+3016845	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001964	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008536	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40762365	Volume Fraction	ml/dl	SOURCE	Injected matches Source	{'NA': 0.0392, 'ml/dl': 0.9608}	{'NA': 0.0392, 'ml/dl': 0.9608}
+43055514	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027653	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1261, 'mg/l': 0.8739}	{'NA': 0.1261, 'mg/l': 0.8739}
+3021162	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1282, 'u/l': 0.8718}	{'NA': 0.1282, 'u/l': 0.8718}
+3001501	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.6174, 'mmol/l': 0.3826}	{'NA': 0.6174, 'mmol/l': 0.3826}
+40765089	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005532	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.7997, 'NA': 0.2003}	{'%': 0.7997, 'NA': 0.2003}
+3004409	Relative time	%	SOURCE	Injected matches Source	{'%': 0.4903, 'NA': 0.5097}	{'%': 0.4903, 'NA': 0.5097}
+3002067	Mass Rate	mg/24h	SOURCE	Injected matches Source	{'NA': 0.9989, 'mg/24h': 0.0011}	{'NA': 0.9989, 'mg/24h': 0.0011}
+3013566	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007463	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005353	Relative time	%	SOURCE	Injected matches Source	{'%': 0.4769, 'NA': 0.5231}	{'%': 0.4769, 'NA': 0.5231}
+36306090	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868766	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868647	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030862	Number Concentration	%	SOURCE	Injected matches Source	{'%': 0.4032, 'NA': 0.5527, 'e6/l': 0.0441}	{'%': 0.4032, 'NA': 0.5527, 'e6/l': 0.0441}
+3034426	Time (e.g. seconds)	s	SOURCE	Injected matches Source	{'s': 1.0}	{'s': 1.0}
+40771901	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027300	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.359, 'u/ml': 0.641}	{'NA': 0.359, 'u/ml': 0.641}
+3001186	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1299, 'umol/l': 0.8701}	{'NA': 0.1299, 'umol/l': 0.8701}
+3042585	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3156, 'nmol/l': 0.6844}	{'NA': 0.3156, 'nmol/l': 0.6844}
+36305075	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1237, 'mg/l': 0.8763}	{'NA': 0.1237, 'mg/l': 0.8763}
+37208534	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+44816893	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3041449	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.2788, 'ug/l': 0.7212}	{'NA': 0.2788, 'ug/l': 0.7212}
+3030429	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3046896	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004269	Mass Rate	mg/24h	SOURCE	Injected matches Source	{'NA': 0.9971, 'mg/24h': 0.0029}	{'NA': 0.9971, 'mg/24h': 0.0029}
+3019779	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1853, 'umol/l': 0.8147}	{'NA': 0.1853, 'umol/l': 0.8147}
+3013166	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8554, 'NA': 0.1446}	{'%': 0.8554, 'NA': 0.1446}
+3035544	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9504, 'u/ml': 0.0496}	{'NA': 0.9504, 'u/ml': 0.0496}
+3006441	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012494	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3775, 'u/ml': 0.6225}	{'NA': 0.3775, 'u/ml': 0.6225}
+3028433	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036071	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024932	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1175553	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001893	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8166, 'NA': 0.1834}	{'%': 0.8166, 'NA': 0.1834}
+3023383	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0976, 'mmol/l': 0.9024}	{'NA': 0.0976, 'mmol/l': 0.9024}
+3003985	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2621, 'mmol/l': 0.7373, 'nmol/l': 0.0006}	{'NA': 0.2621, 'mmol/l': 0.7373, 'nmol/l': 0.0006}
+40758355	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.2236, 'pmol/l': 0.7764}	{'NA': 0.2236, 'pmol/l': 0.7764}
+3020229	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3046299	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036670	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.5016, 'g/l': 0.4965, 'mg/l': 0.0019}	{'NA': 0.5016, 'g/l': 0.4965, 'mg/l': 0.0019}
+3042391	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3038769	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'au/ml': 0.0187, 'u/ml': 0.9813}	{'au/ml': 0.0187, 'u/ml': 0.9813}
+3026692	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2406, 'g/l': 0.7413, 'mg/l': 0.0181}	{'NA': 0.2406, 'g/l': 0.7413, 'mg/l': 0.0181}
+40762814	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.7909, 'ug/l': 0.2091}	{'NA': 0.7909, 'ug/l': 0.2091}
+3015956	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9793, 'NA': 0.0207}	{'%': 0.9793, 'NA': 0.0207}
+44817194	Relative Arbitrary Concentration	%	SOURCE	Injected matches Source	{'%': 0.9773, 'NA': 0.0227}	{'%': 0.9773, 'NA': 0.0227}
+3032057	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008116	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.8499, 'mmol/l': 0.1501}	{'NA': 0.8499, 'mmol/l': 0.1501}
+3024471	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002619	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039355	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006109	Relative time	%	SOURCE	Injected matches Source	{'%': 0.949, 'NA': 0.051}	{'%': 0.949, 'NA': 0.051}
+4133840	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000919	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8873, 'NA': 0.1127}	{'%': 0.8873, 'NA': 0.1127}
+3005411	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.34, 'ug/l': 0.66}	{'NA': 0.34, 'ug/l': 0.66}
+46235760	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009804	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.4669, 'ug/l': 0.5331}	{'NA': 0.4669, 'ug/l': 0.5331}
+3012215	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.6688, 'NA': 0.3312}	{'%': 0.6688, 'NA': 0.3312}
+42868417	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40765096	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019083	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.9398, 'nmol/l': 0.0602}	{'NA': 0.9398, 'nmol/l': 0.0602}
+43534046	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2931, 'nmol/l': 0.7062, 'pmol/l': 0.0007}	{'NA': 0.2931, 'nmol/l': 0.7062, 'pmol/l': 0.0007}
+3004446	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035509	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4117, 'mg/l': 0.5883}	{'NA': 0.4117, 'mg/l': 0.5883}
+3022058	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011897	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0134, 'u/ml': 0.9866}	{'NA': 0.0134, 'u/ml': 0.9866}
+3022411	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0685, 'nmol/l': 0.9315}	{'NA': 0.0685, 'nmol/l': 0.9315}
+3010370	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.161, 'pmol/l': 0.839}	{'NA': 0.161, 'pmol/l': 0.839}
+3022907	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002331	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2803, 'g/l': 0.7197}	{'NA': 0.2803, 'g/l': 0.7197}
+42529582	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013637	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42529598	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528593	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40758990	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3032352	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037677	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3044212	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033670	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.5702, 'pmol/l': 0.4298}	{'NA': 0.5702, 'pmol/l': 0.4298}
+3002823	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033099	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3047166	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'u/field': 1.0}	{'u/field': 1.0}
+3027231	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1152, 'u/ml': 0.8848}	{'NA': 0.1152, 'u/ml': 0.8848}
+3001850	Relative time	%	SOURCE	Injected matches Source	{'%': 0.312, 'NA': 0.688}	{'%': 0.312, 'NA': 0.688}
+40761539	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40757373	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+723474	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036048	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9426, 'titre': 0.0574}	{'NA': 0.9426, 'titre': 0.0574}
+3007798	Mass Ratio	ratio	SOURCE	Injected matches Source	{'NA': 0.9984, 'ratio': 0.0016}	{'NA': 0.9984, 'ratio': 0.0016}
+3002348	Relative time	%	SOURCE	Injected matches Source	{'%': 0.2953, 'NA': 0.7047}	{'%': 0.2953, 'NA': 0.7047}
+3006695	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868415	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1176173	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40761872	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2949, 'u/ml': 0.7051}	{'NA': 0.2949, 'u/ml': 0.7051}
+3026051	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8083, 'NA': 0.1917}	{'%': 0.8083, 'NA': 0.1917}
+40758292	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42868421	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013247	Relative Ratio	mg/g	SOURCE	Injected matches Source	{'NA': 0.0472, 'mg/g': 0.9528}	{'NA': 0.0472, 'mg/g': 0.9528}
+3013784	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3018738	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.5131, 'NA': 0.4869}	{'%': 0.5131, 'NA': 0.4869}
+3026048	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'iu/ml': 1.0}	{'iu/ml': 1.0}
+3010254	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003171	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.2853, 'pmol/l': 0.7147}	{'NA': 0.2853, 'pmol/l': 0.7147}
+3021578	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005880	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010464	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010015	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1639, 'umol/l': 0.8361}	{'NA': 0.1639, 'umol/l': 0.8361}
+1001833	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.882, 'u/ml': 0.118}	{'NA': 0.882, 'u/ml': 0.118}
+3017509	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014300	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9017, 'u/ml': 0.0983}	{'NA': 0.9017, 'u/ml': 0.0983}
+37021550	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.2587, 'mu/l': 0.7413}	{'NA': 0.2587, 'mu/l': 0.7413}
+40761849	Arbitrary Concentration	miu/ml	SOURCE	Injected matches Source	{'NA': 0.9973, 'miu/ml': 0.0027}	{'NA': 0.9973, 'miu/ml': 0.0027}
+3040562	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012320	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029493	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016628	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.2972, 'g/l': 0.0266, 'mg/l': 0.6761}	{'NA': 0.2972, 'g/l': 0.0266, 'mg/l': 0.6761}
+3044936	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36305790	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0901, 'mg/l': 0.9099}	{'NA': 0.0901, 'mg/l': 0.9099}
+3015302	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015479	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43055442	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.1651, 'ug/l': 0.8349}	{'NA': 0.1651, 'ug/l': 0.8349}
+42870325	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.16, 'mmol/l': 0.0143, 'nmol/l': 0.8257}	{'NA': 0.16, 'mmol/l': 0.0143, 'nmol/l': 0.8257}
+3052592	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011436	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9664, 'u/ml': 0.0336}	{'NA': 0.9664, 'u/ml': 0.0336}
+3018840	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.4217, 'pmol/l': 0.5783}	{'NA': 0.4217, 'pmol/l': 0.5783}
+3014038	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46235168	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.4609, 'mmol/l': 0.5391}	{'NA': 0.4609, 'mmol/l': 0.5391}
+3040661	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0667, 'mmol/l': 0.9333}	{'NA': 0.0667, 'mmol/l': 0.9333}
+3037441	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0227, 'umol/l': 0.9773}	{'NA': 0.0227, 'umol/l': 0.9773}
+3022764	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.5805, 'NA': 0.4195}	{'%': 0.5805, 'NA': 0.4195}
+42529528	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001686	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.8645, 'titre': 0.1355}	{'NA': 0.8645, 'titre': 0.1355}
+3023091	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.3491, 'ng/l': 0.6509}	{'NA': 0.3491, 'ng/l': 0.6509}
+3005011	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041918	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.3712, 'mmol/l': 0.6288}	{'NA': 0.3712, 'mmol/l': 0.6288}
+3000285	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1687, 'mmol/l': 0.8313}	{'NA': 0.1687, 'mmol/l': 0.8313}
+3046426	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36304617	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1777, 'mg/l': 0.8223}	{'NA': 0.1777, 'mg/l': 0.8223}
+3003752	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8924, 'u/ml': 0.1076}	{'NA': 0.8924, 'u/ml': 0.1076}
+3033923	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.5161, 'umol/24h': 0.4839}	{'NA': 0.5161, 'umol/24h': 0.4839}
+3029715	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3052912	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.9217, 'iu/ml': 0.0783}	{'NA': 0.9217, 'iu/ml': 0.0783}
+40763091	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018834	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.7819, 'estimate': 0.2181}	{'NA': 0.7819, 'estimate': 0.2181}
+3045209	Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032185	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032390	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020393	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014891	Appearance	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022229	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0981, 'mmol/l': 0.9019}	{'NA': 0.0981, 'mmol/l': 0.9019}
+3036525	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9976, 'mmol/24h': 0.0024}	{'NA': 0.9976, 'mmol/24h': 0.0024}
+3016330	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9774, 'mmol/24h': 0.0226}	{'NA': 0.9774, 'mmol/24h': 0.0226}
+3026726	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0311, 'umol/l': 0.9689}	{'NA': 0.0311, 'umol/l': 0.9689}
+3042010	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.3529, 'mmol/l': 0.6471}	{'NA': 0.3529, 'mmol/l': 0.6471}
+3024869	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40763791	Volume Fraction	ml/dl	SOURCE	Injected matches Source	{'NA': 0.0314, 'ml/dl': 0.9686}	{'NA': 0.0314, 'ml/dl': 0.9686}
+3028029	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.4945, 'NA': 0.5055}	{'%': 0.4945, 'NA': 0.5055}
+3033926	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.1215, 'g/l': 0.8603, 'mg/l': 0.0182}	{'NA': 0.1215, 'g/l': 0.8603, 'mg/l': 0.0182}
+3013803	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1542, 'mg/l': 0.8458}	{'NA': 0.1542, 'mg/l': 0.8458}
+43055222	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43533860	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3287, 'u/ml': 0.6713}	{'NA': 0.3287, 'u/ml': 0.6713}
+3041365	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004437	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.5223, 'NA': 0.4777}	{'%': 0.5223, 'NA': 0.4777}
+3012898	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0767, 'mmol/l': 0.9233}	{'NA': 0.0767, 'mmol/l': 0.9233}
+40760007	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041870	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028717	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3020951	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.5729, 'NA': 0.4271}	{'%': 0.5729, 'NA': 0.4271}
+3005812	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3050099	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36203821	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.422, 'mg/l': 0.578}	{'NA': 0.422, 'mg/l': 0.578}
+3048522	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3017962	Arbitrary	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025378	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041008	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2321, 'mmol/l': 0.7679}	{'NA': 0.2321, 'mmol/l': 0.7679}
+3015401	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.2967, 'u/l': 0.7033}	{'NA': 0.2967, 'u/l': 0.7033}
+3000899	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3232, 'mg/l': 0.6768}	{'NA': 0.3232, 'mg/l': 0.6768}
+36204286	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4911, 'mg/l': 0.5089}	{'NA': 0.4911, 'mg/l': 0.5089}
+36204187	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.449, 'mg/l': 0.551}	{'NA': 0.449, 'mg/l': 0.551}
+3005665	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4063, 'mg/l': 0.5937}	{'NA': 0.4063, 'mg/l': 0.5937}
+3005260	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3857, 'mg/l': 0.6143}	{'NA': 0.3857, 'mg/l': 0.6143}
+36204005	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3623, 'mg/l': 0.6377}	{'NA': 0.3623, 'mg/l': 0.6377}
+3006665	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3113, 'mg/l': 0.6887}	{'NA': 0.3113, 'mg/l': 0.6887}
+36204094	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3333, 'mg/l': 0.6667}	{'NA': 0.3333, 'mg/l': 0.6667}
+36203922	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4366, 'mg/l': 0.5634}	{'NA': 0.4366, 'mg/l': 0.5634}
+44806071	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028009	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3035510	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4775, 'mg/l': 0.5225}	{'NA': 0.4775, 'mg/l': 0.5225}
+37021073	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36306063	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023530	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0864, 'nmol/l': 0.9136}	{'NA': 0.0864, 'nmol/l': 0.9136}
+3043525	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033888	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.2199, 'ug/l': 0.7801}	{'NA': 0.2199, 'ug/l': 0.7801}
+3007916	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.8539, 'titre': 0.1461}	{'NA': 0.8539, 'titre': 0.1461}
+3008402	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.9287, 'mmol/l': 0.0713}	{'NA': 0.9287, 'mmol/l': 0.0713}
+3015616	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.9269, 'mmol/l': 0.0731}	{'NA': 0.9269, 'mmol/l': 0.0731}
+3003157	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032868	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42529188	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003101	Mass Content	ug/g	SOURCE	Injected matches Source	{'NA': 0.2, 'ug/g': 0.8}	{'NA': 0.2, 'ug/g': 0.8}
+3001556	Substance Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011335	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+1002183	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027955	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3023365	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034459	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.795, 'NA': 0.205}	{'%': 0.795, 'NA': 0.205}
+40761873	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5054, 'u/ml': 0.4946}	{'NA': 0.5054, 'u/ml': 0.4946}
+40761871	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5008, 'u/ml': 0.4992}	{'NA': 0.5008, 'u/ml': 0.4992}
+3011841	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.189, 'u/ml': 0.811}	{'NA': 0.189, 'u/ml': 0.811}
+42528717	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1921, 'u/ml': 0.8079}	{'NA': 0.1921, 'u/ml': 0.8079}
+3013924	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.5071, 'iu/ml': 0.4929}	{'NA': 0.5071, 'iu/ml': 0.4929}
+46234826	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.4141, 'NA': 0.5859}	{'%': 0.4141, 'NA': 0.5859}
+3018851	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3035929	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42870298	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494227	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.5515, 'mg/l': 0.4485}	{'NA': 0.5515, 'mg/l': 0.4485}
+3030313	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9089, 'titre': 0.0911}	{'NA': 0.9089, 'titre': 0.0911}
+44786800	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.7534, 'NA': 0.2466}	{'%': 0.7534, 'NA': 0.2466}
+40767665	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5034, 'u/ml': 0.4966}	{'NA': 0.5034, 'u/ml': 0.4966}
+42868418	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003577	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.6519, 'umol/l': 0.3481}	{'NA': 0.6519, 'umol/l': 0.3481}
+42529527	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3051659	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.7569, 'nmol/l': 0.2431}	{'NA': 0.7569, 'nmol/l': 0.2431}
+3025927	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40761847	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3525, 'u/ml': 0.6475}	{'NA': 0.3525, 'u/ml': 0.6475}
+3041678	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027035	Mass Rate	mg/24h	SOURCE	Injected matches Source	{'NA': 0.8815, 'mg/24h': 0.1185}	{'NA': 0.8815, 'mg/24h': 0.1185}
+40760435	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4572, 'u/ml': 0.5428}	{'NA': 0.4572, 'u/ml': 0.5428}
+3002621	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7695, 'u/ml': 0.2305}	{'NA': 0.7695, 'u/ml': 0.2305}
+3014373	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.5243, 'iu/ml': 0.4757}	{'NA': 0.5243, 'iu/ml': 0.4757}
+3009015	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.5366, 'mmol/l': 0.4634}	{'NA': 0.5366, 'mmol/l': 0.4634}
+40768453	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2315, 'u/ml': 0.7685}	{'NA': 0.2315, 'u/ml': 0.7685}
+21491866	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.2072, 'pmol/l': 0.7928}	{'NA': 0.2072, 'pmol/l': 0.7928}
+3028371	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007695	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009471	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0058, 'mmol/l': 0.9942}	{'NA': 0.0058, 'mmol/l': 0.9942}
+3003633	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1324, 'u/ml': 0.8676}	{'NA': 0.1324, 'u/ml': 0.8676}
+3031072	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013336	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3043870	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7933, 'u/ml': 0.2067}	{'NA': 0.7933, 'u/ml': 0.2067}
+3044009	Time (e.g. seconds)	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021374	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.1026, 'ug/l': 0.8974}	{'NA': 0.1026, 'ug/l': 0.8974}
+3001729	Color	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40771922	Volume Rate/Area	ml/s/173m2	SOURCE	Injected matches Source	{'NA': 0.3931, 'ml/min/173m2': 0.0565, 'ml/s/173m2': 0.5504}	{'NA': 0.3931, 'ml/min/173m2': 0.0565, 'ml/s/173m2': 0.5504}
+42868499	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42870560	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.1524, 'miu/l': 0.002, 'mu/l': 0.8455}	{'NA': 0.1524, 'miu/l': 0.002, 'mu/l': 0.8455}
+3027974	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019174	Time (e.g. seconds)	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4038314	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36659890	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040491	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.3418, 'u/l': 0.6582}	{'NA': 0.3418, 'u/l': 0.6582}
+3025549	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9726, 'mmol/24h': 0.0274}	{'NA': 0.9726, 'mmol/24h': 0.0274}
+21493866	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.2203, 'e6/l': 0.7797}	{'NA': 0.2203, 'e6/l': 0.7797}
+3027570	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'umol/24h': 1.0}	{'umol/24h': 1.0}
+3025059	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.6344, 'mg/l': 0.3656}	{'NA': 0.6344, 'mg/l': 0.3656}
+3011544	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0886, 'g/l': 0.892, 'mg/l': 0.0194}	{'NA': 0.0886, 'g/l': 0.892, 'mg/l': 0.0194}
+3013945	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014064	Multiple of the median	mom	SOURCE	Injected matches Source	{'mom': 1.0}	{'mom': 1.0}
+3016031	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3956, 'u/ml': 0.6044}	{'NA': 0.3956, 'u/ml': 0.6044}
+3000213	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'umol/24h': 1.0}	{'umol/24h': 1.0}
+3006598	Log molar concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035611	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.7969, 'NA': 0.2031}	{'%': 0.7969, 'NA': 0.2031}
+3003932	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.1283, 'kpa': 0.8717}	{'NA': 0.1283, 'kpa': 0.8717}
+3051252	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.135, 'pmol/l': 0.865}	{'NA': 0.135, 'pmol/l': 0.865}
+40762887	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+37020271	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3050794	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035457	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3004959	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.7589, 'mmol/l': 0.2411}	{'NA': 0.7589, 'mmol/l': 0.2411}
+3011048	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1031, 'umol/l': 0.8969}	{'NA': 0.1031, 'umol/l': 0.8969}
+3018562	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.7422, 'NA': 0.2578}	{'%': 0.7422, 'NA': 0.2578}
+3021706	Partial pressure	kpa	SOURCE	Injected matches Source	{'NA': 0.1374, 'kpa': 0.8626}	{'NA': 0.1374, 'kpa': 0.8626}
+43055458	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.3964, 'ng/ml': 0.0023, 'ug/l': 0.6014}	{'NA': 0.3964, 'ng/ml': 0.0023, 'ug/l': 0.6014}
+3023436	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.1742, 'ng/l': 0.8258}	{'NA': 0.1742, 'ng/l': 0.8258}
+3012741	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+42869858	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009876	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40767663	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+40766207	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4052, 'u/ml': 0.5948}	{'NA': 0.4052, 'u/ml': 0.5948}
+3017461	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.2389, 'umol/l': 0.7611}	{'NA': 0.2389, 'umol/l': 0.7611}
+3026480	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9663, 'titre': 0.0337}	{'NA': 0.9663, 'titre': 0.0337}
+40758047	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0686, 'mg/l': 0.9314}	{'NA': 0.0686, 'mg/l': 0.9314}
+3020356	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040893	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0564, 'mmol/l': 0.9436}	{'NA': 0.0564, 'mmol/l': 0.9436}
+40763641	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3024316	Viscosity	mpas	SOURCE	Injected matches Source	{'NA': 0.4776, 'mpas': 0.5224}	{'NA': 0.4776, 'mpas': 0.5224}
+3037577	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.802, 'NA': 0.198}	{'%': 0.802, 'NA': 0.198}
+3039744	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9219, 'u/ml': 0.0781}	{'NA': 0.9219, 'u/ml': 0.0781}
+3018001	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3929, 'u/ml': 0.6071}	{'NA': 0.3929, 'u/ml': 0.6071}
+3038864	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3008092	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8144, 'u/ml': 0.1856}	{'NA': 0.8144, 'u/ml': 0.1856}
+3004593	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7732, 'u/ml': 0.2268}	{'NA': 0.7732, 'u/ml': 0.2268}
+40762482	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0733, 'u/ml': 0.9267}	{'NA': 0.0733, 'u/ml': 0.9267}
+3010937	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494262	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1897, 'u/ml': 0.8103}	{'NA': 0.1897, 'u/ml': 0.8103}
+3036312	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2643, 'u/ml': 0.7357}	{'NA': 0.2643, 'u/ml': 0.7357}
+21494567	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+4212803	NA	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036180	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016273	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041293	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3032743	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045519	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+40763634	Arbitrary	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029790	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.0029, 'u/l': 0.9971}	{'NA': 0.0029, 'u/l': 0.9971}
+3042847	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.3, 'NA': 0.7}	{'%': 0.3, 'NA': 0.7}
+3000722	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0201, 'umol/l': 0.9799}	{'NA': 0.0201, 'umol/l': 0.9799}
+3042552	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.6319, 'iu/ml': 0.3681}	{'NA': 0.6319, 'iu/ml': 0.3681}
+21494429	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033882	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0466, 'umol/l': 0.9534}	{'NA': 0.0466, 'umol/l': 0.9534}
+40761545	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1175825	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013466	Time (e.g. seconds)	s	SOURCE	Injected matches Source	{'NA': 0.1582, 's': 0.8418}	{'NA': 0.1582, 's': 0.8418}
+3019768	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014444	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022475	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3008994	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.8086, 'u/l': 0.1914}	{'NA': 0.8086, 'u/l': 0.1914}
+3008691	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1451, 'u/l': 0.8549}	{'NA': 0.1451, 'u/l': 0.8549}
+3036604	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42870531	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1988, 'u/ml': 0.8012}	{'NA': 0.1988, 'u/ml': 0.8012}
+3005685	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.1924, 'u/l': 0.8076}	{'NA': 0.1924, 'u/l': 0.8076}
+3041672	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528615	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1757, 'mg/l': 0.8243}	{'NA': 0.1757, 'mg/l': 0.8243}
+42868497	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46234834	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3007542	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5145, 'u/ml': 0.4855}	{'NA': 0.5145, 'u/ml': 0.4855}
+3022640	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.7452, 'NA': 0.2548}	{'%': 0.7452, 'NA': 0.2548}
+3046861	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035401	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40763480	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034368	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3051339	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.2525, 'umol/l': 0.7475}	{'NA': 0.2525, 'umol/l': 0.7475}
+3041082	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9529, 'titre': 0.0471}	{'NA': 0.9529, 'titre': 0.0471}
+3020123	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016184	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8644, 'u/ml': 0.1356}	{'NA': 0.8644, 'u/ml': 0.1356}
+3051671	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.058, 'ug/l': 0.942}	{'NA': 0.058, 'ug/l': 0.942}
+3030703	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.0788, 'ug/l': 0.9212}	{'NA': 0.0788, 'ug/l': 0.9212}
+3043257	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40766799	Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042951	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7021, 'u/ml': 0.2979}	{'NA': 0.7021, 'u/ml': 0.2979}
+3043681	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.2883, 'u/field': 0.7117}	{'NA': 0.2883, 'u/field': 0.7117}
+3033942	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.5464, 'umol/24h': 0.4536}	{'NA': 0.5464, 'umol/24h': 0.4536}
+3034552	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.7706, 'u/l': 0.2294}	{'NA': 0.7706, 'u/l': 0.2294}
+3007700	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4652, 'u/ml': 0.5348}	{'NA': 0.4652, 'u/ml': 0.5348}
+723473	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006804	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3017950	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.4583, 'mmol/l': 0.2121, 'umol/l': 0.3295}	{'NA': 0.4583, 'mmol/l': 0.2121, 'umol/l': 0.3295}
+3044336	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2615, 'nmol/l': 0.7385}	{'NA': 0.2615, 'nmol/l': 0.7385}
+3022725	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1284, 'nmol/l': 0.8716}	{'NA': 0.1284, 'nmol/l': 0.8716}
+3009410	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0988, 'umol/l': 0.9012}	{'NA': 0.0988, 'umol/l': 0.9012}
+3007625	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3017312	Arbitrary	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009347	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760871	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009677	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004982	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.4274, 'ng/ml': 0.1826, 'ug/l': 0.39}	{'NA': 0.4274, 'ng/ml': 0.1826, 'ug/l': 0.39}
+3044416	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2585, 'g/l': 0.7415}	{'NA': 0.2585, 'g/l': 0.7415}
+3046904	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'mu/l': 1.0}	{'mu/l': 1.0}
+3026926	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3147, 'nmol/l': 0.6853}	{'NA': 0.3147, 'nmol/l': 0.6853}
+3007733	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1422, 'mmol/l': 0.8578}	{'NA': 0.1422, 'mmol/l': 0.8578}
+3008799	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0172, 'mmol/l': 0.9828}	{'NA': 0.0172, 'mmol/l': 0.9828}
+3011325	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40761516	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43055190	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.4248, 'u/field': 0.5752}	{'NA': 0.4248, 'u/field': 0.5752}
+3007858	Catalytic Fraction	%	SOURCE	Injected matches Source	{'%': 0.9022, 'NA': 0.0978}	{'%': 0.9022, 'NA': 0.0978}
+3023919	Catalytic Fraction	%	SOURCE	Injected matches Source	{'%': 0.9111, 'NA': 0.0889}	{'%': 0.9111, 'NA': 0.0889}
+40763476	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3024830	Catalytic Fraction	%	SOURCE	Injected matches Source	{'%': 0.9009, 'NA': 0.0991}	{'%': 0.9009, 'NA': 0.0991}
+3016913	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.2227, 'u/l': 0.7773}	{'NA': 0.2227, 'u/l': 0.7773}
+21493619	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46236287	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.3349, 'ng/l': 0.6651}	{'NA': 0.3349, 'ng/l': 0.6651}
+3026029	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6419, 'u/ml': 0.3581}	{'NA': 0.6419, 'u/ml': 0.3581}
+3014345	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3442, 'nmol/l': 0.6558}	{'NA': 0.3442, 'nmol/l': 0.6558}
+3016135	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'g/l': 0.1476, 'mg/l': 0.8524}	{'g/l': 0.1476, 'mg/l': 0.8524}
+3015822	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027401	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9854, 'NA': 0.0146}	{'%': 0.9854, 'NA': 0.0146}
+40759057	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.175, 'mg/l': 0.825}	{'NA': 0.175, 'mg/l': 0.825}
+3019920	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.39, 'nmol/l': 0.61}	{'NA': 0.39, 'nmol/l': 0.61}
+3037297	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6888, 'u/ml': 0.3112}	{'NA': 0.6888, 'u/ml': 0.3112}
+43055459	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'NA': 0.3776, 'ug/l': 0.6224}	{'NA': 0.3776, 'ug/l': 0.6224}
+40765091	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016426	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3038385	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.1429, 'umol/l': 0.8571}	{'NA': 0.1429, 'umol/l': 0.8571}
+3031067	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46236302	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760409	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013862	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760410	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40763590	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027874	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.3279, 'mmol/l': 0.5847, 'umol/l': 0.0874}	{'NA': 0.3279, 'mmol/l': 0.5847, 'umol/l': 0.0874}
+3043138	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.3204, 'u/field': 0.6796}	{'NA': 0.3204, 'u/field': 0.6796}
+3027901	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0055, 'g/l': 0.9945}	{'NA': 0.0055, 'g/l': 0.9945}
+3015665	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.442, 'u/ml': 0.558}	{'NA': 0.442, 'u/ml': 0.558}
+3000510	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4833, 'u/ml': 0.5167}	{'NA': 0.4833, 'u/ml': 0.5167}
+3036955	Catalytic Fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+40760849	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009224	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018688	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+40758358	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022670	Log molar concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025886	Mass Rate	mg/24h	SOURCE	Injected matches Source	{'mg/24h': 1.0}	{'mg/24h': 1.0}
+3017958	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4024, 'u/ml': 0.5976}	{'NA': 0.4024, 'u/ml': 0.5976}
+3017414	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.454, 'u/ml': 0.546}	{'NA': 0.454, 'u/ml': 0.546}
+3021367	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3252, 'nmol/l': 0.6748}	{'NA': 0.3252, 'nmol/l': 0.6748}
+40762485	Arbitrary Concentration	NA	SOURCE	Injected matches Source | REF DIFF: ref was u/ml	{'NA': 1.0}	{'NA': 1.0}
+3020618	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2857, 'mmol/l': 0.7143}	{'NA': 0.2857, 'mmol/l': 0.7143}
+3013762	Mass	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3018081	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0573, 'mg/l': 0.9172, 'ug/l': 0.0255}	{'NA': 0.0573, 'mg/l': 0.9172, 'ug/l': 0.0255}
+3033086	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3017937	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9935, 'mmol/24h': 0.0065}	{'NA': 0.9935, 'mmol/24h': 0.0065}
+3002568	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.2258, 'g/l': 0.7742}	{'NA': 0.2258, 'g/l': 0.7742}
+3004280	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.4286, 'pmol/l': 0.5714}	{'NA': 0.4286, 'pmol/l': 0.5714}
+3012989	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'mmol/24h': 1.0}	{'mmol/24h': 1.0}
+3014339	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.1961, 'pmol/l': 0.8039}	{'NA': 0.1961, 'pmol/l': 0.8039}
+3038205	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7682, 'u/ml': 0.2318}	{'NA': 0.7682, 'u/ml': 0.2318}
+3004282	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.3333, 'ng/l': 0.6667}	{'NA': 0.3333, 'ng/l': 0.6667}
+3009461	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'umol/24h': 1.0}	{'umol/24h': 1.0}
+3040668	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3017400	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.1745, 'mmol/l': 0.8255}	{'NA': 0.1745, 'mmol/l': 0.8255}
+42868555	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.6846, 'ng/l': 0.3154}	{'NA': 0.6846, 'ng/l': 0.3154}
+42868452	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027318	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.7431, 'mmol/l': 0.2569}	{'NA': 0.7431, 'mmol/l': 0.2569}
+3035082	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.6224, 'g/l': 0.3776}	{'NA': 0.6224, 'g/l': 0.3776}
+3004347	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003843	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2214, 'u/ml': 0.7786}	{'NA': 0.2214, 'u/ml': 0.7786}
+3031659	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40757578	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001218	Mass Rate	mg/24h	SOURCE	Injected matches Source	{'mg/24h': 1.0}	{'mg/24h': 1.0}
+3006969	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.4818, 'g/l': 0.5182}	{'NA': 0.4818, 'g/l': 0.5182}
+3000936	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2574, 'u/ml': 0.7426}	{'NA': 0.2574, 'u/ml': 0.7426}
+3021691	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014114	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4815, 'mg/l': 0.5185}	{'NA': 0.4815, 'mg/l': 0.5185}
+3012920	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
+3016284	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3044316	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.1955, 'nmol/l': 0.8045}	{'NA': 0.1955, 'nmol/l': 0.8045}
+3034614	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014591	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3038413	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9618, 'NA': 0.0382}	{'%': 0.9618, 'NA': 0.0382}
+3007456	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3672, 'u/ml': 0.6328}	{'NA': 0.3672, 'u/ml': 0.6328}
+3043649	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029612	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528597	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3037377	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3049233	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3041184	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528596	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032333	Mass or Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9672, 'mmol/24h': 0.0328}	{'NA': 0.9672, 'mmol/24h': 0.0328}
+3019396	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.124, 'u/l': 0.876}	{'NA': 0.124, 'u/l': 0.876}
+1175310	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36303722	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0924, 'mg/l': 0.9076}	{'NA': 0.0924, 'mg/l': 0.9076}
+3019298	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.8448, 'NA': 0.1552}	{'%': 0.8448, 'NA': 0.1552}
+3013676	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2609, 'nmol/l': 0.7391}	{'NA': 0.2609, 'nmol/l': 0.7391}
+3035060	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.4522, 'nmol/l': 0.5478}	{'NA': 0.4522, 'nmol/l': 0.5478}
+3032492	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528595	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025296	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3874, 'u/ml': 0.6126}	{'NA': 0.3874, 'u/ml': 0.6126}
+3039817	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3033093	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042341	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3043722	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'u/field': 1.0}	{'u/field': 1.0}
+3032641	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005067	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.3178, 'nmol/l': 0.6822}	{'NA': 0.3178, 'nmol/l': 0.6822}
+3021855	Number Concentration	e6/l	SOURCE	Injected matches Source	{'NA': 0.2453, 'e6/l': 0.7547}	{'NA': 0.2453, 'e6/l': 0.7547}
+3002481	Mass Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029847	Relative Ratio	%	SOURCE	Injected matches Source	{'%': 0.9245, 'NA': 0.0755}	{'%': 0.9245, 'NA': 0.0755}
+3009208	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.217, 'u/ml': 0.783}	{'NA': 0.217, 'u/ml': 0.783}
+3001488	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8667, 'u/ml': 0.1333}	{'NA': 0.8667, 'u/ml': 0.1333}
+3046914	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.5096, 'u/field': 0.4904}	{'NA': 0.5096, 'u/field': 0.4904}
+3007919	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002719	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.9417, 'mg/l': 0.0583}	{'NA': 0.9417, 'mg/l': 0.0583}
+3006044	Catalytic Ratio	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+37019676	Arbitrary Concentration	mu/l	SOURCE	Injected matches Source	{'NA': 0.303, 'mu/l': 0.697}	{'NA': 0.303, 'mu/l': 0.697}
+3047185	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.9293, 'mg/l': 0.0707}	{'NA': 0.9293, 'mg/l': 0.0707}
+40769427	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0816, 'mmol/l': 0.6531, 'umol/l': 0.2653}	{'NA': 0.0816, 'mmol/l': 0.6531, 'umol/l': 0.2653}
+3026657	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9375, 'titre': 0.0625}	{'NA': 0.9375, 'titre': 0.0625}
+3027540	Titer	titre	SOURCE	Injected matches Source	{'NA': 0.9479, 'titre': 0.0521}	{'NA': 0.9479, 'titre': 0.0521}
+3028714	Substance Rate	mmol/24h	SOURCE	Injected matches Source	{'NA': 0.9684, 'mmol/24h': 0.0316}	{'NA': 0.9684, 'mmol/24h': 0.0316}
+3017166	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2872, 'u/ml': 0.7128}	{'NA': 0.2872, 'u/ml': 0.7128}
+3006567	Substance Rate	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020093	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.956, 'NA': 0.044}	{'%': 0.956, 'NA': 0.044}
+3020047	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.5506, 'mg/l': 0.4494}	{'NA': 0.5506, 'mg/l': 0.4494}
+43054952	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015147	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.6353, 'u/ml': 0.3647}	{'NA': 0.6353, 'u/ml': 0.3647}
+3009385	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0235, 'mg/l': 0.9176, 'ug/l': 0.0588}	{'NA': 0.0235, 'mg/l': 0.9176, 'ug/l': 0.0588}
+3018291	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42528783	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3012403	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.7738, 'umol/24h': 0.2262}	{'NA': 0.7738, 'umol/24h': 0.2262}
+3027305	Mass fraction	%	SOURCE	Injected matches Source	{'%': 0.9286, 'NA': 0.0714}	{'%': 0.9286, 'NA': 0.0714}
+3004268	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3034099	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042301	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.5301, 'umol/l': 0.4699}	{'NA': 0.5301, 'umol/l': 0.4699}
+3017986	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021661	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4512, 'u/ml': 0.5488}	{'NA': 0.4512, 'u/ml': 0.5488}
+3045177	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.4878, 'umol/l': 0.5122}	{'NA': 0.4878, 'umol/l': 0.5122}
+3041198	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.0617, 'mg/l': 0.9383}	{'NA': 0.0617, 'mg/l': 0.9383}
+3038702	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.0633, 'mmol/l': 0.9367}	{'NA': 0.0633, 'mmol/l': 0.9367}
+36303858	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027505	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.0519, 'u/ml': 0.9481}	{'NA': 0.0519, 'u/ml': 0.9481}
+3040794	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3020934	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5132, 'u/ml': 0.4868}	{'NA': 0.5132, 'u/ml': 0.4868}
+36304315	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.7432, 'au/ml': 0.2568}	{'NA': 0.7432, 'au/ml': 0.2568}
+3003771	Relative Mass Concentration	%	SOURCE	Injected matches Source	{'%': 0.8333, 'NA': 0.1667}	{'%': 0.8333, 'NA': 0.1667}
+3009883	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3194, 'u/ml': 0.6806}	{'NA': 0.3194, 'u/ml': 0.6806}
+3015350	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3042934	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3001409	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4783, 'u/ml': 0.5217}	{'NA': 0.4783, 'u/ml': 0.5217}
+3003593	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5797, 'u/ml': 0.4203}	{'NA': 0.5797, 'u/ml': 0.4203}
+3002814	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3046682	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40761593	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039114	Number Fraction	%	SOURCE	Injected matches Source	{'%': 1.0}	{'%': 1.0}
+3008640	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3012932	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2063, 'u/ml': 0.7937}	{'NA': 0.2063, 'u/ml': 0.7937}
+3006840	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.3016, 'u/ml': 0.6984}	{'NA': 0.3016, 'u/ml': 0.6984}
+3027696	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3012787	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.0164, 'umol/l': 0.9836}	{'NA': 0.0164, 'umol/l': 0.9836}
+3008838	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.2623, 'NA': 0.7377}	{'%': 0.2623, 'NA': 0.7377}
+3009754	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1167, 'u/ml': 0.8833}	{'NA': 0.1167, 'u/ml': 0.8833}
+3016976	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.0678, 'nmol/l': 0.9322}	{'NA': 0.0678, 'nmol/l': 0.9322}
+3005593	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3046594	Mass Concentration	ng/l	SOURCE	Injected matches Source	{'NA': 0.3793, 'ng/l': 0.6207}	{'NA': 0.3793, 'ng/l': 0.6207}
+3028468	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+44786798	Number Fraction	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025966	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2632, 'u/ml': 0.7368}	{'NA': 0.2632, 'u/ml': 0.7368}
+3027859	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8596, 'u/ml': 0.1404}	{'NA': 0.8596, 'u/ml': 0.1404}
+3008717	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3023693	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039183	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025481	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.3818, 'mg/l': 0.6182}	{'NA': 0.3818, 'mg/l': 0.6182}
+3009992	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.9273, 'NA': 0.0727}	{'%': 0.9273, 'NA': 0.0727}
+3003531	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3038714	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+46236344	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040944	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760087	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40759632	Mass Content	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40760512	Number Fraction	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3036005	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+42529039	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004560	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.9787, 'e9/l': 0.0213}	{'NA': 0.9787, 'e9/l': 0.0213}
+3033463	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003675	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3026820	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0233, 'g/l': 0.9767}	{'NA': 0.0233, 'g/l': 0.9767}
+3051596	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039528	Number Fraction	%	SOURCE	Injected matches Source	{'%': 0.6744, 'NA': 0.3256}	{'%': 0.6744, 'NA': 0.3256}
+3014178	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3044291	Mass Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3045759	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43055189	Number Areic (per area)	u/field	SOURCE	Injected matches Source	{'NA': 0.6829, 'u/field': 0.3171}	{'NA': 0.6829, 'u/field': 0.3171}
+40760083	Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3016816	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+21494671	Finding	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014171	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.027, 'umol/l': 0.973}	{'NA': 0.027, 'umol/l': 0.973}
+40765955	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36660577	Mass Concentration	ng/ml	SOURCE	Injected matches Source	{'NA': 0.4595, 'ng/ml': 0.5405}	{'NA': 0.4595, 'ng/ml': 0.5405}
+3026906	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.3889, 'umol/l': 0.6111}	{'NA': 0.3889, 'umol/l': 0.6111}
+3012138	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.4444, 'u/ml': 0.5556}	{'NA': 0.4444, 'u/ml': 0.5556}
+3008896	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3042045	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.2059, 'umol/l': 0.7941}	{'NA': 0.2059, 'umol/l': 0.7941}
+3017497	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2647, 'u/ml': 0.7353}	{'NA': 0.2647, 'u/ml': 0.7353}
+3010422	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.2353, 'u/ml': 0.7647}	{'NA': 0.2353, 'u/ml': 0.7647}
+3017894	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1515, 'u/ml': 0.8485}	{'NA': 0.1515, 'u/ml': 0.8485}
+3000876	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.9394, 'u/ml': 0.0606}	{'NA': 0.9394, 'u/ml': 0.0606}
+3003095	Arbitrary Concentration	kiu/l	SOURCE	Injected matches Source	{'NA': 0.9062, 'kiu/l': 0.0938}	{'NA': 0.9062, 'kiu/l': 0.0938}
+3000690	Substance Rate	nmol/24h	SOURCE	Injected matches Source	{'nmol/24h': 1.0}	{'nmol/24h': 1.0}
+3044590	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+40760866	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3027020	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1, 'u/ml': 0.9}	{'NA': 0.1, 'u/ml': 0.9}
+3018910	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3002853	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020893	Arbitrary	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3012892	Volume Fraction	%	SOURCE	Injected matches Source	{'%': 0.9259, 'NA': 0.0741}	{'%': 0.9259, 'NA': 0.0741}
+40763629	Arbitrary	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3051950	Entitic mean volume	fl	SOURCE	Injected matches Source	{'NA': 0.037, 'fl': 0.963}	{'NA': 0.037, 'fl': 0.963}
+40763527	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'NA': 0.5385, 'estimate': 0.4615}	{'NA': 0.5385, 'estimate': 0.4615}
+3018487	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1923, 'u/ml': 0.8077}	{'NA': 0.1923, 'u/ml': 0.8077}
+3035153	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3025504	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.84, 'umol/24h': 0.16}	{'NA': 0.84, 'umol/24h': 0.16}
+3039621	Length fraction	%	SOURCE	Injected matches Source	{'%': 0.96, 'NA': 0.04}	{'%': 0.96, 'NA': 0.04}
+3004541	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3007147	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3010801	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3017074	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3015694	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43055187	Number Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3030940	Number Areic (per area)	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028917	Number Areic (per area)	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006498	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3004768	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8333, 'u/ml': 0.1667}	{'NA': 0.8333, 'u/ml': 0.1667}
+3011324	Arbitrary Concentration	au/ml	SOURCE	Injected matches Source	{'NA': 0.1304, 'au/ml': 0.8696}	{'NA': 0.1304, 'au/ml': 0.8696}
+3025830	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'u/ml': 1.0}	{'u/ml': 1.0}
+3023006	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.1304, 'u/ml': 0.8696}	{'NA': 0.1304, 'u/ml': 0.8696}
+3013931	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36304079	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3008343	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.2273, 'mg/l': 0.7727}	{'NA': 0.2273, 'mg/l': 0.7727}
+3043614	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+36031836	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.1364, 'mg/l': 0.8636}	{'NA': 0.1364, 'mg/l': 0.8636}
+3042628	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3002022	Relative Mass Concentration	%	SOURCE	Injected matches Source	{'%': 0.7619, 'NA': 0.2381}	{'%': 0.7619, 'NA': 0.2381}
+3025566	Arbitrary Concentration	iu/ml	SOURCE	Injected matches Source	{'NA': 0.9524, 'iu/ml': 0.0476}	{'NA': 0.9524, 'iu/ml': 0.0476}
+3032995	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3022577	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3013293	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3017501	Number Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3019529	Impression/interpretation of study	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020399	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
+21490721	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3035173	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3034707	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5, 'u/ml': 0.5}	{'NA': 0.5, 'u/ml': 0.5}
+3009609	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+40762495	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3009179	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.2778, 'mmol/l': 0.7222}	{'NA': 0.2778, 'mmol/l': 0.7222}
+3015531	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'u/l': 1.0}	{'u/l': 1.0}
+3002480	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.7059, 'umol/l': 0.2941}	{'NA': 0.7059, 'umol/l': 0.2941}
+3013851	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+43055555	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3026868	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3029889	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3014257	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3011829	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.25, 'u/ml': 0.75}	{'NA': 0.25, 'u/ml': 0.75}
+1616488	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'NA': 0.75, 'nmol/l': 0.0625, 'pmol/l': 0.1875}	{'NA': 0.75, 'nmol/l': 0.0625, 'pmol/l': 0.1875}
+46235479	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.3125, 'umol/l': 0.6875}	{'NA': 0.3125, 'umol/l': 0.6875}
+3035411	Arbitrary Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3021993	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.7333, 'u/ml': 0.2667}	{'NA': 0.7333, 'u/ml': 0.2667}
+3005069	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'NA': 0.6667, 'umol/l': 0.3333}	{'NA': 0.6667, 'umol/l': 0.3333}
+3036566	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2, 'nmol/l': 0.8}	{'NA': 0.2, 'nmol/l': 0.8}
+3015057	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3009220	Number Concentration	e6/l	SOURCE	Injected matches Source	{'e6/l': 1.0}	{'e6/l': 1.0}
+3000219	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006392	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3020132	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3003195	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3020071	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+3037201	Relative Mass Concentration	%	SOURCE	Injected matches Source	{'%': 0.8333, 'NA': 0.1667}	{'%': 0.8333, 'NA': 0.1667}
+3017830	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3039542	Substance Rate	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006706	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'mg/l': 1.0}	{'mg/l': 1.0}
+40762473	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4545, 'mg/l': 0.5455}	{'NA': 0.4545, 'mg/l': 0.5455}
+3034610	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.6364, 'mg/l': 0.3636}	{'NA': 0.6364, 'mg/l': 0.3636}
+3034266	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.5455, 'mg/l': 0.4545}	{'NA': 0.5455, 'mg/l': 0.4545}
+3033016	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.6364, 'mg/l': 0.3636}	{'NA': 0.6364, 'mg/l': 0.3636}
+3029088	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.6364, 'mg/l': 0.3636}	{'NA': 0.6364, 'mg/l': 0.3636}
+3047005	Ratio	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006407	Mass Concentration	ug/l	SOURCE	Injected matches Source	{'ug/l': 1.0}	{'ug/l': 1.0}
+44816697	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.4545, 'mg/l': 0.5455}	{'NA': 0.4545, 'mg/l': 0.5455}
+3014620	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'NA': 0.2, 'nmol/l': 0.8}	{'NA': 0.2, 'nmol/l': 0.8}
+3016072	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'mg/l': 1.0}	{'mg/l': 1.0}
+3025311	Type	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3005117	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3032642	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3027114	Mass Concentration	mg/ml	SOURCE	Injected matches Source	{'mg/ml': 1.0}	{'mg/ml': 1.0}
+3003220	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3045191	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+3039179	Catalytic Concentration	u/l	SOURCE	Injected matches Source	{'NA': 0.625, 'u/l': 0.375}	{'NA': 0.625, 'u/l': 0.375}
+3005031	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'NA': 0.75, 'mg/l': 0.25}	{'NA': 0.75, 'mg/l': 0.25}
+3012864	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3006906	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
+36305197	-	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3000337	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.5714, 'u/ml': 0.4286}	{'NA': 0.5714, 'u/ml': 0.4286}
+1175312	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+1176058	Titer	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035109	Presence or Threshold	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3035963	Substance Concentration	pmol/l	SOURCE	Injected matches Source	{'pmol/l': 1.0}	{'pmol/l': 1.0}
+3032940	Presence or Identity	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3028050	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3017913	Titer	titre	SOURCE	Injected matches Source	{'titre': 1.0}	{'titre': 1.0}
+3022912	Substance Rate	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+40771459	Substance Concentration	NA	SOURCE	Injected matches Source	{'NA': 1.0}	{'NA': 1.0}
+3040637	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'NA': 0.3333, 'mmol/l': 0.6667}	{'NA': 0.3333, 'mmol/l': 0.6667}
+3037820	Arbitrary Concentration	u/ml	SOURCE	Injected matches Source	{'NA': 0.8, 'u/ml': 0.2}	{'NA': 0.8, 'u/ml': 0.2}
+3023030	Substance Rate	nmol/24h	SOURCE	Injected matches Source	{'nmol/24h': 1.0}	{'nmol/24h': 1.0}
+3010424	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3009176	Presence or Threshold	estimate	SOURCE	Injected matches Source	{'estimate': 1.0}	{'estimate': 1.0}
+3003722	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'mg/l': 1.0}	{'mg/l': 1.0}
+3008304	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+3041041	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.25, 'g/l': 0.75}	{'NA': 0.25, 'g/l': 0.75}
+3018730	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.6667, 'umol/24h': 0.3333}	{'NA': 0.6667, 'umol/24h': 0.3333}
+3004149	Substance Rate	umol/24h	SOURCE	Injected matches Source	{'NA': 0.3333, 'umol/24h': 0.6667}	{'NA': 0.3333, 'umol/24h': 0.6667}
+3037739	Substance Concentration	nmol/l	SOURCE	Injected matches Source	{'nmol/l': 1.0}	{'nmol/l': 1.0}
+36303415	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
+3023261	Mass Concentration	mg/l	SOURCE	Injected matches Source	{'mg/l': 1.0}	{'mg/l': 1.0}
+3033042	Substance Concentration	mmol/l	SOURCE	Injected matches Source	{'mmol/l': 1.0}	{'mmol/l': 1.0}
+3052927	Substance Concentration	umol/l	SOURCE	Injected matches Source	{'umol/l': 1.0}	{'umol/l': 1.0}
+40758059	Titer	titre	SOURCE	Injected matches Source | NEW MAPPING	{'titre': 1.0}	{'titre': 1.0}
+3011099	Mass Concentration	g/l	SOURCE	Injected matches Source	{'g/l': 1.0}	{'g/l': 1.0}
