@@ -1,4 +1,4 @@
-omop_quantity	source_unit_valid	to_source_unit_valid	conversion	only_to_omop_concepts	validation_messages
+harmonization_omop::OMOP_QUANTITY	MEASUREMENT_UNIT	TO_MEASUREMENT_UNIT	CONVERSION	ONLY_TO_OMOP_CONCEPTS	VALIDATION_MESSAGES
 -			1		
 Arbitrary Concentration	index	index	1		
 Arbitrary Concentration	au/ml	au/ml	1		

@@ -1,4 +1,4 @@
-harmonization_omop::OMOP_ID	harmonization_omop::omopQuantity	harmonization_omop::MEASUREMENT_UNIT	UNIT_SOURCE	NOTES	PREV_SOURCE	PREV_INJECTED
+harmonization_omop::OMOP_ID	harmonization_omop::OMOP_QUANTITY	harmonization_omop::MEASUREMENT_UNIT	UNIT_SOURCE	NOTES	PREV_SOURCE	PREV_INJECTED
 3009542	Volume Fraction	%	MANUAL	MANUAL MAPPING (locked) - Current data suggests: ratio	{'%': 0.4315, 'NA': 0.1651, 'osuus': 0.4034}	{'%': 0.4321, 'NA': 0.0882, 'ratio': 0.4797}
 3000963	Mass Concentration	g/l	SOURCE	Injected matches Source	{'NA': 0.0877, 'g/l': 0.9123}	{'NA': 0.0858, 'g/l': 0.9142}
 3010813	Number Concentration	e9/l	SOURCE	Injected matches Source	{'NA': 0.2496, 'e6/l': 0.0001, 'e9/l': 0.7504}	{'NA': 0.2477, 'e6/l': 0.0001, 'e9/l': 0.7523}
