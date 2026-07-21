@@ -5,7 +5,7 @@ Arbitrary Concentration	au/ml	au/ml	1
 Arbitrary Concentration	eliau/ml	eliau/ml	1		
 Arbitrary Concentration	eliau/ml	u/ml	1		
 Arbitrary Concentration	iu/l	iu/l	1		
-Arbitrary Concentration	iu/l	iu/ml	1000		
+Arbitrary Concentration	iu/l	iu/ml	0.001		
 Arbitrary Concentration	iu/l	miu/ml	1		
 Arbitrary Concentration	miu/ml	iu/l	1		
 Arbitrary Concentration	iu/l	mu/l	1000		
@@ -144,7 +144,7 @@ Substance Concentration	pmol/l	mmol/l	0.000000001
 Substance Concentration	mmol/l	umol/l	1000		
 Substance Concentration	mol/l	mmol/l	1000		
 Substance Concentration	mmol/l	mol/l	0.001		
-Substance Concentration	nmol/l	mmol/l	0.001		
+Substance Concentration	nmol/l	mmol/l	0.000001		
 Substance Concentration	nmol/l	nmol/l	1		
 Substance Concentration	nmol/l	pmol/l	1000		
 Substance Concentration	pmol/l	nmol/l	0.001		

@@ -828,7 +828,7 @@ s-vlseabg		0		UNCHECKED
 p-bil-lap	umol/l	3006140	Substance Concentration	APPROVED
 ua-pco2	kpa	3003932	Partial pressure	APPROVED
 b-hco3	mmol/l	3006576	Substance Concentration	APPROVED
-pt-gfre-cg	ml/min/173m2	44806420		APPROVED
+pt-gfre-cg	ml/min/173m2	44806420	Volume Rate/Area	APPROVED
 p-antifxa	u/ml	3020427	Arbitrary Concentration	APPROVED
 s-ld	u/l	3016436	Catalytic Concentration	APPROVED
 s-igf1	nmol/l	3014326	Substance Concentration	APPROVED
@@ -1263,7 +1263,7 @@ pt-ekg-15		3004451	Impression/interpretation of study	APPROVED
 pt-lämpöt	%	0		UNCHECKED
 u-tutk-1,prot		0		UNCHECKED
 -dermnho		0		UNCHECKED
-pt-gfre-cg		44806420		APPROVED
+pt-gfre-cg		44806420	Volume Rate/Area	APPROVED
 fp-cga	nmol/l	3014702	Substance Concentration	APPROVED
 ex-kolonvi		4015189		APPROVED
 s-t4v	pmol/l	3008486	Substance Concentration	APPROVED
