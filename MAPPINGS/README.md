@@ -56,6 +56,7 @@ One row per (test abbreviation, unit) mapping to an OMOP measurement concept.
 | `TEST_NAME_ABBREVIATION`            | string  | Source lab test abbreviation. Required.                  |
 | `MEASUREMENT_UNIT`                  | string  | Source unit; `""` = qualitative test (no unit).          |
 | `harmonization_omop::OMOP_ID`       | integer | Target OMOP measurement `concept_id`.                    |
+| `harmonization_omop::OMOP_NAME`     | string  | OMOP `concept_name` for `OMOP_ID`; `""` when unmapped.   |
 | `harmonization_omop::OMOP_QUANTITY` | string  | OMOP quantity/property (e.g. `Mass Concentration`).      |
 | `harmonization_omop::MAPPING_STATUS`| enum    | Review state: `APPROVED` or `UNCHECKED`.                 |
 
