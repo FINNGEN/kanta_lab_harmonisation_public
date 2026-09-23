@@ -1,0 +1,211 @@
+new_omop_id	new_invalid_reason	status	OMOP_CONCEPT_ID	OMOP_CONCEPT_NAME	OMOP_QUANTITY	testId	n_subjects	n_records	p_values_missing_extracted_source	p_outcomes_NA_N_A_AA_L_LL_H_HH	decile_MEASUREMENT_VALUE	ksTest_pValue	ksTest_KS	CONVERSION_FACTOR	decile_MEASUREMENT_VALUE_HARMONIZED	ksTestHarmonized_pValue	ksTestHarmonized_KS	message
+		UNCHECKED	0	Unmapped		s-p�lyer [u/ml]	7012	7492	[ 0, 0, 100, 0]%	[ 0, 39.7, 6.2, 0, 0, 0, 37.6, 0, 16.5]%								
+		UNCHECKED	0	Unmapped		nitr-o []	2076	8368	[ 100, 0, 0, 0]%	[ 0, 0, 9.1, 0, 0, 0, 0, 0, 90.9]%								
+		NOT-FOUND				ekg,12kytkentäälevossa(asi []	5087	8872	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		metamyelosyytit []	6373	13185	[ 100, 0, 0, 0]%	[ 0, 2.2, 0, 0, 0, 0, 0, 0, 97.8]%								
+		UNCHECKED	0	Unmapped		b-leukosyytit,erittelylaskenta []	5643	12230	[ 100, 0, 0, 0]%	[ 0, 18.2, 0, 0, 0, 0, 0, 0, 81.8]%								
+		NOT-FOUND				l-eosinofiili [%]	3614	11078	[ 0, 0, 100, 0]%	[ 0, 0, 21.9, 0, 0, 0, 0, 0, 78.1]%								
+		UNCHECKED	0	Unmapped		solut,virtsasta []	2044	5181	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		cb-tt-inrp []	197	5576	[ 0, 100, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-ctgcnho []	49118	99485	[ 100, 0, 0, 0]%	[ 0, 20.8, 0.4, 0, 0, 0, 0, 0, 78.7]%								
+		NOT-FOUND				21622 [ug/l]	821	16239	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				u-seulonta(liuskakoe) []	3117	5149	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		promyelosyytit []	6498	13448	[ 100, 0, 0, 0]%	[ 0, 2.2, 0, 0, 0, 0, 0, 0, 97.8]%								
+		UNCHECKED	0	Unmapped		-kskäynt []	1403	14197	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-proteiini(kval) []	4941	7566	[ 100, 0, 0, 0]%	[ 0, 12.1, 9.7, 0, 0, 0, 0, 0, 78.3]%								
+		UNCHECKED	0	Unmapped		p-happamuusaste(ionis.ca) []	8169	22410	[ 0, 100, 0, 0]%	[ 0, 27.2, 0, 0, 0, 0, 0, 0, 72.8]%								
+		NOT-FOUND				e-erytrosyytit,kokojakaumaprosentti [%]	4543	24537	[ 0, 0, 100, 0]%	[ 0, 0.1, 1.3, 0, 0, 0, 32.6, 0, 66.1]%								
+		UNCHECKED	0	Unmapped		pt-papahpv []	3858	6590	[ 100, 0, 0, 0]%	[ 0, 34.8, 0, 36.2, 0, 0, 0, 0, 29]%								
+		UNCHECKED	0	Unmapped		c-reaktiivinenproteiini []	4482	6391	[ 100, 0, 0, 0]%	[ 0, 73.7, 0, 0, 0, 0, 0.3, 0, 26.1]%								
+		NOT-FOUND				glomerulussuodosnopeus,estimo [ml/min/173m2]	17875	69299	[ 0, 0, 100, 0]%	[ 0, 47.9, 8.8, 0, 29.5, 0, 0, 0, 13.7]%								
+		UNCHECKED	0	Unmapped		s-ngmuut []	15765	16771	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		s-leukabo []	1735	7490	[ 100, 0, 0, 0]%	[ 0, 27.9, 5.8, 0, 0, 0, 0, 0, 66.4]%								
+		UNCHECKED	0	Unmapped		b-perusverenkuva,trombosyytitjaneutrofiilit []	5807	24176	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				pt-glomerulussuodosnopeus,ckd-epi-kaava [ml/min/173m2]	2041	5605	[ 0, 0, 100, 0]%	[ 0, 0, 35.5, 0, 0, 0, 0, 0, 64.5]%								
+		UNCHECKED	0	Unmapped		u-ominaispaino []	12919	28701	[ 100, 0, 0, 0]%	[ 0, 31, 0, 0, 0, 0, 0, 0, 69]%								
+		UNCHECKED	0	Unmapped		b-baktvi-anaerobi []	5082	9943	[ 100, 0, 0, 0]%	[ 0, 27.8, 0, 0, 0, 0, 0, 0, 72.2]%								
+		NOT-FOUND				p-laktaatti [mmol/l]	4521	11611	[ 0, 0, 100, 0]%	[ 0, 50.3, 9.8, 0, 1, 0, 5.6, 0, 33.3]%								
+		UNCHECKED	0	Unmapped		u-inf []	20048	51515	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		inbnho []	5285	7468	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-bio-0 []	81820	85825	[ 100, 0, 0, 0]%	[ 0, 17.6, 0, 0, 0, 0, 0, 0, 82.4]%								
+		UNCHECKED	0	Unmapped		lipidit,plasma []	7655	14830	[ 100, 0, 0, 0]%	[ 0, 8.6, 0, 0, 0, 0, 0, 0, 91.4]%								
+		UNCHECKED	0	Unmapped		-chlamydiatrachomatisjaneisseriagonorrhoeae,nukleiinihappokotona(kval) []	3643	6639	[ 100, 0, 0, 0]%	[ 0, 100, 0, 0, 0, 0, 0, 0, 0]%								
+		UNCHECKED	0	Unmapped		u-tutk/ottotapa []	3956	5668	[ 100, 0, 0, 0]%	[ 0, 27, 0, 0, 0, 0, 0, 0, 73]%								
+		NOT-FOUND				perusverenkuvajatrombosyytit,verestä []	3544	8477	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		pt-papa-tk []	12261	15081	[ 100, 0, 0, 0]%	[ 0, 4.8, 0.8, 0.1, 0, 0, 0, 0, 94.4]%								
+		UNCHECKED	0	Unmapped		s-anca-t []	4223	5070	[ 100, 0, 0, 0]%	[ 0, 0.5, 0, 0, 0, 0, 0, 0, 99.5]%								
+		UNCHECKED	0	Unmapped		bakteeri,viljelyvirtsasta []	3729	10088	[ 100, 0, 0, 0]%	[ 0, 0.1, 0, 0, 0, 0, 0, 0, 99.9]%								
+		UNCHECKED	0	Unmapped		tth-scrcdt []	5854	6583	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-happamuusaste []	3759	5381	[ 0, 100, 0, 0]%	[ 0, 58.1, 10.4, 0, 0, 0, 19.8, 0, 11.7]%								
+		UNCHECKED	0	Unmapped		b-perusverenkuva []	14523	58206	[ 100, 0, 0, 0]%	[ 0, 2, 0, 0, 0, 0, 0, 0, 98]%								
+		UNCHECKED	0	Unmapped		l-myelosyytti []	3686	10592	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-leukosyytit,erittelylaskenta(mikrosk.) []	5141	12650	[ 100, 0, 0, 0]%	[ 0, 17.6, 0, 0, 0, 0, 0, 0, 82.4]%								
+		UNCHECKED	0	Unmapped		l-promyelosyytti []	3686	10592	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		c-reaktiivinenproteiini,herkkä,seerumista [mg/l]	6225	7411	[ 0, 0, 100, 0]%	[ 0, 90.6, 0.1, 0, 0, 0, 8.7, 0, 0.6]%								
+		UNCHECKED	0	Unmapped		leuk-o []	2077	8377	[ 100, 0, 0, 0]%	[ 0, 0, 22.6, 0, 0, 0, 0, 0, 77.4]%								
+		UNCHECKED	0	Unmapped		veriryhmävasta-aineet,seulonta,plasmasta []	2999	7056	[ 100, 0, 0, 0]%	[ 0, 0, 2.7, 0, 0, 0, 0, 0, 97.3]%								
+		UNCHECKED	0	Unmapped		bakteerit []	4006	6094	[ 100, 0, 0, 0]%	[ 0, 17.9, 0, 0, 0, 0, 0, 0, 82.1]%								
+		UNCHECKED	44806420	Estimation of glomerular filtration rate		pt-gfre-cg [ml/min/173m2]	4646	10060	[ 0, 0, 100, 0]%	[ 0, 79.6, 19.8, 0, 0, 0, 0, 0, 0.6]%								
+		NOT-FOUND				tth-screennextgen []	13469	14214	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		-influenssaa,b,rsvjacovid-19nukleiinihappo(kval) []	3145	5134	[ 100, 0, 0, 0]%	[ 0, 0.6, 13.4, 0, 0, 0, 0, 0, 85.9]%								
+		NOT-FOUND				14272 []	2646	5212	[ 0, 100, 0, 0]%	[ 0, 0, 24, 0, 0, 0, 0, 0, 76]%								
+		UNCHECKED	0	Unmapped		b-baktvi-aerobi []	5061	9838	[ 100, 0, 0, 0]%	[ 0, 28.1, 0, 0, 0, 0, 0, 0, 71.9]%								
+		UNCHECKED	0	Unmapped		korona-rs-influenssa,pcrpikatesti []	4144	6428	[ 100, 0, 0, 0]%	[ 0, 34.5, 0.5, 0, 0, 0, 0, 0, 65]%								
+		UNCHECKED	0	Unmapped		b-perusverenkuva,leukosyyttienerittelylaskenta,koneellinen []	3664	10066	[ 100, 0, 0, 0]%	[ 0, 0.2, 0, 0, 0, 0, 0, 0, 99.8]%								
+		UNCHECKED	0	Unmapped		b-baktsvi []	2452	6478	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-perusverenkuva,trombosyytitjaneutrofiilit,pvk+neut []	2642	8682	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		lipidit []	5643	7338	[ 100, 0, 0, 0]%	[ 0, 14.6, 0, 0, 0, 0, 0, 0, 85.4]%								
+		UNCHECKED	0	Unmapped		f-mm-touk []	3672	6826	[ 100, 0, 0, 0]%	[ 0, 5.4, 0, 0, 0, 0, 0, 0, 94.6]%								
+		UNCHECKED	0	Unmapped		cb-veion []	4963	8950	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				8836 []	4192	6811	[ 100, 0, 0, 0]%	[ 0, 0, 16.6, 0, 0, 0, 0, 0, 83.4]%								
+		UNCHECKED	0	Unmapped		glomerulussuodosnopeus,estimoitu,ckd-epi-kaava,osatutk. []	2047	7208	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				s-kalsium-ioni.aktuaali [mmol/l]	3148	9632	[ 0, 0, 100, 0]%	[ 0, 0.3, 0, 0, 0, 0, 0, 0, 99.7]%								
+		UNCHECKED	0	Unmapped		-influenssab-virus,nukleiinihappo(kval) []	4376	7124	[ 100, 0, 0, 0]%	[ 0, 29.5, 0.2, 0, 0, 0, 0, 0, 70.3]%								
+		NOT-FOUND				sydän-javerisuonitautiriski []	15600	16574	[ 100, 0, 0, 0]%	[ 0, 14.3, 5.7, 0, 0, 0, 0, 0, 80]%								
+		NOT-FOUND				e-rdw,punasolujenkokojakauma [%]	5188	25924	[ 0, 0, 100, 0]%	[ 0, 0.2, 32.2, 0, 0, 0, 0, 0, 67.6]%								
+		UNCHECKED	0	Unmapped		ehecnho []	5796	8225	[ 100, 0, 0, 0]%	[ 0, 2.4, 0.4, 0, 0, 0, 0, 0, 97.2]%								
+		UNCHECKED	0	Unmapped		u-liuskakokeet []	4471	6782	[ 100, 0, 0, 0]%	[ 0, 0.1, 0, 0, 0, 0, 0, 0, 99.9]%								
+		UNCHECKED	0	Unmapped		vb-vkperus []	1322	5469	[ 100, 0, 0, 0]%	[ 0, 0, 64, 0, 0, 0, 0, 0, 36]%								
+		UNCHECKED	0	Unmapped		b-pvktp []	3893	5209	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		s-ca++/7.40 []	4518	5861	[ 0, 100, 0, 0]%	[ 0, 0, 17.3, 0, 0, 0, 0, 0, 82.7]%								
+		NOT-FOUND				b-neutrofiili,erillistutkimuksena [e9/l]	4648	26884	[ 0, 0, 100, 0]%	[ 0, 67.8, 31.6, 0, 0, 0, 0, 0, 0.6]%								
+		UNCHECKED	0	Unmapped		f-kystat []	3775	7009	[ 100, 0, 0, 0]%	[ 0, 6.5, 5.2, 0, 0, 0, 0, 0, 88.3]%								
+		UNCHECKED	0	Unmapped		u-neisseriagonorrhoeae,nukleiinihappo(kval) []	4034	5319	[ 100, 0, 0, 0]%	[ 0, 19.3, 0, 0, 0, 0, 0, 0, 80.7]%								
+		UNCHECKED	0	Unmapped		osmolaliteetinestimaatti [mosm/kgh2o]	3841	5733	[ 0, 0, 100, 0]%	[ 0, 93.3, 0, 0, 0, 0, 0, 0, 6.7]%								
+		UNCHECKED	0	Unmapped		-ctngnho []	6325	12007	[ 100, 0, 0, 0]%	[ 0, 1.1, 0, 0, 0, 0, 0, 0, 98.9]%								
+		UNCHECKED	0	Unmapped		u-bakteeri,jatkoviljely []	5080	8781	[ 100, 0, 0, 0]%	[ 0, 2.7, 31.1, 0, 0, 0, 0, 0, 66.1]%								
+		UNCHECKED	0	Unmapped		l-myelosyytit [%]	1852	5057	[ 0, 0, 100, 0]%	[ 0, 27.4, 49.7, 0, 0, 0, 0.5, 0, 22.3]%								
+		NOT-FOUND				erytrosyytit,kokojakaumaindeksi,osatutk.2474 [%]	2569	12711	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				hdl-kolesteroli [mmol/l]	6157	7026	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-pvk-tkd []	1046	5227	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-perusverenkuva+trombosyytit []	38315	114189	[ 100, 0, 0, 0]%	[ 0, 13.9, 0, 0, 0, 0, 0, 0, 86.1]%								
+		UNCHECKED	3018387	Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum	Arbitrary Concentration	s-mypnabg [eiu]	6172	7286	[ 0, 0, 100, 0]%	[ 0, 9.7, 17.4, 0, 0, 0, 7, 0, 65.9]%								WARNING: not APPROVED: test unit [eiu] does not agree with omop_quantity 'Arbitrary Concentration' for mapped concept 3018387 (Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum)
+		UNCHECKED	0	Unmapped		rsnho []	5028	7044	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		l-metamyelosyytti []	3686	10592	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				keuhkoahtaumatautiriski(tupakoivilla) []	15640	16624	[ 100, 0, 0, 0]%	[ 0, 0, 20, 0, 0, 0, 0, 0, 80]%								
+		UNCHECKED	0	Unmapped		p-bil-vt []	3913	10274	[ 100, 0, 0, 0]%	[ 0, 72, 0, 0, 0, 0, 0, 0, 28]%								
+		NOT-FOUND				ab-happikyllästeisyys(hemoglobiini),eitilattava [%]	2150	9563	[ 0, 0, 100, 0]%	[ 0, 6.6, 54, 0, 1.3, 0, 7.8, 0, 30.2]%								
+		UNCHECKED	0	Unmapped		-inabrsv []	13564	19021	[ 100, 0, 0, 0]%	[ 0, 6.7, 2, 0, 0, 0, 0, 0, 91.3]%								
+		NOT-FOUND				fp-glukoosi,paastonäyte [mmol/l]	8085	9604	[ 0, 0, 100, 0]%	[ 0, 56.2, 0, 0, 0.1, 0, 43.7, 0, 0]%								
+		UNCHECKED	0	Unmapped		b-pvk+t+n []	2353	20007	[ 100, 0, 0, 0]%	[ 0, 1.1, 0, 0, 0, 0, 0, 0, 98.9]%								
+		NOT-FOUND				p-kalsium-ioni,aktuaali [mmol/l]	4960	14960	[ 0, 0, 100, 0]%	[ 0, 0.2, 0, 0, 0, 0, 0, 0, 99.8]%								
+		UNCHECKED	0	Unmapped		bakteerit,virtsa []	2857	7782	[ 100, 0, 0, 0]%	[ 0, 0.4, 0, 0, 0, 0, 0, 0, 99.6]%								
+		UNCHECKED	0	Unmapped		veriryhmäjarh []	4910	5251	[ 100, 0, 0, 0]%	[ 0, 0.6, 0, 0, 0, 0, 0, 0, 99.4]%								
+		UNCHECKED	0	Unmapped		veriryhmävasta-aineet,seulonta []	6221	9010	[ 100, 0, 0, 0]%	[ 0, 0.1, 0.6, 0, 0, 0, 0, 0, 99.3]%								
+		NOT-FOUND				e-mcv(erytrosyytit,keskitilavuus) [fl]	9397	26895	[ 0, 0, 100, 0]%	[ 0, 0, 16.7, 0, 0, 0, 0, 0, 83.3]%								
+		UNCHECKED	0	Unmapped		u-partikk []	2206	5423	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		fs-kalsium,ionisoitunut []	4046	6165	[ 100, 0, 0, 0]%	[ 0, 42.3, 0, 0, 0, 0, 0, 0, 57.7]%								
+		NOT-FOUND				ldl-kolesteroli [mmol/l]	8662	10891	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		p-tromboplastiiniaika,inr,tt []	1190	9455	[ 0, 100, 0, 0]%	[ 0, 0, 0, 0, 28.5, 0, 6.3, 0.1, 65.1]%								
+		UNCHECKED	0	Unmapped		non-hdl(paasto) []	4927	6004	[ 0, 100, 0, 0]%	[ 0, 18.6, 0, 0, 0, 0, 10.4, 0, 71]%								
+		NOT-FOUND				alkoholimaksasairausriski []	15640	16622	[ 100, 0, 0, 0]%	[ 0, 19.7, 0.3, 0, 0, 0, 0, 0, 80]%								
+		UNCHECKED	0	Unmapped		sy-un�k�-o []	4413	6435	[ 100, 0, 0, 0]%	[ 0, 40.7, 0, 0, 0, 0, 0, 0, 59.3]%								
+		NOT-FOUND				11564 [mmol/l]	5852	22683	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				11554 []	6498	25385	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		seeruminhappamuusaste []	1890	5649	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-fii-d []	6953	7659	[ 100, 0, 0, 0]%	[ 0.1, 23.4, 0, 0, 0, 0, 0, 0, 76.5]%								
+		UNCHECKED	0	Unmapped		u-partikkelienperuslaskenta,koneellinen []	4885	8653	[ 100, 0, 0, 0]%	[ 0, 4.5, 0, 0, 0, 0, 0, 0, 95.5]%								
+		NOT-FOUND				krooninenmunuaistenvajaatoimintariski []	15641	16625	[ 100, 0, 0, 0]%	[ 0, 18.3, 1.6, 0, 0, 0, 0, 0, 80]%								
+		UNCHECKED	0	Unmapped		u-kemseul,leuk []	2186	6354	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-seulonta []	2030	6352	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		pt-biop []	9942	10292	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		etecnho []	5821	8250	[ 100, 0, 0, 0]%	[ 0, 2.8, 0.2, 0, 0, 0, 0, 0, 97]%								
+		UNCHECKED	0	Unmapped		hdl/kol. []	9563	11551	[ 0, 100, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		vb-o2-sis [ml/l]	5643	15632	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								WARNING: not APPROVED: vb-o2-sis[ml/l] is not a valid unit: ml/l
+		UNCHECKED	0	Unmapped		-inrc-vt []	5481	7677	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				p-tromboplastiiniaika,inr-tulos [1]	638	5842	[ 0, 0, 100, 0]%	[ 0, 77.7, 0, 0, 15, 0, 7.2, 0.1, 0]%								
+		UNCHECKED	3000067	Parathyrin.intact [Mass/volume] in Serum or Plasma	Mass Concentration	fp-pth []	4982	9213	[ 0, 100, 0, 0]%	[ 0, 6.1, 46.3, 0, 0.2, 0, 14.2, 0, 33.2]%								
+		UNCHECKED	0	Unmapped		myelosyytit []	6492	13453	[ 100, 0, 0, 0]%	[ 0, 2.2, 0, 0, 0, 0, 0, 0, 97.8]%								
+		NOT-FOUND				14272 [e9/l]	9362	78909	[ 0, 0, 100, 0]%	[ 0, 0, 30.6, 0, 0, 0, 0, 0, 69.4]%								
+		NOT-FOUND				l-eosonofiilit [%]	2919	5793	[ 0, 0, 100, 0]%	[ 0, 0, 19.9, 0, 0, 0, 0, 0, 80.1]%								
+		UNCHECKED	0	Unmapped		u-ominaispaino []	4572	5476	[ 0, 100, 0, 0]%	[ 0, 19.6, 0, 0, 0, 0, 0, 0, 80.4]%								
+		UNCHECKED	0	Unmapped		b-vr+vrab []	11016	11936	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		f-hhb []	3811	5530	[ 100, 0, 0, 0]%	[ 0.1, 4.5, 0, 0, 0, 0, 0, 0, 95.4]%								
+		UNCHECKED	0	Unmapped		p-punasoluvasta-aineet []	9760	16878	[ 100, 0, 0, 0]%	[ 0, 32.1, 0, 0, 0, 0, 0, 0, 67.9]%								
+		UNCHECKED	0	Unmapped		p-veriryhmävasta-aineet,seulonta []	4801	6422	[ 100, 0, 0, 0]%	[ 0, 7.1, 0, 0, 0, 0, 0, 0, 92.9]%								
+		UNCHECKED	0	Unmapped		s-crp,herkkä []	6219	7580	[ 100, 0, 0, 0]%	[ 0, 54.2, 0, 0, 0, 0, 2.9, 0, 42.9]%								
+		UNCHECKED	0	Unmapped		s-tr1horm []	5949	9929	[ 100, 0, 0, 0]%	[ 0, 0.5, 0, 0, 0, 0, 0, 0, 99.5]%								
+		UNCHECKED	0	Unmapped		fs-ttpaka []	4677	5422	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		e-veriryhmä,tarkistus []	9095	14388	[ 100, 0, 0, 0]%	[ 0, 33.5, 0, 0, 0, 0, 0, 0, 66.5]%								
+		NOT-FOUND				e-punasolujenkokojakaum [%]	36380	55540	[ 0, 0, 100, 0]%	[ 0, 11.6, 0, 0, 0, 0, 5.1, 0, 83.3]%								
+		UNCHECKED	0	Unmapped		u-kemseup []	4164	5470	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-bakteeri,jatkoviljely,seulottunäyte []	4643	8996	[ 100, 0, 0, 0]%	[ 0, 21.2, 52.9, 0, 0, 0, 0, 0, 25.9]%								
+		UNCHECKED	0	Unmapped		u-bakteerit,lausunt []	7436	15382	[ 100, 0, 0, 0]%	[ 0, 64, 0, 0, 0, 0, 0, 0, 36]%								
+		UNCHECKED	0	Unmapped		-sienvr []	6693	8938	[ 100, 0, 0, 0]%	[ 0, 8.4, 0, 0, 0, 0, 0, 0, 91.6]%								
+		UNCHECKED	3009542	Hematocrit [Volume Fraction] of Blood by calculation	Volume Fraction	b-hkr [fl]	5159	7241	[ 0, 0, 100, 0]%	[ 0, 53.8, 0, 0, 2.8, 0, 1.9, 0, 41.6]%								WARNING: not APPROVED: test unit [fl] does not agree with omop_quantity 'Volume Fraction' for mapped concept 3009542 (Hematocrit [Volume Fraction] of Blood by calculation)
+		UNCHECKED	0	Unmapped		virtsankemiallinenseulonta []	6598	12405	[ 100, 0, 0, 0]%	[ 0, 0.5, 0, 0, 0, 0, 0, 0, 99.5]%								
+		UNCHECKED	0	Unmapped		kolesteroli/hdl-suhde []	25505	33783	[ 0, 100, 0, 0]%	[ 0, 22.3, 0, 0, 0, 0, 6.9, 0, 70.8]%								
+		UNCHECKED	0	Unmapped		mxd [%]	2927	14328	[ 0, 0, 100, 0]%	[ 0, 70.2, 8, 0, 0, 0, 0, 0, 21.8]%								
+		UNCHECKED	0	Unmapped		p-varainr []	4532	8328	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				kemiallinenseulonta,virtsasta []	4887	13871	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				s-crp,herkkä [mg/l]	5400	6628	[ 0, 0, 100, 0]%	[ 0, 74.6, 0, 0, 0, 0, 25.3, 0, 0]%								
+		NOT-FOUND				p-troponiinii [ng/l]	3444	7299	[ 0, 0, 100, 0]%	[ 0, 0, 26.1, 0, 0, 0, 0, 0, 73.9]%								
+		UNCHECKED	0	Unmapped		li-un�k�-o []	5222	8207	[ 100, 0, 0, 0]%	[ 0, 27.9, 0, 0, 0, 0, 0, 0, 72.1]%								
+		NOT-FOUND				s-apob/apoa1-suhde []	15845	16804	[ 0, 100, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 6.2, 0, 93.8]%								
+		UNCHECKED	0	Unmapped		p-vrabosp []	6237	13400	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		s-äit-seul []	4288	7517	[ 100, 0, 0, 0]%	[ 0, 1.7, 0, 0, 0, 0, 0, 0, 98.2]%								
+		UNCHECKED	0	Unmapped		cv19infrs []	4297	7932	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		u-bakteeri,viljelyvirtsasta []	1989	5504	[ 100, 0, 0, 0]%	[ 0, 14.5, 0, 0, 0, 0, 0, 0, 85.5]%								
+		NOT-FOUND				pt-glomerulussuodosnopeus,ckd-epi-kaava []	4272	21252	[ 0, 0, 100, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				bakteeri,viljely(virtsasta) []	3585	6654	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	3037556	Urate [Mass/volume] in Serum or Plasma	Mass Concentration	p-uraatti [umol/l]	4531	6898	[ 0, 0, 100, 0]%	[ 0, 12.6, 23.4, 0, 0.3, 0, 3.4, 0, 60.3]%								WARNING: not APPROVED: test unit [umol/l] does not agree with omop_quantity 'Mass Concentration' for mapped concept 3037556 (Urate [Mass/volume] in Serum or Plasma)
+		UNCHECKED	0	Unmapped		pt-fib-4 []	4597	6047	[ 0, 0, 100, 0]%	[ 0, 29.9, 1.3, 0, 0, 0, 0.6, 0, 68.3]%								
+		UNCHECKED	0	Unmapped		covid-19koronavirus,2019-ncov,pcr-tutkimus []	3736	5561	[ 100, 0, 0, 0]%	[ 0, 20.8, 14.4, 0, 0, 0, 0, 0, 64.8]%								
+		UNCHECKED	0	Unmapped		l-blast [%]	1673	5229	[ 0, 0, 100, 0]%	[ 0, 2.7, 18, 0, 0, 0, 3.8, 0.4, 75.1]%								
+		UNCHECKED	0	Unmapped		virtsanpartikkelienperuslaskenta []	2858	7795	[ 100, 0, 0, 0]%	[ 0, 0.4, 0, 0, 0, 0, 0, 0, 99.6]%								
+		NOT-FOUND				l-basofiili [%]	3761	11394	[ 0, 0, 100, 0]%	[ 0, 0, 5.6, 0, 0, 0, 0, 0, 94.4]%								
+		UNCHECKED	0	Unmapped		u-kemseul,eryt []	2187	6368	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		vb-vekaion []	5394	16728	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				l-monosyytti [%]	6654	17104	[ 0, 0, 100, 0]%	[ 0, 0, 19.7, 0, 0, 0, 0, 0, 80.3]%								
+		UNCHECKED	0	Unmapped		gt-cdt-ind []	3732	6067	[ 0, 0, 100, 0]%	[ 0, 0.1, 43.3, 0, 0, 0, 1.8, 0, 54.8]%								
+		UNCHECKED	0	Unmapped		fs-metabol []	6837	9475	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				b-hkr(erytrosyytit,tilavuusosuus) [osuus]	10768	39604	[ 0, 0, 100, 0]%	[ 0, 0, 25.5, 0, 7.8, 0, 0.8, 0, 66]%								
+		UNCHECKED	0	Unmapped		s-äitseul []	16083	24742	[ 100, 0, 0, 0]%	[ 0, 22.3, 0, 0, 0, 0, 0, 0, 77.7]%								
+		UNCHECKED	0	Unmapped		u-hemoglobiini(kval) []	6929	12560	[ 100, 0, 0, 0]%	[ 0, 11.4, 29, 0, 0, 0, 0, 0, 59.5]%								
+		UNCHECKED	0	Unmapped		kemiallinenseulonta []	2836	5052	[ 100, 0, 0, 0]%	[ 0, 14.8, 0, 0, 0, 0, 0, 0, 85.2]%								
+		NOT-FOUND				l-lymfosyytti [%]	3614	11079	[ 0, 0, 100, 0]%	[ 0, 0, 31.7, 0, 0, 0, 0, 0, 68.3]%								
+		UNCHECKED	0	Unmapped		vb-verikaasuanalyysi,laaja []	4376	11311	[ 100, 0, 0, 0]%	[ 0, 0.2, 1.1, 0, 0, 0, 0, 0, 98.8]%								
+		NOT-FOUND				10299 [mmol/l]	6499	25386	[ 0, 0, 100, 0]%	[ 0, 0, 35.1, 0, 0, 0, 0, 0, 64.9]%								
+		UNCHECKED	0	Unmapped		-ctgcnho []	31174	66388	[ 100, 0, 0, 0]%	[ 0, 29.1, 0.2, 0, 0, 0, 0, 0, 70.7]%								
+		UNCHECKED	0	Unmapped		vb-vekaast []	4563	10979	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan []	2505	9742	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		ab-verikaasuanalyysi,teho []	2134	9549	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		erytrosyytit [e6/l]	3680	5533	[ 0, 0, 100, 0]%	[ 0, 74.1, 20.3, 0, 0, 0, 1.9, 0, 3.6]%								
+		UNCHECKED	0	Unmapped		p-natriumjakalium []	13627	58450	[ 100, 0, 0, 0]%	[ 0, 24.2, 0, 0, 0, 0, 0, 0, 75.8]%								
+		UNCHECKED	0	Unmapped		b-bakteeri,viljely,seulonta []	1707	5420	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		b-täydellinenverenkuva []	8780	22505	[ 100, 0, 0, 0]%	[ 0, 0.6, 0, 0, 0, 0, 0, 0, 99.4]%								
+		UNCHECKED	44813793	Dust mix specific IgE antibody measurement		s-pölyer [u/ml]	6853	7290	[ 0, 0, 100, 0]%	[ 0, 8.5, 24.3, 0, 0, 0, 10.5, 0, 56.7]%								
+		UNCHECKED	0	Unmapped		u-bakt-vi []	4975	14779	[ 100, 0, 0, 0]%	[ 0, 0, 5.8, 0, 0, 0, 0, 0, 94.2]%								
+		UNCHECKED	0	Unmapped		u-happamuusaste []	2596	5242	[ 0, 0, 100, 0]%	[ 0, 12.2, 17.7, 0, 0, 0, 0, 0, 70.1]%								
+		UNCHECKED	3000067	Parathyrin.intact [Mass/volume] in Serum or Plasma	Mass Concentration	fp-pth [ng/l]	29039	121906	[ 0, 0, 100, 0]%	[ 0, 11, 44.2, 0, 0.9, 0, 23.2, 0, 20.6]%								
+		NOT-FOUND				glom.suod.nopeusckd-epi [ml/min/173m2]	19545	25363	[ 0, 0, 100, 0]%	[ 0, 78.6, 0, 0, 21.4, 0, 0, 0, 0]%								
+		NOT-FOUND				bakteeri,viljely,verestä []	1881	5261	[ 100, 0, 0, 0]%	[ 0.1, 0, 0, 0, 0, 0, 0, 0, 99.9]%								
+		UNCHECKED	0	Unmapped		b-vrab-gr []	29664	64868	[ 100, 0, 0, 0]%	[ 0, 10.4, 0, 0, 0, 0, 0, 0, 89.6]%								
+		UNCHECKED	0	Unmapped		blastit []	6925	14156	[ 100, 0, 0, 0]%	[ 0, 7, 0, 0, 0, 0, 0, 0, 93]%								
+		UNCHECKED	0	Unmapped		s-puumab []	4979	5701	[ 100, 0, 0, 0]%	[ 0, 14.8, 0.2, 0, 0, 0, 0, 0, 85]%								
+		UNCHECKED	0	Unmapped		f-baktvip []	13577	17267	[ 100, 0, 0, 0]%	[ 0, 37.8, 5.8, 0, 0, 0, 0, 0, 56.4]%								
+		UNCHECKED	0	Unmapped		sopivuuskoe,verestä []	2799	5429	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		UNCHECKED	0	Unmapped		l-metmye []	3085	13256	[ 100, 0, 0, 0]%	[ 0, 1.1, 0, 0, 0, 0, 0, 0, 98.9]%								
+		UNCHECKED	0	Unmapped		s-bio []	9934	11267	[ 100, 0, 0, 0]%	[ 0, 29.8, 0, 0, 0, 0, 0, 0, 70.2]%								
+		UNCHECKED	0	Unmapped		s-leuabpr []	1979	8538	[ 100, 0, 0, 0]%	[ 0, 30, 0, 0, 0, 0, 0, 0, 70]%								
+		UNCHECKED	0	Unmapped		p-larvvct []	5070	6540	[ 100, 0, 0, 0]%	[ 0, 41.3, 0.6, 0, 0, 0, 0, 0, 58.1]%								
+		UNCHECKED	0	Unmapped		alb-o []	2077	8370	[ 100, 0, 0, 0]%	[ 0, 0, 12, 0, 0, 0, 0, 0, 88]%								
+		UNCHECKED	0	Unmapped		fl-hiivavi []	5239	6976	[ 100, 0, 0, 0]%	[ 0, 20.1, 13.5, 0, 0, 0, 0, 0, 66.4]%								
+		UNCHECKED	0	Unmapped		s-ige-pse []	4869	5036	[ 100, 0, 0, 0]%	[ 0, 13.3, 1.9, 0, 0, 0, 0, 0, 84.8]%								
+		NOT-FOUND				keuhkosyöpäriski(tupakoivilla) []	15641	16625	[ 100, 0, 0, 0]%	[ 0, 0, 20, 0, 0, 0, 0, 0, 80]%								
+		NOT-FOUND				maksanfibroosijakirroosiriski []	15192	16115	[ 100, 0, 0, 0]%	[ 0, 15.4, 5.2, 0, 0, 0, 0, 0, 79.4]%								
+		NOT-FOUND				tyypin2diabetesriski []	15641	16625	[ 100, 0, 0, 0]%	[ 0, 14.5, 5.5, 0, 0, 0, 0, 0, 80]%								
+		NOT-FOUND				bakteeri,seulontajaviljely []	3642	9911	[ 100, 0, 0, 0]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 100]%								
+		NOT-FOUND				b-hemoglobiini-a1c [mmol/m]	6862	7630	[ 0, 0, 100, 0]%	[ 0, 2.2, 30.1, 0, 0, 0, 0.2, 0, 67.6]%								
+		UNCHECKED	0	Unmapped		p-hyyttek []	4574	12967	[ 100, 0, 0, 0]%	[ 0, 0.5, 0, 0, 0, 0, 0, 0, 99.5]%								
+		UNCHECKED	0	Unmapped		ab-ph []	23504	266709	[ 0, 100, 0, 0]%	[ 0, 54.2, 1.4, 0, 15.6, 0, 25.7, 0, 3.2]%								
+		NOT-FOUND				kilpirauhasentutkimuspaketti []	5448	6810	[ 100, 0, 0, 0]%	[ 0, 26.8, 0, 0, 0, 0, 0, 0, 73.2]%								
+		UNCHECKED	0	Unmapped		e-abovarm []	4686	10066	[ 100, 0, 0, 0]%	[ 0, 6.1, 0, 0, 0, 0, 0, 0, 93.9]%								
+		UNCHECKED	0	Unmapped		u-ctngnho []	12067	26368	[ 100, 0, 0, 0]%	[ 0, 0.8, 0, 0, 0, 0, 0, 0, 99.2]%								
+		NOT-FOUND				sydäninfarktiriski []	15650	16636	[ 100, 0, 0, 0]%	[ 0, 16.8, 3.2, 0, 0, 0, 0, 0, 80]%								
+		UNCHECKED	0	Unmapped		-piconho []	3668	5462	[ 100, 0, 0, 0]%	[ 0, 0.4, 0.1, 0, 0, 0, 0, 0, 99.5]%								
+		UNCHECKED	0	Unmapped		lymf []	5545	26387	[ 0, 100, 0, 0]%	[ 0, 0.1, 33.7, 0, 0.3, 0, 0, 0, 65.9]%								
+		UNCHECKED	0	Unmapped		s-koivue [u/ml]	5763	6384	[ 0, 0, 100, 0]%	[ 0, 17.4, 25.2, 0, 0, 0, 36.4, 0, 21]%								
+		UNCHECKED	0	Unmapped		ab-ph []	4398	18325	[ 100, 0, 0, 0]%	[ 0, 0.3, 51.5, 0, 0, 0, 0, 0, 48.3]%								
+		UNCHECKED	0	Unmapped		virtsanbakteeriviljely []	4794	8964	[ 100, 0, 0, 0]%	[ 0, 0.1, 3.5, 0, 0, 0, 0, 0, 96.3]%								
+		NOT-FOUND				b-laktaatti,päivystystutkimus [mmol/l]	3143	11294	[ 0, 0, 100, 0]%	[ 0, 11.9, 21.6, 0, 0.3, 0, 4, 0, 62.2]%								
