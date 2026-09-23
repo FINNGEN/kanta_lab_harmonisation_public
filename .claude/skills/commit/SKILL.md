@@ -26,7 +26,7 @@ allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(gi
   they contain. If there are 2 (or more) `Infra` changes, make **one** `Infra`
   commit whose summary covers all of them — do not split it per file or per
   action. Only split across commits when changes span **different** subject
-  scopes (a different `<line>/<step> (<location>)`, or `Infra` vs a line).
+  scopes (a different `<step> (<location>)`, or `Infra` vs a step).
   Do not mix an `Infra` change, a `STEPS` code change, and a `DATA` change in
   the same commit.
 - When one commit's summary must cover several changes in that area, write a
@@ -41,13 +41,12 @@ allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(gi
 ## Keep docs in sync with code
 
 Code and docs must stay in sync. Most folders carry a `README.md`; its required
-format and content are defined in `AGENTS.md` / `CLAUDE.md`.
+format and content are defined in `AGENTS.md`.
 
 Before committing, check each change against the relevant `README.md`:
 
-- **New/renamed/removed file, step, or working folder** → reflected in its
-  folder's `README.md` (a new step also in the parent line's step list; a new
-  line also in `LINES_OF_RESEARCH/README.md`).
+- **New/renamed/removed step** → reflected in its folder's `README.md` and in
+  `STEPS/README.md`'s step list.
 - **Changed input/output, env var, run invocation, or action** → matches that
   step's `README.md` sections.
 
@@ -56,25 +55,20 @@ If already in sync, do nothing. Otherwise make the **minimum** edits (per the
 
 ## Commit message format
 
-This repo is organized into lines of research, each a chain of steps that
-read and write working folders (see `AGENTS.md`). The commit subject encodes
+This repo is a pipeline of steps under `STEPS/`, each reading and writing its
+own results folder under `DATA/` (see `AGENTS.md`). The commit subject encodes
 *where* in that structure the change lands, inferred from the changed paths.
 
-Subject line: `<line_of_research>/<step> (<location>): <summary>`
+Subject line: `<step> (<location>): <summary>`
 
-- **`<line_of_research>`** — the affected `LINE_*` / `SUBLINE_*` folder under
-  `LINES_OF_RESEARCH/`, copied verbatim (e.g.
-  `LINE_CompareCohortsWithGenetics`). Use `Infra` instead when the change is
-  **not** inside any line of research — repo-wide or shared files such as
-  `AGENTS.md`, `ENVIRONMENTS/`, `development/STYLE.md`, `.claude/`,
-  `LINES_OF_RESEARCH/README.md`, top-level `README.md`.
-- **`<step>`** — the step folder being edited, i.e. the subfolder under the
-  line's `STEPS/` or under a `DATA/<DATAFOLDER>/`, copied verbatim
-  (PascalCase action name, e.g. `CompareSelectedVariants`).
+- **`<step>`** — the step folder being edited, copied verbatim (PascalCase
+  action name, e.g. `ConvertPhenotypeToSignal`). Use `Infra` instead when the
+  change is **not** inside a specific step — repo-wide or shared files such
+  as `AGENTS.md`, `ENVIRONMENTS/`, `development/STRUCTURE.md`,
+  `development/STYLE.md`, `.claude/`, top-level `README.md`.
 - **`(<location>)`** — tells *which side* of the step changed:
   - `(STEPS)` — the step's code/docs was modified (under `STEPS/<step>/`).
-  - `(DATA/<DATAFOLDER>)` — a data example / results subfolder was modified
-    (under `DATA/<DATAFOLDER>/<step>/`), e.g. `(DATA/G6_PARKINSONS)`.
+  - `(DATA)` — the step's results were modified (under `DATA/<step>/`).
 - **summary** — imperative, no trailing period, based on the actual diff.
   Keep the whole subject line under ~72 characters. Start it with a label
   verb (below).
@@ -84,21 +78,21 @@ For `Infra` there is no step or location — just `Infra: <summary>`.
 **Labels** — the leading verb of the summary. Use the one that fits the
 work; these suit a research pipeline better than software types:
 
-- `Add` — new step, line, working folder, or file.
+- `Add` — new step or file.
 - `Update` / `Refine` — change an existing step's behavior or docs.
 - `Fix` — correct a bug or wrong result.
 - `Refactor` — restructure without changing behavior (e.g. conform a copied
   step to the repo layout).
 - `Remove` / `Ignore` — delete files, or stop tracking them via `.gitignore`.
 - `Record` / `Refresh` — save or regenerate run outputs, data, or plots in a
-  working folder.
+  step's `DATA/` folder.
 - `Docs` — README / AGENTS / STYLE changes only.
 - `WIP` — a checkpoint save with no other clear label.
 
 ```
-LINE_CompareCohortsWithGenetics/CompareSelectedVariants (STEPS): Refine all-studies effects as reference
-LINE_CompareCohortsWithGenetics/CompareSelectedVariants (DATA/G6_PARKINSONS): Refresh conceptRatios.tsv
-LINE_ChartReviewToRules/KeeperToCohort (STEPS): Add chart-review -> case/control cohort step
+CompareSelectedVariants (STEPS): Refine all-studies effects as reference
+CompareSelectedVariants (DATA): Refresh conceptRatios.tsv
+KeeperToCohort (STEPS): Add chart-review -> case/control cohort step
 Infra: Docs clarify step result-folder naming in AGENTS.md
 ```
 
@@ -108,7 +102,7 @@ small, self-explanatory changes. Blank line after the subject, then free
 text wrapped at ~72 chars; bullets are fine.
 
 ```
-LINE_CompareCohortsWithGenetics/CompareSelectedVariants (STEPS): Refine all-studies effects as reference
+CompareSelectedVariants (STEPS): Refine all-studies effects as reference
 
 Per-cohort betas were noisy for rare variants; the all-studies
 beta_all/se_all is the stable reference for the enrichment plot.
