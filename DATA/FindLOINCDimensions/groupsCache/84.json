@@ -1,0 +1,265 @@
+{
+  "rows": [
+    {
+      "row_id": 6654,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6655,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6656,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6657,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6658,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6659,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6660,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6661,
+      "has_component": "Counseling",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6662,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6663,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6664,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6665,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6666,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6667,
+      "has_component": "Specimen handling",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6668,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6669,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6670,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6671,
+      "has_component": "Specimen transport",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6672,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6673,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6674,
+      "has_component": "Specimen collection",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6675,
+      "has_component": "Specimen collection method",
+      "has_property": "Type",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6676,
+      "has_component": "Specimen collection method",
+      "has_property": "Type",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6677,
+      "has_component": "Urine specimen collection method",
+      "has_property": "Type",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6678,
+      "has_component": "Urine specimen collection method",
+      "has_property": "Type",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6679,
+      "has_component": "Specimen collection supervised",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was unusual as it contained no analytical laboratory tests. All codes referred to pre-analytical or administrative procedures, primarily 'näytteenotto' (sample collection) and its variants. The high `p_missing` values across the board confirmed that these are not quantitative measurements.\n\nThe main challenge was mapping these procedural concepts to the LOINC axes. I consistently used components like `Specimen collection` with the property `Finding` (to indicate the action was performed) and system `^Patient`. For codes describing the *method* of collection (`ottotapa`), I used the component `Specimen collection method` and property `Type`.\n\nA significant ambiguity was row 6675 (`ottotapa`), which had numeric deciles and a unit of `h` (hours), contradicting its name which means 'collection method'. I judged the name to be the more reliable clue, interpreting the numeric values as codes for a categorical method. I therefore mapped it to an `Ord` scale and considered the unit `h` a data entry error. The alternative, mapping it as a quantitative time measurement, seemed less likely given the context of the entire group.\n\nPurely administrative codes referencing specific hospital departments (`notto,tyks`, `nottopkl`) were unmappable to a general clinical model and were correctly left blank. This highlights the presence of location-specific identifiers mixed in with more general procedure codes."
+}

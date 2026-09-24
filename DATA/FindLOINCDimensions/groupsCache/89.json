@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "row_id": 7014,
+      "has_component": "Human papilloma virus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7015,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7016,
+      "has_component": "Human papilloma virus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7017,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7018,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7019,
+      "has_component": "Visual acuity",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7020,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7021,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7022,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7023,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7024,
+      "has_component": "Rh(D) Ab",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 7025,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7026,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7027,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7028,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7029,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7030,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7031,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7032,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7033,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7034,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7035,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7036,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7037,
+      "has_component": "Specific gravity",
+      "has_property": "Specific Gravity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 7038,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7039,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7040,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 7041,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group consists almost entirely of screening tests (`seulonta`). The main challenge was distinguishing between codes representing a panel order versus a single test result.\n\n*   **Panel vs. Single Test:** Most codes with `seul` (screening) and `p_missing` near 100% were identified as panels (e.g., prenatal screening `s-tr1seul`, urine chemical screen `u-kemseul`, donor screening `luov.seul.`). This is a critical distinction as panel codes should have most axes empty.\n*   **Data Quality Gotcha:** The most significant finding was in row 7037 (`u-kemseul`). The metadata showed `p_missing=100` (suggesting no numeric results), but also provided `deciles`. The deciles `[...1.01, 1.02...4.17...]` were a perfect match for urine specific gravity readings from a dipstick, assuming a typo in the `p_missing` value. This allowed me to map this row to a specific component (`Specific gravity`) of the `U-Kemseul` panel, while all other `u-kemseul` rows represent the panel itself. This highlights the need to cross-validate all provided data points, as a single column can be misleading.\n*   **Ambiguity:** Some codes like `hoikemseul` and `hörsel` were too abbreviated or misspelled to be interpreted confidently and were left unmapped.\n*   **Context is Key:** The grouping of similar codes was essential. For example, `s-äit-seul`, `s-äit-seula`, and `s-äitseul` were clearly variants of the same maternal screening panel. `oma-u-kemseul` clarified that `oma-kemseu` was also a urine test."
+}

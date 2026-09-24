@@ -71,124 +71,106 @@ Return one entry per input row, with `row_id` echoed exactly, and the seven fiel
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 37 of the table. Infer the LOINC axes for every row.
+Here is group 121 of the table. Infer the LOINC axes for every row.
 
 row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1894	-histologinensolublokkisytologisestanäytteestä		214	100				
-1895	-humanpapillomavirusgenotyyppi16		301	100				
-1896	-humanpapillomavirusgenotyyppi18		301	100				
-1897	-humanpapillomavirusgenotyyppimuupatogeeninenhpv		252	100				
-1898	-lisämaksukiireellisenäpyydetyllenäytteelle		584	100				
-1899	-lisätutkimuspyyntöaiemmintutkitullenäytteelle		191	100				
-1900	-lisävastaus2laskutuskuitatullenäytteelle		438	100				
-1901	-lisävastauslaskutuskuitatullenäytteelle		2865	100				
-1902	-moniresistentitgram-negatiivisetsauvat,viljely		122	100				
-1903	-moniresistentitgramnegatiivisetsauvat,viljely		163	100				
-1904	-resistentitgramnegatiivisetsauvat,viljely		314	100				
-1905	-staphylococcusaureus,metilliiniresist.viljely		248	100				
-1906	-staphylococcusaureus,metisilliiniresistentti,v		540	100				
-1907	b-glukoosi,hoitoyksikönvieritesti,kokoveri		687	0.15	[5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28]		Blood	
-1908	b-hematologisenpotilaanperuskaryotyypinmääritys		125	100			Blood	
-1909	b-kreatiniini,hoitoyksikönvieritesti,veri		167	0	[58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170]		Blood	
-1910	bakteerit,virtsasta,partikkelinlaskijalla,osatutk.		212	100				
-1911	bm-pahanlaatuisenveritaudinimmunofenotyypitys		191	100			Bone marrow	
-1912	bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi		162	100			Bone marrow	
-1913	cb-hemoglobiini,vieritestihoitoyksikössä	g/l	101	0	[84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146]		Capillary blood	
-1914	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä	mmol/l	5203	0	[5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77]			
-1915	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä		19	100	[5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96]			
-1916	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella	mg/l	771	0	[2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84]			
-1917	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella		192	85.42				
-1918	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	438	0	[26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53]		Erythrocyte	
-1919	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä		15	6.67			Erythrocyte	
-1920	emäsylimäärä,laskimoverestä,pikatesti␤	mmol/l	373	0				
-1921	emäsylimäärä,laskimoverestä,pikatesti␤		339	19.47				
-1922	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32]			
-1923	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1924	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta	iu/ml	24	0				
-1925	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta		241	100				
-1926	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	202	0	[3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76]			
-1927	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.		10	100				
-1928	fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi	ug/l	299	0	[0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63]		Fasting plasma	
-1929	happamusaste,kapillaariverestä,pikatesti␤		1262	0.24				
-1930	happamuusaste,laskimoverestä,pikatesti␤		712	0.7				
-1931	happiosapaine,kapillaariverestä,pikatesti␤	kpa	1260	0				
-1932	happoemästasejahappi,laskimoverestä,pikatesti␤		643	100				
-1933	hepatiittic-virus,nh,jatkotutkimus,plasmasta		512	100				
-1934	hiilidioksidiosapaine,laskimoverestä,pikatesti␤	kpa	707	0				
-1935	hiilidioksidiosapaine,laskimoverestä,pikatesti␤		5	100				
-1936	hpv-gt16aptimapanther,apututkimustulostensiirtoon		149	100				
-1937	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon		149	100				
-1938	hpvaptimapanther,apututkimustulostensiirtoon		413	100				
-1939	humanimmunodeficiencyvirus,antigeenijavasta-		192	100				
-1940	humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd		260	100				
-1941	huume-jalääkeainetutkimus,laaja,varmistus		448	100				
-1942	huumeseulonta,kvalitatiivinen,virtsasta␤		140	100				
-1943	kalium,hoitoyksikönvieritesti,veri	mmol/l	166	0	[3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6]			
-1944	kalium,hoitoyksikönvieritesti,veri		290	0	[3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5]			
-1945	kreatiniini,hoitoyksikönvieritesti,veri	mmol/l	163	0	[61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53]			
-1946	kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	874	0	[2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82]			
-1947	kreatiniini,virtsasta(huumeseulonnanyhteydessä)		6	66.67				
-1948	laajahuumeseulonta,varmistustasoinen,virtsasta		944	100				
-1949	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0, 0, 0, 0, 0, 0, 0, 0.1, 0.4]			
-1950	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1951	lisävastauslaskutuskuitatullenäytteelle		214	100				
-1952	luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna		145	100				
-1953	marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte		168	0				
-1954	moniresistentitgramnegatiivisetsauvat,viljely		206	100				
-1955	natrium,hoitoyksikönvieritesti,veri	mmol/l	163	0	[133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142]			
-1956	natrium,hoitoyksikönvieritesti,veri		292	0	[131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142]			
-1957	natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta	ng/l	159	0	[27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2]			
-1958	nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina)	%	665	0	[4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91]			
-1959	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.	mosm/kgh2o	203	0	[331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53]			
-1960	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1961	p-natriureett.peptidin-termin.propept.vieritl	ng/l	118	0	[140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2]		Plasma	
-1962	p-natriureett.peptidin-termin.propept.vieritl		20	100			Plasma	
-1963	p-natriureettinenpeptidi,b-tyypinn-terminaalin	ng/l	4682	0	[86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85]		Plasma	
-1964	p-natriureettinenpeptidi,b-tyypinn-terminaalin		149	100			Plasma	
-1965	p-natriureettinenpeptidi,b-tyypn-term.propeptidi	ng/l	1366	0	[106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983]		Plasma	
-1966	p-natriureettinenpeptidi,b-tyypn-term.propeptidi		107	100			Plasma	
-1967	parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		120	100				
-1968	pienikudoskoepala,enintään1-3samankokonaisuudennäytettä		234	100				
-1969	pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.		267	100				
-1970	pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus		3577	100			Patient	
-1971	pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot		113	100			Patient	
-1972	pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa		120	100			Patient	
-1973	pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee)		177	100			Patient	
-1974	pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta		474	100			Patient	
-1975	pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona		542	100			Patient	
-1976	pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein		102	100			Patient	
-1977	pu-aerobinenjaanaerobinenbakteerityypitysjaan		147	100			Pus	
-1978	resistentitgramnegatiivisetsauvat,viljely		320	100				
-1979	retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	525	0	[26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37]			
-1980	retikulosyyttienkeskimääräinenhemoglobiininmäärä		5	100				
-1981	s-humanimmunodeficiencyvirus,antigeenijavast		1221	100			Serum	
-1982	sikiöperäisendna:ntutkimusäidinverinäytteestä		104	100				
-1983	staphylococcusaureus,metisilliiniresistenssiviljely␤		134	100				
-1984	staphylococcusaureus,metisilliiniresistentti(mrsa),viljely		627	100				
-1985	t-auttajasolujenosuus(määritettynäcd3+cd4+soluina)	%	665	0	[12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07]		Thrombocyte	
-1986	t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina)	%	665	0	[14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66]		Thrombocyte	
-1987	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella	ng/l	7	0				
-1988	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella		97	93.81				
-1989	ts-histologinentutkimus,1-3kudosnäytettä		160	100			Tissue	
-1990	ts-histologinentutkimus,1-3näytettä		945	100			Tissue	
-1991	työpaikanhuumeseulontajavarmistus,4yhdistettä		469	100				
-1992	työpaikanhuumeseulontajavarmistus,7yhdistettä		312	100				
-1993	täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet		1481	100				
-1994	täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤		9742	100				
-1995	u-amfetamiinijametamfetamiini,enantiomeerienerittely		120	100			Urine	
-1996	u-asetoniaineet,kval,vieritestihoitoyksikössä		421	100			Urine	
-1997	u-erytrosyytit,kval,vieritestihoitoyksikössä		413	100			Urine	
-1998	u-glukoosi,kvalvieritestihoitoyksikössä		423	100			Urine	
-1999	u-happamuusaste,vieritestihoitoyksikössä		400	0.25	[5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7]		Urine	
-2000	u-huume-jalääkeainetutkimus,laaja,varmistus		175	100			Urine	
-2001	u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta		121	100			Urine	
-2002	u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms)		144	100			Urine	
-2003	u-kemiallinenseulonta,vieritestihoitoyksikössä		104	100			Urine	
-2004	u-kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	398	0	[2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61]		Urine	
-2005	u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen		421	100			Urine	
-2006	u-leukosyytit,kval,vieritestihoitoyksikössä		429	100			Urine	
-2007	u-nitriitti,kval,vieritestihoitoyksikössä		421	100			Urine	
-2008	u-proteiini,kval,vieritestihoitoyksikössä		425	100			Urine	
-2009	vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä		162	100				
-2010	yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤		484	100				
+10066	-ctr-d		115	100				DNA test
+10067	-fishhyb	form	48	100				
+10068	-fishhyb		174	100				
+10069	b-apoe-d		146	100		B -Apolipoproteiini E, DNA-tutkimus	Blood	DNA test
+10070	b-aso2-qd		102	100			Blood	
+10071	b-atrytyd	form	7	100		B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus	Blood	
+10072	b-atrytyd		283	100		B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus	Blood	
+10073	b-auria10		1807	100			Blood	
+10074	b-bcr-qr	form	159	100		B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Blood	
+10075	b-bcr-qr		1562	100		B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Blood	
+10076	b-blapcr		138	100			Blood	
+10077	b-bo3-d		963	100			Blood	DNA test
+10078	b-brcay-d		519	100			Blood	DNA test
+10079	b-brovcore		356	100			Blood	
+10080	b-calr-d		421	100			Blood	DNA test
+10081	b-cmlpcr		553	100			Blood	
+10082	b-crco		3627	100			Blood	
+10083	b-crcoti		1359	100			Blood	
+10084	b-dm2alld	form	19	100		B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus	Blood	
+10085	b-dm2alld		149	100		B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus	Blood	
+10086	b-dpyd-d	form	211	100			Blood	DNA test
+10087	b-dpyd-d		3111	100			Blood	DNA test
+10088	b-dpydl-d		101	100			Blood	DNA test
+10089	b-exkon-d		147	100			Blood	DNA test
+10090	b-extri-d		136	100			Blood	DNA test
+10091	b-farma-d		594	100			Blood	DNA test
+10092	b-farml-d		190	100			Blood	DNA test
+10093	b-fii-d	form	138	100		B -Protrombiinigeeni, DNA-tutkimus	Blood	DNA test
+10094	b-fii-d		7712	100		B -Protrombiinigeeni, DNA-tutkimus	Blood	DNA test
+10095	b-finngen		736	100			Blood	
+10096	b-fishhem		130	100		B -Hematologinen fluoresenssi in situ hybridisaatio, veri	Blood	
+10097	b-frax-d	form	5	100		B -Fragiili-X,-FMR1-geenin DNA-tutkimus	Blood	DNA test
+10098	b-frax-d		347	100		B -Fragiili-X,-FMR1-geenin DNA-tutkimus	Blood	DNA test
+10099	b-fuus-mr	form	26	100			Blood	
+10100	b-fuus-mr		177	100			Blood	
+10101	b-fv-d	form	139	100		B -Hyytymistekijä V geeni, DNA-tutkimus	Blood	DNA test
+10102	b-fv-d		8156	100		B -Hyytymistekijä V geeni, DNA-tutkimus	Blood	DNA test
+10103	b-fvfii-d	form	52	100			Blood	DNA test
+10104	b-fvfii-d		765	100			Blood	DNA test
+10105	b-hfe-d		730	100		B -Periytyvään hemokromatoosiin liittyvien HFE-geenin valtamutaatioiden tutkimus	Blood	DNA test
+10106	b-hnpcy-d		175	100		B -Periytyvä ei-polypoottinen paksusuolisyöpä (HNPCC), MLH1-, MSH2- tai MSH6-geenin yksittäisen mutaation DNA-tutkimus	Blood	DNA test
+10107	b-jak2-d	form	139	100		B -JAK2-geenin mutaatio, DNA-tutkimus	Blood	DNA test
+10108	b-jak2-d		5494	100		B -JAK2-geenin mutaatio, DNA-tutkimus	Blood	DNA test
+10109	b-kim-d		197	100			Blood	DNA test
+10110	b-kim-fd		1367	100			Blood	
+10111	b-kml-qr		1809	100			Blood	
+10112	b-lakt-d	form	18	77.78		B -Laktoosi-intoleranssi, DNA-tutkimus	Blood	DNA test
+10113	b-lakt-d		27791	100		B -Laktoosi-intoleranssi, DNA-tutkimus	Blood	DNA test
+10114	b-ldlre-4	form	53	100			Blood	
+10115	b-ldlre-4		135	100			Blood	
+10116	b-ldlre-d		1121	100		B -LDL-reseptorigeenin mutaatio, DNA-tutkimus	Blood	DNA test
+10117	b-ngs-d		277	100			Blood	DNA test
+10118	b-nphs1-d		272	100		B -Kongenitaali nefroosi (CNF), kahden NPHS1-geenin valtamutaation DNA-tutkimus	Blood	DNA test
+10119	b-pgx-d		2778	100			Blood	DNA test
+10120	b-sekvy-d	form	59	100			Blood	DNA test
+10121	b-sekvy-d		1268	100			Blood	DNA test
+10122	b-tp53-d		211	100			Blood	DNA test
+10123	b-tpmt-d	form	30	100			Blood	DNA test
+10124	b-tpmt-d		615	100			Blood	DNA test
+10125	b-varfa-d		643	100		B -Varfariinin yksilölliseen annostukseen liittyvät VKORC1- ja CYP2C9-geenivariaatiot, DNA-tutkimus verestä	Blood	DNA test
+10126	b-ykrom-d	form	7	100		B -Y-kromosomin poikkeavuuksia	Blood	DNA test
+10127	b-ykrom-d		142	100		B -Y-kromosomin poikkeavuuksia	Blood	DNA test
+10128	bl-bal		919	100		Bl-Bronkoalveolaarinen lavaationäyte sairaalakohtainen ryhmätutkimus, jonka sisältö vaihtelee	Bronchoalveolar lavage	
+10129	bl-bal-1		3636	100		Bl-Bronkoalveolaarinen huuhtelunäyte, solututkimus	Bronchoalveolar lavage	
+10130	bl-balfc		397	100			Bronchoalveolar lavage	
+10131	bm-aso-qd		224	100			Bone marrow	
+10132	bm-aso2-qd	form	6	100			Bone marrow	
+10133	bm-aso2-qd		511	100			Bone marrow	
+10134	bm-aspir		1994	98.65			Bone marrow	
+10135	bm-bcr-qr		152	100		Bm-BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Bone marrow	
+10136	bm-blapcr		753	100			Bone marrow	
+10137	bm-bpvalm		145	100			Bone marrow	
+10138	bm-fish	form	48	100			Bone marrow	
+10139	bm-fish		943	100			Bone marrow	
+10140	bm-fish-mm		127	100			Bone marrow	
+10141	bm-fish2	form	29	100			Bone marrow	
+10142	bm-fish2		81	100			Bone marrow	
+10143	bm-fishhem	form	7	100		Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin	Bone marrow	
+10144	bm-fishhem		414	100		Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin	Bone marrow	
+10145	bm-fishmm	form	28	100			Bone marrow	
+10146	bm-fishmm		147	100			Bone marrow	
+10147	bm-fishvar		141	100			Bone marrow	
+10148	bm-flt3-d	form	9	100			Bone marrow	DNA test
+10149	bm-flt3-d		138	100			Bone marrow	DNA test
+10150	bm-fuus-mr	form	14	100			Bone marrow	
+10151	bm-fuus-mr		268	100			Bone marrow	
+10152	bm-fuus-qr	form	21	100			Bone marrow	
+10153	bm-fuus-qr		81	100			Bone marrow	
+10154	bm-mgg		314	100			Bone marrow	
+10155	bm-mggfe	form	660	100		Bm-Luuydintutkimus, MGG- ja rautavärjäys	Bone marrow	
+10156	bm-mggfe		11527	100		Bm-Luuydintutkimus, MGG- ja rautavärjäys	Bone marrow	
+10157	bm-mm-ift		651	100			Bone marrow	
+10158	bm-mmpcr		128	100			Bone marrow	
+10159	bm-morflkl		278	100			Bone marrow	
+10160	bm-mrd-all		416	100			Bone marrow	
+10161	bm-mrd-vs		666	100			Bone marrow	
+10162	bm-mrdmut		198	100			Bone marrow	
+10163	bm-npm1-qd	form	23	100			Bone marrow	
+10164	bm-npm1-qd		182	100			Bone marrow	
 

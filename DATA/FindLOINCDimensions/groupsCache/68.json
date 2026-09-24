@@ -1,0 +1,1455 @@
+{
+  "rows": [
+    {
+      "row_id": 5245,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5246,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5247,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5248,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5249,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5250,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5251,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Ascitic fluid",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5252,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Ascitic fluid",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5253,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Rate",
+      "has_time_aspect": "24 hours",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5254,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Rate",
+      "has_time_aspect": "24 hours",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5255,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "24 hours",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5256,
+      "has_component": "Aldosterone",
+      "has_property": "Mass Rate",
+      "has_time_aspect": "24 hours",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5257,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Rate",
+      "has_time_aspect": "24 hours",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5258,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5259,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5260,
+      "has_component": "Aldosterone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5261,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5262,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5263,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5264,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5265,
+      "has_component": "Aldosterone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5266,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5267,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5268,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5269,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5270,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5271,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5272,
+      "has_component": "Cholesterol in LDL.small dense",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5273,
+      "has_component": "Cholesterol in LDL.small dense",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5274,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pancreatic juice",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5275,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pancreatic juice",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5276,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pleural fluid",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5277,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pleural fluid",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5278,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5279,
+      "has_component": "Adalimumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5280,
+      "has_component": "Adalimumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5281,
+      "has_component": "Adalimumab antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 5282,
+      "has_component": "Adalimumab antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 5283,
+      "has_component": "Adalimumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5284,
+      "has_component": "Adalimumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5285,
+      "has_component": "Adalimumab",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5286,
+      "has_component": "Adalimumab",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5287,
+      "has_component": "Alkaline phosphatase.bone/Alkaline phosphatase.total",
+      "has_property": "Catalytic Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5288,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5289,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5290,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5291,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5292,
+      "has_component": "Alkaline phosphatase.other isoenzymes",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5293,
+      "has_component": "Alkaline phosphatase.other isoenzymes",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5294,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5295,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5296,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5297,
+      "has_component": "Alkaline phosphatase isoenzymes",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 5298,
+      "has_component": "Alkaline phosphatase isoenzymes",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 5299,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5300,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5301,
+      "has_component": "Alkaline phosphatase.bone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5302,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5303,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5304,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5305,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5306,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5307,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5308,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5309,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5310,
+      "has_component": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total",
+      "has_property": "Catalytic Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5311,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5312,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5313,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5314,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5315,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5316,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5317,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5318,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5319,
+      "has_component": "Aldolase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5320,
+      "has_component": "Aldolase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5321,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5322,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5323,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5324,
+      "has_component": "Aldosterone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5325,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5326,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5327,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5328,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5329,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5330,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5331,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5332,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5333,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5334,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5335,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5336,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 5337,
+      "has_component": "Allergen specific IgE Ab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5338,
+      "has_component": "Allergen specific IgE Ab",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5339,
+      "has_component": "Allergen specific IgE Ab",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5340,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5341,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5342,
+      "has_component": "Amylase isoenzymes",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 5343,
+      "has_component": "Amylase isoenzymes",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 5344,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5345,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5346,
+      "has_component": "Amylase.salivary",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5347,
+      "has_component": "Amylase.salivary",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5348,
+      "has_component": "Desmethylclozapine",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5349,
+      "has_component": "Desmethylclozapine",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5350,
+      "has_component": "Desmethylclozapine",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5351,
+      "has_component": "Desmethylclozapine",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5352,
+      "has_component": "Deamidated gliadin peptide antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5353,
+      "has_component": "Deamidated gliadin peptide antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5354,
+      "has_component": "Gliadin IgE Ab",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5355,
+      "has_component": "Gliadin IgE Ab",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5356,
+      "has_component": "HLA donor specific antibody",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 5357,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5358,
+      "has_component": "Collagen IgE Ab",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5359,
+      "has_component": "Collagen IgE Ab",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5360,
+      "has_component": "Tissue transglutaminase antibody",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5361,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5362,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5363,
+      "has_component": "Olanzapine",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5364,
+      "has_component": "Olanzapine",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5365,
+      "has_component": "Ovalbumin IgE Ab",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5366,
+      "has_component": "Ovalbumin IgE Ab",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5367,
+      "has_component": "Salicylate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5368,
+      "has_component": "Salicylate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5369,
+      "has_component": "Salicylate",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5370,
+      "has_component": "DNA topoisomerase I antibody",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 5371,
+      "has_component": "Soluble fms-like tyrosine kinase-1",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5372,
+      "has_component": "Soluble fms-like tyrosine kinase-1",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5373,
+      "has_component": "Cholesterol in LDL.small dense",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5374,
+      "has_component": "Cholesterol in LDL.small dense",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5375,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5376,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5377,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5378,
+      "has_component": "Alkaline phosphatase.intestinal",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5379,
+      "has_component": "Aldosterone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5380,
+      "has_component": "Vedolizumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5381,
+      "has_component": "Vedolizumab",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5382,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5383,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Secretion",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5384,
+      "has_component": "Amylase",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Secretion",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5385,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Sperm",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5386,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5387,
+      "has_component": "Amylase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5388,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 5389,
+      "has_component": "Amylase.pancreatic",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group contained a wide variety of tests, primarily chemistry and immunochemistry. Here are some observations and challenges:\n\n*   **Ambiguous Codes**: Several test codes were ambiguous. For example, `s-aaldos`, `s-oaldos`, and `s-valdos` all appear to be Aldosterone tests, but the prefixes `a-`, `o-`, `v-` are not standard and the result distributions are vastly different, suggesting they are performed under specific, unstated conditions (e.g., stimulation tests). Without documentation for these local codes, I mapped them to the base component 'Aldosterone' but the true LOINC would likely include a challenge in the component name.\n*   **Data Contradictions**: A recurring issue was rows with `p_missing=100` that still had `deciles` data (e.g., 5263, 5267, 5271). In these cases, the decile distributions closely matched quantitative sibling rows, so I inferred the scale was `Qn` despite the `p_missing` value, assuming a data pipeline error. This highlights the importance of using all available columns for context.\n*   **Missing System**: Codes without a system prefix (e.g., `alfa-1`, `-amyl`) are difficult to map accurately. While context strongly suggests `Serum` for protein fractions like `alfa-1`, I had to leave the `has_system` axis empty as per the instructions, which reduces the specificity of the mapping.\n*   **Panel vs. Component**: Differentiating panels from components was key. Codes with the `-is` (isoenzymes) suffix, like `s-afos-is` and `s-amyl-is`, were identified as panels that bundle multiple individual results. This was straightforward. More complex panels would be harder to spot without a `LongName` or more structural information.\n*   **Inferred Methods**: For protein fractions (`alfa-1`, `alfa-2`) and isoenzymes (`s-afos-is`), `Electrophoresis` is the standard method and adds crucial context, so I inferred it. Similarly for `s-scl-t` (Immunoblot) and `s-hladsa` (Flow Cytometry), these are very standard methods for these tests. This goes slightly beyond the explicit information but is a reasonable expert inference."
+}

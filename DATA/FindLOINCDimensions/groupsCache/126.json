@@ -1,0 +1,295 @@
+{
+  "rows": [
+    {
+      "row_id": 10591,
+      "has_component": "",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10592,
+      "has_component": "",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10593,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 10594,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10595,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10596,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10597,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10598,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10599,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10600,
+      "has_component": "Glucose",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10601,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10602,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10603,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10604,
+      "has_component": "Glucose",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10605,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10606,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10607,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10608,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10609,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10610,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10611,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10612,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10613,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10614,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10615,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10616,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10617,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10618,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 10619,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group predominantly features glucose measurements, many of which are part of a glucose challenge test (indicated by suffixes `-r`, `-bel`, `-ras` and timings like `0min`, `1h`, `2h`). A key challenge was the almost complete absence of system prefixes (like `P-` or `B-`), which prevented the assignment of the `has_system` axis for most rows. The exceptions were point-of-care tests (`vieri`), where `Blood capillary` is a safe inference for the system and `Test strip` for the method.\n\nThe codes `-gluk-tbr` and `-gluk-tir` were unmappable due to non-standard suffixes and no associated `LongName`. I could infer `Mass Fraction` from the `%` unit but not the `has_component`.\n\nData quality issues like missing units were common, but the `deciles` column was invaluable for confidently inferring `Substance Concentration` from the value distribution. The `p_missing` rate was a critical indicator; a 100% rate for codes with `valm` (preparation) suffix strongly suggested they were narrative status codes about the patient (`System: ^Patient`, `Scale: Nar`), not specimen results."
+}

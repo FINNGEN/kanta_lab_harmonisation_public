@@ -1,0 +1,995 @@
+{
+  "rows": [
+    {
+      "row_id": 10066,
+      "has_component": "",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10067,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10068,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10069,
+      "has_component": "Apolipoprotein E gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10070,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10071,
+      "has_component": "Alpha-1-antitrypsin gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10072,
+      "has_component": "Alpha-1-antitrypsin gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10073,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10074,
+      "has_component": "BCR-ABL1 gene fusion transcript",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 10075,
+      "has_component": "BCR-ABL1 gene fusion transcript",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 10076,
+      "has_component": "",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "Polymerase chain reaction (PCR)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10077,
+      "has_component": "",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10078,
+      "has_component": "BRCA1 and BRCA2 genes",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10079,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10080,
+      "has_component": "Calreticulin gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10081,
+      "has_component": "BCR-ABL1 gene fusion transcript",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "Polymerase chain reaction (PCR)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10082,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10083,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10084,
+      "has_component": "ZNF9 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10085,
+      "has_component": "ZNF9 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10086,
+      "has_component": "DPYD gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10087,
+      "has_component": "DPYD gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10088,
+      "has_component": "DPYD gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10089,
+      "has_component": "",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10090,
+      "has_component": "",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10091,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10092,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10093,
+      "has_component": "Coagulation factor II gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10094,
+      "has_component": "Coagulation factor II gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10095,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10096,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10097,
+      "has_component": "FMR1 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10098,
+      "has_component": "FMR1 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10099,
+      "has_component": "Fusion gene",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10100,
+      "has_component": "Fusion gene",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10101,
+      "has_component": "Coagulation factor V gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10102,
+      "has_component": "Coagulation factor V gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10103,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10104,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10105,
+      "has_component": "HFE gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10106,
+      "has_component": "HNPCC associated genes",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10107,
+      "has_component": "JAK2 gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10108,
+      "has_component": "JAK2 gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10109,
+      "has_component": "Chimerism",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10110,
+      "has_component": "Chimerism",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10111,
+      "has_component": "BCR-ABL1 gene fusion transcript",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 10112,
+      "has_component": "LCT gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10113,
+      "has_component": "LCT gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10114,
+      "has_component": "LDLR gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10115,
+      "has_component": "LDLR gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10116,
+      "has_component": "LDLR gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10117,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10118,
+      "has_component": "NPHS1 gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10119,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10120,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10121,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10122,
+      "has_component": "TP53 gene",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10123,
+      "has_component": "TPMT gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10124,
+      "has_component": "TPMT gene",
+      "has_property": "Genotype",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10125,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10126,
+      "has_component": "Y chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10127,
+      "has_component": "Y chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10128,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10129,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10130,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10131,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10132,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10133,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10134,
+      "has_component": "Bone marrow specimen",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10135,
+      "has_component": "BCR-ABL1 gene fusion transcript",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Qn",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 10136,
+      "has_component": "",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "Polymerase chain reaction (PCR)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10137,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10138,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10139,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10140,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10141,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10142,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10143,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10144,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10145,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10146,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10147,
+      "has_component": "Chromosome",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Fluorescence in situ hybridization (FISH)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10148,
+      "has_component": "FLT3 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10149,
+      "has_component": "FLT3 gene",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10150,
+      "has_component": "Fusion gene",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10151,
+      "has_component": "Fusion gene",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10152,
+      "has_component": "Fusion gene",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Qn",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10153,
+      "has_component": "Fusion gene",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Qn",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10154,
+      "has_component": "Bone marrow specimen",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "May-Grunwald Giemsa stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 10155,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10156,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 10157,
+      "has_component": "Plasma cells",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "Immunofluorescence (IF)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10158,
+      "has_component": "IgH gene rearrangement",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "Polymerase chain reaction (PCR)",
+      "is_panel": false
+    },
+    {
+      "row_id": 10159,
+      "has_component": "Bone marrow specimen",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10160,
+      "has_component": "Minimal residual disease",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10161,
+      "has_component": "Minimal residual disease",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10162,
+      "has_component": "Minimal residual disease",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 10163,
+      "has_component": "NPM1 gene mutation",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Qn",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 10164,
+      "has_component": "NPM1 gene mutation",
+      "has_property": "Number Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone marrow",
+      "has_scale_type": "Qn",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by molecular genetics tests, identifiable by the `-d` (DNA test) suffix, methods like `pcr` and `fish` in the name, and explicit `LongName`s. The high `p_missing` values (100%) were key to identifying these as qualitative (`Ord`), nominal (`Nom`), or narrative (`Nar`) tests, even when the name suggested quantitation.\n\nKey ambiguities:\n1.  **`Qn` vs. `Nar`**: For tests like `b-bcr-qr` (quantitative BCR-ABL), the `LongName` and `TEST_NAME` suffix (`qr`, `kvant`) strongly imply `Qn` scale and a `Number Ratio` property, despite `p_missing` being 100%. This is a common real-world data issue where non-detected results are not stored as numeric zeros. I chose to trust the test's intent and map it as `Qn`.\n2.  **`Nom` vs. `Nar`**: For genetic tests, I used `Nom` for simple genotyping (e.g., Factor V Leiden, Apolipoprotein E) where the result is one of a few categories. I used `Nar` for tests involving sequencing or screening for multiple unknown mutations (e.g., `b-brcay-d`, `b-ldlre-d`), as the result is a complex descriptive report.\n3.  **Panels vs. Single Tests**: Codes like `b-farma-d` (pharmacogenetics), `b-fvfii-d` (Factor V & II), and `b-ngs-d` (Next-Gen Sequencing) were identified as panels because they bundle multiple distinct analytes. The `LongName` was decisive for some, like `b-varfa-d` (VKORC1 and CYP2C9). `bl-bal-1` (cell study) was also classed as a panel as it implies a differential count.\n4.  **Opaque Codes**: Several codes like `b-aso2-qd` and `b-auria10` remained opaque. `Auria` points to a biobank, so I classified `b-auria10` as a probable panel/study code. `aso2-qd` was uninterpretable without further context."
+}

@@ -1,0 +1,365 @@
+{
+  "rows": [
+    {
+      "row_id": 6680,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 6681,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 6682,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6683,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6684,
+      "has_component": "Cobalt",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6685,
+      "has_component": "Candida",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 6686,
+      "has_component": "Candida",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 6687,
+      "has_component": "Cladosporium herbarum Ab.IgE",
+      "has_property": "Length",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Skin test",
+      "is_panel": false
+    },
+    {
+      "row_id": 6688,
+      "has_component": "Cladosporium herbarum Ab.IgE",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 6689,
+      "has_component": "Cladosporium herbarum Ab.IgE",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 6690,
+      "has_component": "Coronavirus 229E",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6691,
+      "has_component": "Coronavirus HKU1",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6692,
+      "has_component": "Coronavirus NL63",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6693,
+      "has_component": "Coronavirus OC43",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6694,
+      "has_component": "Norovirus genogroup I",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6695,
+      "has_component": "Norovirus genogroup II",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6696,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6697,
+      "has_component": "Human papillomavirus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cervix",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 6698,
+      "has_component": "Human papillomavirus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cervix",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 6699,
+      "has_component": "Norovirus genogroup I",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6700,
+      "has_component": "Norovirus genogroup II",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6701,
+      "has_component": "Acetone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6702,
+      "has_component": "Acetone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6703,
+      "has_component": "Urate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6704,
+      "has_component": "Urate",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6705,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6706,
+      "has_component": "Acetone",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6707,
+      "has_component": "Acetone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6708,
+      "has_component": "Urate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6709,
+      "has_component": "Urate",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6710,
+      "has_component": "Valproic acid",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6711,
+      "has_component": "Valproic acid",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6712,
+      "has_component": "Gross findings",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Tissue",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6713,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6714,
+      "has_component": "Urate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 6715,
+      "has_component": "Urate",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was a mix of clearly defined chemical tests and highly ambiguous or unspecific codes. \n\n**Gotchas and Ambiguities:**\n*   Codes like `-aerobivi`, `projekti1`, and `annosvoim` are very difficult to interpret without broader context. The leading hyphen in `-aerobivi` suggests it's part of another test, but what that test is remains unknown. `projekti` is clearly a placeholder.\n*   The `ctgc` suffix (`-omactgc`, `hpvpapctgc`) is a recurring unknown. Documenting such local suffixes would be highly beneficial; it likely indicates a specific molecular test panel (e.g., for Chlamydia/Gonorrhea, which would resolve `-omactgc`).\n*   The test `cladosp.he` (row 6687) with unit `mm` was a great puzzle. Recognizing `Cladosporium` as an allergen led to the hypothesis of a skin prick test, where `mm` measures the wheal diameter. This correctly changes the `has_property` to `Length` and `has_system` to `^Patient`, a completely different interpretation from the serum antibody test in row 6688. The `UNIT` column was indispensable here.\n\n**Data Strengths:**\n*   The presence of both quantitative (with `UNIT` and `deciles`) and qualitative/narrative (high `p_missing`, no `UNIT`) variants for the same analyte (`asetoni`, `uraatti`, `valproaatti`) is a powerful pattern. It confirms the component and system, and allows for confident mapping of both versions.\n*   The `LongName` for `ts-abortti` was crucial. It identified the code not as a simple lab test but as a pathology dissection report, leading to a more appropriate mapping (`Gross findings`, `Finding` property, `Nar` scale).\n*   The `prefix_meaning` column is consistently useful for determining the `has_system` axis."
+}

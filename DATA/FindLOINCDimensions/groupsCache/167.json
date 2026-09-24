@@ -1,0 +1,355 @@
+{
+  "rows": [
+    {
+      "row_id": 13496,
+      "has_component": "Erythroblasts",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13497,
+      "has_component": "Erythroblasts",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13498,
+      "has_component": "Erythroblasts",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13499,
+      "has_component": "Neutrophils",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13500,
+      "has_component": "Basophils",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13501,
+      "has_component": "Basophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13502,
+      "has_component": "Basophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13503,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Entitic Volume",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13504,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Entitic Volume",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13505,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13506,
+      "has_component": "Eosinophils",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13507,
+      "has_component": "Eosinophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13508,
+      "has_component": "Eosinophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13509,
+      "has_component": "Eosinophils",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13510,
+      "has_component": "Calcium",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13511,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13512,
+      "has_component": "Lymphocytes",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13513,
+      "has_component": "Lymphocytes/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13514,
+      "has_component": "Lymphocytes/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13515,
+      "has_component": "Monocytes",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13516,
+      "has_component": "Monocytes/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13517,
+      "has_component": "Monocytes/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13518,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13519,
+      "has_component": "Neutrophils",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13520,
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13521,
+      "has_component": "Alpha 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13522,
+      "has_component": "Alpha 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13523,
+      "has_component": "Beta 1 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13524,
+      "has_component": "Beta 2 globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13525,
+      "has_component": "Gamma globulin",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13526,
+      "has_component": "M-protein.band 1",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13527,
+      "has_component": "M-protein.band 1",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13528,
+      "has_component": "M-protein.band 2",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13529,
+      "has_component": "M-protein.band 2",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    },
+    {
+      "row_id": 13530,
+      "has_component": "M-protein.band 3",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "Electrophoresis",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by component tests (`osatutkimus`), which made it straightforward to set `is_panel` to `false`. The parenthetical information, such as `osatutkimus(b-diffi)` or `osatutkimus s-prot-fr`, was extremely helpful in determining the context (e.g., automated differential count, protein electrophoresis) and thus the correct method (`Automated count`, `Electrophoresis`).\n\nThe main ambiguities arose from different ways of specifying the same test. For instance, neutrophil counts appeared as `b-neut`, `l-neut`, and `neutrofiiliset,konediffi()`. Distinguishing between absolute (`e9/l`, `Number Concentration`) and relative (`%`, `Number Fraction`) counts was crucial and required looking at both the `UNIT` and sometimes clues in the name like `absol.arvot` (absolute values). The prefixes `B-` (Blood), `E-` (Erythrocyte), and `L-` (Leukocyte) were key to assigning the correct `has_system`.\n\nThe M-component tests (`s-m-komponentti`) were interesting, with `valetietue` (\"dummy record\") in the name. The mix of quantitative (`g/l`) and narrative (`p_missing`=100%) rows for the same component suggests a pattern where a numeric value is given if an M-protein band is found, and a narrative/empty result otherwise. This pattern of paired quantitative/narrative rows for the same test is common and was handled by assigning `Qn` or `Nar` scale types accordingly."
+}

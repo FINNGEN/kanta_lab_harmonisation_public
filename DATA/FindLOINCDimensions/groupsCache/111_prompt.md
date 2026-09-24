@@ -71,124 +71,54 @@ Return one entry per input row, with `row_id` echoed exactly, and the seven fiel
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 37 of the table. Infer the LOINC axes for every row.
+Here is group 111 of the table. Infer the LOINC axes for every row.
 
 row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1894	-histologinensolublokkisytologisestanäytteestä		214	100				
-1895	-humanpapillomavirusgenotyyppi16		301	100				
-1896	-humanpapillomavirusgenotyyppi18		301	100				
-1897	-humanpapillomavirusgenotyyppimuupatogeeninenhpv		252	100				
-1898	-lisämaksukiireellisenäpyydetyllenäytteelle		584	100				
-1899	-lisätutkimuspyyntöaiemmintutkitullenäytteelle		191	100				
-1900	-lisävastaus2laskutuskuitatullenäytteelle		438	100				
-1901	-lisävastauslaskutuskuitatullenäytteelle		2865	100				
-1902	-moniresistentitgram-negatiivisetsauvat,viljely		122	100				
-1903	-moniresistentitgramnegatiivisetsauvat,viljely		163	100				
-1904	-resistentitgramnegatiivisetsauvat,viljely		314	100				
-1905	-staphylococcusaureus,metilliiniresist.viljely		248	100				
-1906	-staphylococcusaureus,metisilliiniresistentti,v		540	100				
-1907	b-glukoosi,hoitoyksikönvieritesti,kokoveri		687	0.15	[5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28]		Blood	
-1908	b-hematologisenpotilaanperuskaryotyypinmääritys		125	100			Blood	
-1909	b-kreatiniini,hoitoyksikönvieritesti,veri		167	0	[58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170]		Blood	
-1910	bakteerit,virtsasta,partikkelinlaskijalla,osatutk.		212	100				
-1911	bm-pahanlaatuisenveritaudinimmunofenotyypitys		191	100			Bone marrow	
-1912	bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi		162	100			Bone marrow	
-1913	cb-hemoglobiini,vieritestihoitoyksikössä	g/l	101	0	[84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146]		Capillary blood	
-1914	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä	mmol/l	5203	0	[5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77]			
-1915	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä		19	100	[5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96]			
-1916	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella	mg/l	771	0	[2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84]			
-1917	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella		192	85.42				
-1918	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	438	0	[26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53]		Erythrocyte	
-1919	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä		15	6.67			Erythrocyte	
-1920	emäsylimäärä,laskimoverestä,pikatesti␤	mmol/l	373	0				
-1921	emäsylimäärä,laskimoverestä,pikatesti␤		339	19.47				
-1922	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32]			
-1923	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1924	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta	iu/ml	24	0				
-1925	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta		241	100				
-1926	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	202	0	[3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76]			
-1927	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.		10	100				
-1928	fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi	ug/l	299	0	[0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63]		Fasting plasma	
-1929	happamusaste,kapillaariverestä,pikatesti␤		1262	0.24				
-1930	happamuusaste,laskimoverestä,pikatesti␤		712	0.7				
-1931	happiosapaine,kapillaariverestä,pikatesti␤	kpa	1260	0				
-1932	happoemästasejahappi,laskimoverestä,pikatesti␤		643	100				
-1933	hepatiittic-virus,nh,jatkotutkimus,plasmasta		512	100				
-1934	hiilidioksidiosapaine,laskimoverestä,pikatesti␤	kpa	707	0				
-1935	hiilidioksidiosapaine,laskimoverestä,pikatesti␤		5	100				
-1936	hpv-gt16aptimapanther,apututkimustulostensiirtoon		149	100				
-1937	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon		149	100				
-1938	hpvaptimapanther,apututkimustulostensiirtoon		413	100				
-1939	humanimmunodeficiencyvirus,antigeenijavasta-		192	100				
-1940	humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd		260	100				
-1941	huume-jalääkeainetutkimus,laaja,varmistus		448	100				
-1942	huumeseulonta,kvalitatiivinen,virtsasta␤		140	100				
-1943	kalium,hoitoyksikönvieritesti,veri	mmol/l	166	0	[3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6]			
-1944	kalium,hoitoyksikönvieritesti,veri		290	0	[3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5]			
-1945	kreatiniini,hoitoyksikönvieritesti,veri	mmol/l	163	0	[61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53]			
-1946	kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	874	0	[2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82]			
-1947	kreatiniini,virtsasta(huumeseulonnanyhteydessä)		6	66.67				
-1948	laajahuumeseulonta,varmistustasoinen,virtsasta		944	100				
-1949	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0, 0, 0, 0, 0, 0, 0, 0.1, 0.4]			
-1950	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1951	lisävastauslaskutuskuitatullenäytteelle		214	100				
-1952	luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna		145	100				
-1953	marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte		168	0				
-1954	moniresistentitgramnegatiivisetsauvat,viljely		206	100				
-1955	natrium,hoitoyksikönvieritesti,veri	mmol/l	163	0	[133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142]			
-1956	natrium,hoitoyksikönvieritesti,veri		292	0	[131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142]			
-1957	natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta	ng/l	159	0	[27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2]			
-1958	nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina)	%	665	0	[4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91]			
-1959	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.	mosm/kgh2o	203	0	[331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53]			
-1960	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1961	p-natriureett.peptidin-termin.propept.vieritl	ng/l	118	0	[140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2]		Plasma	
-1962	p-natriureett.peptidin-termin.propept.vieritl		20	100			Plasma	
-1963	p-natriureettinenpeptidi,b-tyypinn-terminaalin	ng/l	4682	0	[86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85]		Plasma	
-1964	p-natriureettinenpeptidi,b-tyypinn-terminaalin		149	100			Plasma	
-1965	p-natriureettinenpeptidi,b-tyypn-term.propeptidi	ng/l	1366	0	[106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983]		Plasma	
-1966	p-natriureettinenpeptidi,b-tyypn-term.propeptidi		107	100			Plasma	
-1967	parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		120	100				
-1968	pienikudoskoepala,enintään1-3samankokonaisuudennäytettä		234	100				
-1969	pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.		267	100				
-1970	pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus		3577	100			Patient	
-1971	pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot		113	100			Patient	
-1972	pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa		120	100			Patient	
-1973	pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee)		177	100			Patient	
-1974	pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta		474	100			Patient	
-1975	pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona		542	100			Patient	
-1976	pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein		102	100			Patient	
-1977	pu-aerobinenjaanaerobinenbakteerityypitysjaan		147	100			Pus	
-1978	resistentitgramnegatiivisetsauvat,viljely		320	100				
-1979	retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	525	0	[26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37]			
-1980	retikulosyyttienkeskimääräinenhemoglobiininmäärä		5	100				
-1981	s-humanimmunodeficiencyvirus,antigeenijavast		1221	100			Serum	
-1982	sikiöperäisendna:ntutkimusäidinverinäytteestä		104	100				
-1983	staphylococcusaureus,metisilliiniresistenssiviljely␤		134	100				
-1984	staphylococcusaureus,metisilliiniresistentti(mrsa),viljely		627	100				
-1985	t-auttajasolujenosuus(määritettynäcd3+cd4+soluina)	%	665	0	[12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07]		Thrombocyte	
-1986	t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina)	%	665	0	[14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66]		Thrombocyte	
-1987	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella	ng/l	7	0				
-1988	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella		97	93.81				
-1989	ts-histologinentutkimus,1-3kudosnäytettä		160	100			Tissue	
-1990	ts-histologinentutkimus,1-3näytettä		945	100			Tissue	
-1991	työpaikanhuumeseulontajavarmistus,4yhdistettä		469	100				
-1992	työpaikanhuumeseulontajavarmistus,7yhdistettä		312	100				
-1993	täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet		1481	100				
-1994	täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤		9742	100				
-1995	u-amfetamiinijametamfetamiini,enantiomeerienerittely		120	100			Urine	
-1996	u-asetoniaineet,kval,vieritestihoitoyksikössä		421	100			Urine	
-1997	u-erytrosyytit,kval,vieritestihoitoyksikössä		413	100			Urine	
-1998	u-glukoosi,kvalvieritestihoitoyksikössä		423	100			Urine	
-1999	u-happamuusaste,vieritestihoitoyksikössä		400	0.25	[5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7]		Urine	
-2000	u-huume-jalääkeainetutkimus,laaja,varmistus		175	100			Urine	
-2001	u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta		121	100			Urine	
-2002	u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms)		144	100			Urine	
-2003	u-kemiallinenseulonta,vieritestihoitoyksikössä		104	100			Urine	
-2004	u-kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	398	0	[2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61]		Urine	
-2005	u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen		421	100			Urine	
-2006	u-leukosyytit,kval,vieritestihoitoyksikössä		429	100			Urine	
-2007	u-nitriitti,kval,vieritestihoitoyksikössä		421	100			Urine	
-2008	u-proteiini,kval,vieritestihoitoyksikössä		425	100			Urine	
-2009	vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä		162	100				
-2010	yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤		484	100				
+9094	-c19agvt		139	100				
+9095	-covidjt		396	100				
+9096	-cv19ag	%	13	0		COVID-19-koronavirustauti, antigeeni		
+9097	-cv19ag	e12/l	7	0		COVID-19-koronavirustauti, antigeeni		
+9098	-cv19ag	e9/l	19	0		COVID-19-koronavirustauti, antigeeni		
+9099	-cv19ag	fl	8	0		COVID-19-koronavirustauti, antigeeni		
+9100	-cv19ag	g/l	15	0		COVID-19-koronavirustauti, antigeeni		
+9101	-cv19ag	mmol/l	25	0		COVID-19-koronavirustauti, antigeeni		
+9102	-cv19ag	pg	8	0		COVID-19-koronavirustauti, antigeeni		
+9103	-cv19ag	u/l	5	0		COVID-19-koronavirustauti, antigeeni		
+9104	-cv19ag	ug/l	6	0		COVID-19-koronavirustauti, antigeeni		
+9105	-cv19ag	umol/l	6	0		COVID-19-koronavirustauti, antigeeni		
+9106	-cv19ag		11991	99.09		COVID-19-koronavirustauti, antigeeni		
+9107	-cv19ag0		3845	100		Panbio COVID-19 Ag Rapid Test, Abbott Rapid Diagnostics		
+9108	-cv19ag1		504	100		Flowflex SARS-CoV-2 Antigen rapid test, ACON Laboratories, Inc		
+9109	-cv19ag2		204	100		mariPOC SARS-CoV-2, ArcDia International Ltd		
+9110	-cv19ag3		270	100		mariPOC Quick Flu+ , ArcDia International Ltd		
+9111	-cv19ag4		20852	100		STANDARD Q COVID-19 Ag, SD BIONSENSOR Inc		
+9112	-cv19ag5		15481	100		SARS-CoV-2 Antigen Rapid Test, Roche (SD BIOSENSOR)		
+9113	-cv19agj		1370	100				
+9114	-cv19agl		391	100				
+9115	-cv19nho		891531	100		-COVID-19-koronavirustauti, nukleiinihappo (kval)		
+9116	-cv19pika		8349	99.95				
+9117	-cv19vt		1271	100				
+9118	b-cv19ab-o		325	100			Blood	Qualitative test (also semi-quantitative)
+9119	b-cv19abg		232	100		B -COVID-19 -koronavirustauti, IgG-vasta-aineet	Blood	
+9120	b-cv19abm		233	100		B -COVID-19 -koronavirustauti, IgM-vasta-aineet	Blood	
+9121	cldinho		111	100				
+9122	covid-19aghoi		476	100				
+9123	cv19ag		985	100				
+9124	cv19infrs		7932	100				
+9125	cv19nho		71412	100				
+9126	cv19nhopth		159	100				
+9127	cv19sekv		120	100				
+9128	oma-covid-o		1391	100				Qualitative test (also semi-quantitative)
+9129	p-c1qabg	u/ml	88	0		P-Komplementti C1q, IgG-vasta-aineet	Plasma	
+9130	p-c1qabg		195	95.38		P-Komplementti C1q, IgG-vasta-aineet	Plasma	
+9131	pika-covid-19ag		290	100				
+9132	s-cv19ab	au/ml	36	100		S -COVID-19 -koronavirustauti, vasta-aineet	Serum	
+9133	s-cv19ab		3692	100		S -COVID-19 -koronavirustauti, vasta-aineet	Serum	
+9134	s-cv19aba		270	100		S -COVID-19 -koronavirustauti, IgA-vasta-aineet	Serum	
+9135	s-cv19abg		1259	100		S -COVID-19 -koronavirustauti, IgG-vasta-aineet	Serum	
+9136	s-cv19abm		101	100		S -COVID-19 -koronavirustauti, IgM- vasta-aineet	Serum	
+9137	s-cv19abp		153	100			Serum	
+9138	s-cv19sab	au/ml	149	0	[1.48, 3.94, 139.34, 691.66, 1561.95, 3317.2, 5543.63, 12999.61, 20746]	S -COVID-19-koronavirustauti, piikkiproteiini, vasta-aineet	Serum	
+9139	s-cv19sab	u/ml	15	0		S -COVID-19-koronavirustauti, piikkiproteiini, vasta-aineet	Serum	
+9140	s-cv19sab		106	100		S -COVID-19-koronavirustauti, piikkiproteiini, vasta-aineet	Serum	
 

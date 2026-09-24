@@ -1,0 +1,475 @@
+{
+  "rows": [
+    {
+      "row_id": 9094,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9095,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9096,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9097,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9098,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9099,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9100,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9101,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9102,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9103,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9104,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9105,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9106,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9107,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9108,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9109,
+      "has_component": "SARS-CoV-2",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9110,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 9111,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9112,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9113,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9114,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9115,
+      "has_component": "SARS-CoV-2 RNA",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 9116,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9117,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9118,
+      "has_component": "SARS-CoV-2 antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9119,
+      "has_component": "SARS-CoV-2 IgG antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9120,
+      "has_component": "SARS-CoV-2 IgM antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9121,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9122,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9123,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9124,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 9125,
+      "has_component": "SARS-CoV-2 RNA",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 9126,
+      "has_component": "SARS-CoV-2 RNA",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 9127,
+      "has_component": "SARS-CoV-2 RNA",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 9128,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9129,
+      "has_component": "Complement C1q IgG antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9130,
+      "has_component": "Complement C1q IgG antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9131,
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9132,
+      "has_component": "SARS-CoV-2 antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9133,
+      "has_component": "SARS-CoV-2 antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9134,
+      "has_component": "SARS-CoV-2 IgA antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9135,
+      "has_component": "SARS-CoV-2 IgG antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9136,
+      "has_component": "SARS-CoV-2 IgM antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9137,
+      "has_component": "SARS-CoV-2 antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9138,
+      "has_component": "SARS-CoV-2 spike protein antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9139,
+      "has_component": "SARS-CoV-2 spike protein antibody",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9140,
+      "has_component": "SARS-CoV-2 spike protein antibody",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by COVID-19 related tests, identifiable by abbreviations like `cv19`, `ag` (antigen), `ab` (antibody), and `nho` (nucleic acid, qualitative). A key challenge was handling rows for antigen tests (`-cv19ag`, rows 9096-9105) that listed nonsensical quantitative units (`g/l`, `mmol/l`). Given the high `p_missing` on the main variant (row 9106) and the nature of these tests, I classified them all as qualitative (`Ord`) with a `Presence or Threshold` property, treating the units as data source errors.\n\nThe `LongName` field was very helpful, for example, confirming that `-cv19ag` with numeric suffixes (e.g., `-cv19ag0`) referred to specific manufacturer kits, and that `S-cv19sab` was indeed a spike protein antibody test. The code `cv19sekv` was a strong hint for sequencing, allowing for a more specific mapping (`Nom` scale, `Molecular genetics` method). \n\nSpotting the outlier `p-c1qabg` (rows 9129-9130), a Complement C1q antibody test mistakenly grouped by string similarity, was crucial and highlighted the need to evaluate each row on its own merits without over-relying on the group's theme. Finally, the recurring pattern of a test appearing in both quantitative (`Qn` with units/deciles) and qualitative (`Ord` with no unit and high `p_missing`) forms was prominent and required careful distinction."
+}

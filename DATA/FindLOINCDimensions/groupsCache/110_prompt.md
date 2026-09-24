@@ -71,124 +71,102 @@ Return one entry per input row, with `row_id` echoed exactly, and the seven fiel
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 37 of the table. Infer the LOINC axes for every row.
+Here is group 110 of the table. Infer the LOINC axes for every row.
 
 row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1894	-histologinensolublokkisytologisestanäytteestä		214	100				
-1895	-humanpapillomavirusgenotyyppi16		301	100				
-1896	-humanpapillomavirusgenotyyppi18		301	100				
-1897	-humanpapillomavirusgenotyyppimuupatogeeninenhpv		252	100				
-1898	-lisämaksukiireellisenäpyydetyllenäytteelle		584	100				
-1899	-lisätutkimuspyyntöaiemmintutkitullenäytteelle		191	100				
-1900	-lisävastaus2laskutuskuitatullenäytteelle		438	100				
-1901	-lisävastauslaskutuskuitatullenäytteelle		2865	100				
-1902	-moniresistentitgram-negatiivisetsauvat,viljely		122	100				
-1903	-moniresistentitgramnegatiivisetsauvat,viljely		163	100				
-1904	-resistentitgramnegatiivisetsauvat,viljely		314	100				
-1905	-staphylococcusaureus,metilliiniresist.viljely		248	100				
-1906	-staphylococcusaureus,metisilliiniresistentti,v		540	100				
-1907	b-glukoosi,hoitoyksikönvieritesti,kokoveri		687	0.15	[5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28]		Blood	
-1908	b-hematologisenpotilaanperuskaryotyypinmääritys		125	100			Blood	
-1909	b-kreatiniini,hoitoyksikönvieritesti,veri		167	0	[58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170]		Blood	
-1910	bakteerit,virtsasta,partikkelinlaskijalla,osatutk.		212	100				
-1911	bm-pahanlaatuisenveritaudinimmunofenotyypitys		191	100			Bone marrow	
-1912	bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi		162	100			Bone marrow	
-1913	cb-hemoglobiini,vieritestihoitoyksikössä	g/l	101	0	[84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146]		Capillary blood	
-1914	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä	mmol/l	5203	0	[5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77]			
-1915	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä		19	100	[5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96]			
-1916	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella	mg/l	771	0	[2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84]			
-1917	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella		192	85.42				
-1918	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	438	0	[26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53]		Erythrocyte	
-1919	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä		15	6.67			Erythrocyte	
-1920	emäsylimäärä,laskimoverestä,pikatesti␤	mmol/l	373	0				
-1921	emäsylimäärä,laskimoverestä,pikatesti␤		339	19.47				
-1922	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32]			
-1923	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1924	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta	iu/ml	24	0				
-1925	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta		241	100				
-1926	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	202	0	[3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76]			
-1927	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.		10	100				
-1928	fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi	ug/l	299	0	[0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63]		Fasting plasma	
-1929	happamusaste,kapillaariverestä,pikatesti␤		1262	0.24				
-1930	happamuusaste,laskimoverestä,pikatesti␤		712	0.7				
-1931	happiosapaine,kapillaariverestä,pikatesti␤	kpa	1260	0				
-1932	happoemästasejahappi,laskimoverestä,pikatesti␤		643	100				
-1933	hepatiittic-virus,nh,jatkotutkimus,plasmasta		512	100				
-1934	hiilidioksidiosapaine,laskimoverestä,pikatesti␤	kpa	707	0				
-1935	hiilidioksidiosapaine,laskimoverestä,pikatesti␤		5	100				
-1936	hpv-gt16aptimapanther,apututkimustulostensiirtoon		149	100				
-1937	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon		149	100				
-1938	hpvaptimapanther,apututkimustulostensiirtoon		413	100				
-1939	humanimmunodeficiencyvirus,antigeenijavasta-		192	100				
-1940	humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd		260	100				
-1941	huume-jalääkeainetutkimus,laaja,varmistus		448	100				
-1942	huumeseulonta,kvalitatiivinen,virtsasta␤		140	100				
-1943	kalium,hoitoyksikönvieritesti,veri	mmol/l	166	0	[3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6]			
-1944	kalium,hoitoyksikönvieritesti,veri		290	0	[3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5]			
-1945	kreatiniini,hoitoyksikönvieritesti,veri	mmol/l	163	0	[61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53]			
-1946	kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	874	0	[2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82]			
-1947	kreatiniini,virtsasta(huumeseulonnanyhteydessä)		6	66.67				
-1948	laajahuumeseulonta,varmistustasoinen,virtsasta		944	100				
-1949	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0, 0, 0, 0, 0, 0, 0, 0.1, 0.4]			
-1950	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1951	lisävastauslaskutuskuitatullenäytteelle		214	100				
-1952	luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna		145	100				
-1953	marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte		168	0				
-1954	moniresistentitgramnegatiivisetsauvat,viljely		206	100				
-1955	natrium,hoitoyksikönvieritesti,veri	mmol/l	163	0	[133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142]			
-1956	natrium,hoitoyksikönvieritesti,veri		292	0	[131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142]			
-1957	natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta	ng/l	159	0	[27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2]			
-1958	nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina)	%	665	0	[4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91]			
-1959	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.	mosm/kgh2o	203	0	[331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53]			
-1960	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1961	p-natriureett.peptidin-termin.propept.vieritl	ng/l	118	0	[140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2]		Plasma	
-1962	p-natriureett.peptidin-termin.propept.vieritl		20	100			Plasma	
-1963	p-natriureettinenpeptidi,b-tyypinn-terminaalin	ng/l	4682	0	[86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85]		Plasma	
-1964	p-natriureettinenpeptidi,b-tyypinn-terminaalin		149	100			Plasma	
-1965	p-natriureettinenpeptidi,b-tyypn-term.propeptidi	ng/l	1366	0	[106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983]		Plasma	
-1966	p-natriureettinenpeptidi,b-tyypn-term.propeptidi		107	100			Plasma	
-1967	parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		120	100				
-1968	pienikudoskoepala,enintään1-3samankokonaisuudennäytettä		234	100				
-1969	pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.		267	100				
-1970	pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus		3577	100			Patient	
-1971	pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot		113	100			Patient	
-1972	pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa		120	100			Patient	
-1973	pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee)		177	100			Patient	
-1974	pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta		474	100			Patient	
-1975	pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona		542	100			Patient	
-1976	pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein		102	100			Patient	
-1977	pu-aerobinenjaanaerobinenbakteerityypitysjaan		147	100			Pus	
-1978	resistentitgramnegatiivisetsauvat,viljely		320	100				
-1979	retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	525	0	[26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37]			
-1980	retikulosyyttienkeskimääräinenhemoglobiininmäärä		5	100				
-1981	s-humanimmunodeficiencyvirus,antigeenijavast		1221	100			Serum	
-1982	sikiöperäisendna:ntutkimusäidinverinäytteestä		104	100				
-1983	staphylococcusaureus,metisilliiniresistenssiviljely␤		134	100				
-1984	staphylococcusaureus,metisilliiniresistentti(mrsa),viljely		627	100				
-1985	t-auttajasolujenosuus(määritettynäcd3+cd4+soluina)	%	665	0	[12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07]		Thrombocyte	
-1986	t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina)	%	665	0	[14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66]		Thrombocyte	
-1987	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella	ng/l	7	0				
-1988	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella		97	93.81				
-1989	ts-histologinentutkimus,1-3kudosnäytettä		160	100			Tissue	
-1990	ts-histologinentutkimus,1-3näytettä		945	100			Tissue	
-1991	työpaikanhuumeseulontajavarmistus,4yhdistettä		469	100				
-1992	työpaikanhuumeseulontajavarmistus,7yhdistettä		312	100				
-1993	täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet		1481	100				
-1994	täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤		9742	100				
-1995	u-amfetamiinijametamfetamiini,enantiomeerienerittely		120	100			Urine	
-1996	u-asetoniaineet,kval,vieritestihoitoyksikössä		421	100			Urine	
-1997	u-erytrosyytit,kval,vieritestihoitoyksikössä		413	100			Urine	
-1998	u-glukoosi,kvalvieritestihoitoyksikössä		423	100			Urine	
-1999	u-happamuusaste,vieritestihoitoyksikössä		400	0.25	[5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7]		Urine	
-2000	u-huume-jalääkeainetutkimus,laaja,varmistus		175	100			Urine	
-2001	u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta		121	100			Urine	
-2002	u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms)		144	100			Urine	
-2003	u-kemiallinenseulonta,vieritestihoitoyksikössä		104	100			Urine	
-2004	u-kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	398	0	[2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61]		Urine	
-2005	u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen		421	100			Urine	
-2006	u-leukosyytit,kval,vieritestihoitoyksikössä		429	100			Urine	
-2007	u-nitriitti,kval,vieritestihoitoyksikössä		421	100			Urine	
-2008	u-proteiini,kval,vieritestihoitoyksikössä		425	100			Urine	
-2009	vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä		162	100				
-2010	yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤		484	100				
+8999	b-b-cd19	e6/l	913	0	[10.41, 31.05, 55.36, 87.14, 120.42, 155.29, 201.58, 263.7, 407.08]		Blood	
+9000	b-b-cd19	e9/l	3083	0	[0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.29, 0.48]		Blood	
+9001	b-b-cd19		569	89.28	[0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.31, 0.47]		Blood	
+9002	b-cd16/56	e6/l	12	0			Blood	
+9003	b-cd16/56	e9/l	2606	0.65	[0.06, 0.09, 0.12, 0.15, 0.18, 0.22, 0.26, 0.33, 0.44]		Blood	
+9004	b-cd16/56		108	84.26			Blood	
+9005	b-cd16/cd56	e9/l	263	0	[0.09, 0.12, 0.15, 0.17, 0.21, 0.24, 0.3, 0.36, 0.44]		Blood	
+9006	b-cd16/cd56		15	100			Blood	
+9007	b-cd19	e6/l	3891	0	[0, 1.97, 16.17, 41.05, 70.27, 108.04, 158.42, 221.57, 336.97]		Blood	
+9008	b-cd19	e9/l	2870	0.59	[0, 0, 0.01, 0.03, 0.06, 0.09, 0.14, 0.19, 0.29]		Blood	
+9009	b-cd19		175	66.29			Blood	
+9010	b-cd3	e6/l	3892	0			Blood	
+9011	b-cd3	e9/l	2868	0.59			Blood	
+9012	b-cd3		204	71.57			Blood	
+9013	b-cd34	e6/l	193	0	[5.27, 13.75, 20.31, 28.86, 37.69, 50.47, 63.07, 93.98, 156.93]		Blood	
+9014	b-cd34		27	29.63			Blood	
+9015	b-cd4	e6/l	3893	0	[134.07, 213.38, 284.14, 381.8, 505.45, 647.7, 819.98, 1038.04, 1335.05]		Blood	
+9016	b-cd4	e9/l	2870	0.59	[0.14, 0.2, 0.25, 0.32, 0.4, 0.51, 0.63, 0.8, 1.07]		Blood	
+9017	b-cd4		172	66.28			Blood	
+9018	b-cd8	e6/l	3892	0	[117.75, 200.41, 277.17, 351.98, 433.16, 541.85, 672.5, 850.74, 1214.03]		Blood	
+9019	b-cd8	e9/l	2870	0.59	[0.11, 0.16, 0.23, 0.29, 0.36, 0.46, 0.57, 0.73, 1]		Blood	
+9020	b-cd8		172	66.28			Blood	
+9021	b-lcd34	e6/l	251	0	[3, 7.11, 11.11, 14.14, 17.55, 23.82, 31.86, 44, 64.2]	B -Leukosyytit, CD34 alaluokka	Blood	
+9022	b-lcd34	e9/l	475	0	[0, 0.01, 0.02, 0.03, 0.03, 0.04, 0.06, 0.09, 0.13]	B -Leukosyytit, CD34 alaluokka	Blood	
+9023	b-lcd34		66	100		B -Leukosyytit, CD34 alaluokka	Blood	
+9024	b-lycd4		496	100		B -Lymfosyytti CD4-alaluokka	Blood	
+9025	b-t-cd3	e6/l	1174	0			Blood	
+9026	b-t-cd3	e9/l	2692	0			Blood	
+9027	b-t-cd3		304	81.91			Blood	
+9028	b-t-cd4	e6/l	1609	0	[168.06, 247.56, 335.09, 433.05, 551.26, 672.04, 816.88, 957.34, 1254.62]		Blood	
+9029	b-t-cd4	e9/l	6105	0	[0.16, 0.25, 0.34, 0.43, 0.52, 0.64, 0.79, 0.96, 1.28]		Blood	
+9030	b-t-cd4		475	69.89	[0.2, 0.26, 0.34, 0.42, 0.55, 0.68, 0.8, 0.95, 1.29]		Blood	
+9031	b-t-cd8	e6/l	1174	0	[141.94, 210.82, 289.62, 366.11, 450.98, 530.13, 639.55, 796.16, 1179.47]		Blood	
+9032	b-t-cd8	e9/l	2753	0	[0.14, 0.21, 0.27, 0.35, 0.43, 0.52, 0.65, 0.83, 1.1]		Blood	
+9033	b-t-cd8		311	79.42			Blood	
+9034	bl-cd4/cd8	form	42	100			Bronchoalveolar lavage	
+9035	bl-cd4/cd8		91	100			Bronchoalveolar lavage	
+9036	cd4/cd8		3940	0.23	[0.29, 0.47, 0.68, 0.91, 1.2, 1.57, 1.94, 2.45, 3.26]			
+9037	l-cd34	%	481	0	[0.05, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.32, 0.61]		Leukocyte	
+9038	l-cd34		41	100			Leukocyte	
+9039	la-cd34	e6/kg	156	0	[0.6, 0.9, 1.18, 1.41, 1.69, 2.1, 2.53, 3.4, 4.94]			
+9040	la-cd34	e9/l	393	0	[0.41, 0.56, 0.72, 0.84, 1.03, 1.27, 1.77, 2.36, 3.2]			
+9041	la-cd34-ks		395	100				
+9042	la-cd34-os	%	393	0	[0.22, 0.3, 0.39, 0.49, 0.59, 0.69, 0.84, 1.12, 1.67]			
+9043	la-t-cd3	e9/l	149	0				
+9044	la-t-cd3		6	16.67				
+9045	la-t-cd4	e9/l	149	0				
+9046	la-t-cd4		6	16.67				
+9047	la-t-cd8	e9/l	149	0				
+9048	la-t-cd8		6	16.67				
+9049	ly-b-cd19	%	1504	0	[0, 0, 0.45, 2.91, 5.54, 7.86, 10.24, 13.34, 18.94]		Lymphocyte	
+9050	ly-b-cd19		950	99.05			Lymphocyte	
+9051	ly-cd16/56	%	3462	0.49	[5.28, 8.01, 10.25, 12.46, 15.08, 18.07, 21.55, 26.37, 33.4]		Lymphocyte	
+9052	ly-cd16/56		107	86.92			Lymphocyte	
+9053	ly-cd16/cd56	%	262	0	[5.52, 8.16, 10.06, 12.71, 14.93, 17.65, 20.63, 27.5, 36.58]		Lymphocyte	
+9054	ly-cd16/cd56		15	100			Lymphocyte	
+9055	ly-cd19	%	3462	0.49	[0, 0, 1.17, 3.24, 5.55, 8.08, 10.86, 14.11, 20.27]		Lymphocyte	
+9056	ly-cd19		107	85.98			Lymphocyte	
+9057	ly-cd19-b	%	2507	0	[0, 0, 1, 3.95, 7.56, 10.5, 13.61, 17.58, 25.6]		Lymphocyte	
+9058	ly-cd19-b		19	100			Lymphocyte	
+9059	ly-cd3	%	3726	0.46	[52.12, 61.25, 67.07, 71.15, 74.98, 78.39, 81.66, 85.36, 89.48]		Lymphocyte	
+9060	ly-cd3		122	87.7			Lymphocyte	
+9061	ly-cd4	%	3726	0.46	[16.32, 22.56, 27.91, 32.59, 37.02, 41.75, 46.47, 51.76, 58.99]		Lymphocyte	
+9062	ly-cd4		122	87.7			Lymphocyte	
+9063	ly-cd4+8+	%	41	41.46			Lymphocyte	
+9064	ly-cd4+8+		75	100			Lymphocyte	
+9065	ly-cd4-8-	%	207	8.21	[7, 8, 8, 8.88, 9.82, 10.9, 12, 14, 16]		Lymphocyte	
+9066	ly-cd4-8-		77	100			Lymphocyte	
+9067	ly-cd4-t	%	4576	0	[15.23, 21.8, 27.31, 31.42, 35.47, 39.26, 43.26, 48.23, 54.7]		Lymphocyte	
+9068	ly-cd4-t		170	22.94	[17.53, 21.58, 24.78, 29.15, 33.2, 38.25, 41.67, 47.37, 52.57]		Lymphocyte	
+9069	ly-cd4/cd8		2752	4.18	[0.37, 0.55, 0.75, 0.96, 1.18, 1.48, 1.83, 2.29, 3.23]	Ly-Auttaja- ja tappajasolujen suhde, immunofenotyypitys	Lymphocyte	
+9070	ly-cd4/cd8suhde		278	5.4	[0.5, 0.76, 1.02, 1.29, 1.66, 1.95, 2.26, 2.73, 3.97]		Lymphocyte	
+9071	ly-cd8	%	3725	0.46	[14.46, 19.13, 22.75, 26.46, 30.35, 34.98, 40.06, 46.74, 56.02]		Lymphocyte	
+9072	ly-cd8		122	87.7			Lymphocyte	
+9073	ly-t-cd3	%	3926	0	[56.23, 64.92, 70.33, 74.35, 77.57, 80.54, 84.02, 87.72, 92.04]		Lymphocyte	
+9074	ly-t-cd3		264	98.48			Lymphocyte	
+9075	ly-t-cd4	%	2006	0	[18.72, 24.57, 29.84, 34.47, 38.67, 43.22, 47.75, 52.18, 58.04]	Ly-Lymfosyytit, T-auttajasolujen osuus	Lymphocyte	
+9076	ly-t-cd4		3875	99.92		Ly-Lymfosyytit, T-auttajasolujen osuus	Lymphocyte	
+9077	ly-t-cd4.	%	1462	0	[18.57, 26.32, 32.42, 36.77, 41.27, 46.47, 51.47, 56.35, 63.05]		Lymphocyte	
+9078	ly-t-cd4.		36	72.22			Lymphocyte	
+9079	ly-t-cd4/8	ratio	1816	0	[0.6, 0.8, 0.99, 1.23, 1.56, 1.85, 2.06, 2.47, 3.19]		Lymphocyte	
+9080	ly-t-cd4/8		224	100	[0.48, 0.79, 1.06, 1.31, 1.55, 1.83, 2.13, 2.62, 3.69]		Lymphocyte	
+9081	ly-t-cd8	%	2895	0	[14.95, 19.45, 23.24, 27.01, 30.29, 33.79, 38.05, 43.59, 52.29]	Ly-Lymfosyytit, T-estäjäsolujen osuus	Lymphocyte	
+9082	ly-t-cd8		245	99.59		Ly-Lymfosyytit, T-estäjäsolujen osuus	Lymphocyte	
+9083	ly-tcd4/8.		2179	0.83	[0.48, 0.75, 1, 1.21, 1.42, 1.69, 2, 2.51, 3.27]		Lymphocyte	
+9084	ly-tt-cd8	%	1219	0	[13.33, 17.86, 21.01, 24.35, 28, 31.32, 36.22, 42.56, 52.88]		Lymphocyte	
+9085	ly-tt-cd8		5	40			Lymphocyte	
+9086	s-gt-cdt	%	13	0			Serum	
+9087	s-gt-cdt		2807	3.35	[2.6, 2.87, 3.04, 3.25, 3.47, 3.7, 3.96, 4.27, 4.86]		Serum	
+9088	so-t-cd3	%	149	0	[16.66, 19.73, 21.87, 23.49, 24.84, 27.82, 29.85, 33.41, 49.51]			
+9089	so-t-cd3		6	16.67				
+9090	so-t-cd4	%	149	0	[9.42, 10.93, 12.3, 13.53, 14.67, 15.99, 17.4, 19.67, 23.42]			
+9091	so-t-cd4		6	16.67				
+9092	so-t-cd8	%	149	0	[5.87, 7, 7.83, 8.57, 9.8, 10.57, 12.18, 14.02, 21.4]			
+9093	so-t-cd8		6	16.67				
 

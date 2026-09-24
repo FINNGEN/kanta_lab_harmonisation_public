@@ -2,8 +2,8 @@
 
 Source: `DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv`
 
-Rows (local `TEST_NAME`/`UNIT` combinations): 3617
-Similarity groups covered: 50
+Rows (local `TEST_NAME`/`UNIT` combinations): 1984
+Similarity groups covered: 30
 
 ## Dimension completeness
 
@@ -13,160 +13,166 @@ leave an axis empty rather than guess, so empties are expected, not failures.
 
 | dimension | n_filled | pct_filled | n_empty | pct_empty | n_unique |
 |---|---|---|---|---|---|
-| has_component | 3250 | 89.9% |  367 | 10.1% | 765 |
-| has_property | 2745 | 75.9% |  872 | 24.1% |  49 |
-| has_time_aspect | 3310 | 91.5% |  307 | 8.5% |   4 |
-| has_system | 3010 | 83.2% |  607 | 16.8% |  89 |
-| has_scale_type | 3213 | 88.8% |  404 | 11.2% |   5 |
-| has_method |  840 | 23.2% | 2777 | 76.8% |  63 |
-| is_panel | 3617 | 100.0% |    0 | 0.0% |   2 |
+| has_component | 1745 | 88.0% |  239 | 12.0% | 475 |
+| has_property | 1624 | 81.9% |  360 | 18.1% |  41 |
+| has_time_aspect | 1743 | 87.9% |  241 | 12.1% |   8 |
+| has_system | 1635 | 82.4% |  349 | 17.6% |  48 |
+| has_scale_type | 1780 | 89.7% |  204 | 10.3% |   7 |
+| has_method |  623 | 31.4% | 1361 | 68.6% |  30 |
+| is_panel | 1984 | 100.0% |    0 | 0.0% |   2 |
 
 **Core axes filled per row** (of the 6 LOINC axes, excluding `is_panel`):
 
 | n_axes | n_rows | pct_rows |
 |---|---|---|
-| 0 |   62 | 1.7% |
-| 1 |  136 | 3.8% |
-| 2 |  194 | 5.4% |
-| 3 |  135 | 3.7% |
-| 4 |  447 | 12.4% |
-| 5 | 2207 | 61.0% |
-| 6 |  436 | 12.1% |
+| 0 |   83 | 4.2% |
+| 1 |   81 | 4.1% |
+| 2 |   43 | 2.2% |
+| 3 |   80 | 4.0% |
+| 4 |  198 | 10.0% |
+| 5 | 1043 | 52.6% |
+| 6 |  456 | 23.0% |
 
 ## `has_component`
 
 The analyte/substance measured — the core identity of the test.
 
-- Filled: 3250 / 3617 (89.9%)
-- Unique values: 765
+- Filled: 1745 / 1984 (88.0%)
+- Unique values: 475
 
 **Top 10 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| C-reactive protein | 118 | 3.6% |
-| Hemoglobin |  89 | 2.7% |
-| Histology |  58 | 1.8% |
-| Glomerular filtration rate/1.73 sq M.predicted |  49 | 1.5% |
-| Lymphocytes |  45 | 1.4% |
-| pH |  45 | 1.4% |
-| Prothrombin time |  42 | 1.3% |
-| Eosinophils |  40 | 1.2% |
-| Albumin |  37 | 1.1% |
-| Sodium |  37 | 1.1% |
+| C reactive protein | 82 | 4.7% |
+| Bacteria | 40 | 2.3% |
+| Bacteria identified | 40 | 2.3% |
+| Glucose | 38 | 2.2% |
+| Sodium | 36 | 2.1% |
+| SARS-CoV-2 antigen | 24 | 1.4% |
+| Amylase | 21 | 1.2% |
+| EKG.12 lead | 21 | 1.2% |
+| Erythrocyte distribution width | 21 | 1.2% |
+| Albumin | 20 | 1.1% |
 
 ## `has_property`
 
-The kind of quantity reported (`MCnc` mass concentration, `SCnc` substance concentration, `PrThr` presence or threshold, ...), independent of the unit.
+The kind of quantity reported (`Substance Concentration`, `Mass Concentration`, `Presence or Threshold`, ...), independent of the unit.
 
-- Filled: 2745 / 3617 (75.9%)
-- Unique values: 49
+- Filled: 1624 / 1984 (81.9%)
+- Unique values: 41
 
 **Top 10 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| PrThr | 921 | 33.6% |
-| MCnc | 416 | 15.2% |
-| ACnc | 313 | 11.4% |
-| SCnc | 269 | 9.8% |
-| NFr |  84 | 3.1% |
-| Prid |  80 | 2.9% |
-| Find |  73 | 2.7% |
-| CCnc |  65 | 2.4% |
-| Ratio |  64 | 2.3% |
-| Titr |  59 | 2.1% |
+| Presence or Threshold | 364 | 22.4% |
+| Substance Concentration | 239 | 14.7% |
+| Mass Concentration | 205 | 12.6% |
+| Finding | 173 | 10.7% |
+| Arbitrary Concentration | 113 | 7.0% |
+| Catalytic Concentration | 108 | 6.7% |
+| Presence or Identity | 106 | 6.5% |
+| Number Concentration |  72 | 4.4% |
+| Number Fraction |  71 | 4.4% |
+| Ratio |  45 | 2.8% |
 
 ## `has_time_aspect`
 
-The timing of the collection (`Pt` for a spot sample, `24H` for a 24-hour collection, ...).
+The timing of the collection (`Point in time (spot)` for a spot sample, `24 hours` for a 24-hour collection, ...).
 
-- Filled: 3310 / 3617 (91.5%)
-- Unique values: 4
+- Filled: 1743 / 1984 (87.9%)
+- Unique values: 8
 
-**Top 4 most used values:**
+**Top 8 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| Pt | 3268 | 98.7% |
-| 24H |   40 | 1.2% |
-| 1H |    1 | 0.0% |
-| 48H |    1 | 0.0% |
+| Point in time (spot) | 1712 | 98.2% |
+| 24 hours |   21 | 1.2% |
+| Point in in time (spot) |    5 | 0.3% |
+| 12 hours |    1 | 0.1% |
+| 48 hours |    1 | 0.1% |
+| Point in a time (spot) |    1 | 0.1% |
+| Point in an (spot) |    1 | 0.1% |
+| Point in an unspecified time |    1 | 0.1% |
 
 ## `has_system`
 
-The specimen or body system the sample was taken from (`Ser`, `Plas`, `Bld`, `Urine`, `CSF`, ...).
+The specimen or body system the sample was taken from (`Serum or Plasma`, `Blood`, `Urine`, `Cerebral spinal fluid`, ...).
 
-- Filled: 3010 / 3617 (83.2%)
-- Unique values: 89
+- Filled: 1635 / 1984 (82.4%)
+- Unique values: 48
 
 **Top 10 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| Ser | 948 | 31.5% |
-| Plas | 459 | 15.2% |
-| Bld | 353 | 11.7% |
-| Urine | 294 | 9.8% |
-| ^Patient | 221 | 7.3% |
-| Ser/Plas | 115 | 3.8% |
-| Stool |  84 | 2.8% |
-| RBC |  66 | 2.2% |
-| CSF |  61 | 2.0% |
-| Tiss |  54 | 1.8% |
+| Serum | 484 | 29.6% |
+| Blood | 266 | 16.3% |
+| Plasma | 225 | 13.8% |
+| Urine | 207 | 12.7% |
+| ^Patient | 103 | 6.3% |
+| Lymphocyte |  37 | 2.3% |
+| Bone marrow |  35 | 2.1% |
+| Cerebral spinal fluid |  31 | 1.9% |
+| Stool |  31 | 1.9% |
+| Platelet poor plasma |  28 | 1.7% |
 
 ## `has_scale_type`
 
 The measurement scale of the result (`Qn` quantitative, `Ord` ordinal, `Nom` nominal, `Nar` narrative, `Doc` document).
 
-- Filled: 3213 / 3617 (88.8%)
-- Unique values: 5
+- Filled: 1780 / 1984 (89.7%)
+- Unique values: 7
 
-**Top 5 most used values:**
+**Top 7 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| Qn | 1646 | 51.2% |
-| Ord |  987 | 30.7% |
-| Nar |  417 | 13.0% |
-| Nom |  102 | 3.2% |
-| Doc |   61 | 1.9% |
+| Qn | 958 | 53.8% |
+| Ord | 393 | 22.1% |
+| Nar | 283 | 15.9% |
+| Nom |  78 | 4.4% |
+| Doc |  57 | 3.2% |
+| SemiQn |   7 | 0.4% |
+| OrdQn |   4 | 0.2% |
 
 ## `has_method`
 
 The analytical method, populated only when the code indicates one that changes clinical interpretation. Mostly empty by design.
 
-- Filled: 840 / 3617 (23.2%)
-- Unique values: 63
+- Filled: 623 / 1984 (31.4%)
+- Unique values: 30
 
 **Top 10 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| NAA | 147 | 17.5% |
-| NAA+probe | 121 | 14.4% |
-| NAA with probe detection |  84 | 10.0% |
-| Test strip |  73 | 8.7% |
-| Culture |  59 | 7.0% |
-| Automated count |  44 | 5.2% |
-| CKD-EPI formula |  34 | 4.0% |
-| Complement fixation |  28 | 3.3% |
-| EKG |  20 | 2.4% |
-| Mass Spectrometry |  16 | 1.9% |
+| Nucleic acid amplification with probe detection | 106 | 17.0% |
+| Flow cytometry (FC) | 101 | 16.2% |
+| Automated count |  90 | 14.4% |
+| Organism specific culture |  65 | 10.4% |
+| Molecular genetics |  51 | 8.2% |
+| Immunoassay |  47 | 7.5% |
+| Electrophoresis |  34 | 5.5% |
+| Test strip |  26 | 4.2% |
+| Coagulation assay |  25 | 4.0% |
+| Calculated |  15 | 2.4% |
 
 ## `is_panel`
 
 Whether the code bundles several separately reported component tests rather than being one reportable result.
 
-- Filled: 3617 / 3617 (100.0%)
+- Filled: 1984 / 1984 (100.0%)
 - Unique values: 2
 
 **Top 2 most used values:**
 
 | value | n | pct_of_filled |
 |---|---|---|
-| FALSE | 3287 | 90.9% |
-| TRUE |  330 | 9.1% |
+| FALSE | 1800 | 90.7% |
+| TRUE |  184 | 9.3% |
 
 ## Findings
 
@@ -174,32 +180,31 @@ Distilled by `gemini-2.5-pro` from the per-group reflections in `DATA/FindLOINCD
 
 ### Key findings
 
-- Distinguishing between quantitative and qualitative/ordinal tests is a primary task, reliably achieved by combining the `UNIT`, `p_missing`, and `deciles` columns. A present unit and/or numeric deciles indicates quantitative, while a missing unit and high `p_missing` indicates qualitative, narrative, or a panel code.
-- Identifying panels versus single-analyte tests is a frequent and critical challenge requiring inference. Panels are identified by keywords (`paketti`, `seulonta`, `tutkimus`), plural nouns, `p_missing` of 100%, or domain knowledge about procedures like Spirometry, OGTT, and CBCs.
-- Mapping requires significant domain and language knowledge, including Finnish medical vocabulary, microbiology (e.g., RNA vs. DNA viruses), immunology (e.g., IGRA structure), and clinical context (e.g., eGFR is always a `^Patient` system test).
-- System (specimen) inference is a core task. The `prefix_meaning` column is the best source, but when absent, the system must be inferred from words in the `TEST_NAME` (e.g., `virtsasta`), sibling rows, or lab conventions. If no evidence exists, it is left blank.
-- When data is contradictory, a clear hierarchy of trust is applied: `deciles` and `UNIT` are trusted over `p_missing` and sometimes even over `TEST_NAME` fragments or incorrect prefixes.
-- The context provided by grouping similar codes is essential for decoding typos, abbreviations, and inconsistencies, and for inferring missing information like the specimen type.
-- It is crucial to recognize and appropriately map codes that are not direct analytical results, such as orderable panels, procedures (ECG), clinical assessments (GDS-15), and administrative flags.
-- The `Method` axis is often inferred from specific Finnish terms (`vieritesti`, `pikatesti`), explicit methods mentioned in the name (`immunofluoresenssi`), or the nature of the component (`fraction` implies `Electrophoresis`).
+- The 'deciles' column is critically important for inferring or confirming the property, scale, and specific component, especially when the test code is ambiguous or the unit is missing or incorrect.
+- A common pattern is the dual representation of a test: one quantitative row (with units and deciles) paired with another row with a high percentage of missing values, representing qualitative, narrative, or non-numeric results for the same test.
+- Source data frequently contains contradictory information across columns (e.g., a name suggesting a qualitative test but deciles indicating a quantitative one). The quantitative data (deciles, units) is generally more trustworthy than descriptive text.
+- A recurring data quality issue is having a 100% 'p_missing' value alongside a full set of 'deciles'. The consensus strategy is to trust the deciles, infer a quantitative scale, and assume the missing percentage is an artifact.
+- Identifying panels is a key judgment call. Strong indicators include explicit terms ('paketti', 'seulonta'), names combining multiple analytes, high 'p_missing' rates without deciles, and specific suffixes (e.g., '-is' for isoenzymes).
+- Expert knowledge is required to infer standard methods (e.g., Electrophoresis, Immunoassay) and apply LOINC-specific conventions (e.g., 'Platelet poor plasma' for coagulation tests), which significantly improves mapping quality.
+- Grouping similar test codes is essential for interpreting typos, truncated names, and using context from clear entries to resolve ambiguities in others.
+- The 'LongName' column is invaluable for confirming components, resolving ambiguous abbreviations, and identifying panels or complex procedures.
+- Specific Finnish terms (e.g., '-nho' for nucleic acid, 'vieritesti' for point-of-care, 'osatutkimus' for component test) are consistent and powerful clues for mapping multiple axes.
+- Administrative, billing, and pre-analytical (e.g., sample collection) codes are often mixed in with analytical test codes and must be identified and handled differently.
 
 ### Suggested improvements
 
-- Provide the `LongName` (official full name) for all codes, as this is the single most effective way to resolve ambiguities from abbreviations, truncations, and uninformative local codes, especially for rows with high `p_missing`.
-- Create and provide a dictionary of local terms, including common Finnish medical vocabulary, acronyms, abbreviations (`nho`, `-tutkimus`), and non-standard system prefixes (`ap`, `cp`, `vp`).
-- Improve the quality and consistency of source data by populating `prefix_meaning` and `suffix_meaning` more reliably and resolving contradictions between columns, especially between `p_missing` and `deciles`.
-- Provide clear documentation on how non-numeric results (e.g., 'Not detected', values below the limit of quantification) are represented in the data, to resolve ambiguity for quantitative tests with high `p_missing` rates.
-- Formalize rules for identifying panel codes, for example by using a dedicated flag or a standardized list of keywords (`tutkimus`, `paketti`, `seulonta`), to make this key decision more systematic and less subjective.
-- Consider a rule change to allow propagation of a confirmed System (e.g., `S-` for Serum) to other highly similar rows within the same group that lack a prefix, to improve completeness.
-- Develop a more advanced parser for `TEST_NAME`s that can identify secondary clues for specimen type, such as embedded Finnish words (`plasmasta`) or national codes, when a standard prefix is missing.
+- Create a glossary documenting local, non-standard codes, including prefixes (e.g., 'ap-', 'res-'), suffixes (e.g., 'ctgc'), ambiguous abbreviations, and common Finnish medical terms ('vieritesti', 'seulonta').
+- Provide the 'LongName' (official Finnish long name) for more rows to reduce ambiguity and confirm component mappings derived from abbreviated local codes.
+- Improve the 'p_missing' data by providing guidance on how to handle contradictions with 'deciles', and by distinguishing between null values and non-numeric text results to better classify tests as narrative versus having missing data.
+- Provide a sample of the non-numeric text values for rows with high 'p_missing' to help differentiate between true narrative results (e.g., 'No growth'), error messages ('Hemolyzed'), or other statuses.
 
 ### Systematic data problems
 
-- System (specimen) information is the most common missing data point. The standard system prefix is often absent from the test code, forcing inference or resulting in information loss.
-- Contradictory data within a single row is a frequent issue, most commonly `p_missing` being high or 100% while the `deciles` column is fully populated. Other examples include nonsensical units for a given test or a system prefix that conflicts with the test's biological nature.
-- Test names (`TEST_NAME`) are highly inconsistent, vague, and messy. They contain numerous typos, non-standard abbreviations, truncations, and concatenated strings that mix panel, component, and qualifier information.
-- The dataset contains many non-clinical or unmappable codes for administrative, billing, or logistical purposes, as well as completely opaque local abbreviations that cannot be mapped without a dictionary.
-- The same local code is sometimes used for multiple distinct measurements (e.g., `E-MCV` for both mean cell volume and hematocrit), making the `TEST_NAME` an unreliable identifier on its own.
-- It is often ambiguous whether a quantitative test with a high `p_missing` rate represents a true qualitative version of the test, a narrative result, or simply a data entry pattern for results below the limit of quantification.
-- Provided metadata can be misleading. For instance, `prefix_meaning` can be biologically incorrect for the given component, or a `(kval)` suffix can appear on a clearly quantitative test.
+- System (specimen) information is frequently missing or ambiguous due to the absence of standard prefixes (e.g., 'S-', 'P-') or the use of undocumented local prefixes.
+- Local test codes are often ambiguous, non-standard, truncated, or contain typos, making them difficult to map without contextual clues or documentation.
+- Data fields often contradict each other, such as a test name suggesting a qualitative result while the unit and deciles are clearly quantitative, or a high 'p_missing' value co-occurring with deciles.
+- Units of measurement are frequently incorrect (e.g., biologically impossible values), nonsensical (e.g., a mass unit for a qualitative test), or inconsistent, especially for serology tests with many arbitrary unit variants.
+- Source data contains many non-analytical codes for administration, billing, sample handling ('frozen'), or location-specific logistics, which are mixed in with clinical test codes.
+- Test names can be misleading, describing the purpose of a test (e.g., 'recirculation') rather than the quantity being measured (a concentration), leading to potential mapping errors.
+- Messy, concatenated codes that combine multiple test names or results into a single string are common and can be misleading.
 

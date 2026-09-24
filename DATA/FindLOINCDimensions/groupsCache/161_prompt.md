@@ -71,124 +71,58 @@ Return one entry per input row, with `row_id` echoed exactly, and the seven fiel
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 37 of the table. Infer the LOINC axes for every row.
+Here is group 161 of the table. Infer the LOINC axes for every row.
 
 row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1894	-histologinensolublokkisytologisestanäytteestä		214	100				
-1895	-humanpapillomavirusgenotyyppi16		301	100				
-1896	-humanpapillomavirusgenotyyppi18		301	100				
-1897	-humanpapillomavirusgenotyyppimuupatogeeninenhpv		252	100				
-1898	-lisämaksukiireellisenäpyydetyllenäytteelle		584	100				
-1899	-lisätutkimuspyyntöaiemmintutkitullenäytteelle		191	100				
-1900	-lisävastaus2laskutuskuitatullenäytteelle		438	100				
-1901	-lisävastauslaskutuskuitatullenäytteelle		2865	100				
-1902	-moniresistentitgram-negatiivisetsauvat,viljely		122	100				
-1903	-moniresistentitgramnegatiivisetsauvat,viljely		163	100				
-1904	-resistentitgramnegatiivisetsauvat,viljely		314	100				
-1905	-staphylococcusaureus,metilliiniresist.viljely		248	100				
-1906	-staphylococcusaureus,metisilliiniresistentti,v		540	100				
-1907	b-glukoosi,hoitoyksikönvieritesti,kokoveri		687	0.15	[5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28]		Blood	
-1908	b-hematologisenpotilaanperuskaryotyypinmääritys		125	100			Blood	
-1909	b-kreatiniini,hoitoyksikönvieritesti,veri		167	0	[58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170]		Blood	
-1910	bakteerit,virtsasta,partikkelinlaskijalla,osatutk.		212	100				
-1911	bm-pahanlaatuisenveritaudinimmunofenotyypitys		191	100			Bone marrow	
-1912	bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi		162	100			Bone marrow	
-1913	cb-hemoglobiini,vieritestihoitoyksikössä	g/l	101	0	[84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146]		Capillary blood	
-1914	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä	mmol/l	5203	0	[5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77]			
-1915	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä		19	100	[5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96]			
-1916	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella	mg/l	771	0	[2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84]			
-1917	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella		192	85.42				
-1918	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	438	0	[26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53]		Erythrocyte	
-1919	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä		15	6.67			Erythrocyte	
-1920	emäsylimäärä,laskimoverestä,pikatesti␤	mmol/l	373	0				
-1921	emäsylimäärä,laskimoverestä,pikatesti␤		339	19.47				
-1922	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32]			
-1923	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1924	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta	iu/ml	24	0				
-1925	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta		241	100				
-1926	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	202	0	[3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76]			
-1927	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.		10	100				
-1928	fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi	ug/l	299	0	[0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63]		Fasting plasma	
-1929	happamusaste,kapillaariverestä,pikatesti␤		1262	0.24				
-1930	happamuusaste,laskimoverestä,pikatesti␤		712	0.7				
-1931	happiosapaine,kapillaariverestä,pikatesti␤	kpa	1260	0				
-1932	happoemästasejahappi,laskimoverestä,pikatesti␤		643	100				
-1933	hepatiittic-virus,nh,jatkotutkimus,plasmasta		512	100				
-1934	hiilidioksidiosapaine,laskimoverestä,pikatesti␤	kpa	707	0				
-1935	hiilidioksidiosapaine,laskimoverestä,pikatesti␤		5	100				
-1936	hpv-gt16aptimapanther,apututkimustulostensiirtoon		149	100				
-1937	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon		149	100				
-1938	hpvaptimapanther,apututkimustulostensiirtoon		413	100				
-1939	humanimmunodeficiencyvirus,antigeenijavasta-		192	100				
-1940	humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd		260	100				
-1941	huume-jalääkeainetutkimus,laaja,varmistus		448	100				
-1942	huumeseulonta,kvalitatiivinen,virtsasta␤		140	100				
-1943	kalium,hoitoyksikönvieritesti,veri	mmol/l	166	0	[3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6]			
-1944	kalium,hoitoyksikönvieritesti,veri		290	0	[3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5]			
-1945	kreatiniini,hoitoyksikönvieritesti,veri	mmol/l	163	0	[61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53]			
-1946	kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	874	0	[2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82]			
-1947	kreatiniini,virtsasta(huumeseulonnanyhteydessä)		6	66.67				
-1948	laajahuumeseulonta,varmistustasoinen,virtsasta		944	100				
-1949	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0, 0, 0, 0, 0, 0, 0, 0.1, 0.4]			
-1950	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1951	lisävastauslaskutuskuitatullenäytteelle		214	100				
-1952	luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna		145	100				
-1953	marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte		168	0				
-1954	moniresistentitgramnegatiivisetsauvat,viljely		206	100				
-1955	natrium,hoitoyksikönvieritesti,veri	mmol/l	163	0	[133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142]			
-1956	natrium,hoitoyksikönvieritesti,veri		292	0	[131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142]			
-1957	natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta	ng/l	159	0	[27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2]			
-1958	nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina)	%	665	0	[4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91]			
-1959	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.	mosm/kgh2o	203	0	[331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53]			
-1960	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1961	p-natriureett.peptidin-termin.propept.vieritl	ng/l	118	0	[140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2]		Plasma	
-1962	p-natriureett.peptidin-termin.propept.vieritl		20	100			Plasma	
-1963	p-natriureettinenpeptidi,b-tyypinn-terminaalin	ng/l	4682	0	[86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85]		Plasma	
-1964	p-natriureettinenpeptidi,b-tyypinn-terminaalin		149	100			Plasma	
-1965	p-natriureettinenpeptidi,b-tyypn-term.propeptidi	ng/l	1366	0	[106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983]		Plasma	
-1966	p-natriureettinenpeptidi,b-tyypn-term.propeptidi		107	100			Plasma	
-1967	parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		120	100				
-1968	pienikudoskoepala,enintään1-3samankokonaisuudennäytettä		234	100				
-1969	pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.		267	100				
-1970	pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus		3577	100			Patient	
-1971	pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot		113	100			Patient	
-1972	pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa		120	100			Patient	
-1973	pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee)		177	100			Patient	
-1974	pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta		474	100			Patient	
-1975	pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona		542	100			Patient	
-1976	pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein		102	100			Patient	
-1977	pu-aerobinenjaanaerobinenbakteerityypitysjaan		147	100			Pus	
-1978	resistentitgramnegatiivisetsauvat,viljely		320	100				
-1979	retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	525	0	[26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37]			
-1980	retikulosyyttienkeskimääräinenhemoglobiininmäärä		5	100				
-1981	s-humanimmunodeficiencyvirus,antigeenijavast		1221	100			Serum	
-1982	sikiöperäisendna:ntutkimusäidinverinäytteestä		104	100				
-1983	staphylococcusaureus,metisilliiniresistenssiviljely␤		134	100				
-1984	staphylococcusaureus,metisilliiniresistentti(mrsa),viljely		627	100				
-1985	t-auttajasolujenosuus(määritettynäcd3+cd4+soluina)	%	665	0	[12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07]		Thrombocyte	
-1986	t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina)	%	665	0	[14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66]		Thrombocyte	
-1987	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella	ng/l	7	0				
-1988	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella		97	93.81				
-1989	ts-histologinentutkimus,1-3kudosnäytettä		160	100			Tissue	
-1990	ts-histologinentutkimus,1-3näytettä		945	100			Tissue	
-1991	työpaikanhuumeseulontajavarmistus,4yhdistettä		469	100				
-1992	työpaikanhuumeseulontajavarmistus,7yhdistettä		312	100				
-1993	täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet		1481	100				
-1994	täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤		9742	100				
-1995	u-amfetamiinijametamfetamiini,enantiomeerienerittely		120	100			Urine	
-1996	u-asetoniaineet,kval,vieritestihoitoyksikössä		421	100			Urine	
-1997	u-erytrosyytit,kval,vieritestihoitoyksikössä		413	100			Urine	
-1998	u-glukoosi,kvalvieritestihoitoyksikössä		423	100			Urine	
-1999	u-happamuusaste,vieritestihoitoyksikössä		400	0.25	[5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7]		Urine	
-2000	u-huume-jalääkeainetutkimus,laaja,varmistus		175	100			Urine	
-2001	u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta		121	100			Urine	
-2002	u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms)		144	100			Urine	
-2003	u-kemiallinenseulonta,vieritestihoitoyksikössä		104	100			Urine	
-2004	u-kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	398	0	[2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61]		Urine	
-2005	u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen		421	100			Urine	
-2006	u-leukosyytit,kval,vieritestihoitoyksikössä		429	100			Urine	
-2007	u-nitriitti,kval,vieritestihoitoyksikössä		421	100			Urine	
-2008	u-proteiini,kval,vieritestihoitoyksikössä		425	100			Urine	
-2009	vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä		162	100				
-2010	yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤		484	100				
+13017	b-fosfatidyylietanoli	umol/l	4792	0	[0.06, 0.1, 0.15, 0.22, 0.3, 0.44, 0.64, 0.94, 1.57]		Blood	
+13018	b-fosfatidyylietanoli		4963	89.32	[0.09, 0.13, 0.17, 0.29, 0.43, 0.63, 0.85, 1.22, 1.87]		Blood	
+13019	b-fosfatidyylietanoli,verestä	umol/l	1555	0	[0.06, 0.1, 0.15, 0.22, 0.29, 0.41, 0.59, 0.87, 1.44]		Blood	
+13020	b-fosfatidyylietanoli,verestä		1534	97.07			Blood	
+13021	b-fosfatidyylietanolivita	umol/l	43	0			Blood	
+13022	b-fosfatidyylietanolivita		69	100			Blood	
+13023	b-haemophilusinfluenzae		144	100			Blood	
+13024	b-suuretvärjäytymättömätsolut	e9/l	171	0	[0.07, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.18]		Blood	
+13025	chlamydiapneumoniae,nukleiin		109	100				
+13026	follikkeliastimuloivahormoni	u/l	138	0	[3, 4.75, 6.19, 8.24, 10, 19.35, 36.42, 56.82, 73.33]			
+13027	fosfatidyylietanoli	umol/l	1540	0	[0.05, 0.09, 0.14, 0.2, 0.29, 0.43, 0.63, 0.98, 1.62]			
+13028	fosfatidyylietanoli		1635	92.35	[0.09, 0.19, 0.32, 0.43, 0.64, 0.89, 1.16, 1.43, 1.78]			
+13029	fosfatidyylietanoli,verestä	umol/l	3284	0	[0.06, 0.08, 0.12, 0.16, 0.22, 0.3, 0.44, 0.66, 1.2]			
+13030	fosfatidyylietanoli,verestä		3273	98.93				
+13031	fosfatidyylietanoli,verestätth	umol/l	35	0				
+13032	fosfatidyylietanoli,verestätth		66	100				
+13033	fosfatidyylietanoli,veri	umol/l	335	0	[0.06, 0.1, 0.15, 0.2, 0.28, 0.39, 0.6, 0.91, 1.55]			
+13034	fosfatidyylietanoli,veri		333	91.89				
+13035	haemophilusinfluenzaenukleii		459	100				
+13036	humaanimetapneumovirus,nukle		109	100				
+13037	humanmetapneumovirus,ag		102	100				
+13038	l-suuretvärjääntymättömätsolut	%	171	0	[1.19, 1.35, 1.5, 1.62, 1.83, 1.97, 2.16, 2.45, 2.85]		Leukocyte	
+13039	legionellapneumoniaenukleiin		109	100				
+13040	li-haemophilusinfluenzaenukl.haponos.		119	100			Cerebrospinal fluid	
+13041	mycoplasmapneumoniae,nukleii		141	100				
+13042	p-follikkeliastimuloivahormoni	u/l	511	0	[2.89, 4.55, 5.71, 7.4, 9.51, 16.11, 32.21, 53.45, 77.25]		Plasma	
+13043	p-glukoosi,2tuntiaaterianjälkeen	mmol/l	125	0	[6.3, 7.71, 9.12, 10.17, 11.1, 12.22, 14.28, 15.89, 18.81]		Plasma	
+13044	p-glukoosi,toimintakokeissa,1h	mmol/l	126	0	[5.54, 6.18, 6.52, 7.01, 7.43, 7.82, 8.23, 9.1, 9.88]		Plasma	
+13045	p-glukoosi,toimintakokeissa,2h	mmol/l	240	0	[4.47, 5.01, 5.34, 5.8, 6.31, 7.03, 7.79, 8.75, 11.07]		Plasma	
+13046	p-glukoosi,toimntakokeissa0m	mmol/l	242	0	[4.3, 4.6, 4.8, 5.01, 5.22, 5.42, 5.83, 6.26, 6.93]		Plasma	
+13047	p-luteinisoivahormoni	u/l	198	0	[2.79, 3.77, 4.73, 5.42, 6.66, 8.63, 10.71, 14.48, 27.26]		Plasma	
+13048	p-luteinisoivahormoni		10	100			Plasma	
+13049	p-omagluk,,potilasmittaringlukoosi		1376	100			Plasma	
+13050	potilasmittaringlukoosi,ihopisto	mmol/l	749	0	[5.9, 6.36, 6.79, 7.19, 7.51, 7.86, 8.26, 8.85, 9.69]			
+13051	potilasmittaringlukoosi,ihopisto		638	100				
+13052	potilasmittaringlukoosi,sensori	mmol/l	201	0	[5.55, 6.53, 7.01, 7.7, 8.35, 9.14, 10.02, 11.7, 13.49]			
+13053	potilasmittaringlukoosi,sensori		568	100				
+13054	s-c-peptidi1haterianjälkeen	nmol/l	275	0	[0.5, 0.75, 0.96, 1.2, 1.4, 1.62, 1.92, 2.33, 3.08]		Serum	
+13055	s-c-peptidi1haterianjälkeen		10	90			Serum	
+13056	s-c-peptidiaterianjälkeen	nmol/l	150	0	[0.4, 0.65, 0.9, 1.07, 1.22, 1.49, 2.03, 2.41, 2.88]		Serum	
+13057	s-follikkeliastimuloivahormoni	iu/l	416	0	[3.31, 4.85, 6.04, 7.33, 10.33, 18.46, 32.36, 54.77, 76.02]		Serum	
+13058	s-follikkeliastimuloivahormoni	u/l	80	0	[3.2, 4.8, 5.65, 6.55, 7.78, 10.22, 16.95, 45.35, 68.7]		Serum	
+13059	s-follikkeliastimuloivahormoni		7	100			Serum	
+13060	s-kertatyydyttymättömätrasvahapot	mmol/l	263	0	[2.43, 2.7, 2.8, 2.99, 3.17, 3.35, 3.54, 3.9, 4.36]		Serum	
+13061	s-luteinisoivahormoni	iu/l	178	0	[1.51, 2.37, 3.11, 3.71, 4.6, 5.61, 7.56, 11.94, 22.46]		Serum	
+13062	s-luteinisoivahormoni	u/l	26	0			Serum	
+13063	s-luteinisoivahormoni		14	100			Serum	
+13064	s-monityydyttymättömätrasvahapot	mmol/l	255	0	[4.74, 4.99, 5.23, 5.48, 5.58, 5.7, 5.92, 6.18, 6.55]		Serum	
+13065	s-monityydyttymättömätrasvahapot		11	100			Serum	
+13066	s-tyydyttyneetrasvahapot	mmol/l	265	0	[3.09, 3.37, 3.58, 3.77, 3.9, 4.15, 4.36, 4.73, 5.26]		Serum	
+13067	ulosteenripulivirukset,nukle		109	100				
 

@@ -40,12 +40,16 @@ Each row is one observed local lab test/unit combination:
 
 Assign, per row:
 
-1. `has_component` — the analyte / substance measured (e.g. `Glucose`, `Hemoglobin`, `Transferrin`, `Thyrotropin`). The core identity of the test. Give the English LOINC-style component name.
-2. `has_property` — the kind of quantity, independent of the unit. Use LOINC property abbreviations: `MCnc` (mass concentration, e.g. g/l, mg/l), `SCnc` (substance/molar concentration, e.g. mmol/l, nmol/l), `CCnc` (catalytic concentration, e.g. U/l), `NCnc` (number concentration, e.g. E9/l), `MFr` (mass fraction, %), `SFr` (substance fraction), `NFr` (number fraction, % of cells), `Titr` (titer), `PrThr` (presence or threshold, for qualitative tests), `Time`, `Temp`, `Vol`, `Len`, `Ratio`, `Type`, `Prid` (identity of an organism), `ACnc` (arbitrary concentration).
-3. `has_time_aspect` — `Pt` for a point-in-time (spot) sample, or an interval such as `24H` for a 24-hour collection (`dU` prefix), `12H`, etc.
-4. `has_system` — the specimen / system, LOINC style: `Ser`, `Plas`, `Ser/Plas`, `Bld`, `Urine`, `CSF`, `Stool`, `Tiss`, `RBC`, `WBC`, `^Patient`, etc. The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC; `fS` is still `Ser`.
-5. `has_scale_type` — `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document). A `-O` suffix means `Ord` (or `Ord` for semi-quantitative). A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
-6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation** (e.g. `Test strip`, `Immunoassay`, `Culture`, `NAA with probe detection`, `Automated count`). LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
+**Write every axis as the full OMOP concept name, never as a LOINC abbreviation.** These values are matched against the OMOP vocabulary's own attribute names, which are spelled out in full: write `Substance Concentration`, not `SCnc`; `Point in time (spot)`, not `Pt`; `Serum or Plasma`, not `Ser/Plas`; `Nucleic acid amplification with probe detection`, not `NAA+probe`. The single exception is `has_scale_type`, which OMOP itself stores abbreviated (`Qn`, `Ord`, ...) — see below.
+
+The value lists below are the **most frequent real values** for each axis, measured on Finnish lab codes that have already been mapped to OMOP concepts. Prefer a value from these lists whenever one fits; use another full OMOP attribute name only when none of them does.
+
+1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
+2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
+3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
+5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
 
@@ -54,11 +58,11 @@ And additionally:
 # LOINC guidelines to follow
 
 - The first five axes (Component, Property, Time, System, Scale) are mandatory in LOINC; **Method is optional by design** and is included only when it changes clinical interpretation. Omitting Method is the norm, not a failure.
-- Property and Scale travel together in practice: a test reported as a number is `Qn` with a concentration-like property; a test reported as positive/negative is `Ord` with `PrThr`.
+- Property and Scale travel together in practice: a test reported as a number is `Qn` with a concentration-like property; a test reported as positive/negative is `Ord` with `Presence or Threshold`.
 - Never cross quantitative and qualitative: if the row shows a real numeric distribution (`deciles` present, `p_missing` low), it is `Qn`, not `Ord`.
-- Mass (`MCnc`) and substance/molar (`SCnc`) properties are distinct axes values even for the same analyte — decide from the `UNIT` and the magnitude of the `deciles`, not from the analyte name. `g/l`, `mg/l`, `ug/l` are mass; `mol/l`, `mmol/l`, `umol/l`, `nmol/l`, `pmol/l` are substance.
+- `Mass Concentration` and `Substance Concentration` are distinct values even for the same analyte — decide from the `UNIT` and the magnitude of the `deciles`, not from the analyte name. `g/l`, `mg/l`, `ug/l` are mass; `mol/l`, `mmol/l`, `umol/l`, `nmol/l`, `pmol/l` are substance.
 - A general System may be legitimately more specific in the local code, but never generalise beyond what the code says, and never substitute across unrelated systems (serum vs urine vs CSF are never interchangeable).
-- `Ser/Plas` is the right answer only when the code itself is ambiguous between serum and plasma; if the prefix says `S` use `Ser`, if it says `P` use `Plas`.
+- `Serum or Plasma` is the right answer only when the code itself is ambiguous between serum and plasma; if the prefix says `S` use `Serum`, if it says `P` use `Plasma`.
 
 # Output
 
@@ -70,32 +74,32 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 Here is group 21 of the table. Infer the LOINC axes for every row.
 
 row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1313	b-konediffi,5-osanen,osavastausb-baso	e9/l	154	0			Blood	
-1314	b-konediffi,5-osanen,osavastausb-eos	e9/l	154	0			Blood	
-1315	b-konediffi,5-osanen,osavastausb-lymf	e9/l	154	0			Blood	
-1316	b-konediffi,5-osanen,osavastausb-monos	e9/l	154	0			Blood	
-1317	b-konediffi,5-osanen,osavastausb-neut	e9/l	156	0			Blood	
-1318	b-konediffi,5-osanen,osavastausbaso	%	156	0			Blood	
-1319	b-konediffi,5-osanen,osavastauseos	%	157	0			Blood	
-1320	b-konediffi,5-osanen,osavastauslymf	%	158	0			Blood	
-1321	b-konediffi,5-osanen,osavastausmono	%	158	0			Blood	
-1322	b-konediffi,5-osanen,osavastausneut	%	158	0			Blood	
-1323	bm-luuydintutkimus,aspiraatio,lausunto		311	100			Bone marrow	
-1324	bm-luuydintutkimus,biopsia,lausunto		212	100			Bone marrow	
-1325	bm-luuydintutkimus,mgg-jarautavärjäys		220	100			Bone marrow	
-1326	luuydintutkimus,mgg-jarautavärjäys		150	100				
-1327	perustutkimus,esitiedot(360u-tutkesi)		266	100				
-1328	perustutkimus,esitiedot(u-tutkesi)		655	100				
-1329	pt-keliakiatutkimus,seulonta(sis.s-iga,s-ttgaba)		178	100			Patient	
-1330	s-tr1tutkosatutkimus,papp-a:nosuus,seerumista	mu/l	112	0	[294.3, 427.73, 506.69, 591.97, 719.63, 876.28, 1088.04, 1358.89, 1874.85]		Serum	
-1331	s-tr1tutkosatutkimus,papp-a:nosuus,seerumista		5	100			Serum	
-1332	u-tutkimus,seulonta,tk:ntekemä		167	98.2			Urine	
-1333	u-tutkimus1,seulonta(alb,hb,leuk,nitr		159	100			Urine	
-1334	u-tutkimus1,seulonta,osavastausblo		187	100			Urine	
-1335	u-tutkimus1,seulonta,osavastausglu		188	100			Urine	
-1336	u-tutkimus1,seulonta,osavastausket		188	100			Urine	
-1337	u-tutkimus1,seulonta,osavastausleu		187	100			Urine	
-1338	u-tutkimus1,seulonta,osavastausnit		187	100			Urine	
-1339	u-tutkimus1,seulonta,osavastauspro		187	98.4			Urine	
-1340	u-tutkimus1,seulonta,osavastaussg		188	12.23	[1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02, 1.02]		Urine	
+1311	fp-transferriininrautakyllästeisyys	%	3193	0	[8.97, 13, 16.76, 20.1, 23.32, 26.3, 29.57, 33.75, 41.18]		Fasting plasma	
+1312	fp-transferriininrautakyllästeisyys		13	84.62			Fasting plasma	
+1313	fp-transferriininrautasaturaatio	%	401	0	[8.17, 12.08, 15.12, 17.38, 20.04, 22.98, 27.38, 31.01, 39.99]		Fasting plasma	
+1314	fs-transferiininrautakyllästeisyys		2368	65.54	[0.08, 0.13, 0.16, 0.19, 0.23, 0.26, 0.3, 0.34, 0.41]		Fasting serum	
+1315	fs-transferiininrautakyllästeisyys,paastotilassa		139	0	[0.07, 0.12, 0.15, 0.19, 0.22, 0.24, 0.28, 0.33, 0.39]		Fasting serum	
+1316	fs-transferriininrautakyllästeisyys	%	144	0	[5.6, 8.49, 12.38, 16.94, 20.5, 24.07, 26.84, 31.55, 40]		Fasting serum	
+1317	fs-transferriininrautakyllästeisyys		230	1.74	[6.96, 10.51, 13.75, 17.95, 20.84, 24.42, 28.14, 32.22, 47.21]		Fasting serum	
+1318	p-transferriininrautakyllästeisyys	%	288	0	[7.78, 11.72, 15.31, 18.47, 21.76, 25.36, 29.49, 34.05, 40.39]		Plasma	
+1319	p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans	%	628	0	[9.32, 12.95, 14.99, 17.87, 20.98, 23.9, 27.48, 31.74, 38.07]		Plasma	
+1320	p-transferriinireseptori	mg/l	1449	0	[0.64, 0.72, 0.81, 0.91, 1.01, 1.14, 1.3, 1.54, 1.97]		Plasma	
+1321	p-transferriinireseptori		176	100			Plasma	
+1322	p-transferriinireseptori,liukoinen	mg/l	1328	0	[0.8, 1.04, 1.37, 1.95, 2.49, 2.95, 3.61, 4.4, 5.84]		Plasma	
+1323	p-transferriinireseptori,liukoinen		42	100			Plasma	
+1324	s-transferriinireseptori	mg/l	1934	0	[2.3, 2.61, 2.91, 3.22, 3.51, 3.93, 4.43, 5.22, 6.84]		Serum	
+1325	s-transferriinireseptori,liukoinen	mg/l	129	0	[0.91, 1.1, 1.18, 1.23, 1.33, 1.45, 1.78, 2.23, 3.16]		Serum	
+1326	transferiininrautakyllästeisyys,seerumista,paastotilassa	osuus	236	0	[0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44]			
+1327	transferiininrautakyllästeisyys,seerumista,paastotilassa	paketti	16	0				
+1328	transferiininrautakyllästeisyys,seerumista,paastotilassa		205	3.41	[0.1, 0.13, 0.16, 0.18, 0.22, 0.26, 0.29, 0.33, 0.41]			
+1329	transferriininrautakyllästeisyys	%	1179	0	[8.18, 11.78, 15.27, 18.31, 21.03, 24.15, 27.59, 31.86, 39.21]			
+1330	transferriininrautakyllästeisyys		26	100				
+1331	transferriininrautakyllästeisyys(fp-)	%	596	0	[10.58, 15.04, 18.08, 21, 24.94, 28.56, 32.22, 37.06, 43.51]			
+1332	transferriininrautakyllästeisyys(fp-)		16	100				
+1333	transferriininrautakyllästeisyys␤	%	1453	0				
+1334	transferriininrautakyllästeisyys␤		5	100				
+1335	transferriinirautakyllästeisyys	%	233	0	[8.52, 13.59, 16.32, 21.55, 25.9, 28.62, 32.3, 36.31, 42.32]			
+1336	transferriinireseptori,liukoinen	mg/l	196	0	[1.64, 2.13, 2.4, 2.6, 2.79, 2.98, 3.16, 3.56, 4.22]			
+1337	transferriinireseptori,liukoinen		48	100				
+1338	transferriinisaturaatio	%	292	0	[6.88, 9.89, 12.73, 16.14, 19.09, 22.3, 26.09, 32.09, 39.32]			
 

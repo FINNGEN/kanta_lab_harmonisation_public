@@ -1,0 +1,275 @@
+{
+  "rows": [
+    {
+      "row_id": 5805,
+      "has_component": "Aspergillus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5806,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5807,
+      "has_component": "Human bocavirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5808,
+      "has_component": "Human bocavirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5809,
+      "has_component": "Bordetella",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5810,
+      "has_component": "Bordetella pertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5811,
+      "has_component": "Bordetella pertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5812,
+      "has_component": "Bordetella pertussis+parapertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5813,
+      "has_component": "Borrelia",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5814,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5815,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5816,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5817,
+      "has_component": "Human bocavirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5818,
+      "has_component": "Bordetella pertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5819,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5820,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5821,
+      "has_component": "Parasite",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5822,
+      "has_component": "Salmonella",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5823,
+      "has_component": "Sapovirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5824,
+      "has_component": "Human coronavirus 229E",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5825,
+      "has_component": "Human coronavirus HKU1",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5826,
+      "has_component": "Human coronavirus NL63",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5827,
+      "has_component": "Human coronavirus OC43",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5828,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cerebral spinal fluid",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5829,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5830,
+      "has_component": "Parvovirus B19",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 5831,
+      "has_component": "Salmonella",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was uniformly composed of qualitative nucleic acid tests, identifiable by the `-nho` suffix, the `LongName` containing \"nukleiinihappo (kval)\", and the 100% missing numeric values. This made assigning `Property: Presence or Threshold`, `Scale: Ord`, and `Method: Nucleic acid amplification with probe detection` straightforward for all rows.\n\nThe main ambiguities arose from missing `LongName`s and non-standard abbreviations:\n*   **Typos/variants:** `bocanho` (5807) was clearly a typo of `bokanho` (5808), which was easy to resolve due to the grouping. `bopanho` (5809) was more ambiguous, likely a variant of `bopenho` or `bparanho`; I mapped it to the more general `Bordetella` to be safe.\n*   **Combined tests:** `boppnho` (5812) was inferred to be a combined test for *Bordetella pertussis* and *parapertussis*. This is an educated guess based on the abbreviation, but such multi-pathogen tests are common.\n*   **Unspecified systems:** Many codes lack a system prefix (e.g., `-aspenho`, `baktnho`). Others have suggestive but non-standard prefixes like `res-` in `resbaktnho` (5829), likely for a respiratory sample, but this cannot be mapped to a specific LOINC system without more information.\n*   **Component specificity:** For `s-parvnho` (5830), I specified `Parvovirus B19` as this is the overwhelming clinical context, even though the `LongName` only says `Parvovirus`.\n\nHaving a more comprehensive list of both standard and common local abbreviations would significantly improve accuracy, especially for resolving ambiguous or combined-analyte codes."
+}

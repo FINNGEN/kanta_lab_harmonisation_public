@@ -1,0 +1,955 @@
+{
+  "rows": [
+    {
+      "row_id": 8999,
+      "has_component": "CD19 positive B-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9000,
+      "has_component": "CD19 positive B-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9001,
+      "has_component": "CD19 positive B-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9002,
+      "has_component": "CD16+CD56 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9003,
+      "has_component": "CD16+CD56 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9004,
+      "has_component": "CD16+CD56 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9005,
+      "has_component": "CD16+CD56 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9006,
+      "has_component": "CD16+CD56 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9007,
+      "has_component": "CD19 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9008,
+      "has_component": "CD19 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9009,
+      "has_component": "CD19 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9010,
+      "has_component": "CD3 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9011,
+      "has_component": "CD3 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9012,
+      "has_component": "CD3 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9013,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9014,
+      "has_component": "CD34 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9015,
+      "has_component": "CD4 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9016,
+      "has_component": "CD4 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9017,
+      "has_component": "CD4 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9018,
+      "has_component": "CD8 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9019,
+      "has_component": "CD8 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9020,
+      "has_component": "CD8 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9021,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9022,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9023,
+      "has_component": "CD34 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9024,
+      "has_component": "CD4 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9025,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9026,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9027,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9028,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9029,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9030,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9031,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9032,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9033,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9034,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bronchoalveolar lavage",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9035,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bronchoalveolar lavage",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9036,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9037,
+      "has_component": "CD34 positive cells/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Leukocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9038,
+      "has_component": "CD34 positive cells/Leukocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Leukocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9039,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number to Mass Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9040,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9041,
+      "has_component": "CD34 positive cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9042,
+      "has_component": "CD34 positive cells",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9043,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9044,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9045,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9046,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9047,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9048,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9049,
+      "has_component": "CD19 positive B-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9050,
+      "has_component": "CD19 positive B-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9051,
+      "has_component": "CD16+CD56 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9052,
+      "has_component": "CD16+CD56 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9053,
+      "has_component": "CD16+CD56 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9054,
+      "has_component": "CD16+CD56 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9055,
+      "has_component": "CD19 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9056,
+      "has_component": "CD19 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9057,
+      "has_component": "CD19 positive B-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9058,
+      "has_component": "CD19 positive B-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9059,
+      "has_component": "CD3 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9060,
+      "has_component": "CD3 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9061,
+      "has_component": "CD4 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9062,
+      "has_component": "CD4 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9063,
+      "has_component": "CD4+CD8+ cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9064,
+      "has_component": "CD4+CD8+ cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9065,
+      "has_component": "CD4-CD8- cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9066,
+      "has_component": "CD4-CD8- cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9067,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9068,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9069,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9070,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9071,
+      "has_component": "CD8 positive cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9072,
+      "has_component": "CD8 positive cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9073,
+      "has_component": "CD3 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9074,
+      "has_component": "CD3 positive T-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9075,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9076,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9077,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9078,
+      "has_component": "CD4 positive T-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9079,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9080,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9081,
+      "has_component": "CD8 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9082,
+      "has_component": "CD8 positive T-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9083,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9084,
+      "has_component": "CD8 positive T-cells/Lymphocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9085,
+      "has_component": "CD8 positive T-cells/Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Lymphocyte",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9086,
+      "has_component": "Carbohydrate deficient transferrin/Transferrin",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9087,
+      "has_component": "Carbohydrate deficient transferrin/Transferrin",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 9088,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9089,
+      "has_component": "CD3 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9090,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9091,
+      "has_component": "CD4 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9092,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 9093,
+      "has_component": "CD8 positive T-cells",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was overwhelmingly composed of immunophenotyping (flow cytometry) results for lymphocyte subsets. The structure of the local codes was quite consistent, which helped interpretation. The pattern `<system>-<parent population>-<marker>` allowed for detailed component naming, for example differentiating between absolute counts in blood (`B-T-CD4`) and fractional counts of lymphocytes (`Ly-T-CD4`).\n\nThe main ambiguities were the non-standard prefixes `La-` and `So-`. For `La-`, the unit `e6/kg` on row 9039 was a crucial clue, strongly suggesting a leukapheresis product for stem cell transplantation and pointing to `^Patient` as the system. For other `La-` codes, I left the system empty as the specimen type (e.g., the apheresis bag) does not have a standard OMOP representation. The `So-` prefix remains unknown.\n\nThere were several data quality issues. For example, row 9080 had `p_missing=100` but also a full set of `deciles`, and row 9030 had no unit but deciles that clearly matched the `e9/l` unit of its sibling row. I used the deciles to override the `p_missing` or missing `UNIT` information in these cases, which felt like the correct interpretation. The `S-GT-CDT` code was likely a typo or local variant for `S-CDT-T`, which could be confirmed with access to a more comprehensive code mapping table."
+}

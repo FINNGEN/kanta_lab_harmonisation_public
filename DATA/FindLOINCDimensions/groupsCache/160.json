@@ -1,0 +1,215 @@
+{
+  "rows": [
+    {
+      "row_id": 12996,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 12997,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 12998,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 12999,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13000,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13001,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13002,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13003,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13004,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13005,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13006,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13007,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13008,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13009,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13010,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13011,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13012,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13013,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13014,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13015,
+      "has_component": "Aspartate aminotransferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13016,
+      "has_component": "Gamma-glutamyl transferase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This was a straightforward group covering three common liver enzymes: Alanine aminotransferase (ALT), Aspartate aminotransferase (AST), and Gamma-glutamyl transferase (GGT). The `U/l` unit made identifying the property as `Catalytic Concentration` easy.\n\n**Gotchas and Ambiguities:**\n*   **Ambiguous System:** For rows without a system prefix (e.g., 12996, 13000), I inferred the system as `Serum or Plasma`. This is a safe and informative choice because the group contains explicit `P-` (Plasma) and `S-` (Serum) variants, indicating the unprefixed version is likely used ambiguously in source systems.\n*   **Data Quality vs. Scale:** The main challenge was interpreting rows like 13007, 13009, and 13015, which lacked a `UNIT` but had `deciles` and high `p_missing`. The presence of deciles is definitive proof that the test is fundamentally quantitative (`Qn`). The high percentage of missing numeric values points to data quality issues (e.g., results recorded as text like 'Cancelled' or 'Hemolyzed') rather than the test being narrative. I correctly classified these as `Qn` and inferred the property from sibling rows.\n*   **Explicit System in Name:** Row 12998 (`alaniiniaminotransferaasi,plasmasta`) provided a useful confirmation, where the system was spelled out in the name itself, reinforcing the value of parsing the full test name.\n\n**Suggestions for Improvement:**\nTo better distinguish true narrative results from data quality problems, it would be invaluable to have a sample of the non-numeric values for rows with high `p_missing`."
+}

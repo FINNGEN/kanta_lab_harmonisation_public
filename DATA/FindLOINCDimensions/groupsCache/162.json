@@ -1,0 +1,1095 @@
+{
+  "rows": [
+    {
+      "row_id": 13068,
+      "has_component": "CD4/CD8",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13069,
+      "has_component": "Kt/V dialysis",
+      "has_property": "Ratio",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Calculated",
+      "is_panel": false
+    },
+    {
+      "row_id": 13070,
+      "has_component": "Fungus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 13071,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood arterial",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13072,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood arterial",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13073,
+      "has_component": "Temperature",
+      "has_property": "Temperature",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13074,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood arterial",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13075,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood arterial",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13076,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13077,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13078,
+      "has_component": "Angiotensin converting enzyme",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13079,
+      "has_component": "Angiotensin converting enzyme",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13080,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Blood",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13081,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13082,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in an unspecified time",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13083,
+      "has_component": "25-Hydroxyvitamin D2+25-Hydroxyvitamin D3",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13084,
+      "has_component": "25-hydroxyvitamin D",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13085,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13086,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13087,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13088,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13089,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13090,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13091,
+      "has_component": "EKG study",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13092,
+      "has_component": "EKG study",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13093,
+      "has_component": "Consultation note",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13094,
+      "has_component": "Folate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13095,
+      "has_component": "Folate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Red Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13096,
+      "has_component": "Phosphate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13097,
+      "has_component": "Phosphate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13098,
+      "has_component": "Phosphate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13099,
+      "has_component": "Phosphate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13100,
+      "has_component": "Parathyrin.intact",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13101,
+      "has_component": "Parathyrin.intact",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13102,
+      "has_component": "Parathyrin.intact",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13103,
+      "has_component": "Parathyrin.intact",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13104,
+      "has_component": "Renin",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13105,
+      "has_component": "Renin",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13106,
+      "has_component": "Oxidative stress",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13107,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13108,
+      "has_component": "Angiotensin converting enzyme",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13109,
+      "has_component": "Angiotensin converting enzyme",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13110,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13111,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13112,
+      "has_component": "Audiometry study",
+      "has_property": "Finding",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13113,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "Nucleic acid amplification",
+      "is_panel": true
+    },
+    {
+      "row_id": 13114,
+      "has_component": "Creatine kinase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13115,
+      "has_component": "Basophils/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13116,
+      "has_component": "Eosinophils/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13117,
+      "has_component": "Lymphocytes/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13118,
+      "has_component": "Lymphocytes/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13119,
+      "has_component": "Monocytes/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13120,
+      "has_component": "Monocytes/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13121,
+      "has_component": "Neutrophils/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13122,
+      "has_component": "Neutrophils/100 leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13123,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13124,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13125,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13126,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13127,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13128,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13129,
+      "has_component": "Bilirubin.direct",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13130,
+      "has_component": "Bilirubin.direct",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13131,
+      "has_component": "Phosphate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13132,
+      "has_component": "Creatine kinase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13133,
+      "has_component": "Creatine kinase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13134,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13135,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13136,
+      "has_component": "Lupus anticoagulant",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Platelet poor plasma",
+      "has_scale_type": "Nar",
+      "has_method": "Coagulation assay",
+      "is_panel": false
+    },
+    {
+      "row_id": 13137,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13138,
+      "has_component": "Urea",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13139,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13140,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13141,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13142,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13143,
+      "has_component": "Inhalation therapy",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13144,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13145,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13146,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13147,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13148,
+      "has_component": "Erythroblasts",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13149,
+      "has_component": "Erythroblasts",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13150,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13151,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13152,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13153,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13154,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13155,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13156,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "Electrophoresis",
+      "is_panel": true
+    },
+    {
+      "row_id": 13157,
+      "has_component": "Glycoprotein acetyls",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13158,
+      "has_component": "Enolase.neuron specific",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13159,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13160,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13161,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13162,
+      "has_component": "Thymidine kinase",
+      "has_property": "Catalytic Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13163,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13164,
+      "has_component": "Prostate specific Ag.free/Prostate specific Ag.total",
+      "has_property": "Mass Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13165,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "Nucleic acid amplification",
+      "is_panel": true
+    },
+    {
+      "row_id": 13166,
+      "has_component": "SARS-CoV-2 Ag",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 13167,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13168,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "Test strip",
+      "is_panel": true
+    },
+    {
+      "row_id": 13169,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 13170,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood venous",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13171,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood venous",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13172,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood venous",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13173,
+      "has_component": "Bicarbonate.standard",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood venous",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13174,
+      "has_component": "Cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13175,
+      "has_component": "Cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13176,
+      "has_component": "Bicarbonate",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood venous",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was characterized by a high number of common chemistry and hematology tests, often with many variations in naming (`alkalinenfosfataasi`, `punasolujen kokojakauma`). Seeing the same test with different prefixes (e.g., `ab-`, `cb-`, `vb-`, `p-` for bicarbonates) and with/without a prefix was helpful for confirming the component and highlighting the importance of the system.\n\nAn ambiguity arose with `P-Urea, resirkulaatio` (13138), where the name suggests a ratio ('recirculation') but the unit (`mmol/l`) and values indicate a concentration. I mapped it as a Urea concentration, assuming the name refers to the *purpose* of the measurement (to calculate recirculation) rather than the reported quantity itself. This is a common source of confusion in source data.\n\nAnother subtle point was with the leukocyte differential counts (13115-13122). The `L-` prefix (`prefix_meaning`: Leukocyte) refers to the category of the component, but the correct LOINC system is `White Blood Cells`, not `Blood`. This is a convention that needs to be known.\n\nThe `(fe-folaat)` hint in the name for Folate (13094) was crucial. Without it, the very high deciles would have been puzzling. Cross-referencing deciles with typical reference ranges for different specimen types (serum vs. erythrocyte folate) proved to be a valuable sanity check."
+}

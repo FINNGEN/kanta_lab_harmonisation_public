@@ -1,0 +1,515 @@
+{
+  "rows": [
+    {
+      "row_id": 13017,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13018,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "OrdQn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13019,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13020,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13021,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13022,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13023,
+      "has_component": "Haemophilus influenzae",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13024,
+      "has_component": "Large unstained cells",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13025,
+      "has_component": "Chlamydia pneumoniae",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13026,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum or Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13027,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13028,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "OrdQn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13029,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13030,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13031,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13032,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13033,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13034,
+      "has_component": "Phosphatidylethanol",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13035,
+      "has_component": "Haemophilus influenzae",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13036,
+      "has_component": "Human metapneumovirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13037,
+      "has_component": "Human metapneumovirus",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 13038,
+      "has_component": "Large unstained cells/Leukocytes",
+      "has_property": "Number Fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "White Blood Cells",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 13039,
+      "has_component": "Legionella pneumophila",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13040,
+      "has_component": "Haemophilus influenzae",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cerebral spinal fluid",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13041,
+      "has_component": "Mycoplasma pneumoniae",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 13042,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13043,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13044,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13045,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13046,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13047,
+      "has_component": "Luteinizing hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13048,
+      "has_component": "Luteinizing hormone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13049,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 13050,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 13051,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood capillary",
+      "has_scale_type": "Nar",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 13052,
+      "has_component": "Glucose",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Continuous glucose monitoring",
+      "is_panel": false
+    },
+    {
+      "row_id": 13053,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "Continuous glucose monitoring",
+      "is_panel": false
+    },
+    {
+      "row_id": 13054,
+      "has_component": "C-peptide",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13055,
+      "has_component": "C-peptide",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "OrdQn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13056,
+      "has_component": "C-peptide",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13057,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13058,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13059,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13060,
+      "has_component": "Fatty acids.monounsaturated",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13061,
+      "has_component": "Luteinizing hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13062,
+      "has_component": "Luteinizing hormone",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13063,
+      "has_component": "Luteinizing hormone",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13064,
+      "has_component": "Fatty acids.polyunsaturated",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13065,
+      "has_component": "Fatty acids.polyunsaturated",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13066,
+      "has_component": "Fatty acids.saturated",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 13067,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group highlighted several interesting challenges. The distinction between monounsaturated (`kertatyydyttymätön`) and polyunsaturated (`monityydyttymätön`) fatty acids was a key linguistic point requiring specific Finnish knowledge. The main difficulty was interpreting the `p_missing` and `deciles` columns to assign a `has_scale_type`. I used a tiered logic: `Qn` for records with low `p_missing`, `OrdQn` for those with high `p_missing` but available `deciles` (like rows 13018, 13028), and `Ord` or `Nar` for records with very high or 100% `p_missing` and no deciles. This shows that a single test concept can have multiple result reporting patterns in the wild. Additionally, some codes like `p-omagluk,,potilasmittaringlukoosi` (13049) contained contradictory information (`p-` for plasma vs. `potilasmittari` for capillary blood), forcing an interpretation of which part of the string was more likely to be correct versus a data entry error. Lastly, identifying patient self-monitoring methods (`ihopisto`, `sensori`) and mapping them to appropriate LOINC systems (`Blood capillary`, `^Patient`) and methods (`Test strip`, `Continuous glucose monitoring`) was a key step."
+}
