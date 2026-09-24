@@ -1,0 +1,1224 @@
+axe_name	name	concept_id	n_codes	n_events
+component	Hemoglobin	40795725	130	30658802
+component	Observation	1093759	127	19099066
+component	Erythrocytes	40789120	64	12187960
+component	Leukocytes	40782521	126	12024159
+component	Erythrocyte/Blood	1471944	29	11407235
+component	Platelets	40779159	19	11196211
+component	Creatinine	40775801	80	9559920
+component	Potassium	40792413	61	7976034
+component	Sodium	40782562	63	7836829
+component	C reactive protein	40779184	197	6881941
+component	Glomerular filtration rate	1029770	84	6240111
+component	CBC panel	37051746	5	6172064
+component	Alanine aminotransferase	40782579	21	5367314
+component	Bacteria	40772507	32	3027518
+component	INR	40779364	88	2812069
+component	Alkaline phosphatase	40789190	13	2756532
+component	Neutrophils	40785788	48	2694055
+component	Hemoglobin A1c/Hemoglobin.total	37056065	88	2419123
+component	Glucose	3968605	116	2411012
+component	Cholesterol in LDL	40795800	47	2347979
+component	Normoblasts	40796050	22	2299398
+component	pH	40785817	92	2272494
+component	Thyrotropin	40795727	47	2174311
+component	Albumin	40791227	80	2081573
+component	Cholesterol	40772590	35	2074540
+component	Cholesterol in HDL	40782589	41	2024003
+component	Glucose^post CFst	1021844	48	1997678
+component	Calcium.ionized^^adjusted to pH 7.4	1023099	78	1748819
+component	Triglyceride^post CFst	1022952	17	1655520
+component	Eosinophils	40795733	35	1618391
+component	Lymphocytes	40772531	42	1557267
+component	Thyroxine free	40782883	28	1539345
+component	Basophils	40785796	26	1519691
+component	Monocytes	40785793	29	1513142
+component	Bilirubin	40779224	19	1512475
+component	Lymphocytes/leukocytes	37021613	92	1475101
+component	Monocytes/leukocytes	37028463	51	1452186
+component	Basophils/leukocytes	37062621	48	1446628
+component	Eosinophils/leukocytes	37077477	54	1434138
+component	Erythrocyte sedimentation rate	1471105	7	1426097
+component	Neutrophils/leukocytes	37064170	62	1413613
+component	Urinalysis macro (dipstick) panel	37025543	6	1393084
+component	Calcium.ionized	40775880	78	1345884
+component	12 lead EKG panel	37023739	2	1163408
+component	Gamma glutamyl transferase	40782597	17	1024731
+component	Differential panel, method unspecified	37067392	2	1020069
+component	SARS-CoV-2 (COVID-19) RNA	36661507	6	996958
+component	Ketones	40792455	18	935210
+component	Nitrite	40775795	10	919087
+component	Short blood count panel	37038746	8	872285
+component	Carbon dioxide	40789180	19	766557
+component	Ferritin	40772593	13	725861
+component	Leukocyte esterase	40775898	3	687408
+component	Prostate specific Ag	40779420	39	674775
+component	Oxygen	40775815	18	641307
+component	Base excess	40795795	21	638655
+component	Gas panel	37044382	14	619379
+component	Troponin T.cardiac	40776031	60	599869
+component	Blood group antibody screen	1472104	2	590172
+component	Albumin/Creatinine	37039737	31	588386
+component	Protein	40779250	36	586844
+component	Bicarbonate	40792440	60	580127
+component	Urinalysis microscopic panel	37062638	3	557289
+component	Calcium	40785850	33	540872
+component	Lipid panel	1762344	4	529561
+component	Chloride	40785869	19	528307
+component	Pathology biopsy report	40772303	20	523474
+component	Aspartate aminotransferase	40785861	14	513305
+component	25-Hydroxyvitamin D3+25-Hydroxyvitamin D2	37077414	28	509831
+component	Lactate	40785884	59	509384
+component	EKG study	1992662	10	506024
+component	CBC W Ordered Manual Differential panel	37036000	3	490892
+component	Coagulation tissue factor induced actual/Normal	37025549	17	484673
+component	ABO and Rh group	40776356	4	473481
+component	Carboxyhemoglobin/Hemoglobin.total	37026339	20	462998
+component	Bicarbonate^^standard	1023095	27	462530
+component	Methemoglobin/Hemoglobin.total	37074202	12	457306
+component	Oxygen saturation	37031553	17	447656
+component	Prostate specific Ag.free/Prostate specific Ag.total	37037292	47	441698
+component	Casts	40792336	20	419520
+component	Holo-transcobalamin II	37059306	7	404765
+component	Amylase	40775876	23	397167
+component	Natriuretic peptide.B prohormone N-Terminal	21496993	59	390817
+component	Phosphate	40779176	14	378156
+component	Blood type and Crossmatch panel	37074242	1	354396
+component	Triglyceride	40772572	30	344681
+component	Oxyhemoglobin/Hemoglobin.total	37078943	20	340118
+component	Folate	40785879	22	338797
+component	Sodium and Potassium panel	37045646	2	328037
+component	Troponin I.cardiac	37073332	25	323924
+component	Urea	40795713	25	318422
+component	Urate	40795826	26	314859
+component	Creatine kinase	40782593	12	297958
+component	Transferrin receptor.soluble	37040130	15	285465
+component	Epithelial cells	40772505	24	278115
+component	Magnesium	40795717	13	270301
+component	Oxygen capacity	37038520	4	257858
+component	Calcium^^corrected for albumin	1023100	17	250713
+component	Chlamydia trachomatis DNA	40786382	2	242755
+component	Lactate dehydrogenase	40775849	12	238282
+component	Epithelial cells.non-squamous	40773009	12	237764
+component	Cholesterol.in HDL/Cholesterol.total	37051349	7	236608
+component	Prostate Specific Ag Free	40795963	17	236561
+component	Epithelial cells.squamous	40781790	4	227680
+component	HIV 1 and 2 tests - Meaningful Use set	37051076	1	209479
+component	Iron	40775896	15	207654
+component	Neisseria gonorrhoeae DNA	40773130	2	205474
+component	Transferrin	40779258	17	191693
+component	Blasts/leukocytes	37074858	9	186024
+component	Fibrin D-dimer	40785907	52	183051
+component	Myelocytes/leukocytes	37071963	9	182740
+component	Iron/Transferrin	37076807	38	180828
+component	Carcinoembryonic Ag	40796053	11	180535
+component	Promyelocytes/leukocytes	37063622	7	177088
+component	Metamyelocytes/leukocytes	37075634	14	173236
+component	Parathyrin.intact	40779242	4	167377
+component	Calprotectin	37045106	5	164242
+component	Streptococcus.beta-hemolytic	40775861	1	159335
+component	Cobalamin	1018451	28	153899
+component	Methicillin resistant Staphylococcus aureus	1012565	6	153221
+component	Tissue Transglutaminase IgA	37053497	20	151122
+component	Bilirubin.glucuronidated	40775879	11	150241
+component	aPTT	40775918	11	149660
+component	Hepatitis B virus surface Ag	40796247	2	147462
+component	IgA	40785813	12	145636
+component	Microorganisms panel	37054651	1	144188
+component	Influenza virus A RNA	40783120	3	142013
+component	Reticulocytes/Erythrocytes	1471063	3	135278
+component	Influenza virus B RNA	40786436	2	129826
+component	Respiratory syncytial virus RNA	40779837	2	129044
+component	Treponema pallidum Ab	40786492	8	119525
+component	Rheumatoid factor	40776003	56	114517
+component	Amylase.pancreatic	40789191	12	113346
+component	Cells panel	37073856	5	111359
+component	Cortisol	40779122	14	109106
+component	Transferrin.carbohydrate deficient.disialo/Transferrin.total	37064738	9	108678
+component	IgG	40782534	20	107440
+component	Triiodothyronine Free	40786177	15	105869
+component	Reticulocytes	40789266	4	103543
+component	Cyclic citrullinated peptide Ab	40776400	11	103227
+component	Cholesterol.in LDL/Cholesterol.in HDL	37067673	8	102409
+component	Prealbumin	40792464	18	102147
+component	Base excess.100% oxygenated^^standard	1023093	3	101737
+component	Hepatitis C virus Ab	40796248	1	100548
+component	Nuclear Ab	40779503	23	99502
+component	Choriogonadotropin	40775824	17	98732
+component	Natriuretic peptide B	37078027	4	97925
+component	Tacrolimus	40789181	5	95949
+component	Oxygen^^adjusted to patient's actual temperature	1023220	6	93244
+component	Testosterone	40779116	11	93098
+component	Body temperature	1029358	9	93063
+component	Hyaline casts	40772695	8	90944
+component	Glucose tolerance 2 hours panel	37048668	4	90712
+component	Streptococcus pyogenes Ag	40783169	4	86750
+component	Cancer Ag 19-9	40775775	15	83710
+component	Borrelia burgdorferi IgM	40786362	15	83211
+component	Protein electrophoresis panel	37069571	4	81766
+component	Fungus	40792365	4	80804
+component	Creatine kinase.MB	40782594	16	80308
+component	Cancer Ag 125	40782528	14	77205
+component	Path report.gross observation	1029242	1	77007
+component	Cytology report	40797823	5	76827
+component	Anion gap	40789527	6	73574
+component	Study observation	37022351	1	72045
+component	Polysomnography study	1992671	5	69533
+component	cloZAPine	40789334	7	66864
+component	Cholesterol non HDL	37045117	3	66002
+component	Cytomegalovirus DNA	40786394	8	64352
+component	Public health laboratory ask at order entry panel	1015167	1	62951
+component	Cystatin C	40796112	8	62034
+component	cycloSPORINE	40775936	6	61025
+component	Hepatitis B virus core Ab	40796246	1	59489
+component	Clostridioides difficile toxin genes	37027091	2	55043
+component	IgM	40785814	9	54221
+component	Cannabinoids	40785915	2	53591
+component	Benzodiazepines	40782553	2	52864
+component	Drugs	40789381	2	52388
+component	Opiates	40782531	1	52282
+component	Hemoglobin.gastrointestinal	40772594	1	51660
+component	Amphetamines	40789232	2	50457
+component	Cocaine	40772627	1	50225
+component	Oxygen content	40772930	13	48410
+component	SARS-CoV-2 (COVID-19) Ag	36661764	4	48202
+component	Follitropin	40772528	14	48059
+component	Kappa light chains.free	40789488	4	47803
+component	Lambda light chains.free	40779523	4	47682
+component	Norclozapine	40779415	5	47586
+component	Coagulation factor X inhibitor	37056481	4	47280
+component	Celiac disease serology panel	36662010	3	46498
+component	Buprenorphine	40779268	6	46210
+component	Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel	36033811	2	45357
+component	Mycobacterium sp	40772794	5	45312
+component	Granulocytes/leukocytes	1471759	39	44978
+component	Pregnancy associated plasma protein A	37022548	6	44842
+component	Vancomycin	40795863	4	44276
+component	Borrelia burgdorferi IgG	40796206	12	43843
+component	IgE	40775825	10	43220
+component	Angiotensin converting enzyme	40795792	11	43074
+component	Thyroperoxidase Ab	40773164	19	42371
+component	Alpha 1 globulin	40785895	13	41700
+component	Fibrinogen	40789150	9	41538
+component	Salmonella sp	40779334	3	41500
+component	Immunoglobulin light chains.kappa/Immunoglobulin light chains.lambda	37052214	5	41343
+component	Cancer Ag 15-3	40789193	11	40941
+component	Thrombin time	40775921	12	40633
+component	Fetal trisomy 21 risk	1027853	2	40547
+component	Microorganism; Organism		2	39950
+component	Lithium	40782643	3	39840
+component	Alpha 2 globulin	40775907	10	39833
+component	Beta 1 globulin	40782934	11	39801
+component	Beta 2 globulin	40796110	11	39732
+component	Antithrombin actual/Normal	37036715	9	39650
+component	Free T4 and TSH panel	37052205	1	39480
+component	Helicobacter pylori Ag	40779771	2	39315
+component	Hemolysis interference index	37057777	2	39221
+component	Helicobacter pylori Ab	40773095	8	38806
+component	Coagulation factor VIII activity actual/Normal	37025890	9	38489
+component	Mycobacterium tuberculosis DNA	40783140	2	38421
+component	Valproate	40789259	4	37442
+component	DNA double strand Ab	40786397	17	37303
+component	Myoglobin	40779162	6	37123
+component	Phosphatidylethanol	37061434	3	36977
+component	Nucleic acid		4	36918
+component	Protein.monoclonal band 1	37078549	5	36539
+component	Haptoglobin	40772662	6	36279
+component	Gamma globulin	40785896	4	34144
+component	Cell count panel	37076867	7	33880
+component	Procalcitonin	37064734	10	33817
+component	Prolactin	40785815	4	33582
+component	Immunoglobulin light chains.free panel	37021928	2	31906
+component	Methadone	40785835	2	31454
+component	Proteinase 3 Ab	40783154	5	30254
+component	Granulocytes	40795977	7	30146
+component	Differential panel	37022337	4	30119
+component	Ova and parasites	40782546	2	29961
+component	Cytomegalovirus IgG	40783083	6	29759
+component	Sex hormone binding globulin	40792466	5	29702
+component	Protein.monoclonal band 2	40776288	3	29394
+component	Choriogonadotropin.beta subunit free	40779519	10	29125
+component	Protein.monoclonal band 3	40774823	3	28276
+component	MCM6 gene c.-13910C>T and -13915T>G	44787431	1	27787
+component	Testosterone Free	40772799	26	27359
+component	Tissue Transglutaminase IgG	37049605	8	27233
+component	Protein.monoclonal band 4	40781527	3	27037
+component	Ammonium ion	40772875	5	26930
+component	Endomysium IgA	37047926	3	26862
+component	First trimester maternal screen panel	37033428	1	26783
+component	Lysozyme	40792383	8	26632
+component	Thyrotropin receptor Ab	40786489	13	26524
+component	Complement C3	40772660	11	26471
+component	Complement C4	40779305	16	26242
+component	Extractable nuclear Ab	40779761	12	26012
+component	Digoxin	40782538	5	25993
+component	Epstein Barr virus DNA	40796236	5	25871
+component	Polysomnography panel	1018630	1	25006
+component	Neutrophils.band form/leukocytes	37074101	11	24799
+component	Mycobacterium tuberculosis stimulated gamma interferon release by CD4+ and CD8+ T-cells	37042394	7	24456
+component	Hepatitis B virus core and surface Ab and surface Ag panel	37049304	1	24037
+component	Human papilloma virus DNA	40796258	1	23809
+component	Lutropin	40789146	7	23616
+component	Sjogrens syndrome-B extractable nuclear Ab	40776478	15	23114
+component	Hepatitis B virus surface Ab	40783106	7	23029
+component	Campylobacter sp	40785976	2	22946
+component	Glucose tolerance 2 hours gestational panel	37039181	1	22618
+component	Influenza virus A Ag	40796263	2	22589
+component	Epstein Barr virus Ab	37053968	2	22583
+component	Influenza virus B Ag	40783122	2	22580
+component	Apolipoprotein B	40772580	7	22533
+component	Yersinia sp	40782691	2	22467
+component	Streptococcus agalactiae	40779144	1	22188
+component	Ribonucleoprotein extractable nuclear Ab	40776469	15	22113
+component	Smith extractable nuclear Ab	40779846	12	21948
+component	Thickness^^adjusted for maternal weight	1024374	2	21813
+component	Pregnancy associated plasma protein A^^adjusted	1023229	2	21810
+component	Choriogonadotropin^^adjusted	1023111	2	21721
+component	Interpretation	40782861	4	21543
+component	Neutrophil cytoplasmic Ab	40773136	10	21421
+component	Thyroglobulin Ab	40792997	19	21287
+component	Apolipoprotein A-I	37024265	6	21031
+component	Alpha-1-Fetoprotein	40792356	4	20986
+component	Jo-1 extractable nuclear Ab	40773111	15	20813
+component	Mycoplasma pneumoniae Ab	40792969	2	20258
+component	C peptide^post CFst	1020736	11	20232
+component	SCL-70 extractable nuclear Ab	40789747	20	19685
+component	Apolipoprotein B/Apolipoprotein A-I	37067863	3	19494
+component	Adenovirus DNA	40773034	1	19254
+component	Elastase.pancreatic	40786153	3	19232
+component	Myeloperoxidase IgG	21495281	7	19059
+component	HLA-B27	40772667	1	18491
+component	Thyroglobulin	40789148	3	18470
+component	Human metapneumovirus RNA	40789698	2	18405
+component	Fetal trisomy 18 risk	1027854	1	18292
+component	Sjogrens syndrome-A extractable nuclear Ab	40789748	14	18143
+component	Thickness	1029256	3	17755
+component	Specimen volume	40792679	20	17488
+component	Gastrointestinal bacterial pathogens panel	37058448	1	17394
+component	Bile acid^post CFst	1020659	6	17221
+component	Norovirus RNA	40795153	1	17197
+component	Crystals	40789305	2	16990
+component	Hepatitis B virus core IgM	40776409	1	16968
+component	Smooth muscle Ab	40783165	6	16962
+component	Chromogranin A	40792380	5	16765
+component	Mitochondria Ab	40783137	5	16434
+component	Morphology	40779460	2	16373
+component	Mycoplasma pneumoniae IgM	40792970	3	16231
+component	Reagin Ab	40796302	3	16230
+component	Leukocyte morphology finding	40778713	2	16006
+component	Choriogonadotropin.intact+Beta subunit	37025129	1	15974
+component	Neutrophils.segmented/leukocytes	37035815	6	15889
+component	Complement+Immunoglobulin	37066177	1	15870
+component	Cytomegalovirus IgM	40796230	3	15107
+component	Neutrophil cytoplasmic Ab.classic	37055496	12	15102
+component	Influenza virus A+B Ag	40783121	1	15096
+component	Neutrophil cytoplasmic Ab.perinuclear	43055719	15	15042
+component	Mycoplasma pneumoniae DNA	40779816	1	14832
+component	Shigella sp	40789429	1	14828
+component	HIV 1 RNA	40796255	2	14699
+component	Human papilloma virus	40772542	1	14516
+component	Bacteria identified based on 16S rRNA gene	37046593	1	14507
+component	Lipemic interference index	37038395	2	14493
+component	Toxoplasma gondii IgG	40786490	5	14368
+component	Human epididymis protein 4	37055290	8	14218
+component	Estradiol	40792373	11	14186
+component	Gliadin peptide IgG	37034252	5	14056
+component	Epstein Barr virus capsid IgM	40776406	3	13880
+component	Epstein Barr virus nuclear IgG	40786407	5	13363
+component	Dermatophagoides pteronyssinus IgE	37028976	14	13347
+component	Reticulocytes/Erythrocytes^^hematocrit adjusted	1471691	4	13287
+component	Human bocavirus DNA	37047565	2	13049
+component	IgG subclass 4	36206590	5	12850
+component	Lupus anticoagulant	40775923	2	12621
+component	Macroprolactin	37067548	4	12553
+component	Beta 2 glycoprotein 1 IgG	40773045	6	12353
+component	Chlamydophila pneumoniae DNA	40773069	1	12165
+component	Bordetella pertussis DNA	40786361	1	12026
+component	Prostate specific Ag panel	37036118	1	11468
+component	Cardiolipin IgG	40779729	8	11278
+component	Timothy (Phleum pratense) IgE	37033193	6	11251
+component	CD3 cells	40782525	8	11121
+component	Mullerian inhibiting substance	1176934	3	10872
+component	Mycoplasma pneumoniae IgG	40779815	4	10820
+component	Renin	40772571	21	10814
+component	Vancomycin resistant enterococcus	40789397	1	10730
+component	Mugwort (Artemisia vulgaris) IgE	37035772	6	10711
+component	Horse dander IgE	37047480	11	10671
+component	5-Hydroxyindoleacetate	40792412	5	10627
+component	Insulin	40779160	6	10580
+component	Myeloperoxidase Ab	40792973	7	10571
+component	Enolase.neuron specific	40789143	3	10290
+component	Streptococcus agalactiae Ag	40789750	1	10143
+component	Insulin-like growth factor-I	40775895	3	10089
+component	Corticotropin	40785812	2	10007
+component	Icteric interference index	37032757	2	9821
+component	Erythropoietin	40772592	9	9513
+component	Legionella pneumophila DNA	37035017	1	9507
+component	Cells.CD4/Lymphocytes	1472096	5	9464
+component	Candida sp	40789157	1	9451
+component	Varicella zoster virus IgM	40786496	3	9420
+component	Free Hemoglobin	40792735	4	9350
+component	Dog dander IgE	37077038	10	9242
+component	Human coronavirus RNA	40779784	1	9189
+component	Hepatitis A virus Ab	40786418	1	9155
+component	Alkaline phosphatase isoenzymes	40792806	2	9116
+component	Hepatitis C virus RNA	40786419	7	9029
+component	Normetanephrine	40782610	6	9025
+component	CD3-CD16+CD56+ (Natural killer) cells	40789359	4	8969
+component	Hepatitis A virus IgM	40796245	1	8920
+component	Varicella zoster virus Ab	40776493	2	8865
+component	Respiratory virus DNA+RNA	37022423	1	8794
+component	Cat dander IgE	37074699	6	8711
+component	Chlamydophila sp Ab	37053252	1	8697
+component	Hantavirus puumala IgM	37073420	2	8674
+component	3-Methoxytyramine	40772923	3	8672
+component	Adenosine deaminase	40795788	8	8599
+component	Aldosterone	40792361	11	8593
+component	Centromere protein B Ab	40781851	12	8557
+component	Glutamate decarboxylase 65 Ab	40773090	5	8418
+component	Spermatozoa.nonprogressive/Spermatozoa	1471300	2	8309
+component	Glucose^2H post dose glucose	1021693	37	8302
+component	CD3+CD8+ (T8 suppressor) cells	40772752	7	8289
+component	Shigella species+EIEC invasion plasmid antigen H ipaH gene	37033237	1	8148
+component	CD3+CD4+ (T4 helper) cells	40789130	4	8143
+component	Metanephrine	40795726	5	8142
+component	HLA Ab	40773103	1	8109
+component	F5 gene p.Arg506Gln	40789451	1	8102
+component	U1 small nuclear ribonucleoprotein 70kD Ab	21495776	10	8068
+component	Streptococcus pyogenes	40795774	1	8058
+component	Cells.CD3/Lymphocytes	1471062	5	8032
+component	Protein C actual/Normal	37061435	3	7908
+component	Enterovirus RNA	40783093	1	7886
+component	Alpha 1 antitrypsin	40785811	5	7846
+component	Vibrio sp	40786012	1	7795
+component	Mycobacterium tuberculosis genotype	37035897	1	7791
+component	Plesiomonas shigelloides DNA	37074885	1	7786
+component	Lymphocyte T-cell and B-cell and Natural killer subsets panel	37025009	2	7781
+component	Cladosporium herbarum IgE	37054535	8	7686
+component	Chlamydophila pneumoniae IgM	40783073	4	7678
+component	Cells.CD3-CD16+CD56+/Cells	1471144	4	7605
+component	Urea^post dialysis	1023288	3	7568
+component	Gliadin peptide IgA	37053465	4	7448
+component	Streptococcus sp	40792571	2	7396
+component	Rhinovirus RNA	21497672	1	7393
+component	BK virus DNA	40792895	8	7343
+component	Cells.CD3+CD4+/Cells	1471247	3	7337
+component	Interleukin 2 Receptor Soluble	37028189	3	7318
+component	Metanephrine Free	40786234	3	7315
+component	Methylenedioxymethamphetamine	40776100	1	7272
+component	Blood group antibody investigation	37073004	1	7240
+component	Coagulation factor V activity actual/Normal	37073724	3	7162
+component	inFLIXimab	36205760	7	7102
+component	IgG subclass 1	37074982	5	7070
+component	IgG subclass 2	37028866	5	7057
+component	IgG subclass 3	37043158	5	7055
+component	Creatine	40775882	10	7054
+component	Herpes simplex virus 1+2 DNA	40783111	1	7001
+component	Immunologic substance		1	6998
+component	CD19 cells	40792593	4	6933
+component	Cells.CD3+CD4+/Cells.CD3+CD8+	37043590	5	6764
+component	Toxoplasma gondii IgM	40776487	2	6758
+component	Glucose^1H post dose glucose	1021639	25	6546
+component	Glomerular basement membrane Ab	40789687	10	6490
+component	Parathyrin related protein	37040560	10	6468
+component	Glucose^2H post meal	1021698	7	6457
+component	Beta-2-Microglobulin	40789164	6	6416
+component	Ethanol	40785797	6	6410
+component	Methamphetamine	40779289	1	6199
+component	Protein S.free Ag actual/Normal	37041020	3	6117
+component	C peptide^post meal	1020737	13	6005
+component	RHD gene allele	36661704	1	6001
+component	Mononuclear cells/leukocytes	37023105	23	5993
+component	Human coronavirus OC43 RNA	21495462	1	5976
+component	Human coronavirus 229E RNA	21495430	1	5974
+component	Human coronavirus NL63 RNA	21497037	1	5974
+component	Cortisol^post 1 mg dexamethasone PO overnight	1023035	2	5971
+component	Nitrate	40779133	1	5946
+component	Mycobacterium tuberculosis stimulated gamma interferon release by CD4+ T-cells^^corrected for background	1024042	3	5928
+component	Liver kidney microsomal Ab	40792960	2	5901
+component	Days in therapeutic INR range/Days INR result determined	1019753	6	5861
+component	Sjogrens syndrome-A extractable nuclear 52kD Ab	40781767	5	5853
+component	Histone Ab	40783112	7	5840
+component	Centromere Ab	40773064	11	5772
+component	Alkaline phosphatase.bone	37068943	13	5731
+component	Methotrexate	40782648	3	5537
+component	JAK2 gene exon 14 targeted mutation analysis	37061044	2	5528
+component	Varicella zoster virus DNA	40786497	2	5511
+component	Hantavirus puumala IgG	37067716	2	5324
+component	Pneumocystis jirovecii DNA	40789734	1	5301
+component	Blood cell		1	5203
+component	Endomysium IgG	37032034	3	5197
+component	Collection duration	40782527	6	5190
+component	Acetaminophen	40789151	3	5169
+component	Cobalt	40785799	6	5167
+component	Erythrocyte agglutination	37077339	2	5038
+component	Sjogrens syndrome-A extractable nuclear 60kD Ab	40798225	4	5031
+component	10-Hydroxycarbazepine	36306728	4	5002
+component	Parainfluenza virus RNA	37057415	1	5001
+component	Cells.CD3-CD19+/Cells	1471283	5	4977
+component	Eosinophil cationic protein (ECP)	40782859	6	4972
+component	Aspergillus fumigatus IgE	37042200	7	4915
+component	Borrelia burgdorferi Ab	40783063	1	4875
+component	inFLIXimab Ab	37045530	2	4852
+component	Somatotropin	40775826	5	4804
+component	Cytomegalovirus IgG Avidity	37051496	2	4799
+component	Basement membrane zone BP180 Ab	37032592	3	4795
+component	Erythrocyte/Specimen Volume	1471076	2	4795
+component	Chromium	40779338	3	4755
+component	Retinol	40792426	3	4735
+component	Homocysteine	40789166	8	4728
+component	von Willebrand factor.activity actual/Normal	37055307	3	4678
+component	Calcitriol	40789188	1	4661
+component	Magnesium Ionized	37034478	1	4652
+component	Leukocytes other/leukocytes	37058066	3	4629
+component	OLANZapine	40789387	3	4596
+component	Progesterone	40775776	3	4581
+component	carBAMazepine	40772631	3	4575
+component	Gas and Carbon monoxide and Electrolytes panel	1028337	1	4573
+component	Carbon dioxide^^adjusted to patient's actual temperature	1023103	1	4513
+component	Ribosomal P Ab	40776471	2	4458
+component	Chlamydophila pneumoniae IgA	40786384	5	4452
+component	Tryptase	40789355	5	4407
+component	Cells.cytoplasmic Ig/Cells	1471533	2	4407
+component	Alpha tocopherol	40785857	3	4393
+component	Cells.CD3+CD8+/Cells	1471557	3	4359
+component	Zinc	40792386	5	4355
+component	Streptococcus pneumoniae Ag	40792992	2	4336
+component	Karyotype	40772867	2	4295
+component	Multiple inhalant allergen IgE	37030773	2	4192
+component	Hepatitis E virus Ab	40783108	1	4188
+component	Bordetella pertussis Ab	40786359	1	4165
+component	Spermatozoa Progressive	40792639	1	4161
+component	Hepatitis A virus IgG	37036734	1	4150
+component	Herpes simplex virus Ab	40789690	2	4144
+component	Dehydroepiandrosterone sulfate	40775884	3	4116
+component	Cryptosporidium sp DNA	21497595	1	4105
+component	C peptide	40785865	8	4100
+component	Alkaline phosphatase.intestinal	40795789	9	4096
+component	Giardia lamblia DNA	21497598	1	4058
+component	Triacylglycerol lipase	40779178	3	4052
+component	Parainfluenza virus 1 RNA	40786468	1	4037
+component	Ceruloplasmin	40795799	4	4036
+component	Parainfluenza virus 2 RNA	40792978	1	4036
+component	Parainfluenza virus 3 RNA	40786469	1	4036
+component	Parainfluenza virus 4 RNA	40789726	1	4034
+component	Varicella zoster virus IgG	40786495	5	4026
+component	Protein fractions.oligoclonal bands.IgG	40785324	1	4001
+component	Bordetella pertussis IgA	37069869	3	3997
+component	Adalimumab	36205394	7	3981
+component	Genetic diseases	37067283	2	3942
+component	Streptococcus pneumoniae DNA	40791374	1	3940
+component	Aldolase	40775848	3	3930
+component	Milk IgE	37062117	5	3854
+component	Allergen specific immunoglobulin E		2	3820
+component	Thiamine	40779255	2	3819
+component	Immunoglobulin G; Immunologic substance		3	3817
+component	Herpes simplex virus IgM	40786420	2	3789
+component	Rotavirus RNA	40779844	1	3783
+component	Bordetella parapertussis DNA	40792896	1	3745
+component	Sapovirus genogroups I+II+IV+V RNA	37028602	1	3731
+component	Cells.CD8/Lymphocytes	1471066	1	3725
+component	Egg white IgE	37029014	6	3697
+component	Procollagen type I.N-terminal propeptide	37059174	2	3659
+component	B lymphocytes	40779194	3	3643
+component	Haemophilus influenzae DNA	21496743	1	3610
+component	European tick borne encephalitis virus IgM	42871105	3	3576
+component	Hepatitis B virus DNA	40779772	6	3571
+component	Cells.CD19/Cells	1470867	3	3567
+component	Hepatitis E virus IgM	37066901	1	3515
+component	Chromosome analysis panel	37045685	4	3505
+component	Hepatitis E virus IgG	37059632	1	3502
+component	Basement membrane Ab	40789643	3	3490
+component	von Willebrand factor (vWf) Ag actual/Normal	37069939	3	3480
+component	Direct antiglobulin test.IgG specific reagent	40775813	1	3455
+component	Direct antiglobulin test.complement C3d specific reagent	37059949	1	3452
+component	Alkaline phosphatase.liver	40795790	3	3451
+component	Protein/Creatinine	37074789	3	3428
+component	Human papilloma virus E6+E7 mRNA	44817311	1	3405
+component	Desmosome IgG	37068934	3	3400
+component	Coagulation surface induced.lupus sensitive actual/Normal	37027974	3	3380
+component	Clostridioides difficile	40776008	3	3371
+component	Alkaline phosphatase.other fractions	37060816	3	3363
+component	Glucose^baseline	1021838	12	3346
+component	Soybean (Glycine max) IgE	37056989	5	3257
+component	Extractable nuclear Ab panel	37029773	4	3253
+component	Resp pathogens DNA and RNA tested for	37054100	1	3252
+component	Respiratory syncytial virus A RNA	21495139	1	3207
+component	Respiratory syncytial virus B RNA	21497671	1	3206
+component	Synovial lining cells/Cells	1472012	3	3159
+component	Herpes virus 6 DNA	40789694	4	3143
+component	Other cells	40794678	1	3089
+component	Protocol used for examination of sentinel lymph nodes	1619308	1	3066
+component	EKG impression	37054081	1	3021
+component	HLA typing for celiac disease panel	37070385	1	3015
+component	Acetylcholine receptor Ab	37067270	3	2987
+component	Inhibin B	37031627	2	2979
+component	Parvovirus B19 IgM	40779830	1	2963
+component	Measles virus Ab	40773121	4	2957
+component	Lupus anticoagulant two screening tests W Reflex panel	37039353	1	2950
+component	Herpes simplex virus DNA	40776411	1	2923
+component	Alkaline phosphatase.liver 1	37065035	16	2842
+component	Alkaline phosphatase.liver 2	37059470	18	2833
+component	Adenovirus Ag	40786343	2	2822
+component	Amyloid beta 42 peptide	40779562	4	2795
+component	Phosphorylated tau 181	37027027	5	2789
+component	Tau protein	40782875	4	2785
+component	Adenovirus F(40+41) DNA	37057751	1	2769
+component	Astrovirus RNA	42871095	1	2767
+component	Myosin Ab	37024259	1	2698
+component	Prolactin.monomeric/Prolactin.total	37065702	3	2690
+component	Prolactin monomeric	37052372	3	2654
+component	Toxoplasma gondii IgG Avidity	37065220	2	2621
+component	Parvovirus B19 IgG	40776458	3	2615
+component	Staphylolysin Ab	40783167	4	2520
+component	lamoTRIgine	40789335	1	2477
+component	Streptolysin O Ab	40779853	3	2457
+component	Copper	40782692	14	2448
+component	Adalimumab Ab	37071018	3	2402
+component	Respiratory syncytial virus Ag	40773148	1	2352
+component	Entamoeba histolytica DNA	21495527	1	2336
+component	Blood group antigens tested for	37077679	1	2213
+component	Complement C1 esterase inhibitor	40795747	7	2212
+component	Alpha-1-Microglobulin	40779875	3	2195
+component	Phadiotop IgE	37041893	3	2184
+component	CXCL13 Ag	44817727	3	2157
+component	Toxoplasma gondii IgA	40783174	1	2101
+component	Protein S actual/Normal	37058032	3	2093
+component	Legionella sp	40795883	1	2089
+component	Thymidine kinase	37041299	3	2079
+component	Procollagen type III.N-terminal propeptide	37026286	2	2070
+component	Neisseria gonorrhoeae	40779138	1	2067
+component	Benzodiazepines panel	37033308	1	2066
+component	Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total	37033729	6	2062
+component	ERBB2 gene copy number/nucleus	1019774	1	2061
+component	Coagulation factor VII activity actual/Normal	37067773	3	2012
+component	European tick borne encephalitis virus IgG	42871104	3	2012
+component	Bone marrow aspiration report	1031390	1	1994
+component	Cryoglobulin	40785872	4	1989
+component	Lambda light chains	40779185	4	1988
+component	Herpes simplex virus Ag	40776410	1	1954
+component	Aspergillus sp Ab	40779708	1	1942
+component	Mycophenolate	40792358	3	1935
+component	JC virus DNA	40786443	3	1898
+component	Coagulation factor X activity actual/Normal	37050607	3	1860
+component	Kappa light chains	40782555	5	1855
+component	Prothrombin.activity actual/Normal	37075628	3	1839
+component	Helicobacter pylori	40782689	1	1838
+component	Dientamoeba fragilis DNA	37050885	1	1831
+component	JC virus Ab	37052074	2	1823
+component	Prothrombin time (PT)	40792548	1	1808
+component	t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale)	37026702	1	1803
+component	Silver Birch (Betula verrucosa) IgE	37033426	7	1802
+component	Pyridoxine	40775909	5	1790
+component	Vedolizumab	37062796	3	1787
+component	Food Allergen Mix 50 (Kiwi+Pineapple+Banana+Mango) IgE	37031358	1	1781
+component	Collagen crosslinked C-telopeptide	40773008	3	1772
+component	Borrelia sp DNA	37061852	1	1758
+component	Phenytoin	40772539	3	1716
+component	t(9;22)(q34.1;q11)(ABL1,BCR) e1a2 fusion transcript/control transcript	37077556	2	1704
+component	HLA-A	40792628	2	1700
+component	Virus	40772543	2	1675
+component	Cardiolipin IgM	40789660	2	1671
+component	Salmonella sp Ab	40786480	2	1649
+component	Peanut (Arachis hypogaea) IgE	37063743	6	1644
+component	HLA-DR beta	37047236	2	1634
+component	Vedolizumab and Vedolizumab Ab panel	37033086	1	1625
+component	Beta hydroxybutyrate	40785863	9	1611
+component	Pancreatic polypeptide	37074903	4	1603
+component	Protein.monoclonal	40789526	1	1578
+component	Chlamydophila pneumoniae IgG	40779731	3	1572
+component	Titanium	40776010	3	1545
+component	Complement alternate pathway AH50 actual/normal	37063339	3	1539
+component	Coagulation factor IX activity actual/Normal	37065377	3	1491
+component	Squamous cell carcinoma Ag	40773158	3	1450
+component	Insulin-like growth factor	40786147	3	1412
+component	Plasmodium sp	40792388	1	1366
+component	Herpes simplex virus IgG	40783109	3	1365
+component	Tobramycin	40792501	3	1365
+component	Casein IgE	37032482	5	1345
+component	Androstenedione	40785805	3	1344
+component	Gastrin	40789145	3	1342
+component	Direct antiglobulin test.polyspecific reagent	40775814	1	1341
+component	MDA5 Ab	37028983	1	1337
+component	Mi-2 Ab	40789720	1	1337
+component	SUMO-activating enzyme subunit 1 Ab	37048128	1	1337
+component	TIF1-gamma Ab	37029060	1	1337
+component	Choriogonadotropin.beta subunit	40779139	1	1332
+component	Blasts	40779195	1	1319
+component	Herpes simplex virus 1+2 IgM	40776414	1	1302
+component	Wheat (Triticum aestivum) IgE	37072291	6	1267
+component	Coagulation factor XI activity actual/Normal	37028650	3	1266
+component	Cells	40785816	1	1262
+component	SARS-CoV-2 (COVID-19) IgG	36661886	1	1259
+component	Influenza virus	40779369	1	1256
+component	Francisella tularensis Ab	40789685	3	1252
+component	IgG/Albumin	37039898	2	1248
+component	Coagulation factor XII activity actual/Normal	37042482	3	1243
+component	Toxoplasma gondii DNA	40786491	1	1241
+component	BK virus + JC virus DNA	37061808	1	1237
+component	Bordetella pertussis IgG	37074912	2	1231
+component	Peanut (Arachis hypogaea) recombinant (rAra h) 2 IgE	37053211	3	1227
+component	HTLV I+II Ab panel	37076613	1	1208
+component	Albumin.CSF/Albumin.SerPl	1023078	4	1187
+component	Hemoglobin F/Hemoglobin.total	37074099	2	1172
+component	Herpes simplex virus	40795737	1	1154
+component	Aldosterone^upright	1023083	3	1153
+component	Parainfluenza virus 2 Ag	40776455	1	1147
+component	Parainfluenza virus 3 Ag	40776456	1	1147
+component	Parainfluenza virus 1 Ag	40796294	1	1146
+component	Selenium	40782508	3	1141
+component	Phencyclidine	40775820	1	1134
+component	Beta 2 glycoprotein 1 IgM	40786358	3	1129
+component	Renin^upright	1023246	3	1125
+component	Pathologist interpretation	40772821	1	1109
+component	Neuronal Ab	40776448	2	1098
+component	TCRG gene rearrangements	40796033	6	1097
+component	Fibrinogen Ag	40792932	7	1087
+component	Clostridioides difficile toxin A+B	40786008	1	1083
+component	Ustekinumab	37069695	6	1074
+component	Apixaban	44787432	2	1057
+component	Hepcidin 25 amino acid peptide	37030636	4	1050
+component	Norovirus Ag	37030716	1	1048
+component	Calcitonin	40789142	3	1034
+component	Collagen crosslinked N-telopeptide	40772787	2	1030
+component	Cold agglutinin	37072610	2	999
+component	Interleukin 6	40775977	3	991
+component	Chlamydia sp Ab	40773065	1	980
+component	Aquaporin 4 water channel IgG	40786459	1	949
+component	Golimumab	37062247	3	940
+component	Chromosome analysis.interphase	1005293	1	927
+component	Proteinase 3 IgG	37031875	5	918
+component	Lutropin/Follitropin	37029617	2	896
+component	Mesothelial cells/leukocytes	37073155	4	824
+component	Platelet function.collagen + Adenosine diphosphate induced and EPINEPHrine induced panel	37041304	1	815
+component	Aspergillus fumigatus IgG	40776365	4	812
+component	HIV 1+2 Ab+HIV1 p24 Ag	37024277	1	776
+component	Hepatitis C virus IgG	37066709	1	764
+component	Immunoglobulin light chains	40775853	1	752
+component	Platelet factor 4 heparin complex induced Ab	40776261	4	751
+component	Galactose-alpha-1,3-galactose (Alpha-Gal) IgE	37064228	3	751
+component	Streptococcus pneumoniae Danish serotype 1 IgG	37032296	3	744
+component	Glucose^pre dose glucose	1021857	6	743
+component	Streptococcus pneumoniae Danish serotype 5 IgG	1016562	3	727
+component	Streptococcus pneumoniae Danish serotype 7F IgG	37030064	3	727
+component	Streptococcus pneumoniae Danish serotype 14 IgG	37070924	3	726
+component	Streptococcus pneumoniae Danish serotype 18C IgG	37068103	3	726
+component	Streptococcus pneumoniae Danish serotype 19F IgG	37052983	3	726
+component	Streptococcus pneumoniae Danish serotype 23F IgG	37057397	3	726
+component	Streptococcus pneumoniae Danish serotype 4 IgG	37049602	3	726
+component	Streptococcus pneumoniae Danish serotype 6B IgG	37045680	3	726
+component	Streptococcus pneumoniae Danish serotype 9V IgG	37032762	3	726
+component	Cardiolipin antibody		2	724
+component	Chlamydia trachomatis IgG	40792913	1	713
+component	Gentamicin	40772603	3	712
+component	Hepatitis C virus genotype	42530379	2	711
+component	17-Hydroxyprogesterone	40789165	3	706
+component	Golimumab Ab	1016734	1	706
+component	Pepsinogen I	40785892	3	705
+component	Methanol	40785798	2	701
+component	Isopropanol	40789124	2	698
+component	Hemoglobin panel	37039815	2	694
+component	Androgen free Index	37022632	2	664
+component	Plasma cells monotypic population	37061049	1	650
+component	HFE gene mutations tested for	37027655	1	646
+component	Peanut (Arachis hypogaea) recombinant (rAra h) 1 IgE	37058457	3	639
+component	Anacardium occidentale recombinant (rAna o) 3 Ab.IgE	37040103	3	635
+component	Clostridium tetani IgG	37036737	3	635
+component	English Walnut (Juglans regia) IgE	37048014	3	634
+component	Oxalate	40772606	2	634
+component	Peanut (Arachis hypogaea) recombinant (rAra h) 3 IgE	37058039	3	631
+component	Theophylline	40779300	2	628
+component	Other cells/Leukocytes	1471120	3	623
+component	TPMT gene c.238G>C+460G>A+719A>G	42870865	1	613
+component	Amikacin free	37053013	3	602
+component	Lead	1018424	3	592
+component	Adrenal Ab	37032384	2	592
+component	Peanut (Arachis hypogaea) recombinant (rAra h) 9 IgE	37032551	3	584
+component	Centromere protein A Ab	21496507	3	581
+component	25-hydroxyvitamin D2	37045218	2	575
+component	Hazelnut (Corylus avellana) recombinant (rCor a) 8 IgE	37056665	3	570
+component	Intrinsic coagulation system thromboelastography panel	37047502	1	567
+component	Streptococcal DNAse B	37046787	3	538
+component	Corynebacterium diphtheriae Ab	40786388	3	534
+component	Tropomyosin IgE	37041138	3	529
+component	Amino acids	40772766	3	526
+component	Provasopressin.C-terminal	37067054	3	526
+component	Hazelnut (Corylus avellana) native (nCor a) 9 IgE	37051469	3	524
+component	Herpes simplex virus 2 IgG	40773096	1	522
+component	Ovomucoid IgE	37062984	3	521
+component	Actinomyces sp	40775997	1	521
+component	Fatty acids.nonesterified	40792448	1	518
+component	Herpes simplex virus 1 IgG	40779775	1	514
+component	Sirolimus	40779511	3	507
+component	aPTT.lupus sensitive	40772957	1	507
+component	Enterovirus IgG	42870710	1	493
+component	Hepatitis B virus e Ag	40789689	1	488
+component	dRVVT	1012755	1	485
+component	Mycobacterial identification panel	36662188	1	475
+component	Hepatitis B virus e Ab	40779773	1	462
+component	Transferrin.carbohydrate deficient	40772779	2	461
+component	Almond (Prunus dulcis) IgE	37065503	3	453
+component	Vasoactive intestinal peptide	40775917	3	452
+component	Cefaclor IgE	37066262	3	450
+component	Legionella sp Ab	40779800	1	450
+component	Myelin oligodendrocyte glycoprotein Ab	37077855	1	450
+component	Glucagon	40782533	3	442
+component	Pyruvate	40779236	2	441
+component	Rivaroxaban	40782440	2	440
+component	Acute and chronic leukemia fusion transcript panel	37030871	2	433
+component	Amylase isoenzyme 3 panel	37043056	1	432
+component	Brazil Nut (Bertholletia excelsa) recombinant (rBer e) 1 IgE	37047690	1	431
+component	Flecainide	40772637	3	427
+component	Peanut (Arachis hypogaea) recombinant (rAra h) 8 IgE	37031971	3	421
+component	Teichoate Ab	37052592	2	414
+component	Listeria sp	40772721	1	408
+component	Viscosity	40789228	3	402
+component	risperiDONE	40782745	2	401
+component	Cell count and Differential panel	37066075	1	401
+component	RNA polymerase III Ab	21497690	3	391
+component	Baker's yeast (Saccharomyces cerevisiae) IgG	40789744	6	385
+component	Porphyrins	40795756	4	384
+component	Oat (Avena sativa) IgE	37045727	3	384
+component	Baker's yeast (Saccharomyces cerevisiae) IgA	40786476	6	383
+component	Peach (Prunus persica) recombinant (rPru p) 3 IgE	37049668	3	381
+component	Rubella virus Ab	40776474	1	374
+component	Juglans regia recombinant (rJug r) 3 Ab.IgE	37068771	3	368
+component	Venlafaxine	40776062	2	367
+component	Legionella sp IgM	37063992	1	367
+component	Salmon (Salmo salar) IgE	37061291	3	365
+component	Islet cell 512 Ab	42871108	2	362
+component	ARIPiprazole	21497801	3	358
+component	Legionella sp IgG	37055860	1	357
+component	Carnitine free (C0)	40792633	2	347
+component	FMR1 gene CGG repeat analysis	37067521	1	345
+component	Carnitine	40785803	2	343
+component	Erythrocytes.dysmorphic	40796094	1	339
+component	Sexually transmitted pathogens panel	37035907	1	338
+component	Coxiella burnetii Ab	40773072	1	332
+component	EGFR gene mutations tested for	37073491	1	329
+component	Manganese	40785988	1	325
+component	Creatine kinase isoenzymes	40786268	1	324
+component	Amylase.salivary	40779217	3	317
+component	Hazelnut (Corylus avellana) recombinant (rCor a) 1 IgE	37037339	3	316
+component	Baker's yeast (Saccharomyces cerevisiae) Ab	40783160	1	315
+component	Creatine kinase.BB	40779226	3	313
+component	Etanercept	36208953	3	313
+component	Enterovirus IgM	42871102	1	312
+component	Legionella sp Ag	40779801	1	304
+component	Rye (Secale cereale) IgE	37075296	2	301
+component	Herpes virus 6 IgM	40789693	1	301
+component	Human metapneumovirus Ag	37039397	1	301
+component	Enterovirus Ab	42871103	2	296
+component	Myelin associated glycoprotein Ab	40773127	2	294
+component	Everolimus	21495559	3	292
+component	S100 calcium binding protein B	40777983	2	291
+component	Citrate	40795743	2	290
+component	Herpes virus 6 IgG	40773097	1	287
+component	MGMT gene methylation score	37060039	1	284
+component	Complement C1q Ab	37059006	3	282
+component	Transitional cells	40782742	3	281
+component	HC gene rearrangements	40779483	3	271
+component	SARS-CoV-2 (COVID-19) IgA	36662109	1	270
+component	Salicylates	40795858	3	262
+component	Barley (Hordeum vulgare) IgE	37022768	2	262
+component	Serotonin	40795741	3	257
+component	PHENobarbital	40772538	2	249
+component	Mercury	40782514	4	243
+component	Lactate dehydrogenase isoenzymes	40792807	1	243
+component	Dengue virus Ab	40779749	1	242
+component	Nortriptyline	40775844	3	232
+component	HIV 1+2 Ab	40796256	2	231
+component	Glucose^30M post dose glucose	1021724	1	228
+component	BRAF gene p.Val600Glu	40788717	1	227
+component	Macrophages	40795715	3	226
+component	Lactate dehydrogenase 2/Lactate dehydrogenase.total	37031938	4	223
+component	Lactate dehydrogenase 3/Lactate dehydrogenase.total	37045922	4	223
+component	Honey bee (Apis mellifera) phospholipase A2 rApi m 1 IgE	37035327	1	223
+component	Lactate dehydrogenase 4/Lactate dehydrogenase.total	37051568	4	220
+component	Chromosome 12 trisomy and chromosome region 11q22.3 and 13q14 and 17p13.1 deletion	1015327	1	219
+component	Creatine kinase.MM	40789199	3	217
+component	Penicillin V IgE	37056962	2	212
+component	IgD	40789210	2	210
+component	clomiPRAMINE	40795838	2	208
+component	Parvovirus B19 DNA	40773142	1	207
+component	Amitriptyline	40775843	3	200
+component	Penicillin G IgE	37033416	2	196
+component	HLA-B	40779425	2	195
+component	Dabigatran	40789074	2	193
+component	Testosterone.free/Testosterone.total	37033267	5	191
+component	Methylmalonate	40779240	1	191
+component	HIV 1 p24 Ag	40779781	2	188
+component	HLA-C	40776086	1	187
+component	HLA-DP	40779412	1	186
+component	HLA-DQ beta	37028719	1	184
+component	Epithelial cells.renal	40795970	3	181
+component	Alkaline phosphatase.liver/Alkaline phosphatase.total	37061767	2	176
+component	Acarus siro IgE	37068980	2	175
+component	Lepidoglyphus destructor IgE	37070741	2	175
+component	EGFR gene targeted mutation analysis	37068504	1	172
+component	Ampicillin IgE	37034500	2	171
+component	Immune stain study	1992667	1	168
+component	Yersinia pseudotuberculosis Ab	40773173	3	164
+component	Citalopram	40786150	3	163
+component	Strawberry (Fragaria vesca) IgE	37046637	2	160
+component	Body weight	1029318	2	157
+component	Tyrophagus putrescentiae IgE	37023381	2	157
+component	Aldosterone^supine	1023082	3	154
+component	Complement factor B	40775974	3	154
+component	Estrone	40785876	3	153
+component	Alternaria alternata IgE	37078274	3	151
+component	Tumor necrosis factor.alpha	37076690	3	150
+component	CNBP gene targeted mutation analysis	37064141	1	149
+component	Amyloid beta 40 peptide	42870711	2	146
+component	Ethylene glycol	40792341	2	143
+component	Hepatitis D virus Ab	40779774	1	143
+component	FLT3 gene targeted mutation analysis	37025196	1	138
+component	Aureobasidium pullulans IgG	40786349	3	135
+component	Paprika (Capsicum annuum) IgE	37023578	2	135
+component	Plasmodium malariae Ab	40792982	1	135
+component	Epstein Barr virus nuclear Ab	40773082	1	134
+component	Kiwifruit (Actinidia chinensis) IgE	37049816	2	132
+component	HLA Ag	40782887	1	132
+component	Smooth Alder (Alnus rugosa) IgE	37058585	1	131
+component	Orange (Citrus sinensis) IgE	37023465	3	128
+component	Fibrin monomer	37045188	1	127
+component	Listeria sp Ab	40789716	1	126
+component	U1 small nuclear ribonucleoprotein C Ab	37062065	2	125
+component	Organic acids panel	37028160	1	125
+component	Propoxyphene + Norpropoxyphene	40779406	1	125
+component	U1 small nuclear ribonucleoprotein A Ab	37072465	2	124
+component	Isoniazid	40789222	1	124
+component	Leucine-rich glioma-inactivated protein 1 Ab	37056772	1	120
+component	Certolizumab	37069777	2	117
+component	Sertraline	40772727	3	115
+component	Yersinia enterocolitica IgA	37023901	2	110
+component	Yersinia sp IgM	37071109	2	109
+component	Amino acids panel	37067767	1	107
+component	Meadow Fescue (Festuca elatior) IgE	37057600	3	106
+component	Cow milk IgE	37078935	3	105
+component	Carrot (Daucus carota) IgE	37076939	2	105
+component	von Willebrand factor.collagen binding activity actual/Normal	37065355	2	105
+component	Fasciola sp Ab	40776407	2	103
+component	Mononuclear cells	40786043	2	103
+component	clonazePAM	40775935	2	103
+component	Granular casts	40776011	4	102
+component	Creatine kinase.total/Creatine kinase.MB	37072424	1	100
+component	Renin^supine	1023245	3	99
+component	Parietal cell Ab	40776457	2	98
+component	Rickettsia conorii Ab	40773150	2	96
+component	Chili Pepper (Capsicum frutescens) IgE	37058173	2	92
+component	Rickettsia typhi Ab	40779840	1	91
+component	inv(16)(p13.1;q22.1)(MYH11,CBFB) fusion transcript/control transcript	37054358	1	88
+component	Influenza virus A IgG	40779789	3	85
+component	Haemophilus influenzae B Ab	40786416	2	85
+component	Metanephrines	40789133	3	84
+component	Apis mellifera recombinant (rApi m) 10 Ab.IgE	37071172	1	84
+component	Platelet Ab	40786168	1	84
+component	Aspergillus versicolor IgE	37058371	2	83
+component	Cytomegalovirus Ab	40789672	1	83
+component	Pineapple (Ananas comosus) IgE	37023591	2	80
+component	Aluminum	40792540	1	77
+component	Calcium/Creatinine	37030318	1	76
+component	Sesame Seed (Sesamum indicum) IgE	37073566	2	75
+component	Certolizumab Ab	1016732	3	74
+component	Toxocara sp Ab	21498328	2	72
+component	Potato (Solanum tuberosum) IgE	37024536	2	70
+component	Triiodothyronine Ab	37057368	1	70
+component	Antithrombin Ag actual/Normal	37071641	3	68
+component	Trichinella spiralis Ab	40779858	2	68
+component	Leptospira sp IgG	40796280	2	67
+component	Acanthocytes/1000 erythrocytes	37072992	1	65
+component	Coagulation factor VIII Ab	37046339	1	65
+component	Hazelnut (Corylus avellana) IgE	37026432	3	63
+component	Leptospira sp IgM	40789713	2	63
+component	Celery (Apium graveolens) IgE	37025469	2	60
+component	Garlic (Allium sativum) IgE	37039179	2	60
+component	Ethosuximide	40795841	1	60
+component	Pancreatic islet cell Ab	40773140	1	59
+component	Interleukin 8	40772929	2	58
+component	Fragments	37022121	2	57
+component	Clostridium tetani toxoid IgG	37029505	2	56
+component	Formaldehyde IgE	37033766	2	56
+component	von Willebrand factor (vWf) multimers	37031485	1	56
+component	Cortisol^baseline	1021196	2	55
+component	Amoxicillin IgE	37036145	1	55
+component	Yersinia enterocolitica O:9 IgG	37064931	1	55
+component	Yersinia pseudotuberculosis 3 Ab	37023667	1	55
+component	Peach (Prunus persica) IgE	37070991	2	52
+component	Cells.CD34/Cells	1471682	1	52
+component	Osteocalcin	40772605	1	52
+component	Blasts/Cells	1472056	1	51
+component	Plasmodium sp Ab	40776461	1	50
+component	Urine sediment comments	1011762	1	49
+component	t(15;17)(q24.1;q21.1)(PML,RARA) fusion transcript/control transcript	37061916	1	49
+component	Topiramate	40772808	2	44
+component	Macrophages/leukocytes	37036887	2	43
+component	Thermoactinomyces vulgaris IgG	37033148	2	42
+component	Histamine	40792451	1	42
+component	Phosphate/Creatinine	37040617	1	40
+component	Edoxaban	37077833	2	37
+component	Thiocyanate	40775915	1	36
+component	Gabapentin	40789374	2	34
+component	Guinea pig epithelium IgE	37054827	2	34
+component	Pine Nut (Pinus edulis) IgE	37034300	2	33
+component	Delta aminolevulinate	40795771	1	31
+component	Influenza virus B Ab	40792948	1	29
+component	Codfish (Gadus morhua) IgE	37038255	1	28
+component	Mustard IgE	37072609	1	28
+component	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript	37044472	1	28
+component	Pear (Pyrus communis) IgE	37048042	1	27
+component	Lemon (Citrus limon) IgE	37070538	2	26
+component	Lymphocytes.vacuolated	37059119	2	26
+component	Chicken meat IgE	37034102	1	26
+component	Maximum lysis.intrinsic coagulation system activated.heparin insensitive	37065872	1	24
+component	Trichoderma viride IgE	37040483	1	24
+component	t(12;21)(p13;q22.3)(ETV6,RUNX1) fusion transcript/control transcript	37047441	1	24
+component	Mucus	40782741	1	22
+component	Oligosaccharides	40782762	1	22
+component	RBC casts	40785989	1	22
+component	Waxy casts	40776012	1	22
+component	Sunflower (Helianthus annuus) Seed IgE	37029259	1	21
+component	Beef IgE	37053759	1	20
+component	Itrinsic factor Ab	40773108	1	20
+component	Phthalic anhydride IgE	37051535	1	20
+component	Creatine kinase.macromolecular	37042125	1	18
+component	Homovanillate	40795768	1	18
+component	Tocilizumab	36033714	1	18
+component	Cochineal extract IgE	37034031	2	17
+component	Penicillium brevicompactum IgE	37073722	1	16
+component	Protein C Ag actual/Normal	37059983	1	16
+component	Rhodotorula spp IgE	37041932	1	16
+component	Stachybotrys chartarum IgE	37034410	1	16
+component	Chaetomium globosum IgE	37076640	1	15
+component	Paecilomyces variottii Ab.IgE	37041505	1	15
+component	Respiratory syncytial virus Ab	40776468	1	14
+component	Chylomicrons	40789196	1	13
+component	Corynebacterium diphtheriae	40795887	1	13
+component	Insulin receptor Ab	37071757	1	13
+component	Common Millet (Panicum milliaceum) IgE	37072917	1	12
+component	Thyroxine binding globulin	37041070	1	12
+component	Bilirubin fractions panel	37060044	1	11
+component	Gliadin IgG	40773089	1	11
+component	Sodium/Creatinine	37056091	1	11
+component	C3 nephritic factor	37058884	1	10
+component	Protein S Ag actual/Normal	37024072	1	10
+component	Influenza virus A Ab	40789701	1	9
+component	Schistosoma sp Ab	40783163	1	9
+component	Thyroglobulin and thyroperoxidase Ab panel	1017246	1	8
+component	Thyroxine	40772617	1	8
+component	AMPAR 1 Ab	37044990	1	7
+component	AMPAR2 Ab	37022769	1	7
+component	Mycobacterium sp DNA	40773125	1	7
+component	Aspergillus versicolor IgG	40786164	1	6
+component	Hexacarboxylporphyrin	40779403	1	6
+component	Penicillium sp IgG	37066223	1	6
+component	Voltage-gated potassium channel Ab	40779862	1	6
+method	Calculated	1028907	89	12276393
+method	Automated count	1028881	103	11606924
+method	Creatinine-based formula (CKD-EPI)/1.73 sq M	1472115	62	6143658
+method	Test strip	1029357	79	4294769
+method	Coagulation assay	1028929	181	3646966
+method	Nucleic acid amplification with probe detection	1029261	115	2413483
+method	Electrocardiogram (EKG)	1028987	13	1672453
+method	Westergren method	1029588	6	1423371
+method	Culture	1028950	20	1273557
+method	Test strip automated	1029363	3	687408
+method	Blood group antibody screen	1471854	2	590172
+method	Organism specific culture	1029180	33	505882
+method	Automated	1029883	3	431124
+method	Refractometry	1029280	16	426435
+method	Electrophoresis	1028989	91	336860
+method	Immunoassay	1015177	164	322567
+method	Confirm	1028939	2	266339
+method	Reaction - lactate to pyruvate	1029275	10	233073
+method	Evaluation - action		13	203523
+method	FEU	1470265	52	183051
+method	Measurement - action		23	147368
+method	Toxicology screen	1029307	6	134927
+method	Cyto stain.thin prep	1028955	1	114152
+method	Aerobe culture	1028852	1	97268
+method	Creatinine-based formula (MDRD)/1.73 sq M	1472001	18	95960
+method	Cyto stain	1028954	8	83257
+method	Colonoscopy	1028933	1	72045
+method	Spirometry	1029335	5	69533
+method	Molecular genetics	1029157	33	56293
+method	Light microscopy	1029151	13	53782
+method	Immunofluorescence (IF)	1029077	37	44647
+method	High sensitivity method	1019936	29	40691
+method	Immunoblot	1029074	41	39701
+method	Chromogenic (Enzyme)	1029002	11	39687
+method	Gram stain	1029054	2	32302
+method	Immunofixation	1029089	4	21543
+method	Based on maternal age	1012725	1	21171
+method	Ultrasound.measured	1029566	3	17755
+method	VDRL	1029926	3	16230
+method	Rapid immunoassay	1015178	1	15478
+method	Sequencing	1011692	3	15218
+method	Probe with amplification	1029250	2	14699
+method	Detection limit <= 20 mg/L	1028967	9	14498
+method	Manual count	1029133	12	12702
+method	Hemagglutination	1019893	4	11584
+method	Heat stability	1029060	2	9116
+method	Nucleic acid amplification with non-probe detection	1014987	1	7786
+method	Fluorescent in situ hybridization (FISH)	1029038	5	7149
+method	Line blot	1017792	16	5961
+method	Non-gynecological cytology method	1019939	1	5394
+method	Isoelectric focusing	1029283	1	4001
+method	Dialysis	1028971	3	2328
+method	G-banded	1005287	2	2080
+method	Glucometer	1029050	3	1900
+method	Multidisk	1029162	1	1781
+method	Banding	1005289	2	1425
+method	Ion-selective membrane electrode (ISE)	1029099	2	1180
+method	Flow cytometry (FC)	1029022	1	650
+method	Computer assisted method	1029882	12	608
+method	Cell binding immunofluorescent assay	1018633	4	584
+method	High resolution	1027722	3	558
+method	based on 1.73 sq M	1471649	4	493
+method	Anaerobe+Aerobe culture	1028872	1	312
+method	Microscopy high power field	1029152	6	267
+method	Immune stain	1029086	1	168
+method	Measured	1029134	2	157
+method	Agglutination	1028854	2	110
+method	Electron microscopy	1029148	1	25
+method	Rotational TEG	1019136	1	24
+property	Substance Concentration	1029726	1643	51490057
+property	Number Concentration	1029672	507	49434956
+property	Mass Concentration	1029650	1215	26086908
+property	-	1029597	114	13702885
+property	Volume Fraction	1029752	44	11697579
+property	Entitic mass	1029632	18	11151545
+property	Entitic mean volume	1471595	19	11148828
+property	Catalytic Concentration	1029614	228	10802985
+property	Presence or Threshold	1015176	382	10296466
+property	Number Fraction	1029691	482	8246054
+property	Entitic Mass/volume	1471897	16	7331654
+property	DistWidth	1471168	31	7021436
+property	Volume Rate/Area	1029612	84	6240111
+property	Mass fraction	1029654	229	4683692
+property	Arbitrary Concentration	1029599	998	4231921
+property	Relative time	1015155	144	3365485
+property	Log molar concentration	1029878	92	2272494
+property	Presence or Identity	1029719	79	1946967
+property	Partial pressure	1029714	44	1505621
+property	Velocity (distance/time)	1029749	7	1426097
+property	Finding	1029636	52	1337646
+property	Ratio	1003919	88	786172
+property	Specific gravity	1470825	20	498208
+property	Type	1029747	17	482606
+property	Titer	1029742	146	279254
+property	Osmolality	1029712	42	260031
+property	Substance Ratio	1029733	9	237272
+property	Time (e.g. seconds)	1029740	32	198283
+property	Mass Content	1029652	11	184195
+property	Mass Ratio	1029667	16	145076
+property	Temperature	1029737	9	93063
+property	Multiple of the median	1030073	7	65805
+property	Likelihood	1012721	3	58839
+property	Impression/interpretation of study	1029642	14	51209
+property	Mass Rate	1029404	32	47943
+property	Relative catalytic concentration	1025903	9	39650
+property	Substance Rate	1029732	41	25881
+property	Percentile	1029715	3	19494
+property	Length	1029645	3	17755
+property	Volume	1029754	20	17488
+property	Number Areic (per area)	1029670	41	12894
+property	Appearance	1029604	7	11781
+property	Number Ratio	1029705	11	10432
+property	Mass	1029649	5	10152
+property	Relative Mass Concentration	1029725	11	9691
+property	Decimal number fraction	1011565	1	6152
+property	Genotype	1027189	1	6001
+property	Relative Ratio	1029721	9	5970
+property	Susceptibility (microorganisms)	1029735	1	5659
+property	Entitic number	1029629	1	2061
+property	Relative Arbitrary Concentration	1027274	3	1539
+property	Arbitrary	1029606	10	1396
+property	Catalytic Fraction	1029617	14	842
+property	Color	1471153	1	504
+property	Viscosity	1029753	3	402
+property	Mass or Substance Rate	1026266	2	118
+property	Catalytic Ratio	1029616	1	100
+property	Length fraction	1029646	1	24
+scale_type	Qn	1033751	6192	221809443
+scale_type	-	1033746	62	10417315
+scale_type	Ord	1033749	392	10297862
+scale_type	SemiQn	3968295	252	2644519
+scale_type	Nom	1033748	116	2627186
+scale_type	Doc	1026208	30	671374
+scale_type	Nar	1033747	25	538154
+scale_type	OrdQn	1033750	1	5659
+system	Blood	1029919	1135	91968350
+system	Serum or Plasma	1033306	2776	78327842
+system	Red Blood Cells	1032890	100	38219166
+system	Urine	1033714	586	16080701
+system	Serum, Plasma or Blood	1033343	84	6240111
+system	Blood arterial	1029928	102	4209123
+system	Serum	1033211	995	2593077
+system	Blood venous	1029933	125	1808160
+system	Heart	21496060	13	1672453
+system	XXX	21496667	111	1394341
+system	Platelet poor plasma	1032441	180	1076490
+system	Respiratory system specimen	3967830	5	1010529
+system	Blood capillary	1029929	121	787125
+system	Stool	1033499	42	537967
+system	^Patient	1025532	20	396517
+system	Tissue and Smears	1033683	15	392714
+system	Urine sediment	1033718	40	269519
+system	Throat	1033655	6	254143
+system	Cerebral spinal fluid	1030067	150	183922
+system	Isolate	1031280	6	171857
+system	Skin	1027716	3	121968
+system	Cervix	1030046	4	118300
+system	Nasopharynx	1024395	7	93361
+system	Synovial fluid	1033459	82	91594
+system	Blood or Tissue	1029924	38	85755
+system	Specimen	40781877	2	80073
+system	Stomach	21498248	1	76301
+system	Lower GI tract	40775166	1	72045
+system	Respiratory system	40798311	5	69533
+system	Pleural fluid	1032362	95	67704
+system	^Fetus	1025531	3	58839
+system	Plasma	1032286	41	58727
+system	Upper respiratory specimen	1014879	4	48202
+system	Vaginal	1030614	3	42778
+system	Nuchal fold^fetus	1020063	5	39568
+system	Blood central venous	1620206	1	38175
+system	Sputum	1033465	2	29931
+system	Bone marrow	1031570	18	26597
+system	Blood mixed venous	1029931	7	25251
+system	Cervix or Vagina	1030077	2	22405
+system	Peritoneal fluid	1032584	41	16617
+system	Tissue FNA	1033684	1	13478
+system	Breast	40772887	2	13464
+system	Semen	1033439	3	12470
+system	Reticulocytes	1027596	3	12422
+system	Body fluid	1030397	8	10064
+system	Prostate	21495892	1	9355
+system	Dialysis fluid peritoneal	1030089	21	8603
+system	Plasma or RBC	1032314	1	7240
+system	Pleura	40778913	1	6447
+system	Buccal smear	1029966	1	5687
+system	Lymph node	40779552	2	5290
+system	Liver	21497553	1	4718
+system	Genital	1030555	2	4590
+system	Blood cord	1029930	6	4090
+system	Saliva	1033195	3	3803
+system	Kidney	21497556	1	3432
+system	Blood cord arterial	1019750	20	2773
+system	Nose	1031915	1	1512
+system	Pharynx	1021139	1	1445
+system	Serum or Plasma and CSF	1012044	4	1187
+system	Mother's milk	1031792	1	694
+system	Bone	21497905	1	312
+system	Blood cord venous	1019752	4	294
+system	Chorionic villus sample	1023719	1	192
+system	Amniotic fluid	1029847	1	73
+system	RBC^BldCo	1470929	1	24
+system	Aspirate	1029893	1	22
+time_aspect	Point in time (spot)	1029816	6958	248600325
+time_aspect	-	1029897	8	200329
+time_aspect	Study	1029817	2	97051
+time_aspect	24 hours	1029790	74	64730
+time_aspect	Unspecified	1029818	22	43887
+time_aspect	*	1029760	6	5190

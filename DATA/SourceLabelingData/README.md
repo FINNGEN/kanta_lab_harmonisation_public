@@ -30,3 +30,39 @@ from the Finnish/Swedish), `name_fi` (Finnish). Note: prefixes `fB`
 both lowercase to the same `id` (`fb`) — a genuine collision in the source,
 not a transcription error.
 
+## `loinc_axes_frequency.tsv` — how often each LOINC axis value is used in Finland
+
+A frequency prior over LOINC axis values, used to break ties when a fuzzy
+search offers several plausible terms for the same axis: the term Finland
+actually uses is usually the right one.
+
+Columns:
+
+- `axe_name` — which axis: `component`, `property`, `method`, `system`,
+  `scale_type`, `time_aspect`.
+- `name` — the axis value, exactly as the OMOP vocabulary spells it.
+- `concept_id` — that value's own OMOP concept id. Empty for 9 of 1223 values
+  whose names come from SNOMED rather than LOINC (`Measurement - action`,
+  `Microorganism; Organism`, ...) and so have no concept in the LOINC classes
+  searched.
+- `n_codes` — how many curated Finnish code→concept mappings use a concept
+  carrying this axis value.
+- `n_events` — how many lab records those codes cover (`n_records` summed).
+
+Built by `STEPS/FixLOINCDimensions/scripts/buildLoincAxesFrequency.R`, which
+joins `DATA/ReferenceMappings/lab_data_summary.csv` to
+`DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv` on
+`concept_id` and resolves each value's own id through Hecate (exact name match
+only). Only `status == "APPROVED"` reference rows are counted — the
+human-verified mappings — since `UNCHECKED` ones would add volume at the cost
+of feeding unverified concept assignments into what is meant to be a
+trustworthy prior. Re-run it only when the reference mappings or the OMOP
+vocabulary snapshot change:
+
+```
+Rscript STEPS/FixLOINCDimensions/scripts/buildLoincAxesFrequency.R \
+    DATA/ReferenceMappings/lab_data_summary.csv \
+    DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv \
+    DATA/SourceLabelingData/loinc_axes_frequency.tsv
+```
+
