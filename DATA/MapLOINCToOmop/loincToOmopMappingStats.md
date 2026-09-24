@@ -4,102 +4,125 @@ Source: `DATA/MapLOINCToOmop/codesWithOMOP.tsv`
 
 ## Overview
 
-Local codes are joined to OMOP concepts by requiring an exact match on all
-6 LOINC axes (`has_component`, `has_property`, `has_method`,
-`has_scale_type`, `has_system`, `has_time_aspect`) plus `is_panel`. A row
-with none of the 6 axes known is never attempted -- there is nothing to
-join by -- rather than being matched against every equally-unknown OMOP
-concept.
+Each local code carries the OMOP concept `FixLOINCDimensions` chose for it
+from a shortlist that a semantic search over the LOINC vocabulary returned for
+the name `FindLOINCDimensions` guessed. This step only resolves that id
+against the vocabulary — there is no tuple join to succeed or fail, so
+"unmapped" here means the model declined every candidate, not that a join
+missed.
 
-| bucket | n | % |
+| bucket | n | pct |
 |---|---|---|
 | total | 1984 | 100.0% |
-| with >=1 axis known | 1940 | 97.8% |
-| no axis known | 44 | 2.2% |
+| named by FindLOINCDimensions | 1790 | 90.2% |
+| left unnamed |  194 | 9.8% |
 
-Of the rows a match was attempted for:
+Of the rows a mapping was attempted for:
 
-| bucket | n | % |
+| bucket | n | pct |
 |---|---|---|
-| attempted | 1940 | 100.0% |
-| matched (>=1 OMOP concept) | 177 | 9.1% |
-| unmatched (0 OMOP concepts) | 1763 | 90.9% |
-| matched uniquely (1 concept) | 175 | 9.0% |
-| matched ambiguously (>1 concept) | 2 | 0.1% |
+| attempted (a name was guessed) | 1790 | 100.0% |
+| mapped to an OMOP concept | 1586 | 88.6% |
+| unmapped (no candidate was right) |  204 | 11.4% |
+| distinct concepts used |  623 |  |
 
-## By domain (has_system)
+## By domain (the chosen concept's `has_system`)
 
-Match rate broken down by specimen/system (`has_system`), most common
-first. `(unknown)` groups rows with no `has_system` value at all.
+Which specimens the mapped codes ended up in, most common first. Unmapped
+rows are grouped together: this approach never infers a system of its own, so
+an unmapped row has no specimen to be counted under.
 
-| has_system | n rows | n matched | % matched |
-|---|---|---|---|
-| Serum | 471 | 12 | 2.5% |
-| (unknown) | 345 | 3 | 0.9% |
-| Blood | 276 | 37 | 13.4% |
-| Plasma | 270 | 2 | 0.7% |
-| Urine | 218 | 91 | 41.7% |
-| ^Patient | 82 | 0 | 0.0% |
-| Bone marrow | 37 | 0 | 0.0% |
-| Lymphocytes | 37 | 0 | 0.0% |
-| Stool | 34 | 2 | 5.9% |
-| Cerebral spinal fluid | 31 | 3 | 9.7% |
-| Serum or Plasma | 16 | 3 | 18.8% |
-| Blood capillary | 15 | 3 | 20.0% |
-| Red Blood Cells | 15 | 1 | 6.7% |
-| Throat | 15 | 1 | 6.7% |
-| Blood venous | 13 | 6 | 46.2% |
-| Pleural fluid | 9 | 4 | 44.4% |
-| Urine sediment | 9 | 0 | 0.0% |
-| White Blood Cells | 8 | 0 | 0.0% |
-| Blood arterial | 7 | 3 | 42.9% |
-| Platelet poor plasma | 5 | 0 | 0.0% |
-| Tissue | 5 | 0 | 0.0% |
-| Vaginal fluid | 5 | 0 | 0.0% |
-| Bronchoalveolar lavage fluid | 4 | 0 | 0.0% |
-| Respiratory specimen | 4 | 0 | 0.0% |
-| Secretion | 4 | 0 | 0.0% |
-| Amniotic fluid | 3 | 0 | 0.0% |
-| Nose | 3 | 0 | 0.0% |
-| Perineum | 3 | 0 | 0.0% |
-| Pharyngeal secretion | 3 | 0 | 0.0% |
-| Pus | 3 | 2 | 66.7% |
-| Skin | 3 | 0 | 0.0% |
-| Ascitic fluid | 2 | 0 | 0.0% |
-| Bronchoalveolar lavage | 2 | 0 | 0.0% |
-| Cervical specimen | 2 | 0 | 0.0% |
-| Dialysate | 2 | 0 | 0.0% |
-| Interstitial fluid | 2 | 1 | 50.0% |
-| Pancreatic fluid | 2 | 0 | 0.0% |
-| Plasma capillary | 2 | 0 | 0.0% |
-| Semen | 2 | 0 | 0.0% |
-| Sputum | 2 | 1 | 50.0% |
-| Umbilical cord blood serum | 2 | 0 | 0.0% |
-| Aspirate | 1 | 1 | 100.0% |
-| Bile | 1 | 0 | 0.0% |
-| Bone | 1 | 0 | 0.0% |
-| Catheter tip | 1 | 1 | 100.0% |
-| Dialysis fluid.peritoneal | 1 | 0 | 0.0% |
-| Gingival crevicular fluid | 1 | 0 | 0.0% |
-| Nasal secretion | 1 | 0 | 0.0% |
-| Nasopharynx | 1 | 0 | 0.0% |
-| Peritoneal fluid | 1 | 0 | 0.0% |
-| Sperm | 1 | 0 | 0.0% |
-| Synovial fluid | 1 | 0 | 0.0% |
+| omop_has_system | n_rows | pct_of_rows |
+|---|---|---|
+| Serum or Plasma | 563 | 28.4% |
+| (unmapped) | 389 | 19.6% |
+| Blood | 202 | 10.2% |
+| Urine | 179 | 9.0% |
+| Serum | 112 | 5.6% |
+| XXX |  89 | 4.5% |
+| Stool |  37 | 1.9% |
+| Blood or Tissue |  36 | 1.8% |
+| Red Blood Cells |  35 | 1.8% |
+| Blood capillary |  28 | 1.4% |
+| Heart |  27 | 1.4% |
+| Specimen |  22 | 1.1% |
+| Platelet poor plasma |  20 | 1.0% |
+| Cerebral spinal fluid |  19 | 1.0% |
+| Respiratory system specimen |  18 | 0.9% |
+| Upper respiratory specimen |  18 | 0.9% |
+| Bone marrow |  15 | 0.8% |
+| Urine sediment |  15 | 0.8% |
+| Blood venous |  12 | 0.6% |
+| Throat |  12 | 0.6% |
+| Blood arterial |  11 | 0.6% |
+| ^Patient |  11 | 0.6% |
+| Semen |   8 | 0.4% |
+| Plasma |   7 | 0.4% |
+| Pleural fluid |   7 | 0.4% |
+| Serum, Plasma or Blood |   7 | 0.4% |
+| Respiratory system |   5 | 0.3% |
+| Tissue and Smears |   5 | 0.3% |
+| Body fluid |   4 | 0.2% |
+| Interstitial fluid |   4 | 0.2% |
+| Nose |   4 | 0.2% |
+| Reticulocytes |   4 | 0.2% |
+| Serum and Blood |   4 | 0.2% |
+| Vaginal |   4 | 0.2% |
+| Bronchoalveolar lavage |   3 | 0.2% |
+| Cervix |   3 | 0.2% |
+| Nasopharynx |   3 | 0.2% |
+| Pharynx |   3 | 0.2% |
+| Blood^BPU |   2 | 0.1% |
+| Calculus (stone) |   2 | 0.1% |
+| Cardiac echo study |   2 | 0.1% |
+| Dialysis fluid |   2 | 0.1% |
+| Hematopoietic progenitor cells^BPU |   2 | 0.1% |
+| Isolate |   2 | 0.1% |
+| Peritoneal fluid |   2 | 0.1% |
+| Plasma arterial |   2 | 0.1% |
+| Pus |   2 | 0.1% |
+| Respiratory system airway |   2 | 0.1% |
+| Skeletal system |   2 | 0.1% |
+| Skin |   2 | 0.1% |
+| Blood central venous |   1 | 0.1% |
+| Blood cord |   1 | 0.1% |
+| Blood^Donor |   1 | 0.1% |
+| Bone |   1 | 0.1% |
+| Catheter tip |   1 | 0.1% |
+| Dialysis fluid peritoneal |   1 | 0.1% |
+| Eye |   1 | 0.1% |
+| Lower respiratory specimen |   1 | 0.1% |
+| Nervous system |   1 | 0.1% |
+| Plasma cell-free DNA |   1 | 0.1% |
+| Sputum |   1 | 0.1% |
+| Synovial fluid |   1 | 0.1% |
+| Vagina |   1 | 0.1% |
+| Wound |   1 | 0.1% |
+| ^Specimen |   1 | 0.1% |
 
 ## Cross-check against the reference mapping
 
-`DATA/ReferenceMappings/lab_data_summary.csv` holds a previously curated Finnish-code -> OMOP mapping. Restricted to its `APPROVED` rows and matched to this table by `TEST_NAME`+`UNIT`:
+`DATA/ReferenceMappings/lab_data_summary.csv` holds a separately curated Finnish-code -> OMOP mapping. Restricted to its `APPROVED` rows and matched to this table by `TEST_NAME`+`UNIT`, it is the only independent read on whether the concepts chosen here are the *right* ones:
 
-- n rows overlapping an APPROVED reference mapping: 764
-- of those, our join's OMOP concept(s) include the reference's approved concept: 62 / 764 (8.1%)
+| bucket | n | pct |
+|---|---|---|
+| rows overlapping an APPROVED reference mapping | 764 |  |
+| of those, this pipeline chose a concept | 688 | 90.1% |
+| of those, it chose the reference's concept | 469 | 68.2% |
+
+Agreement over the whole overlap (the comparable headline number): **469 / 764 = 61.4%**.
 
 **Example disagreements:**
 
-| TEST_NAME | UNIT | our omop_concept_id | our omop_concept_name | reference OMOP_CONCEPT_ID | reference OMOP_CONCEPT_NAME |
-|---|---|---|---|---|---|
-| kudostransglutaminaasi,iga-vasta-aineet |  |  |  | 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
-| kudostransglutaminaasi,igavasta-aineet | u/ml |  |  | 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
-| kudostransglutaminaasi,igavasta-aineet |  |  |  | 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
-| kudostransglutaminaasi,igg-vasta-aineet |  |  |  | 3046870 | Tissue transglutaminase IgG Ab [Units/volume] in Serum |
-| s-kudostransglutaminaasi,iga-vasta-aineet | u/ml |  |  | 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
+| TEST_NAME | UNIT | loinc_name_guess | our_omop_concept_name | reference_OMOP_CONCEPT_NAME |
+|---|---|---|---|---|
+| kudostransglutaminaasi,iga-vasta-aineet |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgA Ab [Presence] in Serum | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
+| kudostransglutaminaasi,igavasta-aineet |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgA Ab [Presence] in Serum | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
+| kudostransglutaminaasi,igg-vasta-aineet |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgG Ab [Presence] in Serum | Tissue transglutaminase IgG Ab [Units/volume] in Serum |
+| s-kudostransglutaminaasi,iga-vasta-aineet |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgA Ab [Presence] in Serum | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
+| s-kudostransglutaminaasi,igavasta-aineet |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgA Ab [Presence] in Serum | Tissue transglutaminase IgA Ab [Units/volume] in Serum |
+| s-kudostransglutaminaasi,iggva(keliakia) |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgG Ab [Presence] in Serum | Tissue transglutaminase IgG Ab [Units/volume] in Serum |
+| s-kudostransglutaminaasi,iggvasta-aineet |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | Tissue transglutaminase IgG Ab [Presence] in Serum | Tissue transglutaminase IgG Ab [Units/volume] in Serum |
+| b-c-resktiivinenproteiini | mg/l | C reactive protein [Mass/volume] in Serum or Plasma | C reactive protein [Mass/volume] in Capillary blood | C reactive protein [Mass/volume] in Serum or Plasma |
+| c-reaktiivinenproteiini,pika | mg/l | C reactive protein [Mass/volume] in Serum or Plasma | C reactive protein [Mass/volume] in Serum or Plasma | C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method |
+| c-reaktiivinenproteiini,pikatesti,veri | mg/l | C reactive protein [Mass/volume] in Serum or Plasma | C reactive protein [Mass/volume] in Capillary blood | C reactive protein [Mass/volume] in Serum or Plasma |

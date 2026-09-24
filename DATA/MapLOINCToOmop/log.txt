@@ -11,14 +11,13 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  codesWithLoincDimensionsFile = DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+  codesWithOmopConceptsFile = DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv
   measurementConceptAttributesFile = DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
   outDir = DATA/MapLOINCToOmop
-  join key = has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect, is_panel
-Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Read 1984 rows from DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv
 Read 102825 rows from DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
-Built 75116 distinct OMOP axis tuples from 84606 concepts (18219 concepts with no axis known were excluded as join targets)
-1940 / 1984 rows have at least one axis known; 177 / 1984 rows matched at least one OMOP concept
+4 row(s) carry a concept_id that is not in the OMOP attributes table; they are reported as unmapped
+1599 / 1984 rows carry a concept_id; 1595 resolved to an OMOP concept (627 distinct concepts)
 Wrote 1984 rows to DATA/MapLOINCToOmop/codesWithOMOP.tsv
 - The project is out-of-sync -- use `renv::status()` for details.
 
@@ -36,16 +35,11 @@ Configuration:
   codesWithOmopFile = DATA/MapLOINCToOmop/codesWithOMOP.tsv
   referenceMappingFile = DATA/ReferenceMappings/lab_data_summary.csv
   outDir = DATA/MapLOINCToOmop
-Warning message:
-One or more parsing issues, call `problems()` on your data frame for details,
-e.g.:
-  dat <- vroom(...)
-  problems(dat) 
 Read 1984 rows from DATA/MapLOINCToOmop/codesWithOMOP.tsv
-1940 / 1984 rows had >=1 axis known; 177 / 1940 of those matched >=1 OMOP concept
-Computed match rate for 52 has_system domains
+1790 / 1984 rows were named; 1586 / 1790 of those mapped to an OMOP concept
+Grouped the mapped rows into 64 OMOP systems
 Read 28685 rows from DATA/ReferenceMappings/lab_data_summary.csv
-764 rows overlap an APPROVED reference mapping; 62 (8.1%) agree with it
+764 rows overlap an APPROVED reference mapping; 688 of them got a concept; 469 (61.4% of the overlap, 68.2% of those answered) agree with it
 Wrote stats report to DATA/MapLOINCToOmop/loincToOmopMappingStats.md
 Wrote DATA/MapLOINCToOmop/codesWithOMOP.tsv
 Wrote DATA/MapLOINCToOmop/loincToOmopMappingStats.md
