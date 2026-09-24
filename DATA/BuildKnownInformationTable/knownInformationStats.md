@@ -13,8 +13,8 @@ decile summary.
 
 | bucket | n | % |
 |---|---|---|
-| total | 29341 | 100.0% |
-| with recorded data (p_missing < 95.0) | 13150 | 44.8% |
+| total | 29310 | 100.0% |
+| with recorded data (p_missing < 95.0) | 13119 | 44.8% |
 | with deciles computed | 5568 | 19.0% |
 
 ### Distinct TEST_NAME
@@ -31,31 +31,31 @@ table's `%` is relative to that tier's own total, stated in its heading.
 - `with long name` / `with prefix` / `with suffix` -- matched as described
   in this step's `README.md`.
 
-**All TEST_NAME** (n = 23242)
+**All TEST_NAME** (n = 23241)
 
 | bucket | n | % |
 |---|---|---|
-| total | 23242 | 100.0% |
+| total | 23241 | 100.0% |
 | is number (TEST_NAME is a bare digit code) | 473 | 2.0% |
 | with long name | 2390 | 10.3% |
 | with prefix | 13741 | 59.1% |
 | with suffix | 1092 | 4.7% |
 
-**TEST_NAME with n_events > 100** (n = 9412)
+**TEST_NAME with n_events > 100** (n = 9411)
 
 | bucket | n | % |
 |---|---|---|
-| total | 9412 | 100.0% |
+| total | 9411 | 100.0% |
 | is number (TEST_NAME is a bare digit code) | 190 | 2.0% |
 | with long name | 1649 | 17.5% |
 | with prefix | 6073 | 64.5% |
 | with suffix | 493 | 5.2% |
 
-**TEST_NAME with n_events > 500** (n = 4701)
+**TEST_NAME with n_events > 500** (n = 4700)
 
 | bucket | n | % |
 |---|---|---|
-| total | 4701 | 100.0% |
+| total | 4700 | 100.0% |
 | is number (TEST_NAME is a bare digit code) | 86 | 1.8% |
 | with long name | 1159 | 24.7% |
 | with prefix | 3154 | 67.1% |
