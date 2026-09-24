@@ -15,3 +15,7 @@ Index of the steps, in the order they run.
    filter `knownInformation.tsv` and cluster the surviving `TEST_NAME`s by
    string similarity into size-capped groups, then summarise the groups
    (with a dendrogram) into a stats report.
+4. [`FindLOINCDimensions`](FindLOINCDimensions/README.md) — send each
+   similarity group to an LLM to infer the six LOINC axes and `is_panel`
+   per local lab code, into `codesWithLoincDimensions.tsv` plus a
+   per-group `reflections.md`.
