@@ -49,11 +49,11 @@ fi
 #
 # --- Input -------------------------------------------------------------
 #
-CODES_WITH_LOINC_DIMENSIONS_FILE="$DATA_DIR/FindLOINCDimensions/codesWithLoincDimensions.tsv"
+CODES_WITH_OMOP_CONCEPTS_FILE="$DATA_DIR/FixLOINCDimensions/codesWithOmopConcepts.tsv"
 MEASUREMENT_CONCEPT_ATTRIBUTES_FILE="$DATA_DIR/GetMeasurementOmopData/measurement_concept_attributes.tsv"
 REFERENCE_MAPPING_FILE="$DATA_DIR/ReferenceMappings/lab_data_summary.csv"
 
-for f in "$CODES_WITH_LOINC_DIMENSIONS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE"; do
+for f in "$CODES_WITH_OMOP_CONCEPTS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -68,7 +68,7 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/mapLoincToOmop.R" \
-  "$CODES_WITH_LOINC_DIMENSIONS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE" "$OUTDIR"
+  "$CODES_WITH_OMOP_CONCEPTS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE" "$OUTDIR"
 
 Rscript "$STEP_DIR/scripts/summariseLoincToOmopMapping.R" \
   "$OUTDIR/codesWithOMOP.tsv" "$REFERENCE_MAPPING_FILE" "$OUTDIR"
