@@ -17,8 +17,8 @@
 # earlier axis-based version of this step required.
 #
 # One LLM call per group. The group's rows are rendered as a markdown table and
-# appended to scripts/systemPrompt.md; the model returns, per row, only the 2
-# NEW fields keyed by `row_id` (not the whole table back). That keeps the
+# appended to scripts/systemPrompt.md; the model returns, per row, only the ONE
+# new field keyed by `row_id` (not the whole table back). That keeps the
 # payload small, makes it impossible for the model to silently alter source
 # values (n, deciles, ...), and gives an unambiguous integer join key --
 # TEST_NAME alone is not unique within a group (the same code recurs with
@@ -39,10 +39,9 @@ library(ParallelLogger)
 #
 args <- commandArgs(trailingOnly = TRUE)
 inputFile <- args[1]
-frequencyFile <- args[2]
-outDir <- args[3]
-nGroups <- if (length(args) >= 4 && nzchar(args[4])) as.integer(args[4]) else NA_integer_
-seed <- if (length(args) >= 5 && nzchar(args[5])) as.integer(args[5]) else 1L
+outDir <- args[2]
+nGroups <- if (length(args) >= 3 && nzchar(args[3])) as.integer(args[3]) else NA_integer_
+seed <- if (length(args) >= 4 && nzchar(args[4])) as.integer(args[4]) else 1L
 
 scriptDir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(scriptDir) || !nzchar(scriptDir)) scriptDir <- "."
@@ -63,13 +62,6 @@ llmConfig <- list(
 workersEnv <- Sys.getenv("LLM_PARALLEL_WORKERS", "")
 workers <- if (nzchar(workersEnv)) as.integer(workersEnv) else max(parallel::detectCores() - 2L, 1L)
 
-# How many of the most-used Finnish LOINC names to show the model as worked
-# examples. 100 covers ~90% of all records in the curated mappings, so it shows
-# the model nearly every test it will actually meet, while staying short enough
-# to read as examples rather than as a list to pick from.
-nExamplesEnv <- Sys.getenv("FINNISH_NAME_EXAMPLES", "")
-nExamples <- if (nzchar(nExamplesEnv)) as.integer(nExamplesEnv) else 100L
-
 cacheDir <- file.path(outDir, "groupsCache")
 dir.create(cacheDir, showWarnings = FALSE, recursive = TRUE)
 
@@ -79,11 +71,9 @@ pathToReflectionsMD <- file.path(outDir, "reflections.md")
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  inputFile = ", inputFile)
-ParallelLogger::logInfo("  frequencyFile = ", frequencyFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  nGroups = ", if (is.na(nGroups)) "(all)" else nGroups)
 ParallelLogger::logInfo("  seed = ", seed)
-ParallelLogger::logInfo("  nExamples = ", nExamples)
 ParallelLogger::logInfo("  provider = ", llmConfig$provider)
 ParallelLogger::logInfo("  model = ", llmConfig$model)
 ParallelLogger::logInfo("  project = ", llmConfig$project)
@@ -92,7 +82,9 @@ ParallelLogger::logInfo("  workers = ", workers)
 ParallelLogger::logInfo("  cacheDir = ", cacheDir)
 
 # Structured-output schema. One entry per input row: the row_id echoed back as
-# the join key, the guessed name, is_panel, plus a per-group reflection.
+# the join key, the guessed name, plus a per-group reflection. A panel is
+# expressed inside the name itself (LOINC names panels as panels), so there is
+# no separate flag to return.
 # The name is a free string so the model can return "" for "not knowable" --
 # the prompt is explicit that an empty name beats an invented one.
 namesType <- ellmer::type_object(
@@ -104,8 +96,7 @@ namesType <- ellmer::type_object(
                "'<Component> [<Property>] in <System> by <Method>', e.g. ",
                "'Creatinine [Moles/volume] in Serum or Plasma'. ",
                "Empty if you cannot tell what the test measures.")
-      ),
-      is_panel = ellmer::type_boolean("TRUE if the code orders a panel bundling several separately reported tests.")
+      )
     ),
     "One entry per row of the input table, in the same order."
   ),
@@ -124,18 +115,55 @@ grouped <- readr::read_tsv(
 )
 ParallelLogger::logInfo("Read ", nrow(grouped), " rows from ", inputFile)
 
-frequency <- readr::read_tsv(frequencyFile, na = "", col_types = readr::cols(
-  concept_id = readr::col_character(), concept_name = readr::col_character(),
-  vocabulary_id = readr::col_character(),
-  n_codes = readr::col_double(), n_events = readr::col_double()
-))
-ParallelLogger::logInfo("Read ", nrow(frequency), " Finnish name-frequency rows from ", frequencyFile)
-
 # Stable integer key per row, used as the only join key between the model's
 # answer and the table. Assigned over the whole table before any subsetting so
 # a row's id does not depend on --ngroups.
 grouped <- grouped |>
   dplyr::mutate(row_id = dplyr::row_number())
+
+# What share of this TEST_NAME's records carry this row's UNIT. Units are typed
+# by hand at hundreds of source sites and are frequently wrong; a unit holding a
+# sliver of a code's records while another unit holds the rest is far more
+# likely a data-entry error than a second real test. The model cannot work this
+# out from the table -- it would have to sum `n` across rows -- so it is
+# computed here and handed over as evidence. Computed over the WHOLE table, not
+# the selected groups, so --ngroups cannot change a row's share.
+grouped <- grouped |>
+  dplyr::mutate(nNum = suppressWarnings(as.numeric(.data$n))) |>
+  dplyr::group_by(.data$TEST_NAME) |>
+  dplyr::mutate(
+    testNameTotal = sum(.data$nNum, na.rm = TRUE),
+    unit_share = ifelse(
+      is.na(.data$nNum) | .data$testNameTotal <= 0,
+      NA_character_,
+      sprintf("%.0f%%", 100 * .data$nNum / .data$testNameTotal)
+    )
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::select(-dplyr::all_of(c("nNum", "testNameTotal")))
+
+# What kind of evidence this row actually carries, stated plainly so the model
+# does not have to infer it and cannot misreport it. This is the column that
+# decides how far a row can be pushed: a row with neither a unit nor a value
+# distribution has nothing to fix the quantity with, and the prompt requires it
+# to be left unnamed rather than filled from a neighbouring row. Computed here
+# rather than asked of the model: it is a fact about the table, it costs no
+# tokens, and a deterministic flag is worth more downstream than a claimed one.
+grouped <- grouped |>
+  dplyr::mutate(
+    hasUnit = !is.na(.data$UNIT) & nzchar(.data$UNIT),
+    hasValues = !is.na(.data$deciles) & nzchar(.data$deciles),
+    evidence_level = dplyr::case_when(
+      .data$hasUnit & .data$hasValues ~ "unit+values",
+      .data$hasUnit & !.data$hasValues ~ "unit only",
+      !.data$hasUnit & .data$hasValues ~ "values only",
+      TRUE ~ "name only"
+    )
+  ) |>
+  dplyr::select(-dplyr::all_of(c("hasUnit", "hasValues")))
+ParallelLogger::logInfo("Evidence levels: ",
+                        paste(names(table(grouped$evidence_level)), table(grouped$evidence_level),
+                              sep = "=", collapse = ", "))
 
 allGroupIds <- sort(unique(as.integer(grouped$group_id)))
 groupIds <- if (!is.na(nGroups) && nGroups > 0 && nGroups < length(allGroupIds)) {
@@ -180,32 +208,18 @@ renderMarkdownTable <- function(tbl) {
   ), collapse = "\n")
 }
 
-# The worked-examples block the prompt's {{FINNISH_NAME_EXAMPLES}} placeholder
-# is replaced with. Injected at run time rather than pasted into the prompt file
-# so the examples cannot drift from the reference table they come from, and so
-# the exact list sent is recoverable from the cached <group>_prompt.md.
-examplesTable <- frequency |>
-  dplyr::arrange(dplyr::desc(.data$n_events), dplyr::desc(.data$n_codes)) |>
-  dplyr::slice_head(n = nExamples) |>
-  dplyr::transmute(
-    `LOINC Long Common Name` = .data$concept_name,
-    n_codes = format(as.integer(.data$n_codes), big.mark = ","),
-    n_events = format(as.integer(.data$n_events), big.mark = ",")
-  )
-
+# Read verbatim. Nothing derived from the curated reference mappings is injected
+# here: those mappings are what this pipeline is measured against, so putting
+# their concepts in front of the model would both make the evaluation circular
+# and hand the model whatever errors the reference itself contains.
 systemPrompt <- paste(readLines(systemPromptFile, warn = FALSE), collapse = "\n")
-if (!grepl("{{FINNISH_NAME_EXAMPLES}}", systemPrompt, fixed = TRUE)) {
-  stop("systemPrompt.md has no {{FINNISH_NAME_EXAMPLES}} placeholder to fill")
-}
-systemPrompt <- sub("{{FINNISH_NAME_EXAMPLES}}", renderMarkdownTable(examplesTable),
-                    systemPrompt, fixed = TRUE)
-ParallelLogger::logInfo("Injected ", nrow(examplesTable), " Finnish name examples into the system prompt")
+ParallelLogger::logInfo("Read ", nchar(systemPrompt), " characters of system prompt from ", systemPromptFile)
 
 # Columns handed to the model: everything that carries information about the
 # test, plus row_id as the key. group_path is dropped (it encodes the clustering
 # tree, not the test) and group_id is constant within a call.
 promptColumns <- c(
-  "row_id", "TEST_NAME", "UNIT", "n", "p_missing", "deciles",
+  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "p_missing", "deciles",
   "LongName", "prefix_meaning", "suffix_meaning"
 )
 
@@ -326,11 +340,9 @@ readGroupRows <- function(gid) {
     } else {
       trimws(as.character(v)[1])
     }
-    p <- r$is_panel
     tibble::tibble(
       row_id = as.integer(r$row_id %||% NA_integer_),
-      loinc_name_guess = name,
-      is_panel = if (is.null(p) || length(p) == 0) NA else as.logical(p)[1]
+      loinc_name_guess = name
     )
   })
 }

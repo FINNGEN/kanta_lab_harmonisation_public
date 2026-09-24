@@ -100,9 +100,9 @@ nNamed <- sum(named)
 
 overview <- tibble::tibble(
   bucket = c("total rows", "named", "left empty (not determinable)",
-             "flagged as a panel", "distinct names guessed"),
+             "named as a panel", "distinct names guessed"),
   n = c(nRows, nNamed, nRows - nNamed,
-        sum(codes$is_panel == "TRUE", na.rm = TRUE),
+        sum(grepl("panel", guesses, fixed = TRUE), na.rm = TRUE),
         dplyr::n_distinct(guesses[named]))
 ) |>
   dplyr::mutate(pct = ifelse(bucket == "distinct names guessed", "", .formatPct(n / nRows)))
@@ -144,6 +144,16 @@ ParallelLogger::logInfo(nNamed, " / ", nRows, " rows named; ",
       pct = .formatPct(n / length(values))
     )
 }
+
+byEvidence <- codes |>
+  dplyr::mutate(
+    evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)"),
+    named = !is.na(.data$loinc_name_guess)
+  ) |>
+  dplyr::group_by(evidence_level) |>
+  dplyr::summarise(n_rows = dplyr::n(), n_named = sum(.data$named), .groups = "drop") |>
+  dplyr::mutate(pct_named = .formatPct(n_named / n_rows)) |>
+  dplyr::arrange(dplyr::desc(n_rows))
 
 topNames <- .topTable(guesses, "guessed LOINC name")
 topProperties <- .topTable(parts[, "property"], "[property]", n = 15)
@@ -225,6 +235,16 @@ md <- c(
   "are expected, not failures.",
   "",
   .markdownTable(overview),
+  "",
+  "## Coverage by evidence level",
+  "",
+  "`evidence_level` is computed from the row itself: whether it carries a `UNIT`,",
+  "a `deciles` distribution, both, or neither. The prompt forbids naming a",
+  "`name only` row unless its name alone settles the concept — it has nothing to",
+  "fix the quantity with and may not borrow one from a neighbour — so a low",
+  "named rate there is the rule working, not a failure.",
+  "",
+  .markdownTable(byEvidence),
   "",
   "## Name shape",
   "",

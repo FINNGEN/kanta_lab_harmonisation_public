@@ -8,20 +8,32 @@ Guesses the **LOINC Long Common Name** of every local Finnish lab code.
   local `TEST_NAME`/`UNIT`, with `n`, `p_missing`, `deciles`, `LongName`,
   `prefix_meaning`, `suffix_meaning`, clustered into similarity groups by
   `group_id` / `group_path`.
-- `DATA/SourceLabelingData/loinc_names_frequency.tsv` — which LOINC concepts
-  the curated Finnish mappings already use, and how much data they cover. The
-  head of this table is injected into the prompt as worked examples; see
-  `DATA/SourceLabelingData/README.md`.
 - `scripts/systemPrompt.md` — the system prompt: the LOINC-expert role, the
   Finnish lab coding system, how it maps onto the table's columns, the caveats
-  about this data, and the rules for building a LOINC Long Common Name. It
-  carries a `{{FINNISH_NAME_EXAMPLES}}` placeholder that the script fills at
-  run time with the frequency table's head.
+  about this data, and the rules for building a LOINC Long Common Name. It is
+  read verbatim: **nothing derived from the curated reference mappings is
+  injected into it**, since those mappings are what the pipeline is measured
+  against — showing the model their concepts would make the evaluation
+  circular and hand it whatever errors the reference itself carries.
 
 ## Outputs
 
 - `DATA/FindLOINCDimensions/codesWithLoincNames.tsv` — every processed row of
-  the input table, unchanged, with two columns appended:
+  the input table, unchanged, with four columns appended. Two are **computed
+  evidence**, not model output — they are facts about the table, so deriving
+  them in R costs no tokens and leaves nothing for the model to misreport, and
+  `FixLOINCDimensions` and the reports read them too:
+  - `unit_share` — what percentage of this `TEST_NAME`'s records carry this
+    row's `UNIT`, computed over the whole input table. A unit holding a sliver
+    of a code's records while another unit holds the rest is far more likely a
+    data-entry error than a second real test.
+  - `evidence_level` — `unit+values`, `unit only`, `values only`, or
+    `name only`, from whether the row has a `UNIT` and a `deciles`
+    distribution. This is what bounds how far a row may be pushed: a
+    `name only` row has nothing to fix the quantity with, and the prompt
+    requires it to be left unnamed unless the name alone settles the concept.
+    It also splits the reports, since a `name only` row is where this
+    pipeline's target and the reference's differ by construction.
   - `loinc_name_guess` — the LOINC Long Common Name the model believes this
     code maps to, spelled as LOINC spells it:
     `<Component> [<Property>] in <System> by <Method>`, e.g.
@@ -29,8 +41,13 @@ Guesses the **LOINC Long Common Name** of every local Finnish lab code.
     not tell what the test measures — the prompt explicitly prefers an empty
     name to an invented one, since an invention sends the next step's search
     after a concept the code never meant.
-  - `is_panel` — `TRUE` when the code orders a bundle of separately reported
-    tests rather than one result.
+  There is no `is_panel` column. LOINC names panels *as panels* — the word
+  `panel` appears in 81% of its panel concepts, only 6% carry a `[Property]`
+  (a bundle has no single quantity), and the system follows a dash rather than
+  `in`, as in `CBC panel - Blood by Automated count`. So a bundle is expressed
+  in the guessed name itself, and the prompt explains that form along with the
+  Finnish cues for it (`-seula`/`-seulonta`, `-paketti`, a `LongName` listing
+  several analytes, and `B-PVK` vs `B-TVK`).
 - `DATA/FindLOINCDimensions/reflections.md` — one `# Group <id>` section per
   group, holding that group's reflection from the model: ideas to improve the
   process, gotchas, ambiguities and data problems it hit on those rows.
@@ -70,6 +87,51 @@ right, and on a 30-group sample it matched 287 of 1,940 rows while agreeing
 with the curated Finnish mapping on 11.3% of the overlap. Guessing one string
 well is a far easier target than guessing seven labels that must *all* be
 exactly right.
+
+### Reading the evidence
+
+The prompt carries an explicit hierarchy for combining `TEST_NAME`, `UNIT` and
+`deciles`, because the obvious readings of this data are wrong:
+
+- **A row is a `TEST_NAME` + `UNIT` pair, and that pair is what gets named.**
+  Two rows of the same code with different units are two observations and may
+  belong to two different LOINC concepts. Each is decided on its own.
+- **The name is the source of truth.** `prefix_meaning` and `suffix_meaning`
+  are *derived from the name string* by an upstream step, so a misspelled or
+  locally-invented name yields a wrong prefix. They confirm what the name says;
+  they never outrank it. The specimen is frequently a Finnish word rather than
+  a prefix — `veri`, `seerumi`, `virtsa` — and
+  `c-reaktiivinenproteiini,pikatesti,veri` names blood with no decoded prefix
+  at all, its leading `c-` being the start of "C-reactive".
+- **Missing values say nothing about the test.** `p_missing` is a fact about
+  this extract, not about the laboratory test, so an empty `deciles` column is
+  never grounds for a `[Presence]` (qualitative) name. Scale comes from the
+  code — the `-O` suffix, the `LongName` — never from how much was recorded.
+- **Nothing is borrowed between rows.** The group is a string-similarity
+  cluster, so a neighbour's unit is not evidence about this row, and the same
+  code may also sit in another group carrying units invisible here. A sibling
+  row may help *read* a run-together name; it may never supply a unit, a
+  quantity or an answer.
+- **What a row may conclude is bounded by its `evidence_level`.** With a unit
+  and values, the strongest case — and if they contradict each other the
+  **unit** is the part to distrust, especially at a low `unit_share`. With a
+  unit only, trust the unit. With values only, read the quantity off the
+  magnitudes. With **neither**, the quantity cannot be fixed at all: the row is
+  named only if the name alone settles it (a panel, which carries no property,
+  or an analyte with one LOINC form) and is otherwise left empty. An honest gap
+  beats a name resting on nothing.
+- **Some units are ratios, not concentrations** — `mmol/mol` (HbA1c IFCC),
+  `mg/mmol` (albumin/creatinine), `ml/min/173m2` (eGFR), and `%`, which may be
+  a cell fraction, a mass fraction, or activity as a percentage of normal.
+- **The specimen is often a Finnish word, not a prefix.** `prefix_meaning` is
+  filled only for codes opening with a recognised prefix and a hyphen, so
+  `c-reaktiivinenproteiini,pikatesti,veri` has none — yet `veri` says blood,
+  and its leading `c-` is the start of "C-reactive", not a specimen.
+- **A repeated lowest decile is a detection limit.** `[5, 5, 6.2, ...]` means
+  the assay was censored at 5 and everything below reported as "<5"; that
+  floor is the assay's sensitivity, not the population's low end.
+
+### Naming
 
 The prompt therefore spends its length on how LOINC actually writes names: the
 `<Component> [<Property>] in <System> by <Method>` template, the property
@@ -115,9 +177,6 @@ fails, the statistics are still written and the Findings section says so.
 - `LLM_MODEL` — model, default `gemini-2.5-pro`.
 - `LLM_PARALLEL_WORKERS` — number of parallel workers; defaults to
   `detectCores() - 2`.
-- `FINNISH_NAME_EXAMPLES` — how many of the most-used Finnish LOINC names to
-  inject into the prompt, default `100` (which covers ~90% of all records in
-  the curated mappings).
 
 ## How to run
 
