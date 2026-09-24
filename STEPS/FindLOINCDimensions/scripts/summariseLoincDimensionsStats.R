@@ -46,9 +46,9 @@ dimensionColumns <- c(
 
 dimensionDescriptions <- c(
   has_component = "The analyte/substance measured — the core identity of the test.",
-  has_property = "The kind of quantity reported (`MCnc` mass concentration, `SCnc` substance concentration, `PrThr` presence or threshold, ...), independent of the unit.",
-  has_time_aspect = "The timing of the collection (`Pt` for a spot sample, `24H` for a 24-hour collection, ...).",
-  has_system = "The specimen or body system the sample was taken from (`Ser`, `Plas`, `Bld`, `Urine`, `CSF`, ...).",
+  has_property = "The kind of quantity reported (`Substance Concentration`, `Mass Concentration`, `Presence or Threshold`, ...), independent of the unit.",
+  has_time_aspect = "The timing of the collection (`Point in time (spot)` for a spot sample, `24 hours` for a 24-hour collection, ...).",
+  has_system = "The specimen or body system the sample was taken from (`Serum or Plasma`, `Blood`, `Urine`, `Cerebral spinal fluid`, ...).",
   has_scale_type = "The measurement scale of the result (`Qn` quantitative, `Ord` ordinal, `Nom` nominal, `Nar` narrative, `Doc` document).",
   has_method = "The analytical method, populated only when the code indicates one that changes clinical interpretation. Mostly empty by design.",
   is_panel = "Whether the code bundles several separately reported component tests rather than being one reportable result."

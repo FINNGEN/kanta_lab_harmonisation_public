@@ -79,11 +79,11 @@ dimensionsType <- ellmer::type_object(
     ellmer::type_object(
       row_id = ellmer::type_integer("The row_id of the input row, echoed exactly."),
       has_component = ellmer::type_string("The analyte/substance measured, English LOINC-style name. Empty if not determinable."),
-      has_property = ellmer::type_string("LOINC property abbreviation (MCnc, SCnc, CCnc, NCnc, MFr, NFr, Titr, PrThr, ...). Empty if not determinable."),
-      has_time_aspect = ellmer::type_string("LOINC time aspect (Pt, 24H, ...). Empty if not determinable."),
-      has_system = ellmer::type_string("LOINC system/specimen (Ser, Plas, Ser/Plas, Bld, Urine, CSF, ...). Empty if not determinable."),
-      has_scale_type = ellmer::type_string("LOINC scale (Qn, Ord, Nom, Nar, Doc). Empty if not determinable."),
-      has_method = ellmer::type_string("Analytical method, ONLY when the code indicates one and it changes interpretation. Empty otherwise."),
+      has_property = ellmer::type_string("Full OMOP property name, NOT a LOINC abbreviation (e.g. 'Substance Concentration' not 'SCnc', 'Presence or Threshold' not 'PrThr'). Empty if not determinable."),
+      has_time_aspect = ellmer::type_string("Full OMOP time aspect name, NOT an abbreviation (e.g. 'Point in time (spot)' not 'Pt', '24 hours' not '24H'). Empty if not determinable."),
+      has_system = ellmer::type_string("Full OMOP system/specimen name, NOT an abbreviation (e.g. 'Serum or Plasma' not 'Ser/Plas', 'Blood' not 'Bld', 'Cerebral spinal fluid' not 'CSF'). Empty if not determinable."),
+      has_scale_type = ellmer::type_string("LOINC scale, abbreviated as OMOP stores it: Qn, Ord, SemiQn, Nom, Nar, Doc, OrdQn. Empty if not determinable."),
+      has_method = ellmer::type_string("Full OMOP method name, NOT an abbreviation (e.g. 'Nucleic acid amplification with probe detection' not 'NAA+probe'). ONLY when the code indicates a method that changes interpretation. Empty otherwise."),
       is_panel = ellmer::type_boolean("TRUE if the code refers to a panel bundling several separately reported tests.")
     ),
     "One entry per row of the input table, in the same order."

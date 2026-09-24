@@ -16,19 +16,31 @@
 - `DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv` — every processed row
   of the input table, unchanged, with seven columns appended:
   - `has_component` — the analyte measured (English LOINC-style name).
-  - `has_property` — LOINC property abbreviation (`MCnc`, `SCnc`, `CCnc`,
-    `NCnc`, `NFr`, `PrThr`, ...).
-  - `has_time_aspect` — `Pt` for a spot sample, `24H` for a 24-hour collection, ...
-  - `has_system` — LOINC specimen/system (`Ser`, `Plas`, `Bld`, `Urine`, ...).
-  - `has_scale_type` — `Qn`, `Ord`, `Nom`, `Nar`, `Doc`.
-  - `has_method` — the analytical method, only when the code indicates one.
+  - `has_property` — `Substance Concentration`, `Mass Concentration`,
+    `Presence or Threshold`, ...
+  - `has_time_aspect` — `Point in time (spot)`, `24 hours`, ...
+  - `has_system` — `Serum or Plasma`, `Blood`, `Urine`,
+    `Cerebral spinal fluid`, ...
+  - `has_scale_type` — `Qn`, `Ord`, `SemiQn`, `Nom`, `Nar`, `Doc`, `OrdQn`.
+  - `has_method` — `Immunoassay`,
+    `Nucleic acid amplification with probe detection`, ... only when the code
+    indicates a method.
   - `is_panel` — `TRUE` when the code bundles several separately reported tests.
 
   These are named exactly as in `GetMeasurementOmopData`'s
   `measurement_concept_attributes.tsv`, so the inferred axes and the OMOP
-  vocabulary's own axes are directly comparable. Any axis the model could not
-  determine from the row is empty — an empty value means "not knowable from this
-  row", which the prompt explicitly prefers over a guess.
+  vocabulary's own axes are directly comparable. For the same reason the axis
+  *values* are written as **full OMOP concept names, not LOINC abbreviations**
+  (`Substance Concentration`, not `SCnc`) — otherwise the two tables could not
+  be joined. `has_scale_type` is the one exception: OMOP itself stores it
+  abbreviated. The prompt's per-axis value lists are the most frequent real
+  values, derived by joining `DATA/ReferenceMappings/lab_data_summary.csv`
+  (Finnish codes already mapped to OMOP concepts) with
+  `measurement_concept_attributes.tsv` on `concept_id`.
+
+  Any axis the model could not determine from the row is empty — an empty value
+  means "not knowable from this row", which the prompt explicitly prefers over a
+  guess.
 - `DATA/FindLOINCDimensions/reflections.md` — one `# Group <id>` section per
   group, holding that group's reflection from the model: ideas to improve the
   process, gotchas, ambiguities and data problems it hit on those rows.
