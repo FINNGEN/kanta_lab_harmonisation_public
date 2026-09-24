@@ -1,0 +1,43 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  environment = build
+  outDir = DATA/GetMeasurementOmopData
+  domainId = Measurement
+  standardConceptFlag = S
+  excludedVocabularyIds = OMOP Genomic
+Using temporary emulation schema: atlas-development-270609.sandbox
+Discovered 89 relationship_id types attached to standard 'Measurement' concepts
+Using 6 core LOINC attribute relationships: Has component, Has property, Has scale type, Has time aspect, Has system, Has method
+Flagged 2377 concepts as panels (have 'Panel contains' relationships)
+Wrote 89 rows to DATA/GetMeasurementOmopData/measurement_attribute_relationships.tsv
+Wrote 102825 standard 'Measurement' concepts with attributes to DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  inputFile = DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+  outDir = DATA/GetMeasurementOmopData
+Read 102825 rows, 11 columns from DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+Wrote summary for 102825 rows / 11 columns to DATA/GetMeasurementOmopData/measurement_concept_attributes_summary.md
+Wrote DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+Wrote DATA/GetMeasurementOmopData/measurement_concept_attributes_summary.md
