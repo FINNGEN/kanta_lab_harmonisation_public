@@ -239,7 +239,7 @@ measurementConceptAttributes <- measurementConcepts |>
 #
 # --- Output -------------------------------------------------------------
 #
-readr::write_tsv(relationshipCounts, pathToDiscoveredAttributesTSV)
+readr::write_tsv(relationshipCounts, pathToDiscoveredAttributesTSV, na = "")
 ParallelLogger::logInfo("Wrote ", nrow(relationshipCounts), " rows to ", pathToDiscoveredAttributesTSV)
 
 readr::write_tsv(measurementConceptAttributes, pathToConceptAttributesTSV, na = "")
