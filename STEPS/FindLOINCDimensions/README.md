@@ -1,0 +1,101 @@
+# FindLOINCDimensions
+
+## Inputs
+
+- `DATA/GroupKnownInformationTable/knownInformationGrouped.tsv` — one row per
+  local `TEST_NAME`/`UNIT`, with `n`, `p_missing`, `deciles`, `LongName`,
+  `prefix_meaning`, `suffix_meaning`, clustered into similarity groups by
+  `group_id` / `group_path`.
+- `scripts/systemPrompt.md` — the system prompt: the LOINC-expert role, a brief
+  description of the Finnish lab coding system, how it maps onto the table's
+  columns, the caveats about this data, and the definition of the six LOINC axes
+  plus the LOINC mapping guidelines to follow.
+
+## Outputs
+
+- `DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv` — every processed row
+  of the input table, unchanged, with seven columns appended:
+  - `has_component` — the analyte measured (English LOINC-style name).
+  - `has_property` — LOINC property abbreviation (`MCnc`, `SCnc`, `CCnc`,
+    `NCnc`, `NFr`, `PrThr`, ...).
+  - `has_time_aspect` — `Pt` for a spot sample, `24H` for a 24-hour collection, ...
+  - `has_system` — LOINC specimen/system (`Ser`, `Plas`, `Bld`, `Urine`, ...).
+  - `has_scale_type` — `Qn`, `Ord`, `Nom`, `Nar`, `Doc`.
+  - `has_method` — the analytical method, only when the code indicates one.
+  - `is_panel` — `TRUE` when the code bundles several separately reported tests.
+
+  These are named exactly as in `GetMeasurementOmopData`'s
+  `measurement_concept_attributes.tsv`, so the inferred axes and the OMOP
+  vocabulary's own axes are directly comparable. Any axis the model could not
+  determine from the row is empty — an empty value means "not knowable from this
+  row", which the prompt explicitly prefers over a guess.
+- `DATA/FindLOINCDimensions/reflections.md` — one `# Group <id>` section per
+  group, holding that group's reflection from the model: ideas to improve the
+  process, gotchas, ambiguities and data problems it hit on those rows.
+- `DATA/FindLOINCDimensions/loincDimensionsStats.md` — a stats report over
+  `codesWithLoincDimensions.tsv`: how completely each axis could be filled, how
+  many of the 6 core axes each row got, one section per axis with its top 10
+  most-used values, and a **Findings** section in which the per-group
+  reflections are sent back to the model and distilled into recurring key
+  findings, suggested improvements, and systematic data problems.
+- `DATA/FindLOINCDimensions/groupsCache/<group_id>.json` — the model's raw
+  structured answer for one group, and `<group_id>_prompt.md` the exact prompt
+  that produced it. The `.json` files are a **cache**: a re-run only calls the
+  LLM for groups that have none, so the step is resumable and re-running it
+  after a partial failure costs nothing for the groups already done.
+- `DATA/FindLOINCDimensions/log.txt` — run log: `run.sh`'s `tee` capturing both
+  its own output and the R script's `ParallelLogger` console output, per
+  `development/STYLE.md`.
+
+## Action
+
+`scripts/findLoincDimensions.R` sends **one LLM call per similarity group**, in
+parallel across workers, and joins the answers back into one table.
+
+Each call is `systemPrompt.md` as the system prompt, plus the group's rows
+rendered as a TSV table as the user message. The group is the unit of work
+because the clustering puts near-identical codes together: sibling rows
+disambiguate a truncated or misspelled code, and show whether two similar codes
+are genuinely the same test or deliberately differ (specimen, fasting state,
+unit).
+
+The model returns **only the seven new fields per row**, keyed by a `row_id`
+that the script assigns before prompting — not the whole table back. This keeps
+the payload small, makes it impossible for the model to silently alter source
+values (`n`, `deciles`, ...), and gives an unambiguous integer join key;
+`TEST_NAME` alone would not work, since the same code recurs within a group with
+different `UNIT`s. The join is guarded: `row_id`s that were never sent, or
+returned twice, are dropped with a warning, and rows the model skipped keep
+empty axes rather than silently shifting the table.
+
+Each call also returns a short reflection on that group, collected into
+`reflections.md`.
+
+`scripts/summariseLoincDimensionsStats.R` then reports on the result: per-axis
+completeness and top-10 values computed locally from the table, plus one further
+LLM call — over the concatenated reflections, not per group — that distils them
+into the report's **Findings** section. That call degrades gracefully: if it
+fails, the statistics are still written and the Findings section says so.
+
+## Env vars
+
+- `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`, `GOOGLE_APPLICATION_CREDENTIALS` —
+  the Vertex AI project, region and service-account key, from the
+  `ENVIRONMENTS/<ENV_NAME>.env` file selected by `--env`.
+- `LLM_PROVIDER` — ellmer provider, default `google_vertex`.
+- `LLM_MODEL` — model, default `gemini-2.5-pro`.
+- `LLM_PARALLEL_WORKERS` — number of parallel workers; defaults to
+  `detectCores() - 2`.
+
+## How to run
+
+```
+./STEPS/FindLOINCDimensions/run.sh <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--ngroups <N>]
+```
+
+`--ngroups <N>` processes only the first `N` groups — used during development to
+keep runs small and cheap. Omit it to process all groups.
+
+```
+./STEPS/FindLOINCDimensions/run.sh DATA --env build --ngroups 5
+```
