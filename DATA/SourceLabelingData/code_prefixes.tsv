@@ -1,0 +1,92 @@
+id	code	prefix_meaning	prefix_meaning_fi
+ab	aB	Arterial blood	valtimoveri
+af	Af	Aspiration fluid	punktioneste
+ag	aG	Alveolar gas	alveolikaasu
+am	Am	Amniotic fluid	lapsivesi
+as	As	Ascitic fluid	askitesneste
+b	B	Blood	veri
+bf	Bf	Bronchial fluid	keuhkoputkilima
+bi	Bi	Bile	sappi
+bl	Bl	Bronchoalveolar lavage	bronkoalveolaarihuuhtelu
+bm	Bm	Bone marrow	luuydin
+bo	Bo	Bone	luu
+cb	cB	Capillary blood	kapillaariveri
+cf	Cf	Cervical fluid	kohdunkaulan erite
+ch	Ch	Chyle	maitiaisneste, lymfa
+cn	Cn	Central nervous system	keskushermosto
+co	Co	Colon	paksusuoli
+cu	cU	Collected urine	keräysvirtsa
+cv	Cv	Chorionic villus	(sikiön) suonikalvon nukkalisäke
+df	dF	24-hour feces	vuorokausiuloste
+di	Di	Dialysis fluid	dialyysineste
+dj	Dj	Duodenal juice	duodenaalineste
+du	dU	24-hour urine	vuorokausivirtsa
+e	E	Erythrocyte	erytrosyytti, punasolu
+ef	Ef	Electrophoresis	elektroforeesi
+ex	Ex	Expectorate (sputum)	yskös
+f	F	Feces	uloste
+fb	fB	Fasting blood	paastoveri
+fb	Fb	Foreign body / implant	vierasesine tai implantti
+fe	fE	Fasting erythrocyte	paastoerytrosyytti
+fl	Fl	Vaginal discharge	emätinerite
+fp	fP	Fasting plasma	paastoplasma
+fs	fS	Fasting serum	paastoseerumi
+g	G	Gas	kaasu
+gf	Gf	Gargle fluid	nieluhuuhteluneste
+gi	Gi	Gastrointestinal canal	suolikanava
+gj	Gj	Gastric juice	mahaneste
+gr	Gr	Granulocyte	granulosyytti
+ha	Ha	Hair	hius, karva
+hb	Hb	Hemoglobin	hemoglobiini
+he	He	Heart	sydän
+ki	Ki	Kidney	munuainen
+kl	Kl	Replacement fluid	korvausliuos
+l	L	Leukocyte	leukosyytti, valkosolu
+lf	Lf	Lacrimal fluid (tears)	kyynelneste
+li	Li	Cerebrospinal fluid	aivo-selkäydinneste
+ln	Ln	Lymph node	imusolmuke
+lr	Lr	Liver	maksa
+lu	Lu	Lung	keuhko
+ly	Ly	Lymphocyte	lymfosyytti
+m	M	Muscle	lihas
+me	Me	Meconium	lapsenpihka
+mf	Mf	Mammary fluid	maitorauhaserite
+mm	Mm	Maternal milk	äidinmaito
+mu	Mu	Mucosa	limakalvo
+na	Na	Nail	kynsi
+ne	Ne	Nerve	hermo
+ns	Ns	Nasal secretion	nenäerite
+nu	nU	Night (morning) urine	yövirtsa (aamuvirtsa)
+p	P	Plasma	plasma
+pa	Pa	Pancreatic juice	haimaneste
+pd	Pd	Peritoneal dialysis fluid	vatsaontelon dialyysineste
+pf	Pf	Pleural fluid	pleuraneste
+pi	Pi	Pituitary gland	aivolisäke
+pl	Pl	Placenta	istukka
+pp	Pp	Periodontal pocket	ientasku
+ps	Ps	Pharyngeal secretion	nieluerite
+pt	Pt	Patient	potilas
+pu	Pu	Pus	märkä
+s	S	Serum	seerumi
+sa	Sa	Saliva	sylki
+se	Se	Secretion	erite
+sk	Sk	Skin	iho
+sp	Sp	Sperm / semen	siemenneste
+st	St	Stomach	mahalaukku
+sw	Sw	Sweat	hiki
+sy	Sy	Synovial fluid	nivelneste
+t	T	Thrombocyte	trombosyytti
+ta	Ta	Tracheal aspirate	trakea-aspiraatti
+tf	Tf	Tissue fluid	kudosneste
+ts	Ts	Tissue	kudosnäyte
+u	U	Urine	virtsanäyte
+ua	uA	Umbilical artery blood	napavaltimoveri
+ub	uB	Umbilical blood	napaveri
+uf	Uf	Urethral fluid	virtsaputken erite
+us	uS	Umbilical (blood) serum	napaseerumi
+ut	Ut	Uterus (womb)	kohtu
+uv	uV	Umbilical venous blood	napalaskimoveri
+vb	vB	Venous blood	laskimoveri
+vf	Vf	Vesicle fluid	rakkulaneste
+vt	Vt	Point-of-care test	vieritutkimus
+zb	zB	Central blood	sentraaliveri

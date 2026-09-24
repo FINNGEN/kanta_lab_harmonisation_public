@@ -1,0 +1,80 @@
+id	code	suffix_meaning	suffix_meaning_fi
+-ab	-Ab	Antibodies	vasta-aineet
+-aba	-AbA	IgA antibodies	IgA vasta-aineet
+-abd	-AbD	IgD antibodies	IgD vasta-aineet
+-abe	-AbE	IgE antibodies	IgE vasta-aineet
+-abg	-AbG	IgG antibodies	IgG vasta-aineet
+-abm	-AbM	IgM antibodies	IgM vasta-aineet
+-abs	-Abs	Absorbed	absorboitu
+-ae	-Ae	Aerobic	aerobinen
+-ag	-Ag	Antigen	antigeeni
+-ai	-Ai	Amplitude-integrated	amplitudi-integroitu
+-an	-An	Anaerobic	anaerobinen
+-avi	-Avi	Avidity test	aviditeettitutkimus
+-bc	-Bc	Binding capacity	sitoutumiskapasiteetti
+-cl	-Cl	Clearance	poistuma
+-cml	-Cml	Cell-mediated lysis	soluvälitteinen lyysi
+-ct	-Ct	Confirmation, confirmatory test	varmistus, varmistustesti
+-d	-D	DNA test	DNA-tutkimus
+-eh	-EH	Enzyme histochemical	entsyymihistokemiallinen
+-ek	-Ek	Organ incorporation	elinkertymä
+-em	-EM	Electron microscopic	elektronimikroskooppinen
+-et	-Et	Special technique	erikoistekniikka
+-fc	-Fc	Flow cytometry	virtaussytometria
+-fr	-Fr	Fractions	fraktiot
+-ft	-Ft	Phage typing	faagityypitys
+-he	-He	Antibiotic sensitivity	antibioottiherkkyys
+-hs	-Hs	Heat-stable	lämpöstabiili
+-ic	-Ic	Immunoglobulin-antigen complex	immunoglobuliiniantigeenikompleksi
+-ief	-Ief	Isoelectric focusing	isoelektrinen fokusointi
+-if	-IF	Immunofluorescence	immunofluoresenssi
+-ih	-IH	Immunohistochemical	immunohistokemiallinen
+-ik	-Ik	Ion channel	ionikavana
+-ind	-Ind	Index	indeksi
+-inh	-Inh	Inhibited	inhiboitu
+-ion	-Ion	Ionized	ionisoitunut
+-is	-Is	Isoenzymes	isoentsyymit
+-ish	-ISH	In situ hybridization	in situ-hybridisaatio
+-jt	-Jt	Follow-up test	jatkotutkimus
+-kj	-Kj	Conjugated	konjugoitunut
+-lm	-Lm	Species identification	lajimääritys
+-m	-M	Supine (lying down)	makuulla
+-ma	-Ma	Macro	makro
+-mc	-Mc	Mitochondrial	mitokondriaalinen
+-mi	-Mi	Micro	mikro
+-mo	-Mo	Monoclonal	monoklonaalinen
+-mor	-Mor	Histomorphometric	histomorfometrinen
+-na	-Na	Native preparation	natiivivalmiste
+-nh	-Nh	Nucleic acid	nukleiinihappo
+-o	-O	Qualitative test (also semi-quantitative)	kvalitatiivinen tutkimus, myös semikvantitatiivinen
+-oc	-Oc	Oligoclonal	oligoklonaalinen
+-or	-Or	Organic	orgaaninen
+-p	-P	Upright (standing)	pystyssä
+-pa	-Pa	Long-term / prolonged	pitkäaikainen
+-pcl	-Pcl	Polyclonal	polyklonaalinen
+-pm	-Pm	Pressure measurement	painemittaus
+-pr	-Pr	Precipitation	presipitaatio
+-ps	-Ps	Basic screening	perusseulonta
+-pse	-Pse	Basic screening with specified follow-up	perusseulonta ja erittely
+-r	-R	Exercise / functional test	rasituskoe, toimintakoe
+-re	-Re	Retention	retentio
+-rh	-RH	Releasing hormone	vapauttajahormoni
+-s	-S	Stimulation, stimulated	stimulaatio, stimuloitu
+-sc	-Sc	Classification, subclasses	luokitus, alaluokat
+-sis	-Sis	Content	sisältö
+-sit	-Sit	Bound	sitoutunut
+-ss	-Ss	Targeted screening	suunnattu seulonta
+-sse	-Sse	Targeted screening with specified follow-up	suunnattu seulonta ja erittely
+-st	-St	Stability	stabiilisuus
+-tc	-Tc	Transcutaneous	transkutaaninen
+-tox	-Tox	Toxin	toksiini
+-ty	-Ty	Typing	tyypitys
+-v	-V	Free or unconjugated	vapaa tai konjugoimaton
+-vaih	-Vaih	Variable	vaihtuva
+-vf	-Vf	Free fraction	vapaa fraktio
+-vi	-Vi	Culture	viljely
+-vib	-Vib	Vibration sense	värinätunto
+-vid	-Vid	Video	video
+-vit	-Vit	Vitamin	vitamiini
+-vr	-Vr	Staining	värjäys
+-yr	-Yr	Upper extremity	yläraaja
