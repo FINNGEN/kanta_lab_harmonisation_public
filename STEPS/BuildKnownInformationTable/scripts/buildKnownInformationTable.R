@@ -24,7 +24,10 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 #
 # --- Input -------------------------------------------------------------
 #
-labSummary <- readr::read_tsv(labSummaryFile, show_col_types = FALSE)
+# na = "" (not readr's default c("", "NA")): some TEST_NAME values are
+# literally the text "NA" -- a real abbreviation, not a missing value -- and
+# labSummaryFile itself only ever writes "" for a genuine missing value.
+labSummary <- readr::read_tsv(labSummaryFile, show_col_types = FALSE, na = "")
 ParallelLogger::logInfo("Read ", nrow(labSummary), " rows from ", labSummaryFile)
 
 labCodes <- readr::read_tsv(labCodesFile, show_col_types = FALSE)
@@ -106,5 +109,5 @@ ParallelLogger::logInfo(nMatchedSuffix, " / ", nrow(result), " rows matched a su
 # --- Output -------------------------------------------------------------
 #
 outFile <- file.path(outDir, "knownInformation.tsv")
-readr::write_tsv(result, outFile)
+readr::write_tsv(result, outFile, na = "")
 ParallelLogger::logInfo("Wrote ", nrow(result), " rows to ", outFile)

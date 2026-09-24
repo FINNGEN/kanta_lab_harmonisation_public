@@ -18,7 +18,10 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 #
 # --- Input -------------------------------------------------------------
 #
-knownInformation <- readr::read_tsv(knownInformationFile, show_col_types = FALSE)
+# na = "" (not readr's default c("", "NA")): some TEST_NAME values are
+# literally the text "NA" -- a real abbreviation, not a missing value -- and
+# knownInformationFile itself only ever writes "" for a genuine missing value.
+knownInformation <- readr::read_tsv(knownInformationFile, show_col_types = FALSE, na = "")
 ParallelLogger::logInfo("Read ", nrow(knownInformation), " rows from ", knownInformationFile)
 
 #
