@@ -3,19 +3,19 @@
     {
       "row_id": 1710,
       "has_component": "",
-      "has_property": "Mass fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_property": "Time Fraction",
+      "has_time_aspect": "Reporting Period",
+      "has_system": "^Patient",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 1711,
-      "has_component": "",
-      "has_property": "Mass fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_component": "Glucose measurements in range",
+      "has_property": "Time Fraction",
+      "has_time_aspect": "Reporting Period",
+      "has_system": "^Patient",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -43,10 +43,10 @@
     {
       "row_id": 1714,
       "has_component": "Glucose",
-      "has_property": "Substance Concentration",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -93,10 +93,10 @@
     {
       "row_id": 1719,
       "has_component": "Glucose",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -125,7 +125,7 @@
       "has_component": "Glucose",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -133,10 +133,10 @@
     {
       "row_id": 1723,
       "has_component": "Glucose",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nar",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -213,10 +213,10 @@
     {
       "row_id": 1731,
       "has_component": "",
-      "has_property": "Finding",
+      "has_property": "",
       "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_system": "",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -243,10 +243,10 @@
     {
       "row_id": 1734,
       "has_component": "Glucose",
-      "has_property": "Substance Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -263,10 +263,10 @@
     {
       "row_id": 1736,
       "has_component": "",
-      "has_property": "Finding",
+      "has_property": "",
       "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_system": "",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -291,5 +291,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was straightforward, focusing almost entirely on glucose measurements. The main correction was for capitalization: changing `Mass Fraction` to the correct OMOP term `Mass fraction` for rows 1710 and 1711, which represent 'time in range' and 'time below range' metrics from continuous glucose monitoring, correctly identified as a property of `Mass fraction` given the '%' unit. The previous pass correctly distinguished between laboratory glucose tests (where `has_system` is appropriately left blank due to lack of a specimen prefix like `S-` or `P-`) and point-of-care tests (`-vieri`), which were correctly assigned `Blood capillary` as the system and `Test strip` as the method. The candidate lists were sufficient and accurate for this group."
+  "reflection": "This group primarily consists of glucose measurements. Most axis values were already correct OMOP terms with 1.000 similarity scores. I made two corrections to `has_component`:\n\n*   For `row_id` 1710 (`-gluk-tbr`, Time Below Range), the candidate list for `Glucose time below range` was empty, so I correctly cleared the component.\n*   For `row_id` 1711 (`-gluk-tir`, Time In Range), I selected `Glucose measurements in range` as the most appropriate candidate over the panel option, since `is_panel` was false and the unit was `%` (Time Fraction).\n\nThe most significant issue was the candidate list for the `has_system` axis. It was missing `Serum or Plasma`, which is the standard system for most routine venous blood glucose tests (like OGTTs) where the local code doesn't specify serum or plasma explicitly. This forced me to leave the `has_system` axis empty for a large number of rows (e.g., 1713, 1715-1718, etc.), as the provided options (`^Patient`, `Blood capillary`, `Plasma`) were not appropriate. Including `Serum or Plasma` in the candidate list for such groups would greatly improve mapping accuracy."
 }

@@ -67,7 +67,7 @@ Return one entry per input row, with `row_id` echoed exactly and all seven field
 Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 126.
+Here is group 84.
 
 ## Candidate OMOP terms for the values used in this group
 
@@ -75,72 +75,63 @@ Here is group 126.
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| Glucose | Glucose | 1.000 | 116 | 2,411,012 |
-| Glucose time below range | (none scored >= 0.75) |  |  |  |
-| Glucose time in range | Glucose measurements in range | 0.776 | 0 | 0 |
-| Glucose time in range | Continuous glucose monitoring time in ranges panel | 0.767 | 0 | 0 |
+| Collection method | Collection method | 1.000 | 0 | 0 |
+| Collection method | Collection duration | 0.788 | 6 | 5,190 |
+| Collection method | Collection setting | 0.784 | 0 | 0 |
+| Collection method | Collection procedure comment | 0.775 | 0 | 0 |
+| Collection method | Collection time | 0.771 | 0 | 0 |
+| Specimen collection procedure | Specimen collection | 0.921 | 0 | 0 |
+| Specimen collection procedure | Specimen collection problem | 0.784 | 0 | 0 |
+| Specimen processing | Specimen preparation | 0.797 | 0 | 0 |
+| Specimen processing | Specimen collection | 0.793 | 0 | 0 |
+| Specimen transport | (none scored >= 0.75) |  |  |  |
+| Time | Time | 1.000 | 0 | 0 |
+| Time | Timing | 0.796 | 0 | 0 |
 
 ### property
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| Substance Concentration | Substance Concentration | 1.000 | 1,643 | 51,490,057 |
-| Substance Concentration | Substance Concentration Squared | 0.845 | 0 | 0 |
-| Substance Concentration | Substance concentration difference | 0.841 | 0 | 0 |
-| Substance Concentration | Mass or Substance Concentration | 0.837 | 0 | 0 |
-| Substance Concentration | Mass Concentration | 0.772 | 1,215 | 26,086,908 |
-| Time Fraction | Time Fraction | 1.000 | 0 | 0 |
-| Time Fraction | Number Fraction | 0.782 | 482 | 8,246,054 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Test strip | Test strip | 1.000 | 79 | 4,294,769 |
-| Test strip | Test strip manual | 0.843 | 0 | 0 |
-| Test strip | Test strip automated | 0.836 | 3 | 687,408 |
+| Finding | Finding | 1.000 | 52 | 1,337,646 |
+| Time | (none scored >= 0.75) |  |  |  |
+| Type | Type | 1.000 | 17 | 482,606 |
 
 ### system
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| ^Patient | ^Patient | 1.000 | 20 | 396,517 |
-| Blood capillary | Blood capillary | 1.000 | 121 | 787,125 |
-| Blood capillary | Blood capillary^Fetus | 0.763 | 0 | 0 |
-| Plasma | Plasma | 1.000 | 41 | 58,727 |
-| Plasma | Plasma or Blood | 0.752 | 0 | 0 |
+| Blood | Blood | 1.000 | 1,135 | 91,968,350 |
+| Bone marrow | Bone marrow | 1.000 | 18 | 26,597 |
+| Urine | Urine | 1.000 | 586 | 16,080,701 |
 
 ## The rows
 
 | row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1710 | -gluk-tbr | % | 118 | 0 | [0, 0, 1, 1, 1, 2, 2.43, 4.38, 6.6] |  |  |  | Glucose time below range | Time Fraction |  | ^Patient | Qn | Reporting Period | FALSE |
-| 1711 | -gluk-tir | % | 120 | 0 | [25.5, 36.83, 44.57, 51.33, 60.25, 66, 72.25, 76.73, 81.25] |  |  |  | Glucose time in range | Time Fraction |  | ^Patient | Qn | Reporting Period | FALSE |
-| 1712 | gluk-vieri |  | 309 | 0 | [5.09, 5.42, 5.78, 6.17, 6.7, 7.14, 8, 9.04, 11.23] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 1713 | gluk0 | mmol/l | 143 | 0 | [4.61, 4.8, 4.96, 5.03, 5.21, 5.48, 5.8, 6.24, 6.7] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1714 | gluk0 |  | 10 | 20 |  |  |  |  | Glucose |  |  |  |  |  | FALSE |
-| 1715 | gluk0min |  | 368 | 0 | [4.92, 5.32, 5.58, 5.75, 5.88, 6, 6.19, 6.58, 7.05] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1716 | gluk120min |  | 349 | 0 | [4.3, 5.17, 5.91, 6.49, 7.07, 7.6, 8.72, 10.59, 13.35] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1717 | gluk1h | mmol/l | 282 | 0 | [5.36, 6.29, 6.9, 7.39, 7.93, 8.69, 9.15, 9.75, 11.47] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1718 | gluk2h | mmol/l | 280 | 0 | [4.55, 5.28, 5.68, 6.16, 6.59, 6.99, 7.54, 8.2, 9.44] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1719 | gluk2h |  | 6 | 100 |  |  |  |  | Glucose |  |  |  |  |  | FALSE |
-| 1720 | gluk30min |  | 362 | 0 | [7.03, 7.79, 8.42, 8.84, 9.36, 9.74, 10.39, 11.2, 12.52] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1721 | gluk60min |  | 359 | 0 | [5.8, 6.9, 7.62, 8.52, 9.3, 10.21, 11.28, 12.5, 14.53] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1722 | glukbel-vp | mmol/l | 664 | 0 | [4.52, 4.88, 5.29, 5.73, 5.99, 6.35, 6.81, 10.3, 12.64] |  |  |  | Glucose | Substance Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1723 | glukbel-vp |  | 209 | 100 |  |  |  |  | Glucose |  |  | Plasma |  |  | FALSE |
-| 1724 | glukoosi120min | mmol/l | 119 | 0 | [4.6, 5.12, 5.49, 5.84, 6.6, 7.25, 8.25, 9.68, 12.44] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1725 | glukr-0 | mmol/l | 144 | 0 | [4.8, 5.18, 5.45, 5.64, 5.93, 6.16, 6.41, 6.64, 7.16] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1726 | glukr-1h | mmol/l | 125 | 0 | [6.69, 7.13, 7.9, 8.73, 9.2, 10.36, 11.37, 12.79, 14.55] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1727 | glukr-2h | mmol/l | 144 | 0 | [5.34, 5.79, 6.28, 6.91, 7.51, 8.15, 8.91, 10.16, 11.81] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1728 | glukr0 | mmol/l | 204 | 0 | [4.5, 4.79, 4.89, 5.08, 5.2, 5.47, 5.8, 6.29, 6.89] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1729 | glukr0-n | mmol/l | 618 | 0 | [4.67, 4.86, 5.09, 5.3, 5.57, 5.83, 6.03, 6.29, 6.69] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1730 | glukr1h | mmol/l | 381 | 0 | [5.67, 6.21, 6.84, 7.42, 7.86, 8.3, 8.82, 9.42, 10.36] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1731 | glukr1valm |  | 333 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 1732 | glukr2h | mmol/l | 780 | 0 | [4.8, 5.34, 5.8, 6.21, 6.59, 7.03, 7.53, 8.19, 9.83] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1733 | glukras-0 | mmol/l | 97 | 0 | [4.6, 4.78, 5, 5.1, 5.2, 5.43, 5.65, 5.9, 6.3] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1734 | glukras-0 |  | 30 | 3.33 |  |  |  |  | Glucose |  |  |  |  | Point in time (spot) | FALSE |
-| 1735 | glukras120 | mmol/l | 153 | 0 | [5.1, 5.47, 5.77, 6.11, 6.54, 6.97, 7.58, 8.12, 9.26] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1736 | glukrvalm |  | 2563 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 1737 | glukvieri | mmol/l | 823 | 0 | [5.3, 5.72, 6.09, 6.42, 6.92, 7.6, 8.66, 10.17, 12.3] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 1738 | glukvieri |  | 251 | 1.59 | [5.24, 5.55, 5.81, 6.07, 6.3, 6.79, 7.52, 8.56, 10.76] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
+| 1215 | alvhuumott |  | 120 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1216 | bm-notto |  | 364 | 100 |  |  | Bone marrow |  | Specimen collection procedure | Finding |  | Bone marrow | Nar | Point in time (spot) | FALSE |
+| 1217 | gyn.notto |  | 1682 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1218 | huumn.otto |  | 1041 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1219 | n-otto |  | 165 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1220 | n.otto |  | 258 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1221 | notto |  | 4008 | 99.88 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1222 | notto,neuv |  | 634 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1223 | notto,tyks |  | 416 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1224 | notto/eris |  | 444 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1225 | nottocovid |  | 1700 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1226 | nottopkl |  | 3516 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1227 | nottoverikoe |  | 1735 | 100 |  |  |  |  | Specimen collection procedure | Finding |  | Blood | Nar | Point in time (spot) | FALSE |
+| 1228 | näyt.käsit |  | 520 | 100 |  |  |  |  | Specimen processing | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1229 | näyt.ot-1 |  | 174 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1230 | näyt.ot. |  | 10018 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1231 | näyt.otto |  | 5060 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1232 | näytekulje |  | 408 | 100 |  |  |  |  | Specimen transport | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1233 | näytt.otto |  | 7199 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1234 | näytteenot |  | 600 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1235 | näytteenotto |  | 1441 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
+| 1236 | ottotapa | h | 452 | 0 | [2, 2.94, 3.78, 4, 4, 5, 5.83, 6.78, 8] |  |  |  | Time | Time |  |  | Qn | Point in time (spot) | FALSE |
+| 1237 | ottotapa |  | 73358 | 100 |  |  |  |  | Collection method | Type |  |  | Nar | Point in time (spot) | FALSE |
+| 1238 | u-ottotap |  | 363 | 100 |  |  | Urine |  | Collection method | Type |  | Urine | Nar | Point in time (spot) | FALSE |
+| 1239 | u-tutk/ottotapa |  | 5714 | 100 |  |  | Urine |  | Collection method | Type |  | Urine | Nar | Point in time (spot) | FALSE |
+| 1240 | valv.notto |  | 502 | 100 |  |  |  |  | Specimen collection procedure | Finding |  |  | Nar | Point in time (spot) | FALSE |
 

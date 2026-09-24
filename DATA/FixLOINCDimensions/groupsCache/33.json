@@ -1,0 +1,215 @@
+{
+  "rows": [
+    {
+      "row_id": 183,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 184,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Nose",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 185,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 186,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 187,
+      "has_component": "",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
+      "is_panel": false
+    },
+    {
+      "row_id": 188,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 189,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 190,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 191,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Nose",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 192,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Nose",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 193,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 194,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 195,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 196,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 197,
+      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 198,
+      "has_component": "ECG",
+      "has_property": "Finding",
+      "has_time_aspect": "24 hours",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 199,
+      "has_component": "ECG",
+      "has_property": "Finding",
+      "has_time_aspect": "24 hours",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 200,
+      "has_component": "ECG",
+      "has_property": "Finding",
+      "has_time_aspect": "48 hours",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 201,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 202,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 203,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "The main correction in this group was to the `has_component` axis for all MRSA-related tests (e.g., rows 183-186). The initial free-text value `Staphylococcus aureus methicillin resistant` was changed to the standard OMOP term `Methicillin resistant Staphylococcus aureus`, as suggested by the candidate list and supported by high usage in curated Finnish data. The `has_system` value `Perineum` for rows 186, 195, and 196 was removed because the candidate list correctly indicated it is not a valid OMOP term. For the ECG tests (rows 198-200), I changed the component from `Electrocardiogram` to `ECG`. Although `Electrocardiogram` is a valid LOINC term, it was not present in the candidate list of fixes, and the strict instruction is to pick from the list. The local code `pt-ekg` also supports using the abbreviation `ECG`. Most other axes were already correct and required no changes."
+}

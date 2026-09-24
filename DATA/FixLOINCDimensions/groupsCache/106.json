@@ -1,0 +1,725 @@
+{
+  "rows": [
+    {
+      "row_id": 1397,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1398,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1399,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1400,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1401,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Aspirate",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1402,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Peritoneal fluid",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1403,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1404,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1405,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Ord",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1406,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1407,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1408,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Blood",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1409,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1410,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1411,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1412,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bronchoalveolar lavage",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1413,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Bone",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1414,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Catheter tip",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1415,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1416,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Sputum",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1417,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Sputum",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1418,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1419,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1420,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1421,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1422,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Stool",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1423,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Genital fluid",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 1424,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Genital fluid",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1425,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cerebral spinal fluid",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1426,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Cerebral spinal fluid",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1427,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Dialysis fluid peritoneal",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1428,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pleural fluid",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1429,
+      "has_component": "Bacteria",
+      "has_property": "Substance Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 1430,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1431,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1432,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1433,
+      "has_component": "Bacteria",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Synovial fluid",
+      "has_scale_type": "Nar",
+      "has_method": "Gram stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1434,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1435,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1436,
+      "has_component": "Bacteria",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "SemiQn",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1437,
+      "has_component": "Bacteria",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "SemiQn",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1438,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1439,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1440,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1441,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1442,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1443,
+      "has_component": "Bacteria",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "SemiQn",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1444,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1445,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1446,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1447,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1448,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1449,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1450,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1451,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1452,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1453,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1454,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1455,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1456,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1457,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1458,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1459,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1460,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1461,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1462,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1463,
+      "has_component": "Bacteria identified",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1464,
+      "has_component": "Bacteria",
+      "has_property": "Number Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "OrdQn",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1465,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1466,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1467,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1468,
+      "has_component": "Bacteria",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group consisted entirely of bacteriology tests. The initial axis assignments were largely correct, and most values were already valid OMOP terms. My corrections focused on the `has_system` axis. I corrected `Bronchoalveolar lavage fluid` to the valid term `Bronchoalveolar lavage` (row 1412), and `Dialysis fluid.peritoneal` to `Dialysis fluid peritoneal` (row 1427). A significant issue was the candidate lists failing to provide exact matches for valid OMOP terms. For `Gingival crevicular fluid` (row 1429), no candidate was found, so I had to clear the field as per instructions. For `Vaginal fluid` (rows 1423, 1424), the only candidate was the more general term `Genital fluid`, which I used. This highlights a limitation where the candidate list can force a loss of specificity or a complete omission of a correct value."
+}

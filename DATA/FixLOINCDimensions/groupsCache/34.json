@@ -1,0 +1,185 @@
+{
+  "rows": [
+    {
+      "row_id": 204,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 205,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Genital fluid",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 206,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 207,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 208,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 209,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 210,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 211,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 212,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 213,
+      "has_component": "Streptococcus pyogenes Ag",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 214,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 215,
+      "has_component": "Streptococcus pyogenes Ag",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 216,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Throat",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 217,
+      "has_component": "Streptococcus.beta-hemolytic",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Organism specific culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 218,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Genital fluid",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 219,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 220,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "Presence or Identity",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Nucleic acid amplification with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 221,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This was a microbiology group focused on Streptococcus species. The main corrections involved standardizing component names. \n\n*   For rows testing for beta-hemolytic strep (206-212, 216-217), I corrected `Streptococcus.beta hemolytic` to the proper OMOP term `Streptococcus.beta-hemolytic` from the candidate list.\n*   For Group A Strep antigen tests (rows 213, 215), I changed `Streptococcus pyogenes antigen` to the standard LOINC abbreviation `Streptococcus pyogenes Ag`.\n*   A notable issue arose with the system axis for rows 205 and 218. The local codes `fl-` and `fluori` clearly indicate `Vaginal fluid`. However, the candidate list for the current value `Vaginal fluid` only offered `Genital fluid` as a fix. While `Vaginal fluid` is a valid LOINC system, it was absent from the candidates. Following instructions, I chose the provided candidate `Genital fluid` over leaving the axis empty, as it's a correct, albeit less specific, term. This suggests a potential gap or configuration issue in the semantic search that generated the candidates."
+}

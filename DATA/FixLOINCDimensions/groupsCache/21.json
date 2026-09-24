@@ -7,7 +7,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -17,7 +17,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Nar",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -27,7 +27,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -37,7 +37,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -47,7 +47,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -57,7 +57,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -67,7 +67,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -77,7 +77,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -87,7 +87,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -106,7 +106,7 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -126,7 +126,7 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -157,7 +157,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -177,7 +177,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -187,7 +187,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -196,8 +196,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -207,7 +207,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -216,8 +216,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -227,7 +227,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -236,8 +236,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -247,7 +247,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -266,7 +266,7 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -277,9 +277,9 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     }
   ],
-  "reflection": "In this group, corrections were primarily made to the `has_component` and `has_property` axes. The near-miss paraphrase `Soluble transferrin receptor` was consistently corrected to the precise OMOP term `Transferrin receptor.soluble`, supported by Finnish test names like `p-transferriinireseptori,liukoinen` where `liukoinen` means soluble (e.g., row 166). The most frequent correction was capitalizing `Mass Fraction` to the correct OMOP form `Mass fraction`. This was guided by units (`%`, `osuus`) or decile values that clearly represented a ratio/fraction (e.g., 0.08-0.41 in row 158). The `has_system` axis values (`Plasma`, `Serum`) were already correct and aligned with the national prefixes (`P-`, `S-`, etc.). The candidate lists were effective and provided all necessary terms for this group."
+  "reflection": "In this group, two primary corrections were made. First, the `has_component` value 'Transferrin.iron saturation', a non-existent OMOP term, was corrected to the proper term `Transferrin saturation` based on the candidate list. Second, the `has_property` value 'Mass Fraction' was corrected to its proper OMOP cased form, `Mass fraction`. This capitalization issue is a perfect example of why this review step is critical, as a near-miss string fails automated mapping. The `has_system` axis values were already correctly inferred from the Finnish test code prefixes (`p-` for Plasma, `s-` for Serum) and were left unchanged. The candidate lists provided were sufficient for all necessary corrections."
 }

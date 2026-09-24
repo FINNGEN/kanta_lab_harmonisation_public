@@ -67,7 +67,7 @@ Return one entry per input row, with `row_id` echoed exactly and all seven field
 Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 126.
+Here is group 160.
 
 ## Candidate OMOP terms for the values used in this group
 
@@ -75,72 +75,60 @@ Here is group 126.
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| Glucose | Glucose | 1.000 | 116 | 2,411,012 |
-| Glucose time below range | (none scored >= 0.75) |  |  |  |
-| Glucose time in range | Glucose measurements in range | 0.776 | 0 | 0 |
-| Glucose time in range | Continuous glucose monitoring time in ranges panel | 0.767 | 0 | 0 |
+| Alanine aminotransferase | Alanine aminotransferase | 1.000 | 21 | 5,367,314 |
+| Alanine aminotransferase | Alanine aminotransferase/Aspartate aminotransferase | 0.852 | 0 | 0 |
+| Alanine aminotransferase | Aspartate aminotransferase/Alanine aminotransferase | 0.775 | 0 | 0 |
+| Aspartate aminotransferase | Aspartate aminotransferase | 1.000 | 14 | 513,305 |
+| Aspartate aminotransferase | Aspartate aminotransferase/Alanine aminotransferase | 0.834 | 0 | 0 |
+| Aspartate aminotransferase | Alanine aminotransferase | 0.762 | 21 | 5,367,314 |
+| Aspartate aminotransferase | Aspartate aminotransferase.macromolecular | 0.760 | 0 | 0 |
+| gamma-Glutamyl transferase | Gamma glutamyl transferase | 0.908 | 17 | 1,024,731 |
+| gamma-Glutamyl transferase | Gamma glutamyl transferase/Aspartate aminotransferase | 0.811 | 0 | 0 |
+| gamma-Glutamyl transferase | Gamma glutamyl transferase.macromolecular | 0.751 | 0 | 0 |
 
 ### property
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| Substance Concentration | Substance Concentration | 1.000 | 1,643 | 51,490,057 |
-| Substance Concentration | Substance Concentration Squared | 0.845 | 0 | 0 |
-| Substance Concentration | Substance concentration difference | 0.841 | 0 | 0 |
-| Substance Concentration | Mass or Substance Concentration | 0.837 | 0 | 0 |
-| Substance Concentration | Mass Concentration | 0.772 | 1,215 | 26,086,908 |
-| Time Fraction | Time Fraction | 1.000 | 0 | 0 |
-| Time Fraction | Number Fraction | 0.782 | 482 | 8,246,054 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Test strip | Test strip | 1.000 | 79 | 4,294,769 |
-| Test strip | Test strip manual | 0.843 | 0 | 0 |
-| Test strip | Test strip automated | 0.836 | 3 | 687,408 |
+| Catalytic Concentration | Catalytic Concentration | 1.000 | 228 | 10,802,985 |
+| Catalytic Concentration | Relative catalytic concentration | 0.848 | 9 | 39,650 |
 
 ### system
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| ^Patient | ^Patient | 1.000 | 20 | 396,517 |
-| Blood capillary | Blood capillary | 1.000 | 121 | 787,125 |
-| Blood capillary | Blood capillary^Fetus | 0.763 | 0 | 0 |
 | Plasma | Plasma | 1.000 | 41 | 58,727 |
 | Plasma | Plasma or Blood | 0.752 | 0 | 0 |
+| Serum | Serum | 1.000 | 995 | 2,593,077 |
+| Serum or Plasma | Serum or Plasma | 1.000 | 2,776 | 78,327,842 |
+| Serum or Plasma | Serum or Plasma or Urine | 0.832 | 0 | 0 |
+| Serum or Plasma | Serum and Plasma | 0.819 | 0 | 0 |
+| Serum or Plasma | Serum, Plasma or Blood | 0.816 | 84 | 6,240,111 |
+| Serum or Plasma | Serum or Plasma and CSF | 0.792 | 4 | 1,187 |
 
 ## The rows
 
 | row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1710 | -gluk-tbr | % | 118 | 0 | [0, 0, 1, 1, 1, 2, 2.43, 4.38, 6.6] |  |  |  | Glucose time below range | Time Fraction |  | ^Patient | Qn | Reporting Period | FALSE |
-| 1711 | -gluk-tir | % | 120 | 0 | [25.5, 36.83, 44.57, 51.33, 60.25, 66, 72.25, 76.73, 81.25] |  |  |  | Glucose time in range | Time Fraction |  | ^Patient | Qn | Reporting Period | FALSE |
-| 1712 | gluk-vieri |  | 309 | 0 | [5.09, 5.42, 5.78, 6.17, 6.7, 7.14, 8, 9.04, 11.23] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 1713 | gluk0 | mmol/l | 143 | 0 | [4.61, 4.8, 4.96, 5.03, 5.21, 5.48, 5.8, 6.24, 6.7] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1714 | gluk0 |  | 10 | 20 |  |  |  |  | Glucose |  |  |  |  |  | FALSE |
-| 1715 | gluk0min |  | 368 | 0 | [4.92, 5.32, 5.58, 5.75, 5.88, 6, 6.19, 6.58, 7.05] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1716 | gluk120min |  | 349 | 0 | [4.3, 5.17, 5.91, 6.49, 7.07, 7.6, 8.72, 10.59, 13.35] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1717 | gluk1h | mmol/l | 282 | 0 | [5.36, 6.29, 6.9, 7.39, 7.93, 8.69, 9.15, 9.75, 11.47] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1718 | gluk2h | mmol/l | 280 | 0 | [4.55, 5.28, 5.68, 6.16, 6.59, 6.99, 7.54, 8.2, 9.44] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1719 | gluk2h |  | 6 | 100 |  |  |  |  | Glucose |  |  |  |  |  | FALSE |
-| 1720 | gluk30min |  | 362 | 0 | [7.03, 7.79, 8.42, 8.84, 9.36, 9.74, 10.39, 11.2, 12.52] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1721 | gluk60min |  | 359 | 0 | [5.8, 6.9, 7.62, 8.52, 9.3, 10.21, 11.28, 12.5, 14.53] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1722 | glukbel-vp | mmol/l | 664 | 0 | [4.52, 4.88, 5.29, 5.73, 5.99, 6.35, 6.81, 10.3, 12.64] |  |  |  | Glucose | Substance Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1723 | glukbel-vp |  | 209 | 100 |  |  |  |  | Glucose |  |  | Plasma |  |  | FALSE |
-| 1724 | glukoosi120min | mmol/l | 119 | 0 | [4.6, 5.12, 5.49, 5.84, 6.6, 7.25, 8.25, 9.68, 12.44] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1725 | glukr-0 | mmol/l | 144 | 0 | [4.8, 5.18, 5.45, 5.64, 5.93, 6.16, 6.41, 6.64, 7.16] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1726 | glukr-1h | mmol/l | 125 | 0 | [6.69, 7.13, 7.9, 8.73, 9.2, 10.36, 11.37, 12.79, 14.55] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1727 | glukr-2h | mmol/l | 144 | 0 | [5.34, 5.79, 6.28, 6.91, 7.51, 8.15, 8.91, 10.16, 11.81] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1728 | glukr0 | mmol/l | 204 | 0 | [4.5, 4.79, 4.89, 5.08, 5.2, 5.47, 5.8, 6.29, 6.89] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1729 | glukr0-n | mmol/l | 618 | 0 | [4.67, 4.86, 5.09, 5.3, 5.57, 5.83, 6.03, 6.29, 6.69] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1730 | glukr1h | mmol/l | 381 | 0 | [5.67, 6.21, 6.84, 7.42, 7.86, 8.3, 8.82, 9.42, 10.36] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1731 | glukr1valm |  | 333 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 1732 | glukr2h | mmol/l | 780 | 0 | [4.8, 5.34, 5.8, 6.21, 6.59, 7.03, 7.53, 8.19, 9.83] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1733 | glukras-0 | mmol/l | 97 | 0 | [4.6, 4.78, 5, 5.1, 5.2, 5.43, 5.65, 5.9, 6.3] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1734 | glukras-0 |  | 30 | 3.33 |  |  |  |  | Glucose |  |  |  |  | Point in time (spot) | FALSE |
-| 1735 | glukras120 | mmol/l | 153 | 0 | [5.1, 5.47, 5.77, 6.11, 6.54, 6.97, 7.58, 8.12, 9.26] |  |  |  | Glucose | Substance Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 1736 | glukrvalm |  | 2563 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 1737 | glukvieri | mmol/l | 823 | 0 | [5.3, 5.72, 6.09, 6.42, 6.92, 7.6, 8.66, 10.17, 12.3] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 1738 | glukvieri |  | 251 | 1.59 | [5.24, 5.55, 5.81, 6.07, 6.3, 6.79, 7.52, 8.56, 10.76] |  |  |  | Glucose | Substance Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
+| 1769 | alaniiniaminotransferaasi | u/l | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
+| 1770 | alaniiniaminotransferaasi |  | 1818 | 100 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
+| 1771 | alaniiniaminotransferaasi,plasmasta | u/l | 97 | 0 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1772 | alaniiniaminotransferaasi,plasmasta |  | 5 | 100 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
+| 1773 | aspartaattiaminotransferaasi | u/l | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
+| 1774 | aspartaattiaminotransferaasi |  | 112 | 100 |  |  |  |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
+| 1775 | fp-glutamyylitransferaasi | u/l | 102 | 0 |  |  | Fasting plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1776 | fs-alaniiniaminotransferaasi | u/l | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| 1777 | glutamyylitransferaasi | u/l | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
+| 1778 | glutamyylitransferaasi |  | 147 | 100 |  |  |  |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
+| 1779 | p-alaniiniaminotransferaasi | u/l | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1780 | p-alaniiniaminotransferaasi |  | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1781 | p-aspartaattiaminotransferaasi | u/l | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  | Aspartate aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1782 | p-aspartaattiaminotransferaasi |  | 129 | 90.7 |  |  | Plasma |  | Aspartate aminotransferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
+| 1783 | p-glutamyylitransferaasi | u/l | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 1784 | p-glutamyylitransferaasi |  | 33 | 84.85 |  |  | Plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
+| 1785 | s-alaniiniaminotransferaasi | u/l | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| 1786 | s-alaniiniaminotransferaasi |  | 52 | 100 |  |  | Serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum |  | Point in time (spot) | FALSE |
+| 1787 | s-aspartaattiaminotransferaasi | u/l | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| 1788 | s-aspartaattiaminotransferaasi |  | 8 | 87.5 |  |  | Serum |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum |  | Point in time (spot) | FALSE |
+| 1789 | s-glutamyylitransferaasi | u/l | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
 

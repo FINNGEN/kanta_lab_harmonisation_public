@@ -75,9 +75,14 @@ Here is group 21.
 
 | current | possible fix | score | n_codes | n_events |
 |---|---|---|---|---|
-| Soluble transferrin receptor | Transferrin receptor.soluble | 0.859 | 15 | 285,465 |
-| Soluble transferrin receptor | Transferrin receptor.soluble/log Ferritin index | 0.761 | 0 | 0 |
-| Transferrin saturation | Transferrin saturation | 1.000 | 0 | 0 |
+| Transferrin receptor.soluble | Transferrin receptor.soluble | 1.000 | 15 | 285,465 |
+| Transferrin receptor.soluble | Transferrin receptor.soluble/log Ferritin index | 0.818 | 0 | 0 |
+| Transferrin receptor.soluble | Transferrin | 0.753 | 17 | 191,693 |
+| Transferrin.iron saturation | Transferrin saturation | 0.865 | 0 | 0 |
+| Transferrin.iron saturation | Iron/Transferrin | 0.775 | 38 | 180,828 |
+| Transferrin.iron saturation | Transferrin | 0.775 | 17 | 191,693 |
+| Transferrin.iron saturation | Transferrin/Protein.total | 0.766 | 0 | 0 |
+| Transferrin.iron saturation | Transferrin receptor.soluble/log Ferritin index | 0.757 | 0 | 0 |
 
 ### property
 
@@ -88,6 +93,12 @@ Here is group 21.
 | Mass Concentration | Mass Concentration Squared | 0.776 | 0 | 0 |
 | Mass Concentration | Mass or Substance Concentration | 0.774 | 0 | 0 |
 | Mass Fraction | Mass fraction | 1.000 | 229 | 4,683,692 |
+
+### method
+
+| current | possible fix | score | n_codes | n_events |
+|---|---|---|---|---|
+| Calculated | Calculated | 1.000 | 89 | 12,276,393 |
 
 ### system
 
@@ -101,32 +112,32 @@ Here is group 21.
 
 | row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 155 | fp-transferriininrautakyllästeisyys | % | 3193 | 0 | [8.97, 13, 16.76, 20.1, 23.32, 26.3, 29.57, 33.75, 41.18] |  | Fasting plasma |  | Transferrin saturation | Mass Fraction |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 156 | fp-transferriininrautakyllästeisyys |  | 13 | 84.62 |  |  | Fasting plasma |  | Transferrin saturation |  |  | Plasma | Nar | Point in time (spot) | FALSE |
-| 157 | fp-transferriininrautasaturaatio | % | 401 | 0 | [8.17, 12.08, 15.12, 17.38, 20.04, 22.98, 27.38, 31.01, 39.99] |  | Fasting plasma |  | Transferrin saturation | Mass Fraction |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 158 | fs-transferiininrautakyllästeisyys |  | 2368 | 65.54 | [0.08, 0.13, 0.16, 0.19, 0.23, 0.26, 0.3, 0.34, 0.41] |  | Fasting serum |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
-| 159 | fs-transferiininrautakyllästeisyys,paastotilassa |  | 139 | 0 | [0.07, 0.12, 0.15, 0.19, 0.22, 0.24, 0.28, 0.33, 0.39] |  | Fasting serum |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
-| 160 | fs-transferriininrautakyllästeisyys | % | 144 | 0 | [5.6, 8.49, 12.38, 16.94, 20.5, 24.07, 26.84, 31.55, 40] |  | Fasting serum |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
-| 161 | fs-transferriininrautakyllästeisyys |  | 230 | 1.74 | [6.96, 10.51, 13.75, 17.95, 20.84, 24.42, 28.14, 32.22, 47.21] |  | Fasting serum |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
-| 162 | p-transferriininrautakyllästeisyys | % | 288 | 0 | [7.78, 11.72, 15.31, 18.47, 21.76, 25.36, 29.49, 34.05, 40.39] |  | Plasma |  | Transferrin saturation | Mass Fraction |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 163 | p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans | % | 628 | 0 | [9.32, 12.95, 14.99, 17.87, 20.98, 23.9, 27.48, 31.74, 38.07] |  | Plasma |  | Transferrin saturation | Mass Fraction |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 164 | p-transferriinireseptori | mg/l | 1449 | 0 | [0.64, 0.72, 0.81, 0.91, 1.01, 1.14, 1.3, 1.54, 1.97] |  | Plasma |  | Soluble transferrin receptor | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 165 | p-transferriinireseptori |  | 176 | 100 |  |  | Plasma |  | Soluble transferrin receptor |  |  | Plasma | Nar | Point in time (spot) | FALSE |
-| 166 | p-transferriinireseptori,liukoinen | mg/l | 1328 | 0 | [0.8, 1.04, 1.37, 1.95, 2.49, 2.95, 3.61, 4.4, 5.84] |  | Plasma |  | Soluble transferrin receptor | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 167 | p-transferriinireseptori,liukoinen |  | 42 | 100 |  |  | Plasma |  | Soluble transferrin receptor |  |  | Plasma | Nar | Point in time (spot) | FALSE |
-| 168 | s-transferriinireseptori | mg/l | 1934 | 0 | [2.3, 2.61, 2.91, 3.22, 3.51, 3.93, 4.43, 5.22, 6.84] |  | Serum |  | Soluble transferrin receptor | Mass Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 169 | s-transferriinireseptori,liukoinen | mg/l | 129 | 0 | [0.91, 1.1, 1.18, 1.23, 1.33, 1.45, 1.78, 2.23, 3.16] |  | Serum |  | Soluble transferrin receptor | Mass Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 170 | transferiininrautakyllästeisyys,seerumista,paastotilassa | osuus | 236 | 0 | [0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44] |  |  |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
+| 155 | fp-transferriininrautakyllästeisyys | % | 3193 | 0 | [8.97, 13, 16.76, 20.1, 23.32, 26.3, 29.57, 33.75, 41.18] |  | Fasting plasma |  | Transferrin.iron saturation | Mass Fraction | Calculated | Plasma | Qn | Point in time (spot) | FALSE |
+| 156 | fp-transferriininrautakyllästeisyys |  | 13 | 84.62 |  |  | Fasting plasma |  | Transferrin.iron saturation |  | Calculated | Plasma | Nar | Point in time (spot) | FALSE |
+| 157 | fp-transferriininrautasaturaatio | % | 401 | 0 | [8.17, 12.08, 15.12, 17.38, 20.04, 22.98, 27.38, 31.01, 39.99] |  | Fasting plasma |  | Transferrin.iron saturation | Mass Fraction | Calculated | Plasma | Qn | Point in time (spot) | FALSE |
+| 158 | fs-transferiininrautakyllästeisyys |  | 2368 | 65.54 | [0.08, 0.13, 0.16, 0.19, 0.23, 0.26, 0.3, 0.34, 0.41] |  | Fasting serum |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
+| 159 | fs-transferiininrautakyllästeisyys,paastotilassa |  | 139 | 0 | [0.07, 0.12, 0.15, 0.19, 0.22, 0.24, 0.28, 0.33, 0.39] |  | Fasting serum |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
+| 160 | fs-transferriininrautakyllästeisyys | % | 144 | 0 | [5.6, 8.49, 12.38, 16.94, 20.5, 24.07, 26.84, 31.55, 40] |  | Fasting serum |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
+| 161 | fs-transferriininrautakyllästeisyys |  | 230 | 1.74 | [6.96, 10.51, 13.75, 17.95, 20.84, 24.42, 28.14, 32.22, 47.21] |  | Fasting serum |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
+| 162 | p-transferriininrautakyllästeisyys | % | 288 | 0 | [7.78, 11.72, 15.31, 18.47, 21.76, 25.36, 29.49, 34.05, 40.39] |  | Plasma |  | Transferrin.iron saturation | Mass Fraction | Calculated | Plasma | Qn | Point in time (spot) | FALSE |
+| 163 | p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans | % | 628 | 0 | [9.32, 12.95, 14.99, 17.87, 20.98, 23.9, 27.48, 31.74, 38.07] |  | Plasma |  | Transferrin.iron saturation | Mass Fraction | Calculated | Plasma | Qn | Point in time (spot) | FALSE |
+| 164 | p-transferriinireseptori | mg/l | 1449 | 0 | [0.64, 0.72, 0.81, 0.91, 1.01, 1.14, 1.3, 1.54, 1.97] |  | Plasma |  | Transferrin receptor.soluble | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 165 | p-transferriinireseptori |  | 176 | 100 |  |  | Plasma |  | Transferrin receptor.soluble |  |  | Plasma |  | Point in time (spot) | FALSE |
+| 166 | p-transferriinireseptori,liukoinen | mg/l | 1328 | 0 | [0.8, 1.04, 1.37, 1.95, 2.49, 2.95, 3.61, 4.4, 5.84] |  | Plasma |  | Transferrin receptor.soluble | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
+| 167 | p-transferriinireseptori,liukoinen |  | 42 | 100 |  |  | Plasma |  | Transferrin receptor.soluble |  |  | Plasma |  | Point in time (spot) | FALSE |
+| 168 | s-transferriinireseptori | mg/l | 1934 | 0 | [2.3, 2.61, 2.91, 3.22, 3.51, 3.93, 4.43, 5.22, 6.84] |  | Serum |  | Transferrin receptor.soluble | Mass Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| 169 | s-transferriinireseptori,liukoinen | mg/l | 129 | 0 | [0.91, 1.1, 1.18, 1.23, 1.33, 1.45, 1.78, 2.23, 3.16] |  | Serum |  | Transferrin receptor.soluble | Mass Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| 170 | transferiininrautakyllästeisyys,seerumista,paastotilassa | osuus | 236 | 0 | [0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
 | 171 | transferiininrautakyllästeisyys,seerumista,paastotilassa | paketti | 16 | 0 |  |  |  |  |  |  |  |  |  |  | TRUE |
-| 172 | transferiininrautakyllästeisyys,seerumista,paastotilassa |  | 205 | 3.41 | [0.1, 0.13, 0.16, 0.18, 0.22, 0.26, 0.29, 0.33, 0.41] |  |  |  | Transferrin saturation | Mass Fraction |  | Serum | Qn | Point in time (spot) | FALSE |
-| 173 | transferriininrautakyllästeisyys | % | 1179 | 0 | [8.18, 11.78, 15.27, 18.31, 21.03, 24.15, 27.59, 31.86, 39.21] |  |  |  | Transferrin saturation | Mass Fraction |  |  | Qn | Point in time (spot) | FALSE |
-| 174 | transferriininrautakyllästeisyys |  | 26 | 100 |  |  |  |  | Transferrin saturation |  |  |  | Nar | Point in time (spot) | FALSE |
-| 175 | transferriininrautakyllästeisyys(fp-) | % | 596 | 0 | [10.58, 15.04, 18.08, 21, 24.94, 28.56, 32.22, 37.06, 43.51] |  |  |  | Transferrin saturation | Mass Fraction |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 176 | transferriininrautakyllästeisyys(fp-) |  | 16 | 100 |  |  |  |  | Transferrin saturation |  |  | Plasma | Nar | Point in time (spot) | FALSE |
-| 177 | transferriininrautakyllästeisyys␤ | % | 1453 | 0 |  |  |  |  | Transferrin saturation | Mass Fraction |  |  | Qn | Point in time (spot) | FALSE |
-| 178 | transferriininrautakyllästeisyys␤ |  | 5 | 100 |  |  |  |  | Transferrin saturation |  |  |  | Nar | Point in time (spot) | FALSE |
-| 179 | transferriinirautakyllästeisyys | % | 233 | 0 | [8.52, 13.59, 16.32, 21.55, 25.9, 28.62, 32.3, 36.31, 42.32] |  |  |  | Transferrin saturation | Mass Fraction |  |  | Qn | Point in time (spot) | FALSE |
-| 180 | transferriinireseptori,liukoinen | mg/l | 196 | 0 | [1.64, 2.13, 2.4, 2.6, 2.79, 2.98, 3.16, 3.56, 4.22] |  |  |  | Soluble transferrin receptor | Mass Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 181 | transferriinireseptori,liukoinen |  | 48 | 100 |  |  |  |  | Soluble transferrin receptor |  |  |  | Nar | Point in time (spot) | FALSE |
-| 182 | transferriinisaturaatio | % | 292 | 0 | [6.88, 9.89, 12.73, 16.14, 19.09, 22.3, 26.09, 32.09, 39.32] |  |  |  | Transferrin saturation | Mass Fraction |  |  | Qn | Point in time (spot) | FALSE |
+| 172 | transferiininrautakyllästeisyys,seerumista,paastotilassa |  | 205 | 3.41 | [0.1, 0.13, 0.16, 0.18, 0.22, 0.26, 0.29, 0.33, 0.41] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated | Serum | Qn | Point in time (spot) | FALSE |
+| 173 | transferriininrautakyllästeisyys | % | 1179 | 0 | [8.18, 11.78, 15.27, 18.31, 21.03, 24.15, 27.59, 31.86, 39.21] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated |  | Qn | Point in time (spot) | FALSE |
+| 174 | transferriininrautakyllästeisyys |  | 26 | 100 |  |  |  |  | Transferrin.iron saturation |  | Calculated |  |  | Point in time (spot) | FALSE |
+| 175 | transferriininrautakyllästeisyys(fp-) | % | 596 | 0 | [10.58, 15.04, 18.08, 21, 24.94, 28.56, 32.22, 37.06, 43.51] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated | Plasma | Qn | Point in time (spot) | FALSE |
+| 176 | transferriininrautakyllästeisyys(fp-) |  | 16 | 100 |  |  |  |  | Transferrin.iron saturation |  | Calculated | Plasma |  | Point in time (spot) | FALSE |
+| 177 | transferriininrautakyllästeisyys␤ | % | 1453 | 0 |  |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated |  | Qn | Point in time (spot) | FALSE |
+| 178 | transferriininrautakyllästeisyys␤ |  | 5 | 100 |  |  |  |  | Transferrin.iron saturation |  | Calculated |  |  | Point in time (spot) | FALSE |
+| 179 | transferriinirautakyllästeisyys | % | 233 | 0 | [8.52, 13.59, 16.32, 21.55, 25.9, 28.62, 32.3, 36.31, 42.32] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated |  | Qn | Point in time (spot) | FALSE |
+| 180 | transferriinireseptori,liukoinen | mg/l | 196 | 0 | [1.64, 2.13, 2.4, 2.6, 2.79, 2.98, 3.16, 3.56, 4.22] |  |  |  | Transferrin receptor.soluble | Mass Concentration |  |  | Qn | Point in time (spot) | FALSE |
+| 181 | transferriinireseptori,liukoinen |  | 48 | 100 |  |  |  |  | Transferrin receptor.soluble |  |  |  |  | Point in time (spot) | FALSE |
+| 182 | transferriinisaturaatio | % | 292 | 0 | [6.88, 9.89, 12.73, 16.14, 19.09, 22.3, 26.09, 32.09, 39.32] |  |  |  | Transferrin.iron saturation | Mass Fraction | Calculated |  | Qn | Point in time (spot) | FALSE |
 

@@ -1,0 +1,305 @@
+{
+  "rows": [
+    {
+      "row_id": 1739,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1740,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1741,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1742,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1743,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1744,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1745,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1746,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1747,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1748,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1749,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1750,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1751,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1752,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1753,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1754,
+      "has_component": "Semen analysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1755,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1756,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1757,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1758,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1759,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1760,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1761,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1762,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1763,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1764,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1765,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1766,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1767,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1768,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group largely consisted of clinical procedures performed on the patient, identified by the `Pt-` prefix and correctly assigned `^Patient` as the system. For `Spirometry` and `Semen analysis`, the provided candidates included more specific `... panel` terms (`Spirometry panel`, `Semen analysis panel`). I adopted these as they were a better fit for the data, which had `is_panel=TRUE` and Finnish long names indicating comprehensive examinations. The main difficulty was the absence of any candidate OMOP terms for several valid clinical concepts, including `Echocardiography`, `Myocardial perfusion study`, `Spirometry with bronchodilator`, and `Thermal sensory testing`. These concepts were clearly identifiable from the Finnish codes but had to be cleared from the `has_component` axis due to the lack of a valid term to map to, as per the instructions."
+}
