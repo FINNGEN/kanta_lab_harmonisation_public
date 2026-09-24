@@ -4,7 +4,8 @@
 
 - `DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv` — one row per local
   `TEST_NAME`/`UNIT`, with the `omop_concept_id` chosen for it (empty when no
-  candidate was right), its guessed name `loinc_name_guess`, and `is_panel`.
+  candidate was right), its guessed name `loinc_name_guess`, `is_panel`, and
+  the computed `evidence_level` / `unit_share` the report breaks down by.
 - `DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv` — every
   standard OMOP `Measurement`-domain concept, with its name, code, vocabulary
   and the six LOINC axes pulled from the vocabulary itself.
@@ -63,15 +64,30 @@ Two scripts, run in order:
      candidate, not that a join missed.
    - **By domain** — which specimens the mapped codes ended up in, from the
      chosen concept's own `has_system`.
-   - **Cross-check against the reference mapping** — the number that matters.
+   - **Cross-check against the reference mapping** — the section that matters.
      The reference's `APPROVED` rows are matched to this table by
      `TEST_NAME`+`UNIT`, and for the overlap the report gives both how often
      this pipeline answered at all and how often its answer *is* the
-     reference's concept. Coverage and correctness pull in opposite
-     directions, so reporting only the first would let the step look good by
-     mapping everything; both are given, with agreement over the whole overlap
-     as the headline. A few example disagreements are listed. The section is
-     skipped (with a note, not an error) if the file isn't found.
+     reference's concept. Coverage and agreement pull in opposite directions,
+     so reporting only the first would let the step look good by mapping
+     everything.
+
+     Read it as **agreement, not correctness**. The reference is the best
+     mapping available, not ground truth: it sends the rapid-test code
+     `c-reaktiivinenproteiini,pika` to a high-sensitivity CRP concept although
+     that row's values floor at 5 mg/l, and it is internally inconsistent on
+     some panel families.
+
+     The figures are broken out by `evidence_level`, because the two mappings
+     do not have the same target. The reference gives more than one concept
+     across a code's units for only ~6% of multi-unit codes, so in practice it
+     maps `TEST_NAME` -> concept; this pipeline maps `(TEST_NAME, UNIT)` and
+     leaves a `name only` row unmapped rather than assuming a quantity. On
+     those rows the two disagree by construction, so they are reported apart
+     from the evidenced rows — and agreement restricted to rows carrying real
+     evidence is the figure that tracks whether this pipeline picks the right
+     concept. A few example disagreements are listed. The section is skipped
+     (with a note, not an error) if the file isn't found.
 
 ## Env vars
 

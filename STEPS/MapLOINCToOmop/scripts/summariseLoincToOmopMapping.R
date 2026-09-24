@@ -2,9 +2,12 @@
 # Reports on the final local-code -> OMOP concept mapping.
 #
 # The number that actually matters is the last section: how often this
-# pipeline's concept agrees with the curated Finnish mapping on the codes both
-# cover. Coverage (how many codes got any concept) is easy to inflate by
-# guessing, so it is reported next to agreement, never instead of it.
+# pipeline's concept AGREES with the curated Finnish mapping on the codes both
+# cover. Agreement, not correctness -- the reference is the best mapping
+# available, not ground truth, and it carries errors and internal
+# inconsistencies of its own. Coverage (how many codes got any concept) is easy
+# to inflate by guessing, so it is reported next to agreement, never instead of
+# it, and both are broken out by how much evidence the local row actually had.
 #
 
 #
@@ -32,6 +35,16 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 codes <- readr::read_tsv(codesWithOmopFile, show_col_types = FALSE, na = "",
                          col_types = readr::cols(.default = readr::col_character()))
 ParallelLogger::logInfo("Read ", nrow(codes), " rows from ", codesWithOmopFile)
+
+# Columns the report reads but an older upstream run may not have written. Added
+# as empty rather than left missing so a schema change upstream degrades the
+# report by one blank column instead of aborting the whole run.
+for (col in c("evidence_level", "certainty", "reasoning")) {
+  if (!col %in% names(codes)) {
+    ParallelLogger::logWarn("Input has no `", col, "` column; reporting it as empty")
+    codes[[col]] <- NA_character_
+  }
+}
 
 #
 # --- Action -------------------------------------------------------------
@@ -116,9 +129,9 @@ if (file.exists(referenceMappingFile)) {
     checked$omop_concept_id == as.character(checked$OMOP_CONCEPT_ID)
   nChecked <- nrow(checked)
   nAgree <- sum(agrees)
-  # Of the overlap rows this pipeline actually answered, how often was the
-  # answer right? Coverage and correctness pull in opposite directions, so
-  # reporting only the first would let a step look good by mapping everything.
+  # Of the overlap rows this pipeline actually answered, how often did it agree?
+  # Coverage and agreement pull in opposite directions, so reporting only the
+  # first would let a step look good by mapping everything.
   nAnswered <- sum(!is.na(checked$omop_concept_id))
   ParallelLogger::logInfo(
     nChecked, " rows overlap an APPROVED reference mapping; ",
@@ -127,20 +140,76 @@ if (file.exists(referenceMappingFile)) {
     .formatPct(nAgree / max(nAnswered, 1)), " of those answered) agree with it"
   )
 
+  # Examples of disagreement, up to 5 per evidence_level. Taking the first 10 of
+  # the table drew them all from one similarity group -- ten spellings of the
+  # same CRP code, disagreeing the same way -- which says nothing about how the
+  # mapping fails anywhere else. Two guards fix that: distinct (our concept,
+  # reference concept) pairs are kept first, so one recurring disagreement
+  # cannot fill the sample, and the draw is then seeded so re-runs on the same
+  # data show the same examples.
+  #
   # dplyr::coalesce(..., "") rather than leaving NA: sprintf("%s", NA) prints
   # the literal text "NA", which the Table output rule in development/STYLE.md
   # forbids in a table this project produces.
-  examplesDisagree <- checked[!agrees & !is.na(checked$omop_concept_id), ] |>
-    dplyr::transmute(
-      TEST_NAME = dplyr::coalesce(TEST_NAME, ""),
-      UNIT = dplyr::coalesce(UNIT, ""),
-      loinc_name_guess = dplyr::coalesce(loinc_name_guess, ""),
-      our_omop_concept_name = dplyr::coalesce(omop_concept_name, ""),
-      reference_OMOP_CONCEPT_NAME = dplyr::coalesce(OMOP_CONCEPT_NAME, "")
-    ) |>
-    dplyr::slice_head(n = 10)
+  set.seed(1)
+  disagreeing <- checked[!agrees & !is.na(checked$omop_concept_id), ] |>
+    dplyr::mutate(evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)"))
 
-  exampleLines <- if (nrow(examplesDisagree) > 0) .markdownTable(examplesDisagree) else character(0)
+  exampleFor <- function(lvl) {
+    pool <- disagreeing |>
+      dplyr::filter(.data$evidence_level == lvl) |>
+      dplyr::distinct(.data$omop_concept_id, .data$OMOP_CONCEPT_ID, .keep_all = TRUE)
+    if (nrow(pool) == 0) return(character(0))
+    picked <- pool |>
+      dplyr::slice_sample(n = min(5L, nrow(pool))) |>
+      dplyr::transmute(
+        TEST_NAME = dplyr::coalesce(TEST_NAME, ""),
+        UNIT = dplyr::coalesce(UNIT, ""),
+        certainty = dplyr::coalesce(certainty, ""),
+        loinc_name_guess = dplyr::coalesce(loinc_name_guess, ""),
+        our_omop_concept_name = dplyr::coalesce(omop_concept_name, ""),
+        reference_OMOP_CONCEPT_NAME = dplyr::coalesce(OMOP_CONCEPT_NAME, "")
+      )
+    c(paste0("*`", lvl, "` — ", nrow(pool), " distinct disagreements, ",
+             nrow(picked), " shown:*"),
+      "",
+      .markdownTable(picked),
+      "")
+  }
+
+  exampleLines <- unlist(lapply(
+    c("unit+values", "unit only", "values only", "name only", "(unknown)"),
+    exampleFor
+  ))
+  if (is.null(exampleLines)) exampleLines <- character(0)
+
+  # Broken out by evidence_level, because the reference is in practice a
+  # TEST_NAME -> concept mapping: it gives more than one concept across a code's
+  # units for only ~6% of multi-unit codes. This pipeline maps (TEST_NAME, UNIT)
+  # and leaves a name-only row unmapped rather than assuming, so on exactly
+  # those rows the two targets differ by construction. Reporting one blended
+  # percentage would hide that; the `name only` line is where the two
+  # definitions disagree, and the evidenced lines are the ones that measure
+  # whether this pipeline picks the right concept.
+  byEvidence <- checked |>
+    dplyr::mutate(agrees = agrees) |>
+    dplyr::group_by(evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)")) |>
+    dplyr::summarise(
+      n_rows = dplyr::n(),
+      n_answered = sum(!is.na(.data$omop_concept_id)),
+      n_agree = sum(.data$agrees),
+      .groups = "drop"
+    ) |>
+    dplyr::mutate(
+      pct_answered = .formatPct(n_answered / n_rows),
+      pct_agree_of_rows = .formatPct(n_agree / n_rows),
+      pct_agree_of_answered = .formatPct(n_agree / pmax(n_answered, 1))
+    ) |>
+    dplyr::arrange(dplyr::desc(n_rows))
+
+  evidenced <- checked[!is.na(checked$evidence_level) & checked$evidence_level != "name only", ]
+  nEvid <- nrow(evidenced)
+  nEvidAgree <- sum(agrees[!is.na(checked$evidence_level) & checked$evidence_level != "name only"])
 
   referenceSection <- c(
     "## Cross-check against the reference mapping",
@@ -160,9 +229,35 @@ if (file.exists(referenceMappingFile)) {
       pct = c("", .formatPct(nAnswered / max(nChecked, 1)), .formatPct(nAgree / max(nAnswered, 1)))
     )),
     "",
-    paste0("Agreement over the whole overlap (the comparable headline number): **",
-           nAgree, " / ", nChecked, " = ", .formatPct(nAgree / max(nChecked, 1)), "**."),
-    if (length(exampleLines) > 0) c("", "**Example disagreements:**", "", exampleLines) else character(0)
+    paste0("Agreement over the whole overlap: **",
+           nAgree, " / ", nChecked, " = ", .formatPct(nAgree / max(nChecked, 1)), "**. ",
+           "Restricted to rows that carry real evidence (a unit, values, or both): **",
+           nEvidAgree, " / ", nEvid, " = ", .formatPct(nEvidAgree / max(nEvid, 1)), "**."),
+    "",
+    "The reference is the best mapping available, not ground truth — it contains",
+    "errors of its own (it sends the rapid-test code `c-reaktiivinenproteiini,pika`",
+    "to a high-sensitivity CRP concept, though that row's values floor at 5 mg/l),",
+    "and it is internally inconsistent on some panel families. Read the figures",
+    "below as *agreement*, not as correctness.",
+    "",
+    "By `evidence_level` — what the local row actually carried. The reference gives",
+    "more than one concept across a code's units for only ~6% of multi-unit codes,",
+    "so it is in practice a `TEST_NAME` -> concept mapping, while this pipeline maps",
+    "`(TEST_NAME, UNIT)` and leaves a `name only` row unmapped rather than assuming a",
+    "quantity. On those rows the two targets differ by construction, which is why",
+    "they are reported apart from the evidenced ones:",
+    "",
+    .markdownTable(byEvidence),
+    if (length(exampleLines) > 0) c(
+      "",
+      "**Example disagreements.** Up to 5 per `evidence_level`, drawn at random",
+      "from the *distinct* (our concept, reference concept) pairs so that one",
+      "recurring disagreement cannot fill the sample. The `reasoning` column of",
+      "`DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv` says, clause by clause,",
+      "what each of these choices rested on.",
+      "",
+      exampleLines
+    ) else character(0)
   )
 }
 
