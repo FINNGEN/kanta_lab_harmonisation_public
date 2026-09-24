@@ -65,9 +65,15 @@ fi
 # --- Input -------------------------------------------------------------
 #
 GROUPED_FILE="$DATA_DIR/GroupKnownInformationTable/knownInformationGrouped.tsv"
+FREQUENCY_FILE="$DATA_DIR/SourceLabelingData/loinc_names_frequency.tsv"
 
 if [[ ! -f "$GROUPED_FILE" ]]; then
   echo "Missing input file: $GROUPED_FILE" >&2
+  exit 1
+fi
+if [[ ! -f "$FREQUENCY_FILE" ]]; then
+  echo "Missing input file: $FREQUENCY_FILE" >&2
+  echo "Build it with STEPS/FixLOINCDimensions/scripts/buildLoincNamesFrequency.R" >&2
   exit 1
 fi
 if [[ ! -f "$STEP_DIR/scripts/systemPrompt.md" ]]; then
@@ -99,15 +105,15 @@ if [[ "$CLEAN" -eq 1 ]]; then
   fi
 fi
 
-Rscript "$STEP_DIR/scripts/findLoincDimensions.R" \
-  "$GROUPED_FILE" "$OUTDIR" "$NGROUPS" "$SEED"
+Rscript "$STEP_DIR/scripts/findLoincNames.R" \
+  "$GROUPED_FILE" "$FREQUENCY_FILE" "$OUTDIR" "$NGROUPS" "$SEED"
 
-Rscript "$STEP_DIR/scripts/summariseLoincDimensionsStats.R" \
-  "$OUTDIR/codesWithLoincDimensions.tsv" "$OUTDIR/reflections.md" "$OUTDIR"
+Rscript "$STEP_DIR/scripts/summariseLoincNamesStats.R" \
+  "$OUTDIR/codesWithLoincNames.tsv" "$OUTDIR/reflections.md" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
 #
-echo "Wrote $OUTDIR/codesWithLoincDimensions.tsv"
+echo "Wrote $OUTDIR/codesWithLoincNames.tsv"
 echo "Wrote $OUTDIR/reflections.md"
-echo "Wrote $OUTDIR/loincDimensionsStats.md"
+echo "Wrote $OUTDIR/loincNamesStats.md"
