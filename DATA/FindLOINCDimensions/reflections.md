@@ -1,259 +1,281 @@
 # Group 7
 
-This group was straightforward, centered on tissue transglutaminase (tTG) antibodies. The main distinctions were between IgA and IgG isotypes, and between quantitative (`Qn`, `Arbitrary Concentration`, `U/ml`) and qualitative (`Ord`, `Presence or Threshold`) results. The presence of both a quantitative and a qualitative version for the same test name (e.g., rows 364/365, 376/377) is a common pattern, likely representing the order code (qualitative) and the result code (quantitative). A key gotcha was deciding on the system for rows without an 'S-' prefix or 'seerumista'. I correctly left the system empty as per instructions, even though serum is the standard specimen. The terms `(keliakia)` and `osatutk` were contextual and did not indicate a panel code, but rather a single test as part of a larger clinical investigation. The `LongName` column being empty for all rows was unhelpful; having it populated would have confirmed the component and possibly clarified the unspecified immunoglobulin class in rows 384-385.
+This group was relatively straightforward due to the clear common analyte, tissue transglutaminase antibodies (`kudostransglutaminaasi...vasta-aineet`), a marker for celiac disease. The main challenge was distinguishing between quantitative and qualitative tests. This was reliably achieved by checking for a `UNIT` (`u/ml`) and a low `p_missing` for quantitative tests, versus a missing `UNIT` and a `p_missing` of ~100% for qualitative tests (or test orders).
+
+Several rows demonstrated common data quality issues: some test names contained the specimen type (`seerumista`) explicitly, which was helpful when a standard `S-` prefix was missing. Other names included contextual information like `(keliakia)` or suffixes like `osatutk.` (partial investigation) or `keliakiatutkimus` (celiac investigation). While these could ambiguously suggest a panel, in this context they appear to be single component tests where the name adds clinical context. I interpreted them as single tests, not panels.
+
+Finally, the data included abbreviations (`iggva` for `igg-vasta-aineet`) and minor variations in spelling and spacing, but the grouping by string similarity made it easy to see they all referred to the same set of concepts: tissue transglutaminase IgA, IgG, or total antibodies.
 
 # Group 14
 
-This group consists entirely of variations of C-reactive protein (CRP) tests. The main challenges were handling numerous local naming conventions and data quality issues.
+This group covered the very common C-reactive protein (CRP) test and its many local variations. The main challenge was to correctly distinguish between standard CRP and high-sensitivity CRP (hs-CRP). The Finnish keyword `herkkä` (sensitive) was a strong clue, but the `deciles` were the definitive evidence. hs-CRP results have a median around 1-2 mg/L, while standard CRP for acute inflammation is typically >10 mg/L. 
 
-**Ambiguities & Gotchas:**
-*   A significant conflict occurred with test names containing `(kval)` (e.g., row 1016), suggesting a qualitative test, while the associated data (`UNIT` of `mg/l` and numeric `deciles`) were clearly quantitative. I prioritized the quantitative data over the name fragment, inferring that `(kval)` was a misleading local convention.
-*   The prefix `cp-` combined with `ihopiston` (skin prick) in the name (row 1008) strongly implied a capillary blood sample, which I mapped to `Blood capillary`. This is an inference, as `cp-` is not a standard national prefix.
-*   Qualifiers like "pika" (rapid), "vieritesti" (point-of-care), and "herkkä" (sensitive) were mapped to methods (`Rapid immunoassay` and `Immunoassay`). This adds valuable detail that distinguishes the tests, which is appropriate for LOINC mapping.
+A second point of ambiguity was the LOINC `System`. The codes used prefixes for Blood (`B-`), Serum (`S-`), Plasma (`P-`), and capillary plasma (`cp-`). While LOINC has terms for `... in Blood`, point-of-care tests using whole blood often report a plasma-equivalent result. Given this, and the fact that `Serum or Plasma` is the most common system for this analyte, I chose the broader `C reactive protein [Mass/volume] in Serum or Plasma` for all standard CRP tests. This maximizes the chance of finding the correct common concept.
 
-**Data Quality Issues:**
-*   There were several data quality problems: typos (`resktiivinen`), uninformative units (`1`), and contradictory metadata (row 1001 had `p_missing: 100` but also a full set of `deciles`). In these cases, I relied on context from sibling rows and trusted the `deciles` data when present.
-
-**Process Improvements:**
-*   Providing the official `LongName` for every code would be extremely helpful, especially to resolve conflicts like the `(kval)` issue.
-*   A glossary of non-standard prefixes and local abbreviations encountered in the source data (like `cp-`) would improve mapping accuracy.
+Finally, many local codes contained contradictory information, such as the suffix `(kval)` on a test clearly reported with quantitative `mg/l` units and numeric deciles. In these cases, the quantitative evidence from `UNIT` and `deciles` was prioritized over potentially inaccurate local naming conventions.
 
 # Group 20
 
-This group contained two distinct types of tests: various ECG recordings and microbiological pathogen detections. The ECG tests were mostly variations of a 12-lead resting ECG, where additional text described the context (e.g., 'patient-taken', 'includes computer analysis') rather than the core test. I mapped these to a single concept for the study ('EKG study', `Doc` scale), adding 'with interpretation' to the method where specified. One ECG row (1296) with `UNIT`=1 was an exception, likely a flag for procedure completion, which I mapped to a `Nom` scale.
+This group was divided into two distinct categories: EKG procedures and microbiology nucleic acid amplification tests (NAATs). The `p_missing` of ~100% for all rows was a strong indicator that these are either qualitative tests or complex reports/panels, which they were.
 
-The microbiology tests were identifiable by pathogen name. The abbreviation 'nukl.haponos.' was a crucial clue for 'Nucleic acid amplification with probe detection'. I assumed the typo 'nho' was also an indicator for this method. The consistent `n` counts for the fecal and CSF pathogen groups strongly suggest they originate from multiplex PCR panels, confirming that each row represents a single component result (`is_panel: false`). The main limitation was the frequent absence of a specimen prefix (`F-`, `Li-`), which forced me to leave the `has_system` axis empty for several pathogen tests.
+The main challenge was inferring the specimen and method for rows without a formal prefix or suffix (e.g., rows 1265, 1271-1275, 1310). I used the context of the other, more complete codes in the group (like the `F-` prefixed stool tests) to infer that the system was likely `Stool`. For rows containing `nho` or `nukl.haponos`, I specified the method as `by NAA with probe detection`. For those without, I chose a more generic name omitting the method, as it could have been an antigen test or culture.
+
+Decoding the EKG variations (`Pt-EKG...`) was straightforward: despite many different local textual qualifiers (`asiakkaan ottama`, `sisältäen tietokoneanalyysin`), they all map to the same core LOINC concept, `12 lead EKG panel`. The exception was the 'atrial fibrillation screening' (`eteisvärinän seulonta`), which is better described by `Rhythm EKG`.
+
+The microbiology tests appeared to be components of multiplex panels (one for GI pathogens, one for meningitis/encephalitis pathogens). The similar `n` counts for rows 1276-1282 confirmed they were ordered together as a GI panel. My task was to map each component individually, not the panel itself.
 
 # Group 21
 
-This group was straightforward as it contained only two distinct analytes: 'Transferrin.iron saturation' and 'Transferrin receptor.soluble'. The main ambiguities arose from missing or inconsistent data, which I handled as follows:
+This group was divided into two clear concepts: Transferrin Saturation and Soluble Transferrin Receptor. The Finnish names were mostly consistent, making identification straightforward.
 
-*   **Synonyms**: 'rautakyllästeisyys' and 'rautasaturaatio' were correctly identified as synonyms for iron saturation.
-*   **Units**: Rows with `%` units and deciles 1-100 were clearly `Mass Fraction`. Sibling rows with no unit but deciles 0-1 were interpreted as the same test, just reported as a fraction instead of a percentage, mapping to the same `Mass Fraction` property. The unit `osuus` ('share'/'fraction') confirmed this interpretation.
-*   **System**: I relied on prefixes (`fP-`, `fS-`, `P-`, `S-`) and explicit text (`seerumista` meaning 'from serum') to determine the system. When no information was present, I correctly left the `has_system` axis empty. The messy `TEST_NAME` in row 1319 was parsed by focusing on the primary prefix `p-`.
-*   **Method**: For Transferrin Iron Saturation, I inferred the `Calculated` method, as this is standard practice and helps distinguish it from directly measured analytes. For Transferrin Receptor, I correctly left the method empty as per instructions, since it's not specified in the code.
-*   **Panels**: The Finnish word `paketti` in the unit column for row 1327 was a clear and helpful signal to mark it as a panel.
-*   **Data Quality**: Rows with `p_missing` at 100% were treated as instances of the test with no result data; component and system could often be inferred, but property and scale were left empty. For row 1312, with 84% missing values, I assigned `Nar` as the most likely scale.
+A key decision point was handling the different representations for Transferrin Saturation. Some records used percent (`%`) while others (e.g., row 1326 with unit `osuus`) used a fraction (ratio between 0 and 1), evident from the deciles. I mapped all of these to a single LOINC concept, `Transferrin saturation [Molar ratio] in Serum or Plasma`, as the difference is in local display formatting, not the underlying clinical measurement. LOINC standardizes this as a molar ratio.
+
+For the receptor tests, some names explicitly stated `liukoinen` (soluble), while others did not. As the common clinical test is for the soluble form, I inferred this for all `transferriinireseptori` tests. This was supported by the `mg/l` units and decile values. The final guess was `Transferrin receptor.soluble [Mass/volume] in Serum or Plasma`.
+
+The fasting status indicated by `fP-`, `fS-`, and `paastotilassa` was noted, but I opted for the more general LOINC term without the `--fasting` suffix to provide a broader, more common mapping target. The fasting state is often handled as a separate observation attribute rather than being part of the core test name.
 
 # Group 33
 
-This group contained a mix of microbiology cultures, drug screening panels, genetic tests, and physiological monitoring (ECG). The free-text but descriptive nature of the `TEST_NAME`s was essential for mapping.
+This group contained several different types of tests, making the string-similarity grouping less effective. The tests were primarily panels or qualitative microbiology cultures.
 
-**Gotchas and Ambiguities:**
-*   **MRSA Cultures:** The terms 'viljely nenästä' (culture from nose), 'nielusta' (from throat), and 'perineumista' (from perineum) were key to identifying the `has_system` axis. The grouping of truncated versions (e.g., `...viljelyne`) with the full text was crucial for confirmation.
-*   **Drug Screens:** The listing of multiple analytes in parentheses (e.g., `amfet, bents, opiaat...`) is a classic indicator of a panel (`is_panel: true`), for which component-level axes should be left empty.
-*   **Genetic Test (1816):** The name "study of base changes...of predefined gene exons...by NGS method" is very generic. While I could infer `has_property: Finding`, `has_scale_type: Nar`, and `has_method: Molecular genetics`, the core `has_component` remains unknown ('predefined gene' is not a specific analyte). This is an inherent limitation when local codes are descriptive of a process rather than a specific target.
-*   **ECG Holter:** The `Pt-` prefix was a clear signal for `has_system: ^Patient`. The time aspect was explicitly mentioned in the name ('24h'/'48h'), making it easy to map. These are good examples of non-specimen-based investigations.
+- **MRSA Cultures**: The names were quite clear, often including the method (`viljely`=culture) and the specimen site (`nenästä`=from nose, `nielusta`=from throat, `perineumista`=from perineum). Truncated site names (`ne`, `ni`, `pe`) were easily resolved by context. For non-site-specific MRSA cultures (e.g., row 1812), `Specimen` is a reasonable system choice. The term `seulontaviljely` (screening culture) strongly suggests a multi-site screen, making `Staphylococcus aureus.methicillin resistant screen panel by Culture` a good fit.
+- **Drug Screens**: These were clearly identifiable as panels. The listed analytes helped determine the panel size (e.g., 5-drug vs 6-drug). Although the specimen wasn't always stated in the `TEST_NAME`, `Urine` is the standard for such screens and was confirmed by `U-` prefixes in some rows.
+- **EKG Holter**: The `Pt-` prefix and descriptive names `pitkäaikaisrekisteröinti` (long-term registration) with specified durations (24h, 48h) made these easy to identify as ambulatory EKG panels.
+- **Genetics (row 1816)**: This name was extremely long and specific. Translating it as a request for a 'Targeted gene variant analysis panel' using NGS is an appropriate abstraction for what is being ordered. It's too complex to be a single result, hence `is_panel: true`.
 
 # Group 34
 
-This group covered microbiological tests for Streptococcus. The main challenge was handling truncated or prefix-less test names. For rows with missing prefixes (e.g., 1846, 1848, 1849), I adhered to the instruction to leave `has_system` empty, even though clinical context strongly implies a specific specimen (like throat for S. pyogenes). The presence of `nielusta` (from the throat) in row 1845 was crucial for assigning a system to an otherwise prefix-less code. The `prefix_meaning` column was essential for decoding `Ps-` as Pharyngeal secretion (`Throat`) and `Fl-` as Vaginal discharge (`Vaginal fluid`). Row 1847's `fluori` was a good example of a localism/typo that became clear through context from row 1834. I distinguished between culture (`viljely`), antigen (`antigeeni`), and nucleic acid (`nukleiinihappo`) tests, assigning methods and properties accordingly. For the vague term `osoituskoe` (detection test) in row 1850, I left the method empty as it's ambiguous between antigen and NAAT.
+This group focused on Streptococcus microbiology tests. The key was to differentiate between Streptococcus pyogenes (Group A), Streptococcus agalactiae (Group B), and the broader group of beta-hemolytic streptococci. It was also critical to distinguish the method: culture (`viljely`), antigen detection (`antigeeni`), and nucleic acid amplification (`nukleiinihaponosoitus`).
+
+The grouping was very effective, as it placed many textual variations of the same test concept together (e.g., multiple spellings and truncations for 'beta-hemolytic streptococci culture from throat'). The Finnish system prefixes like `Ps-` (pharyngeal secretion/throat) and `Fl-` (vaginal discharge) were invaluable for determining the LOINC System. For rows lacking a prefix or an explicit source in the name, I defaulted to the generic `in Specimen`.
+
+The term `osoituskoe` ('detection test') was ambiguous, as it could refer to either an antigen or a nucleic acid test. I chose the most common rapid antigen test as the likely meaning. Having the official Finnish 4-digit laboratory code for each `TEST_NAME` would have been a great help in resolving such ambiguities.
 
 # Group 37
 
-This group was extremely diverse, containing everything from administrative codes and technical placeholders to complex procedures, microbiology, point-of-care tests, and standard chemistry. The `TEST_NAME` fields were often long and descriptive, which was very helpful. Many codes lacked standard prefixes (like `S-` or `P-`), requiring inference or leaving the `has_system` axis blank.
+This group contained a wide variety of tests, from standard chemistry to complex panels and administrative codes. A significant challenge was the prevalence of long, unspaced Finnish test names, which required careful reading to parse the component, system, and method. For example, `-staphylococcusaureus,metilliiniresist.viljely` clearly breaks down into Staphylococcus aureus, methicillin-resistant, and culture.
 
-A major gotcha was the presence of many administrative codes (e.g., `lisämaks...`, `lisävastaus...`, `hpv...apututkimus...`) that represent billing or data transfer actions rather than clinical measurements. These needed to be identified and left with empty axes. Similarly, many codes clearly represented panels or complex procedures (e.g., `täydellinenverenkuva`, `pt-` codes, histology, drug screens), which required setting `is_panel: true` and mapping at the procedure level rather than component level.
+Many rows were clearly administrative or billing codes (e.g., `lisämaksu` for 'additional charge', `lisävastaus` for 'additional result', or `apututkimus` for 'helper test'), which should not be mapped to clinical LOINCs. Identifying these required some knowledge of Finnish administrative terms.
 
-There were also inconsistencies, such as the `T-` prefix (for Thrombocytes) being used for lymphocyte subset tests (rows 1985, 1986), which required ignoring the prefix based on the component name. The unit for Creatinine in row 1945 was incorrectly listed as `mmol/l` when the deciles clearly indicated `umol/l`. Being able to use the deciles to correct for unit errors was crucial. Having the official `LongName` for more rows would have been beneficial for disambiguation, especially for the many panel/procedure codes.
+The distinction between lab-based and point-of-care tests (`vieritesti`) was common and crucial for correct mapping. Similarly, identifying components of larger automated analyses (like urinalysis by `partikkelinlaskija` or 'particle counter') was key. Finally, the provided `prefix_meaning` was helpful but sometimes misleading, as with the `T-` (Thrombocyte) prefix for T-cell subset tests, demonstrating that the full test name context must always take precedence.
 
 # Group 42
 
-This group was a very diverse mix of tests, from basic electrolytes (`Na`) to coagulation factors (`AT3`, `FV`, `FX`), hormones (`ACTH`), cardiac markers (`TnI`, `TnT`), and patient measurements (`PEF`).
+This was a large and diverse group of tests, not clustered by a single analyte. The primary challenge was interpreting a wide variety of Finnish abbreviations, some standard (`P-T4-V`, `P-ACTH`) and some ambiguous or local (`p-fs`, `p-ked.`). The `LongName` column was crucial where available, such as for identifying `P-TT` as Prothrombin Time, not Thrombin Time.
 
-**Gotchas and Ambiguities:**
-*   **Prefixes:** `aP-` (arterial plasma) and `cP-` (capillary plasma) were inferred but aren't standard OMOP Systems. I mapped `aP-Lakt` to `Blood arterial` (row 2488), as this is a common sample for blood gas analyzers which report lactate, but for `aP-Na` I stayed with the safer `Plasma` (row 2493). This inconsistency reflects the ambiguity. A clearer rule for when to generalize a specific specimen type (arterial plasma) to its parent (plasma) vs. its source (arterial blood) would be helpful.
-*   **Panels vs. Single tests:** Codes like `ap-nak`, `p-k+na`, `p-k-na`, `p-k,na`, `p-k/na` were clearly panels for Sodium and Potassium. It's interesting to see the many different local conventions for denoting a panel (`+`, `-`, `/`, or just concatenating abbreviations).
-*   **Unusual Units:** `P-GT` in `mg/ml` (row 2533) is highly suspect for an enzyme usually measured by activity (`U/l`), especially given the tiny `n=8` compared to the `U/l` version with `n=820k`. I mapped it as `Mass Concentration` but it is almost certainly a data error. `ap-na` with units `%`, `kPa`, `°c` are also clear errors.
-*   **Obscure Abbreviations:** `p-fs` (row 2527), `p-ked.` (2543), and `p-kjd.` (2544) were unidentifiable from the information given. I could only map the property based on the unit `s` for `p-fs`, but not the component.
-*   **Suffixes:** The `pa` suffix on `p-k-pa` (2541) with a meaning of 'long-term' was confusing for a spot potassium test. I ignored it for the time aspect, assuming it's a local convention not reflected in LOINC's `has_time_aspect`.
+Several specific issues arose:
+1.  **Ambiguous Codes:** `p-fs` with unit `s` looked like a coagulation time, but `fs` is not a standard abbreviation. Without a `LongName` or more context, I had to leave it blank. Similarly, `p-ked.` and `p-kjd.` were unidentifiable.
+2.  **Panel Identification:** Codes like `p-nak` and `sp-pak` were clearly panels, identifiable by the combined analyte name (`NaK`) or suffix (`-pak`), and confirmed by `p_missing` being 100%. This is a reliable pattern.
+3.  **Property and System Specificity:** Mapping coagulation tests (e.g., `P-AT3`, `P-FV`) required choosing the correct property (`[Activity]` or `[Arbitrary concentration]`) and system (`in Platelet poor plasma`). Mapping `P-TT` to `Prothrombin time (PT) actual/Normal` (a ratio) instead of a simple time was a key distinction based on the `%` unit.
+4.  **Suffix Interpretation:** The suffix `-pa` (long-term) on `p-k-pa` was confusing for a spot potassium test. I chose to map it to the standard potassium concept, assuming the suffix was an ordering instruction rather than part of the result's definition.
+5.  **Data Quality:** Numerous rows had incorrect units (e.g., `g/l` for Sodium). In these cases, the `TEST_NAME` and `deciles` were the deciding factors, and the unit was ignored as a data entry error. The presence of deciles for some rows with high `p_missing` was also a useful hint.
 
 # Group 43
 
-This group contained many hormone and antibody tests, often with both quantitative/semi-quantitative (`titre`, `nmol/l`, etc.) and qualitative (no unit, `p_missing` >95%) variants, which is a common pattern. Correctly identifying these pairs was a key task. A few codes were highly ambiguous and likely represent panels (`fs-apot`, `s-kem`, `ts-res`); marking these as panels based on the vague name and 100% missing values is a reasonable inference. 
+This group was dominated by immunoassays and endocrinology tests. The presence of `LongName` for most was very helpful.
 
-A recurring data quality issue was the contradiction between `p_missing=100` and the presence of `deciles` (e.g., rows 2723, 2730). In these cases, I trusted the `deciles` as definitive proof of a quantitative test, assuming the `p_missing` value was calculated incorrectly. The code `-ana` (row 2630) with a leading hyphen is a minor data entry anomaly, but the `LongName` resolved the ambiguity.
-
-`S-ENA` (row 2703) was a tricky case: ENA is typically a panel, but the presence of deciles strongly suggests it was recorded as a quantitative screening test (e.g., a ratio result), so I mapped it as a single test rather than a panel.
+Gotchas and ambiguities:
+*   **Platelet function tests** (rows 2635-2638, `b-adp`, `b-aspi`): The unit `auc` (Area Under Curve) is specific to the instrument/method and does not map cleanly to a standard LOINC property like `[Ratio]` or `[Time]`. Without knowing the exact test platform, creating a precise LOINC name is difficult. I opted to leave these blank rather than guess a potentially incorrect property.
+*   **Ambiguous abbreviations**: `fs-apot`, `s-apot`, `p-hae`, `s-hae`, `s-hbe`, `s-kem` were too generic or unclear to map reliably.
+*   **ENA screen vs. panel** (rows 2703, 2704): Differentiating between the initial screen (`S-Ena`, often an index value) and the follow-up identification panel (`S-EnaL`, a qualitative report or set of results) was key. I mapped `S-Ena` to a quantitative index (`[Units/volume]`) and `S-EnaL` to a panel.
+*   **Multiple units for the same test**: AFP, EPO, and TATI appeared with both mass (`ug/L`), molar (`pmol/L`), and/or activity units (`U/L`), requiring distinct LOINC names for what is clinically the same analyte.
 
 # Group 44
 
-This group was characterized by a large number of common chemistry tests, many of which had parallel entries for Serum (S-), Plasma (P-), Fasting Serum (fS-), and Fasting Plasma (fP-). The distinction between `Substance` property for 24-hour collections (unit `mmol`) and `Substance Concentration` for spot collections (unit `mmol/l`) was important. The `dU-` prefix was a clear indicator for `24 hours` time aspect.
+This group was a good mix of standard chemistry and more esoteric tests. The presence of `LongName` and clear `prefix_meaning` made most tests straightforward.
 
-A recurring pattern was a quantitative test row followed by a row for the same test with no unit and very high `p_missing`. I've consistently mapped these as `Nar` (Narrative) scale, assuming they capture non-numeric results, comments, or cancellations. The large number of urine drug screens (e.g., `U-AMP`, `U-BUP`) were straightforward to identify as qualitative (`Ord`, `Presence or Threshold`).
+**Gotchas and Ambiguities:**
+*   **Ambiguous abbreviations**: `b-bio`, `li-bio`, `s-bio` are unclear. While `B-Bio` is nationally `Biopsia`, the `Blood` system makes no sense, suggesting a local code. I correctly left these blank.
+*   **Unknown drug screens**: The `u-ds*` codes are clearly local drug screen panel components. Without a key, they are unmappable, and leaving them blank was the only safe option.
+*   **Out of scope tests**: `mmse` (Mini-Mental State Exam) and `vp-dop` (Doppler pressure) are clinical assessments/procedures, not lab tests. I was able to map `mmse` because it has a very standard LOINC representation. I left `vp-dop` blank as it's too generic without more context.
+*   **Creatinine Ratios**: For `u-intp`, the unit `nmol/mmol` was a dead giveaway for a creatinine ratio, which is crucial for the correct LOINC name (`.../Creatinine [Molar ratio]...`). The variant `nmol/mmolkr` made this even clearer.
 
-Ambiguities included:
-*   Codes like `b-bio` or `s-bio`: Component is unknown, but the `B-` and `S-` prefixes at least give the system.
-*   `p-fsl`: The unit `s` strongly suggests a time-based property, but the component is not identifiable from the abbreviation.
-*   `vp-dop`: This is clearly a Doppler blood pressure measurement, but the source data's lack of numeric values (`p_missing` 100%) is strange for such a measurement. I mapped it based on its fundamental nature (`Qn`), but the data quality is suspect.
+**Process Improvement Ideas:**
+*   A cross-reference for common drug-of-abuse abbreviations (`amp`, `bzd`, `thc`, `fyl`) would be very helpful. I inferred these from common knowledge, but a provided list would increase accuracy.
+*   When a national code (`LongName`) conflicts with a local prefix (like `B-Bio` being 'Biopsy' in 'Blood'), it highlights a data quality issue. Flagging these contradictions could be a useful feature for data cleaning upstream.
 
 # Group 51
 
-This group was dominated by microbiology antigen and antibody tests. The main challenges were:
+This group was dominated by infectious disease diagnostics, primarily antigen and antibody tests. A key challenge was differentiating between qualitative `[Presence]` tests and quantitative tests. The combination of `p_missing=100` and no `UNIT` was a strong signal for qualitative tests. Conversely, the presence of deciles and units like `eiu`, `au/ml`, `index`, or `mg/l` indicated quantitative tests, leading to properties like `[Units/volume]`, `[Ratio]`, or `[Mass/volume]`.
 
-1.  **Ambiguous System**: Many codes began with a `-` prefix, making the specimen system unknowable. These are likely respiratory samples like nasopharyngeal swabs, but this is an unprovable assumption. I have left the `has_system` axis empty as instructed.
-2.  **Panels vs. Multiplex Tests**: Codes like `-infabag` (Influenza A+B) or `-infrsv` (Influenza+RSV) are ambiguous. They could be orderable panels bundling separate results, or single multiplex assays that detect multiple targets. I treated them as single tests with a combined component (e.g., `Influenza virus A+B antigen`), setting `is_panel` to `false`. In contrast, codes with `-pak` (package) or covering a broad category like `-rvirag` (respiratory viruses) were more clearly panels and I marked them as `is_panel: true`.
-3.  **Data Contradiction**: Several rows (e.g., 3511, 3515) had `p_missing`=100% yet also had deciles. This common data quality issue suggests a field is used for both coded qualitative results (e.g., '1' for positive) and true quantitative values. Using the `OrdQn` scale is an effective way to represent this ambiguity. The property was inferred from sibling rows with clear units (`Ratio` or `Arbitrary Concentration`).
-4.  **Obscure Abbreviations**: Some test codes like `-bokaag` (Bocavirus) or `-micfaeg` (Mycophenolic acid glucuronide) required educated guesses based on common microbiological or pharmacological terms. The presence of `LongName` for many rows was invaluable for confirming these interpretations.
+Several codes lacked an explicit system prefix (e.g., `-adenag`). Given the context of respiratory viruses, I inferred the system as `Respiratory system specimen`, which is a safe, general choice. Differentiating between pharynx (`Ps-`) and nasal (`Ns-`) specimens was straightforward thanks to the prefixes.
+
+Identifying panels (`is_panel: true`) was based on abbreviations like `-infrpak` (package) and `-rvirag` (respiratory viruses, plural). I distinguished these from multiplex single tests like `-inabrsv` (Influenza A+B+RSV), which are single LOINC concepts. The guess for `S-InfliPa` as an Infliximab panel (drug level + antibodies) is an educated one based on clinical practice.
+
+The code `-ivf-et` (IVF Embryo Transfer) was clearly a procedure, not a laboratory test, and was correctly left blank. Some codes like `-coinrsv` or `-infah03` were too ambiguous to map confidently.
 
 # Group 68
 
-This group was dominated by variations of a few common tests (Amylase, Alkaline phosphatase, Aldosterone) across different specimens and with minor spelling differences. The `LongName` and `prefix_meaning` columns were invaluable for resolving these.
+This was a large and diverse group. The Finnish national code table `LongName` and decoded prefixes (`prefix_meaning`) were extremely helpful in disambiguating tests.
 
-Gotchas and Ambiguities:
-*   Several codes (`s-aaldos`, `s-oaldos`, `s-valdos`) looked like Aldosterone (`aldos`) but had decile values that were orders of magnitude different from typical Aldosterone levels. Without a `LongName`, the true component remains unknown, forcing me to either make a questionable guess or leave the component empty. I've noted the discrepancy in my thinking but mapped them as Aldosterone for some, and left others empty where values were too extreme.
-*   The distinction between a panel code and a result code was sometimes blurry. Codes ending in `-is` (isoenzymes) or clearly referring to multiple analytes (`s-adalipa`) were identified as panels. Some of these panel codes paradoxically had quantitative results attached (`S-AFOS-IS` with `U/L`), likely due to source data entry errors. I classified these as panels regardless.
-*   A significant number of rows had `p_missing` near 100% but also had a full set of `deciles`. This is a recurring data quality issue. My approach is to trust the `deciles` and map the test as quantitative (`Qn`) with the property suggested by the sibling rows' units. The `p_missing` value seems unreliable in these cases.
-*   For protein electrophoresis fractions (`s-alfa-1`), I explicitly added `Electrophoresis` as the method, as it's fundamental to the interpretation of these tests.
-*   Row 5351 (`s-dmklots` with no unit) had bimodal deciles, suggesting results from two different units (nmol/L and umol/L) were combined. This makes it impossible to assign a single valid property, so I left it blank.
+**Gotchas and Ambiguities:**
+*   **Missing Prefixes:** Codes like `alfa-1` (5247) and `-amyl` (5245) lack a specimen prefix. I inferred Serum/Plasma for `alfa-1` based on later `S-alfa-1` codes and typical use, but left `-amyl` empty because the deciles were unusual for a blood sample, suggesting a different fluid type where I couldn't be certain.
+*   **Unusual Values:** `s-oaldos` (5362) and `s-valdos` (5379) had astronomically high deciles for aldosterone, making them unmappable. These are likely data errors or represent extremely specific, unidentifiable clinical contexts (e.g., sampling from an adrenal vein, massive drug interference).
+*   **Vague Abbreviations:** Many codes were too ambiguous to map, e.g., `s-kudosab` ('tissue antibodies'), `s-afospit`, `s-hladsa` (mapped as a panel, but specificities are unknown), `s-afluu`, and `saline` (which isn't a lab result).
+*   **Allelic IgE:** `s-kolaige` was a guess for dog IgE. A catalogue of common allergen codes would be helpful for these.
+*   **Fractions vs. Specific Analytes:** `s-alfa-1` could be the globulin fraction or alpha-1-antitrypsin. The deciles supported either. I chose the globulin fraction as it's the more direct interpretation of the name, but this is an ambiguity.
+
+**Process Improvements:**
+*   Having the official Finnish long name (`LongName`) for every row would be the single most impactful improvement. It instantly clarifies abbreviations like `P-Afos` into 'Alkaline phosphatase'.
+*   Context from other similar codes is key. Seeing `P-Amyl`, `S-Amyl`, `As-Amyl`, and `U-Amyl` together makes it clear that `Amyl` is amylase and the prefixes denote the specimen.
 
 # Group 70
 
-This group was characterized by a large number of specific antibody tests (Cardiolipin, various allergens), therapeutic drug monitoring (Carbamazepine, Valproate), and administrative or panel codes. The `LongName` field was invaluable for resolving abbreviations like `s-kardabg` and `s-maapähe`.
+This group was very large and diverse, containing everything from routine chemistry to histopathology, serology, and administrative codes. The main challenges were:
 
-**Gotchas & Ambiguities:**
-*   A significant number of codes were administrative (e.g., `b-vara`, `s-pakaste`), indicated by terms like `vara` (reservation) or `pakaste` (frozen). Identifying these as non-tests is crucial.
-*   Many codes were clearly panels (`paketti`), such as `s-makspak` (liver panel) or `u-partik` (urine sediment/particles). These are correctly marked as `is_panel: true` with most axes left blank.
-*   The distinction between quantitative (`Qn`) and qualitative/narrative (`Ord`/`Nar`) versions of the same test was very common, usually differentiated by the presence of a unit and a low `p_missing` versus no unit and a high `p_missing`. However, several rows (e.g., 5464, 5470) had contradictory data: `p_missing` of 100% but `deciles` present. In these cases, I trusted the `p_missing` and lack of unit to indicate a non-quantitative result (`Nar` or `Ord`).
-*   Some abbreviations were very obscure (`b-nakkrea`, `u-rakkoai`) and could not be mapped without a `LongName` or more context. I left the component empty in these cases.
-*   The same analyte could appear under slightly different abbreviations (e.g., `s-parapäe` and `s-parpäh` for Brazil nut), highlighting the need for robust synonym matching.
+1.  **Ambiguous abbreviations**: Codes like `b-nakkrea` or `p-pakk-si` were impossible to decipher. Many codes appeared to be administrative placeholders for frozen (`pakaste`) or reserve (`vara`) samples, which are not true analytical tests and were left empty.
+2.  **Macroenzymes**: The series of `s-afmakro...` and `s-maksa...` codes required recognizing the pattern for alkaline phosphatase macroenzyme fractionation. The abbreviation `maksa` (liver) being used for `makroentsyymi` (macroenzyme) was a potentially misleading local convention.
+3.  **Context-dependent mapping**: `f-calpro` was clearly fecal calprotectin. The version with no system prefix (`-calpro`) was harder, especially with the `mg/L` unit, which is atypical. I mapped it to a mass/volume LOINC concept for stool, assuming a liquid-phase assay, which is a plausible but uncertain guess.
+4.  **Panel vs. Single Test**: Differentiating panels (`u-partik`, `s-maksaab`) from single tests that generate a report (`b-karyot`, `sk-padihot`) was important for the `is_panel` flag.
+5.  **Unusual observations**: `u-rakkoai` (bladder time) in hours was interesting. While it represents a real clinical observation about the sample collection, it doesn't map to a standard analyte. I couldn't find a confident LOINC match for this specific concept and left it blank.
 
 # Group 73
 
-This group was characterized by nucleic acid tests for respiratory viruses. The suffix `-nho` was a consistent and reliable indicator of a qualitative (`-O`) nucleic acid (`-Nh`) test, making it easy to infer the `has_property` (Presence or Threshold), `has_scale_type` (Ord), and `has_method` (Nucleic acid amplification with probe detection).
+This group consists entirely of qualitative nucleic acid tests for respiratory viruses, identified by the `-nho` suffix (`nukleiinihappo, kval`). The `LongName`s, when available, confirmed the abbreviations. The lack of specimen prefixes in the codes meant inferring the `System` as 'Respiratory system specimen', which is the standard for these analytes. 
 
-The main challenge was the complete absence of specimen prefixes (`has_system`), with many codes starting with a hyphen. This is a significant data gap, as the specimen (e.g., Nasopharyngeal swab, Bronchoalveolar lavage) is clinically important. I correctly left `has_system` empty as per instructions.
+Several codes were clearly typos or garbled (`-inabnhoho`, `-hinnho`) and were left unmapped. The code `hinflnho` was ambiguous between a typo for 'Influenza' and a test for *Haemophilus influenzae*; given the viral context of the group, a typo is more likely, but to be safe, I left it unmapped. 
 
-Several codes were clearly typos (`-inabnhoho`, `hinfnho`), but the grouping and `LongName` entries for similar codes made them easy to resolve. A few codes (`-hinnho`, `-tintnho`) were too ambiguous to map a component. The code `-inabrsnho` was confidently identified as a panel for Influenza A, B, and RSV, a common respiratory panel, which highlights the need to recognize multi-analyte abbreviations.
+The primary point of ambiguity was whether a code for multiple pathogens (e.g., `-inabnho` for Influenza A and B) represented a single multiplex result or a panel ordering two separate tests. I interpreted these as panels, as this often reflects laboratory ordering practice, and suitable LOINC panel concepts exist. This assumption is a potential source of error if the source system uses a single code for a combined positive/negative result.
 
 # Group 74
 
-This group was characterized by the `-nho` suffix, a consistent and strong indicator for a qualitative nucleic acid test. This made assigning Property (`Presence or Threshold`), Scale (`Ord`), and Method (`Nucleic acid amplification with probe detection`) straightforward and consistent across the group, an interpretation confirmed by the available `LongName`s (`nukleiinihappo (kval)`) and the 100% `p_missing` values.
+This group was dominated by qualitative nucleic acid tests, identifiable by the `-nho` suffix and 100% missing values. The main challenge was the frequent absence of a specimen prefix in the test code.
 
-The main challenges were:
-1.  **Ambiguous abbreviations**: The code `-bopanho` (row 5809) could not be confidently resolved to an analyte as it could be a typo for either pertussis (`bopenho`) or parapertussis (`bparnho`), so its component was left empty. In contrast, `-boppnho` (row 5812) was interpreted as a combined test for `Bordetella pertussis+parapertussis` based on common microbiology test panels.
-2.  **Panel identification**: Tests for broad categories like 'Parasites' (`f-paranho`), 'Respiratory bacteria' (`resbaktnho`), or 'Bacteria' (`-rbaktnho`) are likely multiplex panels. I have marked them as `is_panel: true`. This is an inference based on the plural nature of the component, as the data doesn't explicitly distinguish between a multiplex panel order and a multiplex test reporting a single combined finding.
-3.  **Missing systems**: A large number of tests, particularly the coronavirus strains, lacked a system prefix. While they are almost certainly from respiratory specimens, this cannot be proven from the data, so the `has_system` axis was correctly left empty. Non-standard prefixes like `res-` and `r-` strongly suggest a respiratory system, but without a formal mapping, it is safer to omit the system.
+For known respiratory pathogens (Bordetella, Bocavirus, Coronavirus), I inferred the system as `Respiratory system specimen`. For other pathogens with no specified specimen (e.g., `baktnho`, `salmnho`), I used the generic `Specimen` to avoid making an incorrect assumption. Prefixes like `r-` (`-rbaktnho`) and `res-` (`resbaktnho`) were interpreted as 'respiratory', reinforcing this choice.
+
+The `kv...nho` codes (5824-5827) were a good example of pattern recognition, where `kv` likely stood for `Koronavirus` and the following characters matched known human coronavirus strains (229E, HKU1, NL63, OC43).
+
+The code `f-paranho` (F-Parasiitit, nukleiinihappo) was ambiguous. While 'Parasites' suggests a panel, it's a single result code. I mapped it to `Protozoa DNA [Presence]...` as a plausible guess for a broad-range PCR target, as `Parasites DNA` is not a standard LOINC component.
 
 # Group 79
 
-This group was mostly focused on urine albumin, creatinine, and their ratio, along with other urine tests. The prefixes `cU-` (collected urine) and `nU-` (night urine) were crucial for determining the `has_time_aspect`. For `cU-` with unit `ug/min`, I inferred a `Mass Rate` property but couldn't specify a duration. For `nU-`, `Night time` seemed appropriate. The various spellings for albumin/creatinine ratio (`-kre`, `-krea`, `/kre`) were easy to normalize, especially with the `LongName` confirming the meaning for `u-albkre`.
+This group was a good example of how a single clinical concept (urinary albumin) can manifest as many different LOINC terms depending on the property and system. The main challenges were:
 
-The most ambiguous cases were the concatenated `TEST_NAME`s like `u-alb/kre,u-alb`. Here, the `deciles` were the only way to disambiguate. For example, in row 6271 the deciles matched an albumin concentration, not a ratio. This reliance on numeric distributions is powerful but also brittle if the data is sparse. The `u-alvhu...` codes were uninterpretable and correctly left mostly blank.
+1.  **Differentiating properties**: It was crucial to distinguish between mass concentration (`mg/l`), mass rate (`ug/min`, `mg/12h`), and mass ratio (`mg/mmol`). The `UNIT` and `deciles` columns were essential for this.
+2.  **Decoding abbreviations**: I had to correctly interpret `cU` (collected), `nU` (night), `-Mi` (micro), `-O` (qualitative), and `Kre`/`Krea` (creatinine). The `LongName` and `suffix_meaning` columns were very helpful when present.
+3.  **Ambiguous and concatenated `TEST_NAME`s**: Rows like 6271 (`u-alb/kre,u-alb`) and 6274 (`u-alb/kre,u-krea`) were problematic. The only way to resolve them was to look at the `deciles`, which strongly suggested they were actually measuring just one of the named components (albumin in the first case, creatinine in the second). This is a tricky data quality issue where the `TEST_NAME` is misleading.
+4.  **Handling urine sediment components**: The `U-Sakka` tests required recognizing them as individual components of a manual microscopy exam. The unit `u/field` in some rows was the key clue to select `[#/area]` as the property and `...by Light microscopy` as the method.
+5.  **Speculative mapping**: For `u-a1mikre` (row 6259), the guess of `Alpha 1 microglobulin/Creatinine` is plausible but not certain without a `LongName`. It's a reasonable interpretation given the `A1M` pattern and the context of other urine ratios.
 
-A slight ambiguity arose with qualitative urine tests (`u-alb-o`). While the `-O` suffix clearly points to an ordinal test, the method is almost always a test strip. I added `Test strip` as the method, which is a slight violation of the 'only when specified' rule, but highly probable and clinically relevant. For the `u-sakka` (sediment) tests, I inferred `Number Concentration` and `SemiQn` from the context of microscopy counts per field, which seems reasonable.
+Overall, the combination of code structure, units, and deciles made it possible to untangle the different test variations effectively.
 
 # Group 84
 
-This group was composed almost entirely of procedural or administrative codes related to sample collection (`näytteenotto`), handling (`käsittely`), or transport (`kuljetus`). The key was recognizing this from the Finnish terms and the universal lack of units and numeric values (`p_missing`≈100%). These codes represent events or actions, not measurements. The appropriate LOINC mapping for such concepts often uses `Finding` or `Type` as the property and `Nar` as the scale, which I've applied consistently. The one significant anomaly was row 6675 (`ottotapa`), which, despite its name meaning 'collection method', had quantitative data with the unit 'h' (hours). I inferred this to be a measurement of time associated with the collection, likely mislabeled. Its sibling row 6676 with the same name but no data confirmed the expected narrative nature of `ottotapa`, strengthening the case that row 6675 is an exception. Having `LongName`s from the national codebook would have been unhelpful here, as these are clearly local/administrative codes.
+This group consists almost entirely of administrative or procedural codes related to specimen handling, not laboratory tests that produce a result. This is evident from the names (`näytteenotto` = sample collection, `näytteen käsittely` = sample processing, `näytteen kuljetus` = sample transport, `ottotapa` = collection method) and the fact that nearly all rows have 100% missing numeric values.
+
+The mapping challenge here is that these local codes often contain more specific context (e.g., `bm-` for bone marrow, `gyn.` for gynecologic, `valv.` for supervised) than is available in a single general LOINC procedural code. I mapped these to generic LOINC concepts like `Specimen collection procedure` because it's the most appropriate general fit, even if it loses some local detail. These are likely used for workflow tracking or billing rather than clinical reporting.
+
+A significant data quality issue was present in row 6675 (`ottotapa`), which had a unit of `h` (hours) and numeric deciles. This makes no sense for a concept meaning "collection method" and was therefore left unmapped as it's impossible to interpret.
 
 # Group 85
 
-This group contained a wide variety of test types, including standard chemistry, microbiology, allergy testing, and molecular diagnostics. The presence of sibling rows with and without units (e.g., `p-uraatti`) was a very strong and useful pattern for distinguishing quantitative (`Qn`) from qualitative/narrative (`Ord`/`Nar`) versions of the same test. The `cladosp.he` triplet (rows 6687-6689) was a perfect example of a single allergen being tested in three completely different ways (skin prick, quantitative IgE, qualitative IgE), requiring careful attention to units and context to assign the correct property and system. The most ambiguous codes were those with the `-ctgc` suffix (`u-omactgc`, `hpvpapctgc`). While `ctgc` strongly suggests a nucleic acid test, possibly for Chlamydia/Gonorrhea, `u-omactgc` was too opaque and had 100% missing values, making it safer to classify as a panel. For the `corona` and `hpv` tests, I had to infer the system (`Respiratory specimen`, `Cervical specimen`) from common clinical practice, which is a calculated risk but likely correct. Finally, `ts-abortti` was clearly a pathology procedure, best mapped as a narrative finding from a dissection, rather than a standard lab test.
+This group contained a mix of clearly defined chemical analytes (Urate, Acetone, Valproate), microbiology, and some very cryptic local codes. The main challenge was dealing with missing system information. For `uraatti` (row 6714), the deciles were a perfect match for `p-uraatti`, allowing a confident inference of the `Serum or Plasma` system. For others like `norogi` (row 6699) or `cand.nativ` (row 6686), the lack of a system prefix made them unmappable, even though the component was clear. Local abbreviations like `-omactgc` (rows 6682, 6713) are also tricky; `ctgc` appears to be a common localism for CT/GC testing, and recognizing this pattern was key to mapping `u-omactgc` to a panel. The `LongName` for `ts-abortti` was crucial for identifying it as a pathology report on products of conception. Finally, the unit was essential for distinguishing the allergy skin test `cladosp.he` in `mm` from the serum IgE test in `u/ml`.
 
 # Group 89
 
-This group consisted almost entirely of screening tests, identifiable by the `seul` or `seula` morpheme. The primary challenge was determining whether a screening code represented a single test or a panel. For most, such as maternal screening (`s-äit-seul`, `s-tr1seul`) and urine chemical screening (`u-kemseul`), 'panel' was the obvious interpretation. The `LongName` and prefixes (`S-`, `U-`) were invaluable for confirming these interpretations.
+This group was dominated by codes ending in `-seul` or `-seula`, Finnish for "screening". This was a powerful hint, almost always indicating a panel of tests. Correctly identifying these as panels (`is_panel: true`) was the main task. The high `p_missing` rate for these codes reinforced this, as panel orders typically don't have a single value themselves.
 
-There were several data quality issues and ambiguities. Row 7037 (`u-kemseul`) presented a contradiction, showing 100% missing values but also providing deciles. The decile values (e.g., `1.02`, `5.87`) strongly suggest that results for individual components of the urine dipstick panel (like specific gravity and pH) are being stored under the panel's code. While I mapped the code itself as a panel, this points to a common data practice that complicates analysis. Codes like `hoikemseul` (7015) were uninterpretable due to their obscurity. Finally, non-laboratory tests like hearing (`hörsel`) and vision (`näköseula`) screening required mapping to the `^Patient` system, which was an inference based on the test name.
+The group covered a wide range of common screening procedures, from lab panels (`U-KemSeul` for urinalysis, `S-Tr1Seul` for first-trimester maternal screening) to clinical assessments (`hörsel` for hearing, `näköseula` for vision). This required knowledge beyond pure lab terminology. The presence of a Swedish word (`hörsel`) also highlights the bilingual nature of some data sources in Finland.
+
+When available, the `LongName` column was invaluable for confirming the meaning of abbreviations, as seen with the maternal screening tests (`S-Tr1Seul`, `S-Tr2Seul`). For ambiguous codes like `hoikemseul` with no supporting information, leaving the guess empty was the only responsible action.
 
 # Group 105
 
-This group, centered on Finnish blood count panels (`B-PVK`, `B-TVK`), exemplifies the challenge of mapping panel codes. The key was distinguishing between rows representing the panel order itself versus rows representing individual component results reported under the panel code.
+This group was a textbook example of how a single panel code (like `B-PVK`) can be used in source data to represent both the panel order itself and the individual component results within that panel. The key was to distinguish these two use cases based on whether `UNIT` and `deciles` were present.
 
-**Gotchas and Ambiguities:**
-*   **Panel vs. Component:** A very large number of rows had `p_missing` = 100% or a unit of `paketti`. These were clearly panel orders (`is_panel: true`). Rows with numeric data under the same panel code were treated as individual components (`is_panel: false`), with the component inferred from the `UNIT` and `deciles` (e.g., `g/l` with deciles ~140 is Hemoglobin; `fl` is MCV).
-*   **Ambiguous Components:** When a panel code was used with an ambiguous unit like `%` (e.g., row 8571), the component could not be determined with certainty, as it could be any of several leukocyte fractions.
-*   **Unclear Units:** The unit `form` (rows 8561, 8578, 8643) is not standard and its meaning could not be determined.
-*   **Data Entry Errors:** Row 8626 had the unit `eg/l`, which is a clear typo for `E9/l`.
+Gotchas:
+*   **Panel vs Component:** Rows with `p_missing=100` and no unit were clearly panel orders. Rows with specific units (`g/l`, `fl`, `e9/l`, etc.) and numeric data were unpacked components.
+*   **Code variations:** `B-PVK`, `B-PVK+T`, `B-PVK+TKD`, and `B-TVK` represent different levels of a complete blood count: short/basic (`PVK`, `PVK+T`), with automated differential (`TKD`, `TVK`), or with a mini-differential (`TMD`). Mapping them to appropriate LOINC panels (`Short blood count panel`, `CBC panel by Automated count`, etc.) was crucial.
+*   **Unpacking components:** The `b-pvk+tkd,<analyte>` codes were very helpful as they explicitly named the component. This helped confirm the mappings for less specific codes, e.g., identifying that `g/l` with deciles ~330 is MCHC (row 8579) and not Hemoglobin (deciles ~140, row 8562).
+*   **Ambiguous units:** The unit `form` (rows 8561, 8578, 8643) was uninterpretable. The unit `eg/l` (row 8626) was a clear typo for `E9/l`, confirmed by the deciles for platelets.
 
-**Helpful Information:**
-*   The `LongName` for the panels was extremely useful (e.g., for `B-PVK+TKD`, confirming it includes an automated differential).
-*   The most helpful pattern was `b-pvk+tkd,[component]` (e.g., `b-pvk+tkd,neut`). This explicitly names the component, removing all ambiguity. This is excellent coding practice.
-*   Suffixes on panel codes like `%l` for lymphocytes (row 8573) or `%m` for monocytes (row 8574) were also very useful for disambiguation.
+The logic was to first identify the base panel, then for each row, determine if it's a panel order or a component result. If a component, use the `unit` and `deciles` to identify the analyte. This strategy worked well for this highly structured hematology group.
 
 # Group 106
 
-This group, centered on bacteriology, demonstrates several common challenges in lab code mapping. The primary distinction is between different methodologies for detecting bacteria: direct automated counting (`U-Bakt` with unit `E6/l`), microscopic examination (`-Vr` suffix, `Finding` property), and culture (`-Vi` suffix). 
+This group was large but highly structured around the `Bakt` (bacteria) component and a consistent set of suffixes (`-vi`, `-vr`, `-lm`, etc.) and specimen prefixes. The primary challenge was distinguishing between different types of tests that share a similar local code, particularly in the large `U-Bakt` (urine bacteria) section.
 
-Gotchas included:
-1.  **Panels vs. single tests**: Codes for antibiotic sensitivity (`-he`) and specific pathogen panels (`F-BaktVi1/2/3`) were identified as panels, which is crucial for correct mapping. A generic culture request (`-BaktVi`) is a single test, but leads to follow-up tests like identification (`-Lm`) and sensitivity (`-He`).
-2.  **Ambiguous scale**: The same test code, like `U-BaktVi`, can yield qualitative (`no growth`), nominal (`E. coli`), or quantitative (`1e5 CFU/ml`) results. This is evident in row 8716, where high `p_missing` suggests most results are not numeric, but the deciles show large quantitative values. The `OrdQn` scale is the appropriate choice here.
-3.  **Method vs. Property**: It's important to distinguish between quantitative particle counts (e.g., from flow cytometry) and quantitative culture counts (colony forming units). While both can be represented with `Number Concentration`, their methods (`Automated count` vs. `Culture`) are different.
-4.  **Localisms and typos**: Suffixes like `-b`, `-bv`, `-vtk` and typos like `u-bakt.` are common. Inferring their meaning relies heavily on context from surrounding, cleaner codes and the data profile (units, deciles).
+The key to disambiguation was to carefully use the `UNIT`, `deciles`, and `p_missing` columns. For instance, `U-Bakt` with `UNIT` `e6/l` and low `p_missing` clearly pointed to a quantitative automated count (`Bacteria [#/volume] in Urine by Automated count`). In contrast, the same base code with a `UNIT` of `/sunf` (field of view) indicated microscopy (`Bacteria [#/area] in Urine sediment...`). Finally, `U-BaktVi` (urine culture) with deciles showing large colony counts (10^4, 10^5) mapped to a quantitative culture (`Bacteria [#/volume] in Urine by Culture`), while variants with 100% missing values were interpreted as the identification part of the culture (`Bacteria identified in Urine by Culture`).
 
-The `LongName` and decoded prefix/suffix columns were invaluable, particularly for identifying panels and specific methods like dip-slide culture (`aluslasiviljely`). Without them, mapping would be far less accurate.
+The `LongName` field was very helpful, for example in identifying `Ca-` as catheter tip culture, `Pu-BaktVi1` as anaerobic/aerobic, and `Pu-BaktVi2` as aerobic-only. The presence of `Candida` in the `LongName` for `F-BaktVi2` (row 8672) was a crucial detail, prompting a more specific guess (`Bacteria and Fungus identified...`).
+
+Some codes remained ambiguous (e.g., `d-baktvi`, `u-baktla`), and were correctly left blank. This group highlights the necessity of using all available data columns to differentiate clinically distinct tests that may be represented by very similar local codes.
 
 # Group 110
 
-This group predominantly featured lymphocyte surface marker (CD marker) tests, crucial for immunology and hematology. The key challenge was differentiating between absolute counts (in Blood, units E6/L or E9/L) and relative fractions (as a % of Lymphocytes). The `TEST_NAME` prefixes (`B-` vs. `Ly-`) and units (`%` vs. `E9/L`) were vital clues. Many codes were synonyms or typographical variants for the same test (e.g., `ly-cd4`, `ly-t-cd4`, `ly-cd4-t`), which the grouping made easier to identify. 
+This group was dominated by immunophenotyping tests (CD markers). The main challenges were:
 
-Several prefixes, `la-` and `so-`, were unknown, forcing me to leave the `has_system` axis empty. A glossary of these local prefixes would be immensely helpful. The `s-gt-cdt` code was an interesting 'red herring', appearing to be a CD marker test but actually being a chemistry test (Carbohydrate-Deficient Transferrin), identifiable by its `%` unit and typical value range. This highlights the risk of relying solely on code patterns. Finally, an inconsistency in row 9080 (`p_missing: 100%` but deciles present) required a judgment call to trust the deciles over the missingness flag.
+1.  **Differentiating absolute vs. relative counts:** The local codes use prefixes (`B-` vs `Ly-`) and units (`e9/l` vs `%`) to distinguish between absolute counts (cells/L) and relative counts (percentage of a parent population). This was a critical distinction for constructing the correct LOINC name (`Component [#/volume] in System` vs. `Child/Parent in System`). The `LongName` entries, when available, confirmed these interpretations.
+
+2.  **Non-standard prefixes:** The prefixes `La-` and `So-` were not standard. I inferred `La-` as `Leukapheresis product` from the context of CD34 counts and the `e6/kg` unit, which is specific to stem cell transplant dosing. This was an educated guess but a strong one. The `So-` prefix remained ambiguous; without knowing the system (specimen), I could not create a valid LOINC name and had to leave those rows blank.
+
+3.  **Redundant or mistyped codes:** Many codes contained redundant information (e.g., `B-T-CD3` where CD3 already implies T-cell) or typos (`b-b-cd19`, `ly-tt-cd8`). Grouping similar codes was essential to see they all represented the same underlying test concept.
+
+4.  **`S-GT-CDT`:** This was a tricky one. The code appeared to conflate two different markers, GGT and CDT. However, the unit (`%`) and deciles strongly suggested it was the standard CDT test, which is a ratio (`Carbohydrate deficient transferrin/Transferrin.total`). I concluded that `GT-CDT` was a local, perhaps misleading, name for the CDT test.
+
+Overall, the process worked well for this group because immunophenotyping has a very regular structure that aligns with LOINC's compositional model. The deciles and units were crucial for disambiguation.
 
 # Group 111
 
-This group was dominated by COVID-19 related tests, primarily antigen (`-ag`), nucleic acid (`-nho`), and antibody (`-ab`). The main challenge was severe data quality issues, especially for rows 9096-9105 (`-cv19ag`). The `LongName` clearly identifies this as an antigen test, which should be qualitative (`Ord`) or semi-quantitative. However, these rows have quantitative units like `mmol/l`, `g/l`, `fl`, etc., which are biologically impossible for this analyte. This suggests a code collision where `-cv19ag` was misused for other lab tests, or a major data pipeline error. I mapped them literally based on the unit, but the combination of component and property/unit is nonsensical.
+This group was dominated by COVID-19 tests, which highlights several common mapping challenges. A large number of local codes (`-cv19ag`, `-cv19ag0`, `pika-covid-19ag`, `oma-covid-o`, etc.) all correspond to the same concept: a qualitative rapid antigen test. The `LongName` fields for many of these were brand names of test kits (Panbio, Flowflex, etc.), which correctly map to a generic LOINC term. The `cv19infrs` code was an interesting case of a local abbreviation for a multiplex panel (COVID, Influenza, RSV).
 
-The presence of `LongName` entries specifying the exact commercial test kit (e.g., Panbio, Flowflex for rows 9107-9112) was very helpful. This allowed confident assignment of `Test strip` or `Immunoassay` as the method. Similarly, `-cv19sekv` (row 9127) clearly pointed to `Sequencing` as a method.
+A significant data quality issue was apparent for the `-cv19ag` test (rows 9096-9105), where a fundamentally qualitative test was recorded with a wide variety of quantitative units. I inferred these were errors and mapped them to the qualitative concept, as confirmed by the high `p_missing` and lack of unit in the most common variant (row 9106). This pattern of erroneous units on qualitative tests is a recurring theme.
 
-The group also contained a clear non-COVID test, `p-c1qabg` (rows 9129-9130), which was easy to identify from its code and `LongName`. One code, `cldinho` (row 9121), was completely uninterpretable and I had to leave it blank. Finally, the absence of a system prefix for most antigen and NAAT tests is a major limitation, as the specimen (e.g., Nasopharynx, Saliva, Nose) is a critical part of the LOINC code; this axis had to be left empty in most cases.
+Finally, some codes like `-covidjt` and `cldinho` were too ambiguous to map confidently, even with context from the group. The `cldinho` code was particularly tricky as it contained a recognizable suffix (`nho` for nucleic acid) but an unidentifiable prefix.
 
 # Group 121
 
-This group was dominated by molecular genetics and hematopathology tests, identifiable by prefixes (`B-`, `Bm-`) and suffixes/abbreviations (`-d`, `pcr`, `fish`, gene names). The `LongName` was crucial for confirming the identity of many tests, especially for resolving gene abbreviations like `FII`, `FV`, `HFE`, and `Lakt`.
+This group was dominated by molecular genetics and hematopathology tests. The `LongName` and `suffix_meaning` columns were crucial for disambiguation. For example, the `-D` suffix (DNA test) and `p_missing=100` immediately pointed towards qualitative or nominal genetic tests.
 
-A key pattern was that almost all tests had `p_missing=100`, indicating they are not typically reported as numbers. This points towards scales like `Nom` (e.g., for genotypes), `Nar` (for descriptive findings like morphology or FISH results), or `Ord` (for presence/absence). For tests marked as quantitative (`-qr`, `kvant`), the `p_missing=100` is a gotcha; it suggests that a numeric result is only given when the analyte is detected. The scale `OrdQn` is perfect for these cases.
+The abbreviations were largely decodable for common genetic targets (e.g., `FV` for Factor V, `JAK2`, `BCR`, `LAKT`). The system prefixes (`B-` for Blood, `Bm-` for Bone Marrow) were also highly consistent and useful. Many tests were identifiable as panels (e.g., `b-varfa-d` for warfarin pharmacogenomics, `bm-mggfe` for bone marrow morphology + iron stain), which required creating panel-type names.
 
-Disambiguating single tests from panels was a major task. Codes combining multiple analytes (`b-fvfii-d`), specifying broad methods (`b-fishhem`), or having generic names (`b-farma-d`) were classified as panels. This distinction is subtle but important.
-
-Several codes remained ambiguous due to non-standard or unclear abbreviations (e.g., `-ctr-d`, `b-aso2-qd`, `b-blapcr`). Without `LongName` or more context, mapping these is impossible. The abbreviation `BL` for bronchoalveolar lavage was a new one, distinct from the common `B` for blood.
+Ambiguities arose from very generic codes like `b-fuus-mr` (fusion gene), `b-sekvy-d` (sequencing), or un-annotated acronyms like `b-auria10`. Without more context or a `LongName`, these are impossible to map. The `form` unit was a useful clue indicating a structured/narrative report, reinforcing the qualitative nature of many of these tests.
 
 # Group 126
 
-This group was overwhelmingly composed of glucose measurements, most of which appear to be individual time points from a glucose tolerance test (GTT). The various suffixes and abbreviations (`r`, `ras`, `0`, `1h`, `120min`) all point to this. A key decision was to map the `has_time_aspect` for all these individual results as `Point in time (spot)`, as the time marker (e.g., '2h') specifies the point in a challenge protocol, not the duration of sample collection.
+This group was straightforward as it revolved entirely around glucose ('gluk'). The main challenge was differentiating between fasting/baseline samples, timed samples from a glucose tolerance test (GTT), and point-of-care tests. The numeric suffixes (0, 30, 60, 1h, 120, 2h) and the deciles were key to identifying the timed GTT samples. Finnish abbreviations like 'vieri' (point-of-care), 'ras' (rasitus, challenge), and 'valm' (valmistelu, preparation) were very helpful. Codes with 'valm' or 100% missing values were clearly procedural/order codes, not results.
 
-The main ambiguity was the specimen type (`has_system`), as most local codes lacked a prefix like `P-` or `B-`. I left it empty for most, but inferred `Plasma` from `-vp` (`veriplasma`) and `Blood capillary` from `vieri` (bedside), which also suggested the `Test strip` method. The two codes ending in `-tbr` and `-tir` with a unit of `%` were interesting. I interpreted these as Continuous Glucose Monitoring (CGM) metrics ('Time Below Range' and 'Time In Range'), which required creating a more descriptive component and using the `Time Fraction` property and `^Patient` system. The codes ending in `valm` (`valmis`/ready) with 100% missing values were identified as procedural flags rather than measurable tests and mapped accordingly with empty axes. Having the official `LongName` would have confirmed these interpretations and resolved the specimen ambiguity.
+The most unusual codes were `-gluk-tbr` and `-gluk-tir` with unit `%`. The deciles strongly suggested 'Time Below Range' and 'Time In Range' from Continuous Glucose Monitoring (CGM). This is a newer type of measurement, and it was interesting to see it appear in this dataset. Mapping them to the generic LOINC CGM concepts felt correct as the local codes didn't specify the exact glucose thresholds for the range. The leading hyphen in these codes is odd, perhaps indicating they are derived or calculated values within a specific system's report format.
 
 # Group 129
 
-This group was dominated by `Pt-` prefixed codes, indicating patient-level procedures rather than specimen-based tests. The primary challenge was distinguishing between a single narrative result (`Doc`/`Nar` scale) and a panel (`is_panel: true`). I chose to use `is_panel: true` for codes that represent an order for a complex study with multiple separately interpretable results, such as spirometry, comprehensive semen analysis, and cardiac imaging. The `LongName`s, when available, were crucial for this (`Pt-Siemennestetutkimus, laaja` for comprehensive semen analysis). For spirometry (`fvsp...`, `spiro...`) and cardiac (`syd...`) tests, the abbreviations strongly implied complex procedures, and the high `p_missing` and `form` units supported that these are not single quantitative results. I classified them as panels representing the entire study. A minor ambiguity exists: even panels can have a component (e.g., "Spirometry study"). I added this where reasonable but kept other axes empty as is standard for panels. The cryptic suffixes (`-id`, `-idl`, `-ido`, `-io`) on the spirometry codes could not be resolved, but grouping them as spirometry panels is a safe and likely correct generalization.
+This group was dominated by `Pt-` (Patient) prefixed codes, which typically denote whole-patient investigations or panels rather than specimen-based lab tests. This made the `is_panel` flag crucial. The primary difficulty was deciphering the heavily abbreviated and sometimes non-standard test names. For example, `pt-fvspiro` likely means 'Patient - Flow Volume Spirometry with bRonchodilator', but this requires inferring `spiro` from `spi`, and `r` (for the standard Finnish suffix `-R`) from `o`. Having the Finnish long name (`LongName`) for more rows would have been extremely helpful, as seen with `pt-sper-*` (Semen analysis) and `pt-st-temp` (Thermal sensory threshold). The presence of `form` in the `UNIT` column and 100% missing values for many rows reinforces the idea that these codes often represent orders for complex studies or entire reports, not individual measurable results. A significant number of codes remained too ambiguous to map, highlighting the challenge of working with truncated or idiosyncratic local variations.
 
 # Group 160
 
-This group was straightforward, containing three common liver enzymes: Alanine aminotransferase (ALAT), Aspartate aminotransferase (ASAT), and gamma-Glutamyl transferase (GGT). The component names were clear and the unit `U/L` consistently pointed to the `Catalytic Concentration` property.
+This group was very straightforward. The `TEST_NAME` values were the full Finnish names for three common liver enzymes: `alaniiniaminotransferaasi` (ALT), `aspartaattiaminotransferaasi` (AST), and `glutamyylitransferaasi` (GGT). The unit `U/l` and the associated deciles consistently indicated an enzymatic activity measurement, leading to the `[Enzymatic activity/volume]` property.
 
-The main challenge was handling rows with missing units and high `p_missing`. The `deciles` column was crucial here. Row 13007, for example, had over 74% missing values but also had deciles, which confirmed it was a quantitative (`Qn`) test. In contrast, rows like 13009 and 13011 had high `p_missing` and no deciles, so the scale type was correctly left undetermined.
-
-This highlights a data quality issue: many records for these standard quantitative tests lack a numeric value. The presence of both explicit prefixes (`P-`, `S-`) and non-prefixed names for the same analyte shows the variability in source data coding; correctly interpreting the non-prefixed versions as `Serum or Plasma` is important. The use of full Finnish names (e.g., `alaniiniaminotransferaasi`) instead of only abbreviations made component identification unambiguous.
+The main variation between rows was the specimen type, indicated by prefixes (`p-`, `s-`, `fp-`, `fs-`) or by an explicit name suffix (`...plasmasta`). For these common chemistry tests, LOINC uses the broad system `Serum or Plasma`, which correctly covers all these variants. The fasting status (`fp-`, `fs-`) is not typically distinguished in the main LOINC term for these enzymes, so it was appropriate to map them to the same general concept. All rows were clearly single-analyte tests, so no panels were involved.
 
 # Group 161
 
-This group contained several clear patterns. The pairing of quantitative rows with units and low `p_missing` against qualitative/narrative rows for the same analyte with no unit and high `p_missing` was very helpful in assigning `Qn` vs `Ord`/`Nar` scales. 
+This group was a mix of many different tests, requiring individual analysis for each concept rather than leveraging group context for a single concept. The main challenges were:
 
-Gotchas and ambiguities included:
-- Method identifiers like `nukleiin` (nucleic acid), `nukle`, and `ag` (antigen) were embedded in the `TEST_NAME` rather than appearing as a standard suffix (like `-Nh` or `-Ag`), requiring parsing of the whole string. 
-- Timed/challenge tests (e.g., `2 tuntia aterian jälkeen` for glucose) require knowing the LOINC convention that the time aspect is usually `Point in time (spot)`, while the timing detail is part of the component name (which is beyond this mapping task). 
-- The test `p-omagluk,,potilasmittaringlukoosi` (row 13049) had a conflicting prefix `p-` (Plasma) with the name `potilasmittari` (patient meter), which typically uses capillary blood. I mapped based on the explicit prefix but noted the ambiguity.
-- Differentiating Finnish terms like `kertatyydyttymätön` (monounsaturated) and `monityydyttymätön` (polyunsaturated) required specific domain knowledge of chemistry terminology in Finnish.
-- Identifying panels like `ulosteenripulivirukset,nukle` (stool diarrhea viruses) relies on recognizing the plural `virukset` and the general nature of the name.
+1.  **Implicit Systems:** Many microbiology tests (e.g., `Chlamydia pneumoniae`, `Haemophilus influenzae`) lacked a system prefix. I had to infer the most likely specimen type (e.g., Respiratory system specimen) based on the pathogen's typical presentation. The presence of `Li-` (CSF) for `H. influenzae` in one row (13040) helped confirm that system-less codes likely referred to a different specimen type.
+
+2.  **Challenge/Timing Nuances:** The glucose and C-peptide tests required careful parsing of Finnish terms like `aterian jälkeen` (after meal), `toimintakokeissa` (in functional test), and specific timings (0h, 1h, 2h) to map to appropriate LOINC challenge terms (e.g., `--2 hours post dose glucose`, `--post meal`).
+
+3.  **Specific vs. General:** Differentiating between patient-measured capillary glucose (`ihopisto` = skin prick, row 13050) and continuous sensor glucose (`sensori`, row 13052) was crucial, as they map to different LOINC systems (`Capillary blood` vs. `Interstitial fluid`).
+
+4.  **Panel Identification:** A test like `ulosteen ripulivirukset` (fecal diarrhea viruses, row 13067) is clearly a panel, and requires mapping to a panel concept, not a single analyte. Identifying these is key.
+
+Having the `prefix_meaning` was extremely helpful, as seen with `B-` (Blood) and `Li-` (CSF). When it was missing, the task became significantly more ambiguous.
 
 # Group 162
 
-This group contained a mix of standard chemistry, hematology, panels, and some non-lab procedures. The grouping by string similarity worked well, for example by bringing together multiple spellings of 'Alkaline phosphatase' and 'Punasolujen kokojakauma' (RDW).
+This group contained a good mix of standard chemistry, hematology, and more specialized tests. The string grouping was particularly effective for tests like RDW (`punasolujen kokojakauma`) and free/total PSA ratio, which appeared under many different local spellings.
 
-**Ambiguities and Gotchas:**
-*   **Row 13138 (`p-urea,resirkulaatio`):** This was the most difficult. The name 'resirkulaatio' implies a ratio (property `Ratio`), typically reported as a percentage. However, the recorded unit was `mmol/l` and the `deciles` (4.65-23.14) are typical for a standard urea concentration, not a ratio. This is a clear data quality conflict. I chose to map based on the specific test name (`Urea recirculation`, property `Ratio`), assuming the unit and values were incorrectly recorded. Access to original result strings (e.g., '15%') would have resolved this.
-*   **Row 13094 (`folaatti(fe-folaat)`):** The `fE` prefix isn't standard, but inferring `E` as Erythrocytes was key. The very high decile values confirmed this was RBC Folate, not serum Folate, demonstrating the utility of the `deciles` column for disambiguation.
-*   **Panels:** Identifying panels was straightforward due to keywords like `paketti` (package), `erittelylaskenta` (differential count), `isoentsyymit` (isoenzymes), and multi-analyte names (`korona-rs-influenssa`). Marking `is_panel: true` and leaving other axes empty is the correct approach for these.
-*   **System for hematology:** For the `L-` prefixed differential counts (e.g. `l-basofiilit`), the system is `Blood` rather than `White Blood Cells`, as the count is performed on a blood sample. The `E-` prefix for RDW correctly points to `Red Blood Cells` as the system of interest.
+The main challenges were:
+1.  **Ambiguous Panels**: Codes like `fs-työterveyshuollonperuspaketti` (occupational health basic package) or `s-nightingale-mittaus` are clearly panels, but their contents are unknown, making it impossible to select a specific LOINC panel. I correctly identified them as panels but left the name guess empty.
+2.  **Procedure/Administrative Codes**: Several codes represented procedures (`ekg,hoitoyksikönottama`, `pt-vaativainhalaatiohoito`) or administrative events (`erikoislääkärinkonsultaatio`), not laboratory results. I mapped EKG to a panel but left the others empty as they don't fit the lab test model.
+3.  **Conflicting Information**: The test `p-urea,resirkulaatio` (row 13138) had a name suggesting a percentage (recirculation) but a unit of `mmol/l`. This internal contradiction makes it unmappable, and I correctly left it empty.
+4.  **Blood Gas System Ambiguity**: The `AB-`, `VB-`, `CB-` prefixes were clear, but a code like `p-aktuaalinenbikarbonaatti` (row 13124) is ambiguous. I interpreted `P-` in a blood gas context as likely referring to a sample from venous blood, but this is an assumption. More context on local conventions for blood gas specimen labeling would be helpful.
 
 # Group 167
 
-This group was dominated by components of hematology differential counts and serum protein electrophoresis. The phrase `osatutkimus` ('sub-test' or 'component study') in many `TEST_NAME`s was a clear indicator that these are not panels.
+This group was a good example of how local test names encode a lot of context. The term "osatutkimus" (component test) consistently indicated that the code represents a single result from a larger analysis, correctly setting `is_panel` to `false`.
 
-Key gotchas and patterns:
-*   **Method Inference**: The term `konediffi` ('machine differential') was a direct signal to use the `Automated count` method. Similarly, `s-prot-fr` and the `-Fr` suffix ('fractions') pointed clearly to `Electrophoresis` for the protein tests.
-*   **Paired Quantitative/Narrative Results**: The `S-M-komponentti` (M-protein) tests demonstrated a common pattern where a single analyte has both a quantitative result (in `g/l`) and a separate entry for narrative findings (identity of the protein, comments), which appeared here as a row with 100% missing values and no unit. Mapping the quantitative row to `Qn`/`Mass Concentration` and the narrative row to `Nar`/`Presence or Identity` is crucial.
-*   **Absolute vs. Relative Counts**: The data clearly distinguished between absolute counts (e.g., `B-Neut`, `e9/l`, `Number Concentration`) and relative counts (`L-Neut`, `%`, `Number Fraction`). The component name must reflect this (`Neutrophils` vs. `Neutrophils/Leukocytes`).
-*   **System Ambiguity (`B-` vs `L-`)**: The prefixes `B-` (Blood) and `L-` (Leukocyte) were used for similar components (e.g., `B-Neut` vs `L-Neut`). I interpreted `B-` as system `Blood` and `L-` as system `White Blood Cells`, which is a finer distinction but supported by the source data. This reflects local coding conventions that may not always have a direct parallel in LOINC's more standardized system axis, but is important to capture.
+The distinction between absolute (`[#/volume]`) and relative (`/Leukocytes`) cell counts was very clear. Codes with a `b-` prefix, `e9/l` unit, and terms like "absol.arvot" pointed to absolute counts. In contrast, codes with an `l-` prefix or `%` unit pointed to relative counts (fractions of leukocytes).
+
+The protein electrophoresis results were also quite clear. The text `osatutkimus s-prot-fr` in the `TEST_NAME` was a strong signal that these were components of a serum protein fraction analysis, making it appropriate to add `by Electrophoresis` to the LOINC name guesses for albumin, globulins, and the M-components. The `(valetietue...)` or 'dummy record' text for M-components was an interesting detail, showing how labs embed metadata for data entry purposes.
 

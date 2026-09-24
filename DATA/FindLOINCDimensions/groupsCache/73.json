@@ -2,304 +2,154 @@
   "rows": [
     {
       "row_id": 5775,
-      "has_component": "Influenza virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5776,
-      "has_component": "",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5777,
-      "has_component": "Influenza virus A+B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B RNA panel - Respiratory system specimen by NAA with probe detection",
+      "is_panel": true
     },
     {
       "row_id": 5778,
-      "has_component": "Influenza virus A+B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5779,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection",
       "is_panel": true
     },
     {
       "row_id": 5780,
-      "has_component": "Influenza virus A",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5781,
-      "has_component": "Influenza virus A",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5782,
-      "has_component": "Influenza virus B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5783,
-      "has_component": "Influenza virus B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5784,
-      "has_component": "Influenza virus A",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5785,
-      "has_component": "Influenza virus B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5786,
-      "has_component": "Influenza virus A variant",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus A variant [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5787,
-      "has_component": "Parainfluenza virus 1",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5788,
-      "has_component": "Parainfluenza virus 2",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5789,
-      "has_component": "Parainfluenza virus 3",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5790,
-      "has_component": "Parainfluenza virus 4",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5791,
-      "has_component": "Parainfluenza virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5792,
-      "has_component": "Rhinovirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5793,
-      "has_component": "",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5794,
-      "has_component": "Influenza virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5795,
-      "has_component": "Influenza virus A",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5796,
-      "has_component": "Influenza virus B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5797,
-      "has_component": "Influenza virus A",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5798,
-      "has_component": "Influenza virus B",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5799,
-      "has_component": "Influenza virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 5800,
-      "has_component": "Parainfluenza virus 1",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5801,
-      "has_component": "Parainfluenza virus 2",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5802,
-      "has_component": "Parainfluenza virus 3",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5803,
-      "has_component": "Parainfluenza virus 4",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5804,
-      "has_component": "Rhinovirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     }
   ],
-  "reflection": "This group was characterized by nucleic acid tests for respiratory viruses. The suffix `-nho` was a consistent and reliable indicator of a qualitative (`-O`) nucleic acid (`-Nh`) test, making it easy to infer the `has_property` (Presence or Threshold), `has_scale_type` (Ord), and `has_method` (Nucleic acid amplification with probe detection).\n\nThe main challenge was the complete absence of specimen prefixes (`has_system`), with many codes starting with a hyphen. This is a significant data gap, as the specimen (e.g., Nasopharyngeal swab, Bronchoalveolar lavage) is clinically important. I correctly left `has_system` empty as per instructions.\n\nSeveral codes were clearly typos (`-inabnhoho`, `hinfnho`), but the grouping and `LongName` entries for similar codes made them easy to resolve. A few codes (`-hinnho`, `-tintnho`) were too ambiguous to map a component. The code `-inabrsnho` was confidently identified as a panel for Influenza A, B, and RSV, a common respiratory panel, which highlights the need to recognize multi-analyte abbreviations."
+  "reflection": "This group consists entirely of qualitative nucleic acid tests for respiratory viruses, identified by the `-nho` suffix (`nukleiinihappo, kval`). The `LongName`s, when available, confirmed the abbreviations. The lack of specimen prefixes in the codes meant inferring the `System` as 'Respiratory system specimen', which is the standard for these analytes. \n\nSeveral codes were clearly typos or garbled (`-inabnhoho`, `-hinnho`) and were left unmapped. The code `hinflnho` was ambiguous between a typo for 'Influenza' and a test for *Haemophilus influenzae*; given the viral context of the group, a typo is more likely, but to be safe, I left it unmapped. \n\nThe primary point of ambiguity was whether a code for multiple pathogens (e.g., `-inabnho` for Influenza A and B) represented a single multiplex result or a panel ordering two separate tests. I interpreted these as panels, as this often reflects laboratory ordering practice, and suitable LOINC panel concepts exist. This assumption is a potential source of error if the source system uses a single code for a combined positive/negative result."
 }

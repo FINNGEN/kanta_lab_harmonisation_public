@@ -2,214 +2,109 @@
   "rows": [
     {
       "row_id": 12996,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 12997,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 12998,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 12999,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13000,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13001,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13002,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13003,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13004,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13005,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13006,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13007,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13008,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13009,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13010,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13011,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13012,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13013,
-      "has_component": "Alanine aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13014,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13015,
-      "has_component": "Aspartate aminotransferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 13016,
-      "has_component": "gamma-Glutamyl transferase",
-      "has_property": "Catalytic Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
       "is_panel": false
     }
   ],
-  "reflection": "This group was straightforward, containing three common liver enzymes: Alanine aminotransferase (ALAT), Aspartate aminotransferase (ASAT), and gamma-Glutamyl transferase (GGT). The component names were clear and the unit `U/L` consistently pointed to the `Catalytic Concentration` property.\n\nThe main challenge was handling rows with missing units and high `p_missing`. The `deciles` column was crucial here. Row 13007, for example, had over 74% missing values but also had deciles, which confirmed it was a quantitative (`Qn`) test. In contrast, rows like 13009 and 13011 had high `p_missing` and no deciles, so the scale type was correctly left undetermined.\n\nThis highlights a data quality issue: many records for these standard quantitative tests lack a numeric value. The presence of both explicit prefixes (`P-`, `S-`) and non-prefixed names for the same analyte shows the variability in source data coding; correctly interpreting the non-prefixed versions as `Serum or Plasma` is important. The use of full Finnish names (e.g., `alaniiniaminotransferaasi`) instead of only abbreviations made component identification unambiguous."
+  "reflection": "This group was very straightforward. The `TEST_NAME` values were the full Finnish names for three common liver enzymes: `alaniiniaminotransferaasi` (ALT), `aspartaattiaminotransferaasi` (AST), and `glutamyylitransferaasi` (GGT). The unit `U/l` and the associated deciles consistently indicated an enzymatic activity measurement, leading to the `[Enzymatic activity/volume]` property.\n\nThe main variation between rows was the specimen type, indicated by prefixes (`p-`, `s-`, `fp-`, `fs-`) or by an explicit name suffix (`...plasmasta`). For these common chemistry tests, LOINC uses the broad system `Serum or Plasma`, which correctly covers all these variants. The fasting status (`fp-`, `fs-`) is not typically distinguished in the main LOINC term for these enzymes, so it was appropriate to map them to the same general concept. All rows were clearly single-analyte tests, so no panels were involved."
 }

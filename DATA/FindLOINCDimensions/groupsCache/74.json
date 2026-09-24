@@ -2,274 +2,139 @@
   "rows": [
     {
       "row_id": 5805,
-      "has_component": "Aspergillus sp",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5806,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5807,
-      "has_component": "Human bocavirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5808,
-      "has_component": "Human bocavirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5809,
-      "has_component": "",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5810,
-      "has_component": "Bordetella pertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5811,
-      "has_component": "Bordetella pertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5812,
-      "has_component": "Bordetella pertussis+parapertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella pertussis+Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5813,
-      "has_component": "Borrelia sp",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Borrelia burgdorferi group DNA [Presence] in Specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5814,
-      "has_component": "Bordetella parapertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5815,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
-      "is_panel": true
+      "loinc_name_guess": "Bacteria DNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "is_panel": false
     },
     {
       "row_id": 5816,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5817,
-      "has_component": "Human bocavirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5818,
-      "has_component": "Bordetella pertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5819,
-      "has_component": "Bordetella parapertussis",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5820,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bacteria DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5821,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Stool",
-      "has_scale_type": "",
-      "has_method": "",
-      "is_panel": true
+      "loinc_name_guess": "Protozoa DNA [Presence] in Stool by NAA with probe detection",
+      "is_panel": false
     },
     {
       "row_id": 5822,
-      "has_component": "Salmonella sp",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5823,
-      "has_component": "Sapovirus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Sapovirus RNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5824,
-      "has_component": "Coronavirus 229E",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5825,
-      "has_component": "Coronavirus HKU1",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5826,
-      "has_component": "Coronavirus NL63",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5827,
-      "has_component": "Coronavirus OC43",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5828,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Bacteria DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5829,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
-      "is_panel": true
+      "loinc_name_guess": "Bacteria DNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "is_panel": false
     },
     {
       "row_id": 5830,
-      "has_component": "Parvovirus B19",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 5831,
-      "has_component": "Salmonella sp",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "loinc_name_guess": "Salmonella sp DNA [Presence] in Specimen by NAA with probe detection",
       "is_panel": false
     }
   ],
-  "reflection": "This group was characterized by the `-nho` suffix, a consistent and strong indicator for a qualitative nucleic acid test. This made assigning Property (`Presence or Threshold`), Scale (`Ord`), and Method (`Nucleic acid amplification with probe detection`) straightforward and consistent across the group, an interpretation confirmed by the available `LongName`s (`nukleiinihappo (kval)`) and the 100% `p_missing` values.\n\nThe main challenges were:\n1.  **Ambiguous abbreviations**: The code `-bopanho` (row 5809) could not be confidently resolved to an analyte as it could be a typo for either pertussis (`bopenho`) or parapertussis (`bparnho`), so its component was left empty. In contrast, `-boppnho` (row 5812) was interpreted as a combined test for `Bordetella pertussis+parapertussis` based on common microbiology test panels.\n2.  **Panel identification**: Tests for broad categories like 'Parasites' (`f-paranho`), 'Respiratory bacteria' (`resbaktnho`), or 'Bacteria' (`-rbaktnho`) are likely multiplex panels. I have marked them as `is_panel: true`. This is an inference based on the plural nature of the component, as the data doesn't explicitly distinguish between a multiplex panel order and a multiplex test reporting a single combined finding.\n3.  **Missing systems**: A large number of tests, particularly the coronavirus strains, lacked a system prefix. While they are almost certainly from respiratory specimens, this cannot be proven from the data, so the `has_system` axis was correctly left empty. Non-standard prefixes like `res-` and `r-` strongly suggest a respiratory system, but without a formal mapping, it is safer to omit the system."
+  "reflection": "This group was dominated by qualitative nucleic acid tests, identifiable by the `-nho` suffix and 100% missing values. The main challenge was the frequent absence of a specimen prefix in the test code.\n\nFor known respiratory pathogens (Bordetella, Bocavirus, Coronavirus), I inferred the system as `Respiratory system specimen`. For other pathogens with no specified specimen (e.g., `baktnho`, `salmnho`), I used the generic `Specimen` to avoid making an incorrect assumption. Prefixes like `r-` (`-rbaktnho`) and `res-` (`resbaktnho`) were interpreted as 'respiratory', reinforcing this choice.\n\nThe `kv...nho` codes (5824-5827) were a good example of pattern recognition, where `kv` likely stood for `Koronavirus` and the following characters matched known human coronavirus strains (229E, HKU1, NL63, OC43).\n\nThe code `f-paranho` (F-Parasiitit, nukleiinihappo) was ambiguous. While 'Parasites' suggests a panel, it's a single result code. I mapped it to `Protozoa DNA [Presence]...` as a plausible guess for a broad-range PCR target, as `Parasites DNA` is not a standard LOINC component."
 }

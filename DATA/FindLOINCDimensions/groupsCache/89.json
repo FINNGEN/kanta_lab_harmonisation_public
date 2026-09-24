@@ -2,284 +2,144 @@
   "rows": [
     {
       "row_id": 7014,
-      "has_component": "Human papilloma virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Human papillomavirus High Risk DNA [Presence] in Genital specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 7015,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "",
       "is_panel": false
     },
     {
       "row_id": 7016,
-      "has_component": "Human papilloma virus",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Human papillomavirus High Risk DNA [Presence] in Genital specimen by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 7017,
-      "has_component": "Hearing",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "^Patient",
-      "has_scale_type": "Nar",
-      "has_method": "",
-      "is_panel": false
+      "loinc_name_guess": "Hearing screen panel",
+      "is_panel": true
     },
     {
       "row_id": 7018,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Blood donor screening panel",
       "is_panel": true
     },
     {
       "row_id": 7019,
-      "has_component": "Vision",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "^Patient",
-      "has_scale_type": "Ord",
-      "has_method": "",
-      "is_panel": false
+      "loinc_name_guess": "Vision screen panel",
+      "is_panel": true
     },
     {
       "row_id": 7020,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7021,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7022,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7023,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7024,
-      "has_component": "Red blood cell antibody",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "RhD Ag [Presence] in Blood",
       "is_panel": false
     },
     {
       "row_id": 7025,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Extractable nuclear Ab panel - Serum",
       "is_panel": true
     },
     {
       "row_id": 7026,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Infectious agent screening panel - Serum",
       "is_panel": true
     },
     {
       "row_id": 7027,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Maternal screening 1st trimester panel - Serum",
       "is_panel": true
     },
     {
       "row_id": 7028,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Maternal screening 2nd trimester panel - Serum",
       "is_panel": true
     },
     {
       "row_id": 7029,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Maternal screening panel - Serum",
       "is_panel": true
     },
     {
       "row_id": 7030,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
       "is_panel": true
     },
     {
       "row_id": 7031,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
       "is_panel": true
     },
     {
       "row_id": 7032,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Serum",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
       "is_panel": true
     },
     {
       "row_id": 7033,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7034,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7035,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7036,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7037,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7038,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7039,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7040,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
       "is_panel": true
     },
     {
       "row_id": 7041,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
       "is_panel": true
     }
   ],
-  "reflection": "This group consisted almost entirely of screening tests, identifiable by the `seul` or `seula` morpheme. The primary challenge was determining whether a screening code represented a single test or a panel. For most, such as maternal screening (`s-äit-seul`, `s-tr1seul`) and urine chemical screening (`u-kemseul`), 'panel' was the obvious interpretation. The `LongName` and prefixes (`S-`, `U-`) were invaluable for confirming these interpretations.\n\nThere were several data quality issues and ambiguities. Row 7037 (`u-kemseul`) presented a contradiction, showing 100% missing values but also providing deciles. The decile values (e.g., `1.02`, `5.87`) strongly suggest that results for individual components of the urine dipstick panel (like specific gravity and pH) are being stored under the panel's code. While I mapped the code itself as a panel, this points to a common data practice that complicates analysis. Codes like `hoikemseul` (7015) were uninterpretable due to their obscurity. Finally, non-laboratory tests like hearing (`hörsel`) and vision (`näköseula`) screening required mapping to the `^Patient` system, which was an inference based on the test name."
+  "reflection": "This group was dominated by codes ending in `-seul` or `-seula`, Finnish for \"screening\". This was a powerful hint, almost always indicating a panel of tests. Correctly identifying these as panels (`is_panel: true`) was the main task. The high `p_missing` rate for these codes reinforced this, as panel orders typically don't have a single value themselves.\n\nThe group covered a wide range of common screening procedures, from lab panels (`U-KemSeul` for urinalysis, `S-Tr1Seul` for first-trimester maternal screening) to clinical assessments (`hörsel` for hearing, `näköseula` for vision). This required knowledge beyond pure lab terminology. The presence of a Swedish word (`hörsel`) also highlights the bilingual nature of some data sources in Finland.\n\nWhen available, the `LongName` column was invaluable for confirming the meaning of abbreviations, as seen with the maternal screening tests (`S-Tr1Seul`, `S-Tr2Seul`). For ambiguous codes like `hoikemseul` with no supporting information, leaving the guess empty was the only responsible action."
 }

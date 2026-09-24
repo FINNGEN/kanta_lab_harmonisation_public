@@ -2,224 +2,114 @@
   "rows": [
     {
       "row_id": 364,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 365,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 366,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 367,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 368,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 369,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 370,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 371,
-      "has_component": "Transglutaminase IgG Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 372,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 373,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 374,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 375,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 376,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 377,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 378,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 379,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 380,
-      "has_component": "Transglutaminase IgA Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 381,
-      "has_component": "Transglutaminase IgG Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 382,
-      "has_component": "Transglutaminase IgG Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 383,
-      "has_component": "Transglutaminase IgG Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 384,
-      "has_component": "Transglutaminase Ab",
-      "has_property": "Arbitrary Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue Ab [Units/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 385,
-      "has_component": "Transglutaminase Ab",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "loinc_name_guess": "Transglutaminase.tissue Ab [Presence] in Serum or Plasma",
       "is_panel": false
     }
   ],
-  "reflection": "This group was straightforward, centered on tissue transglutaminase (tTG) antibodies. The main distinctions were between IgA and IgG isotypes, and between quantitative (`Qn`, `Arbitrary Concentration`, `U/ml`) and qualitative (`Ord`, `Presence or Threshold`) results. The presence of both a quantitative and a qualitative version for the same test name (e.g., rows 364/365, 376/377) is a common pattern, likely representing the order code (qualitative) and the result code (quantitative). A key gotcha was deciding on the system for rows without an 'S-' prefix or 'seerumista'. I correctly left the system empty as per instructions, even though serum is the standard specimen. The terms `(keliakia)` and `osatutk` were contextual and did not indicate a panel code, but rather a single test as part of a larger clinical investigation. The `LongName` column being empty for all rows was unhelpful; having it populated would have confirmed the component and possibly clarified the unspecified immunoglobulin class in rows 384-385."
+  "reflection": "This group was relatively straightforward due to the clear common analyte, tissue transglutaminase antibodies (`kudostransglutaminaasi...vasta-aineet`), a marker for celiac disease. The main challenge was distinguishing between quantitative and qualitative tests. This was reliably achieved by checking for a `UNIT` (`u/ml`) and a low `p_missing` for quantitative tests, versus a missing `UNIT` and a `p_missing` of ~100% for qualitative tests (or test orders).\n\nSeveral rows demonstrated common data quality issues: some test names contained the specimen type (`seerumista`) explicitly, which was helpful when a standard `S-` prefix was missing. Other names included contextual information like `(keliakia)` or suffixes like `osatutk.` (partial investigation) or `keliakiatutkimus` (celiac investigation). While these could ambiguously suggest a panel, in this context they appear to be single component tests where the name adds clinical context. I interpreted them as single tests, not panels.\n\nFinally, the data included abbreviations (`iggva` for `igg-vasta-aineet`) and minor variations in spelling and spacing, but the grouping by string similarity made it easy to see they all referred to the same set of concepts: tissue transglutaminase IgA, IgG, or total antibodies."
 }

@@ -13,9 +13,11 @@ The following objects are masked from ‘package:base’:
 
 Configuration:
   inputFile = DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+  frequencyFile = DATA/SourceLabelingData/loinc_names_frequency.tsv
   outDir = DATA/FindLOINCDimensions
   nGroups = 30
   seed = 1
+  nExamples = 100
   provider = google_vertex
   model = gemini-2.5-pro
   project = atlas-development-270609
@@ -23,7 +25,9 @@ Configuration:
   workers = 6
   cacheDir = DATA/FindLOINCDimensions/groupsCache
 Read 13804 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+Read 1488 Finnish name-frequency rows from DATA/SourceLabelingData/loinc_names_frequency.tsv
 Processing 30 of 170 groups (random sample, seed 1)
+Injected 100 Finnish name examples into the system prompt
 Groups to send to the LLM: 30 (0 already cached)
 Resolving 30 groups across 6 workers
 Initiating cluster with 6 threads
@@ -34,12 +38,11 @@ Initiating cluster with 6 threads
 - The project is out-of-sync -- use `renv::status()` for details.
 - The project is out-of-sync -- use `renv::status()` for details.
   |                                                                              |                                                                      |   0%  |                                                                              |==                                                                    |   3%  |                                                                              |=====                                                                 |   7%  |                                                                              |=======                                                               |  10%  |                                                                              |=========                                                             |  13%  |                                                                              |============                                                          |  17%  |                                                                              |==============                                                        |  20%  |                                                                              |================                                                      |  23%  |                                                                              |===================                                                   |  27%  |                                                                              |=====================                                                 |  30%  |                                                                              |=======================                                               |  33%  |                                                                              |==========================                                            |  37%  |                                                                              |============================                                          |  40%  |                                                                              |==============================                                        |  43%  |                                                                              |=================================                                     |  47%  |                                                                              |===================================                                   |  50%  |                                                                              |=====================================                                 |  53%  |                                                                              |========================================                              |  57%  |                                                                              |==========================================                            |  60%  |                                                                              |============================================                          |  63%  |                                                                              |===============================================                       |  67%  |                                                                              |=================================================                     |  70%  |                                                                              |===================================================                   |  73%  |                                                                              |======================================================                |  77%  |                                                                              |========================================================              |  80%  |                                                                              |==========================================================            |  83%  |                                                                              |=============================================================         |  87%  |                                                                              |===============================================================       |  90%  |                                                                              |=================================================================     |  93%  |                                                                              |====================================================================  |  97%  |                                                                              |======================================================================| 100%
-Resolved 30 groups this run (LLM cost USD 4.5178)
-Collected 1984 per-row answers from 30 groups
-3 returned row_id(s) are not in the processed groups; dropping them
-3 row(s) got no answer from the model; their axes stay empty
-1722 / 1984 rows got a has_component
-Wrote 1984 rows to DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Resolved 30 groups this run (LLM cost USD 3.2832)
+Collected 2073 per-row answers from 30 groups
+89 row_id(s) returned more than once; keeping the first of each
+1790 / 1984 rows got a LOINC name guess
+Wrote 1984 rows to DATA/FindLOINCDimensions/codesWithLoincNames.tsv
 Wrote 30 group reflections to DATA/FindLOINCDimensions/reflections.md
 - The project is out-of-sync -- use `renv::status()` for details.
 
@@ -54,16 +57,16 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  dimensionsFile = DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+  namesFile = DATA/FindLOINCDimensions/codesWithLoincNames.tsv
   reflectionsFile = DATA/FindLOINCDimensions/reflections.md
   outDir = DATA/FindLOINCDimensions
   provider = google_vertex
   model = gemini-2.5-pro
-Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
-Read 42168 characters of reflections from DATA/FindLOINCDimensions/reflections.md
-Computed completeness for 7 dimensions
-Summarised reflections into 7 findings, 4 improvements, 7 data problems
-Wrote stats report to DATA/FindLOINCDimensions/loincDimensionsStats.md
-Wrote DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincNames.tsv
+Read 40130 characters of reflections from DATA/FindLOINCDimensions/reflections.md
+1790 / 1984 rows named; 1380 carry the full '<Component> [<Property>] in <System>' shape
+Summarised reflections into 8 findings, 5 improvements, 8 data problems
+Wrote stats report to DATA/FindLOINCDimensions/loincNamesStats.md
+Wrote DATA/FindLOINCDimensions/codesWithLoincNames.tsv
 Wrote DATA/FindLOINCDimensions/reflections.md
-Wrote DATA/FindLOINCDimensions/loincDimensionsStats.md
+Wrote DATA/FindLOINCDimensions/loincNamesStats.md

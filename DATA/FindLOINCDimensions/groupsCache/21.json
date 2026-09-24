@@ -2,284 +2,144 @@
   "rows": [
     {
       "row_id": 1311,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1312,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Nar",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1313,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1314,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1315,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1316,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1317,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1318,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1319,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1320,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "Mass Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1321,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1322,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "Mass Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1323,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1324,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "Mass Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1325,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "Mass Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1326,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1327,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
-      "is_panel": true
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
+      "is_panel": false
     },
     {
       "row_id": 1328,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1329,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1330,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1331,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1332,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma",
-      "has_scale_type": "",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1333,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1334,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1335,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1336,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "Mass Concentration",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1337,
-      "has_component": "Transferrin receptor.soluble",
-      "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
       "is_panel": false
     },
     {
       "row_id": 1338,
-      "has_component": "Transferrin.iron saturation",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma",
       "is_panel": false
     }
   ],
-  "reflection": "This group was straightforward as it contained only two distinct analytes: 'Transferrin.iron saturation' and 'Transferrin receptor.soluble'. The main ambiguities arose from missing or inconsistent data, which I handled as follows:\n\n*   **Synonyms**: 'rautakyllästeisyys' and 'rautasaturaatio' were correctly identified as synonyms for iron saturation.\n*   **Units**: Rows with `%` units and deciles 1-100 were clearly `Mass Fraction`. Sibling rows with no unit but deciles 0-1 were interpreted as the same test, just reported as a fraction instead of a percentage, mapping to the same `Mass Fraction` property. The unit `osuus` ('share'/'fraction') confirmed this interpretation.\n*   **System**: I relied on prefixes (`fP-`, `fS-`, `P-`, `S-`) and explicit text (`seerumista` meaning 'from serum') to determine the system. When no information was present, I correctly left the `has_system` axis empty. The messy `TEST_NAME` in row 1319 was parsed by focusing on the primary prefix `p-`.\n*   **Method**: For Transferrin Iron Saturation, I inferred the `Calculated` method, as this is standard practice and helps distinguish it from directly measured analytes. For Transferrin Receptor, I correctly left the method empty as per instructions, since it's not specified in the code.\n*   **Panels**: The Finnish word `paketti` in the unit column for row 1327 was a clear and helpful signal to mark it as a panel.\n*   **Data Quality**: Rows with `p_missing` at 100% were treated as instances of the test with no result data; component and system could often be inferred, but property and scale were left empty. For row 1312, with 84% missing values, I assigned `Nar` as the most likely scale."
+  "reflection": "This group was divided into two clear concepts: Transferrin Saturation and Soluble Transferrin Receptor. The Finnish names were mostly consistent, making identification straightforward.\n\nA key decision point was handling the different representations for Transferrin Saturation. Some records used percent (`%`) while others (e.g., row 1326 with unit `osuus`) used a fraction (ratio between 0 and 1), evident from the deciles. I mapped all of these to a single LOINC concept, `Transferrin saturation [Molar ratio] in Serum or Plasma`, as the difference is in local display formatting, not the underlying clinical measurement. LOINC standardizes this as a molar ratio.\n\nFor the receptor tests, some names explicitly stated `liukoinen` (soluble), while others did not. As the common clinical test is for the soluble form, I inferred this for all `transferriinireseptori` tests. This was supported by the `mg/l` units and decile values. The final guess was `Transferrin receptor.soluble [Mass/volume] in Serum or Plasma`.\n\nThe fasting status indicated by `fP-`, `fS-`, and `paastotilassa` was noted, but I opted for the more general LOINC term without the `--fasting` suffix to provide a broader, more common mapping target. The fasting state is often handled as a separate observation attribute rather than being part of the core test name."
 }
