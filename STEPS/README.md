@@ -19,3 +19,11 @@ Index of the steps, in the order they run.
    similarity group to an LLM to infer the six LOINC axes and `is_panel`
    per local lab code, into `codesWithLoincDimensions.tsv` plus a
    per-group `reflections.md`.
+5. [`FixLOINCDimensions`](FixLOINCDimensions/README.md) — correct the inferred
+   axis labels into real OMOP vocabulary terms, using Hecate semantic search
+   per axis plus Finnish usage frequency, into
+   `codesWithFixedLoincDimensions.tsv`.
+6. [`MapLOINCToOmop`](MapLOINCToOmop/README.md) — join `codesWithLoincDimensions.tsv`
+   to OMOP's `measurement_concept_attributes.tsv` by exact match on the six
+   LOINC axes plus `is_panel`, into `codesWithOMOP.tsv`, then report on the
+   mapping's goodness overall and by domain.
