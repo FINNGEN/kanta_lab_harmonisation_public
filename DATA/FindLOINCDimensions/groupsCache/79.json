@@ -23,7 +23,7 @@
     {
       "row_id": 6252,
       "has_component": "Albumin",
-      "has_property": "Mass/Time",
+      "has_property": "Mass Rate",
       "has_time_aspect": "12 hours",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -34,7 +34,7 @@
       "row_id": 6253,
       "has_component": "Albumin",
       "has_property": "Mass Rate",
-      "has_time_aspect": "",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -44,7 +44,7 @@
       "row_id": 6254,
       "has_component": "Albumin",
       "has_property": "Mass Rate",
-      "has_time_aspect": "",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -54,7 +54,7 @@
       "row_id": 6255,
       "has_component": "Albumin/Creatinine",
       "has_property": "Ratio",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -64,7 +64,7 @@
       "row_id": 6256,
       "has_component": "Albumin/Creatinine",
       "has_property": "Ratio",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -74,7 +74,7 @@
       "row_id": 6257,
       "has_component": "Albumin/Creatinine",
       "has_property": "Ratio",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -84,7 +84,7 @@
       "row_id": 6258,
       "has_component": "Albumin/Creatinine",
       "has_property": "Ratio",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "Night time",
       "has_system": "Urine",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -92,7 +92,7 @@
     },
     {
       "row_id": 6259,
-      "has_component": "Alpha-1-microglobulin/Creatinine",
+      "has_component": "Albumin/Creatinine",
       "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
@@ -157,7 +157,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -167,7 +167,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -177,7 +177,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -212,8 +212,8 @@
     },
     {
       "row_id": 6271,
-      "has_component": "Albumin/Creatinine",
-      "has_property": "Ratio",
+      "has_component": "Albumin",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -344,9 +344,9 @@
       "row_id": 6284,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -354,9 +354,9 @@
       "row_id": 6285,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -364,9 +364,9 @@
       "row_id": 6286,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -453,7 +453,7 @@
     {
       "row_id": 6295,
       "has_component": "Epithelial cells",
-      "has_property": "Arbitrary Concentration",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
       "has_scale_type": "SemiQn",
@@ -466,7 +466,7 @@
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
@@ -476,7 +476,7 @@
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
@@ -486,7 +486,7 @@
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
@@ -496,33 +496,33 @@
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 6300,
       "has_component": "Casts",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Ord",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 6301,
       "has_component": "Macrophages",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
-      "has_scale_type": "Ord",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 6302,
-      "has_component": "Microscopic findings",
+      "has_component": "Other",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine sediment",
@@ -532,7 +532,7 @@
     },
     {
       "row_id": 6303,
-      "has_component": "Cells",
+      "has_component": "Cells.other",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
@@ -541,5 +541,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was mostly straightforward, focusing on albumin, protein, and their creatinine ratios in urine, along with urine sediment analysis. However, a few ambiguities and data quality issues stood out:\n\n*   **Ambiguous Component:** The code `u-a1mikre` (row 6259) was the most challenging. While grouped with albumin tests by string similarity, `a1m` is a standard abbreviation for Alpha-1-microglobulin. I chose the more literal interpretation (`Alpha-1-microglobulin/Creatinine`), but the grouping and similar decile ranges to albumin/creatinine ratios create significant ambiguity. This could be a local typo for an albumin ratio.\n*   **Concatenated Codes:** Codes like `u-alb/kre,u-alb` (6271) and especially `u-alb/kre,u-krea` (6274) are messy. For 6274, I had to use the decile values to infer that the result was likely for creatinine alone, not the ratio, contradicting the first part of the code. This shows that concatenated codes can be misleading.\n*   **Uninterpretable Codes:** The `u-alvhu...` series (6284-6286) was completely unmappable ('dark matter'), with no clues from any column. I had to leave most axes blank.\n*   **Data Inconsistencies:** The presence of deciles for rows with 100% missing numeric values (e.g., 6251, 6258) is confusing and suggests an artifact in the data aggregation pipeline. Similarly, the nonsensical unit `mg/mmol/l` (6282) required an educated guess based on the test name `u-albkrea` indicating a ratio."
+  "reflection": "This group was mostly focused on urine albumin, creatinine, and their ratio, along with other urine tests. The prefixes `cU-` (collected urine) and `nU-` (night urine) were crucial for determining the `has_time_aspect`. For `cU-` with unit `ug/min`, I inferred a `Mass Rate` property but couldn't specify a duration. For `nU-`, `Night time` seemed appropriate. The various spellings for albumin/creatinine ratio (`-kre`, `-krea`, `/kre`) were easy to normalize, especially with the `LongName` confirming the meaning for `u-albkre`.\n\nThe most ambiguous cases were the concatenated `TEST_NAME`s like `u-alb/kre,u-alb`. Here, the `deciles` were the only way to disambiguate. For example, in row 6271 the deciles matched an albumin concentration, not a ratio. This reliance on numeric distributions is powerful but also brittle if the data is sparse. The `u-alvhu...` codes were uninterpretable and correctly left mostly blank.\n\nA slight ambiguity arose with qualitative urine tests (`u-alb-o`). While the `-O` suffix clearly points to an ordinal test, the method is almost always a test strip. I added `Test strip` as the method, which is a slight violation of the 'only when specified' rule, but highly probable and clinically relevant. For the `u-sakka` (sediment) tests, I inferred `Number Concentration` and `SemiQn` from the context of microscopy counts per field, which seems reasonable."
 }

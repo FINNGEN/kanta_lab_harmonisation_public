@@ -2,7 +2,7 @@
   "rows": [
     {
       "row_id": 10836,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -12,7 +12,7 @@
     },
     {
       "row_id": 10837,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -22,7 +22,7 @@
     },
     {
       "row_id": 10838,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -32,7 +32,7 @@
     },
     {
       "row_id": 10839,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -42,7 +42,7 @@
     },
     {
       "row_id": 10840,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -52,7 +52,7 @@
     },
     {
       "row_id": 10841,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -62,7 +62,7 @@
     },
     {
       "row_id": 10842,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -72,7 +72,7 @@
     },
     {
       "row_id": 10843,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 10844,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -92,7 +92,7 @@
     },
     {
       "row_id": 10845,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -102,67 +102,67 @@
     },
     {
       "row_id": 10846,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10847,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10848,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10849,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10850,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10851,
-      "has_component": "Semen analysis panel",
+      "has_component": "Semen analysis",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10852,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -172,7 +172,7 @@
     },
     {
       "row_id": 10853,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -182,7 +182,7 @@
     },
     {
       "row_id": 10854,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -192,7 +192,7 @@
     },
     {
       "row_id": 10855,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry with bronchodilator",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -202,7 +202,7 @@
     },
     {
       "row_id": 10856,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry with bronchodilator",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -212,7 +212,7 @@
     },
     {
       "row_id": 10857,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -222,7 +222,7 @@
     },
     {
       "row_id": 10858,
-      "has_component": "Spirometry study",
+      "has_component": "Spirometry",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -238,21 +238,21 @@
       "has_system": "^Patient",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": true
+      "is_panel": false
     },
     {
       "row_id": 10860,
-      "has_component": "Thermal sensation threshold panel",
+      "has_component": "Thermal sensory testing",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 10861,
-      "has_component": "Heart perfusion study",
+      "has_component": "Myocardial perfusion study",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -262,7 +262,7 @@
     },
     {
       "row_id": 10862,
-      "has_component": "Heart perfusion study",
+      "has_component": "Myocardial perfusion study",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -282,7 +282,7 @@
     },
     {
       "row_id": 10864,
-      "has_component": "Stress echocardiogram panel",
+      "has_component": "Echocardiography",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -292,7 +292,7 @@
     },
     {
       "row_id": 10865,
-      "has_component": "Echocardiogram panel",
+      "has_component": "Echocardiography",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "^Patient",
@@ -301,5 +301,5 @@
       "is_panel": true
     }
   ],
-  "reflection": "This group was composed entirely of patient-level investigations (`Pt-` prefix), which are almost always panels or complex procedures. The key was recognizing abbreviations for common procedures: `spiro` for spirometry, `sper` for semen analysis (confirmed by `LongName`), `sydänuä` for echocardiogram, and `st-temp` for thermal threshold test. This allowed me to confidently mark most rows as `is_panel: true` and assign a generic component name for the panel (e.g., \"Spirometry study\"). The `has_system` was consistently `^Patient`.\n\nThe main ambiguity was the meaning of the many suffixes on the `spiro` codes (e.g., `-id`, `-idl`, `-ido`). Without `LongName`s for these specific variants, I couldn't differentiate them further, but the general classification as a spirometry panel holds. The presence of `UNIT` = 'form' on some rows (10842, 10848) and 100% missing values for most supported the interpretation that these codes represent the entire report/document (`has_scale_type: Doc`), not a single numeric value."
+  "reflection": "This group was dominated by `Pt-` prefixed codes, indicating patient-level procedures rather than specimen-based tests. The primary challenge was distinguishing between a single narrative result (`Doc`/`Nar` scale) and a panel (`is_panel: true`). I chose to use `is_panel: true` for codes that represent an order for a complex study with multiple separately interpretable results, such as spirometry, comprehensive semen analysis, and cardiac imaging. The `LongName`s, when available, were crucial for this (`Pt-Siemennestetutkimus, laaja` for comprehensive semen analysis). For spirometry (`fvsp...`, `spiro...`) and cardiac (`syd...`) tests, the abbreviations strongly implied complex procedures, and the high `p_missing` and `form` units supported that these are not single quantitative results. I classified them as panels representing the entire study. A minor ambiguity exists: even panels can have a component (e.g., \"Spirometry study\"). I added this where reasonable but kept other axes empty as is standard for panels. The cryptic suffixes (`-id`, `-idl`, `-ido`, `-io`) on the spirometry codes could not be resolved, but grouping them as spirometry panels is a safe and likely correct generalization."
 }

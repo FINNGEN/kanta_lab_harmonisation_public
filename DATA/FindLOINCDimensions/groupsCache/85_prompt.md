@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,41 +81,42 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 85 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-6680	-aerobivi		314	100				
-6681	-anaerobi		320	100				
-6682	-omactgc		591	100				
-6683	annosvoim		182	65.93				
-6684	b-koboltti	ug/l	157	0	[0.5, 0.72, 0.96, 1.18, 1.68, 2.2, 3.97, 6.08, 10.46]		Blood	
-6685	cand-odl.		542	89.67				
-6686	cand.nativ		286	100				
-6687	cladosp.he	mm	11	0				
-6688	cladosp.he	u/ml	69	0	[0, 0.01, 0.01, 0.04, 0.13, 0.41, 0.5, 0.87, 4.4]			
-6689	cladosp.he		680	93.82				
-6690	corona229e		619	100				
-6691	coronahku1		619	100				
-6692	coronanl63		619	100				
-6693	coronaoc43		619	100				
-6694	f-norogi		261	100			Feces	
-6695	f-norogii		261	100			Feces	
-6696	f-projekti		469	100			Feces	
-6697	hpvpapctgc		116	100				
-6698	hpvrefctgc		135	100				
-6699	norogi		139	100				
-6700	norogii		139	100				
-6701	p-asetoni	mmol/l	171	0	[0, 0, 0, 0, 0, 0, 0.99, 1.7, 3.4]		Plasma	
-6702	p-asetoni		305	100			Plasma	
-6703	p-uraatti	umol/l	6902	0	[234.14, 271.61, 301.37, 327.94, 355.71, 383.49, 416.66, 458.38, 518.94]		Plasma	
-6704	p-uraatti		32	87.5			Plasma	
-6705	projekti1		160	100				
-6706	s-asetoni	mmol/l	42	0		S -Asetoni	Serum	
-6707	s-asetoni		414	100		S -Asetoni	Serum	
-6708	s-uraatti	umol/l	621	0	[231.75, 257.74, 279.08, 298.35, 317.34, 343.64, 366.52, 401.97, 449.54]		Serum	
-6709	s-uraatti		38	100			Serum	
-6710	s-valproaatti	umol/l	431	0	[243.85, 308.03, 356.19, 396.72, 425.61, 467.25, 503.69, 550.21, 628.49]		Serum	
-6711	s-valproaatti		16	87.5			Serum	
-6712	ts-abortti		315	100		Ts-Aborttikudoksen dissektiotutkimus	Tissue	
-6713	u-omactgc		480	100			Urine	
-6714	uraatti	umol/l	3560	0	[230.56, 267.35, 298.53, 325.87, 354.19, 383.04, 414.66, 454.9, 512.27]			
-6715	uraatti		19	100				
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 6680 | -aerobivi |  | 314 | 100 |  |  |  |  |
+| 6681 | -anaerobi |  | 320 | 100 |  |  |  |  |
+| 6682 | -omactgc |  | 591 | 100 |  |  |  |  |
+| 6683 | annosvoim |  | 182 | 65.93 |  |  |  |  |
+| 6684 | b-koboltti | ug/l | 157 | 0 | [0.5, 0.72, 0.96, 1.18, 1.68, 2.2, 3.97, 6.08, 10.46] |  | Blood |  |
+| 6685 | cand-odl. |  | 542 | 89.67 |  |  |  |  |
+| 6686 | cand.nativ |  | 286 | 100 |  |  |  |  |
+| 6687 | cladosp.he | mm | 11 | 0 |  |  |  |  |
+| 6688 | cladosp.he | u/ml | 69 | 0 | [0, 0.01, 0.01, 0.04, 0.13, 0.41, 0.5, 0.87, 4.4] |  |  |  |
+| 6689 | cladosp.he |  | 680 | 93.82 |  |  |  |  |
+| 6690 | corona229e |  | 619 | 100 |  |  |  |  |
+| 6691 | coronahku1 |  | 619 | 100 |  |  |  |  |
+| 6692 | coronanl63 |  | 619 | 100 |  |  |  |  |
+| 6693 | coronaoc43 |  | 619 | 100 |  |  |  |  |
+| 6694 | f-norogi |  | 261 | 100 |  |  | Feces |  |
+| 6695 | f-norogii |  | 261 | 100 |  |  | Feces |  |
+| 6696 | f-projekti |  | 469 | 100 |  |  | Feces |  |
+| 6697 | hpvpapctgc |  | 116 | 100 |  |  |  |  |
+| 6698 | hpvrefctgc |  | 135 | 100 |  |  |  |  |
+| 6699 | norogi |  | 139 | 100 |  |  |  |  |
+| 6700 | norogii |  | 139 | 100 |  |  |  |  |
+| 6701 | p-asetoni | mmol/l | 171 | 0 | [0, 0, 0, 0, 0, 0, 0.99, 1.7, 3.4] |  | Plasma |  |
+| 6702 | p-asetoni |  | 305 | 100 |  |  | Plasma |  |
+| 6703 | p-uraatti | umol/l | 6902 | 0 | [234.14, 271.61, 301.37, 327.94, 355.71, 383.49, 416.66, 458.38, 518.94] |  | Plasma |  |
+| 6704 | p-uraatti |  | 32 | 87.5 |  |  | Plasma |  |
+| 6705 | projekti1 |  | 160 | 100 |  |  |  |  |
+| 6706 | s-asetoni | mmol/l | 42 | 0 |  | S -Asetoni | Serum |  |
+| 6707 | s-asetoni |  | 414 | 100 |  | S -Asetoni | Serum |  |
+| 6708 | s-uraatti | umol/l | 621 | 0 | [231.75, 257.74, 279.08, 298.35, 317.34, 343.64, 366.52, 401.97, 449.54] |  | Serum |  |
+| 6709 | s-uraatti |  | 38 | 100 |  |  | Serum |  |
+| 6710 | s-valproaatti | umol/l | 431 | 0 | [243.85, 308.03, 356.19, 396.72, 425.61, 467.25, 503.69, 550.21, 628.49] |  | Serum |  |
+| 6711 | s-valproaatti |  | 16 | 87.5 |  |  | Serum |  |
+| 6712 | ts-abortti |  | 315 | 100 |  | Ts-Aborttikudoksen dissektiotutkimus | Tissue |  |
+| 6713 | u-omactgc |  | 480 | 100 |  |  | Urine |  |
+| 6714 | uraatti | umol/l | 3560 | 0 | [230.56, 267.35, 298.53, 325.87, 354.19, 383.04, 414.66, 454.9, 512.27] |  |  |  |
+| 6715 | uraatti |  | 19 | 100 |  |  |  |  |
 

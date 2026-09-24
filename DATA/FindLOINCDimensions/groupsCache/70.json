@@ -13,9 +13,9 @@
     {
       "row_id": 5452,
       "has_component": "Calprotectin",
-      "has_property": "Mass Concentration",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -23,10 +23,10 @@
     {
       "row_id": 5453,
       "has_component": "Calprotectin",
-      "has_property": "Presence or Threshold",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -37,7 +37,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Skin",
       "has_scale_type": "Nar",
-      "has_method": "",
+      "has_method": "Histology",
       "is_panel": false
     },
     {
@@ -46,7 +46,7 @@
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Nom",
       "has_method": "Cytogenetics",
       "is_panel": false
     },
@@ -57,16 +57,16 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Nom",
-      "has_method": "",
+      "has_method": "Stain",
       "is_panel": false
     },
     {
       "row_id": 5457,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -86,7 +86,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -96,7 +96,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -113,17 +113,17 @@
     {
       "row_id": 5462,
       "has_component": "Paraprotein",
-      "has_property": "Finding",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "24 hours",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Ord",
       "has_method": "Electrophoresis",
       "is_panel": false
     },
     {
       "row_id": 5463,
       "has_component": "Calprotectin",
-      "has_property": "Mass Concentration",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
       "has_scale_type": "Qn",
@@ -133,17 +133,17 @@
     {
       "row_id": 5464,
       "has_component": "Calprotectin",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5465,
       "has_component": "Calprotectin",
-      "has_property": "Mass Concentration",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
       "has_scale_type": "Qn",
@@ -153,16 +153,16 @@
     {
       "row_id": 5466,
       "has_component": "Calprotectin",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5467,
-      "has_component": "Beta-carotene",
+      "has_component": "Beta carotene",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -172,7 +172,7 @@
     },
     {
       "row_id": 5468,
-      "has_component": "Beta-carotene",
+      "has_component": "Beta carotene",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -193,10 +193,10 @@
     {
       "row_id": 5470,
       "has_component": "Bile acids.total",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -213,10 +213,10 @@
     {
       "row_id": 5472,
       "has_component": "Bile acids.total",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -227,7 +227,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Cerebral spinal fluid",
       "has_scale_type": "SemiQn",
-      "has_method": "",
+      "has_method": "VDRL",
       "is_panel": false
     },
     {
@@ -237,7 +237,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Cerebral spinal fluid",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "VDRL",
       "is_panel": false
     },
     {
@@ -246,7 +246,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -322,12 +322,12 @@
     },
     {
       "row_id": 5483,
-      "has_component": "INR",
-      "has_property": "Ratio",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Qn",
-      "has_method": "Coagulation assay",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -343,7 +343,7 @@
     {
       "row_id": 5485,
       "has_component": "Thrombin time",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Platelet poor plasma",
       "has_scale_type": "Ord",
@@ -352,8 +352,8 @@
     },
     {
       "row_id": 5486,
-      "has_component": "Prothrombin time",
-      "has_property": "Ratio",
+      "has_component": "Prothrombin",
+      "has_property": "Mass Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Platelet poor plasma",
       "has_scale_type": "Qn",
@@ -362,8 +362,8 @@
     },
     {
       "row_id": 5487,
-      "has_component": "Prothrombin time",
-      "has_property": "Presence or Threshold",
+      "has_component": "Prothrombin",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Platelet poor plasma",
       "has_scale_type": "Ord",
@@ -372,7 +372,7 @@
     },
     {
       "row_id": 5488,
-      "has_component": "Alkaline phosphatase.macroenzyme",
+      "has_component": "Macroalkaline phosphatase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -382,17 +382,17 @@
     },
     {
       "row_id": 5489,
-      "has_component": "Alkaline phosphatase.macroenzyme",
-      "has_property": "Catalytic Concentration",
+      "has_component": "Macroalkaline phosphatase",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5490,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
+      "has_component": "Macroalkaline phosphatase.fraction 1",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -402,7 +402,7 @@
     },
     {
       "row_id": 5491,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
+      "has_component": "Macroalkaline phosphatase.fraction 1",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -412,7 +412,7 @@
     },
     {
       "row_id": 5492,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
+      "has_component": "Macroalkaline phosphatase.fraction 2",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -422,7 +422,7 @@
     },
     {
       "row_id": 5493,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
+      "has_component": "Macroalkaline phosphatase.fraction 2",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -432,7 +432,7 @@
     },
     {
       "row_id": 5494,
-      "has_component": "Alkaline phosphatase.liver isoenzyme",
+      "has_component": "Macroalkaline phosphatase/Alkaline phosphatase.total",
       "has_property": "Catalytic Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -442,7 +442,7 @@
     },
     {
       "row_id": 5495,
-      "has_component": "Alkaline phosphatase.liver isoenzyme",
+      "has_component": "Macroalkaline phosphatase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -452,11 +452,11 @@
     },
     {
       "row_id": 5496,
-      "has_component": "Alkaline phosphatase.liver isoenzyme",
-      "has_property": "Catalytic Concentration",
+      "has_component": "Macroalkaline phosphatase",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -467,7 +467,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -477,7 +477,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -487,7 +487,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -497,7 +497,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -507,7 +507,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -517,7 +517,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -533,10 +533,10 @@
     {
       "row_id": 5504,
       "has_component": "Carbamazepine",
-      "has_property": "Substance Concentration",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -578,7 +578,7 @@
       "has_system": "Serum",
       "has_scale_type": "Ord",
       "has_method": "",
-      "is_panel": true
+      "is_panel": false
     },
     {
       "row_id": 5509,
@@ -677,7 +677,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -687,7 +687,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -697,7 +697,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -707,7 +707,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -717,7 +717,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -727,7 +727,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -736,13 +736,13 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 5525,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -752,7 +752,7 @@
     },
     {
       "row_id": 5526,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -762,7 +762,7 @@
     },
     {
       "row_id": 5527,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -772,7 +772,7 @@
     },
     {
       "row_id": 5528,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -782,7 +782,7 @@
     },
     {
       "row_id": 5529,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -792,17 +792,17 @@
     },
     {
       "row_id": 5530,
-      "has_component": "Alkaline phosphatase isoenzyme 1",
-      "has_property": "Catalytic Concentration",
+      "has_component": "",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5531,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
+      "has_component": "",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -812,11 +812,11 @@
     },
     {
       "row_id": 5532,
-      "has_component": "Alkaline phosphatase isoenzyme 2",
-      "has_property": "Catalytic Concentration",
+      "has_component": "",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -852,7 +852,7 @@
     },
     {
       "row_id": 5536,
-      "has_component": "10-Hydroxy-10,11-dihydrocarbamazepine",
+      "has_component": "10-Hydroxycarbazepine",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -862,11 +862,11 @@
     },
     {
       "row_id": 5537,
-      "has_component": "10-Hydroxy-10,11-dihydrocarbamazepine",
-      "has_property": "Substance Concentration",
+      "has_component": "10-Hydroxycarbazepine",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -916,7 +916,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -926,7 +926,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -936,7 +936,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -946,7 +946,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -956,7 +956,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -966,7 +966,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -976,7 +976,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -986,7 +986,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -996,7 +996,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1043,10 +1043,10 @@
     {
       "row_id": 5555,
       "has_component": "Pregnancy-associated plasma protein A",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -1057,7 +1057,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Calculated",
       "is_panel": false
     },
     {
@@ -1067,7 +1067,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1077,7 +1077,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1102,9 +1102,9 @@
     },
     {
       "row_id": 5561,
-      "has_component": "Mumps virus Ab",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
@@ -1153,10 +1153,10 @@
     {
       "row_id": 5566,
       "has_component": "Paraprotein",
-      "has_property": "Finding",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Ord",
       "has_method": "Electrophoresis",
       "is_panel": false
     },
@@ -1167,7 +1167,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1177,14 +1177,14 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5569,
-      "has_component": "Parvovirus B19 Ab",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
@@ -1263,7 +1263,7 @@
     {
       "row_id": 5577,
       "has_component": "Parvovirus B19 IgG Ab avidity",
-      "has_property": "Ratio",
+      "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
@@ -1273,7 +1273,7 @@
     {
       "row_id": 5578,
       "has_component": "Parvovirus B19 IgG Ab avidity",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
@@ -1282,22 +1282,22 @@
     },
     {
       "row_id": 5579,
-      "has_component": "Pecan nut IgE Ab",
+      "has_component": "Pecan IgE Ab",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5580,
-      "has_component": "Pecan nut IgE Ab",
+      "has_component": "Pecan IgE Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1307,7 +1307,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1317,7 +1317,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -1333,17 +1333,17 @@
     {
       "row_id": 5584,
       "has_component": "Bile acids.total",
-      "has_property": "Substance Concentration",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5585,
       "has_component": "Valproate.free/Valproate.total",
-      "has_property": "Mass Fraction",
+      "has_property": "Substance Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
@@ -1363,10 +1363,10 @@
     {
       "row_id": 5587,
       "has_component": "Valproate",
-      "has_property": "Presence or Threshold",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -1416,7 +1416,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1426,7 +1426,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1435,7 +1435,7 @@
       "has_component": "Bile acids.total",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -1445,7 +1445,7 @@
       "has_component": "Bile acids.total",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
+      "has_system": "",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
@@ -1457,13 +1457,13 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Skin",
       "has_scale_type": "Nar",
-      "has_method": "",
+      "has_method": "Histology",
       "is_panel": false
     },
     {
       "row_id": 5597,
       "has_component": "Cotinine",
-      "has_property": "Arbitrary Concentration",
+      "has_property": "Arbitrary Rate",
       "has_time_aspect": "24 hours",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -1474,7 +1474,7 @@
       "row_id": 5598,
       "has_component": "Cotinine",
       "has_property": "Presence or Threshold",
-      "has_time_aspect": "",
+      "has_time_aspect": "24 hours",
       "has_system": "Urine",
       "has_scale_type": "Ord",
       "has_method": "",
@@ -1482,9 +1482,9 @@
     },
     {
       "row_id": 5599,
-      "has_component": "Glucose and Protein panel",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Urine",
       "has_scale_type": "",
       "has_method": "",
@@ -1492,29 +1492,29 @@
     },
     {
       "row_id": 5600,
-      "has_component": "Microscopic observation",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Urine sediment",
-      "has_scale_type": "Nar",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 5601,
-      "has_component": "Microscopic observation",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Urine sediment",
-      "has_scale_type": "Nar",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 5602,
-      "has_component": "Bladder emptying time",
+      "has_component": "Time",
       "has_property": "Time",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "Procedure duration",
       "has_system": "^Patient",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -1522,23 +1522,23 @@
     },
     {
       "row_id": 5603,
-      "has_component": "Bladder emptying time",
-      "has_property": "Time",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "Time",
+      "has_property": "Finding",
+      "has_time_aspect": "Procedure duration",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 5604,
-      "has_component": "Microscopic observation",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Urine sediment",
-      "has_scale_type": "Nar",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 5605,
@@ -1546,7 +1546,7 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1556,10 +1556,10 @@
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     }
   ],
-  "reflection": "This group was rich in different test types, from standard chemistry (Calprotectin, Bile Acids) and TDM (Carbamazepine, Valproate) to serology, allergy testing, and histology. The presence of `LongName` for many rows was extremely helpful for confirmation, especially for the allergy tests (e.g., confirming `s-haspähe` is Hazelnut IgE) and histology (`sk-padihot`).\n\nThe main challenges were:\n1.  **Ambiguous abbreviations**: Codes like `s-maksa1`, `s-maksa2` were ambiguous. I inferred they were alkaline phosphatase isoenzymes based on sibling rows `s-afmaksa`, but this is a guess. `p-varmtr` and `p-varmtt` were inferred as Thrombin Time and PT%, which seems plausible but isn't certain.\n2.  **Panel vs. Specific Test**: Differentiating panels from specific tests with multiple reporting formats was tricky. For example, `s-kardab` (Cardiolipin Ab) has a `titre` row and a high `p_missing` row, but it's an orderable that bundles IgG and IgM. I marked it as a panel. Conversely, for a specific test like `s-kardabg` (IgG only), the multiple rows represent different ways of reporting (quantitative vs. qualitative), not a panel.\n3.  **Local/Handling Codes**: Many codes like `s-pakaste` (frozen), `b-vara` (reserve), or `u-valvott` (supervised) are clearly not actual tests but sample handling instructions or placeholders. It's important to recognize and map these to empty axes rather than trying to force an interpretation.\n4.  **Unit Diversity**: For serology tests like Parvovirus IgG Ab (`s-parvabg`), there were many different arbitrary units (`eiu`, `ie/ml`, `index`, `iu/ml`, `titre`). This highlights the lack of standardization and reinforces the need to use `Arbitrary Concentration` or `Titer` as the property, and not to assume they are equivalent. It also shows the value of having `p_missing` to identify the qualitative versions of these tests."
+  "reflection": "This group was characterized by a large number of specific antibody tests (Cardiolipin, various allergens), therapeutic drug monitoring (Carbamazepine, Valproate), and administrative or panel codes. The `LongName` field was invaluable for resolving abbreviations like `s-kardabg` and `s-maapähe`.\n\n**Gotchas & Ambiguities:**\n*   A significant number of codes were administrative (e.g., `b-vara`, `s-pakaste`), indicated by terms like `vara` (reservation) or `pakaste` (frozen). Identifying these as non-tests is crucial.\n*   Many codes were clearly panels (`paketti`), such as `s-makspak` (liver panel) or `u-partik` (urine sediment/particles). These are correctly marked as `is_panel: true` with most axes left blank.\n*   The distinction between quantitative (`Qn`) and qualitative/narrative (`Ord`/`Nar`) versions of the same test was very common, usually differentiated by the presence of a unit and a low `p_missing` versus no unit and a high `p_missing`. However, several rows (e.g., 5464, 5470) had contradictory data: `p_missing` of 100% but `deciles` present. In these cases, I trusted the `p_missing` and lack of unit to indicate a non-quantitative result (`Nar` or `Ord`).\n*   Some abbreviations were very obscure (`b-nakkrea`, `u-rakkoai`) and could not be mapped without a `LongName` or more context. I left the component empty in these cases.\n*   The same analyte could appear under slightly different abbreviations (e.g., `s-parapäe` and `s-parpäh` for Brazil nut), highlighting the need for robust synonym matching."
 }

@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,104 +81,105 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 121 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-10066	-ctr-d		115	100				DNA test
-10067	-fishhyb	form	48	100				
-10068	-fishhyb		174	100				
-10069	b-apoe-d		146	100		B -Apolipoproteiini E, DNA-tutkimus	Blood	DNA test
-10070	b-aso2-qd		102	100			Blood	
-10071	b-atrytyd	form	7	100		B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus	Blood	
-10072	b-atrytyd		283	100		B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus	Blood	
-10073	b-auria10		1807	100			Blood	
-10074	b-bcr-qr	form	159	100		B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Blood	
-10075	b-bcr-qr		1562	100		B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Blood	
-10076	b-blapcr		138	100			Blood	
-10077	b-bo3-d		963	100			Blood	DNA test
-10078	b-brcay-d		519	100			Blood	DNA test
-10079	b-brovcore		356	100			Blood	
-10080	b-calr-d		421	100			Blood	DNA test
-10081	b-cmlpcr		553	100			Blood	
-10082	b-crco		3627	100			Blood	
-10083	b-crcoti		1359	100			Blood	
-10084	b-dm2alld	form	19	100		B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus	Blood	
-10085	b-dm2alld		149	100		B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus	Blood	
-10086	b-dpyd-d	form	211	100			Blood	DNA test
-10087	b-dpyd-d		3111	100			Blood	DNA test
-10088	b-dpydl-d		101	100			Blood	DNA test
-10089	b-exkon-d		147	100			Blood	DNA test
-10090	b-extri-d		136	100			Blood	DNA test
-10091	b-farma-d		594	100			Blood	DNA test
-10092	b-farml-d		190	100			Blood	DNA test
-10093	b-fii-d	form	138	100		B -Protrombiinigeeni, DNA-tutkimus	Blood	DNA test
-10094	b-fii-d		7712	100		B -Protrombiinigeeni, DNA-tutkimus	Blood	DNA test
-10095	b-finngen		736	100			Blood	
-10096	b-fishhem		130	100		B -Hematologinen fluoresenssi in situ hybridisaatio, veri	Blood	
-10097	b-frax-d	form	5	100		B -Fragiili-X,-FMR1-geenin DNA-tutkimus	Blood	DNA test
-10098	b-frax-d		347	100		B -Fragiili-X,-FMR1-geenin DNA-tutkimus	Blood	DNA test
-10099	b-fuus-mr	form	26	100			Blood	
-10100	b-fuus-mr		177	100			Blood	
-10101	b-fv-d	form	139	100		B -Hyytymistekijä V geeni, DNA-tutkimus	Blood	DNA test
-10102	b-fv-d		8156	100		B -Hyytymistekijä V geeni, DNA-tutkimus	Blood	DNA test
-10103	b-fvfii-d	form	52	100			Blood	DNA test
-10104	b-fvfii-d		765	100			Blood	DNA test
-10105	b-hfe-d		730	100		B -Periytyvään hemokromatoosiin liittyvien HFE-geenin valtamutaatioiden tutkimus	Blood	DNA test
-10106	b-hnpcy-d		175	100		B -Periytyvä ei-polypoottinen paksusuolisyöpä (HNPCC), MLH1-, MSH2- tai MSH6-geenin yksittäisen mutaation DNA-tutkimus	Blood	DNA test
-10107	b-jak2-d	form	139	100		B -JAK2-geenin mutaatio, DNA-tutkimus	Blood	DNA test
-10108	b-jak2-d		5494	100		B -JAK2-geenin mutaatio, DNA-tutkimus	Blood	DNA test
-10109	b-kim-d		197	100			Blood	DNA test
-10110	b-kim-fd		1367	100			Blood	
-10111	b-kml-qr		1809	100			Blood	
-10112	b-lakt-d	form	18	77.78		B -Laktoosi-intoleranssi, DNA-tutkimus	Blood	DNA test
-10113	b-lakt-d		27791	100		B -Laktoosi-intoleranssi, DNA-tutkimus	Blood	DNA test
-10114	b-ldlre-4	form	53	100			Blood	
-10115	b-ldlre-4		135	100			Blood	
-10116	b-ldlre-d		1121	100		B -LDL-reseptorigeenin mutaatio, DNA-tutkimus	Blood	DNA test
-10117	b-ngs-d		277	100			Blood	DNA test
-10118	b-nphs1-d		272	100		B -Kongenitaali nefroosi (CNF), kahden NPHS1-geenin valtamutaation DNA-tutkimus	Blood	DNA test
-10119	b-pgx-d		2778	100			Blood	DNA test
-10120	b-sekvy-d	form	59	100			Blood	DNA test
-10121	b-sekvy-d		1268	100			Blood	DNA test
-10122	b-tp53-d		211	100			Blood	DNA test
-10123	b-tpmt-d	form	30	100			Blood	DNA test
-10124	b-tpmt-d		615	100			Blood	DNA test
-10125	b-varfa-d		643	100		B -Varfariinin yksilölliseen annostukseen liittyvät VKORC1- ja CYP2C9-geenivariaatiot, DNA-tutkimus verestä	Blood	DNA test
-10126	b-ykrom-d	form	7	100		B -Y-kromosomin poikkeavuuksia	Blood	DNA test
-10127	b-ykrom-d		142	100		B -Y-kromosomin poikkeavuuksia	Blood	DNA test
-10128	bl-bal		919	100		Bl-Bronkoalveolaarinen lavaationäyte sairaalakohtainen ryhmätutkimus, jonka sisältö vaihtelee	Bronchoalveolar lavage	
-10129	bl-bal-1		3636	100		Bl-Bronkoalveolaarinen huuhtelunäyte, solututkimus	Bronchoalveolar lavage	
-10130	bl-balfc		397	100			Bronchoalveolar lavage	
-10131	bm-aso-qd		224	100			Bone marrow	
-10132	bm-aso2-qd	form	6	100			Bone marrow	
-10133	bm-aso2-qd		511	100			Bone marrow	
-10134	bm-aspir		1994	98.65			Bone marrow	
-10135	bm-bcr-qr		152	100		Bm-BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant)	Bone marrow	
-10136	bm-blapcr		753	100			Bone marrow	
-10137	bm-bpvalm		145	100			Bone marrow	
-10138	bm-fish	form	48	100			Bone marrow	
-10139	bm-fish		943	100			Bone marrow	
-10140	bm-fish-mm		127	100			Bone marrow	
-10141	bm-fish2	form	29	100			Bone marrow	
-10142	bm-fish2		81	100			Bone marrow	
-10143	bm-fishhem	form	7	100		Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin	Bone marrow	
-10144	bm-fishhem		414	100		Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin	Bone marrow	
-10145	bm-fishmm	form	28	100			Bone marrow	
-10146	bm-fishmm		147	100			Bone marrow	
-10147	bm-fishvar		141	100			Bone marrow	
-10148	bm-flt3-d	form	9	100			Bone marrow	DNA test
-10149	bm-flt3-d		138	100			Bone marrow	DNA test
-10150	bm-fuus-mr	form	14	100			Bone marrow	
-10151	bm-fuus-mr		268	100			Bone marrow	
-10152	bm-fuus-qr	form	21	100			Bone marrow	
-10153	bm-fuus-qr		81	100			Bone marrow	
-10154	bm-mgg		314	100			Bone marrow	
-10155	bm-mggfe	form	660	100		Bm-Luuydintutkimus, MGG- ja rautavärjäys	Bone marrow	
-10156	bm-mggfe		11527	100		Bm-Luuydintutkimus, MGG- ja rautavärjäys	Bone marrow	
-10157	bm-mm-ift		651	100			Bone marrow	
-10158	bm-mmpcr		128	100			Bone marrow	
-10159	bm-morflkl		278	100			Bone marrow	
-10160	bm-mrd-all		416	100			Bone marrow	
-10161	bm-mrd-vs		666	100			Bone marrow	
-10162	bm-mrdmut		198	100			Bone marrow	
-10163	bm-npm1-qd	form	23	100			Bone marrow	
-10164	bm-npm1-qd		182	100			Bone marrow	
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 10066 | -ctr-d |  | 115 | 100 |  |  |  | DNA test |
+| 10067 | -fishhyb | form | 48 | 100 |  |  |  |  |
+| 10068 | -fishhyb |  | 174 | 100 |  |  |  |  |
+| 10069 | b-apoe-d |  | 146 | 100 |  | B -Apolipoproteiini E, DNA-tutkimus | Blood | DNA test |
+| 10070 | b-aso2-qd |  | 102 | 100 |  |  | Blood |  |
+| 10071 | b-atrytyd | form | 7 | 100 |  | B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus | Blood |  |
+| 10072 | b-atrytyd |  | 283 | 100 |  | B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus | Blood |  |
+| 10073 | b-auria10 |  | 1807 | 100 |  |  | Blood |  |
+| 10074 | b-bcr-qr | form | 159 | 100 |  | B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Blood |  |
+| 10075 | b-bcr-qr |  | 1562 | 100 |  | B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Blood |  |
+| 10076 | b-blapcr |  | 138 | 100 |  |  | Blood |  |
+| 10077 | b-bo3-d |  | 963 | 100 |  |  | Blood | DNA test |
+| 10078 | b-brcay-d |  | 519 | 100 |  |  | Blood | DNA test |
+| 10079 | b-brovcore |  | 356 | 100 |  |  | Blood |  |
+| 10080 | b-calr-d |  | 421 | 100 |  |  | Blood | DNA test |
+| 10081 | b-cmlpcr |  | 553 | 100 |  |  | Blood |  |
+| 10082 | b-crco |  | 3627 | 100 |  |  | Blood |  |
+| 10083 | b-crcoti |  | 1359 | 100 |  |  | Blood |  |
+| 10084 | b-dm2alld | form | 19 | 100 |  | B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus | Blood |  |
+| 10085 | b-dm2alld |  | 149 | 100 |  | B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus | Blood |  |
+| 10086 | b-dpyd-d | form | 211 | 100 |  |  | Blood | DNA test |
+| 10087 | b-dpyd-d |  | 3111 | 100 |  |  | Blood | DNA test |
+| 10088 | b-dpydl-d |  | 101 | 100 |  |  | Blood | DNA test |
+| 10089 | b-exkon-d |  | 147 | 100 |  |  | Blood | DNA test |
+| 10090 | b-extri-d |  | 136 | 100 |  |  | Blood | DNA test |
+| 10091 | b-farma-d |  | 594 | 100 |  |  | Blood | DNA test |
+| 10092 | b-farml-d |  | 190 | 100 |  |  | Blood | DNA test |
+| 10093 | b-fii-d | form | 138 | 100 |  | B -Protrombiinigeeni, DNA-tutkimus | Blood | DNA test |
+| 10094 | b-fii-d |  | 7712 | 100 |  | B -Protrombiinigeeni, DNA-tutkimus | Blood | DNA test |
+| 10095 | b-finngen |  | 736 | 100 |  |  | Blood |  |
+| 10096 | b-fishhem |  | 130 | 100 |  | B -Hematologinen fluoresenssi in situ hybridisaatio, veri | Blood |  |
+| 10097 | b-frax-d | form | 5 | 100 |  | B -Fragiili-X,-FMR1-geenin DNA-tutkimus | Blood | DNA test |
+| 10098 | b-frax-d |  | 347 | 100 |  | B -Fragiili-X,-FMR1-geenin DNA-tutkimus | Blood | DNA test |
+| 10099 | b-fuus-mr | form | 26 | 100 |  |  | Blood |  |
+| 10100 | b-fuus-mr |  | 177 | 100 |  |  | Blood |  |
+| 10101 | b-fv-d | form | 139 | 100 |  | B -Hyytymistekijä V geeni, DNA-tutkimus | Blood | DNA test |
+| 10102 | b-fv-d |  | 8156 | 100 |  | B -Hyytymistekijä V geeni, DNA-tutkimus | Blood | DNA test |
+| 10103 | b-fvfii-d | form | 52 | 100 |  |  | Blood | DNA test |
+| 10104 | b-fvfii-d |  | 765 | 100 |  |  | Blood | DNA test |
+| 10105 | b-hfe-d |  | 730 | 100 |  | B -Periytyvään hemokromatoosiin liittyvien HFE-geenin valtamutaatioiden tutkimus | Blood | DNA test |
+| 10106 | b-hnpcy-d |  | 175 | 100 |  | B -Periytyvä ei-polypoottinen paksusuolisyöpä (HNPCC), MLH1-, MSH2- tai MSH6-geenin yksittäisen mutaation DNA-tutkimus | Blood | DNA test |
+| 10107 | b-jak2-d | form | 139 | 100 |  | B -JAK2-geenin mutaatio, DNA-tutkimus | Blood | DNA test |
+| 10108 | b-jak2-d |  | 5494 | 100 |  | B -JAK2-geenin mutaatio, DNA-tutkimus | Blood | DNA test |
+| 10109 | b-kim-d |  | 197 | 100 |  |  | Blood | DNA test |
+| 10110 | b-kim-fd |  | 1367 | 100 |  |  | Blood |  |
+| 10111 | b-kml-qr |  | 1809 | 100 |  |  | Blood |  |
+| 10112 | b-lakt-d | form | 18 | 77.78 |  | B -Laktoosi-intoleranssi, DNA-tutkimus | Blood | DNA test |
+| 10113 | b-lakt-d |  | 27791 | 100 |  | B -Laktoosi-intoleranssi, DNA-tutkimus | Blood | DNA test |
+| 10114 | b-ldlre-4 | form | 53 | 100 |  |  | Blood |  |
+| 10115 | b-ldlre-4 |  | 135 | 100 |  |  | Blood |  |
+| 10116 | b-ldlre-d |  | 1121 | 100 |  | B -LDL-reseptorigeenin mutaatio, DNA-tutkimus | Blood | DNA test |
+| 10117 | b-ngs-d |  | 277 | 100 |  |  | Blood | DNA test |
+| 10118 | b-nphs1-d |  | 272 | 100 |  | B -Kongenitaali nefroosi (CNF), kahden NPHS1-geenin valtamutaation DNA-tutkimus | Blood | DNA test |
+| 10119 | b-pgx-d |  | 2778 | 100 |  |  | Blood | DNA test |
+| 10120 | b-sekvy-d | form | 59 | 100 |  |  | Blood | DNA test |
+| 10121 | b-sekvy-d |  | 1268 | 100 |  |  | Blood | DNA test |
+| 10122 | b-tp53-d |  | 211 | 100 |  |  | Blood | DNA test |
+| 10123 | b-tpmt-d | form | 30 | 100 |  |  | Blood | DNA test |
+| 10124 | b-tpmt-d |  | 615 | 100 |  |  | Blood | DNA test |
+| 10125 | b-varfa-d |  | 643 | 100 |  | B -Varfariinin yksilölliseen annostukseen liittyvät VKORC1- ja CYP2C9-geenivariaatiot, DNA-tutkimus verestä | Blood | DNA test |
+| 10126 | b-ykrom-d | form | 7 | 100 |  | B -Y-kromosomin poikkeavuuksia | Blood | DNA test |
+| 10127 | b-ykrom-d |  | 142 | 100 |  | B -Y-kromosomin poikkeavuuksia | Blood | DNA test |
+| 10128 | bl-bal |  | 919 | 100 |  | Bl-Bronkoalveolaarinen lavaationäyte sairaalakohtainen ryhmätutkimus, jonka sisältö vaihtelee | Bronchoalveolar lavage |  |
+| 10129 | bl-bal-1 |  | 3636 | 100 |  | Bl-Bronkoalveolaarinen huuhtelunäyte, solututkimus | Bronchoalveolar lavage |  |
+| 10130 | bl-balfc |  | 397 | 100 |  |  | Bronchoalveolar lavage |  |
+| 10131 | bm-aso-qd |  | 224 | 100 |  |  | Bone marrow |  |
+| 10132 | bm-aso2-qd | form | 6 | 100 |  |  | Bone marrow |  |
+| 10133 | bm-aso2-qd |  | 511 | 100 |  |  | Bone marrow |  |
+| 10134 | bm-aspir |  | 1994 | 98.65 |  |  | Bone marrow |  |
+| 10135 | bm-bcr-qr |  | 152 | 100 |  | Bm-BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Bone marrow |  |
+| 10136 | bm-blapcr |  | 753 | 100 |  |  | Bone marrow |  |
+| 10137 | bm-bpvalm |  | 145 | 100 |  |  | Bone marrow |  |
+| 10138 | bm-fish | form | 48 | 100 |  |  | Bone marrow |  |
+| 10139 | bm-fish |  | 943 | 100 |  |  | Bone marrow |  |
+| 10140 | bm-fish-mm |  | 127 | 100 |  |  | Bone marrow |  |
+| 10141 | bm-fish2 | form | 29 | 100 |  |  | Bone marrow |  |
+| 10142 | bm-fish2 |  | 81 | 100 |  |  | Bone marrow |  |
+| 10143 | bm-fishhem | form | 7 | 100 |  | Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin | Bone marrow |  |
+| 10144 | bm-fishhem |  | 414 | 100 |  | Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin | Bone marrow |  |
+| 10145 | bm-fishmm | form | 28 | 100 |  |  | Bone marrow |  |
+| 10146 | bm-fishmm |  | 147 | 100 |  |  | Bone marrow |  |
+| 10147 | bm-fishvar |  | 141 | 100 |  |  | Bone marrow |  |
+| 10148 | bm-flt3-d | form | 9 | 100 |  |  | Bone marrow | DNA test |
+| 10149 | bm-flt3-d |  | 138 | 100 |  |  | Bone marrow | DNA test |
+| 10150 | bm-fuus-mr | form | 14 | 100 |  |  | Bone marrow |  |
+| 10151 | bm-fuus-mr |  | 268 | 100 |  |  | Bone marrow |  |
+| 10152 | bm-fuus-qr | form | 21 | 100 |  |  | Bone marrow |  |
+| 10153 | bm-fuus-qr |  | 81 | 100 |  |  | Bone marrow |  |
+| 10154 | bm-mgg |  | 314 | 100 |  |  | Bone marrow |  |
+| 10155 | bm-mggfe | form | 660 | 100 |  | Bm-Luuydintutkimus, MGG- ja rautavärjäys | Bone marrow |  |
+| 10156 | bm-mggfe |  | 11527 | 100 |  | Bm-Luuydintutkimus, MGG- ja rautavärjäys | Bone marrow |  |
+| 10157 | bm-mm-ift |  | 651 | 100 |  |  | Bone marrow |  |
+| 10158 | bm-mmpcr |  | 128 | 100 |  |  | Bone marrow |  |
+| 10159 | bm-morflkl |  | 278 | 100 |  |  | Bone marrow |  |
+| 10160 | bm-mrd-all |  | 416 | 100 |  |  | Bone marrow |  |
+| 10161 | bm-mrd-vs |  | 666 | 100 |  |  | Bone marrow |  |
+| 10162 | bm-mrdmut |  | 198 | 100 |  |  | Bone marrow |  |
+| 10163 | bm-npm1-qd | form | 23 | 100 |  |  | Bone marrow |  |
+| 10164 | bm-npm1-qd |  | 182 | 100 |  |  | Bone marrow |  |
 

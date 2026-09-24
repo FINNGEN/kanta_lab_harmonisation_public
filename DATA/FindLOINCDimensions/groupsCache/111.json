@@ -12,111 +12,111 @@
     },
     {
       "row_id": 9095,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
+      "has_component": "SARS-CoV-2",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9096,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9097,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9098,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9099,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Volume",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9100,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9101,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9102,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9103,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9104,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 9105,
       "has_component": "SARS-CoV-2 antigen",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -137,7 +137,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -147,28 +147,28 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
       "row_id": 9109,
-      "has_component": "SARS-CoV-2",
+      "has_component": "SARS-CoV-2 antigen",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 9110,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
+      "has_component": "SARS-CoV-2 antigen",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
-      "is_panel": true
+      "has_scale_type": "Ord",
+      "has_method": "Immunoassay",
+      "is_panel": false
     },
     {
       "row_id": 9111,
@@ -177,7 +177,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -187,7 +187,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -227,16 +227,16 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
       "row_id": 9117,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
+      "has_component": "SARS-CoV-2",
+      "has_property": "Presence or Threshold",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
@@ -302,7 +302,7 @@
     },
     {
       "row_id": 9124,
-      "has_component": "",
+      "has_component": "SARS-CoV-2 & Influenza virus A & Influenza virus B & Respiratory syncytial virus RNA",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "",
@@ -337,7 +337,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Nom",
-      "has_method": "Molecular genetics",
+      "has_method": "Sequencing",
       "is_panel": false
     },
     {
@@ -347,12 +347,12 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
       "row_id": 9129,
-      "has_component": "Complement C1q IgG antibody",
+      "has_component": "Complement C1q antibody.IgG",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -362,7 +362,7 @@
     },
     {
       "row_id": 9130,
-      "has_component": "Complement C1q IgG antibody",
+      "has_component": "Complement C1q antibody.IgG",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -377,7 +377,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -471,5 +471,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was dominated by COVID-19 related tests, identifiable by abbreviations like `cv19`, `ag` (antigen), `ab` (antibody), and `nho` (nucleic acid, qualitative). A key challenge was handling rows for antigen tests (`-cv19ag`, rows 9096-9105) that listed nonsensical quantitative units (`g/l`, `mmol/l`). Given the high `p_missing` on the main variant (row 9106) and the nature of these tests, I classified them all as qualitative (`Ord`) with a `Presence or Threshold` property, treating the units as data source errors.\n\nThe `LongName` field was very helpful, for example, confirming that `-cv19ag` with numeric suffixes (e.g., `-cv19ag0`) referred to specific manufacturer kits, and that `S-cv19sab` was indeed a spike protein antibody test. The code `cv19sekv` was a strong hint for sequencing, allowing for a more specific mapping (`Nom` scale, `Molecular genetics` method). \n\nSpotting the outlier `p-c1qabg` (rows 9129-9130), a Complement C1q antibody test mistakenly grouped by string similarity, was crucial and highlighted the need to evaluate each row on its own merits without over-relying on the group's theme. Finally, the recurring pattern of a test appearing in both quantitative (`Qn` with units/deciles) and qualitative (`Ord` with no unit and high `p_missing`) forms was prominent and required careful distinction."
+  "reflection": "This group was dominated by COVID-19 related tests, primarily antigen (`-ag`), nucleic acid (`-nho`), and antibody (`-ab`). The main challenge was severe data quality issues, especially for rows 9096-9105 (`-cv19ag`). The `LongName` clearly identifies this as an antigen test, which should be qualitative (`Ord`) or semi-quantitative. However, these rows have quantitative units like `mmol/l`, `g/l`, `fl`, etc., which are biologically impossible for this analyte. This suggests a code collision where `-cv19ag` was misused for other lab tests, or a major data pipeline error. I mapped them literally based on the unit, but the combination of component and property/unit is nonsensical.\n\nThe presence of `LongName` entries specifying the exact commercial test kit (e.g., Panbio, Flowflex for rows 9107-9112) was very helpful. This allowed confident assignment of `Test strip` or `Immunoassay` as the method. Similarly, `-cv19sekv` (row 9127) clearly pointed to `Sequencing` as a method.\n\nThe group also contained a clear non-COVID test, `p-c1qabg` (rows 9129-9130), which was easy to identify from its code and `LongName`. One code, `cldinho` (row 9121), was completely uninterpretable and I had to leave it blank. Finally, the absence of a system prefix for most antigen and NAAT tests is a major limitation, as the specimen (e.g., Nasopharynx, Saliva, Nose) is a critical part of the LOINC code; this axis had to be left empty in most cases."
 }

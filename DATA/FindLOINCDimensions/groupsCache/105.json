@@ -7,7 +7,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -17,7 +17,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -27,17 +27,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8560,
       "has_component": "Erythrocyte mean volume",
-      "has_property": "Entitic Volume",
+      "has_property": "Volume",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -46,7 +46,7 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -57,7 +57,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -72,12 +72,12 @@
     },
     {
       "row_id": 8564,
-      "has_component": "Erythrocyte mean mass",
-      "has_property": "Entitic Mass",
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -142,18 +142,18 @@
     },
     {
       "row_id": 8571,
-      "has_component": "Lymphocytes/Leukocytes",
+      "has_component": "",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8572,
-      "has_component": "",
-      "has_property": "",
+      "has_component": "Granulocytes/leukocytes",
+      "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
@@ -162,22 +162,22 @@
     },
     {
       "row_id": 8573,
-      "has_component": "Lymphocytes/Leukocytes",
+      "has_component": "Lymphocytes/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8574,
-      "has_component": "Monocytes/Leukocytes",
+      "has_component": "Monocytes/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -187,7 +187,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -197,17 +197,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8577,
       "has_component": "Erythrocyte mean volume",
-      "has_property": "Entitic Volume",
+      "has_property": "Volume",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -227,7 +227,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -237,7 +237,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -252,12 +252,12 @@
     },
     {
       "row_id": 8582,
-      "has_component": "Erythrocyte mean mass",
-      "has_property": "Entitic Mass",
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -322,7 +322,7 @@
     },
     {
       "row_id": 8589,
-      "has_component": "Lymphocytes/Leukocytes",
+      "has_component": "",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -352,7 +352,7 @@
     },
     {
       "row_id": 8592,
-      "has_component": "Basophils/Leukocytes",
+      "has_component": "Basophils/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -362,7 +362,7 @@
     },
     {
       "row_id": 8593,
-      "has_component": "Basophils",
+      "has_component": "Basophils/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -372,17 +372,17 @@
     },
     {
       "row_id": 8594,
-      "has_component": "Basophils",
+      "has_component": "Basophils/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8595,
-      "has_component": "Eosinophils/Leukocytes",
+      "has_component": "Eosinophils/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -392,7 +392,7 @@
     },
     {
       "row_id": 8596,
-      "has_component": "Eosinophils",
+      "has_component": "Eosinophils/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -402,12 +402,12 @@
     },
     {
       "row_id": 8597,
-      "has_component": "Eosinophils",
+      "has_component": "Eosinophils/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -426,8 +426,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -446,8 +446,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -457,7 +457,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -466,13 +466,13 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8604,
-      "has_component": "Immature granulocytes/Leukocytes",
+      "has_component": "Immature granulocytes/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -482,7 +482,7 @@
     },
     {
       "row_id": 8605,
-      "has_component": "Immature granulocytes",
+      "has_component": "Immature granulocytes/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -492,12 +492,12 @@
     },
     {
       "row_id": 8606,
-      "has_component": "Immature granulocytes",
+      "has_component": "Immature granulocytes/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -516,13 +516,13 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8609,
-      "has_component": "Lymphocytes/Leukocytes",
+      "has_component": "Lymphocytes/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -532,7 +532,7 @@
     },
     {
       "row_id": 8610,
-      "has_component": "Lymphocytes",
+      "has_component": "Lymphocytes/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -542,32 +542,32 @@
     },
     {
       "row_id": 8611,
-      "has_component": "Lymphocytes",
+      "has_component": "Lymphocytes/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8612,
-      "has_component": "Erythrocyte mean mass",
-      "has_property": "Entitic Mass",
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8613,
-      "has_component": "Erythrocyte mean mass",
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -577,7 +577,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -586,18 +586,18 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8616,
       "has_component": "Erythrocyte mean volume",
-      "has_property": "Entitic Volume",
+      "has_property": "Volume",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -606,13 +606,13 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8618,
-      "has_component": "Monocytes/Leukocytes",
+      "has_component": "Monocytes/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -622,7 +622,7 @@
     },
     {
       "row_id": 8619,
-      "has_component": "Monocytes",
+      "has_component": "Monocytes/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -632,17 +632,17 @@
     },
     {
       "row_id": 8620,
-      "has_component": "Monocytes",
+      "has_component": "Monocytes/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 8621,
-      "has_component": "Neutrophils/Leukocytes",
+      "has_component": "Neutrophils/leukocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -652,7 +652,7 @@
     },
     {
       "row_id": 8622,
-      "has_component": "Neutrophils",
+      "has_component": "Neutrophils/leukocytes",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -662,12 +662,12 @@
     },
     {
       "row_id": 8623,
-      "has_component": "Neutrophils",
+      "has_component": "Neutrophils/leukocytes",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -677,7 +677,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -686,8 +686,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -706,8 +706,8 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -717,7 +717,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -837,27 +837,27 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8641,
-      "has_component": "Basophils",
+      "has_component": "",
       "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 8642,
       "has_component": "Erythrocyte mean volume",
-      "has_property": "Entitic Volume",
+      "has_property": "Volume",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -866,7 +866,7 @@
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -877,7 +877,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -892,12 +892,12 @@
     },
     {
       "row_id": 8646,
-      "has_component": "Erythrocyte mean mass",
-      "has_property": "Entitic Mass",
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Calculated",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -921,5 +921,5 @@
       "is_panel": true
     }
   ],
-  "reflection": "This group was a textbook example of panel-component ambiguity, where results for individual components of a blood count are reported under the code for the parent panel. The grouping of rows was extremely helpful. Seeing `b-pvk`, `b-pvk+t`, `b-pvk+tkd` followed by the explicit components like `b-pvk+tkd,hb` made it possible to confidently infer the components for the ambiguous rows by comparing units and decile distributions.\n\nGotchas included:\n1.  Distinguishing components with the same unit: `g/l` can be Hemoglobin or MCHC, and `e9/l` can be Leukocytes or Platelets. The `deciles` column was essential for disambiguation.\n2.  Distinguishing properties for the same unit: `%` is used for `Number Fraction` (leukocyte diffs) and `Ratio` (RDW-CV). The component identity determines the property.\n3.  The unit `osuus` means 'fraction' and corresponds to Hematocrit with property `Volume Fraction`.\n4.  A significant number of rows represent panel orders, identifiable by high `p_missing`, no units, or a unit of `paketti` (package). These are correctly mapped as `is_panel: true` with empty axes.\n5.  Many test codes are concatenated or truncated (`b-pvkt`, `b-pvktkdr`), but their high `p_missing` rate confirms they are used as panel order codes.\n\nThis exercise highlights the importance of having `deciles` to interpret quantitative results correctly when the test code itself is ambiguous."
+  "reflection": "This group, centered on Finnish blood count panels (`B-PVK`, `B-TVK`), exemplifies the challenge of mapping panel codes. The key was distinguishing between rows representing the panel order itself versus rows representing individual component results reported under the panel code.\n\n**Gotchas and Ambiguities:**\n*   **Panel vs. Component:** A very large number of rows had `p_missing` = 100% or a unit of `paketti`. These were clearly panel orders (`is_panel: true`). Rows with numeric data under the same panel code were treated as individual components (`is_panel: false`), with the component inferred from the `UNIT` and `deciles` (e.g., `g/l` with deciles ~140 is Hemoglobin; `fl` is MCV).\n*   **Ambiguous Components:** When a panel code was used with an ambiguous unit like `%` (e.g., row 8571), the component could not be determined with certainty, as it could be any of several leukocyte fractions.\n*   **Unclear Units:** The unit `form` (rows 8561, 8578, 8643) is not standard and its meaning could not be determined.\n*   **Data Entry Errors:** Row 8626 had the unit `eg/l`, which is a clear typo for `E9/l`.\n\n**Helpful Information:**\n*   The `LongName` for the panels was extremely useful (e.g., for `B-PVK+TKD`, confirming it includes an automated differential).\n*   The most helpful pattern was `b-pvk+tkd,[component]` (e.g., `b-pvk+tkd,neut`). This explicitly names the component, removing all ambiguity. This is excellent coding practice.\n*   Suffixes on panel codes like `%l` for lymphocytes (row 8573) or `%m` for monocytes (row 8574) were also very useful for disambiguation."
 }

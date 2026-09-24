@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,40 +81,41 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 167 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-13496	b-erybla,osatutkimus(19978b-erybla)	e9/l	1575	0	[0, 0, 0, 0, 0, 0, 0, 0, 0]		Blood	
-13497	b-erybla,osatutkimus(b-erybla)	e9/l	3732	0	[0, 0, 0, 0, 0, 0, 0, 0, 0]		Blood	
-13498	b-erybla,osatutkimus(b-erybla)		8	75			Blood	
-13499	b-neut,osatutkimus(689b-neut)	e9/l	114	0	[2.36, 2.69, 3.03, 3.4, 3.69, 4.15, 4.59, 5.12, 5.88]		Blood	
-13500	basofiilit,absol.arvot,osatutkimus(40b-baso)	e9/l	114	0	[0.02, 0.03, 0.03, 0.04, 0.04, 0.05, 0.06, 0.06, 0.08]			
-13501	basofiilit,konediffi(),osatutk.b-diffi	%	1040	0	[0.2, 0.35, 0.48, 0.57, 0.68, 0.78, 0.9, 1.09, 1.35]			
-13502	basofiilit,osatutkimus(692l-baso)	%	128	0	[0, 0, 0.88, 1, 1, 1, 1, 1, 1]			
-13503	e-rdw,osatutkimus(19976e-rdw)	%	1577	0	[12, 12.98, 13, 13, 13, 13, 13.6, 14, 14.04]		Erythrocyte	
-13504	e-rdw,osatutkimus(e-rdw)	%	3731	0	[12, 12.05, 13, 13, 13, 13, 13, 14, 14.04]		Erythrocyte	
-13505	e-rdw,osatutkimus(e-rdw)		8	100			Erythrocyte	
-13506	eosinofiilit,absol.arvot,osatutkimus(39b-eos)	e9/l	114	0	[0.06, 0.09, 0.12, 0.16, 0.18, 0.2, 0.23, 0.28, 0.33]			
-13507	eosinofiilit,konediffi(),osatutk.b-diffi	%	1041	0	[0.08, 1.13, 1.71, 2.33, 2.85, 3.43, 4.13, 5.02, 6.83]			
-13508	eosinofiilit,osatutkimus(690l-eos)	%	114	0	[1, 1.43, 2, 2, 3, 3, 3.11, 4, 5]			
-13509	eosinofiilitabs,konediffi,osatutk.b-diffi	e9/l	1041	0	[0.01, 0.07, 0.1, 0.14, 0.17, 0.22, 0.27, 0.33, 0.46]			
-13510	kalsium,osatutkimus(p-ca)	mmol/l	167	0	[2.26, 2.3, 2.32, 2.34, 2.37, 2.38, 2.41, 2.43, 2.47]			
-13511	l-neut,osatutkimus(688l-neut)	%	114	0	[46.1, 51, 53.29, 55, 56.87, 59, 62, 66.13, 71.3]		Leukocyte	
-13512	lymfosyytit,absol.arvot,osatutkimus(43b-lymf)	e9/l	114	0	[1.2, 1.42, 1.67, 1.84, 1.94, 2.02, 2.22, 2.46, 2.71]			
-13513	lymfosyytit,konediffi(),osatutk.b-diffi	%	1041	0	[14.77, 18.39, 21, 24.27, 27.4, 30.54, 33.61, 37.23, 41.49]			
-13514	lymfosyytit,osatutkimus(46l-lymf)	%	114	0	[17.98, 23.4, 26.71, 28, 31, 32.84, 34.76, 36, 40.42]			
-13515	monosyytit,absol.arvot,osatutkimus(42b-monos)	e9/l	114	0	[0.36, 0.42, 0.44, 0.49, 0.53, 0.58, 0.62, 0.67, 0.77]			
-13516	monosyytit,konediffi(),osatutk.b-diffi	%	1041	0	[6.01, 6.87, 7.49, 8.19, 8.74, 9.45, 10.43, 11.69, 13.27]			
-13517	monosyytit,osatutkimus(693l-monos)	%	114	0	[6, 6.9, 7, 8, 8, 9, 9, 10, 11]			
-13518	neutrofiiliset,konediffi(),osatutk.b-diffi	%	1041	0	[43.33, 48.08, 51.94, 55.59, 58.77, 61.59, 65.14, 69.9, 74.47]			
-13519	neutrofiilitabs,konediffi,osatutk.b-diffi	e9/l	1041	0	[1.86, 2.39, 2.82, 3.25, 3.63, 4.11, 4.7, 5.54, 6.96]			
-13520	s-albumiini,osatutkimuss-prot-fr	g/l	109	0	[31.62, 35.39, 37.28, 38.52, 39.57, 40.75, 41.75, 43.12, 44]		Serum	Fractions
-13521	s-alfa-1-globuliini,osatutkimuss-prot-fr	g/l	109	0	[2.3, 2.4, 2.54, 2.7, 2.89, 3.08, 3.35, 3.6, 4.2]		Serum	Fractions
-13522	s-alfa-2-globuliini,osatutkimuss-prot-fr	g/l	109	0	[5.63, 6, 6.24, 6.66, 7.47, 7.93, 8.35, 9.06, 9.9]		Serum	Fractions
-13523	s-beta-1-globuliini,osatutkimuss-prot-fr	g/l	109	0	[3.5, 3.7, 3.85, 4.04, 4.14, 4.31, 4.42, 4.7, 4.9]		Serum	Fractions
-13524	s-beta-2-globuliini,osatutkimuss-prot-fr	g/l	109	0	[2.8, 3.09, 3.44, 3.86, 4.01, 4.31, 4.58, 4.8, 5.27]		Serum	Fractions
-13525	s-gamma-globuliini,osatutkimuss-prot-fr	g/l	109	0	[6.61, 7.97, 8.64, 9.16, 9.73, 10.36, 11, 11.66, 12.99]		Serum	Fractions
-13526	s-m-komponentti-1(valetietues-prot-fr)	g/l	135	0	[0, 0, 0, 1.3, 2.13, 3.83, 5.42, 7.84, 12.97]		Serum	
-13527	s-m-komponentti-1(valetietues-prot-fr)		93	100			Serum	
-13528	s-m-komponentti-2(valetietues-prot-fr)	g/l	82	0	[0, 0, 0, 0, 0, 0, 0, 0, 1]		Serum	
-13529	s-m-komponentti-2(valetietues-prot-fr)		133	100			Serum	
-13530	s-m-komponentti-3(valetietues-prot-fr)		131	100			Serum	
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 13496 | b-erybla,osatutkimus(19978b-erybla) | e9/l | 1575 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Blood |  |
+| 13497 | b-erybla,osatutkimus(b-erybla) | e9/l | 3732 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Blood |  |
+| 13498 | b-erybla,osatutkimus(b-erybla) |  | 8 | 75 |  |  | Blood |  |
+| 13499 | b-neut,osatutkimus(689b-neut) | e9/l | 114 | 0 | [2.36, 2.69, 3.03, 3.4, 3.69, 4.15, 4.59, 5.12, 5.88] |  | Blood |  |
+| 13500 | basofiilit,absol.arvot,osatutkimus(40b-baso) | e9/l | 114 | 0 | [0.02, 0.03, 0.03, 0.04, 0.04, 0.05, 0.06, 0.06, 0.08] |  |  |  |
+| 13501 | basofiilit,konediffi(),osatutk.b-diffi | % | 1040 | 0 | [0.2, 0.35, 0.48, 0.57, 0.68, 0.78, 0.9, 1.09, 1.35] |  |  |  |
+| 13502 | basofiilit,osatutkimus(692l-baso) | % | 128 | 0 | [0, 0, 0.88, 1, 1, 1, 1, 1, 1] |  |  |  |
+| 13503 | e-rdw,osatutkimus(19976e-rdw) | % | 1577 | 0 | [12, 12.98, 13, 13, 13, 13, 13.6, 14, 14.04] |  | Erythrocyte |  |
+| 13504 | e-rdw,osatutkimus(e-rdw) | % | 3731 | 0 | [12, 12.05, 13, 13, 13, 13, 13, 14, 14.04] |  | Erythrocyte |  |
+| 13505 | e-rdw,osatutkimus(e-rdw) |  | 8 | 100 |  |  | Erythrocyte |  |
+| 13506 | eosinofiilit,absol.arvot,osatutkimus(39b-eos) | e9/l | 114 | 0 | [0.06, 0.09, 0.12, 0.16, 0.18, 0.2, 0.23, 0.28, 0.33] |  |  |  |
+| 13507 | eosinofiilit,konediffi(),osatutk.b-diffi | % | 1041 | 0 | [0.08, 1.13, 1.71, 2.33, 2.85, 3.43, 4.13, 5.02, 6.83] |  |  |  |
+| 13508 | eosinofiilit,osatutkimus(690l-eos) | % | 114 | 0 | [1, 1.43, 2, 2, 3, 3, 3.11, 4, 5] |  |  |  |
+| 13509 | eosinofiilitabs,konediffi,osatutk.b-diffi | e9/l | 1041 | 0 | [0.01, 0.07, 0.1, 0.14, 0.17, 0.22, 0.27, 0.33, 0.46] |  |  |  |
+| 13510 | kalsium,osatutkimus(p-ca) | mmol/l | 167 | 0 | [2.26, 2.3, 2.32, 2.34, 2.37, 2.38, 2.41, 2.43, 2.47] |  |  |  |
+| 13511 | l-neut,osatutkimus(688l-neut) | % | 114 | 0 | [46.1, 51, 53.29, 55, 56.87, 59, 62, 66.13, 71.3] |  | Leukocyte |  |
+| 13512 | lymfosyytit,absol.arvot,osatutkimus(43b-lymf) | e9/l | 114 | 0 | [1.2, 1.42, 1.67, 1.84, 1.94, 2.02, 2.22, 2.46, 2.71] |  |  |  |
+| 13513 | lymfosyytit,konediffi(),osatutk.b-diffi | % | 1041 | 0 | [14.77, 18.39, 21, 24.27, 27.4, 30.54, 33.61, 37.23, 41.49] |  |  |  |
+| 13514 | lymfosyytit,osatutkimus(46l-lymf) | % | 114 | 0 | [17.98, 23.4, 26.71, 28, 31, 32.84, 34.76, 36, 40.42] |  |  |  |
+| 13515 | monosyytit,absol.arvot,osatutkimus(42b-monos) | e9/l | 114 | 0 | [0.36, 0.42, 0.44, 0.49, 0.53, 0.58, 0.62, 0.67, 0.77] |  |  |  |
+| 13516 | monosyytit,konediffi(),osatutk.b-diffi | % | 1041 | 0 | [6.01, 6.87, 7.49, 8.19, 8.74, 9.45, 10.43, 11.69, 13.27] |  |  |  |
+| 13517 | monosyytit,osatutkimus(693l-monos) | % | 114 | 0 | [6, 6.9, 7, 8, 8, 9, 9, 10, 11] |  |  |  |
+| 13518 | neutrofiiliset,konediffi(),osatutk.b-diffi | % | 1041 | 0 | [43.33, 48.08, 51.94, 55.59, 58.77, 61.59, 65.14, 69.9, 74.47] |  |  |  |
+| 13519 | neutrofiilitabs,konediffi,osatutk.b-diffi | e9/l | 1041 | 0 | [1.86, 2.39, 2.82, 3.25, 3.63, 4.11, 4.7, 5.54, 6.96] |  |  |  |
+| 13520 | s-albumiini,osatutkimuss-prot-fr | g/l | 109 | 0 | [31.62, 35.39, 37.28, 38.52, 39.57, 40.75, 41.75, 43.12, 44] |  | Serum | Fractions |
+| 13521 | s-alfa-1-globuliini,osatutkimuss-prot-fr | g/l | 109 | 0 | [2.3, 2.4, 2.54, 2.7, 2.89, 3.08, 3.35, 3.6, 4.2] |  | Serum | Fractions |
+| 13522 | s-alfa-2-globuliini,osatutkimuss-prot-fr | g/l | 109 | 0 | [5.63, 6, 6.24, 6.66, 7.47, 7.93, 8.35, 9.06, 9.9] |  | Serum | Fractions |
+| 13523 | s-beta-1-globuliini,osatutkimuss-prot-fr | g/l | 109 | 0 | [3.5, 3.7, 3.85, 4.04, 4.14, 4.31, 4.42, 4.7, 4.9] |  | Serum | Fractions |
+| 13524 | s-beta-2-globuliini,osatutkimuss-prot-fr | g/l | 109 | 0 | [2.8, 3.09, 3.44, 3.86, 4.01, 4.31, 4.58, 4.8, 5.27] |  | Serum | Fractions |
+| 13525 | s-gamma-globuliini,osatutkimuss-prot-fr | g/l | 109 | 0 | [6.61, 7.97, 8.64, 9.16, 9.73, 10.36, 11, 11.66, 12.99] |  | Serum | Fractions |
+| 13526 | s-m-komponentti-1(valetietues-prot-fr) | g/l | 135 | 0 | [0, 0, 0, 1.3, 2.13, 3.83, 5.42, 7.84, 12.97] |  | Serum |  |
+| 13527 | s-m-komponentti-1(valetietues-prot-fr) |  | 93 | 100 |  |  | Serum |  |
+| 13528 | s-m-komponentti-2(valetietues-prot-fr) | g/l | 82 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 1] |  | Serum |  |
+| 13529 | s-m-komponentti-2(valetietues-prot-fr) |  | 133 | 100 |  |  | Serum |  |
+| 13530 | s-m-komponentti-3(valetietues-prot-fr) |  | 131 | 100 |  |  | Serum |  |
 

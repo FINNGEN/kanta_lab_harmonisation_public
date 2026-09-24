@@ -2,41 +2,41 @@
   "rows": [
     {
       "row_id": 1812,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1813,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Nose",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1814,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1815,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Perineum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
@@ -52,7 +52,7 @@
     },
     {
       "row_id": 1817,
-      "has_component": "Drugs of abuse screen",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "",
@@ -62,7 +62,7 @@
     },
     {
       "row_id": 1818,
-      "has_component": "Drugs of abuse screen",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "",
@@ -72,117 +72,117 @@
     },
     {
       "row_id": 1819,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 1820,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Nose",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1821,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Nose",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1822,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1823,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1824,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Perineum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1825,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Perineum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1826,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
+      "has_component": "Staphylococcus aureus methicillin resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1827,
-      "has_component": "Electrocardiogram panel",
+      "has_component": "Electrocardiogram",
       "has_property": "Finding",
       "has_time_aspect": "24 hours",
       "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Doc",
       "has_method": "",
-      "is_panel": true
+      "is_panel": false
     },
     {
       "row_id": 1828,
-      "has_component": "Electrocardiogram panel",
+      "has_component": "Electrocardiogram",
       "has_property": "Finding",
       "has_time_aspect": "24 hours",
       "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Doc",
       "has_method": "",
-      "is_panel": true
+      "is_panel": false
     },
     {
       "row_id": 1829,
-      "has_component": "Electrocardiogram panel",
+      "has_component": "Electrocardiogram",
       "has_property": "Finding",
       "has_time_aspect": "48 hours",
       "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Doc",
       "has_method": "",
-      "is_panel": true
+      "is_panel": false
     },
     {
       "row_id": 1830,
-      "has_component": "Drugs of abuse screen",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "",
@@ -192,7 +192,7 @@
     },
     {
       "row_id": 1831,
-      "has_component": "Drugs of abuse screen",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Urine",
@@ -202,7 +202,7 @@
     },
     {
       "row_id": 1832,
-      "has_component": "Drugs of abuse screen",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "Urine",
@@ -211,5 +211,5 @@
       "is_panel": true
     }
   ],
-  "reflection": "This group contained several long, descriptive test names, which are challenging but also informative. The grouping by text similarity was crucial for interpreting truncated names, such as `viljelyne` being a prefix of `viljelynenästä` (culture from nose) or `viljelyni` being a prefix of `viljelynielusta` (culture from throat). A key ambiguity was identifying panels vs. complex single tests. I classified the long-term ECG recordings (`Pt-EKG`) as panels, as they represent a whole study culminating in a report with multiple findings, which aligns with LOINC's modeling approach for such procedures. Conversely, the generic NGS test name (row 1816) describes a single complex narrative result, so I marked it `is_panel: false`. The `TEST_NAME` for the NGS test was too generic ('study of...a predefined gene') to allow for component identification, highlighting a limitation when local codes are descriptive but non-specific."
+  "reflection": "This group contained a mix of microbiology cultures, drug screening panels, genetic tests, and physiological monitoring (ECG). The free-text but descriptive nature of the `TEST_NAME`s was essential for mapping.\n\n**Gotchas and Ambiguities:**\n*   **MRSA Cultures:** The terms 'viljely nenästä' (culture from nose), 'nielusta' (from throat), and 'perineumista' (from perineum) were key to identifying the `has_system` axis. The grouping of truncated versions (e.g., `...viljelyne`) with the full text was crucial for confirmation.\n*   **Drug Screens:** The listing of multiple analytes in parentheses (e.g., `amfet, bents, opiaat...`) is a classic indicator of a panel (`is_panel: true`), for which component-level axes should be left empty.\n*   **Genetic Test (1816):** The name \"study of base changes...of predefined gene exons...by NGS method\" is very generic. While I could infer `has_property: Finding`, `has_scale_type: Nar`, and `has_method: Molecular genetics`, the core `has_component` remains unknown ('predefined gene' is not a specific analyte). This is an inherent limitation when local codes are descriptive of a process rather than a specific target.\n*   **ECG Holter:** The `Pt-` prefix was a clear signal for `has_system: ^Patient`. The time aspect was explicitly mentioned in the name ('24h'/'48h'), making it easy to map. These are good examples of non-specimen-based investigations."
 }

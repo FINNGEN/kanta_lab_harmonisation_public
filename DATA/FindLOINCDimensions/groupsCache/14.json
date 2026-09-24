@@ -27,7 +27,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -43,10 +43,10 @@
     {
       "row_id": 969,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -93,10 +93,10 @@
     {
       "row_id": 974,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -113,10 +113,10 @@
     {
       "row_id": 976,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -133,51 +133,51 @@
     {
       "row_id": 978,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 979,
-      "has_component": "C reactive protein.high sensitivity",
+      "has_component": "C reactive protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 980,
-      "has_component": "C reactive protein.high sensitivity",
-      "has_property": "Mass Concentration",
+      "has_component": "C reactive protein",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 981,
-      "has_component": "C reactive protein.high sensitivity",
+      "has_component": "C reactive protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 982,
-      "has_component": "C reactive protein.high sensitivity",
-      "has_property": "Mass Concentration",
+      "has_component": "C reactive protein",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -187,17 +187,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 984,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -207,17 +207,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 986,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -227,7 +227,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -237,7 +237,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -247,17 +247,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 990,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -267,17 +267,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 992,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -287,17 +287,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 994,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -317,7 +317,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -327,7 +327,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -337,7 +337,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -347,7 +347,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -357,7 +357,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -367,7 +367,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -377,17 +377,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1003,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -397,17 +397,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1005,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -417,17 +417,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1007,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -437,7 +437,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood capillary",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -447,7 +447,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood capillary",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -463,10 +463,10 @@
     {
       "row_id": 1011,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -477,17 +477,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1013,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -503,10 +503,10 @@
     {
       "row_id": 1015,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -523,10 +523,10 @@
     {
       "row_id": 1017,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -543,10 +543,10 @@
     {
       "row_id": 1019,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -557,7 +557,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -567,7 +567,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -583,31 +583,31 @@
     {
       "row_id": 1023,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 1024,
       "has_component": "C reactive protein",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1025,
       "has_component": "C reactive protein",
-      "has_property": "",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "SemiQn",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -617,7 +617,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -627,7 +627,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -637,7 +637,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -647,7 +647,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -657,17 +657,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1031,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -677,17 +677,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1033,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -697,7 +697,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -707,7 +707,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -717,7 +717,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -727,7 +727,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -737,26 +737,26 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1039,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1040,
       "has_component": "C reactive protein",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -773,10 +773,10 @@
     {
       "row_id": 1042,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -793,31 +793,31 @@
     {
       "row_id": 1044,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 1045,
-      "has_component": "C reactive protein.high sensitivity",
+      "has_component": "C reactive protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1046,
-      "has_component": "C reactive protein.high sensitivity",
-      "has_property": "Mass Concentration",
+      "has_component": "C reactive protein",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -827,17 +827,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1048,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "",
+      "has_method": "Rapid immunoassay",
       "is_panel": false
     },
     {
@@ -853,13 +853,13 @@
     {
       "row_id": 1050,
       "has_component": "C reactive protein",
-      "has_property": "Mass Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     }
   ],
-  "reflection": "This group was overwhelmingly about C-reactive protein (CRP), which made the component identification straightforward. The main challenges were:\n\n1.  **Ambiguous Systems**: Many test names lacked a specimen prefix (`B-`, `P-`, `S-`). I was able to infer the system in some cases from clarifying text in the name string itself (e.g., `...plasmasta` for Plasma, `...veri` for Blood, `...seerumista` for Serum). For others, like row 971, the system had to be left empty. The prefix `cp-` combined with `ihopiston` (skin prick) was a good clue for `Blood capillary`.\n2.  **Conflicting Information**: Some test names included qualifiers that contradicted the data. For instance, `p-c-reaktiivinenproteiini(kval)` (row 1016) suggests a qualitative test, but the `mg/l` unit and deciles clearly indicate it's quantitative. In these cases, I trusted the quantitative data (unit, deciles) over the text in the name. Similarly, `...osoitus` (detection) suggests qualitative, but it was used for both qualitative (row 1040) and quantitative (row 1041) results, highlighting inconsistent naming.\n3.  **Data Quality**: Several rows had inconsistent or dirty data. Row 970 had a unit of '1' but quantitative deciles consistent with mg/l, suggesting a data entry error. I prioritized the deciles. Rows 1024 (unit '1', no deciles) and 1025 (unit 'alle') appeared to be genuinely non-quantitative, which I mapped to Ord and Nar respectively.\n\nOverall, the deciles were extremely useful for confirming property (`Mass Concentration`) and scale (`Qn`) even when the unit was missing or incorrect. The grouping of similar test names was crucial for resolving typos (`resktiivinen`) and for using a clear entry (e.g., one with a unit) to inform its siblings with missing data."
+  "reflection": "This group consists entirely of variations of C-reactive protein (CRP) tests. The main challenges were handling numerous local naming conventions and data quality issues.\n\n**Ambiguities & Gotchas:**\n*   A significant conflict occurred with test names containing `(kval)` (e.g., row 1016), suggesting a qualitative test, while the associated data (`UNIT` of `mg/l` and numeric `deciles`) were clearly quantitative. I prioritized the quantitative data over the name fragment, inferring that `(kval)` was a misleading local convention.\n*   The prefix `cp-` combined with `ihopiston` (skin prick) in the name (row 1008) strongly implied a capillary blood sample, which I mapped to `Blood capillary`. This is an inference, as `cp-` is not a standard national prefix.\n*   Qualifiers like \"pika\" (rapid), \"vieritesti\" (point-of-care), and \"herkkä\" (sensitive) were mapped to methods (`Rapid immunoassay` and `Immunoassay`). This adds valuable detail that distinguishes the tests, which is appropriate for LOINC mapping.\n\n**Data Quality Issues:**\n*   There were several data quality problems: typos (`resktiivinen`), uninformative units (`1`), and contradictory metadata (row 1001 had `p_missing: 100` but also a full set of `deciles`). In these cases, I relied on context from sibling rows and trusted the `deciles` data when present.\n\n**Process Improvements:**\n*   Providing the official `LongName` for every code would be extremely helpful, especially to resolve conflicts like the `(kval)` issue.\n*   A glossary of non-standard prefixes and local abbreviations encountered in the source data (like `cp-`) would improve mapping accuracy."
 }

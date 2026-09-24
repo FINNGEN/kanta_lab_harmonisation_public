@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,77 +81,78 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 106 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-8649	-bakt-he		111	100				Antibiotic sensitivity
-8650	-bakt-lm		545	100				Species identification
-8651	-baktvi		1515	100		-Bakteeri, viljely		
-8652	-baktvr		22025	100		-Bakteeri, värjäys		
-8653	af-baktvi		262	100			Aspiration fluid	
-8654	as-baktvr		252	100			Ascitic fluid	
-8655	b-bakt-vi		1757	100			Blood	Culture
-8656	b-baktjvi		28084	100		B -Bakteeri, jatkoviljely	Blood	
-8657	b-baktsvi		6514	100			Blood	
-8658	b-baktvi		506538	100		B -Bakteeri, viljely	Blood	
-8659	b-baktvi.		2240	100			Blood	
-8660	b-baktvij		1818	100			Blood	
-8661	bakteerit		6114	100				
-8662	baktlm		897	100				
-8663	baktvr		339	100				
-8664	bl-baktvi		303	100			Bronchoalveolar lavage	
-8665	bo-baktvi		312	100			Bone	
-8666	ca-baktvi		1564	100		Ca-Bakteeri, viljely suonikanyylista		
-8667	d-baktvi		120	100				
-8668	ex-baktvi		14096	100		Ex-Bakteeri, viljely	Expectorate (sputum)	
-8669	ex-baktvr		3217	100			Expectorate (sputum)	
-8670	f-baktjvi		281	100			Feces	
-8671	f-baktvi1		32771	100		F -Bakteeri, viljely 1 (Salmonella, Shigella, Yersinia, Campylobacter)	Feces	
-8672	f-baktvi2		739	100		F -Bakteeri, viljely 2 (Clostridium difficile, Staphylococcus aureus, candida)	Feces	
-8673	f-baktvi3		1380	100		F -Bakteeri, viljely 3 (viljely 1 + Bacillus cereus, Clostridium perfringens, Staphylococcus aureus)	Feces	
-8674	f-baktvip		17284	100			Feces	
-8675	fl-baktna		154	100			Vaginal discharge	
-8676	fl-baktvr		11637	100		Fl-Bakteeri, värjäys	Vaginal discharge	
-8677	li-baktvi		7020	100		Li-Bakteeri, viljely	Cerebrospinal fluid	
-8678	li-baktvr		3747	100		Li-Bakteeri, värjäys	Cerebrospinal fluid	
-8679	pd-baktvi		917	100		Pd-Bakteeri, viljely peritoneaalidialyysinesteestä	Peritoneal dialysis fluid	
-8680	pf-baktvr		258	100			Pleural fluid	
-8681	pp-baktnh		445	100		Pp-Bakteeri, nukleiinihappo (kvant), ientasku	Periodontal pocket	
-8682	ps-baktvi		3894	99.97		Ps-Bakteeri, viljely	Pharyngeal secretion	
-8683	pu-baktvi1		132179	100		Pu-Bakteeri, viljely 1 (anaerobi + aerobiviljely, syvämärkä)	Pus	
-8684	pu-baktvi2		97752	100		Pu-Bakteeri, viljely 2 (aerobiviljely, pintamärkä)	Pus	
-8685	sy-baktvr		1225	100			Synovial fluid	
-8686	u-bact		4570	19.15	[1.88, 4.41, 7.11, 12.12, 22.01, 65.08, 182.99, 478.65, 3425.04]		Urine	
-8687	u-bakt	e6/l	12886	0	[0.99, 1.98, 3.85, 6.56, 13.19, 31.1, 95.22, 562.86, 5560.98]		Urine	
-8688	u-bakt	estimate	14084	99.66			Urine	
-8689	u-bakt	u/field	11	0			Urine	
-8690	u-bakt		377251	99.78	[0, 0, 0, 0, 0, 0, 0, 0, 0]		Urine	
-8691	u-bakt-vi		14923	100	[10000, 10000, 10000, 10000, 1e+05, 1e+05, 1e+05, 1e+06, 1e+06]		Urine	Culture
-8692	u-bakt.	/sunf	514	0	[0, 0, 0, 0, 0, 0, 0, 0, 0]		Urine	
-8693	u-bakt.	/sunfält	40	0			Urine	
-8694	u-bakt.		1617	100			Urine	
-8695	u-baktalv		2258	99.42		U -Bakteeri, aluslasiviljely	Urine	
-8696	u-baktb		210	4.29	[1.72, 5.76, 11.77, 19.42, 30.15, 66.2, 213.28, 2129.49, 11056.23]		Urine	
-8697	u-baktbv	e6/l	3962	0	[0.82, 1.8, 3.97, 7.16, 16.23, 44.68, 171.24, 1315.3, 12976.36]		Urine	
-8698	u-baktbv		93	100			Urine	
-8699	u-bakteeri		1711	100			Urine	
-8700	u-bakteerit	e6/l	1692	0	[1, 3.34, 6.78, 15.13, 44.47, 159.79, 845.2, 5975.08, 24980.83]		Urine	
-8701	u-bakteerit		16840	99.96			Urine	
-8702	u-baktevi		18799	99.99		U -Bakteeri, erikoisviljely	Urine	
-8703	u-baktjvi		390824	100		U -Bakteeri, jatkoviljely	Urine	
-8704	u-baktjvi.		11570	100			Urine	
-8705	u-baktla		4577	100			Urine	
-8706	u-baktlm		1437	100			Urine	
-8707	u-baktnim		111	100			Urine	
-8708	u-bakts		1045	100			Urine	
-8709	u-baktseu		39886	99.99			Urine	
-8710	u-baktsjvi		539	100			Urine	
-8711	u-bakttun		653	100			Urine	
-8712	u-baktv		1154	100			Urine	
-8713	u-baktvi	e6	45	0		U -Bakteeri, viljely	Urine	
-8714	u-baktvi	e6/l	60	0		U -Bakteeri, viljely	Urine	
-8715	u-baktvi	form	10	0		U -Bakteeri, viljely	Urine	
-8716	u-baktvi		1324678	99.99	[106.83, 10000, 1e+05, 754545.45, 1e+06, 1e+07, 1e+08, 1e+08, 1e+08]	U -Bakteeri, viljely	Urine	
-8717	u-baktvi/		562	100			Urine	
-8718	u-baktvi/oma		629	100			Urine	
-8719	u-baktvi2		283	100			Urine	
-8720	u-baktvtk		1637	100			Urine	
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 8649 | -bakt-he |  | 111 | 100 |  |  |  | Antibiotic sensitivity |
+| 8650 | -bakt-lm |  | 545 | 100 |  |  |  | Species identification |
+| 8651 | -baktvi |  | 1515 | 100 |  | -Bakteeri, viljely |  |  |
+| 8652 | -baktvr |  | 22025 | 100 |  | -Bakteeri, värjäys |  |  |
+| 8653 | af-baktvi |  | 262 | 100 |  |  | Aspiration fluid |  |
+| 8654 | as-baktvr |  | 252 | 100 |  |  | Ascitic fluid |  |
+| 8655 | b-bakt-vi |  | 1757 | 100 |  |  | Blood | Culture |
+| 8656 | b-baktjvi |  | 28084 | 100 |  | B -Bakteeri, jatkoviljely | Blood |  |
+| 8657 | b-baktsvi |  | 6514 | 100 |  |  | Blood |  |
+| 8658 | b-baktvi |  | 506538 | 100 |  | B -Bakteeri, viljely | Blood |  |
+| 8659 | b-baktvi. |  | 2240 | 100 |  |  | Blood |  |
+| 8660 | b-baktvij |  | 1818 | 100 |  |  | Blood |  |
+| 8661 | bakteerit |  | 6114 | 100 |  |  |  |  |
+| 8662 | baktlm |  | 897 | 100 |  |  |  |  |
+| 8663 | baktvr |  | 339 | 100 |  |  |  |  |
+| 8664 | bl-baktvi |  | 303 | 100 |  |  | Bronchoalveolar lavage |  |
+| 8665 | bo-baktvi |  | 312 | 100 |  |  | Bone |  |
+| 8666 | ca-baktvi |  | 1564 | 100 |  | Ca-Bakteeri, viljely suonikanyylista |  |  |
+| 8667 | d-baktvi |  | 120 | 100 |  |  |  |  |
+| 8668 | ex-baktvi |  | 14096 | 100 |  | Ex-Bakteeri, viljely | Expectorate (sputum) |  |
+| 8669 | ex-baktvr |  | 3217 | 100 |  |  | Expectorate (sputum) |  |
+| 8670 | f-baktjvi |  | 281 | 100 |  |  | Feces |  |
+| 8671 | f-baktvi1 |  | 32771 | 100 |  | F -Bakteeri, viljely 1 (Salmonella, Shigella, Yersinia, Campylobacter) | Feces |  |
+| 8672 | f-baktvi2 |  | 739 | 100 |  | F -Bakteeri, viljely 2 (Clostridium difficile, Staphylococcus aureus, candida) | Feces |  |
+| 8673 | f-baktvi3 |  | 1380 | 100 |  | F -Bakteeri, viljely 3 (viljely 1 + Bacillus cereus, Clostridium perfringens, Staphylococcus aureus) | Feces |  |
+| 8674 | f-baktvip |  | 17284 | 100 |  |  | Feces |  |
+| 8675 | fl-baktna |  | 154 | 100 |  |  | Vaginal discharge |  |
+| 8676 | fl-baktvr |  | 11637 | 100 |  | Fl-Bakteeri, värjäys | Vaginal discharge |  |
+| 8677 | li-baktvi |  | 7020 | 100 |  | Li-Bakteeri, viljely | Cerebrospinal fluid |  |
+| 8678 | li-baktvr |  | 3747 | 100 |  | Li-Bakteeri, värjäys | Cerebrospinal fluid |  |
+| 8679 | pd-baktvi |  | 917 | 100 |  | Pd-Bakteeri, viljely peritoneaalidialyysinesteestä | Peritoneal dialysis fluid |  |
+| 8680 | pf-baktvr |  | 258 | 100 |  |  | Pleural fluid |  |
+| 8681 | pp-baktnh |  | 445 | 100 |  | Pp-Bakteeri, nukleiinihappo (kvant), ientasku | Periodontal pocket |  |
+| 8682 | ps-baktvi |  | 3894 | 99.97 |  | Ps-Bakteeri, viljely | Pharyngeal secretion |  |
+| 8683 | pu-baktvi1 |  | 132179 | 100 |  | Pu-Bakteeri, viljely 1 (anaerobi + aerobiviljely, syvämärkä) | Pus |  |
+| 8684 | pu-baktvi2 |  | 97752 | 100 |  | Pu-Bakteeri, viljely 2 (aerobiviljely, pintamärkä) | Pus |  |
+| 8685 | sy-baktvr |  | 1225 | 100 |  |  | Synovial fluid |  |
+| 8686 | u-bact |  | 4570 | 19.15 | [1.88, 4.41, 7.11, 12.12, 22.01, 65.08, 182.99, 478.65, 3425.04] |  | Urine |  |
+| 8687 | u-bakt | e6/l | 12886 | 0 | [0.99, 1.98, 3.85, 6.56, 13.19, 31.1, 95.22, 562.86, 5560.98] |  | Urine |  |
+| 8688 | u-bakt | estimate | 14084 | 99.66 |  |  | Urine |  |
+| 8689 | u-bakt | u/field | 11 | 0 |  |  | Urine |  |
+| 8690 | u-bakt |  | 377251 | 99.78 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
+| 8691 | u-bakt-vi |  | 14923 | 100 | [10000, 10000, 10000, 10000, 1e+05, 1e+05, 1e+05, 1e+06, 1e+06] |  | Urine | Culture |
+| 8692 | u-bakt. | /sunf | 514 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
+| 8693 | u-bakt. | /sunfält | 40 | 0 |  |  | Urine |  |
+| 8694 | u-bakt. |  | 1617 | 100 |  |  | Urine |  |
+| 8695 | u-baktalv |  | 2258 | 99.42 |  | U -Bakteeri, aluslasiviljely | Urine |  |
+| 8696 | u-baktb |  | 210 | 4.29 | [1.72, 5.76, 11.77, 19.42, 30.15, 66.2, 213.28, 2129.49, 11056.23] |  | Urine |  |
+| 8697 | u-baktbv | e6/l | 3962 | 0 | [0.82, 1.8, 3.97, 7.16, 16.23, 44.68, 171.24, 1315.3, 12976.36] |  | Urine |  |
+| 8698 | u-baktbv |  | 93 | 100 |  |  | Urine |  |
+| 8699 | u-bakteeri |  | 1711 | 100 |  |  | Urine |  |
+| 8700 | u-bakteerit | e6/l | 1692 | 0 | [1, 3.34, 6.78, 15.13, 44.47, 159.79, 845.2, 5975.08, 24980.83] |  | Urine |  |
+| 8701 | u-bakteerit |  | 16840 | 99.96 |  |  | Urine |  |
+| 8702 | u-baktevi |  | 18799 | 99.99 |  | U -Bakteeri, erikoisviljely | Urine |  |
+| 8703 | u-baktjvi |  | 390824 | 100 |  | U -Bakteeri, jatkoviljely | Urine |  |
+| 8704 | u-baktjvi. |  | 11570 | 100 |  |  | Urine |  |
+| 8705 | u-baktla |  | 4577 | 100 |  |  | Urine |  |
+| 8706 | u-baktlm |  | 1437 | 100 |  |  | Urine |  |
+| 8707 | u-baktnim |  | 111 | 100 |  |  | Urine |  |
+| 8708 | u-bakts |  | 1045 | 100 |  |  | Urine |  |
+| 8709 | u-baktseu |  | 39886 | 99.99 |  |  | Urine |  |
+| 8710 | u-baktsjvi |  | 539 | 100 |  |  | Urine |  |
+| 8711 | u-bakttun |  | 653 | 100 |  |  | Urine |  |
+| 8712 | u-baktv |  | 1154 | 100 |  |  | Urine |  |
+| 8713 | u-baktvi | e6 | 45 | 0 |  | U -Bakteeri, viljely | Urine |  |
+| 8714 | u-baktvi | e6/l | 60 | 0 |  | U -Bakteeri, viljely | Urine |  |
+| 8715 | u-baktvi | form | 10 | 0 |  | U -Bakteeri, viljely | Urine |  |
+| 8716 | u-baktvi |  | 1324678 | 99.99 | [106.83, 10000, 1e+05, 754545.45, 1e+06, 1e+07, 1e+08, 1e+08, 1e+08] | U -Bakteeri, viljely | Urine |  |
+| 8717 | u-baktvi/ |  | 562 | 100 |  |  | Urine |  |
+| 8718 | u-baktvi/oma |  | 629 | 100 |  |  | Urine |  |
+| 8719 | u-baktvi2 |  | 283 | 100 |  |  | Urine |  |
+| 8720 | u-baktvtk |  | 1637 | 100 |  |  | Urine |  |
 

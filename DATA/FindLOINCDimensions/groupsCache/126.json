@@ -2,20 +2,20 @@
   "rows": [
     {
       "row_id": 10591,
-      "has_component": "",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_component": "Glucose time below range",
+      "has_property": "Time Fraction",
+      "has_time_aspect": "Reporting Period",
+      "has_system": "^Patient",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 10592,
-      "has_component": "",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_component": "Glucose time in range",
+      "has_property": "Time Fraction",
+      "has_time_aspect": "Reporting Period",
+      "has_system": "^Patient",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -43,10 +43,10 @@
     {
       "row_id": 10595,
       "has_component": "Glucose",
-      "has_property": "Substance Concentration",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -93,10 +93,10 @@
     {
       "row_id": 10600,
       "has_component": "Glucose",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -125,7 +125,7 @@
       "has_component": "Glucose",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -133,10 +133,10 @@
     {
       "row_id": 10604,
       "has_component": "Glucose",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nar",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -213,10 +213,10 @@
     {
       "row_id": 10612,
       "has_component": "",
-      "has_property": "Finding",
+      "has_property": "",
       "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_system": "",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -243,10 +243,10 @@
     {
       "row_id": 10615,
       "has_component": "Glucose",
-      "has_property": "Substance Concentration",
+      "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -263,10 +263,10 @@
     {
       "row_id": 10617,
       "has_component": "",
-      "has_property": "Finding",
+      "has_property": "",
       "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Nar",
+      "has_system": "",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -291,5 +291,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group predominantly features glucose measurements, many of which are part of a glucose challenge test (indicated by suffixes `-r`, `-bel`, `-ras` and timings like `0min`, `1h`, `2h`). A key challenge was the almost complete absence of system prefixes (like `P-` or `B-`), which prevented the assignment of the `has_system` axis for most rows. The exceptions were point-of-care tests (`vieri`), where `Blood capillary` is a safe inference for the system and `Test strip` for the method.\n\nThe codes `-gluk-tbr` and `-gluk-tir` were unmappable due to non-standard suffixes and no associated `LongName`. I could infer `Mass Fraction` from the `%` unit but not the `has_component`.\n\nData quality issues like missing units were common, but the `deciles` column was invaluable for confidently inferring `Substance Concentration` from the value distribution. The `p_missing` rate was a critical indicator; a 100% rate for codes with `valm` (preparation) suffix strongly suggested they were narrative status codes about the patient (`System: ^Patient`, `Scale: Nar`), not specimen results."
+  "reflection": "This group was overwhelmingly composed of glucose measurements, most of which appear to be individual time points from a glucose tolerance test (GTT). The various suffixes and abbreviations (`r`, `ras`, `0`, `1h`, `120min`) all point to this. A key decision was to map the `has_time_aspect` for all these individual results as `Point in time (spot)`, as the time marker (e.g., '2h') specifies the point in a challenge protocol, not the duration of sample collection.\n\nThe main ambiguity was the specimen type (`has_system`), as most local codes lacked a prefix like `P-` or `B-`. I left it empty for most, but inferred `Plasma` from `-vp` (`veriplasma`) and `Blood capillary` from `vieri` (bedside), which also suggested the `Test strip` method. The two codes ending in `-tbr` and `-tir` with a unit of `%` were interesting. I interpreted these as Continuous Glucose Monitoring (CGM) metrics ('Time Below Range' and 'Time In Range'), which required creating a more descriptive component and using the `Time Fraction` property and `^Patient` system. The codes ending in `valm` (`valmis`/ready) with 100% missing values were identified as procedural flags rather than measurable tests and mapped accordingly with empty axes. Having the official `LongName` would have confirmed these interpretations and resolved the specimen ambiguity."
 }

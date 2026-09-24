@@ -2,42 +2,42 @@
   "rows": [
     {
       "row_id": 1894,
-      "has_component": "Cell block",
+      "has_component": "Histology study",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Tissue",
       "has_scale_type": "Nar",
-      "has_method": "Histology",
-      "is_panel": false
+      "has_method": "Cell block",
+      "is_panel": true
     },
     {
       "row_id": 1895,
       "has_component": "Human papillomavirus 16 DNA",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "has_method": "Molecular genetics",
       "is_panel": false
     },
     {
       "row_id": 1896,
       "has_component": "Human papillomavirus 18 DNA",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "has_method": "Molecular genetics",
       "is_panel": false
     },
     {
       "row_id": 1897,
-      "has_component": "Human papillomavirus high risk types DNA",
-      "has_property": "Presence or Threshold",
+      "has_component": "Human papillomavirus high risk types other than 16 and 18 DNA",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "has_method": "Molecular genetics",
       "is_panel": false
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 1902,
-      "has_component": "Bacteria identified",
+      "has_component": "Gram negative rod multi-drug resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -92,7 +92,7 @@
     },
     {
       "row_id": 1903,
-      "has_component": "Bacteria identified",
+      "has_component": "Gram negative rod multi-drug resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -102,7 +102,7 @@
     },
     {
       "row_id": 1904,
-      "has_component": "Bacteria identified",
+      "has_component": "Gram negative rod resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -113,20 +113,20 @@
     {
       "row_id": 1905,
       "has_component": "Staphylococcus aureus methicillin resistant",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1906,
       "has_component": "Staphylococcus aureus methicillin resistant",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
@@ -137,17 +137,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
       "row_id": 1908,
-      "has_component": "Karyotype",
+      "has_component": "Chromosome analysis",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Nar",
-      "has_method": "Cytogenetics",
+      "has_method": "Karyotype",
       "is_panel": false
     },
     {
@@ -157,28 +157,28 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
       "row_id": 1910,
       "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 1911,
-      "has_component": "Immunophenotype",
+      "has_component": "Immunophenotyping",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Bone marrow",
       "has_scale_type": "Nar",
       "has_method": "Flow cytometry (FC)",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1912,
@@ -197,7 +197,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood capillary",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -205,9 +205,9 @@
       "has_component": "Glucose",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Blood capillary",
+      "has_system": "Plasma capillary",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -215,9 +215,9 @@
       "has_component": "Glucose",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Blood capillary",
+      "has_system": "Plasma capillary",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": false
     },
     {
@@ -225,9 +225,9 @@
       "has_component": "C reactive protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -235,29 +235,29 @@
       "has_component": "C reactive protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1918,
       "has_component": "Hemoglobin/Reticulocyte",
-      "has_property": "Mass Content",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 1919,
       "has_component": "Hemoglobin/Reticulocyte",
-      "has_property": "Mass Content",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
@@ -293,10 +293,10 @@
     {
       "row_id": 1923,
       "has_component": "Epithelial cells",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "Automated count",
       "is_panel": false
     },
@@ -333,16 +333,16 @@
     {
       "row_id": 1927,
       "has_component": "Erythrocytes",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 1928,
-      "has_component": "Collagen type I C-terminal telopeptide beta",
+      "has_component": "Collagen type I beta-carboxyterminal telopeptide",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -353,7 +353,7 @@
     {
       "row_id": 1929,
       "has_component": "pH",
-      "has_property": "Substance Concentration",
+      "has_property": "Logarithmic scale",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood capillary",
       "has_scale_type": "Qn",
@@ -363,7 +363,7 @@
     {
       "row_id": 1930,
       "has_component": "pH",
-      "has_property": "Substance Concentration",
+      "has_property": "Logarithmic scale",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood venous",
       "has_scale_type": "Qn",
@@ -373,7 +373,7 @@
     {
       "row_id": 1931,
       "has_component": "Oxygen",
-      "has_property": "Partial Pressure",
+      "has_property": "Partial pressure",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood capillary",
       "has_scale_type": "Qn",
@@ -385,7 +385,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Blood venous",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -393,7 +393,7 @@
     {
       "row_id": 1933,
       "has_component": "Hepatitis C virus RNA",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Ord",
@@ -403,7 +403,7 @@
     {
       "row_id": 1934,
       "has_component": "Carbon dioxide",
-      "has_property": "Partial Pressure",
+      "has_property": "Partial pressure",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood venous",
       "has_scale_type": "Qn",
@@ -413,7 +413,7 @@
     {
       "row_id": 1935,
       "has_component": "Carbon dioxide",
-      "has_property": "Partial Pressure",
+      "has_property": "Partial pressure",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood venous",
       "has_scale_type": "Qn",
@@ -452,20 +452,20 @@
     },
     {
       "row_id": 1939,
-      "has_component": "HIV 1+2 p24 Ag+Ab",
+      "has_component": "HIV 1+2 Ag+Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Ord",
       "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1940,
-      "has_component": "HIV 1+2 p24 Ag+Ab",
+      "has_component": "HIV 1+2 Ag+Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Ord",
       "has_method": "Immunoassay",
       "is_panel": false
@@ -475,9 +475,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography",
       "is_panel": true
     },
     {
@@ -485,7 +485,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -545,9 +545,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography",
       "is_panel": true
     },
     {
@@ -563,10 +563,10 @@
     {
       "row_id": 1950,
       "has_component": "Casts",
-      "has_property": "Presence or Threshold",
+      "has_property": "Number Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "Automated count",
       "is_panel": false
     },
@@ -582,13 +582,13 @@
     },
     {
       "row_id": 1952,
-      "has_component": "Bone density",
-      "has_property": "Mass/Area",
+      "has_component": "Bone density study",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "Dual-energy X-ray absorptiometry",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1953,
@@ -602,7 +602,7 @@
     },
     {
       "row_id": 1954,
-      "has_component": "Bacteria identified",
+      "has_component": "Gram negative rod multi-drug resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -632,7 +632,7 @@
     },
     {
       "row_id": 1957,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -672,27 +672,27 @@
     },
     {
       "row_id": 1961,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1962,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 1963,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -702,7 +702,7 @@
     },
     {
       "row_id": 1964,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -712,7 +712,7 @@
     },
     {
       "row_id": 1965,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -722,7 +722,7 @@
     },
     {
       "row_id": 1966,
-      "has_component": "Natriuretic peptide B N-Terminal prohormone",
+      "has_component": "Natriuretic peptide.B N-Terminal Prohormone",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -732,101 +732,101 @@
     },
     {
       "row_id": 1967,
-      "has_component": "Parasite identified",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "Stool",
-      "has_scale_type": "Nom",
+      "has_scale_type": "",
       "has_method": "Microscopy",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1968,
-      "has_component": "Histology",
+      "has_component": "Histology study",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Tissue",
       "has_scale_type": "Nar",
-      "has_method": "Histology",
-      "is_panel": false
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 1969,
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Nasopharynx",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 1970,
-      "has_component": "Carbon monoxide diffusing capacity",
-      "has_property": "Volume/Time/Pressure",
+      "has_component": "Pulmonary function test study",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1971,
       "has_component": "Neurophysiology study",
       "has_property": "Finding",
-      "has_time_aspect": "",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
       "has_scale_type": "Nar",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1972,
-      "has_component": "Bone density",
-      "has_property": "Mass/Area",
+      "has_component": "Bone density study",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "Dual-energy X-ray absorptiometry",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1973,
-      "has_component": "Echocardiogram",
+      "has_component": "Echocardiography study",
       "has_property": "Finding",
-      "has_time_aspect": "",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Doc",
+      "has_scale_type": "Nar",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1974,
-      "has_component": "Peak expiratory flow",
-      "has_property": "Volume Rate",
-      "has_time_aspect": "24 hours",
+      "has_component": "Peak expiratory flow monitoring",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Nar",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 1975,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
+      "has_component": "Sleep study",
+      "has_property": "Finding",
+      "has_time_aspect": "Night time",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 1976,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
+      "has_component": "Sleep study",
+      "has_property": "Finding",
+      "has_time_aspect": "Night time",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": true
     },
@@ -835,14 +835,14 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Pus",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Organism specific culture",
       "is_panel": true
     },
     {
       "row_id": 1978,
-      "has_component": "Bacteria identified",
+      "has_component": "Gram negative rod resistant",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -853,26 +853,26 @@
     {
       "row_id": 1979,
       "has_component": "Hemoglobin/Reticulocyte",
-      "has_property": "Mass Content",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 1980,
       "has_component": "Hemoglobin/Reticulocyte",
-      "has_property": "Mass Content",
+      "has_property": "Mass content",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Automated count",
       "is_panel": false
     },
     {
       "row_id": 1981,
-      "has_component": "HIV 1+2 p24 Ag+Ab",
+      "has_component": "HIV 1+2 Ag+Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -882,37 +882,37 @@
     },
     {
       "row_id": 1982,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "has_component": "Fetal DNA",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "Molecular genetics",
       "is_panel": true
     },
     {
       "row_id": 1983,
       "has_component": "Staphylococcus aureus methicillin resistant",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1984,
       "has_component": "Staphylococcus aureus methicillin resistant",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 1985,
-      "has_component": "CD4+ T-cells/CD3+ T-cells",
+      "has_component": "CD4+ T-lymphocytes/T-lymphocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -922,7 +922,7 @@
     },
     {
       "row_id": 1986,
-      "has_component": "CD8+ T-cells/CD3+ T-cells",
+      "has_component": "CD8+ T-lymphocytes/T-lymphocytes",
       "has_property": "Number Fraction",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -935,9 +935,9 @@
       "has_component": "Troponin T",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -945,39 +945,39 @@
       "has_component": "Troponin T",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
-      "row_id": 1989,
-      "has_component": "Histology",
+      "row_id": 1890,
+      "has_component": "Histology study",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Tissue",
       "has_scale_type": "Nar",
-      "has_method": "Histology",
-      "is_panel": false
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 1990,
-      "has_component": "Histology",
+      "has_component": "Histology study",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Tissue",
       "has_scale_type": "Nar",
-      "has_method": "Histology",
-      "is_panel": false
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 1991,
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography",
       "is_panel": true
     },
     {
@@ -985,9 +985,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography",
       "is_panel": true
     },
     {
@@ -1005,19 +1005,19 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Blood",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 1995,
-      "has_component": "Amphetamine+Methamphetamine enantiomers",
-      "has_property": "Finding",
+      "has_component": "Amphetamine and Methamphetamine enantiomers",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "Nom",
+      "has_method": "Chromatography",
       "is_panel": false
     },
     {
@@ -1053,7 +1053,7 @@
     {
       "row_id": 1999,
       "has_component": "pH",
-      "has_property": "Substance Concentration",
+      "has_property": "Logarithmic scale",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -1065,9 +1065,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography",
       "is_panel": true
     },
     {
@@ -1075,7 +1075,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1085,9 +1085,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Chromatography/Mass spectrometry",
       "is_panel": true
     },
     {
@@ -1095,9 +1095,9 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
-      "has_method": "",
+      "has_method": "Test strip",
       "is_panel": true
     },
     {
@@ -1115,7 +1115,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Urine",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1155,15 +1155,15 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Blood venous",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     },
     {
       "row_id": 2010,
-      "has_component": "Yersinia sp DNA",
-      "has_property": "Presence or Threshold",
+      "has_component": "Yersinia species DNA",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
       "has_scale_type": "Ord",
@@ -1171,5 +1171,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This was a very diverse group, ranging from standard chemistry and hematology to microbiology, pathology, genetics, and patient-level procedures like lung function tests and sleep studies. The `TEST_NAME` strings were often long, concatenated, and descriptive Finnish phrases rather than clean abbreviations, which required more interpretation.\n\n**Gotchas and Ambiguities:**\n*   **Administrative codes:** Several rows (e.g., 1898-1901, 1936-1938, 1993) were clearly administrative or billing codes ('additional fee', 'result transfer helper'). Identifying and ignoring these is key.\n*   **Incorrect `prefix_meaning`:** For rows 1985 and 1986, the prefix `T-` was decoded as 'Thrombocyte', but the component was clearly T-cells (auttaja-/estäjäsolut). This required overriding the provided hint with knowledge of the test component, assigning `Blood` as the system.\n*   **Incorrect `UNIT`:** For row 1945 (`b-kreatiniini`), the unit was `mmol/l`, which is biologically impossible for creatinine. The deciles clearly indicated the standard `umol/l`. I trusted the deciles and analyte name over the recorded unit.\n*   **Ambiguous `Scale`:** For urine particle counter tests (e.g., 1910, 1923), some rows had quantitative data (`Qn`) while others with identical names had 100% missing values. I interpreted the latter as `Ord` (`Presence or Threshold`), assuming a different reporting mode (e.g., 'few', 'many') or that they are just order codes.\n*   **Point-of-Care (`vieritesti`):** For POCT, the System is often not specified. I left it blank unless there was a clear indicator like 'sormenpäänäyte' (fingertip sample -> `Blood capillary`). Method is often `Test strip`, which I added for urine dipstick tests, but left blank for others to avoid over-interpreting.\n\n**Improvements:**\nHaving the official Finnish long name (`LongName`) for more rows would have been very helpful, especially for the longer, more descriptive `TEST_NAME`s, as it would confirm interpretations. Also, having a dictionary of common Finnish medical terms (like 'vieritesti', 'osatutkimus', 'pikatesti', 'viljely') would speed up the process."
+  "reflection": "This group was extremely diverse, containing everything from administrative codes and technical placeholders to complex procedures, microbiology, point-of-care tests, and standard chemistry. The `TEST_NAME` fields were often long and descriptive, which was very helpful. Many codes lacked standard prefixes (like `S-` or `P-`), requiring inference or leaving the `has_system` axis blank.\n\nA major gotcha was the presence of many administrative codes (e.g., `lisämaks...`, `lisävastaus...`, `hpv...apututkimus...`) that represent billing or data transfer actions rather than clinical measurements. These needed to be identified and left with empty axes. Similarly, many codes clearly represented panels or complex procedures (e.g., `täydellinenverenkuva`, `pt-` codes, histology, drug screens), which required setting `is_panel: true` and mapping at the procedure level rather than component level.\n\nThere were also inconsistencies, such as the `T-` prefix (for Thrombocytes) being used for lymphocyte subset tests (rows 1985, 1986), which required ignoring the prefix based on the component name. The unit for Creatinine in row 1945 was incorrectly listed as `mmol/l` when the deciles clearly indicated `umol/l`. Being able to use the deciles to correct for unit errors was crucial. Having the official `LongName` for more rows would have been beneficial for disambiguation, especially for the many panel/procedure codes."
 }

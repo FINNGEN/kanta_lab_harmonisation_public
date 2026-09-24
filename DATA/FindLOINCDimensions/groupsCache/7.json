@@ -5,7 +5,7 @@
       "has_component": "Transglutaminase IgA Ab",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -15,7 +15,7 @@
       "has_component": "Transglutaminase IgA Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
@@ -35,7 +35,7 @@
       "has_component": "Transglutaminase IgA Ab",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -45,7 +45,7 @@
       "has_component": "Transglutaminase IgA Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
@@ -75,7 +75,7 @@
       "has_component": "Transglutaminase IgG Ab",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
@@ -117,7 +117,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "Immunoassay",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -221,5 +221,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was fairly consistent, centered around tissue transglutaminase antibodies. The key distinctions were between IgA and IgG, and between quantitative (`Qn`) and qualitative (`Ord`) results.\n\n**Gotchas and Ambiguities:**\n*   **System Inference**: Rows 364-371 lacked the `S-` prefix. However, sibling rows like 366 and 369 explicitly mentioned `seerumista` (from serum), and all other rows in the group were for Serum. It felt safe to infer `Serum` for all, but this relies on group context which might not always be reliable.\n*   **Panel vs. Single Test**: Suffixes like `osatutk.` (part of study, row 374) and `keliakiatutkimus` (celiac study, row 380) could imply a panel. I interpreted them as descriptive text added to a single test's name, not as a panel code itself, because the component (IgA antibodies) was explicitly named. True panels usually have a more generic name.\n*   **Ambiguous Component**: Rows 384 and 385 (`s-transglutaminaasivasta-aineet`) didn't specify the immunoglobulin class (IgA/IgG). I used a more general component `Transglutaminase Ab` which is correct but less specific.\n*   **Method Detection**: Only row 375 (`eliau/ml`) gave a clear hint about the method (`Immunoassay`). It's highly likely all other quantitative tests in this group use a similar method, but without evidence, the method axis was correctly left empty per instructions.\n\nOverall, the pairing of quantitative rows with units and deciles alongside qualitative rows with 100% missing values was a clear and helpful pattern. The component name `Transglutaminase Ab` is the standard LOINC component, so mapping was straightforward once the IgA/IgG distinction was made."
+  "reflection": "This group was straightforward, centered on tissue transglutaminase (tTG) antibodies. The main distinctions were between IgA and IgG isotypes, and between quantitative (`Qn`, `Arbitrary Concentration`, `U/ml`) and qualitative (`Ord`, `Presence or Threshold`) results. The presence of both a quantitative and a qualitative version for the same test name (e.g., rows 364/365, 376/377) is a common pattern, likely representing the order code (qualitative) and the result code (quantitative). A key gotcha was deciding on the system for rows without an 'S-' prefix or 'seerumista'. I correctly left the system empty as per instructions, even though serum is the standard specimen. The terms `(keliakia)` and `osatutk` were contextual and did not indicate a panel code, but rather a single test as part of a larger clinical investigation. The `LongName` column being empty for all rows was unhelpful; having it populated would have confirmed the component and possibly clarified the unspecified immunoglobulin class in rows 384-385."
 }

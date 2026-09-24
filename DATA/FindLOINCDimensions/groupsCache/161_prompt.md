@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,56 +81,57 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 161 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-13017	b-fosfatidyylietanoli	umol/l	4792	0	[0.06, 0.1, 0.15, 0.22, 0.3, 0.44, 0.64, 0.94, 1.57]		Blood	
-13018	b-fosfatidyylietanoli		4963	89.32	[0.09, 0.13, 0.17, 0.29, 0.43, 0.63, 0.85, 1.22, 1.87]		Blood	
-13019	b-fosfatidyylietanoli,verestä	umol/l	1555	0	[0.06, 0.1, 0.15, 0.22, 0.29, 0.41, 0.59, 0.87, 1.44]		Blood	
-13020	b-fosfatidyylietanoli,verestä		1534	97.07			Blood	
-13021	b-fosfatidyylietanolivita	umol/l	43	0			Blood	
-13022	b-fosfatidyylietanolivita		69	100			Blood	
-13023	b-haemophilusinfluenzae		144	100			Blood	
-13024	b-suuretvärjäytymättömätsolut	e9/l	171	0	[0.07, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.18]		Blood	
-13025	chlamydiapneumoniae,nukleiin		109	100				
-13026	follikkeliastimuloivahormoni	u/l	138	0	[3, 4.75, 6.19, 8.24, 10, 19.35, 36.42, 56.82, 73.33]			
-13027	fosfatidyylietanoli	umol/l	1540	0	[0.05, 0.09, 0.14, 0.2, 0.29, 0.43, 0.63, 0.98, 1.62]			
-13028	fosfatidyylietanoli		1635	92.35	[0.09, 0.19, 0.32, 0.43, 0.64, 0.89, 1.16, 1.43, 1.78]			
-13029	fosfatidyylietanoli,verestä	umol/l	3284	0	[0.06, 0.08, 0.12, 0.16, 0.22, 0.3, 0.44, 0.66, 1.2]			
-13030	fosfatidyylietanoli,verestä		3273	98.93				
-13031	fosfatidyylietanoli,verestätth	umol/l	35	0				
-13032	fosfatidyylietanoli,verestätth		66	100				
-13033	fosfatidyylietanoli,veri	umol/l	335	0	[0.06, 0.1, 0.15, 0.2, 0.28, 0.39, 0.6, 0.91, 1.55]			
-13034	fosfatidyylietanoli,veri		333	91.89				
-13035	haemophilusinfluenzaenukleii		459	100				
-13036	humaanimetapneumovirus,nukle		109	100				
-13037	humanmetapneumovirus,ag		102	100				
-13038	l-suuretvärjääntymättömätsolut	%	171	0	[1.19, 1.35, 1.5, 1.62, 1.83, 1.97, 2.16, 2.45, 2.85]		Leukocyte	
-13039	legionellapneumoniaenukleiin		109	100				
-13040	li-haemophilusinfluenzaenukl.haponos.		119	100			Cerebrospinal fluid	
-13041	mycoplasmapneumoniae,nukleii		141	100				
-13042	p-follikkeliastimuloivahormoni	u/l	511	0	[2.89, 4.55, 5.71, 7.4, 9.51, 16.11, 32.21, 53.45, 77.25]		Plasma	
-13043	p-glukoosi,2tuntiaaterianjälkeen	mmol/l	125	0	[6.3, 7.71, 9.12, 10.17, 11.1, 12.22, 14.28, 15.89, 18.81]		Plasma	
-13044	p-glukoosi,toimintakokeissa,1h	mmol/l	126	0	[5.54, 6.18, 6.52, 7.01, 7.43, 7.82, 8.23, 9.1, 9.88]		Plasma	
-13045	p-glukoosi,toimintakokeissa,2h	mmol/l	240	0	[4.47, 5.01, 5.34, 5.8, 6.31, 7.03, 7.79, 8.75, 11.07]		Plasma	
-13046	p-glukoosi,toimntakokeissa0m	mmol/l	242	0	[4.3, 4.6, 4.8, 5.01, 5.22, 5.42, 5.83, 6.26, 6.93]		Plasma	
-13047	p-luteinisoivahormoni	u/l	198	0	[2.79, 3.77, 4.73, 5.42, 6.66, 8.63, 10.71, 14.48, 27.26]		Plasma	
-13048	p-luteinisoivahormoni		10	100			Plasma	
-13049	p-omagluk,,potilasmittaringlukoosi		1376	100			Plasma	
-13050	potilasmittaringlukoosi,ihopisto	mmol/l	749	0	[5.9, 6.36, 6.79, 7.19, 7.51, 7.86, 8.26, 8.85, 9.69]			
-13051	potilasmittaringlukoosi,ihopisto		638	100				
-13052	potilasmittaringlukoosi,sensori	mmol/l	201	0	[5.55, 6.53, 7.01, 7.7, 8.35, 9.14, 10.02, 11.7, 13.49]			
-13053	potilasmittaringlukoosi,sensori		568	100				
-13054	s-c-peptidi1haterianjälkeen	nmol/l	275	0	[0.5, 0.75, 0.96, 1.2, 1.4, 1.62, 1.92, 2.33, 3.08]		Serum	
-13055	s-c-peptidi1haterianjälkeen		10	90			Serum	
-13056	s-c-peptidiaterianjälkeen	nmol/l	150	0	[0.4, 0.65, 0.9, 1.07, 1.22, 1.49, 2.03, 2.41, 2.88]		Serum	
-13057	s-follikkeliastimuloivahormoni	iu/l	416	0	[3.31, 4.85, 6.04, 7.33, 10.33, 18.46, 32.36, 54.77, 76.02]		Serum	
-13058	s-follikkeliastimuloivahormoni	u/l	80	0	[3.2, 4.8, 5.65, 6.55, 7.78, 10.22, 16.95, 45.35, 68.7]		Serum	
-13059	s-follikkeliastimuloivahormoni		7	100			Serum	
-13060	s-kertatyydyttymättömätrasvahapot	mmol/l	263	0	[2.43, 2.7, 2.8, 2.99, 3.17, 3.35, 3.54, 3.9, 4.36]		Serum	
-13061	s-luteinisoivahormoni	iu/l	178	0	[1.51, 2.37, 3.11, 3.71, 4.6, 5.61, 7.56, 11.94, 22.46]		Serum	
-13062	s-luteinisoivahormoni	u/l	26	0			Serum	
-13063	s-luteinisoivahormoni		14	100			Serum	
-13064	s-monityydyttymättömätrasvahapot	mmol/l	255	0	[4.74, 4.99, 5.23, 5.48, 5.58, 5.7, 5.92, 6.18, 6.55]		Serum	
-13065	s-monityydyttymättömätrasvahapot		11	100			Serum	
-13066	s-tyydyttyneetrasvahapot	mmol/l	265	0	[3.09, 3.37, 3.58, 3.77, 3.9, 4.15, 4.36, 4.73, 5.26]		Serum	
-13067	ulosteenripulivirukset,nukle		109	100				
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 13017 | b-fosfatidyylietanoli | umol/l | 4792 | 0 | [0.06, 0.1, 0.15, 0.22, 0.3, 0.44, 0.64, 0.94, 1.57] |  | Blood |  |
+| 13018 | b-fosfatidyylietanoli |  | 4963 | 89.32 | [0.09, 0.13, 0.17, 0.29, 0.43, 0.63, 0.85, 1.22, 1.87] |  | Blood |  |
+| 13019 | b-fosfatidyylietanoli,verestä | umol/l | 1555 | 0 | [0.06, 0.1, 0.15, 0.22, 0.29, 0.41, 0.59, 0.87, 1.44] |  | Blood |  |
+| 13020 | b-fosfatidyylietanoli,verestä |  | 1534 | 97.07 |  |  | Blood |  |
+| 13021 | b-fosfatidyylietanolivita | umol/l | 43 | 0 |  |  | Blood |  |
+| 13022 | b-fosfatidyylietanolivita |  | 69 | 100 |  |  | Blood |  |
+| 13023 | b-haemophilusinfluenzae |  | 144 | 100 |  |  | Blood |  |
+| 13024 | b-suuretvärjäytymättömätsolut | e9/l | 171 | 0 | [0.07, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.18] |  | Blood |  |
+| 13025 | chlamydiapneumoniae,nukleiin |  | 109 | 100 |  |  |  |  |
+| 13026 | follikkeliastimuloivahormoni | u/l | 138 | 0 | [3, 4.75, 6.19, 8.24, 10, 19.35, 36.42, 56.82, 73.33] |  |  |  |
+| 13027 | fosfatidyylietanoli | umol/l | 1540 | 0 | [0.05, 0.09, 0.14, 0.2, 0.29, 0.43, 0.63, 0.98, 1.62] |  |  |  |
+| 13028 | fosfatidyylietanoli |  | 1635 | 92.35 | [0.09, 0.19, 0.32, 0.43, 0.64, 0.89, 1.16, 1.43, 1.78] |  |  |  |
+| 13029 | fosfatidyylietanoli,verestä | umol/l | 3284 | 0 | [0.06, 0.08, 0.12, 0.16, 0.22, 0.3, 0.44, 0.66, 1.2] |  |  |  |
+| 13030 | fosfatidyylietanoli,verestä |  | 3273 | 98.93 |  |  |  |  |
+| 13031 | fosfatidyylietanoli,verestätth | umol/l | 35 | 0 |  |  |  |  |
+| 13032 | fosfatidyylietanoli,verestätth |  | 66 | 100 |  |  |  |  |
+| 13033 | fosfatidyylietanoli,veri | umol/l | 335 | 0 | [0.06, 0.1, 0.15, 0.2, 0.28, 0.39, 0.6, 0.91, 1.55] |  |  |  |
+| 13034 | fosfatidyylietanoli,veri |  | 333 | 91.89 |  |  |  |  |
+| 13035 | haemophilusinfluenzaenukleii |  | 459 | 100 |  |  |  |  |
+| 13036 | humaanimetapneumovirus,nukle |  | 109 | 100 |  |  |  |  |
+| 13037 | humanmetapneumovirus,ag |  | 102 | 100 |  |  |  |  |
+| 13038 | l-suuretvärjääntymättömätsolut | % | 171 | 0 | [1.19, 1.35, 1.5, 1.62, 1.83, 1.97, 2.16, 2.45, 2.85] |  | Leukocyte |  |
+| 13039 | legionellapneumoniaenukleiin |  | 109 | 100 |  |  |  |  |
+| 13040 | li-haemophilusinfluenzaenukl.haponos. |  | 119 | 100 |  |  | Cerebrospinal fluid |  |
+| 13041 | mycoplasmapneumoniae,nukleii |  | 141 | 100 |  |  |  |  |
+| 13042 | p-follikkeliastimuloivahormoni | u/l | 511 | 0 | [2.89, 4.55, 5.71, 7.4, 9.51, 16.11, 32.21, 53.45, 77.25] |  | Plasma |  |
+| 13043 | p-glukoosi,2tuntiaaterianjälkeen | mmol/l | 125 | 0 | [6.3, 7.71, 9.12, 10.17, 11.1, 12.22, 14.28, 15.89, 18.81] |  | Plasma |  |
+| 13044 | p-glukoosi,toimintakokeissa,1h | mmol/l | 126 | 0 | [5.54, 6.18, 6.52, 7.01, 7.43, 7.82, 8.23, 9.1, 9.88] |  | Plasma |  |
+| 13045 | p-glukoosi,toimintakokeissa,2h | mmol/l | 240 | 0 | [4.47, 5.01, 5.34, 5.8, 6.31, 7.03, 7.79, 8.75, 11.07] |  | Plasma |  |
+| 13046 | p-glukoosi,toimntakokeissa0m | mmol/l | 242 | 0 | [4.3, 4.6, 4.8, 5.01, 5.22, 5.42, 5.83, 6.26, 6.93] |  | Plasma |  |
+| 13047 | p-luteinisoivahormoni | u/l | 198 | 0 | [2.79, 3.77, 4.73, 5.42, 6.66, 8.63, 10.71, 14.48, 27.26] |  | Plasma |  |
+| 13048 | p-luteinisoivahormoni |  | 10 | 100 |  |  | Plasma |  |
+| 13049 | p-omagluk,,potilasmittaringlukoosi |  | 1376 | 100 |  |  | Plasma |  |
+| 13050 | potilasmittaringlukoosi,ihopisto | mmol/l | 749 | 0 | [5.9, 6.36, 6.79, 7.19, 7.51, 7.86, 8.26, 8.85, 9.69] |  |  |  |
+| 13051 | potilasmittaringlukoosi,ihopisto |  | 638 | 100 |  |  |  |  |
+| 13052 | potilasmittaringlukoosi,sensori | mmol/l | 201 | 0 | [5.55, 6.53, 7.01, 7.7, 8.35, 9.14, 10.02, 11.7, 13.49] |  |  |  |
+| 13053 | potilasmittaringlukoosi,sensori |  | 568 | 100 |  |  |  |  |
+| 13054 | s-c-peptidi1haterianjälkeen | nmol/l | 275 | 0 | [0.5, 0.75, 0.96, 1.2, 1.4, 1.62, 1.92, 2.33, 3.08] |  | Serum |  |
+| 13055 | s-c-peptidi1haterianjälkeen |  | 10 | 90 |  |  | Serum |  |
+| 13056 | s-c-peptidiaterianjälkeen | nmol/l | 150 | 0 | [0.4, 0.65, 0.9, 1.07, 1.22, 1.49, 2.03, 2.41, 2.88] |  | Serum |  |
+| 13057 | s-follikkeliastimuloivahormoni | iu/l | 416 | 0 | [3.31, 4.85, 6.04, 7.33, 10.33, 18.46, 32.36, 54.77, 76.02] |  | Serum |  |
+| 13058 | s-follikkeliastimuloivahormoni | u/l | 80 | 0 | [3.2, 4.8, 5.65, 6.55, 7.78, 10.22, 16.95, 45.35, 68.7] |  | Serum |  |
+| 13059 | s-follikkeliastimuloivahormoni |  | 7 | 100 |  |  | Serum |  |
+| 13060 | s-kertatyydyttymättömätrasvahapot | mmol/l | 263 | 0 | [2.43, 2.7, 2.8, 2.99, 3.17, 3.35, 3.54, 3.9, 4.36] |  | Serum |  |
+| 13061 | s-luteinisoivahormoni | iu/l | 178 | 0 | [1.51, 2.37, 3.11, 3.71, 4.6, 5.61, 7.56, 11.94, 22.46] |  | Serum |  |
+| 13062 | s-luteinisoivahormoni | u/l | 26 | 0 |  |  | Serum |  |
+| 13063 | s-luteinisoivahormoni |  | 14 | 100 |  |  | Serum |  |
+| 13064 | s-monityydyttymättömätrasvahapot | mmol/l | 255 | 0 | [4.74, 4.99, 5.23, 5.48, 5.58, 5.7, 5.92, 6.18, 6.55] |  | Serum |  |
+| 13065 | s-monityydyttymättömätrasvahapot |  | 11 | 100 |  |  | Serum |  |
+| 13066 | s-tyydyttyneetrasvahapot | mmol/l | 265 | 0 | [3.09, 3.37, 3.58, 3.77, 3.9, 4.15, 4.36, 4.73, 5.26] |  | Serum |  |
+| 13067 | ulosteenripulivirukset,nukle |  | 109 | 100 |  |  |  |  |
 

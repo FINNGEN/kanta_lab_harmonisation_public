@@ -7,7 +7,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -17,13 +17,13 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 13498,
       "has_component": "Erythroblasts",
-      "has_property": "",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Nar",
@@ -37,7 +37,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -47,7 +47,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -67,13 +67,13 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "White Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 13503,
       "has_component": "Erythrocyte distribution width",
-      "has_property": "Entitic Volume",
+      "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
@@ -83,7 +83,7 @@
     {
       "row_id": 13504,
       "has_component": "Erythrocyte distribution width",
-      "has_property": "Entitic Volume",
+      "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Red Blood Cells",
       "has_scale_type": "Qn",
@@ -107,7 +107,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -127,7 +127,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "White Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -157,7 +157,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "White Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -167,7 +167,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -187,7 +187,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "White Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -197,7 +197,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -217,7 +217,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "White Blood Cells",
       "has_scale_type": "Qn",
-      "has_method": "Automated count",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -302,7 +302,7 @@
     },
     {
       "row_id": 13526,
-      "has_component": "M-protein.band 1",
+      "has_component": "M-protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -312,8 +312,8 @@
     },
     {
       "row_id": 13527,
-      "has_component": "M-protein.band 1",
-      "has_property": "",
+      "has_component": "M-protein",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Nar",
@@ -322,7 +322,7 @@
     },
     {
       "row_id": 13528,
-      "has_component": "M-protein.band 2",
+      "has_component": "M-protein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -332,8 +332,8 @@
     },
     {
       "row_id": 13529,
-      "has_component": "M-protein.band 2",
-      "has_property": "",
+      "has_component": "M-protein",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Nar",
@@ -342,8 +342,8 @@
     },
     {
       "row_id": 13530,
-      "has_component": "M-protein.band 3",
-      "has_property": "",
+      "has_component": "M-protein",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Nar",
@@ -351,5 +351,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was dominated by component tests (`osatutkimus`), which made it straightforward to set `is_panel` to `false`. The parenthetical information, such as `osatutkimus(b-diffi)` or `osatutkimus s-prot-fr`, was extremely helpful in determining the context (e.g., automated differential count, protein electrophoresis) and thus the correct method (`Automated count`, `Electrophoresis`).\n\nThe main ambiguities arose from different ways of specifying the same test. For instance, neutrophil counts appeared as `b-neut`, `l-neut`, and `neutrofiiliset,konediffi()`. Distinguishing between absolute (`e9/l`, `Number Concentration`) and relative (`%`, `Number Fraction`) counts was crucial and required looking at both the `UNIT` and sometimes clues in the name like `absol.arvot` (absolute values). The prefixes `B-` (Blood), `E-` (Erythrocyte), and `L-` (Leukocyte) were key to assigning the correct `has_system`.\n\nThe M-component tests (`s-m-komponentti`) were interesting, with `valetietue` (\"dummy record\") in the name. The mix of quantitative (`g/l`) and narrative (`p_missing`=100%) rows for the same component suggests a pattern where a numeric value is given if an M-protein band is found, and a narrative/empty result otherwise. This pattern of paired quantitative/narrative rows for the same test is common and was handled by assigning `Qn` or `Nar` scale types accordingly."
+  "reflection": "This group was dominated by components of hematology differential counts and serum protein electrophoresis. The phrase `osatutkimus` ('sub-test' or 'component study') in many `TEST_NAME`s was a clear indicator that these are not panels.\n\nKey gotchas and patterns:\n*   **Method Inference**: The term `konediffi` ('machine differential') was a direct signal to use the `Automated count` method. Similarly, `s-prot-fr` and the `-Fr` suffix ('fractions') pointed clearly to `Electrophoresis` for the protein tests.\n*   **Paired Quantitative/Narrative Results**: The `S-M-komponentti` (M-protein) tests demonstrated a common pattern where a single analyte has both a quantitative result (in `g/l`) and a separate entry for narrative findings (identity of the protein, comments), which appeared here as a row with 100% missing values and no unit. Mapping the quantitative row to `Qn`/`Mass Concentration` and the narrative row to `Nar`/`Presence or Identity` is crucial.\n*   **Absolute vs. Relative Counts**: The data clearly distinguished between absolute counts (e.g., `B-Neut`, `e9/l`, `Number Concentration`) and relative counts (`L-Neut`, `%`, `Number Fraction`). The component name must reflect this (`Neutrophils` vs. `Neutrophils/Leukocytes`).\n*   **System Ambiguity (`B-` vs `L-`)**: The prefixes `B-` (Blood) and `L-` (Leukocyte) were used for similar components (e.g., `B-Neut` vs `L-Neut`). I interpreted `B-` as system `Blood` and `L-` as system `White Blood Cells`, which is a finer distinction but supported by the source data. This reflects local coding conventions that may not always have a direct parallel in LOINC's more standardized system axis, but is important to capture."
 }

@@ -2,7 +2,7 @@
   "rows": [
     {
       "row_id": 5805,
-      "has_component": "Aspergillus",
+      "has_component": "Aspergillus sp",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -42,7 +42,7 @@
     },
     {
       "row_id": 5809,
-      "has_component": "Bordetella",
+      "has_component": "",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 5813,
-      "has_component": "Borrelia",
+      "has_component": "Borrelia sp",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -102,13 +102,13 @@
     },
     {
       "row_id": 5815,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
-      "is_panel": false
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 5816,
@@ -162,17 +162,17 @@
     },
     {
       "row_id": 5821,
-      "has_component": "Parasite",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
-      "is_panel": false
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 5822,
-      "has_component": "Salmonella",
+      "has_component": "Salmonella sp",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
@@ -192,7 +192,7 @@
     },
     {
       "row_id": 5824,
-      "has_component": "Human coronavirus 229E",
+      "has_component": "Coronavirus 229E",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -202,7 +202,7 @@
     },
     {
       "row_id": 5825,
-      "has_component": "Human coronavirus HKU1",
+      "has_component": "Coronavirus HKU1",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -212,7 +212,7 @@
     },
     {
       "row_id": 5826,
-      "has_component": "Human coronavirus NL63",
+      "has_component": "Coronavirus NL63",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -222,7 +222,7 @@
     },
     {
       "row_id": 5827,
-      "has_component": "Human coronavirus OC43",
+      "has_component": "Coronavirus OC43",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -242,13 +242,13 @@
     },
     {
       "row_id": 5829,
-      "has_component": "Bacteria",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "Nucleic acid amplification with probe detection",
-      "is_panel": false
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 5830,
@@ -262,7 +262,7 @@
     },
     {
       "row_id": 5831,
-      "has_component": "Salmonella",
+      "has_component": "Salmonella sp",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -271,5 +271,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group was uniformly composed of qualitative nucleic acid tests, identifiable by the `-nho` suffix, the `LongName` containing \"nukleiinihappo (kval)\", and the 100% missing numeric values. This made assigning `Property: Presence or Threshold`, `Scale: Ord`, and `Method: Nucleic acid amplification with probe detection` straightforward for all rows.\n\nThe main ambiguities arose from missing `LongName`s and non-standard abbreviations:\n*   **Typos/variants:** `bocanho` (5807) was clearly a typo of `bokanho` (5808), which was easy to resolve due to the grouping. `bopanho` (5809) was more ambiguous, likely a variant of `bopenho` or `bparanho`; I mapped it to the more general `Bordetella` to be safe.\n*   **Combined tests:** `boppnho` (5812) was inferred to be a combined test for *Bordetella pertussis* and *parapertussis*. This is an educated guess based on the abbreviation, but such multi-pathogen tests are common.\n*   **Unspecified systems:** Many codes lack a system prefix (e.g., `-aspenho`, `baktnho`). Others have suggestive but non-standard prefixes like `res-` in `resbaktnho` (5829), likely for a respiratory sample, but this cannot be mapped to a specific LOINC system without more information.\n*   **Component specificity:** For `s-parvnho` (5830), I specified `Parvovirus B19` as this is the overwhelming clinical context, even though the `LongName` only says `Parvovirus`.\n\nHaving a more comprehensive list of both standard and common local abbreviations would significantly improve accuracy, especially for resolving ambiguous or combined-analyte codes."
+  "reflection": "This group was characterized by the `-nho` suffix, a consistent and strong indicator for a qualitative nucleic acid test. This made assigning Property (`Presence or Threshold`), Scale (`Ord`), and Method (`Nucleic acid amplification with probe detection`) straightforward and consistent across the group, an interpretation confirmed by the available `LongName`s (`nukleiinihappo (kval)`) and the 100% `p_missing` values.\n\nThe main challenges were:\n1.  **Ambiguous abbreviations**: The code `-bopanho` (row 5809) could not be confidently resolved to an analyte as it could be a typo for either pertussis (`bopenho`) or parapertussis (`bparnho`), so its component was left empty. In contrast, `-boppnho` (row 5812) was interpreted as a combined test for `Bordetella pertussis+parapertussis` based on common microbiology test panels.\n2.  **Panel identification**: Tests for broad categories like 'Parasites' (`f-paranho`), 'Respiratory bacteria' (`resbaktnho`), or 'Bacteria' (`-rbaktnho`) are likely multiplex panels. I have marked them as `is_panel: true`. This is an inference based on the plural nature of the component, as the data doesn't explicitly distinguish between a multiplex panel order and a multiplex test reporting a single combined finding.\n3.  **Missing systems**: A large number of tests, particularly the coronavirus strains, lacked a system prefix. While they are almost certainly from respiratory specimens, this cannot be proven from the data, so the `has_system` axis was correctly left empty. Non-standard prefixes like `res-` and `r-` strongly suggest a respiratory system, but without a formal mapping, it is safer to omit the system."
 }

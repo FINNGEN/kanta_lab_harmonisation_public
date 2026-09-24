@@ -15,7 +15,7 @@
       "has_component": "Lactate",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
+      "has_system": "Blood arterial",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -24,19 +24,19 @@
       "row_id": 2489,
       "has_component": "Lactate",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2490,
       "has_component": "Sodium",
-      "has_property": "Mass Fraction",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
-      "has_scale_type": "Qn",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -45,7 +45,7 @@
       "has_component": "Sodium",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -54,9 +54,9 @@
       "row_id": 2492,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
-      "has_scale_type": "Qn",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -65,7 +65,7 @@
       "has_component": "Sodium",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -74,9 +74,9 @@
       "row_id": 2494,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
-      "has_scale_type": "Qn",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -84,8 +84,8 @@
       "row_id": 2495,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma arterial",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
       "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
@@ -95,7 +95,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -134,7 +134,7 @@
       "row_id": 2500,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -145,7 +145,7 @@
       "has_component": "Sodium",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Dialysis fluid",
+      "has_system": "Dialysate",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -154,8 +154,8 @@
       "row_id": 2502,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Dialysis fluid",
+      "has_time_aspect": "",
+      "has_system": "Dialysate",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": false
@@ -163,7 +163,7 @@
     {
       "row_id": 2503,
       "has_component": "Sodium",
-      "has_property": "Substance Amount",
+      "has_property": "Substance Rate",
       "has_time_aspect": "24 hours",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -183,7 +183,7 @@
     {
       "row_id": 2505,
       "has_component": "Sodium",
-      "has_property": "Substance Amount",
+      "has_property": "Substance Rate",
       "has_time_aspect": "24 hours",
       "has_system": "Urine",
       "has_scale_type": "Qn",
@@ -222,7 +222,7 @@
     },
     {
       "row_id": 2509,
-      "has_component": "gamma-Glutamyl transferase",
+      "has_component": "Gamma-glutamyltransferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -232,7 +232,7 @@
     },
     {
       "row_id": 2510,
-      "has_component": "gamma-Glutamyl transferase",
+      "has_component": "Gamma-glutamyltransferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -267,7 +267,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -277,7 +277,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -287,7 +287,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -295,7 +295,7 @@
       "has_component": "Antithrombin III",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -304,9 +304,9 @@
       "row_id": 2517,
       "has_component": "Antithrombin III",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "Doc",
       "has_method": "",
       "is_panel": false
     },
@@ -315,7 +315,7 @@
       "has_component": "Antithrombin III",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -325,7 +325,7 @@
       "has_component": "Antithrombin III",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -335,7 +335,7 @@
       "has_component": "Antithrombin III",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -345,7 +345,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -355,7 +355,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -374,9 +374,9 @@
       "row_id": 2524,
       "has_component": "Complement factor B",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -402,7 +402,7 @@
     },
     {
       "row_id": 2527,
-      "has_component": "Coagulation",
+      "has_component": "",
       "has_property": "Time",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -412,9 +412,9 @@
     },
     {
       "row_id": 2528,
-      "has_component": "Coagulation",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -425,7 +425,7 @@
       "has_component": "Coagulation factor V",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -435,7 +435,7 @@
       "has_component": "Coagulation factor V",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -445,7 +445,7 @@
       "has_component": "Coagulation factor X",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -455,14 +455,14 @@
       "has_component": "Coagulation factor X",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2533,
-      "has_component": "gamma-Glutamyl transferase",
+      "has_component": "Gamma-glutamyltransferase",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -472,7 +472,7 @@
     },
     {
       "row_id": 2534,
-      "has_component": "gamma-Glutamyl transferase",
+      "has_component": "Gamma-glutamyltransferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -482,7 +482,7 @@
     },
     {
       "row_id": 2535,
-      "has_component": "gamma-Glutamyl transferase",
+      "has_component": "Gamma-glutamyltransferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -505,7 +505,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -515,7 +515,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -525,7 +525,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -535,7 +535,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -555,7 +555,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -563,20 +563,20 @@
     {
       "row_id": 2543,
       "has_component": "",
-      "has_property": "Substance Concentration",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2544,
       "has_component": "",
-      "has_property": "Substance Concentration",
-      "has_time_aspect": "Point in time (spot)",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -585,7 +585,7 @@
       "has_component": "Lupus anticoagulant",
       "has_property": "Time",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -593,11 +593,11 @@
     {
       "row_id": 2546,
       "has_component": "Lupus anticoagulant",
-      "has_property": "",
+      "has_property": "Time",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
@@ -605,7 +605,7 @@
       "has_component": "Lupus anticoagulant",
       "has_property": "Time",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
@@ -614,8 +614,8 @@
       "row_id": 2548,
       "has_component": "Lupus anticoagulant",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": false
@@ -634,9 +634,9 @@
       "row_id": 2550,
       "has_component": "Mycophenolic acid",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -715,7 +715,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -732,7 +732,7 @@
     },
     {
       "row_id": 2560,
-      "has_component": "Soluble urokinase-type plasminogen activator receptor",
+      "has_component": "Soluble urokinase plasminogen activator receptor",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -742,9 +742,9 @@
     },
     {
       "row_id": 2561,
-      "has_component": "Soluble urokinase-type plasminogen activator receptor",
+      "has_component": "Soluble urokinase plasminogen activator receptor",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -757,7 +757,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -767,7 +767,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -777,7 +777,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -787,7 +787,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -797,7 +797,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -807,7 +807,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -837,7 +837,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -847,7 +847,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -857,7 +857,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -867,7 +867,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -877,14 +877,14 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2575,
       "has_component": "Troponin I",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -904,7 +904,7 @@
       "row_id": 2577,
       "has_component": "Troponin I",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -917,7 +917,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -927,14 +927,14 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2580,
       "has_component": "Troponin I",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -947,7 +947,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -957,7 +957,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -967,102 +967,102 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2584,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2585,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "Doc",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2586,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2587,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2588,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2589,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2590,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2591,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "Coagulation assay",
       "is_panel": false
     },
     {
       "row_id": 2592,
-      "has_component": "Prothrombin",
+      "has_component": "Prothrombin time",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Platelet poor plasma",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2593,
-      "has_component": "Platelet-derived growth factor receptor",
+      "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
       "has_system": "",
@@ -1084,7 +1084,7 @@
       "row_id": 2595,
       "has_component": "Peak expiratory flow",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "^Patient",
       "has_scale_type": "",
       "has_method": "",
@@ -1095,7 +1095,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "^Patient",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1105,7 +1105,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "^Patient",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1124,9 +1124,9 @@
       "row_id": 2599,
       "has_component": "Angiotensin converting enzyme",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Pleural fluid",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1144,9 +1144,9 @@
       "row_id": 2601,
       "has_component": "Adenosine deaminase",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Pleural fluid",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1197,7 +1197,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1207,7 +1207,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1217,7 +1217,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1227,7 +1227,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1237,16 +1237,16 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2611,
       "has_component": "Transferrin receptor.soluble",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -1277,17 +1277,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2615,
       "has_component": "Tumor necrosis factor alpha",
-      "has_property": "",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1297,7 +1297,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -1307,14 +1307,14 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2618,
       "has_component": "Troponin I",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
@@ -1327,14 +1327,14 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2620,
       "has_component": "Troponin T",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "Nar",
       "has_method": "",
@@ -1353,10 +1353,10 @@
     {
       "row_id": 2622,
       "has_component": "Tobramycin",
-      "has_property": "",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -1365,7 +1365,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Semen",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1375,7 +1375,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "",
+      "has_system": "Semen",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -1415,7 +1415,7 @@
       "has_component": "Sodium",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma venous",
+      "has_system": "Plasma",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -1424,12 +1424,12 @@
       "row_id": 2629,
       "has_component": "Sodium",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Plasma venous",
+      "has_time_aspect": "",
+      "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     }
   ],
-  "reflection": "This group was large and diverse, covering basic chemistry, hormones, coagulation, and cardiac markers. The presence of `LongName` for many rows was extremely helpful for confirming components (e.g., `P-TT` as thromboplastin time, `P-FV` as Factor V).\n\n**Gotchas and Ambiguities:**\n*   **Prefix `ap-`**: This isn't a standard prefix. I inferred it as 'Arterial Plasma' based on the combination of `a` (arterial) and `p` (plasma). This seems plausible, especially for `ap-lakt` (Lactate), which can be measured from arterial samples. This leads to the `Plasma arterial` system, which is a valid but less common LOINC system.\n*   **Unclear codes**: `p-fs`, `p-ked.`, `p-kjd.`, `p-tnl` were ambiguous. For `p-fs` (unit 's'), I made a conservative guess of a generic `Coagulation` component. For `p-ked.` and `p-kjd.`, the component was unknowable. For `p-tnl`, the context strongly suggested a typo for `p-tni` (Troponin I).\n*   **Coagulation System**: Coagulation tests (AT3, FV, FX, TT, LA) are typically performed on `Platelet poor plasma`. The prefix `P-` just decodes to `Plasma`. I used the more specific `Platelet poor plasma` system and added `Coagulation assay` as the method, as this is a standard LOINC convention for these tests.\n*   **Panel Identification**: Codes like `p-k+na`, `p-nak`, `pef-pa`, and `sp-pak` were clearly panels, either combining multiple analytes or representing a procedure/serial measurement. The 100% `p_missing` is a strong indicator for these.\n*   **Inconsistent data**: Many rows had `100%` `p_missing` but still had deciles (e.g., 2535 `p-gt`, 2553 `p-na`). This is a data quality issue, but I trusted the deciles to infer the property and scale for those rows.\n\n**Improvements:**\n*   A glossary of non-standard prefixes like `ap-`, `cp-`, and `v-` would be beneficial. `vp-` was inferable as Venous Plasma, but `v-` alone was ambiguous (I chose `Blood venous`).\n*   Clarification on how to handle rows with both high `p_missing` and `deciles` would be useful. My current approach is to trust the deciles over the missingness percentage if they are present and plausible."
+  "reflection": "This group was a very diverse mix of tests, from basic electrolytes (`Na`) to coagulation factors (`AT3`, `FV`, `FX`), hormones (`ACTH`), cardiac markers (`TnI`, `TnT`), and patient measurements (`PEF`).\n\n**Gotchas and Ambiguities:**\n*   **Prefixes:** `aP-` (arterial plasma) and `cP-` (capillary plasma) were inferred but aren't standard OMOP Systems. I mapped `aP-Lakt` to `Blood arterial` (row 2488), as this is a common sample for blood gas analyzers which report lactate, but for `aP-Na` I stayed with the safer `Plasma` (row 2493). This inconsistency reflects the ambiguity. A clearer rule for when to generalize a specific specimen type (arterial plasma) to its parent (plasma) vs. its source (arterial blood) would be helpful.\n*   **Panels vs. Single tests:** Codes like `ap-nak`, `p-k+na`, `p-k-na`, `p-k,na`, `p-k/na` were clearly panels for Sodium and Potassium. It's interesting to see the many different local conventions for denoting a panel (`+`, `-`, `/`, or just concatenating abbreviations).\n*   **Unusual Units:** `P-GT` in `mg/ml` (row 2533) is highly suspect for an enzyme usually measured by activity (`U/l`), especially given the tiny `n=8` compared to the `U/l` version with `n=820k`. I mapped it as `Mass Concentration` but it is almost certainly a data error. `ap-na` with units `%`, `kPa`, `°c` are also clear errors.\n*   **Obscure Abbreviations:** `p-fs` (row 2527), `p-ked.` (2543), and `p-kjd.` (2544) were unidentifiable from the information given. I could only map the property based on the unit `s` for `p-fs`, but not the component.\n*   **Suffixes:** The `pa` suffix on `p-k-pa` (2541) with a meaning of 'long-term' was confusing for a spot potassium test. I ignored it for the time aspect, assuming it's a local convention not reflected in LOINC's `has_time_aspect`."
 }

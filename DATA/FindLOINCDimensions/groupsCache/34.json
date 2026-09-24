@@ -3,7 +3,7 @@
     {
       "row_id": 1833,
       "has_component": "Streptococcus agalactiae",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
@@ -13,7 +13,7 @@
     {
       "row_id": 1834,
       "has_component": "Streptococcus agalactiae",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Vaginal fluid",
       "has_scale_type": "Ord",
@@ -22,7 +22,7 @@
     },
     {
       "row_id": 1835,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -32,7 +32,7 @@
     },
     {
       "row_id": 1836,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -42,7 +42,7 @@
     },
     {
       "row_id": 1837,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -52,7 +52,7 @@
     },
     {
       "row_id": 1838,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -62,7 +62,7 @@
     },
     {
       "row_id": 1839,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -72,7 +72,7 @@
     },
     {
       "row_id": 1840,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 1841,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -92,7 +92,7 @@
     },
     {
       "row_id": 1842,
-      "has_component": "Streptococcus pyogenes",
+      "has_component": "Streptococcus pyogenes antigen",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -103,7 +103,7 @@
     {
       "row_id": 1843,
       "has_component": "Streptococcus pyogenes",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
       "has_scale_type": "Ord",
@@ -112,7 +112,7 @@
     },
     {
       "row_id": 1844,
-      "has_component": "Streptococcus pyogenes",
+      "has_component": "Streptococcus pyogenes antigen",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -122,7 +122,7 @@
     },
     {
       "row_id": 1845,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Throat",
@@ -132,7 +132,7 @@
     },
     {
       "row_id": 1846,
-      "has_component": "Streptococcus beta hemolytic",
+      "has_component": "Streptococcus.beta hemolytic",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
@@ -143,9 +143,9 @@
     {
       "row_id": 1847,
       "has_component": "Streptococcus agalactiae",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Vaginal fluid",
       "has_scale_type": "Ord",
       "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
@@ -153,7 +153,7 @@
     {
       "row_id": 1848,
       "has_component": "Streptococcus agalactiae",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
@@ -163,7 +163,7 @@
     {
       "row_id": 1849,
       "has_component": "Streptococcus pyogenes",
-      "has_property": "Presence or Threshold",
+      "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
       "has_scale_type": "Ord",
@@ -181,5 +181,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This group highlights several common challenges in microbiology test mapping. \n\n1.  **Method Ambiguity**: The term `osoituskoe` ('detection test') in row 1850 is too generic to confidently map to a specific method like `Immunoassay` or `NAA+probe`, forcing the `has_method` axis to be left empty. \n2.  **Missing System Information**: Many rows lack a system prefix (`Ps-`, `Fl-`), making it impossible to determine the `has_system` axis. While row 1845 contained a clue in the test name (`nielusta` -> from the throat), most others did not, demonstrating a common data quality gap. Having the `LongName` for these rows would likely have resolved this.\n3.  **Component Specificity**: The test name `hemolyyttiset streptokokit` (beta-hemolytic streptococci) refers to a group of bacteria. I mapped this to a generic component `Streptococcus beta hemolytic`. While throat cultures often focus on Group A (S. pyogenes), the test name is broader, and mapping to the more specific component would be an over-inference. For cultures (`-Vi`), I opted for `Presence or Identity` as the property and `Nom` as the scale, as the goal is to identify the organism, whereas for antigen/NAA tests, `Presence or Threshold` and `Ord` are more fitting for a positive/negative result."
+  "reflection": "This group covered microbiological tests for Streptococcus. The main challenge was handling truncated or prefix-less test names. For rows with missing prefixes (e.g., 1846, 1848, 1849), I adhered to the instruction to leave `has_system` empty, even though clinical context strongly implies a specific specimen (like throat for S. pyogenes). The presence of `nielusta` (from the throat) in row 1845 was crucial for assigning a system to an otherwise prefix-less code. The `prefix_meaning` column was essential for decoding `Ps-` as Pharyngeal secretion (`Throat`) and `Fl-` as Vaginal discharge (`Vaginal fluid`). Row 1847's `fluori` was a good example of a localism/typo that became clear through context from row 1834. I distinguished between culture (`viljely`), antigen (`antigeeni`), and nucleic acid (`nukleiinihappo`) tests, assigning methods and properties accordingly. For the vague term `osoituskoe` (detection test) in row 1850, I left the method empty as it's ambiguous between antigen and NAAT."
 }

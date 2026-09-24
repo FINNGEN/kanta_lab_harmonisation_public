@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,26 +81,27 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 160 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-12996	alaniiniaminotransferaasi	u/l	17127	0	[12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64]			
-12997	alaniiniaminotransferaasi		1818	100				
-12998	alaniiniaminotransferaasi,plasmasta	u/l	97	0				
-12999	alaniiniaminotransferaasi,plasmasta		5	100				
-13000	aspartaattiaminotransferaasi	u/l	333	0	[19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73]			
-13001	aspartaattiaminotransferaasi		112	100				
-13002	fp-glutamyylitransferaasi	u/l	102	0			Fasting plasma	
-13003	fs-alaniiniaminotransferaasi	u/l	404	0	[11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11]		Fasting serum	
-13004	glutamyylitransferaasi	u/l	1299	0	[14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17]			
-13005	glutamyylitransferaasi		147	100				
-13006	p-alaniiniaminotransferaasi	u/l	56170	0	[12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12]		Plasma	
-13007	p-alaniiniaminotransferaasi		2147	74.66	[38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17]		Plasma	
-13008	p-aspartaattiaminotransferaasi	u/l	7811	0	[14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86]		Plasma	
-13009	p-aspartaattiaminotransferaasi		129	90.7			Plasma	
-13010	p-glutamyylitransferaasi	u/l	5844	0	[14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3]		Plasma	
-13011	p-glutamyylitransferaasi		33	84.85			Plasma	
-13012	s-alaniiniaminotransferaasi	u/l	1811	0	[14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32]		Serum	
-13013	s-alaniiniaminotransferaasi		52	100			Serum	
-13014	s-aspartaattiaminotransferaasi	u/l	554	0	[18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22]		Serum	
-13015	s-aspartaattiaminotransferaasi		8	87.5			Serum	
-13016	s-glutamyylitransferaasi	u/l	861	0	[11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05]		Serum	
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 12996 | alaniiniaminotransferaasi | u/l | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  |
+| 12997 | alaniiniaminotransferaasi |  | 1818 | 100 |  |  |  |  |
+| 12998 | alaniiniaminotransferaasi,plasmasta | u/l | 97 | 0 |  |  |  |  |
+| 12999 | alaniiniaminotransferaasi,plasmasta |  | 5 | 100 |  |  |  |  |
+| 13000 | aspartaattiaminotransferaasi | u/l | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  |
+| 13001 | aspartaattiaminotransferaasi |  | 112 | 100 |  |  |  |  |
+| 13002 | fp-glutamyylitransferaasi | u/l | 102 | 0 |  |  | Fasting plasma |  |
+| 13003 | fs-alaniiniaminotransferaasi | u/l | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  |
+| 13004 | glutamyylitransferaasi | u/l | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  |
+| 13005 | glutamyylitransferaasi |  | 147 | 100 |  |  |  |  |
+| 13006 | p-alaniiniaminotransferaasi | u/l | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  |
+| 13007 | p-alaniiniaminotransferaasi |  | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  |
+| 13008 | p-aspartaattiaminotransferaasi | u/l | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  |
+| 13009 | p-aspartaattiaminotransferaasi |  | 129 | 90.7 |  |  | Plasma |  |
+| 13010 | p-glutamyylitransferaasi | u/l | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  |
+| 13011 | p-glutamyylitransferaasi |  | 33 | 84.85 |  |  | Plasma |  |
+| 13012 | s-alaniiniaminotransferaasi | u/l | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  |
+| 13013 | s-alaniiniaminotransferaasi |  | 52 | 100 |  |  | Serum |  |
+| 13014 | s-aspartaattiaminotransferaasi | u/l | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  |
+| 13015 | s-aspartaattiaminotransferaasi |  | 8 | 87.5 |  |  | Serum |  |
+| 13016 | s-glutamyylitransferaasi | u/l | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  |
 

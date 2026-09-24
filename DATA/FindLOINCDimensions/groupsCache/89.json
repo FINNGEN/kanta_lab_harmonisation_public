@@ -32,11 +32,11 @@
     },
     {
       "row_id": 7017,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
+      "has_component": "Hearing",
+      "has_property": "Finding",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
       "has_method": "",
       "is_panel": false
     },
@@ -52,11 +52,11 @@
     },
     {
       "row_id": 7019,
-      "has_component": "Visual acuity",
+      "has_component": "Vision",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "^Patient",
-      "has_scale_type": "Qn",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
@@ -65,7 +65,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "Urine",
+      "has_system": "",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -75,7 +75,7 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "Urine",
+      "has_system": "",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
@@ -102,10 +102,10 @@
     },
     {
       "row_id": 7024,
-      "has_component": "Rh(D) Ab",
+      "has_component": "Red blood cell antibody",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
+      "has_system": "",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
@@ -232,13 +232,13 @@
     },
     {
       "row_id": 7037,
-      "has_component": "Specific gravity",
-      "has_property": "Specific Gravity",
-      "has_time_aspect": "Point in time (spot)",
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
       "has_system": "Urine",
-      "has_scale_type": "Qn",
-      "has_method": "Test strip",
-      "is_panel": false
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
     },
     {
       "row_id": 7038,
@@ -275,11 +275,11 @@
       "has_component": "",
       "has_property": "",
       "has_time_aspect": "",
-      "has_system": "Serum",
+      "has_system": "",
       "has_scale_type": "",
       "has_method": "",
       "is_panel": true
     }
   ],
-  "reflection": "This group consists almost entirely of screening tests (`seulonta`). The main challenge was distinguishing between codes representing a panel order versus a single test result.\n\n*   **Panel vs. Single Test:** Most codes with `seul` (screening) and `p_missing` near 100% were identified as panels (e.g., prenatal screening `s-tr1seul`, urine chemical screen `u-kemseul`, donor screening `luov.seul.`). This is a critical distinction as panel codes should have most axes empty.\n*   **Data Quality Gotcha:** The most significant finding was in row 7037 (`u-kemseul`). The metadata showed `p_missing=100` (suggesting no numeric results), but also provided `deciles`. The deciles `[...1.01, 1.02...4.17...]` were a perfect match for urine specific gravity readings from a dipstick, assuming a typo in the `p_missing` value. This allowed me to map this row to a specific component (`Specific gravity`) of the `U-Kemseul` panel, while all other `u-kemseul` rows represent the panel itself. This highlights the need to cross-validate all provided data points, as a single column can be misleading.\n*   **Ambiguity:** Some codes like `hoikemseul` and `hörsel` were too abbreviated or misspelled to be interpreted confidently and were left unmapped.\n*   **Context is Key:** The grouping of similar codes was essential. For example, `s-äit-seul`, `s-äit-seula`, and `s-äitseul` were clearly variants of the same maternal screening panel. `oma-u-kemseul` clarified that `oma-kemseu` was also a urine test."
+  "reflection": "This group consisted almost entirely of screening tests, identifiable by the `seul` or `seula` morpheme. The primary challenge was determining whether a screening code represented a single test or a panel. For most, such as maternal screening (`s-äit-seul`, `s-tr1seul`) and urine chemical screening (`u-kemseul`), 'panel' was the obvious interpretation. The `LongName` and prefixes (`S-`, `U-`) were invaluable for confirming these interpretations.\n\nThere were several data quality issues and ambiguities. Row 7037 (`u-kemseul`) presented a contradiction, showing 100% missing values but also providing deciles. The decile values (e.g., `1.02`, `5.87`) strongly suggest that results for individual components of the urine dipstick panel (like specific gravity and pH) are being stored under the panel's code. While I mapped the code itself as a panel, this points to a common data practice that complicates analysis. Codes like `hoikemseul` (7015) were uninterpretable due to their obscurity. Finally, non-laboratory tests like hearing (`hörsel`) and vision (`näköseula`) screening required mapping to the `^Patient` system, which was an inference based on the test name."
 }

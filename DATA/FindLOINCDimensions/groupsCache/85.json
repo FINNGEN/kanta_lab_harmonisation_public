@@ -6,7 +6,7 @@
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
@@ -16,7 +16,7 @@
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
@@ -56,7 +56,7 @@
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Nom",
       "has_method": "Organism specific culture",
       "is_panel": false
     },
@@ -72,10 +72,10 @@
     },
     {
       "row_id": 6687,
-      "has_component": "Cladosporium herbarum Ab.IgE",
+      "has_component": "Cladosporium herbarum",
       "has_property": "Length",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "^Patient",
+      "has_system": "Skin",
       "has_scale_type": "Qn",
       "has_method": "Skin test",
       "is_panel": false
@@ -85,7 +85,7 @@
       "has_component": "Cladosporium herbarum Ab.IgE",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Qn",
       "has_method": "Immunoassay",
       "is_panel": false
@@ -95,7 +95,7 @@
       "has_component": "Cladosporium herbarum Ab.IgE",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Ord",
       "has_method": "Immunoassay",
       "is_panel": false
@@ -105,9 +105,9 @@
       "has_component": "Coronavirus 229E",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Respiratory specimen",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -115,9 +115,9 @@
       "has_component": "Coronavirus HKU1",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Respiratory specimen",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -125,9 +125,9 @@
       "has_component": "Coronavirus NL63",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Respiratory specimen",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -135,9 +135,9 @@
       "has_component": "Coronavirus OC43",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Respiratory specimen",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -146,8 +146,8 @@
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -156,15 +156,15 @@
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Stool",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
       "row_id": 6696,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Stool",
       "has_scale_type": "Nar",
       "has_method": "",
@@ -175,8 +175,8 @@
       "has_component": "Human papillomavirus",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cervix",
-      "has_scale_type": "Ord",
+      "has_system": "Cervical specimen",
+      "has_scale_type": "Nom",
       "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
@@ -185,8 +185,8 @@
       "has_component": "Human papillomavirus",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cervix",
-      "has_scale_type": "Ord",
+      "has_system": "Cervical specimen",
+      "has_scale_type": "Nom",
       "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
@@ -195,9 +195,9 @@
       "has_component": "Norovirus genogroup I",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Stool",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -205,9 +205,9 @@
       "has_component": "Norovirus genogroup II",
       "has_property": "Presence or Identity",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_system": "Stool",
+      "has_scale_type": "Nom",
+      "has_method": "Nucleic acid amplification with probe detection",
       "is_panel": false
     },
     {
@@ -302,7 +302,7 @@
     },
     {
       "row_id": 6710,
-      "has_component": "Valproic acid",
+      "has_component": "Valproate",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -312,7 +312,7 @@
     },
     {
       "row_id": 6711,
-      "has_component": "Valproic acid",
+      "has_component": "Valproate",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -322,23 +322,23 @@
     },
     {
       "row_id": 6712,
-      "has_component": "Gross findings",
+      "has_component": "Gross pathology",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Tissue",
       "has_scale_type": "Nar",
-      "has_method": "",
+      "has_method": "Dissection",
       "is_panel": false
     },
     {
       "row_id": 6713,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Urine",
-      "has_scale_type": "Nar",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 6714,
@@ -355,11 +355,11 @@
       "has_component": "Urate",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Serum or Plasma",
       "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     }
   ],
-  "reflection": "This group was a mix of clearly defined chemical tests and highly ambiguous or unspecific codes. \n\n**Gotchas and Ambiguities:**\n*   Codes like `-aerobivi`, `projekti1`, and `annosvoim` are very difficult to interpret without broader context. The leading hyphen in `-aerobivi` suggests it's part of another test, but what that test is remains unknown. `projekti` is clearly a placeholder.\n*   The `ctgc` suffix (`-omactgc`, `hpvpapctgc`) is a recurring unknown. Documenting such local suffixes would be highly beneficial; it likely indicates a specific molecular test panel (e.g., for Chlamydia/Gonorrhea, which would resolve `-omactgc`).\n*   The test `cladosp.he` (row 6687) with unit `mm` was a great puzzle. Recognizing `Cladosporium` as an allergen led to the hypothesis of a skin prick test, where `mm` measures the wheal diameter. This correctly changes the `has_property` to `Length` and `has_system` to `^Patient`, a completely different interpretation from the serum antibody test in row 6688. The `UNIT` column was indispensable here.\n\n**Data Strengths:**\n*   The presence of both quantitative (with `UNIT` and `deciles`) and qualitative/narrative (high `p_missing`, no `UNIT`) variants for the same analyte (`asetoni`, `uraatti`, `valproaatti`) is a powerful pattern. It confirms the component and system, and allows for confident mapping of both versions.\n*   The `LongName` for `ts-abortti` was crucial. It identified the code not as a simple lab test but as a pathology dissection report, leading to a more appropriate mapping (`Gross findings`, `Finding` property, `Nar` scale).\n*   The `prefix_meaning` column is consistently useful for determining the `has_system` axis."
+  "reflection": "This group contained a wide variety of test types, including standard chemistry, microbiology, allergy testing, and molecular diagnostics. The presence of sibling rows with and without units (e.g., `p-uraatti`) was a very strong and useful pattern for distinguishing quantitative (`Qn`) from qualitative/narrative (`Ord`/`Nar`) versions of the same test. The `cladosp.he` triplet (rows 6687-6689) was a perfect example of a single allergen being tested in three completely different ways (skin prick, quantitative IgE, qualitative IgE), requiring careful attention to units and context to assign the correct property and system. The most ambiguous codes were those with the `-ctgc` suffix (`u-omactgc`, `hpvpapctgc`). While `ctgc` strongly suggests a nucleic acid test, possibly for Chlamydia/Gonorrhea, `u-omactgc` was too opaque and had 100% missing values, making it safer to classify as a panel. For the `corona` and `hpv` tests, I had to infer the system (`Respiratory specimen`, `Cervical specimen`) from common clinical practice, which is a calculated risk but likely correct. Finally, `ts-abortti` was clearly a pathology procedure, best mapped as a narrative finding from a dissection, rather than a standard lab test."
 }

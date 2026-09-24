@@ -6,7 +6,7 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "Immunofluorescence (IF)",
       "is_panel": false
     },
@@ -43,17 +43,17 @@
     {
       "row_id": 2634,
       "has_component": "Erythropoietin",
-      "has_property": "Presence or Threshold",
+      "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Amniotic fluid",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2635,
-      "has_component": "Platelet aggregation.ADP induced",
-      "has_property": "Arbitrary Concentration",
+      "has_component": "Platelet aggregation ADP induced",
+      "has_property": "Arbitrary unit",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
@@ -62,7 +62,7 @@
     },
     {
       "row_id": 2636,
-      "has_component": "Platelet aggregation.ADP induced",
+      "has_component": "Platelet aggregation ADP induced",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -72,8 +72,8 @@
     },
     {
       "row_id": 2637,
-      "has_component": "Platelet aggregation.Arachidonic acid induced",
-      "has_property": "Arbitrary Concentration",
+      "has_component": "Platelet aggregation arachidonic acid induced",
+      "has_property": "Arbitrary unit",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 2638,
-      "has_component": "Platelet aggregation.Arachidonic acid induced",
+      "has_component": "Platelet aggregation arachidonic acid induced",
       "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
@@ -92,8 +92,8 @@
     },
     {
       "row_id": 2639,
-      "has_component": "Vasodilator-stimulated phosphoprotein",
-      "has_property": "Mass Fraction",
+      "has_component": "Vasodilator-stimulated phosphoprotein phosphorylation",
+      "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Qn",
@@ -102,11 +102,11 @@
     },
     {
       "row_id": 2640,
-      "has_component": "Vasodilator-stimulated phosphoprotein",
-      "has_property": "Presence or Threshold",
+      "has_component": "Vasodilator-stimulated phosphoprotein phosphorylation",
+      "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "Flow cytometry (FC)",
       "is_panel": false
     },
@@ -143,10 +143,10 @@
     {
       "row_id": 2644,
       "has_component": "5-Hydroxyindoleacetic acid",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Rate",
       "has_time_aspect": "24 hours",
       "has_system": "Urine",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -163,22 +163,22 @@
     {
       "row_id": 2646,
       "has_component": "Angiotensin converting enzyme",
-      "has_property": "Presence or Threshold",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2647,
-      "has_component": "Apolipoprotein",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2648,
@@ -193,10 +193,10 @@
     {
       "row_id": 2649,
       "has_component": "Fatty acids.free",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -204,41 +204,41 @@
       "row_id": 2650,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2651,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2652,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2653,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2654,
@@ -246,7 +246,7 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "Hemagglutination",
       "is_panel": false
     },
@@ -264,67 +264,67 @@
       "row_id": 2656,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2657,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2658,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2659,
-      "has_component": "Chorionic gonadotropin",
-      "has_property": "Presence or Threshold",
+      "has_component": "Choriogonadotropin",
+      "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2660,
-      "has_component": "HE4 Ag",
+      "has_component": "Human epididymis protein 4",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2661,
-      "has_component": "HE4 Ag",
-      "has_property": "Presence or Threshold",
+      "has_component": "Human epididymis protein 4",
+      "has_property": "Finding",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Nar",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2662,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -334,7 +334,7 @@
       "row_id": 2663,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Plasma",
       "has_scale_type": "",
       "has_method": "",
@@ -373,10 +373,10 @@
     {
       "row_id": 2667,
       "has_component": "5-Hydroxyindoleacetic acid",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -413,61 +413,61 @@
     {
       "row_id": 2671,
       "has_component": "Adenosine deaminase",
-      "has_property": "Presence or Threshold",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2672,
-      "has_component": "Alpha-fetoprotein",
+      "has_component": "Alpha-1-Fetoprotein",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2673,
-      "has_component": "Alpha-fetoprotein",
+      "has_component": "Alpha-1-Fetoprotein",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2674,
-      "has_component": "Alpha-fetoprotein",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
-      "is_panel": false
-    },
-    {
-      "row_id": 2675,
-      "has_component": "Alpha-fetoprotein",
+      "has_component": "Alpha-1-Fetoprotein",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 2675,
+      "has_component": "Alpha-1-Fetoprotein",
+      "has_property": "Arbitrary Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2676,
-      "has_component": "Alpha-fetoprotein",
-      "has_property": "Presence or Threshold",
+      "has_component": "Alpha-1-Fetoprotein",
+      "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -477,17 +477,17 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2678,
       "has_component": "Anti-Mullerian hormone",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
@@ -503,10 +503,10 @@
     {
       "row_id": 2680,
       "has_component": "Amikacin",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -516,29 +516,29 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "Immunofluorescence (IF)",
       "is_panel": false
     },
     {
       "row_id": 2682,
-      "has_component": "Nuclear Ab pattern",
-      "has_property": "Finding",
+      "has_component": "Nuclear Ab",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "Ord",
       "has_method": "Immunofluorescence (IF)",
       "is_panel": false
     },
     {
       "row_id": 2683,
-      "has_component": "Apolipoprotein",
+      "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2684,
@@ -576,7 +576,7 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "",
       "is_panel": false
     },
@@ -593,10 +593,10 @@
     {
       "row_id": 2689,
       "has_component": "Streptolysin O Ab",
-      "has_property": "Presence or Threshold",
+      "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -642,7 +642,7 @@
     },
     {
       "row_id": 2694,
-      "has_component": "Dehydroepiandrosterone",
+      "has_component": "Dehydroepiandrosterone (DHEA)",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -652,17 +652,17 @@
     },
     {
       "row_id": 2695,
-      "has_component": "Dehydroepiandrosterone",
-      "has_property": "Presence or Threshold",
+      "has_component": "Dehydroepiandrosterone (DHEA)",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 2696,
-      "has_component": "Dehydroepiandrosterone sulfate",
+      "has_component": "Dehydroepiandrosterone sulfate (DHEA-S)",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -672,11 +672,11 @@
     },
     {
       "row_id": 2697,
-      "has_component": "Dehydroepiandrosterone sulfate",
-      "has_property": "Presence or Threshold",
+      "has_component": "Dehydroepiandrosterone sulfate (DHEA-S)",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -693,10 +693,10 @@
     {
       "row_id": 2699,
       "has_component": "Estrone",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -713,10 +713,10 @@
     {
       "row_id": 2701,
       "has_component": "Estradiol",
-      "has_property": "Presence or Threshold",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -733,7 +733,7 @@
     {
       "row_id": 2703,
       "has_component": "Extractable nuclear Ab",
-      "has_property": "Arbitrary Concentration",
+      "has_property": "Ratio",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
@@ -813,10 +813,10 @@
     {
       "row_id": 2711,
       "has_component": "Gentamicin",
-      "has_property": "Presence or Threshold",
+      "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -824,81 +824,81 @@
       "row_id": 2712,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2713,
-      "has_component": "Hepatitis B e Ag",
+      "has_component": "Hepatitis B virus e Ag",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2714,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2715,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2716,
-      "has_component": "Chorionic gonadotropin",
-      "has_property": "Presence or Threshold",
+      "has_component": "Choriogonadotropin",
+      "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
-      "has_method": "",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2717,
-      "has_component": "HE4 Ag",
+      "has_component": "Human epididymis protein 4",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2718,
-      "has_component": "HE4 Ag",
+      "has_component": "Human epididymis protein 4",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2719,
       "has_component": "",
       "has_property": "",
-      "has_time_aspect": "Point in time (spot)",
+      "has_time_aspect": "",
       "has_system": "Serum",
       "has_scale_type": "",
       "has_method": "",
-      "is_panel": false
+      "is_panel": true
     },
     {
       "row_id": 2720,
@@ -906,8 +906,8 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
-      "has_method": "",
+      "has_scale_type": "SemiQn",
+      "has_method": "Agglutination",
       "is_panel": false
     },
     {
@@ -917,7 +917,7 @@
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Ord",
-      "has_method": "",
+      "has_method": "Agglutination",
       "is_panel": false
     },
     {
@@ -942,7 +942,7 @@
     },
     {
       "row_id": 2724,
-      "has_component": "Tumor associated trypsin inhibitor",
+      "has_component": "Tumor-associated trypsin inhibitor",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -952,7 +952,7 @@
     },
     {
       "row_id": 2725,
-      "has_component": "Tumor associated trypsin inhibitor",
+      "has_component": "Tumor-associated trypsin inhibitor",
       "has_property": "Mass Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -962,11 +962,11 @@
     },
     {
       "row_id": 2726,
-      "has_component": "Tumor associated trypsin inhibitor",
-      "has_property": "Presence or Threshold",
+      "has_component": "Tumor-associated trypsin inhibitor",
+      "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -976,7 +976,7 @@
       "has_property": "Titer",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "SemiQn",
       "has_method": "Hemagglutination",
       "is_panel": false
     },
@@ -1003,10 +1003,10 @@
     {
       "row_id": 2730,
       "has_component": "Vancomycin",
-      "has_property": "Presence or Threshold",
-      "has_time_aspect": "Point in a time (spot)",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Ord",
+      "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
     },
@@ -1022,34 +1022,34 @@
     },
     {
       "row_id": 2732,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2733,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Qn",
-      "has_method": "",
+      "has_method": "Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 2734,
-      "has_component": "Chorionic gonadotropin",
+      "has_component": "Choriogonadotropin",
       "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Urine",
       "has_scale_type": "Ord",
-      "has_method": "Test strip",
+      "has_method": "Immunoassay",
       "is_panel": false
     }
   ],
-  "reflection": "This was a large and diverse group of tests, covering everything from hormones and tumor markers to drug levels and antibodies. Having the `LongName` was critical for most rows; without it, abbreviations like `AST` (Antistreptolysin, not the enzyme), `APOT`, `HAE`, or `KEM` are ambiguous or unmappable.\n\nKey challenges and decisions:\n*   **Platelet function tests (`b-adp`, `b-aspi`, `b-vasp`):** These are less common than standard chemistry. Recognizing `ADP` and `ASPI` as agonists and `VASP` as a specific test was necessary. Assigning `Platelet aggregation` or `Flow cytometry (FC)` as methods was an expert judgment but important for distinguishing these tests.\n*   **Panel vs. Single Test (`s-enal`, `ts-res`):** Codes with 100% missing numeric values and suggestive names (`-L` for `laadullinen`/qualitative or `-Res` for `tutkimus`/study) are good candidates for panel codes. I marked `S-ENAL` and `Ts-Res` as panels. The `S-ENA` row with deciles was interpreted as a quantitative ENA screen index.\n*   **Implicit Methods:** For classic tests like `ANA` (IF), `EMA` (IF), `TPHA` (Hemagglutination), and qualitative `U-hCG` (Test strip), I added the method because it is almost invariably linked to the test and is key to its identity. This goes slightly beyond the explicit data but greatly improves the mapping quality.\n*   **Conflicting Data:** Row 2723 (`S-SHBG`) had `p_missing` of 100% but also a full set of `deciles`. I trusted the deciles, assuming the `p_missing` was an error, and mapped it as quantitative (`Qn`). This highlights the need for careful cross-checking of all available columns.\n*   **`du-5hiaa` variants:** It was important to distinguish between total amount per collection (`umol`, property `Substance Rate`), explicit rate (`umol/24h`, property `Substance Rate`), and concentration (`umol/l`, property `Substance Concentration`). The `dU-` prefix consistently defined the `Time` as `24 hours`."
+  "reflection": "This group contained many hormone and antibody tests, often with both quantitative/semi-quantitative (`titre`, `nmol/l`, etc.) and qualitative (no unit, `p_missing` >95%) variants, which is a common pattern. Correctly identifying these pairs was a key task. A few codes were highly ambiguous and likely represent panels (`fs-apot`, `s-kem`, `ts-res`); marking these as panels based on the vague name and 100% missing values is a reasonable inference. \n\nA recurring data quality issue was the contradiction between `p_missing=100` and the presence of `deciles` (e.g., rows 2723, 2730). In these cases, I trusted the `deciles` as definitive proof of a quantitative test, assuming the `p_missing` value was calculated incorrectly. The code `-ana` (row 2630) with a leading hyphen is a minor data entry anomaly, but the `LongName` resolved the ambiguity.\n\n`S-ENA` (row 2703) was a tricky case: ENA is typically a panel, but the presence of deciles strongly suggests it was recorded as a quantitative screening test (e.g., a ratio result), so I mapped it as a single test rather than a panel."
 }

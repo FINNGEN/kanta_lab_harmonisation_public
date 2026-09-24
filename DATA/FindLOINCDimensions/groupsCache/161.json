@@ -13,10 +13,10 @@
     {
       "row_id": 13018,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
-      "has_scale_type": "OrdQn",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
@@ -33,7 +33,7 @@
     {
       "row_id": 13020,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Ord",
@@ -53,7 +53,7 @@
     {
       "row_id": 13022,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Ord",
@@ -95,7 +95,7 @@
       "has_component": "Follicle stimulating hormone",
       "has_property": "Arbitrary Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Serum or Plasma",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -105,7 +105,7 @@
       "has_component": "Phosphatidylethanol",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Blood",
+      "has_system": "",
       "has_scale_type": "Qn",
       "has_method": "",
       "is_panel": false
@@ -113,10 +113,10 @@
     {
       "row_id": 13028,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "Blood",
-      "has_scale_type": "OrdQn",
+      "has_system": "",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
@@ -133,7 +133,7 @@
     {
       "row_id": 13030,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Ord",
@@ -153,7 +153,7 @@
     {
       "row_id": 13032,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Ord",
@@ -173,7 +173,7 @@
     {
       "row_id": 13034,
       "has_component": "Phosphatidylethanol",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Blood",
       "has_scale_type": "Ord",
@@ -325,9 +325,9 @@
       "has_component": "Glucose",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
+      "has_system": "Plasma",
       "has_scale_type": "Nar",
-      "has_method": "Test strip",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -355,9 +355,9 @@
       "has_component": "Glucose",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "^Patient",
+      "has_system": "Interstitial fluid",
       "has_scale_type": "Qn",
-      "has_method": "Continuous glucose monitoring",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -365,9 +365,9 @@
       "has_component": "Glucose",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
-      "has_system": "^Patient",
+      "has_system": "Interstitial fluid",
       "has_scale_type": "Nar",
-      "has_method": "Continuous glucose monitoring",
+      "has_method": "",
       "is_panel": false
     },
     {
@@ -383,10 +383,10 @@
     {
       "row_id": 13055,
       "has_component": "C-peptide",
-      "has_property": "Substance Concentration",
+      "has_property": "Presence or Threshold",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "OrdQn",
+      "has_scale_type": "Ord",
       "has_method": "",
       "is_panel": false
     },
@@ -432,7 +432,7 @@
     },
     {
       "row_id": 13060,
-      "has_component": "Fatty acids.monounsaturated",
+      "has_component": "Monounsaturated fatty acids",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -472,9 +472,9 @@
     },
     {
       "row_id": 13064,
-      "has_component": "Fatty acids.polyunsaturated",
+      "has_component": "Polyunsaturated fatty acids",
       "has_property": "Substance Concentration",
-      "has_time_aspect": "Point in in time (spot)",
+      "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
       "has_scale_type": "Qn",
       "has_method": "",
@@ -482,7 +482,7 @@
     },
     {
       "row_id": 13065,
-      "has_component": "Fatty acids.polyunsaturated",
+      "has_component": "Polyunsaturated fatty acids",
       "has_property": "",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -492,7 +492,7 @@
     },
     {
       "row_id": 13066,
-      "has_component": "Fatty acids.saturated",
+      "has_component": "Saturated fatty acids",
       "has_property": "Substance Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -511,5 +511,5 @@
       "is_panel": true
     }
   ],
-  "reflection": "This group highlighted several interesting challenges. The distinction between monounsaturated (`kertatyydyttymätön`) and polyunsaturated (`monityydyttymätön`) fatty acids was a key linguistic point requiring specific Finnish knowledge. The main difficulty was interpreting the `p_missing` and `deciles` columns to assign a `has_scale_type`. I used a tiered logic: `Qn` for records with low `p_missing`, `OrdQn` for those with high `p_missing` but available `deciles` (like rows 13018, 13028), and `Ord` or `Nar` for records with very high or 100% `p_missing` and no deciles. This shows that a single test concept can have multiple result reporting patterns in the wild. Additionally, some codes like `p-omagluk,,potilasmittaringlukoosi` (13049) contained contradictory information (`p-` for plasma vs. `potilasmittari` for capillary blood), forcing an interpretation of which part of the string was more likely to be correct versus a data entry error. Lastly, identifying patient self-monitoring methods (`ihopisto`, `sensori`) and mapping them to appropriate LOINC systems (`Blood capillary`, `^Patient`) and methods (`Test strip`, `Continuous glucose monitoring`) was a key step."
+  "reflection": "This group contained several clear patterns. The pairing of quantitative rows with units and low `p_missing` against qualitative/narrative rows for the same analyte with no unit and high `p_missing` was very helpful in assigning `Qn` vs `Ord`/`Nar` scales. \n\nGotchas and ambiguities included:\n- Method identifiers like `nukleiin` (nucleic acid), `nukle`, and `ag` (antigen) were embedded in the `TEST_NAME` rather than appearing as a standard suffix (like `-Nh` or `-Ag`), requiring parsing of the whole string. \n- Timed/challenge tests (e.g., `2 tuntia aterian jälkeen` for glucose) require knowing the LOINC convention that the time aspect is usually `Point in time (spot)`, while the timing detail is part of the component name (which is beyond this mapping task). \n- The test `p-omagluk,,potilasmittaringlukoosi` (row 13049) had a conflicting prefix `p-` (Plasma) with the name `potilasmittari` (patient meter), which typically uses capillary blood. I mapped based on the explicit prefix but noted the ambiguity.\n- Differentiating Finnish terms like `kertatyydyttymätön` (monounsaturated) and `monityydyttymätön` (polyunsaturated) required specific domain knowledge of chemistry terminology in Finnish.\n- Identifying panels like `ulosteenripulivirukset,nukle` (stool diarrhea viruses) relies on recognizing the plural `virukset` and the general nature of the name."
 }

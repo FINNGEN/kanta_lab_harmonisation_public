@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,35 +81,36 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 129 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-10836	pt-fvsirod		396	100			Patient	
-10837	pt-fvspdo6		226	100			Patient	
-10838	pt-fvspid		451	100			Patient	
-10839	pt-fvspidl		4654	100			Patient	
-10840	pt-fvspido		17640	98.28	[1, 1, 1, 1, 1, 1, 1, 1, 1]		Patient	
-10841	pt-fvspio		1411	100			Patient	
-10842	pt-fvspird	form	18	100	[30622, 77088.15, 106752.5, 134032.5, 166516.57, 190349.45, 230673.1, 250553.8, 270325]		Patient	
-10843	pt-fvspird		7795	100			Patient	
-10844	pt-fvspiro	form	26	100			Patient	
-10845	pt-fvspiro		1641	82.39	[1, 1, 1, 1, 1, 1, 1, 1, 1]		Patient	
-10846	pt-sper-1	u/nke	5	0		Pt-Siemennestetutkimus, suppea	Patient	
-10847	pt-sper-1		714	98.74		Pt-Siemennestetutkimus, suppea	Patient	
-10848	pt-sper-2	form	39	100		Pt-Siemennestetutkimus, laaja	Patient	
-10849	pt-sper-2		480	100		Pt-Siemennestetutkimus, laaja	Patient	
-10850	pt-sper-3		663	100		Pt-Siemennestetutkimus, laaja lisätutkimuksin	Patient	
-10851	pt-sperma		159	100			Patient	
-10852	pt-spird-x		8902	100			Patient	
-10853	pt-spirlau		493	100			Patient	
-10854	pt-spiro-x		775	100			Patient	
-10855	pt-spirob,		746	100			Patient	
-10856	pt-spirob,tk		986	100			Patient	
-10857	pt-spirom		814	100			Patient	
-10858	pt-spiromd		547	100			Patient	
-10859	pt-sppesu		141	100			Patient	
-10860	pt-st-temp		111	100		Pt-Terminen tuntokynnysmittaus	Patient	
-10861	pt-sydperg		117	100			Patient	
-10862	pt-sydperq		923	100			Patient	
-10863	pt-sydrasq		197	100			Patient	
-10864	pt-sydrtuä		139	100			Patient	
-10865	pt-sydänuä		3154	100			Patient	
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 10836 | pt-fvsirod |  | 396 | 100 |  |  | Patient |  |
+| 10837 | pt-fvspdo6 |  | 226 | 100 |  |  | Patient |  |
+| 10838 | pt-fvspid |  | 451 | 100 |  |  | Patient |  |
+| 10839 | pt-fvspidl |  | 4654 | 100 |  |  | Patient |  |
+| 10840 | pt-fvspido |  | 17640 | 98.28 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  | Patient |  |
+| 10841 | pt-fvspio |  | 1411 | 100 |  |  | Patient |  |
+| 10842 | pt-fvspird | form | 18 | 100 | [30622, 77088.15, 106752.5, 134032.5, 166516.57, 190349.45, 230673.1, 250553.8, 270325] |  | Patient |  |
+| 10843 | pt-fvspird |  | 7795 | 100 |  |  | Patient |  |
+| 10844 | pt-fvspiro | form | 26 | 100 |  |  | Patient |  |
+| 10845 | pt-fvspiro |  | 1641 | 82.39 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  | Patient |  |
+| 10846 | pt-sper-1 | u/nke | 5 | 0 |  | Pt-Siemennestetutkimus, suppea | Patient |  |
+| 10847 | pt-sper-1 |  | 714 | 98.74 |  | Pt-Siemennestetutkimus, suppea | Patient |  |
+| 10848 | pt-sper-2 | form | 39 | 100 |  | Pt-Siemennestetutkimus, laaja | Patient |  |
+| 10849 | pt-sper-2 |  | 480 | 100 |  | Pt-Siemennestetutkimus, laaja | Patient |  |
+| 10850 | pt-sper-3 |  | 663 | 100 |  | Pt-Siemennestetutkimus, laaja lisätutkimuksin | Patient |  |
+| 10851 | pt-sperma |  | 159 | 100 |  |  | Patient |  |
+| 10852 | pt-spird-x |  | 8902 | 100 |  |  | Patient |  |
+| 10853 | pt-spirlau |  | 493 | 100 |  |  | Patient |  |
+| 10854 | pt-spiro-x |  | 775 | 100 |  |  | Patient |  |
+| 10855 | pt-spirob, |  | 746 | 100 |  |  | Patient |  |
+| 10856 | pt-spirob,tk |  | 986 | 100 |  |  | Patient |  |
+| 10857 | pt-spirom |  | 814 | 100 |  |  | Patient |  |
+| 10858 | pt-spiromd |  | 547 | 100 |  |  | Patient |  |
+| 10859 | pt-sppesu |  | 141 | 100 |  |  | Patient |  |
+| 10860 | pt-st-temp |  | 111 | 100 |  | Pt-Terminen tuntokynnysmittaus | Patient |  |
+| 10861 | pt-sydperg |  | 117 | 100 |  |  | Patient |  |
+| 10862 | pt-sydperq |  | 923 | 100 |  |  | Patient |  |
+| 10863 | pt-sydrasq |  | 197 | 100 |  |  | Patient |  |
+| 10864 | pt-sydrtuä |  | 139 | 100 |  |  | Patient |  |
+| 10865 | pt-sydänuä |  | 3154 | 100 |  |  | Patient |  |
 

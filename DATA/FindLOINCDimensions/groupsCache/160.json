@@ -13,10 +13,10 @@
     {
       "row_id": 12997,
       "has_component": "Alanine aminotransferase",
-      "has_property": "",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum or Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -33,10 +33,10 @@
     {
       "row_id": 12999,
       "has_component": "Alanine aminotransferase",
-      "has_property": "",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -53,16 +53,16 @@
     {
       "row_id": 13001,
       "has_component": "Aspartate aminotransferase",
-      "has_property": "",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum or Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 13002,
-      "has_component": "Gamma-glutamyl transferase",
+      "has_component": "gamma-Glutamyl transferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -82,7 +82,7 @@
     },
     {
       "row_id": 13004,
-      "has_component": "Gamma-glutamyl transferase",
+      "has_component": "gamma-Glutamyl transferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum or Plasma",
@@ -92,11 +92,11 @@
     },
     {
       "row_id": 13005,
-      "has_component": "Gamma-glutamyl transferase",
-      "has_property": "",
+      "has_component": "gamma-Glutamyl transferase",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum or Plasma",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -136,13 +136,13 @@
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 13010,
-      "has_component": "Gamma-glutamyl transferase",
+      "has_component": "gamma-Glutamyl transferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
@@ -152,11 +152,11 @@
     },
     {
       "row_id": 13011,
-      "has_component": "Gamma-glutamyl transferase",
+      "has_component": "gamma-Glutamyl transferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Plasma",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -173,10 +173,10 @@
     {
       "row_id": 13013,
       "has_component": "Alanine aminotransferase",
-      "has_property": "",
+      "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Nar",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
@@ -196,13 +196,13 @@
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
-      "has_scale_type": "Qn",
+      "has_scale_type": "",
       "has_method": "",
       "is_panel": false
     },
     {
       "row_id": 13016,
-      "has_component": "Gamma-glutamyl transferase",
+      "has_component": "gamma-Glutamyl transferase",
       "has_property": "Catalytic Concentration",
       "has_time_aspect": "Point in time (spot)",
       "has_system": "Serum",
@@ -211,5 +211,5 @@
       "is_panel": false
     }
   ],
-  "reflection": "This was a straightforward group covering three common liver enzymes: Alanine aminotransferase (ALT), Aspartate aminotransferase (AST), and Gamma-glutamyl transferase (GGT). The `U/l` unit made identifying the property as `Catalytic Concentration` easy.\n\n**Gotchas and Ambiguities:**\n*   **Ambiguous System:** For rows without a system prefix (e.g., 12996, 13000), I inferred the system as `Serum or Plasma`. This is a safe and informative choice because the group contains explicit `P-` (Plasma) and `S-` (Serum) variants, indicating the unprefixed version is likely used ambiguously in source systems.\n*   **Data Quality vs. Scale:** The main challenge was interpreting rows like 13007, 13009, and 13015, which lacked a `UNIT` but had `deciles` and high `p_missing`. The presence of deciles is definitive proof that the test is fundamentally quantitative (`Qn`). The high percentage of missing numeric values points to data quality issues (e.g., results recorded as text like 'Cancelled' or 'Hemolyzed') rather than the test being narrative. I correctly classified these as `Qn` and inferred the property from sibling rows.\n*   **Explicit System in Name:** Row 12998 (`alaniiniaminotransferaasi,plasmasta`) provided a useful confirmation, where the system was spelled out in the name itself, reinforcing the value of parsing the full test name.\n\n**Suggestions for Improvement:**\nTo better distinguish true narrative results from data quality problems, it would be invaluable to have a sample of the non-numeric values for rows with high `p_missing`."
+  "reflection": "This group was straightforward, containing three common liver enzymes: Alanine aminotransferase (ALAT), Aspartate aminotransferase (ASAT), and gamma-Glutamyl transferase (GGT). The component names were clear and the unit `U/L` consistently pointed to the `Catalytic Concentration` property.\n\nThe main challenge was handling rows with missing units and high `p_missing`. The `deciles` column was crucial here. Row 13007, for example, had over 74% missing values but also had deciles, which confirmed it was a quantitative (`Qn`) test. In contrast, rows like 13009 and 13011 had high `p_missing` and no deciles, so the scale type was correctly left undetermined.\n\nThis highlights a data quality issue: many records for these standard quantitative tests lack a numeric value. The presence of both explicit prefixes (`P-`, `S-`) and non-prefixed names for the same analyte shows the variability in source data coding; correctly interpreting the non-prefixed versions as `Serum or Plasma` is important. The use of full Finnish names (e.g., `alaniiniaminotransferaasi`) instead of only abbreviations made component identification unambiguous."
 }

@@ -17,7 +17,7 @@ Finnish long names are largely descriptive; note that Finnish compound words run
 
 # The table columns
 
-Each row is one observed local lab test/unit combination:
+The group is given as a markdown table. Each row is one observed local lab test/unit combination:
 
 - `row_id` — a unique integer identifying the row. **Echo it back exactly**; it is the only key used to join your answer to the table.
 - `TEST_NAME` — the local test code, lowercased with spaces removed. Normally the Finnish abbreviation described above, but see the caveats below.
@@ -46,9 +46,17 @@ The value lists below are the **most frequent real values** for each axis, measu
 
 1. `has_component` — the analyte / substance measured. The core identity of the test. Give the English LOINC-style component name, e.g. `C reactive protein`, `Hemoglobin`, `Leukocytes`, `Glucose`, `Creatinine`, `Albumin`, `pH`, `Lymphocytes/leukocytes`, `Hemoglobin A1c/Hemoglobin.total`, `INR`, `Glomerular filtration rate`. Components are free text, so there is no closed list — but match the LOINC spelling where you know it (note `C reactive protein`, no hyphen).
 2. `has_property` — the kind of quantity, independent of the unit. Most common: `Substance Concentration` (molar units: mol/l, mmol/l, umol/l, nmol/l, pmol/l), `Mass Concentration` (mass units: g/l, mg/l, ug/l), `Arbitrary Concentration` (arbitrary/IU units), `Number Concentration` (counts per volume, e.g. E9/l), `Number Fraction` (% of cells), `Presence or Threshold` (qualitative detected/not-detected), `Mass fraction` (%), `Catalytic Concentration` (enzyme activity, e.g. U/l), `Titer`, `Relative time`. Others include `Presence or Identity`, `Ratio`, `Volume`, `Time`, `Temperature`, `Length`, `Susceptibility (microorganisms)`, `Finding`.
-3. `has_time_aspect` — almost always `Point in time (spot)`. Use `24 hours` for a 24-hour collection (the `dU` prefix), and the matching interval (`12 hours`, `1 hour`, `8 hours`, ...) for other timed collections. `Unspecified` exists but prefer leaving the axis empty over using it.
+3. `has_time_aspect` — a **closed list**. Use one of these values EXACTLY as written, or leave the axis empty; never write anything else:
+
+   `Point in time (spot)`, `24 hours`, `Single point in time`, `Unspecified`, `12 hours`, `Study`, `1 hour`, `8 hours`, `10 hours`, `Reporting Period`, `2 hours`, `Procedure duration`, `5 hours`, `1M^mean`, `72 hours`, `Stdy^mean`, `6 hours`, `Stdy^max`, `18 hours`, `4 hours`, `24H^max`, `Daytime`, `Night time`, `8Hmax`, `8Hmin`, `Episode`, `Stdy^min`, `24H^mean`, `48 hours`, `Enctr^frst`, `1 minute`, `1 week`, `10H^max`, `10H^min`, `12H^max`, `12H^mean`, `12H^min`, `1H^max`, `1H^min`, `24H^min`, `3 hours`, `Lifetime`, `XXX^mean`, `10H^mean`, `1H^mean`, `2 minutes`, `8H^mean`, `Episode^frst`, `Procedure`, `10M^mean`, `24H^median`, `Reporting Period^max`, `RptPeriod^mean`, `100ms`, `1Mo^mean`, `1W^max`, `1W^mean`, `3 weeks`, `4 weeks`, `5 minutes`, `6 minutes`, `Daily`, `Enctr^max`, `Stdy^total`, `Surgery`, `XXX^max`, `XXX^min`
+
+   In practice it is `Point in time (spot)` for the overwhelming majority of lab tests, and `24 hours` for a 24-hour collection (the `dU` prefix). Prefer leaving the axis empty over reaching for `Unspecified`.
 4. `has_system` — the specimen / system. Most common: `Serum or Plasma`, `Blood`, `Serum`, `Urine`, `Platelet poor plasma`, `Cerebral spinal fluid`, `Blood venous`, `Blood capillary`, `Blood arterial`, `Red Blood Cells`. Others include `Plasma`, `Stool`, `Tissue`, `White Blood Cells`, `^Patient` (a whole-patient measure such as eGFR or a body measurement). The `prefix_meaning` column maps onto this directly. Note fasting is NOT part of the system in LOINC: `fS` is still `Serum`. Do not use the placeholder values `XXX` or `-`; leave the axis empty instead.
-5. `has_scale_type` — **the one abbreviated axis**, because OMOP stores it abbreviated: `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `Nom` (nominal, e.g. an organism identified), `Nar` (narrative text), `Doc` (document), `OrdQn` (reportable either ordinally or quantitatively). A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
+5. `has_scale_type` — a **closed list**, and **the one abbreviated axis**, because OMOP stores it abbreviated. Use one of these EXACTLY, or leave it empty:
+
+   `Qn` (quantitative), `Ord` (ordinal / qualitative with ordered answers), `Nom` (nominal, e.g. an organism identified), `SemiQn` (semi-quantitative, e.g. graded `1+`/`2+`/`3+`), `OrdQn` (reportable either ordinally or quantitatively), `Doc` (document), `Nar` (narrative text)
+
+   OMOP also holds `Quantitative`, `Ordinal value`, `Nominal value` and `Qualitative` for this axis, but only on SNOMED concepts, never on LOINC lab tests — do not use them. A `-O` suffix means `Ord`, or `SemiQn` when the result is graded. A high `p_missing` with no unit and no deciles suggests `Nar` or `Ord` rather than `Qn`.
 6. `has_method` — the analytical method, **only when the method genuinely changes the clinical interpretation**. Most common: `Coagulation assay`, `Immunoassay`, `Nucleic acid amplification with probe detection`, `Automated count`, `Electrophoresis`, `Calculated`, `Test strip`, `Creatinine-based formula (CKD-EPI)/1.73 sq M`, `Immunoblot`, `Immunofluorescence (IF)`. Others include `Organism specific culture`, `Flow cytometry (FC)`, `Molecular genetics`, `Confirm`. LOINC deliberately omits Method for most chemistry tests, and so should you: **leave it empty unless the code explicitly indicates a method**. Do not invent a method.
 
 And additionally:
@@ -73,122 +81,123 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 37 of the table. Infer the LOINC axes for every row.
 
-row_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning
-1894	-histologinensolublokkisytologisestanäytteestä		214	100				
-1895	-humanpapillomavirusgenotyyppi16		301	100				
-1896	-humanpapillomavirusgenotyyppi18		301	100				
-1897	-humanpapillomavirusgenotyyppimuupatogeeninenhpv		252	100				
-1898	-lisämaksukiireellisenäpyydetyllenäytteelle		584	100				
-1899	-lisätutkimuspyyntöaiemmintutkitullenäytteelle		191	100				
-1900	-lisävastaus2laskutuskuitatullenäytteelle		438	100				
-1901	-lisävastauslaskutuskuitatullenäytteelle		2865	100				
-1902	-moniresistentitgram-negatiivisetsauvat,viljely		122	100				
-1903	-moniresistentitgramnegatiivisetsauvat,viljely		163	100				
-1904	-resistentitgramnegatiivisetsauvat,viljely		314	100				
-1905	-staphylococcusaureus,metilliiniresist.viljely		248	100				
-1906	-staphylococcusaureus,metisilliiniresistentti,v		540	100				
-1907	b-glukoosi,hoitoyksikönvieritesti,kokoveri		687	0.15	[5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28]		Blood	
-1908	b-hematologisenpotilaanperuskaryotyypinmääritys		125	100			Blood	
-1909	b-kreatiniini,hoitoyksikönvieritesti,veri		167	0	[58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170]		Blood	
-1910	bakteerit,virtsasta,partikkelinlaskijalla,osatutk.		212	100				
-1911	bm-pahanlaatuisenveritaudinimmunofenotyypitys		191	100			Bone marrow	
-1912	bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi		162	100			Bone marrow	
-1913	cb-hemoglobiini,vieritestihoitoyksikössä	g/l	101	0	[84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146]		Capillary blood	
-1914	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä	mmol/l	5203	0	[5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77]			
-1915	cp-glukoosi,ihopistosn,vieritestihoitoyksikössä		19	100	[5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96]			
-1916	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella	mg/l	771	0	[2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84]			
-1917	crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella		192	85.42				
-1918	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	438	0	[26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53]		Erythrocyte	
-1919	e-retikulosyyttienkeskimääräinenhemoglobiininmäärä		15	6.67			Erythrocyte	
-1920	emäsylimäärä,laskimoverestä,pikatesti␤	mmol/l	373	0				
-1921	emäsylimäärä,laskimoverestä,pikatesti␤		339	19.47				
-1922	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32]			
-1923	epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1924	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta	iu/ml	24	0				
-1925	epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta		241	100				
-1926	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	202	0	[3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76]			
-1927	erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.		10	100				
-1928	fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi	ug/l	299	0	[0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63]		Fasting plasma	
-1929	happamusaste,kapillaariverestä,pikatesti␤		1262	0.24				
-1930	happamuusaste,laskimoverestä,pikatesti␤		712	0.7				
-1931	happiosapaine,kapillaariverestä,pikatesti␤	kpa	1260	0				
-1932	happoemästasejahappi,laskimoverestä,pikatesti␤		643	100				
-1933	hepatiittic-virus,nh,jatkotutkimus,plasmasta		512	100				
-1934	hiilidioksidiosapaine,laskimoverestä,pikatesti␤	kpa	707	0				
-1935	hiilidioksidiosapaine,laskimoverestä,pikatesti␤		5	100				
-1936	hpv-gt16aptimapanther,apututkimustulostensiirtoon		149	100				
-1937	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon		149	100				
-1938	hpvaptimapanther,apututkimustulostensiirtoon		413	100				
-1939	humanimmunodeficiencyvirus,antigeenijavasta-		192	100				
-1940	humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd		260	100				
-1941	huume-jalääkeainetutkimus,laaja,varmistus		448	100				
-1942	huumeseulonta,kvalitatiivinen,virtsasta␤		140	100				
-1943	kalium,hoitoyksikönvieritesti,veri	mmol/l	166	0	[3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6]			
-1944	kalium,hoitoyksikönvieritesti,veri		290	0	[3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5]			
-1945	kreatiniini,hoitoyksikönvieritesti,veri	mmol/l	163	0	[61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53]			
-1946	kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	874	0	[2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82]			
-1947	kreatiniini,virtsasta(huumeseulonnanyhteydessä)		6	66.67				
-1948	laajahuumeseulonta,varmistustasoinen,virtsasta		944	100				
-1949	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	203	0	[0, 0, 0, 0, 0, 0, 0, 0.1, 0.4]			
-1950	lieriöt,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1951	lisävastauslaskutuskuitatullenäytteelle		214	100				
-1952	luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna		145	100				
-1953	marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte		168	0				
-1954	moniresistentitgramnegatiivisetsauvat,viljely		206	100				
-1955	natrium,hoitoyksikönvieritesti,veri	mmol/l	163	0	[133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142]			
-1956	natrium,hoitoyksikönvieritesti,veri		292	0	[131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142]			
-1957	natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta	ng/l	159	0	[27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2]			
-1958	nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina)	%	665	0	[4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91]			
-1959	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.	mosm/kgh2o	203	0	[331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53]			
-1960	osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk.		9	100				
-1961	p-natriureett.peptidin-termin.propept.vieritl	ng/l	118	0	[140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2]		Plasma	
-1962	p-natriureett.peptidin-termin.propept.vieritl		20	100			Plasma	
-1963	p-natriureettinenpeptidi,b-tyypinn-terminaalin	ng/l	4682	0	[86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85]		Plasma	
-1964	p-natriureettinenpeptidi,b-tyypinn-terminaalin		149	100			Plasma	
-1965	p-natriureettinenpeptidi,b-tyypn-term.propeptidi	ng/l	1366	0	[106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983]		Plasma	
-1966	p-natriureettinenpeptidi,b-tyypn-term.propeptidi		107	100			Plasma	
-1967	parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		120	100				
-1968	pienikudoskoepala,enintään1-3samankokonaisuudennäytettä		234	100				
-1969	pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.		267	100				
-1970	pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus		3577	100			Patient	
-1971	pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot		113	100			Patient	
-1972	pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa		120	100			Patient	
-1973	pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee)		177	100			Patient	
-1974	pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta		474	100			Patient	
-1975	pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona		542	100			Patient	
-1976	pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein		102	100			Patient	
-1977	pu-aerobinenjaanaerobinenbakteerityypitysjaan		147	100			Pus	
-1978	resistentitgramnegatiivisetsauvat,viljely		320	100				
-1979	retikulosyyttienkeskimääräinenhemoglobiininmäärä	pg	525	0	[26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37]			
-1980	retikulosyyttienkeskimääräinenhemoglobiininmäärä		5	100				
-1981	s-humanimmunodeficiencyvirus,antigeenijavast		1221	100			Serum	
-1982	sikiöperäisendna:ntutkimusäidinverinäytteestä		104	100				
-1983	staphylococcusaureus,metisilliiniresistenssiviljely␤		134	100				
-1984	staphylococcusaureus,metisilliiniresistentti(mrsa),viljely		627	100				
-1985	t-auttajasolujenosuus(määritettynäcd3+cd4+soluina)	%	665	0	[12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07]		Thrombocyte	
-1986	t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina)	%	665	0	[14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66]		Thrombocyte	
-1987	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella	ng/l	7	0				
-1988	troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella		97	93.81				
-1989	ts-histologinentutkimus,1-3kudosnäytettä		160	100			Tissue	
-1990	ts-histologinentutkimus,1-3näytettä		945	100			Tissue	
-1991	työpaikanhuumeseulontajavarmistus,4yhdistettä		469	100				
-1992	työpaikanhuumeseulontajavarmistus,7yhdistettä		312	100				
-1993	täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet		1481	100				
-1994	täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤		9742	100				
-1995	u-amfetamiinijametamfetamiini,enantiomeerienerittely		120	100			Urine	
-1996	u-asetoniaineet,kval,vieritestihoitoyksikössä		421	100			Urine	
-1997	u-erytrosyytit,kval,vieritestihoitoyksikössä		413	100			Urine	
-1998	u-glukoosi,kvalvieritestihoitoyksikössä		423	100			Urine	
-1999	u-happamuusaste,vieritestihoitoyksikössä		400	0.25	[5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7]		Urine	
-2000	u-huume-jalääkeainetutkimus,laaja,varmistus		175	100			Urine	
-2001	u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta		121	100			Urine	
-2002	u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms)		144	100			Urine	
-2003	u-kemiallinenseulonta,vieritestihoitoyksikössä		104	100			Urine	
-2004	u-kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	398	0	[2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61]		Urine	
-2005	u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen		421	100			Urine	
-2006	u-leukosyytit,kval,vieritestihoitoyksikössä		429	100			Urine	
-2007	u-nitriitti,kval,vieritestihoitoyksikössä		421	100			Urine	
-2008	u-proteiini,kval,vieritestihoitoyksikössä		425	100			Urine	
-2009	vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä		162	100				
-2010	yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤		484	100				
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+|---|---|---|---|---|---|---|---|---|
+| 1894 | -histologinensolublokkisytologisestanäytteestä |  | 214 | 100 |  |  |  |  |
+| 1895 | -humanpapillomavirusgenotyyppi16 |  | 301 | 100 |  |  |  |  |
+| 1896 | -humanpapillomavirusgenotyyppi18 |  | 301 | 100 |  |  |  |  |
+| 1897 | -humanpapillomavirusgenotyyppimuupatogeeninenhpv |  | 252 | 100 |  |  |  |  |
+| 1898 | -lisämaksukiireellisenäpyydetyllenäytteelle |  | 584 | 100 |  |  |  |  |
+| 1899 | -lisätutkimuspyyntöaiemmintutkitullenäytteelle |  | 191 | 100 |  |  |  |  |
+| 1900 | -lisävastaus2laskutuskuitatullenäytteelle |  | 438 | 100 |  |  |  |  |
+| 1901 | -lisävastauslaskutuskuitatullenäytteelle |  | 2865 | 100 |  |  |  |  |
+| 1902 | -moniresistentitgram-negatiivisetsauvat,viljely |  | 122 | 100 |  |  |  |  |
+| 1903 | -moniresistentitgramnegatiivisetsauvat,viljely |  | 163 | 100 |  |  |  |  |
+| 1904 | -resistentitgramnegatiivisetsauvat,viljely |  | 314 | 100 |  |  |  |  |
+| 1905 | -staphylococcusaureus,metilliiniresist.viljely |  | 248 | 100 |  |  |  |  |
+| 1906 | -staphylococcusaureus,metisilliiniresistentti,v |  | 540 | 100 |  |  |  |  |
+| 1907 | b-glukoosi,hoitoyksikönvieritesti,kokoveri |  | 687 | 0.15 | [5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28] |  | Blood |  |
+| 1908 | b-hematologisenpotilaanperuskaryotyypinmääritys |  | 125 | 100 |  |  | Blood |  |
+| 1909 | b-kreatiniini,hoitoyksikönvieritesti,veri |  | 167 | 0 | [58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170] |  | Blood |  |
+| 1910 | bakteerit,virtsasta,partikkelinlaskijalla,osatutk. |  | 212 | 100 |  |  |  |  |
+| 1911 | bm-pahanlaatuisenveritaudinimmunofenotyypitys |  | 191 | 100 |  |  | Bone marrow |  |
+| 1912 | bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi |  | 162 | 100 |  |  | Bone marrow |  |
+| 1913 | cb-hemoglobiini,vieritestihoitoyksikössä | g/l | 101 | 0 | [84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146] |  | Capillary blood |  |
+| 1914 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä | mmol/l | 5203 | 0 | [5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77] |  |  |  |
+| 1915 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä |  | 19 | 100 | [5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96] |  |  |  |
+| 1916 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella | mg/l | 771 | 0 | [2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84] |  |  |  |
+| 1917 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella |  | 192 | 85.42 |  |  |  |  |
+| 1918 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 438 | 0 | [26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53] |  | Erythrocyte |  |
+| 1919 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 15 | 6.67 |  |  | Erythrocyte |  |
+| 1920 | emäsylimäärä,laskimoverestä,pikatesti␤ | mmol/l | 373 | 0 |  |  |  |  |
+| 1921 | emäsylimäärä,laskimoverestä,pikatesti␤ |  | 339 | 19.47 |  |  |  |  |
+| 1922 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32] |  |  |  |
+| 1923 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  |
+| 1924 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta | iu/ml | 24 | 0 |  |  |  |  |
+| 1925 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta |  | 241 | 100 |  |  |  |  |
+| 1926 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 202 | 0 | [3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76] |  |  |  |
+| 1927 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. |  | 10 | 100 |  |  |  |  |
+| 1928 | fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi | ug/l | 299 | 0 | [0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63] |  | Fasting plasma |  |
+| 1929 | happamusaste,kapillaariverestä,pikatesti␤ |  | 1262 | 0.24 |  |  |  |  |
+| 1930 | happamuusaste,laskimoverestä,pikatesti␤ |  | 712 | 0.7 |  |  |  |  |
+| 1931 | happiosapaine,kapillaariverestä,pikatesti␤ | kpa | 1260 | 0 |  |  |  |  |
+| 1932 | happoemästasejahappi,laskimoverestä,pikatesti␤ |  | 643 | 100 |  |  |  |  |
+| 1933 | hepatiittic-virus,nh,jatkotutkimus,plasmasta |  | 512 | 100 |  |  |  |  |
+| 1934 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ | kpa | 707 | 0 |  |  |  |  |
+| 1935 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ |  | 5 | 100 |  |  |  |  |
+| 1936 | hpv-gt16aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  |
+| 1937 | hpv-gt18-45aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  |
+| 1938 | hpvaptimapanther,apututkimustulostensiirtoon |  | 413 | 100 |  |  |  |  |
+| 1939 | humanimmunodeficiencyvirus,antigeenijavasta- |  | 192 | 100 |  |  |  |  |
+| 1940 | humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd |  | 260 | 100 |  |  |  |  |
+| 1941 | huume-jalääkeainetutkimus,laaja,varmistus |  | 448 | 100 |  |  |  |  |
+| 1942 | huumeseulonta,kvalitatiivinen,virtsasta␤ |  | 140 | 100 |  |  |  |  |
+| 1943 | kalium,hoitoyksikönvieritesti,veri | mmol/l | 166 | 0 | [3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6] |  |  |  |
+| 1944 | kalium,hoitoyksikönvieritesti,veri |  | 290 | 0 | [3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5] |  |  |  |
+| 1945 | kreatiniini,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53] |  |  |  |
+| 1946 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 874 | 0 | [2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82] |  |  |  |
+| 1947 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) |  | 6 | 66.67 |  |  |  |  |
+| 1948 | laajahuumeseulonta,varmistustasoinen,virtsasta |  | 944 | 100 |  |  |  |  |
+| 1949 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0, 0, 0, 0, 0, 0, 0, 0.1, 0.4] |  |  |  |
+| 1950 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  |
+| 1951 | lisävastauslaskutuskuitatullenäytteelle |  | 214 | 100 |  |  |  |  |
+| 1952 | luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna |  | 145 | 100 |  |  |  |  |
+| 1953 | marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte |  | 168 | 0 |  |  |  |  |
+| 1954 | moniresistentitgramnegatiivisetsauvat,viljely |  | 206 | 100 |  |  |  |  |
+| 1955 | natrium,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142] |  |  |  |
+| 1956 | natrium,hoitoyksikönvieritesti,veri |  | 292 | 0 | [131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142] |  |  |  |
+| 1957 | natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta | ng/l | 159 | 0 | [27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2] |  |  |  |
+| 1958 | nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina) | % | 665 | 0 | [4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91] |  |  |  |
+| 1959 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. | mosm/kgh2o | 203 | 0 | [331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53] |  |  |  |
+| 1960 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  |
+| 1961 | p-natriureett.peptidin-termin.propept.vieritl | ng/l | 118 | 0 | [140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2] |  | Plasma |  |
+| 1962 | p-natriureett.peptidin-termin.propept.vieritl |  | 20 | 100 |  |  | Plasma |  |
+| 1963 | p-natriureettinenpeptidi,b-tyypinn-terminaalin | ng/l | 4682 | 0 | [86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85] |  | Plasma |  |
+| 1964 | p-natriureettinenpeptidi,b-tyypinn-terminaalin |  | 149 | 100 |  |  | Plasma |  |
+| 1965 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi | ng/l | 1366 | 0 | [106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983] |  | Plasma |  |
+| 1966 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi |  | 107 | 100 |  |  | Plasma |  |
+| 1967 | parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat) |  | 120 | 100 |  |  |  |  |
+| 1968 | pienikudoskoepala,enintään1-3samankokonaisuudennäytettä |  | 234 | 100 |  |  |  |  |
+| 1969 | pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit. |  | 267 | 100 |  |  |  |  |
+| 1970 | pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus |  | 3577 | 100 |  |  | Patient |  |
+| 1971 | pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot |  | 113 | 100 |  |  | Patient |  |
+| 1972 | pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa |  | 120 | 100 |  |  | Patient |  |
+| 1973 | pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee) |  | 177 | 100 |  |  | Patient |  |
+| 1974 | pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta |  | 474 | 100 |  |  | Patient |  |
+| 1975 | pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona |  | 542 | 100 |  |  | Patient |  |
+| 1976 | pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein |  | 102 | 100 |  |  | Patient |  |
+| 1977 | pu-aerobinenjaanaerobinenbakteerityypitysjaan |  | 147 | 100 |  |  | Pus |  |
+| 1978 | resistentitgramnegatiivisetsauvat,viljely |  | 320 | 100 |  |  |  |  |
+| 1979 | retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 525 | 0 | [26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37] |  |  |  |
+| 1980 | retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 5 | 100 |  |  |  |  |
+| 1981 | s-humanimmunodeficiencyvirus,antigeenijavast |  | 1221 | 100 |  |  | Serum |  |
+| 1982 | sikiöperäisendna:ntutkimusäidinverinäytteestä |  | 104 | 100 |  |  |  |  |
+| 1983 | staphylococcusaureus,metisilliiniresistenssiviljely␤ |  | 134 | 100 |  |  |  |  |
+| 1984 | staphylococcusaureus,metisilliiniresistentti(mrsa),viljely |  | 627 | 100 |  |  |  |  |
+| 1985 | t-auttajasolujenosuus(määritettynäcd3+cd4+soluina) | % | 665 | 0 | [12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07] |  | Thrombocyte |  |
+| 1986 | t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina) | % | 665 | 0 | [14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66] |  | Thrombocyte |  |
+| 1987 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella | ng/l | 7 | 0 |  |  |  |  |
+| 1988 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella |  | 97 | 93.81 |  |  |  |  |
+| 1989 | ts-histologinentutkimus,1-3kudosnäytettä |  | 160 | 100 |  |  | Tissue |  |
+| 1990 | ts-histologinentutkimus,1-3näytettä |  | 945 | 100 |  |  | Tissue |  |
+| 1991 | työpaikanhuumeseulontajavarmistus,4yhdistettä |  | 469 | 100 |  |  |  |  |
+| 1992 | työpaikanhuumeseulontajavarmistus,7yhdistettä |  | 312 | 100 |  |  |  |  |
+| 1993 | täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet |  | 1481 | 100 |  |  |  |  |
+| 1994 | täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤ |  | 9742 | 100 |  |  |  |  |
+| 1995 | u-amfetamiinijametamfetamiini,enantiomeerienerittely |  | 120 | 100 |  |  | Urine |  |
+| 1996 | u-asetoniaineet,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  |
+| 1997 | u-erytrosyytit,kval,vieritestihoitoyksikössä |  | 413 | 100 |  |  | Urine |  |
+| 1998 | u-glukoosi,kvalvieritestihoitoyksikössä |  | 423 | 100 |  |  | Urine |  |
+| 1999 | u-happamuusaste,vieritestihoitoyksikössä |  | 400 | 0.25 | [5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7] |  | Urine |  |
+| 2000 | u-huume-jalääkeainetutkimus,laaja,varmistus |  | 175 | 100 |  |  | Urine |  |
+| 2001 | u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta |  | 121 | 100 |  |  | Urine |  |
+| 2002 | u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms) |  | 144 | 100 |  |  | Urine |  |
+| 2003 | u-kemiallinenseulonta,vieritestihoitoyksikössä |  | 104 | 100 |  |  | Urine |  |
+| 2004 | u-kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 398 | 0 | [2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61] |  | Urine |  |
+| 2005 | u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen |  | 421 | 100 |  |  | Urine |  |
+| 2006 | u-leukosyytit,kval,vieritestihoitoyksikössä |  | 429 | 100 |  |  | Urine |  |
+| 2007 | u-nitriitti,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  |
+| 2008 | u-proteiini,kval,vieritestihoitoyksikössä |  | 425 | 100 |  |  | Urine |  |
+| 2009 | vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä |  | 162 | 100 |  |  |  |  |
+| 2010 | yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤ |  | 484 | 100 |  |  |  |  |
 
