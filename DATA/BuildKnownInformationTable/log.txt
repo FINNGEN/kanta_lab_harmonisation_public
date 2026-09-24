@@ -1,0 +1,52 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  labSummaryFile = DATA/getSummaryData/labSummary.tsv
+  labCodesFile = DATA/SourceLabelingData/lab_codes_kodistopalvely.tsv
+  prefixesFile = DATA/SourceLabelingData/code_prefixes.tsv
+  suffixesFile = DATA/SourceLabelingData/code_suffixes.tsv
+  outDir = DATA/BuildKnownInformationTable
+Read 29341 rows from DATA/getSummaryData/labSummary.tsv
+Warning message:
+One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat <- vroom(...)
+  problems(dat) 
+Read 4469 rows from DATA/SourceLabelingData/lab_codes_kodistopalvely.tsv
+Read 91 rows from DATA/SourceLabelingData/code_prefixes.tsv
+Read 79 rows from DATA/SourceLabelingData/code_suffixes.tsv
+Built 4446 distinct normalized abbreviations with a LongName
+4220 / 29341 rows matched a LongName
+18353 / 29341 rows matched a prefix_meaning
+1399 / 29341 rows matched a suffix_meaning
+Wrote 29341 rows to DATA/BuildKnownInformationTable/knownInformation.tsv
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  knownInformationFile = DATA/BuildKnownInformationTable/knownInformation.tsv
+  outDir = DATA/BuildKnownInformationTable
+Read 29341 rows from DATA/BuildKnownInformationTable/knownInformation.tsv
+Computed overview and prefix/suffix usage stats
+Wrote stats report to DATA/BuildKnownInformationTable/knownInformationStats.md
+Wrote DATA/BuildKnownInformationTable/knownInformation.tsv
+Wrote DATA/BuildKnownInformationTable/knownInformationStats.md
