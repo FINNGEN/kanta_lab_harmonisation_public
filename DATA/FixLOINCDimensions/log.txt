@@ -1,0 +1,47 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  inputFile = DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+  frequencyFile = DATA/SourceLabelingData/loinc_axes_frequency.tsv
+  outDir = DATA/FixLOINCDimensions
+  nGroups = 2
+  seed = 1
+  model = gemini-2.5-pro
+  workers = 6 (LLM), 4 (Hecate)
+  scoreThreshold = 0.75, candidateLimit = 5
+Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Read 1223 axis-frequency rows from DATA/SourceLabelingData/loinc_axes_frequency.tsv
+Processing 2 of 30 groups (random sample, seed 1)
+Distinct (axis, value) pairs needing candidates: 12
+Hecate lookups to run: 0 (12 already cached)
+Kept 147 candidates at score >= 0.75
+Groups to send to the LLM: 2 (0 already cached)
+Fixing 2 groups across 6 workers
+Initiating cluster with 6 threads
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+  |                                                                              |                                                                      |   0%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================================================| 100%
+Fixed 2 groups this run (LLM cost USD 0.1544)
+Collected 57 per-row answers from 2 groups
+  has_component: 8 / 57 values changed
+  has_property: 17 / 57 values changed
+  has_method: 0 / 57 values changed
+  has_system: 0 / 57 values changed
+Wrote 57 rows to DATA/FixLOINCDimensions/codesWithFixedLoincDimensions.tsv
+Wrote 2 group reflections to DATA/FixLOINCDimensions/reflections.md
+Wrote DATA/FixLOINCDimensions/codesWithFixedLoincDimensions.tsv
+Wrote DATA/FixLOINCDimensions/reflections.md

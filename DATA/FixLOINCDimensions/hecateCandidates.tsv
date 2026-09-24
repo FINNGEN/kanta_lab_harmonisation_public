@@ -1,0 +1,256 @@
+axe_name	value	concept_name	concept_id	score
+component	Transferrin saturation	Transferrin saturation	1018580	1
+component	Transferrin saturation	Transferrin	40779258	0.72942352294921875
+component	Transferrin saturation	Transferrin/Protein.total	1992114	0.714813232421875
+component	Transferrin saturation	Transferrin receptor.soluble/log Ferritin index	37027036	0.7145538330078125
+component	Transferrin saturation	Iron saturation	1026198	0.696563720703125
+component	Soluble transferrin receptor	Transferrin receptor.soluble	37040130	0.8588409423828125
+component	Soluble transferrin receptor	Transferrin receptor.soluble/log Ferritin index	37027036	0.761322021484375
+component	Soluble transferrin receptor	Transferrin	40779258	0.7240753173828125
+component	Soluble transferrin receptor	Interleukin 2 Receptor Soluble	37028189	0.68657684326171875
+component	Soluble transferrin receptor	Transferrin saturation	1018580	0.68154144287109375
+component	Glucose	Glucose	3968605	1
+component	Glucose	Glucose.IV	37077584	0.68723297119140625
+component	Glucose	Glucose^baseline	1021838	0.66880035400390625
+component	Glucose	Glucose^overnight	1023174	0.66058349609375
+component	Glucose	Glucose and Protein	1033756	0.64330291748046875
+property	Mass Fraction	Mass fraction	1029654	1
+property	Mass Fraction	Mass Ratio	1029667	0.696380615234375
+property	Mass Fraction	Substance Fraction	1029731	0.69618988037109375
+property	Mass Fraction	Decimal mass fraction	1011698	0.672637939453125
+property	Mass Fraction	Mass fraction difference	1012215	0.6633758544921875
+property	Mass Concentration	Mass Concentration	1029650	1
+property	Mass Concentration	Mass concentration difference	1005911	0.839263916015625
+property	Mass Concentration	Mass Concentration Squared	1014697	0.776275634765625
+property	Mass Concentration	Mass or Substance Concentration	1026265	0.7735137939453125
+property	Mass Concentration	Mass concentration percent difference	1010857	0.7399749755859375
+property	Substance Concentration	Substance Concentration	1029726	1
+property	Substance Concentration	Substance Concentration Squared	1014696	0.84484100341796875
+property	Substance Concentration	Substance concentration difference	1029306	0.8410186767578125
+property	Substance Concentration	Mass or Substance Concentration	1026265	0.8373184204101564
+property	Substance Concentration	Mass Concentration	1029650	0.771636962890625
+property	Finding	Finding	1029636	1
+method	Test strip	Test strip	1029357	1
+method	Test strip	Test strip manual	1029360	0.84304046630859375
+method	Test strip	Test strip automated	1029363	0.83556365966796875
+method	Test strip	Test strip detection limit <= 20 mg/L	1025985	0.6697845458984375
+system	Plasma	Plasma	1032286	1
+system	Plasma	Plasma or Blood	1012720	0.75205230712890625
+system	Plasma	Plasma and Urine	1032305	0.67740631103515625
+system	Plasma	Plasma or RBC	1032314	0.67412567138671875
+system	Plasma	Plasma venous	1019914	0.6666412353515625
+system	Serum	Serum	1033211	1
+system	Serum	Serum or Blood	1033297	0.72429656982421875
+system	Serum	Serum and Blood	1033219	0.70621490478515625
+system	Serum	Serum or Plasma	1033306	0.70418548583984375
+system	Serum	Serum^Control	1027451	0.68277740478515625
+system	Blood capillary	Blood capillary	1029929	1
+system	Blood capillary	Blood capillary^Fetus	1025902	0.76305389404296875
+system	Blood capillary	Capillary bed	1030020	0.7230377197265625
+system	Blood capillary	Capillary bed+BldC	1033501	0.6531105041503906
+system	Blood capillary	Pulmonary capillaries	1013030	0.6232147216796875
+system	^Patient	^Patient	1025532	1
+system	^Patient	*^patient	1019946	0.74597930908203125
+system	^Patient	^Parent	1019605	0.6839141845703125
+system	^Patient	^Person	1260802	0.6828155517578125
+system	^Patient	^Pediatric	1471256	0.66065216064453125
+component	Amylase	Amylase	40775876	1
+component	Amylase	Amylase.P1	37041169	0.8164482116699219
+component	Amylase	Amylase.P2	37052188	0.81410980224609375
+component	Amylase	Amylase.P3	37022040	0.809356689453125
+component	Amylase	Macroamylase	40772602	0.772430419921875
+component	Alpha 1 globulin	Alpha 1 globulin	40785895	1
+component	Alpha 1 globulin	Alpha 2 globulin	40775907	0.90801239013671875
+component	Alpha 1 globulin	Alpha globulin	40782944	0.86933135986328125
+component	Alpha 1 globulin	Alpha 1 globulin/Protein.total	37071409	0.837371826171875
+component	Alpha 1 globulin	Beta 1 globulin	40782934	0.7997283935546875
+component	Alpha 2 globulin	Alpha 2 globulin	40775907	1
+component	Alpha 2 globulin	Alpha 1 globulin	40785895	0.91316986083984375
+component	Alpha 2 globulin	Alpha globulin	40782944	0.85829925537109375
+component	Alpha 2 globulin	Alpha 2 globulin/Protein.total	37059628	0.83123779296875
+component	Alpha 2 globulin	Beta 2 globulin	40796110	0.79384613037109375
+component	Aldosterone	Aldosterone	40792361	1
+component	Aldosterone	Aldosterone free	37076677	0.7779426574707031
+component	Aldosterone	Aldosterone receptors	37071131	0.7709503173828125
+component	Aldosterone	Aldosterone^upright	1023083	0.7607612609863281
+component	Aldosterone	Aldosterone/Renin	37031569	0.75841522216796875
+component	Alkaline phosphatase	Alkaline phosphatase	40789190	1
+component	Alkaline phosphatase	Alkaline phosphatase isoenzyme	37025608	0.8636131286621094
+component	Alkaline phosphatase	Alkaline phosphatase.bone	37068943	0.8288688659667969
+component	Alkaline phosphatase	Alkaline phosphatase isoenzymes	40792806	0.8166847229003906
+component	Alkaline phosphatase	Alkaline phosphatase.liver	40795790	0.8151588439941406
+component	Amylase.pancreatic	Amylase.pancreatic	40789191	1
+component	Amylase.pancreatic	Amylase.pancreatic/Creatinine	37030705	0.8048667907714844
+component	Amylase.pancreatic	Amylase.salivary	40779217	0.8040885925292969
+component	Amylase.pancreatic	Amylase.pancreatic/Amylase.total	37057090	0.7781257629394531
+component	Amylase.pancreatic	Amylase	40775876	0.75579833984375
+component	Adalimumab	Adalimumab	36205394	1
+component	Adalimumab	Adalimumab Ab	37071018	0.8578758239746094
+component	Adalimumab	Adalimumab Ab.Neut	1025835	0.7767066955566406
+component	Adalimumab	Adalimumab^trough	1619307	0.7617835998535156
+component	Adalimumab	Adalimumab and Adalimumab Ab panel	1992396	0.71607208251953125
+component	Adalimumab Ab	Adalimumab Ab	37071018	1
+component	Adalimumab Ab	Adalimumab	36205394	0.8578758239746094
+component	Adalimumab Ab	Adalimumab Ab.Neut	1025835	0.8358268737792969
+component	Adalimumab Ab	Golimumab Ab	1016734	0.78618621826171875
+component	Adalimumab Ab	Ustekinumab Ab	1016733	0.777557373046875
+component	Alkaline phosphatase.bone/Alkaline phosphatase	Alkaline phosphatase.bone	37068943	0.9092750549316406
+component	Alkaline phosphatase.bone/Alkaline phosphatase	Alkaline phosphatase.bone/Alkaline phosphatase.total	37065628	0.89608001708984375
+component	Alkaline phosphatase.bone/Alkaline phosphatase	Alkaline phosphatase.liver+bone	37047159	0.8075981140136719
+component	Alkaline phosphatase.bone/Alkaline phosphatase	Alkaline phosphatase.bile/Alkaline phosphatase.total	37048507	0.79828643798828125
+component	Alkaline phosphatase.bone/Alkaline phosphatase	Alkaline phosphatase.bile	37065030	0.7892875671386719
+component	Alkaline phosphatase.bone	Alkaline phosphatase.bone	37068943	1
+component	Alkaline phosphatase.bone	Alkaline phosphatase.liver+bone	37047159	0.8694190979003906
+component	Alkaline phosphatase.bone	Alkaline phosphatase.bone/Alkaline phosphatase.total	37065628	0.841766357421875
+component	Alkaline phosphatase.bone	Alkaline phosphatase.bile	37065030	0.8307456970214844
+component	Alkaline phosphatase.bone	Alkaline phosphatase	40789190	0.8288688659667969
+component	Alkaline phosphatase.other	Alkaline phosphatase.other fractions	37060816	0.8607063293457031
+component	Alkaline phosphatase.other	Alkaline phosphatase	40789190	0.8170356750488281
+component	Alkaline phosphatase.other	Alkaline phosphatase.bone	37068943	0.8074607849121094
+component	Alkaline phosphatase.other	Alkaline phosphatase.renal	37048912	0.7848472595214844
+component	Alkaline phosphatase.other	Alkaline phosphatase.bile	37065030	0.7846412658691406
+component	Alkaline phosphatase isoenzymes	Alkaline phosphatase isoenzymes	40792806	1
+component	Alkaline phosphatase isoenzymes	Alkaline phosphatase isoenzyme	37025608	0.9376258850097656
+component	Alkaline phosphatase isoenzymes	Alkaline phosphatase isoenz panel	37070862	0.8522605895996094
+component	Alkaline phosphatase isoenzymes	Alkaline phosphatase	40789190	0.8166847229003906
+component	Alkaline phosphatase isoenzymes	Alkaline phosphatase.other fractions	37060816	0.7167549133300781
+component	Alkaline phosphatase.intestinal	Alkaline phosphatase.intestinal	40795789	1
+component	Alkaline phosphatase.intestinal	Alkaline phosphatase.intestinal 3	37064935	0.92403411865234375
+component	Alkaline phosphatase.intestinal	Alkaline phosphatase.intestinal 2	37068186	0.9238548278808594
+component	Alkaline phosphatase.intestinal	Alkaline phosphatase.intestinal+renal	37039562	0.87554931640625
+component	Alkaline phosphatase.intestinal	Alkaline phosphatase.intestinal/Alkaline phosphatase.total	37024559	0.8579444885253906
+component	Albumin	Albumin	40791227	1
+component	Albumin	Albumin in serum	1034467	0.7793426513671875
+component	Albumin	Albumin ug	1034932	0.75191497802734375
+component	Albumin	Albumin^supine	1023081	0.73656463623046875
+component	Albumin	Albumin concentration	37078730	0.7349700927734375
+component	Aldolase	Aldolase	40775848	1
+component	Aldolase	Transaldolase	44817587	0.75461578369140625
+component	Aldolase	Enolase	40789170	0.6649436950683594
+component	Aldolase	Lactate dehydrogenase	40775849	0.6442718505859375
+component	Aldolase	Phosphorylase	21497365	0.6229248046875
+component	Allergen specific IgE Ab	IgE Ab	37069957	0.852691650390625
+component	Allergen specific IgE Ab	Total IgE	37050584	0.7565155029296875
+component	Allergen specific IgE Ab	XXX allergen basophil bound Ab	37035645	0.7385063171386719
+component	Allergen specific IgE Ab	IgE Ag	37042566	0.7381591796875
+component	Allergen specific IgE Ab	Butterfly IgE	37078585	0.72286224365234375
+component	Amylase isoenzymes	Amylase isoenzymes	40789475	1
+component	Amylase isoenzymes	Amylase isoenzyme 3 panel	37043056	0.8275184631347656
+component	Amylase isoenzymes	Amylase isoenzyme 7 panel	37036257	0.797332763671875
+component	Amylase isoenzymes	Lactate dehydrogenase isoenzymes	40792807	0.72505950927734375
+component	Amylase isoenzymes	Amylase	40775876	0.7174491882324219
+component	Amylase.salivary	Amylase.salivary	40779217	1
+component	Amylase.salivary	Amylase.pancreatic	40789191	0.8040885925292969
+component	Amylase.salivary	Amylase.salivary/Amylase.total	37031121	0.79686737060546875
+component	Amylase.salivary	Amylase	40775876	0.767669677734375
+component	Amylase.salivary	Amylase.P1	37041169	0.7504920959472656
+component	Desmethylclozapine	Desmethylclomipramine	1018472	0.7552680969238281
+component	Desmethylclozapine	Norclozapine	40779415	0.7257843017578125
+component	Desmethylclozapine	Desmethylcyclobenzaprine	1619481	0.7054557800292969
+component	Desmethylclozapine	clozapine N-oxide	37061812	0.69057464599609375
+component	Desmethylclozapine	Desmethylzopiclone	1093265	0.68976593017578125
+component	Gliadin Ab	Gliadin Ab	40796242	1
+component	Gliadin Ab	Gliadin peptide Ab	40774644	0.9098968505859375
+component	Gliadin Ab	Gliadin IgG	40773089	0.8861083984375
+component	Gliadin Ab	Gliadin peptide Ab IgA+IgG	3968602	0.87572479248046875
+component	Gliadin Ab	Gliadin IgA	40792936	0.8754730224609375
+component	HLA donor specific Ab	HLA-A and B and C (class I) IgG donor specific	1620264	0.809112548828125
+component	HLA donor specific Ab	HLA-A and B and C (class I) and HLA-DP and DQ and DR (class II) Ab.IgG donor specific	651325	0.796905517578125
+component	HLA donor specific Ab	HLA-DP and DQ and DR (class II) IgG donor specific	1619173	0.78871917724609375
+component	HLA donor specific Ab	HLA Ab	40773103	0.7725677490234375
+component	HLA donor specific Ab	HLA-DP+DQ+DR Ab	43056009	0.7050323486328125
+component	Tissue Ab	Tissue polypeptide Ag	37071946	0.7232666015625
+component	Tissue Ab	Tissue type	1034221	0.71056365966796875
+component	Tissue Ab	Tissue transglutaminase Ab	40792998	0.70980072021484375
+component	Tissue Ab	Tissue polypeptide specific Ag	40776485	0.69670867919921875
+component	Tissue Ab	Tissue polypeptide	1012734	0.67395782470703125
+component	Olanzapine	OLANZapine	40789387	1
+component	Olanzapine	Norolanzapine	1176623	0.7485809326171875
+component	Ovalbumin IgE Ab	Ovalbumin IgE	37066237	0.957489013671875
+component	Ovalbumin IgE Ab	Ovalbumin Ab.IgG	1991814	0.89446258544921875
+component	Ovalbumin IgE Ab	Ovalbumin Ab.IgG4	1619188	0.88640594482421875
+component	Ovalbumin IgE Ab	Ovalbumin Ab.IgE.RAST class	37053707	0.883819580078125
+component	Ovalbumin IgE Ab	Ovomucoid IgE	37062984	0.81450653076171875
+component	Salicylate	Salicylates	40795858	0.9091300964355469
+component	Salicylate	Sodium salicylate	37054231	0.81219482421875
+component	Salicylate	Salicylates^trough	1023682	0.77878570556640625
+component	Salicylate	Acetylsalicylate	40775926	0.76738739013671875
+component	Salicylate	Salicylurate	40783037	0.76160430908203125
+component	Scleroderma-70 Ab	Systemic sclerosis Ab panel	651869	0.7964324951171875
+component	Scleroderma-70 Ab	SCL-70 extractable nuclear Ab	40789747	0.759796142578125
+component	Scleroderma-70 Ab	SCL-70 extractable nuclear IgG	37037576	0.7294158935546875
+component	Scleroderma-70 Ab	Sjogrens syndrome-A extractable nuclear 60kD Ab	40798225	0.700225830078125
+component	Scleroderma-70 Ab	SCL-70 extractable nuclear	36204959	0.6968040466308594
+component	Soluble fms-like tyrosine kinase-1	Soluble fms-like tyrosine kinase-1	37063260	1
+component	Soluble fms-like tyrosine kinase-1	Soluble fms-like tyrosine kinase-1/placental growth factor	37037676	0.911346435546875
+component	Soluble fms-like tyrosine kinase-1	Soluble fms-like tyrosine kinase-1 and placental growth factor panel	44817712	0.7755317687988281
+component	Soluble fms-like tyrosine kinase-1	Soluble triggering receptor expressed on myeloid cells-1	1260956	0.6855354309082031
+component	Soluble fms-like tyrosine kinase-1	Soluble urokinase plasminogen activator receptor	3968641	0.6782379150390625
+component	Vedolizumab	Vedolizumab	37062796	1
+component	Vedolizumab	Vedolizumab Ab	1016731	0.7263031005859375
+component	Vedolizumab	Vedolizumab^trough	1023715	0.704010009765625
+component	Vedolizumab	Vedolizumab and Vedolizumab Ab panel	37033086	0.69702911376953125
+component	Vedolizumab	Certolizumab	37069777	0.6477012634277344
+property	Catalytic Concentration	Catalytic Concentration	1029614	1
+property	Catalytic Concentration	Relative catalytic concentration	1025903	0.848358154296875
+property	Catalytic Concentration	Catalytic Ratio	1029616	0.7374420166015625
+property	Catalytic Concentration	Catalytic Rate	1029622	0.7367401123046875
+property	Catalytic Concentration	Catalytic Activity	1023947	0.7065582275390625
+property	Substance/time	Substance Rate	1029732	0.74353790283203125
+property	Substance/time	Substance Content	1029727	0.70754241943359375
+property	Substance/time	Substance Ratio	1029733	0.70433807373046875
+property	Substance/time	Substance Amount	1029734	0.70075225830078125
+property	Substance/time	Mass or Substance Rate	1026266	0.6486663818359375
+property	Mass/time	Mass/Area	1014288	0.7958526611328125
+property	Mass/time	Mass Rate	1029404	0.7010345458984375
+property	Mass/time	Mass or Substance Rate	1026266	0.69527435302734375
+property	Mass/time	Volume/Area	1029611	0.684173583984375
+property	Mass/time	Volume Rate/Area	1029612	0.63860321044921875
+property	Arbitrary Concentration	Arbitrary Concentration	1029599	1
+property	Arbitrary Concentration	Relative Arbitrary Concentration	1027274	0.8413200378417969
+property	Arbitrary Concentration	Mass Concentration	1029650	0.6881103515625
+property	Arbitrary Concentration	Substance Concentration	1029726	0.6569976806640625
+property	Arbitrary Concentration	Threshold Arbitrary Concentration	1029738	0.642913818359375
+property	Presence or Threshold	Presence or Threshold	1015176	1
+property	Presence or Threshold	Presence or Identity	1029719	0.635894775390625
+property	Presence or Threshold	Threshold	1029739	0.5972137451171875
+property	Presence or Threshold	Presence	1011507	0.560394287109375
+property	Catalytic Fraction	Catalytic Fraction	1029617	1
+property	Catalytic Fraction	Decimal catalytic fraction	1012089	0.71990203857421875
+property	Catalytic Fraction	Catalytic Ratio	1029616	0.66130828857421875
+property	Catalytic Fraction	Catalytic Content	1029615	0.64496612548828125
+property	Catalytic Fraction	Catalytic Activity	1023947	0.63262939453125
+method	Electrophoresis	Electrophoresis	1028989	1
+method	Electrophoresis	Electrophoresis agarose gel	1028994	0.6975364685058594
+method	Electrophoresis	Electrophoresis alkaline (pH 8.9)	1028993	0.6543769836425781
+method	Electrophoresis	Electrophoresis acid (pH 6.3)	1028990	0.6349525451660156
+method	Electrophoresis	Isoelectric focusing	1029283	0.63092803955078125
+system	Serum or Plasma	Serum or Plasma	1033306	1
+system	Serum or Plasma	Serum or Plasma or Urine	1012839	0.83191680908203125
+system	Serum or Plasma	Serum and Plasma	1012718	0.81908416748046875
+system	Serum or Plasma	Serum, Plasma or Blood	1033343	0.8156585693359375
+system	Serum or Plasma	Serum or Plasma and CSF	1012044	0.79248809814453125
+system	Ascitic fluid	Peritoneal fluid	1032584	0.7723579406738281
+system	Ascitic fluid	Pleural fluid	1032362	0.72847747802734375
+system	Ascitic fluid	Peritoneal fluid and serum or plasma	1030072	0.64630889892578125
+system	Ascitic fluid	Pericardial fluid	1032158	0.63352203369140625
+system	Ascitic fluid	Spun Peritoneal fluid	1030083	0.62589263916015625
+system	Urine	Urine	1033714	1
+system	Urine	Urine^Fetus	1019676	0.69913482666015625
+system	Urine	Urine tube	1033717	0.6746826171875
+system	Urine	Blood or Urine	1012893	0.66097259521484375
+system	Urine	Urine sediment	1033718	0.65627288818359375
+system	Pancreatic juice	Pancreatic duct	1032124	0.63155364990234375
+system	Pancreatic juice	Pancreas	21497847	0.62073516845703125
+system	Pancreatic juice	Duodenal fluid	1030100	0.579833984375
+system	Pancreatic juice	Pancreatic artery	1020068	0.55625152587890625
+system	Pleural fluid	Pleural fluid	1032362	1
+system	Pleural fluid	Pericardial fluid	1032158	0.758758544921875
+system	Pleural fluid	Spun Pleural fluid	1030081	0.740081787109375
+system	Pleural fluid	Peritoneal fluid	1032584	0.7280464172363281
+system	Pleural fluid	Pleura	40778913	0.72254180908203125
+system	Secretion	Serum	1033211	0.49382781982421875
+system	Secretion	Exudate	1002558	0.4758567810058594
+system	Sperm	Spermatozoa	1033464	0.8062744140625
+system	Sperm	Semen	1033439	0.7246246337890625
+system	Sperm	Seminal plasma	1029834	0.6075172424316406

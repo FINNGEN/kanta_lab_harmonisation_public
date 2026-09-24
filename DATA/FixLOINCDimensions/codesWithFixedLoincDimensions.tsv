@@ -1,0 +1,58 @@
+group_id	TEST_NAME	UNIT	n	p_missing	deciles	LongName	prefix_meaning	suffix_meaning	group_path	has_component	has_property	has_method	has_system	has_scale_type	has_time_aspect	is_panel
+21	fp-transferriininrautakyllästeisyys	%	3193	0	[8.97, 13, 16.76, 20.1, 23.32, 26.3, 29.57, 33.75, 41.18]		Fasting plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Plasma	Qn	Point in time (spot)	FALSE
+21	fp-transferriininrautakyllästeisyys		13	84.62			Fasting plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation			Plasma	Nar	Point in time (spot)	FALSE
+21	fp-transferriininrautasaturaatio	%	401	0	[8.17, 12.08, 15.12, 17.38, 20.04, 22.98, 27.38, 31.01, 39.99]		Fasting plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Plasma	Qn	Point in time (spot)	FALSE
+21	fs-transferiininrautakyllästeisyys		2368	65.54	[0.08, 0.13, 0.16, 0.19, 0.23, 0.26, 0.3, 0.34, 0.41]		Fasting serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	fs-transferiininrautakyllästeisyys,paastotilassa		139	0	[0.07, 0.12, 0.15, 0.19, 0.22, 0.24, 0.28, 0.33, 0.39]		Fasting serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	fs-transferriininrautakyllästeisyys	%	144	0	[5.6, 8.49, 12.38, 16.94, 20.5, 24.07, 26.84, 31.55, 40]		Fasting serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	fs-transferriininrautakyllästeisyys		230	1.74	[6.96, 10.51, 13.75, 17.95, 20.84, 24.42, 28.14, 32.22, 47.21]		Fasting serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	p-transferriininrautakyllästeisyys	%	288	0	[7.78, 11.72, 15.31, 18.47, 21.76, 25.36, 29.49, 34.05, 40.39]		Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Plasma	Qn	Point in time (spot)	FALSE
+21	p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans	%	628	0	[9.32, 12.95, 14.99, 17.87, 20.98, 23.9, 27.48, 31.74, 38.07]		Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Plasma	Qn	Point in time (spot)	FALSE
+21	p-transferriinireseptori	mg/l	1449	0	[0.64, 0.72, 0.81, 0.91, 1.01, 1.14, 1.3, 1.54, 1.97]		Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble	Mass Concentration		Plasma	Qn	Point in time (spot)	FALSE
+21	p-transferriinireseptori		176	100			Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble			Plasma	Nar	Point in time (spot)	FALSE
+21	p-transferriinireseptori,liukoinen	mg/l	1328	0	[0.8, 1.04, 1.37, 1.95, 2.49, 2.95, 3.61, 4.4, 5.84]		Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble	Mass Concentration		Plasma	Qn	Point in time (spot)	FALSE
+21	p-transferriinireseptori,liukoinen		42	100			Plasma		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble			Plasma	Nar	Point in time (spot)	FALSE
+21	s-transferriinireseptori	mg/l	1934	0	[2.3, 2.61, 2.91, 3.22, 3.51, 3.93, 4.43, 5.22, 6.84]		Serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble	Mass Concentration		Serum	Qn	Point in time (spot)	FALSE
+21	s-transferriinireseptori,liukoinen	mg/l	129	0	[0.91, 1.1, 1.18, 1.23, 1.33, 1.45, 1.78, 2.23, 3.16]		Serum		1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble	Mass Concentration		Serum	Qn	Point in time (spot)	FALSE
+21	transferiininrautakyllästeisyys,seerumista,paastotilassa	osuus	236	0	[0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	transferiininrautakyllästeisyys,seerumista,paastotilassa	paketti	16	0					1.2.2.1.2.2.2.2.2.2.2.2.2.1						Point in time (spot)	TRUE
+21	transferiininrautakyllästeisyys,seerumista,paastotilassa		205	3.41	[0.1, 0.13, 0.16, 0.18, 0.22, 0.26, 0.29, 0.33, 0.41]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Serum	Qn	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys	%	1179	0	[8.18, 11.78, 15.27, 18.31, 21.03, 24.15, 27.59, 31.86, 39.21]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction			Qn	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys		26	100					1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation				Nar	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys(fp-)	%	596	0	[10.58, 15.04, 18.08, 21, 24.94, 28.56, 32.22, 37.06, 43.51]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction		Plasma	Qn	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys(fp-)		16	100					1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation			Plasma	Nar	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys␤	%	1453	0					1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction			Qn	Point in time (spot)	FALSE
+21	transferriininrautakyllästeisyys␤		5	100					1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation				Nar	Point in time (spot)	FALSE
+21	transferriinirautakyllästeisyys	%	233	0	[8.52, 13.59, 16.32, 21.55, 25.9, 28.62, 32.3, 36.31, 42.32]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction			Qn	Point in time (spot)	FALSE
+21	transferriinireseptori,liukoinen	mg/l	196	0	[1.64, 2.13, 2.4, 2.6, 2.79, 2.98, 3.16, 3.56, 4.22]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble	Mass Concentration			Qn	Point in time (spot)	FALSE
+21	transferriinireseptori,liukoinen		48	100					1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin receptor.soluble				Nar	Point in time (spot)	FALSE
+21	transferriinisaturaatio	%	292	0	[6.88, 9.89, 12.73, 16.14, 19.09, 22.3, 26.09, 32.09, 39.32]				1.2.2.1.2.2.2.2.2.2.2.2.2.1	Transferrin saturation	Mass fraction			Qn	Point in time (spot)	FALSE
+126	-gluk-tbr	%	118	0	[0, 0, 1, 1, 1, 2, 2.43, 4.38, 6.6]				2.1.2.2.2.2.1.1		Mass fraction			Qn	Point in time (spot)	FALSE
+126	-gluk-tir	%	120	0	[25.5, 36.83, 44.57, 51.33, 60.25, 66, 72.25, 76.73, 81.25]				2.1.2.2.2.2.1.1		Mass fraction			Qn	Point in time (spot)	FALSE
+126	gluk-vieri		309	0	[5.09, 5.42, 5.78, 6.17, 6.7, 7.14, 8, 9.04, 11.23]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration	Test strip	Blood capillary	Qn	Point in time (spot)	FALSE
+126	gluk0	mmol/l	143	0	[4.61, 4.8, 4.96, 5.03, 5.21, 5.48, 5.8, 6.24, 6.7]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk0		10	20					2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk0min		368	0	[4.92, 5.32, 5.58, 5.75, 5.88, 6, 6.19, 6.58, 7.05]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk120min		349	0	[4.3, 5.17, 5.91, 6.49, 7.07, 7.6, 8.72, 10.59, 13.35]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk1h	mmol/l	282	0	[5.36, 6.29, 6.9, 7.39, 7.93, 8.69, 9.15, 9.75, 11.47]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk2h	mmol/l	280	0	[4.55, 5.28, 5.68, 6.16, 6.59, 6.99, 7.54, 8.2, 9.44]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk2h		6	100					2.1.2.2.2.2.1.1	Glucose	Finding			Nar	Point in time (spot)	FALSE
+126	gluk30min		362	0	[7.03, 7.79, 8.42, 8.84, 9.36, 9.74, 10.39, 11.2, 12.52]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	gluk60min		359	0	[5.8, 6.9, 7.62, 8.52, 9.3, 10.21, 11.28, 12.5, 14.53]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukbel-vp	mmol/l	664	0	[4.52, 4.88, 5.29, 5.73, 5.99, 6.35, 6.81, 10.3, 12.64]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukbel-vp		209	100					2.1.2.2.2.2.1.1	Glucose	Finding			Nar	Point in time (spot)	FALSE
+126	glukoosi120min	mmol/l	119	0	[4.6, 5.12, 5.49, 5.84, 6.6, 7.25, 8.25, 9.68, 12.44]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr-0	mmol/l	144	0	[4.8, 5.18, 5.45, 5.64, 5.93, 6.16, 6.41, 6.64, 7.16]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr-1h	mmol/l	125	0	[6.69, 7.13, 7.9, 8.73, 9.2, 10.36, 11.37, 12.79, 14.55]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr-2h	mmol/l	144	0	[5.34, 5.79, 6.28, 6.91, 7.51, 8.15, 8.91, 10.16, 11.81]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr0	mmol/l	204	0	[4.5, 4.79, 4.89, 5.08, 5.2, 5.47, 5.8, 6.29, 6.89]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr0-n	mmol/l	618	0	[4.67, 4.86, 5.09, 5.3, 5.57, 5.83, 6.03, 6.29, 6.69]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr1h	mmol/l	381	0	[5.67, 6.21, 6.84, 7.42, 7.86, 8.3, 8.82, 9.42, 10.36]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukr1valm		333	100					2.1.2.2.2.2.1.1		Finding		^Patient	Nar		FALSE
+126	glukr2h	mmol/l	780	0	[4.8, 5.34, 5.8, 6.21, 6.59, 7.03, 7.53, 8.19, 9.83]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukras-0	mmol/l	97	0	[4.6, 4.78, 5, 5.1, 5.2, 5.43, 5.65, 5.9, 6.3]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukras-0		30	3.33					2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukras120	mmol/l	153	0	[5.1, 5.47, 5.77, 6.11, 6.54, 6.97, 7.58, 8.12, 9.26]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration			Qn	Point in time (spot)	FALSE
+126	glukrvalm		2563	100					2.1.2.2.2.2.1.1		Finding		^Patient	Nar		FALSE
+126	glukvieri	mmol/l	823	0	[5.3, 5.72, 6.09, 6.42, 6.92, 7.6, 8.66, 10.17, 12.3]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration	Test strip	Blood capillary	Qn	Point in time (spot)	FALSE
+126	glukvieri		251	1.59	[5.24, 5.55, 5.81, 6.07, 6.3, 6.79, 7.52, 8.56, 10.76]				2.1.2.2.2.2.1.1	Glucose	Substance Concentration	Test strip	Blood capillary	Qn	Point in time (spot)	FALSE

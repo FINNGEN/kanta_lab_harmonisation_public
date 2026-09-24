@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "row_id": 155,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 156,
+      "has_component": "Transferrin saturation",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 157,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 158,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 159,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 160,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 161,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 162,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 163,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 164,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 165,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 166,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 167,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 168,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 169,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 170,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 171,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 172,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Serum",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 173,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 174,
+      "has_component": "Transferrin saturation",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 175,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 176,
+      "has_component": "Transferrin saturation",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "Plasma",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 177,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 178,
+      "has_component": "Transferrin saturation",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 179,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 180,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "Mass Concentration",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 181,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 182,
+      "has_component": "Transferrin saturation",
+      "has_property": "Mass fraction",
+      "has_time_aspect": "Point in time (spot)",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "In this group, corrections were primarily made to the `has_component` and `has_property` axes. The near-miss paraphrase `Soluble transferrin receptor` was consistently corrected to the precise OMOP term `Transferrin receptor.soluble`, supported by Finnish test names like `p-transferriinireseptori,liukoinen` where `liukoinen` means soluble (e.g., row 166). The most frequent correction was capitalizing `Mass Fraction` to the correct OMOP form `Mass fraction`. This was guided by units (`%`, `osuus`) or decile values that clearly represented a ratio/fraction (e.g., 0.08-0.41 in row 158). The `has_system` axis values (`Plasma`, `Serum`) were already correct and aligned with the national prefixes (`P-`, `S-`, etc.). The candidate lists were effective and provided all necessary terms for this group."
+}
