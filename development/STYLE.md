@@ -39,13 +39,15 @@ errors. How each language emits it is described in its section below.
 
 **Package-qualified calls:** use `package::function()` for all calls outside the current script's primary package. Omit qualification only for `library()` itself and for functions from a package that is the script's sole purpose (e.g. Capr functions inside a cohort generation script).
 
-**Logging:** use **`ParallelLogger`**, never bare `message()`/`cat()`, for run logging. It writes a structured, timestamped log and also captures output from **parallel workers**, so the same code logs correctly whether it runs serially or in parallel. Initialize a file logger pointed at the step's output folder at the top of the script and log through it thereafter:
+**Logging:** use **`ParallelLogger`**, never bare `message()`/`cat()`, for run logging. It writes a structured, timestamped log and also captures output from **parallel workers**, so the same code logs correctly whether it runs serially or in parallel. `run.sh` already tees all stdout/stderr to `log.txt`, so R must log to the **console**, not to its own file — a second file logger pointed at `log.txt` would be a second writer on the same file. Call only `clearLoggers()` at the top of the script and log through `logInfo()`/`logWarn()`/`logError()` thereafter — with no logger registered, `ParallelLogger` already echoes to the console by default:
 ```r
 ParallelLogger::clearLoggers()
-ParallelLogger::addDefaultFileLogger(file.path(outDir, "log.txt"))
 ParallelLogger::logInfo("Configuration: ...")
 ```
-When `run.sh` already tees to `log.txt`, either let bash own the file and have R log to the console, or point `ParallelLogger` at a distinct file (e.g. `log.R.txt`) to avoid two writers on one file — pick one per step and document it in the step README.
+Do **not** also call `addDefaultConsoleLogger()` — it registers a second console
+logger on top of the implicit default one, so every line prints twice.
+
+This keeps every step to a single `log.txt`, combining bash's own output with R's structured log lines.
 
 **Script sections:** structure every R script with these sections in order, each headed by:
 ```r
