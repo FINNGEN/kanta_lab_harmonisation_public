@@ -29,6 +29,22 @@ Use only the sections that apply, but keep them in the order given.
 resolved config, inputs read, actions taken, outputs written, warnings, and
 errors. How each language emits it is described in its section below.
 
+**Table output.** Never write the literal text `NA` for a missing value in
+any table this project produces (TSV, CSV, or a markdown table) — use an
+empty string instead. This applies to every language; see each language's
+section below for the concrete mechanism (e.g. R's `readr::write_tsv(...,
+na = "")`).
+
+Symmetrically, when a script **reads** a TSV/CSV another step in this
+project wrote, it must tell its parser that `""` — not the parser's own
+default of `""`/`"NA"` — is the missing-value marker (e.g. R's
+`readr::read_tsv(..., na = "")`). Without this, a column whose real values
+can legitimately be the text `"NA"` (e.g. a `TEST_NAME` that really is
+`"NA"`) gets silently corrupted into a true missing value on read, which
+then gets written back out as `""` — quietly losing that row's real
+identity. A file read from **outside** this project (a source table, an
+external vocabulary) is unaffected and can keep the parser's own default.
+
 ---
 
 ## R Style
@@ -36,6 +52,10 @@ errors. How each language emits it is described in its section below.
 **Data manipulation:** use the **tidyverse** (`dplyr`, `tibble`, `tidyr`, `readr`, `purrr`, `stringr`, ...) where possible.
 
 **Pipe:** always `|>` (native), never `%>%`.
+
+**Table output:** `readr::write_tsv()` / `readr::write_csv()` default to writing
+missing values as the text `NA` — always pass `na = ""` to write an empty
+string instead, per the Table output rule above.
 
 **Package-qualified calls:** use `package::function()` for all calls outside the current script's primary package. Omit qualification only for `library()` itself and for functions from a package that is the script's sole purpose (e.g. Capr functions inside a cohort generation script).
 
@@ -103,6 +123,10 @@ names. Never `from package import *`.
 **Configuration:** read env vars with `os.environ[...]` (required) or
 `os.getenv(...)` (optional); assign to local vars and log each, mirroring the R
 `Configuration` section.
+
+**Table output:** `pandas.DataFrame.to_csv()` defaults to writing missing
+values as an empty string already — leave `na_rep` at its default (do not
+set it to `"NA"`), per the Table output rule above.
 
 **Logging:** configure the `logging` module with a `FileHandler` pointed at
 `log.txt` in the step's output folder, then log config, inputs, actions, and

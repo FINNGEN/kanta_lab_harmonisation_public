@@ -14,3 +14,6 @@ output_data/*
 *.knit.md
 
 .DS_Store
+
+
+.scratchpad
