@@ -14,18 +14,18 @@ concept.
 | bucket | n | % |
 |---|---|---|
 | total | 1984 | 100.0% |
-| with >=1 axis known | 1901 | 95.8% |
-| no axis known | 83 | 4.2% |
+| with >=1 axis known | 1940 | 97.8% |
+| no axis known | 44 | 2.2% |
 
 Of the rows a match was attempted for:
 
 | bucket | n | % |
 |---|---|---|
-| attempted | 1901 | 100.0% |
-| matched (>=1 OMOP concept) | 167 | 8.8% |
-| unmatched (0 OMOP concepts) | 1734 | 91.2% |
-| matched uniquely (1 concept) | 167 | 8.8% |
-| matched ambiguously (>1 concept) | 0 | 0.0% |
+| attempted | 1940 | 100.0% |
+| matched (>=1 OMOP concept) | 177 | 9.1% |
+| unmatched (0 OMOP concepts) | 1763 | 90.9% |
+| matched uniquely (1 concept) | 175 | 9.0% |
+| matched ambiguously (>1 concept) | 2 | 0.1% |
 
 ## By domain (has_system)
 
@@ -34,52 +34,55 @@ first. `(unknown)` groups rows with no `has_system` value at all.
 
 | has_system | n rows | n matched | % matched |
 |---|---|---|---|
-| Serum | 484 | 13 | 2.7% |
-| (unknown) | 349 | 0 | 0.0% |
-| Blood | 266 | 32 | 12.0% |
-| Plasma | 225 | 2 | 0.9% |
-| Urine | 207 | 80 | 38.6% |
-| ^Patient | 103 | 0 | 0.0% |
-| Lymphocyte | 37 | 0 | 0.0% |
-| Bone marrow | 35 | 0 | 0.0% |
-| Cerebral spinal fluid | 31 | 1 | 3.2% |
-| Stool | 31 | 3 | 9.7% |
-| Platelet poor plasma | 28 | 0 | 0.0% |
-| Serum or Plasma | 23 | 11 | 47.8% |
-| Blood capillary | 17 | 7 | 41.2% |
-| Red Blood Cells | 15 | 2 | 13.3% |
-| Throat | 15 | 0 | 0.0% |
-| White Blood Cells | 14 | 0 | 0.0% |
-| Urine sediment | 13 | 3 | 23.1% |
-| Blood venous | 11 | 4 | 36.4% |
+| Serum | 471 | 12 | 2.5% |
+| (unknown) | 345 | 3 | 0.9% |
+| Blood | 276 | 37 | 13.4% |
+| Plasma | 270 | 2 | 0.7% |
+| Urine | 218 | 91 | 41.7% |
+| ^Patient | 82 | 0 | 0.0% |
+| Bone marrow | 37 | 0 | 0.0% |
+| Lymphocytes | 37 | 0 | 0.0% |
+| Stool | 34 | 2 | 5.9% |
+| Cerebral spinal fluid | 31 | 3 | 9.7% |
+| Serum or Plasma | 16 | 3 | 18.8% |
+| Blood capillary | 15 | 3 | 20.0% |
+| Red Blood Cells | 15 | 1 | 6.7% |
+| Throat | 15 | 1 | 6.7% |
+| Blood venous | 13 | 6 | 46.2% |
 | Pleural fluid | 9 | 4 | 44.4% |
-| Plasma arterial | 8 | 1 | 12.5% |
-| Tissue | 6 | 0 | 0.0% |
-| Blood arterial | 5 | 3 | 60.0% |
+| Urine sediment | 9 | 0 | 0.0% |
+| White Blood Cells | 8 | 0 | 0.0% |
+| Blood arterial | 7 | 3 | 42.9% |
+| Platelet poor plasma | 5 | 0 | 0.0% |
+| Tissue | 5 | 0 | 0.0% |
+| Vaginal fluid | 5 | 0 | 0.0% |
+| Bronchoalveolar lavage fluid | 4 | 0 | 0.0% |
+| Respiratory specimen | 4 | 0 | 0.0% |
 | Secretion | 4 | 0 | 0.0% |
-| Vaginal fluid | 4 | 0 | 0.0% |
 | Amniotic fluid | 3 | 0 | 0.0% |
 | Nose | 3 | 0 | 0.0% |
 | Perineum | 3 | 0 | 0.0% |
 | Pharyngeal secretion | 3 | 0 | 0.0% |
+| Pus | 3 | 2 | 66.7% |
+| Skin | 3 | 0 | 0.0% |
 | Ascitic fluid | 2 | 0 | 0.0% |
 | Bronchoalveolar lavage | 2 | 0 | 0.0% |
-| Cervix | 2 | 0 | 0.0% |
-| Dialysis fluid | 2 | 1 | 50.0% |
-| Leukocyte | 2 | 0 | 0.0% |
-| Pancreatic juice | 2 | 0 | 0.0% |
-| Plasma venous | 2 | 0 | 0.0% |
-| Pus | 2 | 0 | 0.0% |
-| Serum from umbilical cord blood | 2 | 0 | 0.0% |
-| Skin | 2 | 0 | 0.0% |
-| Sputum | 2 | 0 | 0.0% |
-| Ascites fluid | 1 | 0 | 0.0% |
-| Aspirate | 1 | 0 | 0.0% |
+| Cervical specimen | 2 | 0 | 0.0% |
+| Dialysate | 2 | 0 | 0.0% |
+| Interstitial fluid | 2 | 1 | 50.0% |
+| Pancreatic fluid | 2 | 0 | 0.0% |
+| Plasma capillary | 2 | 0 | 0.0% |
+| Semen | 2 | 0 | 0.0% |
+| Sputum | 2 | 1 | 50.0% |
+| Umbilical cord blood serum | 2 | 0 | 0.0% |
+| Aspirate | 1 | 1 | 100.0% |
 | Bile | 1 | 0 | 0.0% |
 | Bone | 1 | 0 | 0.0% |
-| Bronchoalveolar lavage fluid | 1 | 0 | 0.0% |
-| Catheter tip | 1 | 0 | 0.0% |
+| Catheter tip | 1 | 1 | 100.0% |
+| Dialysis fluid.peritoneal | 1 | 0 | 0.0% |
 | Gingival crevicular fluid | 1 | 0 | 0.0% |
+| Nasal secretion | 1 | 0 | 0.0% |
+| Nasopharynx | 1 | 0 | 0.0% |
 | Peritoneal fluid | 1 | 0 | 0.0% |
 | Sperm | 1 | 0 | 0.0% |
 | Synovial fluid | 1 | 0 | 0.0% |
@@ -89,7 +92,7 @@ first. `(unknown)` groups rows with no `has_system` value at all.
 `DATA/ReferenceMappings/lab_data_summary.csv` holds a previously curated Finnish-code -> OMOP mapping. Restricted to its `APPROVED` rows and matched to this table by `TEST_NAME`+`UNIT`:
 
 - n rows overlapping an APPROVED reference mapping: 764
-- of those, our join's OMOP concept(s) include the reference's approved concept: 57 / 764 (7.5%)
+- of those, our join's OMOP concept(s) include the reference's approved concept: 62 / 764 (8.1%)
 
 **Example disagreements:**
 
