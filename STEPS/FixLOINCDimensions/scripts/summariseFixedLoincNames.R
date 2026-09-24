@@ -5,11 +5,16 @@
 # improvements are across all groups.
 #
 # The numbers that matter here are about the *route*, not the hit rate: how
-# often the search even offered a candidate, and how often the model took one
-# that is on the LOINC recommended list or already used in Finland. Whether the
-# chosen concept is the RIGHT one is not knowable from this table -- that is
-# what MapLOINCToOmop's cross-check against the curated reference mapping is
-# for.
+# often the search even offered a candidate, what kind of concept was taken,
+# and how sure the model says it is. Whether the chosen concept is the RIGHT
+# one is not knowable from this table -- that is what MapLOINCToOmop's
+# cross-check against the curated reference mapping is for.
+#
+# "already used in Finnish mappings" appears here as a DIAGNOSTIC only. That
+# figure comes from the curated reference mappings, which the prompt is
+# deliberately not shown: they are what the pipeline is measured against, so
+# feeding them to the model would make the evaluation circular. Measuring
+# against them afterwards is exactly what they are for.
 #
 # The findings section is a second, much cheaper LLM call than the per-group
 # mapping: one call over the concatenated reflections, not one per group.
@@ -190,6 +195,38 @@ topConcepts <- if (length(chosen) == 0) NULL else {
     )
 }
 
+# How sure the model says it is, and whether it justified the choice. Read this
+# before trusting a batch of mappings: `low` rows and rows with no reasoning
+# trail are the ones a human should look at first.
+byCertainty <- tibble::tibble(
+  certainty = factor(codes$certainty[wasMapped], levels = c("high", "medium", "low"))
+) |>
+  dplyr::count(certainty, name = "n_rows", .drop = FALSE) |>
+  dplyr::mutate(
+    certainty = as.character(.data$certainty),
+    pct = .formatPct(n_rows / max(sum(wasMapped), 1))
+  ) |>
+  dplyr::bind_rows(tibble::tibble(
+    certainty = "(not stated)",
+    n_rows = sum(is.na(codes$certainty[wasMapped])),
+    pct = .formatPct(sum(is.na(codes$certainty[wasMapped])) / max(sum(wasMapped), 1))
+  ))
+
+# Cross-tabulated against the evidence the row actually carried: a mapping
+# claimed `high` on a row with neither a unit nor values is exactly the kind of
+# confidence that should not be taken at face value.
+certaintyByEvidence <- codes |>
+  dplyr::filter(wasMapped) |>
+  dplyr::mutate(
+    evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)"),
+    certainty = dplyr::coalesce(.data$certainty, "(not stated)")
+  ) |>
+  dplyr::count(evidence_level, certainty, name = "n") |>
+  tidyr::pivot_wider(names_from = certainty, values_from = n, values_fill = 0)
+
+nReasoned <- sum(!is.na(codes$reasoning[wasMapped]))
+ParallelLogger::logInfo(nReasoned, " / ", sum(wasMapped), " mapped rows carry a reasoning trail")
+
 # Findings: send the per-group reflections back to the model and ask it to
 # distil the recurring themes across all of them.
 findingsType <- ellmer::type_object(
@@ -277,7 +314,10 @@ md <- c(
   "## What kind of concept was chosen",
   "",
   "The prompt asks the model to break ties by preferring a concept on the **LOINC",
-  "Top 2000+ (SI)** recommended list, and then one Finland already maps codes to.",
+  "Top 2000+ (SI)** recommended list — an external recommendation. The Finnish",
+  "usage column is a *diagnostic here only*: it comes from the curated reference",
+  "mappings, which the prompt is never shown, since feeding the thing this",
+  "pipeline is measured against back into it would make the evaluation circular.",
   "A high share in neither bucket means the model is routinely landing on obscure",
   "concepts, which is worth a look even when the concept is defensible.",
   "",
@@ -304,6 +344,25 @@ if (is.null(topConcepts)) {
 
 md <- c(
   md,
+  "## How sure the model says it is",
+  "",
+  "One overall certainty per mapped row, self-reported. It is a claim, not a",
+  "measurement — but a `low` row is one the model is telling you to check, and",
+  "those are cheap to act on.",
+  "",
+  .markdownTable(byCertainty),
+  "",
+  paste0("A reasoning trail — why each part of the chosen name is right, clause by ",
+         "clause — was given for **", nReasoned, " / ", sum(wasMapped), "** mapped rows. ",
+         "It is in the `reasoning` column of `codesWithOmopConcepts.tsv`, and it is what ",
+         "makes a mapping reviewable without re-deriving it."),
+  "",
+  "Certainty against the evidence the row actually carried. A concept claimed",
+  "`high` on a `name only` row is worth checking, since such a row has no unit",
+  "and no values to fix a quantity with:",
+  "",
+  .markdownTable(certaintyByEvidence),
+  "",
   "## Findings",
   "",
   paste0("Distilled by `", llmConfig$model, "` from the per-group reflections in `",

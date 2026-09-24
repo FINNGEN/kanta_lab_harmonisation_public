@@ -6,11 +6,14 @@ concept ids.
 ## Inputs
 
 - `DATA/FindLOINCDimensions/codesWithLoincNames.tsv` — local Finnish lab codes
-  with the LLM's guessed LOINC Long Common Name (`loinc_name_guess`) and
-  `is_panel`, in similarity groups (`group_id`).
+  with the LLM's guessed LOINC Long Common Name (`loinc_name_guess`) and the
+  computed `unit_share` / `evidence_level`, in similarity groups (`group_id`).
 - `DATA/SourceLabelingData/loinc_names_frequency.tsv` — which LOINC concepts
-  the curated Finnish mappings already use (`concept_id`, `concept_name`,
-  `n_codes`, `n_events`). Built by `scripts/buildLoincNamesFrequency.R`.
+  the curated Finnish mappings already use. Built by
+  `scripts/buildLoincNamesFrequency.R`. Read **only by the stats report**,
+  never by the prompt: it is derived from the reference mappings this pipeline
+  is measured against, so showing it to the model would make the evaluation
+  circular. Measuring against it afterwards is what it is for.
 - `DATA/SourceLabelingData/loinc_top2000.tsv` — the LOINC Top 2000+ (SI)
   recommended mapping targets (`rank`, `concept_id`, ...). Built by
   `scripts/buildLoincTop2000.R`. See `DATA/SourceLabelingData/README.md` for
@@ -29,16 +32,25 @@ concept ids.
     when it judged that no candidate was right.
   - `omop_concept_name` — that concept's name, taken from the OMOP vocabulary
     rather than from the model's copy of it.
+  - `reasoning` — why each part of the chosen name is right, one clause per
+    part separated by ` ; `, each naming the evidence in the row that carries
+    it. This is what makes a mapping reviewable without re-deriving it: a
+    reader can see whether the specimen came from the code or from nowhere.
+  - `certainty` — `high`, `medium` or `low`, the model's own confidence in the
+    whole mapping. A claim rather than a measurement, but a `low` row is one it
+    is asking you to check, and the report cross-tabulates it against
+    `evidence_level` so a `high` on a `name only` row is visible.
 
-  `is_panel` is carried through, refreshed by this pass where it judged the
-  earlier one contradictory.
+  There is no `is_panel` column: LOINC names panels as panels, so a bundle is
+  expressed in the name itself rather than in a separate flag.
 - `DATA/FixLOINCDimensions/reflections.md` — one `# Group <id>` section per
   group: what could and could not be mapped, and where the candidate list was
   missing the concept the model knew was right.
 - `DATA/FixLOINCDimensions/fixedLoincNamesStats.md` — a stats report: how many
   guesses became concept ids, whether the search even returned candidates and
   how close they scored, whether the chosen concepts are on the LOINC
-  recommended list or already used in Finland, the most-chosen concepts, and a
+  recommended list or already used in Finland, the most-chosen concepts, the
+  `certainty` distribution cross-tabulated against `evidence_level`, and a
   **Findings** section distilled from the reflections by a further LLM call.
 - `DATA/FixLOINCDimensions/hecateCandidates.tsv` — every Hecate lookup made
   (`value`, `concept_name`, `concept_id`, `concept_code`, `score`), cached
@@ -73,12 +85,32 @@ it into an identifier.
    them by `concept_id`, keeping the best score. Pooling is deliberate: sibling
    codes in a group are near-identical strings, so the right concept for one
    row is often what another row's guess retrieved.
-3. Annotates each candidate with its **LOINC Top 2000+ (SI)** rank and with how
-   many Finnish codes and records already map to it — the two priors the prompt
-   asks the model to break ties on, in that order, and only between candidates
-   the row's own evidence supports equally.
+3. Annotates each candidate with its **LOINC Top 2000+ (SI)** rank — the one
+   prior the prompt breaks ties on, and only between candidates the row's own
+   evidence supports equally. That list is Regenstrief's, independent of the
+   Finnish reference mappings, so using it does not contaminate the evaluation.
 4. Sends each group to the LLM with its rows and that candidate table, and asks
-   for one `omop_concept_id` per row.
+   for one `omop_concept_id` per row, a `reasoning` trail naming the evidence
+   behind each part of the chosen name, and one overall `certainty`.
+
+The prompt carries the same evidence hierarchy as `FindLOINCDimensions` — see
+that step's README — plus two rules specific to choosing between real concepts,
+both derived from measuring the first run against the curated Finnish mappings:
+
+- **Precision must be earned by the name.** LOINC holds a plain and a qualified
+  concept for most tests. The more precise candidate is the right answer when
+  the name states the qualifier — `-Vi` says culture, `pikatesti` says a rapid
+  test, `dU` says a 24-hour collection. The error to avoid is *inventing* a
+  qualifier, not being specific: this step added a method the reference leaves
+  blank 59 times (usually `Automated count` on a bare blood-count code), took
+  `--trough` variants for plain drug levels, and narrowed `Serum or Plasma` to
+  `Capillary blood` on codes that said no such thing. The prompt asks, of every
+  qualifier: which characters of this code say so?
+- **A guess that is itself a real concept is evidence, not an instruction.** In
+  33 rows the earlier pass had already written the reference concept's exact
+  name and the search returned it at score 1.000, yet this step moved off it.
+  It now carries real weight — but a better-supported candidate, including a
+  more precise one, still wins.
 
 The score threshold is `0.5`, deliberately looser than the `0.75` the earlier
 axis-based version used. There, the search matched a short axis label against
@@ -99,8 +131,9 @@ that the model meant a different concept than the id it typed.
 
 The join is guarded the same way as in `FindLOINCDimensions`: unknown or
 duplicated `row_id`s are dropped with a warning rather than allowed to shift
-the table, and a row the model skipped keeps the earlier pass's `is_panel`
-rather than being emptied.
+the table. `certainty` is normalised to `high`/`medium`/`low` and anything else
+becomes empty, and both it and `reasoning` are cleared whenever no concept
+survived — they would otherwise describe a choice that is not in the table.
 
 `scripts/summariseFixedLoincNames.R` then writes the stats report. Its numbers
 are about the *route*, not about correctness: whether the search offered

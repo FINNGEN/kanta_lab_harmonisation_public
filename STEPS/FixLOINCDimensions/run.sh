@@ -65,6 +65,9 @@ fi
 # --- Input -------------------------------------------------------------
 #
 NAMES_FILE="$DATA_DIR/FindLOINCDimensions/codesWithLoincNames.tsv"
+# Read only by the stats report, never by the prompt: it is derived from the
+# curated reference mappings, so showing it to the model would make the
+# evaluation circular. As a report metric it is a useful diagnostic.
 FREQUENCY_FILE="$DATA_DIR/SourceLabelingData/loinc_names_frequency.tsv"
 TOP2000_FILE="$DATA_DIR/SourceLabelingData/loinc_top2000.tsv"
 OMOP_ATTRIBUTES_FILE="$DATA_DIR/GetMeasurementOmopData/measurement_concept_attributes.tsv"
@@ -115,7 +118,7 @@ if [[ "$CLEAN" -eq 1 ]]; then
 fi
 
 Rscript "$STEP_DIR/scripts/fixLoincNames.R" \
-  "$NAMES_FILE" "$FREQUENCY_FILE" "$TOP2000_FILE" "$OMOP_ATTRIBUTES_FILE" \
+  "$NAMES_FILE" "$TOP2000_FILE" "$OMOP_ATTRIBUTES_FILE" \
   "$OUTDIR" "$NGROUPS" "$SEED"
 
 Rscript "$STEP_DIR/scripts/summariseFixedLoincNames.R" \

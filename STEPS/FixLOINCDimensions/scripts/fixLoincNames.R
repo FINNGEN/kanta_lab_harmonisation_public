@@ -15,9 +15,11 @@
 #      row of the group -- sibling codes are near-identical strings and the
 #      right concept for one is often what another's guess retrieved;
 #   3. each candidate is annotated with its rank in the LOINC Top 2000+ (SI)
-#      recommended mapping targets and with how much Finnish data already maps
-#      to it, so the model can break ties on recommendation and on established
-#      national usage rather than on the search score alone;
+#      recommended mapping targets, so the model can break ties on an external
+#      recommendation rather than on the search score alone. Nothing derived
+#      from the curated reference mappings is shown: they are what this
+#      pipeline is measured against, so putting them in the prompt would make
+#      the evaluation circular;
 #   4. the group, its rows and its candidate list go to an LLM, which returns
 #      the chosen omop_concept_id per row.
 #
@@ -42,12 +44,11 @@ library(ParallelLogger)
 #
 args <- commandArgs(trailingOnly = TRUE)
 inputFile <- args[1]
-frequencyFile <- args[2]
-top2000File <- args[3]
-omopAttributesFile <- args[4]
-outDir <- args[5]
-nGroups <- if (length(args) >= 6 && nzchar(args[6])) as.integer(args[6]) else NA_integer_
-seed <- if (length(args) >= 7 && nzchar(args[7])) as.integer(args[7]) else 1L
+top2000File <- args[2]
+omopAttributesFile <- args[3]
+outDir <- args[4]
+nGroups <- if (length(args) >= 5 && nzchar(args[5])) as.integer(args[5]) else NA_integer_
+seed <- if (length(args) >= 6 && nzchar(args[6])) as.integer(args[6]) else 1L
 
 scriptDir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(scriptDir) || !nzchar(scriptDir)) scriptDir <- "."
@@ -94,7 +95,6 @@ pathToReflectionsMD <- file.path(outDir, "reflections.md")
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  inputFile = ", inputFile)
-ParallelLogger::logInfo("  frequencyFile = ", frequencyFile)
 ParallelLogger::logInfo("  top2000File = ", top2000File)
 ParallelLogger::logInfo("  omopAttributesFile = ", omopAttributesFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
@@ -106,7 +106,9 @@ ParallelLogger::logInfo("  scoreThreshold = ", scoreThreshold, ", candidateLimit
 
 # One entry per input row: the row_id echoed back as the join key, the chosen
 # concept id, its name (a cross-check that the id copied is the concept meant),
-# and is_panel carried through. All strings so the model can return "" for
+# a per-part reasoning trail, and one overall certainty. The reasoning is what
+# makes a mapping reviewable without re-deriving it: it names the evidence each
+# part of the chosen name rests on. All strings, so the model can return "" for
 # "no candidate is right".
 mappingType <- ellmer::type_object(
   rows = ellmer::type_array(
@@ -114,7 +116,8 @@ mappingType <- ellmer::type_object(
       row_id = ellmer::type_integer("The row_id of the input row, echoed exactly."),
       omop_concept_id = ellmer::type_string("The chosen concept's omop_concept_id, copied digit for digit from the candidate table. Empty if no candidate is right."),
       omop_concept_name = ellmer::type_string("That candidate's omop_concept_name, copied verbatim. Empty if the id is empty."),
-      is_panel = ellmer::type_boolean("Carried through from the input row unless plainly contradictory.")
+      reasoning = ellmer::type_string("Why each part of the chosen name is right: one clause per part, separated by ' ; ', each naming the part and the evidence in the row that carries it. Empty if no concept was chosen."),
+      certainty = ellmer::type_string("high | medium | low -- how sure you are, on all the evidence together, that this concept is right for this row. Empty if no concept was chosen.")
     ),
     "One entry per row of the input table."
   ),
@@ -128,13 +131,6 @@ mappingType <- ellmer::type_object(
 # project, so "" (not "NA") is their missing-value marker.
 codes <- readr::read_tsv(inputFile, na = "", col_types = readr::cols(.default = readr::col_character()))
 ParallelLogger::logInfo("Read ", nrow(codes), " rows from ", inputFile)
-
-frequency <- readr::read_tsv(frequencyFile, na = "", col_types = readr::cols(
-  concept_id = readr::col_character(), concept_name = readr::col_character(),
-  vocabulary_id = readr::col_character(),
-  n_codes = readr::col_double(), n_events = readr::col_double()
-))
-ParallelLogger::logInfo("Read ", nrow(frequency), " Finnish name-frequency rows from ", frequencyFile)
 
 top2000 <- readr::read_tsv(top2000File, na = "", col_types = readr::cols(
   rank = readr::col_integer(), loinc_code = readr::col_character(),
@@ -234,26 +230,24 @@ top2000Rank <- top2000 |>
   dplyr::group_by(concept_id) |>
   dplyr::summarise(top2000 = min(.data$rank, na.rm = TRUE), .groups = "drop")
 
+# Only the LOINC Top 2000 rank is attached. Finnish usage counts were attached
+# here before and are not any more: they are derived from the curated reference
+# mappings, which is exactly what this pipeline is measured against, so feeding
+# them into the prompt made the evaluation partly circular -- and handed the
+# model whatever errors the reference itself carries. The Top 2000 list is an
+# independent, external recommendation, so it stays.
 candidates <- cached |>
   dplyr::filter(!is.na(.data$concept_name), !is.na(.data$score), .data$score >= scoreThreshold) |>
-  dplyr::left_join(top2000Rank, by = "concept_id") |>
-  dplyr::left_join(
-    frequency |> dplyr::select(concept_id, n_codes, n_events),
-    by = "concept_id"
-  ) |>
-  dplyr::mutate(
-    n_codes = ifelse(is.na(.data$n_codes), 0, .data$n_codes),
-    n_events = ifelse(is.na(.data$n_events), 0, .data$n_events)
-  )
+  dplyr::left_join(top2000Rank, by = "concept_id")
 ParallelLogger::logInfo("Kept ", nrow(candidates), " candidate rows at score >= ", scoreThreshold,
                         " (", dplyr::n_distinct(candidates$concept_id), " distinct concepts, ",
                         sum(!is.na(dplyr::distinct(candidates, concept_id, top2000)$top2000)), " of them in the LOINC Top 2000)")
 
 ## Step 2: one LLM call per group, with its rows plus the pooled candidate list.
 promptColumns <- c(
-  "row_id", "TEST_NAME", "UNIT", "n", "p_missing", "deciles",
+  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "p_missing", "deciles",
   "LongName", "prefix_meaning", "suffix_meaning",
-  "loinc_name_guess", "is_panel"
+  "loinc_name_guess"
 )
 
 # Make one value safe to put in a markdown table cell: a literal "|" would end
@@ -304,9 +298,7 @@ renderCandidates <- function(groupCandidates) {
     omop_concept_id = groupCandidates$concept_id,
     omop_concept_name = groupCandidates$concept_name,
     score = sprintf("%.3f", groupCandidates$score),
-    top2000 = ifelse(is.na(groupCandidates$top2000), "", as.character(groupCandidates$top2000)),
-    n_codes = format(as.integer(groupCandidates$n_codes), big.mark = ","),
-    n_events = format(as.integer(groupCandidates$n_events), big.mark = ",")
+    top2000 = ifelse(is.na(groupCandidates$top2000), "", as.character(groupCandidates$top2000))
   ))
 }
 
@@ -409,13 +401,25 @@ readGroupRows <- function(gid) {
       if (is.null(v) || length(v) == 0 || !nzchar(trimws(as.character(v)[1]))) NA_character_
       else trimws(as.character(v)[1])
     }
-    p <- r$is_panel
+    # Certainty is normalised to the three allowed words; anything else the
+    # model invents becomes NA rather than being carried into the table as a
+    # value downstream code would have to guess the meaning of.
+    certaintyOf <- function(v) {
+      x <- tolower(blankToNA(v))
+      if (is.na(x) || !(x %in% c("high", "medium", "low"))) NA_character_ else x
+    }
+    # A newline in the reasoning would break the TSV row it is written to.
+    reasoningOf <- function(v) {
+      x <- blankToNA(v)
+      if (is.na(x)) NA_character_ else gsub("[\r\n]+", " ", x)
+    }
     tibble::tibble(
       group_id = as.character(gid),
       row_id = as.integer(r$row_id %||% NA_integer_),
       omop_concept_id = blankToNA(r$omop_concept_id),
       model_concept_name = blankToNA(r$omop_concept_name),
-      is_panel = if (is.null(p) || length(p) == 0) NA else as.logical(p)[1]
+      reasoning = reasoningOf(r$reasoning),
+      certainty = certaintyOf(r$certainty)
     )
   })
 }
@@ -482,15 +486,29 @@ if (nUnknownToOmop > 0) {
   ParallelLogger::logWarn(nUnknownToOmop, " chosen concept_id(s) are not in the OMOP attributes table")
 }
 
+# A certainty or a reasoning trail only means something next to a concept: if
+# the id was discarded as not-offered, or the model returned none, anything it
+# wrote describes a choice that is not in the table, so it is cleared with it.
+answers <- answers |>
+  dplyr::mutate(dplyr::across(
+    dplyr::all_of(c("reasoning", "certainty")),
+    ~ ifelse(is.na(.data$omop_concept_id), NA_character_, .x)
+  ))
+
 result <- selected |>
   dplyr::left_join(
-    answers |> dplyr::select(row_id, omop_concept_id, omop_concept_name, is_panel_fixed = is_panel),
+    answers |> dplyr::select(row_id, omop_concept_id, omop_concept_name,
+                             reasoning, certainty),
     by = "row_id"
   ) |>
-  # A row the model skipped keeps the earlier pass's is_panel rather than being
-  # emptied; the id simply stays missing.
-  dplyr::mutate(is_panel = dplyr::coalesce(as.character(.data$is_panel_fixed), .data$is_panel)) |>
-  dplyr::select(-dplyr::all_of(c("is_panel_fixed", "row_id")))
+  dplyr::select(-dplyr::all_of("row_id"))
+
+counts <- table(factor(result$certainty, levels = c("high", "medium", "low")), useNA = "no")
+ParallelLogger::logInfo("  certainty: ",
+                        paste(names(counts), counts, sep = "=", collapse = ", "),
+                        ", not stated=", sum(is.na(result$certainty)))
+ParallelLogger::logInfo("  reasoning given for ", sum(!is.na(result$reasoning)), " / ",
+                        sum(!is.na(result$omop_concept_id)), " mapped rows")
 
 nMapped <- sum(!is.na(result$omop_concept_id))
 ParallelLogger::logInfo(nMapped, " / ", nrow(result), " rows were mapped to an OMOP concept (",
