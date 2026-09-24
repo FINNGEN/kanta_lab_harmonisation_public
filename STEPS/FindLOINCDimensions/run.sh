@@ -5,7 +5,7 @@ set -euo pipefail
 # --- Arguments -------------------------------------------------------------
 #
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--ngroups <N>]" >&2
+  echo "Usage: $0 <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--ngroups <N>] [--seed <N>] [--clean]" >&2
   exit 1
 fi
 
@@ -14,6 +14,8 @@ shift
 
 ENV_NAME=""
 NGROUPS=""
+SEED=""
+CLEAN=0
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --env)
@@ -23,6 +25,14 @@ while [[ $# -gt 0 ]]; do
     --ngroups)
       NGROUPS="$2"
       shift 2
+      ;;
+    --seed)
+      SEED="$2"
+      shift 2
+      ;;
+    --clean)
+      CLEAN=1
+      shift
       ;;
     *)
       echo "Unknown argument: $1" >&2
@@ -76,8 +86,21 @@ fi
 #
 # --- Action -------------------------------------------------------------
 #
+# --clean discards the per-group LLM answer cache so every selected group is
+# asked again. Needed after editing scripts/systemPrompt.md or the output
+# schema: the cache is keyed on group_id alone, so without this a re-run
+# silently returns answers produced by the OLD prompt. Costs a full re-run.
+if [[ "$CLEAN" -eq 1 ]]; then
+  if [[ -d "$OUTDIR/groupsCache" ]]; then
+    echo "--clean: removing cached LLM answers in $OUTDIR/groupsCache"
+    rm -rf "${OUTDIR:?}/groupsCache"
+  else
+    echo "--clean: no cache to remove at $OUTDIR/groupsCache"
+  fi
+fi
+
 Rscript "$STEP_DIR/scripts/findLoincDimensions.R" \
-  "$GROUPED_FILE" "$OUTDIR" "$NGROUPS"
+  "$GROUPED_FILE" "$OUTDIR" "$NGROUPS" "$SEED"
 
 Rscript "$STEP_DIR/scripts/summariseLoincDimensionsStats.R" \
   "$OUTDIR/codesWithLoincDimensions.tsv" "$OUTDIR/reflections.md" "$OUTDIR"

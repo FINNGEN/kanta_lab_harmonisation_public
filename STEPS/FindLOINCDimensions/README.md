@@ -102,12 +102,25 @@ fails, the statistics are still written and the Findings section says so.
 ## How to run
 
 ```
-./STEPS/FindLOINCDimensions/run.sh <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--ngroups <N>]
+./STEPS/FindLOINCDimensions/run.sh <PATH_TO_DATA_FOLDER> --env <ENV_NAME> \
+    [--ngroups <N>] [--seed <N>] [--clean]
 ```
 
-`--ngroups <N>` processes only the first `N` groups — used during development to
-keep runs small and cheap. Omit it to process all groups.
+`--ngroups <N>` processes a **random sample** of `N` groups — used during
+development to keep runs small and cheap. Omit it to process all groups. The
+sample is random rather than the first `N` because groups come out of the
+clustering in dendrogram order, so the first `N` are all neighbours in the tree
+and cover only one corner of the data (the first 50 were all microbiology).
+
+`--seed <N>` seeds that sample (default `1`), so a given `--seed`/`--ngroups`
+pair always selects the same groups.
+
+`--clean` deletes the per-group answer cache before running, forcing every
+selected group to be asked again. **Use it after editing `systemPrompt.md` or
+the output schema**: the cache is keyed on `group_id` alone, so without it a
+re-run silently returns answers produced by the old prompt. It costs a full
+re-run, so it is off by default.
 
 ```
-./STEPS/FindLOINCDimensions/run.sh DATA --env build --ngroups 5
+./STEPS/FindLOINCDimensions/run.sh DATA --env build --ngroups 30 --clean
 ```

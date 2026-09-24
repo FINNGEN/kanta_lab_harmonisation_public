@@ -32,6 +32,7 @@ args <- commandArgs(trailingOnly = TRUE)
 inputFile <- args[1]
 outDir <- args[2]
 nGroups <- if (length(args) >= 3 && nzchar(args[3])) as.integer(args[3]) else NA_integer_
+seed <- if (length(args) >= 4 && nzchar(args[4])) as.integer(args[4]) else 1L
 
 scriptDir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1]))
 if (is.na(scriptDir) || !nzchar(scriptDir)) scriptDir <- "."
@@ -63,6 +64,7 @@ ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  inputFile = ", inputFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  nGroups = ", if (is.na(nGroups)) "(all)" else nGroups)
+ParallelLogger::logInfo("  seed = ", seed)
 ParallelLogger::logInfo("  provider = ", llmConfig$provider)
 ParallelLogger::logInfo("  model = ", llmConfig$model)
 ParallelLogger::logInfo("  project = ", llmConfig$project)
@@ -111,11 +113,19 @@ grouped <- grouped |>
 
 allGroupIds <- sort(unique(as.integer(grouped$group_id)))
 groupIds <- if (!is.na(nGroups) && nGroups > 0 && nGroups < length(allGroupIds)) {
-  utils::head(allGroupIds, nGroups)
+  # A RANDOM sample, not the first N. The groups come out of the clustering in
+  # tree order, so the first N are all neighbours in the dendrogram -- the
+  # original --ngroups 50 run drew 50 consecutive microbiology groups and said
+  # nothing about how the step behaves on chemistry, haematology or narrative
+  # codes. Sampling spreads the subset across the whole table.
+  # Seeded so a given --seed/--ngroups pair is reproducible across re-runs.
+  set.seed(seed)
+  sort(sample(allGroupIds, nGroups))
 } else {
   allGroupIds
 }
-ParallelLogger::logInfo("Processing ", length(groupIds), " of ", length(allGroupIds), " groups")
+ParallelLogger::logInfo("Processing ", length(groupIds), " of ", length(allGroupIds), " groups",
+                        if (length(groupIds) < length(allGroupIds)) paste0(" (random sample, seed ", seed, ")") else "")
 
 systemPrompt <- paste(readLines(systemPromptFile, warn = FALSE), collapse = "\n")
 
