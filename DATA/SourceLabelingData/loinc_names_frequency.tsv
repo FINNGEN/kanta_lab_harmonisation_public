@@ -1,0 +1,1489 @@
+concept_id	concept_name	vocabulary_id	n_codes	n_events
+3009542	Hematocrit [Volume Fraction] of Blood by calculation	LOINC	29	11407235
+3000963	Hemoglobin [Mass/volume] in Blood	LOINC	57	11265093
+3010813	Leukocytes [#/volume] in Blood	LOINC	53	11205325
+3007461	Platelets [#/volume] in Blood	LOINC	19	11196211
+3026361	Erythrocytes [#/volume] in Blood	LOINC	14	11175264
+3024731	MCV [Entitic mean volume] in Red Blood Cells	LOINC	18	11148804
+3035941	MCH [Entitic mass]	LOINC	15	11139123
+3020564	Creatinine [Moles/volume] in Serum or Plasma	LOINC	51	9024989
+3023103	Potassium [Moles/volume] in Serum or Plasma	LOINC	45	7908182
+3019550	Sodium [Moles/volume] in Serum or Plasma	LOINC	52	7821326
+3003338	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	16	7331654
+3002385	Erythrocyte [DistWidth] in Red Blood Cells	LOINC	20	7004505
+3020460	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	159	6802841
+40761511	CBC panel - Blood by Automated count	LOINC	5	6172064
+40764999	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	62	6143658
+3006923	Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	21	5367314
+3032080	INR in Blood by Coagulation assay	LOINC	88	2812069
+3035995	Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma	LOINC	13	2756532
+3013650	Neutrophils [#/volume] in Blood by Automated count	LOINC	4	2514044
+3004410	Hemoglobin A1c/Hemoglobin.total in Blood	LOINC	88	2419123
+3001308	Cholesterol in LDL [Moles/volume] in Serum or Plasma	LOINC	47	2347979
+3021589	Normoblasts [#/volume] in Blood	LOINC	22	2299398
+3009201	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	44	2173821
+3019900	Cholesterol [Moles/volume] in Serum or Plasma	LOINC	31	2073556
+3023602	Cholesterol in HDL [Moles/volume] in Serum or Plasma	LOINC	41	2024003
+3018251	Fasting glucose [Moles/volume] in Serum or Plasma	LOINC	42	1996657
+3048773	Triglyceride [Moles/volume] in Serum or Plasma --fasting	LOINC	17	1655520
+3013115	Eosinophils [#/volume] in Blood	LOINC	35	1618391
+3016431	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	66	1612576
+3019198	Lymphocytes [#/volume] in Blood	LOINC	38	1557180
+3008486	Thyroxine (T4) free [Moles/volume] in Serum or Plasma	LOINC	24	1537005
+3006315	Basophils [#/volume] in Blood	LOINC	26	1519691
+3001604	Monocytes [#/volume] in Blood	LOINC	29	1513142
+3006140	Bilirubin.total [Moles/volume] in Serum or Plasma	LOINC	12	1506859
+3002030	Lymphocytes/Leukocytes in Blood	LOINC	65	1465459
+3019069	Monocytes/Leukocytes in Blood	LOINC	48	1451788
+3022096	Basophils/Leukocytes in Blood	LOINC	48	1446628
+3006504	Eosinophils/Leukocytes in Blood	LOINC	42	1429973
+3013707	Erythrocyte sedimentation rate [Velocity] in Red Blood Cells by Westergren method	LOINC	6	1423371
+3018010	Neutrophils/Leukocytes in Blood	LOINC	55	1410042
+3037467	Urinalysis macro (dipstick) panel - Urine	LOINC	6	1393084
+3031040	Bacteria [#/volume] in Urine by Automated count	LOINC	12	1358321
+3013826	Glucose [Moles/volume] in Serum or Plasma	LOINC	53	1339897
+3021347	Calcium.ionized [Moles/volume] in Serum or Plasma	LOINC	74	1333722
+3044889	12 lead EKG panel	LOINC	2	1163408
+3026910	Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	17	1024731
+42870588	Differential panel, method unspecified - Blood	LOINC	2	1020069
+3024561	Albumin [Mass/volume] in Serum or Plasma	LOINC	21	1016464
+706163	SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection	LOINC	2	961920
+3009261	Glucose [Presence] in Urine by Test strip	LOINC	10	946600
+3035350	Ketones [Presence] in Urine by Test strip	LOINC	11	933706
+3021601	Nitrite [Presence] in Urine by Test strip	LOINC	10	919087
+40758558	Short blood count panel - Blood	LOINC	8	872285
+3001122	Ferritin [Mass/volume] in Serum or Plasma	LOINC	13	725861
+40763086	Leukocyte esterase [Presence] in Urine by Automated test strip	LOINC	3	687408
+3018095	Leukocytes [#/volume] in Urine	LOINC	20	676308
+3013603	Prostate specific Ag [Mass/volume] in Serum or Plasma	LOINC	39	674775
+3015736	pH of Urine	LOINC	11	668794
+3019800	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	60	599869
+3001079	Blood group antibody screen [Presence] in Serum or Plasma	LOINC	2	590172
+3020682	Albumin/Creatinine [Ratio] in Urine	LOINC	31	588386
+3018418	pH of Serum or Plasma	LOINC	19	570372
+3029287	Urinalysis microscopic panel [#/volume] - Urine by Automated count	LOINC	3	557289
+3029937	Albumin [Presence] in Urine by Test strip	LOINC	10	532964
+3009508	Creatinine [Moles/volume] in Urine	LOINC	22	532449
+1761868	Lipid panel - Serum or Plasma	LOINC	4	529561
+3023368	Bacteria identified in Blood by Culture	LOINC	3	528769
+3015377	Calcium [Moles/volume] in Serum or Plasma	LOINC	20	520967
+3013721	Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	14	513305
+40771025	25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma	LOINC	26	509150
+3013512	EKG study	LOINC	10	506024
+3002582	Erythrocytes [#/volume] in Urine	LOINC	12	500225
+40760892	CBC W Ordered Manual Differential panel - Blood	LOINC	3	490892
+3012516	Albumin [Mass/volume] in Urine	LOINC	15	484794
+3033658	Prothrombin time (PT) actual/Normal	LOINC	17	484673
+3014576	Chloride [Moles/volume] in Serum or Plasma	LOINC	10	457594
+3001784	Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma	LOINC	47	441698
+3041096	Erythrocytes [Presence] in Urine by Automated	LOINC	3	431124
+3019150	Specific gravity of Urine by Refractometry	LOINC	16	426435
+3026008	Bacteria identified in Urine by Culture	LOINC	3	420379
+3030467	Casts [#/volume] in Urine by Automated count	LOINC	20	419520
+3011397	Hemoglobin [Presence] in Urine by Test strip	LOINC	5	413345
+3019977	pH of Arterial blood	LOINC	8	406844
+3027946	Carbon dioxide [Partial pressure] in Arterial blood	LOINC	3	405582
+3027801	Oxygen [Partial pressure] in Arterial blood	LOINC	3	404986
+43054903	Holo-transcobalamin II [Moles/volume] in Serum	LOINC	7	404765
+3003396	Base excess in Arterial blood by calculation	LOINC	5	400371
+3016771	Amylase [Enzymatic activity/volume] in Serum or Plasma	LOINC	14	391242
+36304419	Bacteria [Presence] in Urine	LOINC	2	390903
+3029187	Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma	LOINC	57	390599
+3014051	Protein [Presence] in Urine by Test strip	LOINC	3	382676
+3003458	Phosphate [Moles/volume] in Serum or Plasma	LOINC	9	377182
+3016502	Oxygen saturation in Arterial blood	LOINC	10	377099
+40768804	Tissue Pathology biopsy report	LOINC	9	373531
+3000991	Gas panel - Venous blood	LOINC	5	371862
+3002173	Hemoglobin [Mass/volume] in Arterial blood	LOINC	9	371451
+3044640	Blood type and Crossmatch panel - Blood	LOINC	1	354396
+3025839	Triglyceride [Moles/volume] in Serum or Plasma	LOINC	26	343761
+3045783	Sodium and Potassium panel [Moles/volume] - Serum or Plasma	LOINC	2	328037
+3014111	Lactate [Moles/volume] in Serum or Plasma	LOINC	10	326511
+3021337	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	25	323924
+3020779	Urea [Moles/volume] in Serum or Plasma	LOINC	17	315788
+3026493	Urate [Moles/volume] in Serum or Plasma	LOINC	17	314502
+3007220	Creatine kinase [Enzymatic activity/volume] in Serum or Plasma	LOINC	12	297958
+3014007	Fractional oxyhemoglobin in Arterial blood	LOINC	5	296200
+3028653	Carboxyhemoglobin/Hemoglobin.total in Arterial blood	LOINC	6	292051
+3006217	Methemoglobin/Hemoglobin.total in Arterial blood	LOINC	3	291335
+3015399	Transferrin receptor.soluble [Mass/volume] in Serum or Plasma	LOINC	15	285465
+3000850	Epithelial cells [#/volume] in Urine	LOINC	23	276843
+3012095	Magnesium [Moles/volume] in Serum or Plasma	LOINC	8	270004
+3016293	Bicarbonate [Moles/volume] in Serum or Plasma	LOINC	3	269735
+46236098	ABO and Rh group [Type] in Blood by Confirmatory method	LOINC	1	266214
+3014218	Bicarbonate [Moles/volume] standard in Arterial blood	LOINC	9	265515
+40762366	Oxygen capacity [Volume Fraction] in Arterial blood	LOINC	4	257858
+3026782	Osmolality of Urine	LOINC	32	252736
+3020059	Calcium [Moles/volume] corrected for albumin in Serum or Plasma	LOINC	17	250713
+3030306	Epithelial cells.non-squamous [#/volume] in Urine by Automated count	LOINC	12	237764
+42868674	Cholesterol in HDL/Cholesterol.total [Molar ratio] in Serum or Plasma	LOINC	7	236608
+3005013	Prostate Specific Ag Free [Mass/volume] in Serum or Plasma	LOINC	17	236561
+3022250	Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction	LOINC	7	227952
+3029879	Epithelial cells.squamous [#/volume] in Urine by Automated count	LOINC	3	227666
+46235355	HIV 1 and 2 tests - Meaningful Use set	LOINC	1	209479
+3021960	Folate [Moles/volume] in Serum or Plasma	LOINC	7	209197
+3022948	Iron [Moles/volume] in Serum or Plasma	LOINC	15	207654
+3003694	ABO and Rh group [Type] in Blood	LOINC	3	207267
+3012544	pH of Venous blood	LOINC	16	197076
+3021447	Carbon dioxide [Partial pressure] in Venous blood	LOINC	3	193244
+3004789	Transferrin [Mass/volume] in Serum or Plasma	LOINC	17	191693
+3002032	Base excess in Venous blood by calculation	LOINC	7	189855
+3025159	Blasts/Leukocytes in Blood	LOINC	9	186024
+3008152	Bicarbonate [Moles/volume] in Arterial blood	LOINC	12	183958
+3051714	Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma	LOINC	52	183051
+3017181	Myelocytes/Leukocytes in Blood	LOINC	9	182740
+40763571	Iron/Transferrin [Ratio] in Serum or Plasma	LOINC	38	180828
+3017732	Neutrophils [#/volume] in Blood	LOINC	42	179947
+3003785	Carcinoembryonic Ag [Mass/volume] in Serum or Plasma	LOINC	8	179100
+3021440	Promyelocytes/Leukocytes in Blood	LOINC	7	177088
+3002179	Metamyelocytes/Leukocytes in Blood	LOINC	13	167084
+3019225	pH of Specimen	LOINC	3	165532
+3048689	Calprotectin [Mass/mass] in Stool	LOINC	5	164242
+3024135	Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture	LOINC	1	159335
+3009035	Cobalamin (Vitamin B12) [Moles/volume] in Serum or Plasma	LOINC	28	153899
+3024950	Chlamydia trachomatis DNA [Presence] in Urine by NAA with probe detection	LOINC	1	152510
+3019050	Tissue transglutaminase IgA Ab [Units/volume] in Serum	LOINC	20	151122
+3005772	Bilirubin.conjugated [Moles/volume] in Serum or Plasma	LOINC	11	150241
+3018677	aPTT in Platelet poor plasma by Coagulation assay	LOINC	6	149326
+3019284	Hepatitis B virus surface Ag [Presence] in Serum	LOINC	2	147462
+3019902	Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture	LOINC	2	145674
+3007164	IgA [Mass/volume] in Serum or Plasma	LOINC	11	145569
+40761536	Microorganisms panel - Urine sediment	LOINC	1	144188
+3044938	Influenza virus A RNA [Presence] in Specimen by NAA with probe detection	LOINC	3	142013
+3024354	Oxygen [Partial pressure] in Venous blood	LOINC	3	139005
+3000067	Parathyrin.intact [Mass/volume] in Serum or Plasma	LOINC	3	136886
+3027945	Reticulocytes/Erythrocytes in Blood	LOINC	3	135278
+3003510	Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection	LOINC	1	134265
+3048816	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood	LOINC	3	134038
+3042936	Bacteria identified in Isolate by Culture	LOINC	1	131106
+4034850	Laboratory test	SNOMED	4	129604
+3019309	Folate [Moles/volume] in Red Blood Cells	LOINC	8	125721
+3007628	Bicarbonate [Moles/volume] standard in Venous blood	LOINC	9	123954
+3019060	Gas panel - Arterial blood	LOINC	5	122222
+3023024	Carbon dioxide [Partial pressure] in Capillary blood	LOINC	4	121264
+3009343	pH of Capillary blood	LOINC	7	117986
+3018006	Microscopic observation [Identifier] in Cervix by Cyto stain.thin prep	LOINC	1	114152
+3021614	Rheumatoid factor [Units/volume] in Serum or Plasma	LOINC	53	114145
+3016417	Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma	LOINC	10	113228
+40761535	Cells panel - Urine sediment	LOINC	5	111359
+3003031	Transferrin.carbohydrate deficient.disialo/Transferrin.total in Serum or Plasma	LOINC	9	108678
+3019832	Treponema pallidum Ab [Presence] in Serum	LOINC	5	108068
+3026989	Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma	LOINC	15	105869
+3023520	Reticulocytes [#/volume] in Blood	LOINC	4	103543
+3041942	Cyclic citrullinated peptide Ab [Units/volume] in Serum	LOINC	11	103227
+3036481	Cortisol [Moles/volume] in Serum or Plasma	LOINC	8	102798
+3005719	IgG [Mass/volume] in Serum or Plasma	LOINC	13	102666
+3002109	Cholesterol in LDL/Cholesterol in HDL [Mass Ratio] in Serum or Plasma	LOINC	8	102409
+3013742	Prealbumin [Mass/volume] in Serum or Plasma	LOINC	18	102147
+43055554	Base excess.100% oxygenated [Moles/volume] standard in Capillary blood by calculation	LOINC	3	101737
+3017143	Hepatitis C virus Ab [Presence] in Serum	LOINC	1	100548
+3043924	Respiratory syncytial virus RNA [Identifier] in Specimen by NAA with probe detection	LOINC	1	99482
+3011960	Natriuretic peptide B [Mass/volume] in Serum or Plasma	LOINC	4	97925
+3007853	Bacteria identified in Skin by Aerobe culture	LOINC	1	97268
+3004119	Hemoglobin [Mass/volume] in Venous blood	LOINC	10	97228
+46236952	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M	LOINC	18	95960
+3026250	Tacrolimus [Mass/volume] in Blood	LOINC	5	95949
+3023081	Carboxyhemoglobin/Hemoglobin.total in Blood	LOINC	6	95302
+3038288	Influenza virus B RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	95225
+3020630	Protein [Mass/volume] in Serum or Plasma	LOINC	3	93875
+3017446	Testosterone [Moles/volume] in Serum or Plasma	LOINC	11	93098
+3020891	Body temperature	LOINC	9	93063
+3022621	pH of Urine by Test strip	LOINC	17	92206
+3037522	Nuclear Ab [Titer] in Serum	LOINC	21	91824
+3007930	Methemoglobin/Hemoglobin.total in Blood	LOINC	5	91155
+3030981	Hyaline casts [#/volume] in Urine by Automated count	LOINC	7	90835
+43054914	Glucose tolerance 2 hours panel - Serum or Plasma	LOINC	4	90712
+3006093	Chlamydia trachomatis DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	90245
+3004529	Oxygen [Partial pressure] adjusted to patient's actual temperature in Venous blood	LOINC	5	88729
+3045414	Leukocytes [Presence] in Urine	LOINC	6	88404
+3022313	Gas panel - Capillary blood	LOINC	3	87120
+3033319	Streptococcus pyogenes Ag [Presence] in Throat	LOINC	4	86750
+3000494	Fungus identified in Specimen by Culture	LOINC	4	80804
+3005785	Creatine kinase.MB [Mass/volume] in Serum or Plasma	LOINC	13	79959
+3008230	Borrelia burgdorferi IgM Ab [Units/volume] in Serum	LOINC	10	77662
+3037551	Cancer Ag 125 [Units/volume] in Serum or Plasma	LOINC	14	77205
+3002256	Pathology report gross observation	LOINC	1	77007
+40768797	Stomach Pathology biopsy report	LOINC	1	76301
+3010517	Carboxyhemoglobin/Hemoglobin.total in Venous blood	LOINC	8	75645
+3024889	Methemoglobin/Hemoglobin.total in Venous blood	LOINC	4	74816
+3047181	Lactate [Moles/volume] in Blood	LOINC	13	73160
+3004490	Bicarbonate [Moles/volume] standard in Capillary blood	LOINC	3	72349
+3022145	Colonoscopy Study observation	LOINC	1	72045
+3000330	Specific gravity of Urine by Test strip	LOINC	4	71773
+3011371	Neisseria gonorrhoeae DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	71209
+3027273	Bicarbonate [Moles/volume] in Venous blood	LOINC	20	70272
+3000492	Spirometry study	LOINC	5	69533
+3004588	Protein electrophoresis panel - Serum or Plasma	LOINC	1	68293
+3000081	cloZAPine [Moles/volume] in Serum or Plasma	LOINC	7	66864
+42868678	Cholesterol non HDL [Moles/volume] in Serum or Plasma	LOINC	3	66002
+21494755	Public health laboratory ask at order entry panel	LOINC	1	62951
+3030366	Cystatin C [Mass/volume] in Serum or Plasma	LOINC	8	62034
+3010375	cycloSPORINE [Mass/volume] in Blood	LOINC	6	61025
+43055120	Cytomegalovirus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	4	59845
+3021879	Hepatitis B virus core Ab [Presence] in Serum	LOINC	1	59489
+3018572	Chloride [Moles/volume] in Blood	LOINC	2	59321
+3039000	Anion gap in Blood by calculation	LOINC	3	59287
+3018405	Lactate [Moles/volume] in Arterial blood	LOINC	8	56958
+3051552	Clostridioides difficile toxin genes [Presence] in Stool by NAA with probe detection	LOINC	2	55043
+3018171	Choriogonadotropin [Units/volume] in Serum or Plasma	LOINC	12	54905
+3028026	IgM [Mass/volume] in Serum or Plasma	LOINC	8	54210
+3022914	Cancer Ag 19-9 [Units/volume] in Serum or Plasma	LOINC	12	53815
+3028300	Cannabinoids [Presence] in Urine	LOINC	2	53591
+3000764	Benzodiazepines [Presence] in Urine	LOINC	1	52821
+3011288	Drugs identified in Urine by Screen method Nominal	LOINC	2	52388
+3027008	Opiates [Presence] in Urine	LOINC	1	52282
+3037121	Protein [Mass/volume] in Urine	LOINC	4	52163
+4035726	Immunohistochemistry procedure	SNOMED	1	51942
+3016251	Hemoglobin.gastrointestinal [Presence] in Stool	LOINC	1	51660
+3028626	Oxygen [Partial pressure] in Capillary blood	LOINC	4	51613
+3043409	Potassium [Moles/volume] in Arterial blood	LOINC	4	51548
+4010399	Spirometry for bronchospasm with prolonged evaluation after bronchodilator	SNOMED	2	50607
+3027944	Amphetamines [Presence] in Urine	LOINC	2	50457
+3010421	pH of Blood	LOINC	4	50330
+3016879	Cocaine [Presence] in Urine	LOINC	1	50225
+3034860	Kappa light chains.free [Mass/volume] in Serum	LOINC	4	47803
+3047169	Lambda light chains.free [Mass/volume] in Serum or Plasma	LOINC	4	47682
+3008832	Norclozapine [Moles/volume] in Serum or Plasma	LOINC	5	47586
+3015235	Bicarbonate [Moles/volume] in Capillary blood	LOINC	20	47536
+3020427	Coagulation factor X inhibitor [Units/volume] in Platelet poor plasma by Coagulation assay	LOINC	4	47280
+36660697	Celiac disease serology panel - Serum	LOINC	3	46498
+3045424	Erythrocytes [Presence] in Urine	LOINC	5	46066
+36031861	Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection	LOINC	2	45357
+3021584	Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma	LOINC	5	44381
+1001926	Buprenorphine [Presence] in Urine by Screen method	LOINC	1	44133
+3005322	IgE [Units/volume] in Serum or Plasma	LOINC	10	43220
+3027238	Thyroperoxidase Ab [Units/volume] in Serum or Plasma	LOINC	19	42371
+3016407	Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay	LOINC	9	41538
+3024928	Oxygen saturation in Venous blood	LOINC	4	41392
+3007778	Kappa light chains/Lambda light chains [Mass Ratio] in Serum	LOINC	5	41343
+3049717	Cytology report of Urine Cyto stain	LOINC	2	40944
+3036489	Thrombin time	LOINC	12	40633
+1761482	Bacteria [#/volume] in Urine by Culture	LOINC	1	39881
+3024666	Lithium [Moles/volume] in Serum or Plasma	LOINC	3	39840
+3005229	Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	10	39833
+3043723	Beta 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	11	39801
+3043747	Beta 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	11	39732
+3000515	Antithrombin actual/normal in Platelet poor plasma by Chromogenic method	LOINC	9	39650
+3034780	Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma	LOINC	6	39648
+3001019	Free T4 and TSH panel - Serum or Plasma	LOINC	1	39480
+3013139	Helicobacter pylori Ag [Presence] in Stool	LOINC	2	39315
+3052851	Hemolysis interference index of Serum or Plasma	LOINC	2	39221
+3005715	Vancomycin [Mass/volume] in Serum or Plasma	LOINC	3	38617
+3019250	Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	9	38489
+3016888	Borrelia burgdorferi IgG Ab [Units/volume] in Serum	LOINC	7	38425
+3014162	Mycobacterium tuberculosis DNA [Presence] in Specimen by NAA with probe detection	LOINC	2	38421
+1616796	Gas panel - Central venous blood	LOINC	1	38175
+3015322	Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	9	38126
+4024509	Urine culture	SNOMED	1	37702
+3023323	Follitropin [Units/volume] in Serum or Plasma	LOINC	11	37598
+3009466	Valproate [Moles/volume] in Serum or Plasma	LOINC	4	37442
+3040151	Glucose [Moles/volume] in Capillary blood	LOINC	16	37386
+3005895	Myoglobin [Mass/volume] in Serum or Plasma	LOINC	6	37123
+3027315	Oxygen [Partial pressure] in Blood	LOINC	3	37085
+44816559	Phosphatidylethanol [Mass/volume] in Blood	LOINC	3	36977
+3013290	Carbon dioxide [Partial pressure] in Blood	LOINC	3	36789
+3012501	Base excess in Blood by calculation	LOINC	3	36737
+3023420	DNA double strand Ab [Units/volume] in Serum	LOINC	12	36567
+3029713	Protein.monoclonal band 1 [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	5	36539
+3012336	Haptoglobin [Mass/volume] in Serum or Plasma	LOINC	6	36279
+586526	SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection	LOINC	4	35038
+46235759	Influenza virus B RNA [Presence] in Nasopharynx by NAA with probe detection	LOINC	1	34601
+3035933	Granulocytes/Leukocytes in Blood	LOINC	5	34440
+3023465	Gamma globulin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	4	34144
+3019230	Fractional oxyhemoglobin in Venous blood	LOINC	8	34102
+3046279	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	10	33817
+3021387	Prolactin [Units/volume] in Serum or Plasma	LOINC	4	33582
+3004716	Salmonella sp identified in Stool by Organism specific culture	LOINC	2	33317
+3008037	Lactate [Moles/volume] in Venous blood	LOINC	7	32806
+36032419	SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Immunoassay	LOINC	3	32724
+3025941	Bacteria identified in Stool by Culture	LOINC	1	32658
+40760888	Immunoglobulin light chains.free panel - Serum	LOINC	2	31906
+3028707	Methadone [Presence] in Urine by Screen method	LOINC	1	31091
+3010566	Parathyrin.intact [Moles/volume] in Serum or Plasma	LOINC	1	30491
+3051387	C reactive protein [Mass/volume] in Capillary blood	LOINC	9	30338
+3009445	Proteinase 3 Ab [Units/volume] in Serum	LOINC	5	30254
+3003327	Ova and parasites identified in Stool by Light microscopy	LOINC	2	29961
+42529201	Cancer Ag 19-9 [Units/volume] in Serum or Plasma by Immunoassay	LOINC	3	29895
+3004248	Sex hormone binding globulin [Moles/volume] in Serum or Plasma	LOINC	5	29702
+3044254	Respiratory syncytial virus RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	29562
+3035797	Protein.monoclonal band 2 [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	3	29394
+3017895	Helicobacter pylori Ab [Units/volume] in Serum	LOINC	6	29385
+3021901	Oxygen saturation in Capillary blood	LOINC	3	29165
+3003191	Choriogonadotropin [Presence] in Serum or Plasma	LOINC	3	28800
+3010156	C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method	LOINC	19	28709
+3038515	Glucose [Moles/volume] in Venous blood	LOINC	5	28609
+3035715	Granulocytes [#/volume] in Blood	LOINC	2	28336
+3029338	Protein.monoclonal band 3 [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	3	28276
+43534045	MCM6 gene c.-13910C>T and -13915T>G [Identifier] in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	27787
+3046870	Tissue transglutaminase IgG Ab [Units/volume] in Serum	LOINC	8	27233
+3029379	Protein.monoclonal band 4 [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	3	27037
+3023183	Ammonium ion [Moles/volume] in Plasma	LOINC	5	26930
+3020961	Endomysium IgA Ab [Titer] in Serum	LOINC	3	26862
+3050129	First trimester maternal screen panel - Serum or Plasma	LOINC	1	26783
+3017044	Thyrotropin receptor Ab [Units/volume] in Serum	LOINC	13	26524
+3000620	Complement C3 [Mass/volume] in Serum or Plasma	LOINC	11	26471
+3012110	Lysozyme [Mass/volume] in Serum or Plasma	LOINC	3	26011
+3017766	Complement C4 [Mass/volume] in Serum or Plasma	LOINC	10	26007
+3027456	Digoxin [Moles/volume] in Serum or Plasma	LOINC	4	25341
+3006184	Hemoglobin [Mass/volume] in Capillary blood	LOINC	10	25042
+1002224	Polysomnography panel	LOINC	1	25006
+40767503	Oxygen content in Capillary blood by calculation	LOINC	5	24929
+3004809	Band form neutrophils/Leukocytes in Blood	LOINC	11	24799
+3043849	Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	3	24736
+40768443	Skin Pathology biopsy report	LOINC	1	24633
+36304997	Mycobacterium tuberculosis stimulated gamma interferon release by CD4+ and CD8+ T-cells [Units/volume] in Blood	LOINC	7	24456
+3006588	Cancer Ag 15-3 [Units/volume] in Serum or Plasma	LOINC	8	24289
+46237023	Hepatitis B virus core and surface Ab and surface Ag panel - Serum	LOINC	1	24037
+3029511	Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	23809
+3009214	Lutropin [Units/volume] in Serum or Plasma	LOINC	7	23616
+3019145	Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma	LOINC	7	23584
+3015171	Extractable nuclear Ab [Units/volume] in Serum	LOINC	8	23094
+3023421	Hepatitis B virus surface Ab [Units/volume] in Serum	LOINC	7	23029
+3050449	Albumin [Mass/time] in Urine collected for unspecified duration	LOINC	6	22756
+36032269	Testosterone Free [Moles/volume] in Serum or Plasma by calculation	LOINC	19	22706
+21492888	Glucose tolerance 2 hours gestational panel - Serum or Plasma	LOINC	1	22618
+3048929	Epstein Barr virus Ab [Presence] in Serum	LOINC	2	22583
+3014791	Apolipoprotein B [Mass/volume] in Serum or Plasma	LOINC	7	22533
+3050380	Cytology report of Cervical or vaginal smear or scraping Cyto stain	LOINC	2	22405
+3020321	Streptococcus agalactiae [Presence] in Vaginal fluid by Organism specific culture	LOINC	1	22188
+36305247	Microscopic observation [Identifier] in Isolate by Gram stain	LOINC	1	21855
+40763531	Fetal Nuchal fold [Multiple of the median] Thickness adjusted for maternal weight	LOINC	2	21813
+46235831	Pregnancy associated plasma protein A [Multiple of the median] adjusted in Serum or Plasma	LOINC	2	21810
+3008714	Choriogonadotropin [Multiple of the median] adjusted in Serum or Plasma	LOINC	2	21721
+3001334	Neutrophil cytoplasmic Ab [Units/volume] in Serum	LOINC	10	21421
+3025547	Thyroglobulin Ab [Units/volume] in Serum or Plasma	LOINC	19	21287
+3049207	Fetal Trisomy 21 risk [Likelihood] Based on maternal age	LOINC	1	21171
+3008364	Apolipoprotein A-I [Mass/volume] in Serum or Plasma	LOINC	6	21031
+3032836	C peptide [Moles/volume] in Serum or Plasma --fasting	LOINC	11	20232
+3027545	Mycoplasma pneumoniae Ab [Presence] in Serum by Immunoassay	LOINC	1	19646
+3011831	Apolipoprotein B/Apolipoprotein A-I [Percentile]	LOINC	3	19494
+3043238	Trisomy 21 risk [Likelihood] in Fetus	LOINC	1	19376
+3040853	Adenovirus DNA [Identifier] in Specimen by NAA with probe detection	LOINC	1	19254
+3000570	Elastase.pancreatic [Mass/mass] in Stool	LOINC	3	19232
+3049804	Myeloperoxidase IgG Ab [Units/volume] in Serum	LOINC	7	19059
+3008898	HLA-B27 [Presence]	LOINC	1	18491
+3036535	Thyroglobulin [Mass/volume] in Serum or Plasma	LOINC	3	18470
+3042194	Human metapneumovirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	2	18405
+3015916	Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma	LOINC	2	18403
+3027450	Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum	LOINC	10	18375
+3047352	Trisomy 18 risk [Likelihood] in Fetus	LOINC	1	18292
+3000475	Leukocytes [#/volume] in Synovial fluid	LOINC	12	17909
+3005033	Fetal Nuchal fold Thickness US	LOINC	3	17755
+3006999	Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum	LOINC	11	17500
+37019628	Gastrointestinal bacterial pathogens panel - Stool by NAA with probe detection	LOINC	1	17394
+3016921	Smith extractable nuclear Ab [Units/volume] in Serum	LOINC	10	17352
+3034274	Bile acid [Moles/volume] in Serum --fasting	LOINC	6	17221
+3008909	Norovirus RNA [Presence] in Stool by NAA with probe detection	LOINC	1	17197
+3013527	Hepatitis B virus core IgM Ab [Presence] in Serum	LOINC	1	16968
+3007566	Smooth muscle Ab [Titer] in Serum	LOINC	6	16962
+3019897	Erythrocyte [DistWidth] in Red Blood Cells by Automated count	LOINC	11	16931
+3050238	Crystals [Presence] in Synovial fluid by Light microscopy	LOINC	1	16912
+3014702	Chromogranin A [Moles/volume] in Serum or Plasma	LOINC	4	16754
+42529200	Cancer Ag 15-3 [Units/volume] in Serum or Plasma by Immunoassay	LOINC	3	16652
+3019473	Protein [Mass/volume] in Cerebral spinal fluid	LOINC	4	16625
+3034770	Mitochondria Ab [Titer] in Serum	LOINC	5	16434
+3029634	Reagin Ab [Titer] in Serum by VDRL	LOINC	3	16230
+3027475	Erythrocytes [#/volume] in Cerebral spinal fluid	LOINC	10	16111
+3008757	Leukocyte morphology finding [Identifier] in Blood	LOINC	2	16006
+1002102	Choriogonadotropin.intact+Beta subunit [Mass/volume] in Serum or Plasma	LOINC	1	15974
+3027544	Mycobacterium sp identified in Sputum by Organism specific culture	LOINC	1	15895
+3017354	Segmented neutrophils/Leukocytes in Blood	LOINC	6	15889
+3024403	Complement+Immunoglobulin [Units/volume] in Red Blood Cells	LOINC	1	15870
+3011648	Oxygen content in Venous blood	LOINC	3	15620
+3010838	Calcium [Moles/time] in 24 hour Urine	LOINC	6	15513
+36033641	SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay	LOINC	1	15478
+3016543	Leukocytes [#/volume] in Cerebral spinal fluid	LOINC	7	15443
+3017918	Cytomegalovirus IgG Ab [Titer] in Serum or Plasma	LOINC	1	15431
+3015635	Cytomegalovirus IgM Ab [Units/volume] in Serum or Plasma	LOINC	3	15107
+3024891	Influenza virus A+B Ag [Presence] in Specimen	LOINC	1	15096
+3023511	Choriogonadotropin [Units/volume] in Urine	LOINC	2	15027
+3010521	Mycoplasma pneumoniae IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	14920
+3036086	Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunoassay	LOINC	8	14853
+3002482	Mycoplasma pneumoniae DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	14832
+42529406	Shigella sp [Presence] in Stool by Culture	LOINC	1	14828
+3013180	HIV 1 RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification	LOINC	2	14699
+3014765	Yersinia sp identified in Stool by Organism specific culture	LOINC	1	14695
+3006418	Campylobacter sp identified in Tissue by Organism specific culture	LOINC	1	14605
+3037756	Immunofixation for Serum or Plasma	LOINC	1	14593
+3025130	Human papilloma virus identified in Specimen	LOINC	1	14516
+40769539	Bacteria identified based on 16S rRNA gene [Identifier] in Specimen by Sequencing	LOINC	1	14507
+3051611	Lipemic interference index of Serum or Plasma	LOINC	2	14493
+3042631	Mycobacterium sp identified in Specimen	LOINC	1	14454
+3044290	Cell count panel - Cerebral spinal fluid	LOINC	1	14432
+3014959	Toxoplasma gondii IgG Ab [Units/volume] in Serum	LOINC	4	14348
+3010130	Cytomegalovirus IgG Ab [Units/volume] in Serum or Plasma	LOINC	4	14289
+3045716	Anion gap in Serum or Plasma by calculation	LOINC	3	14287
+3020044	Glucose [Moles/volume] in Cerebral spinal fluid	LOINC	3	14248
+40758310	Human epididymis protein 4 [Moles/volume] in Serum or Plasma	LOINC	8	14218
+3025245	SCL-70 extractable nuclear Ab [Units/volume] in Serum by Immunoassay	LOINC	11	14176
+40766189	Gliadin peptide IgG Ab [Units/volume] in Serum by Immunoassay	LOINC	5	14056
+3023419	Bacteria identified in Sputum by Culture	LOINC	1	14036
+3005702	Mycobacterium sp identified in Specimen by Organism specific culture	LOINC	2	13903
+3007844	Epstein Barr virus capsid IgM Ab [Units/volume] in Serum by Immunoassay	LOINC	3	13880
+3043109	Cytology report of Tissue fine needle aspirate Cyto stain	LOINC	1	13478
+40768793	Breast Pathology biopsy report	LOINC	2	13464
+3023939	Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Serum	LOINC	10	13411
+3007080	Epstein Barr virus nuclear IgG Ab [Units/volume] in Serum	LOINC	5	13363
+3023351	European house dust mite IgE Ab [Units/volume] in Serum	LOINC	14	13347
+3000012	Reticulocyte production index	LOINC	4	13287
+3020876	Protein [Mass/time] in 24 hour Urine	LOINC	7	13222
+40765161	Human bocavirus DNA [Presence] in Specimen by NAA with probe detection	LOINC	2	13049
+3028271	Lactate [Moles/volume] in Capillary blood	LOINC	6	13034
+4094501	Cardiovascular stress test using bicycle ergometer	SNOMED	1	13034
+3021788	Differential panel - Synovial fluid	LOINC	1	12939
+3024980	IgG subclass 4 [Mass/volume] in Serum	LOINC	5	12850
+3026725	Estradiol (E2) [Moles/volume] in Serum or Plasma	LOINC	5	12778
+4268621	Lupus anticoagulant assay	SNOMED	2	12621
+3029080	Hemoglobin [Entitic mass] in Reticulocytes	LOINC	3	12422
+44806420	Estimation of glomerular filtration rate	SNOMED	3	12320
+3031478	Chlamydophila pneumoniae DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	12165
+4146454	Self-monitoring of blood glucose	SNOMED	2	12127
+3012477	Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	12026
+3046524	Influenza virus A Ag [Presence] in Nasopharynx by Immunoassay	LOINC	1	11862
+3043362	Influenza virus B Ag [Presence] in Nasopharynx by Immunoassay	LOINC	1	11860
+3003181	Sodium [Moles/volume] in Urine	LOINC	3	11625
+3039443	Prostate specific Ag panel - Serum or Plasma	LOINC	1	11468
+3042111	Morphology [Interpretation] in Bone marrow Narrative	LOINC	1	11463
+3019539	Treponema pallidum Ab [Titer] in Serum by Hemagglutination	LOINC	3	11457
+3003888	Timothy IgE Ab [Units/volume] in Serum	LOINC	6	11251
+3003129	Base excess in Capillary blood by calculation	LOINC	3	11244
+3011412	CD3 cells [#/volume] in Blood	LOINC	8	11121
+3041354	Potassium [Moles/volume] in Venous blood	LOINC	2	11069
+3044941	Cell count panel - Synovial fluid	LOINC	2	11068
+3035285	Chloride [Moles/volume] in Venous blood	LOINC	2	11067
+3033705	Calcium.ionized [Moles/volume] in Venous blood	LOINC	2	10982
+3047826	Mullerian inhibiting substance [Mass/volume] in Serum or Plasma	LOINC	3	10872
+3011985	Renin [Units/volume] in Plasma	LOINC	21	10814
+3023601	Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture	LOINC	1	10730
+3002523	Influenza virus A Ag [Presence] in Specimen	LOINC	1	10727
+3003740	Influenza virus B Ag [Presence] in Specimen	LOINC	1	10720
+3008401	Mugwort IgE Ab [Units/volume] in Serum	LOINC	6	10711
+3010726	Horse dander IgE Ab [Units/volume] in Serum	LOINC	11	10671
+44816844	Macroprolactin [Units/volume] in Serum or Plasma	LOINC	3	10618
+3016244	Insulin [Units/volume] in Serum or Plasma	LOINC	6	10580
+42870365	C reactive protein [Mass/volume] in Blood by High sensitivity method	LOINC	4	10574
+3023150	Myeloperoxidase Ab [Units/volume] in Serum	LOINC	7	10571
+3000034	Microalbumin [Mass/volume] in Urine	LOINC	3	10514
+42529215	Follitropin [Units/volume] in Serum or Plasma by Immunoassay	LOINC	3	10461
+3030136	5-Hydroxyindoleacetate [Moles/volume] in Serum or Plasma	LOINC	3	10452
+3000855	Microscopic observation [Identifier] in Vaginal fluid by Gram stain	LOINC	1	10447
+3004383	Neutrophil cytoplasmic Ab.classic [Titer] in Serum by Immunofluorescence	LOINC	9	10424
+3003284	Neutrophil cytoplasmic Ab.perinuclear [Titer] in Serum by Immunofluorescence	LOINC	12	10348
+3028531	Enolase.neuron specific [Mass/volume] in Serum or Plasma	LOINC	3	10290
+3042206	Streptococcus agalactiae Ag [Presence] in Vaginal fluid	LOINC	1	10143
+3014326	Insulin-like growth factor-I [Moles/volume] in Serum or Plasma	LOINC	3	10089
+3035637	Corticotropin [Mass/volume] in Plasma	LOINC	1	10000
+3017817	Protein [Mass] in Urine collected for unspecified duration	LOINC	3	9995
+3044355	Beta 2 glycoprotein 1 IgG Ab [Units/volume] in Serum or Plasma by Immunoassay	LOINC	3	9863
+3051651	Icteric interference index of Serum or Plasma	LOINC	2	9821
+3022806	Fractional oxyhemoglobin in Capillary blood	LOINC	4	9645
+3009041	Cardiolipin IgG Ab [Units/volume] in Serum by Immunoassay	LOINC	5	9604
+3018387	Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum	LOINC	3	9534
+3024172	Erythropoietin (EPO) [Units/volume] in Serum or Plasma	LOINC	9	9513
+3020565	Legionella pneumophila DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	9507
+3035320	C reactive protein [Mass/volume] in Body fluid	LOINC	6	9479
+21494815	CD4 cells/Lymphocytes in Specimen	LOINC	5	9464
+3026389	Candida sp identified in Specimen by Organism specific culture	LOINC	1	9451
+3038177	Helicobacter pylori Ab [Presence] in Serum	LOINC	1	9359
+40768800	Prostate Pathology biopsy report	LOINC	1	9355
+3022493	Free Hemoglobin [Mass/volume] in Plasma	LOINC	4	9350
+3014133	Dog dander IgE Ab [Units/volume] in Serum	LOINC	10	9242
+44790047	Parainfluenza type 1 nucleic acid detection	SNOMED	1	9233
+44790048	Parainfluenza type 2 nucleic acid detection	SNOMED	1	9231
+44790049	Parainfluenza type 3 nucleic acid detection	SNOMED	1	9227
+44806118	Parainfluenza type 4 nucleic acid detection	SNOMED	1	9227
+3021513	Carbon dioxide [Partial pressure] in Mixed venous blood	LOINC	3	9226
+3042596	Human coronavirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	9189
+3016650	Hepatitis A virus Ab [Presence] in Serum	LOINC	1	9155
+3021952	Alkaline phosphatase isoenzymes [Enzymatic activity/volume] in Serum or Plasma by Heat stability	LOINC	2	9116
+3025271	CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood	LOINC	4	8969
+3013327	Hepatitis A virus IgM Ab [Presence] in Serum	LOINC	1	8920
+3030692	Respiratory virus DNA+RNA [Identifier] in Specimen by NAA with probe detection	LOINC	1	8794
+21494890	Protein electrophoresis panel - 24 hour Urine	LOINC	1	8784
+3023430	Cat dander IgE Ab [Units/volume] in Serum	LOINC	6	8711
+3047007	Chlamydophila sp Ab [Presence] in Serum	LOINC	1	8697
+42868544	Hantavirus puumala IgM Ab [Presence] in Serum or Plasma by Immunofluorescence	LOINC	2	8674
+3030408	3-Methoxytyramine [Moles/volume] in Serum or Plasma	LOINC	3	8672
+3006576	Bicarbonate [Moles/volume] in Blood	LOINC	5	8626
+3026179	Normetanephrine [Moles/volume] in Serum or Plasma	LOINC	4	8562
+3001788	Aldosterone [Moles/volume] in Serum or Plasma	LOINC	9	8537
+3020148	Glutamate decarboxylase 65 Ab [Units/volume] in Serum	LOINC	5	8418
+3012568	Campylobacter sp identified in Specimen by Organism specific culture	LOINC	1	8341
+3016018	Differential panel - Cerebral spinal fluid	LOINC	1	8312
+3014043	Spermatozoa Nonprogressive/Spermatozoa in Semen	LOINC	2	8309
+4195642	Thrombophilia screening test	SNOMED	1	8303
+3016701	Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose	LOINC	37	8302
+3001405	CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood	LOINC	7	8289
+3006571	Granulocytes/Leukocytes in Synovial fluid	LOINC	17	8256
+3005570	Glucose [Moles/volume] in Urine	LOINC	3	8232
+3014148	Varicella zoster virus Ab [Titer] in Serum	LOINC	1	8220
+3003434	Protein [Mass/volume] in Pleural fluid	LOINC	3	8217
+3012220	Varicella zoster virus IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	8216
+3024522	Salmonella sp identified in Specimen by Organism specific culture	LOINC	1	8183
+3038071	Oxygen [Partial pressure] in Mixed venous blood	LOINC	2	8174
+42868716	Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection	LOINC	1	8148
+3028167	CD3+CD4+ (T4 helper) cells [#/volume] in Blood	LOINC	4	8143
+3023410	Appearance of Cerebral spinal fluid	LOINC	2	8125
+3042733	HLA Ab [Presence] in Serum	LOINC	1	8109
+3015816	F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method	LOINC	1	8102
+3000924	Streptococcus pyogenes [Presence] in Throat by Organism specific culture	LOINC	1	8058
+1175426	CD3 cells/Lymphocytes in Blood	LOINC	5	8032
+40762119	U1 small nuclear ribonucleoprotein 70kD Ab [Units/volume] in Serum	LOINC	9	7957
+3020287	Protein C actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	7908
+3016881	Enterovirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	7886
+3005988	Vibrio sp identified in Specimen by Organism specific culture	LOINC	1	7795
+3036432	Mycobacterium tuberculosis genotype [Identifier] in Isolate	LOINC	1	7791
+21493466	Plesiomonas shigelloides DNA [Presence] in Stool by NAA with non-probe detection	LOINC	1	7786
+21493690	Lymphocyte T-cell and B-cell and Natural killer subsets panel - Blood	LOINC	2	7781
+3025468	Yersinia sp identified in Specimen by Organism specific culture	LOINC	1	7772
+3005136	Cladosporium herbarum IgE Ab [Units/volume] in Serum	LOINC	8	7686
+3004616	Nuclear Ab [Presence] in Serum	LOINC	2	7678
+1175715	Chlamydophila pneumoniae IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	7630
+3027831	CD3-CD16+CD56+ (Natural killer) cells/cells in Blood	LOINC	4	7605
+3042602	Urea [Moles/volume] in Serum or Plasma --post dialysis	LOINC	3	7568
+3039162	Centromere protein B Ab [Units/volume] in Serum	LOINC	7	7548
+40766183	Gliadin peptide IgA Ab [Units/volume] in Serum by Immunoassay	LOINC	4	7448
+3025023	Rhinovirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	7393
+3023199	Leukocytes [#/volume] in Pleural fluid	LOINC	4	7372
+3014037	CD3+CD4+ (T4 helper) cells/cells in Blood	LOINC	3	7337
+3007847	Interleukin 2 Receptor Soluble [Units/volume] in Serum or Plasma	LOINC	3	7318
+3032155	Metanephrine Free [Moles/volume] in Serum or Plasma	LOINC	3	7315
+3008295	Osmolality of Serum or Plasma	LOINC	10	7295
+3002148	Methylenedioxymethamphetamine [Presence] in Urine by Screen method	LOINC	1	7272
+3019601	Blood group antibody investigation [Interpretation] in Plasma or RBC	LOINC	1	7240
+3009340	Metanephrine [Moles/volume] in Serum or Plasma	LOINC	2	7208
+3026285	Alpha 1 antitrypsin [Mass/volume] in Serum or Plasma	LOINC	3	7178
+3005757	Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	7162
+3004775	Volume in Urine collected for unspecified duration	LOINC	7	7152
+3042299	inFLIXimab [Mass/volume] in Serum or Plasma	LOINC	7	7102
+3027135	IgG subclass 1 [Mass/volume] in Serum	LOINC	5	7070
+3028192	IgG subclass 2 [Mass/volume] in Serum	LOINC	5	7057
+3024139	IgG subclass 3 [Mass/volume] in Serum	LOINC	5	7055
+3028369	Herpes simplex virus 1+2 DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	7001
+4062490	Immunoglobulin typing, IgG	SNOMED	1	6998
+3016914	Bacteria identified in Cerebral spinal fluid by Culture	LOINC	1	6996
+3010503	CD19 cells [#/volume] in Blood	LOINC	4	6933
+3027529	Toxoplasma gondii IgM Ab [Units/volume] in Serum	LOINC	1	6737
+3051014	Leukocytes [#/area] in Urine sediment by Automated count	LOINC	15	6638
+3015024	Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose	LOINC	25	6546
+3028308	Erythrocytes [#/volume] in Pleural fluid	LOINC	4	6504
+3012413	Glucose [Moles/volume] in Serum or Plasma --2 hours post meal	LOINC	7	6457
+40768806	Pleura Pathology biopsy report	LOINC	1	6447
+4211845	Urine protein measurement	SNOMED	1	6361
+3012441	Differential panel - Pleural fluid	LOINC	1	6311
+3045142	Bone marrow Pathology biopsy report	LOINC	1	6303
+3020191	Ethanol [Moles/volume] in Serum or Plasma	LOINC	4	6276
+3003329	Lymphocytes/Leukocytes in Synovial fluid	LOINC	12	6247
+4198724	Urine methamphetamine measurement	SNOMED	1	6199
+3013201	Beta-2-Microglobulin [Mass/volume] in Serum or Plasma	LOINC	3	6187
+43055361	Metamyelocytes/Leukocytes [Pure number fraction] in Blood by Manual count	LOINC	1	6152
+3020629	Protein S Free Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	3	6117
+3032700	Glomerular basement membrane Ab [Units/volume] in Serum	LOINC	7	6031
+40759040	C peptide [Moles/volume] in Serum or Plasma --post meal	LOINC	13	6005
+3034603	RHD gene allele [Genotype] in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	6001
+3038546	Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	5976
+3040359	Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	5974
+3041642	Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	5974
+3048821	Cortisol [Moles/volume] in Serum or Plasma --post 1 mg dexamethasone PO overnight	LOINC	2	5971
+3006462	Nitrate [Presence] in Urine	LOINC	1	5946
+3045788	Cell count panel - Pleural fluid	LOINC	2	5943
+40766800	Mycobacterium tuberculosis stimulated gamma interferon release by CD4+ T-cells [Units/volume] corrected for background in Blood	LOINC	3	5928
+3003265	Liver kidney microsomal Ab [Titer] in Serum by Immunofluorescence	LOINC	2	5901
+43055246	Days in therapeutic INR range/Days INR result determined [Ratio]	LOINC	6	5861
+3041067	Sjogrens syndrome-A extractable nuclear 52kD Ab [Units/volume] in Serum	LOINC	5	5853
+3010144	Erythrocytes [#/volume] in Synovial fluid	LOINC	4	5727
+3020491	Glucose [Moles/volume] in Blood	LOINC	11	5703
+3001467	Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma	LOINC	12	5701
+3018559	Microscopic observation [Identifier] in Buccal smear by Cyto stain	LOINC	1	5687
+3036603	Volume of Urine	LOINC	7	5683
+3014271	Vancomycin [Susceptibility]	LOINC	1	5659
+3000504	BK virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	4	5633
+3014973	Borrelia burgdorferi IgM Ab [Units/volume] in Cerebral spinal fluid	LOINC	5	5549
+3019497	Choriogonadotropin.beta subunit free [Moles/volume] in Serum or Plasma	LOINC	3	5541
+3017115	Methotrexate [Moles/volume] in Serum or Plasma	LOINC	3	5537
+40759812	SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	9	5509
+21494670	JAK2 gene exon 14 targeted mutation analysis in Blood or Tissue by Molecular genetics method	LOINC	1	5490
+3036782	Glucose [Moles/volume] in Pleural fluid	LOINC	3	5467
+3010380	Borrelia burgdorferi IgG Ab [Units/volume] in Cerebral spinal fluid	LOINC	5	5418
+3043405	Microscopic observation [Identifier] in Specimen by Non-gynecological cytology method	LOINC	1	5394
+3012447	Hantavirus puumala IgG Ab [Titer] in Serum	LOINC	2	5324
+3009595	Pneumocystis jirovecii DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	5301
+40768795	Lymph node Pathology biopsy report	LOINC	2	5290
+3016436	Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma	LOINC	2	5209
+4281824	Cell count and differential, peritoneal fluid	SNOMED	1	5203
+3032773	Endomysium IgG Ab [Titer] in Serum	LOINC	3	5197
+3016750	Collection duration of Urine	LOINC	6	5190
+3037534	Parathyrin related protein [Mass/volume] in Serum or Plasma	LOINC	5	5172
+3020485	Acetaminophen [Moles/volume] in Serum or Plasma	LOINC	3	5169
+40763082	Lactate dehydrogenase [Enzymatic activity/volume] in Pleural fluid by Lactate to pyruvate reaction	LOINC	3	5121
+3017569	Oxygen content in Arterial blood	LOINC	1	5099
+3029396	Erythrocyte agglutination [Presence] in Blood	LOINC	2	5038
+3041423	Sjogrens syndrome-A extractable nuclear 60kD Ab [Units/volume] in Serum	LOINC	4	5031
+3048469	10-Hydroxycarbazepine [Moles/volume] in Serum or Plasma	LOINC	4	5002
+40764126	Parainfluenza virus RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	5001
+3006245	CD3-CD19+ cells/cells in Blood	LOINC	5	4977
+3005791	Eosinophil cationic protein (ECP) [Mass/volume] in Serum	LOINC	6	4972
+3011951	Aspergillus fumigatus IgE Ab [Units/volume] in Serum	LOINC	7	4915
+3026470	Cobalt [Mass/volume] in Blood	LOINC	4	4913
+3000093	Morphology [Interpretation] in Blood Narrative	LOINC	1	4910
+3021125	Hepatitis C virus RNA [Presence] in Serum or Plasma by NAA with probe detection	LOINC	1	4893
+40759850	Jo-1 extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	6	4887
+3011166	Borrelia burgdorferi Ab [Presence] in Cerebral spinal fluid	LOINC	1	4875
+1175556	inFLIXimab Ab [Units/volume] in Serum by Immunoassay	LOINC	2	4852
+40759836	Histone Ab [Presence] in Serum by Immunoblot	LOINC	5	4799
+21492711	Cytomegalovirus IgG Ab avidity [Presence] in Serum or Plasma by Immunoassay	LOINC	2	4799
+40760848	Basement membrane zone BP180 Ab [Units/volume] in Serum by Immunoassay	LOINC	3	4795
+3034037	Hematocrit [Volume Fraction] of Mixed venous blood by calculation	LOINC	1	4771
+3025577	Chromium [Mass/volume] in Blood	LOINC	3	4755
+3035999	Lactate [Moles/volume] in Cerebral spinal fluid	LOINC	5	4754
+40759844	Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	5	4739
+3013005	Retinol [Moles/volume] in Serum or Plasma	LOINC	3	4735
+40759843	Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	4	4732
+3016724	Homocysteine [Moles/volume] in Serum or Plasma	LOINC	8	4728
+40768441	Liver Pathology biopsy report	LOINC	1	4718
+3043453	Neutrophil cytoplasmic Ab.perinuclear [Titer] in Serum	LOINC	3	4694
+3046294	Neutrophil cytoplasmic Ab.classic [Titer] in Serum	LOINC	3	4678
+40770918	von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay	LOINC	3	4678
+3007368	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	4	4675
+40757494	Bilirubin.total [Moles/volume] in Blood	LOINC	3	4674
+3011391	Calcitriol [Moles/volume] in Serum or Plasma	LOINC	1	4661
+3018301	Testosterone Free [Moles/volume] in Serum or Plasma	LOINC	7	4653
+3012565	Volume of 24 hour Urine	LOINC	6	4653
+3021197	Magnesium Ionized [Moles/volume] in Serum or Plasma	LOINC	1	4652
+3013727	Leukocytes other/Leukocytes in Blood	LOINC	3	4629
+40759842	Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	4	4613
+3044927	Protein electrophoresis panel - Urine	LOINC	1	4606
+3040370	OLANZapine [Moles/volume] in Serum or Plasma	LOINC	3	4596
+40759849	Smith extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	2	4596
+3050898	Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture	LOINC	2	4590
+3005082	Progesterone [Moles/volume] in Serum or Plasma	LOINC	3	4581
+3018980	carBAMazepine [Moles/volume] in Serum or Plasma	LOINC	3	4575
+1001509	Gas and Carbon monoxide and Electrolytes panel - Arterial blood	LOINC	1	4573
+3023709	Somatotropin [Mass/volume] in Serum or Plasma	LOINC	4	4572
+3022803	Oxygen [Partial pressure] adjusted to patient's actual temperature in Arterial blood	LOINC	1	4515
+3045156	Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Arterial blood	LOINC	1	4513
+3044242	Glucose [Moles/volume] in Arterial blood	LOINC	2	4510
+3006442	Creatine [Moles/volume] in Serum or Plasma	LOINC	4	4502
+3018333	Ribosomal P Ab [Presence] in Serum	LOINC	2	4458
+3019420	Tryptase [Mass/volume] in Serum or Plasma	LOINC	5	4407
+3034092	Cytoplasmic Ig cells/cells in Blood	LOINC	2	4407
+3052649	Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	4406
+3000208	Alpha tocopherol [Moles/volume] in Serum or Plasma	LOINC	3	4393
+3007449	CD3+CD8+ (T8 suppressor) cells/cells in Blood	LOINC	3	4359
+3020717	Zinc [Moles/volume] in Serum or Plasma	LOINC	5	4355
+3038026	Centromere Ab [Units/volume] in Serum	LOINC	8	4314
+21494434	Karyotype in Bone marrow	LOINC	2	4295
+3024474	Albumin [Mass/volume] in Cerebral spinal fluid	LOINC	4	4253
+3002670	Multiple inhalant allergen IgE Ab [Units/volume] in Serum	LOINC	2	4192
+3042975	Streptococcus sp identified in Isolate by Organism specific culture	LOINC	1	4190
+3006922	Hepatitis E virus Ab [Presence] in Serum	LOINC	1	4188
+3025018	Bordetella pertussis Ab [Titer] in Serum	LOINC	1	4165
+40761995	Spermatozoa Progressive [#/volume] in Semen	LOINC	1	4161
+3040363	Hepatitis A virus IgG Ab [Presence] in Serum by Immunoassay	LOINC	1	4150
+3029536	Hepatitis C virus RNA [Units/volume] (viral load) in Specimen by NAA with probe detection	LOINC	6	4136
+3016616	Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma	LOINC	3	4116
+36305771	Cryptosporidium sp DNA [Presence] in Stool by NAA with probe detection	LOINC	1	4105
+3027923	C peptide [Moles/volume] in Serum or Plasma	LOINC	8	4100
+3020013	Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma	LOINC	9	4096
+3011363	Streptococcus pneumoniae Ag [Presence] in Urine	LOINC	1	4092
+37020937	Giardia lamblia DNA [Presence] in Stool by NAA with probe detection	LOINC	1	4058
+3004905	Lipase [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	4052
+3025634	Parainfluenza virus 1 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	4037
+3022756	Ceruloplasmin [Mass/volume] in Serum or Plasma	LOINC	4	4036
+3006262	Parainfluenza virus 3 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	4036
+3012158	Parainfluenza virus 2 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	4036
+3038297	Parainfluenza virus 4 RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	4034
+3004915	Chlamydophila pneumoniae IgA Ab [Units/volume] in Serum	LOINC	4	4017
+40757349	CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood	LOINC	3	4016
+40759883	Oligoclonal Bands IgG [Presence] in Cerebral spinal fluid by Isoelectric focusing	LOINC	1	4001
+3048402	Erythrocytes [#/area] in Urine sediment by Automated count	LOINC	6	4000
+3016038	Potassium [Moles/volume] in Urine	LOINC	3	3999
+3025149	Bordetella pertussis IgA Ab [Units/volume] in Serum	LOINC	3	3997
+3049506	Microalbumin [Mass/time] in Urine collected for unspecified duration	LOINC	6	3984
+44786774	Adalimumab [Mass/volume] in Serum or Plasma	LOINC	7	3981
+3049539	Genetic diseases [Identifier] in Blood or Tissue by FISH Nominal	LOINC	2	3942
+3032699	Streptococcus pneumoniae DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	3940
+3027953	Aldolase [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	3930
+3036428	Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid	LOINC	3	3914
+3006270	Folate [Moles/volume] in Blood	LOINC	7	3879
+3020874	Milk IgE Ab [Units/volume] in Serum	LOINC	5	3854
+44813793	Dust mix specific IgE antibody measurement	SNOMED	2	3820
+4027681	Cerebrospinal fluid IgG ratio and IgG index	SNOMED	3	3817
+3039429	Cortisol [Moles/volume] in Saliva (oral fluid)	LOINC	3	3803
+3041145	Herpes simplex virus IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	3789
+42869457	Rotavirus RNA [Identifier] in Stool by NAA with probe detection	LOINC	1	3783
+3033386	Bacteria [Presence] in Cerebral spinal fluid by Light microscopy	LOINC	1	3745
+3037875	Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	3745
+37020957	Sapovirus genogroups I+II+IV+V RNA [Presence] in Stool by NAA with probe detection	LOINC	1	3731
+21494814	CD8 cells/Lymphocytes in Specimen	LOINC	1	3725
+3014599	Egg white IgE Ab [Units/volume] in Serum	LOINC	6	3697
+3049714	Procollagen type I.N-terminal propeptide [Mass/volume] in Serum	LOINC	2	3659
+3000060	B lymphocytes [#/volume] in Blood	LOINC	3	3643
+3017704	Immunofixation for Urine	LOINC	1	3625
+40764127	Haemophilus influenzae DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	3610
+3018461	Alpha 1 globulin [Mass/time] in 24 hour Urine by Electrophoresis	LOINC	4	3574
+3016228	CD19 cells/cells in Blood	LOINC	3	3567
+3051101	Glucose [Moles/volume] in Cord blood	LOINC	1	3564
+3002222	Hepatitis E virus IgM Ab [Presence] in Serum	LOINC	1	3515
+3029023	Hepatitis E virus IgG Ab [Presence] in Serum by Immunoassay	LOINC	1	3502
+40760847	Basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	3	3490
+3036035	von Willebrand factor (vWf) Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	3	3480
+40758897	Direct antiglobulin test.IgG specific reagent [Presence] on Red Blood Cells	LOINC	1	3455
+40758895	Direct antiglobulin test.complement C3d specific reagent [Presence] on Red Blood Cells	LOINC	1	3452
+3035400	Alkaline phosphatase.liver [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	3451
+3028679	Herpes simplex virus Ab [Presence] in Serum	LOINC	1	3438
+40768446	Kidney Pathology biopsy report	LOINC	1	3432
+3045462	Protein/Creatinine [Ratio] in Urine	LOINC	3	3428
+40771527	Human papilloma virus E6+E7 mRNA [Presence] in Cervix by NAA with probe detection	LOINC	1	3405
+42870308	Desmosome IgG Ab [Titer] in Serum by Immunofluorescence	LOINC	3	3400
+3048518	aPTT.lupus sensitive actual/normal (normalized LA screen)	LOINC	3	3380
+3045684	Alkaline phosphatase.other fractions [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	3363
+3007821	Glucose [Moles/volume] in Serum or Plasma --baseline	LOINC	12	3346
+3047189	Immunofixation for 24 hour Urine	LOINC	1	3306
+3015076	Soybean IgE Ab [Units/volume] in Serum	LOINC	5	3257
+3029075	Extractable nuclear Ab panel - Serum	LOINC	4	3253
+21493195	Respiratory pathogens DNA and RNA tested for in Respiratory system specimen by NAA with probe detection	LOINC	1	3252
+3028286	Albumin [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	4	3222
+3005156	Respiratory syncytial virus A RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	3207
+3000108	Respiratory syncytial virus B RNA [Presence] in Specimen by NAA with probe detection	LOINC	1	3206
+3053028	Streptococcus sp identified in Specimen by Organism specific culture	LOINC	1	3206
+3034891	Synovial lining cells/cells in Synovial fluid	LOINC	3	3159
+3041806	Other cells [#/volume] in Blood by Manual count	LOINC	1	3089
+3007302	Hemoglobin [Mass/volume] in Mixed venous blood	LOINC	1	3080
+1617658	Protocol used for examination of sentinel lymph nodes	LOINC	1	3066
+3006653	Thiamine [Moles/volume] in Blood	LOINC	1	3060
+3023487	Leukocytes [#/volume] in Peritoneal fluid	LOINC	3	3041
+3004451	EKG impression Narrative	LOINC	1	3021
+3045683	HLA typing for celiac disease panel - Blood or Tissue	LOINC	1	3015
+3006257	Acetylcholine receptor Ab [Moles/volume] in Serum	LOINC	3	2987
+3045781	Inhibin B [Mass/volume] in Serum or Plasma	LOINC	2	2979
+3024263	Appearance of Synovial fluid	LOINC	3	2964
+3026515	Parvovirus B19 IgM Ab [Units/volume] in Serum	LOINC	1	2963
+3009871	Measles virus Ab [Titer] in Serum	LOINC	4	2957
+3009991	Angiotensin converting enzyme [Enzymatic activity/volume] in Cerebral spinal fluid	LOINC	3	2955
+3017315	Amylase [Enzymatic activity/volume] in Urine	LOINC	3	2954
+46235128	Lupus anticoagulant aPTT and dRVVT screening panel W Reflex	LOINC	1	2950
+3008733	Herpes simplex virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection	LOINC	1	2923
+3033306	Mononuclear cells/Leukocytes in Cerebral spinal fluid	LOINC	4	2922
+3030558	Cytomegalovirus DNA [Units/volume] (viral load) in Specimen by NAA with probe detection	LOINC	3	2915
+3022575	Varicella zoster virus IgG Ab [Units/volume] in Serum	LOINC	3	2905
+40760543	Extractable nuclear Ab [Presence] in Serum by Immunoblot	LOINC	3	2898
+3012202	Varicella zoster virus DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	2880
+3035062	Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma	LOINC	16	2842
+3002079	Sodium [Moles/time] in 24 hour Urine	LOINC	2	2837
+3036185	Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma	LOINC	18	2833
+3042810	Amyloid beta 42 peptide [Mass/volume] in Cerebral spinal fluid	LOINC	4	2795
+43055225	Phosphorylated tau 181 [Mass/volume] in Cerebral spinal fluid by Immunoassay	LOINC	5	2789
+3000242	Tau protein [Mass/volume] in Cerebral spinal fluid	LOINC	4	2785
+37021247	Adenovirus 40+41 DNA [Presence] in Stool by NAA with probe detection	LOINC	1	2769
+37020445	Astrovirus RNA [Presence] in Stool by NAA with probe detection	LOINC	1	2767
+3020073	CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Specimen	LOINC	2	2748
+3035880	pH of Pleural fluid	LOINC	3	2736
+3015183	Erythrocyte sedimentation rate [Velocity] in Red Blood Cells	LOINC	1	2726
+43055089	Myosin Ab [Presence] in Serum or Plasma by Immunoblot	LOINC	1	2698
+3031309	Prolactin monomeric/Prolactin.total in Serum or Plasma	LOINC	3	2690
+21491979	Prolactin monomeric [Units/volume] in Serum or Plasma	LOINC	3	2654
+3016894	Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection	LOINC	1	2631
+40760109	Toxoplasma gondii IgG Ab avidity [Ratio] in Serum by Immunoassay	LOINC	2	2621
+3009550	Parvovirus B19 IgG Ab [Titer] in Serum	LOINC	3	2615
+3029856	Leukocytes [#/volume] in Peritoneal dialysis fluid	LOINC	5	2607
+3020650	Glucose [Presence] in Urine	LOINC	1	2596
+3033799	Differential panel - Peritoneal fluid	LOINC	1	2557
+3035947	Staphylolysin Ab [Units/volume] in Serum	LOINC	4	2520
+3009306	Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma	LOINC	1	2510
+3018658	Beta 2 glycoprotein 1 IgG Ab [Units/volume] in Serum	LOINC	3	2490
+3037826	lamoTRIgine [Moles/volume] in Serum or Plasma	LOINC	1	2477
+3020911	Cortisol [Moles/time] in 24 hour Urine	LOINC	2	2470
+3009613	Erythrocytes [#/volume] in Peritoneal fluid	LOINC	3	2468
+3021236	Streptolysin O Ab [Units/volume] in Serum or Plasma	LOINC	2	2450
+3044007	Cell count panel - Peritoneal fluid	LOINC	2	2437
+36304052	Adalimumab Ab [Units/volume] in Serum or Plasma	LOINC	3	2402
+3001684	Respiratory syncytial virus Ag [Presence] in Specimen	LOINC	1	2352
+42868414	European tick borne encephalitis virus IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	2336
+37020300	Entamoeba histolytica DNA [Presence] in Stool by NAA with probe detection	LOINC	1	2336
+42868691	Thyroxine (T4) free [Moles/volume] in Serum or Plasma by Dialysis	LOINC	3	2328
+4015189	Microbial culture of sputum	SNOMED	1	2248
+3018133	Calcium [Moles/volume] in Urine	LOINC	3	2229
+3032567	Hepatitis B virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	5	2225
+3043410	Blood group antigens tested for on Red Blood Cells	LOINC	1	2213
+3003245	Complement C1 esterase inhibitor [Mass/volume] in Serum or Plasma	LOINC	7	2212
+3039602	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Capillary blood	LOINC	9	2205
+3052318	Alpha-1-Microglobulin [Mass/volume] in Urine	LOINC	3	2195
+3025443	Phadiatop IgE Ab [Units/volume] in Serum	LOINC	3	2184
+44816808	CXCL13 Ag [Mass/volume] in Cerebral spinal fluid	LOINC	3	2157
+3034988	Calcium [Moles/volume] in Capillary blood	LOINC	3	2155
+3018921	Toxoplasma gondii IgA Ab [Units/volume] in Serum	LOINC	1	2101
+3036669	Protein S actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	2093
+3037692	Legionella sp identified in Specimen by Organism specific culture	LOINC	1	2089
+3022689	Creatine [Moles/volume] in Urine	LOINC	3	2082
+3045066	Thymidine kinase [Enzymatic activity/volume] in Serum	LOINC	3	2079
+3028334	Neisseria gonorrhoeae [Presence] in Specimen by Organism specific culture	LOINC	1	2067
+3042517	Benzodiazepines panel - Urine	LOINC	1	2066
+3023659	Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total in Serum or Plasma	LOINC	6	2062
+44816752	ERBB2 gene copy number/nucleus in Tissue by FISH	LOINC	1	2061
+42869547	Procollagen type III.N-terminal propeptide [Mass/volume] in Serum	LOINC	1	2039
+3011547	Coagulation factor VII activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	2012
+3048879	Bone marrow aspiration report	LOINC	1	1994
+21491868	Cryoglobulin [Mass/volume] in Serum	LOINC	4	1989
+3016845	Adenovirus Ag [Presence] in Specimen by Immunofluorescence	LOINC	1	1959
+3001964	Herpes simplex virus Ag [Presence] in Specimen	LOINC	1	1954
+3008536	Aspergillus sp Ab [Presence] in Serum	LOINC	1	1942
+3027653	Mycophenolate [Mass/volume] in Serum or Plasma	LOINC	3	1935
+40762365	Oxygen content in Arterial blood by calculation	LOINC	2	1935
+43055514	Macroprolactin [Presence] in Serum or Plasma	LOINC	1	1935
+3021162	Amylase [Enzymatic activity/volume] in Specimen	LOINC	2	1924
+3001501	Glucose [Moles/volume] in Capillary blood by Glucometer	LOINC	3	1900
+40765089	Chromosome analysis panel - Blood by G-banded	LOINC	1	1888
+3005532	Lymphocytes/Leukocytes in Pleural fluid	LOINC	7	1866
+3004409	Coagulation factor X activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	1860
+3002067	Lambda light chains [Mass/time] in 24 hour Urine	LOINC	2	1855
+3013566	Clostridioides difficile [Presence] in Stool by Organism specific culture	LOINC	1	1847
+3005353	Prothrombin activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	1839
+36306090	Helicobacter pylori [Presence] in Tissue by Organism specific culture	LOINC	1	1838
+3007463	Buprenorphine [Presence] in Urine	LOINC	1	1837
+42868766	Dientamoeba fragilis DNA [Presence] in Stool by NAA with probe detection	LOINC	1	1831
+42868647	JC virus Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	2	1823
+3030862	Granulocytes [#/volume] in Cerebral spinal fluid	LOINC	5	1810
+3034426	Prothrombin time (PT)	LOINC	1	1808
+40771901	t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method	LOINC	1	1803
+3027300	Silver Birch IgE Ab [Units/volume] in Serum	LOINC	7	1802
+3042585	Pyridoxine [Moles/volume] in Serum or Plasma	LOINC	5	1790
+3001186	Copper [Moles/volume] in Serum or Plasma	LOINC	5	1789
+36305075	Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	3	1787
+37208534	Antinuclear antibody arbitrary concentration in serum	SNOMED	1	1783
+44816893	Food Allergen Mix 50 (Kiwi+Pineapple+Banana+Mango) IgE Ab [Units/volume] in Serum by Multidisk	LOINC	1	1781
+3041449	Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma	LOINC	3	1772
+3030429	Borrelia sp DNA [Identifier] in Specimen by NAA with probe detection	LOINC	1	1758
+3046896	Herpes virus 6 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection	LOINC	2	1738
+3019779	Phenytoin [Moles/volume] in Serum or Plasma	LOINC	3	1716
+3004269	Kappa light chains [Mass/time] in 24 hour Urine	LOINC	2	1712
+3013166	Neutrophils/Leukocytes in Synovial fluid	LOINC	3	1674
+3035544	Cardiolipin IgG Ab [Units/volume] in Serum or Plasma	LOINC	3	1674
+3006441	Cardiolipin IgM Ab [Presence] in Serum by Immunoassay	LOINC	2	1671
+3028433	Virus identified in Specimen by Culture	LOINC	1	1650
+3036071	Salmonella sp Ab [Titer] in Serum	LOINC	2	1649
+3012494	Peanut IgE Ab [Units/volume] in Serum	LOINC	6	1644
+3024932	HLA-DR beta [Type]	LOINC	2	1634
+1175553	Vedolizumab and Vedolizumab Ab panel [Mass/volume] - Serum or Plasma	LOINC	1	1625
+3001893	Eosinophils/Leukocytes in Pleural fluid	LOINC	3	1621
+3023383	Lactate [Moles/volume] in Pleural fluid	LOINC	6	1615
+3003985	Beta hydroxybutyrate [Moles/volume] in Serum or Plasma	LOINC	9	1611
+40758355	Pancreatic polypeptide [Moles/volume] in Serum or Plasma	LOINC	4	1603
+3020229	Cytomegalovirus DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	1592
+3046299	Protein.monoclonal [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	1	1578
+3036670	Protein [Mass/volume] in Synovial fluid	LOINC	3	1564
+3042391	t(9;22)(q34.1;q11)(ABL1,BCR) e1a2 fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method	LOINC	1	1560
+3038769	Chlamydophila pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay	LOINC	2	1547
+3026692	Albumin [Mass/volume] in Peritoneal fluid	LOINC	4	1546
+40762814	Titanium [Mass/volume] in Blood	LOINC	3	1545
+3015956	Eosinophils/Leukocytes in Blood by Manual count	LOINC	2	1540
+44817194	Complement alternate pathway AH50 actual/normal in Serum by Immunoassay	LOINC	3	1539
+3032057	Clostridioides difficile [Presence] in Stool	LOINC	2	1524
+3002619	Bacteria identified in Specimen by Culture	LOINC	1	1514
+3024471	HLA-A [Type]	LOINC	1	1514
+3039355	Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture	LOINC	1	1512
+3008116	Ketones [Moles/volume] in Urine by Test strip	LOINC	7	1504
+3006109	Coagulation factor IX activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	1491
+3000919	Neutrophils/Leukocytes in Pleural fluid	LOINC	2	1451
+3005411	Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma	LOINC	3	1450
+46235760	Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture	LOINC	1	1445
+4133840	Spirometry	SNOMED	2	1441
+3009804	Carcinoembryonic Ag [Mass/volume] in Pleural fluid	LOINC	3	1435
+42868417	European tick borne encephalitis virus IgG Ab [Presence] in Serum by Immunoassay	LOINC	2	1426
+40765096	Chromosome analysis panel by Banding	LOINC	2	1425
+3012215	Mononuclear cells/Leukocytes in Synovial fluid	LOINC	9	1420
+3019083	Insulin-like growth factor [Moles/volume] in Serum or Plasma	LOINC	3	1412
+43534046	Estradiol (E2) [Moles/volume] in Serum or Plasma by High sensitivity method	LOINC	6	1408
+3004446	Plasmodium sp identified in Blood by Light microscopy	LOINC	1	1366
+3035509	Tobramycin [Mass/volume] in Serum or Plasma	LOINC	3	1365
+3022058	Hepatitis B virus DNA [Presence] in Serum or Plasma by NAA with probe detection	LOINC	1	1346
+3011897	Casein IgE Ab [Units/volume] in Serum	LOINC	5	1345
+3022411	Androstenedione [Moles/volume] in Serum or Plasma	LOINC	3	1344
+3010370	Gastrin [Moles/volume] in Serum or Plasma	LOINC	3	1342
+3022907	Direct antiglobulin test.polyspecific reagent [Presence] on Red Blood Cells	LOINC	1	1341
+3002331	Protein [Mass/volume] in Peritoneal fluid	LOINC	3	1338
+3013637	Mi-2 Ab [Presence] in Serum	LOINC	1	1337
+42528593	TIF1-gamma Ab [Presence] in Serum by Line blot	LOINC	1	1337
+42529582	MDA5 Ab [Presence] in Serum by Line blot	LOINC	1	1337
+42529598	SUMO-activating enzyme subunit 1 Ab [Presence] in Serum by Line blot	LOINC	1	1337
+40758990	Choriogonadotropin.beta subunit [Mass/volume] in Serum or Plasma	LOINC	1	1332
+3032352	Blasts [#/volume] in Cerebral spinal fluid	LOINC	1	1319
+3037677	Mycoplasma pneumoniae IgM Ab [Titer] in Cerebral spinal fluid	LOINC	1	1311
+3044212	Herpes simplex virus 1+2 IgM Ab [Presence] in Cerebral spinal fluid	LOINC	1	1302
+3033670	Parathyrin related protein [Moles/volume] in Serum or Plasma	LOINC	5	1296
+3002823	Mycoplasma pneumoniae IgG Ab [Units/volume] in Cerebral spinal fluid	LOINC	1	1286
+3033099	Centromere Ab [Titer] in Serum	LOINC	2	1284
+3047166	Epithelial cells [#/area] in Urine sediment by Automated count	LOINC	1	1272
+3027231	Wheat IgE Ab [Units/volume] in Serum	LOINC	6	1267
+3001850	Coagulation factor XI activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	1266
+40761539	Cells [Type] in Urine sediment by Light microscopy	LOINC	1	1262
+723474	SARS-CoV-2 (COVID-19) IgG Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	1	1259
+40757373	Influenza virus identified in Isolate	LOINC	1	1256
+3036048	Francisella tularensis Ab [Titer] in Serum	LOINC	3	1252
+3007798	IgG/Albumin [Mass Ratio] in Cerebral spinal fluid	LOINC	2	1248
+3002348	Coagulation factor XII activity actual/normal in Platelet poor plasma by Coagulation assay	LOINC	3	1243
+3006695	Toxoplasma gondii DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	1241
+42868415	European tick borne encephalitis virus IgM Ab [Presence] in Cerebral spinal fluid by Immunoassay	LOINC	1	1240
+1176173	BK virus + JC virus DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	1237
+3026051	Granulocytes/Leukocytes in Pleural fluid	LOINC	9	1229
+40761872	Peanut recombinant (rAra h) 2 IgE Ab [Units/volume] in Serum	LOINC	3	1227
+40758292	HTLV I+II Ab panel - Serum	LOINC	1	1208
+42868421	Varicella zoster virus IgM Ab [Presence] in Cerebral spinal fluid by Immunoassay	LOINC	1	1204
+3013247	Albumin in CSF/Albumin in Serum or Plasma	LOINC	4	1187
+3013784	Calcium.ionized [Moles/volume] in Serum or Plasma by Ion-selective membrane electrode (ISE)	LOINC	2	1180
+3018738	Hemoglobin F/Hemoglobin.total in Blood	LOINC	2	1172
+3026048	Bordetella pertussis IgG Ab [Units/volume] in Serum	LOINC	1	1168
+3010254	Herpes simplex virus identified in Specimen by Organism specific culture	LOINC	1	1154
+3003171	Aldosterone [Moles/volume] in Serum or Plasma --upright	LOINC	3	1153
+3005880	Parainfluenza virus 3 Ag [Presence] in Specimen	LOINC	1	1147
+3021578	Parainfluenza virus 2 Ag [Presence] in Specimen	LOINC	1	1147
+3010464	Parainfluenza virus 1 Ag [Presence] in Specimen	LOINC	1	1146
+3010015	Selenium [Moles/volume] in Serum or Plasma	LOINC	3	1141
+1001833	Epstein Barr virus DNA [Units/volume] (viral load) in Blood by NAA with probe detection	LOINC	2	1135
+3017509	Phencyclidine [Presence] in Urine	LOINC	1	1134
+3014300	Beta 2 glycoprotein 1 IgM Ab [Units/volume] in Serum	LOINC	3	1129
+37021550	Renin [Units/volume] in Plasma --upright	LOINC	3	1125
+40761849	Varicella zoster virus IgG Ab [Units/volume] in Cerebral spinal fluid by Immunoassay	LOINC	1	1113
+3040562	Leukocytes [#/volume] in Peritoneal dialysis fluid by Manual count	LOINC	1	1112
+3012320	Pathologist interpretation of Cerebral spinal fluid tests	LOINC	1	1109
+3029493	Herpes virus 6 DNA [Presence] in Blood by NAA with probe detection	LOINC	1	1103
+3016628	Fibrinogen Ag [Mass/volume] in Platelet poor plasma by Immunoassay	LOINC	7	1087
+3044936	Clostridioides difficile toxin A+B [Presence] in Stool by Immunoassay	LOINC	1	1083
+36305790	Ustekinumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	6	1074
+3015302	Jo-1 extractable nuclear Ab [Units/volume] in Serum	LOINC	1	1073
+3015479	Mycobacterium sp identified in Blood by Organism specific culture	LOINC	1	1060
+43055442	Apixaban [Mass/volume] in Serum or Plasma	LOINC	2	1057
+42870325	Hepcidin 25 amino acid peptide [Moles/volume] in Serum or Plasma	LOINC	4	1050
+3052592	Norovirus Ag [Presence] in Stool	LOINC	1	1048
+3011436	Histone Ab [Units/volume] in Serum	LOINC	2	1041
+3018840	Calcitonin [Moles/volume] in Serum or Plasma	LOINC	3	1034
+3014038	Collagen crosslinked N-telopeptide [Moles/volume] in Urine	LOINC	2	1030
+46235168	Fasting glucose [Moles/volume] in Blood	LOINC	6	1021
+3040661	Urea [Moles/volume] in Peritoneal dialysis fluid	LOINC	3	1019
+3022764	Mononuclear cells/Leukocytes in Peritoneal fluid	LOINC	4	1013
+3037441	Creatinine [Moles/volume] in Peritoneal dialysis fluid	LOINC	2	1012
+42529528	Centromere protein B Ab [Units/volume] in Serum by Line blot	LOINC	5	1009
+3001686	Cold agglutinin [Titer] in Serum or Plasma	LOINC	2	999
+3023091	Interleukin 6 [Mass/volume] in Serum or Plasma	LOINC	3	991
+3005011	Chlamydia sp Ab [Titer] in Serum	LOINC	1	980
+3041918	Cholesterol [Moles/volume] in Pleural fluid	LOINC	3	975
+3000285	Sodium [Moles/volume] in Blood	LOINC	4	967
+3046426	Aquaporin 4 water channel IgG Ab [Presence] in Serum or Plasma	LOINC	1	949
+36304617	Golimumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	3	940
+3003752	BK virus DNA [Units/volume] (viral load) in Urine by NAA with probe detection	LOINC	2	939
+3033923	Metanephrine [Moles/time] in 24 hour Urine	LOINC	3	934
+3029715	Chromosome analysis.interphase [Interpretation] in Bone marrow by FISH Narrative	LOINC	1	927
+3052912	Proteinase 3 IgG Ab [Units/volume] in Serum	LOINC	5	918
+40763091	Bacteria identified in Peritoneal dialysis fluid by Culture	LOINC	1	914
+3018834	Bilirubin.total [Presence] in Urine by Test strip	LOINC	2	908
+3045209	Lutropin/Follitropin [Ratio] in Serum or Plasma	LOINC	2	896
+3032185	JC virus DNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	1	895
+3032390	JC virus DNA [#/volume] (viral load) in Urine by NAA with probe detection	LOINC	1	891
+3020393	Adenovirus Ag [Presence] in Stool	LOINC	1	863
+3022229	Phosphate [Moles/volume] in Urine	LOINC	3	856
+3026726	Creatinine [Moles/volume] in Specimen	LOINC	2	834
+3016330	Potassium [Moles/time] in 24 hour Urine	LOINC	3	833
+3036525	Urea [Moles/time] in 24 hour Urine	LOINC	2	833
+3024869	Neuronal Ab [Presence] in Serum	LOINC	1	832
+3042010	Triglyceride [Moles/volume] in Pleural fluid	LOINC	2	830
+40763791	Oxygen content in Venous blood by calculation	LOINC	2	827
+3028029	Mesothelial cells/Leukocytes in Pleural fluid	LOINC	4	824
+43055222	Platelet function.collagen + Adenosine diphosphate induced and EPINEPHrine induced panel - Blood	LOINC	1	815
+3013803	Aspergillus fumigatus IgG Ab [Mass/volume] in Serum	LOINC	4	812
+3033926	Protein [Mass/volume] in Peritoneal dialysis fluid	LOINC	2	808
+3041365	Herpes simplex virus IgG Ab [Units/volume] in Serum by Immunoassay	LOINC	2	794
+3012898	Urea [Moles/volume] in Urine	LOINC	3	782
+40760007	HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay	LOINC	1	776
+3004437	Lymphocytes/Leukocytes in Peritoneal fluid	LOINC	4	775
+3041870	Hepatitis C virus IgG Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	1	764
+3028717	Thiamine [Mass/volume] in Blood	LOINC	1	759
+3020951	Lymphocytes/Leukocytes in Cerebral spinal fluid	LOINC	4	754
+3005812	Immunoglobulin light chains [Presence] in 24 hour Urine	LOINC	1	752
+43533860	Galactose-alpha-1,3-galactose (Alpha-Gal) IgE Ab [Units/volume] in Serum	LOINC	3	751
+3050099	BK virus DNA [#/volume] (viral load) in Specimen by NAA with probe detection	LOINC	1	750
+36203821	Streptococcus pneumoniae Danish serotype 1 IgG Ab [Mass/volume] in Serum	LOINC	3	744
+3048522	Glucose [Moles/volume] in Serum or Plasma --pre dose glucose	LOINC	6	743
+3017962	TCRG gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method	LOINC	4	743
+3025378	Microscopic observation [Identifier] in Cervix by Cyto stain	LOINC	2	743
+3015401	Amylase [Enzymatic activity/volume] in Pleural fluid	LOINC	2	728
+3000899	Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum	LOINC	3	727
+36204286	Streptococcus pneumoniae Danish serotype 5 IgG Ab [Mass/volume] in Serum	LOINC	3	727
+3005260	Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum	LOINC	3	726
+3005665	Streptococcus pneumoniae Danish serotype 6B IgG Ab [Mass/volume] in Serum	LOINC	3	726
+3006665	Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum	LOINC	3	726
+36203922	Streptococcus pneumoniae Danish serotype 14 IgG Ab [Mass/volume] in Serum	LOINC	3	726
+36204005	Streptococcus pneumoniae Danish serotype 19F IgG Ab [Mass/volume] in Serum	LOINC	3	726
+36204094	Streptococcus pneumoniae Danish serotype 23F IgG Ab [Mass/volume] in Serum	LOINC	3	726
+36204187	Streptococcus pneumoniae Danish serotype 4 IgG Ab [Mass/volume] in Serum	LOINC	3	726
+44806071	Cardiolipin IgM antibody measurement	SNOMED	2	724
+3028009	Chlamydia trachomatis IgG Ab [Units/volume] in Serum	LOINC	1	713
+3041008	Bicarbonate [Moles/volume] standard in Arterial cord blood	LOINC	6	712
+3035510	Gentamicin [Mass/volume] in Serum or Plasma	LOINC	3	712
+37021073	Hepatitis C virus genotype in Serum or Plasma by Sequencing	LOINC	2	711
+3023530	17-Hydroxyprogesterone [Moles/volume] in Serum or Plasma	LOINC	3	706
+3043525	Herpes simplex virus Ab [Presence] in Cerebral spinal fluid	LOINC	1	706
+36306063	Golimumab Ab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	1	706
+3033888	Pepsinogen I [Mass/volume] in Serum or Plasma	LOINC	3	705
+3008402	Methanol [Moles/volume] in Serum or Plasma	LOINC	2	701
+3007916	DNA double strand Ab [Titer] in Serum	LOINC	4	699
+3015616	Isopropanol [Moles/volume] in Serum or Plasma	LOINC	2	698
+3032868	Hemoglobin electrophoresis panel in Blood	LOINC	2	694
+3003157	Bacteria [#/volume] in Mother's milk	LOINC	1	694
+3014891	Appearance of Pleural fluid	LOINC	2	692
+42529188	25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma by Immunoassay	LOINC	2	681
+3003101	Alpha 1 antitrypsin [Mass/mass] in Stool	LOINC	2	668
+3001556	Androgen free Index in Serum or Plasma	LOINC	2	664
+3011335	Digoxin [Mass/volume] in Serum or Plasma	LOINC	1	652
+1002183	Plasma cells monotypic population [Identifier] in Bone marrow by Flow cytometry (FC)	LOINC	1	650
+3027955	HFE gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	646
+3023365	Varicella zoster virus Ab [Titer] in Cerebral spinal fluid	LOINC	1	645
+40761873	Peanut recombinant (rAra h) 1 IgE Ab [Units/volume] in Serum	LOINC	3	639
+3034459	Mononuclear cells/Leukocytes in Pleural fluid	LOINC	6	638
+3013924	Clostridium tetani IgG Ab [Units/volume] in Serum	LOINC	3	635
+42528717	Cashew nut recombinant (rAna o) 3 IgE Ab [Units/volume] in Serum	LOINC	3	635
+3011841	English Walnut IgE Ab [Units/volume] in Serum	LOINC	3	634
+40761871	Peanut recombinant (rAra h) 3 IgE Ab [Units/volume] in Serum	LOINC	3	631
+46234826	Other cells/Leukocytes in Peritoneal fluid by Manual count	LOINC	3	623
+3018851	Theophylline [Moles/volume] in Serum or Plasma	LOINC	1	618
+42870298	TPMT gene c.238G>C+460G>A+719A>G [Identifier] in Blood or Tissue by Molecular genetics method Narrative	LOINC	1	613
+3035929	Mycoplasma pneumoniae Ab [Units/volume] in Cerebral spinal fluid	LOINC	1	612
+21494227	Amikacin free [Mass/volume] in Serum or Plasma	LOINC	3	602
+3030313	Adrenal Ab [Titer] in Serum	LOINC	2	592
+42868418	European tick borne encephalitis virus IgG Ab [Presence] in Cerebral spinal fluid by Immunoassay	LOINC	1	586
+44786800	Granulocytes/Leukocytes in Body fluid	LOINC	2	585
+40767665	Peanut recombinant (rAra h) 9 IgE Ab [Units/volume] in Serum	LOINC	3	584
+42529527	Centromere protein A Ab [Units/volume] in Serum by Line blot	LOINC	3	581
+3003577	Lead [Moles/volume] in Blood	LOINC	2	580
+3051659	25-hydroxyvitamin D2 [Moles/volume] in Serum or Plasma	LOINC	2	575
+3025927	Herpes simplex virus IgG Ab [Units/volume] in Cerebral spinal fluid by Immunoassay	LOINC	1	571
+40761847	Hazelnut recombinant (rCor a) 8 IgE Ab [Units/volume] in Serum	LOINC	3	570
+3041678	Intrinsic coagulation system thromboelastography panel - Blood	LOINC	1	567
+3027035	Albumin [Mass/time] in 24 hour Urine	LOINC	3	539
+3002621	Streptococcal DNAse B [Units/volume] in Serum	LOINC	3	538
+3014373	Corynebacterium diphtheriae Ab [Units/volume] in Serum	LOINC	3	534
+3009015	Lactate [Moles/volume] in Synovial fluid	LOINC	3	533
+40760435	Tropomyosin IgE Ab [Units/volume] in Serum	LOINC	3	529
+21491866	Provasopressin.C-terminal [Moles/volume] in Serum or Plasma by Immunoassay	LOINC	3	526
+40768453	Hazelnut native (nCor a) 9 IgE Ab [Units/volume] in Serum	LOINC	3	524
+3007695	Herpes simplex virus 2 IgG Ab [Presence] in Cerebral spinal fluid	LOINC	1	522
+3003633	Ovomucoid IgE Ab [Units/volume] in Serum	LOINC	3	521
+3028371	Actinomyces sp identified in Specimen by Organism specific culture	LOINC	1	521
+3009471	Fatty acids.nonesterified [Moles/volume] in Serum or Plasma	LOINC	1	518
+3031072	Herpes simplex virus 1 IgG Ab [Presence] in Cerebral spinal fluid	LOINC	1	514
+3013336	Amino acids [Identifier] in Serum or Plasma	LOINC	1	511
+3043870	Heparin induced platelet Ab [Units/volume] in Serum	LOINC	3	508
+3021374	Sirolimus [Mass/volume] in Blood	LOINC	3	507
+3044009	aPTT.lupus sensitive (LA screen)	LOINC	1	507
+3001729	Color of Synovial fluid	LOINC	1	504
+40771922	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by based on 1.73 sq M	LOINC	4	493
+42868499	Enterovirus IgG Ab [Presence] in Cerebral spinal fluid by Immunoassay	LOINC	1	493
+42870560	Thyrotropin [Units/volume] in Cord blood	LOINC	3	490
+3027974	Hepatitis B virus e Ag [Presence] in Serum	LOINC	1	488
+3019174	dRVVT (LA screen)	LOINC	1	485
+4038314	Semen analysis, post vasectomy	SNOMED	1	480
+36659890	Mycobacterial identification panel - Specimen by Molecular genetics method	LOINC	1	475
+21493866	Erythrocytes [#/volume] in Peritoneal dialysis fluid by Automated count	LOINC	3	471
+3040491	Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid	LOINC	2	471
+3025549	Creatine [Moles/time] in 24 hour Urine	LOINC	3	470
+3027570	Oxalate [Moles/time] in 24 hour Urine	LOINC	1	470
+3013945	Hepatitis B virus e Ab [Presence] in Serum	LOINC	1	462
+3011544	Albumin [Mass/volume] in Pleural fluid	LOINC	3	461
+3025059	Transferrin.carbohydrate deficient [Mass/volume] in Serum or Plasma	LOINC	2	461
+3014064	Pregnancy associated plasma protein A [Multiple of the median] in Serum or Plasma	LOINC	1	461
+3000213	Normetanephrine [Moles/time] in 24 hour Urine	LOINC	1	455
+3016031	Almond IgE Ab [Units/volume] in Serum	LOINC	3	453
+3006598	pH of Arterial cord blood	LOINC	2	453
+3035611	Eosinophils/Leukocytes in Synovial fluid	LOINC	2	453
+3003932	Carbon dioxide [Partial pressure] in Arterial cord blood	LOINC	3	452
+3051252	Vasoactive intestinal peptide [Moles/volume] in Serum or Plasma	LOINC	3	452
+3035457	Cefaclor IgE Ab [Units/volume] in Serum	LOINC	3	450
+3050794	Legionella sp Ab [Presence] in Serum	LOINC	1	450
+37020271	Myelin oligodendrocyte glycoprotein Ab [Titer] in Serum by Cell binding immunofluorescent assay	LOINC	1	450
+40762887	Creatinine [Moles/volume] in Blood	LOINC	1	449
+3004959	Base excess in Arterial cord blood by calculation	LOINC	3	448
+3018562	Neutrophils/Leukocytes in Cerebral spinal fluid	LOINC	2	446
+3021706	Oxygen [Partial pressure] in Arterial cord blood	LOINC	3	444
+3023436	Glucagon [Mass/volume] in Serum or Plasma	LOINC	3	442
+3011048	Pyruvate [Moles/volume] in Blood	LOINC	2	441
+43055458	Rivaroxaban [Mass/volume] in Serum or Plasma	LOINC	2	440
+3012741	Chlamydophila pneumoniae IgA Ab [Titer] in Serum	LOINC	1	435
+42869858	Acute and chronic leukemia fusion transcript panel - Blood or Tissue by Molecular genetics method	LOINC	2	433
+3009876	Amylase isoenzyme 3 panel - Serum or Plasma	LOINC	1	432
+40767663	Brazil Nut recombinant (rBer e) 1 IgE Ab [Units/volume] in Serum	LOINC	1	431
+3017461	Flecainide [Moles/volume] in Serum or Plasma	LOINC	3	427
+40766207	Peanut recombinant (rAra h) 8 IgE Ab [Units/volume] in Serum	LOINC	3	421
+3026480	Teichoate Ab [Titer] in Serum	LOINC	2	414
+3020356	Listeria sp identified in Specimen by Organism specific culture	LOINC	1	408
+40758047	Lysozyme [Mass/volume] in Pleural fluid	LOINC	2	405
+3040893	Potassium [Moles/volume] in Capillary blood	LOINC	4	403
+3024316	Viscosity of Plasma	LOINC	3	402
+40763641	Cell count and Differential panel - Peritoneal dialysis fluid	LOINC	1	401
+3037577	Monocytes/Leukocytes in Cerebral spinal fluid	LOINC	3	398
+3039744	RNA polymerase III Ab [Units/volume] in Serum	LOINC	3	391
+3038864	risperiDONE [Moles/volume] in Serum or Plasma	LOINC	1	389
+3008092	Baker's yeast IgG Ab [Units/volume] in Serum	LOINC	6	385
+3018001	Oat IgE Ab [Units/volume] in Serum	LOINC	3	384
+3004593	Baker's yeast IgA Ab [Units/volume] in Serum	LOINC	6	383
+40762482	Peach recombinant (rPru p) 3 IgE Ab [Units/volume] in Serum	LOINC	3	381
+3010937	Rubella virus Ab [Presence] in Serum	LOINC	1	374
+21494262	English walnut recombinant (rJug r) 3 IgE Ab [Units/volume] in Serum	LOINC	3	368
+21494567	Legionella sp IgM Ab [Presence] in Serum	LOINC	1	367
+3036312	Salmon IgE Ab [Units/volume] in Serum	LOINC	3	365
+4212803	Bone marrow aspirate examination	SNOMED	1	364
+3036180	Methadone [Presence] in Urine	LOINC	1	363
+3016273	Islet cell 512 Ab [Units/volume] in Serum	LOINC	2	362
+3041293	ARIPiprazole [Mass/volume] in Serum or Plasma	LOINC	3	358
+3032743	Legionella sp IgG Ab [Presence] in Serum	LOINC	1	357
+3045519	Venlafaxine [Moles/volume] in Serum or Plasma	LOINC	1	355
+40763634	TCRG gene rearrangements [Presence] in Bone marrow by Molecular genetics method	LOINC	2	354
+3042847	Granulocytes/Leukocytes in Cerebral spinal fluid	LOINC	2	350
+3029790	Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	349
+3000722	Carnitine free (C0) [Moles/volume] in Serum or Plasma	LOINC	2	347
+3042552	Rheumatoid factor [Units/volume] in Pleural fluid	LOINC	2	345
+21494429	FMR1 gene CGG repeat analysis in Blood or Tissue by Molecular genetics method	LOINC	1	345
+3033882	Carnitine [Moles/volume] in Serum or Plasma	LOINC	2	343
+40761545	Erythrocytes.dysmorphic [Presence] in Urine sediment by Light microscopy	LOINC	1	339
+1175825	Sexually transmitted pathogens panel - Specimen by NAA with probe detection	LOINC	1	338
+3013466	aPTT in Blood by Coagulation assay	LOINC	5	334
+3019768	Coxiella burnetii Ab [Presence] in Serum	LOINC	1	332
+3014444	EGFR gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	329
+3022475	Manganese [Moles/volume] in Blood	LOINC	1	325
+3036604	Creatine kinase isoenzymes [Interpretation] in Serum or Plasma by Electrophoresis	LOINC	1	324
+3008691	Amylase [Enzymatic activity/volume] in Peritoneal fluid	LOINC	2	319
+3005685	Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma	LOINC	3	317
+42870531	Hazelnut recombinant (rCor a) 1 IgE Ab [Units/volume] in Serum	LOINC	3	316
+3041672	Baker's yeast Ab [Presence] in Serum	LOINC	1	315
+3008994	Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis	LOINC	3	313
+42528615	Etanercept [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	3	313
+42868497	Enterovirus IgM Ab [Presence] in Cerebral spinal fluid by Immunoassay	LOINC	1	312
+46234834	Bacteria identified in Bone by Anaerobe+Aerobe culture	LOINC	1	312
+3022640	Eosinophils/Leukocytes in Cerebral spinal fluid	LOINC	2	310
+3046861	Legionella sp Ag [Presence] in Urine	LOINC	1	304
+3035401	Herpes virus 6 DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	302
+3007542	Rye IgE Ab [Units/volume] in Serum	LOINC	2	301
+3034368	Herpes virus 6 IgM Ab [Presence] in Cerebral spinal fluid	LOINC	1	301
+40763480	Human metapneumovirus Ag [Presence] in Specimen	LOINC	1	301
+3051339	Copper [Moles/volume] in Blood	LOINC	3	297
+3041082	Glomerular basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	2	297
+3020123	Porphyrins [Interpretation] in Serum or Plasma	LOINC	1	297
+3016184	Myelin associated glycoprotein Ab [Units/volume] in Serum	LOINC	2	294
+3030703	Everolimus [Mass/volume] in Blood	LOINC	3	292
+3051671	S100 calcium binding protein B [Mass/volume] in Serum	LOINC	2	291
+3043257	Herpes virus 6 IgG Ab [Presence] in Cerebral spinal fluid	LOINC	1	287
+40766799	MGMT gene methylation score in Tissue by Molecular genetics method	LOINC	1	284
+3042951	Complement C1q Ab [Units/volume] in Serum	LOINC	3	282
+3043681	Transitional cells [#/area] in Urine by Computer assisted method	LOINC	3	281
+3033942	Copper [Moles/time] in 24 hour Urine	LOINC	3	280
+3034552	Adenosine deaminase [Enzymatic activity/volume] in Cerebral spinal fluid	LOINC	2	279
+723473	SARS-CoV-2 (COVID-19) IgA Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	1	270
+3006804	Neuronal Ab [Presence] in Cerebral spinal fluid	LOINC	1	266
+3017950	Salicylates [Moles/volume] in Serum or Plasma	LOINC	3	262
+3007700	Barley IgE Ab [Units/volume] in Serum	LOINC	2	262
+3022725	Serotonin [Moles/volume] in Serum	LOINC	3	257
+3044336	Cobalt [Moles/volume] in Urine	LOINC	2	254
+3009410	PHENobarbital [Moles/volume] in Serum or Plasma	LOINC	2	249
+3017312	HC gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method	LOINC	2	244
+3007625	Streptococcus pneumoniae Ag [Presence] in Specimen	LOINC	1	244
+3009347	Lactate dehydrogenase isoenzymes [Interpretation] in Serum or Plasma	LOINC	1	243
+40760871	Heparin induced platelet Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	1	243
+3009677	Dengue virus Ab [Presence] in Serum	LOINC	1	242
+3004982	Buprenorphine [Mass/volume] in Serum or Plasma	LOINC	4	240
+3044416	Complement C4 [Mass/volume] in Pleural fluid	LOINC	6	235
+3007733	Chloride [Moles/volume] in Urine	LOINC	3	232
+3026926	Nortriptyline [Moles/volume] in Serum or Plasma	LOINC	3	232
+3046904	Somatotropin [Units/volume] in Serum or Plasma	LOINC	1	232
+3011325	HIV 1+2 Ab [Presence] in Serum	LOINC	2	231
+3008799	Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose	LOINC	1	228
+40761516	BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method	LOINC	1	227
+43055190	Macrophages [#/area] in Urine sediment by Microscopy high power field	LOINC	3	226
+3007858	Lactate dehydrogenase 3/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	4	223
+3023919	Lactate dehydrogenase 2/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	4	223
+40763476	Honey bee phospholipase A2 recombinant (rApi m) 1 IgE Ab [Units/volume] in Serum	LOINC	1	223
+3024830	Lactate dehydrogenase 4/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	4	220
+21493619	Chromosome 12 trisomy and chromosome region 11q22.3 and 13q14 and 17p13.1 deletion in Blood or Tissue by FISH	LOINC	1	219
+46236287	Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Pleural fluid by Immunoassay	LOINC	2	218
+3016913	Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis	LOINC	3	217
+3026029	Penicillin V IgE Ab [Units/volume] in Serum	LOINC	2	212
+3016135	IgD [Mass/volume] in Serum	LOINC	2	210
+3014345	clomiPRAMINE [Moles/volume] in Serum or Plasma	LOINC	2	208
+3015822	Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection	LOINC	1	207
+3019920	Amitriptyline [Moles/volume] in Serum or Plasma	LOINC	3	200
+40759057	Lysozyme [Mass/volume] in Cerebral spinal fluid	LOINC	2	199
+3037297	Penicillin G IgE Ab [Units/volume] in Serum	LOINC	2	196
+43055459	Dabigatran [Mass/volume] in Serum or Plasma	LOINC	2	193
+40765091	Chromosome analysis panel - Chorionic villus sample by G-banded	LOINC	1	192
+3027401	Testosterone Free/Testosterone.total in Serum or Plasma	LOINC	5	191
+3016426	Methylmalonate [Moles/volume] in Serum or Plasma	LOINC	1	191
+3031067	HIV 1 p24 Ag [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	2	188
+3038385	Creatinine [Moles/volume] in Peritoneal fluid	LOINC	2	187
+46236302	HLA-C [Type] by High resolution typing	LOINC	1	187
+3013862	HLA-DP [Type]	LOINC	1	186
+40760409	HLA-A [Type] by High resolution	LOINC	1	186
+40760410	HLA-B [Type] by High resolution	LOINC	1	185
+40763590	HLA-DQ beta [Type]	LOINC	1	184
+3027874	Urate [Moles/volume] in Urine	LOINC	4	183
+3043138	Epithelial cells.renal [#/area] in Urine by Computer assisted method	LOINC	3	181
+3027901	Hemoglobin [Mass/volume] in Arterial cord blood	LOINC	1	180
+3036955	Alkaline phosphatase.liver/Alkaline phosphatase.total in Serum or Plasma	LOINC	2	176
+3000510	Lepidoglyphus destructor IgE Ab [Units/volume] in Serum	LOINC	2	175
+3015665	Acarus siro IgE Ab [Units/volume] in Serum	LOINC	2	175
+40760849	Centromere Ab [Presence] in Serum by Immunoblot	LOINC	1	174
+3009224	EGFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	172
+3018688	Ampicillin IgE Ab [Units/volume] in Serum	LOINC	2	171
+40758358	Immune stain study	LOINC	1	168
+3022670	pH of Venous cord blood	LOINC	2	165
+3025886	Oxalate [Mass/time] in 24 hour Urine	LOINC	1	164
+3021367	Citalopram [Moles/volume] in Serum or Plasma	LOINC	3	163
+40762485	Glomerular basement membrane Ab [Units/volume] in Serum by Immunoassay	LOINC	1	162
+3017958	Strawberry IgE Ab [Units/volume] in Serum	LOINC	2	160
+3013762	Body weight Measured	LOINC	2	157
+3017414	Tyrophagus putrescentiae IgE Ab [Units/volume] in Serum	LOINC	2	157
+3033086	Enterovirus Ab [Titer] in Serum	LOINC	1	156
+3020618	Glucose [Moles/volume] in Synovial fluid	LOINC	2	155
+3002568	Complement factor B [Mass/volume] in Serum or Plasma	LOINC	3	154
+3004280	Aldosterone [Moles/volume] in Serum or Plasma --supine	LOINC	3	154
+3014339	Estrone (E1) [Moles/volume] in Serum or Plasma	LOINC	3	153
+3012989	Citrate [Moles/time] in 24 hour Urine	LOINC	1	153
+3038205	Alternaria alternata IgE Ab [Units/volume] in Serum	LOINC	3	151
+3018081	Beta-2-Microglobulin [Mass/volume] in Urine	LOINC	2	151
+3004282	Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma	LOINC	3	150
+3009461	5-Hydroxyindoleacetate [Moles/time] in 24 hour Urine	LOINC	1	150
+3017400	Magnesium [Moles/volume] in Urine	LOINC	3	149
+3040668	CNBP gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal	LOINC	1	149
+3017937	Magnesium [Moles/time] in 24 hour Urine	LOINC	2	148
+42868555	Amyloid beta 40 peptide [Mass/volume] in Cerebral spinal fluid	LOINC	2	146
+42868452	t(9;22)(q34.1;q11)(ABL1,BCR) e1a2 fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method	LOINC	1	144
+3035082	Kappa light chains [Mass/volume] in Urine	LOINC	3	143
+3027318	Ethylene glycol [Moles/volume] in Serum or Plasma	LOINC	2	143
+3004347	Hepatitis D virus Ab [Presence] in Serum	LOINC	1	143
+3031659	Enterovirus Ab [Titer] in Cerebral spinal fluid	LOINC	1	140
+40757578	FLT3 gene targeted mutation analysis in Bone marrow by Molecular genetics method	LOINC	1	138
+3001218	Citrate [Mass/time] in 24 hour Urine	LOINC	1	137
+3014114	Aureobasidium pullulans IgG Ab [Mass/volume] in Serum	LOINC	3	135
+3003843	Paprika IgE Ab [Units/volume] in Serum	LOINC	2	135
+3021691	Plasmodium malariae Ab [Titer] in Serum	LOINC	1	135
+3012920	Ethanol [Mass/volume] in Serum or Plasma	LOINC	2	134
+3016284	Epstein Barr virus nuclear Ab [Units/volume] in Serum	LOINC	1	134
+3006969	Lambda light chains [Mass/volume] in Urine	LOINC	2	133
+3000936	Kiwifruit IgE Ab [Units/volume] in Serum	LOINC	2	132
+3044316	Mercury [Moles/volume] in Urine	LOINC	2	132
+3034614	HLA Ag [Interpretation]	LOINC	1	132
+3014591	Smooth Alder IgE Ab [Units/volume] in Serum	LOINC	1	131
+3007456	Orange IgE Ab [Units/volume] in Serum	LOINC	3	128
+3043649	Fibrin monomer [Presence] in Platelet poor plasma by Hemagglutination	LOINC	1	127
+3029612	Listeria sp Ab [Titer] in Serum	LOINC	1	126
+3038413	Eosinophils/Leukocytes in Peritoneal dialysis fluid by Manual count	LOINC	1	126
+42528597	U1 small nuclear ribonucleoprotein C Ab [Presence] in Serum by Line blot	LOINC	2	125
+3037377	Propoxyphene + Norpropoxyphene [Presence] in Urine by Confirmatory method	LOINC	1	125
+3049233	Organic acids panel - Urine	LOINC	1	125
+42528596	U1 small nuclear ribonucleoprotein A Ab [Presence] in Serum by Line blot	LOINC	2	124
+3041184	Isoniazid [Presence] in Urine	LOINC	1	124
+1175310	Leucine-rich glioma-inactivated protein 1 Ab [Presence] in Cerebral spinal fluid by Cell binding immunofluorescent assay	LOINC	1	120
+3019396	Amylase.pancreatic [Enzymatic activity/volume] in Urine	LOINC	2	118
+3032333	Phosphate [Mass or Moles] in 24 hour Urine	LOINC	2	118
+36303722	Certolizumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	2	117
+3013676	Sertraline [Moles/volume] in Serum or Plasma	LOINC	3	115
+3019298	Eosinophils/Leukocytes in Peritoneal fluid	LOINC	2	115
+3032492	JC virus DNA [#/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection	LOINC	1	112
+3035060	Mercury [Moles/volume] in Blood	LOINC	2	111
+42528595	U1 small nuclear ribonucleoprotein 70kD Ab [Presence] in Serum by Line blot	LOINC	1	111
+3039817	Yersinia enterocolitica IgA Ab [Presence] in Serum	LOINC	2	110
+3033093	Yersinia sp IgM Ab [Titer] in Serum	LOINC	2	109
+3042341	Yersinia pseudotuberculosis Ab [Presence] in Serum	LOINC	2	109
+3043722	Hyaline casts [#/area] in Urine sediment by Automated count	LOINC	1	109
+3032641	Amino acids panel - Urine	LOINC	1	107
+3009208	Meadow Fescue IgE Ab [Units/volume] in Serum	LOINC	3	106
+3001488	Cow milk IgE Ab [Units/volume] in Serum	LOINC	3	105
+3025296	Carrot IgE Ab [Units/volume] in Serum	LOINC	2	105
+3029847	von Willebrand factor (vWf).collagen binding activity actual/normal in Platelet poor plasma by Immunoassay	LOINC	2	105
+3005067	clonazePAM [Moles/volume] in Serum or Plasma	LOINC	2	103
+3007919	Fasciola sp Ab [Titer] in Serum	LOINC	2	103
+3021855	Mononuclear cells [#/volume] in Cerebral spinal fluid	LOINC	2	103
+3046914	Granular casts [#/area] in Urine by Computer assisted method	LOINC	4	102
+3006044	Creatine kinase.total/Creatine kinase.MB [Enzymatic activity ratio] in Serum or Plasma	LOINC	1	100
+3047185	IgG [Mass/volume] in Urine	LOINC	3	99
+37019676	Renin [Units/volume] in Plasma --supine	LOINC	3	99
+3002719	Hemoglobin [Mass/volume] in Urine	LOINC	1	97
+3026657	Rickettsia conorii Ab [Titer] in Serum	LOINC	2	96
+3006567	Chloride [Moles/time] in 24 hour Urine	LOINC	2	93
+3017166	Chili Pepper IgE Ab [Units/volume] in Serum	LOINC	2	92
+3028714	Urate [Moles/time] in 24 hour Urine	LOINC	2	91
+3027540	Rickettsia typhi Ab [Titer] in Serum	LOINC	1	91
+40769427	Triglyceride [Moles/volume] in Peritoneal fluid	LOINC	2	90
+43054952	inv(16)(p13.1;q22.1)(MYH11,CBFB) fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method	LOINC	1	88
+3020093	Fractional oxyhemoglobin in Venous cord blood	LOINC	1	87
+3015147	Influenza virus A IgG Ab [Units/volume] in Serum	LOINC	3	85
+3020047	Haemophilus influenzae B Ab [Mass/volume] in Serum	LOINC	2	85
+3012403	Metanephrines [Moles/time] in 24 hour Urine	LOINC	3	84
+3027305	Fractional oxyhemoglobin in Arterial cord blood	LOINC	2	84
+3018291	Platelet Ab [Presence] in Serum	LOINC	1	84
+42528783	Honey bee recombinant (rApi m) 10 IgE Ab [Units/volume] in Serum	LOINC	1	84
+3042301	Urate [Moles/volume] in Synovial fluid	LOINC	3	83
+3017986	Aspergillus versicolor IgE Ab [Units/volume] in Serum	LOINC	2	83
+3004268	Protein electrophoresis panel - Cerebral spinal fluid	LOINC	1	83
+3034099	Cytomegalovirus Ab [Titer] in Cerebral spinal fluid	LOINC	1	83
+3045177	Copper [Moles/volume] in Urine	LOINC	3	82
+3021661	Pineapple IgE Ab [Units/volume] in Serum	LOINC	2	80
+3009385	Beta-2-Microglobulin [Mass/volume] in Cerebral spinal fluid	LOINC	1	78
+36303858	Crystals [Presence] in Urine	LOINC	1	78
+3040794	Aluminum [Moles/volume] in Urine	LOINC	1	77
+3002481	Calcium/Creatinine [Mass Ratio] in Urine	LOINC	1	76
+3041198	Albumin [Mass/volume] in Peritoneal dialysis fluid	LOINC	1	76
+3020934	Sesame Seed IgE Ab [Units/volume] in Serum	LOINC	2	75
+36304315	Certolizumab Ab [Units/volume] in Serum or Plasma by Immunoassay	LOINC	3	74
+3038702	Sodium [Moles/volume] in Capillary blood	LOINC	2	74
+3027505	Alpha-1-Fetoprotein [Units/volume] in Amniotic fluid	LOINC	1	73
+3015350	Toxocara sp Ab [Presence] in Serum	LOINC	2	72
+3009883	Potato IgE Ab [Units/volume] in Serum	LOINC	2	70
+3042934	Triiodothyronine (T3) Ab [Presence] in Serum	LOINC	1	70
+3003771	Antithrombin Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	3	68
+3002814	Trichinella spiralis Ab [Titer] in Serum	LOINC	2	68
+3003593	Leptospira sp IgG Ab [Units/volume] in Serum	LOINC	2	67
+3046682	IgA [Presence] in Skin by Immunofluorescence	LOINC	1	67
+3039114	Acanthocytes/1000 erythrocytes in Blood by Light microscopy	LOINC	1	65
+40761593	Coagulation factor VIII Ab [Presence] in Platelet poor plasma by Immunoassay	LOINC	1	65
+3012932	Hazelnut IgE Ab [Units/volume] in Serum	LOINC	3	63
+3001409	Leptospira sp IgM Ab [Units/volume] in Serum	LOINC	2	63
+3008640	Bordetella pertussis IgG Ab [Titer] in Serum	LOINC	1	63
+3027696	Helicobacter pylori Ab [Titer] in Serum	LOINC	1	62
+3008838	Granulocytes/Leukocytes in Peritoneal fluid	LOINC	3	61
+3006840	Garlic IgE Ab [Units/volume] in Serum	LOINC	2	60
+3009754	Celery IgE Ab [Units/volume] in Serum	LOINC	2	60
+3012787	Ethosuximide [Moles/volume] in Serum or Plasma	LOINC	1	60
+3005593	Pancreatic islet cell Ab [Titer] in Serum	LOINC	1	59
+3046594	Interleukin 8 [Mass/volume] in Serum or Plasma	LOINC	2	58
+3028468	Fragments [Presence] in Blood by Light microscopy	LOINC	2	57
+44786798	Granulocytes/Leukocytes in Peritoneal dialysis fluid	LOINC	1	57
+3027859	Formaldehyde IgE Ab [Units/volume] in Serum	LOINC	2	56
+3039183	Clostridium tetani toxoid IgG Ab [Units/volume] in Serum or Plasma by Immunoassay	LOINC	2	56
+3008717	Parietal cell Ab [Titer] in Serum	LOINC	1	56
+3023693	von Willebrand factor (vWf) multimers in Platelet poor plasma by Immunoblot	LOINC	1	56
+3016976	Cortisol [Moles/volume] in Serum or Plasma --baseline	LOINC	2	55
+3003531	Amoxicillin IgE Ab [Units/volume] in Serum	LOINC	1	55
+3038714	Yersinia pseudotuberculosis Ab [Titer] in Serum by Agglutination	LOINC	1	55
+3040944	Yersinia pseudotuberculosis 3 Ab [Titer] in Serum	LOINC	1	55
+46236344	Yersinia enterocolitica O:9 IgG Ab [Presence] in Serum by Agglutination	LOINC	1	55
+40759632	Porphyrins [Mass/mass] in Stool	LOINC	1	53
+3025966	Peach IgE Ab [Units/volume] in Serum	LOINC	2	52
+3028772	Osteocalcin [Mass/volume] in Serum or Plasma	LOINC	1	52
+40760512	CD34 cells/cells in Bone marrow	LOINC	1	52
+3009992	Blasts/cells in Bone marrow	LOINC	1	51
+40760087	Plasmodium sp Ab [Presence] in Serum by Immunofluorescence	LOINC	1	50
+3036005	Urine sediment comments by Light microscopy Narrative	LOINC	1	49
+42529039	t(15;17)(q24.1;q21.1)(PML,RARA) fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method	LOINC	1	49
+3033463	Neutrophils [#/volume] in Cerebral spinal fluid	LOINC	1	47
+3004560	Lymphocytes [#/volume] in Cerebral spinal fluid	LOINC	1	46
+3003675	Hemoglobin [Mass/volume] in Cerebral spinal fluid	LOINC	1	45
+3025481	Topiramate [Mass/volume] in Serum or Plasma	LOINC	2	44
+3039528	Macrophages/Leukocytes in Pleural fluid by Manual count	LOINC	2	43
+3051596	Benzodiazepines [Presence] in Serum or Plasma by Screen method	LOINC	1	43
+3044291	Thermoactinomyces vulgaris IgG Ab [Mass/volume] in Serum	LOINC	2	42
+3014178	Parietal cell Ab [Units/volume] in Serum	LOINC	1	42
+3026820	Hemoglobin [Mass/volume] in Venous cord blood	LOINC	1	42
+3045759	Histamine [Moles/volume] in Serum or Plasma	LOINC	1	42
+43055189	Lymphocytes [#/area] in Urine sediment by Microscopy high power field	LOINC	3	41
+40760083	Phosphate/Creatinine [Ratio] in Urine	LOINC	1	40
+3016816	Cytomegalovirus IgG Ab [Presence] in Serum or Plasma	LOINC	1	39
+21494671	JAK2 gene exon 14 targeted mutation analysis in Bone marrow by Molecular genetics method	LOINC	1	38
+36660577	Edoxaban [Mass/volume] in Platelet poor plasma by Chromogenic method	LOINC	2	37
+40765955	DNA double strand Ab [Titer] in Pleural fluid by Immunofluorescence	LOINC	1	37
+3014171	Thiocyanate [Moles/volume] in Serum or Plasma	LOINC	1	36
+3008896	Cortisol [Moles/volume] in Urine	LOINC	1	35
+3012138	Guinea pig epithelium IgE Ab [Units/volume] in Serum	LOINC	2	34
+3026906	Gabapentin [Moles/volume] in Serum or Plasma	LOINC	2	34
+3042045	Bilirubin.total [Moles/volume] in Peritoneal fluid	LOINC	2	34
+3017497	Pine Nut IgE Ab [Units/volume] in Serum	LOINC	2	33
+3000690	Aldosterone [Moles/time] in 24 hour Urine	LOINC	1	31
+3044590	Delta aminolevulinate [Moles/volume] in Urine	LOINC	1	31
+40760866	Procollagen type III.N-terminal propeptide [Units/volume] in Serum	LOINC	1	31
+3018910	Alkaline phosphatase.bone [Mass/volume] in Serum or Plasma	LOINC	1	30
+3002853	Influenza virus B Ab [Titer] in Serum	LOINC	1	29
+3000876	Codfish IgE Ab [Units/volume] in Serum	LOINC	1	28
+3017894	Mustard IgE Ab [Units/volume] in Serum	LOINC	1	28
+3020893	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method	LOINC	1	28
+3003095	Rheumatoid factor [Units/volume] in Synovial fluid	LOINC	1	27
+3027020	Pear IgE Ab [Units/volume] in Serum	LOINC	1	27
+40763629	HC gene rearrangements [Presence] in Bone marrow by Molecular genetics method	LOINC	1	27
+3035153	Lemon IgE Ab [Units/volume] in Serum	LOINC	2	26
+40763527	Lymphocytes.vacuolated [Presence] in Blood by Light microscopy	LOINC	2	26
+3010422	Chicken meat IgE Ab [Units/volume] in Serum	LOINC	1	26
+3004541	Aldosterone [Moles/volume] in Urine	LOINC	1	25
+3007147	Virus identified in Stool by Electron microscopy	LOINC	1	25
+3010801	5-Hydroxyindoleacetate [Moles/volume] in 24 hour Urine	LOINC	1	25
+3015694	Chlamydophila pneumoniae IgG Ab [Titer] in Cerebral spinal fluid	LOINC	1	25
+3017074	Chlamydophila pneumoniae IgM Ab [Titer] in Cerebral spinal fluid	LOINC	1	25
+3006498	Trichoderma viride IgE Ab [Units/volume] in Serum	LOINC	1	24
+3012892	Hematocrit [Volume Fraction] of Cord blood by calculation	LOINC	1	24
+3039621	Maximum lysis.intrinsic coagulation system activated.heparin insensitive [Length fraction] in Blood by Rotational TEG	LOINC	1	24
+3051950	MCV [Entitic mean volume] in Cord blood	LOINC	1	24
+43055187	t(12;21)(p13;q22.3)(ETV6,RUNX1) fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method	LOINC	1	24
+3025830	Chlamydophila pneumoniae IgM Ab [Units/volume] in Serum	LOINC	1	23
+3013931	Oligosaccharides [Presence] in Urine	LOINC	1	22
+3028917	Waxy casts [#/area] in Urine by Computer assisted method	LOINC	1	22
+3030940	RBC casts [#/area] in Urine by Computer assisted method	LOINC	1	22
+3042628	Porphyrins [Moles/volume] in Urine	LOINC	1	22
+3043614	Bacteria identified in Aspirate by Culture	LOINC	1	22
+36304079	Mucus [Presence] in Urine sediment	LOINC	1	22
+3018487	Sunflower Seed IgE Ab [Units/volume] in Serum	LOINC	1	21
+3022577	Toxoplasma gondii IgM Ab [Presence] in Cerebral spinal fluid	LOINC	1	21
+3032995	BK virus DNA [#/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection	LOINC	1	21
+3004768	Phthalic anhydride IgE Ab [Units/volume] in Serum	LOINC	1	20
+3011324	Intrinsic factor Ab [Units/volume] in Serum	LOINC	1	20
+3013293	Extractable nuclear Ab [Presence] in Serum	LOINC	1	20
+3023006	Beef IgE Ab [Units/volume] in Serum	LOINC	1	20
+3025566	Toxoplasma gondii IgG Ab [Units/volume] in Cerebral spinal fluid	LOINC	1	20
+3019529	Immunofixation for Cerebral spinal fluid	LOINC	1	19
+3015531	Creatine kinase.macromolecular [Enzymatic activity/volume] in Serum or Plasma	LOINC	1	18
+3020399	Glucose [Mass/volume] in Urine	LOINC	1	18
+3025504	Homovanillate [Moles/time] in 24 hour Urine	LOINC	1	18
+36031836	Tocilizumab [Mass/volume] in Serum	LOINC	1	18
+3034707	Cochineal extract IgE Ab [Units/volume] in Serum	LOINC	2	17
+3008343	Lysozyme [Mass/volume] in Urine	LOINC	1	17
+3017501	Neutrophils [#/volume] in Blood by Manual count	LOINC	1	17
+3002022	Protein C Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	1	16
+3013851	Stachybotrys chartarum IgE Ab [Units/volume] in Serum	LOINC	1	16
+3014257	Rhodotorula spp IgE Ab [Units/volume] in Serum	LOINC	1	16
+3026868	Penicillium brevicompactum IgE Ab [Units/volume] in Serum	LOINC	1	16
+3029889	Paecilomyces variottii IgE Ab [Units/volume] in Serum	LOINC	1	15
+3035411	Chaetomium globosum IgE Ab [Units/volume] in Serum	LOINC	1	15
+3009220	Epithelial cells.squamous [#/volume] in Urine sediment	LOINC	1	14
+3015057	Respiratory syncytial virus Ab [Titer] in Serum	LOINC	1	14
+3000219	Insulin receptor Ab [Presence] in Serum	LOINC	1	13
+3006392	Corynebacterium diphtheriae [Presence] in Specimen by Organism specific culture	LOINC	1	13
+3009179	Lactate [Moles/volume] in Peritoneal fluid	LOINC	1	13
+3020132	Chylomicrons [Presence] in Serum or Plasma	LOINC	1	13
+1616488	Thyroxine (T4) free [Moles/volume] in Cord blood	LOINC	1	12
+3002480	Lead [Moles/volume] in Urine	LOINC	1	12
+3003195	risperiDONE [Mass/volume] in Serum or Plasma	LOINC	1	12
+3011829	Common Millet IgE Ab [Units/volume] in Serum	LOINC	1	12
+3020071	Venlafaxine [Mass/volume] in Serum or Plasma	LOINC	1	12
+3036566	Thyroxine binding globulin [Moles/volume] in Serum or Plasma	LOINC	1	12
+3039542	Porphyrins [Moles/time] in 24 hour Urine	LOINC	1	12
+3006407	Chromogranin A [Mass/volume] in Serum or Plasma	LOINC	1	11
+3006706	IgM [Mass/volume] in Cerebral spinal fluid	LOINC	1	11
+3017830	Gliadin IgG Ab [Presence] in Serum	LOINC	1	11
+3047005	Sodium/Creatinine [Ratio] in Urine	LOINC	1	11
+46235479	Bilirubin fractions panel [Moles/volume] - Serum or Plasma	LOINC	1	11
+3016072	Theophylline [Mass/volume] in Serum or Plasma	LOINC	1	10
+3021993	C3 nephritic factor [Units/volume] in Serum or Plasma	LOINC	1	10
+3025311	HLA-B [Type]	LOINC	1	10
+3037201	Protein S Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	1	10
+3005117	Influenza virus A Ab [Titer] in Serum	LOINC	1	9
+3027114	Cholesterol [Mass/volume] in Serum or Plasma	LOINC	1	9
+3032642	Schistosoma sp Ab [Titer] in Serum	LOINC	1	9
+3003220	Varicella zoster virus IgG Ab [Titer] in Serum	LOINC	1	8
+3006906	Calcium [Mass/volume] in Serum or Plasma	LOINC	1	8
+3012864	Amino acids [Identifier] in 24 hour Urine	LOINC	1	8
+3014620	Thyroxine (T4) [Moles/volume] in Serum or Plasma	LOINC	1	8
+3045191	Normetanephrine [Moles/volume] in Urine	LOINC	1	8
+36305197	Thyroglobulin and thyroperoxidase Ab panel - Serum or Plasma	LOINC	1	8
+1175312	AMPAR1 Ab [Titer] in Cerebral spinal fluid by Cell binding immunofluorescent assay	LOINC	1	7
+1176058	AMPAR2 Ab [Titer] in Cerebral spinal fluid by Cell binding immunofluorescent assay	LOINC	1	7
+3028050	Streptolysin O Ab [Titer] in Serum	LOINC	1	7
+3032940	Amino acids [Identifier] in Cerebral spinal fluid	LOINC	1	7
+3035109	Mycobacterium sp DNA [Presence] in Specimen by NAA with probe detection	LOINC	1	7
+3035963	Corticotropin [Moles/volume] in Plasma	LOINC	1	7
+3022912	Hexacarboxylporphyrin [Moles/time] in 24 hour Urine	LOINC	1	6
+40762473	Aspergillus versicolor IgG Ab [Mass/volume] in Serum	LOINC	1	6
+40771459	Voltage-gated potassium channel Ab [Moles/volume] in Cerebral spinal fluid	LOINC	1	6
+44816697	Penicillium sp IgG Ab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	1	6
