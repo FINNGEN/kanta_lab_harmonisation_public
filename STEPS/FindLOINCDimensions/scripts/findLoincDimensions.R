@@ -140,15 +140,28 @@ promptColumns <- c(
   "LongName", "prefix_meaning", "suffix_meaning"
 )
 
-# Render a group's rows as a TSV block for the prompt. TSV (not markdown) keeps
-# it compact and unambiguous when values themselves contain commas or brackets.
+# Make one value safe to put in a markdown table cell: a literal "|" would end
+# the cell early and silently shift every later column, and a real newline
+# would end the row. Neither occurs in the data today; escaping them keeps a
+# future value from corrupting the table the model reads.
+escapeMarkdownCell <- function(x) {
+  x |>
+    gsub("|", "\\|", x = _, fixed = TRUE) |>
+    gsub("\r?\n", " ", x = _)
+}
+
+# Render a group's rows as a markdown table for the prompt.
 renderGroupTable <- function(groupData) {
   tbl <- groupData |>
     dplyr::select(dplyr::all_of(promptColumns)) |>
-    dplyr::mutate(dplyr::across(dplyr::everything(), ~ ifelse(is.na(.x), "", as.character(.x))))
+    dplyr::mutate(dplyr::across(
+      dplyr::everything(),
+      ~ escapeMarkdownCell(ifelse(is.na(.x), "", as.character(.x)))
+    ))
   lines <- c(
-    paste(names(tbl), collapse = "\t"),
-    apply(tbl, 1, function(r) paste(r, collapse = "\t"))
+    paste0("| ", paste(names(tbl), collapse = " | "), " |"),
+    paste0("|", paste(rep("---", ncol(tbl)), collapse = "|"), "|"),
+    apply(tbl, 1, function(r) paste0("| ", paste(r, collapse = " | "), " |"))
   )
   paste(lines, collapse = "\n")
 }
@@ -263,7 +276,16 @@ readGroupRows <- function(gid) {
     out <- list(row_id = as.integer(r$row_id %||% NA_integer_))
     for (col in dimensionColumns) {
       v <- r[[col]]
-      out[[col]] <- if (is.null(v) || length(v) == 0) NA_character_ else as.character(v)[1]
+      # The model returns "" for "not determinable". Normalise it to NA here,
+      # at the JSON boundary, so the in-memory table represents missing the
+      # same way the rest of the pipeline does (tables are read with na = "").
+      # Without this, "" and NA both write out as empty but compare unequal,
+      # so any is.na() check downstream silently misreads the column.
+      out[[col]] <- if (is.null(v) || length(v) == 0 || !nzchar(trimws(as.character(v)[1]))) {
+        NA_character_
+      } else {
+        trimws(as.character(v)[1])
+      }
     }
     v <- r$is_panel
     out$is_panel <- if (is.null(v) || length(v) == 0) NA else as.logical(v)[1]
