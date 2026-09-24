@@ -17,20 +17,20 @@ Configuration:
   targetGroupSize = 100
   distMethod = osa
   linkageMethod = ward.D2
-Read 29341 rows from DATA/BuildKnownInformationTable/knownInformation.tsv
-Distinct TEST_NAME in input: 23242
+Read 29310 rows from DATA/BuildKnownInformationTable/knownInformation.tsv
+Distinct TEST_NAME in input: 23241
   dropped (purely numeric): 473
   dropped (total n <= 100): 13547
-  -> remaining TEST_NAME to group: 9222
-Computing pairwise osa distance matrix (9222 names)...
-  done in 75.2s
+  -> remaining TEST_NAME to group: 9221
+Computing pairwise osa distance matrix (9221 names)...
+  done in 76.6s
 Clustering (ward.D2 linkage)...
-  done in 2s
+  done in 2.1s
 Walking the dendrogram (cutting each branch at <= 100 names)...
   done in 0s
-Formed 171 groups (each at most 100 names); sizes: mean=53.9, median=54, min=1, max=100; depths: mean=10.2, min=3, max=18
-Sanity check (mean within-group pairwise osa distance, 20 sampled groups): stringdist-order groups mean = 10.74 vs. alphabetical-order groups mean = 18.87 (lower = more similar within group)
-Wrote 13835 rows (9222 TEST_NAME, 171 groups) to DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+Formed 170 groups (each at most 100 names); sizes: mean=54.2, median=54, min=1, max=100; depths: mean=10, min=3, max=19
+Sanity check (mean within-group pairwise osa distance, 20 sampled groups): stringdist-order groups mean = 10.42 vs. alphabetical-order groups mean = 18.84 (lower = more similar within group)
+Wrote 13804 rows (9221 TEST_NAME, 170 groups) to DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
 - The project is out-of-sync -- use `renv::status()` for details.
 
 Attaching package: ‘dplyr’
@@ -46,9 +46,9 @@ The following objects are masked from ‘package:base’:
 Configuration:
   knownInformationGroupedFile = DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
   outDir = DATA/GroupKnownInformationTable
-Read 13835 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
-Computed group-size stats for 171 groups
-Rendered a 341-node dendrogram (171 group leaves)
+Read 13804 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+Computed group-size stats for 170 groups
+Rendered a 339-node dendrogram (170 group leaves)
 Wrote stats report to DATA/GroupKnownInformationTable/knownInformationGroupedStats.md
 Wrote DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
 Wrote DATA/GroupKnownInformationTable/knownInformationGroupedStats.md
