@@ -64,18 +64,26 @@ fi
 #
 # --- Input -------------------------------------------------------------
 #
-DIMENSIONS_FILE="$DATA_DIR/FindLOINCDimensions/codesWithLoincDimensions.tsv"
-FREQUENCY_FILE="$DATA_DIR/SourceLabelingData/loinc_axes_frequency.tsv"
+NAMES_FILE="$DATA_DIR/FindLOINCDimensions/codesWithLoincNames.tsv"
+FREQUENCY_FILE="$DATA_DIR/SourceLabelingData/loinc_names_frequency.tsv"
+TOP2000_FILE="$DATA_DIR/SourceLabelingData/loinc_top2000.tsv"
+OMOP_ATTRIBUTES_FILE="$DATA_DIR/GetMeasurementOmopData/measurement_concept_attributes.tsv"
 
-if [[ ! -f "$DIMENSIONS_FILE" ]]; then
-  echo "Missing input file: $DIMENSIONS_FILE" >&2
+if [[ ! -f "$NAMES_FILE" ]]; then
+  echo "Missing input file: $NAMES_FILE" >&2
   exit 1
 fi
-if [[ ! -f "$FREQUENCY_FILE" ]]; then
-  echo "Missing input file: $FREQUENCY_FILE" >&2
-  echo "Build it with scripts/buildLoincAxesFrequency.R (see the step README)" >&2
+if [[ ! -f "$OMOP_ATTRIBUTES_FILE" ]]; then
+  echo "Missing input file: $OMOP_ATTRIBUTES_FILE" >&2
   exit 1
 fi
+for f in "$FREQUENCY_FILE" "$TOP2000_FILE"; do
+  if [[ ! -f "$f" ]]; then
+    echo "Missing input file: $f" >&2
+    echo "Build it with scripts/buildLoincNamesFrequency.R / scripts/buildLoincTop2000.R (see the step README)" >&2
+    exit 1
+  fi
+done
 if [[ ! -f "$STEP_DIR/scripts/systemPrompt.md" ]]; then
   echo "Missing input file: $STEP_DIR/scripts/systemPrompt.md" >&2
   exit 1
@@ -96,7 +104,7 @@ fi
 # asked again. Needed after editing scripts/systemPrompt.md or the output
 # schema: the cache is keyed on group_id alone, so without this a re-run
 # silently returns answers produced by the OLD prompt. The Hecate candidate
-# cache is kept -- it depends only on the axis values, not on the prompt.
+# cache is kept -- it depends only on the guessed names, not on the prompt.
 if [[ "$CLEAN" -eq 1 ]]; then
   if [[ -d "$OUTDIR/groupsCache" ]]; then
     echo "--clean: removing cached LLM answers in $OUTDIR/groupsCache"
@@ -106,11 +114,17 @@ if [[ "$CLEAN" -eq 1 ]]; then
   fi
 fi
 
-Rscript "$STEP_DIR/scripts/fixLoincDimensions.R" \
-  "$DIMENSIONS_FILE" "$FREQUENCY_FILE" "$OUTDIR" "$NGROUPS" "$SEED"
+Rscript "$STEP_DIR/scripts/fixLoincNames.R" \
+  "$NAMES_FILE" "$FREQUENCY_FILE" "$TOP2000_FILE" "$OMOP_ATTRIBUTES_FILE" \
+  "$OUTDIR" "$NGROUPS" "$SEED"
+
+Rscript "$STEP_DIR/scripts/summariseFixedLoincNames.R" \
+  "$OUTDIR/codesWithOmopConcepts.tsv" "$OUTDIR/hecateCandidates.tsv" \
+  "$FREQUENCY_FILE" "$TOP2000_FILE" "$OUTDIR/reflections.md" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
 #
-echo "Wrote $OUTDIR/codesWithFixedLoincDimensions.tsv"
+echo "Wrote $OUTDIR/codesWithOmopConcepts.tsv"
 echo "Wrote $OUTDIR/reflections.md"
+echo "Wrote $OUTDIR/fixedLoincNamesStats.md"
