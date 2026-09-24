@@ -24,11 +24,35 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 #
 # --- Input -------------------------------------------------------------
 #
-# na = "" (not readr's default c("", "NA")): some TEST_NAME values are
-# literally the text "NA" -- a real abbreviation, not a missing value -- and
-# labSummaryFile itself only ever writes "" for a genuine missing value.
+# na = "" (not readr's default c("", "NA")): the TEST_NAME "na" is a real
+# abbreviation, not a missing value, and labSummaryFile itself only ever
+# writes "" for a genuine missing value.
 labSummary <- readr::read_tsv(labSummaryFile, show_col_types = FALSE, na = "")
 ParallelLogger::logInfo("Read ", nrow(labSummary), " rows from ", labSummaryFile)
+
+# Drop the upstream's stringified missing test name. The source extract
+# (test_unit_counts.txt) was written by something that renders a missing value
+# as the text "NA" (R's write.table default), so records with no test name at
+# all arrived as a TEST_NAME of literally "NA" -- one row per UNIT they were
+# grouped into. They are not a test: the 31 rows span 31 unrelated units
+# (mmol/l, e9/l, fl, mm/h, ml/min/173m2, ...) that belong to completely
+# different assays, and none of them carries deciles.
+#
+# The match is case-sensitive and exact on purpose. Uppercase "NA" is the only
+# uppercase TEST_NAME in the whole dataset -- every real code is lowercased --
+# whereas lowercase "na" IS a real code (24 records with a genuine decile
+# distribution) and must survive. Matching case-insensitively here would
+# silently delete it.
+isMissingTestName <- labSummary$TEST_NAME == "NA" & !is.na(labSummary$TEST_NAME)
+if (any(isMissingTestName)) {
+  ParallelLogger::logWarn(
+    "Dropping ", sum(isMissingTestName), " row(s) whose TEST_NAME is the literal text \"NA\" ",
+    "(the upstream extract's stringified missing value), covering ",
+    format(sum(as.numeric(labSummary$n[isMissingTestName]), na.rm = TRUE), big.mark = ","),
+    " records with no recorded test name"
+  )
+  labSummary <- labSummary[!isMissingTestName, ]
+}
 
 labCodes <- readr::read_tsv(labCodesFile, show_col_types = FALSE)
 ParallelLogger::logInfo("Read ", nrow(labCodes), " rows from ", labCodesFile)

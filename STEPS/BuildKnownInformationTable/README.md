@@ -14,7 +14,8 @@
 ## Outputs
 
 - `DATA/BuildKnownInformationTable/knownInformation.tsv` — `labSummary.tsv`,
-  sorted by `TEST_NAME` ascending, with three columns appended:
+  minus the rows with no recorded test name (see Action), sorted by
+  `TEST_NAME` ascending, with three columns appended:
   - `LongName` — from `lab_codes_kodistopalvely.tsv`, joined on
     `TEST_NAME = lowercase(Abbreviation)` with all spaces removed. `NA` when
     no `Abbreviation` normalizes to that `TEST_NAME`. A handful of normalized
@@ -38,7 +39,22 @@
 
 ## Action
 
-Two scripts, run in order:
+Before anything else, rows whose `TEST_NAME` is the literal text `NA` are
+dropped, and the count is logged as a warning. These are not a test: the
+upstream extract (`test_unit_counts.txt`) renders a missing value as the text
+`NA` (R's `write.table` default), so records with no test name at all arrived
+as a `TEST_NAME` of `"NA"`, one row per `UNIT` they were grouped into — 31 rows
+spanning 31 unrelated units (`mmol/l`, `e9/l`, `fl`, `mm/h`, `ml/min/173m2`,
+...) that belong to completely different assays, none of them carrying
+deciles. They carry no information that could be mapped to a lab test.
+
+The match is **case-sensitive and exact**: uppercase `NA` is the only uppercase
+`TEST_NAME` in the dataset (every real code is lowercased), whereas lowercase
+`na` is a real code with a genuine decile distribution and is kept. This is
+also why the file is read with `na = ""` rather than readr's default
+`c("", "NA")` — the default would destroy the real `na` too.
+
+Then two scripts, run in order:
 
 1. `scripts/buildKnownInformationTable.R` builds `knownInformation.tsv` as
    described above.
