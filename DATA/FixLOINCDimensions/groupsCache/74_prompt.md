@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,167 +21,255 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 74.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Aspergillus sp | Aspergillus sp | 1.000 | 0 | 0 |
-| Aspergillus sp | Aspergillus sp Ag | 0.869 | 0 | 0 |
-| Aspergillus sp | Aspergillus sp identified | 0.840 | 0 | 0 |
-| Aspergillus sp | Aspergillus sp Ab | 0.839 | 1 | 1,942 |
-| Aspergillus sp | Aspergillus fumigatus | 0.796 | 0 | 0 |
-| Bacteria | Bacteria | 1.000 | 32 | 3,027,518 |
-| Bordetella parapertussis | Bordetella parapertussis | 1.000 | 0 | 0 |
-| Bordetella parapertussis | Bordetella parapertussis Ab | 0.806 | 0 | 0 |
-| Bordetella parapertussis | Bordetella parapertussis Ag | 0.793 | 0 | 0 |
-| Bordetella parapertussis | Bordetella parapertussis IgG | 0.758 | 0 | 0 |
-| Bordetella parapertussis | Bordetella parapertussis DNA | 0.758 | 1 | 3,745 |
-| Bordetella pertussis | Bordetella pertussis | 1.000 | 0 | 0 |
-| Bordetella pertussis+parapertussis | Bordetella pertussis+parapertussis | 1.000 | 0 | 0 |
-| Bordetella pertussis+parapertussis | Bordetella pertussis+parapertussis+bronchiseptica | 0.923 | 0 | 0 |
-| Bordetella pertussis+parapertussis | Bordetella parapertussis | 0.794 | 0 | 0 |
-| Bordetella pertussis+parapertussis | Bordetella pertussis+Bordetella parapertussis.filamentous hemagglutinin IgG | 0.780 | 0 | 0 |
-| Bordetella pertussis+parapertussis | Bordetella parapertussis Ag | 0.765 | 0 | 0 |
-| Borrelia sp | Borrelia sp | 1.000 | 0 | 0 |
-| Borrelia sp | Borreliella sp | 0.914 | 0 | 0 |
-| Borrelia sp | Borrelia sp Ab | 0.866 | 0 | 0 |
-| Borrelia sp | Borrelia sp Ag | 0.847 | 0 | 0 |
-| Borrelia sp | Borrelia sp identified | 0.845 | 0 | 0 |
-| Coronavirus 229E | Human coronavirus 229E | 0.931 | 0 | 0 |
-| Coronavirus 229E | Human coronavirus 229E+NL63 | 0.820 | 0 | 0 |
-| Coronavirus 229E | Human coronavirus 229E RNA | 0.819 | 1 | 5,974 |
-| Coronavirus 229E | Human coronavirus 229E Ag | 0.818 | 0 | 0 |
-| Coronavirus 229E | Human coronavirus 229E Ab | 0.799 | 0 | 0 |
-| Coronavirus HKU1 | Human coronavirus HKU1 | 0.900 | 0 | 0 |
-| Coronavirus HKU1 | Human coronavirus HKU1 RNA | 0.798 | 0 | 0 |
-| Coronavirus HKU1 | Human coronavirus HKU1+OC43 | 0.757 | 0 | 0 |
-| Coronavirus NL63 | Human coronavirus NL63 | 0.895 | 0 | 0 |
-| Coronavirus NL63 | Human coronavirus NL63 RNA | 0.813 | 1 | 5,974 |
-| Coronavirus NL63 | Human coronavirus NL63 IgG | 0.769 | 0 | 0 |
-| Coronavirus NL63 | Human coronavirus NL63 Ab | 0.762 | 0 | 0 |
-| Coronavirus OC43 | Human coronavirus OC43 | 0.922 | 0 | 0 |
-| Coronavirus OC43 | Human coronavirus OC43 Ab | 0.835 | 0 | 0 |
-| Coronavirus OC43 | Human coronavirus OC43 Ag | 0.808 | 0 | 0 |
-| Coronavirus OC43 | Human coronavirus OC43 RNA | 0.802 | 1 | 5,976 |
-| Coronavirus OC43 | Human coronavirus OC43 IgG | 0.792 | 0 | 0 |
-| Human bocavirus | Human bocavirus | 1.000 | 0 | 0 |
-| Parvovirus B19 | Parvovirus B19 | 1.000 | 0 | 0 |
-| Parvovirus B19 | Parvovirus B19 Ab | 0.832 | 0 | 0 |
-| Parvovirus B19 | Parvovirus B19 IgM | 0.830 | 1 | 2,963 |
-| Parvovirus B19 | Parvovirus B19 DNA | 0.824 | 1 | 207 |
-| Parvovirus B19 | Parvovirus B19 IgG | 0.814 | 3 | 2,615 |
-| Salmonella sp | Salmonella sp | 1.000 | 3 | 41,500 |
-| Salmonella sp | Salmonella sp serovar | 0.879 | 0 | 0 |
-| Salmonella sp | Salmonella spp | 0.865 | 0 | 0 |
-| Salmonella sp | Salmonella sp serotype | 0.860 | 0 | 0 |
-| Salmonella sp | Salmonella sp Ag | 0.850 | 0 | 0 |
-| Sapovirus | Sapovirus | 1.000 | 0 | 0 |
-| Sapovirus | Sapovirus genogroup V | 0.809 | 0 | 0 |
-| Sapovirus | Sapovirus RNA | 0.800 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Presence or Threshold | Presence or Threshold | 1.000 | 382 | 10,296,466 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with probe detection | 1.000 | 115 | 2,413,483 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with non-probe detection | 0.864 | 1 | 7,786 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5a | 0.770 | 0 | 0 |
-| Nucleic acid amplification with probe detection | Probe with amplification | 0.759 | 2 | 14,699 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5b | 0.754 | 0 | 0 |
-
-### system
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Cerebral spinal fluid | Cerebral spinal fluid | 1.000 | 150 | 183,922 |
-| Serum | Serum | 1.000 | 995 | 2,593,077 |
-| Stool | Stool | 1.000 | 42 | 537,967 |
-| Stool | Stool.wet | 0.760 | 0 | 0 |
-| Stool | Stool^Patient.gastrointestinal | 0.756 | 0 | 0 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 1092116 | Bacteria DNA [Presence] in Specimen by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 1616933 | Salmonella sp DNA [Presence] in Stool by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 3015822 | Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection | 1.000 |  | 1 |    207 |
+| 3032674 | Salmonella sp DNA [Presence] in Specimen by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 3033060 | Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 37020160 | Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 37021179 | Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |      0 |
+| 3028372 | Borrelia burgdorferi DNA [Presence] in Specimen by NAA with probe detection | 0.971 | 1877 | 0 |      0 |
+| 3032435 | Parvovirus B19 DNA [Presence] in Blood by NAA with probe detection | 0.969 |  | 0 |      0 |
+| 3965970 | Human coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.967 |  | 0 |      0 |
+| 40765215 | Aspergillus fumigatus DNA [Presence] in Specimen by NAA with probe detection | 0.966 |  | 0 |      0 |
+| 40764131 | Salmonella enterica DNA [Presence] in Specimen by NAA with probe detection | 0.962 |  | 0 |      0 |
+| 3966673 | Human coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.962 |  | 0 |      0 |
+| 3964787 | Human coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.961 |  | 0 |      0 |
+| 37021321 | Human bocavirus 1+2+3 DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.958 |  | 0 |      0 |
+| 1091614 | Aspergillus clavatus DNA [Presence] in Specimen by NAA with probe detection | 0.958 |  | 0 |      0 |
+| 37019602 | Bordetella parapertussis DNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.955 |  | 0 |      0 |
+| 36305655 | Human bocavirus DNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.955 |  | 0 |      0 |
+| 3037875 | Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection | 0.954 |  | 1 |  3,745 |
+| 1469897 | Bordetella parapertussis DNA [Presence] in Bronchial specimen by NAA with probe detection | 0.953 |  | 0 |      0 |
+| 42869862 | Sapovirus RNA [Presence] in Specimen by NAA with probe detection | 0.953 |  | 0 |      0 |
+| 3009121 | Parvovirus B19 DNA [Presence] in Specimen by NAA with probe detection | 0.952 |  | 0 |      0 |
+| 1469600 | Bordetella pertussis DNA [Presence] in Bronchial specimen by NAA with probe detection | 0.951 |  | 0 |      0 |
+| 3965395 | Human coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.951 |  | 0 |      0 |
+| 3012477 | Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection | 0.951 |  | 1 | 12,026 |
+| 40765161 | Human bocavirus DNA [Presence] in Specimen by NAA with probe detection | 0.949 |  | 2 | 13,049 |
+| 37020862 | Bordetella pertussis DNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.949 |  | 0 |      0 |
+| 3965131 | Sapovirus genogroup V RNA [Presence] in Stool by NAA with probe detection | 0.949 |  | 0 |      0 |
+| 3023950 | Parvovirus B19 RNA [Presence] in Blood by NAA with probe detection | 0.947 |  | 0 |      0 |
+| 648686 | Borrelia sp DNA [Presence] in Specimen by NAA with probe detection | 0.944 |  | 0 |      0 |
+| 1091764 | Bordetella parapertussis DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.942 |  | 0 |      0 |
+| 37020776 | Human coronavirus 229E+NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.942 |  | 0 |      0 |
+| 1761619 | Aspergillus sp DNA [Presence] in Blood by NAA with probe detection | 0.940 |  | 0 |      0 |
+| 36303776 | Human bocavirus DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.939 |  | 0 |      0 |
+| 1176020 | Aspergillus sp DNA [Presence] in Tissue by NAA with probe detection | 0.939 |  | 0 |      0 |
+| 36659767 | Bordetella pertussis DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.938 |  | 0 |      0 |
+| 1259587 | Human bocavirus DNA [Presence] in Upper respiratory specimen by NAA with non-probe detection | 0.938 |  | 0 |      0 |
+| 1091413 | Aspergillus flavus DNA [Presence] in Specimen by NAA with probe detection | 0.937 |  | 0 |      0 |
+| 1176455 | Aspergillus sp DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.937 |  | 0 |      0 |
+| 1469496 | Human bocavirus DNA [Presence] in Sputum by NAA with probe detection | 0.933 |  | 0 |      0 |
+| 3029274 | Parvovirus B19 DNA [Presence] in Body fluid by NAA with probe detection | 0.933 |  | 0 |      0 |
+| 40765216 | Aspergillus terreus DNA [Presence] in Specimen by NAA with probe detection | 0.931 |  | 0 |      0 |
+| 3964934 | Sapovirus genogroups I+II+IV RNA [Presence] in Stool by NAA with probe detection | 0.930 |  | 0 |      0 |
+| 646396 | Aspergillus sp DNA [#/volume] in Specimen by NAA with probe detection | 0.930 |  | 0 |      0 |
+| 3034972 | Bordetella parapertussis DNA [Presence] in Nasopharynx by NAA with probe detection | 0.929 |  | 0 |      0 |
+| 37019802 | Human coronavirus HKU1+OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.928 |  | 0 |      0 |
+| 36304464 | Human coronavirus OC43 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.927 |  | 0 |      0 |
+| 3041642 | Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection | 0.926 |  | 1 |  5,974 |
+| 1092055 | Human bocavirus DNA [Presence] in Nasopharynx by NAA with probe detection | 0.925 |  | 0 |      0 |
+| 21493467 | Salmonella enterica+bongori DNA [Presence] in Stool by NAA with non-probe detection | 0.924 |  | 0 |      0 |
+| 37020957 | Sapovirus genogroups I+II+IV+V RNA [Presence] in Stool by NAA with probe detection | 0.924 |  | 1 |  3,731 |
+| 36304601 | Human coronavirus 229E RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.923 |  | 0 |      0 |
+| 1091135 | Borreliella sp DNA [Presence] in Specimen by NAA with probe detection | 0.922 |  | 0 |      0 |
+| 3025310 | Parvovirus B19 RNA [Presence] in Specimen by NAA with probe detection | 0.922 |  | 0 |      0 |
+| 3032785 | Parvovirus B19 DNA [Presence] in Bone marrow by NAA with probe detection | 0.922 |  | 0 |      0 |
+| 21492661 | Salmonella sp rpoD gene [Presence] in Stool by NAA with probe detection | 0.921 |  | 0 |      0 |
+| 3038546 | Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection | 0.921 |  | 1 |  5,976 |
+| 3028977 | Parvovirus B19 DNA [Presence] in Urine by NAA with probe detection | 0.920 |  | 0 |      0 |
+| 3047117 | Bordetella pertussis DNA [Presence] in Nasopharynx by NAA with probe detection | 0.920 |  | 0 |      0 |
+| 1091349 | Aspergillus niger DNA [Presence] in Specimen by NAA with probe detection | 0.919 |  | 0 |      0 |
+| 36305676 | Human coronavirus HKU1 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.917 |  | 0 |      0 |
+| 37020168 | Bordetella pertussis DNA [Presence] in Throat by NAA with probe detection | 0.917 |  | 0 |      0 |
+| 36304330 | Human coronavirus 229E RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.917 |  | 0 |      0 |
+| 3024482 | Parvovirus B19 RNA [Presence] in Tissue by NAA with probe detection | 0.917 |  | 0 |      0 |
+| 36204249 | Human bocavirus DNA [Presence] in Tissue by NAA with probe detection | 0.916 |  | 0 |      0 |
+| 3966166 | Staphylococcus aureus DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.915 |  | 0 |      0 |
+| 1092421 | Human coronavirus OC43 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.915 |  | 0 |      0 |
+| 21493559 | Salmonella sp invA+fliC genes [Presence] in Stool by NAA with probe detection | 0.911 |  | 0 |      0 |
+| 21493481 | Sapovirus genogroups I+II+IV+V RNA [Presence] in Stool by NAA with non-probe detection | 0.911 |  | 0 |      0 |
+| 3007217 | Salmonella pullorum DNA [Presence] in Specimen by NAA with probe detection | 0.911 |  | 0 |      0 |
+| 40765160 | Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection | 0.911 |  | 0 |      0 |
+| 36304548 | Human coronavirus NL63 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.910 |  | 0 |      0 |
+| 36304961 | Human coronavirus OC43 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.910 |  | 0 |      0 |
+| 36305656 | Human coronavirus NL63 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.909 |  | 0 |      0 |
+| 36660491 | Human coronavirus 229E RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.909 |  | 0 |      0 |
+| 1001596 | Salmonella sp DNA [Presence] by NAA with probe detection in Positive blood culture | 0.908 |  | 0 |      0 |
+| 21493883 | Salmonella sp spaO gene [Presence] in Stool by NAA with probe detection | 0.908 |  | 0 |      0 |
+| 1091951 | Staphylococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.907 |  | 0 |      0 |
+| 36305349 | Human coronavirus HKU1 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.907 |  | 0 |      0 |
+| 36660364 | Human coronavirus OC43 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.906 |  | 0 |      0 |
+| 46234881 | Bacterial 16S rRNA [Presence] in Specimen by NAA with probe detection | 0.906 |  | 0 |      0 |
+| 646724 | Human coronavirus 229E RNA [Presence] in Specimen by NAA with non-probe detection | 0.905 |  | 0 |      0 |
+| 3015220 | Salmonella gallinarum DNA [Presence] in Specimen by NAA with probe detection | 0.904 |  | 0 |      0 |
+| 3040359 | Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection | 0.903 |  | 1 |  5,974 |
+| 645449 | Human coronavirus OC43 RNA [Presence] in Specimen by NAA with non-probe detection | 0.902 |  | 0 |      0 |
+| 1091185 | Human bocavirus 1+2+3+4 DNA [Presence] in Bronchial specimen by NAA with probe detection | 0.902 |  | 0 |      0 |
+| 3008909 | Norovirus RNA [Presence] in Stool by NAA with probe detection | 0.902 |  | 1 | 17,197 |
+| 1091709 | Human coronavirus NL63 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.902 |  | 0 |      0 |
+| 46235156 | Parvovirus B19 DNA [Presence] in Plasma from Donor by NAA with probe detection | 0.900 |  | 0 |      0 |
+| 3044820 | Borrelia burgdorferi DNA [Presence] in Blood by NAA with probe detection | 0.900 |  | 0 |      0 |
+| 36660329 | Human coronavirus NL63 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.900 |  | 0 |      0 |
+| 40764159 | Escherichia coli DNA [Presence] in Specimen by NAA with probe detection | 0.899 |  | 0 |      0 |
+| 37020998 | Streptococcus pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.899 |  | 0 |      0 |
+| 1091933 | Human coronavirus OC43 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.898 |  | 0 |      0 |
+| 36659667 | Human coronavirus HKU1 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.898 |  | 0 |      0 |
+| 3966163 | Shigella sp DNA [Presence] in Stool by NAA with probe detection | 0.897 |  | 0 |      0 |
+| 40764165 | Staphylococcus aureus DNA [Presence] in Specimen by NAA with probe detection | 0.897 |  | 0 |      0 |
+| 1988730 | Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.895 |  | 0 |      0 |
+| 36305477 | Microsporidia DNA [Presence] in Stool by NAA with probe detection | 0.895 |  | 0 |      0 |
+| 645895 | Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with non-probe detection | 0.895 |  | 0 |      0 |
+| 3966671 | Aeromonas sp DNA [Presence] in Stool by NAA with probe detection | 0.895 |  | 0 |      0 |
+| 37020598 | Moraxella catarrhalis DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.894 |  | 0 |      0 |
+| 37020300 | Entamoeba histolytica DNA [Presence] in Stool by NAA with probe detection | 0.892 |  | 1 |  2,336 |
+| 36032369 | Salmonella sp DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.892 |  | 0 |      0 |
+| 1469493 | Salmonella sp DNA [Presence] in Body fluid by NAA with non-probe detection | 0.892 |  | 0 |      0 |
+| 1259661 | Salmonella paratyphi DNA [Presence] in Isolate by NAA with probe detection | 0.891 |  | 0 |      0 |
+| 1091342 | Human coronavirus HKU1 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.891 |  | 0 |      0 |
+| 36304443 | Parechovirus RNA [Presence] in Stool by NAA with probe detection | 0.890 |  | 0 |      0 |
+| 1988643 | Escherichia coli K1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.889 |  | 0 |      0 |
+| 3030429 | Borrelia sp DNA [Identifier] in Specimen by NAA with probe detection | 0.888 |  | 1 |  1,758 |
+| 42868767 | Plesiomonas shigelloides DNA [Presence] in Stool by NAA with probe detection | 0.888 |  | 0 |      0 |
+| 3035492 | Borrelia burgdorferi DNA [Presence] in Tissue by NAA with probe detection | 0.888 |  | 0 |      0 |
+| 1260098 | Salmonella typhi DNA [Presence] in Isolate by NAA with probe detection | 0.888 |  | 0 |      0 |
+| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.887 |  | 0 |      0 |
+| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.887 |  | 0 |      0 |
+| 706165 | SARS-related coronavirus RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.886 |  | 0 |      0 |
+| 21493148 | Human coronavirus OC43 RNA [Presence] in Nasopharynx by NAA with non-probe detection | 0.886 |  | 0 |      0 |
+| 3035833 | XXX microorganism DNA [Presence] in Specimen by NAA with probe detection | 0.884 | 279 | 0 |      0 |
+| 37020262 | Human coronavirus 229E+HKU1+NL63+OC43 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.884 |  | 0 |      0 |
+| 1091866 | Human coronavirus NL63 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.883 |  | 0 |      0 |
+| 3001391 | Mycobacterium sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.883 |  | 0 |      0 |
+| 36031318 | Borrelia sp DNA [Presence] in Blood by NAA with probe detection | 0.883 |  | 0 |      0 |
+| 1259851 | Entamoeba coli DNA [Presence] in Stool by NAA with probe detection | 0.882 |  | 0 |      0 |
+| 37020058 | Rotavirus A RNA [Presence] in Stool by NAA with probe detection | 0.882 |  | 0 |      0 |
+| 1469649 | Campylobacter sp DNA [Presence] in Stool by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 3000499 | Borrelia burgdorferi DNA [Presence] in Urine by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 3028815 | Burkholderia sp DNA [Presence] in Specimen by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 1259863 | Entamoeba hartmanni DNA [Presence] in Stool by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 3029113 | Borrelia burgdorferi DNA [Presence] in Tick by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 1091141 | Micrococcus luteus DNA [Presence] in Specimen by NAA with probe detection | 0.881 |  | 0 |      0 |
+| 647461 | Rotavirus RNA [Presence] in Stool by NAA with probe detection | 0.880 |  | 0 |      0 |
+| 40764162 | Pseudomonas aeruginosa DNA [Presence] in Specimen by NAA with probe detection | 0.880 |  | 0 |      0 |
+| 3027858 | Mycobacterium tuberculosis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.880 |  | 0 |      0 |
+| 646769 | Human coronavirus NL63 RNA [Presence] in Specimen by NAA with non-probe detection | 0.879 |  | 0 |      0 |
+| 37020818 | Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection | 0.879 |  | 0 |      0 |
+| 3964818 | Klebsiella pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.879 |  | 0 |      0 |
+| 1988744 | Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.879 |  | 0 |      0 |
+| 3965358 | Campylobacter coli DNA [Presence] in Stool by NAA with probe detection | 0.879 |  | 0 |      0 |
+| 21493475 | Entamoeba histolytica DNA [Presence] in Stool by NAA with non-probe detection | 0.878 |  | 0 |      0 |
+| 36305771 | Cryptosporidium sp DNA [Presence] in Stool by NAA with probe detection | 0.878 |  | 1 |  4,105 |
+| 37019853 | Mycoplasma pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.878 |  | 0 |      0 |
+| 1988899 | Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.878 |  | 0 |      0 |
+| 37020445 | Astrovirus RNA [Presence] in Stool by NAA with probe detection | 0.878 |  | 1 |  2,767 |
+| 1616599 | Cyclospora cayetanensis DNA [Presence] in Stool by NAA with probe detection | 0.876 |  | 0 |      0 |
+| 1469822 | Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 37020101 | Chlamydophila pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 1617136 | Vibrio parahaemolyticus DNA [Presence] in Stool by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 1616308 | Escherichia coli enteropathogenic DNA [Presence] in Stool by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 40766195 | Brucella sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 3037610 | Borrelia burgdorferi DNA [Presence] in Body fluid by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 3031996 | Naegleria fowleri DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.875 |  | 0 |      0 |
+| 1989596 | Streptococcus pyogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.874 |  | 0 |      0 |
+| 21493330 | Human coronavirus HKU1 RNA [Presence] in Nasopharynx by NAA with non-probe detection | 0.873 |  | 0 |      0 |
+| 36305386 | Human coronavirus HKU1 RNA [Presence] in Aspirate by NAA with probe detection | 0.872 |  | 0 |      0 |
+| 1175392 | Giardia sp DNA [Presence] in Stool by NAA with probe detection | 0.871 |  | 0 |      0 |
+| 1092075 | Human bocavirus 1+2+3+4 DNA [Presence] in Bronchoalveolar lavage by NAA with probe detection | 0.871 |  | 0 |      0 |
+| 36659989 | Staphylococcus aureus DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.866 |  | 0 |      0 |
+| 42868763 | Blastocystis hominis DNA [Presence] in Stool by NAA with probe detection | 0.866 |  | 0 |      0 |
+| 37020338 | Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.865 |  | 0 |      0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1134 | -aspenho |  | 680 | 100 |  | -Aspergillus, nukleiinihappo (kval) |  |  | Aspergillus sp | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1135 | -baktnho |  | 14771 | 100 |  | -Bakteeri, nukleiinihappo (kval) |  |  | Bacteria | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1136 | -bocanho |  | 1008 | 100 |  |  |  |  | Human bocavirus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1137 | -bokanho |  | 13005 | 100 |  | -Bokavirus, nukleiinihappo (kval) |  |  | Human bocavirus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1138 | -bopanho |  | 1739 | 100 |  |  |  |  |  | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1139 | -bopenho |  | 12052 | 100 |  | -Bordetella pertussis, nukleiinihappo (kval) |  |  | Bordetella pertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1140 | -bopenho. |  | 1314 | 100 |  |  |  |  | Bordetella pertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1141 | -boppnho |  | 3753 | 100 |  |  |  |  | Bordetella pertussis+parapertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1142 | -borrnho |  | 1762 | 100 |  | -Borrelia, nukleiinihappo (kval) |  |  | Borrelia sp | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1143 | -bparnho |  | 314 | 100 |  |  |  |  | Bordetella parapertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1144 | -rbaktnho |  | 4646 | 100 |  |  |  |  |  |  |  |  |  |  | TRUE |
-| 1145 | baktnho |  | 328 | 100 |  |  |  |  | Bacteria | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1146 | bokanho |  | 222 | 100 |  |  |  |  | Human bocavirus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1147 | bopenho |  | 608 | 100 |  |  |  |  | Bordetella pertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1148 | bparanho |  | 1650 | 100 |  |  |  |  | Bordetella parapertussis | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1149 | f-baktnho |  | 17469 | 100 |  |  | Feces |  | Bacteria | Presence or Threshold | Nucleic acid amplification with probe detection | Stool | Ord | Point in time (spot) | FALSE |
-| 1150 | f-paranho |  | 14240 | 99.99 |  | F -Parasiitit, nukleiinihappo (kval) | Feces |  |  |  |  | Stool |  |  | TRUE |
-| 1151 | f-salmnho |  | 2354 | 100 |  | F -Salmonella, nukleiinihappo (kval) | Feces |  | Salmonella sp | Presence or Threshold | Nucleic acid amplification with probe detection | Stool | Ord | Point in time (spot) | FALSE |
-| 1152 | f-saponho |  | 4057 | 100 |  | F -Sapovirus, nukleiinihappo (kval) | Feces |  | Sapovirus | Presence or Threshold | Nucleic acid amplification with probe detection | Stool | Ord | Point in time (spot) | FALSE |
-| 1153 | kv229enho |  | 5976 | 100 |  |  |  |  | Coronavirus 229E | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1154 | kvhku1nho |  | 537 | 100 |  |  |  |  | Coronavirus HKU1 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1155 | kvnl63nho |  | 5975 | 100 |  |  |  |  | Coronavirus NL63 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1156 | kvoc43nho |  | 5977 | 100 |  |  |  |  | Coronavirus OC43 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1157 | li-baktnho |  | 268 | 100 |  | Li-Bakteeri, nukleiinihappo (kval) | Cerebrospinal fluid |  | Bacteria | Presence or Threshold | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Ord | Point in time (spot) | FALSE |
-| 1158 | resbaktnho |  | 770 | 100 |  |  |  |  |  |  |  |  |  |  | TRUE |
-| 1159 | s-parvnho |  | 208 | 99.04 |  | S -Parvovirus, nukleiinihappo (kval) | Serum |  | Parvovirus B19 | Presence or Threshold | Nucleic acid amplification with probe detection | Serum | Ord | Point in time (spot) | FALSE |
-| 1160 | salmnho |  | 8183 | 100 |  |  |  |  | Salmonella sp | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1134 | -aspenho |  | 680 | 100 |  | -Aspergillus, nukleiinihappo (kval) |  |  | Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection | FALSE |
+| 1135 | -baktnho |  | 14771 | 100 |  | -Bakteeri, nukleiinihappo (kval) |  |  | Bacteria DNA [Presence] in Specimen by NAA with probe detection | FALSE |
+| 1136 | -bocanho |  | 1008 | 100 |  |  |  |  | Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1137 | -bokanho |  | 13005 | 100 |  | -Bokavirus, nukleiinihappo (kval) |  |  | Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1138 | -bopanho |  | 1739 | 100 |  |  |  |  | Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1139 | -bopenho |  | 12052 | 100 |  | -Bordetella pertussis, nukleiinihappo (kval) |  |  | Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1140 | -bopenho. |  | 1314 | 100 |  |  |  |  | Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1141 | -boppnho |  | 3753 | 100 |  |  |  |  | Bordetella pertussis+Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1142 | -borrnho |  | 1762 | 100 |  | -Borrelia, nukleiinihappo (kval) |  |  | Borrelia burgdorferi group DNA [Presence] in Specimen by NAA with probe detection | FALSE |
+| 1143 | -bparnho |  | 314 | 100 |  |  |  |  | Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1144 | -rbaktnho |  | 4646 | 100 |  |  |  |  | Bacteria DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1145 | baktnho |  | 328 | 100 |  |  |  |  | Bacteria DNA [Presence] in Specimen by NAA with probe detection | FALSE |
+| 1146 | bokanho |  | 222 | 100 |  |  |  |  | Human bocavirus DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1147 | bopenho |  | 608 | 100 |  |  |  |  | Bordetella pertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1148 | bparanho |  | 1650 | 100 |  |  |  |  | Bordetella parapertussis DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1149 | f-baktnho |  | 17469 | 100 |  |  | Feces |  | Bacteria DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 1150 | f-paranho |  | 14240 | 99.99 |  | F -Parasiitit, nukleiinihappo (kval) | Feces |  | Protozoa DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 1151 | f-salmnho |  | 2354 | 100 |  | F -Salmonella, nukleiinihappo (kval) | Feces |  | Salmonella sp DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 1152 | f-saponho |  | 4057 | 100 |  | F -Sapovirus, nukleiinihappo (kval) | Feces |  | Sapovirus RNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 1153 | kv229enho |  | 5976 | 100 |  |  |  |  | Coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1154 | kvhku1nho |  | 537 | 100 |  |  |  |  | Coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1155 | kvnl63nho |  | 5975 | 100 |  |  |  |  | Coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1156 | kvoc43nho |  | 5977 | 100 |  |  |  |  | Coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1157 | li-baktnho |  | 268 | 100 |  | Li-Bakteeri, nukleiinihappo (kval) | Cerebrospinal fluid |  | Bacteria DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 1158 | resbaktnho |  | 770 | 100 |  |  |  |  | Bacteria DNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1159 | s-parvnho |  | 208 | 99.04 |  | S -Parvovirus, nukleiinihappo (kval) | Serum |  | Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection | FALSE |
+| 1160 | salmnho |  | 8183 | 100 |  |  |  |  | Salmonella sp DNA [Presence] in Specimen by NAA with probe detection | FALSE |
 

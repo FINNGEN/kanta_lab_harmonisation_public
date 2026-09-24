@@ -1,191 +1,289 @@
 # Group 7
 
-The main correction in this group was for `has_component`. The initial values like `Transglutaminase IgA Ab` were correctly identified as referring to tissue transglutaminase tests, and the candidate list provided the exact OMOP terms `Tissue Transglutaminase IgA` and `Tissue Transglutaminase IgG`, which I applied based on the local test names. For the less specific `s-transglutaminaasivasta-aineet` (rows 21-22), which omits `kudos` (tissue), I chose the best available candidate `Tissue transglutaminase Ab`.
+This group contained tests for tissue transglutaminase (tTG) antibodies, part of the celiac disease workup. The mapping was straightforward, guided by three clear distinctions in the source data:
+1.  **Immunoglobulin class**: The local names specified IgA (`-iga-vasta-aineet`) or IgG (`-igg-vasta-aineet`).
+2.  **Property**: Rows with a unit (`U/mL`) and numeric values were mapped to quantitative concepts (`[Units/volume]`). Rows with no unit and 100% missing values were mapped to qualitative concepts (`[Presence]`).
+3.  **Specimen**: All tests were in serum (`S-` prefix or implied).
 
-The `has_property` values (`Arbitrary Concentration`, `Presence or Threshold`) were already correct OMOP terms and required no changes.
+For quantitative IgA and IgG tests, I chose the more general LOINC concepts (`3019050` and `3046870`) over the method-specific ones (`3046538`, `40759657`). This decision was reinforced by their Top 2000 status and significantly higher existing mapping frequency in Finland, suggesting they are the preferred targets.
 
-For `has_system`, I confirmed `Serum` for tests with the `S-` prefix or "seerumista" in the name. For rows without an explicit system defined in the local code (e.g., rows 1, 2, 4, 5, 8), I left `has_system` empty as instructed, because the ideal LOINC term `Serum or Plasma` was not in the candidate list. This was the correct action under the rules, but a future process might benefit from having `Serum or Plasma` as a candidate for ambiguous blood chemistry tests.
+Row 21 (`s-transglutaminaasivasta-aineet`, `U/mL`) was left unmapped. The name is non-specific about the immunoglobulin class. While it's likely IgA, the candidate list lacked a generic quantitative concept for "Tissue transglutaminase Ab [Units/volume]", so making an assumption would be incorrect. In contrast, its qualitative counterpart (row 22) had a perfect match in `3041414`, which I used.
 
 # Group 14
 
-This group covered variations of the C-reactive protein (CRP) test. The previous pass was highly accurate, and all the generated axis labels were already exact, case-sensitive matches to OMOP vocabulary terms. Consequently, no corrections were needed. My work was to verify this by checking each `current` value against its corresponding `possible fix` in the candidate lists. The logic was consistent: `has_system` was correctly inferred from prefixes (`p-` for Plasma, `s-` for Serum, `b-` for Blood, `cp-` for Blood capillary) and left empty when no prefix was present. `has_method` was correctly assigned based on keywords like `pika`, `vieritesti` (for 'Rapid immunoassay'), and `herkkä` (for 'Immunoassay'). The candidate lists provided were sufficient and contained all necessary terms.
+This group was entirely about C-reactive protein (CRP) and was quite straightforward to map. The candidate concepts were excellent. The mapping strategy was to distinguish between three main types of tests based on the local codes and data:
+1.  **Standard CRP in Serum/Plasma**: The vast majority of codes, with prefixes `S-`, `P-`, `fS-` or no prefix, mapped to the top-2000 concept `3020460`. This included point-of-care (`pika`, `vieritesti`) tests where the specimen was still plasma or serum.
+2.  **High-sensitivity CRP (hs-CRP)**: Codes containing `herkkä` (sensitive) clearly mapped to `3010156`. The decile data, showing values typically <10 mg/L, confirmed this distinction.
+3.  **CRP in Blood/Capillary blood**: Codes with prefixes `B-` (Blood), `cp-` (Capillary), or names including `veri` (blood) or `ihopisto` (skin prick) were mapped to `3051387` for Capillary blood, which is the most appropriate concept for whole-blood point-of-care tests.
+
+All rows were successfully mapped. The provided data (prefixes, units, deciles, and keywords in names) was sufficient for a confident mapping for every row.
 
 # Group 20
 
-This group contained a large number of microbiology and EKG tests. Several axes were cleared due to limitations in the candidate lists. For `has_method`, common EKG terms like `12 lead` and `Monitor` were not in the candidate list and had to be cleared. For `has_component`, the candidate list was missing terms for clinically significant targets like `Escherichia coli enterohemorrhagic` (EHEC) and `EKG monitoring for atrial fibrillation`, forcing these to be cleared. Similarly, a combined component for `Shigella` and enteroinvasive `E. coli` (EIEC) was missing, making the provided candidate (`Escherichia coli enteroinvasive`) incomplete for tests that detect both. On the other hand, for several nucleic acid tests (CMV, VZV), I was able to improve specificity by choosing the `... DNA` component. Similar improvements were made for `Campylobacter` and `Salmonella` by choosing the `... sp` variant, and for `Cryptococcus` by using the combined `...gattii+neoformans` term, which better reflects OMOP's syntax.
+This group consisted primarily of microbiology nucleic acid amplification tests (NAA/PCR) and electrocardiogram (EKG) panels. The candidate concepts were excellent and highly specific, allowing for confident mapping of nearly all rows.
+
+*   **NAA Tests**: Rows with `F-` (Feces) or `Li-` (CSF) prefixes and the `-nukl.haponos.` (`-Nh`) suffix were straightforward to map to the corresponding NAA-based LOINC codes. The candidate list provided perfect matches for each pathogen and specimen combination.
+*   **EKG Panels**: The numerous variations of `pt-ekg, 12 kytkentää` (12-lead EKG) were all correctly mapped to the standard `12 lead EKG panel` concept (`3044889`), which also has high existing usage in Finland.
+*   **Ambiguous Methods**: A few rows lacked explicit prefixes or method suffixes (e.g., `ehec...`, `etec...`). For EHEC (row 109), I chose a common immunoassay screen (`3020489`) which is also a Top2000 concept, as it seemed more appropriate for a generic code than the specific NAA test. For other pathogens where only an NAA candidate was available, I mapped to the NAA concept, assuming the generic name referred to the same common test.
+*   **EKG Screening**: Rows 147-148 for atrial fibrillation screening were mapped to a `Rhythm segment [Interpretation]` concept (`3007355`), as there was no specific "rhythm screening panel" available, and an interpretation fits the purpose of screening.
 
 # Group 21
 
-In this group, two primary corrections were made. First, the `has_component` value 'Transferrin.iron saturation', a non-existent OMOP term, was corrected to the proper term `Transferrin saturation` based on the candidate list. Second, the `has_property` value 'Mass Fraction' was corrected to its proper OMOP cased form, `Mass fraction`. This capitalization issue is a perfect example of why this review step is critical, as a near-miss string fails automated mapping. The `has_system` axis values were already correctly inferred from the Finnish test code prefixes (`p-` for Plasma, `s-` for Serum) and were left unchanged. The candidate lists provided were sufficient for all necessary corrections.
+This group was straightforward to map. The rows divided cleanly into two concepts: transferrin iron saturation and soluble transferrin receptor. The candidate list contained excellent matches for both.
+
+For transferrin iron saturation (`transferriininrautakyllästeisyys` or `transferriinisaturaatio`), the LOINC Top 2000 concept `3009814` (Iron saturation [Molar fraction] in Serum or Plasma) was a perfect fit. The local data included results reported both as percentages (e.g., 23%) and as decimal fractions (e.g., 0.23), but both correctly map to the single LOINC concept with the property `Molar fraction`.
+
+For soluble transferrin receptor (`transferriinireseptori, liukoinen`), the candidate `3015399` (Transferrin receptor.soluble [Mass/volume] in Serum or Plasma) was an exact match for the test name, specimen (serum/plasma), and unit (`mg/l`, implying mass/volume).
+
+Only one row, #171, could not be mapped. Its unit was `paketti` (package/panel), which plainly contradicts the `is_panel: false` input. I have corrected `is_panel` to `true` for this row and left it unmapped as no suitable panel concept was available in the candidate list.
 
 # Group 33
 
-The main correction in this group was to the `has_component` axis for all MRSA-related tests (e.g., rows 183-186). The initial free-text value `Staphylococcus aureus methicillin resistant` was changed to the standard OMOP term `Methicillin resistant Staphylococcus aureus`, as suggested by the candidate list and supported by high usage in curated Finnish data. The `has_system` value `Perineum` for rows 186, 195, and 196 was removed because the candidate list correctly indicated it is not a valid OMOP term. For the ECG tests (rows 198-200), I changed the component from `Electrocardiogram` to `ECG`. Although `Electrocardiogram` is a valid LOINC term, it was not present in the candidate list of fixes, and the strict instruction is to pick from the list. The local code `pt-ekg` also supports using the abbreviation `ECG`. Most other axes were already correct and required no changes.
+This group contained microbiology cultures, drug screens, EKG studies, and a genetic test. 
+
+The MRSA cultures were mostly straightforward to map, with clear candidates for generic specimen (`3019902`), nose (`3039355`), and pharynx/throat (`46235760`). However, the candidate list lacked a concept for MRSA culture from perineum, preventing mapping of rows 186, 195, and 196.
+
+The drug screen panels were a mixed bag. The 5-panel screen (row 188) was mapped to `40768439`, which specifies 'Screen method'. Multiple rows (189, 201, 202, 203) clearly indicated a 6-panel screen including buprenorphine, but no such concept was available in the candidate list, so these were left unmapped. 
+
+The ambulatory EKG (Holter) studies (rows 198, 199, 200) were successfully mapped to the general `Ambulatory cardiac rhythm monitor (Holter) study` concept `3010479`. This was deemed appropriate even for the 48-hour study, as LOINC often uses a general study concept regardless of duration. 
+
+The generic NGS panel (row 187) was left unmapped as none of the available candidates were a good fit for a generic "targeted gene variant analysis" test.
 
 # Group 34
 
-This was a microbiology group focused on Streptococcus species. The main corrections involved standardizing component names. 
+This group consisted of various Streptococcus tests (S. agalactiae/Group B, S. pyogenes/Group A, and beta-hemolytic strep). The mappings were generally straightforward by distinguishing between analyte, method (culture, antigen, NAA), and specimen (throat, vaginal fluid, or unspecified). The candidate list was comprehensive and contained appropriate matches for all rows.
 
-*   For rows testing for beta-hemolytic strep (206-212, 216-217), I corrected `Streptococcus.beta hemolytic` to the proper OMOP term `Streptococcus.beta-hemolytic` from the candidate list.
-*   For Group A Strep antigen tests (rows 213, 215), I changed `Streptococcus pyogenes antigen` to the standard LOINC abbreviation `Streptococcus pyogenes Ag`.
-*   A notable issue arose with the system axis for rows 205 and 218. The local codes `fl-` and `fluori` clearly indicate `Vaginal fluid`. However, the candidate list for the current value `Vaginal fluid` only offered `Genital fluid` as a fix. While `Vaginal fluid` is a valid LOINC system, it was absent from the candidates. Following instructions, I chose the provided candidate `Genital fluid` over leaving the axis empty, as it's a correct, albeit less specific, term. This suggests a potential gap or configuration issue in the semantic search that generated the candidates.
+The `prefix_meaning` (e.g., `Ps` for pharyngeal secretion, `Fl` for vaginal discharge) was critical for selecting the correct specimen-specific LOINC code. For rows without a prefix, the `Specimen` concept was chosen. For row 216, the specimen was identified from the Finnish long name `nielusta` (from throat) even though it lacked a prefix.
+
+For the Strep A antigen tests (rows 213, 215), I chose `3033319` (Streptococcus pyogenes Ag [Presence] in Throat) over the more method-specific `21491660` (...by Rapid immunoassay) because `3033319` is also a `top2000` concept and has very high existing usage in Finland, suggesting it's the established national standard mapping.
 
 # Group 37
 
-This group contained a wide variety of tests, from point-of-care chemistry to complex molecular genetics and patient-level studies. Several corrections were made by selecting more precise OMOP terms from the candidate lists, such as `Natriuretic peptide.B N-Terminal Prohormone` to `Natriuretic peptide.B prohormone N-Terminal`, `HIV 1+2 Ag+Ab` to `HIV 1+2 Ab+HIV1 p24 Ag` for modern combo tests, and `Sleep study` to `Polysomnography study`.
+This group was a mix of standard chemistry, hematology, microbiology, and more specialized tests. The point-of-care (POC) tests were generally easy to map, either to a specific POC concept (e.g., 'by Glucometer', 'by Rapid immunoassay') or to a general concept if a specific one wasn't available.
 
-A systematic error was identified and corrected: all `pH` measurements (rows 257, 258, 327) were incorrectly assigned the property `Logarithmic scale`, which is not a valid OMOP term. I changed this to `Substance Concentration`, the standard OMOP property for pH. 
+I was able to map most rows successfully. The unmapped rows fell into several categories:
+1.  **Administrative/Billing Codes**: Rows like 226, 227, 279, and 321 are for billing or process management and have no clinical LOINC equivalent.
+2.  **Lab Procedures**: Row 222 (`-histologinensolublokki...`) describes a sample preparation step, not an observation, so it doesn't map to a result LOINC.
+3.  **Missing Panel Concepts**: Several local panels did not have a corresponding LOINC panel in the candidate list. This includes a generic bone marrow MRD panel (240), PEF monitoring panel (302), various drug panels with specific compound counts (276, 319, 320, 323, 328, 330), and a Yersinia species panel (338). Mapping these to a single component or a non-matching panel would be incorrect.
+4.  ** overly specific local codes**: Row 225 for 'other pathogenic HPV' doesn't have a direct LOINC counterpart, which usually list specific genotypes or just test for 'HPV DNA'.
 
-The candidate lists were unhelpful for components representing ratios (e.g., CD4+ or CD8+ T-cell fractions, rows 313, 314) or very specific analytes without a common LOINC equivalent (e.g., Amphetamine enantiomers, row 323). In these cases, the component was cleared to avoid mapping to an incorrect term. Similarly, some methods like `Karyotype` and `Cell block` had no OMOP candidates and were cleared. Row 317, which was initially empty, was populated based on its name and its similarity to other histology rows (296, 318).
+The candidate list was very comprehensive for single analyte tests, especially for common POC and urine dipstick measurements. For panels, especially in toxicology and microbiology, the granularity of the local codes sometimes exceeded what was available in the candidate list.
 
 # Group 42
 
-This group involved several standard chemistry and coagulation tests. A number of corrections were made to align with precise OMOP vocabulary terms. Common fixes included updating `component` names to their standard LOINC form (e.g., `Gamma-glutamyltransferase` to `Gamma glutamyl transferase`, `Thyroxine.free` to `Thyroxine free`, `Antithrombin III` to `Antithrombin`). For cardiac markers like Troponin I and T, the more specific `Troponin I.cardiac` and `Troponin T.cardiac` were chosen. I also corrected `Adrenocorticotropic hormone` to its common synonym `Corticotropin`.
+This group was largely straightforward, consisting of many common chemistry tests. The Finnish prefixes (`aP-`, `fP-`, `B-`, `dU-`, `Pf-`, etc.) were very helpful in determining the specimen. Most tests mapped well to `top2000` concepts.
 
-A key systematic correction was removing the `Time` property for coagulation tests (e.g., `p-la1`, row 397) because `Time` is not a valid OMOP property term; the unit `s` is sufficient evidence of a time-based measurement, but without a candidate term, the property axis must be cleared. For a dialysis fluid measurement (`di-na`, row 353), I corrected the system from `Dialysate` to the OMOP term `Dialysis fluid`. Finally, for some unidentifiable codes like `p-ked.` (row 395), I cleared all axes to avoid making an unsubstantiated mapping.
+A key decision was for `P-TT` (Prothrombin time) reported in `%`. This corresponds to prothrombin activity, not an INR ratio. I mapped it to `3005353` (Prothrombin activity actual/normal...), which has the `ACnc` property suitable for `%` units, rather than the INR concept `3033658`.
+
+Several codes could not be mapped:
+- `ap-nak` (row 348): No candidate for an *arterial* sodium/potassium panel.
+- `p-fs` (rows 379-380), `p-ked.` (395), `p-kjd.` (396), `pneag` (454): The abbreviations were unidentifiable.
+- Lupus anticoagulant tests `p-la1` and `p-la2` (rows 397-400): These clearly represent screen and confirm tests, but the candidate list lacked these specific concepts, only offering a generic dRVVT code which would lose this important distinction.
+- `p-ttr` (rows 443-444): No concept for 'Time in Therapeutic Range' was available.
+- `pef-pa` (448) and `pef-ras` (449): These are clearly PEF monitoring panels (long-term and post-exercise), but no suitable panel concepts were in the candidate list.
 
 # Group 43
 
-This group contained a wide variety of tests, including immunoassays, endocrinology, and therapeutic drug monitoring. The candidate lists were generally very helpful. I made several corrections to the `has_component` axis:
+This group was a mix of straightforward mappings and unmappable codes. Most endocrinology tests (hCG, HE4, SHBG, DHEA/S, E1, E2, AMH) and common serology (ANA, ASO, TPHA) were easily mapped using the provided candidates. Differentiating between mass, molar, activity, and titer properties based on units and deciles was crucial, as was separating Presence/Absence tests from quantitative ones.
 
-*   I corrected several chemical names to their standard OMOP forms, such as `5-Hydroxyindoleacetic acid` to `5-Hydroxyindoleacetate` (rows 493-496, 518-519) and removed parenthetical abbreviations like `(DHEA)` to match the exact OMOP term (rows 546-549).
-*   For free fatty acids (`fs-ffa`, `s-ffa`), the OMOP term `Fatty acids.nonesterified` was a better match than the other candidates (rows 500-501, 561).
-*   For Saccharomyces cerevisiae antibodies (`s-asca`), the candidate `Baker's yeast (Saccharomyces cerevisiae) Ab` was a clear improvement (rows 536-537).
-*   For a few tests (`s-amh`, `s-tati`, `b-vasp`), no suitable component candidate was available, so I correctly left the component field empty. This is an area for improvement, as these are common tests and a candidate should exist.
-*   For platelet aggregation tests measured in `auc` (rows 487, 489), the property `Arbitrary unit` had no candidates. I used `Arbitrary Concentration` as the most reasonable available choice.
+Several codes could not be mapped due to missing candidates:
+*   Platelet function tests (`B-ADP`, `B-ASPI`, `B-VASP`) were completely absent from the candidate list.
+*   Erythropoietin (EPO) in amniotic fluid (`am-epo`) and EPO reported in `pmol/l` (`s-epo`, row 558) had no matching concepts.
+*   Tumor-associated trypsin inhibitor (`s-tati`) was also missing.
+*   Several abbreviations (`-apot`, `-tp-*`, `-hae`, `-hepg`, `-hok`, `-hbe`, `-kem`) were too ambiguous to map confidently.
+
+For therapeutic drug monitoring (Vancomycin, Gentamicin), the decile data was essential to confidently map to the more specific `--trough` concepts, which is a significant improvement in precision over the general drug level concepts.
 
 # Group 44
 
-This group required several corrections based on the candidate lists. I changed `Natriuretic peptide.B` to `Natriuretic peptide B` (row 613-615) and `Neuron specific enolase` to `Enolase.neuron specific` (644-645) as these are the correct OMOP terms. I also corrected `Aminolevulinate` to `Delta aminolevulinate` (665) and `Collagen type I N-terminal telopeptide` to `Collagen crosslinked N-telopeptide` (678-681) based on the long names and common abbreviations (NTx). The `has_property` for 24-hour urine collections (mmol unit) was changed from `Substance` to the more specific `Substance Content`.
+This group contained a wide variety of tests, from routine chemistry (Bilirubin, Cholesterol, TSH) to toxicology (drugs of abuse, heavy metals), endocrinology (FSH), and urinalysis. Most quantitative tests were straightforward to map using the analyte, specimen, and unit. The use of `top2000` codes was very helpful in confirming the standard target concepts.
 
-The candidate lists were unhelpful in several cases. For `Follicle stimulating hormone` (e.g., 616), no candidate was provided, forcing me to clear the component even though `Follitropin` is the likely OMOP term. Similarly, `Umbilical cord blood serum` (608-609) and `Secretion` (651-652) were missing from the `has_system` candidates, and `Potassium hydroxide preparation` (598) and `Calculus (stone) analysis` (682-683) were missing from the `has_component` candidates, resulting in data loss. The property list for `pH` was empty, a surprising omission for such a common term; I retained `pH` as it is certainly a valid OMOP property. The `Narrative` property was consistently unmapped and I cleared it in all instances.
+Several rows could not be mapped. The main reasons were:
+1.  **Missing `Presence` concepts**: Many qualitative/screening tests (rows with no unit and high `p_missing`) could not be mapped because a specific LOINC concept for `[Presence]` in that specimen did not exist in the candidate list (e.g., Bilirubin in Serum/Plasma, FSH in Serum/Plasma).
+2.  **Vague local codes**: Codes like `b-bio`, `u-bio`, `u-inf`, and the drug screen panels `u-ds*` were too non-specific to map confidently.
+3.  **Missing candidates**: Tests for 1-Hydroxypyrene (`u-pyr`, rows 699-701) and MMSE (row 610) had no suitable candidates. Row 710 (`vp-dop`) was a non-laboratory procedure (arterial pressure measurement).
+4.  **Specimen mismatch**: For umbilical cord TSH (row 708), the local code specified serum (`uS-`) but the only available candidate was for whole cord blood (`42870560`). This was mapped as the best available option, but it's an imperfect fit.
+
+The distinction between BNP (`3011960`) and NT-proBNP (`3029187`) for code `P-BNP` was resolved by the `(32-)` in the long name, which likely refers to the 32-amino acid active BNP molecule, making `3011960` the correct choice.
 
 # Group 51
 
-This group primarily contained microbiology tests, mostly for viral antigens and antibodies. The corrections were concentrated in the `has_component` axis. Many `current` values were descriptive near-misses of the official OMOP term, such as using '... antigen' instead of '... Ag' or '... IgG antibody' instead of '... IgG'. A notable correction was `Infliximab` to `inFLIXimab`, which required paying close attention to case sensitivity. 
+This group covered a wide range of microbiology tests, mainly for respiratory and gastrointestinal pathogens, as well as some therapeutic drug monitoring (Infliximab, Mycophenolate) and tumor markers (SCC-Ag). 
 
-The candidate lists were unhelpful for a few codes. `Coronavirus antigen` (row 730) and some virus combinations (e.g., `-coinrsv`, row 713) had no suggestions, forcing me to clear the component. The `Pharyngeal secretion` system (e.g., rows 760-762) also lacked a suitable candidate, so I cleared the system for those rows. Additionally, I cleared the component for concepts that are not analytes, such as `Embryo transfer` (row 729) and `Inflammation` (row 741), as they do not fit the LOINC component model.
+The mapping was largely successful. The provided data fields (`LongName`, specimen prefixes, `UNIT`, `p_missing`) were critical for distinguishing between antigen vs. nucleic acid tests, qualitative vs. quantitative results, and different specimen types (respiratory, stool, serum, CSF, urine). Preferring Top2000 concepts and those with existing Finnish usage (`n_codes` > 0) helped resolve ambiguities, especially for common rapid antigen tests.
+
+Several rows were left unmapped due to specific reasons:
+- **Ambiguous local codes:** Codes like `-coinrsv`, `-infavt`, and `f-virag` were too vague to confidently map to a specific panel or test.
+- **Missing candidates:** The candidate list lacked precise matches for several CSF antibody tests (e.g., Influenza IgG in CSF, Mycoplasma IgM `[Presence]` in CSF). It also lacked concepts for ratio-based antibody results (`index` or `s/co` units for `s-mypnabm`).
+- **Non-lab procedures:** `-ivf-et` is a clinical procedure (embryo transfer), not a lab test, and thus has no LOINC laboratory concept.
+
+For `rvirag-o` and `rvirag`, I overrode `is_panel=TRUE` to `FALSE` because the best fitting LOINC concept (`40757376`) has the property `[Identifier]`, meaning the result is the name of the identified virus, which is a single observation, not a panel of separate results.
 
 # Group 68
 
-In this group, numerous corrections were made to align with the provided candidate OMOP terms. Spelling and punctuation fixes were common, such as `Soluble fms-like tyrosine kinase 1` to `Soluble fms-like tyrosine kinase-1` (row 929) and `Mass Fraction` to `Mass fraction` (row 885). More substantive component changes included standardizing allergen-related components (e.g., `Dog (Canis familiaris) dander IgE Ab` to `Dog dander IgE` on row 916) and improving specificity (e.g., `Scleroderma-70 Ab` to `SCL-70 extractable nuclear Ab` on row 928).
+This was a large group with many common analytes (Amylase, Alkaline Phosphatase, Albumin, Aldosterone) and their variants. The mapping was straightforward for most of these, especially where `top2000` concepts were available. The presence of deciles for rows with missing units was very helpful and allowed for confident mapping of many high-volume codes (e.g., rows 821, 825, 872).
 
-The candidate lists were unhelpful for a few `has_system` values; `Pancreatic fluid` (row 832) and `Secretion` (row 941) had no suitable OMOP replacement and were cleared. The component `Desmethylclozapine` (rows 906-909) also lacked a correct candidate, with the provided options being for a different drug, so the component was cleared. For two ambiguous aldosterone codes (`s-oaldos` and `s-valdos`, rows 920 and 937), the component was also cleared due to extremely high and implausible decile values.
+Several rows could not be mapped due to ambiguous or unidentifiable local codes (e.g., `s-afluu`, `s-afospit`, `s-kalatue`, `s-oaldos`). The values for some of these were so extreme that they are likely local calculations or from a very specific context not covered by standard LOINC. For `s-amyl-is` (amylase isoenzymes), the available candidates were for specific panel sizes (3 or 7), not a generic panel, so it was left unmapped.
 
-`Ascitic fluid` was correctly mapped to the OMOP term `Peritoneal fluid` (rows 809, 810) and `Sperm` to `Spermatozoa` (row 943) based on the candidate lists. `Catalytic Activity Fraction` was consistently changed to the more common `Catalytic Fraction` (rows 845, 868).
+The candidate list was missing a concept for Amylase in 'Pancreatic fluid' (`Pa-Amylaasi`, row 832). While 'Duodenal fluid' was an option, it's not the same specimen. Similarly, `s-gliade` (deamidated gliadin Ab) could not be mapped to a total antibody test, as only IgA and IgG-specific concepts were available in the candidate list. The panel mapping for `s-adalip/s-adalipa` to 'Adalimumab and Adalimumab Ab panel' is a reasonable inference.
 
 # Group 70
 
-This group was characterized by a mix of drug monitoring, serology, allergy testing, and some unspecific or panel codes. 
+This was a large and diverse group of tests. Most rows were mappable thanks to a comprehensive candidate list. The tests covered therapeutic drug monitoring (carbamazepine, valproate), infectious disease serology (Parvo, Mumps), allergy testing (various nuts), coagulation (INR, PT, TT), and specialized chemistry (calprotectin, bile acids, carnitine).
 
-Several corrections involved standardizing component names. Antibody tests like `Cardiolipin IgG Ab` and `Parvovirus B19 IgG Ab` were refined to the more standard OMOP forms `Cardiolipin IgG` and `Parvovirus B19 IgG`. Drug names like `Carbamazepine` were corrected to `carBAMazepine`. Allergen IgE tests were successfully mapped to their more specific forms including the Latin binomial names, e.g., `Peanut IgE Ab` to `Peanut (Arachis hypogaea) IgE`.
-
-The candidate lists had significant gaps. Common analytes like `Paraprotein` and `Beta carotene` had no suitable candidates, forcing me to clear the component. Similarly, the common property `Time` was missing from the candidates list, as was `Histology` as a method. This suggests the semantic search underlying the candidate generation needs improvement for certain terms.
-
-Case corrections were common for properties, such as `Mass content` to `Mass Content` and `Mass Fraction` to `Mass fraction`, underscoring the need for exact string matching.
-
-Finally, a large number of rows (e.g., `s-vara`, `s-pakaste...`) had no component and seemed to represent administrative codes or panels, which were correctly left mostly unmapped.
+Key points:
+* **Calprotectin:** The distinction between `mass/mass` (ug/g) and `mass/volume` (mg/l) was clear and candidates were available for both (`3048689`, `42529010`).
+* **Alkaline Phosphatase Isoenzymes:** The codes for macro-AP fractions (`s-afmaks1`, `s-afmaks2`) mapped well to `Alkaline phosphatase.liver 1/2` (`3035062`, `3036185`), but a quantitative concept for total macro-AP (`s-afmakro` and `s-afmaksa` with `u/l`) was missing from the candidates.
+* **Allergies:** The candidate list was good, but for some allergens like Alder (`s-leppäe`), the local code is generic while LOINC is specific (Grey Alder, White Alder etc.). I chose Grey Alder (`t2`) as it is a common mapping target, but this is an assumption.
+* **Administrative codes:** Several codes like `s-pakast*` (frozen sample), `u-valvott` (supervised collection) are administrative and correctly unmapped.
+* **Panels:** Several panel codes (`b-vara` for crossmatch, `s-maksaab` for liver autoantibodies, `u-partik` for urine microscopy) were successfully mapped to appropriate panel concepts.
+* **Missing concepts:** Some tests like Parvovirus IgG avidity (`s-parvavi`) and Parvovirus total Ab (`s-parvab`) lacked suitable candidates.
+* **Data inconsistency:** Some rows (e.g., 961, 967) had `p_missing`=100% but also had decile values, which is contradictory. I used the deciles as the primary evidence in these cases, assuming they were quantitative tests with some data entry issues.
 
 # Group 73
 
-This group consisted entirely of nucleic acid amplification tests (`-nho` suffix) for respiratory viruses. The `has_property` (`Presence or Threshold`) and `has_method` (`Nucleic acid amplification with probe detection`) were already correct and confirmed as valid OMOP terms.
-
-The main corrections were to the `has_component` axis. For RNA viruses detected by NAAT, the most specific component is `[Virus] RNA`. Based on the candidate lists and their high usage in Finnish reference data, I updated most components to include the 'RNA' suffix (e.g., `Influenza virus B` became `Influenza virus B RNA`). This was not possible for `Influenza virus A` or the generic `Parainfluenza virus`, as the `... RNA` version was missing from their candidate lists, so I retained the valid, albeit less specific, term. For `Influenza virus A variant` (row 1115), I chose `Influenza virus A subtype` as the best semantic match for 'variantti' from the candidates.
-
-A significant omission is the `has_system` axis, which was empty for all rows. These are respiratory tests, so the system is likely `Nasopharynx` or a similar term. Since this was blank and no candidates were provided, I was required to leave it empty, which represents a loss of information.
+This group consisted of qualitative nucleic acid amplification tests for various respiratory viruses. The Finnish codes were generally clear mnemonics (e.g., `-infanho` for Influenza A, `-pin1nho` for Parainfluenza 1, `-rinonho` for Rhinovirus), and the `-Nho` suffix correctly identified them as qualitative nucleic acid tests. The main challenge was the specimen type, as the local codes often lacked a prefix. For single-analyte tests, I consistently chose the LOINC concepts with the generic `Specimen` system, as these had significant pre-existing usage in the Finnish data (`n_codes` and `n_events`), indicating a strong precedent. For panel tests (`-inabnho`, `-inabrsnho`), I selected the corresponding LOINC panel concepts. Several codes were left unmapped due to ambiguity (e.g., `-hinfnho`, `-tintnho`) or non-specific terms (e.g., `-infvnho` for 'variant'). The `hoho` suffix on some codes appears to be a local convention and could not be interpreted.
 
 # Group 74
 
-This group consisted entirely of qualitative nucleic acid amplification tests (`-Nho`). The `has_property` (`Presence or Threshold`) and `has_method` (`Nucleic acid amplification with probe detection`) were consistent and correct across the board. The `has_system` axis was also correctly inferred from the test code prefixes (`f-`, `li-`, `s-`) in the prior pass, requiring no changes. 
+This group consisted entirely of qualitative nucleic acid tests (`-nho`). Mapping was generally successful where the Finnish code specified an analyte and either a specific specimen (e.g., `S-` for Serum, `F-` for Feces) or no specimen at all. For codes without a specimen prefix (e.g., `-bopenho`, `bopenho`), I consistently mapped to the LOINC concept with the generic `Specimen` system, as this is the most accurate representation.
 
-The main corrections involved the `has_component` axis for four coronavirus tests (rows 1153-1156). The original values, e.g., `Coronavirus 229E`, were near-misses; I corrected them to the exact OMOP terms, `Human coronavirus 229E`, as suggested by the candidate list. This is a perfect example of the value of this correction step. Rows flagged as panels (`is_panel: true`) correctly had their component axes left empty, as did one row with an ambiguous test code (`-bopanho`), which I left unchanged.
+Several rows could not be mapped because the candidate list was missing the required concepts. This was particularly evident for:
+-   Generic bacterial NAA tests in specific specimens: `li-baktnho` (CSF), `f-baktnho` (Stool), and `-rbaktnho`/`resbaktnho` (Respiratory) all had plausible LOINC analogues, but those concepts were not among the candidates.
+-   Panel tests: `f-paranho` (`-Parasiitit`, parasites plural) and `-boppnho` (`B. pertussis` + `B. parapertussis`) clearly represent multiplex tests, but no corresponding panel LOINC codes were retrieved.
+
+The distinction between a generic code like `-borrnho` (Borrelia) and a specific one (`Borrelia burgdorferi`) was important; I chose the more general `Borrelia sp` concept (`648686`) as the better fit.
 
 # Group 79
 
-This group consisted primarily of urine tests, which were mostly correctly mapped by the previous pass. The existing axis values were almost all valid OMOP terms. I made three specific corrections:
+This group was dominated by urine albumin and protein tests, especially albumin/creatinine ratio (ACR) and urine sediment microscopy. Mapping was generally straightforward due to the excellent candidate list, which included the key Top 2000 LOINC codes for these common tests.
 
-1.  **Row 1170 (`u-a1mikre`):** The initial pass incorrectly identified this as an `Albumin/Creatinine` ratio. The test code clearly indicates Alpha-1-Microglobulin (`a1mi`). I corrected `has_component` to `Alpha-1-Microglobulin/Creatinine`, which was fortunately available in the candidate list for the incorrect value.
-2.  **Row 1214 (`u-solut,muut`):** The component was `Cells.other`, which is not a valid OMOP term and had no candidates. I changed this to the generic but valid component `Other`, which fits the Finnish term `muut` (other).
-3.  **Row 1199 (`u-happamuus`):** The candidate list for the property `pH` was empty. However, `pH` is a valid OMOP property, and the deciles (`6.5`-`8.0`) confirm this is a pH measurement. I retained the `pH` property, noting this gap in the candidate list generation.
-
-Overall, the candidate lists were effective, but the process has a weakness when the initial free-text value is completely wrong for a specific row, as seen with row 1170. It relies on the correct term coincidentally being a semantic match for the wrong term.
+*   **Albumin/Creatinine Ratios:** Multiple local codes (`u-alb/kre`, `u-albkre`, `u-albkrea`, `nu-albkre`) all map to the same concept. I consistently chose the Top 2000 code `3001802` (Microalbumin/Creatinine [Mass Ratio] in Urine), which is the recommended target despite the "Microalbumin" term, as it fits the `mg/mmol` unit (a mass/mole ratio that LOINC files under Mass Ratio) and is the standard for this measurement.
+*   **Urine Sediment:** The `U-Sakka` (sediment) components were easily mapped to their corresponding Top 2000 microscopy codes (Erythrocytes, Leukocytes, Epithelial cells, Bacteria, Casts). For casts (`lieriö`), I chose the low-power field concept (`3005658`), as this is the standard method for observing them. For 'other' (`muuta`), I found a more specific concept (`40761543`, Other elements) than the generic `Microscopic observation`.
+*   **Timed vs. Spot Samples:** I was able to distinguish between timed collections (e.g., `cU-Alb-mi` in `ug/min`, `nU-Alb-mi` in `mg/12h`) and spot samples (e.g., `U-Alb-mi` in `mg/l`).
+*   **Unmappable Codes:** The codes `u-alvhu4a`, `u-alvhu5b`, and `u-alvhu6a` were opaque and had no supporting data, so I correctly left them unmapped.
 
 # Group 84
 
-This group consisted entirely of codes related to specimen collection, processing, and transport logistics rather than analytical results. The corrections were mostly straightforward. The non-OMOP term `Specimen collection procedure`, used for many Finnish codes like `näytteenotto` (specimen collection), was consistently corrected to the valid OMOP term `Specimen collection`. Similarly, `Specimen processing` was corrected to `Specimen preparation`.
+This group consisted of administrative codes for pre-analytical procedures. The majority (`notto`, `otto`, etc.) represented the act of specimen collection, which often appear as billable items with no result value. I mapped these to `36660087 | Specimen Collection procedure comment`, as this best reflects their nature. Codes explicitly mentioning supervision (`valv.notto`, `alvhuumott`) were mapped to the more specific `1989324 | Specimen collection supervision level`. 
 
-The candidate lists had two notable gaps. First, for `näytekulje` (`Specimen transport`), no suitable candidate was found, forcing me to clear the component. Second, and more critically, for row 1236 (`ottotapa` with unit `h`), the data strongly implies a measurement of time duration (`has_component`: Time, `has_scale_type`: Qn). The property should be `Time`, but no candidate was provided for this value. Following the instructions, I had to leave the property empty, resulting in an incomplete mapping that contradicts the evidence.
+A key distinction was made for `ottotapa` (collection method): row 1236 had a unit of 'h' and numeric values, pointing to a time measurement, and was mapped to `3026893 | Specimen collection [Time] of Specimen`. Row 1237, with no unit or value, was mapped to the nominal `3042242 | Collection method - Specimen`. This highlights the importance of using unit and value data to differentiate concepts. The candidate list was good but lacked a concept for specimen transport, forcing me to leave `näytekulje` (row 1232) unmapped.
 
 # Group 85
 
-Corrections mainly involved standardizing component names to their more complete or conventional OMOP forms (e.g., `Coronavirus...` to `Human coronavirus...`, `Cladosporium herbarum Ab.IgE` to `Cladosporium herbarum IgE`). I also refined generic `Candida` to `Candida sp` and `Microscopy` to the more specific `Light microscopy`. A significant issue was the absence of candidates for several correct concepts, forcing me to clear fields that were likely correct in spirit but not in vocabulary. `Dissection` (row 1273), `Skin test` (row 1248), and `Cervical specimen` (rows 1258, 1259) all lacked OMOP term candidates. Critically, `Urine` was also missing from the system candidate list, preventing its assignment to row 1274 despite a clear `U-` prefix in the test code. For coronavirus tests (rows 1251-1254), I chose `Respiratory system specimen` over the current `Respiratory specimen` based on its higher use in curated Finnish data.
+This was a varied group with clear mappings and some unmappable codes. The quantitative tests like Urate, Acetone, Valproate, and Cobalt were straightforward, with `UNIT` and `deciles` providing clear evidence for selecting the right LOINC concept based on property (Moles/volume or Mass/volume) and specimen. The `Top2000` flag was very helpful in resolving ambiguity, for instance, in choosing `Acetone [Presence] ... by Screen method` (3037286).
+
+Several rows could not be mapped. Administrative or procedural codes like `-aerobivi`, `annosvoim`, and `projekti` are outside the scope of LOINC lab tests. Some local codes were too fragmentary (`-omactgc`) or complex (`hpvpapctgc`) to decipher. The `cladosp.he` with unit `mm` (row 1248) was clearly a skin test, for which no candidates were available. Qualitative `uraatti` tests (rows 1265, 1270, 1276) also lacked a suitable `[Presence]` candidate in serum/plasma. Similarly, `u-omactgc` (row 1274), a CT/GC panel in urine, did not have a perfect panel candidate in the list — the available options either included an extra pathogen (Trichomonas) or were specific to rRNA, making a confident mapping impossible.
+
+For the coronavirus RNA tests (1251-1254), I opted for the more general `Specimen` concepts over `Respiratory system specimen`, as this was safer without explicit specimen information and was consistent with existing mappings in Finland (`n_codes` > 0).
 
 # Group 89
 
-This group primarily consists of screening tests (`seulonta`), many of which are panels. Most of the existing axis values were already exact OMOP terms and required no changes. The main correction was for `row_id` 1287 (`rhdnegseul`), where the `has_component` was `Red blood cell antibody`. The candidate search found no suitable OMOP terms, so I cleared the field as per instructions. While the concept is clear (RBC antibody screen), the provided string is not a valid OMOP term, and without a candidate, it's better left empty. The remaining rows were either correctly defined panels (mostly empty axes) or had correct, existing axis values that were validated against the candidate lists.
+This group consisted almost entirely of screening tests (`seul` or `seula`), mostly panels. The mappings were generally straightforward by combining the prefix (e.g., `S-`, `U-`) with the core test name (`hpv`, `kem`, `ena`, `äit`).
+
+*   **Mappable**: The urine chemical screens (`u-kemseul`), maternal screens (`s-äit-seul`, `s-tr1seul`), ENA screen (`s-enaseul`), and drug screen (`u-huseula`) had clear, well-established panel candidates.
+*   **Slight Ambiguity**: For the generic second-trimester screen (`s-tr2seul`), the candidate list offered specific panels (triple, quad, penta) but no generic one. I chose a broader panel concept (`3029318`) that covers the purpose of second-trimester screening for fetal abnormalities.
+*   **Unmappable**: `hoikemseul` (row 1278) was too ambiguous without a `LongName` or other context clues; the `hoi` prefix could have several meanings.
+*   **Single Tests vs. Panels**: It was important to distinguish panels from single tests. For example, `hpvseul` (HPV screen) and `rhdnegseul` (RhD screen) are screening tests but report a single result (Presence/Absence), so I mapped them to single concepts and set `is_panel` to false.
 
 # Group 105
 
-This group consisted entirely of hematology tests, mostly components of a complete blood count (CBC), prefixed with `B-` for Blood. The candidate lists were excellent and contained the correct OMOP terms for almost all rows.
+This group consists of various complete blood count (CBC) panels and their components. The Finnish codes `B-PVK` (basic blood count), `B-PVK+T` (with platelets), `B-PVK+TKD` (with automated differential), and `B-TVK` (complete blood count) were generally straightforward to map.
 
-The main corrections involved replacing near-miss component names with their canonical OMOP counterparts. Specifically:
+For individual result components, I consistently chose LOINC concepts specifying `by Automated count` when available and on the Top2000 list, as these tests are performed on automated hematology analyzers. This provides more specific mapping than the generic codes, even if the generic codes had higher existing usage in Finland.
 
-*   `Erythrocyte mean volume` was consistently corrected to `Erythrocyte mean corpuscular volume` for Mean Corpuscular Volume (MCV) measurements (e.g., rows 1308, 1325, 1364, 1390).
-*   For Immature Granulocytes (IG), I differentiated based on the property. `Immature granulocytes/leukocytes` was corrected to `Granulocytes.immature/Leukocytes` for the fraction (`%`, `Number Fraction`, row 1352) and to `Immature granulocytes` for the absolute count (`e9/l`, `Number Concentration`, row 1353). This distinction is crucial for correct LOINC mapping.
-*   For one ambiguous row (1307, `b-pvk` with unit `e9/l`), I inferred the component to be `Leukocytes` based on the common use of that unit for WBC counts in a basic blood count panel.
+The panel codes were mostly mapped successfully. `B-PVK` and `B-PVK+T` were mapped to `Short blood count panel - Blood` (40758558). `B-PVK+TKD` and `B-TVK` were mapped to `CBC panel - Blood by Automated count` (40761511).
 
-Many rows were left with empty components because the test code (e.g., `b-pvk`) and unit (e.g., `%`) were too generic to identify a specific analyte, which is the correct outcome for ambiguous data.
+Some rows could not be mapped:
+- Rows with ambiguous units like `form` (1309, 1326, 1391) or unclear measurements (1319, 1392) were left unmapped.
+- The candidate list was missing concepts for certain panels. Specifically, panels including reticulocytes (e.g., `b-pvkt+re`, `b-pvktkdr`, `b-tvk+r`) and panels with a 3-part 'minidiff' (`b-pvk+tmd`) did not have exact matches. For the 3-part diff panels, I mapped to the 5-part diff panel (`40761511`) as the closest available superset. The reticulocyte panels were left unmapped due to a lack of a suitable candidate panel.
 
 # Group 106
 
-This group consisted entirely of bacteriology tests. The initial axis assignments were largely correct, and most values were already valid OMOP terms. My corrections focused on the `has_system` axis. I corrected `Bronchoalveolar lavage fluid` to the valid term `Bronchoalveolar lavage` (row 1412), and `Dialysis fluid.peritoneal` to `Dialysis fluid peritoneal` (row 1427). A significant issue was the candidate lists failing to provide exact matches for valid OMOP terms. For `Gingival crevicular fluid` (row 1429), no candidate was found, so I had to clear the field as per instructions. For `Vaginal fluid` (rows 1423, 1424), the only candidate was the more general term `Genital fluid`, which I used. This highlights a limitation where the candidate list can force a loss of specificity or a complete omission of a correct value.
+This was a large group of bacteriology tests. The mapping was mostly successful by carefully parsing the Finnish test names (prefixes for specimen, suffixes like `-vi` for culture and `-vr` for stain). The distinction between identification (qualitative), counts per volume, and counts per area was crucial and could be determined from the units (`e6/l`, `/sunf`) and deciles.
+
+The main challenge was the lack of good candidates for generic stain results (e.g., `ex-baktvr`, sputum stain) and for some less common or ambiguously named tests (`pp-baktnh`, `-bakt-he`, `u-baktla`). For specimen-specific stains like in CSF or synovial fluid, a `Microscopic observation [Identifier] ... by Gram stain` concept was available and chosen as the most likely interpretation of `-vr` (stain). For urine, the distinction between automated particle counts, microscopy counts, and culture counts (both quantitative and qualitative) was clear and had excellent LOINC candidates in the list, many of which were top-2000 codes with high existing usage in Finland.
 
 # Group 110
 
-This group consisted entirely of immunophenotyping tests (CD markers). I standardized the component names based on whether they were absolute counts (e.g., `CD19 cells`) or fractions. For fractions of lymphocytes (`ly-` prefix), I used the `Cells.X/Lymphocytes` component where candidates existed and had usage data (`CD3`, `CD4`, `CD8`). Where they didn't (`CD19`, `CD16/56`), I used the simpler cell name component.
+This group consisted primarily of lymphocyte subpopulation counts from blood and other specimens, measured either as absolute counts (`B-`, `#/volume`) or as fractions of a parent population (`Ly-`, `%`). Mapping was generally successful for standard markers like CD3, CD4, CD8, and the CD4/CD8 ratio, especially where `top2000` concepts with existing Finnish usage were available.
 
-The most significant issue was the `has_system` axis. For the many tests that were fractions of lymphocytes (`ly-` prefix), the prior pass correctly inferred the system as `Lymphocytes`. However, `Lymphocytes` is not a valid OMOP system term, and the candidate list provided no alternatives. As instructed, I had to clear this axis. Ideally, the system should be `Blood`, with the denominator captured in the component (e.g., `Cells.CD4/Lymphocytes`), but I could not add `Blood` without it being in the candidate list for `Lymphocytes`.
+A key challenge was interpreting LOINC concepts where the denominator is `.../cells` when the Finnish code (`Ly-` prefix) clearly indicates a fraction of lymphocytes. I mapped these to the `/cells` concepts (e.g., for `Ly-CD4` to `3014037 CD3+CD4+ .../cells`), assuming this is standard practice, supported by their `top2000` status and Finnish usage. The concept `1175426 CD3 cells/Lymphocytes in Blood` shows a more specific denominator is possible, but such options were not available for other markers.
 
-Additionally, one property, `Number per Mass`, had no candidates and was cleared (row 1509). Two rows (1556-1557) were completely unmapped and remained so.
+A significant gap in the candidate list was the absence of a concept for `B-lymphocytes/Lymphocytes in Blood` (e.g., LOINC 21087-9). This prevented mapping for several rows (1519, 1520, 1525-1528) measuring `Ly-CD19`.
+
+Measurements from leukapheresis products (`LA-` prefix) were mostly mappable, though for CD4 and CD8 counts, only generic `Specimen` concepts were available. Rows with the unknown specimen prefix `so-` (1558-1563) could not be mapped.
 
 # Group 111
 
-This group consisted almost entirely of COVID-19 related tests. The main task was to correct the `has_component` axis from descriptive, free-text values like `SARS-CoV-2 IgG antibody` to their standard OMOP forms, such as `SARS-CoV-2 (COVID-19) IgG`. The candidate lists were effective for this, with high usage statistics confirming the choices. The `property`, `method`, and `system` axes were already correct and did not require changes. A notable challenge was the `SARS-CoV-2 spike protein antibody` test (`s-cv19sab`). The candidate list lacked an ideal component like `SARS-CoV-2 (COVID-19) spike protein Ab`. I chose `SARS-CoV-2 (COVID-19) spike protein`, treating the spike protein as the component against which antibodies are measured, which is a plausible LOINC pattern but less direct. Similarly, for `Complement C1q antibody.IgG`, the best available candidate `Complement C1q Ab` lost the IgG specificity, highlighting a minor gap in the provided candidates.
+This group was almost entirely COVID-19 related tests, which were generally straightforward to map. 
+
+*   **Mapped successfully:** Most tests for COVID-19 RNA (`-cv19nho`), rapid antigen (`-cv19ag`, `-cv19pika`, etc.), multi-pathogen RNA panels (`cv19infrs`), and serum/plasma antibodies (total, IgG, IgA, IgM) had clear targets in the candidate list. For the many local variations of the rapid antigen test, I standardized them to `36033641` (Ag [Presence] in Upper respiratory specimen by Rapid immunoassay), which already had Finnish usage.
+*   **Data Quality Issues:** Rows 1566-1575 for `-cv19ag` reported quantitative results in nonsensical units for an antigen test (e.g., `e12/l`, `fl`). These are clearly data errors and were left unmapped.
+*   **Candidate List Gaps:** The codes for spike protein antibodies (`s-cv19sab`, rows 1608-1610) could not be mapped. The Finnish code does not specify IgG or neutralizing function, but the available candidates did (e.g., `...S protein IgG Ab...` or `...S protein RBD neutralizing antibody...`). The correct generic LOINC concepts for total anti-Spike antibodies (quantitative `94745-0` and qualitative `94746-8`) were not in the candidate list.
+*   **Approximation:** For C1q IgG antibodies (`p-c1qabg`), no IgG-specific concept was available. I mapped them to the concepts for total C1q antibodies (`3042951` and `3041700`) as a reasonable approximation, supported by existing Finnish usage.
+*   **Unmappable:** Codes like `-covidjt` and `cldinho` were too cryptic to identify and were left unmapped.
 
 # Group 121
 
-This group largely contained molecular genetics, cytogenetics, and hematopathology tests. Many `has_component` values for gene tests were either already correct OMOP terms or were corrected to a more standard format (e.g., `BRCA1 and BRCA2 genes` to `BRCA1+BRCA2 gene`). However, for several genetic tests (e.g., `Coagulation factor V gene`, `Alpha-1-antitrypsin gene`), the candidate lists only offered OMOP terms for the resulting protein, not the gene itself. As no correct candidate was available, I cleared these components, highlighting a weakness in the candidate generation. The `has_method` axis required systematic corrections: `Fluorescence...` was corrected to `Fluorescent...`, and general `Nucleic acid amplification` was specified as `... with probe detection` for relevant PCR tests. Similarly, `Bronchoalveolar lavage fluid` was consistently corrected to the OMOP term `Bronchoalveolar lavage`.
+This group consisted almost entirely of molecular genetics and cytogenetics tests. Many were standard pharmacogenomic or hematologic oncology tests that were readily mappable thanks to `LongName` descriptions and informative abbreviations (e.g., `B-LAKT-D`, `B-FV-D`, `B-JAK2-D`, `B-BCR-QR`).
+
+The candidate list was generally very good. However, a crucial concept for Prothrombin (Factor II) gene analysis (`B-FII-D`, rows 1638-1639) was missing, preventing a mapping for this common thrombophilia test. Similarly, several requests for FISH panels (`B-FISHHEM`, `BM-FISH-MM`) were for panels more generic than the specific disease panels available in the candidate list, leading to no mapping.
+
+A few codes were too cryptic to map (e.g., `-ctr-d`, `b-auria10`, `b-blapcr`). For quantitative MRD tests (`bm-aso-qd`, `bm-mrdmut`), the specific LOINC concepts for quantitative PCR-based monitoring of clone-specific markers were not present, though the guess was accurate. I mapped what I could to the most specific available concepts, leveraging `top2000` status and existing Finnish usage data (`n_events`) as strong indicators (e.g., for `B-LAKT-D` and `B-TPMT-D`).
 
 # Group 126
 
-This group primarily consists of glucose measurements. Most axis values were already correct OMOP terms with 1.000 similarity scores. I made two corrections to `has_component`:
+This group was straightforward, consisting almost entirely of glucose measurements. Most rows were clearly identifiable as parts of a glucose tolerance test (0, 30, 60, 120-minute samples) and mapped cleanly to the corresponding time-stamped LOINC concepts for Serum/Plasma. The `mmol/l` unit and deciles confirmed these were Moles/volume measurements.
 
-*   For `row_id` 1710 (`-gluk-tbr`, Time Below Range), the candidate list for `Glucose time below range` was empty, so I correctly cleared the component.
-*   For `row_id` 1711 (`-gluk-tir`, Time In Range), I selected `Glucose measurements in range` as the most appropriate candidate over the panel option, since `is_panel` was false and the unit was `%` (Time Fraction).
+The `gluk-vieri` codes (rows 1712, 1737, 1738) were correctly identified as point-of-care tests, which pointed to `Capillary blood` as the specimen (`3040151`).
 
-The most significant issue was the candidate list for the `has_system` axis. It was missing `Serum or Plasma`, which is the standard system for most routine venous blood glucose tests (like OGTTs) where the local code doesn't specify serum or plasma explicitly. This forced me to leave the `has_system` axis empty for a large number of rows (e.g., 1713, 1715-1718, etc.), as the provided options (`^Patient`, `Blood capillary`, `Plasma`) were not appropriate. Including `Serum or Plasma` in the candidate list for such groups would greatly improve mapping accuracy.
+The CGM-related codes `-gluk-tbr` (time below range) and `-gluk-tir` (time in range) were interesting. `1469878` was a good fit for TBR. For TIR (row 1711), the candidate list lacked a perfect match for '% time in range'. I chose `1617716 | Glucose measurements in range out of Total glucose measurements during reporting period` as the best available proxy, since it represents a ratio ('%') of in-range values.
+
+Several rows with 100% missing values (`1719`, `1723`, `1731`, `1736`) were left unmapped, as they likely represent cancelled orders or administrative/preparatory steps (`-valm`).
 
 # Group 129
 
-This group largely consisted of clinical procedures performed on the patient, identified by the `Pt-` prefix and correctly assigned `^Patient` as the system. For `Spirometry` and `Semen analysis`, the provided candidates included more specific `... panel` terms (`Spirometry panel`, `Semen analysis panel`). I adopted these as they were a better fit for the data, which had `is_panel=TRUE` and Finnish long names indicating comprehensive examinations. The main difficulty was the absence of any candidate OMOP terms for several valid clinical concepts, including `Echocardiography`, `Myocardial perfusion study`, `Spirometry with bronchodilator`, and `Thermal sensory testing`. These concepts were clearly identifiable from the Finnish codes but had to be cleared from the `has_component` axis due to the lack of a valid term to map to, as per the instructions.
+This group consisted of `Pt-` (Patient) investigations, mainly panels or studies. I was able to map several categories of tests.
+
+*   **Spirometry**: Codes with `spiro` and `fvsp` were clearly spirometry. I mapped basic spirometry to `3000492` (Spirometry study), preferring it over `21493451` (Spirometry panel) because of its existing usage in Finland. For codes implying a bronchodilator test (e.g., `pt-fvspird`, `pt-spirom`), I used `36031657` (Pulmonary vasodilator test panel).
+*   **Semen Analysis**: The `pt-sper-` codes were clearly identifiable from `TEST_NAME` and `LongName`. All variants (`suppea`/limited, `laaja`/extensive) were mapped to the general `3008607` (Semen analysis panel), as this represents the overall procedure.
+*   **Cardiology**: `pt-sydänuä` was a clear abbreviation for `sydämen ultraääni` (echocardiogram), which I mapped to `3009203` (Cardiac echo study Procedure).
+
+Several codes could not be mapped. Many, such as `pt-fvsirod` and the `pt-syd...` codes (1764-1767), had abbreviations that were too truncated or ambiguous and lacked a `LongName` to clarify their meaning. Additionally, `pt-st-temp` (`Pt-Terminen tuntokynnysmittaus` / Thermal sensation threshold measurement) had a clear meaning but no suitable LOINC candidate was available in the provided list; the available temperature-related concepts were for simple measurements, not a sensory threshold study.
 
 # Group 160
 
-This group concerned three common liver enzymes: ALAT, ASAT, and GT. The `has_property` (`Catalytic Concentration`) and `has_system` (`Plasma`, `Serum`, `Serum or Plasma`) axes were already correct and corresponded perfectly to the test names, prefixes, and units. The only required correction was on the `has_component` axis for Gamma-glutamyl transferase. The previous pass had used `gamma-Glutamyl transferase`, and I corrected this to the exact OMOP term `Gamma glutamyl transferase` based on the candidate list. This correction affected six rows (1775, 1777, 1778, 1783, 1784, 1789). The candidate lists were sufficient for all necessary corrections.
+This was a very straightforward group. The local test names clearly corresponded to three common liver enzymes: Alanine aminotransferase (ALAT/ALT), Aspartate aminotransferase (ASAT/AST), and Gamma glutamyl transferase (GT/GGT). The candidate list provided the exact, top-ranked, highly-used LOINC concepts for these three tests in Serum/Plasma with the property of Enzymatic activity/volume, which matched the `U/l` unit in the data. All rows could be confidently mapped. The variations in local names (e.g., `s-`, `p-`, `fs-`, `fp-`) correctly collapsed into the standard LOINC 'Serum or Plasma' specimen type. Rows with missing units and values were clearly orders for these same tests and were mapped accordingly.
 
 # Group 161
 
-Most mappings in this group were already correct and only required validation. A few minor corrections were made for precise OMOP terminology. For `C-peptide` (rows 1827-1829), the term was changed to the correct OMOP spelling `C peptide`. For a leukocyte count (row 1811), the system `White Blood Cells` was corrected to the lowercase `White blood cells`. In one case of a nucleic acid test (row 1798), `Chlamydia pneumoniae` was updated to the taxonomically newer `Chlamydophila pneumoniae` as suggested by the candidate list and used in LOINC for the analyte itself (as opposed to antibody tests). The candidate generation process failed for the common components `Follicle stimulating hormone` and `Luteinizing hormone`, providing no suggestions. I retained the existing values as they are the correct OMOP terms, but this gap in the candidate list is a significant weakness.
+This group contained a mix of chemistry, microbiology, and hematology tests. The mappings were generally straightforward.
+
+A key challenge was the `B-Fosfatidyylietanoli` (Phosphatidylethanol in Blood) test. Rows with the unit `umol/l` (e.g., 1790, 1792) clearly indicate a quantitative molar concentration. However, the candidate list lacked a LOINC concept for `[Moles/volume]`, only offering `[Mass/volume]` and `[Presence]`. Consequently, these quantitative rows were left unmapped. The rows with empty units and high `p_missing` were mapped to the `[Presence]` concept, assuming they represent qualitative screening tests.
+
+The glucose tests with specific timings (fasting, 1h/2h post-dose, 2h post-meal) were easily mapped to the correct Top 2000 LOINC codes. Similarly, hormones like FSH and LH were clear matches.
+
+The microbiology NAA tests were identifiable by the `-nukleiini` suffix. Most were mapped to general `Respiratory system specimen` concepts, which seemed appropriate in the absence of more specific local information, except for the `Li-` prefixed test which was correctly mapped to CSF.
+
+The two types of "Large unstained cells" were successfully differentiated by their units: `e9/l` mapped to the absolute count (`[#/volume]`), and `%` mapped to the fraction (`/Leukocytes`).
+
+For C-peptide `1h post meal` (row 1827), a perfectly specific LOINC concept was not in the candidate list. The mapping was made to the less specific but correct parent concept `C peptide ... --post meal` (`40759040`).
 
 # Group 162
 
-This was a fairly large and diverse group. A significant number of corrections involved selecting a more specific or correctly formatted component from the candidate list, such as changing `Bicarbonate.standard` to `Bicarbonate^^standard` and `25-Hydroxyvitamin D2+D3` to `25-Hydroxyvitamin D3+25-Hydroxyvitamin D2`. A simple but crucial fix was correcting the capitalization of `Mass Fraction` to `Mass fraction` for PSA ratio tests (e.g., row 1910). The candidate lists were unhelpful for several clear concepts (e.g., `Kt/V`, `Urea recirculation`, `Erythroblasts`), forcing me to leave the component axis empty as per instructions. The most problematic case was `Bilirubin.direct` (row 1902), where the test is clearly for conjugated bilirubin, but the only candidate was `Bilirubin` (total), which is incorrect. This resulted in data loss, as clearing the component was the only valid action. For `25-Hydroxyvitamin D` (row 1857), I made an informed choice to use the total (D2+D3) component, as this is standard clinical practice for an unspecified vitamin D test. The prefixes in the Finnish codes (`fP-`, `S-`, `B-`) were very helpful in confirming or choosing the `has_system` axis.
+This group was a mix of common chemistry, hematology, and some specialized tests. Mapping was straightforward for most common tests like ALP, CK, LDH, phosphate, and the various bicarbonate measurements, where the specimen prefix (`AB-`, `P-`, `VB-`, `CB-`) and the distinction between actual vs. standard bicarbonate were key. The candidate list was excellent for these.
+
+The many synonyms for Red Cell Distribution Width (RDW, e.g., `punasolujen kokojakauma`, `koonvaihtelu`) all correctly mapped to the same `top2000` LOINC concept (`3019897`). Similarly, all variants of the free/total PSA ratio mapped well to `3001784`.
+
+I was unable to map several rows:
+- Row 1842 (`-kt/v,daugirdaksenkaava`): No candidate for this dialysis adequacy measure.
+- Rows for local/administrative panels (e.g., `fs-työterveyshuollonperuspaketti`, `s-nightingale-mittaus`) are unmappable to standard LOINC concepts.
+- Row 1909 (`p-lupusantikoagulantti`): The local name was too general for the specific LOINC candidates available.
+- Row 1911 (`p-urea,resirkulaatio`): The name implied a ratio (recirculation) but the unit (`mmol/l`) and values were for a substance concentration, a contradiction that prevented mapping.
+- Some non-laboratory or highly specific procedural codes (`erikoislääkärinkonsultaatio`, `ilmajohtotarv.luujohto`) were also unmappable as expected.
 
 # Group 167
 
-This group largely consisted of hematology differential counts and serum protein electrophoresis fractions. Most initial mappings were already correct and exact OMOP terms. The main corrections were:
-
-1.  **System case correction**: For several rows with an 'L-' prefix (e.g., `l-baso`, `l-neut`), the system was `White Blood Cells`. The candidate list provided `White blood cells`, which is the correct OMOP capitalization. I applied this fix to rows 1956, 1962, 1965, 1968, and 1971.
-2.  **Missing Component Candidate**: For M-protein (`s-m-komponentti`, rows 1980-1984), the candidate list for the component `M-protein` was empty. Since a valid OMOP term could not be found in the provided list, I had to clear the `has_component` field for these rows, as per instructions.
-3.  **Candidate List Gap**: For `Erythroblasts` (rows 1950-1952), the `current` value was correct, but the candidate search failed to find `Erythroblasts` as a possible fix for itself, instead offering only more specific or related terms. I retained the `current` value as it is the most logical and correct component, assuming a gap in the candidate generation process.
+This group consisted of common hematology differential counts and serum protein electrophoresis fractions. Mapping was straightforward for most rows. The local naming was clear, distinguishing between absolute (`B-`, `e9/l`, 'absol. arvot') and relative (`L-`, `%`) counts, and explicitly stating automated method (`konediffi`). I chose specific 'by Automated count' LOINC codes where `konediffi` was present or implied for modern tests (like absolute counts and RDW), and more general codes (without method) where the Finnish code was generic (e.g., `L-Neut`). The serum protein fractions were also clearly named and mapped well to the specific electrophoresis LOINC codes. The only unmapped row was for 'M-komponentti-3' (row 1984), as the candidate list lacked a concept for a third monoclonal protein band, only providing options for a general/first band and a second band.
 

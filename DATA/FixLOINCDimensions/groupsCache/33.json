@@ -2,214 +2,130 @@
   "rows": [
     {
       "row_id": 183,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 184,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Nose",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 185,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Throat",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 186,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": false
     },
     {
       "row_id": 187,
-      "has_component": "",
-      "has_property": "Finding",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nar",
-      "has_method": "Molecular genetics",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": true
     },
     {
       "row_id": 188,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "40768439",
+      "omop_concept_name": "Drugs of abuse 5 panel - Urine by Screen method",
       "is_panel": true
     },
     {
       "row_id": 189,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": true
     },
     {
       "row_id": 190,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "",
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 191,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Nose",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 192,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Nose",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 193,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Throat",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 194,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Throat",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
       "is_panel": false
     },
     {
       "row_id": 195,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": false
     },
     {
       "row_id": 196,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": false
     },
     {
       "row_id": 197,
-      "has_component": "Methicillin resistant Staphylococcus aureus",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Organism specific culture",
-      "is_panel": false
+      "omop_concept_id": "1761466",
+      "omop_concept_name": "Staph aureus and MRSA screening panel - Specimen by Organism specific culture",
+      "is_panel": true
     },
     {
       "row_id": 198,
-      "has_component": "ECG",
-      "has_property": "Finding",
-      "has_time_aspect": "24 hours",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "is_panel": true
     },
     {
       "row_id": 199,
-      "has_component": "ECG",
-      "has_property": "Finding",
-      "has_time_aspect": "24 hours",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "is_panel": true
     },
     {
       "row_id": 200,
-      "has_component": "ECG",
-      "has_property": "Finding",
-      "has_time_aspect": "48 hours",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "is_panel": true
     },
     {
       "row_id": 201,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": true
     },
     {
       "row_id": 202,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": true
     },
     {
       "row_id": 203,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "Urine",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": true
     }
   ],
-  "reflection": "The main correction in this group was to the `has_component` axis for all MRSA-related tests (e.g., rows 183-186). The initial free-text value `Staphylococcus aureus methicillin resistant` was changed to the standard OMOP term `Methicillin resistant Staphylococcus aureus`, as suggested by the candidate list and supported by high usage in curated Finnish data. The `has_system` value `Perineum` for rows 186, 195, and 196 was removed because the candidate list correctly indicated it is not a valid OMOP term. For the ECG tests (rows 198-200), I changed the component from `Electrocardiogram` to `ECG`. Although `Electrocardiogram` is a valid LOINC term, it was not present in the candidate list of fixes, and the strict instruction is to pick from the list. The local code `pt-ekg` also supports using the abbreviation `ECG`. Most other axes were already correct and required no changes."
+  "reflection": "This group contained microbiology cultures, drug screens, EKG studies, and a genetic test. \n\nThe MRSA cultures were mostly straightforward to map, with clear candidates for generic specimen (`3019902`), nose (`3039355`), and pharynx/throat (`46235760`). However, the candidate list lacked a concept for MRSA culture from perineum, preventing mapping of rows 186, 195, and 196.\n\nThe drug screen panels were a mixed bag. The 5-panel screen (row 188) was mapped to `40768439`, which specifies 'Screen method'. Multiple rows (189, 201, 202, 203) clearly indicated a 6-panel screen including buprenorphine, but no such concept was available in the candidate list, so these were left unmapped. \n\nThe ambulatory EKG (Holter) studies (rows 198, 199, 200) were successfully mapped to the general `Ambulatory cardiac rhythm monitor (Holter) study` concept `3010479`. This was deemed appropriate even for the 48-hour study, as LOINC often uses a general study concept regardless of duration. \n\nThe generic NGS panel (row 187) was left unmapped as none of the available candidates were a good fit for a generic \"targeted gene variant analysis\" test."
 }

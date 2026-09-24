@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,112 +21,115 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 160.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Alanine aminotransferase | Alanine aminotransferase | 1.000 | 21 | 5,367,314 |
-| Alanine aminotransferase | Alanine aminotransferase/Aspartate aminotransferase | 0.852 | 0 | 0 |
-| Alanine aminotransferase | Aspartate aminotransferase/Alanine aminotransferase | 0.775 | 0 | 0 |
-| Aspartate aminotransferase | Aspartate aminotransferase | 1.000 | 14 | 513,305 |
-| Aspartate aminotransferase | Aspartate aminotransferase/Alanine aminotransferase | 0.834 | 0 | 0 |
-| Aspartate aminotransferase | Alanine aminotransferase | 0.762 | 21 | 5,367,314 |
-| Aspartate aminotransferase | Aspartate aminotransferase.macromolecular | 0.760 | 0 | 0 |
-| gamma-Glutamyl transferase | Gamma glutamyl transferase | 0.908 | 17 | 1,024,731 |
-| gamma-Glutamyl transferase | Gamma glutamyl transferase/Aspartate aminotransferase | 0.811 | 0 | 0 |
-| gamma-Glutamyl transferase | Gamma glutamyl transferase.macromolecular | 0.751 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Catalytic Concentration | Catalytic Concentration | 1.000 | 228 | 10,802,985 |
-| Catalytic Concentration | Relative catalytic concentration | 0.848 | 9 | 39,650 |
-
-### system
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Plasma | Plasma | 1.000 | 41 | 58,727 |
-| Plasma | Plasma or Blood | 0.752 | 0 | 0 |
-| Serum | Serum | 1.000 | 995 | 2,593,077 |
-| Serum or Plasma | Serum or Plasma | 1.000 | 2,776 | 78,327,842 |
-| Serum or Plasma | Serum or Plasma or Urine | 0.832 | 0 | 0 |
-| Serum or Plasma | Serum and Plasma | 0.819 | 0 | 0 |
-| Serum or Plasma | Serum, Plasma or Blood | 0.816 | 84 | 6,240,111 |
-| Serum or Plasma | Serum or Plasma and CSF | 0.792 | 4 | 1,187 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 16 | 21 | 5,367,314 |
+| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 19 | 14 |   513,305 |
+| 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 190 | 17 | 1,024,731 |
+| 46236949 | Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.975 |  |  0 |         0 |
+| 46235106 | Alanine aminotransferase [Enzymatic activity/volume] in Blood | 0.933 |  |  0 |         0 |
+| 3052577 | Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.912 |  |  0 |         0 |
+| 3052018 | Alanine aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.908 |  |  0 |         0 |
+| 3005755 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.907 |  |  0 |         0 |
+| 3037081 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.896 |  |  0 |         0 |
+| 3019056 | Alanine aminotransferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.890 |  |  0 |         0 |
+| 3003792 | Aspartate aminotransferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |  0 |         0 |
+| 3028465 | Gamma glutamyl transferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |  0 |         0 |
+| 649315 | Aspartate aminotransferase [Measurement] in Serum or Plasma | 0.886 |  |  0 |         0 |
+| 3042781 | Aspartate aminotransferase [Enzymatic activity/volume] (Maximum value during study) in Serum or Plasma | 0.885 |  |  0 |         0 |
+| 3000784 | Alanine aminotransferase [Enzymatic activity/volume] in Body fluid | 0.884 |  |  0 |         0 |
+| 645672 | Alanine aminotransferase [Measurement] in Serum or Plasma | 0.883 |  |  0 |         0 |
+| 3028515 | Gamma glutamyl transferase [Enzymatic activity/volume] in Urine | 0.879 |  |  0 |         0 |
+| 3027388 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.878 |  |  0 |         0 |
+| 36305398 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.869 |  |  0 |         0 |
+| 3022893 | Aspartate aminotransferase/Alanine aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.868 |  |  0 |         0 |
+| 3010307 | Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.864 |  |  0 |         0 |
+| 3022979 | Gamma glutamyl cysteine synthetase [Enzymatic activity/volume] in Serum | 0.833 |  |  0 |         0 |
+| 3026365 | Gamma glutamyl transferase [Enzymatic activity/volume] in Semen | 0.821 |  |  0 |         0 |
+| 36032012 | Gamma glutamyl transferase [Enzymatic activity/volume] in DBS | 0.821 |  |  0 |         0 |
+| 3021398 | Gamma glutamyl transferase [Enzymatic activity/volume] in Amniotic fluid | 0.819 |  |  0 |         0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1769 | alaniiniaminotransferaasi | u/l | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 1770 | alaniiniaminotransferaasi |  | 1818 | 100 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
-| 1771 | alaniiniaminotransferaasi,plasmasta | u/l | 97 | 0 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1772 | alaniiniaminotransferaasi,plasmasta |  | 5 | 100 |  |  |  |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
-| 1773 | aspartaattiaminotransferaasi | u/l | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 1774 | aspartaattiaminotransferaasi |  | 112 | 100 |  |  |  |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
-| 1775 | fp-glutamyylitransferaasi | u/l | 102 | 0 |  |  | Fasting plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1776 | fs-alaniiniaminotransferaasi | u/l | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 1777 | glutamyylitransferaasi | u/l | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 1778 | glutamyylitransferaasi |  | 147 | 100 |  |  |  |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum or Plasma |  | Point in time (spot) | FALSE |
-| 1779 | p-alaniiniaminotransferaasi | u/l | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1780 | p-alaniiniaminotransferaasi |  | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  | Alanine aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1781 | p-aspartaattiaminotransferaasi | u/l | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  | Aspartate aminotransferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1782 | p-aspartaattiaminotransferaasi |  | 129 | 90.7 |  |  | Plasma |  | Aspartate aminotransferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
-| 1783 | p-glutamyylitransferaasi | u/l | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 1784 | p-glutamyylitransferaasi |  | 33 | 84.85 |  |  | Plasma |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Plasma |  | Point in time (spot) | FALSE |
-| 1785 | s-alaniiniaminotransferaasi | u/l | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 1786 | s-alaniiniaminotransferaasi |  | 52 | 100 |  |  | Serum |  | Alanine aminotransferase | Catalytic Concentration |  | Serum |  | Point in time (spot) | FALSE |
-| 1787 | s-aspartaattiaminotransferaasi | u/l | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 1788 | s-aspartaattiaminotransferaasi |  | 8 | 87.5 |  |  | Serum |  | Aspartate aminotransferase | Catalytic Concentration |  | Serum |  | Point in time (spot) | FALSE |
-| 1789 | s-glutamyylitransferaasi | u/l | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  | gamma-Glutamyl transferase | Catalytic Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1769 | alaniiniaminotransferaasi | u/l | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1770 | alaniiniaminotransferaasi |  | 1818 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1771 | alaniiniaminotransferaasi,plasmasta | u/l | 97 | 0 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1772 | alaniiniaminotransferaasi,plasmasta |  | 5 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1773 | aspartaattiaminotransferaasi | u/l | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1774 | aspartaattiaminotransferaasi |  | 112 | 100 |  |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1775 | fp-glutamyylitransferaasi | u/l | 102 | 0 |  |  | Fasting plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1776 | fs-alaniiniaminotransferaasi | u/l | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1777 | glutamyylitransferaasi | u/l | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1778 | glutamyylitransferaasi |  | 147 | 100 |  |  |  |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1779 | p-alaniiniaminotransferaasi | u/l | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1780 | p-alaniiniaminotransferaasi |  | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1781 | p-aspartaattiaminotransferaasi | u/l | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1782 | p-aspartaattiaminotransferaasi |  | 129 | 90.7 |  |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1783 | p-glutamyylitransferaasi | u/l | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1784 | p-glutamyylitransferaasi |  | 33 | 84.85 |  |  | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1785 | s-alaniiniaminotransferaasi | u/l | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1786 | s-alaniiniaminotransferaasi |  | 52 | 100 |  |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1787 | s-aspartaattiaminotransferaasi | u/l | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1788 | s-aspartaattiaminotransferaasi |  | 8 | 87.5 |  |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| 1789 | s-glutamyylitransferaasi | u/l | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
 

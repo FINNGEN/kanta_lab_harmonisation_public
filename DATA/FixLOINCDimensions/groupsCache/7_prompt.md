@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,112 +21,107 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 7.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Transglutaminase Ab | Tissue transglutaminase Ab | 0.894 | 0 | 0 |
-| Transglutaminase Ab | Tissue transglutaminase Ab panel | 0.826 | 0 | 0 |
-| Transglutaminase Ab | Tissue transglutaminase | 0.824 | 0 | 0 |
-| Transglutaminase Ab | Tissue Transglutaminase IgG | 0.819 | 8 | 27,233 |
-| Transglutaminase Ab | Tissue Transglutaminase IgA | 0.816 | 20 | 151,122 |
-| Transglutaminase IgA Ab | Tissue Transglutaminase IgA | 0.896 | 20 | 151,122 |
-| Transglutaminase IgA Ab | Tissue transglutaminase Ab | 0.880 | 0 | 0 |
-| Transglutaminase IgA Ab | Tissue Transglutaminase IgG | 0.854 | 8 | 27,233 |
-| Transglutaminase IgA Ab | Tissue Transglutaminase IgM | 0.826 | 0 | 0 |
-| Transglutaminase IgA Ab | Tissue transglutaminase Ab panel | 0.824 | 0 | 0 |
-| Transglutaminase IgG Ab | Tissue Transglutaminase IgG | 0.895 | 8 | 27,233 |
-| Transglutaminase IgG Ab | Tissue transglutaminase Ab | 0.881 | 0 | 0 |
-| Transglutaminase IgG Ab | Tissue Transglutaminase IgA | 0.858 | 20 | 151,122 |
-| Transglutaminase IgG Ab | Tissue Transglutaminase IgM | 0.834 | 0 | 0 |
-| Transglutaminase IgG Ab | Tissue transglutaminase Ab panel | 0.828 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Arbitrary Concentration | Arbitrary Concentration | 1.000 | 998 | 4,231,921 |
-| Arbitrary Concentration | Relative Arbitrary Concentration | 0.841 | 3 | 1,539 |
-| Presence or Threshold | Presence or Threshold | 1.000 | 382 | 10,296,466 |
-
-### system
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Serum | Serum | 1.000 | 995 | 2,593,077 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 3046870 | Tissue transglutaminase IgG Ab [Units/volume] in Serum | 0.936 | 529 |  8 |  27,233 |
+| 647325 | Tissue transglutaminase IgG Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.935 |  |  0 |       0 |
+| 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum | 0.933 | 384 | 20 | 151,122 |
+| 3041414 | Tissue transglutaminase Ab [Presence] in Serum | 0.930 |  |  0 |       0 |
+| 3041421 | Tissue transglutaminase IgG Ab [Presence] in Serum | 0.926 |  |  0 |       0 |
+| 3030555 | Tissue transglutaminase IgA Ab [Presence] in Serum | 0.917 |  |  0 |       0 |
+| 40759657 | Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay | 0.912 | 530 |  0 |       0 |
+| 3046538 | Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay | 0.907 | 1948 |  0 |       0 |
+| 3036688 | Tissue transglutaminase IgM Ab [Units/volume] in Serum | 0.898 |  |  0 |       0 |
+| 3033171 | Tissue transglutaminase IgA Ab [Presence] in Serum by Immunoassay | 0.893 |  |  0 |       0 |
+| 646194 | Tissue transglutaminase IgG Ab [Measurement] in Serum | 0.862 |  |  0 |       0 |
+| 647093 | Tissue transglutaminase IgA Ab [Measurement] in Serum | 0.861 |  |  0 |       0 |
+| 3034859 | Tissue transglutaminase Ab panel - Serum | 0.844 |  |  0 |       0 |
+| 40766151 | Gliadin peptide+tissue transglutaminase IgA+IgG Ab [Presence] in Serum by Immunoassay | 0.830 |  |  0 |       0 |
+| 40758059 | Tissue transglutaminase Ab [Titer] in Serum by Immunofluorescence | 0.812 |  |  0 |       0 |
+| 40758856 | Tissue transglutaminase IgA and IgG panel - Serum | 0.808 |  |  0 |       0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.81, 1.01, 1.43] |  |  |  | Transglutaminase IgA Ab | Arbitrary Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 2 | kudostransglutaminaasi,iga-vasta-aineet |  | 36 | 100 |  |  |  |  | Transglutaminase IgA Ab | Presence or Threshold |  |  | Ord | Point in time (spot) | FALSE |
-| 3 | kudostransglutaminaasi,iga-vasta-aineet,seerumista |  | 134 | 100 |  |  |  |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 4 | kudostransglutaminaasi,igavasta-aineet | u/ml | 70 | 0 | [0.2, 0.3, 0.3, 0.4, 0.5, 0.6, 0.75, 1.05, 2.8] |  |  |  | Transglutaminase IgA Ab | Arbitrary Concentration |  |  | Qn | Point in time (spot) | FALSE |
-| 5 | kudostransglutaminaasi,igavasta-aineet |  | 62 | 100 |  |  |  |  | Transglutaminase IgA Ab | Presence or Threshold |  |  | Ord | Point in time (spot) | FALSE |
-| 6 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 169 | 0 |  |  |  |  | Transglutaminase IgA Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 7 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ |  | 508 | 100 |  |  |  |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 8 | kudostransglutaminaasi,igg-vasta-aineet |  | 131 | 100 |  |  |  |  | Transglutaminase IgG Ab | Presence or Threshold |  |  | Ord | Point in time (spot) | FALSE |
-| 9 | s-kudostransglutaminaasi,iga-vasta-aineet | u/ml | 36 | 0 |  |  | Serum |  | Transglutaminase IgA Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 10 | s-kudostransglutaminaasi,iga-vasta-aineet |  | 300 | 100 |  |  | Serum |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 11 | s-kudostransglutaminaasi,iga-vasta-aineetosatutk. |  | 426 | 100 |  |  | Serum |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 12 | s-kudostransglutaminaasi,igavasta-aineet | eliau/ml | 10 | 0 |  |  | Serum |  | Transglutaminase IgA Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 13 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.77, 0.99, 1.51] |  | Serum |  | Transglutaminase IgA Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 14 | s-kudostransglutaminaasi,igavasta-aineet |  | 3189 | 99.94 |  |  | Serum |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 15 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) | u/ml | 5 | 0 |  |  | Serum |  | Transglutaminase IgA Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 16 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 149 | 100 |  |  | Serum |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 17 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 118 | 100 |  |  | Serum |  | Transglutaminase IgA Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 18 | s-kudostransglutaminaasi,iggva(keliakia) |  | 133 | 100 |  |  | Serum |  | Transglutaminase IgG Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 19 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 6 | 0 |  |  | Serum |  | Transglutaminase IgG Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 20 | s-kudostransglutaminaasi,iggvasta-aineet |  | 2026 | 100 |  |  | Serum |  | Transglutaminase IgG Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
-| 21 | s-transglutaminaasivasta-aineet | u/ml | 12 | 0 |  |  | Serum |  | Transglutaminase Ab | Arbitrary Concentration |  | Serum | Qn | Point in time (spot) | FALSE |
-| 22 | s-transglutaminaasivasta-aineet |  | 454 | 100 |  |  | Serum |  | Transglutaminase Ab | Presence or Threshold |  | Serum | Ord | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.81, 1.01, 1.43] |  |  |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 2 | kudostransglutaminaasi,iga-vasta-aineet |  | 36 | 100 |  |  |  |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 3 | kudostransglutaminaasi,iga-vasta-aineet,seerumista |  | 134 | 100 |  |  |  |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 4 | kudostransglutaminaasi,igavasta-aineet | u/ml | 70 | 0 | [0.2, 0.3, 0.3, 0.4, 0.5, 0.6, 0.75, 1.05, 2.8] |  |  |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 5 | kudostransglutaminaasi,igavasta-aineet |  | 62 | 100 |  |  |  |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 6 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 169 | 0 |  |  |  |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 7 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ |  | 508 | 100 |  |  |  |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 8 | kudostransglutaminaasi,igg-vasta-aineet |  | 131 | 100 |  |  |  |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | FALSE |
+| 9 | s-kudostransglutaminaasi,iga-vasta-aineet | u/ml | 36 | 0 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 10 | s-kudostransglutaminaasi,iga-vasta-aineet |  | 300 | 100 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 11 | s-kudostransglutaminaasi,iga-vasta-aineetosatutk. |  | 426 | 100 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 12 | s-kudostransglutaminaasi,igavasta-aineet | eliau/ml | 10 | 0 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 13 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.77, 0.99, 1.51] |  | Serum |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 14 | s-kudostransglutaminaasi,igavasta-aineet |  | 3189 | 99.94 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 15 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) | u/ml | 5 | 0 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma | FALSE |
+| 16 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 149 | 100 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 17 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 118 | 100 |  |  | Serum |  | Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma | FALSE |
+| 18 | s-kudostransglutaminaasi,iggva(keliakia) |  | 133 | 100 |  |  | Serum |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | FALSE |
+| 19 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 6 | 0 |  |  | Serum |  | Transglutaminase.tissue IgG Ab [Units/volume] in Serum or Plasma | FALSE |
+| 20 | s-kudostransglutaminaasi,iggvasta-aineet |  | 2026 | 100 |  |  | Serum |  | Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma | FALSE |
+| 21 | s-transglutaminaasivasta-aineet | u/ml | 12 | 0 |  |  | Serum |  | Transglutaminase.tissue Ab [Units/volume] in Serum or Plasma | FALSE |
+| 22 | s-transglutaminaasivasta-aineet |  | 454 | 100 |  |  | Serum |  | Transglutaminase.tissue Ab [Presence] in Serum or Plasma | FALSE |
 

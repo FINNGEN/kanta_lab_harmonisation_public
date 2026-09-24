@@ -2,304 +2,184 @@
   "rows": [
     {
       "row_id": 1739,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1740,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1741,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "3000492",
+      "omop_concept_name": "Spirometry study",
       "is_panel": true
     },
     {
       "row_id": 1742,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "3000492",
+      "omop_concept_name": "Spirometry study",
       "is_panel": true
     },
     {
       "row_id": 1743,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "3000492",
+      "omop_concept_name": "Spirometry study",
       "is_panel": true
     },
     {
       "row_id": 1744,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "3000492",
+      "omop_concept_name": "Spirometry study",
       "is_panel": true
     },
     {
       "row_id": 1745,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1746,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1747,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1748,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1749,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1750,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1751,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1752,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1753,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1754,
-      "has_component": "Semen analysis panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
       "is_panel": true
     },
     {
       "row_id": 1755,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1756,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1757,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1758,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1759,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1760,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1761,
-      "has_component": "Spirometry panel",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "36031657",
+      "omop_concept_name": "Pulmonary vasodilator test panel",
       "is_panel": true
     },
     {
       "row_id": 1762,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": false
     },
     {
       "row_id": 1763,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "",
-      "has_method": "",
+      "omop_concept_id": "",
+      "omop_concept_name": "",
       "is_panel": true
     },
     {
       "row_id": 1764,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1765,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1766,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1767,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "is_panel": false
     },
     {
       "row_id": 1768,
-      "has_component": "",
-      "has_property": "",
-      "has_time_aspect": "",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
+      "omop_concept_id": "3009203",
+      "omop_concept_name": "Cardiac echo study Procedure",
       "is_panel": true
     }
   ],
-  "reflection": "This group largely consisted of clinical procedures performed on the patient, identified by the `Pt-` prefix and correctly assigned `^Patient` as the system. For `Spirometry` and `Semen analysis`, the provided candidates included more specific `... panel` terms (`Spirometry panel`, `Semen analysis panel`). I adopted these as they were a better fit for the data, which had `is_panel=TRUE` and Finnish long names indicating comprehensive examinations. The main difficulty was the absence of any candidate OMOP terms for several valid clinical concepts, including `Echocardiography`, `Myocardial perfusion study`, `Spirometry with bronchodilator`, and `Thermal sensory testing`. These concepts were clearly identifiable from the Finnish codes but had to be cleared from the `has_component` axis due to the lack of a valid term to map to, as per the instructions."
+  "reflection": "This group consisted of `Pt-` (Patient) investigations, mainly panels or studies. I was able to map several categories of tests.\n\n*   **Spirometry**: Codes with `spiro` and `fvsp` were clearly spirometry. I mapped basic spirometry to `3000492` (Spirometry study), preferring it over `21493451` (Spirometry panel) because of its existing usage in Finland. For codes implying a bronchodilator test (e.g., `pt-fvspird`, `pt-spirom`), I used `36031657` (Pulmonary vasodilator test panel).\n*   **Semen Analysis**: The `pt-sper-` codes were clearly identifiable from `TEST_NAME` and `LongName`. All variants (`suppea`/limited, `laaja`/extensive) were mapped to the general `3008607` (Semen analysis panel), as this represents the overall procedure.\n*   **Cardiology**: `pt-sydänuä` was a clear abbreviation for `sydämen ultraääni` (echocardiogram), which I mapped to `3009203` (Cardiac echo study Procedure).\n\nSeveral codes could not be mapped. Many, such as `pt-fvsirod` and the `pt-syd...` codes (1764-1767), had abbreviations that were too truncated or ambiguous and lacked a `LongName` to clarify their meaning. Additionally, `pt-st-temp` (`Pt-Terminen tuntokynnysmittaus` / Thermal sensation threshold measurement) had a clear meaning but no suitable LOINC candidate was available in the provided list; the available temperature-related concepts were for simple measurements, not a sensory threshold study."
 }

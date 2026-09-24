@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,162 +21,169 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 73.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Influenza virus | Influenza virus | 1.000 | 1 | 1,256 |
-| Influenza virus | Influenza virus A | 0.883 | 0 | 0 |
-| Influenza virus | Influenza virus RNA | 0.808 | 0 | 0 |
-| Influenza virus | Influenza virus A H1 | 0.807 | 0 | 0 |
-| Influenza virus | Influenza virus A and B | 0.785 | 0 | 0 |
-| Influenza virus A | Influenza virus A | 1.000 | 0 | 0 |
-| Influenza virus A | Influenza virus | 0.883 | 1 | 1,256 |
-| Influenza virus A | Influenza virus A H1 | 0.876 | 0 | 0 |
-| Influenza virus A | Influenza virus A H3 | 0.849 | 0 | 0 |
-| Influenza virus A | Influenza virus A and B | 0.846 | 0 | 0 |
-| Influenza virus A variant | Influenza virus A | 0.832 | 0 | 0 |
-| Influenza virus A variant | Influenza virus A subtype | 0.816 | 0 | 0 |
-| Influenza virus A variant | Influenza virus A N7 | 0.789 | 0 | 0 |
-| Influenza virus A variant | Influenza virus A identified | 0.789 | 0 | 0 |
-| Influenza virus A variant | Influenza virus A H1 | 0.782 | 0 | 0 |
-| Influenza virus A+B | Influenza virus A+B | 1.000 | 0 | 0 |
-| Influenza virus A+B | Influenza virus A+B Ab | 0.893 | 0 | 0 |
-| Influenza virus A+B | Influenza virus A+B+C | 0.885 | 0 | 0 |
-| Influenza virus A+B | Influenza virus A+B RNA | 0.884 | 0 | 0 |
-| Influenza virus A+B | Influenza virus A+B Ag | 0.882 | 1 | 15,096 |
-| Influenza virus B | Influenza virus B | 1.000 | 0 | 0 |
-| Influenza virus B | Influenza virus B lineage | 0.862 | 0 | 0 |
-| Influenza virus B | Influenza virus B RNA | 0.837 | 2 | 129,826 |
-| Influenza virus B | Influenza virus B Ab | 0.837 | 1 | 29 |
-| Influenza virus B | Influenza virus B Ag | 0.835 | 2 | 22,580 |
-| Parainfluenza virus | Parainfluenza virus | 1.000 | 0 | 0 |
-| Parainfluenza virus | Parainfluenza virus A | 0.881 | 0 | 0 |
-| Parainfluenza virus | Parainfluenza virus 2 | 0.868 | 0 | 0 |
-| Parainfluenza virus | Parainfluenza virus 1 | 0.867 | 0 | 0 |
-| Parainfluenza virus | Parainfluenza virus 4 | 0.866 | 0 | 0 |
-| Parainfluenza virus 1 | Parainfluenza virus 1 | 1.000 | 0 | 0 |
-| Parainfluenza virus 1 | Parainfluenza virus 1 RNA | 0.878 | 1 | 4,037 |
-| Parainfluenza virus 1 | Parainfluenza virus 1+2+3 | 0.867 | 0 | 0 |
-| Parainfluenza virus 1 | Parainfluenza virus | 0.867 | 0 | 0 |
-| Parainfluenza virus 1 | Parainfluenza virus 3 | 0.864 | 0 | 0 |
-| Parainfluenza virus 2 | Parainfluenza virus 2 | 1.000 | 0 | 0 |
-| Parainfluenza virus 2 | Canine parainfluenza virus 2 | 0.902 | 0 | 0 |
-| Parainfluenza virus 2 | Parainfluenza virus 4 | 0.876 | 0 | 0 |
-| Parainfluenza virus 2 | Parainfluenza virus 2 RNA | 0.871 | 1 | 4,036 |
-| Parainfluenza virus 2 | Parainfluenza virus | 0.868 | 0 | 0 |
-| Parainfluenza virus 3 | Parainfluenza virus 3 | 1.000 | 0 | 0 |
-| Parainfluenza virus 3 | Parainfluenza virus 4 | 0.884 | 0 | 0 |
-| Parainfluenza virus 3 | Parainfluenza virus 3 RNA | 0.869 | 1 | 4,036 |
-| Parainfluenza virus 3 | Parainfluenza virus 2 | 0.867 | 0 | 0 |
-| Parainfluenza virus 3 | Parainfluenza virus 1 | 0.864 | 0 | 0 |
-| Parainfluenza virus 4 | Parainfluenza virus 4 | 1.000 | 0 | 0 |
-| Parainfluenza virus 4 | Parainfluenza virus 4b | 0.951 | 0 | 0 |
-| Parainfluenza virus 4 | Parainfluenza virus 4a | 0.942 | 0 | 0 |
-| Parainfluenza virus 4 | Parainfluenza virus 3 | 0.884 | 0 | 0 |
-| Parainfluenza virus 4 | Parainfluenza virus 4 RNA | 0.878 | 1 | 4,034 |
-| Rhinovirus | Rhinovirus | 1.000 | 0 | 0 |
-| Rhinovirus | Human Rhinovirus 2 | 0.793 | 0 | 0 |
-| Rhinovirus | Rhinovirus/enterovirus | 0.792 | 0 | 0 |
-| Rhinovirus | Rhinovirus RNA | 0.780 | 1 | 7,393 |
-| Rhinovirus | Rhinovirus Ag | 0.766 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Presence or Threshold | Presence or Threshold | 1.000 | 382 | 10,296,466 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with probe detection | 1.000 | 115 | 2,413,483 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with non-probe detection | 0.864 | 1 | 7,786 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5a | 0.770 | 0 | 0 |
-| Nucleic acid amplification with probe detection | Probe with amplification | 0.759 | 2 | 14,699 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5b | 0.754 | 0 | 0 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 37019589 | Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37019613 | Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37020003 | Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37020335 | Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37020635 | Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37021252 | Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 37021465 | Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
+| 3965803 | Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.977 |  | 0 |       0 |
+| 3966116 | Influenza virus A H1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.969 |  | 0 |       0 |
+| 3038297 | Parainfluenza virus 4 RNA [Presence] in Specimen by NAA with probe detection | 0.960 |  | 1 |   4,034 |
+| 3038288 | Influenza virus B RNA [Presence] in Specimen by NAA with probe detection | 0.959 |  | 1 |  95,225 |
+| 36203322 | Influenza virus B RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.959 |  | 0 |       0 |
+| 37019984 | Parainfluenza virus 4 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.958 |  | 0 |       0 |
+| 37019747 | Rhinovirus RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.957 |  | 0 |       0 |
+| 1091113 | Influenza virus B RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.957 |  | 0 |       0 |
+| 3012158 | Parainfluenza virus 2 RNA [Presence] in Specimen by NAA with probe detection | 0.957 |  | 1 |   4,036 |
+| 3964727 | Influenza virus A H3 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.957 |  | 0 |       0 |
+| 3965820 | Human Rhinovirus 1 and 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.956 |  | 0 |       0 |
+| 3965123 | Human Rhinovirus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.956 |  | 0 |       0 |
+| 37021346 | Parainfluenza virus 2 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.954 |  | 0 |       0 |
+| 40764126 | Parainfluenza virus RNA [Presence] in Specimen by NAA with probe detection | 0.954 |  | 1 |   5,001 |
+| 37020881 | Parainfluenza virus 1 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.953 |  | 0 |       0 |
+| 3025634 | Parainfluenza virus 1 RNA [Presence] in Specimen by NAA with probe detection | 0.953 |  | 1 |   4,037 |
+| 3006262 | Parainfluenza virus 3 RNA [Presence] in Specimen by NAA with probe detection | 0.953 |  | 1 |   4,036 |
+| 3025023 | Rhinovirus RNA [Presence] in Specimen by NAA with probe detection | 0.953 |  | 1 |   7,393 |
+| 37019976 | Parainfluenza virus 3 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.953 |  | 0 |       0 |
+| 36203321 | Influenza virus A RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.951 |  | 0 |       0 |
+| 37019554 | Parainfluenza virus RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.950 |  | 0 |       0 |
+| 36304919 | Influenza virus B RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.949 |  | 0 |       0 |
+| 36304298 | Parainfluenza virus 4 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.949 |  | 0 |       0 |
+| 36305681 | Parainfluenza virus 1 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.949 |  | 0 |       0 |
+| 1091251 | Parainfluenza virus 4 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.948 |  | 0 |       0 |
+| 36304319 | Parainfluenza virus 2 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.947 |  | 0 |       0 |
+| 36203320 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection | 0.947 |  | 0 |       0 |
+| 40770419 | Parainfluenza virus 4a RNA [Presence] in Specimen by NAA with probe detection | 0.947 |  | 0 |       0 |
+| 40770420 | Parainfluenza virus 4b RNA [Presence] in Specimen by NAA with probe detection | 0.947 |  | 0 |       0 |
+| 3044938 | Influenza virus A RNA [Presence] in Specimen by NAA with probe detection | 0.946 |  | 3 | 142,013 |
+| 36304620 | Parainfluenza virus RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.946 |  | 0 |       0 |
+| 1091967 | Parainfluenza virus 2 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.945 |  | 0 |       0 |
+| 648704 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Specimen by NAA with probe detection | 0.944 |  | 0 |       0 |
+| 1091332 | Parainfluenza virus 1 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.943 |  | 0 |       0 |
+| 36303784 | Parainfluenza virus 3 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.943 |  | 0 |       0 |
+| 1092023 | Parainfluenza virus 3 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.942 |  | 0 |       0 |
+| 1091443 | Influenza virus A RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.940 |  | 0 |       0 |
+| 36305662 | Influenza virus A RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.939 |  | 0 |       0 |
+| 1091557 | Rhinovirus RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.939 |  | 0 |       0 |
+| 21494892 | Influenza virus types A and B and subtypes RNA panel - Respiratory system specimen by NAA with probe detection | 0.938 |  | 0 |       0 |
+| 1092106 | Parainfluenza virus RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.937 |  | 0 |       0 |
+| 37021109 | Influenza virus B RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.936 |  | 0 |       0 |
+| 646127 | Influenza virus B RNA [Presence] in Specimen by NAA with non-probe detection | 0.935 |  | 0 |       0 |
+| 36660164 | Parainfluenza virus 1 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.934 |  | 0 |       0 |
+| 1616605 | Rhinovirus+Enterovirus A+B+C RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.934 |  | 0 |       0 |
+| 649299 | Parainfluenza virus 1 RNA [Presence] in Specimen by NAA with non-probe detection | 0.933 |  | 0 |       0 |
+| 1175203 | Rhinovirus RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.932 |  | 0 |       0 |
+| 36659829 | Parainfluenza virus 3 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.931 |  | 0 |       0 |
+| 645627 | Parainfluenza virus 2 RNA [Presence] in Specimen by NAA with non-probe detection | 0.930 |  | 0 |       0 |
+| 1988089 | Influenza virus A N1 RNA [Presence] in Specimen by NAA with probe detection | 0.930 |  | 0 |       0 |
+| 36660052 | Parainfluenza virus 2 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.929 |  | 0 |       0 |
+| 647882 | Parainfluenza virus 3 RNA [Presence] in Specimen by NAA with non-probe detection | 0.927 |  | 0 |       0 |
+| 1091221 | Influenza virus B RNA [Presence] in Sputum by NAA with probe detection | 0.926 |  | 0 |       0 |
+| 1092357 | Rhinovirus RNA [Presence] in Sputum by NAA with probe detection | 0.925 |  | 0 |       0 |
+| 46236735 | Rhinovirus RNA [Presence] in Nasopharynx by NAA with probe detection | 0.919 |  | 0 |       0 |
+| 37020181 | Influenza virus types A and B panel - Upper respiratory specimen by NAA with probe detection | 0.918 |  | 0 |       0 |
+| 36031861 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection | 0.907 |  | 2 |  45,357 |
+| 36304096 | Influenza virus types A and B panel - Lower respiratory specimen by NAA with probe detection | 0.897 |  | 0 |       0 |
+| 1617384 | Influenza virus types A and B and subtypes RNA panel - Specimen by NAA with probe detection | 0.896 |  | 0 |       0 |
+| 40765199 | Influenza virus A+B RNA [Presence] in Specimen by NAA with probe detection | 0.896 |  | 0 |       0 |
+| 36661376 | Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Respiratory system specimen by NAA with probe detection | 0.894 |  | 0 |       0 |
+| 21493425 | Influenza virus A H7 Eurasia RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.893 |  | 0 |       0 |
+| 36661384 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and SARS-related CoV RNA panel - Respiratory system specimen by NAA with probe detection | 0.875 |  | 0 |       0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1104 | -hinfnho |  | 311 | 100 |  |  |  |  | Influenza virus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1105 | -hinnho |  | 3618 | 100 |  |  |  |  |  | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1106 | -inabnho |  | 4313 | 100 |  | -Influenssa A ja B-virus, nukleiinihappo (kval) |  |  | Influenza virus A+B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1107 | -inabnhoho |  | 387 | 100 |  |  |  |  | Influenza virus A+B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1108 | -inabrsnho |  | 432 | 100 |  |  |  |  |  |  |  |  |  |  | TRUE |
-| 1109 | -inanho |  | 356 | 100 |  |  |  |  | Influenza virus A | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1110 | -inanhoho |  | 409 | 100 |  |  |  |  | Influenza virus A | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1111 | -inbnho |  | 356 | 100 |  |  |  |  | Influenza virus B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1112 | -inbnhoho |  | 411 | 100 |  |  |  |  | Influenza virus B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1113 | -infanho |  | 122873 | 100 |  | -Influenssa A -virus, nukleiinihappo (kval) |  |  | Influenza virus A | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1114 | -infbnho |  | 95902 | 100 |  | -Influenssa B-virus, nukleiinihappo (kval) |  |  | Influenza virus B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1115 | -infvnho |  | 1260 | 100 |  | -Influenssa A-virus, variantti, nukleiinihappo (kval) |  |  | Influenza virus A variant | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1116 | -pin1nho |  | 9246 | 100 |  | -Parainfluenssa 1-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 1 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1117 | -pin2nho |  | 9244 | 100 |  | -Parainfluenssa 2-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 2 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1118 | -pin3nho |  | 9240 | 100 |  | -Parainfluenssa 3-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 3 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1119 | -pin4nho |  | 9240 | 100 |  | -Parainfluenssa 4-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 4 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1120 | -pinfnho |  | 5018 | 100 |  |  |  |  | Parainfluenza virus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1121 | -rinonho |  | 7403 | 100 |  | -Rinovirus, nukleiinihappo (kval) |  |  | Rhinovirus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1122 | -tintnho |  | 595 | 100 |  |  |  |  |  | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1123 | hinflnho |  | 745 | 100 |  |  |  |  | Influenza virus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1124 | inanho |  | 7494 | 100 |  |  |  |  | Influenza virus A | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1125 | inbnho |  | 7494 | 100 |  |  |  |  | Influenza virus B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1126 | infanho |  | 12417 | 100 |  |  |  |  | Influenza virus A | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1127 | infbnho |  | 34660 | 100 |  |  |  |  | Influenza virus B | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1128 | infnho |  | 766 | 100 |  |  |  |  | Influenza virus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in in time (spot) | FALSE |
-| 1129 | pin1nho |  | 4037 | 100 |  |  |  |  | Parainfluenza virus 1 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1130 | pin2nho |  | 4036 | 100 |  |  |  |  | Parainfluenza virus 2 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1131 | pin3nho |  | 4036 | 100 |  |  |  |  | Parainfluenza virus 3 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1132 | pin4nho |  | 4034 | 100 |  |  |  |  | Parainfluenza virus 4 | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
-| 1133 | rinonho |  | 245 | 100 |  |  |  |  | Rhinovirus | Presence or Threshold | Nucleic acid amplification with probe detection |  | Ord | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1104 | -hinfnho |  | 311 | 100 |  |  |  |  |  | FALSE |
+| 1105 | -hinnho |  | 3618 | 100 |  |  |  |  |  | FALSE |
+| 1106 | -inabnho |  | 4313 | 100 |  | -Influenssa A ja B-virus, nukleiinihappo (kval) |  |  | Influenza virus A+B RNA panel - Respiratory system specimen by NAA with probe detection | TRUE |
+| 1107 | -inabnhoho |  | 387 | 100 |  |  |  |  |  | FALSE |
+| 1108 | -inabrsnho |  | 432 | 100 |  |  |  |  | Influenza virus A+B+Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection | TRUE |
+| 1109 | -inanho |  | 356 | 100 |  |  |  |  | Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1110 | -inanhoho |  | 409 | 100 |  |  |  |  |  | FALSE |
+| 1111 | -inbnho |  | 356 | 100 |  |  |  |  | Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1112 | -inbnhoho |  | 411 | 100 |  |  |  |  |  | FALSE |
+| 1113 | -infanho |  | 122873 | 100 |  | -Influenssa A -virus, nukleiinihappo (kval) |  |  | Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1114 | -infbnho |  | 95902 | 100 |  | -Influenssa B-virus, nukleiinihappo (kval) |  |  | Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1115 | -infvnho |  | 1260 | 100 |  | -Influenssa A-virus, variantti, nukleiinihappo (kval) |  |  | Influenza virus A variant [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1116 | -pin1nho |  | 9246 | 100 |  | -Parainfluenssa 1-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1117 | -pin2nho |  | 9244 | 100 |  | -Parainfluenssa 2-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1118 | -pin3nho |  | 9240 | 100 |  | -Parainfluenssa 3-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1119 | -pin4nho |  | 9240 | 100 |  | -Parainfluenssa 4-virus, nukleiinihappo (kval) |  |  | Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1120 | -pinfnho |  | 5018 | 100 |  |  |  |  | Parainfluenza virus RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1121 | -rinonho |  | 7403 | 100 |  | -Rinovirus, nukleiinihappo (kval) |  |  | Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1122 | -tintnho |  | 595 | 100 |  |  |  |  |  | FALSE |
+| 1123 | hinflnho |  | 745 | 100 |  |  |  |  |  | FALSE |
+| 1124 | inanho |  | 7494 | 100 |  |  |  |  | Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1125 | inbnho |  | 7494 | 100 |  |  |  |  | Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1126 | infanho |  | 12417 | 100 |  |  |  |  | Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1127 | infbnho |  | 34660 | 100 |  |  |  |  | Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1128 | infnho |  | 766 | 100 |  |  |  |  |  | FALSE |
+| 1129 | pin1nho |  | 4037 | 100 |  |  |  |  | Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1130 | pin2nho |  | 4036 | 100 |  |  |  |  | Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1131 | pin3nho |  | 4036 | 100 |  |  |  |  | Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1132 | pin4nho |  | 4034 | 100 |  |  |  |  | Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
+| 1133 | rinonho |  | 245 | 100 |  |  |  |  | Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection | FALSE |
 

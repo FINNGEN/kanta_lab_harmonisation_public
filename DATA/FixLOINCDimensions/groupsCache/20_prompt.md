@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,206 +21,269 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 20.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Campylobacter | Campylobacter sp | 0.798 | 2 | 22,946 |
-| Cryptococcus neoformans/gattii | Cryptococcus gattii+neoformans | 0.860 | 0 | 0 |
-| Cryptococcus neoformans/gattii | Cryptococcus gattii | 0.828 | 0 | 0 |
-| Cryptococcus neoformans/gattii | Cryptococcus neoformans | 0.798 | 0 | 0 |
-| Cryptococcus neoformans/gattii | Cryptococcus gattii+neoformans DNA | 0.770 | 0 | 0 |
-| Cytomegalovirus | Cytomegalovirus | 1.000 | 0 | 0 |
-| Cytomegalovirus | Cytomegalovirus Ab | 0.788 | 1 | 83 |
-| Cytomegalovirus | Cytomegalovirus Ag | 0.778 | 0 | 0 |
-| Cytomegalovirus | Cytomegalovirus DNA | 0.777 | 8 | 64,352 |
-| Cytomegalovirus | Cytomegalovirus IgG | 0.772 | 6 | 29,759 |
-| EKG monitoring for atrial fibrillation | (none scored >= 0.75) |  |  |  |
-| EKG study | EKG study | 1.000 | 10 | 506,024 |
-| EKG study | EEG study | 0.785 | 0 | 0 |
-| EKG study | Cardiac stress EKG study | 0.767 | 0 | 0 |
-| Escherichia coli enteroaggregative | Escherichia coli enteroaggregative | 1.000 | 0 | 0 |
-| Escherichia coli enteroaggregative | Escherichia coli enteroaggregative DNA | 0.858 | 0 | 0 |
-| Escherichia coli enteroaggregative | Escherichia coli enteroaggregative pAA plasmid aggR+aatA genes | 0.792 | 0 | 0 |
-| Escherichia coli enteroaggregative | Escherichia coli enteropathogenic | 0.783 | 0 | 0 |
-| Escherichia coli enteroaggregative | Escherichia coli enteroaggregative astA gene | 0.758 | 0 | 0 |
-| Escherichia coli enterohemorrhagic | Escherichia coli enteropathogenic | 0.807 | 0 | 0 |
-| Escherichia coli enterohemorrhagic | Escherichia coli enteroinvasive | 0.786 | 0 | 0 |
-| Escherichia coli enterohemorrhagic | Escherichia coli enterotoxic | 0.756 | 0 | 0 |
-| Escherichia coli enteropathogenic | Escherichia coli enteropathogenic | 1.000 | 0 | 0 |
-| Escherichia coli enteropathogenic | Escherichia coli enteroinvasive | 0.835 | 0 | 0 |
-| Escherichia coli enteropathogenic | Escherichia coli enteropathogenic DNA | 0.828 | 0 | 0 |
-| Escherichia coli enteropathogenic | Escherichia coli enterotoxic | 0.790 | 0 | 0 |
-| Escherichia coli enteropathogenic | Escherichia coli enterotoxigenic | 0.786 | 0 | 0 |
-| Escherichia coli enterotoxigenic | Escherichia coli enterotoxigenic | 1.000 | 0 | 0 |
-| Escherichia coli enterotoxigenic | Escherichia coli enterotoxigenic heat-labile toxin | 0.845 | 0 | 0 |
-| Escherichia coli enterotoxigenic | Escherichia coli enterotoxic | 0.830 | 0 | 0 |
-| Escherichia coli enterotoxigenic | Escherichia coli enterotoxigenic DNA | 0.826 | 0 | 0 |
-| Escherichia coli enterotoxigenic | Escherichia coli enteropathogenic | 0.786 | 0 | 0 |
-| Escherichia coli K1 | Escherichia coli K1 | 1.000 | 0 | 0 |
-| Escherichia coli K1 | Escherichia coli K1 Ag | 0.796 | 0 | 0 |
-| Herpes simplex virus 1 | Herpes simplex virus 1 | 1.000 | 0 | 0 |
-| Herpes simplex virus 1 | Herpes simplex virus | 0.867 | 1 | 1,154 |
-| Herpes simplex virus 1 | Herpes simplex virus 1 and 2 | 0.843 | 0 | 0 |
-| Herpes simplex virus 1 | Herpes simplex virus 1+2 | 0.810 | 0 | 0 |
-| Herpes simplex virus 1 | Herpes simplex virus 2 | 0.798 | 0 | 0 |
-| Herpes simplex virus 2 | Herpes simplex virus 2 | 1.000 | 0 | 0 |
-| Herpes simplex virus 2 | Herpes simplex virus | 0.784 | 1 | 1,154 |
-| Herpes simplex virus 2 | Herpes simplex virus 2 Ab | 0.777 | 0 | 0 |
-| Herpes simplex virus 2 | Herpes simplex virus 2 Ag | 0.770 | 0 | 0 |
-| Herpes simplex virus 2 | Herpes simplex virus 1 and 2 | 0.766 | 0 | 0 |
-| Listeria monocytogenes | Listeria monocytogenes | 1.000 | 0 | 0 |
-| Neisseria meningitidis | Neisseria meningitidis | 1.000 | 0 | 0 |
-| Neisseria meningitidis | Neisseria meningitidis type | 0.815 | 0 | 0 |
-| Neisseria meningitidis | Neisseria meningitidis serogroup | 0.810 | 0 | 0 |
-| Neisseria meningitidis | Neisseria meningitdis B | 0.808 | 0 | 0 |
-| Neisseria meningitidis | Neisseria meningitidis serogroup A | 0.806 | 0 | 0 |
-| Plesiomonas shigelloides | Plesiomonas shigelloides | 1.000 | 0 | 0 |
-| Salmonella | Salmonella sp | 0.781 | 3 | 41,500 |
-| Salmonella | Salmonella spp | 0.778 | 0 | 0 |
-| Shigella/Escherichia coli enteroinvasive | Escherichia coli enteroinvasive | 0.824 | 0 | 0 |
-| Streptococcus agalactiae | Streptococcus agalactiae | 1.000 | 1 | 22,188 |
-| Streptococcus agalactiae | Streptococcus agalactiae Ag | 0.799 | 1 | 10,143 |
-| Streptococcus agalactiae | Mycoplasma agalactiae | 0.785 | 0 | 0 |
-| Streptococcus agalactiae | Streptococcus agalactiae DNA | 0.753 | 0 | 0 |
-| Streptococcus pneumoniae | Streptococcus pneumoniae | 1.000 | 0 | 0 |
-| Varicella zoster virus | Varicella zoster virus | 1.000 | 0 | 0 |
-| Varicella zoster virus | Varicella zoster virus strain | 0.857 | 0 | 0 |
-| Varicella zoster virus | Varicella zoster virus DNA | 0.830 | 2 | 5,511 |
-| Varicella zoster virus | Varicella zoster virus identified | 0.819 | 0 | 0 |
-| Varicella zoster virus | Varicella zoster virus status | 0.810 | 0 | 0 |
-| Yersinia enterocolitica | Yersinia enterocolitica | 1.000 | 0 | 0 |
-| Yersinia enterocolitica | Yersinia enterocolitica Ab | 0.831 | 0 | 0 |
-| Yersinia enterocolitica | Yersinia enterocolitica biotype | 0.809 | 0 | 0 |
-| Yersinia enterocolitica | Yersinia enterocolitica O:9 | 0.807 | 0 | 0 |
-| Yersinia enterocolitica | Yersinia pseudotuberculosis | 0.798 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Finding | Finding | 1.000 | 52 | 1,337,646 |
-| Presence or Identity | Presence or Identity | 1.000 | 79 | 1,946,967 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| 12 lead | (none scored >= 0.75) |  |  |  |
-| 12 lead with interpretation | (none scored >= 0.75) |  |  |  |
-| Monitor | (none scored >= 0.75) |  |  |  |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with probe detection | 1.000 | 115 | 2,413,483 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with non-probe detection | 0.864 | 1 | 7,786 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5a | 0.770 | 0 | 0 |
-| Nucleic acid amplification with probe detection | Probe with amplification | 0.759 | 2 | 14,699 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5b | 0.754 | 0 | 0 |
-
-### system
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| ^Patient | ^Patient | 1.000 | 20 | 396,517 |
-| Cerebral spinal fluid | Cerebral spinal fluid | 1.000 | 150 | 183,922 |
-| Stool | Stool | 1.000 | 42 | 537,967 |
-| Stool | Stool.wet | 0.760 | 0 | 0 |
-| Stool | Stool^Patient.gastrointestinal | 0.756 | 0 | 0 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 1469649 | Campylobacter sp DNA [Presence] in Stool by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 1616933 | Salmonella sp DNA [Presence] in Stool by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 1988730 | Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 1988744 | Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 1988899 | Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 3011927 | Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 3016894 | Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  1 |     2,631 |
+| 3023671 | Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 3033564 | Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 3044889 | 12 lead EKG panel | 1.000 |  |  2 | 1,163,408 |
+| 37020818 | Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 42868767 | Plesiomonas shigelloides DNA [Presence] in Stool by NAA with probe detection | 1.000 |  |  0 |         0 |
+| 3008733 | Herpes simplex virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.989 |  |  1 |     2,923 |
+| 3002781 | Herpes simplex virus 1+2 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.981 |  |  0 |         0 |
+| 21493357 | Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.978 |  |  0 |         0 |
+| 21493350 | Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.977 |  |  0 |         0 |
+| 21493354 | Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.976 |  |  0 |         0 |
+| 21493351 | Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.975 |  |  0 |         0 |
+| 21493352 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.973 |  |  0 |         0 |
+| 21493356 | Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.972 |  |  0 |         0 |
+| 21493353 | Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.970 |  |  0 |         0 |
+| 42870368 | Campylobacter sp DNA.diarrheagenic [Presence] in Stool by NAA with probe detection | 0.970 |  |  0 |         0 |
+| 21493466 | Plesiomonas shigelloides DNA [Presence] in Stool by NAA with non-probe detection | 0.969 |  |  1 |     7,786 |
+| 21493470 | Yersinia enterocolitica DNA [Presence] in Stool by NAA with non-probe detection | 0.968 |  |  0 |         0 |
+| 3966289 | Campylobacter jejuni DNA [Presence] in Stool by NAA with probe detection | 0.967 |  |  0 |         0 |
+| 21493355 | Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.965 |  |  0 |         0 |
+| 3965358 | Campylobacter coli DNA [Presence] in Stool by NAA with probe detection | 0.960 |  |  0 |         0 |
+| 1988643 | Escherichia coli K1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.957 |  |  0 |         0 |
+| 1469726 | Herpes virus 7 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.953 |  |  0 |         0 |
+| 3966224 | Campylobacter upsaliensis DNA [Presence] in Stool by NAA with probe detection | 0.950 |  |  0 |         0 |
+| 1469822 | Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection | 0.948 |  |  0 |         0 |
+| 1092255 | Campylobacter sp DNA [Identifier] in Stool by NAA with probe detection | 0.948 |  |  0 |         0 |
+| 40765218 | Herpes virus 6A DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.946 |  |  0 |         0 |
+| 3046896 | Herpes virus 6 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.945 |  |  2 |     1,738 |
+| 1091300 | Yersinia enterocolitica DNA [Presence] in Specimen by NAA with probe detection | 0.940 |  |  0 |         0 |
+| 1092359 | Campylobacter sp DNA [Presence] in Specimen by NAA with probe detection | 0.940 |  |  0 |         0 |
+| 1988916 | Cryptococcus gattii+neoformans DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.940 |  |  0 |         0 |
+| 21492665 | Escherichia coli Stx2 toxin stx2 gene [Presence] in Stool by NAA with probe detection | 0.938 |  |  0 |         0 |
+| 40765219 | Herpes virus 6B DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.938 |  |  0 |         0 |
+| 1616645 | Escherichia coli enteroaggregative DNA [Presence] in Stool by NAA with probe detection | 0.938 |  |  0 |         0 |
+| 1616308 | Escherichia coli enteropathogenic DNA [Presence] in Stool by NAA with probe detection | 0.937 |  |  0 |         0 |
+| 21493348 | Escherichia coli K1 DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.936 |  |  0 |         0 |
+| 21492664 | Escherichia coli Stx1 toxin stx1 gene [Presence] in Stool by NAA with probe detection | 0.936 |  |  0 |         0 |
+| 1616367 | Campylobacter coli+jejuni+upsaliensis DNA [Presence] in Stool by NAA with probe detection | 0.935 |  |  0 |         0 |
+| 36304546 | Varicella zoster virus DNA [Presence] in Body fluid by NAA with probe detection | 0.935 |  |  0 |         0 |
+| 3032674 | Salmonella sp DNA [Presence] in Specimen by NAA with probe detection | 0.933 |  |  0 |         0 |
+| 42868716 | Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection | 0.929 |  |  1 |     8,148 |
+| 3042515 | Neisseria meningitidis DNA [Presence] in Blood by NAA with probe detection | 0.928 |  |  0 |         0 |
+| 21493558 | Escherichia coli enterotoxigenic eltA+estB genes [Presence] in Stool by NAA with probe detection | 0.928 |  |  0 |         0 |
+| 1175408 | Cryptococcus sp rRNA gene [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.926 |  |  0 |         0 |
+| 21493560 | Escherichia coli Stx1 and Stx2 toxin stx1+stx2 genes [Presence] in Stool by NAA with probe detection | 0.925 |  |  0 |         0 |
+| 21493467 | Salmonella enterica+bongori DNA [Presence] in Stool by NAA with non-probe detection | 0.924 |  |  0 |         0 |
+| 21492663 | Yersinia enterocolitica recN gene [Presence] in Stool by NAA with probe detection | 0.922 |  |  0 |         0 |
+| 3965777 | Cryptococcus neoformans DNA [Presence] in Specimen by NAA with probe detection | 0.922 |  |  0 |         0 |
+| 1989596 | Streptococcus pyogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.922 |  |  0 |         0 |
+| 21492661 | Salmonella sp rpoD gene [Presence] in Stool by NAA with probe detection | 0.921 |  |  0 |         0 |
+| 3030388 | Neisseria meningitidis DNA [Presence] in Specimen by NAA with probe detection | 0.921 |  |  0 |         0 |
+| 3966163 | Shigella sp DNA [Presence] in Stool by NAA with probe detection | 0.921 |  |  0 |         0 |
+| 649062 | Plesiomonas shigelloides and aeromonas sp DNA [Identifier] in Stool by NAA with probe detection | 0.920 |  |  0 |         0 |
+| 3000384 | Varicella zoster virus DNA [Presence] in Serum by NAA with probe detection | 0.919 |  |  0 |         0 |
+| 3005197 | Varicella zoster virus DNA [Presence] in Blood by NAA with probe detection | 0.918 |  |  0 |         0 |
+| 36303825 | Escherichia coli eaeA gene [Presence] in Stool by NAA with probe detection | 0.916 |  |  0 |         0 |
+| 36204312 | Varicella zoster virus DNA [Presence] in Amniotic fluid by NAA with probe detection | 0.915 |  |  0 |         0 |
+| 1761458 | Varicella zoster virus DNA [Log #/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.914 |  |  0 |         0 |
+| 3038874 | Streptococcus pneumoniae DNA [Presence] in Blood by NAA with probe detection | 0.914 |  |  0 |         0 |
+| 1617228 | Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection | 0.914 |  |  0 |         0 |
+| 36305298 | Varicella zoster virus DNA [Presence] in Aspirate by NAA with probe detection | 0.914 |  |  0 |         0 |
+| 3052840 | Varicella zoster virus DNA [#/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.914 |  |  0 |         0 |
+| 21493362 | Campylobacter coli+jejuni+upsaliensis DNA [Presence] in Stool by NAA with non-probe detection | 0.913 |  |  0 |         0 |
+| 21493559 | Salmonella sp invA+fliC genes [Presence] in Stool by NAA with probe detection | 0.911 |  |  0 |         0 |
+| 3012202 | Varicella zoster virus DNA [Presence] in Specimen by NAA with probe detection | 0.911 |  |  1 |     2,880 |
+| 1469633 | Shigella species+EIEC DNA [Presence] in Stool by NAA with probe detection | 0.909 |  |  0 |         0 |
+| 21492844 | Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with non-probe detection | 0.908 |  |  0 |         0 |
+| 21493883 | Salmonella sp spaO gene [Presence] in Stool by NAA with probe detection | 0.908 |  |  0 |         0 |
+| 40764129 | Campylobacter jejuni DNA [Presence] in Specimen by NAA with probe detection | 0.907 |  |  0 |         0 |
+| 21492842 | Escherichia coli enteropathogenic eae gene [Presence] in Stool by NAA with non-probe detection | 0.907 |  |  0 |         0 |
+| 21493347 | Cryptococcus gattii+neoformans DNA [Presence] in Cerebral spinal fluid by NAA with non-probe detection | 0.906 |  |  0 |         0 |
+| 3966743 | Escherichia coli enteroinvasive DNA [Presence] in Stool by NAA with probe detection | 0.905 |  |  0 |         0 |
+| 21492845 | Escherichia coli enterotoxigenic ltA+st1a+st1b genes [Presence] in Stool by NAA with non-probe detection | 0.905 |  |  0 |         0 |
+| 1617150 | Escherichia coli O157 DNA [Presence] in Stool by NAA with probe detection | 0.904 |  |  0 |         0 |
+| 1091086 | Streptococcus pneumoniae DNA [Presence] in Nasopharynx by NAA with probe detection | 0.904 |  |  0 |         0 |
+| 1259931 | Blastomyces sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.903 |  |  0 |         0 |
+| 3032699 | Streptococcus pneumoniae DNA [Presence] in Specimen by NAA with probe detection | 0.903 |  |  1 |     3,940 |
+| 1002168 | Neisseria meningitidis DNA [Presence] by NAA with probe detection in Positive blood culture | 0.903 |  |  0 |         0 |
+| 1617136 | Vibrio parahaemolyticus DNA [Presence] in Stool by NAA with probe detection | 0.902 |  |  0 |         0 |
+| 40764131 | Salmonella enterica DNA [Presence] in Specimen by NAA with probe detection | 0.902 |  |  0 |         0 |
+| 37020459 | Cryptococcus neoformans DNA [Presence] by NAA with probe detection in Positive blood culture | 0.901 |  |  0 |         0 |
+| 1470026 | Neisseria meningitidis DNA [Presence] in Body fluid by NAA with non-probe detection | 0.900 |  |  0 |         0 |
+| 1259979 | Histoplasma sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.900 |  |  0 |         0 |
+| 3043907 | Cytomegalovirus DNA [#/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.900 |  |  0 |         0 |
+| 1617553 | Streptococcus pneumoniae DNA [Presence] in Synovial fluid by NAA with non-probe detection | 0.898 |  |  0 |         0 |
+| 3048882 | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.895 | 1156 |  0 |         0 |
+| 3966671 | Aeromonas sp DNA [Presence] in Stool by NAA with probe detection | 0.895 |  |  0 |         0 |
+| 40764130 | Listeria monocytogenes DNA [Presence] in Specimen by NAA with probe detection | 0.894 |  |  0 |         0 |
+| 37020998 | Streptococcus pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.894 |  |  0 |         0 |
+| 648359 | Cytomegalovirus DNA [Log #/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.894 |  |  0 |         0 |
+| 647508 | Cytomegalovirus DNA [log units/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.894 |  |  0 |         0 |
+| 3965246 | Cytomegalovirus DNA [Units/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection | 0.893 |  |  0 |         0 |
+| 36303809 | Escherichia coli enterotoxigenic heat-labile toxin DNA [Presence] in Isolate by NAA with probe detection | 0.892 |  |  0 |         0 |
+| 1259632 | Coccidioides sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.892 |  |  0 |         0 |
+| 3031469 | Cytomegalovirus DNA [Presence] in Amniotic fluid by NAA with probe detection | 0.891 |  |  0 |         0 |
+| 37020949 | Neisseria meningitidis DNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.891 |  |  0 |         0 |
+| 36305353 | Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection | 0.890 |  |  0 |         0 |
+| 37021509 | Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture | 0.890 |  |  0 |         0 |
+| 1175573 | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | 0.887 |  |  0 |         0 |
+| 1091454 | Yersinia pseudotuberculosis complex DNA [Presence] in Specimen by NAA with probe detection | 0.887 |  |  0 |         0 |
+| 1091287 | Listeria sp DNA [Presence] in Specimen by NAA with probe detection | 0.887 |  |  0 |         0 |
+| 36203226 | Neisseria meningitidis DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.885 |  |  0 |         0 |
+| 44817210 | Neisseria meningitidis serogroup C DNA [Presence] in Specimen by NAA with probe detection | 0.882 |  |  0 |         0 |
+| 3966738 | Aeromonas hydrophila DNA [Presence] in Stool by NAA with probe detection | 0.882 |  |  0 |         0 |
+| 21492843 | Escherichia coli enteroaggregative pAA plasmid aggR+aatA genes [Presence] in Stool by NAA with non-probe detection | 0.881 |  |  0 |         0 |
+| 3965696 | Yersinia enterocolitica DNA [Presence] in Wound by NAA with probe detection | 0.877 |  |  0 |         0 |
+| 36305431 | Escherichia coli enterotoxigenic sta gene [Presence] in Isolate by NAA with probe detection | 0.872 |  |  0 |         0 |
+| 37020933 | Listeria monocytogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.871 |  |  0 |         0 |
+| 3001391 | Mycobacterium sp DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.861 |  |  0 |         0 |
+| 1175359 | Enterovirus RNA [Presence] in Stool by NAA with probe detection | 0.861 |  |  0 |         0 |
+| 1259880 | Pneumocystis jirovecii DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.861 |  |  0 |         0 |
+| 1091127 | Escherichia coli enterotoxigenic ltA+st1a+st1b genes [Presence] in Stool | 0.853 |  |  0 |         0 |
+| 3004245 | Escherichia coli K1 Ag [Presence] in Cerebral spinal fluid | 0.847 |  |  0 |         0 |
+| 3046567 | Escherichia coli O157:H7 Ag [Presence] in Stool | 0.842 |  |  0 |         0 |
+| 3006574 | Escherichia coli verotoxin 1 [Presence] in Stool | 0.829 |  |  0 |         0 |
+| 3025564 | Escherichia coli verotoxin 2 [Presence] in Stool | 0.827 |  |  0 |         0 |
+| 3005925 | Escherichia coli K1 Ag [Presence] in Cerebral spinal fluid by Latex agglutination | 0.819 |  |  0 |         0 |
+| 1091794 | Escherichia coli Stx1 and Stx2 toxin stx1+stx2 genes [Presence] in Stool | 0.801 |  |  0 |         0 |
+| 3040222 | Escherichia coli shiga-like toxin 2 [Presence] in Stool by Immunoassay | 0.800 |  |  0 |         0 |
+| 3041798 | Escherichia coli shiga-like toxin 1 [Presence] in Stool by Immunoassay | 0.800 |  |  0 |         0 |
+| 3020489 | Escherichia coli shiga-like toxin [Presence] in Stool by Immunoassay | 0.796 | 589 |  0 |         0 |
+| 3038330 | Escherichia coli enteroinvasive [Presence] in Isolate | 0.793 |  |  0 |         0 |
+| 42529409 | Escherichia coli O157 [Presence] in Stool by Culture | 0.785 |  |  0 |         0 |
+| 42529406 | Shigella sp [Presence] in Stool by Culture | 0.781 |  |  1 |    14,828 |
+| 3023207 | Escherichia coli O157:H7 [Presence] in Stool by Organism specific culture | 0.775 |  |  0 |         0 |
+| 42529405 | Escherichia coli shiga-like toxin 1+2 [Presence] in Stool by Immunoassay | 0.762 |  |  0 |         0 |
+| 3022318 | Heart rate rhythm | 0.761 |  |  0 |         0 |
+| 3007355 | Rhythm segment [Interpretation] by EKG | 0.748 |  |  0 |         0 |
+| 1091029 | Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Specimen | 0.740 |  |  0 |         0 |
+| 3020434 | Escherichia coli enteroinvasive identified in Stool by Organism specific culture | 0.733 |  |  0 |         0 |
+| 21490782 | Paced heart rate by EKG | 0.731 |  |  0 |         0 |
+| 3013078 | R-R interval by EKG | 0.728 |  |  0 |         0 |
+| 3016075 | Rhythm segment [Interpretation] Narrative by EKG | 0.726 |  |  0 |         0 |
+| 21490872 | Heart rate.beat-to-beat by EKG | 0.724 |  |  0 |         0 |
+| 3044421 | Heart rate rhythm palpation | 0.702 |  |  0 |         0 |
+| 3043216 | Cardiovascular physiologic and EKG assessment panel | 0.695 |  |  0 |         0 |
+| 3036311 | QRS complex Ventricles by EKG | 0.691 |  |  0 |         0 |
+| 3036520 | Type of Pacemaker by EKG | 0.689 |  |  0 |         0 |
+| 3023075 | Type of EKG leads | 0.684 |  |  0 |         0 |
+| 3035644 | Style Pacemaker lead by EKG | 0.680 |  |  0 |         0 |
+| 1988764 | Electromyography panel | 0.654 |  |  0 |         0 |
+| 1259654 | Diagnostic multisection transesophageal and cardioversion panel Heart | 0.652 |  |  0 |         0 |
+| 1988411 | Permanent pacemaker panel | 0.642 |  |  0 |         0 |
+| 3044933 | Cardiac 2D echo panel | 0.641 |  |  0 |         0 |
+| 3013512 | EKG study | 0.638 |  | 10 |   506,024 |
+| 1988318 | Temporary pacemaker panel | 0.628 |  |  0 |         0 |
+| 3044671 | QRS duration {Electrocardiograph lead} | 0.625 |  |  0 |         0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 109 | ehec(enterohemorraaginene.coli) |  | 1317 | 100 |  |  |  |  | Escherichia coli enterohemorrhagic | Presence or Identity |  |  | Nom | Point in time (spot) | FALSE |
-| 110 | ekg,12kytkentäälevossa |  | 6937 | 99.99 |  |  |  |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 111 | ekg,12kytkentäälevossa(asi |  | 8872 | 100 |  |  |  |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 112 | ekg,12kytkentäälevossa(asiakkaanottama) |  | 2232 | 100 |  |  |  |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 113 | ekg,12kytkentäälevossa(asiakkanottama) |  | 1287 | 100 |  |  |  |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 114 | ekg-12kytkentäälevossa |  | 2227 | 100 |  |  |  |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 115 | enteroaggregatiivinene.colinho |  | 229 | 100 |  |  |  |  | Escherichia coli enteroaggregative | Presence or Identity | Nucleic acid amplification with probe detection |  | Nom | Point in time (spot) | FALSE |
-| 116 | enterohemorraginene.colinho |  | 383 | 100 |  |  |  |  | Escherichia coli enterohemorrhagic | Presence or Identity | Nucleic acid amplification with probe detection |  | Nom | Point in time (spot) | FALSE |
-| 117 | enteropatogeeninene.colinho |  | 229 | 100 |  |  |  |  | Escherichia coli enteropathogenic | Presence or Identity | Nucleic acid amplification with probe detection |  | Nom | Point in time (spot) | FALSE |
-| 118 | enterotoksigeeninene.colinho |  | 383 | 100 |  |  |  |  | Escherichia coli enterotoxigenic | Presence or Identity | Nucleic acid amplification with probe detection |  | Nom | Point in time (spot) | FALSE |
-| 119 | etec(enterotoksigeeninene.coli) |  | 1317 | 100 |  |  |  |  | Escherichia coli enterotoxigenic | Presence or Identity |  |  | Nom | Point in time (spot) | FALSE |
-| 120 | f-campylobacterspp.(jejuni&coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Campylobacter | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 121 | f-ehec(enterohemorraaginene.coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Escherichia coli enterohemorrhagic | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 122 | f-etec(enterotoksigeeninene.coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Escherichia coli enterotoxigenic | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 123 | f-plesiomonasshigelloidesnukl.haponos. |  | 607 | 100 |  |  | Feces |  | Plesiomonas shigelloides | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 124 | f-salmonellaspp.nukl.haponos |  | 607 | 100 |  |  | Feces |  | Salmonella | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 125 | f-shigellaspp./eiec(enteroinvasiivinene.coli)nukl.haponos |  | 616 | 100 |  |  | Feces |  | Shigella/Escherichia coli enteroinvasive | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 126 | f-yersiniaenterocoliticanukl.haponos. |  | 607 | 100 |  |  | Feces |  | Yersinia enterocolitica | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Nom | Point in time (spot) | FALSE |
-| 127 | li-cryptococcusneoformans,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Cryptococcus neoformans/gattii | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 128 | li-cytomegalovirusnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Cytomegalovirus | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 129 | li-escherichiacolik1nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Escherichia coli K1 | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 130 | li-herpessimplex1,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Herpes simplex virus 1 | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 131 | li-herpessimplex2,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Herpes simplex virus 2 | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 132 | li-l.monocytogenesnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Listeria monocytogenes | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 133 | li-neisseriameningitidisnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Neisseria meningitidis | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 134 | li-streptococcusagalactiaenukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Streptococcus agalactiae | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 135 | li-streptococcuspneumoniaenukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Streptococcus pneumoniae | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 136 | li-varicella-zosternukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Varicella zoster virus | Presence or Identity | Nucleic acid amplification with probe detection | Cerebral spinal fluid | Nom | Point in time (spot) | FALSE |
-| 137 | pt-ekg,12kytkentälevossa |  | 243 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 138 | pt-ekg,12kytkentää6tk |  | 368 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 139 | pt-ekg,12kytkentääep-terveyskeskus |  | 206 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 140 | pt-ekg,12kytkentäälevossa | 1 | 55 | 0 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Nom | Procedure | FALSE |
-| 141 | pt-ekg,12kytkentäälevossa |  | 54957 | 99.91 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 142 | pt-ekg,12kytkentäälevossa(k-pks:n)(ko) |  | 272 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 143 | pt-ekg,12kytkentäälevossa(ot.tk:ssa) |  | 210 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 144 | pt-ekg,12kytkentäälevossa,omarekisteröintimuseen |  | 2847 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 145 | pt-ekg,12kytkentäälevossaosastolla |  | 193 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 146 | pt-ekg,12kytkentäälevossa␤ |  | 2419 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead | ^Patient | Doc | Study | FALSE |
-| 147 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg |  | 477 | 100 |  |  | Patient |  | EKG monitoring for atrial fibrillation | Finding | Monitor | ^Patient | Doc | Study | FALSE |
-| 148 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne |  | 625 | 100 |  |  | Patient |  | EKG monitoring for atrial fibrillation | Finding | Monitor | ^Patient | Doc | Study | FALSE |
-| 149 | pt-ekg,sisältäentietokoneanalyysin |  | 8257 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead with interpretation | ^Patient | Doc | Study | FALSE |
-| 150 | pt-ekg,sisältäentietokoneanalyysin(malmin)(pi) |  | 226 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead with interpretation | ^Patient | Doc | Study | FALSE |
-| 151 | pt-ekg,sisältäätietokoneanalyysin |  | 4178 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead with interpretation | ^Patient | Doc | Study | FALSE |
-| 152 | pt-ekgsis[lt[entietokoneanalyysin |  | 305 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead with interpretation | ^Patient | Doc | Study | FALSE |
-| 153 | pt-ekgsisältäentietokoneanalyysin |  | 347 | 100 |  |  | Patient |  | EKG study | Finding | 12 lead with interpretation | ^Patient | Doc | Study | FALSE |
-| 154 | shigella/eiec(enteroinvasiivinene.coli) |  | 1318 | 100 |  |  |  |  | Shigella/Escherichia coli enteroinvasive | Presence or Identity |  |  | Nom | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 109 | ehec(enterohemorraaginene.coli) |  | 1317 | 100 |  |  |  |  | Escherichia coli.enterohemorrhagic [Presence] in Stool | FALSE |
+| 110 | ekg,12kytkentäälevossa |  | 6937 | 99.99 |  |  |  |  | 12 lead EKG panel | TRUE |
+| 111 | ekg,12kytkentäälevossa(asi |  | 8872 | 100 |  |  |  |  | 12 lead EKG panel | TRUE |
+| 112 | ekg,12kytkentäälevossa(asiakkaanottama) |  | 2232 | 100 |  |  |  |  | 12 lead EKG panel | TRUE |
+| 113 | ekg,12kytkentäälevossa(asiakkanottama) |  | 1287 | 100 |  |  |  |  | 12 lead EKG panel | TRUE |
+| 114 | ekg-12kytkentäälevossa |  | 2227 | 100 |  |  |  |  | 12 lead EKG panel | TRUE |
+| 115 | enteroaggregatiivinene.colinho |  | 229 | 100 |  |  |  |  | Escherichia coli.enteroaggregative RNA+DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 116 | enterohemorraginene.colinho |  | 383 | 100 |  |  |  |  | Escherichia coli.enterohemorrhagic shiga-like toxin gene [Presence] in Stool by NAA with probe detection | FALSE |
+| 117 | enteropatogeeninene.colinho |  | 229 | 100 |  |  |  |  | Escherichia coli.enteropathogenic RNA+DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 118 | enterotoksigeeninene.colinho |  | 383 | 100 |  |  |  |  | Escherichia coli.enterotoxigenic heat-labile+heat-stable enterotoxin gene [Presence] in Stool by NAA with probe detection | FALSE |
+| 119 | etec(enterotoksigeeninene.coli) |  | 1317 | 100 |  |  |  |  | Escherichia coli.enterotoxigenic [Presence] in Stool | FALSE |
+| 120 | f-campylobacterspp.(jejuni&coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Campylobacter sp DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 121 | f-ehec(enterohemorraaginene.coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Escherichia coli.enterohemorrhagic shiga-like toxin gene [Presence] in Stool by NAA with probe detection | FALSE |
+| 122 | f-etec(enterotoksigeeninene.coli)nukl.haponos |  | 607 | 100 |  |  | Feces |  | Escherichia coli.enterotoxigenic heat-labile+heat-stable enterotoxin gene [Presence] in Stool by NAA with probe detection | FALSE |
+| 123 | f-plesiomonasshigelloidesnukl.haponos. |  | 607 | 100 |  |  | Feces |  | Plesiomonas shigelloides DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 124 | f-salmonellaspp.nukl.haponos |  | 607 | 100 |  |  | Feces |  | Salmonella sp DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 125 | f-shigellaspp./eiec(enteroinvasiivinene.coli)nukl.haponos |  | 616 | 100 |  |  | Feces |  | Shigella sp+Escherichia coli.enteroinvasive ipaH gene [Presence] in Stool by NAA with probe detection | FALSE |
+| 126 | f-yersiniaenterocoliticanukl.haponos. |  | 607 | 100 |  |  | Feces |  | Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection | FALSE |
+| 127 | li-cryptococcusneoformans,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Cryptococcus neoformans DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 128 | li-cytomegalovirusnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 129 | li-escherichiacolik1nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Escherichia coli K1 antigen gene [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 130 | li-herpessimplex1,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 131 | li-herpessimplex2,nukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 132 | li-l.monocytogenesnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 133 | li-neisseriameningitidisnukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 134 | li-streptococcusagalactiaenukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 135 | li-streptococcuspneumoniaenukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 136 | li-varicella-zosternukl.haponos. |  | 129 | 100 |  |  | Cerebrospinal fluid |  | Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | FALSE |
+| 137 | pt-ekg,12kytkentälevossa |  | 243 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 138 | pt-ekg,12kytkentää6tk |  | 368 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 139 | pt-ekg,12kytkentääep-terveyskeskus |  | 206 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 140 | pt-ekg,12kytkentäälevossa | 1 | 55 | 0 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 141 | pt-ekg,12kytkentäälevossa |  | 54957 | 99.91 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 142 | pt-ekg,12kytkentäälevossa(k-pks:n)(ko) |  | 272 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 143 | pt-ekg,12kytkentäälevossa(ot.tk:ssa) |  | 210 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 144 | pt-ekg,12kytkentäälevossa,omarekisteröintimuseen |  | 2847 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 145 | pt-ekg,12kytkentäälevossaosastolla |  | 193 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 146 | pt-ekg,12kytkentäälevossa␤ |  | 2419 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 147 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg |  | 477 | 100 |  |  | Patient |  | Rhythm EKG | TRUE |
+| 148 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne |  | 625 | 100 |  |  | Patient |  | Rhythm EKG | TRUE |
+| 149 | pt-ekg,sisältäentietokoneanalyysin |  | 8257 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 150 | pt-ekg,sisältäentietokoneanalyysin(malmin)(pi) |  | 226 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 151 | pt-ekg,sisältäätietokoneanalyysin |  | 4178 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 152 | pt-ekgsis[lt[entietokoneanalyysin |  | 305 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 153 | pt-ekgsisältäentietokoneanalyysin |  | 347 | 100 |  |  | Patient |  | 12 lead EKG panel | TRUE |
+| 154 | shigella/eiec(enteroinvasiivinene.coli) |  | 1318 | 100 |  |  |  |  | Shigella sp+Escherichia coli.enteroinvasive [Presence] in Stool | FALSE |
 

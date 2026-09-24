@@ -1,13 +1,11 @@
 [System Prompt]
 You are a LOINC mapping expert with deep knowledge of the Finnish national laboratory coding system (Laboratoriotutkimusnimikkeistö, maintained by Kuntaliitto / Kodistopalvelu) and of the OMOP CDM representation of LOINC.
 
-An earlier pass already inferred the six LOINC axes for each of these local Finnish lab codes. Your task is **not** to redo that work. It is to **correct the axis labels so they are real OMOP vocabulary terms**, using a shortlist of genuine candidates retrieved for each value.
+An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-# Why this pass exists
+Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
-The earlier pass wrote each axis as free text. Measured against curated Finnish mappings, most values were real OMOP terms but the wrong one, and `has_component` in particular drifted off the controlled vocabulary entirely — roughly three quarters of its mismatches were near-miss paraphrases that do not exist anywhere in OMOP, e.g. `Transglutaminase IgA Ab` where OMOP has `Tissue Transglutaminase IgA`, or `gamma-Glutamyl transferase` where OMOP has `Gamma glutamyl transferase`.
-
-A label that is one character off is worthless downstream: the mapping joins on exact axis values, so a near-miss fails just as hard as nonsense. Your job is to land each axis on the exact OMOP string.
+You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
 
 # The Finnish laboratory coding system
 
@@ -23,388 +21,787 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 
 # What you are given
 
-**The group table** — a markdown table, one row per local lab test/unit combination, with the columns:
+**The candidate table** — real OMOP LOINC concepts, found by running every guessed name in this group through a semantic search over the LOINC vocabulary and pooling the results. The candidates are pooled and deduplicated **across the whole group**, so a concept retrieved by one row's guess is offered to every row: sibling codes in a group are near-identical strings, and the right concept for one row is often the one another row's guess found. Columns:
+
+- `omop_concept_id` — the id to return. Copy it digit for digit.
+- `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
+- `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
+- `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
+- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
+
+**The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
 - `UNIT` — the recorded unit; may be empty.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single evidence for what a test really measures: a "sodium" code whose deciles read 0.32-0.40 is not sodium.
+- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `has_component`, `has_property`, `has_method`, `has_system` — the **current, possibly wrong** axis values from the earlier pass.
-- `has_scale_type`, `has_time_aspect`, `is_panel` — already drawn from closed lists in the earlier pass. Carry them through unchanged unless a row is plainly contradictory.
-
-**The candidate tables** — one markdown table per free-text axis, listing for each distinct current value in this group the closest real OMOP terms from a semantic search over the LOINC vocabulary. Columns:
-
-- `current` — the value the earlier pass produced. It repeats down the rows: every row with the same `current` is an alternative for that one value.
-- `possible fix` — a real OMOP term you may replace it with. `(none scored >= ...)` means the search found nothing close enough, so that value has no suggested replacement.
-- `score` — semantic similarity between `current` and `possible fix`, 0 to 1. **A score of 1.000 does NOT mean the two strings are identical** — the search is case-insensitive, so `Mass Fraction` scores 1.000 against the real OMOP term `Mass fraction`. Always compare the two strings character for character yourself.
-- `n_codes` / `n_events` — how many curated Finnish lab codes use that term, and how many records they cover. **This is usage in Finland, not correctness.** Use it only to break ties between candidates that fit the evidence equally well; never to override what the row's own evidence says.
+- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
+- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
 
 # How to decide
 
-For each row and each of the four axes:
+For each row:
 
-1. **If `possible fix` is character-for-character identical to `current`, keep it.** It is already an exact OMOP term; do not "improve" it. But if a row scores 1.000 while the two strings differ in any way — capitalisation, punctuation, spacing — **take the `possible fix`**: that column holds the real OMOP spelling and `current` does not. `Mass Fraction` must become `Mass fraction`.
-2. **Otherwise pick the candidate that the row's own evidence supports** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix/suffix meanings. Prefer the exact OMOP spelling of the concept the code actually denotes.
-3. **Where two candidates fit equally**, prefer the one with higher `n_codes`/`n_events` — Finland's established usage.
-4. **If no candidate is right, leave the axis empty.** An empty axis is a correct, useful answer: it says "not knowable". A confidently wrong exact term is worse than nothing, because downstream code cannot tell it from a verified one.
-5. **Never invent a value that is not in the candidate list.** The whole point of this pass is that only real OMOP terms survive. The one exception: if an axis is currently empty and the evidence genuinely supports no value, leave it empty.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
+3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
+   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
+   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+
+   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **`has_system` was the worst axis in the earlier pass** (about 29% agreement). The recurring error is splitting `Serum or Plasma` into a bare `Serum` or `Plasma`. LOINC uses the combined `Serum or Plasma` for most chemistry, and only a genuinely serum-specific or plasma-specific test takes the narrow term. Let the code decide: an explicit `S` prefix means serum, `P` means plasma, and an ambiguous or absent prefix on a routine chemistry test usually means `Serum or Plasma`. Fasting is not part of the system: `fS` is still serum.
-- **`has_component` drifts most.** Take the candidate's exact spelling, including its capitalisation and word order (`Gamma glutamyl transferase`, not `gamma-Glutamyl transferase`).
-- **`has_method` is optional by design** and empty for most chemistry. If the earlier pass invented a method the code does not state, clear it.
-- **`has_property`** follows the unit and the decile magnitude, not the analyte name: `g/l`, `mg/l`, `ug/l` are `Mass Concentration`; `mol/l`, `mmol/l`, `umol/l`, `nmol/l` are `Substance Concentration`; `U/l` is `Catalytic Concentration`.
-- Never use the OMOP placeholder values `-`, `*` or `XXX`; leave the axis empty instead.
+- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
+- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
+- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
 
 # Output
 
-Return one entry per input row, with `row_id` echoed exactly and all seven fields. Return an entry for EVERY row, including ones you change nothing on — carrying a value through unchanged is a valid answer.
+Return one entry per input row, with `row_id` echoed exactly, and:
 
-Also return a short `reflection` (a few sentences, markdown) on THIS group: which corrections you made and why, where the candidate lists were unhelpful or missing the right term, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
+- `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
+- `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
+- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Return an entry for EVERY row, including ones you leave unmapped.
+
+Also return a short `reflection` (a few sentences, markdown) on THIS group: which rows you could map and which you could not, where the candidate list was missing the concept you knew was right, where the earlier pass's guess sent the search astray, and anything about the data or this process that should improve. Be concrete about the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
 Here is group 37.
 
-## Candidate OMOP terms for the values used in this group
+## Candidate OMOP concepts for this group
 
-### component
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Amphetamine and Methamphetamine enantiomers | (none scored >= 0.75) |  |  |  |
-| Bacteria | Bacteria | 1.000 | 32 | 3,027,518 |
-| Base excess | Base excess | 1.000 | 21 | 638,655 |
-| Base excess | Base excess^^standard | 0.806 | 0 | 0 |
-| Bone density study | Bone density | 0.809 | 0 | 0 |
-| Bone density study | Bone density quantitative ultrasound study | 0.800 | 0 | 0 |
-| C reactive protein | C reactive protein | 1.000 | 197 | 6,881,941 |
-| Carbon dioxide | Carbon dioxide | 1.000 | 19 | 766,557 |
-| Casts | Casts | 1.000 | 20 | 419,520 |
-| Casts | Casts panel | 0.809 | 0 | 0 |
-| Casts | Casts type not specified | 0.758 | 0 | 0 |
-| CD4+ T-lymphocytes/T-lymphocytes | (none scored >= 0.75) |  |  |  |
-| CD8+ T-lymphocytes/T-lymphocytes | CD8 cells | 0.754 | 0 | 0 |
-| Chromosome analysis | Chromosome analysis | 1.000 | 0 | 0 |
-| Chromosome analysis | Chromosome analysis panel | 0.855 | 4 | 3,505 |
-| Chromosome analysis | Chromosome painting analysis | 0.805 | 0 | 0 |
-| Chromosome analysis | Chromosome analysis.metaphase panel | 0.801 | 0 | 0 |
-| Chromosome analysis | Chromosome analysis.interphase | 0.792 | 1 | 927 |
-| Collagen type I beta-carboxyterminal telopeptide | Collagen crosslinked C-telopeptide | 0.811 | 3 | 1,772 |
-| Collagen type I beta-carboxyterminal telopeptide | Collagen crosslinked N-telopeptide | 0.795 | 2 | 1,030 |
-| Collagen type I beta-carboxyterminal telopeptide | Procollagen type I.N-terminal propeptide | 0.785 | 2 | 3,659 |
-| Creatinine | Creatinine | 1.000 | 80 | 9,559,920 |
-| Echocardiography study | Cardiac stress echo study | 0.767 | 0 | 0 |
-| Epithelial cells | Epithelial cells | 1.000 | 24 | 278,115 |
-| Epithelial cells | Epithelial cells/Cells | 0.887 | 0 | 0 |
-| Epithelial cells | Epithelial cells.squamous | 0.792 | 4 | 227,680 |
-| Epithelial cells | Epithelial cells.squamous/Cells | 0.790 | 0 | 0 |
-| Epithelial cells | Epithelial cells.ciliated | 0.775 | 0 | 0 |
-| Epstein-Barr virus DNA | Epstein-Barr Virus DNA | 1.000 | 0 | 0 |
-| Epstein-Barr virus DNA | Epstein Barr virus DNA | 0.966 | 5 | 25,871 |
-| Epstein-Barr virus DNA | Epstein Barr virus DNA panel | 0.816 | 0 | 0 |
-| Epstein-Barr virus DNA | Cytomegalovirus+Epstein Barr virus DNA | 0.814 | 0 | 0 |
-| Epstein-Barr virus DNA | Epstein-Barr Virus | 0.806 | 0 | 0 |
-| Erythrocytes | Erythrocytes | 1.000 | 64 | 12,187,960 |
-| Fetal DNA | Cell-free DNA.fetal | 0.804 | 0 | 0 |
-| Fetal DNA | Cell-free DNA | 0.797 | 0 | 0 |
-| Glucose | Glucose | 1.000 | 116 | 2,411,012 |
-| Gram negative rod multi-drug resistant | Multiple drug resistant gram negative organism | 0.807 | 0 | 0 |
-| Gram negative rod resistant | Gram negative bacterial resistance panel | 0.775 | 0 | 0 |
-| Hemoglobin | Hemoglobin | 1.000 | 130 | 30,658,802 |
-| Hemoglobin/Reticulocyte | Reticulocyte - RBC Hemoglobin | 0.823 | 0 | 0 |
-| Hemoglobin/Reticulocyte | Reticulocytes/Erythrocytes | 0.762 | 3 | 135,278 |
-| Hepatitis C virus RNA | Hepatitis C virus RNA | 1.000 | 7 | 9,029 |
-| Hepatitis C virus RNA | Hepatitis C virus rRNA | 0.901 | 0 | 0 |
-| Hepatitis C virus RNA | Hepatitis C virus DNA | 0.886 | 0 | 0 |
-| Hepatitis C virus RNA | Hepatitis A virus RNA | 0.856 | 0 | 0 |
-| Hepatitis C virus RNA | Hepatitis B virus RNA | 0.851 | 0 | 0 |
-| Histology study | Histology | 0.817 | 0 | 0 |
-| Histology study | Histology type | 0.753 | 0 | 0 |
-| HIV 1+2 Ag+Ab | HIV 1+2 Ab | 0.929 | 2 | 231 |
-| HIV 1+2 Ag+Ab | HIV 1+2 Ab+HIV1 p24 Ag | 0.927 | 1 | 776 |
-| HIV 1+2 Ag+Ab | HIV 1 Ab+Ag | 0.903 | 0 | 0 |
-| HIV 1+2 Ag+Ab | HIV 1+2 | 0.902 | 0 | 0 |
-| HIV 1+2 Ag+Ab | HIV 1+2 Ab and HIV1 p24 Ag | 0.900 | 0 | 0 |
-| Human papillomavirus 16 DNA | Human papilloma virus 16 DNA | 0.988 | 0 | 0 |
-| Human papillomavirus 16 DNA | Human papilloma virus 16 and 18 DNA | 0.886 | 0 | 0 |
-| Human papillomavirus 16 DNA | Human papilloma virus 16+18 DNA | 0.882 | 0 | 0 |
-| Human papillomavirus 16 DNA | Human papilloma virus 16 | 0.877 | 0 | 0 |
-| Human papillomavirus 16 DNA | Human papilloma virus 16+18+31+33+35+45+51+52+56 DNA | 0.851 | 0 | 0 |
-| Human papillomavirus 18 DNA | Human papilloma virus 18 DNA | 0.986 | 0 | 0 |
-| Human papillomavirus 18 DNA | Human papilloma virus 18 | 0.881 | 0 | 0 |
-| Human papillomavirus 18 DNA | Human papilloma virus 16 and 18 DNA | 0.860 | 0 | 0 |
-| Human papillomavirus 18 DNA | Human papilloma virus 16+18 DNA | 0.858 | 0 | 0 |
-| Human papillomavirus 18 DNA | Human papilloma virus 58 DNA | 0.847 | 0 | 0 |
-| Human papillomavirus high risk types other than 16 and 18 DNA | Human papilloma virus 16 and 18 and 31+33+35+39+45+51+52+56+58+59+66+68 DNA | 0.778 | 0 | 0 |
-| Human papillomavirus high risk types other than 16 and 18 DNA | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68+70 DNA | 0.778 | 0 | 0 |
-| Human papillomavirus high risk types other than 16 and 18 DNA | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+68+70 DNA | 0.778 | 0 | 0 |
-| Human papillomavirus high risk types other than 16 and 18 DNA | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68 DNA | 0.775 | 0 | 0 |
-| Human papillomavirus high risk types other than 16 and 18 DNA | Human papilloma virus 16 and 18 DNA | 0.775 | 0 | 0 |
-| Immunophenotyping | Immunophenotyping | 1.000 | 0 | 0 |
-| Immunophenotyping | Immunophenotyping study | 0.876 | 0 | 0 |
-| Immunophenotyping | Leukemia and lymphoma immunophenotyping | 0.787 | 0 | 0 |
-| INR | INR | 1.000 | 88 | 2,812,069 |
-| Ketones | Ketones | 1.000 | 18 | 935,210 |
-| Leukocytes | Leukocytes | 1.000 | 126 | 12,024,159 |
-| Leukocytes | Leukocytes other | 0.773 | 0 | 0 |
-| Leukocytes | Abnormal leukocytes | 0.759 | 0 | 0 |
-| Minimal residual disease | Measurable residual disease analysis | 0.801 | 0 | 0 |
-| Minimal residual disease | Acute myeloid leukemia minimal residual disease | 0.779 | 0 | 0 |
-| Minimal residual disease | CLL minimal residual disease detection | 0.766 | 0 | 0 |
-| Minimal residual disease | Multiple myeloma minimal residual disease analysis | 0.756 | 0 | 0 |
-| Natriuretic peptide.B N-Terminal Prohormone | Natriuretic peptide.B prohormone N-Terminal | 0.964 | 59 | 390,817 |
-| Natriuretic peptide.B N-Terminal Prohormone | Natriuretic peptide B | 0.858 | 4 | 97,925 |
-| Natriuretic peptide.B N-Terminal Prohormone | Natriuretic peptide | 0.825 | 0 | 0 |
-| Neurophysiology study | Neurology study | 0.781 | 0 | 0 |
-| Nitrite | Nitrite | 1.000 | 10 | 919,087 |
-| Nitrite | Nitrate | 0.826 | 1 | 5,946 |
-| Nitrite | Nitrate+Nitrite | 0.801 | 0 | 0 |
-| NK cells/Leukocytes | (none scored >= 0.75) |  |  |  |
-| Osmolality | Osmolality | 1.000 | 0 | 0 |
-| Osmolality | Osmolarity | 0.908 | 0 | 0 |
-| Osmolality | Osmolality^baseline | 0.792 | 0 | 0 |
-| Osmolality | Osmolality.urine | 0.777 | 0 | 0 |
-| Osmolality | Protein/Osmolality | 0.755 | 0 | 0 |
-| Oxygen | Oxygen | 1.000 | 18 | 641,307 |
-| Peak expiratory flow monitoring | Peak expiratory flow | 0.838 | 0 | 0 |
-| Peak expiratory flow monitoring | Peak expiratory flow attempt | 0.795 | 0 | 0 |
-| pH | pH | 1.000 | 92 | 2,272,494 |
-| Potassium | Potassium | 1.000 | 61 | 7,976,034 |
-| Protein | Protein | 1.000 | 36 | 586,844 |
-| Pulmonary function test study | Pulmonary function study | 0.891 | 0 | 0 |
-| Pulmonary function test study | Pulmonary studies | 0.786 | 0 | 0 |
-| Pulmonary function test study | Pulmonary Function Tests | 0.785 | 0 | 0 |
-| Pulmonary function test study | Pulmonary function test method | 0.774 | 0 | 0 |
-| Sleep study | Polysomnography study | 0.793 | 5 | 69,533 |
-| Sodium | Sodium | 1.000 | 63 | 7,836,829 |
-| Staphylococcus aureus methicillin resistant | Staphylococcus species methicillin resistant | 0.895 | 0 | 0 |
-| Staphylococcus aureus methicillin resistant | Methicillin resistant Staphylococcus aureus | 0.879 | 6 | 153,221 |
-| Staphylococcus aureus methicillin resistant | Staphylococcus species methicillin resistant identified | 0.801 | 0 | 0 |
-| Staphylococcus aureus methicillin resistant | Methicillin susceptible Staphylococcus aureus | 0.791 | 0 | 0 |
-| Staphylococcus aureus methicillin resistant | Staphylococcus aureus and Methicillin Resistant Staphylococcus aureus | 0.777 | 0 | 0 |
-| Troponin T | Troponin T | 1.000 | 0 | 0 |
-| Troponin T | Troponin T.cardiac | 0.849 | 60 | 599,869 |
-| Troponin T | Troponin T.cardiac delta | 0.762 | 0 | 0 |
-| Troponin T | Troponin T.cardiac panel | 0.758 | 0 | 0 |
-| Troponin T | Troponin I.cardiac | 0.755 | 25 | 323,924 |
-| Yersinia species DNA | Yersinia sp DNA | 0.949 | 0 | 0 |
-| Yersinia species DNA | Yersinia enterocolitica DNA | 0.912 | 0 | 0 |
-| Yersinia species DNA | Yersinia pseudotuberculosis complex DNA | 0.850 | 0 | 0 |
-| Yersinia species DNA | Yersinia pestis DNA | 0.817 | 0 | 0 |
-| Yersinia species DNA | Yersina pestis DNA | 0.797 | 0 | 0 |
-
-### property
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Arbitrary Concentration | Arbitrary Concentration | 1.000 | 998 | 4,231,921 |
-| Arbitrary Concentration | Relative Arbitrary Concentration | 0.841 | 3 | 1,539 |
-| Finding | Finding | 1.000 | 52 | 1,337,646 |
-| Logarithmic scale | (none scored >= 0.75) |  |  |  |
-| Mass Concentration | Mass Concentration | 1.000 | 1,215 | 26,086,908 |
-| Mass Concentration | Mass concentration difference | 0.839 | 0 | 0 |
-| Mass Concentration | Mass Concentration Squared | 0.776 | 0 | 0 |
-| Mass Concentration | Mass or Substance Concentration | 0.774 | 0 | 0 |
-| Mass content | Mass Content | 1.000 | 11 | 184,195 |
-| Number Concentration | Number Concentration | 1.000 | 507 | 49,434,956 |
-| Number Fraction | Number Fraction | 1.000 | 482 | 8,246,054 |
-| Number Fraction | Decimal number fraction | 0.787 | 1 | 6,152 |
-| Number Fraction | Time Fraction | 0.765 | 0 | 0 |
-| Osmolality | Osmolality | 1.000 | 42 | 260,031 |
-| Osmolality | Osmolarity | 0.908 | 0 | 0 |
-| Partial pressure | Partial pressure | 1.000 | 44 | 1,505,621 |
-| Presence or Identity | Presence or Identity | 1.000 | 79 | 1,946,967 |
-| Presence or Threshold | Presence or Threshold | 1.000 | 382 | 10,296,466 |
-| Relative time | Relative time | 1.000 | 144 | 3,365,485 |
-| Substance Concentration | Substance Concentration | 1.000 | 1,643 | 51,490,057 |
-| Substance Concentration | Substance Concentration Squared | 0.845 | 0 | 0 |
-| Substance Concentration | Substance concentration difference | 0.841 | 0 | 0 |
-| Substance Concentration | Mass or Substance Concentration | 0.837 | 0 | 0 |
-| Substance Concentration | Mass Concentration | 0.772 | 1,215 | 26,086,908 |
-
-### method
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| Automated count | Automated count | 1.000 | 103 | 11,606,924 |
-| Cell block | (none scored >= 0.75) |  |  |  |
-| Chromatography | (none scored >= 0.75) |  |  |  |
-| Chromatography/Mass spectrometry | (none scored >= 0.75) |  |  |  |
-| Coagulation assay | Coagulation assay | 1.000 | 181 | 3,646,966 |
-| Dual-energy X-ray absorptiometry | Dual Energy X-ray Absorptiometry | 0.965 | 0 | 0 |
-| Dual-energy X-ray absorptiometry | Dual Energy X-ray Absorptiometry (DXA) | 0.902 | 0 | 0 |
-| Flow cytometry (FC) | Flow cytometry (FC) | 1.000 | 1 | 650 |
-| Immunoassay | Immunoassay | 1.000 | 164 | 322,567 |
-| Karyotype | (none scored >= 0.75) |  |  |  |
-| Microscopy | Microscopy | 1.000 | 0 | 0 |
-| Microscopy | Light microscopy | 0.815 | 13 | 53,782 |
-| Molecular genetics | Molecular genetics | 1.000 | 33 | 56,293 |
-| Molecular genetics | Medical genetics | 0.765 | 0 | 0 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with probe detection | 1.000 | 115 | 2,413,483 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification with non-probe detection | 0.864 | 1 | 7,786 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5a | 0.770 | 0 | 0 |
-| Nucleic acid amplification with probe detection | Probe with amplification | 0.759 | 2 | 14,699 |
-| Nucleic acid amplification with probe detection | Nucleic acid amplification using primer-probe set H5b | 0.754 | 0 | 0 |
-| Organism specific culture | Organism specific culture | 1.000 | 33 | 505,882 |
-| Test strip | Test strip | 1.000 | 79 | 4,294,769 |
-| Test strip | Test strip manual | 0.843 | 0 | 0 |
-| Test strip | Test strip automated | 0.836 | 3 | 687,408 |
-
-### system
-
-| current | possible fix | score | n_codes | n_events |
-|---|---|---|---|---|
-| ^Patient | ^Patient | 1.000 | 20 | 396,517 |
-| Blood | Blood | 1.000 | 1,135 | 91,968,350 |
-| Blood capillary | Blood capillary | 1.000 | 121 | 787,125 |
-| Blood capillary | Blood capillary^Fetus | 0.763 | 0 | 0 |
-| Blood venous | Blood venous | 1.000 | 125 | 1,808,160 |
-| Blood venous | Venous | 0.798 | 0 | 0 |
-| Blood venous | Blood cord venous | 0.772 | 4 | 294 |
-| Blood venous | Plasma venous | 0.752 | 0 | 0 |
-| Blood venous | Blood central venous | 0.750 | 1 | 38,175 |
-| Bone marrow | Bone marrow | 1.000 | 18 | 26,597 |
-| Nasopharynx | Nasopharynx | 1.000 | 7 | 93,361 |
-| Plasma | Plasma | 1.000 | 41 | 58,727 |
-| Plasma | Plasma or Blood | 0.752 | 0 | 0 |
-| Plasma capillary | Blood capillary | 0.751 | 121 | 787,125 |
-| Pus | Pus | 1.000 | 0 | 0 |
-| Red Blood Cells | Red Blood Cells | 1.000 | 100 | 38,219,166 |
-| Serum | Serum | 1.000 | 995 | 2,593,077 |
-| Serum or Plasma | Serum or Plasma | 1.000 | 2,776 | 78,327,842 |
-| Serum or Plasma | Serum or Plasma or Urine | 0.832 | 0 | 0 |
-| Serum or Plasma | Serum and Plasma | 0.819 | 0 | 0 |
-| Serum or Plasma | Serum, Plasma or Blood | 0.816 | 84 | 6,240,111 |
-| Serum or Plasma | Serum or Plasma and CSF | 0.792 | 4 | 1,187 |
-| Stool | Stool | 1.000 | 42 | 537,967 |
-| Stool | Stool.wet | 0.760 | 0 | 0 |
-| Stool | Stool^Patient.gastrointestinal | 0.756 | 0 | 0 |
-| Tissue | Tissue | 1.000 | 0 | 0 |
-| Urine | Urine | 1.000 | 586 | 16,080,701 |
+| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
+|---|---|---|---|---|---|
+| 1002224 | Polysomnography panel | 1.000 |  |   1 |     25,006 |
+| 1469525 | Bacteria identified in Pus by Culture | 1.000 |  |   0 |          0 |
+| 3000348 | Leukocyte esterase [Presence] in Urine by Test strip | 1.000 | 65 |   0 |          0 |
+| 3000991 | Gas panel - Venous blood | 1.000 |  |   5 |    371,862 |
+| 3002032 | Base excess in Venous blood by calculation | 1.000 | 966 |   7 |    189,855 |
+| 3002864 | Erythrocytes [#/volume] in Urine by Automated count | 1.000 | 246 |   0 |          0 |
+| 3009261 | Glucose [Presence] in Urine by Test strip | 1.000 | 309 |  10 |    946,600 |
+| 3009343 | pH of Capillary blood | 1.000 | 865 |   7 |    117,986 |
+| 3009508 | Creatinine [Moles/volume] in Urine | 1.000 | 161 |  22 |    532,449 |
+| 3011397 | Hemoglobin [Presence] in Urine by Test strip | 1.000 | 72 |   5 |    413,345 |
+| 3012544 | pH of Venous blood | 1.000 | 519 |  16 |    197,076 |
+| 3014051 | Protein [Presence] in Urine by Test strip | 1.000 | 99 |   3 |    382,676 |
+| 3021447 | Carbon dioxide [Partial pressure] in Venous blood | 1.000 | 523 |   3 |    193,244 |
+| 3021601 | Nitrite [Presence] in Urine by Test strip | 1.000 | 56 |  10 |    919,087 |
+| 3022621 | pH of Urine by Test strip | 1.000 | 59 |  17 |     92,206 |
+| 3028626 | Oxygen [Partial pressure] in Capillary blood | 1.000 |  |   4 |     51,613 |
+| 3030467 | Casts [#/volume] in Urine by Automated count | 1.000 |  |  20 |    419,520 |
+| 3031040 | Bacteria [#/volume] in Urine by Automated count | 1.000 |  |  12 |  1,358,321 |
+| 3035350 | Ketones [Presence] in Urine by Test strip | 1.000 | 102 |  11 |    933,706 |
+| 3037467 | Urinalysis macro (dipstick) panel - Urine | 1.000 |  |   6 |  1,393,084 |
+| 40768804 | Tissue Pathology biopsy report | 1.000 |  |   9 |    373,531 |
+| 3029187 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma | 0.975 | 516 |  57 |    390,599 |
+| 1091714 | HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma | 0.975 |  |   0 |          0 |
+| 36303442 | Epithelial cells [#/volume] in Urine by Automated | 0.974 |  |   0 |          0 |
+| 40763086 | Leukocyte esterase [Presence] in Urine by Automated test strip | 0.970 |  |   3 |    687,408 |
+| 3021125 | Hepatitis C virus RNA [Presence] in Serum or Plasma by NAA with probe detection | 0.966 | 740 |   1 |      4,893 |
+| 3027215 | Base excess standard in Venous blood by calculation | 0.961 |  |   0 |          0 |
+| 3008075 | Hepatitis C virus RNA [Presence] in Blood by NAA with probe detection | 0.960 |  |   0 |          0 |
+| 3026782 | Osmolality of Urine | 0.956 | 556 |  32 |    252,736 |
+| 3030758 | Nitrite [Presence] in Urine by Automated test strip | 0.952 |  |   0 |          0 |
+| 648782 | Epstein Barr virus DNA [Presence] in Serum or Plasma by NAA with probe detection | 0.952 |  |   0 |          0 |
+| 40760861 | Hemoglobin [Presence] in Urine by Automated test strip | 0.949 |  |   0 |          0 |
+| 3012570 | Epstein Barr virus DNA [Presence] in Blood by NAA with probe detection | 0.949 |  |   0 |          0 |
+| 1091414 | Leukocyte esterase [Presence] in Urine | 0.947 |  |   0 |          0 |
+| 3043849 | Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection | 0.945 |  |   3 |     24,736 |
+| 40760844 | Ketones [Presence] in Urine by Automated test strip | 0.945 |  |   0 |          0 |
+| 3004391 | Epithelial cells [#/volume] in Urine by Manual count | 0.943 |  |   0 |          0 |
+| 3019077 | Protein [Presence] in 24 hour Urine by Test strip | 0.943 |  |   0 |          0 |
+| 3030260 | Glucose [Presence] in Urine by Automated test strip | 0.942 |  |   0 |          0 |
+| 1616796 | Gas panel - Central venous blood | 0.941 |  |   1 |     38,175 |
+| 40760007 | HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay | 0.938 |  |   1 |        776 |
+| 3003327 | Ova and parasites identified in Stool by Light microscopy | 0.937 | 659 |   2 |     29,961 |
+| 40760845 | Protein [Presence] in Urine by Automated test strip | 0.935 |  |   0 |          0 |
+| 1001833 | Epstein Barr virus DNA [Units/volume] (viral load) in Blood by NAA with probe detection | 0.935 |  |   2 |      1,135 |
+| 42870364 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Blood by Immunoassay | 0.934 |  |   0 |          0 |
+| 3029435 | Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma | 0.934 |  |   0 |          0 |
+| 3001695 | Erythrocytes [#/volume] in Urine by Manual count | 0.933 |  |   0 |          0 |
+| 3028734 | HIV 1 p24 Ag [Presence] in Serum | 0.931 |  |   0 |          0 |
+| 3042804 | Leukocyte esterase+Nitrite [Presence] in Urine by Test strip | 0.931 |  |   0 |          0 |
+| 649459 | Epstein Barr virus DNA [log units/volume] (viral load) in Serum or Plasma by NAA with probe detection | 0.928 |  |   0 |          0 |
+| 1616922 | Base excess in Central venous blood by calculation | 0.927 |  |   0 |          0 |
+| 3039402 | Gas panel - Mixed venous blood | 0.927 |  |   0 |          0 |
+| 648637 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum, Plasma or Blood by Immunoassay | 0.926 |  |   0 |          0 |
+| 3029879 | Epithelial cells.squamous [#/volume] in Urine by Automated count | 0.926 |  |   3 |    227,666 |
+| 3030306 | Epithelial cells.non-squamous [#/volume] in Urine by Automated count | 0.925 |  |  12 |    237,764 |
+| 3015451 | Hepatitis C virus RNA [Presence] in Specimen by NAA with probe detection | 0.925 |  |   0 |          0 |
+| 46236251 | Leukocyte esterase [Presence] in Body fluid by Automated test strip | 0.925 |  |   0 |          0 |
+| 3020647 | HIV 1 p24 Ag [Presence] in Serum or Plasma by Immunoassay | 0.923 |  |   0 |          0 |
+| 40760857 | Erythrocytes [#/volume] in Urine by Automated test strip | 0.922 |  |   0 |          0 |
+| 3021513 | Carbon dioxide [Partial pressure] in Mixed venous blood | 0.921 |  |   3 |      9,226 |
+| 42529224 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay | 0.919 |  |   0 |          0 |
+| 1616989 | Carbon dioxide [Partial pressure] in Central venous blood | 0.918 |  |   0 |          0 |
+| 3014258 | Epstein Barr virus DNA [Presence] in Specimen by NAA with probe detection | 0.917 | 1832 |   0 |          0 |
+| 3023001 | Base excess in Mixed venous blood by calculation | 0.917 |  |   0 |          0 |
+| 1001594 | Epstein Barr virus DNA [log units/volume] (viral load) in Blood by NAA with probe detection | 0.915 |  |   0 |          0 |
+| 3000850 | Epithelial cells [#/volume] in Urine | 0.915 |  |  23 |    276,843 |
+| 40762866 | Epstein Barr virus DNA [Presence] in Body fluid by NAA with probe detection | 0.915 |  |   0 |          0 |
+| 40760140 | CBC W Auto Differential panel - Blood | 0.914 |  |   0 |          0 |
+| 3050079 | Epstein Barr virus DNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection | 0.914 |  |   0 |          0 |
+| 3047166 | Epithelial cells [#/area] in Urine sediment by Automated count | 0.913 |  |   1 |      1,272 |
+| 46236100 | Human papilloma virus 16 DNA [Presence] in Cervix by NAA with probe detection | 0.913 |  |   0 |          0 |
+| 1469712 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.913 |  |   0 |          0 |
+| 46235476 | Human papilloma virus 18+45 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection | 0.913 |  |   0 |          0 |
+| 3007435 | Base excess in Venous cord blood by calculation | 0.912 |  |   0 |          0 |
+| 3014305 | Glucose [Presence] in Blood by Test strip | 0.912 |  |   0 |          0 |
+| 42870589 | Drugs of abuse panel - Urine by Screen method | 0.911 |  |   0 |          0 |
+| 3045874 | Casts [#/area] in Urine sediment by Automated count | 0.911 |  |   0 |          0 |
+| 3033106 | HIV 1 p24 Ab [Presence] in Serum | 0.911 |  |   0 |          0 |
+| 648911 | Epstein Barr virus DNA [Units/volume] (viral load) in Specimen by NAA with probe detection | 0.911 |  |   0 |          0 |
+| 42529473 | Bone density quantitative measurement by DXA panel | 0.911 |  |   0 |          0 |
+| 3028893 | Ketones [Presence] in Urine | 0.910 | 217 |   0 |          0 |
+| 3042812 | Nitrite [Presence] in Urine | 0.910 |  |   0 |          0 |
+| 3002574 | Fasting glucose [Presence] in Urine by Test strip | 0.910 |  |   0 |          0 |
+| 42528601 | Human papilloma virus 16 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection | 0.909 |  |   0 |          0 |
+| 3013539 | Creatinine [Moles/volume] in 24 hour Urine | 0.908 | 1978 |   0 |          0 |
+| 3020416 | Erythrocytes [#/volume] in Blood by Automated count | 0.907 | 9 |   0 |          0 |
+| 1616406 | Base excess standard in Central venous blood by calculation | 0.907 |  |   0 |          0 |
+| 1761893 | Epstein Barr virus DNA [Log #/volume] (viral load) in Serum or Plasma by NAA with probe detection | 0.907 |  |   0 |          0 |
+| 40762887 | Creatinine [Moles/volume] in Blood | 0.907 | 283 |   1 |        449 |
+| 3007921 | HIV 1 Ag [Presence] in Serum | 0.907 | 785 |   0 |          0 |
+| 40761511 | CBC panel - Blood by Automated count | 0.906 |  |   5 |  6,172,064 |
+| 3039401 | Hepatitis C virus RNA [Presence] in Body fluid by NAA with probe detection | 0.905 |  |   0 |          0 |
+| 3037329 | Epstein Barr virus DNA [#/volume] (viral load) in Blood by NAA with probe detection | 0.905 |  |   0 |          0 |
+| 3009531 | Nitrite [Mass/volume] in Urine by Test strip | 0.904 |  |   0 |          0 |
+| 3041449 | Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma | 0.904 |  |   3 |      1,772 |
+| 3011325 | HIV 1+2 Ab [Presence] in Serum | 0.904 | 442 |   2 |        231 |
+| 649308 | Natriuretic peptide.B prohormone N-Terminal [Measurement] in Serum or Plasma | 0.904 |  |   0 |          0 |
+| 3018613 | Epstein Barr virus DNA [Presence] in Tissue by NAA with probe detection | 0.902 |  |   0 |          0 |
+| 1469767 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Body fluid by Immunoassay | 0.902 |  |   0 |          0 |
+| 3029305 | pH of Urine by Automated test strip | 0.901 |  |   0 |          0 |
+| 3024629 | Glucose [Mass/volume] in Urine by Test strip | 0.901 |  |   0 |          0 |
+| 3002582 | Erythrocytes [#/volume] in Urine | 0.900 |  |  12 |    500,225 |
+| 3018753 | Human papilloma virus 18 Ag [Presence] in Specimen | 0.900 |  |   0 |          0 |
+| 3012501 | Base excess in Blood by calculation | 0.900 | 84 |   3 |     36,737 |
+| 3021257 | Drugs of abuse 5 panel - Urine | 0.899 |  |   0 |          0 |
+| 3003344 | Hemoglobin [Presence] in Urine | 0.899 |  |   0 |          0 |
+| 1469672 | Bacteria identified in Pus by Anaerobe culture | 0.899 |  |   0 |          0 |
+| 40764134 | Human papilloma virus 18 DNA [Presence] in Specimen by NAA with probe detection | 0.898 |  |   0 |          0 |
+| 3031015 | pH of 24 hour Urine by Test strip | 0.898 |  |   0 |          0 |
+| 3033479 | HIV 1 Ag [Presence] in Serum or Plasma by Immunoassay | 0.898 | 786 |   0 |          0 |
+| 3027315 | Oxygen [Partial pressure] in Blood | 0.898 | 87 |   3 |     37,085 |
+| 3040890 | HIV 1 p24 Ab [Presence] in Serum or Plasma by Immunoassay | 0.898 |  |   0 |          0 |
+| 3019800 | Troponin T.cardiac [Mass/volume] in Serum or Plasma | 0.897 | 291 |  60 |    599,869 |
+| 37020511 | Human papilloma virus 18 DNA [Presence] in Genital specimen by NAA with probe detection | 0.896 |  |   0 |          0 |
+| 3050934 | HIV 1+Hepatitis C virus RNA [Presence] in Serum or Plasma by NAA with probe detection | 0.895 |  |   0 |          0 |
+| 3028923 | Bacteria [#/area] in Urine sediment by Automated count | 0.895 |  |   0 |          0 |
+| 42529225 | Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma by Immunoassay | 0.895 |  |   0 |          0 |
+| 1091200 | Bacteria [#/volume] in Urine | 0.895 |  |   0 |          0 |
+| 3049185 | Hemoglobin [Mass/volume] in Urine by Test strip | 0.894 |  |   0 |          0 |
+| 1761344 | Epstein Barr virus DNA [Log #/volume] (viral load) in Blood by NAA with probe detection | 0.894 |  |   0 |          0 |
+| 649280 | Hepatitis A virus RNA [Presence] in Blood by NAA with probe detection | 0.893 |  |   0 |          0 |
+| 3026726 | Creatinine [Moles/volume] in Specimen | 0.893 |  |   2 |        834 |
+| 645864 | Human papilloma virus 18+45 E6+E7 mRNA [Presence] in Specimen by NAA with probe detection | 0.893 |  |   0 |          0 |
+| 3007696 | Carbon dioxide [Partial pressure] in Venous cord blood | 0.893 | 1204 |   0 |          0 |
+| 1469858 | Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.893 |  |   0 |          0 |
+| 648393 | HIV 1+2 Ab+HIV1 p24 Ag [Measurement] in Serum or Plasma | 0.892 |  |   0 |          0 |
+| 46236101 | Human papilloma virus 18 DNA [Presence] in Cervix by NAA with probe detection | 0.891 |  |   0 |          0 |
+| 3048402 | Erythrocytes [#/area] in Urine sediment by Automated count | 0.891 |  |   6 |      4,000 |
+| 1469656 | Human papilloma virus 18+45 mRNA [Presence] in Vaginal fluid by NAA with probe detection | 0.889 |  |   0 |          0 |
+| 3022999 | Human papilloma virus 16 Ag [Presence] in Specimen | 0.889 |  |   0 |          0 |
+| 3010329 | Base excess standard in Mixed venous blood by calculation | 0.889 |  |   0 |          0 |
+| 3023024 | Carbon dioxide [Partial pressure] in Capillary blood | 0.889 |  |   4 |    121,264 |
+| 3003396 | Base excess in Arterial blood by calculation | 0.889 | 389 |   5 |    400,371 |
+| 1616438 | pH of Central venous blood | 0.888 |  |   0 |          0 |
+| 3006184 | Hemoglobin [Mass/volume] in Capillary blood | 0.888 |  |  10 |     25,042 |
+| 40764133 | Human papilloma virus 16 DNA [Presence] in Specimen by NAA with probe detection | 0.888 |  |   0 |          0 |
+| 3005897 | Protein [Mass/volume] in Urine by Test strip | 0.886 | 74 |   0 |          0 |
+| 3036701 | Epstein Barr virus DNA [Presence] in Bone marrow by NAA with probe detection | 0.886 |  |   0 |          0 |
+| 3013290 | Carbon dioxide [Partial pressure] in Blood | 0.885 | 86 |   3 |     36,789 |
+| 3040006 | Creatinine [Moles/volume] in 12 hour Urine | 0.885 |  |   0 |          0 |
+| 3003159 | Erythrocytes [#/volume] in Body fluid by Automated count | 0.885 | 1726 |   0 |          0 |
+| 648515 | Epstein Barr virus DNA [Presence] in Urine by NAA with probe detection | 0.885 |  |   0 |          0 |
+| 3037459 | Creatinine [Moles/volume] in Body fluid | 0.885 | 1234 |   0 |          0 |
+| 3017250 | Creatinine [Mass/volume] in Urine | 0.884 |  |   0 |          0 |
+| 37020661 | Human papilloma virus 16 DNA [Presence] in Genital specimen by NAA with probe detection | 0.884 |  |   0 |          0 |
+| 3023539 | Ketones [Mass/volume] in Urine by Test strip | 0.884 |  |   0 |          0 |
+| 3012388 | pH of Mixed venous blood | 0.883 |  |   0 |          0 |
+| 3037185 | Protein [Presence] in Urine | 0.883 |  |   0 |          0 |
+| 3040151 | Glucose [Moles/volume] in Capillary blood | 0.883 |  |  16 |     37,386 |
+| 3020650 | Glucose [Presence] in Urine | 0.882 | 116 |   1 |      2,596 |
+| 3008116 | Ketones [Moles/volume] in Urine by Test strip | 0.882 | 80 |   7 |      1,504 |
+| 3030141 | Hepatitis C virus RNA panel (viral load) in Serum or Plasma by NAA with probe detection | 0.881 |  |   0 |          0 |
+| 3019060 | Gas panel - Arterial blood | 0.881 |  |   5 |    122,222 |
+| 3001501 | Glucose [Moles/volume] in Capillary blood by Glucometer | 0.881 |  |   3 |      1,900 |
+| 3040510 | Creatinine [Moles/time] in 1 hour Urine | 0.879 |  |   0 |          0 |
+| 3003129 | Base excess in Capillary blood by calculation | 0.879 | 1953 |   3 |     11,244 |
+| 3014918 | Hepatitis C virus RNA [Presence] in Tissue by NAA with probe detection | 0.878 |  |   0 |          0 |
+| 3038830 | Creatinine [Moles/volume] in Urine --baseline | 0.878 |  |   0 |          0 |
+| 40769783 | Troponin T.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method | 0.878 |  |   0 |          0 |
+| 3020460 | C reactive protein [Mass/volume] in Serum or Plasma | 0.878 | 154 | 159 |  6,802,841 |
+| 3033985 | Epstein Barr virus DNA [Presence] in Mouth by NAA with probe detection | 0.878 |  |   0 |          0 |
+| 645339 | Human papilloma virus 16 E6+E7 mRNA [Presence] in Specimen by NAA with probe detection | 0.877 |  |   0 |          0 |
+| 3020564 | Creatinine [Moles/volume] in Serum or Plasma | 0.876 | 1 |  51 |  9,024,989 |
+| 40768439 | Drugs of abuse 5 panel - Urine by Screen method | 0.875 |  |   0 |          0 |
+| 3041849 | Gas panel - Venous cord blood | 0.875 |  |   0 |          0 |
+| 3036300 | Epstein Barr virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.875 |  |   0 |          0 |
+| 1091602 | Human papilloma virus DNA [Presence] in Specimen | 0.875 |  |   0 |          0 |
+| 3018447 | Hepatitis C virus RNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection | 0.874 | 531 |   0 |          0 |
+| 3006735 | Hepatitis A virus RNA [Presence] in Serum by NAA with probe detection | 0.874 |  |   0 |          0 |
+| 3011960 | Natriuretic peptide B [Mass/volume] in Serum or Plasma | 0.874 | 204 |   4 |     97,925 |
+| 21494814 | CD8 cells/Lymphocytes in Specimen | 0.873 |  |   1 |      3,725 |
+| 1469690 | Human papilloma virus 16 mRNA [Presence] in Vaginal fluid by NAA with probe detection | 0.873 |  |   0 |          0 |
+| 3003453 | Glucose [Presence] in Urine by Test strip --30 minutes post dose glucose | 0.873 |  |   0 |          0 |
+| 3051593 | INR in Capillary blood by Coagulation assay | 0.873 |  |   0 |          0 |
+| 3002388 | Ova and parasites identified in Stool by Parasite sedimentation | 0.873 |  |   0 |          0 |
+| 3008770 | Glucose [Moles/volume] in Urine by Test strip | 0.873 | 73 |   0 |          0 |
+| 1761482 | Bacteria [#/volume] in Urine by Culture | 0.872 |  |   1 |     39,881 |
+| 40760950 | Erythrocytes [#/volume] in Dialysis fluid by Automated count | 0.872 |  |   0 |          0 |
+| 37020002 | Multiple myeloma minimal residual disease panel - Bone marrow by Flow cytometry (FC) | 0.872 |  |   0 |          0 |
+| 40760892 | CBC W Ordered Manual Differential panel - Blood | 0.872 |  |   3 |    490,892 |
+| 3017921 | Human papilloma virus 16+18 Ag [Presence] in Specimen | 0.871 |  |   0 |          0 |
+| 3027946 | Carbon dioxide [Partial pressure] in Arterial blood | 0.871 | 205 |   3 |    405,582 |
+| 3019493 | Glucose [Presence] in Urine by Test strip --1 hour post dose glucose | 0.871 |  |   0 |          0 |
+| 3046787 | Ova and parasites identified in Stool by Trichrome stain | 0.870 |  |   0 |          0 |
+| 1469485 | Fungus identified in Pus by Culture | 0.870 |  |   0 |          0 |
+| 40762353 | Leukocyte esterase [Presence] in Cerebral spinal fluid by Test strip | 0.870 |  |   0 |          0 |
+| 3020126 | Human papilloma virus 16+18 Ag [Presence] in Genital specimen | 0.869 |  |   0 |          0 |
+| 1092301 | Erythrocytes [#/volume] in Urine sediment | 0.868 |  |   0 |          0 |
+| 40766103 | Ketones [Presence] in Urine by Test strip --1 hour post dose glucose | 0.868 |  |   0 |          0 |
+| 42868547 | Human papilloma virus 16 and 18 DNA [Presence] in Specimen by NAA with probe detection | 0.867 |  |   0 |          0 |
+| 3036839 | Oxygen [Partial pressure] in Capillary blood --pre treatment | 0.867 |  |   0 |          0 |
+| 21491346 | Pathologic casts [#/volume] in Urine by Automated count | 0.867 |  |   0 |          0 |
+| 3040526 | Collagen crosslinked C-telopeptide [Moles/volume] in Serum or Plasma | 0.866 |  |   0 |          0 |
+| 36204250 | Human papilloma virus 16 DNA [Presence] in Tissue by NAA with probe detection | 0.866 |  |   0 |          0 |
+| 42529439 | Human papilloma virus 16 and 18+45 E6+E7 mRNA [Identifier] in Cervix by NAA with probe detection | 0.866 |  |   0 |          0 |
+| 36305828 | Drugs of abuse screen W Reflex confirm panel - Urine | 0.865 |  |   0 |          0 |
+| 36031861 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection | 0.865 |  |   2 |     45,357 |
+| 3005518 | Ova and parasites identified in Stool by Immune stain | 0.865 |  |   0 |          0 |
+| 646531 | Influenza virus A and Influenza virus B and SARS coronavirus 2 and Respiratory syncytial virus Ag panel - Nose by Rapid immunoassay | 0.865 |  |   0 |          0 |
+| 36031312 | Human papilloma virus 45 DNA [Presence] in Cervix by NAA with probe detection | 0.865 |  |   0 |          0 |
+| 3005589 | Glucose [Presence] in Urine by Test strip --1.5 hours post dose glucose | 0.865 |  |   0 |          0 |
+| 42870592 | CBC W Differential panel, method unspecified - Blood | 0.865 |  |   0 |          0 |
+| 3021337 | Troponin I.cardiac [Mass/volume] in Serum or Plasma | 0.865 | 113 |  25 |    323,924 |
+| 3012744 | Ova and parasites identified in Specimen by Light microscopy | 0.863 | 527 |   0 |          0 |
+| 3043614 | Bacteria identified in Aspirate by Culture | 0.863 |  |   1 |         22 |
+| 3024354 | Oxygen [Partial pressure] in Venous blood | 0.862 | 665 |   3 |    139,005 |
+| 3001298 | Ova and parasites identified in Stool by McMaster concentration | 0.862 |  |   0 |          0 |
+| 3020389 | Ova and parasites identified in Stool by Concentration | 0.862 | 257 |   0 |          0 |
+| 3027801 | Oxygen [Partial pressure] in Arterial blood | 0.861 | 193 |   3 |    404,986 |
+| 648594 | Leukocyte esterase [Measurement] in Urine | 0.861 |  |   0 |          0 |
+| 37020818 | Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection | 0.861 |  |   0 |          0 |
+| 3005448 | Ova and parasites identified in Stool by Iron hematoxylin stain | 0.860 |  |   0 |          0 |
+| 1469723 | Troponin I.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.859 |  |   0 |          0 |
+| 42528835 | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Cervix by NAA with probe detection | 0.859 |  |   0 |          0 |
+| 3048529 | Troponin T.cardiac [Mass/volume] in Blood | 0.857 |  |   0 |          0 |
+| 1469985 | C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.857 |  |   0 |          0 |
+| 36203320 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection | 0.856 |  |   0 |          0 |
+| 36032027 | Human papilloma virus 56+59+66 DNA [Presence] in Cervix by NAA with probe detection | 0.856 |  |   0 |          0 |
+| 1616317 | Hemoglobin [Mass/volume] in Capillary blood by Oximetry | 0.856 |  |   0 |          0 |
+| 3966546 | Human papilloma virus 16 DNA [Presence] in Urine by NAA with probe detection | 0.855 |  |   0 |          0 |
+| 3006147 | Osmolality of 24 hour Urine | 0.855 |  |   0 |          0 |
+| 3039904 | Epithelial cells.renal [#/volume] in Urine by Computer assisted method | 0.854 |  |   0 |          0 |
+| 3004361 | Ova and parasites identified in Stool by Kinyoun iron hematoxylin stain | 0.854 |  |   0 |          0 |
+| 44787055 | CBC W Differential panel - Cord blood | 0.854 |  |   0 |          0 |
+| 40766104 | Ketones [Presence] in Urine by Test strip --3 hours post dose glucose | 0.853 |  |   0 |          0 |
+| 3022313 | Gas panel - Capillary blood | 0.853 |  |   3 |     87,120 |
+| 36661384 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and SARS-related CoV RNA panel - Respiratory system specimen by NAA with probe detection | 0.853 |  |   0 |          0 |
+| 40762355 | Human papilloma virus 18 DNA [Presence] in Cervix by Probe with signal amplification | 0.853 |  |   0 |          0 |
+| 1091617 | C reactive protein [Mass/volume] in Serum, Plasma or Blood | 0.853 |  |   0 |          0 |
+| 3044495 | Bacteria identified in Tissue by Culture | 0.852 |  |   0 |          0 |
+| 36031556 | Human papilloma virus 35+39+68 DNA [Presence] in Cervix by NAA with probe detection | 0.852 |  |   0 |          0 |
+| 36031448 | Human papilloma virus 33+58 DNA [Presence] in Cervix by NAA with probe detection | 0.852 |  |   0 |          0 |
+| 40768790 | Lung Pathology biopsy report | 0.852 |  |   0 |          0 |
+| 3030830 | pH of Body fluid by Test strip | 0.851 |  |   0 |          0 |
+| 36306105 | Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method | 0.851 |  |   0 |          0 |
+| 3966513 | Influenza virus A and Influenza virus B and SARS coronavirus 2 RNA panel - Nose by NAA with non-probe detection | 0.851 |  |   0 |          0 |
+| 1761840 | Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Specimen by NAA with probe detection | 0.851 |  |   0 |          0 |
+| 3003714 | Bacteria identified in Wound by Culture | 0.851 | 270 |   0 |          0 |
+| 3029080 | Hemoglobin [Entitic mass] in Reticulocytes | 0.850 | 1413 |   3 |     12,422 |
+| 3035968 | Oxygen [Partial pressure] in Capillary blood --post treatment | 0.850 |  |   0 |          0 |
+| 40760141 | CBC W Reflex Manual Differential panel - Blood | 0.850 |  |   0 |          0 |
+| 3029162 | Epithelial cells.squamous [#/area] in Urine sediment by Automated count | 0.850 |  |   0 |          0 |
+| 1175426 | CD3 cells/Lymphocytes in Blood | 0.850 |  |   5 |      8,032 |
+| 40766105 | Ketones [Presence] in Urine by Test strip --4 hours post dose glucose | 0.849 |  |   0 |          0 |
+| 36661376 | Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Respiratory system specimen by NAA with probe detection | 0.849 |  |   0 |          0 |
+| 648704 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Specimen by NAA with probe detection | 0.849 |  |   0 |          0 |
+| 3004097 | Oxygen content in Capillary blood | 0.849 |  |   0 |          0 |
+| 46236287 | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Pleural fluid by Immunoassay | 0.848 |  |   2 |        218 |
+| 3029937 | Albumin [Presence] in Urine by Test strip | 0.848 |  |  10 |    532,964 |
+| 3009105 | Erythrocytes [#/volume] in Urine by Test strip | 0.848 | 126 |   0 |          0 |
+| 3043088 | Ketones [Presence] in 24 hour Urine | 0.847 |  |   0 |          0 |
+| 21494815 | CD4 cells/Lymphocytes in Specimen | 0.847 |  |   5 |      9,464 |
+| 3049183 | Collagen crosslinked C-telopeptide [Mass/volume] in Urine | 0.846 |  |   0 |          0 |
+| 1988560 | Cocci bacteria [#/volume] in Urine sediment by Automated count | 0.846 |  |   0 |          0 |
+| 3965853 | B-Cell lymphoblastic leukemia monitoring minimal residual disease detection in Blood or Marrow by Flow cytometry (FC) | 0.846 |  |   0 |          0 |
+| 3000285 | Sodium [Moles/volume] in Blood | 0.846 | 129 |   4 |        967 |
+| 3965306 | Troponin T.cardiac [Mass/volume] in 6 hour Serum or Plasma | 0.846 |  |   0 |          0 |
+| 3030327 | pH of Capillary blood from Fetus | 0.845 |  |   0 |          0 |
+| 3005833 | Gas panel - Blood | 0.845 |  |   0 |          0 |
+| 3032431 | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68 DNA [Presence] in Specimen by NAA with probe detection | 0.845 |  |   0 |          0 |
+| 3017553 | Oxygen [Partial pressure] (8 hour minimum) in Capillary blood | 0.844 |  |   0 |          0 |
+| 1989355 | Bacilliform bacteria [#/volume] in Urine sediment by Automated count | 0.843 |  |   0 |          0 |
+| 40762354 | Human papilloma virus 16 DNA [Presence] in Cervix by Probe with signal amplification | 0.843 |  |   0 |          0 |
+| 3030267 | Hemoglobin [Mass/volume] in Urine by Automated test strip | 0.843 |  |   0 |          0 |
+| 21493470 | Yersinia enterocolitica DNA [Presence] in Stool by NAA with non-probe detection | 0.842 |  |   0 |          0 |
+| 3006462 | Nitrate [Presence] in Urine | 0.842 |  |   1 |      5,946 |
+| 3019383 | Ova and parasites identified in Stool by Baermann concentration | 0.841 |  |   0 |          0 |
+| 1469828 | Troponin I.cardiac [Mass/volume] in Serum, Plasma or Blood by High sensitivity method | 0.841 |  |   0 |          0 |
+| 3022670 | pH of Venous cord blood | 0.841 | 1082 |   2 |        165 |
+| 3041412 | Epithelial cells.non-squamous [#/area] in Urine sediment by Automated count | 0.841 |  |   0 |          0 |
+| 3051387 | C reactive protein [Mass/volume] in Capillary blood | 0.840 |  |   9 |     30,338 |
+| 3030981 | Hyaline casts [#/volume] in Urine by Automated count | 0.840 |  |   7 |     90,835 |
+| 3013171 | Leukocyte esterase [Units/volume] in Urine | 0.840 |  |   0 |          0 |
+| 36204252 | Human papilloma virus 18 DNA [Presence] in Tissue by NAA with probe detection | 0.840 |  |   0 |          0 |
+| 3010251 | Oxygen [Partial pressure] in Body fluid | 0.840 |  |   0 |          0 |
+| 40768443 | Skin Pathology biopsy report | 0.840 | 1793 |   1 |     24,633 |
+| 3029490 | Free Hemoglobin [Presence] in Urine | 0.839 |  |   0 |          0 |
+| 21490848 | Carbon dioxide [Partial pressure] in Pulmonary artery | 0.839 |  |   0 |          0 |
+| 3041290 | Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Venous blood | 0.839 |  |   0 |          0 |
+| 43533384 | Drugs of abuse panel - Blood by Screen method | 0.838 |  |   0 |          0 |
+| 3023368 | Bacteria identified in Blood by Culture | 0.838 | 131 |   3 |    528,769 |
+| 3010156 | C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method | 0.838 | 348 |  19 |     28,709 |
+| 3019572 | Troponin T.cardiac [Mass/volume] in Venous blood | 0.836 |  |   0 |          0 |
+| 40758490 | Osmolality of Urine--baseline | 0.836 |  |   0 |          0 |
+| 43055234 | pH of Vaginal fluid by Test strip | 0.836 |  |   0 |          0 |
+| 40761054 | Collagen crosslinked C-telopeptide [Mass/volume] in 24 hour Urine | 0.836 |  |   0 |          0 |
+| 3029350 | Yeast [#/volume] in Urine by Automated count | 0.836 |  |   0 |          0 |
+| 46235784 | Sodium [Moles/volume] in Serum, Plasma or Blood | 0.835 |  |   0 |          0 |
+| 40768803 | Thyroid Pathology biopsy report | 0.835 |  |   0 |          0 |
+| 3039059 | Drugs of abuse 7 and Alcohol and Tricyclics panel - Urine by Screen method | 0.833 |  |   0 |          0 |
+| 1175703 | Drugs of abuse panel - Body fluid | 0.833 |  |   0 |          0 |
+| 3015736 | pH of Urine | 0.833 | 612 |  11 |    668,794 |
+| 3008440 | Collagen crosslinked N-telopeptide [Moles/volume] in Serum | 0.833 |  |   0 |          0 |
+| 40768793 | Breast Pathology biopsy report | 0.833 |  |   2 |     13,464 |
+| 3005456 | Potassium [Moles/volume] in Blood | 0.832 | 106 |   0 |          0 |
+| 36031949 | Influenza virus A and B and SARS-CoV+SARS-CoV-2 (COVID-19) Ag panel - Upper respiratory specimen by Rapid immunoassay | 0.832 |  |   0 |          0 |
+| 3014886 | Neutrophils [#/volume] in Urine by Automated count | 0.832 |  |   0 |          0 |
+| 3024194 | Bacteria identified in Pleural fluid by Culture | 0.831 |  |   0 |          0 |
+| 3050687 | CBC WO Differential panel - Cord blood | 0.831 |  |   0 |          0 |
+| 36033643 | Influenza virus A and B and SARS-CoV-2 (COVID-19) Ag panel - Upper respiratory specimen by Rapid immunoassay | 0.830 |  |   0 |          0 |
+| 3040799 | Casts [Presence] in Urine by Automated | 0.830 |  |   0 |          0 |
+| 3035854 | CD4+CD45+ cells/100 cells in Blood | 0.829 |  |   0 |          0 |
+| 3002619 | Bacteria identified in Specimen by Culture | 0.829 | 39 |   1 |      1,514 |
+| 3041694 | Casts type not specified [#/volume] in Urine by Computer assisted method | 0.828 |  |   0 |          0 |
+| 3038702 | Sodium [Moles/volume] in Capillary blood | 0.828 |  |   2 |         74 |
+| 3020491 | Glucose [Moles/volume] in Blood | 0.828 | 13 |  11 |      5,703 |
+| 3029872 | Protein [Mass/volume] in Urine by Automated test strip | 0.828 |  |   0 |          0 |
+| 3966204 | Leukemia and lymphoma immunophenotyping in Specimen Document by Flow cytometry (FC) | 0.828 |  |   0 |          0 |
+| 3019902 | Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.827 | 146 |   2 |    145,674 |
+| 46235076 | Creatinine [Moles/volume] in Serum, Plasma or Blood | 0.826 |  |   0 |          0 |
+| 3016727 | Bacteria identified in Body fluid by Culture | 0.826 | 1786 |   0 |          0 |
+| 44816885 | Collagen crosslinked C-telopeptide [Z-score] in Serum or Plasma | 0.826 |  |   0 |          0 |
+| 40758548 | Home drug screening panel - Urine | 0.825 |  |   0 |          0 |
+| 3038950 | Acinetobacter sp multidrug resistant identified in Specimen by Organism specific culture | 0.825 |  |   0 |          0 |
+| 3032172 | Bacteria [Presence] in Urine by Automated | 0.825 |  |   0 |          0 |
+| 3004077 | Glucose [Mass/volume] in Capillary blood | 0.824 |  |   0 |          0 |
+| 1616736 | Protein/Creatinine Qualitative in Urine by Test strip | 0.824 |  |   0 |          0 |
+| 40771527 | Human papilloma virus E6+E7 mRNA [Presence] in Cervix by NAA with probe detection | 0.824 |  |   1 |      3,405 |
+| 1091300 | Yersinia enterocolitica DNA [Presence] in Specimen by NAA with probe detection | 0.822 |  |   0 |          0 |
+| 46235078 | Potassium [Moles/volume] in Serum, Plasma or Blood | 0.822 |  |   0 |          0 |
+| 3023757 | Gas and Carbon monoxide panel - Venous blood | 0.821 |  |   0 |          0 |
+| 3034962 | Glucose [Mass/volume] in Capillary blood by Glucometer | 0.820 |  |   0 |          0 |
+| 648549 | B-Cell lymphoblastic leukemia monitoring minimal residual disease detection in Bone marrow by Flow cytometry (FC) Narrative | 0.820 |  |   0 |          0 |
+| 648940 | C reactive protein [Measurement] in Serum or Plasma | 0.819 |  |   0 |          0 |
+| 3039628 | Collagen crosslinked C-telopeptide [Mass/time] in 24 hour Urine | 0.819 |  |   0 |          0 |
+| 3040893 | Potassium [Moles/volume] in Capillary blood | 0.819 |  |   4 |        403 |
+| 36660607 | Microalbumin [Presence] in Urine by Test strip | 0.817 |  |   0 |          0 |
+| 648479 | CLL minimal residual disease detection in Bone marrow by Flow cytometry (FC) Narrative | 0.817 |  |   0 |          0 |
+| 46236733 | Noninvasive prenatal fetal 18 and 21 aneuploidy panel - Plasma cell-free DNA by Sequencing | 0.817 | 3000 |   0 |          0 |
+| 1469831 | Hyaline casts [#/volume] in Urine sediment by Automated count | 0.817 |  |   0 |          0 |
+| 3017703 | Fasting glucose [Moles/volume] in Capillary blood by Glucometer | 0.817 |  |   0 |          0 |
+| 42869451 | Hemoglobin [Entitic mass] in Reticulocytes by Automated count | 0.817 |  |   0 |          0 |
+| 1091454 | Yersinia pseudotuberculosis complex DNA [Presence] in Specimen by NAA with probe detection | 0.816 |  |   0 |          0 |
+| 1616954 | Amphetamines panel - Urine by Confirmatory method | 0.816 |  |   0 |          0 |
+| 46234968 | Reticulocyte cellular hemoglobin distribution width [Entitic mass] in Blood by calculation | 0.816 |  |   0 |          0 |
+| 3043706 | Sodium [Moles/volume] in Arterial blood | 0.816 |  |   0 |          0 |
+| 1175629 | Drugs of abuse panel - Hair | 0.816 |  |   0 |          0 |
+| 3044942 | Collagen crosslinked N-telopeptide [Mass/volume] in Urine | 0.815 |  |   0 |          0 |
+| 46236732 | Noninvasive prenatal fetal 13 and 18 and 21 aneuploidy panel - Plasma cell-free DNA by Sequencing | 0.815 | 3000 |   0 |          0 |
+| 3026340 | CD5+CD8+ cells/100 cells in Blood | 0.814 |  |   0 |          0 |
+| 3051698 | Osmolality of Urine by calculation | 0.814 |  |   0 |          0 |
+| 3035607 | CD8+CD56+ cells/100 cells in Blood | 0.814 |  |   0 |          0 |
+| 3965536 | Acute myeloid leukemia minimal residual disease in Bone marrow by Flow cytometry (FC) Narrative | 0.812 |  |   0 |          0 |
+| 3042095 | Gas panel - Arterial cord blood | 0.812 |  |   0 |          0 |
+| 3036482 | CD8+CD11b+ cells/100 cells in Blood | 0.812 |  |   0 |          0 |
+| 3041130 | Mixed cellular casts [#/volume] in Urine by Computer assisted method | 0.812 |  |   0 |          0 |
+| 21491345 | Pathologic casts [#/area] in Urine by Automated count | 0.812 |  |   0 |          0 |
+| 40768795 | Lymph node Pathology biopsy report | 0.812 |  |   2 |      5,290 |
+| 43055143 | Glucose [Moles/volume] in Blood by Automated test strip | 0.811 |  |   0 |          0 |
+| 647347 | Glucose [Measurement] in Capillary blood | 0.811 |  |   0 |          0 |
+| 46234770 | C reactive protein [Moles/volume] in Serum or Plasma | 0.811 |  |   0 |          0 |
+| 3025722 | Staphylococcus sp identified in Specimen by Organism specific culture | 0.811 |  |   0 |          0 |
+| 3040501 | WBC casts [#/volume] in Urine by Computer assisted method | 0.811 |  |   0 |          0 |
+| 645216 | T-ALL minimal residual disease detection in Bone marrow by Flow cytometry (FC) Narrative | 0.810 |  |   0 |          0 |
+| 40768792 | Brain Pathology biopsy report | 0.809 |  |   0 |          0 |
+| 3034801 | CD8+HLA-DR+ cells/100 cells in Blood | 0.808 | 1735 |   0 |          0 |
+| 36031212 | Human papilloma virus 31 DNA [Presence] in Cervix by NAA with probe detection | 0.808 |  |   0 |          0 |
+| 648732 | Reticulocyte - RBC Hemoglobin [Entitic mass difference] in Blood | 0.808 |  |   0 |          0 |
+| 3964702 | Creatinine [Moles/volume] in Venous blood | 0.808 |  |   0 |          0 |
+| 40768796 | Uterus Pathology biopsy report | 0.807 |  |   0 |          0 |
+| 1259531 | Human papilloma virus 31+33+52+58 DNA [Presence] in Cervix by NAA with probe detection | 0.807 |  |   0 |          0 |
+| 3010169 | Leukocyte esterase [Enzymatic activity/volume] in Leukocytes | 0.807 |  |   0 |          0 |
+| 3041473 | Sodium [Moles/volume] in Venous blood | 0.806 |  |   0 |          0 |
+| 3010421 | pH of Blood | 0.806 | 97 |   4 |     50,330 |
+| 46236948 | Glucose [Moles/volume] in Serum, Plasma or Blood | 0.805 |  |   0 |          0 |
+| 21492663 | Yersinia enterocolitica recN gene [Presence] in Stool by NAA with probe detection | 0.805 |  |   0 |          0 |
+| 3000330 | Specific gravity of Urine by Test strip | 0.805 | 71 |   4 |     71,773 |
+| 3014037 | CD3+CD4+ (T4 helper) cells/100 cells in Blood | 0.805 | 377 |   3 |      7,337 |
+| 36032296 | Human papilloma virus 52 DNA [Presence] in Cervix by NAA with probe detection | 0.805 |  |   0 |          0 |
+| 3043409 | Potassium [Moles/volume] in Arterial blood | 0.804 |  |   4 |     51,548 |
+| 3040135 | pH of Capillary blood adjusted to patient's actual temperature | 0.804 |  |   0 |          0 |
+| 21493361 | Gastrointestinal pathogens DNA and RNA panel - Stool by NAA with non-probe detection | 0.804 |  |   0 |          0 |
+| 42870370 | Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Cervix by NAA with probe detection | 0.803 |  |   0 |          0 |
+| 37020081 | Noninvasive prenatal fetal aneuploidy and microdeletion panel - Plasma cell-free DNA by Sequencing | 0.803 |  |   0 |          0 |
+| 3019550 | Sodium [Moles/volume] in Serum or Plasma | 0.803 | 5 |  52 |  7,821,326 |
+| 3029315 | Leukocytes [#/volume] in Urine by Automated count | 0.802 |  |   0 |          0 |
+| 3028766 | C reactive protein [Titer] in Serum or Plasma | 0.802 |  |   0 |          0 |
+| 3011030 | Human papilloma virus rRNA [Presence] in Specimen by NAA with probe detection | 0.802 |  |   0 |          0 |
+| 3035320 | C reactive protein [Mass/volume] in Body fluid | 0.802 |  |   6 |      9,479 |
+| 649098 | B-ALL minimal residual disease detection in Bone marrow by Flow cytometry (FC) Narrative | 0.801 |  |   0 |          0 |
+| 40768446 | Kidney Pathology biopsy report | 0.801 | 1790 |   1 |      3,432 |
+| 3033688 | Peak flow meter device panel | 0.801 |  |   0 |          0 |
+| 1092282 | Methadone Confirmatory panel - Urine | 0.801 |  |   0 |          0 |
+| 3041354 | Potassium [Moles/volume] in Venous blood | 0.800 |  |   2 |     11,069 |
+| 40760486 | Osmolality of 12 hour Urine | 0.800 |  |   0 |          0 |
+| 40771046 | pH of Peritoneal fluid by Test strip | 0.800 |  |   0 |          0 |
+| 1091437 | Human papilloma virus 35+39+51+56+59+66+68 DNA [Presence] in Cervix by NAA with probe detection | 0.800 |  |   0 |          0 |
+| 3029361 | Urinalysis dipstick panel - Urine by Automated test strip | 0.800 |  |   0 |          0 |
+| 37020245 | Staphylococcus species methicillin resistant identified in Isolate or Specimen by Molecular genetics method | 0.799 |  |   0 |          0 |
+| 3001728 | CD8+CD25+ cells/100 cells in Blood | 0.799 |  |   0 |          0 |
+| 40768799 | Ovary Pathology biopsy report | 0.799 |  |   0 |          0 |
+| 3033173 | Hemoglobin [Presence] in Specimen | 0.798 |  |   0 |          0 |
+| 3051825 | Creatinine [Mass/volume] in Blood | 0.798 |  |   0 |          0 |
+| 3052990 | Drugs of abuse panel - Meconium | 0.798 |  |   0 |          0 |
+| 1469687 | pH of Urine by pH-meter | 0.798 |  |   0 |          0 |
+| 43533989 | Noninvasive prenatal fetal aneuploidy panel - Plasma cell-free DNA | 0.797 | 3000 |   0 |          0 |
+| 3000965 | C reactive protein [Presence] in Serum or Plasma | 0.795 | 1281 |   0 |          0 |
+| 646465 | Collagen crosslinked C-telopeptide [Measurement] in Urine | 0.794 |  |   0 |          0 |
+| 3023103 | Potassium [Moles/volume] in Serum or Plasma | 0.794 | 3 |  45 |  7,908,182 |
+| 3045592 | Acute leukemia panel - Specimen by Flow cytometry (FC) | 0.793 |  |   0 |          0 |
+| 3036941 | Urinalysis complete panel - Urine | 0.792 |  |   0 |          0 |
+| 1091745 | Staphylococcus sp identified in Specimen | 0.792 |  |   0 |          0 |
+| 646446 | B-Cell lymphoblastic leukemia monitoring minimal residual disease detection in Blood by Flow cytometry (FC) Narrative | 0.791 |  |   0 |          0 |
+| 37019628 | Gastrointestinal bacterial pathogens panel - Stool by NAA with probe detection | 0.791 |  |   1 |     17,394 |
+| 3019977 | pH of Arterial blood | 0.791 | 187 |   8 |    406,844 |
+| 3047142 | Chronic leukemia panel - Specimen by Flow cytometry (FC) | 0.790 |  |   0 |          0 |
+| 3013826 | Glucose [Moles/volume] in Serum or Plasma | 0.790 | 4 |  53 |  1,339,897 |
+| 3035441 | CD4+HLA-DR+ cells/cells in Blood | 0.790 |  |   0 |          0 |
+| 1091245 | Enteric bacteria panel - Stool by NAA with probe detection | 0.789 |  |   0 |          0 |
+| 3026681 | Sodium [Moles/volume] in Specimen | 0.789 |  |   0 |          0 |
+| 21491103 | Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture | 0.787 |  |   0 |          0 |
+| 3028160 | Osmolality of Specimen | 0.786 |  |   0 |          0 |
+| 40757357 | Lymphoma panel - Specimen by Flow cytometry (FC) | 0.786 |  |   0 |          0 |
+| 3037242 | Nitrite [Mass/volume] in Urine | 0.786 |  |   0 |          0 |
+| 37020875 | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68 DNA [Presence] in Genital specimen by NAA with probe detection | 0.786 |  |   0 |          0 |
+| 40758903 | Hemoglobin [Mass/volume] in Blood by Oximetry | 0.785 |  |   0 |          0 |
+| 46236282 | Fetal chromosome 13+18+21+Y aneuploidy [Presence] based on dosage of chromosome-specific cell-free DNA from Maternal plasma | 0.785 |  |   0 |          0 |
+| 3044552 | Amphetamine+Methamphetamine [Presence] in Urine | 0.785 |  |   0 |          0 |
+| 3044242 | Glucose [Moles/volume] in Arterial blood | 0.785 |  |   2 |      4,510 |
+| 3035729 | Glucose [Moles/volume] in Body fluid | 0.784 | 788 |   0 |          0 |
+| 40761558 | Sulfites [Presence] in Urine by Test strip | 0.784 |  |   0 |          0 |
+| 3037426 | Urobilinogen [Presence] in Urine by Test strip | 0.783 | 134 |   0 |          0 |
+| 21492659 | Gastrointestinal pathogens panel - Stool by NAA with probe detection | 0.783 |  |   0 |          0 |
+| 3049714 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma | 0.781 |  |   2 |      3,659 |
+| 3045414 | Leukocytes [Presence] in Urine | 0.781 |  |   6 |     88,404 |
+| 3006893 | Glucose [Moles/volume] in Specimen | 0.781 |  |   0 |          0 |
+| 40760139 | Urinalysis dipstick W Reflex Microscopic panel - Urine | 0.780 |  |   0 |          0 |
+| 3050126 | Yersinia sp DNA [Identifier] in Specimen by NAA with probe detection | 0.780 |  |   0 |          0 |
+| 3034660 | CD4+CD45RO+ cells/100 cells in Blood | 0.780 |  |   0 |          0 |
+| 1469562 | Drug toxicology panel - Specimen | 0.779 |  |   0 |          0 |
+| 37020690 | Gram negative bacilli identified in Isolate by Organism specific culture | 0.779 |  |   0 |          0 |
+| 645112 | Stenotrophomonas maltophilia.multidrug resistant [Presence] in Specimen by Organism specific culture | 0.778 |  |   0 |          0 |
+| 46235160 | Noninvasive prenatal fetal aneuploidy and microdeletion panel based on Plasma cell-free+WBC DNA by Dosage of chromosome-specific circulating cell free (ccf) DNA | 0.778 | 3000 |   0 |          0 |
+| 3013512 | EKG study | 0.778 |  |  10 |    506,024 |
+| 648476 | Amphetamine+Methamphetamine [Measurement] in Urine | 0.778 |  |   0 |          0 |
+| 46234777 | Amphetamine+Methamphetamine [Presence] in Urine by Screen method | 0.778 |  |   0 |          0 |
+| 36660149 | OxyCODONE and metabolites panel - Urine by Confirmatory method | 0.778 |  |   0 |          0 |
+| 647840 | CLL minimal residual disease detection in Blood by Flow cytometry (FC) Narrative | 0.777 |  |   0 |          0 |
+| 1617363 | Noninvasive prenatal fetal aneuploidy panel - Plasma cell-free+WBC DNA by Dosage of chromosome-specific cfDNA | 0.777 |  |   0 |          0 |
+| 36659811 | Staphylococcus aureus and Methicillin Resistant Staphylococcus aureus identified in Isolate or Specimen by Molecular genetics method | 0.777 |  |   0 |          0 |
+| 46235498 | Fetal Chromosome 13+18+21+X+Y aneuploidy [Presence] based on Plasma cell-free DNA by Dosage of chromosome-specific cfDNA | 0.777 |  |   0 |          0 |
+| 3013098 | Potassium [Moles/volume] in Specimen | 0.776 |  |   0 |          0 |
+| 1260102 | Creatinine [Moles/volume] in Serum or Plasma by LC/MS/MS | 0.776 |  |   0 |          0 |
+| 3050898 | Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture | 0.776 |  |   2 |      4,590 |
+| 37019579 | Human papilloma virus DNA [Presence] in Genital specimen by NAA with probe detection | 0.776 |  |   0 |          0 |
+| 36659836 | Osmolality of Urine from Fetus | 0.775 |  |   0 |          0 |
+| 37020529 | Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Genital specimen by NAA with probe detection | 0.775 |  |   0 |          0 |
+| 46235811 | Reticulocyte corpuscular hemoglobin concentration mean [Mass/volume] in Blood | 0.775 |  |   0 |          0 |
+| 1617152 | Noninvasive prenatal fetal aneuploidy and 22q11.2 deletion panel - Plasma cell-free+WBC DNA by Dosage of chromosome-specific cfDNA | 0.775 |  |   0 |          0 |
+| 1175815 | Drugs of abuse panel - Tissue | 0.775 |  |   0 |          0 |
+| 3038962 | Glucose [Mass/volume] in Capillary blood --baseline | 0.774 |  |   0 |          0 |
+| 3038515 | Glucose [Moles/volume] in Venous blood | 0.773 |  |   5 |     28,609 |
+| 40771543 | Amphetamines panel - Meconium by Confirmatory method | 0.773 |  |   0 |          0 |
+| 3022810 | Sodium [Moles/volume] in Body fluid | 0.773 |  |   0 |          0 |
+| 3041440 | Amphetamine+Methamphetamine [Presence] in Specimen | 0.773 |  |   0 |          0 |
+| 647799 | T-ALL minimal residual disease detection in Blood by Flow cytometry (FC) Narrative | 0.773 |  |   0 |          0 |
+| 46236080 | Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Specimen by NAA with probe detection | 0.772 |  |   0 |          0 |
+| 40770969 | pH of Synovial fluid by Test strip | 0.772 |  |   0 |          0 |
+| 36659824 | Bacteria.carbapenem resistant identified in Specimen by Organism specific culture | 0.771 |  |   0 |          0 |
+| 46236725 | Fetal Chromosome 21 trisomy [Presence] based on Plasma cell-free DNA by Sequencing | 0.771 |  |   0 |          0 |
+| 1259993 | Gas and Lactate panel - Venous blood | 0.771 |  |   0 |          0 |
+| 36660656 | CBC W Differential panel - Stem cell product | 0.770 |  |   0 |          0 |
+| 3029511 | Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection | 0.770 |  |   1 |     23,809 |
+| 3023300 | Diffusion capacity/Alveolar volume by Single breath.carbon monoxide+Helium | 0.770 |  |   0 |          0 |
+| 1091119 | Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68 DNA [Presence] in Cervix by Molecular genetics method | 0.769 |  |   0 |          0 |
+| 3020210 | Human papilloma virus Ag [Presence] in Genital specimen | 0.769 |  |   0 |          0 |
+| 43533757 | Human papilloma virus 26+31+33+35+39+45+51+52+53+56+58+59+66+68+73+82 DNA [Presence] in Genital specimen by NAA with probe detection | 0.769 |  |   0 |          0 |
+| 3039355 | Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture | 0.768 |  |   1 |      1,512 |
+| 3024461 | Microorganism identified in Specimen by Culture | 0.768 |  |   0 |          0 |
+| 40766210 | Pseudomonas aeruginosa.multidrug resistant isolate [Presence] in Specimen by Organism specific culture | 0.767 |  |   0 |          0 |
+| 1617021 | Hemoglobin [Mass/volume] in Central venous blood by Oximetry | 0.767 |  |   0 |          0 |
+| 3022113 | Urinalysis microscopic panel - Urine sediment | 0.766 |  |   0 |          0 |
+| 40757358 | Lymphoma - acute screen panel - Specimen by Flow cytometry (FC) | 0.766 |  |   0 |          0 |
+| 3002030 | Lymphocytes/Leukocytes in Blood | 0.766 | 45 |  65 |  1,465,459 |
+| 40760842 | Osmolality of Urine--3rd specimen | 0.765 |  |   0 |          0 |
+| 3006239 | Hemoglobin [Mass/volume] in Arterial blood by Oximetry | 0.765 |  |   0 |          0 |
+| 3027901 | Hemoglobin [Mass/volume] in Arterial cord blood | 0.765 |  |   1 |        180 |
+| 40762373 | Cardiac stress echo study | 0.765 |  |   0 |          0 |
+| 42870522 | Lymphocyte proliferation antigen panel - Blood by Flow cytometry (FC) | 0.764 |  |   0 |          0 |
+| 40758488 | Osmolality of Urine--1 hour post fluid fast | 0.764 |  |   0 |          0 |
+| 40757359 | Lymphoma - CLL screen panel - Specimen by Flow cytometry (FC) | 0.763 |  |   0 |          0 |
+| 1761484 | Gram negative bacteria.colistin resistant identified in Stool by Organism specific culture | 0.763 |  |   0 |          0 |
+| 40758486 | Osmolality of Urine--3 hours post fluid fast | 0.762 |  |   0 |          0 |
+| 21490733 | Potassium [Mass/volume] in Blood | 0.762 |  |   0 |          0 |
+| 3041041 | Hemoglobin [Mass/volume] in Cord blood | 0.762 |  |   0 |          0 |
+| 3019491 | Creatinine [Moles/volume] in Urine by Test strip | 0.762 |  |   0 |          0 |
+| 3000963 | Hemoglobin [Mass/volume] in Blood | 0.760 | 2 |  57 | 11,265,093 |
+| 3040705 | Amphetamine+Methamphetamine [Presence] in Serum or Plasma | 0.759 |  |   0 |          0 |
+| 3031579 | Sodium [Moles/volume] in Mixed venous blood | 0.759 |  |   0 |          0 |
+| 46235392 | Hemoglobin [Mass/volume] in Venous blood by Oximetry | 0.758 |  |   0 |          0 |
+| 3039353 | Urinalysis microscopic panel - Urine Qualitative by Automated | 0.758 |  |   0 |          0 |
+| 3006598 | pH of Arterial cord blood | 0.755 | 1087 |   2 |        453 |
+| 43533918 | Hemoglobin [Entitic substance] in Reticulocytes by Automated count | 0.755 |  |   0 |          0 |
+| 3031219 | Potassium [Moles/volume] in Mixed venous blood | 0.755 |  |   0 |          0 |
+| 3030688 | Urinalysis panel - Urine by Auto | 0.755 |  |   0 |          0 |
+| 3036243 | Potassium [Moles/volume] in Body fluid | 0.754 |  |   0 |          0 |
+| 3003338 | MCHC [Entitic Mass/volume] in Red Blood Cells | 0.753 |  |  16 |  7,331,654 |
+| 40757360 | Lymphoma - T-cell screen panel - Specimen by Flow cytometry (FC) | 0.753 |  |   0 |          0 |
+| 3034226 | Lambda lymphocytes/Lymphocytes in Blood | 0.752 |  |   0 |          0 |
+| 3050489 | Study report Skeletal system DXA | 0.752 |  |   0 |          0 |
+| 42870577 | Diffusion capacity.carbon monoxide/Alveolar volume adjusted for hemoglobin | 0.751 |  |   0 |          0 |
+| 3027831 | CD3-CD16+CD56+ (Natural killer) cells/cells in Blood | 0.751 | 944 |   4 |      7,605 |
+| 648527 | Amphetamines [Measurement] in Urine | 0.751 |  |   0 |          0 |
+| 3029461 | Hemoglobin [Mass/volume] in Arterial cord blood by calculation | 0.751 |  |   0 |          0 |
+| 3007672 | Kappa lymphocytes/Lymphocytes in Blood | 0.750 |  |   0 |          0 |
+| 1091049 | Amphetamine [Presence] in Urine | 0.748 |  |   0 |          0 |
+| 3008905 | Diffusion capacity.carbon monoxide | 0.748 |  |   0 |          0 |
+| 648501 | Amphetamine [Measurement] in Urine | 0.748 |  |   0 |          0 |
+| 3001838 | Sodium [Moles/volume] in Red Blood Cells | 0.747 |  |   0 |          0 |
+| 37020799 | Gram positive bacilli identified in Isolate by Organism specific culture | 0.746 |  |   0 |          0 |
+| 21494434 | Karyotype in Bone marrow | 0.746 |  |   2 |      4,295 |
+| 3012323 | Lymphocytes/Leukocytes in Blood by Flow cytometry (FC) | 0.745 |  |   0 |          0 |
+| 3023764 | Bacteria identified in Specimen by Respiratory culture | 0.743 |  |   0 |          0 |
+| 3009203 | Cardiac echo study Procedure | 0.743 |  |   0 |          0 |
+| 1988185 | Stimulants drug panel - Urine by Screen method | 0.743 |  |   0 |          0 |
+| 3038999 | pH of Venous blood adjusted to patient's actual temperature | 0.743 |  |   0 |          0 |
+| 3053181 | Prothrombin time (PT) in Capillary blood by Coagulation assay | 0.743 |  |   0 |          0 |
+| 3005460 | CD56 cells/cells in Blood | 0.742 |  |   0 |          0 |
+| 3030157 | CD56+CD57+ cells/cells in Blood | 0.741 |  |   0 |          0 |
+| 3015455 | CD16+CD56+ cells/cells in Blood | 0.739 | 1406 |   0 |          0 |
+| 40760138 | Urinalysis dipstick W Reflex Culture panel - Urine | 0.734 |  |   0 |          0 |
+| 46235809 | Reticulocyte hemoglobin distribution width [Mass/volume] in Blood by calculation | 0.733 |  |   0 |          0 |
+| 3003466 | CD3+CD56+ cells/cells in Blood | 0.732 |  |   0 |          0 |
+| 3051343 | DXA Bone [Mass/Area] Bone density | 0.730 |  |   0 |          0 |
+| 40758220 | CD3-CD56+ cells/cells in Blood | 0.730 |  |   0 |          0 |
+| 3032080 | INR in Blood by Coagulation assay | 0.725 | 206 |  88 |  2,812,069 |
+| 21493451 | Spirometry panel | 0.723 |  |   0 |          0 |
+| 3049858 | Reticulocyte mean volume [Entitic volume] in Reticulocytes | 0.723 |  |   0 |          0 |
+| 3007558 | Diffusion capacity.carbon monoxide adjusted for hemoglobin by Helium single breath | 0.723 |  |   0 |          0 |
+| 3051314 | MCHC [Entitic Mass/volume] in Red Blood Cells from Cord blood | 0.723 |  |   0 |          0 |
+| 3006400 | Diffusion capacity.carbon monoxide adjusted for hemoglobin | 0.722 |  |   0 |          0 |
+| 3050583 | Platelets panel - Blood by Automated count | 0.721 |  |   0 |          0 |
+| 3018418 | pH of Serum or Plasma | 0.720 | 160 |  19 |    570,372 |
+| 3042605 | INR in Platelet poor plasma or blood by Coagulation assay | 0.719 |  |   0 |          0 |
+| 3010322 | Cardiac catheterization study | 0.717 |  |   0 |          0 |
+| 1091363 | DXA Spine [T-score] Bone density | 0.715 |  |   0 |          0 |
+| 1617299 | Diffusion capacity.carbon monoxide/Predicted | 0.710 |  |   0 |          0 |
+| 3027837 | Diffusion capacity adjusted to body conditions by Single breath.carbon monoxide+Helium | 0.710 |  |   0 |          0 |
+| 36204417 | DXA Lumbar spine [Z-score] Bone density | 0.708 |  |   0 |          0 |
+| 3049581 | DXA Calcaneus [T-score] Bone density | 0.705 |  |   0 |          0 |
+| 1988764 | Electromyography panel | 0.704 |  |   0 |          0 |
+| 1617225 | Diffusion capacity.carbon monoxide --pre bronchodilation | 0.703 |  |   0 |          0 |
+| 3965513 | Bone DXA Calcaneus [Z-score] Bone density | 0.703 |  |   0 |          0 |
+| 36203242 | DXA Humerus [Mass/Area] Bone density | 0.703 |  |   0 |          0 |
+| 3021722 | DXA Femur [Mass/Area] Bone density | 0.702 |  |   0 |          0 |
+| 3044045 | Cell count and Differential panel - Body fluid | 0.702 |  |   0 |          0 |
+| 3002101 | DXA Radius and Ulna [Mass/Area] Bone density | 0.701 |  |   0 |          0 |
+| 3015145 | Diffusion capacity.carbon monoxide Predicted | 0.700 |  |   0 |          0 |
+| 3022217 | INR in Platelet poor plasma by Coagulation assay | 0.699 | 53 |   0 |          0 |
+| 3014424 | Cardiac echo study Procedure stress method | 0.696 |  |   0 |          0 |
+| 3027232 | Diffusion capacity/Alveolar volume | 0.688 |  |   0 |          0 |
+| 3023329 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter | 0.686 |  |   0 |          0 |
+| 3043821 | Protein and Glucose panel - Urine by Test strip | 0.684 |  |   0 |          0 |
+| 3009544 | EKG Study overall | 0.674 |  |   0 |          0 |
+| 3033157 | Peak flow meter Vendor name | 0.669 |  |   0 |          0 |
+| 3003481 | Cardiac echo study Transducer site Narrative | 0.668 |  |   0 |          0 |
+| 3002200 | Cardiac echo study Transducer site | 0.665 |  |   0 |          0 |
+| 3015588 | Electromyogram study | 0.664 |  |   0 |          0 |
+| 40765089 | Chromosome analysis panel - Blood by G-banded | 0.663 |  |   1 |      1,888 |
+| 3034016 | Peak flow meter Vendor model code | 0.662 |  |   0 |          0 |
+| 46235184 | Cardiac stress test EKG study Type | 0.660 |  |   0 |          0 |
+| 21493450 | Pulmonary function test panel | 0.660 |  |   0 |          0 |
+| 3019794 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --post therapy | 0.658 |  |   0 |          0 |
+| 46235180 | Neurology study | 0.657 |  |   0 |          0 |
+| 42868488 | Positive airway pressure panel | 0.657 |  |   0 |          0 |
+| 42869550 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --pre therapy | 0.654 |  |   0 |          0 |
+| 3034996 | Type of Peak flow meter | 0.654 |  |   0 |          0 |
+| 21494435 | Karyotype in Blood or Tissue --post mitogen stimulation | 0.651 |  |   0 |          0 |
+| 3034930 | Peak flow meter Vendor software version | 0.651 |  |   0 |          0 |
+| 40758532 | Asthma tracking panel | 0.651 |  |   0 |          0 |
+| 40758294 | Paroxysmal nocturnal panel - Blood | 0.650 |  |   0 |          0 |
+| 3012667 | Hematologic+Nuclear elements.microscopic observation [Identifier] in Tissue by Giemsa stain.May-Grunwald | 0.649 |  |   0 |          0 |
+| 21494996 | Respiratory assessment panel | 0.648 |  |   0 |          0 |
+| 36660396 | Hematologic neoplasm chromosome analysis in Blood or Marrow by Mate pair sequencing | 0.645 |  |   0 |          0 |
+| 3026358 | Preparation techniques [Type] in Cervical or vaginal smear or scraping by Cyto stain | 0.644 |  |   0 |          0 |
+| 21494982 | Neurological assessment panel | 0.642 |  |   0 |          0 |
+| 21491758 | Electroretinography (ERG) panel | 0.641 |  |   0 |          0 |
+| 36303746 | Microscopic observation [Identifier] in Bone marrow by Giemsa stain | 0.639 |  |   0 |          0 |
+| 36031935 | Sedation panel NPASS | 0.638 |  |   0 |          0 |
+| 21493510 | Constitutive heterochromatin analysis in Blood or Tissue by Banding | 0.637 |  |   0 |          0 |
+| 3049361 | Cytology report of Specimen Cyto stain | 0.635 |  |   0 |          0 |
+| 21493275 | Clotting time of Capillary blood by Sukharev method | 0.634 |  |   0 |          0 |
+| 3966104 | Acute myeloid leukemia in Blood or Tissue by FISH | 0.633 |  |   0 |          0 |
+| 40763950 | INR in Platelet poor plasma from Fetus by Coagulation assay | 0.632 |  |   0 |          0 |
+| 40762358 | Karyotype [Identifier] in Blood or Tissue by FISH Narrative | 0.625 |  |   0 |          0 |
+| 36660048 | Chromosome region 14q32 rearrangements in Bone marrow by FISH | 0.624 |  |   0 |          0 |
+| 3041830 | Coag.tissue factor induced.PIVKA sensitive actual/normal in Capillary blood by Coagulation assay | 0.622 |  |   0 |          0 |
+| 3039326 | INR post heparin neutralization in Platelet poor plasma by Coagulation assay | 0.621 |  |   0 |          0 |
+| 40762347 | Cytologist who read Cyto stain of Specimen | 0.591 |  |   0 |          0 |
+| 3049717 | Cytology report of Urine Cyto stain | 0.590 |  |   2 |     40,944 |
+| 3030078 | Cell type in Specimen | 0.578 |  |   0 |          0 |
+| 3049411 | Cytology report of Body fluid Cyto stain | 0.577 |  |   0 |          0 |
+| 46235082 | Evoked potential study | 0.576 |  |   0 |          0 |
+| 3043109 | Cytology report of Tissue fine needle aspirate Cyto stain | 0.570 | 943 |   1 |     13,478 |
+| 3052565 | Study report | 0.564 |  |   0 |          0 |
+| 3030694 | Cytology report of Bronchial brush Cyto stain | 0.562 |  |   0 |          0 |
+| 3013125 | Reviewing cytologist who read Cyto stain of Cervical or vaginal smear or scraping | 0.560 | 1656 |   0 |          0 |
+| 3035004 | Microscopic observation [Identifier] in Urine by Cyto stain | 0.557 | 1251 |   0 |          0 |
+| 3003981 | EKG Study observation overall (narrative) | 0.552 |  |   0 |          0 |
+| 21494992 | Neurological assessment [Interpretation] | 0.547 |  |   0 |          0 |
+| 3026936 | Central cardiovascular Study observation Narrative by US | 0.531 |  |   0 |          0 |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | has_component | has_property | has_method | has_system | has_scale_type | has_time_aspect | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 222 | -histologinensolublokkisytologisestanäytteestä |  | 214 | 100 |  |  |  |  | Histology study | Finding | Cell block | Tissue | Nar | Point in time (spot) | TRUE |
-| 223 | -humanpapillomavirusgenotyyppi16 |  | 301 | 100 |  |  |  |  | Human papillomavirus 16 DNA | Presence or Identity | Molecular genetics |  | Ord | Point in time (spot) | FALSE |
-| 224 | -humanpapillomavirusgenotyyppi18 |  | 301 | 100 |  |  |  |  | Human papillomavirus 18 DNA | Presence or Identity | Molecular genetics |  | Ord | Point in time (spot) | FALSE |
-| 225 | -humanpapillomavirusgenotyyppimuupatogeeninenhpv |  | 252 | 100 |  |  |  |  | Human papillomavirus high risk types other than 16 and 18 DNA | Presence or Identity | Molecular genetics |  | Ord | Point in time (spot) | FALSE |
-| 226 | -lisämaksukiireellisenäpyydetyllenäytteelle |  | 584 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 227 | -lisätutkimuspyyntöaiemmintutkitullenäytteelle |  | 191 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 228 | -lisävastaus2laskutuskuitatullenäytteelle |  | 438 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 229 | -lisävastauslaskutuskuitatullenäytteelle |  | 2865 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 230 | -moniresistentitgram-negatiivisetsauvat,viljely |  | 122 | 100 |  |  |  |  | Gram negative rod multi-drug resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 231 | -moniresistentitgramnegatiivisetsauvat,viljely |  | 163 | 100 |  |  |  |  | Gram negative rod multi-drug resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 232 | -resistentitgramnegatiivisetsauvat,viljely |  | 314 | 100 |  |  |  |  | Gram negative rod resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 233 | -staphylococcusaureus,metilliiniresist.viljely |  | 248 | 100 |  |  |  |  | Staphylococcus aureus methicillin resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 234 | -staphylococcusaureus,metisilliiniresistentti,v |  | 540 | 100 |  |  |  |  | Staphylococcus aureus methicillin resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 235 | b-glukoosi,hoitoyksikönvieritesti,kokoveri |  | 687 | 0.15 | [5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28] |  | Blood |  | Glucose | Substance Concentration | Test strip | Blood | Qn | Point in time (spot) | FALSE |
-| 236 | b-hematologisenpotilaanperuskaryotyypinmääritys |  | 125 | 100 |  |  | Blood |  | Chromosome analysis | Finding | Karyotype | Blood | Nar | Point in time (spot) | FALSE |
-| 237 | b-kreatiniini,hoitoyksikönvieritesti,veri |  | 167 | 0 | [58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170] |  | Blood |  | Creatinine | Substance Concentration | Test strip | Blood | Qn | Point in time (spot) | FALSE |
-| 238 | bakteerit,virtsasta,partikkelinlaskijalla,osatutk. |  | 212 | 100 |  |  |  |  | Bacteria | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 239 | bm-pahanlaatuisenveritaudinimmunofenotyypitys |  | 191 | 100 |  |  | Bone marrow |  | Immunophenotyping | Finding | Flow cytometry (FC) | Bone marrow | Nar | Point in time (spot) | TRUE |
-| 240 | bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi |  | 162 | 100 |  |  | Bone marrow |  | Minimal residual disease | Finding | Flow cytometry (FC) | Bone marrow | Nar | Point in time (spot) | FALSE |
-| 241 | cb-hemoglobiini,vieritestihoitoyksikössä | g/l | 101 | 0 | [84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146] |  | Capillary blood |  | Hemoglobin | Mass Concentration | Test strip | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 242 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä | mmol/l | 5203 | 0 | [5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77] |  |  |  | Glucose | Substance Concentration | Test strip | Plasma capillary | Qn | Point in time (spot) | FALSE |
-| 243 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä |  | 19 | 100 | [5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96] |  |  |  | Glucose | Substance Concentration | Test strip | Plasma capillary | Qn | Point in time (spot) | FALSE |
-| 244 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella | mg/l | 771 | 0 | [2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84] |  |  |  | C reactive protein | Mass Concentration | Immunoassay | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 245 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella |  | 192 | 85.42 |  |  |  |  | C reactive protein | Mass Concentration | Immunoassay | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 246 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 438 | 0 | [26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53] |  | Erythrocyte |  | Hemoglobin/Reticulocyte | Mass content | Automated count | Red Blood Cells | Qn | Point in time (spot) | FALSE |
-| 247 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 15 | 6.67 |  |  | Erythrocyte |  | Hemoglobin/Reticulocyte | Mass content | Automated count | Red Blood Cells | Qn | Point in time (spot) | FALSE |
-| 248 | emäsylimäärä,laskimoverestä,pikatesti␤ | mmol/l | 373 | 0 |  |  |  |  | Base excess | Substance Concentration |  | Blood venous | Qn | Point in time (spot) | FALSE |
-| 249 | emäsylimäärä,laskimoverestä,pikatesti␤ |  | 339 | 19.47 |  |  |  |  | Base excess | Substance Concentration |  | Blood venous | Qn | Point in time (spot) | FALSE |
-| 250 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32] |  |  |  | Epithelial cells | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 251 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Epithelial cells | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 252 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta | iu/ml | 24 | 0 |  |  |  |  | Epstein-Barr virus DNA | Arbitrary Concentration | Nucleic acid amplification with probe detection | Plasma | Qn | Point in time (spot) | FALSE |
-| 253 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta |  | 241 | 100 |  |  |  |  | Epstein-Barr virus DNA | Arbitrary Concentration | Nucleic acid amplification with probe detection | Plasma | Qn | Point in time (spot) | FALSE |
-| 254 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 202 | 0 | [3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76] |  |  |  | Erythrocytes | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 255 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. |  | 10 | 100 |  |  |  |  | Erythrocytes | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 256 | fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi | ug/l | 299 | 0 | [0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63] |  | Fasting plasma |  | Collagen type I beta-carboxyterminal telopeptide | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 257 | happamusaste,kapillaariverestä,pikatesti␤ |  | 1262 | 0.24 |  |  |  |  | pH | Logarithmic scale |  | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 258 | happamuusaste,laskimoverestä,pikatesti␤ |  | 712 | 0.7 |  |  |  |  | pH | Logarithmic scale |  | Blood venous | Qn | Point in time (spot) | FALSE |
-| 259 | happiosapaine,kapillaariverestä,pikatesti␤ | kpa | 1260 | 0 |  |  |  |  | Oxygen | Partial pressure |  | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 260 | happoemästasejahappi,laskimoverestä,pikatesti␤ |  | 643 | 100 |  |  |  |  |  |  |  | Blood venous |  |  | TRUE |
-| 261 | hepatiittic-virus,nh,jatkotutkimus,plasmasta |  | 512 | 100 |  |  |  |  | Hepatitis C virus RNA | Presence or Identity | Nucleic acid amplification with probe detection | Plasma | Ord | Point in time (spot) | FALSE |
-| 262 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ | kpa | 707 | 0 |  |  |  |  | Carbon dioxide | Partial pressure |  | Blood venous | Qn | Point in time (spot) | FALSE |
-| 263 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ |  | 5 | 100 |  |  |  |  | Carbon dioxide | Partial pressure |  | Blood venous | Qn | Point in time (spot) | FALSE |
-| 264 | hpv-gt16aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 265 | hpv-gt18-45aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 266 | hpvaptimapanther,apututkimustulostensiirtoon |  | 413 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 267 | humanimmunodeficiencyvirus,antigeenijavasta- |  | 192 | 100 |  |  |  |  | HIV 1+2 Ag+Ab | Presence or Threshold | Immunoassay | Serum or Plasma | Ord | Point in time (spot) | FALSE |
-| 268 | humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd |  | 260 | 100 |  |  |  |  | HIV 1+2 Ag+Ab | Presence or Threshold | Immunoassay | Serum or Plasma | Ord | Point in time (spot) | FALSE |
-| 269 | huume-jalääkeainetutkimus,laaja,varmistus |  | 448 | 100 |  |  |  |  |  |  | Chromatography | Urine |  |  | TRUE |
-| 270 | huumeseulonta,kvalitatiivinen,virtsasta␤ |  | 140 | 100 |  |  |  |  |  |  |  | Urine |  |  | TRUE |
-| 271 | kalium,hoitoyksikönvieritesti,veri | mmol/l | 166 | 0 | [3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6] |  |  |  | Potassium | Substance Concentration |  | Blood | Qn | Point in time (spot) | FALSE |
-| 272 | kalium,hoitoyksikönvieritesti,veri |  | 290 | 0 | [3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5] |  |  |  | Potassium | Substance Concentration |  | Blood | Qn | Point in time (spot) | FALSE |
-| 273 | kreatiniini,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53] |  |  |  | Creatinine | Substance Concentration |  | Blood | Qn | Point in time (spot) | FALSE |
-| 274 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 874 | 0 | [2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82] |  |  |  | Creatinine | Substance Concentration |  | Urine | Qn | Point in time (spot) | FALSE |
-| 275 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) |  | 6 | 66.67 |  |  |  |  | Creatinine | Substance Concentration |  | Urine | Qn | Point in time (spot) | FALSE |
-| 276 | laajahuumeseulonta,varmistustasoinen,virtsasta |  | 944 | 100 |  |  |  |  |  |  | Chromatography | Urine |  |  | TRUE |
-| 277 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0, 0, 0, 0, 0, 0, 0, 0.1, 0.4] |  |  |  | Casts | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 278 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Casts | Number Concentration | Automated count | Urine | Qn | Point in time (spot) | FALSE |
-| 279 | lisävastauslaskutuskuitatullenäytteelle |  | 214 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 280 | luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna |  | 145 | 100 |  |  |  |  | Bone density study | Finding | Dual-energy X-ray absorptiometry | ^Patient | Nar | Point in time (spot) | TRUE |
-| 281 | marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte |  | 168 | 0 |  |  |  |  | INR | Relative time | Coagulation assay | Blood capillary | Qn | Point in time (spot) | FALSE |
-| 282 | moniresistentitgramnegatiivisetsauvat,viljely |  | 206 | 100 |  |  |  |  | Gram negative rod multi-drug resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 283 | natrium,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142] |  |  |  | Sodium | Substance Concentration |  | Blood | Qn | Point in time (spot) | FALSE |
-| 284 | natrium,hoitoyksikönvieritesti,veri |  | 292 | 0 | [131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142] |  |  |  | Sodium | Substance Concentration |  | Blood | Qn | Point in time (spot) | FALSE |
-| 285 | natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta | ng/l | 159 | 0 | [27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2] |  |  |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 286 | nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina) | % | 665 | 0 | [4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91] |  |  |  | NK cells/Leukocytes | Number Fraction | Flow cytometry (FC) | Blood | Qn | Point in time (spot) | FALSE |
-| 287 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. | mosm/kgh2o | 203 | 0 | [331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53] |  |  |  | Osmolality | Osmolality |  | Urine | Qn | Point in time (spot) | FALSE |
-| 288 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Osmolality | Osmolality |  | Urine | Qn | Point in time (spot) | FALSE |
-| 289 | p-natriureett.peptidin-termin.propept.vieritl | ng/l | 118 | 0 | [140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2] |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration | Immunoassay | Plasma | Qn | Point in time (spot) | FALSE |
-| 290 | p-natriureett.peptidin-termin.propept.vieritl |  | 20 | 100 |  |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration | Immunoassay | Plasma | Qn | Point in time (spot) | FALSE |
-| 291 | p-natriureettinenpeptidi,b-tyypinn-terminaalin | ng/l | 4682 | 0 | [86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85] |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 292 | p-natriureettinenpeptidi,b-tyypinn-terminaalin |  | 149 | 100 |  |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 293 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi | ng/l | 1366 | 0 | [106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983] |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 294 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi |  | 107 | 100 |  |  | Plasma |  | Natriuretic peptide.B N-Terminal Prohormone | Mass Concentration |  | Plasma | Qn | Point in time (spot) | FALSE |
-| 295 | parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat) |  | 120 | 100 |  |  |  |  |  |  | Microscopy | Stool |  |  | TRUE |
-| 296 | pienikudoskoepala,enintään1-3samankokonaisuudennäytettä |  | 234 | 100 |  |  |  |  | Histology study | Finding |  | Tissue | Nar | Point in time (spot) | TRUE |
-| 297 | pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit. |  | 267 | 100 |  |  |  |  |  |  |  | Nasopharynx |  |  | TRUE |
-| 298 | pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus |  | 3577 | 100 |  |  | Patient |  | Pulmonary function test study | Finding |  | ^Patient | Nar | Point in time (spot) | TRUE |
-| 299 | pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot |  | 113 | 100 |  |  | Patient |  | Neurophysiology study | Finding |  | ^Patient | Nar | Point in time (spot) | TRUE |
-| 300 | pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa |  | 120 | 100 |  |  | Patient |  | Bone density study | Finding | Dual-energy X-ray absorptiometry | ^Patient | Nar | Point in time (spot) | TRUE |
-| 301 | pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee) |  | 177 | 100 |  |  | Patient |  | Echocardiography study | Finding |  | ^Patient | Nar | Point in time (spot) | TRUE |
-| 302 | pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta |  | 474 | 100 |  |  | Patient |  | Peak expiratory flow monitoring | Finding |  | ^Patient | Nar | Point in time (spot) | TRUE |
-| 303 | pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona |  | 542 | 100 |  |  | Patient |  | Sleep study | Finding |  | ^Patient | Nar | Night time | TRUE |
-| 304 | pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein |  | 102 | 100 |  |  | Patient |  | Sleep study | Finding |  | ^Patient | Nar | Night time | TRUE |
-| 305 | pu-aerobinenjaanaerobinenbakteerityypitysjaan |  | 147 | 100 |  |  | Pus |  |  |  | Organism specific culture | Pus |  |  | TRUE |
-| 306 | resistentitgramnegatiivisetsauvat,viljely |  | 320 | 100 |  |  |  |  | Gram negative rod resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 307 | retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 525 | 0 | [26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37] |  |  |  | Hemoglobin/Reticulocyte | Mass content | Automated count | Red Blood Cells | Qn | Point in time (spot) | FALSE |
-| 308 | retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 5 | 100 |  |  |  |  | Hemoglobin/Reticulocyte | Mass content | Automated count | Red Blood Cells | Qn | Point in time (spot) | FALSE |
-| 309 | s-humanimmunodeficiencyvirus,antigeenijavast |  | 1221 | 100 |  |  | Serum |  | HIV 1+2 Ag+Ab | Presence or Threshold | Immunoassay | Serum | Ord | Point in time (spot) | FALSE |
-| 310 | sikiöperäisendna:ntutkimusäidinverinäytteestä |  | 104 | 100 |  |  |  |  | Fetal DNA | Finding | Molecular genetics | Plasma | Nar | Point in time (spot) | TRUE |
-| 311 | staphylococcusaureus,metisilliiniresistenssiviljely␤ |  | 134 | 100 |  |  |  |  | Staphylococcus aureus methicillin resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 312 | staphylococcusaureus,metisilliiniresistentti(mrsa),viljely |  | 627 | 100 |  |  |  |  | Staphylococcus aureus methicillin resistant | Presence or Identity | Organism specific culture |  | Nom | Point in time (spot) | FALSE |
-| 313 | t-auttajasolujenosuus(määritettynäcd3+cd4+soluina) | % | 665 | 0 | [12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07] |  | Thrombocyte |  | CD4+ T-lymphocytes/T-lymphocytes | Number Fraction | Flow cytometry (FC) | Blood | Qn | Point in time (spot) | FALSE |
-| 314 | t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina) | % | 665 | 0 | [14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66] |  | Thrombocyte |  | CD8+ T-lymphocytes/T-lymphocytes | Number Fraction | Flow cytometry (FC) | Blood | Qn | Point in time (spot) | FALSE |
-| 315 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella | ng/l | 7 | 0 |  |  |  |  | Troponin T | Mass Concentration | Immunoassay | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 316 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella |  | 97 | 93.81 |  |  |  |  | Troponin T | Mass Concentration | Immunoassay | Serum or Plasma | Qn | Point in time (spot) | FALSE |
-| 317 | ts-histologinentutkimus,1-3kudosnäytettä |  | 160 | 100 |  |  | Tissue |  |  |  |  |  |  |  |  |
-| 318 | ts-histologinentutkimus,1-3näytettä |  | 945 | 100 |  |  | Tissue |  | Histology study | Finding |  | Tissue | Nar | Point in time (spot) | TRUE |
-| 319 | työpaikanhuumeseulontajavarmistus,4yhdistettä |  | 469 | 100 |  |  |  |  |  |  | Chromatography | Urine |  |  | TRUE |
-| 320 | työpaikanhuumeseulontajavarmistus,7yhdistettä |  | 312 | 100 |  |  |  |  |  |  | Chromatography | Urine |  |  | TRUE |
-| 321 | täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet |  | 1481 | 100 |  |  |  |  |  |  |  |  |  |  | FALSE |
-| 322 | täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤ |  | 9742 | 100 |  |  |  |  |  |  |  | Blood |  |  | TRUE |
-| 323 | u-amfetamiinijametamfetamiini,enantiomeerienerittely |  | 120 | 100 |  |  | Urine |  | Amphetamine and Methamphetamine enantiomers | Presence or Identity | Chromatography | Urine | Nom | Point in time (spot) | FALSE |
-| 324 | u-asetoniaineet,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  | Ketones | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 325 | u-erytrosyytit,kval,vieritestihoitoyksikössä |  | 413 | 100 |  |  | Urine |  | Erythrocytes | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 326 | u-glukoosi,kvalvieritestihoitoyksikössä |  | 423 | 100 |  |  | Urine |  | Glucose | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 327 | u-happamuusaste,vieritestihoitoyksikössä |  | 400 | 0.25 | [5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7] |  | Urine |  | pH | Logarithmic scale | Test strip | Urine | Qn | Point in time (spot) | FALSE |
-| 328 | u-huume-jalääkeainetutkimus,laaja,varmistus |  | 175 | 100 |  |  | Urine |  |  |  | Chromatography | Urine |  |  | TRUE |
-| 329 | u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta |  | 121 | 100 |  |  | Urine |  |  |  |  | Urine |  |  | TRUE |
-| 330 | u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms) |  | 144 | 100 |  |  | Urine |  |  |  | Chromatography/Mass spectrometry | Urine |  |  | TRUE |
-| 331 | u-kemiallinenseulonta,vieritestihoitoyksikössä |  | 104 | 100 |  |  | Urine |  |  |  | Test strip | Urine |  |  | TRUE |
-| 332 | u-kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 398 | 0 | [2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61] |  | Urine |  | Creatinine | Substance Concentration |  | Urine | Qn | Point in time (spot) | FALSE |
-| 333 | u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen |  | 421 | 100 |  |  | Urine |  |  |  |  | Urine |  |  | TRUE |
-| 334 | u-leukosyytit,kval,vieritestihoitoyksikössä |  | 429 | 100 |  |  | Urine |  | Leukocytes | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 335 | u-nitriitti,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  | Nitrite | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 336 | u-proteiini,kval,vieritestihoitoyksikössä |  | 425 | 100 |  |  | Urine |  | Protein | Presence or Threshold | Test strip | Urine | Ord | Point in time (spot) | FALSE |
-| 337 | vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä |  | 162 | 100 |  |  |  |  |  |  |  | Blood venous |  |  | TRUE |
-| 338 | yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤ |  | 484 | 100 |  |  |  |  | Yersinia species DNA | Presence or Identity | Nucleic acid amplification with probe detection | Stool | Ord | Point in time (spot) | FALSE |
+| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 222 | -histologinensolublokkisytologisestanäytteestä |  | 214 | 100 |  |  |  |  | Cell block preparation from Cytology specimen | FALSE |
+| 223 | -humanpapillomavirusgenotyyppi16 |  | 301 | 100 |  |  |  |  | Human Papillomavirus 16 DNA [Presence] in Cervical or Vaginal specimen | FALSE |
+| 224 | -humanpapillomavirusgenotyyppi18 |  | 301 | 100 |  |  |  |  | Human Papillomavirus 18 DNA [Presence] in Cervical or Vaginal specimen | FALSE |
+| 225 | -humanpapillomavirusgenotyyppimuupatogeeninenhpv |  | 252 | 100 |  |  |  |  | Human Papillomavirus high risk types DNA [Presence] in Cervical or Vaginal specimen | FALSE |
+| 226 | -lisämaksukiireellisenäpyydetyllenäytteelle |  | 584 | 100 |  |  |  |  |  | FALSE |
+| 227 | -lisätutkimuspyyntöaiemmintutkitullenäytteelle |  | 191 | 100 |  |  |  |  |  | FALSE |
+| 228 | -lisävastaus2laskutuskuitatullenäytteelle |  | 438 | 100 |  |  |  |  |  | FALSE |
+| 229 | -lisävastauslaskutuskuitatullenäytteelle |  | 2865 | 100 |  |  |  |  |  | FALSE |
+| 230 | -moniresistentitgram-negatiivisetsauvat,viljely |  | 122 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Specimen by Culture | FALSE |
+| 231 | -moniresistentitgramnegatiivisetsauvat,viljely |  | 163 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Specimen by Culture | FALSE |
+| 232 | -resistentitgramnegatiivisetsauvat,viljely |  | 314 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Specimen by Culture | FALSE |
+| 233 | -staphylococcusaureus,metilliiniresist.viljely |  | 248 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Specimen by Culture | FALSE |
+| 234 | -staphylococcusaureus,metisilliiniresistentti,v |  | 540 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Specimen by Culture | FALSE |
+| 235 | b-glukoosi,hoitoyksikönvieritesti,kokoveri |  | 687 | 0.15 | [5.55, 5.93, 6.7, 7.42, 8.33, 9.1, 10.22, 12.18, 14.28] |  | Blood |  | Glucose [Moles/volume] in Blood by Point of care | FALSE |
+| 236 | b-hematologisenpotilaanperuskaryotyypinmääritys |  | 125 | 100 |  |  | Blood |  | Karyotype for Hematologic malignancy in Blood by Giemsa stain | FALSE |
+| 237 | b-kreatiniini,hoitoyksikönvieritesti,veri |  | 167 | 0 | [58.29, 69.03, 76.8, 84.73, 95.67, 105.12, 116.21, 134.79, 170] |  | Blood |  | Creatinine [Moles/volume] in Blood by Point of care | FALSE |
+| 238 | bakteerit,virtsasta,partikkelinlaskijalla,osatutk. |  | 212 | 100 |  |  |  |  | Bacteria [#/volume] in Urine by Automated count | FALSE |
+| 239 | bm-pahanlaatuisenveritaudinimmunofenotyypitys |  | 191 | 100 |  |  | Bone marrow |  | Leukemia or Lymphoma immunophenotyping panel by Flow cytometry (FC) in Bone marrow | TRUE |
+| 240 | bm-pahanlaatuisenveritaudinimmunofenotyyppinenjäännöstautianalyysi |  | 162 | 100 |  |  | Bone marrow |  | Leukemia or Lymphoma Minimal Residual Disease panel by Flow cytometry (FC) in Bone marrow | TRUE |
+| 241 | cb-hemoglobiini,vieritestihoitoyksikössä | g/l | 101 | 0 | [84.5, 92.5, 100.5, 112.5, 121.56, 127.06, 131.83, 135.83, 146] |  | Capillary blood |  | Hemoglobin [Mass/volume] in Capillary blood by Point of care | FALSE |
+| 242 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä | mmol/l | 5203 | 0 | [5.2, 6.16, 6.92, 7.87, 8.89, 10.17, 11.74, 13.96, 16.77] |  |  |  | Glucose [Moles/volume] in Capillary blood by Point of care | FALSE |
+| 243 | cp-glukoosi,ihopistosn,vieritestihoitoyksikössä |  | 19 | 100 | [5.33, 6.26, 7.1, 7.98, 9.1, 10.33, 11.92, 13.89, 16.96] |  |  |  | Glucose [Moles/volume] in Capillary blood by Point of care | FALSE |
+| 244 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella | mg/l | 771 | 0 | [2.6, 5.17, 9.64, 14.69, 22, 32.29, 47.95, 69.4, 106.84] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma by Point of care | FALSE |
+| 245 | crp-pitoisuus,hoitoyksikkömittaavieritestilaitteella |  | 192 | 85.42 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma by Point of care | FALSE |
+| 246 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 438 | 0 | [26.9, 30, 31.94, 33, 34, 34.57, 35, 36, 37.53] |  | Erythrocyte |  | Reticulocyte hemoglobin content [Entitic mass] in Red Blood Cells | FALSE |
+| 247 | e-retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 15 | 6.67 |  |  | Erythrocyte |  | Reticulocyte hemoglobin content [Entitic mass] in Red Blood Cells | FALSE |
+| 248 | emäsylimäärä,laskimoverestä,pikatesti␤ | mmol/l | 373 | 0 |  |  |  |  | Base excess in Venous blood by calculation | FALSE |
+| 249 | emäsylimäärä,laskimoverestä,pikatesti␤ |  | 339 | 19.47 |  |  |  |  | Base excess in Venous blood by calculation | FALSE |
+| 250 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0.2, 0.4, 0.66, 1, 1.3, 1.71, 2.47, 3.65, 8.32] |  |  |  | Epithelial cells [#/volume] in Urine by Automated count | FALSE |
+| 251 | epiteelisolut,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Epithelial cells [#/volume] in Urine by Automated count | FALSE |
+| 252 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta | iu/ml | 24 | 0 |  |  |  |  | Epstein-Barr virus DNA [Units/volume] in Plasma by NAA with probe detection | FALSE |
+| 253 | epstein-barrvirus(ebv),nhkvantitatiivinen,plasmasta |  | 241 | 100 |  |  |  |  | Epstein-Barr virus DNA [Presence] in Plasma by NAA with probe detection | FALSE |
+| 254 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 202 | 0 | [3.19, 4.28, 5.76, 7.13, 9.35, 12.16, 16.65, 32.02, 93.76] |  |  |  | Erythrocytes [#/volume] in Urine by Automated count | FALSE |
+| 255 | erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk. |  | 10 | 100 |  |  |  |  | Erythrocytes [#/volume] in Urine by Automated count | FALSE |
+| 256 | fp-kollageenii:nbeta-karboksiterminaalinentelopeptidi | ug/l | 299 | 0 | [0.08, 0.14, 0.17, 0.21, 0.26, 0.3, 0.36, 0.45, 0.63] |  | Fasting plasma |  | Collagen type I cross-linked C-telopeptide [Mass/volume] in Serum or Plasma --fasting | FALSE |
+| 257 | happamusaste,kapillaariverestä,pikatesti␤ |  | 1262 | 0.24 |  |  |  |  | pH of Capillary blood | FALSE |
+| 258 | happamuusaste,laskimoverestä,pikatesti␤ |  | 712 | 0.7 |  |  |  |  | pH of Venous blood | FALSE |
+| 259 | happiosapaine,kapillaariverestä,pikatesti␤ | kpa | 1260 | 0 |  |  |  |  | Oxygen [Partial pressure] in Capillary blood | FALSE |
+| 260 | happoemästasejahappi,laskimoverestä,pikatesti␤ |  | 643 | 100 |  |  |  |  | Gas panel - Venous blood | TRUE |
+| 261 | hepatiittic-virus,nh,jatkotutkimus,plasmasta |  | 512 | 100 |  |  |  |  | Hepatitis C virus RNA [Presence] in Plasma by NAA with probe detection | FALSE |
+| 262 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ | kpa | 707 | 0 |  |  |  |  | Carbon dioxide [Partial pressure] in Venous blood | FALSE |
+| 263 | hiilidioksidiosapaine,laskimoverestä,pikatesti␤ |  | 5 | 100 |  |  |  |  | Carbon dioxide [Partial pressure] in Venous blood | FALSE |
+| 264 | hpv-gt16aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  | Human Papillomavirus 16 RNA [Presence] in Cervix by NAA | FALSE |
+| 265 | hpv-gt18-45aptimapanther,apututkimustulostensiirtoon |  | 149 | 100 |  |  |  |  | Human Papillomavirus 18+45 RNA [Presence] in Cervix by NAA | FALSE |
+| 266 | hpvaptimapanther,apututkimustulostensiirtoon |  | 413 | 100 |  |  |  |  | Human Papillomavirus high risk types RNA [Presence] in Cervix by NAA | FALSE |
+| 267 | humanimmunodeficiencyvirus,antigeenijavasta- |  | 192 | 100 |  |  |  |  | HIV 1+2 p24 Ag+Ab [Presence] in Serum or Plasma | FALSE |
+| 268 | humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd |  | 260 | 100 |  |  |  |  | HIV 1+2 p24 Ag+Ab [Presence] in Serum or Plasma | FALSE |
+| 269 | huume-jalääkeainetutkimus,laaja,varmistus |  | 448 | 100 |  |  |  |  | Drugs of abuse confirmation panel - Specimen | TRUE |
+| 270 | huumeseulonta,kvalitatiivinen,virtsasta␤ |  | 140 | 100 |  |  |  |  | Drugs of abuse screen panel - Urine | TRUE |
+| 271 | kalium,hoitoyksikönvieritesti,veri | mmol/l | 166 | 0 | [3.34, 3.65, 3.8, 3.9, 4, 4.19, 4.3, 4.42, 4.6] |  |  |  | Potassium [Moles/volume] in Blood by Point of care | FALSE |
+| 272 | kalium,hoitoyksikönvieritesti,veri |  | 290 | 0 | [3.4, 3.69, 3.8, 3.9, 4.06, 4.2, 4.4, 4.56, 5] |  |  |  | Potassium [Moles/volume] in Blood by Point of care | FALSE |
+| 273 | kreatiniini,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [61.44, 68.7, 74.81, 78.74, 84.67, 94.44, 102.62, 112.17, 146.53] |  |  |  | Creatinine [Moles/volume] in Blood by Point of care | FALSE |
+| 274 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 874 | 0 | [2.21, 3.1, 4.22, 5.54, 6.81, 8.47, 10.55, 13.18, 17.82] |  |  |  | Creatinine [Moles/volume] in Urine | FALSE |
+| 275 | kreatiniini,virtsasta(huumeseulonnanyhteydessä) |  | 6 | 66.67 |  |  |  |  | Creatinine [Moles/volume] in Urine | FALSE |
+| 276 | laajahuumeseulonta,varmistustasoinen,virtsasta |  | 944 | 100 |  |  |  |  | Drugs of abuse confirmation panel - Urine | TRUE |
+| 277 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. | e6/l | 203 | 0 | [0, 0, 0, 0, 0, 0, 0, 0.1, 0.4] |  |  |  | Casts [#/volume] in Urine by Automated count | FALSE |
+| 278 | lieriöt,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Casts [#/volume] in Urine by Automated count | FALSE |
+| 279 | lisävastauslaskutuskuitatullenäytteelle |  | 214 | 100 |  |  |  |  |  | FALSE |
+| 280 | luuntiheysmittaus,2kohdetta(nk6sa),lausuttuna |  | 145 | 100 |  |  |  |  | Bone density by DXA panel | TRUE |
+| 281 | marevan-hoidonseur.tatesti,hoitoyksikkötekeesormenpäänäyte |  | 168 | 0 |  |  |  |  | INR in Capillary blood by Point of care | FALSE |
+| 282 | moniresistentitgramnegatiivisetsauvat,viljely |  | 206 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Specimen by Culture | FALSE |
+| 283 | natrium,hoitoyksikönvieritesti,veri | mmol/l | 163 | 0 | [133.07, 135, 136.54, 138, 139, 139.55, 140, 141, 142] |  |  |  | Sodium [Moles/volume] in Blood by Point of care | FALSE |
+| 284 | natrium,hoitoyksikönvieritesti,veri |  | 292 | 0 | [131.17, 133.92, 135.97, 137.29, 138.69, 139.5, 140, 141, 142] |  |  |  | Sodium [Moles/volume] in Blood by Point of care | FALSE |
+| 285 | natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi,plasmasta | ng/l | 159 | 0 | [27.45, 51.56, 106.33, 265.57, 634.4, 1351.3, 2903.04, 5577.84, 11032.2] |  |  |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma | FALSE |
+| 286 | nk-solujenosuus(määritettynäcd3-/cd16+/cd56+-soluina) | % | 665 | 0 | [4, 7.07, 9.79, 12.53, 14.84, 17.1, 21.25, 26.92, 36.91] |  |  |  | NK cells/Lymphocytes in Blood | FALSE |
+| 287 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. | mosm/kgh2o | 203 | 0 | [331.17, 377.3, 431.74, 500.49, 539.14, 595.38, 634.62, 686.05, 750.53] |  |  |  | Osmolality in Urine | FALSE |
+| 288 | osmolaliteetti,virtsasta,partikkelinlaskijalla,osatutk. |  | 9 | 100 |  |  |  |  | Osmolality in Urine | FALSE |
+| 289 | p-natriureett.peptidin-termin.propept.vieritl | ng/l | 118 | 0 | [140.45, 226.81, 316.84, 708.93, 1117.67, 1691.6, 2121.04, 3414.6, 4866.2] |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma by Point of care | FALSE |
+| 290 | p-natriureett.peptidin-termin.propept.vieritl |  | 20 | 100 |  |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma by Point of care | FALSE |
+| 291 | p-natriureettinenpeptidi,b-tyypinn-terminaalin | ng/l | 4682 | 0 | [86.24, 151.65, 238.65, 387.07, 653.89, 1066.35, 1771.72, 3084.52, 6142.85] |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma | FALSE |
+| 292 | p-natriureettinenpeptidi,b-tyypinn-terminaalin |  | 149 | 100 |  |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma | FALSE |
+| 293 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi | ng/l | 1366 | 0 | [106.15, 192.31, 311.64, 535.82, 915.89, 1456.12, 2310.73, 3820.95, 6983] |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma | FALSE |
+| 294 | p-natriureettinenpeptidi,b-tyypn-term.propeptidi |  | 107 | 100 |  |  | Plasma |  | Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma | FALSE |
+| 295 | parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat) |  | 120 | 100 |  |  |  |  | Ova and Parasites identified in Stool by Microscopy | FALSE |
+| 296 | pienikudoskoepala,enintään1-3samankokonaisuudennäytettä |  | 234 | 100 |  |  |  |  | Tissue Pathology biopsy report | FALSE |
+| 297 | pika:m10inabnhp,rsvnhp,cv19nhp,yhdistelmävierit. |  | 267 | 100 |  |  |  |  | SARS-CoV-2 & Influenza virus A & B & RSV RNA panel - Nasopharynx by NAA | TRUE |
+| 298 | pt-diffuusiokapasiteetti,single-breath-menetelmä,tavallinenperusmittaus |  | 3577 | 100 |  |  | Patient |  | Carbon monoxide diffusing capacity [Volume/time/Pressure] by Single breath | FALSE |
+| 299 | pt-lausuntoneurofysiologisestatutkimuksesta,hälytysindikaatiot |  | 113 | 100 |  |  | Patient |  | Neurophysiology study report | FALSE |
+| 300 | pt-luuntiheysmittaus,2kohdetta,ilmanlausuntoa |  | 120 | 100 |  |  | Patient |  | Bone density by DXA panel | TRUE |
+| 301 | pt-sydämenkattavarakenteellinenjatoiminnallinenuä(fm1ee) |  | 177 | 100 |  |  | Patient |  | Echocardiogram study | TRUE |
+| 302 | pt-uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta |  | 474 | 100 |  |  | Patient |  | Peak expiratory flow rate monitoring panel | TRUE |
+| 303 | pt-yöpolygrafia,ambulatorinen,hyvinsuppeaunirekisteröintikotona |  | 542 | 100 |  |  | Patient |  | Polysomnography panel | TRUE |
+| 304 | pt-yöpolygrafia,ambulatorinen,jalkaliikerekisteröinnein |  | 102 | 100 |  |  | Patient |  | Polysomnography panel | TRUE |
+| 305 | pu-aerobinenjaanaerobinenbakteerityypitysjaan |  | 147 | 100 |  |  | Pus |  | Bacteria identified in Pus by Culture | FALSE |
+| 306 | resistentitgramnegatiivisetsauvat,viljely |  | 320 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Specimen by Culture | FALSE |
+| 307 | retikulosyyttienkeskimääräinenhemoglobiininmäärä | pg | 525 | 0 | [26.59, 29.88, 31.77, 32.87, 33.87, 34, 35, 35.95, 37] |  |  |  | Reticulocyte hemoglobin content [Entitic mass] in Red Blood Cells | FALSE |
+| 308 | retikulosyyttienkeskimääräinenhemoglobiininmäärä |  | 5 | 100 |  |  |  |  | Reticulocyte hemoglobin content [Entitic mass] in Red Blood Cells | FALSE |
+| 309 | s-humanimmunodeficiencyvirus,antigeenijavast |  | 1221 | 100 |  |  | Serum |  | HIV 1+2 p24 Ag+Ab [Presence] in Serum or Plasma | FALSE |
+| 310 | sikiöperäisendna:ntutkimusäidinverinäytteestä |  | 104 | 100 |  |  |  |  | Fetal Aneuploidy (T21, T18, T13) and Fetal sex panel by Maternal cell-free DNA in Plasma | TRUE |
+| 311 | staphylococcusaureus,metisilliiniresistenssiviljely␤ |  | 134 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Specimen by Culture | FALSE |
+| 312 | staphylococcusaureus,metisilliiniresistentti(mrsa),viljely |  | 627 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Specimen by Culture | FALSE |
+| 313 | t-auttajasolujenosuus(määritettynäcd3+cd4+soluina) | % | 665 | 0 | [12.24, 17.15, 20.76, 25.01, 30.99, 37.63, 47.04, 52.34, 60.07] |  | Thrombocyte |  | CD4 cells/Lymphocytes in Blood | FALSE |
+| 314 | t-estäjäsolujenosuus(määritettynäcd3+cd8+soluina) | % | 665 | 0 | [14.45, 20.35, 24.03, 27.06, 32.04, 37.14, 44.33, 52.92, 66.66] |  | Thrombocyte |  | CD8 cells/Lymphocytes in Blood | FALSE |
+| 315 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella | ng/l | 7 | 0 |  |  |  |  | Troponin T.cardiac [Mass/volume] in Serum or Plasma by Point of care | FALSE |
+| 316 | troponiini-t-pit.hoitoyksikkötekeevieritestilaitteella |  | 97 | 93.81 |  |  |  |  | Troponin T.cardiac [Mass/volume] in Serum or Plasma by Point of care | FALSE |
+| 317 | ts-histologinentutkimus,1-3kudosnäytettä |  | 160 | 100 |  |  | Tissue |  | Tissue Pathology biopsy report | FALSE |
+| 318 | ts-histologinentutkimus,1-3näytettä |  | 945 | 100 |  |  | Tissue |  | Tissue Pathology biopsy report | FALSE |
+| 319 | työpaikanhuumeseulontajavarmistus,4yhdistettä |  | 469 | 100 |  |  |  |  | Drugs of abuse 4 panel - Urine | TRUE |
+| 320 | työpaikanhuumeseulontajavarmistus,7yhdistettä |  | 312 | 100 |  |  |  |  | Drugs of abuse 7 panel - Urine | TRUE |
+| 321 | täydellinennimi:pt-näytteenotto0maksu,kierronulkopuolisetnäytteet |  | 1481 | 100 |  |  |  |  |  | FALSE |
+| 322 | täydellinenverenkuva,sis.perusverenkuvanjaleukosyyttienerittelylaskennan␤ |  | 9742 | 100 |  |  |  |  | CBC W Differential panel - Blood by Automated count | TRUE |
+| 323 | u-amfetamiinijametamfetamiini,enantiomeerienerittely |  | 120 | 100 |  |  | Urine |  | Amphetamine and Methamphetamine enantiomers panel - Urine | TRUE |
+| 324 | u-asetoniaineet,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  | Ketones [Presence] in Urine by Test strip | FALSE |
+| 325 | u-erytrosyytit,kval,vieritestihoitoyksikössä |  | 413 | 100 |  |  | Urine |  | Hemoglobin [Presence] in Urine by Test strip | FALSE |
+| 326 | u-glukoosi,kvalvieritestihoitoyksikössä |  | 423 | 100 |  |  | Urine |  | Glucose [Presence] in Urine by Test strip | FALSE |
+| 327 | u-happamuusaste,vieritestihoitoyksikössä |  | 400 | 0.25 | [5.5, 5.5, 5.5, 5.9, 6, 6, 6.5, 7, 7] |  | Urine |  | pH of Urine by Test strip | FALSE |
+| 328 | u-huume-jalääkeainetutkimus,laaja,varmistus |  | 175 | 100 |  |  | Urine |  | Drugs of abuse confirmation panel - Urine | TRUE |
+| 329 | u-huume-jalääkeainetutkimus,semikvantitatiivinen,virtsa␤sta |  | 121 | 100 |  |  | Urine |  | Drugs of abuse screen panel - Urine | TRUE |
+| 330 | u-huumeseulonta,laaja(kvalitatiivinenlc-tof-ms) |  | 144 | 100 |  |  | Urine |  | Drugs of abuse screen panel - Urine by Chromatography/Mass spectrometry | TRUE |
+| 331 | u-kemiallinenseulonta,vieritestihoitoyksikössä |  | 104 | 100 |  |  | Urine |  | Urinalysis macro (dipstick) panel - Urine | TRUE |
+| 332 | u-kreatiniini,virtsasta(huumeseulonnanyhteydessä) | mmol/l | 398 | 0 | [2.13, 2.88, 3.69, 4.73, 6, 7.61, 9.67, 12.44, 16.61] |  | Urine |  | Creatinine [Moles/volume] in Urine | FALSE |
+| 333 | u-laajahuume-jalääkeainetutkimus,semikvantitatiivinen |  | 421 | 100 |  |  | Urine |  | Drugs of abuse screen panel - Urine | TRUE |
+| 334 | u-leukosyytit,kval,vieritestihoitoyksikössä |  | 429 | 100 |  |  | Urine |  | Leukocyte esterase [Presence] in Urine by Test strip | FALSE |
+| 335 | u-nitriitti,kval,vieritestihoitoyksikössä |  | 421 | 100 |  |  | Urine |  | Nitrite [Presence] in Urine by Test strip | FALSE |
+| 336 | u-proteiini,kval,vieritestihoitoyksikössä |  | 425 | 100 |  |  | Urine |  | Protein [Presence] in Urine by Test strip | FALSE |
+| 337 | vieritestilaite(epoc)verikaasuanalyysilaskimonäytteestä |  | 162 | 100 |  |  |  |  | Gas panel - Venous blood | TRUE |
+| 338 | yersinia(lajitenterocolitica,pseudotuberculosis,pestis)nho,ulosteesta␤ |  | 484 | 100 |  |  |  |  | Yersinia enterocolitica and Yersinia pseudotuberculosis DNA panel - Stool by NAA | TRUE |
 

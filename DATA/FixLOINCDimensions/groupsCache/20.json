@@ -2,464 +2,280 @@
   "rows": [
     {
       "row_id": 109,
-      "has_component": "",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "",
+      "omop_concept_id": "3020489",
+      "omop_concept_name": "Escherichia coli shiga-like toxin [Presence] in Stool by Immunoassay",
       "is_panel": false
     },
     {
       "row_id": 110,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 111,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 112,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 113,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 114,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 115,
-      "has_component": "Escherichia coli enteroaggregative",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1616645",
+      "omop_concept_name": "Escherichia coli enteroaggregative DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 116,
-      "has_component": "",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1469822",
+      "omop_concept_name": "Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 117,
-      "has_component": "Escherichia coli enteropathogenic",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1616308",
+      "omop_concept_name": "Escherichia coli enteropathogenic DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 118,
-      "has_component": "Escherichia coli enterotoxigenic",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1617228",
+      "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 119,
-      "has_component": "Escherichia coli enterotoxigenic",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "",
+      "omop_concept_id": "1617228",
+      "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 120,
-      "has_component": "Campylobacter sp",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1469649",
+      "omop_concept_name": "Campylobacter sp DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 121,
-      "has_component": "",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1469822",
+      "omop_concept_name": "Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 122,
-      "has_component": "Escherichia coli enterotoxigenic",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1617228",
+      "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 123,
-      "has_component": "Plesiomonas shigelloides",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "42868767",
+      "omop_concept_name": "Plesiomonas shigelloides DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 124,
-      "has_component": "Salmonella sp",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1616933",
+      "omop_concept_name": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 125,
-      "has_component": "",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "42868716",
+      "omop_concept_name": "Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 126,
-      "has_component": "Yersinia enterocolitica",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Stool",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "37020818",
+      "omop_concept_name": "Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 127,
-      "has_component": "Cryptococcus gattii+neoformans",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988916",
+      "omop_concept_name": "Cryptococcus gattii+neoformans DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 128,
-      "has_component": "Cytomegalovirus DNA",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "3011927",
+      "omop_concept_name": "Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 129,
-      "has_component": "Escherichia coli K1",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988643",
+      "omop_concept_name": "Escherichia coli K1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 130,
-      "has_component": "Herpes simplex virus 1",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "3023671",
+      "omop_concept_name": "Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 131,
-      "has_component": "Herpes simplex virus 2",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "3033564",
+      "omop_concept_name": "Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 132,
-      "has_component": "Listeria monocytogenes",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988744",
+      "omop_concept_name": "Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 133,
-      "has_component": "Neisseria meningitidis",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988730",
+      "omop_concept_name": "Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 134,
-      "has_component": "Streptococcus agalactiae",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988894",
+      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 135,
-      "has_component": "Streptococcus pneumoniae",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "1988899",
+      "omop_concept_name": "Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 136,
-      "has_component": "Varicella zoster virus DNA",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "Cerebral spinal fluid",
-      "has_scale_type": "Nom",
-      "has_method": "Nucleic acid amplification with probe detection",
+      "omop_concept_id": "3016894",
+      "omop_concept_name": "Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
       "is_panel": false
     },
     {
       "row_id": 137,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 138,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 139,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 140,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Procedure",
-      "has_system": "^Patient",
-      "has_scale_type": "Nom",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 141,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 142,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 143,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 144,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 145,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 146,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 147,
-      "has_component": "",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3007355",
+      "omop_concept_name": "Rhythm segment [Interpretation] by EKG",
+      "is_panel": true
     },
     {
       "row_id": 148,
-      "has_component": "",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3007355",
+      "omop_concept_name": "Rhythm segment [Interpretation] by EKG",
+      "is_panel": true
     },
     {
       "row_id": 149,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 150,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 151,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 152,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 153,
-      "has_component": "EKG study",
-      "has_property": "Finding",
-      "has_time_aspect": "Study",
-      "has_system": "^Patient",
-      "has_scale_type": "Doc",
-      "has_method": "",
-      "is_panel": false
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "is_panel": true
     },
     {
       "row_id": 154,
-      "has_component": "",
-      "has_property": "Presence or Identity",
-      "has_time_aspect": "Point in time (spot)",
-      "has_system": "",
-      "has_scale_type": "Nom",
-      "has_method": "",
+      "omop_concept_id": "42868716",
+      "omop_concept_name": "Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection",
       "is_panel": false
     }
   ],
-  "reflection": "This group contained a large number of microbiology and EKG tests. Several axes were cleared due to limitations in the candidate lists. For `has_method`, common EKG terms like `12 lead` and `Monitor` were not in the candidate list and had to be cleared. For `has_component`, the candidate list was missing terms for clinically significant targets like `Escherichia coli enterohemorrhagic` (EHEC) and `EKG monitoring for atrial fibrillation`, forcing these to be cleared. Similarly, a combined component for `Shigella` and enteroinvasive `E. coli` (EIEC) was missing, making the provided candidate (`Escherichia coli enteroinvasive`) incomplete for tests that detect both. On the other hand, for several nucleic acid tests (CMV, VZV), I was able to improve specificity by choosing the `... DNA` component. Similar improvements were made for `Campylobacter` and `Salmonella` by choosing the `... sp` variant, and for `Cryptococcus` by using the combined `...gattii+neoformans` term, which better reflects OMOP's syntax."
+  "reflection": "This group consisted primarily of microbiology nucleic acid amplification tests (NAA/PCR) and electrocardiogram (EKG) panels. The candidate concepts were excellent and highly specific, allowing for confident mapping of nearly all rows.\n\n*   **NAA Tests**: Rows with `F-` (Feces) or `Li-` (CSF) prefixes and the `-nukl.haponos.` (`-Nh`) suffix were straightforward to map to the corresponding NAA-based LOINC codes. The candidate list provided perfect matches for each pathogen and specimen combination.\n*   **EKG Panels**: The numerous variations of `pt-ekg, 12 kytkentää` (12-lead EKG) were all correctly mapped to the standard `12 lead EKG panel` concept (`3044889`), which also has high existing usage in Finland.\n*   **Ambiguous Methods**: A few rows lacked explicit prefixes or method suffixes (e.g., `ehec...`, `etec...`). For EHEC (row 109), I chose a common immunoassay screen (`3020489`) which is also a Top2000 concept, as it seemed more appropriate for a generic code than the specific NAA test. For other pathogens where only an NAA candidate was available, I mapped to the NAA concept, assuming the generic name referred to the same common test.\n*   **EKG Screening**: Rows 147-148 for atrial fibrillation screening were mapped to a `Rhythm segment [Interpretation]` concept (`3007355`), as there was no specific \"rhythm screening panel\" available, and an interpretation fits the purpose of screening."
 }
