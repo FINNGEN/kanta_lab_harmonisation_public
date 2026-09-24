@@ -1,0 +1,1145 @@
+{
+  "rows": [
+    {
+      "row_id": 1985,
+      "has_component": "Nuchal translucency thickness",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Fetus",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1986,
+      "has_component": "Nuchal translucency thickness",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Fetus",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1987,
+      "has_component": "",
+      "has_property": "NFr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1988,
+      "has_component": "Erythrocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1989,
+      "has_component": "",
+      "has_property": "NCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1990,
+      "has_component": "",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1991,
+      "has_component": "",
+      "has_property": "ACnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1992,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1993,
+      "has_component": "",
+      "has_property": "MCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1994,
+      "has_component": "",
+      "has_property": "CCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1995,
+      "has_component": "",
+      "has_property": "CCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1996,
+      "has_component": "",
+      "has_property": "Mass",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1997,
+      "has_component": "",
+      "has_property": "MCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1998,
+      "has_component": "",
+      "has_property": "MRto",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1999,
+      "has_component": "Glomerular filtration rate/1.73 sq M predicted",
+      "has_property": "VRat",
+      "has_time_aspect": "Pt",
+      "has_system": "Kidney",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2000,
+      "has_component": "Erythrocyte sedimentation rate",
+      "has_property": "Vel",
+      "has_time_aspect": "1H",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2001,
+      "has_component": "",
+      "has_property": "Sub",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2002,
+      "has_component": "",
+      "has_property": "SCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2003,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2004,
+      "has_component": "Osmolality",
+      "has_property": "Osmol",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2005,
+      "has_component": "",
+      "has_property": "CCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2006,
+      "has_component": "",
+      "has_property": "MCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2007,
+      "has_component": "",
+      "has_property": "SCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2008,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2009,
+      "has_component": "",
+      "has_property": "SCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2010,
+      "has_component": "",
+      "has_property": "Time",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2011,
+      "has_component": "",
+      "has_property": "Titr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2012,
+      "has_component": "",
+      "has_property": "CCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2013,
+      "has_component": "",
+      "has_property": "CCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2014,
+      "has_component": "",
+      "has_property": "MFr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2015,
+      "has_component": "",
+      "has_property": "MCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2016,
+      "has_component": "",
+      "has_property": "SCnc",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2017,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2018,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2019,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2020,
+      "has_component": "CD4 cells/Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry",
+      "is_panel": false
+    },
+    {
+      "row_id": 2021,
+      "has_component": "CD4 cells/Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Flow cytometry",
+      "is_panel": false
+    },
+    {
+      "row_id": 2022,
+      "has_component": "CD4 cells",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2023,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2024,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2025,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2026,
+      "has_component": "Eosinophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2027,
+      "has_component": "Eosinophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2028,
+      "has_component": "Eosinophils",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2029,
+      "has_component": "Eosinophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2030,
+      "has_component": "Forced expiratory volume",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2031,
+      "has_component": "FEV1/FVC",
+      "has_property": "VFr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2032,
+      "has_component": "Forced expiratory volume 1sec",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2033,
+      "has_component": "Forced expiratory volume 1sec",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2034,
+      "has_component": "Forced vital capacity",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2035,
+      "has_component": "Forced vital capacity",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2036,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2037,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2038,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2039,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2040,
+      "has_component": "Hematocrit",
+      "has_property": "VFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2041,
+      "has_component": "Hematocrit",
+      "has_property": "VFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2042,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2043,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2044,
+      "has_component": "Kt/V",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2045,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2046,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2047,
+      "has_component": "Neutrophils.band form/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2048,
+      "has_component": "Neutrophils.band form",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2049,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2050,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "Mass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2051,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2052,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2053,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2054,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2055,
+      "has_component": "Mononuclear cells/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2056,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2057,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2058,
+      "has_component": "Cells.other/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Manual count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2059,
+      "has_component": "Cells.other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2060,
+      "has_component": "Mixed cells/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2061,
+      "has_component": "Mixed cells",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2062,
+      "has_component": "Myelocytes/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Manual count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2063,
+      "has_component": "Myelocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2064,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2065,
+      "has_component": "Neutrophils",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2066,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2067,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2068,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2069,
+      "has_component": "Neutrophils.band form/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Manual count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2070,
+      "has_component": "Neutrophils.band form",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2071,
+      "has_component": "Nuchal translucency thickness",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Fetus",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2072,
+      "has_component": "Expiratory peak flow",
+      "has_property": "VRat",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2073,
+      "has_component": "Expiratory peak flow",
+      "has_property": "VRat",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2074,
+      "has_component": "Expiratory peak flow",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2075,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2076,
+      "has_component": "pH",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2077,
+      "has_component": "pH",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2078,
+      "has_component": "Platelets",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 2079,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2080,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2081,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2082,
+      "has_component": "Blood pressure panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2083,
+      "has_component": "Blood pressure panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2084,
+      "has_component": "Gamma glutamyl transferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2085,
+      "has_component": "Gamma glutamyl transferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2086,
+      "has_component": "Gamma glutamyl transferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2087,
+      "has_component": "Gamma glutamyl transferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2088,
+      "has_component": "Nuchal translucency thickness",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Fetus",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2089,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 2090,
+      "has_component": "Interferon gamma",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 2091,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 2092,
+      "has_component": "Interferon gamma",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Immunoassay",
+      "is_panel": false
+    },
+    {
+      "row_id": 2093,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2094,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2095,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2096,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2097,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2098,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was extremely varied, containing everything from standard hematology and chemistry to patient-level measurements and tests with completely unidentifiable codes. The main challenges were:\n\n*   **Uninformative codes**: The large block of `NA` codes (1987-2017) and many three-letter abbreviations with 100% missing values (`acl`, `amp`, `coc`, `thc`, etc.) were impossible to map reliably. For the `NA` block, I relied solely on the `UNIT` to infer the `has_property` axis, which is a reasonable but limited approach. For the others, I had to return empty axes as instructed, even though some seemed like plausible drug screens (e.g., `coc` for Cocaine). Having a `LongName` for these would have been essential.\n*   **Data quality issues**: Row 2088 (`s-nt`) presents a direct conflict: the `S-` prefix means Serum, but `nt` with a unit of `mm` is clearly Nuchal Translucency, an ultrasound measurement on a fetus. I chose to prioritize the component/unit/value evidence over the prefix, assuming a data entry error. This highlights the need to be able to override prefix information when it is nonsensical.\n*   **Ambiguous hematology codes**: Abbreviations like `nlt` (vs `neut`) and `nst` are common for neutrophil types, and `mxd`/`mns` for mixed/mononuclear cell groups. Context from `prefix_meaning` (`L-` for Leukocyte) was very helpful. Without it, mapping these would have been more speculative.\n*   **Panel vs. Single Test**: `rr` (blood pressure) is a classic panel containing systolic and diastolic results. I've marked it as a panel. In contrast, `ekg` is a report/document and not a panel of discrete numeric results, so I mapped it as a `Doc`.\n\nTo improve this, providing `LongName` for more codes, even for the ones with high `p_missing`, would be the single most effective change. It would turn many of the unmappable rows (like `acl`, `thc`) into straightforward mappings."
+}

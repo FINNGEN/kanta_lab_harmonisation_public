@@ -1,0 +1,695 @@
+{
+  "rows": [
+    {
+      "row_id": 210,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 211,
+      "has_component": "Bordetella pertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 212,
+      "has_component": "Chlamydia pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 213,
+      "has_component": "Dermatophytes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 214,
+      "has_component": "Human metapneumovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 215,
+      "has_component": "Legionella pneumophila",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 216,
+      "has_component": "Human metapneumovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 217,
+      "has_component": "Mycoplasma pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 218,
+      "has_component": "Respiratory microbes DNA/RNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 219,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 220,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 221,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 222,
+      "has_component": "Bordetella parapertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 223,
+      "has_component": "Bordetella pertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 224,
+      "has_component": "Bordetella pertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 225,
+      "has_component": "Bordetella pertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 226,
+      "has_component": "Bordetella pertussis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 227,
+      "has_component": "Chlamydia pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 228,
+      "has_component": "Chlamydia pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 229,
+      "has_component": "Chlamydia pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "PCR",
+      "is_panel": false
+    },
+    {
+      "row_id": 230,
+      "has_component": "Cryptosporidium",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 231,
+      "has_component": "Cryptosporidium",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 232,
+      "has_component": "Cyclospora cayetanensis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 233,
+      "has_component": "Dermatophytes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 234,
+      "has_component": "Dermatophytes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 235,
+      "has_component": "Dientamoeba fragilis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 236,
+      "has_component": "Dientamoeba fragilis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 237,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 238,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 239,
+      "has_component": "Epidermophyton floccosum",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 240,
+      "has_component": "Cryptosporidium",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 241,
+      "has_component": "Cryptosporidium",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 242,
+      "has_component": "Cyclospora cayetanensis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 243,
+      "has_component": "Dientamoeba fragilis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 244,
+      "has_component": "Enteroaggregative Escherichia coli",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 245,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 246,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 247,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 248,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 249,
+      "has_component": "Entamoeba histolytica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 250,
+      "has_component": "Enteropathogenic Escherichia coli",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 251,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 252,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 253,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 254,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 255,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 256,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 257,
+      "has_component": "Stool parasites DNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 258,
+      "has_component": "Vibrio parahaemolyticus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 259,
+      "has_component": "Vibrio vulnificus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 260,
+      "has_component": "Stool viral pathogens DNA/RNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 261,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 262,
+      "has_component": "Giardia lamblia",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 263,
+      "has_component": "Haemophilus influenzae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 264,
+      "has_component": "Haemophilus influenzae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 265,
+      "has_component": "Human metapneumovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 266,
+      "has_component": "Legionella pneumophila",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 267,
+      "has_component": "Microsporum canis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 268,
+      "has_component": "Mycoplasma pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 269,
+      "has_component": "Mycoplasma pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 270,
+      "has_component": "Mycoplasma pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 271,
+      "has_component": "Hepatitis C virus IgG and RNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 272,
+      "has_component": "Respiratory microbes DNA/RNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 273,
+      "has_component": "Sexually transmitted microbes DNA/RNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 274,
+      "has_component": "Streptococcus pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 275,
+      "has_component": "Streptococcus pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 276,
+      "has_component": "Trichophyton rubrum",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 277,
+      "has_component": "Stool parasites DNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 278,
+      "has_component": "Stool parasites DNA panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group was overwhelmingly composed of nucleic acid amplification tests (NAATs) for various microbes, identified by the term 'nukleiinihappo' (nucleic acid). The `100%` `p_missing` and absence of units consistently pointed to qualitative tests, making the assignment of `PrThr` (Property) and `Ord` (Scale) straightforward. The main challenge was distinguishing between single tests for a group of organisms (e.g., 'Dermatofyytit') and true panels ('respiratoriset mikrobiť'). I decided based on whether the name implied a broad clinical screening panel likely to yield multiple individual results (e.g., respiratory, stool parasite panels) versus a test that would likely report a single result for a group (e.g., 'Dermatophyte DNA detected'). Row 271 (`p-hepatiittic,iggvasta-aineetjanukleiinihappo...`) was a clear panel due to the explicit 'ja' (and) joining two distinct test types (antibodies and nucleic acid). The explicit mention of `(pcr)` in row 229 was helpful, allowing for a more specific method than the general 'NAA' used for others. The lack of specimen information (`prefix_meaning`) for most rows was a significant limitation, but the `F-` prefix was very useful when present."
+}

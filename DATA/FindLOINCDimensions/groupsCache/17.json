@@ -1,0 +1,545 @@
+{
+  "rows": [
+    {
+      "row_id": 1168,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1169,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1170,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1171,
+      "has_component": "Borrelia burgdorferi IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1172,
+      "has_component": "Borrelia burgdorferi IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1173,
+      "has_component": "Borrelia burgdorferi Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1174,
+      "has_component": "DNA native Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1175,
+      "has_component": "DNA native Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1176,
+      "has_component": "DNA native Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1177,
+      "has_component": "DNA native Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1178,
+      "has_component": "DNA native Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1179,
+      "has_component": "DNA native Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1180,
+      "has_component": "DNA native Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1181,
+      "has_component": "DNA native Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1182,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1183,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1184,
+      "has_component": "Myeloperoxidase Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1185,
+      "has_component": "Myeloperoxidase Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1186,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1187,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1188,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1189,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1190,
+      "has_component": "Proteinase 3 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1191,
+      "has_component": "Proteinase 3 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1192,
+      "has_component": "Inhalant allergens IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1193,
+      "has_component": "Inhalant allergens IgE Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1194,
+      "has_component": "Food allergens IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1195,
+      "has_component": "Food allergens IgE Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1196,
+      "has_component": "c-ANCA",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1197,
+      "has_component": "c-ANCA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1198,
+      "has_component": "DNA native Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1199,
+      "has_component": "DNA native Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1200,
+      "has_component": "Histone Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 1201,
+      "has_component": "Jo-1 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 1202,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1203,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1204,
+      "has_component": "p-ANCA",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1205,
+      "has_component": "p-ANCA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 1206,
+      "has_component": "Centromere Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 1207,
+      "has_component": "Scl-70 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 1208,
+      "has_component": "Smith Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 1209,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1210,
+      "has_component": "Scl-70 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1211,
+      "has_component": "Scl-70 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1212,
+      "has_component": "Smith Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1213,
+      "has_component": "Smith Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1214,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1215,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1216,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1217,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1218,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1219,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1220,
+      "has_component": "Blood group antibodies",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1221,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group was heavily focused on immunology, serology, and blood banking. A clear pattern emerged for many antibody tests: a quantitative version (`Qn`, `ACnc`/`Titr`) and a qualitative/screening version (`Ord`, `PrThr`). The `p_missing` rate and presence of a unit were essential to distinguish between them. \n\nSeveral tests were identified as panels (`is_panel: true`), such as celiac disease screens (`keliakia, vasta-ainetutkimus`), ANA typing (`tuma, vasta-aineet, tyypitys`), and blood group antibody identification (`veriryhmävasta-aineet, tunnistus`). This requires domain knowledge, as the names don't always explicitly say 'panel'. For instance, antibody identification is a procedure that results in naming one or more specific antibodies, which is best represented as a panel in LOINC.\n\nExplicitly mentioned methods (`immunofluoresenssi`, `immunoblotting`) were mapped to the `has_method` axis. Truncated test names (e.g., `immunoblotting-tekni...`) were a minor nuisance but still interpretable. A glossary of local acronyms like 'SPR' (which I inferred as the Finnish Red Cross Blood Service) would improve accuracy and reduce reliance on assumptions."
+}

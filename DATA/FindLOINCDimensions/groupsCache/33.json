@@ -1,0 +1,185 @@
+{
+  "rows": [
+    {
+      "row_id": 1807,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1808,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Vag",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1809,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1810,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1811,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1812,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1813,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1814,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1815,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1816,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Ord",
+      "has_method": "IA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1817,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1818,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Ord",
+      "has_method": "IA.rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1819,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1820,
+      "has_component": "Streptococcus beta-hemolytic",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1821,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA.rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1822,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1823,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1824,
+      "has_component": "Streptococcus pyogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was focused on microbiology tests for Streptococcus. The main distinction was between Group A (`pyogenes`), Group B (`agalactiae`), and general Beta-hemolytic strep. The methods were also quite clear: `viljely` (Culture), `nukleiinihapon osoitus` (NAA), and `antigeeni` (Antigen/IA). All were qualitative, making the property/scale determination (`Prid`/`Nom` for culture, `PrThr`/`Ord` for detection) straightforward.\n\nThe primary difficulty was the lack of a system prefix on many rows (1807, 1820-1824). While the group context suggests many are throat swabs, I could not assume this and correctly left the `has_system` axis empty. An exception was row 1819, where the text `nielusta` ('from the pharynx') allowed a confident assignment of `Thrt` despite a missing prefix. Another ambiguity was the term `osoituskoe` ('detection test') in row 1824, which is too generic to map to a specific method, so `has_method` was left empty. Finally, the term `vieritesti` ('point-of-care test') was correctly interpreted as a method qualifier (`.rapid`). The `LongName` column being empty for all rows meant relying entirely on parsing the `TEST_NAME` strings, which worked well due to their structured nature."
+}

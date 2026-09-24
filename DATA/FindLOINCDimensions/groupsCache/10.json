@@ -1,0 +1,365 @@
+{
+  "rows": [
+    {
+      "row_id": 640,
+      "has_component": "Ribonucleoprotein Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 641,
+      "has_component": "Ribonucleoprotein Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 642,
+      "has_component": "Borrelia burgdorferi C6 peptide Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 643,
+      "has_component": "Borrelia burgdorferi IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 644,
+      "has_component": "Borrelia burgdorferi IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 645,
+      "has_component": "Borrelia burgdorferi IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 646,
+      "has_component": "Borrelia burgdorferi IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 647,
+      "has_component": "Borrelia burgdorferi IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 648,
+      "has_component": "Borrelia burgdorferi",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 649,
+      "has_component": "Borrelia burgdorferi Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 650,
+      "has_component": "Borrelia burgdorferi IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 651,
+      "has_component": "Borrelia burgdorferi IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 652,
+      "has_component": "Borrelia burgdorferi Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 653,
+      "has_component": "Ribonucleoprotein 70kD Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 654,
+      "has_component": "Ribonucleoprotein 70kD Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 655,
+      "has_component": "Ribonucleoprotein Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 656,
+      "has_component": "Ribonucleoprotein Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 657,
+      "has_component": "Ribonucleoprotein U1 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 658,
+      "has_component": "Ribonucleoprotein U1 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 659,
+      "has_component": "Ribonucleoprotein Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 660,
+      "has_component": "SS-A/Ro Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 661,
+      "has_component": "SS-A/Ro Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 662,
+      "has_component": "SS-A/Ro Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 663,
+      "has_component": "SS-A/Ro52 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 664,
+      "has_component": "SS-A/Ro52 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 665,
+      "has_component": "SS-A/Ro60 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 666,
+      "has_component": "SS-A/Ro60 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 667,
+      "has_component": "SS-B/La Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 668,
+      "has_component": "SS-B/La Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 669,
+      "has_component": "SS-B/La Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 670,
+      "has_component": "Borrelia burgdorferi VlsE protein IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 671,
+      "has_component": "Borrelia burgdorferi VlsE protein IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 672,
+      "has_component": "Borrelia burgdorferi VlsE protein IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 673,
+      "has_component": "Borrelia burgdorferi VlsE protein IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 674,
+      "has_component": "SS-B/La Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 675,
+      "has_component": "SS-B/La Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was straightforward, consisting entirely of serological antibody tests. The primary challenge was distinguishing between quantitative (`Qn`/`ACnc`) and qualitative/semi-quantitative (`Ord`/`PrThr`) versions of the same test. The combination of `UNIT` and `p_missing` was a very effective discriminant: a unit like `u/ml` or `au/ml` with low `p_missing` clearly indicates a quantitative result, while no unit and high `p_missing` indicates a qualitative one. The `TEST_NAME`s were descriptive, allowing for specific component identification (e.g., `U1RNP`, `Ro52`, `VlsE`, `IgG`/`IgM`). The most ambiguous case was `s-borreliaburgdorferi,jatkotutkimus` (follow-up study). Without more context, it's unclear if this is a panel, a reflexive test order, or a narrative immunoblot interpretation. I chose `Nar` (narrative) as the most plausible scale for a single result entry, as it's unlikely to be a simple quantitative or ordinal value. Having the official `LongName` for every row would have been helpful to confirm my interpretation of the often-truncated `TEST_NAME`."
+}

@@ -1,0 +1,855 @@
+{
+  "rows": [
+    {
+      "row_id": 279,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 280,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 281,
+      "has_component": "Human bocavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 282,
+      "has_component": "Gardnerella vaginalis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 283,
+      "has_component": "Herpes simplex virus 1",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 284,
+      "has_component": "Herpes simplex virus 2",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 285,
+      "has_component": "Herpes simplex virus 1 and 2",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 286,
+      "has_component": "JC polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 287,
+      "has_component": "Coronavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 288,
+      "has_component": "Coronavirus 229E",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 289,
+      "has_component": "Coronavirus HKU1",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 290,
+      "has_component": "Coronavirus NL63",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 291,
+      "has_component": "Coronavirus OC43",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 292,
+      "has_component": "Human papillomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 293,
+      "has_component": "Human papillomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Oropharynx",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 294,
+      "has_component": "Human papillomavirus high risk types",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 295,
+      "has_component": "Human papillomavirus other high risk types",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 296,
+      "has_component": "Human papillomavirus other high risk types",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 297,
+      "has_component": "Human papillomavirus 16",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 298,
+      "has_component": "Human papillomavirus 18",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 299,
+      "has_component": "BK polyomavirus and JC polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 300,
+      "has_component": "Polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 301,
+      "has_component": "Rhinovirus and Enterovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 302,
+      "has_component": "Rhinovirus and Enterovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 303,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 304,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 305,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 306,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 307,
+      "has_component": "Fungus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 308,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 309,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 310,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 311,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 312,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 313,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 314,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 315,
+      "has_component": "BK polyomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 316,
+      "has_component": "BK polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 317,
+      "has_component": "Blastocystis hominis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 318,
+      "has_component": "Human bocavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 319,
+      "has_component": "Human bocavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 320,
+      "has_component": "SARS-CoV-2",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 321,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 322,
+      "has_component": "Cytomegalovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 323,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 324,
+      "has_component": "Cytomegalovirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 325,
+      "has_component": "Epstein-Barr virus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 326,
+      "has_component": "Epstein-Barr virus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 327,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 328,
+      "has_component": "Microorganisms",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 329,
+      "has_component": "Norovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 330,
+      "has_component": "Rotavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 331,
+      "has_component": "Rotavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 332,
+      "has_component": "Sapovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 333,
+      "has_component": "JC polyomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 334,
+      "has_component": "JC polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 335,
+      "has_component": "Coronavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 336,
+      "has_component": "Coronavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 337,
+      "has_component": "Microorganisms",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": true
+    },
+    {
+      "row_id": 338,
+      "has_component": "Norovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 339,
+      "has_component": "BK polyomavirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 340,
+      "has_component": "BK polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 341,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 342,
+      "has_component": "Cytomegalovirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 343,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 344,
+      "has_component": "Cytomegalovirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 345,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 346,
+      "has_component": "Cytomegalovirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 347,
+      "has_component": "Cytomegalovirus",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 348,
+      "has_component": "Cytomegalovirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 349,
+      "has_component": "Human papillomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 350,
+      "has_component": "Human papillomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 351,
+      "has_component": "Human papillomavirus high risk types",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Amplified RNA",
+      "is_panel": false
+    },
+    {
+      "row_id": 352,
+      "has_component": "Picornavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 353,
+      "has_component": "Picornavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 354,
+      "has_component": "Polyomavirus",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 355,
+      "has_component": "Polyomavirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 356,
+      "has_component": "Rhinovirus and Enterovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 357,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 358,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 359,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 360,
+      "has_component": "Respiratory syncytial virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 361,
+      "has_component": "Adenovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 362,
+      "has_component": "Astrovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    },
+    {
+      "row_id": 363,
+      "has_component": "Sapovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA with probe detection",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group consists entirely of nucleic acid amplification tests (NAATs) for various pathogens. The structure `[Organism], nukleiinihappo, [(kval)|(kvant)]` made component, scale, and property inference relatively straightforward. The method for these was consistently inferred as `NAA with probe detection`, or `Amplified RNA` for the specific mRNA test.\n\nThe main ambiguity arises with quantitative tests (`kvant`) that have 100% missing values and no unit (e.g., rows 324, 326, 340). These likely represent 'not detected' results for a quantitative assay. I have mapped them as `Qn` scale based on the name but left the property blank, as no quantitative information is present. An alternative would be to map them as `Ord`/`PrThr`, but this contradicts the explicit `(kvant)` instruction in the test name.\n\nSystem information was sparse. I was able to infer `Stool` from `F-` prefix and `ulosteen` (of stool), `Plas` from `P-` prefix and `plasmasta` (from plasma), and made an educated guess of `Oropharynx` for a test specified from `suu` (mouth). For the majority of tests, especially respiratory viruses, the specimen type remains unknown, limiting the specificity of the mapping.\n\nDistinguishing between panels and multiplex single tests was challenging. I classified broad screens like `bakteerit` (bacteria) or `mikrobit` (microbes) as panels (`is_panel: true`), assuming they report on multiple specific findings, while treating dual-target assays like `Rhinovirus/Enterovirus` as single tests (`is_panel: false`). This distinction is an assumption based on common lab practice and cannot be definitively determined from the provided data."
+}

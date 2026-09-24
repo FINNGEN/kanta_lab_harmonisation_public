@@ -1,0 +1,925 @@
+{
+  "rows": [
+    {
+      "row_id": 3382,
+      "has_component": "Adenovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3383,
+      "has_component": "Human bocavirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3384,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3385,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3386,
+      "has_component": "Influenza virus A Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3387,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3388,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "NAA",
+      "is_panel": true
+    },
+    {
+      "row_id": 3389,
+      "has_component": "Influenza virus A H3 subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3390,
+      "has_component": "Influenza virus A H1N1pdm09 subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3391,
+      "has_component": "Influenza virus A H1 subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3392,
+      "has_component": "Influenza virus A H3 subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3393,
+      "has_component": "Influenza virus A subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3394,
+      "has_component": "Influenza virus B Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3395,
+      "has_component": "Influenza virus B subtype",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3396,
+      "has_component": "Influenza virus A Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3397,
+      "has_component": "Influenza virus B Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3398,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3399,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3400,
+      "has_component": "Embryo transfer",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3401,
+      "has_component": "SARS-CoV-2 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3402,
+      "has_component": "Human metapneumovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3403,
+      "has_component": "Parainfluenza virus 1 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3404,
+      "has_component": "Parainfluenza virus 2 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3405,
+      "has_component": "Parainfluenza virus 3 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3406,
+      "has_component": "Parainfluenza virus 1 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3407,
+      "has_component": "Parainfluenza virus 2 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3408,
+      "has_component": "Parainfluenza virus 3 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3409,
+      "has_component": "Pneumocystis jirovecii Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3410,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3411,
+      "has_component": "Streptococcus pneumoniae Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3412,
+      "has_component": "Inflammation associated",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bile",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3413,
+      "has_component": "Adenovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3414,
+      "has_component": "Giardia lamblia Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3415,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3416,
+      "has_component": "Norovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3417,
+      "has_component": "Rotavirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3418,
+      "has_component": "Virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3419,
+      "has_component": "Adenovirus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3420,
+      "has_component": "Influenza virus A IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3421,
+      "has_component": "Influenza virus A IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3422,
+      "has_component": "Influenza virus B IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3423,
+      "has_component": "Influenza virus B IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3424,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3425,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3426,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3427,
+      "has_component": "Mycoplasma pneumoniae IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3428,
+      "has_component": "Parainfluenza virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3429,
+      "has_component": "Parainfluenza virus 1 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3430,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Nasal Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3431,
+      "has_component": "Adenovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Nph",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3432,
+      "has_component": "Influenza virus A Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Nph",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3433,
+      "has_component": "Influenza virus A+B Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Nph",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3434,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3435,
+      "has_component": "Adenovirus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3436,
+      "has_component": "Adenovirus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3437,
+      "has_component": "Influenza virus A IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3438,
+      "has_component": "Influenza virus A IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3439,
+      "has_component": "Influenza virus A IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3440,
+      "has_component": "Influenza virus B Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3441,
+      "has_component": "Influenza virus B Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3442,
+      "has_component": "Influenza virus B Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3443,
+      "has_component": "Influenza virus B IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3444,
+      "has_component": "Influenza virus B IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3445,
+      "has_component": "Influenza virus B IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3446,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3447,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3448,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3449,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3450,
+      "has_component": "Infliximab Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3451,
+      "has_component": "Infliximab Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3452,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3453,
+      "has_component": "Infliximab",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3454,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3455,
+      "has_component": "Mycophenolic acid",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3456,
+      "has_component": "Mycophenolic acid",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3457,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3458,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3459,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3460,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3461,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3462,
+      "has_component": "Mycoplasma pneumoniae IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3463,
+      "has_component": "Mycoplasma pneumoniae IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3464,
+      "has_component": "Mycoplasma pneumoniae IgM Ab",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3465,
+      "has_component": "Mycoplasma pneumoniae IgM Ab",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3466,
+      "has_component": "Mycoplasma pneumoniae IgM Ab",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3467,
+      "has_component": "Parainfluenza virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3468,
+      "has_component": "Parainfluenza virus 1 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3469,
+      "has_component": "Squamous cell carcinoma associated Ag",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3470,
+      "has_component": "Squamous cell carcinoma associated Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3471,
+      "has_component": "Legionella pneumophila Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3472,
+      "has_component": "Streptococcus pneumoniae Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3473,
+      "has_component": "Streptococcus pneumoniae Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by microbiology tests, primarily for viral antigens and antibodies, along with a few for therapeutic drug monitoring (Infliximab). The structure of the Finnish codes (`-ag` for antigen, `-ab` for antibody, `-abg` for IgG, `-abm` for IgM) was extremely helpful. \n\nThe main challenges were:\n1.  **Panels vs. single tests**: Codes like `-infabag` (Influenza A+B), `-infrsv` (Influenza+RSV), or the generic `-rvirag` (Respiratory viruses) are ambiguous. I've classified them as panels, as they likely result in separate reports for each component. The `-pak` suffix (`-infrpak`) and plural `LongName` (`Respiratoristen virusten...`) are strong indicators of panels.\n2.  **Unspecified systems**: A large number of tests had no system prefix (e.g., `-adenag`). These are likely from respiratory samples (like their `Ps-` counterparts), but I correctly left the system empty as this cannot be confirmed from the row data alone.\n3.  **Contradictory data**: Rows 3462 and 3466 had `p_missing=100` but also `deciles` data. This is a data quality issue. I chose to trust the presence of `deciles` as stronger evidence for a quantitative test (`Qn`) over the `p_missing` value, which might be an artifact of data merging over time.\n4.  **Special cases**: `ivf-et` (row 3400) is a procedural report, not a lab analyte. I mapped it to a `Nar` scale on `^Patient`. `bi-inflamm` (row 3412) was very vague; using the `prefix_meaning` of 'Bile' was key, but the component is a guess.\n\nOverall, the combination of `TEST_NAME` structure, `LongName`, and `prefix_meaning` was sufficient for most rows. The clear separation of Qn vs. Ord/Nom tests based on units/deciles vs. high `p_missing` was a recurring and useful pattern."
+}

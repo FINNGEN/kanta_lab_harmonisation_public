@@ -1,0 +1,1445 @@
+{
+  "rows": [
+    {
+      "row_id": 3474,
+      "has_component": "Human papillomavirus high risk genotype",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3475,
+      "has_component": "Human papillomavirus high risk",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "Typing",
+      "is_panel": false
+    },
+    {
+      "row_id": 3476,
+      "has_component": "Human metapneumovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3477,
+      "has_component": "Human papillomavirus 16",
+      "has_property": "PrThr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3478,
+      "has_component": "Human papillomavirus 18",
+      "has_property": "PrThr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3479,
+      "has_component": "Human papillomavirus other high risk",
+      "has_property": "PrThr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3480,
+      "has_component": "Human papillomavirus",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3481,
+      "has_component": "Human papillomavirus",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3482,
+      "has_component": "Herpes simplex virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3483,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3484,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3485,
+      "has_component": "Respiratory syncytial virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3486,
+      "has_component": "Varicella zoster virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3487,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3488,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3489,
+      "has_component": "Hematocrit",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3490,
+      "has_component": "Heparin Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3491,
+      "has_component": "Heparin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3492,
+      "has_component": "Platelet factor 4 heparin complex Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3493,
+      "has_component": "Platelet factor 4 heparin complex Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3494,
+      "has_component": "Platelet factor 4 heparin complex Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3495,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3496,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3497,
+      "has_component": "Erythrocytes.hypochromic",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3498,
+      "has_component": "Erythrocytes.hypochromic",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3499,
+      "has_component": "Helicobacter pylori Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3500,
+      "has_component": "Human metapneumovirus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3501,
+      "has_component": "Human papillomavirus",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3502,
+      "has_component": "Human papillomavirus",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3503,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3504,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3505,
+      "has_component": "Human herpesvirus 6 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3506,
+      "has_component": "Human herpesvirus 6 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3507,
+      "has_component": "Human herpesvirus 6 IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3508,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3509,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3510,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3511,
+      "has_component": "Herpes simplex virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3512,
+      "has_component": "Herpes simplex virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3513,
+      "has_component": "Herpes simplex virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3514,
+      "has_component": "Herpes simplex virus IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3515,
+      "has_component": "Respiratory syncytial virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3516,
+      "has_component": "Respiratory syncytial virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3517,
+      "has_component": "Varicella zoster virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3518,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3519,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3520,
+      "has_component": "Varicella zoster virus IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3521,
+      "has_component": "Heparin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3522,
+      "has_component": "Heparin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3523,
+      "has_component": "Heparin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3524,
+      "has_component": "Respiratory syncytial virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Nph",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3525,
+      "has_component": "Hepatitis A virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3526,
+      "has_component": "Hepatitis A virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3527,
+      "has_component": "Hepatitis A virus IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3528,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3529,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3530,
+      "has_component": "Hepatitis B virus core IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3531,
+      "has_component": "Hepatitis B virus e Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3532,
+      "has_component": "Hepatitis B virus e Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3533,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3534,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3535,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3536,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3537,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "Doc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3538,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3539,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3540,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3541,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3542,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3543,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3544,
+      "has_component": "Hepatitis B virus panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3545,
+      "has_component": "Hepatitis C virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3546,
+      "has_component": "Hepatitis C virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3547,
+      "has_component": "Hepatitis D virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3548,
+      "has_component": "Hepatitis A+B+C virus panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3549,
+      "has_component": "Hepatitis B+C virus panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3550,
+      "has_component": "Hepatitis viruses and HIV panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3551,
+      "has_component": "Hepcidin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3552,
+      "has_component": "Hepcidin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3553,
+      "has_component": "Hepcidin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3554,
+      "has_component": "Helicobacter pylori Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3555,
+      "has_component": "Helicobacter pylori Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3556,
+      "has_component": "Helicobacter pylori IgA Ab",
+      "has_property": "Doc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3557,
+      "has_component": "Helicobacter pylori IgA Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3558,
+      "has_component": "Helicobacter pylori IgA Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3559,
+      "has_component": "Helicobacter pylori IgA Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3560,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3561,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "Doc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3562,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3563,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3564,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3565,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3566,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3567,
+      "has_component": "Helicobacter pylori IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3568,
+      "has_component": "Hepatitis E virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3569,
+      "has_component": "Hepatitis E virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3570,
+      "has_component": "Hepatitis E virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3571,
+      "has_component": "Hepatitis E virus IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3572,
+      "has_component": "Hepatitis E virus IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3573,
+      "has_component": "Human herpesvirus 6 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3574,
+      "has_component": "Human herpesvirus 6 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3575,
+      "has_component": "Human herpesvirus 6 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3576,
+      "has_component": "Human herpesvirus 6 IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3577,
+      "has_component": "HIV 1+2 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3578,
+      "has_component": "HIV 1 p24 Ag",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3579,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3580,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3581,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3582,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3583,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3584,
+      "has_component": "Herpes simplex virus 1 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3585,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3586,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3587,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3588,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3589,
+      "has_component": "Herpes simplex virus 2 IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3590,
+      "has_component": "Herpes simplex virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3591,
+      "has_component": "Herpes simplex virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3592,
+      "has_component": "Herpes simplex virus IgG Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3593,
+      "has_component": "Herpes simplex virus IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3594,
+      "has_component": "Herpes simplex virus IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3595,
+      "has_component": "Herpes simplex virus IgM Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3596,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3597,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3598,
+      "has_component": "Respiratory syncytial virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3599,
+      "has_component": "Varicella zoster virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3600,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3601,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3602,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3603,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3604,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3605,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3606,
+      "has_component": "Varicella zoster virus IgG Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3607,
+      "has_component": "Varicella zoster virus IgM Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3608,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3609,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "",
+      "has_method": "Flow cytometry",
+      "is_panel": true
+    },
+    {
+      "row_id": 3610,
+      "has_component": "Helicobacter pylori",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 3611,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3612,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3613,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3614,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3615,
+      "has_component": "Hepatitis C virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3616,
+      "has_component": "Hepatitis C virus Ag and Ab panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3617,
+      "has_component": "HIV 1+2 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by serological tests for various viruses (Hepatitis, Herpes, HIV, etc.) and bacteria (H. pylori). A major challenge was differentiating between quantitative screening assays (often with arbitrary units like `eiu`, `index`) and qualitative/confirmatory tests. I used the `p_missing` and `deciles` columns as the primary guide: if `p_missing` was near 100%, I mapped to `Ord`/`PrThr`; if `deciles` were present and `p_missing` was low, I mapped to `Qn`/`ACnc`. This pattern was very consistent. Several codes like `B-HemaFc` (Immunophenotyping), `S-HBVPak` (Hepatitis B package), and local bundles like `S-HepABC` were clearly panels. The codes starting with a hyphen (e.g., `-hhpvgt`) were ambiguous due to the lack of a system prefix and LongName, suggesting they are truncated or malformed, forcing me to make educated guesses or leave fields blank. The `ts-hepyvi` code was a nice example of a microbiology test where the method (`-Vi` for culture) was explicitly stated and crucial for mapping."
+}

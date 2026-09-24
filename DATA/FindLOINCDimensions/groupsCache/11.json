@@ -1,0 +1,695 @@
+{
+  "rows": [
+    {
+      "row_id": 676,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 677,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 678,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 679,
+      "has_component": "Hepatitis C virus Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 680,
+      "has_component": "Hepatitis C virus Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 681,
+      "has_component": "Hepatitis C virus Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 682,
+      "has_component": "Hepatitis C virus Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 683,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 684,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 685,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 686,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 687,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 688,
+      "has_component": "Human coronavirus OC43 Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 689,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 690,
+      "has_component": "Hepatitis B virus core Ab.IgM",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 691,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 692,
+      "has_component": "Hepatitis B virus core Ab.IgM",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 693,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 694,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 695,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 696,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 697,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 698,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 699,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 700,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 701,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 702,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 703,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 704,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 705,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 706,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 707,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 708,
+      "has_component": "Hepatitis C virus Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 709,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 710,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 711,
+      "has_component": "Hepatitis B virus core Ab.IgM",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 712,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 713,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 714,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 715,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 716,
+      "has_component": "Hepatitis B virus surface Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 717,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 718,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 719,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 720,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 721,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 722,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 723,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 724,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 725,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 726,
+      "has_component": "HIV 1+2 Ag+Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 727,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 728,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 729,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 730,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 731,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 732,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 733,
+      "has_component": "Bullous pemphigoid Ag 180 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 734,
+      "has_component": "Bullous pemphigoid Ag 180 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 735,
+      "has_component": "Extractable nuclear Ag Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 736,
+      "has_component": "Extractable nuclear Ag Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 737,
+      "has_component": "Extractable nuclear Ag Ab",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 738,
+      "has_component": "Extractable nuclear Ag Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 739,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 740,
+      "has_component": "Hepatitis B virus core Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 741,
+      "has_component": "Hepatitis B virus surface Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 742,
+      "has_component": "Hepatitis C virus Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 743,
+      "has_component": "Extractable nuclear Ag Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 744,
+      "has_component": "Hepatitis B virus surface Ag confirmation",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group focused on serological tests for antigens (antigeeni) and antibodies (vasta-aineet). The Finnish terms for different analytes (e.g., `pinta-antigeeni` for surface antigen, `c-antigeeni`/`ydinantigeeni` for core antigen) and test types (`yhdistelmätutkimus` for combination tests, `laaja` for broad panels) were crucial for accurate component mapping and panel identification. The high number of string variations for common tests like HIV Ag/Ab screening highlighted the importance of using the grouped context. A key distinction was between quantitative (`Qn`/`ACnc`/`Titr`/`Ratio`) and qualitative (`Ord`/`PrThr`) versions of the same test, which was readily apparent from the `UNIT`, `deciles`, and `p_missing` columns. Some test names contained instructive prefixes like `tilaa tämä` (order this) or `varmistustutkimus` (confirmation test), which were helpful in finding more specific LOINC concepts. The main ambiguity was the system for rows lacking a prefix or explicit mention like `seerumista` (from serum), forcing the `has_system` axis to be left blank."
+}

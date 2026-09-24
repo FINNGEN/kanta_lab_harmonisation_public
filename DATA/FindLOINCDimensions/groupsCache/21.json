@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "row_id": 1313,
+      "has_component": "Basophils",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1314,
+      "has_component": "Eosinophils",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1315,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1316,
+      "has_component": "Monocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1317,
+      "has_component": "Neutrophils",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1318,
+      "has_component": "Basophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1319,
+      "has_component": "Eosinophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1320,
+      "has_component": "Lymphocytes/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1321,
+      "has_component": "Monocytes/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1322,
+      "has_component": "Neutrophils/Leukocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1323,
+      "has_component": "Bone marrow aspirate study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1324,
+      "has_component": "Bone marrow biopsy study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1325,
+      "has_component": "Bone marrow",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "MGG stain and Iron stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1326,
+      "has_component": "Bone marrow",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "MGG stain and Iron stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 1327,
+      "has_component": "Clinical information",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1328,
+      "has_component": "Clinical information",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1329,
+      "has_component": "Celiac disease screening panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1330,
+      "has_component": "Pregnancy-associated plasma protein A",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1331,
+      "has_component": "Pregnancy-associated plasma protein A",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1332,
+      "has_component": "Urinalysis screening panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1333,
+      "has_component": "Urinalysis screening panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1334,
+      "has_component": "Hemoglobin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1335,
+      "has_component": "Glucose",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1336,
+      "has_component": "Ketones",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1337,
+      "has_component": "Leukocyte esterase",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1338,
+      "has_component": "Nitrite",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1339,
+      "has_component": "Protein",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Test strip",
+      "is_panel": false
+    },
+    {
+      "row_id": 1340,
+      "has_component": "Specific gravity",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Test strip",
+      "is_panel": false
+    }
+  ],
+  "reflection": "The `TEST_NAME` fields in this group are often heavily concatenated, combining panel names, qualifiers like `osavastaus` (partial result), and component names (e.g., `b-konediffi,5-osanen,osavastausb-baso`). This makes automated parsing challenging without specific rules to split these strings. The presence of `osavastaus` child records was crucial for identifying parent codes like `u-tutkimus1` as panels. The group included non-test items like pathology reports (`bm-luuydintutkimus`) and clinical information placeholders (`perustutkimus,esitiedot`), which require a different mapping approach (e.g., `Nar` or `Doc` scale, patient-level system, and more descriptive component names) than standard chemistry tests. For narrative pathology reports, the list of available properties lacks an ideal value like 'Find', leading to an empty property field. The method `Test strip` for the urinalysis components was inferred from the context of a screening test (`U-Tutkimus`) rather than an explicit code suffix, but it's a strong, clinically relevant inference."
+}

@@ -1,0 +1,1165 @@
+{
+  "rows": [
+    {
+      "row_id": 3266,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3267,
+      "has_component": "Cells",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Fine needle aspirate",
+      "is_panel": false
+    },
+    {
+      "row_id": 3268,
+      "has_component": "Anion gap",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3269,
+      "has_component": "Anion gap",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3270,
+      "has_component": "Anion gap",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3271,
+      "has_component": "Anion gap",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3272,
+      "has_component": "Anion gap",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3273,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3274,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3275,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3276,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3277,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3278,
+      "has_component": "RNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3279,
+      "has_component": "CD138 antigen",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3280,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3281,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3282,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3283,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bone mar",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3284,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3285,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3286,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3287,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "Extraction",
+      "is_panel": false
+    },
+    {
+      "row_id": 3288,
+      "has_component": "C3d globulin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Ord",
+      "has_method": "Agglutination",
+      "is_panel": false
+    },
+    {
+      "row_id": 3289,
+      "has_component": "IgG",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Ord",
+      "has_method": "Agglutination",
+      "is_panel": false
+    },
+    {
+      "row_id": 3290,
+      "has_component": "Alpha-1-antitrypsin",
+      "has_property": "MCnt",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3291,
+      "has_component": "Alpha-1-antitrypsin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3292,
+      "has_component": "Cannabinoids",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3293,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3294,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3295,
+      "has_component": "Anion gap",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3296,
+      "has_component": "Anion gap",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3297,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3298,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3299,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3300,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3301,
+      "has_component": "Antithrombin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3302,
+      "has_component": "Antithrombin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3303,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3304,
+      "has_component": "Adenovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3305,
+      "has_component": "Adenovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3306,
+      "has_component": "Adenovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3307,
+      "has_component": "Adenovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3308,
+      "has_component": "Nuclear Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "IF",
+      "is_panel": false
+    },
+    {
+      "row_id": 3309,
+      "has_component": "Nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "IF",
+      "is_panel": false
+    },
+    {
+      "row_id": 3310,
+      "has_component": "Nuclear Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3311,
+      "has_component": "Nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3312,
+      "has_component": "Nuclear Ab",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "Immunoblot",
+      "is_panel": false
+    },
+    {
+      "row_id": 3313,
+      "has_component": "Nuclear Ab panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3314,
+      "has_component": "Nuclear Ab panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3315,
+      "has_component": "Nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3316,
+      "has_component": "Nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3317,
+      "has_component": "Nuclear Ab panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3318,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3319,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3320,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3321,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3322,
+      "has_component": "Neutrophil cytoplasmic Ab panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3323,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3324,
+      "has_component": "Neutrophil cytoplasmic Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3325,
+      "has_component": "Alpha-1-antitrypsin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3326,
+      "has_component": "Alpha-1-antitrypsin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3327,
+      "has_component": "Neutrophil cytoplasmic Ab.c-ANCA pattern",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3328,
+      "has_component": "Neutrophil cytoplasmic Ab.c-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3329,
+      "has_component": "Neutrophil cytoplasmic Ab.c-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3330,
+      "has_component": "Neutrophil cytoplasmic Ab.c-ANCA pattern",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3331,
+      "has_component": "Neutrophil cytoplasmic Ab.c-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3332,
+      "has_component": "Complement panel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3333,
+      "has_component": "C3 nephritic factor",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3334,
+      "has_component": "Enterovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3335,
+      "has_component": "Enterovirus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3336,
+      "has_component": "Influenza A virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3337,
+      "has_component": "Influenza A virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3338,
+      "has_component": "Influenza B virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3339,
+      "has_component": "Influenza B virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3340,
+      "has_component": "Influenza A virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3341,
+      "has_component": "Influenza A virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3342,
+      "has_component": "Influenza B virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3343,
+      "has_component": "Influenza B virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3344,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3345,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3346,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3347,
+      "has_component": "Mycoplasma pneumoniae Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3348,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3349,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3350,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3351,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3352,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3353,
+      "has_component": "Neutrophil cytoplasmic Ab.p-ANCA pattern",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Immunofluorescence",
+      "is_panel": false
+    },
+    {
+      "row_id": 3354,
+      "has_component": "Placental growth factor",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3355,
+      "has_component": "Parainfluenza virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3356,
+      "has_component": "Parainfluenza virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3357,
+      "has_component": "Parainfluenza virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3358,
+      "has_component": "Parainfluenza virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3359,
+      "has_component": "Placental growth factor",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3360,
+      "has_component": "Coxiella burnetii Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3361,
+      "has_component": "Coxiella burnetii Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3362,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3363,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3364,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3365,
+      "has_component": "Respiratory syncytial virus Ab",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Complement fixation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3366,
+      "has_component": "Vancomycin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3367,
+      "has_component": "Vancomycin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3368,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 3369,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 3370,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Flow cytometry (FC)",
+      "is_panel": false
+    },
+    {
+      "row_id": 3371,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3372,
+      "has_component": "DNA",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Mutation analysis",
+      "is_panel": false
+    },
+    {
+      "row_id": 3373,
+      "has_component": "Cells",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Fine needle aspirate",
+      "is_panel": false
+    },
+    {
+      "row_id": 3374,
+      "has_component": "Cells",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "Fine needle aspirate",
+      "is_panel": false
+    },
+    {
+      "row_id": 3375,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3376,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3377,
+      "has_component": "Cannabinoids",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3378,
+      "has_component": "Cannabinoids",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3379,
+      "has_component": "Cannabinoids",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "Confirm",
+      "is_panel": false
+    },
+    {
+      "row_id": 3380,
+      "has_component": "Cannabinoids",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "Confirm",
+      "is_panel": false
+    },
+    {
+      "row_id": 3381,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group contained a wide variety of tests, from basic chemistry (`Anion gap`) to complex immunology, genetics, and pathology. The presence of `LongName` for some tests was crucial for confident mapping (e.g., `P-Antifactori Xa`, `F-Alfa-1-antitrypsiini`).\n\n**Gotchas and Ambiguities:**\n*   **Procedural vs. Result Codes:** Many codes like `dnaex` (extraction), `ts-fnab` (fine needle biopsy) represent procedures or sample preparation steps rather than analytical results. I've mapped these as having a `Nar` scale, as they typically result in a report or a prepared sample for another test.\n*   **Panels vs. Single Tests:** Codes like `S-ANA-Ty` (typing) and `S-C-def` (deficiency study) strongly imply a panel of multiple subsequent results, which I've marked as `is_panel: true`. In contrast, `s-ancatut` (ANCA study) is more ambiguous and I treated it as a single narrative report.\n*   **Infectious Serology:** A large block of codes (`s-adeabcf`, `s-infacf`, etc.) were clearly serology titers using complement fixation (`-cf`). Identifying the specific microbe (`ade`=Adenovirus, `inf`=Influenza, `rsv`=RSV) was an inference based on common virology panels, and would be much more certain with the `LongName`.\n*   **Vague Codes:** Codes like `u-annat` with an unknown unit (`/sunf`) and all-zero deciles remain unmappable for component/property.\n*   **Administrative Codes:** `pt-vainaja` (`deceased patient`) is an administrative flag, not a lab test. Recognizing these and mapping only the system (`^Patient`) is important.\n\n**To improve this process**, having the `LongName` for every row would be the single most effective change. A dictionary of less common suffixes (like `-ait` in `s-ana(ait)`) would also help clarify methods."
+}

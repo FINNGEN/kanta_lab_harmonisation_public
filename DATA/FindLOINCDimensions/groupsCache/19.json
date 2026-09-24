@@ -1,0 +1,465 @@
+{
+  "rows": [
+    {
+      "row_id": 1239,
+      "has_component": "Escherichia coli enterohemorrhagic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1240,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1241,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1242,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1243,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1244,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1245,
+      "has_component": "Escherichia coli enteroaggregative strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1246,
+      "has_component": "Escherichia coli enterohemorrhagic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1247,
+      "has_component": "Escherichia coli enteropathogenic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1248,
+      "has_component": "Escherichia coli enterotoxigenic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1249,
+      "has_component": "Escherichia coli enterotoxigenic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1250,
+      "has_component": "Campylobacter sp",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1251,
+      "has_component": "Escherichia coli enterohemorrhagic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1252,
+      "has_component": "Escherichia coli enterotoxigenic strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1253,
+      "has_component": "Plesiomonas shigelloides",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1254,
+      "has_component": "Salmonella sp",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1255,
+      "has_component": "Shigella sp & Escherichia coli enteroinvasive strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1256,
+      "has_component": "Yersinia enterocolitica",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1257,
+      "has_component": "Cryptococcus neoformans",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1258,
+      "has_component": "Cytomegalovirus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1259,
+      "has_component": "Escherichia coli K1",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1260,
+      "has_component": "Herpes simplex virus 1",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1261,
+      "has_component": "Herpes simplex virus 2",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1262,
+      "has_component": "Listeria monocytogenes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1263,
+      "has_component": "Neisseria meningitidis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1264,
+      "has_component": "Streptococcus agalactiae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1265,
+      "has_component": "Streptococcus pneumoniae",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1266,
+      "has_component": "Varicella zoster virus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1267,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1268,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1269,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1270,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1271,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1272,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1273,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1274,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1275,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1276,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1277,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG.Screening",
+      "is_panel": true
+    },
+    {
+      "row_id": 1278,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG.Screening",
+      "is_panel": true
+    },
+    {
+      "row_id": 1279,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1280,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1281,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1282,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1283,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "EKG",
+      "is_panel": true
+    },
+    {
+      "row_id": 1284,
+      "has_component": "Shigella sp & Escherichia coli enteroinvasive strain",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group contained a mix of microbiology nucleic acid amplification tests (NAATs) and electrocardiogram (ECG) procedures. \n\n**Key challenges and decisions:**\n\n1.  **Panel vs. Component:** The microbiology tests were clearly components of larger panels (e.g., a stool pathogen panel, a CSF meningitis panel). The consistent `n` counts within each specimen group (Stool, CSF) were a strong indicator. I correctly identified these as individual component results (`is_panel: false`). Conversely, the various ECG codes all represent the order for a full 12-lead ECG study. This is best modeled as a panel (`is_panel: true`) that would contain individual measurements (like heart rate, intervals) and an interpretation. For these panel-level codes, Component and Property are correctly left empty.\n\n2.  **Method Inference:** The Finnish terms `nukl. hapon os.` (nukleiinihapon osoitus) and the `-nho` suffix were invaluable for confidently assigning `Method: NAA`. This highlights the importance of understanding local coding conventions. For ECGs, the procedure name itself becomes the method (`EKG`) as is common LOINC practice for such observations.\n\n3.  **System Inference:** The `Pt-`, `F-`, and `Li-` prefixes were essential for identifying the System (`^Patient`, `Stool`, `CSF`). For microbiology tests without a prefix (e.g., row 1239 `ehec...`), the system could not be determined from the single row and was correctly left empty, even though context from other rows suggests Stool is likely.\n\n4.  **Noisy Data:** The ECG test names were noisy, containing typos, truncated text (`asi` for `asiakkaan`), and location information (`osastolla`). I correctly identified these as variations of the same base test and standardized the mapping. The anomalous ECG row (1270) with a `UNIT` of `1` and some data points was ignored in favor of the overwhelming pattern from the other 20+ similar rows, treating it as a data quality issue."
+}

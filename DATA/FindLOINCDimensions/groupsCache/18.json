@@ -1,0 +1,175 @@
+{
+  "rows": [
+    {
+      "row_id": 1222,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1223,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1224,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1225,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1226,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1227,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1228,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1229,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1230,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1231,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1232,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1233,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1234,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1235,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1236,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1237,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1238,
+      "has_component": "Glucose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group was straightforward once the key pattern was identified. All rows refer to variations of an oral glucose tolerance test (OGTT). The crucial clue was the `p_missing` being nearly 100% for all entries, combined with the lack of units or deciles. This strongly indicates that these codes are for the orderable *procedure* or *panel*, not for the individual reportable glucose measurements. The `pt-` prefix in many codes (and the nature of an OGTT as a procedure) confirms the System as `^Patient`. Following LOINC convention for panels, most axes are left empty, as they describe the components, not the panel itself. I assigned `Glucose` to the Component axis for the panel, as LOINC often names panels after their primary analyte. This seems like a reasonable convention to distinguish different challenge test panels."
+}

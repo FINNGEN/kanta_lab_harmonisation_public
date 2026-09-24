@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "row_id": 1285,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1286,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1287,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1288,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1289,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1290,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1291,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1292,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1293,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1294,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1295,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1296,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1297,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1298,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1299,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1300,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1301,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1302,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1303,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1304,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1305,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1306,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1307,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1308,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1309,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1310,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1311,
+      "has_component": "Transferrin receptor.soluble",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1312,
+      "has_component": "Transferrin.iron saturation",
+      "has_property": "SFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group covered two main components: 'Transferrin.iron saturation' and 'Transferrin receptor.soluble'. A key ambiguity was distinguishing between results expressed as a percentage (e.g., deciles 8-40, unit `%`) and as a fraction/ratio (e.g., deciles 0.08-0.4, unit `osuus` or missing). The `deciles` column was essential for resolving this when the `UNIT` was missing. Both were mapped to the property `SFr`. The presence of `LongName` or even descriptive text within the `TEST_NAME` (e.g., 'seerumista, paastotilassa' in row 1300) was very helpful for resolving system for codes without a prefix. The `UNIT` value 'paketti' (package) in row 1301 was a clear and useful indicator of a panel. Rows with 100% missing values were consistently interpreted as order codes or placeholders, for which component and system could often be inferred but property and scale could not."
+}

@@ -1,0 +1,1345 @@
+{
+  "rows": [
+    {
+      "row_id": 2191,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2192,
+      "has_component": "MDA5 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2193,
+      "has_component": "Mi-2alpha Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2194,
+      "has_component": "Mi-2beta Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2195,
+      "has_component": "TIF1gamma Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2196,
+      "has_component": "Amphetamines",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2197,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2198,
+      "has_component": "Platelet aggregation ADP induced",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2199,
+      "has_component": "Platelet aggregation ADP induced",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2200,
+      "has_component": "Basophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2201,
+      "has_component": "Basophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2202,
+      "has_component": "Leukocytes other",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2203,
+      "has_component": "MxA protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2204,
+      "has_component": "MxA protein",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2205,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2206,
+      "has_component": "Leukocytes other",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2207,
+      "has_component": "Leukocytes other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2208,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2209,
+      "has_component": "Benzodiazepines",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2210,
+      "has_component": "Cocaine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2211,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2212,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2213,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2214,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2215,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2216,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2217,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2218,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2219,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2220,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2221,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2222,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2223,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2224,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2225,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2226,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2227,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2228,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2229,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin concentration",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2230,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "EMass",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2231,
+      "has_component": "Erythrocyte mean corpuscular hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2232,
+      "has_component": "Erythrocyte distribution width",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2233,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2234,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2235,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2236,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2237,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2238,
+      "has_component": "Erythrocytes",
+      "has_property": "VFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2239,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2240,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2241,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2242,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2243,
+      "has_component": "Erythrocyte mean corpuscular volume",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "RBC",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2244,
+      "has_component": "C-reactive protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2245,
+      "has_component": "C-reactive protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2246,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2247,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2248,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2249,
+      "has_component": "INR",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2250,
+      "has_component": "Immunoglobulin A",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2251,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2252,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2253,
+      "has_component": "Immunoglobulins",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2254,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2255,
+      "has_component": "Cat dander",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Skin test",
+      "is_panel": false
+    },
+    {
+      "row_id": 2256,
+      "has_component": "Cat dander IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2257,
+      "has_component": "Cat dander IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2258,
+      "has_component": "Cat dander IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2259,
+      "has_component": "Cat dander IgE Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2260,
+      "has_component": "Birch (Betula verrucosa) pollen",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "Skin test",
+      "is_panel": false
+    },
+    {
+      "row_id": 2261,
+      "has_component": "Birch (Betula verrucosa) pollen IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2262,
+      "has_component": "Birch (Betula verrucosa) pollen IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2263,
+      "has_component": "Birch (Betula verrucosa) pollen IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2264,
+      "has_component": "Birch (Betula verrucosa) pollen IgE Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2265,
+      "has_component": "Consultation note",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2266,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2267,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2268,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2269,
+      "has_component": "Leukocytes other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2270,
+      "has_component": "Leukocytes other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2271,
+      "has_component": "Leukocytes other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2272,
+      "has_component": "Leukocytes other",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2273,
+      "has_component": "Leukocytes other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2274,
+      "has_component": "Cells other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2275,
+      "has_component": "Cells other",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2276,
+      "has_component": "Cells other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2277,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2278,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2279,
+      "has_component": "Lymphocytes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2280,
+      "has_component": "NK cells",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Lymphocytes",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2281,
+      "has_component": "NK cells",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Lymphocytes",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2282,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2283,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2284,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2285,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2286,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2287,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2288,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2289,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2290,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2291,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2292,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2293,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2294,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2295,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2296,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2297,
+      "has_component": "Temperature",
+      "has_property": "Temp",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2298,
+      "has_component": "Medication dose",
+      "has_property": "MRat",
+      "has_time_aspect": "24H",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2299,
+      "has_component": "Medication dose",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2300,
+      "has_component": "MDA5 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2301,
+      "has_component": "MDMA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2302,
+      "has_component": "Methamphetamine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2303,
+      "has_component": "Mi-2alpha Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2304,
+      "has_component": "Mi-2beta Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2305,
+      "has_component": "Opiates",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2306,
+      "has_component": "Methadone",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2307,
+      "has_component": "Oxycodone",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2308,
+      "has_component": "Mi-2 Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2309,
+      "has_component": "Mi-2 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2310,
+      "has_component": "3-Methoxytyramine",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2311,
+      "has_component": "3-Methoxytyramine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2312,
+      "has_component": "Methotrexate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2313,
+      "has_component": "Methotrexate",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2314,
+      "has_component": "S100 protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2315,
+      "has_component": "S100 protein",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2316,
+      "has_component": "Cells other",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Syf",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2317,
+      "has_component": "Cells other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Syf",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2318,
+      "has_component": "Temperature",
+      "has_property": "Temp",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2319,
+      "has_component": "TIF1gamma Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2320,
+      "has_component": "Tramadol",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    },
+    {
+      "row_id": 2321,
+      "has_component": "Cells other",
+      "has_property": "Num",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine sediment",
+      "has_scale_type": "Qn",
+      "has_method": "Microscopy",
+      "is_panel": false
+    },
+    {
+      "row_id": 2322,
+      "has_component": "Cells other",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2323,
+      "has_component": "Waist circumference",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2324,
+      "has_component": "MDMA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "Screen",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group demonstrated several common challenges in mapping local codes. \n\n**Ambiguous Codes:** A significant issue was codes like `E-MCV` being used for different measurements. Row 2232 (`E-MCV`, unit `%`, deciles `~13`) was clearly RDW-CV, while row 2238 (`E-MCV`, unit `l/l`, deciles `~0.4`) was Hematocrit. This required ignoring the test name in favor of the `UNIT` and `deciles`. Similarly, `-lymph` (2191) had unit `%` but deciles (`~0.3`) indicated a fraction, a common data representation issue.\n\n**Inference from Context:** Many codes required inference. Drug screen codes like `amp300` or `bzd300` were identified as qualitative screens for Amphetamines and Benzodiazepines based on the naming pattern (drug class + cutoff) and 100% missing numeric values, even without explicit long names. The system was inferred as `Urine` based on common practice for such screens. Similarly, myositis antibody codes like `-mda5` were mapped as qualitative antibody tests based on context and high `p_missing`, inferring `Ser/Plas` as the system.\n\n**Generic/Vague Codes:** Codes using the Finnish word `muut` (other), such as `B-muut`, `L-muut`, `Li-muut`, were challenging. The meaning depended entirely on the prefix (`B`->Blood, `L`->Leukocyte but on Bld sample, `Li`->CSF). I mapped these to a general `Leukocytes other` or `Cells other` component, which is the best possible resolution.\n\n**Data Quality:** Some rows contained clearly incorrect units for the given test (e.g., `E-MCH` with unit `fl`). In these cases, I prioritized the test code's identity (`E-MCH`) and the `deciles` (which matched the expected values for MCH) over the recorded `UNIT`, mapping the property (`EMass`) accordingly. The presence of many unidentifiable codes with 100% missing data (`dmpak`, `kipa`) also highlights data quality gaps."
+}

@@ -1,0 +1,795 @@
+{
+  "rows": [
+    {
+      "row_id": 1089,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1090,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas.cap",
+      "has_scale_type": "Qn",
+      "has_method": "Point-of-care",
+      "is_panel": false
+    },
+    {
+      "row_id": 1091,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1092,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1093,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1094,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1095,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1096,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1097,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1098,
+      "has_component": "Alanine aminotransferase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1099,
+      "has_component": "Alkaline phosphatase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1100,
+      "has_component": "Amylase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1101,
+      "has_component": "Glucose",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1102,
+      "has_component": "Gamma-glutamyltransferase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1103,
+      "has_component": "Gamma-glutamyltransferase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1104,
+      "has_component": "Potassium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1105,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1106,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1107,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1108,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1109,
+      "has_component": "Creatinine",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1110,
+      "has_component": "Creatinine",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1111,
+      "has_component": "Sodium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Dry chemistry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1112,
+      "has_component": "Prothrombin time",
+      "has_property": "CRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1113,
+      "has_component": "Prothrombin time",
+      "has_property": "CRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1114,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1115,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "Time",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1116,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1117,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1118,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1119,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1120,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1121,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1122,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1123,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1124,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1125,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1126,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1127,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Point-of-care",
+      "is_panel": false
+    },
+    {
+      "row_id": 1128,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "Point-of-care",
+      "is_panel": false
+    },
+    {
+      "row_id": 1129,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1130,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1131,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1132,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1133,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1134,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1135,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1136,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1137,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1138,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1139,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1140,
+      "has_component": "Chorionic gonadotropin.beta subunit free",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1141,
+      "has_component": "Prothrombin time",
+      "has_property": "CRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1142,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1143,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "Time",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1144,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1145,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "Time",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1146,
+      "has_component": "Activated partial thromboplastin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1147,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1148,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1149,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1150,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1151,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1152,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1153,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld.cap",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1154,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "^QC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1155,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^QC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1156,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1157,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1158,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1159,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1160,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1161,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1162,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "Rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1163,
+      "has_component": "Prothrombin time",
+      "has_property": "TRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1164,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Rapid",
+      "is_panel": false
+    },
+    {
+      "row_id": 1165,
+      "has_component": "Prothrombin time",
+      "has_property": "CRatio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1166,
+      "has_component": "Prothrombin time",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1167,
+      "has_component": "Chorionic gonadotropin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was characterized by many variations on Prothrombin Time (PT/INR) and hCG tests. The main challenge was parsing the numerous suffixes and extra words in the `TEST_NAME` to distinguish between the core test, reporting units, methods, and clinical context. For example, `tromboplastiiniaika,inr-tulostus,vieritutkimus` required identifying `tromboplastiiniaika` as the component (Prothrombin time), `inr` as the reporting format (Property: `TRatio`), and `vieritutkimus` (point-of-care) as a Method. \n\nAmbiguities included:\n*   Codes without a system prefix (e.g., rows 1091, 1096, 1141-1152). I inferred the system from sibling rows or Finnish lab conventions (PT is almost always plasma), but this is a guess. `Ser/Plas` was used for hCG when unclear, `Plas` for PT.\n*   Identifying quality control samples (row 1154, `laaduntarkkailu`) was possible from the name, leading to the special `^QC` system. This is an important distinction that could be easily missed.\n*   The group of tests with `paikallisanalytiikka, kuivakemia` (local analytics, dry chemistry) was straightforward and allowed specifying `Dry chemistry` as the method, which is a good example of when to use the method axis.\n*   The distinction between different PT properties (`CRatio` for %, `TRatio` for INR, `Time` for seconds) is crucial and was handled by looking at the `UNIT` column."
+}

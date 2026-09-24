@@ -1,0 +1,385 @@
+{
+  "rows": [
+    {
+      "row_id": 1051,
+      "has_component": "ABCG2 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1052,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1053,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1054,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1055,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1056,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1057,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1058,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1059,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1060,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1061,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1062,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1063,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1064,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1065,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1066,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1067,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1068,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1069,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1070,
+      "has_component": "CYP2B6 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1071,
+      "has_component": "CYP2C19 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1072,
+      "has_component": "CYP2C9 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1073,
+      "has_component": "CYP3A5 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1074,
+      "has_component": "CYP4F2 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1075,
+      "has_component": "DPYD gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1076,
+      "has_component": "DPYD gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1077,
+      "has_component": "NUDT15 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1078,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1079,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1080,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1081,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1082,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1083,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1084,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1085,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1086,
+      "has_component": "SLCO1B1 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1087,
+      "has_component": "TPMT gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    },
+    {
+      "row_id": 1088,
+      "has_component": "VKORC1 gene",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Molgen",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was dominated by two types of tests: Complete Blood Count (CBC) panels and pharmacogenetic tests. The CBCs (`perusverenkuva`) were straightforward to identify as panels, especially with a 100% `p_missing` rate. The `B-` prefix or explicit mention of `verestä` (from blood) clearly indicated the system as `Bld`. The many variations (`+trombosyytit`, `koneellinen erittely`) just describe the specific panel composition but don't change its panel status. The genetic tests (`...geeninnukleotidivariaatiot`) were also clear in their component (the gene) and method (`dna-tutkimus` -> `Molgen`). The main ambiguity was the system; since no prefix was present, I correctly left `has_system` empty as per instructions, though in practice these are almost always performed on blood. The most interesting case was row 1074 (`cyp4f2...`) which had deciles, unlike its peers. The numeric values (`11`, `13`) strongly suggest coded results for genotypes, leading to an `Ord` scale instead of the `Nom` scale used for the others. This highlights how result distributions can disambiguate scale type even for seemingly similar tests."
+}

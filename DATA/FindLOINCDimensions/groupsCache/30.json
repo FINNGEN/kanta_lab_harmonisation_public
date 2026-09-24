@@ -1,0 +1,385 @@
+{
+  "rows": [
+    {
+      "row_id": 1695,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1696,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1697,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1698,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1699,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1700,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1701,
+      "has_component": "Cholesterol.in LDL direct",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1702,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1703,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1704,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1705,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1706,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1707,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1708,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1709,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1710,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1711,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1712,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1713,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1714,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1715,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1716,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1717,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1718,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1719,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1720,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1721,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1722,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1723,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1724,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1725,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1726,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1727,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1728,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1729,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1730,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1731,
+      "has_component": "Cholesterol.in LDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1732,
+      "has_component": "Cholesterol.in HDL",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was relatively straightforward, centered on HDL and LDL cholesterol. The main challenge was the inconsistent formatting of the `TEST_NAME` field. Many rows lacked the crucial system prefix (`fP-`, `fS-`, `P-`, `S-`), making the `has_system` axis ambiguous. However, clues could sometimes be found elsewhere in the string, such as the word `plasmasta` ('from plasma') or an embedded national code like `(4516fp-hdl-kol)`, which allowed for a more confident mapping. A more advanced parser for `TEST_NAME` that looks for these secondary clues would be beneficial.\n\nA key finding was the distinction for direct LDL cholesterol, indicated by `suora` in the name (row 1701). This is a method-specific variant that, in LOINC, is correctly handled by creating a more specific component name, `Cholesterol.in LDL direct`, rather than using the `has_method` axis. Another interesting case was row 1726, where the name was just `kolesteroli` and the deciles matched total cholesterol, not HDL or LDL, highlighting the need to check all available data points. The presence of deciles for rows with a missing `UNIT` but high `p_missing` (e.g., 1699, 1705) was also a useful hint to map them as `Qn` with a property (`SCnc`) inferred from the value range, despite data quality issues."
+}

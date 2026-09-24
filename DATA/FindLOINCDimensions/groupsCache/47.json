@@ -1,0 +1,1695 @@
+{
+  "rows": [
+    {
+      "row_id": 3097,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3098,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3099,
+      "has_component": "Extractable nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3100,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3101,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3102,
+      "has_component": "Jo-1 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3103,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3104,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3105,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3106,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3107,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3108,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3109,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3110,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3111,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3112,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3113,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3114,
+      "has_component": "Bicarbonate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3115,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3116,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3117,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3118,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3119,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3120,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3121,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3122,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3123,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3124,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3125,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3126,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3127,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3128,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Asc",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3129,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3130,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3131,
+      "has_component": "Galactose",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3132,
+      "has_component": "Galactose",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3133,
+      "has_component": "Hemoglobin",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3134,
+      "has_component": "Hemoglobin",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3135,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3136,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3137,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3138,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3139,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3140,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3141,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3142,
+      "has_component": "Hemoglobin S",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3143,
+      "has_component": "Deoxyhemoglobin",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3144,
+      "has_component": "Deoxyhemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3145,
+      "has_component": "Erythrocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3146,
+      "has_component": "Erythrocytes",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3147,
+      "has_component": "Erythrocytes",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3148,
+      "has_component": "Erythrocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3149,
+      "has_component": "Erythrocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3150,
+      "has_component": "Erythrocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3151,
+      "has_component": "Erythrocytes",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3152,
+      "has_component": "Leukocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3153,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3154,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3155,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3156,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3157,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3158,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3159,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3160,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3161,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3162,
+      "has_component": "Interferon gamma",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3163,
+      "has_component": "Lead",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3164,
+      "has_component": "Lead",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3165,
+      "has_component": "Lead",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3166,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3167,
+      "has_component": "Interferon gamma",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3168,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3169,
+      "has_component": "Interferon gamma",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 3170,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3171,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3172,
+      "has_component": "Titanium",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3173,
+      "has_component": "Titanium",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3174,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BAL",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3175,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BAL",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3176,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3177,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3178,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3179,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 3180,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3181,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3182,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3183,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3184,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3185,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3186,
+      "has_component": "Bicarbonate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3187,
+      "has_component": "Albumin",
+      "has_property": "MRat",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3188,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3189,
+      "has_component": "Albumin",
+      "has_property": "Mass",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3190,
+      "has_component": "Albumin",
+      "has_property": "MRat",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3191,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3192,
+      "has_component": "Extractable nuclear Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3193,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnt",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3194,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3195,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3196,
+      "has_component": "Lymphocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3197,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3198,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3199,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3200,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "WBC",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3201,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3202,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3203,
+      "has_component": "Lysozyme",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3204,
+      "has_component": "Lysozyme",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3205,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3206,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3207,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3208,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3209,
+      "has_component": "Albumin",
+      "has_property": "MRat",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3210,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3211,
+      "has_component": "Jo-1 Ab",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3212,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3213,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3214,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3215,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3216,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3217,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3218,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3219,
+      "has_component": "Luteinizing hormone",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3220,
+      "has_component": "Luteinizing hormone",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3221,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Dial fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3222,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Dial fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3223,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3224,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3225,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3226,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3227,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3228,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3229,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3230,
+      "has_component": "Lysozyme",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3231,
+      "has_component": "Lysozyme",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plr fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3232,
+      "has_component": "Albumin",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3233,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3234,
+      "has_component": "Albumin",
+      "has_property": "MCnt",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3235,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3236,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3237,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3238,
+      "has_component": "Lactate dehydrogenase",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3239,
+      "has_component": "Luteinizing hormone",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3240,
+      "has_component": "Luteinizing hormone",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3241,
+      "has_component": "Luteinizing hormone",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3242,
+      "has_component": "Lithium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3243,
+      "has_component": "Lithium",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3244,
+      "has_component": "Lysozyme",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3245,
+      "has_component": "Lysozyme",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3246,
+      "has_component": "Lymphocytes",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Synv fld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3247,
+      "has_component": "Lymphocytes",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Synv fld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3248,
+      "has_component": "Albumin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3249,
+      "has_component": "Albumin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3250,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3251,
+      "has_component": "Hemoglobin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3252,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA.umb",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3253,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA.umb",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3254,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldA.umb",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3255,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV.umb",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3256,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV.umb",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3257,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3258,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3259,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3260,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3261,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3262,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3263,
+      "has_component": "Hemoglobin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "BldV",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3264,
+      "has_component": "Base excess",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld.central",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 3265,
+      "has_component": "Base excess",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld.central",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This was a very large and diverse group. The main challenge was the sheer number of specimen types and the variations in test codes. The `prefix_meaning` column was absolutely critical for correctly identifying the numerous blood specimen types (arterial, venous, capillary, umbilical, central), which map to distinct LOINC system codes. Without it, many would have been ambiguously mapped to `Bld`. A significant data quality issue was the presence of clearly incorrect units for some tests, particularly for blood gas panel components like `aB-BE`. I handled this by mapping the canonical unit (`mmol/l`) correctly and leaving the property/scale empty for the erroneous ones. The `deciles` were useful for sanity-checking units, for instance confirming that values in row 3257 (`v-hb`) were consistent with Hemoglobin in g/l, even though the unit was missing. The codes for Interferon Gamma Release Assays (`b-nil`, `b-tb1`, `b-tb2`) were tricky; the combination of a quantitative unit (`iu/ml`) with 100% missing values suggests that while a numeric value is produced, the clinically relevant result is often a derived qualitative interpretation, and data entry reflects this ambiguity."
+}

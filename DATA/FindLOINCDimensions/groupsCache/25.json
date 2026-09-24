@@ -1,0 +1,1185 @@
+{
+  "rows": [
+    {
+      "row_id": 1435,
+      "has_component": "Adalimumab concentration and antibody",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1436,
+      "has_component": "Erythroblasts",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1437,
+      "has_component": "Erythroblasts",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1438,
+      "has_component": "B-lymphocyte immunophenotype",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1439,
+      "has_component": "Non-invasive prenatal testing panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1440,
+      "has_component": "Red blood cell antibody",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1441,
+      "has_component": "Fetal RhD group",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1442,
+      "has_component": "Compatibility",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1443,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1444,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1445,
+      "has_component": "C-reactive protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1446,
+      "has_component": "C-reactive protein",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1447,
+      "has_component": "ABO and Rh group panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "RBC",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1448,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1449,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1450,
+      "has_component": "Electroneuromyography study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1451,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1452,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1453,
+      "has_component": "Lipid panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1454,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1455,
+      "has_component": "Hemoglobin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1456,
+      "has_component": "General chemistry and hematology panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1457,
+      "has_component": "Insulin-like growth factor 1",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1458,
+      "has_component": "Insulin-like growth factor 1.standard deviation score",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1459,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1460,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1461,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1462,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1463,
+      "has_component": "Chronic kidney disease risk",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1464,
+      "has_component": "Lupus anticoagulant dRVVT",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1465,
+      "has_component": "Lupus anticoagulant dRVVT",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1466,
+      "has_component": "Lupus anticoagulant PTT-LA",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1467,
+      "has_component": "Lupus anticoagulant PTT-LA",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1468,
+      "has_component": "Metanephrine and Normetanephrine panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1469,
+      "has_component": "Mononuclear cells",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Dialysis fluid.peritoneal",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1470,
+      "has_component": "Mononuclear cells",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Dialysis fluid.peritoneal",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1471,
+      "has_component": "Cells.other",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Dialysis fluid.peritoneal",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1472,
+      "has_component": "Basic chemistry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1473,
+      "has_component": "Needlestick exposure panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1474,
+      "has_component": "Non-invasive prenatal testing panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1475,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1476,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1477,
+      "has_component": "Coagulation factor Xa inhibitor",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1478,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1479,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1480,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1481,
+      "has_component": "Fibrin D-dimer",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1482,
+      "has_component": "Lupus anticoagulant APTT confirm",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1483,
+      "has_component": "Lupus anticoagulant APTT confirm",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1484,
+      "has_component": "Lupus anticoagulant dRVVT confirm",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1485,
+      "has_component": "Lupus anticoagulant dRVVT confirm",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1486,
+      "has_component": "Neurofilament light chain",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1487,
+      "has_component": "Neurofilament light chain",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1488,
+      "has_component": "Procalcitonin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1489,
+      "has_component": "Procalcitonin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1490,
+      "has_component": "Sex hormone binding globulin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1491,
+      "has_component": "Troponin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1492,
+      "has_component": "Troponin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1493,
+      "has_component": "Streptococcus",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pharynx",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1494,
+      "has_component": "Streptococcus group A Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Pharynx",
+      "has_scale_type": "Ord",
+      "has_method": "IA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1495,
+      "has_component": "Down syndrome risk",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1496,
+      "has_component": "Down syndrome age related risk",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1497,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1498,
+      "has_component": "Glucose challenge test panel for pregnancy",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1499,
+      "has_component": "Exercise study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "Spiroergometry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1500,
+      "has_component": "Exercise study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "Ergometry",
+      "is_panel": false
+    },
+    {
+      "row_id": 1501,
+      "has_component": "Consultation note",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1502,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1503,
+      "has_component": "Blood pressure panel",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1504,
+      "has_component": "Sleep study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "Polygraphy",
+      "is_panel": false
+    },
+    {
+      "row_id": 1505,
+      "has_component": "Maternal infectious disease screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1506,
+      "has_component": "Myeloperoxidase antibody",
+      "has_property": "Titr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1507,
+      "has_component": "Myeloperoxidase antibody",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1508,
+      "has_component": "Proteinase 3 antibody",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1509,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1510,
+      "has_component": "Branched chain amino acids",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1511,
+      "has_component": "Maternal infectious disease screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1512,
+      "has_component": "Infliximab concentration and antibody",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1513,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1514,
+      "has_component": "Kappa/Lambda Free light chain ratio",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1515,
+      "has_component": "Leukocyte antibody",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1516,
+      "has_component": "Maternal infectious disease screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1517,
+      "has_component": "Sex hormone binding globulin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1518,
+      "has_component": "Maternal infectious disease screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1519,
+      "has_component": "Immunoglobulin A",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1520,
+      "has_component": "Immunoglobulin A",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1521,
+      "has_component": "Cells",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Dialysis fluid.peritoneal",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1522,
+      "has_component": "Cells",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Dialysis fluid.peritoneal",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1523,
+      "has_component": "Spirometry panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1524,
+      "has_component": "Streptococcus",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pharynx",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1525,
+      "has_component": "Streptococcus",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pharynx",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 1526,
+      "has_component": "Sex hormone binding globulin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1527,
+      "has_component": "Sex hormone binding globulin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1528,
+      "has_component": "",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1529,
+      "has_component": "Triglyceride",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1530,
+      "has_component": "Triglyceride",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1531,
+      "has_component": "Triglyceride",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1532,
+      "has_component": "Triglyceride",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1533,
+      "has_component": "Thrombophilia panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1534,
+      "has_component": "Histology study",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1535,
+      "has_component": "Histology study",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1536,
+      "has_component": "Bacteria",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1537,
+      "has_component": "Bacteria",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1538,
+      "has_component": "Buprenorphine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1539,
+      "has_component": "Drugs of abuse screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1540,
+      "has_component": "Leukocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1541,
+      "has_component": "Leukocytes",
+      "has_property": "NCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "Automated count",
+      "is_panel": false
+    },
+    {
+      "row_id": 1542,
+      "has_component": "MDMA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1543,
+      "has_component": "Urinalysis sediment panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "Automated count",
+      "is_panel": true
+    },
+    {
+      "row_id": 1544,
+      "has_component": "Streptococcus pneumoniae Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "IA",
+      "is_panel": false
+    },
+    {
+      "row_id": 1545,
+      "has_component": "Pregabalin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1546,
+      "has_component": "Urinalysis sediment panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "Automated count",
+      "is_panel": true
+    },
+    {
+      "row_id": 1547,
+      "has_component": "Specific gravity",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1548,
+      "has_component": "Compatibility",
+      "has_property": "Find",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1549,
+      "has_component": "Urinalysis sediment panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "Automated count",
+      "is_panel": true
+    },
+    {
+      "row_id": 1550,
+      "has_component": "Urinalysis sediment panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "Automated count",
+      "is_panel": true
+    },
+    {
+      "row_id": 1551,
+      "has_component": "Urinalysis panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1552,
+      "has_component": "Maternal infectious disease screen panel",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group contained a wide variety of tests, including many panels (\"paketti\", \"seulonta\"), procedural tests (EKG, spirometry), and standard chemistry/hematology. The keyword \"paketti\" (package) was a very reliable indicator for `is_panel: true`.\n\nThe main difficulties were:\n1.  **Vague or uninterpretable names**: Rows like 1443 (`biopankkinäyte`), 1502 (`pt-potilastapkliinispat...`), and 1528 (`tehtyposantutk...`) are not clinical tests and could not be mapped. They seem to represent administrative or logistical events.\n2.  **Ambiguous systems**: For common analytes like Triglyceride (1529-1532) or CRP (1445-1446), the `TEST_NAME` often omits the system prefix (S- or P-). In these cases, inferring `Ser/Plas` is the only reasonable option.\n3.  **Data quality issues**: Row 1446 (CRP) had `p_missing: 100` but also had a full set of deciles, a clear contradiction. I chose to trust the deciles and the sibling row (1445) to map it as a quantitative test, assuming the `p_missing` value was an error.\n4.  **Complex tests vs Panels**: It can be tricky to distinguish a complex test reported as a single narrative (like immunophenotyping, row 1438) from a true panel. My rule of thumb was to use `is_panel: true` only when the name explicitly mentioned a package/screen or listed multiple distinct analytes. The Lupus Anticoagulant tests (1464-1467, 1482-1485) are part of a diagnostic algorithm, but each step (screen, confirm) is a distinct reportable result, so I did not mark them as panels."
+}

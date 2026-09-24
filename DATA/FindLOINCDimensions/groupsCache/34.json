@@ -1,0 +1,115 @@
+{
+  "rows": [
+    {
+      "row_id": 1825,
+      "has_component": "Flow-volume loop",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1826,
+      "has_component": "Flow-volume loop",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1827,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1828,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1829,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1830,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1831,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1832,
+      "has_component": "Flow-volume loop",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1833,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1834,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 1835,
+      "has_component": "Flow-volume loop panel with bronchodilator challenge",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group was homogeneous and represented variations of a single concept: flow-volume spirometry. The key to correct mapping was recognizing that a spirometry test is a panel, as it produces multiple individual results (FVC, FEV1, etc.). The 100% `p_missing` across all rows was a strong confirmation of this, as panel order codes do not have a single numeric value.\n\nThe suffixes were informative: `jabronkodilaatiokoe` clearly indicated a bronchodilator challenge, which is a more extensive panel. Suffixes like `ilmanlausuntoa` (without report) describe a workflow difference but do not change the fundamental nature of the ordered panel. The `pt-` prefix consistently indicated the system is `^Patient`, and even when this prefix was missing, the nature of a pulmonary function test makes this a safe inference."
+}

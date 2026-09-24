@@ -1,0 +1,1245 @@
+{
+  "rows": [
+    {
+      "row_id": 2720,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2721,
+      "has_component": "Bilirubin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2722,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2723,
+      "has_component": "Mercury",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2724,
+      "has_component": "Mercury",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2725,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld.cap",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2726,
+      "has_component": "Bilirubin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld.cap",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2727,
+      "has_component": "Magnesium",
+      "has_property": "SAmt",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2728,
+      "has_component": "Magnesium",
+      "has_property": "PrThr",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2729,
+      "has_component": "Phosphate",
+      "has_property": "SAmt",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2730,
+      "has_component": "Phosphate",
+      "has_property": "PrThr",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2731,
+      "has_component": "Fungus",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "VagFld",
+      "has_scale_type": "Ord",
+      "has_method": "KOH Prep",
+      "is_panel": false
+    },
+    {
+      "row_id": 2732,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2733,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2734,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2735,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2736,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2737,
+      "has_component": "Vasoactive intestinal peptide",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2738,
+      "has_component": "Vasoactive intestinal peptide",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2739,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2740,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2741,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2742,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "CSF",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2743,
+      "has_component": "Mini-mental state exam",
+      "has_property": "Score",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2744,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2745,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2746,
+      "has_component": "Natriuretic peptide.B type",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2747,
+      "has_component": "Natriuretic peptide.B type",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2748,
+      "has_component": "Natriuretic peptide.B type",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2749,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2750,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2751,
+      "has_component": "Coagulation",
+      "has_property": "Time",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2752,
+      "has_component": "",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2753,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2754,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2755,
+      "has_component": "Magnesium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2756,
+      "has_component": "Magnesium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2757,
+      "has_component": "Selenium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2758,
+      "has_component": "Selenium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2759,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2760,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2761,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2762,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2763,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "PlrFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2764,
+      "has_component": "Cholesterol",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "PlrFld",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2765,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2766,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2767,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2768,
+      "has_component": "Bilirubin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "Oxidase",
+      "is_panel": false
+    },
+    {
+      "row_id": 2769,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2770,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2771,
+      "has_component": "Follicle stimulating hormone",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2772,
+      "has_component": "Cholesterol",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2773,
+      "has_component": "Cholesterol",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2774,
+      "has_component": "Cholesterol",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2775,
+      "has_component": "Magnesium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2776,
+      "has_component": "Magnesium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2777,
+      "has_component": "Neuron specific enolase",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2778,
+      "has_component": "Neuron specific enolase",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2779,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2780,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2781,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2782,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2783,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2784,
+      "has_component": "Bilirubin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Secretn",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2785,
+      "has_component": "Bilirubin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Secretn",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2786,
+      "has_component": "Aluminum",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2787,
+      "has_component": "Aluminum",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2788,
+      "has_component": "Amphetamines",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2789,
+      "has_component": "Arsenic.inorganic",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2790,
+      "has_component": "Arsenic.inorganic",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2791,
+      "has_component": "Arsenic.inorganic",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2792,
+      "has_component": "Bilirubin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2793,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2794,
+      "has_component": "Buprenorphine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2795,
+      "has_component": "Benzodiazepines",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2796,
+      "has_component": "Chloride",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2797,
+      "has_component": "Chloride",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2798,
+      "has_component": "Delta aminolevulinate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2799,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2800,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2801,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2802,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2803,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2804,
+      "has_component": "Erythrocytes",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2805,
+      "has_component": "Fentanyl",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2806,
+      "has_component": "Mercury",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2807,
+      "has_component": "Mercury",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2808,
+      "has_component": "Iodide",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2809,
+      "has_component": "Iodide",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2810,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2811,
+      "has_component": "Collagen type I N-terminal telopeptide/Creatinine",
+      "has_property": "SRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2812,
+      "has_component": "Collagen type I N-terminal telopeptide/Creatinine",
+      "has_property": "SRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2813,
+      "has_component": "Collagen type I N-terminal telopeptide/Creatinine",
+      "has_property": "SRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2814,
+      "has_component": "Collagen type I N-terminal telopeptide/Creatinine",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2815,
+      "has_component": "Calculus composition",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "Calculus",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2816,
+      "has_component": "Calculus composition",
+      "has_property": "Type",
+      "has_time_aspect": "Pt",
+      "has_system": "Calculus",
+      "has_scale_type": "Nom",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2817,
+      "has_component": "Magnesium",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2818,
+      "has_component": "Magnesium",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2819,
+      "has_component": "Methadone",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2820,
+      "has_component": "Nickel",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2821,
+      "has_component": "Nickel",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2822,
+      "has_component": "Nickel",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2823,
+      "has_component": "Nickel",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2824,
+      "has_component": "Porphobilinogen",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2825,
+      "has_component": "Porphobilinogen/Creatinine",
+      "has_property": "SRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2826,
+      "has_component": "Porphobilinogen",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2827,
+      "has_component": "Pregabalin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2828,
+      "has_component": "pH",
+      "has_property": "pH",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2829,
+      "has_component": "pH",
+      "has_property": "pH",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2830,
+      "has_component": "Phosphate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2831,
+      "has_component": "Phosphate",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2832,
+      "has_component": "1-Hydroxypyrene",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2833,
+      "has_component": "1-Hydroxypyrene",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2834,
+      "has_component": "1-Hydroxypyrene",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2835,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2836,
+      "has_component": "Specific gravity",
+      "has_property": "SGRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2837,
+      "has_component": "Specific gravity",
+      "has_property": "SGRto",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2838,
+      "has_component": "Tetrahydrocannabinol",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2839,
+      "has_component": "Tramadol",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2840,
+      "has_component": "Urobilinogen",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2841,
+      "has_component": "Thyrotropin",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser.umb",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2842,
+      "has_component": "Thyrotropin",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser.umb",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2843,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This was a large and diverse group of tests. A major data quality issue was the frequent contradiction between `p_missing` being high (or 100) and the `deciles` column containing a valid numeric distribution. I consistently chose to trust the `deciles` and map these rows as quantitative (`Qn`), assuming an ETL error in calculating `p_missing`. Several abbreviations were ambiguous (`b-bio`, `s-bio`, `p-fsl`), forcing me to leave the component blank or make an educated guess based on context (e.g., `s-biol` being Bilirubin). The set included many urine drug screens (`u-amp`, `u-bzd`, etc.), which were straightforward to map as qualitative tests. It also contained non-specimen tests like `MMSE` and `vp-dop`, which required mapping the system to `^Patient`. Some local panel codes for drug screens (`u-ds...`) were unmappable without a dictionary. Finally, the `UNIT` 'form' was unusual but I interpreted it as implying a narrative (`Nar`) result."
+}

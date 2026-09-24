@@ -1,0 +1,65 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  inputFile = DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+  outDir = DATA/FindLOINCDimensions
+  nGroups = 50
+  provider = google_vertex
+  model = gemini-2.5-pro
+  project = atlas-development-270609
+  location = europe-north1
+  workers = 6
+  cacheDir = DATA/FindLOINCDimensions/groupsCache
+Read 13835 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
+Processing 50 of 171 groups
+Groups to send to the LLM: 45 (5 already cached)
+Resolving 45 groups across 6 workers
+Initiating cluster with 6 threads
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+  |                                                                              |                                                                      |   0%  |                                                                              |==                                                                    |   2%  |                                                                              |===                                                                   |   4%  |                                                                              |=====                                                                 |   7%  |                                                                              |======                                                                |   9%  |                                                                              |========                                                              |  11%  |                                                                              |=========                                                             |  13%  |                                                                              |===========                                                           |  16%  |                                                                              |============                                                          |  18%  |                                                                              |==============                                                        |  20%  |                                                                              |================                                                      |  22%  |                                                                              |=================                                                     |  24%  |                                                                              |===================                                                   |  27%  |                                                                              |====================                                                  |  29%  |                                                                              |======================                                                |  31%  |                                                                              |=======================                                               |  33%  |                                                                              |=========================                                             |  36%  |                                                                              |==========================                                            |  38%  |                                                                              |============================                                          |  40%  |                                                                              |==============================                                        |  42%  |                                                                              |===============================                                       |  44%  |                                                                              |=================================                                     |  47%  |                                                                              |==================================                                    |  49%  |                                                                              |====================================                                  |  51%  |                                                                              |=====================================                                 |  53%  |                                                                              |=======================================                               |  56%  |                                                                              |========================================                              |  58%  |                                                                              |==========================================                            |  60%  |                                                                              |============================================                          |  62%  |                                                                              |=============================================                         |  64%  |                                                                              |===============================================                       |  67%  |                                                                              |================================================                      |  69%  |                                                                              |==================================================                    |  71%  |                                                                              |===================================================                   |  73%  |                                                                              |=====================================================                 |  76%  |                                                                              |======================================================                |  78%  |                                                                              |========================================================              |  80%  |                                                                              |==========================================================            |  82%  |                                                                              |===========================================================           |  84%  |                                                                              |=============================================================         |  87%  |                                                                              |==============================================================        |  89%  |                                                                              |================================================================      |  91%  |                                                                              |=================================================================     |  93%  |                                                                              |===================================================================   |  96%  |                                                                              |====================================================================  |  98%  |                                                                              |======================================================================| 100%
+Resolved 45 groups this run (LLM cost USD 6.4074)
+Collected 3617 per-row answers from 50 groups
+3250 / 3617 rows got a has_component
+Wrote 3617 rows to DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Wrote 50 group reflections to DATA/FindLOINCDimensions/reflections.md
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  dimensionsFile = DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+  reflectionsFile = DATA/FindLOINCDimensions/reflections.md
+  outDir = DATA/FindLOINCDimensions
+  provider = google_vertex
+  model = gemini-2.5-pro
+Read 3617 rows from DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Read 68948 characters of reflections from DATA/FindLOINCDimensions/reflections.md
+Computed completeness for 7 dimensions
+Summarised reflections into 8 findings, 7 improvements, 7 data problems
+Wrote stats report to DATA/FindLOINCDimensions/loincDimensionsStats.md
+Wrote DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Wrote DATA/FindLOINCDimensions/reflections.md
+Wrote DATA/FindLOINCDimensions/loincDimensionsStats.md

@@ -1,0 +1,535 @@
+{
+  "rows": [
+    {
+      "row_id": 1733,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1734,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1735,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1736,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1737,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1738,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1739,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1740,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1741,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1742,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1743,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1744,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1745,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1746,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1747,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1748,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1749,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1750,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1751,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1752,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1753,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1754,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1755,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1756,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1757,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1758,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1759,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1760,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1761,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1762,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1763,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1764,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1765,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1766,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1767,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1768,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1769,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1770,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1771,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1772,
+      "has_component": "Prostate specific antigen.free",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1773,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1774,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1775,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1776,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1777,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1778,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1779,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1780,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1781,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1782,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1783,
+      "has_component": "Prostate specific antigen.free/Prostate specific antigen.total",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1784,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 1785,
+      "has_component": "Prostate specific antigen.total",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    }
+  ],
+  "reflection": "This group was very consistent, focusing on Prostate-specific antigen (PSA). The main task was to differentiate between total PSA (the default), free PSA (`vapaa`), and the free/total ratio (`suhde`, `osuus`). The distinction between Plasma (`p-`), Serum (`s-`), and unspecified (`Ser/Plas`) was straightforward.\n\nThe most notable ambiguity was row 1758, `prostataspesifinenantigeeni,vapaa`, which had the unit `%`. This contradicts the name (`vapaa` suggests a concentration, not a ratio). I prioritized the unit, which is a strong indicator of the property and scale, and mapped it to the free/total ratio. This demonstrates that local naming can be inconsistent.\n\nMy strategy for rows with high `p_missing` and no unit was to map them as `Nar` (Narrative) scale, assuming these represent orders with missing or non-numeric results. This is an inference but a consistent and justifiable one in this context. For the ratio tests in `%`, I used the `MFr` (Mass Fraction) property, which aligns well with a ratio of two mass concentrations presented as a percentage. An alternative would be `Ratio`, but `MFr` feels more specific to the unit."
+}

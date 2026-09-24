@@ -1,0 +1,1105 @@
+{
+  "rows": [
+    {
+      "row_id": 2468,
+      "has_component": "Neutrophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ascites",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2469,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ascites",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2470,
+      "has_component": "Volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2471,
+      "has_component": "Volume",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2472,
+      "has_component": "Vanillylmandelate",
+      "has_property": "Substance",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2473,
+      "has_component": "Vanillylmandelate",
+      "has_property": "SRat",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2474,
+      "has_component": "Vanillylmandelate",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2475,
+      "has_component": "Volume",
+      "has_property": "Vol",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2476,
+      "has_component": "Volume",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2477,
+      "has_component": "Volume",
+      "has_property": "Vol",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2478,
+      "has_component": "Volume",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "Urine",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2479,
+      "has_component": "gamma Globulin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2480,
+      "has_component": "Oxygen",
+      "has_property": "VFr",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2481,
+      "has_component": "Oxygen",
+      "has_property": "Vol",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2482,
+      "has_component": "Oxygen",
+      "has_property": "Flow",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2483,
+      "has_component": "Oxygen",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2484,
+      "has_component": "Choriogonadotropin beta subunit.free/Median",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2485,
+      "has_component": "Immunoglobulin G",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2486,
+      "has_component": "Cytology",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Cvx",
+      "has_scale_type": "Nar",
+      "has_method": "Papanicolaou stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 2487,
+      "has_component": "Nuchal translucency/Median",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Fetus",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2488,
+      "has_component": "Protein C",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2489,
+      "has_component": "Protein C",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2490,
+      "has_component": "Protein C",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2491,
+      "has_component": "Procalcitonin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2492,
+      "has_component": "Procalcitonin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2493,
+      "has_component": "Procalcitonin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2494,
+      "has_component": "Phosphate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2495,
+      "has_component": "Phosphate",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2496,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2497,
+      "has_component": "Prolactin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2498,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2499,
+      "has_component": "Protein S",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2500,
+      "has_component": "Protein S",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2501,
+      "has_component": "Prostate specific antigen",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2502,
+      "has_component": "Prostate specific antigen",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2503,
+      "has_component": "Prothrombin time",
+      "has_property": "Time",
+      "has_time_aspect": "Pt",
+      "has_system": "Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2504,
+      "has_component": "Cytology",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Cvx",
+      "has_scale_type": "Nar",
+      "has_method": "Papanicolaou stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 2505,
+      "has_component": "Pregnancy associated plasma protein A/Median",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2506,
+      "has_component": "Neutrophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "PlrFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2507,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "PlrFld",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2508,
+      "has_component": "Histology",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Endometrium",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2509,
+      "has_component": "AST to platelet ratio index",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2510,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2511,
+      "has_component": "Body mass index",
+      "has_property": "Mass/Area",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2512,
+      "has_component": "Bronchodilation study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2513,
+      "has_component": "EKG study",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Doc",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2514,
+      "has_component": "Electroneuromyography study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2515,
+      "has_component": "Intracytoplasmic sperm injection procedure",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2516,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2517,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2518,
+      "has_component": "Peak expiratory flow rate",
+      "has_property": "Flow",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2519,
+      "has_component": "Peak expiratory flow rate",
+      "has_property": "Flow",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2520,
+      "has_component": "Peak expiratory flow rate",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2521,
+      "has_component": "Polysomnography study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2522,
+      "has_component": "Polysomnography study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2523,
+      "has_component": "Blood pressure",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2524,
+      "has_component": "Blood pressure 24H study",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2525,
+      "has_component": "Somatosensory evoked potential study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2526,
+      "has_component": "Somatosensory evoked potential study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2527,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2528,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2529,
+      "has_component": "Heart rate",
+      "has_property": "Freq",
+      "has_time_aspect": "Pt",
+      "has_system": "^Patient",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2530,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2531,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2532,
+      "has_component": "Ultraviolet B therapy",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2533,
+      "has_component": "Arterial pressure and blood flow study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "Plethysmography",
+      "is_panel": true
+    },
+    {
+      "row_id": 2534,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2535,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2536,
+      "has_component": "Artemisia vulgaris",
+      "has_property": "Len",
+      "has_time_aspect": "Pt",
+      "has_system": "Skin",
+      "has_scale_type": "Qn",
+      "has_method": "Skin test",
+      "is_panel": false
+    },
+    {
+      "row_id": 2537,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2538,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2539,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2540,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2541,
+      "has_component": "Iron",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2542,
+      "has_component": "Iron",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2543,
+      "has_component": "Rheumatoid factor",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2544,
+      "has_component": "Blood pressure 24H study",
+      "has_property": "",
+      "has_time_aspect": "24H",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 2545,
+      "has_component": "gamma Globulin",
+      "has_property": "MFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2546,
+      "has_component": "gamma Globulin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2547,
+      "has_component": "gamma Globulin",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2548,
+      "has_component": "Nuchal translucency/Median",
+      "has_property": "Ratio",
+      "has_time_aspect": "Pt",
+      "has_system": "^Fetus",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2549,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2550,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2551,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2552,
+      "has_component": "Prolactin",
+      "has_property": "SCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2553,
+      "has_component": "Prolactin",
+      "has_property": "CCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2554,
+      "has_component": "Prostate specific antigen",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2555,
+      "has_component": "Prostate specific antigen",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2556,
+      "has_component": "Prostate specific antigen",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2557,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2558,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2559,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2560,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2561,
+      "has_component": "Artemisia vulgaris IgE Ab",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2562,
+      "has_component": "Neutrophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "Sect",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2563,
+      "has_component": "Neutrophils",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Sect",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2564,
+      "has_component": "Streptococcus pyogenes Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Throat",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2565,
+      "has_component": "Streptococcus pyogenes Ag",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Throat",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2566,
+      "has_component": "Mononuclear cells",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "SynvFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2567,
+      "has_component": "Mononuclear cells",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "SynvFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2568,
+      "has_component": "Neutrophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "SynvFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2569,
+      "has_component": "Neutrophils",
+      "has_property": "NFr",
+      "has_time_aspect": "Pt",
+      "has_system": "SynvFld",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2570,
+      "has_component": "Trichomonas vaginalis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Vag",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2571,
+      "has_component": "Troponin T",
+      "has_property": "MCnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Qn",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2572,
+      "has_component": "Troponin T",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2573,
+      "has_component": "Troponin",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Ser/Plas",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2574,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2575,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2576,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "",
+      "has_scale_type": "Nar",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 2577,
+      "has_component": "Arterial pressure and blood flow study",
+      "has_property": "",
+      "has_time_aspect": "",
+      "has_system": "^Patient",
+      "has_scale_type": "",
+      "has_method": "Plethysmography",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group contained a wide variety of tests, from standard chemistry to cytology, patient-level procedures, and allergy testing. Several key challenges and patterns emerged:\n\n*   **Data Quality Issues:** A significant number of rows (e.g., 2493, 2495, 2502, 2553) had a `p_missing` of 100% but also contained a full set of `deciles`. This is a clear contradiction. I chose to trust the presence of `deciles` as stronger evidence of quantitative results and mapped them as `Qn`, assuming the `p_missing` value was erroneous.\n*   **Ambiguous Patient-Level Codes:** Many codes with the `Pt-` prefix (e.g., `pt-lis`, `pt-neni`, `pt-sik`) were uninterpretable abbreviations for procedures or observations. Without more context, I could only map the system as `^Patient` and the scale as `Nar`. Distinguishing between a single narrative result and a panel/procedure that bundles multiple results was difficult. I marked complex, well-known procedures like EKG, ENMG, and sleep studies (`pt-pol`, `pt-psg`) as panels.\n*   **Semantic Conflicts:** Row 2548, `s-ntmom`, presents a logical conflict. `NT` (Nuchal translucency) is a fetal ultrasound measurement (System `^Fetus`), but the prefix `s-` indicates a serum sample. It's likely that a calculated MoM value, derived from the ultrasound, was stored in the LIS with a default 'serum' system prefix. I prioritized the specific test name (`NT`) over the less specific prefix, mapping the system to `^Fetus`. This highlights how LIS-specific data entry conventions can create misleading codes.\n*   **Interpreting `MoM`:** Codes ending in `mom` (e.g., `hcgbvkmom`, `ntkmom`, `pappakmom`) clearly refer to 'Multiple of the Median' results from prenatal screening. These were consistently mapped with the property `Ratio` and a component name reflecting the division by the median, e.g., 'Choriogonadotropin beta subunit.free/Median'.\n*   **Procedure vs. Result:** Some codes like `pipelle` (2508) name a tool or procedure. The result is what matters for LOINC mapping (in this case, a histology report). It's important to infer the resulting observation (e.g., `Histology`) rather than mapping the procedure name itself."
+}

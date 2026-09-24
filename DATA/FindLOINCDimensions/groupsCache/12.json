@@ -1,0 +1,1005 @@
+{
+  "rows": [
+    {
+      "row_id": 745,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 746,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.anaerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 747,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 748,
+      "has_component": "Mycobacterium tuberculosis DNA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 749,
+      "has_component": "Mycobacterium tuberculosis DNA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 750,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Acid fast stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 751,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 752,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Acid fast stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 753,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Acid fast stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 754,
+      "has_component": "Staphylococcus aureus",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Nose",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 755,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 756,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 757,
+      "has_component": "Bacteria DNA",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 758,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 759,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 760,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 761,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 762,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 763,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 764,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 765,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 766,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 767,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 768,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 769,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 770,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Body fld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 771,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Ord",
+      "has_method": "",
+      "is_panel": false
+    },
+    {
+      "row_id": 772,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 773,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 774,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 775,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 776,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 777,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 778,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 779,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 780,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 781,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 782,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 783,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 784,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 785,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 786,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 787,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 788,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 789,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 790,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 791,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 792,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 793,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 794,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Stool",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 795,
+      "has_component": "Bacteria",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Vag",
+      "has_scale_type": "Ord",
+      "has_method": "Stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 796,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 797,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 798,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 799,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Tiss",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 800,
+      "has_component": "Mycobacterium tuberculosis DNA",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "NAA",
+      "is_panel": false
+    },
+    {
+      "row_id": 801,
+      "has_component": "Mycobacterium tuberculosis",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Ord",
+      "has_method": "Acid fast stain",
+      "is_panel": false
+    },
+    {
+      "row_id": 802,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 803,
+      "has_component": "Interferon gamma",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 804,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 805,
+      "has_component": "Interferon gamma",
+      "has_property": "PrThr",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Ord",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 806,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 807,
+      "has_component": "Interferon gamma",
+      "has_property": "ACnc",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "Qn",
+      "has_method": "Cell stimulation",
+      "is_panel": false
+    },
+    {
+      "row_id": 808,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Bld",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 809,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Thrt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 810,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 811,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 812,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 813,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 814,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 815,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 816,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 817,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 818,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 819,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 820,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 821,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 822,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Pus",
+      "has_scale_type": "Nom",
+      "has_method": "Culture.aerobic",
+      "is_panel": false
+    },
+    {
+      "row_id": 823,
+      "has_component": "Fungus identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 824,
+      "has_component": "Fungus identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 825,
+      "has_component": "Fungus identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Skin",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 826,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 827,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Spt",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 828,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 829,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 830,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 831,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 832,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 833,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 834,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 835,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 836,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 837,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 838,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 839,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 840,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 841,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 842,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    },
+    {
+      "row_id": 843,
+      "has_component": "Bacteria identified",
+      "has_property": "Prid",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "Nom",
+      "has_method": "Culture",
+      "is_panel": false
+    },
+    {
+      "row_id": 844,
+      "has_component": "",
+      "has_property": "",
+      "has_time_aspect": "Pt",
+      "has_system": "Urine",
+      "has_scale_type": "",
+      "has_method": "",
+      "is_panel": true
+    }
+  ],
+  "reflection": "This group was dominated by microbiology tests. The key to parsing this was understanding the Finnish vocabulary for microbiology: `viljely` (culture), `värjäys` (staining), `nukleiinihaponosoitus` (nucleic acid detection), and terms for specimens like `virtsa` (urine), `veri` (blood), `yskös` (sputum), and `märkä` (pus).\n\nA major ambiguity was distinguishing single tests from panels. I used a rule-based approach: tests described with \"ja\" (and), like `viljely ja värjäys` (culture and staining), or terms like `jatkotutkimus`/`jatkoviljely` (follow-up study/culture, which implies identification and sensitivity testing), were marked as panels. The well-known national codes for wound cultures (`viljely 1` for deep/anaerobic+aerobic vs. `viljely 2` for superficial/aerobic) were also critical context for differentiating single tests from panels.\n\nThe Interferon-Gamma Release Assays (IGRA) were complex. The test name `gammainterferoni, eritys` refers to the entire panel, while rows like `tb1antigeeni` and `tb2antigeeni` refer to specific components (e.g., from different tubes in a QuantiFERON kit). Distinguishing these required recognizing the structure of the assay itself. It's also notable that for these components, both quantitative (`iu/ml`) and qualitative (100% missing value) versions exist in the data, which I mapped to `Qn`/`ACnc` and `Ord`/`PrThr` respectively.\n\nHaving the `prefix_meaning` was very helpful, but for many rows, the specimen had to be inferred from words within the `TEST_NAME`, such as `virtsasta` (from urine), which made the process more manual. Having `LongName` for more rows would have been beneficial, though the `TEST_NAME` fields were often descriptive enough."
+}
