@@ -1,0 +1,46 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  codesWithLoincDimensionsFile = DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+  measurementConceptAttributesFile = DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+  outDir = DATA/MapLOINCToOmop
+  join key = has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect, is_panel
+Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincDimensions.tsv
+Read 102825 rows from DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
+Built 75116 distinct OMOP axis tuples from 84606 concepts (18219 concepts with no axis known were excluded as join targets)
+1901 / 1984 rows have at least one axis known; 167 / 1984 rows matched at least one OMOP concept
+Wrote 1984 rows to DATA/MapLOINCToOmop/codesWithOMOP.tsv
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  codesWithOmopFile = DATA/MapLOINCToOmop/codesWithOMOP.tsv
+  referenceMappingFile = DATA/ReferenceMappings/lab_data_summary.csv
+  outDir = DATA/MapLOINCToOmop
+Read 1984 rows from DATA/MapLOINCToOmop/codesWithOMOP.tsv
+1901 / 1984 rows had >=1 axis known; 167 / 1901 of those matched >=1 OMOP concept
+Computed match rate for 49 has_system domains
+Read 28685 rows from DATA/ReferenceMappings/lab_data_summary.csv
+764 rows overlap an APPROVED reference mapping; 57 (7.5%) agree with it
+Wrote stats report to DATA/MapLOINCToOmop/loincToOmopMappingStats.md
+Wrote DATA/MapLOINCToOmop/codesWithOMOP.tsv
+Wrote DATA/MapLOINCToOmop/loincToOmopMappingStats.md
