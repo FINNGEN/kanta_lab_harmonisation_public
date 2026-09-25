@@ -23,11 +23,19 @@ codesWithOmopFile <- args[1]
 referenceMappingFile <- args[2]
 outDir <- args[3]
 
+# Records above which a code counts as high-volume. The curated reference was
+# built mostly for the codes that carry real data volume -- it covers 97% of
+# the rows with >=50,000 records but under 30% of those with <500 -- so the
+# agreement figure over the whole overlap mixes the codes it was written for
+# with ones it barely touches. This threshold splits them.
+volumeThreshold <- suppressWarnings(as.numeric(Sys.getenv("VOLUME_THRESHOLD", "500")))
+
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  codesWithOmopFile = ", codesWithOmopFile)
 ParallelLogger::logInfo("  referenceMappingFile = ", referenceMappingFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
+ParallelLogger::logInfo("  volumeThreshold = ", volumeThreshold)
 
 #
 # --- Input -------------------------------------------------------------
@@ -122,8 +130,88 @@ if (file.exists(referenceMappingFile)) {
     dplyr::filter(status == "APPROVED", !is.na(TEST_NAME)) |>
     dplyr::distinct(TEST_NAME, UNIT, OMOP_CONCEPT_ID, OMOP_CONCEPT_NAME)
 
+  # The join key is TEST_NAME + UNIT, and an empty UNIT is a unit value in its
+  # own right -- "sodium with no unit recorded" is a different row from "sodium
+  # in mmol/l" on both sides, so they must not collapse into one another.
   checked <- codes |>
     dplyr::inner_join(approved, by = c("TEST_NAME", "UNIT"))
+
+  # Every row of THIS pipeline's table falls into exactly one of four outcomes.
+  outcomeOf <- function(inRef, hasId, sameId) {
+    dplyr::case_when(
+      !inRef ~ "not in reference",
+      !hasId ~ "not automapped",
+      sameId ~ "agreement",
+      TRUE ~ "disagreement"
+    )
+  }
+  refKey <- paste(approved$TEST_NAME, approved$UNIT, sep = "\r")
+  refConcept <- stats::setNames(as.character(approved$OMOP_CONCEPT_ID), refKey)
+  codesKey <- paste(codes$TEST_NAME, codes$UNIT, sep = "\r")
+  codes <- codes |>
+    dplyr::mutate(
+      outcome = outcomeOf(
+        inRef = codesKey %in% refKey,
+        hasId = !is.na(.data$omop_concept_id),
+        sameId = !is.na(.data$omop_concept_id) &
+          .data$omop_concept_id == unname(refConcept[codesKey])
+      )
+    )
+  outcomeCounts <- tibble::tibble(
+    outcome = c("not in reference", "not automapped", "disagreement", "agreement")
+  ) |>
+    dplyr::mutate(
+      n = purrr::map_int(outcome, ~ sum(codes$outcome == .x)),
+      pct_of_all = .formatPct(n / nRows),
+      pct_of_in_reference = ifelse(
+        outcome == "not in reference", "",
+        .formatPct(n / max(sum(codes$outcome != "not in reference"), 1))
+      )
+    )
+  ParallelLogger::logInfo("Outcomes: ",
+                          paste(outcomeCounts$outcome, outcomeCounts$n, sep = "=", collapse = ", "))
+
+  # "not in reference" is the largest bucket by far, and the name oversells it:
+  # the cross-check compares against APPROVED rows only, so a row lands here
+  # whenever the reference has no APPROVED mapping for it -- which is usually
+  # not the same as the reference never having heard of the code. Splitting the
+  # bucket by the status the reference does carry separates "nobody has curated
+  # this yet" (UNCHECKED) from "a curator looked and found nothing" (NOT-FOUND)
+  # from genuine absence. The three call for different follow-up, and lumping
+  # them together hides that NOT-FOUND rows we did map are the pipeline's
+  # strongest claim to be adding something the reference does not have.
+  statusRank <- c("APPROVED" = 1L, "UNCHECKED" = 2L, "NOT-FOUND" = 3L, "IGNORED" = 4L)
+  refAll <- reference |>
+    dplyr::mutate(TEST_NAME = testIdParts[, 2], UNIT = dplyr::na_if(testIdParts[, 3], "")) |>
+    dplyr::filter(!is.na(.data$TEST_NAME)) |>
+    dplyr::mutate(rank = dplyr::coalesce(statusRank[.data$status], 9L)) |>
+    dplyr::group_by(.data$TEST_NAME, .data$UNIT) |>
+    dplyr::slice_min(.data$rank, n = 1, with_ties = FALSE) |>
+    dplyr::ungroup()
+  refAllKey <- paste(refAll$TEST_NAME, refAll$UNIT, sep = "\r")
+  # A code can appear under several statuses; the best one is what the
+  # reference effectively says about it, hence slice_min on the rank above.
+  refStatus <- refAll$status[match(codesKey, refAllKey)]
+  notInRef <- codes$outcome == "not in reference"
+  statusBreakdown <- tibble::tibble(
+    reference_status = ifelse(is.na(refStatus), "(no row at all)", refStatus)
+  )[notInRef, ] |>
+    dplyr::mutate(
+      automapped = !is.na(codes$omop_concept_id[notInRef]),
+      # `n` arrives as character: the table is read with na = "" per
+      # development/STYLE.md, so an empty record count is an empty string
+      # rather than NA and readr types the whole column as text.
+      records = suppressWarnings(as.numeric(codes$n[notInRef]))
+    ) |>
+    dplyr::group_by(.data$reference_status) |>
+    dplyr::summarise(
+      rows = dplyr::n(),
+      automapped = sprintf("%d (%s)", sum(.data$automapped),
+                           .formatPct(mean(.data$automapped))),
+      records = format(sum(.data$records, na.rm = TRUE), big.mark = ","),
+      .groups = "drop"
+    ) |>
+    dplyr::arrange(dplyr::desc(.data$rows))
 
   agrees <- !is.na(checked$omop_concept_id) &
     checked$omop_concept_id == as.character(checked$OMOP_CONCEPT_ID)
@@ -140,76 +228,123 @@ if (file.exists(referenceMappingFile)) {
     .formatPct(nAgree / max(nAnswered, 1)), " of those answered) agree with it"
   )
 
-  # Examples of disagreement, up to 5 per evidence_level. Taking the first 10 of
-  # the table drew them all from one similarity group -- ten spellings of the
-  # same CRP code, disagreeing the same way -- which says nothing about how the
-  # mapping fails anywhere else. Two guards fix that: distinct (our concept,
-  # reference concept) pairs are kept first, so one recurring disagreement
-  # cannot fill the sample, and the draw is then seeded so re-runs on the same
-  # data show the same examples.
-  #
-  # dplyr::coalesce(..., "") rather than leaving NA: sprintf("%s", NA) prints
-  # the literal text "NA", which the Table output rule in development/STYLE.md
-  # forbids in a table this project produces.
+  # Five examples of each of the two failure outcomes. Sampling is deduplicated
+  # first -- disagreements by their (our concept, reference concept) pair, and
+  # declines by TEST_NAME -- because taking the head of the table drew ten
+  # spellings of one CRP code failing the same way, and plain random sampling
+  # would not have fixed that: a code that recurs under ten spellings is ten
+  # times as likely to be drawn. Seeded so re-runs on the same data agree.
   set.seed(1)
-  disagreeing <- checked[!agrees & !is.na(checked$omop_concept_id), ] |>
-    dplyr::mutate(evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)"))
+  withOutcome <- checked |>
+    dplyr::mutate(
+      sameId = !is.na(.data$omop_concept_id) &
+        .data$omop_concept_id == as.character(.data$OMOP_CONCEPT_ID),
+      outcome = dplyr::case_when(
+        is.na(.data$omop_concept_id) ~ "not automapped",
+        .data$sameId ~ "agreement",
+        TRUE ~ "disagreement"
+      ),
+      evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)")
+    )
 
-  exampleFor <- function(lvl) {
-    pool <- disagreeing |>
-      dplyr::filter(.data$evidence_level == lvl) |>
-      dplyr::distinct(.data$omop_concept_id, .data$OMOP_CONCEPT_ID, .keep_all = TRUE)
+  exampleTable <- function(outcomeName, dedupe) {
+    pool <- withOutcome |> dplyr::filter(.data$outcome == outcomeName)
+    pool <- if (dedupe == "pair") {
+      dplyr::distinct(pool, .data$omop_concept_id, .data$OMOP_CONCEPT_ID, .keep_all = TRUE)
+    } else {
+      dplyr::distinct(pool, .data$TEST_NAME, .keep_all = TRUE)
+    }
     if (nrow(pool) == 0) return(character(0))
     picked <- pool |>
       dplyr::slice_sample(n = min(5L, nrow(pool))) |>
       dplyr::transmute(
         TEST_NAME = dplyr::coalesce(TEST_NAME, ""),
         UNIT = dplyr::coalesce(UNIT, ""),
+        evidence = dplyr::coalesce(evidence_level, ""),
         certainty = dplyr::coalesce(certainty, ""),
         loinc_name_guess = dplyr::coalesce(loinc_name_guess, ""),
         our_omop_concept_name = dplyr::coalesce(omop_concept_name, ""),
-        reference_OMOP_CONCEPT_NAME = dplyr::coalesce(OMOP_CONCEPT_NAME, "")
+        reference_OMOP_CONCEPT_NAME = dplyr::coalesce(OMOP_CONCEPT_NAME, ""),
+        reasoning = dplyr::coalesce(reasoning, "")
       )
-    c(paste0("*`", lvl, "` — ", nrow(pool), " distinct disagreements, ",
+    c(paste0("*", nrow(pool), " distinct ", outcomeName, " rows; ",
              nrow(picked), " shown:*"),
       "",
       .markdownTable(picked),
       "")
   }
 
-  exampleLines <- unlist(lapply(
-    c("unit+values", "unit only", "values only", "name only", "(unknown)"),
-    exampleFor
-  ))
-  if (is.null(exampleLines)) exampleLines <- character(0)
+  disagreementLines <- exampleTable("disagreement", "pair")
+  declinedLines <- exampleTable("not automapped", "name")
+  nNoReasoning <- sum(withOutcome$outcome == "not automapped" &
+                        is.na(withOutcome$reasoning))
 
-  # Broken out by evidence_level, because the reference is in practice a
-  # TEST_NAME -> concept mapping: it gives more than one concept across a code's
-  # units for only ~6% of multi-unit codes. This pipeline maps (TEST_NAME, UNIT)
-  # and leaves a name-only row unmapped rather than assuming, so on exactly
-  # those rows the two targets differ by construction. Reporting one blended
-  # percentage would hide that; the `name only` line is where the two
-  # definitions disagree, and the evidenced lines are the ones that measure
-  # whether this pipeline picks the right concept.
+  # Agreement restricted to rows that carried real evidence. The labels are
+  # listed explicitly rather than filtered as "everything except `name`": if one
+  # is renamed upstream, an exclusion filter silently keeps every row and the
+  # evidenced figure quietly becomes the whole-overlap figure -- the kind of
+  # error that still looks like a result. An allow-list drops unknown labels and
+  # the warning below makes the drop visible.
+  evidencedLabels <- c("name+unit+values", "name+values", "name+unit")
+  isEvidenced <- !is.na(checked$evidence_level) & checked$evidence_level %in% evidencedLabels
+  nEvid <- sum(isEvidenced)
+  nEvidAgree <- sum(agrees[isEvidenced])
+  nUnknownLabel <- sum(!is.na(checked$evidence_level) &
+                         !(checked$evidence_level %in% c(evidencedLabels, "name")))
+  if (nUnknownLabel > 0) {
+    ParallelLogger::logWarn(nUnknownLabel, " overlap row(s) carry an unrecognised ",
+                            "evidence_level; they are excluded from the evidenced figure")
+  }
+
   byEvidence <- checked |>
     dplyr::mutate(agrees = agrees) |>
     dplyr::group_by(evidence_level = dplyr::coalesce(.data$evidence_level, "(unknown)")) |>
     dplyr::summarise(
       n_rows = dplyr::n(),
-      n_answered = sum(!is.na(.data$omop_concept_id)),
-      n_agree = sum(.data$agrees),
+      n_automapped = sum(!is.na(.data$omop_concept_id)),
+      n_agreement = sum(.data$agrees),
       .groups = "drop"
     ) |>
     dplyr::mutate(
-      pct_answered = .formatPct(n_answered / n_rows),
-      pct_agree_of_rows = .formatPct(n_agree / n_rows),
-      pct_agree_of_answered = .formatPct(n_agree / pmax(n_answered, 1))
+      pct_automapped = .formatPct(n_automapped / n_rows),
+      pct_agree_of_rows = .formatPct(n_agreement / n_rows),
+      pct_agree_of_automapped = .formatPct(n_agreement / pmax(n_automapped, 1))
     ) |>
     dplyr::arrange(dplyr::desc(n_rows))
 
-  evidenced <- checked[!is.na(checked$evidence_level) & checked$evidence_level != "name only", ]
-  nEvid <- nrow(evidenced)
-  nEvidAgree <- sum(agrees[!is.na(checked$evidence_level) & checked$evidence_level != "name only"])
+  # Agreement by how much data the code actually carries: the reference was
+  # curated for the codes that matter, so one blended figure mixes the codes it
+  # was written for with ones it barely touches.
+  checked <- checked |> dplyr::mutate(nRecords = suppressWarnings(as.numeric(.data$n)))
+  allByVolume <- codes |> dplyr::mutate(nRecords = suppressWarnings(as.numeric(.data$n)))
+  volumeBands <- list(
+    list(lo = 0,     hi = 100,   label = "< 100"),
+    list(lo = 100,   hi = 500,   label = "100 - 499"),
+    list(lo = 500,   hi = 5000,  label = "500 - 4,999"),
+    list(lo = 5000,  hi = 50000, label = "5,000 - 49,999"),
+    list(lo = 50000, hi = Inf,   label = ">= 50,000")
+  )
+  byVolume <- purrr::map_dfr(volumeBands, function(b) {
+    allSel <- !is.na(allByVolume$nRecords) & allByVolume$nRecords >= b$lo & allByVolume$nRecords < b$hi
+    sel <- !is.na(checked$nRecords) & checked$nRecords >= b$lo & checked$nRecords < b$hi
+    nOverlap <- sum(sel)
+    tibble::tibble(
+      records = b$label,
+      rows = sum(allSel),
+      in_reference = sprintf("%d (%s)", nOverlap, .formatPct(nOverlap / max(sum(allSel), 1))),
+      automapped = .formatPct(sum(sel & !is.na(checked$omop_concept_id)) / max(nOverlap, 1)),
+      agreement = sprintf("%d (%s)", sum(agrees[sel]), .formatPct(sum(agrees[sel]) / max(nOverlap, 1)))
+    )
+  })
+
+  highSel <- !is.na(checked$nRecords) & checked$nRecords >= volumeThreshold
+  nHigh <- sum(highSel)
+  nHighAgree <- sum(agrees[highSel])
+  nHighAnswered <- sum(highSel & !is.na(checked$omop_concept_id))
+  ParallelLogger::logInfo(
+    "Restricted to codes with >= ", volumeThreshold, " records: ",
+    nHighAgree, " / ", nHigh, " (", .formatPct(nHighAgree / max(nHigh, 1)), ") agree"
+  )
 
   referenceSection <- c(
     "## Cross-check against the reference mapping",
@@ -218,16 +353,30 @@ if (file.exists(referenceMappingFile)) {
       "`", referenceMappingFile, "` holds a separately curated Finnish-code ",
       "-> OMOP mapping. Restricted to its `APPROVED` rows and matched to this ",
       "table by `TEST_NAME`+`UNIT`, it is the only independent read on whether ",
-      "the concepts chosen here are the *right* ones:"
+      "the concepts chosen here are the *right* ones."
     ),
     "",
-    .markdownTable(tibble::tibble(
-      bucket = c("rows overlapping an APPROVED reference mapping",
-                 "of those, this pipeline chose a concept",
-                 "of those, it chose the reference's concept"),
-      n = c(nChecked, nAnswered, nAgree),
-      pct = c("", .formatPct(nAnswered / max(nChecked, 1)), .formatPct(nAgree / max(nAnswered, 1)))
-    )),
+    "The join key is `TEST_NAME` + `UNIT`. An **empty `UNIT` counts as a unit**:",
+    "a code with no unit recorded is a different row from the same code in",
+    "`mmol/l`, on both sides of the join, and they must not collapse together.",
+    "",
+    "Every row of this pipeline's table then falls into exactly one of four",
+    "outcomes:",
+    "",
+    "- **not in reference** — the reference has no **`APPROVED`** mapping for this",
+    "  `TEST_NAME`+`UNIT`, so there is nothing to compare against. Not a result",
+    "  either way, and mostly not a gap in the reference either — see the split",
+    "  below.",
+    "- **not automapped** — the reference has this code, but the pipeline produced",
+    "  no OMOP id: `FixLOINCDimensions` judged no candidate defensible and left it",
+    "  empty on purpose. For a code with no unit and no values that is the intended",
+    "  answer, not a failure.",
+    "- **disagreement** — the pipeline produced an id and the reference has a",
+    "  different one.",
+    "- **agreement** — the pipeline produced the same id as the reference.",
+    "",
+    "",
+    .markdownTable(outcomeCounts),
     "",
     paste0("Agreement over the whole overlap: **",
            nAgree, " / ", nChecked, " = ", .formatPct(nAgree / max(nChecked, 1)), "**. ",
@@ -240,23 +389,78 @@ if (file.exists(referenceMappingFile)) {
     "and it is internally inconsistent on some panel families. Read the figures",
     "below as *agreement*, not as correctness.",
     "",
-    "By `evidence_level` — what the local row actually carried. The reference gives",
+    "### What \"not in reference\" actually means",
+    "",
+    "The cross-check uses the reference's `APPROVED` rows only, so that bucket is",
+    "*not* \"the reference has never heard of this code\". It mostly is not: the",
+    "reference carries a row for these codes under another status. What it says",
+    "about them, and what this pipeline did anyway:",
+    "",
+    .markdownTable(statusBreakdown),
+    "",
+    "- **`UNCHECKED`** — nobody has curated the code yet. There is no answer to",
+    "  compare against, and these are where a working pipeline adds mappings that",
+    "  do not exist today.",
+    "- **`NOT-FOUND`** — a curator looked and concluded no concept fits; none of",
+    "  these rows carries a concept id in the reference. Rows here that the",
+    "  pipeline *did* map are its strongest claim to beat the reference — and,",
+    "  equally, where a hallucinated concept would hide. They are the highest-value",
+    "  set to put in front of a human.",
+    "- **`IGNORED`** — deliberately excluded from the curation.",
+    "- **`(no row at all)`** — genuinely absent from the reference file.",
+    "",
+    "### By record volume",
+    "",
+    paste0("The reference was curated for the codes that carry the data. It covers ",
+           "97% of the rows with 50,000+ records and under 30% of those below 500, ",
+           "so a single agreement figure over the whole overlap mixes the codes it ",
+           "was written for with ones it barely touches."),
+    "",
+    .markdownTable(byVolume),
+    "",
+    paste0("**Restricted to codes with >= ", format(volumeThreshold, big.mark = ","),
+           " records — the range the reference actually covers: ",
+           nHighAgree, " / ", nHigh, " = ", .formatPct(nHighAgree / max(nHigh, 1)),
+           "** (", .formatPct(nHighAgree / max(nHighAnswered, 1)), " of the ",
+           nHighAnswered, " it automapped)."),
+    "",
+    "### By evidence level",
+    "",
+    "What the local row actually carried. The reference gives",
     "more than one concept across a code's units for only ~6% of multi-unit codes,",
     "so it is in practice a `TEST_NAME` -> concept mapping, while this pipeline maps",
-    "`(TEST_NAME, UNIT)` and leaves a `name only` row unmapped rather than assuming a",
-    "quantity. On those rows the two targets differ by construction, which is why",
-    "they are reported apart from the evidenced ones:",
+    "`(TEST_NAME, UNIT)`. A `name`-only row has nothing that fixes its quantity, so",
+    "`FixLOINCDimensions` takes a concept there only when the name alone settles it",
+    "and declines otherwise — which is why those rows both answer less often and",
+    "agree less often, and why they are reported apart from the evidenced ones:",
     "",
     .markdownTable(byEvidence),
-    if (length(exampleLines) > 0) c(
+    if (length(disagreementLines) > 0) c(
       "",
-      "**Example disagreements.** Up to 5 per `evidence_level`, drawn at random",
-      "from the *distinct* (our concept, reference concept) pairs so that one",
-      "recurring disagreement cannot fill the sample. The `reasoning` column of",
-      "`DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv` says, clause by clause,",
-      "what each of these choices rested on.",
+      "### Examples — disagreement",
       "",
-      exampleLines
+      "Five of the rows where the pipeline produced an id and the reference has a",
+      "different one, sampled from the *distinct* (our concept, reference concept)",
+      "pairs so one recurring disagreement cannot fill the table. `reasoning` is what",
+      "`FixLOINCDimensions` gave for that choice, clause by clause — so the mistake",
+      "can be read rather than guessed at.",
+      "",
+      disagreementLines
+    ) else character(0),
+    if (length(declinedLines) > 0) c(
+      "",
+      "### Examples — not automapped",
+      "",
+      "Five of the rows the reference maps but the pipeline left empty. An empty",
+      "`loinc_name_guess` means `FindLOINCDimensions` could not name the test at all;",
+      "a filled one means the search returned nothing the model would accept.",
+      if (nNoReasoning > 0) paste0(
+        "`reasoning` is empty on ", nNoReasoning, " of these: the prompt currently asks ",
+        "for it only when a concept was chosen, so the pipeline does not record WHY it ",
+        "declined. That is the most useful thing it could say about these rows."
+      ) else "",
+      "",
+      declinedLines
     ) else character(0)
   )
 }
