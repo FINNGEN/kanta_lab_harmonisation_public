@@ -39,7 +39,7 @@ concept ids.
   - `certainty` — `high`, `medium` or `low`, the model's own confidence in the
     whole mapping. A claim rather than a measurement, but a `low` row is one it
     is asking you to check, and the report cross-tabulates it against
-    `evidence_level` so a `high` on a `name only` row is visible.
+    `evidence_level` so a `high` on a `name`-only row is visible.
 
   There is no `is_panel` column: LOINC names panels as panels, so a bundle is
   expressed in the name itself rather than in a separate flag.
@@ -106,11 +106,18 @@ both derived from measuring the first run against the curated Finnish mappings:
   `--trough` variants for plain drug levels, and narrowed `Serum or Plasma` to
   `Capillary blood` on codes that said no such thing. The prompt asks, of every
   qualifier: which characters of this code say so?
-- **A guess that is itself a real concept is evidence, not an instruction.** In
-  33 rows the earlier pass had already written the reference concept's exact
-  name and the search returned it at score 1.000, yet this step moved off it.
-  It now carries real weight — but a better-supported candidate, including a
-  more precise one, still wins.
+- **The guess is a search query whose job is already done.** It fetched the
+  candidate list and carries no authority over the choice. `FindLOINCDimensions`
+  is told to write a name whenever the code gives it anything to work with —
+  a near-miss still retrieves the right neighbourhood — so its guesses are not
+  calibrated: a fluent name may rest on very little, and nothing in the row
+  marks which. The prompt therefore has this step re-read `TEST_NAME`,
+  `LongName`, `UNIT` and `deciles` *before* looking at the guess, and when the
+  row's evidence and the guess disagree, the row wins.
+
+  A guess that is itself a real concept name at score 1.000 is mildly
+  reassuring and nothing more — recognition and coincidence look identical
+  here — so a candidate is never adopted *because* it equals the guess.
 
 The score threshold is `0.5`, deliberately looser than the `0.75` the earlier
 axis-based version used. There, the search matched a short axis label against
@@ -132,8 +139,15 @@ that the model meant a different concept than the id it typed.
 The join is guarded the same way as in `FindLOINCDimensions`: unknown or
 duplicated `row_id`s are dropped with a warning rather than allowed to shift
 the table. `certainty` is normalised to `high`/`medium`/`low` and anything else
-becomes empty, and both it and `reasoning` are cleared whenever no concept
-survived — they would otherwise describe a choice that is not in the table.
+becomes empty, and it is cleared whenever no concept survived — a certainty
+without a concept describes a choice that is not in the table.
+
+`reasoning` is **kept on declined rows**, and the prompt requires one: on a row
+with no concept it is the only record of what blocked the mapping, and the
+distinctions matter — a code too garbled to identify, a non-laboratory code, a
+search that returned nothing for the analyte, candidates all in the wrong
+specimen, and evidence that cannot settle the quantity need opposite fixes.
+"Nothing fitted" is explicitly not an accepted answer.
 
 `scripts/summariseFixedLoincNames.R` then writes the stats report. Its numbers
 are about the *route*, not about correctness: whether the search offered

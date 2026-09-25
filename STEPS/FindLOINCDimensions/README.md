@@ -27,20 +27,27 @@ Guesses the **LOINC Long Common Name** of every local Finnish lab code.
     row's `UNIT`, computed over the whole input table. A unit holding a sliver
     of a code's records while another unit holds the rest is far more likely a
     data-entry error than a second real test.
-  - `evidence_level` — `unit+values`, `unit only`, `values only`, or
-    `name only`, from whether the row has a `UNIT` and a `deciles`
+  - `evidence_level` — `name+unit+values`, `name+unit`, `name+values`, or
+    `name`, from whether the row has a `UNIT` and a `deciles`
     distribution. This is what bounds how far a row may be pushed: a
-    `name only` row has nothing to fix the quantity with, and the prompt
+    `name` row has nothing to fix the quantity with, and the prompt
     requires it to be left unnamed unless the name alone settles the concept.
-    It also splits the reports, since a `name only` row is where this
+    It also splits the reports, since a `name`-only row is where this
     pipeline's target and the reference's differ by construction.
   - `loinc_name_guess` — the LOINC Long Common Name the model believes this
     code maps to, spelled as LOINC spells it:
     `<Component> [<Property>] in <System> by <Method>`, e.g.
-    `Creatinine [Moles/volume] in Serum or Plasma`. Empty when the model could
-    not tell what the test measures — the prompt explicitly prefers an empty
-    name to an invented one, since an invention sends the next step's search
-    after a concept the code never meant.
+    `Creatinine [Moles/volume] in Serum or Plasma`. Empty **only** when the
+    code text carries no usable hint at all — a bare running number, an
+    administrative label, a string too garbled to read an analyte out of.
+
+    The name is a search query, not a verdict, and the prompt is written
+    around that: it is fed to a semantic search and `FixLOINCDimensions`
+    chooses from the real concepts that come back. A near-miss still retrieves
+    the right neighbourhood of concepts, so being wrong here is cheap, while
+    an empty name retrieves nothing and drops the code from consideration
+    entirely. Abstaining is the next step's job — it is the one that can hold
+    a guess up against real concepts and conclude none of them fits.
   There is no `is_panel` column. LOINC names panels *as panels* — the word
   `panel` appears in 81% of its panel concepts, only 6% carry a `[Property]`
   (a bundle has no single quantity), and the system follows a dash rather than
@@ -115,11 +122,14 @@ The prompt carries an explicit hierarchy for combining `TEST_NAME`, `UNIT` and
 - **What a row may conclude is bounded by its `evidence_level`.** With a unit
   and values, the strongest case — and if they contradict each other the
   **unit** is the part to distrust, especially at a low `unit_share`. With a
-  unit only, trust the unit. With values only, read the quantity off the
-  magnitudes. With **neither**, the quantity cannot be fixed at all: the row is
-  named only if the name alone settles it (a panel, which carries no property,
-  or an analyte with one LOINC form) and is otherwise left empty. An honest gap
-  beats a name resting on nothing.
+  a unit but no values, trust the unit. With values but no unit, read the
+  quantity off the magnitudes. With **neither**, the quantity cannot be fixed
+  at all — but the search can still be aimed: the row is named from the
+  analyte and specimen that can be read, taking the analyte's plainest
+  ordinary property, or no brackets where there is no basis for one. Retrieval
+  runs mostly on component and system, so such a name still returns the right
+  family of concepts and lets the next step settle the quantity against real
+  candidates.
 - **Some units are ratios, not concentrations** — `mmol/mol` (HbA1c IFCC),
   `mg/mmol` (albumin/creatinine), `ml/min/173m2` (eGFR), and `%`, which may be
   a cell fraction, a mass fraction, or activity as a percentage of normal.

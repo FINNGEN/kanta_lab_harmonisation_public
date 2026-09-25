@@ -4,8 +4,9 @@
 
 - `DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv` — one row per local
   `TEST_NAME`/`UNIT`, with the `omop_concept_id` chosen for it (empty when no
-  candidate was right), its guessed name `loinc_name_guess`, `is_panel`, and
-  the computed `evidence_level` / `unit_share` the report breaks down by.
+  candidate was right), its guessed name `loinc_name_guess`, the `reasoning`
+  and `certainty` behind the choice, and the computed `evidence_level` /
+  `unit_share` the report breaks down by.
 - `DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv` — every
   standard OMOP `Measurement`-domain concept, with its name, code, vocabulary
   and the six LOINC axes pulled from the vocabulary itself.
@@ -72,6 +73,19 @@ Two scripts, run in order:
      so reporting only the first would let the step look good by mapping
      everything.
 
+     Every row falls into exactly one of four outcomes: **not in reference**,
+     **not automapped**, **disagreement**, **agreement**. The first is the
+     largest and its name oversells it — the cross-check compares against
+     `APPROVED` rows only, so a row lands there whenever the reference has no
+     `APPROVED` mapping for it, which is rarely the same as the reference
+     never having heard of the code. A further table splits that bucket by the
+     status the reference does carry, because the parts call for opposite
+     follow-up: `UNCHECKED` is uncurated work where a mapping would be new;
+     `NOT-FOUND` is where a curator looked and concluded nothing fits, so rows
+     this pipeline mapped there are its strongest claim to add something the
+     reference lacks *and* exactly where a hallucination would hide; and only a
+     small remainder is genuinely absent from the file.
+
      Read it as **agreement, not correctness**. The reference is the best
      mapping available, not ground truth: it sends the rapid-test code
      `c-reaktiivinenproteiini,pika` to a high-sensitivity CRP concept although
@@ -82,12 +96,20 @@ Two scripts, run in order:
      do not have the same target. The reference gives more than one concept
      across a code's units for only ~6% of multi-unit codes, so in practice it
      maps `TEST_NAME` -> concept; this pipeline maps `(TEST_NAME, UNIT)` and
-     leaves a `name only` row unmapped rather than assuming a quantity. On
+     leaves a `name`-only row unmapped rather than assuming a quantity. On
      those rows the two disagree by construction, so they are reported apart
      from the evidenced rows — and agreement restricted to rows carrying real
      evidence is the figure that tracks whether this pipeline picks the right
-     concept. A few example disagreements are listed. The section is skipped
-     (with a note, not an error) if the file isn't found.
+     concept.
+
+     Two sets of 5 examples close the section: **disagreements**, sampled
+     from the distinct (our concept, reference concept) pairs so one recurring
+     disagreement cannot fill the table, and rows **not automapped**, deduped
+     by code. Both carry the `reasoning` `FixLOINCDimensions` gave, so the
+     mistake — or the refusal — can be read rather than guessed at. The two
+     need different fixes, a better prompt versus better retrieval or more
+     input evidence, so they are counted and shown apart. The section is
+     skipped (with a note, not an error) if the file isn't found.
 
 ## Env vars
 
