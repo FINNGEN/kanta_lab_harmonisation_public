@@ -153,11 +153,14 @@ grouped <- grouped |>
   dplyr::mutate(
     hasUnit = !is.na(.data$UNIT) & nzchar(.data$UNIT),
     hasValues = !is.na(.data$deciles) & nzchar(.data$deciles),
+    # Every row has a name -- that is the one thing never missing -- so each
+    # label names it explicitly. "unit only" read as though the name were
+    # absent, which is the opposite of the truth.
     evidence_level = dplyr::case_when(
-      .data$hasUnit & .data$hasValues ~ "unit+values",
-      .data$hasUnit & !.data$hasValues ~ "unit only",
-      !.data$hasUnit & .data$hasValues ~ "values only",
-      TRUE ~ "name only"
+      .data$hasUnit & .data$hasValues ~ "name+unit+values",
+      .data$hasUnit & !.data$hasValues ~ "name+unit",
+      !.data$hasUnit & .data$hasValues ~ "name+values",
+      TRUE ~ "name"
     )
   ) |>
   dplyr::select(-dplyr::all_of(c("hasUnit", "hasValues")))
