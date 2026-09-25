@@ -486,14 +486,14 @@ if (nUnknownToOmop > 0) {
   ParallelLogger::logWarn(nUnknownToOmop, " chosen concept_id(s) are not in the OMOP attributes table")
 }
 
-# A certainty or a reasoning trail only means something next to a concept: if
-# the id was discarded as not-offered, or the model returned none, anything it
-# wrote describes a choice that is not in the table, so it is cleared with it.
+# A certainty means nothing without a concept -- there is no choice to be sure
+# about -- so it is cleared when no id survived. The REASONING is kept: on a
+# declined row it is the only record of why nothing fitted, which is the most
+# useful thing the step can say about the rows it could not map.
 answers <- answers |>
-  dplyr::mutate(dplyr::across(
-    dplyr::all_of(c("reasoning", "certainty")),
-    ~ ifelse(is.na(.data$omop_concept_id), NA_character_, .x)
-  ))
+  dplyr::mutate(
+    certainty = ifelse(is.na(.data$omop_concept_id), NA_character_, .data$certainty)
+  )
 
 result <- selected |>
   dplyr::left_join(

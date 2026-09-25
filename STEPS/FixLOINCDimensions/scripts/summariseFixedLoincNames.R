@@ -358,7 +358,7 @@ md <- c(
          "makes a mapping reviewable without re-deriving it."),
   "",
   "Certainty against the evidence the row actually carried. A concept claimed",
-  "`high` on a `name only` row is worth checking, since such a row has no unit",
+  "`high` on a `name` row is worth checking, since such a row has no unit",
   "and no values to fix a quantity with:",
   "",
   .markdownTable(certaintyByEvidence),
