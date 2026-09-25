@@ -16,8 +16,8 @@ Configuration:
   outDir = DATA/MapLOINCToOmop
 Read 1984 rows from DATA/FixLOINCDimensions/codesWithOmopConcepts.tsv
 Read 102825 rows from DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv
-4 row(s) carry a concept_id that is not in the OMOP attributes table; they are reported as unmapped
-1599 / 1984 rows carry a concept_id; 1595 resolved to an OMOP concept (627 distinct concepts)
+5 row(s) carry a concept_id that is not in the OMOP attributes table; they are reported as unmapped
+1566 / 1984 rows carry a concept_id; 1561 resolved to an OMOP concept (601 distinct concepts)
 Wrote 1984 rows to DATA/MapLOINCToOmop/codesWithOMOP.tsv
 - The project is out-of-sync -- use `renv::status()` for details.
 
@@ -35,11 +35,14 @@ Configuration:
   codesWithOmopFile = DATA/MapLOINCToOmop/codesWithOMOP.tsv
   referenceMappingFile = DATA/ReferenceMappings/lab_data_summary.csv
   outDir = DATA/MapLOINCToOmop
+  volumeThreshold = 500
 Read 1984 rows from DATA/MapLOINCToOmop/codesWithOMOP.tsv
-1790 / 1984 rows were named; 1586 / 1790 of those mapped to an OMOP concept
-Grouped the mapped rows into 64 OMOP systems
+1890 / 1984 rows were named; 1559 / 1890 of those mapped to an OMOP concept
+Grouped the mapped rows into 58 OMOP systems
 Read 28685 rows from DATA/ReferenceMappings/lab_data_summary.csv
-764 rows overlap an APPROVED reference mapping; 688 of them got a concept; 469 (61.4% of the overlap, 68.2% of those answered) agree with it
+Outcomes: not in reference=1220, not automapped=71, disagreement=239, agreement=454
+764 rows overlap an APPROVED reference mapping; 693 of them got a concept; 454 (59.4% of the overlap, 65.5% of those answered) agree with it
+Restricted to codes with >= 500 records: 278 / 467 (59.5%) agree
 Wrote stats report to DATA/MapLOINCToOmop/loincToOmopMappingStats.md
 Wrote DATA/MapLOINCToOmop/codesWithOMOP.tsv
 Wrote DATA/MapLOINCToOmop/loincToOmopMappingStats.md
