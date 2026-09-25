@@ -4,308 +4,359 @@
       "row_id": 1790,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (B-) as a molar concentration (umol/l). The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list. The available mass/volume concept (44816559) is incorrect as the unit and values confirm a molar concentration.",
+      "certainty": ""
     },
     {
       "row_id": 1791,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (B-) with a molar concentration inferred from the deciles. The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1792,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (B- and `verestä`) as a molar concentration (umol/l). The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1793,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol in Blood (`b-` and `verestä`), but without units or values, the property (e.g., Moles/volume, Mass/volume, Presence) cannot be determined from the available candidates.",
+      "certainty": ""
     },
     {
       "row_id": 1794,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol in Blood (B-) as a molar concentration (umol/l). The suffix 'vita' is unidentified. The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1795,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol in Blood (`b-`), but without units or values, the property cannot be determined. The suffix 'vita' is unidentified.",
+      "certainty": ""
     },
     {
       "row_id": 1796,
-      "omop_concept_id": "3039777",
-      "omop_concept_name": "Haemophilus influenzae B DNA [Presence] in Blood by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Haemophilus influenzae in Blood (B-). The available candidates are either for a different, less specific specimen ('Specimen' instead of 'Blood') or for a specific serotype (e.g., type B), which is not specified in the local code. No suitable match in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1797,
       "omop_concept_id": "3024944",
       "omop_concept_name": "Large unstained cells [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Component is Large unstained cells (suuret värjäytymättömät solut) ; property is number concentration [#/volume] bcs unit is e9/l ; in Blood bcs of B- prefix ; by Automated count is implicit for this measurement.",
+      "certainty": "high"
     },
     {
       "row_id": 1798,
-      "omop_concept_id": "37020101",
-      "omop_concept_name": "Chlamydophila pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3031478",
+      "omop_concept_name": "Chlamydophila pneumoniae DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Component is Chlamydia pneumoniae DNA bcs of `chlamydiapneumoniae,nukleiin` ; property is Presence by NAA bcs of `nukleiin` suffix and 100% missing values ; in Specimen bcs no specimen is named in the code.",
+      "certainty": "high"
     },
     {
       "row_id": 1799,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Follitropin (follikkeliastimuloivahormoni) ; property is [Units/volume] bcs unit is U/L ; in Serum or Plasma bcs no prefix is given for this common chemistry test.",
+      "certainty": "high"
     },
     {
       "row_id": 1800,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) as a molar concentration (umol/l). The specimen is implicitly Blood for this test. The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1801,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) as a molar concentration, inferred from the deciles. The specimen is implicitly Blood for this test. The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1802,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (`verestä`) as a molar concentration (umol/l). The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1803,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol in Blood (`verestä`), but without units or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1804,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (`verestä`) as a molar concentration (umol/l). The suffix 'tth' is local administrative noise. The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1805,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol in Blood (`verestä`), but without units or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1806,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is for Phosphatidylethanol (fosfatidyylietanoli) in Blood (`veri`) as a molar concentration (umol/l). The correct LOINC concept `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861) is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1807,
-      "omop_concept_id": "46235199",
-      "omop_concept_name": "Phosphatidylethanol [Presence] in Blood by Screen method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Phosphatidylethanol in Blood (`veri`), but without units or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1808,
-      "omop_concept_id": "37020338",
-      "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "40764127",
+      "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Component is Haemophilus influenzae DNA bcs of `haemophilusinfluenzaenukleii` ; property is Presence by NAA bcs of `nukleii` suffix and 100% missing values ; in Specimen bcs no specimen is named in the code.",
+      "certainty": "high"
     },
     {
       "row_id": 1809,
-      "omop_concept_id": "37020808",
-      "omop_concept_name": "Human metapneumovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3042194",
+      "omop_concept_name": "Human metapneumovirus RNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Component is Human metapneumovirus RNA bcs of `humaanimetapneumovirus,nukle` ; property is Presence by NAA bcs `nukle` suffix indicates a nucleic acid test and p_missing is 100% ; in Specimen bcs no specimen is named.",
+      "certainty": "high"
     },
     {
       "row_id": 1810,
       "omop_concept_id": "40763480",
       "omop_concept_name": "Human metapneumovirus Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Component is Human metapneumovirus Ag bcs of `humanmetapneumovirus,ag` ; property is Presence bcs this is a qualitative test ; in Specimen bcs no specimen is named.",
+      "certainty": "high"
     },
     {
       "row_id": 1811,
       "omop_concept_id": "3024117",
       "omop_concept_name": "Large unstained cells/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Component is Large unstained cells/Leukocytes bcs name is `suuretvärjääntymättömätsolut` (LUC) and prefix is L- (leukocyte) ; property is a ratio bcs unit is % ; in Blood bcs this is a standard hematology test performed on whole blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1812,
-      "omop_concept_id": "37020902",
-      "omop_concept_name": "Legionella pneumophila DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3020565",
+      "omop_concept_name": "Legionella pneumophila DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Component is Legionella pneumophila DNA bcs of `legionellapneumoniaenukleiin` ; property is Presence by NAA bcs of `nukleiin` suffix and 100% missing values ; in Specimen bcs no specimen is named.",
+      "certainty": "high"
     },
     {
       "row_id": 1813,
       "omop_concept_id": "1988720",
       "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Component is Haemophilus influenzae DNA bcs of `haemophilusinfluenzaenukl.haponos.` ; property is Presence by NAA bcs `nukl.haponos` implies nucleic acid test and p_missing is 100% ; in Cerebral spinal fluid bcs of `Li-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1814,
-      "omop_concept_id": "37019853",
-      "omop_concept_name": "Mycoplasma pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3002482",
+      "omop_concept_name": "Mycoplasma pneumoniae DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Component is Mycoplasma pneumoniae DNA bcs of `mycoplasmapneumoniae,nukleii` ; property is Presence by NAA bcs of `nukleii` suffix and 100% missing values ; in Specimen bcs no specimen is named.",
+      "certainty": "high"
     },
     {
       "row_id": 1815,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Follitropin (follikkeliastimuloivahormoni) ; property is [Units/volume] bcs unit is U/L ; in Serum or Plasma bcs prefix is P- (Plasma).",
+      "certainty": "high"
     },
     {
       "row_id": 1816,
       "omop_concept_id": "3012413",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is P- (Plasma) ; timing is 2 hours post meal bcs of `2tuntiaaterianjälkeen`.",
+      "certainty": "high"
     },
     {
       "row_id": 1817,
       "omop_concept_id": "3015024",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is P- (Plasma) ; timing is 1 hour post dose glucose bcs `toimintakokeissa, 1h` means 1h point in a challenge test, and the specific glucose dose is not mentioned in the name.",
+      "certainty": "medium"
     },
     {
       "row_id": 1818,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is P- (Plasma) ; timing is 2 hours post dose glucose bcs `toimintakokeissa, 2h` means 2h point in a challenge test, and the specific glucose dose is not mentioned in the name.",
+      "certainty": "medium"
     },
     {
       "row_id": 1819,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3004067",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --pre 75 g glucose PO",
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is P- (Plasma) ; timing is pre-dose for a glucose challenge (`toimntakokeissa0m`). The 75g dose is assumed as the adult standard as no generic pre-dose concept is available.",
+      "certainty": "medium"
     },
     {
       "row_id": 1820,
       "omop_concept_id": "3009214",
       "omop_concept_name": "Lutropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Lutropin (luteinisoivahormoni) ; property is [Units/volume] bcs unit is U/L ; in Serum or Plasma bcs prefix is P- (Plasma).",
+      "certainty": "high"
     },
     {
       "row_id": 1821,
-      "omop_concept_id": "3009214",
-      "omop_concept_name": "Lutropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Lutropin in Plasma, but without units or values, it is not possible to distinguish between [Units/volume] and [Moles/volume] properties from the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 1822,
       "omop_concept_id": "3001501",
       "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "is_panel": false
+      "reasoning": "Component is Glucose (omagluk) ; property is Moles/volume, assumed from standard reporting in Finland ; in Capillary blood by Glucometer bcs `potilasmittaringlukoosi` means patient-metered glucose, which uses capillary blood, overriding the `P-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1823,
       "omop_concept_id": "3001501",
       "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Capillary blood bcs `ihopisto` (skin prick) ; by Glucometer bcs `potilasmittari` (patient meter).",
+      "certainty": "high"
     },
     {
       "row_id": 1824,
       "omop_concept_id": "3001501",
       "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume, assumed as standard ; in Capillary blood bcs `ihopisto` (skin prick) ; by Glucometer bcs `potilasmittari` (patient meter).",
+      "certainty": "medium"
     },
     {
       "row_id": 1825,
       "omop_concept_id": "1091284",
       "omop_concept_name": "Glucose [Moles/volume] in Interstitial fluid",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume bcs unit is mmol/l ; in Interstitial fluid bcs `sensori` refers to a continuous glucose monitor sensor, which measures in interstitial fluid.",
+      "certainty": "high"
     },
     {
       "row_id": 1826,
       "omop_concept_id": "1091284",
       "omop_concept_name": "Glucose [Moles/volume] in Interstitial fluid",
-      "is_panel": false
+      "reasoning": "Component is Glucose (glukoosi) ; property is Moles/volume, assumed as standard ; in Interstitial fluid bcs `sensori` refers to a continuous glucose monitor sensor, which measures in interstitial fluid.",
+      "certainty": "medium"
     },
     {
       "row_id": 1827,
-      "omop_concept_id": "40759040",
-      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is C-peptide (c-peptidi) in Serum (S-), 1 hour post meal (1h aterian jälkeen), with a molar concentration (nmol/l). The correct concept, C peptide [Moles/volume] in Serum or Plasma --1 hour post meal, is not in the candidate list. Existing candidates are for a generic post-meal timepoint or a different challenge type (post-glucose).",
+      "certainty": ""
     },
     {
       "row_id": 1828,
-      "omop_concept_id": "40759040",
-      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is C-peptide in Serum, 1 hour post meal. The correct concept is not in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1829,
       "omop_concept_id": "40759040",
       "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
-      "is_panel": false
+      "reasoning": "Component is C peptide (c-peptidi) ; property is Moles/volume bcs unit is nmol/l ; in Serum or Plasma bcs prefix is S- (Serum) ; timing is post meal bcs of `aterianjälkeen`.",
+      "certainty": "high"
     },
     {
       "row_id": 1830,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Follitropin (follikkeliastimuloivahormoni) ; property is [Units/volume] bcs unit is IU/L ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1831,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Follitropin (follikkeliastimuloivahormoni) ; property is [Units/volume] bcs unit is U/L ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1832,
-      "omop_concept_id": "3023323",
-      "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Follitropin in Serum, but without units or values, it is not possible to distinguish between [Units/volume] and [Moles/volume] properties from the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 1833,
       "omop_concept_id": "3032911",
       "omop_concept_name": "Monounsaturated fatty acids [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Monounsaturated fatty acids (kertatyydyttymättömät rasvahapot) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1834,
       "omop_concept_id": "3009214",
       "omop_concept_name": "Lutropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Lutropin (luteinisoivahormoni) ; property is [Units/volume] bcs unit is IU/L ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1835,
       "omop_concept_id": "3009214",
       "omop_concept_name": "Lutropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Lutropin (luteinisoivahormoni) ; property is [Units/volume] bcs unit is U/L ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1836,
-      "omop_concept_id": "3009214",
-      "omop_concept_name": "Lutropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Lutropin in Serum, but without units or values, it is not possible to distinguish between [Units/volume] and [Moles/volume] properties from the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 1837,
       "omop_concept_id": "3032924",
       "omop_concept_name": "Polyunsaturated fatty acids [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Polyunsaturated fatty acids (monityydyttymättömät rasvahapot) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1838,
       "omop_concept_id": "3032924",
       "omop_concept_name": "Polyunsaturated fatty acids [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Polyunsaturated fatty acids (monityydyttymättömät rasvahapot) ; property is Moles/volume, assumed as standard ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "medium"
     },
     {
       "row_id": 1839,
       "omop_concept_id": "3032897",
       "omop_concept_name": "Saturated fatty acids [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Component is Saturated fatty acids (tyydyttyneet rasvahapot) ; property is Moles/volume bcs unit is mmol/l ; in Serum or Plasma bcs prefix is S- (Serum).",
+      "certainty": "high"
     },
     {
       "row_id": 1840,
       "omop_concept_id": "37021229",
       "omop_concept_name": "Gastrointestinal viral pathogens panel - Stool by NAA with probe detection",
-      "is_panel": true
+      "reasoning": "Component is a Gastrointestinal viral pathogens panel bcs `ulosteen ripulivirukset` means diarrhea viruses of feces ; in Stool bcs of `ulosteen` ; by NAA bcs of `nukle` suffix.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group contained a mix of chemistry, microbiology, and hematology tests. The mappings were generally straightforward.\n\nA key challenge was the `B-Fosfatidyylietanoli` (Phosphatidylethanol in Blood) test. Rows with the unit `umol/l` (e.g., 1790, 1792) clearly indicate a quantitative molar concentration. However, the candidate list lacked a LOINC concept for `[Moles/volume]`, only offering `[Mass/volume]` and `[Presence]`. Consequently, these quantitative rows were left unmapped. The rows with empty units and high `p_missing` were mapped to the `[Presence]` concept, assuming they represent qualitative screening tests.\n\nThe glucose tests with specific timings (fasting, 1h/2h post-dose, 2h post-meal) were easily mapped to the correct Top 2000 LOINC codes. Similarly, hormones like FSH and LH were clear matches.\n\nThe microbiology NAA tests were identifiable by the `-nukleiini` suffix. Most were mapped to general `Respiratory system specimen` concepts, which seemed appropriate in the absence of more specific local information, except for the `Li-` prefixed test which was correctly mapped to CSF.\n\nThe two types of \"Large unstained cells\" were successfully differentiated by their units: `e9/l` mapped to the absolute count (`[#/volume]`), and `%` mapped to the fraction (`/Leukocytes`).\n\nFor C-peptide `1h post meal` (row 1827), a perfectly specific LOINC concept was not in the candidate list. The mapping was made to the less specific but correct parent concept `C peptide ... --post meal` (`40759040`)."
+  "reflection": "This group was mostly straightforward, with clear mappings for hormones, fatty acids, microbiology NAA tests, and glucose measurements. \n\nSeveral rows could not be mapped due to shortcomings in the candidate list. All rows for Phosphatidylethanol (`B-fosfatidyylietanoli` and variants) were reported in `umol/l`, indicating a molar concentration. The candidate list only contained a concept for mass concentration (`44816559`). The correct concept, `Phosphatidylethanol [Moles/volume] in Blood` (OMOP 43530861), was missing. \n\nSimilarly, `s-c-peptidi1haterianjälkeen` (row 1827) clearly specifies a C-peptide measurement 1 hour after a meal. The candidate list lacked this specific timing, offering only a generic post-meal concept or a post-glucose challenge concept, leading to an unmapped row.\n\nFor glucose tolerance tests where the dose was unspecified (`p-glukoosi,toimintakokeissa...`), I used the more generic `...post dose glucose` concepts, which felt safer than assuming the standard 75g dose. For the pre-dose sample, a generic concept was unavailable, so I had to assume the 75g standard.\n\nRows with only a name and no quantitative information (e.g., for hormones) were left unmapped because the property (e.g., Units/volume vs. Moles/volume) could not be definitively chosen from the candidates."
 }

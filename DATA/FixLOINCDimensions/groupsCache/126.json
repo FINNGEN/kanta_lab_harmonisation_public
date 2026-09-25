@@ -4,176 +4,205 @@
       "row_id": 1710,
       "omop_concept_id": "1469878",
       "omop_concept_name": "Time below range, low in Reporting Period Interstitial fluid by calculation",
-      "is_panel": false
+      "reasoning": "Time below range bcs `tbr` in TEST_NAME probably means 'Time Below Range' ; [Time Fraction] bcs unit is '%' and values are low percentages ; in Interstitial fluid bcs this is a continuous glucose monitoring metric ; method by calculation is appropriate for a derived metric.",
+      "certainty": "high"
     },
     {
       "row_id": 1711,
-      "omop_concept_id": "1617716",
-      "omop_concept_name": "Glucose measurements in range out of Total glucose measurements during reporting period",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code '-gluk-tir' with unit '%' refers to 'Glucose Time In Range', a common continuous glucose monitoring (CGM) metric. The candidate list lacks a specific LOINC concept for this single measurement, offering only a panel concept ('Continuous glucose monitoring time in ranges panel') or concepts for time *above/below* range, which are not correct.",
+      "certainty": ""
     },
     {
       "row_id": 1712,
-      "omop_concept_id": "3040151",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
-      "is_panel": false
+      "omop_concept_id": "3001501",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range for glucose ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
+      "certainty": "high"
     },
     {
       "row_id": 1713,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0`, indicating a 0-minute sample in a challenge test context.",
+      "certainty": "high"
     },
     {
       "row_id": 1714,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0`, indicating a 0-minute sample in a challenge test context.",
+      "certainty": "medium"
     },
     {
       "row_id": 1715,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0min`, explicitly indicating a 0-minute sample.",
+      "certainty": "high"
     },
     {
       "row_id": 1716,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1717,
       "omop_concept_id": "3015024",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1718,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1719,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "medium"
     },
     {
       "row_id": 1720,
       "omop_concept_id": "3008799",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --30 minutes post dose glucose bcs `30min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1721,
       "omop_concept_id": "3015024",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `60min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1722,
       "omop_concept_id": "3013826",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test. The `bel-vp` suffix is ambiguous ('belastus' = challenge), and the wide decile range supports a generic, non-timed glucose measurement concept.",
+      "certainty": "high"
     },
     {
       "row_id": 1723,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test. The `bel-vp` suffix is ambiguous, supporting a generic, non-timed glucose measurement concept.",
+      "certainty": "medium"
     },
     {
       "row_id": 1724,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `glukoosi` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1725,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
+      "certainty": "high"
     },
     {
       "row_id": 1726,
       "omop_concept_id": "3015024",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `-1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1727,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `-2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1728,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `r0`, indicating a 0-minute sample.",
+      "certainty": "high"
     },
     {
       "row_id": 1729,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `r0`, indicating a 0-minute sample. The `-n` suffix is uninterpreted.",
+      "certainty": "high"
     },
     {
       "row_id": 1730,
       "omop_concept_id": "3015024",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `r1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1731,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `glukr1valm` likely indicates an administrative status ('valmis' = ready) for a 1-hour glucose challenge test, not a measurement result. The 100% missing values support this interpretation.",
+      "certainty": ""
     },
     {
       "row_id": 1732,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `r2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1733,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
+      "certainty": "high"
     },
     {
       "row_id": 1734,
-      "omop_concept_id": "3018251",
-      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3007821",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
+      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
+      "certainty": "medium"
     },
     {
       "row_id": 1735,
       "omop_concept_id": "3016701",
       "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
+      "certainty": "high"
     },
     {
       "row_id": 1736,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `glukrvalm` likely indicates an administrative status ('valmis' = ready) for a glucose challenge test, not a measurement result. The 100% missing values support this interpretation.",
+      "certainty": ""
     },
     {
       "row_id": 1737,
-      "omop_concept_id": "3040151",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
-      "is_panel": false
+      "omop_concept_id": "3001501",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
+      "certainty": "high"
     },
     {
       "row_id": 1738,
-      "omop_concept_id": "3040151",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
-      "is_panel": false
+      "omop_concept_id": "3001501",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
+      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range for glucose ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group was straightforward, consisting almost entirely of glucose measurements. Most rows were clearly identifiable as parts of a glucose tolerance test (0, 30, 60, 120-minute samples) and mapped cleanly to the corresponding time-stamped LOINC concepts for Serum/Plasma. The `mmol/l` unit and deciles confirmed these were Moles/volume measurements.\n\nThe `gluk-vieri` codes (rows 1712, 1737, 1738) were correctly identified as point-of-care tests, which pointed to `Capillary blood` as the specimen (`3040151`).\n\nThe CGM-related codes `-gluk-tbr` (time below range) and `-gluk-tir` (time in range) were interesting. `1469878` was a good fit for TBR. For TIR (row 1711), the candidate list lacked a perfect match for '% time in range'. I chose `1617716 | Glucose measurements in range out of Total glucose measurements during reporting period` as the best available proxy, since it represents a ratio ('%') of in-range values.\n\nSeveral rows with 100% missing values (`1719`, `1723`, `1731`, `1736`) were left unmapped, as they likely represent cancelled orders or administrative/preparatory steps (`-valm`)."
+  "reflection": "This group was dominated by glucose tests, primarily from glucose tolerance tests (GTTs). The local codes consistently used suffixes like `0`, `1h`, `120min`, `r0`, `ras-0` to denote time points, which were straightforward to map to the corresponding LOINC 'post dose' or 'baseline' concepts. A key decision was to use the generic 'post dose' concepts because the local codes did not specify the glucose load (e.g., 75g or 100g). The `gluk-vieri` code was interpreted as a point-of-care test and mapped to a more specific 'Capillary blood by Glucometer' concept. Two continuous glucose monitoring (CGM) codes were present; 'Time Below Range' (`-gluk-tbr`) was mapped successfully, but 'Time In Range' (`-gluk-tir`) could not be mapped as the candidate list lacked a concept for this single measure, offering only a panel. Lastly, two codes (`glukr1valm`, `glukrvalm`) were identified as administrative and left unmapped."
 }

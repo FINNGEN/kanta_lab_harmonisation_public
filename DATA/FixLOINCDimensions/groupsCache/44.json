@@ -4,746 +4,870 @@
       "row_id": 587,
       "omop_concept_id": "3006140",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' and it's the most common form ; [Moles/volume] bcs UNIT is umol/l ; in Serum or Plasma bcs it is the default specimen for this common chemistry test when the prefix is missing",
+      "certainty": "high"
     },
     {
       "row_id": 588,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Bilirubin, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 589,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3009454",
+      "omop_concept_name": "Biotin [Presence] in Blood",
+      "reasoning": "Biotin bcs TEST_NAME contains 'bio' ; [Presence] bcs there is no unit or value, and p_missing is 100%, suggesting a qualitative test ; in Blood bcs TEST_NAME prefix is 'b-' (Blood)",
+      "certainty": "medium"
     },
     {
       "row_id": 590,
       "omop_concept_id": "3035060",
       "omop_concept_name": "Mercury [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Mercury bcs LongName is 'Elohopea' (Mercury) ; [Moles/volume] bcs UNIT is nmol/l ; in Blood bcs TEST_NAME prefix is 'b-' (Blood)",
+      "certainty": "high"
     },
     {
       "row_id": 591,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Mercury in Blood, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 592,
       "omop_concept_id": "1616780",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Capillary blood",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' ; [Moles/volume] bcs UNIT is umol/l ; in Capillary blood bcs TEST_NAME prefix 'cB-' means Capillary blood",
+      "certainty": "high"
     },
     {
       "row_id": 593,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Bilirubin in Capillary blood, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 594,
       "omop_concept_id": "3017937",
       "omop_concept_name": "Magnesium [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/time] bcs UNIT is mmol for a 24-hour collection ; in 24 hour Urine bcs TEST_NAME prefix is 'dU-' (24-hour urine)",
+      "certainty": "high"
     },
     {
       "row_id": 595,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Magnesium in 24-hour urine, but there is no UNIT or deciles to determine the property (e.g., Moles/time vs Mass/time), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 596,
       "omop_concept_id": "3010600",
       "omop_concept_name": "Phosphate [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "reasoning": "Phosphate bcs LongName is 'Fosfaatti' (Phosphate) ; [Moles/time] bcs UNIT is mmol for a 24-hour collection ; in 24 hour Urine bcs TEST_NAME prefix is 'dU-' (24-hour urine)",
+      "certainty": "high"
     },
     {
       "row_id": 597,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Phosphate in 24-hour urine, but there is no UNIT or deciles to determine the property (e.g., Moles/time vs Mass/time), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 598,
-      "omop_concept_id": "40758436",
-      "omop_concept_name": "Fungus [Presence] in Vaginal fluid by KOH preparation",
-      "is_panel": false
+      "omop_concept_id": "40758442",
+      "omop_concept_name": "Yeast [Presence] in Vaginal fluid by KOH preparation",
+      "reasoning": "Yeast bcs KOH preparation is used to identify fungal elements like yeast ; [Presence] bcs it is a qualitative microscopic examination ; in Vaginal fluid bcs TEST_NAME prefix 'fl-' means 'fluor' (vaginal discharge) ; by KOH preparation bcs TEST_NAME includes 'koh'",
+      "certainty": "high"
     },
     {
       "row_id": 599,
       "omop_concept_id": "3006140",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs TEST_NAME contains 'bil' ; [Moles/volume] bcs UNIT is umol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 600,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol (likely mmol/l, consistent with dominant unit for this code) ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 601,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/ (a typo for mmol/l, consistent with dominant unit) ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 602,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 603,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3019900",
+      "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs deciles are in the range of 4-7, consistent with mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 604,
       "omop_concept_id": "3051252",
       "omop_concept_name": "Vasoactive intestinal peptide [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Vasoactive intestinal peptide bcs LongName is 'Vasoaktiivinen intestinaalinen peptidi' ; [Moles/volume] bcs UNIT is pmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fP-' is Fasting plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 605,
-      "omop_concept_id": "3039416",
-      "omop_concept_name": "Vasoactive intestinal peptide [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Vasoactive intestinal peptide in Plasma, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 606,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/ (a typo for mmol/l, consistent with dominant unit) ; in Serum or Plasma bcs TEST_NAME prefix 'fS-' is Fasting serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 607,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fS-' is Fasting serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 608,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3019900",
+      "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs deciles are in the range of 3.9-6.6, consistent with mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'fS-' is Fasting serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 609,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Biotin in Cerebrospinal fluid (prefix 'Li-'). However, there are no candidates for Biotin in CSF, and no unit or values to determine the property. Therefore, no mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 610,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code 'mmse' stands for Mini-Mental State Examination, which is a clinical assessment tool. No matching concept for MMSE is available in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 611,
       "omop_concept_id": "3006140",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' ; [Moles/volume] bcs UNIT is umol/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 612,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3006140",
+      "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' ; [Moles/volume] bcs deciles are in the range of 4.7-26.4, consistent with umol/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 613,
       "omop_concept_id": "3011960",
       "omop_concept_name": "Natriuretic peptide B [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Natriuretic peptide B bcs LongName is 'Natriureettinen peptidi, B-tyypin' ; [Mass/volume] bcs UNIT is ng/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 614,
       "omop_concept_id": "3011960",
       "omop_concept_name": "Natriuretic peptide B [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Natriuretic peptide B bcs LongName is 'Natriureettinen peptidi, B-tyypin' ; [Mass/volume] bcs UNIT is ng/ml (1000x ng/l), and Mass/volume is the correct property for this analyte ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "medium"
     },
     {
       "row_id": 615,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3011960",
+      "omop_concept_name": "Natriuretic peptide B [Mass/volume] in Serum or Plasma",
+      "reasoning": "Natriuretic peptide B bcs LongName is 'Natriureettinen peptidi, B-tyypin' ; [Mass/volume] bcs deciles are in the range of 41-912, consistent with ng/l units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 616,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Follitropin bcs LongName is 'Follikkelia stimuloiva hormoni' (FSH) ; [Units/volume] bcs UNIT is u/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 617,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3023323",
+      "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Follitropin bcs LongName is 'Follikkelia stimuloiva hormoni' (FSH) ; [Units/volume] bcs deciles are in the range of 3.3-70.2, consistent with U/L units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 618,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is a coagulation time measurement in plasma, but the analyte 'FSL' is an unknown or proprietary abbreviation. No matching candidate could be identified.",
+      "certainty": ""
     },
     {
       "row_id": 619,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is a coagulation measurement in plasma, but the analyte 'FSL' is an unknown or proprietary abbreviation, and there is no unit information. No matching candidate could be identified.",
+      "certainty": ""
     },
     {
       "row_id": 620,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 621,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3019900",
+      "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs deciles are in the range of 3-5.9, consistent with mmol/l units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 622,
       "omop_concept_id": "3012095",
       "omop_concept_name": "Magnesium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 623,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3012095",
+      "omop_concept_name": "Magnesium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/volume] bcs deciles are in the range of 0.6-1.0, consistent with mmol/l units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 624,
       "omop_concept_id": "3010015",
       "omop_concept_name": "Selenium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Selenium bcs LongName is 'Seleeni' ; [Moles/volume] bcs UNIT is umol/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 625,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3010015",
+      "omop_concept_name": "Selenium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Selenium bcs LongName is 'Seleeni' ; [Moles/volume] bcs deciles are in the range of 1.1-1.9, consistent with umol/l units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 626,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mIU/l ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 627,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mLU/l (milli-international units per litre) ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 628,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mu/l (micro-international units per litre, equivalent to mIU/L) ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 629,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3009201",
+      "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs deciles are in the range of 0.3-3.6, consistent with mU/L units ; in Serum or Plasma bcs TEST_NAME prefix 'P-' is Plasma, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 630,
       "omop_concept_id": "3041918",
       "omop_concept_name": "Cholesterol [Moles/volume] in Pleural fluid",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/l ; in Pleural fluid bcs TEST_NAME prefix 'Pf-' is Pleural fluid",
+      "certainty": "high"
     },
     {
       "row_id": 631,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Cholesterol in Pleural fluid, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 632,
       "omop_concept_id": "3006140",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' ; [Moles/volume] bcs UNIT is umol/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 633,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3006140",
+      "omop_concept_name": "Bilirubin.total [Moles/volume] in Serum or Plasma",
+      "reasoning": "Bilirubin.total bcs LongName is 'Bilirubiini' ; [Moles/volume] bcs deciles are in the range of 6-22, consistent with umol/l units ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 634,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Biotin in Serum, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 635,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is likely Biotin in Serum, but the code 's-biol' is ambiguous and there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 636,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Follitropin bcs LongName is 'Follikkelia stimuloiva hormoni' (FSH) ; [Units/volume] bcs UNIT is IU/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 637,
       "omop_concept_id": "3023323",
       "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Follitropin bcs LongName is 'Follikkelia stimuloiva hormoni' (FSH) ; [Units/volume] bcs UNIT is u/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 638,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3023323",
+      "omop_concept_name": "Follitropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Follitropin bcs LongName is 'Follikkelia stimuloiva hormoni' (FSH) ; [Units/volume] bcs deciles are in the range of 3.1-70.3, consistent with U/L units ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 639,
       "omop_concept_id": "3027114",
       "omop_concept_name": "Cholesterol [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Mass/volume] bcs UNIT is mg/ml ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "low"
     },
     {
       "row_id": 640,
       "omop_concept_id": "3019900",
       "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cholesterol bcs LongName is 'Kolesteroli' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 641,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Cholesterol in Serum, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 642,
       "omop_concept_id": "3012095",
       "omop_concept_name": "Magnesium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/volume] bcs UNIT is mmol/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 643,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3012095",
+      "omop_concept_name": "Magnesium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/volume] bcs deciles are in the range of 0.7-0.9, consistent with mmol/l units ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 644,
       "omop_concept_id": "3028531",
       "omop_concept_name": "Enolase.neuron specific [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Enolase.neuron specific bcs LongName is 'Neuronispesifinen enolaasi' ; [Mass/volume] bcs UNIT is ug/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 645,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3028531",
+      "omop_concept_name": "Enolase.neuron specific [Mass/volume] in Serum or Plasma",
+      "reasoning": "Enolase.neuron specific bcs LongName is 'Neuronispesifinen enolaasi' ; [Mass/volume] bcs deciles are in the range of 8.5-29.3, consistent with ug/l units ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 646,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mIU/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 647,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mLU/l (milli-international units per litre) ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 648,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mu/l (micro-international units per litre, equivalent to mIU/L) ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 649,
       "omop_concept_id": "3009201",
       "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is U/l ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 650,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3009201",
+      "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs deciles are in the range of 0.6-3.5, consistent with mU/L units ; in Serum or Plasma bcs TEST_NAME prefix 'S-' is Serum, which maps to Serum or Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 651,
       "omop_concept_id": "3012310",
       "omop_concept_name": "Bilirubin.total [Moles/volume] in Body fluid",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs TEST_NAME is 'se-bil' ; [Moles/volume] bcs UNIT is umol/l ; in Body fluid bcs TEST_NAME prefix 'se-' is Secretion, which is a type of Body fluid",
+      "certainty": "high"
     },
     {
       "row_id": 652,
-      "omop_concept_id": "3045256",
-      "omop_concept_name": "Bilirubin.total [Presence] in Body fluid",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Bilirubin in Secretion, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 653,
       "omop_concept_id": "3040794",
       "omop_concept_name": "Aluminum [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Aluminum bcs LongName is 'Alumiini' ; [Moles/volume] bcs UNIT is umol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 654,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Aluminum in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 655,
       "omop_concept_id": "3027944",
       "omop_concept_name": "Amphetamines [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Amphetamines bcs TEST_NAME abbreviation is 'amp' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 656,
       "omop_concept_id": "3030458",
       "omop_concept_name": "Arsenic.inorganic [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Arsenic.inorganic bcs LongName is 'Arseeni, epäorgaaninen' ; [Moles/volume] bcs UNIT is nmol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 657,
       "omop_concept_id": "3013494",
       "omop_concept_name": "Arsenic.inorganic [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Arsenic.inorganic bcs LongName is 'Arseeni, epäorgaaninen' ; [Mass/volume] bcs UNIT is ug/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 658,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is inorganic Arsenic in Urine, but there is no UNIT or deciles to determine the property (Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 659,
       "omop_concept_id": "3018834",
       "omop_concept_name": "Bilirubin.total [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Bilirubin.total bcs TEST_NAME is 'u-bil' ; [Presence] bcs there is no unit and 100% p_missing, typical for a qualitative test ; in Urine bcs TEST_NAME prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine bilirubin",
+      "certainty": "high"
     },
     {
       "row_id": 660,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Biotin in Urine, but there are no candidates for this analyte-specimen combination, and no unit or values to determine the property. Therefore, no mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 661,
       "omop_concept_id": "3007463",
       "omop_concept_name": "Buprenorphine [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Buprenorphine bcs TEST_NAME abbreviation is 'bup' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 662,
       "omop_concept_id": "3000764",
       "omop_concept_name": "Benzodiazepines [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Benzodiazepines bcs TEST_NAME abbreviation is 'bzd' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 663,
       "omop_concept_id": "3007733",
       "omop_concept_name": "Chloride [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Chloride bcs LongName is 'Kloridi' ; [Moles/volume] bcs UNIT is mmol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 664,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Chloride in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 665,
       "omop_concept_id": "3044590",
       "omop_concept_name": "Delta aminolevulinate [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Delta aminolevulinate bcs LongName is 'Delta-aminolevulinaatti' (DALA) ; [Moles/volume] bcs UNIT is umol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 666,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test code 'u-ds4a' is uninterpretable. There is no LongName or other information to identify the analyte. No mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 667,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test code 'u-ds5' is uninterpretable. There is no LongName or other information to identify the analyte. No mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 668,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test code 'u-ds5b' is uninterpretable. There is no LongName or other information to identify the analyte. No mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 669,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test code 'u-ds6' is uninterpretable. There is no LongName or other information to identify the analyte. No mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 670,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test code 'u-ds6a' is uninterpretable. There is no LongName or other information to identify the analyte. No mapping is possible.",
+      "certainty": ""
     },
     {
       "row_id": 671,
       "omop_concept_id": "3045424",
       "omop_concept_name": "Erythrocytes [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs TEST_NAME abbreviation is 'ery' ; [Presence] bcs it is a common qualitative or semi-quantitative urine dipstick test ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 672,
       "omop_concept_id": "3004176",
       "omop_concept_name": "fentaNYL [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "fentaNYL bcs TEST_NAME abbreviation is 'fyl' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 673,
       "omop_concept_id": "3044316",
       "omop_concept_name": "Mercury [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Mercury bcs LongName is 'Elohopea' ; [Moles/volume] bcs UNIT is nmol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 674,
-      "omop_concept_id": "3009708",
-      "omop_concept_name": "Mercury [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Mercury in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 675,
       "omop_concept_id": "3030704",
       "omop_concept_name": "Iodide [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Iodide bcs LongName is 'Jodidi' ; [Mass/volume] bcs UNIT is ug/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 676,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Iodide in Urine, but there is no UNIT or deciles to determine the property (e.g., Mass/volume vs Moles/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 677,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified by Culture bcs TEST_NAME abbreviation 'inf' refers to infection/culture, a common test ordered for urine ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 678,
       "omop_concept_id": "3010391",
       "omop_concept_name": "Collagen crosslinked N-telopeptide/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Collagen crosslinked N-telopeptide/Creatinine bcs LongName is 'Kollageeni I:n aminoterminaalinen telopeptidi' and the unit implies a ratio to creatinine ; [Molar ratio] bcs UNIT is nmol/mmol ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 679,
       "omop_concept_id": "3010391",
       "omop_concept_name": "Collagen crosslinked N-telopeptide/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Collagen crosslinked N-telopeptide/Creatinine bcs LongName is 'Kollageeni I:n aminoterminaalinen telopeptidi' and the unit implies a ratio to creatinine ; [Molar ratio] bcs UNIT is nmol/mmolkr ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 680,
       "omop_concept_id": "3010391",
       "omop_concept_name": "Collagen crosslinked N-telopeptide/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Collagen crosslinked N-telopeptide/Creatinine bcs LongName is 'Kollageeni I:n aminoterminaalinen telopeptidi' ; [Molar ratio] bcs UNIT is 'ratio' and the dominant unit for this code is nmol/mmol ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "medium"
     },
     {
       "row_id": 681,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Collagen crosslinked N-telopeptide in Urine, but without a unit, it's impossible to know if it's a concentration or a ratio to creatinine. No concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 682,
-      "omop_concept_id": "44787089",
-      "omop_concept_name": "Stone analysis panel",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test 'U-kivi' (LongName 'Kivianalyysi') is a urinary stone analysis. This is a panel or qualitative identification, but no suitable panel concept is available in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 683,
-      "omop_concept_id": "44787089",
-      "omop_concept_name": "Stone analysis panel",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test 'U-kivi' (LongName 'Kivianalyysi') is a urinary stone analysis. This is a panel or qualitative identification, but no suitable panel concept is available in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 684,
       "omop_concept_id": "3017400",
       "omop_concept_name": "Magnesium [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Magnesium bcs LongName is 'Magnesium' ; [Moles/volume] bcs UNIT is mmol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 685,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Magnesium in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 686,
       "omop_concept_id": "3036180",
       "omop_concept_name": "Methadone [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Methadone bcs TEST_NAME abbreviation is 'mtd' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 687,
-      "omop_concept_id": "3023920",
-      "omop_concept_name": "Nickel [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Nickel in Urine, but the UNIT 'form' is uninformative, and it's not possible to determine the property.",
+      "certainty": ""
     },
     {
       "row_id": 688,
       "omop_concept_id": "3025942",
       "omop_concept_name": "Nickel [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Nickel bcs LongName is 'Nikkeli' ; [Mass/volume] bcs UNIT is ug/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 689,
       "omop_concept_id": "3044943",
       "omop_concept_name": "Nickel [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Nickel bcs LongName is 'Nikkeli' ; [Moles/volume] bcs UNIT is umol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 690,
-      "omop_concept_id": "3023920",
-      "omop_concept_name": "Nickel [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Nickel in Urine, but there is no UNIT or deciles to determine the property (Moles/volume vs Mass/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 691,
       "omop_concept_id": "3002395",
       "omop_concept_name": "Porphobilinogen [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Porphobilinogen bcs LongName is 'Porfobilinogeeni' (PBG) ; [Moles/volume] bcs UNIT is umol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 692,
       "omop_concept_id": "3044597",
       "omop_concept_name": "Porphobilinogen/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Porphobilinogen/Creatinine bcs LongName is 'Porfobilinogeeni' and unit implies ratio ; [Molar ratio] bcs UNIT is umol/mmol ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 693,
-      "omop_concept_id": "3034719",
-      "omop_concept_name": "Porphobilinogen [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Porphobilinogen in Urine, but without a unit it's impossible to know if it's a concentration, a ratio, or a presence test. No concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 694,
       "omop_concept_id": "3034719",
       "omop_concept_name": "Porphobilinogen [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Porphobilinogen bcs TEST_NAME 'u-pgb' is a likely typo for 'u-pbg' (Porphobilinogen) ; [Presence] bcs there is no unit, 100% p_missing, and PBG screening tests are common ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "medium"
     },
     {
       "row_id": 695,
       "omop_concept_id": "3015736",
       "omop_concept_name": "pH of Urine",
-      "is_panel": false
+      "reasoning": "pH bcs TEST_NAME is 'u-ph.' ; of Urine bcs TEST_NAME prefix is 'U-'. The deciles are typical for urine pH.",
+      "certainty": "high"
     },
     {
       "row_id": 696,
       "omop_concept_id": "3015736",
       "omop_concept_name": "pH of Urine",
-      "is_panel": false
+      "reasoning": "pH bcs TEST_NAME is 'u-phv' (likely a variant of u-ph) and deciles are typical for urine pH ; of Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 697,
       "omop_concept_id": "3022229",
       "omop_concept_name": "Phosphate [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Phosphate bcs LongName is 'Fosfaatti' ; [Moles/volume] bcs UNIT is mmol/l ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 698,
-      "omop_concept_id": "3025766",
-      "omop_concept_name": "Phosphate [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is Phosphate in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 699,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte is 1-Hydroxypyrene ('Pyrenoli (1)'), but there are no candidates in the provided list for this specific test.",
+      "certainty": ""
     },
     {
       "row_id": 700,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte is 1-Hydroxypyrene ('Pyrenoli (1)'), but there are no candidates in the provided list for this specific test.",
+      "certainty": ""
     },
     {
       "row_id": 701,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte is 1-Hydroxypyrene ('Pyrenoli (1)'), but there are no candidates in the provided list for this specific test.",
+      "certainty": ""
     },
     {
       "row_id": 702,
       "omop_concept_id": "3022113",
       "omop_concept_name": "Urinalysis microscopic panel - Urine sediment",
-      "is_panel": true
+      "reasoning": "Urinalysis microscopic panel bcs TEST_NAME 'u-sed' stands for urine sediment examination, which is a microscopic panel ; in Urine sediment bcs of the 'sed' abbreviation",
+      "certainty": "high"
     },
     {
       "row_id": 703,
       "omop_concept_id": "3033543",
       "omop_concept_name": "Specific gravity of Urine",
-      "is_panel": false
+      "reasoning": "Specific gravity bcs TEST_NAME is 'u-sg' and deciles are typical for specific gravity ; of Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 704,
       "omop_concept_id": "3033543",
       "omop_concept_name": "Specific gravity of Urine",
-      "is_panel": false
+      "reasoning": "Specific gravity bcs TEST_NAME is 'u-sg' and deciles are typical for specific gravity ; of Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 705,
-      "omop_concept_id": "3028064",
-      "omop_concept_name": "Tetrahydrocannabinol [Presence] in Urine",
-      "is_panel": false
+      "omop_concept_id": "3028300",
+      "omop_concept_name": "Cannabinoids [Presence] in Urine",
+      "reasoning": "Cannabinoids bcs TEST_NAME abbreviation is 'thc', and screens typically detect multiple cannabinoids/metabolites ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 706,
       "omop_concept_id": "3045284",
       "omop_concept_name": "traMADol [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "traMADol bcs TEST_NAME abbreviation is 'tml' ; [Presence] bcs it is a qualitative drug screen with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-'",
+      "certainty": "high"
     },
     {
       "row_id": 707,
       "omop_concept_id": "3037426",
       "omop_concept_name": "Urobilinogen [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Urobilinogen bcs TEST_NAME abbreviation is 'ubg' ; [Presence] bcs it is a qualitative dipstick test with no unit and 100% p_missing ; in Urine bcs TEST_NAME prefix is 'U-' ; by Test strip bcs this is the standard method for this test",
+      "certainty": "high"
     },
     {
       "row_id": 708,
       "omop_concept_id": "42870560",
       "omop_concept_name": "Thyrotropin [Units/volume] in Cord blood",
-      "is_panel": false
+      "reasoning": "Thyrotropin bcs LongName is 'Tyreotropiini' (TSH) ; [Units/volume] bcs UNIT is mu/l ; in Cord blood bcs TEST_NAME prefix 'uS-' means Umbilical (blood) serum",
+      "certainty": "high"
     },
     {
       "row_id": 709,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test is Thyrotropin in Umbilical cord serum, but there is no UNIT or deciles to determine the property (e.g., Units/volume vs Presence), so no concept can be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 710,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3031203",
+      "omop_concept_name": "Blood pressure panel",
+      "reasoning": "Blood pressure panel bcs LongName 'Valtimopaine, dopplermittaus' means 'Arterial pressure, doppler measurement'. While no Doppler-specific concept is available, this is the best fit for a blood pressure measurement procedure.",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group contained a wide variety of tests, from routine chemistry (Bilirubin, Cholesterol, TSH) to toxicology (drugs of abuse, heavy metals), endocrinology (FSH), and urinalysis. Most quantitative tests were straightforward to map using the analyte, specimen, and unit. The use of `top2000` codes was very helpful in confirming the standard target concepts.\n\nSeveral rows could not be mapped. The main reasons were:\n1.  **Missing `Presence` concepts**: Many qualitative/screening tests (rows with no unit and high `p_missing`) could not be mapped because a specific LOINC concept for `[Presence]` in that specimen did not exist in the candidate list (e.g., Bilirubin in Serum/Plasma, FSH in Serum/Plasma).\n2.  **Vague local codes**: Codes like `b-bio`, `u-bio`, `u-inf`, and the drug screen panels `u-ds*` were too non-specific to map confidently.\n3.  **Missing candidates**: Tests for 1-Hydroxypyrene (`u-pyr`, rows 699-701) and MMSE (row 610) had no suitable candidates. Row 710 (`vp-dop`) was a non-laboratory procedure (arterial pressure measurement).\n4.  **Specimen mismatch**: For umbilical cord TSH (row 708), the local code specified serum (`uS-`) but the only available candidate was for whole cord blood (`42870560`). This was mapped as the best available option, but it's an imperfect fit.\n\nThe distinction between BNP (`3011960`) and NT-proBNP (`3029187`) for code `P-BNP` was resolved by the `(32-)` in the long name, which likely refers to the 32-amino acid active BNP molecule, making `3011960` the correct choice."
+  "reflection": "This group contained a wide variety of tests, from common chemistry (Bilirubin, Cholesterol, TSH) to toxicology (heavy metals, drugs of abuse) and urinalysis. The mappings were generally straightforward where units and values were provided.\n\n**Successes:**\n- Most common analytes like Bilirubin, Cholesterol, Magnesium, TSH, FSH, and BNP were easily mapped using the combination of name, specimen prefix, and unit/values. The `Serum or Plasma` concepts worked well for `S-`, `P-`, `fS-`, and `fP-` prefixes.\n- Urine drug screens (`u-amp`, `u-bup`, `u-bzd`, etc.) were clearly identifiable as `[Presence]` tests and mapped correctly.\n- Urinalysis components like `u-sed` (sediment panel), `u-sg` (specific gravity), and `u-ph` were also mapped with high confidence.\n\n**Challenges & Unmapped Rows:**\n- **Missing quantity information:** A large number of rows could not be mapped because they lacked a unit or value distribution (`evidence_level` = `name`). This prevents choosing between properties like `[Mass/volume]`, `[Moles/volume]`, or `[Presence]`.\n- **Uninterpretable codes:** The `u-ds...` series of codes were completely unidentifiable and could not be mapped.\n- **Unknown analytes:** The code `p-fsl` seems to refer to a proprietary coagulation test for which no standard LOINC exists in the candidate list. `u-kivi` (stone analysis) is a panel, but no matching panel concept was available.\n- **Missing candidates:** The tests for 1-Hydroxypyrene (`u-pyr`), Biotin in CSF (`li-bio`), and MMSE (`mmse`) could not be mapped because the correct concepts were not retrieved in the candidate list."
 }

@@ -2,214 +2,249 @@
   "rows": [
     {
       "row_id": 1950,
-      "omop_concept_id": "3021589",
-      "omop_concept_name": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3001490",
+      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood",
+      "reasoning": "Nucleated erythrocytes bcs 'erybla' (erythroblast) ; [#/volume] bcs unit 'e9/l' ; in Blood bcs 'b-' prefix",
+      "certainty": "high"
     },
     {
       "row_id": 1951,
-      "omop_concept_id": "3021589",
-      "omop_concept_name": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3001490",
+      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood",
+      "reasoning": "Nucleated erythrocytes bcs 'erybla' (erythroblast) ; [#/volume] bcs unit 'e9/l' ; in Blood bcs 'b-' prefix",
+      "certainty": "high"
     },
     {
       "row_id": 1952,
-      "omop_concept_id": "3021589",
-      "omop_concept_name": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property (e.g., [#/volume] vs ratio) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1953,
-      "omop_concept_id": "3013650",
-      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3017732",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood",
+      "reasoning": "Neutrophils bcs 'b-neut' ; [#/volume] bcs unit 'e9/l' and deciles ; in Blood bcs 'b-' prefix ; no method specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1954,
-      "omop_concept_id": "3013429",
-      "omop_concept_name": "Basophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3006315",
+      "omop_concept_name": "Basophils [#/volume] in Blood",
+      "reasoning": "Basophils bcs 'basofiilit' and 'b-baso' ; [#/volume] bcs 'absol.arvot' (absolute values) and unit 'e9/l' ; in Blood bcs 'b-baso'",
+      "certainty": "high"
     },
     {
       "row_id": 1955,
       "omop_concept_id": "3013869",
       "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Basophils/Leukocytes bcs 'basofiilit' as part of 'b-diffi' ; [# Ratio] bcs unit '%' ; in Blood bcs 'b-diffi' (blood differential) ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1956,
       "omop_concept_id": "3022096",
       "omop_concept_name": "Basophils/Leukocytes in Blood",
-      "is_panel": false
+      "reasoning": "Basophils/Leukocytes bcs 'l-baso' (basophils from leukocyte differential) ; [# Ratio] bcs unit '%' ; in Blood is implied by leukocyte differential ; no method is specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1957,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Erythrocyte distribution width bcs 'e-rdw' ; [Ratio] bcs unit '%' and typical RDW-CV values in deciles ; in Blood is implied by 'e-' prefix",
+      "certainty": "high"
     },
     {
       "row_id": 1958,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Erythrocyte distribution width bcs 'e-rdw' ; [Ratio] bcs unit '%' and typical RDW-CV values in deciles ; in Blood is implied by 'e-' prefix",
+      "certainty": "high"
     },
     {
       "row_id": 1959,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property cannot be distinguished between [Ratio] (RDW-CV) and [Entitic volume] (RDW-SD).",
+      "certainty": ""
     },
     {
       "row_id": 1960,
-      "omop_concept_id": "3028615",
-      "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3013115",
+      "omop_concept_name": "Eosinophils [#/volume] in Blood",
+      "reasoning": "Eosinophils bcs 'eosinofiilit' and 'b-eos' ; [#/volume] bcs 'absol.arvot' (absolute values) and unit 'e9/l' ; in Blood bcs 'b-eos'",
+      "certainty": "high"
     },
     {
       "row_id": 1961,
       "omop_concept_id": "3010457",
       "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Eosinophils/Leukocytes bcs 'eosinofiilit' as part of 'b-diffi' ; [# Ratio] bcs unit '%' ; in Blood bcs 'b-diffi' (blood differential) ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1962,
       "omop_concept_id": "3006504",
       "omop_concept_name": "Eosinophils/Leukocytes in Blood",
-      "is_panel": false
+      "reasoning": "Eosinophils/Leukocytes bcs 'l-eos' (eosinophils from leukocyte differential) ; [# Ratio] bcs unit '%' ; in Blood is implied by leukocyte differential ; no method is specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1963,
       "omop_concept_id": "3028615",
       "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Eosinophils bcs 'eosinofiilit' ; [#/volume] bcs 'abs' (absolute) and unit 'e9/l' ; in Blood bcs 'b-diffi' ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1964,
       "omop_concept_id": "3015377",
       "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Calcium bcs 'kalsium' and 'p-ca' ; [Moles/volume] bcs unit 'mmol/l' and deciles ; in Plasma bcs 'p-' prefix, which maps to LOINC 'Serum or Plasma'",
+      "certainty": "high"
     },
     {
       "row_id": 1965,
       "omop_concept_id": "3018010",
       "omop_concept_name": "Neutrophils/Leukocytes in Blood",
-      "is_panel": false
+      "reasoning": "Neutrophils/Leukocytes bcs 'l-neut' (neutrophils from leukocyte differential) ; [# Ratio] bcs unit '%' ; in Blood is implied by leukocyte differential ; no method is specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1966,
-      "omop_concept_id": "3004327",
-      "omop_concept_name": "Lymphocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3019198",
+      "omop_concept_name": "Lymphocytes [#/volume] in Blood",
+      "reasoning": "Lymphocytes bcs 'lymfosyytit' and 'b-lymf' ; [#/volume] bcs 'absol.arvot' (absolute values) and unit 'e9/l' ; in Blood bcs 'b-lymf'",
+      "certainty": "high"
     },
     {
       "row_id": 1967,
       "omop_concept_id": "3037511",
       "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Lymphocytes/Leukocytes bcs 'lymfosyytit' as part of 'b-diffi' ; [# Ratio] bcs unit '%' ; in Blood bcs 'b-diffi' (blood differential) ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1968,
       "omop_concept_id": "3002030",
       "omop_concept_name": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "reasoning": "Lymphocytes/Leukocytes bcs 'l-lymf' (lymphocytes from leukocyte differential) ; [# Ratio] bcs unit '%' ; in Blood is implied by leukocyte differential ; no method is specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1969,
-      "omop_concept_id": "3033575",
-      "omop_concept_name": "Monocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3001604",
+      "omop_concept_name": "Monocytes [#/volume] in Blood",
+      "reasoning": "Monocytes bcs 'monosyytit' and 'b-monos' ; [#/volume] bcs 'absol.arvot' (absolute values) and unit 'e9/l' ; in Blood bcs 'b-monos'",
+      "certainty": "high"
     },
     {
       "row_id": 1970,
       "omop_concept_id": "3011948",
       "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Monocytes/Leukocytes bcs 'monosyytit' as part of 'b-diffi' ; [# Ratio] bcs unit '%' ; in Blood bcs 'b-diffi' (blood differential) ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1971,
       "omop_concept_id": "3019069",
       "omop_concept_name": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "reasoning": "Monocytes/Leukocytes bcs 'l-monos' (monocytes from leukocyte differential) ; [# Ratio] bcs unit '%' ; in Blood is implied by leukocyte differential ; no method is specified in the name",
+      "certainty": "high"
     },
     {
       "row_id": 1972,
       "omop_concept_id": "3008342",
       "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Neutrophils/Leukocytes bcs 'neutrofiiliset' as part of 'b-diffi' ; [# Ratio] bcs unit '%' ; in Blood bcs 'b-diffi' (blood differential) ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1973,
       "omop_concept_id": "3013650",
       "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Neutrophils bcs 'neutrofiilit' ; [#/volume] bcs 'abs' (absolute) and unit 'e9/l' ; in Blood bcs 'b-diffi' ; by Automated count bcs 'konediffi' (machine differential)",
+      "certainty": "high"
     },
     {
       "row_id": 1974,
       "omop_concept_id": "3028286",
       "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'albumiini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1975,
       "omop_concept_id": "3015322",
       "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Alpha 1 globulin bcs 'alfa-1-globuliini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1976,
       "omop_concept_id": "3005229",
       "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Alpha 2 globulin bcs 'alfa-2-globuliini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1977,
       "omop_concept_id": "3043723",
       "omop_concept_name": "Beta 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Beta 1 globulin bcs 'beta-1-globuliini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1978,
       "omop_concept_id": "3043747",
       "omop_concept_name": "Beta 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Beta 2 globulin bcs 'beta-2-globuliini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1979,
       "omop_concept_id": "3023465",
       "omop_concept_name": "Gamma globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Gamma globulin bcs 'gamma-globuliini' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is an 'osatutkimus' of 's-prot-fr' (serum protein fractions)",
+      "certainty": "high"
     },
     {
       "row_id": 1980,
-      "omop_concept_id": "3046299",
-      "omop_concept_name": "Protein.monoclonal [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "omop_concept_id": "3029713",
+      "omop_concept_name": "Protein.monoclonal band 1 [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Protein.monoclonal band 1 bcs 'm-komponentti-1' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is part of 's-prot-fr'",
+      "certainty": "high"
     },
     {
       "row_id": 1981,
-      "omop_concept_id": "3046299",
-      "omop_concept_name": "Protein.monoclonal [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property (e.g., [Mass/volume]) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1982,
       "omop_concept_id": "3035797",
       "omop_concept_name": "Protein.monoclonal band 2 [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "reasoning": "Protein.monoclonal band 2 bcs 'm-komponentti-2' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs 's-' prefix ; by Electrophoresis bcs it is part of 's-prot-fr'",
+      "certainty": "high"
     },
     {
       "row_id": 1983,
-      "omop_concept_id": "3035797",
-      "omop_concept_name": "Protein.monoclonal band 2 [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property (e.g., [Mass/volume]) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1984,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "No unit or values are provided, so the property (e.g., [Mass/volume]) cannot be determined.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted of common hematology differential counts and serum protein electrophoresis fractions. Mapping was straightforward for most rows. The local naming was clear, distinguishing between absolute (`B-`, `e9/l`, 'absol. arvot') and relative (`L-`, `%`) counts, and explicitly stating automated method (`konediffi`). I chose specific 'by Automated count' LOINC codes where `konediffi` was present or implied for modern tests (like absolute counts and RDW), and more general codes (without method) where the Finnish code was generic (e.g., `L-Neut`). The serum protein fractions were also clearly named and mapped well to the specific electrophoresis LOINC codes. The only unmapped row was for 'M-komponentti-3' (row 1984), as the candidate list lacked a concept for a third monoclonal protein band, only providing options for a general/first band and a second band."
+  "reflection": "This group contained common hematology (differential blood counts) and clinical chemistry (serum protein electrophoresis) tests. The mappings were generally straightforward due to clear Finnish naming conventions. The use of 'konediffi' (machine differential) allowed for mapping to 'Automated count' concepts, while its absence led to choosing more general concepts. 'absol.arvot' (absolute values) and units like 'e9/l' clearly distinguished absolute counts from relative counts in '%'. The serum protein fractions were clearly part of an electrophoresis panel ('s-prot-fr'), justifying the choice of 'by Electrophoresis' concepts. Several rows were left unmapped because they lacked units and values, making it impossible to confidently determine the property of the measurement (e.g., [#/volume] vs ratio, or [Mass/volume] vs another property), which is the correct procedure in such cases. The candidate list was comprehensive for this group."
 }

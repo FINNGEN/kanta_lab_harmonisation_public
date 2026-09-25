@@ -2,574 +2,669 @@
   "rows": [
     {
       "row_id": 1469,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs UNIT `e6/l` and deciles `10.41...407.08` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1470,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.48` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1471,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs deciles `0...0.47` suggest an absolute count reported in e9/l ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1472,
-      "omop_concept_id": "3025271",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3020358",
+      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
+      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1473,
-      "omop_concept_id": "3025271",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3020358",
+      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
+      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs UNIT `e9/l` and deciles `0.06...0.44` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1474,
-      "omop_concept_id": "3025271",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3020358",
+      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
+      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1475,
-      "omop_concept_id": "3025271",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3020358",
+      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
+      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/cd56` ; [#/volume] bcs UNIT `e9/l` and deciles `0.09...0.44` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1476,
-      "omop_concept_id": "3025271",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3020358",
+      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
+      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/cd56` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1477,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs UNIT `e6/l` and deciles `0...336.97` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1478,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.29` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1479,
-      "omop_concept_id": "3000060",
-      "omop_concept_name": "B lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "omop_concept_id": "3010503",
+      "omop_concept_name": "CD19 cells [#/volume] in Blood",
+      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1480,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1481,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs UNIT `e9/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1482,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1483,
       "omop_concept_id": "3019724",
       "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `b-cd34` ; [#/volume] bcs UNIT `e6/l` and deciles `5.27...156.93` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1484,
       "omop_concept_id": "3019724",
       "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `b-cd34` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1485,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e6/l` and deciles `134.07...1335.05` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1486,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.14...1.07` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1487,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1488,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e6/l` and deciles `117.75...1214.03` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1489,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.11...1` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1490,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1491,
       "omop_concept_id": "3019724",
       "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs UNIT `e6/l` and deciles `3...64.2` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1492,
       "omop_concept_id": "3019724",
       "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.13` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1493,
       "omop_concept_id": "3019724",
       "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1494,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-lycd4` and LongName `B -Lymfosyytti CD4-alaluokka` refer to CD4 T-helper cells ; [#/volume] bcs this is the standard property for an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1495,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1496,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs UNIT `e9/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1497,
       "omop_concept_id": "3011412",
       "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1498,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e6/l` and deciles `168.06...1254.62` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1499,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.16...1.28` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1500,
       "omop_concept_id": "3028167",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs deciles `0.2...1.29` suggest an absolute count reported in e9/l ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1501,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e6/l` and deciles `141.94...1179.47` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1502,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.14...1.1` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1503,
       "omop_concept_id": "3001405",
       "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "is_panel": false
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "certainty": "high"
     },
     {
       "row_id": 1504,
       "omop_concept_id": "1469655",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchoalveolar lavage by Flow cytometry (FC)",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs UNIT `form` implies a formula or ratio ; in Bronchoalveolar lavage bcs prefix `bl-` ; by Flow cytometry bcs this is the standard method for this test",
+      "certainty": "medium"
     },
     {
       "row_id": 1505,
       "omop_concept_id": "1469655",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchoalveolar lavage by Flow cytometry (FC)",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs this is the standard property ; in Bronchoalveolar lavage bcs prefix `bl-` ; by Flow cytometry bcs this is the standard method for this test",
+      "certainty": "medium"
     },
     {
       "row_id": 1506,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs deciles `0.29...3.26` are typical for a ratio ; in Blood bcs this is the default specimen for this test when not otherwise specified",
+      "certainty": "high"
     },
     {
       "row_id": 1507,
       "omop_concept_id": "3023256",
       "omop_concept_name": "CD34 cells/cells in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells/cells bcs TEST_NAME `l-cd34` where `l-` means per leukocyte and UNIT is `%`, which is a ratio per cells ; in Blood bcs implied by context",
+      "certainty": "medium"
     },
     {
       "row_id": 1508,
       "omop_concept_id": "3023256",
       "omop_concept_name": "CD34 cells/cells in Blood",
-      "is_panel": false
+      "reasoning": "CD34 cells/cells bcs TEST_NAME `l-cd34` where `l-` means per leukocyte, implying a ratio per cells ; in Blood bcs implied by context",
+      "certainty": "medium"
     },
     {
       "row_id": 1509,
       "omop_concept_id": "46236971",
       "omop_concept_name": "CD34 dose in hematopoietic progenitor cell transfusion [#/mass] per recipient body mass",
-      "is_panel": false
+      "reasoning": "CD34 dose bcs TEST_NAME `la-cd34` where `la-` likely means leukapheresis, used for stem cell collection ; [#/mass] per recipient body mass bcs UNIT `e6/kg` is a cell count per kg body weight",
+      "certainty": "high"
     },
     {
       "row_id": 1510,
       "omop_concept_id": "3045389",
       "omop_concept_name": "CD34 cells [#/volume] in Blood from Blood product unit",
-      "is_panel": false
+      "reasoning": "CD34 cells bcs TEST_NAME `la-cd34` ; [#/volume] bcs UNIT `e9/l` is an absolute concentration ; in Blood from Blood product unit bcs `la-` likely means leukapheresis product",
+      "certainty": "high"
     },
     {
       "row_id": 1511,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "36032071",
+      "omop_concept_name": "CD34 cells [#] in Blood product unit",
+      "reasoning": "CD34 cells bcs TEST_NAME `la-cd34` ; [#] bcs suffix `-ks` likely means 'kappalemääräinen summa' (total count) ; in Blood product unit bcs `la-` likely means leukapheresis product",
+      "certainty": "high"
     },
     {
       "row_id": 1512,
       "omop_concept_id": "3030044",
-      "omop_concept_name": "CD34 cells/cells in Blood from Blood product unit",
-      "is_panel": false
+      "omop_concept_name": "CD34 cells/100 cells in Blood from Blood product unit",
+      "reasoning": "CD34 cells/100 cells bcs TEST_NAME `la-cd34-os` where `-os` means 'osuus' (share) and UNIT is `%` ; in Blood from Blood product unit bcs `la-` likely means leukapheresis product",
+      "certainty": "high"
     },
     {
       "row_id": 1513,
       "omop_concept_id": "1470003",
       "omop_concept_name": "CD3 cells [#/volume] in Hematopoietic progenitor cells from Blood product unit",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `la-t-cd3` ; [#/volume] bcs UNIT `e9/l` is an absolute concentration ; in Hematopoietic progenitor cells from Blood product unit bcs `la-` likely means leukapheresis product, which is a source of HPCs",
+      "certainty": "high"
     },
     {
       "row_id": 1514,
       "omop_concept_id": "1470003",
       "omop_concept_name": "CD3 cells [#/volume] in Hematopoietic progenitor cells from Blood product unit",
-      "is_panel": false
+      "reasoning": "CD3 cells bcs TEST_NAME `la-t-cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Hematopoietic progenitor cells from Blood product unit bcs `la-` likely means leukapheresis product, which is a source of HPCs",
+      "certainty": "high"
     },
     {
       "row_id": 1515,
-      "omop_concept_id": "3001694",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Specimen",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD4 cell count [#/volume] specifically in an apheresis or blood product unit. Candidates with specimen 'Specimen' or 'Tissue' are not specific enough.",
+      "certainty": ""
     },
     {
       "row_id": 1516,
-      "omop_concept_id": "3001694",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Specimen",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD4 cell count [#/volume] specifically in an apheresis or blood product unit. Candidates with specimen 'Specimen' or 'Tissue' are not specific enough.",
+      "certainty": ""
     },
     {
       "row_id": 1517,
-      "omop_concept_id": "3038211",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Specimen",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD8 cell count [#/volume] specifically in an apheresis or blood product unit. Candidate with specimen 'Specimen' is not specific enough.",
+      "certainty": ""
     },
     {
       "row_id": 1518,
-      "omop_concept_id": "3038211",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Specimen",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD8 cell count [#/volume] specifically in an apheresis or blood product unit. Candidate with specimen 'Specimen' is not specific enough.",
+      "certainty": ""
     },
     {
       "row_id": 1519,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "1092118",
+      "omop_concept_name": "CD19 cells/Lymphocytes in Blood",
+      "reasoning": "CD19 cells/Lymphocytes bcs TEST_NAME `ly-b-cd19` where `ly-` means per lymphocyte and `b-cd19` is B-cell CD19 ; [# Ratio] bcs UNIT is `%` ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1520,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "1092118",
+      "omop_concept_name": "CD19 cells/Lymphocytes in Blood",
+      "reasoning": "CD19 cells/Lymphocytes bcs TEST_NAME `ly-b-cd19` where `ly-` means per lymphocyte and `b-cd19` is B-cell CD19 ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1521,
       "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
+      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio and UNIT is `%`. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
+      "certainty": "medium"
     },
     {
       "row_id": 1522,
       "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
+      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
+      "certainty": "medium"
     },
     {
       "row_id": 1523,
       "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
+      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/cd56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio and UNIT is `%`. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
+      "certainty": "medium"
     },
     {
       "row_id": 1524,
       "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
+      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/cd56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
+      "certainty": "medium"
     },
     {
       "row_id": 1525,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3016228",
+      "omop_concept_name": "CD19 cells/100 cells in Blood",
+      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19` (`ly-` = /Lymphocytes) and UNIT `%`. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1526,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3016228",
+      "omop_concept_name": "CD19 cells/100 cells in Blood",
+      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19` (`ly-` = /Lymphocytes) implies a percentage. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1527,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3016228",
+      "omop_concept_name": "CD19 cells/100 cells in Blood",
+      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19-b` (`ly-` = /Lymphocytes) and UNIT `%`. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1528,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3016228",
+      "omop_concept_name": "CD19 cells/100 cells in Blood",
+      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19-b` (`ly-` = /Lymphocytes) implies a percentage. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1529,
       "omop_concept_id": "1175426",
       "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-cd3` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1530,
       "omop_concept_id": "1175426",
       "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-cd3` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1531,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1532,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1533,
-      "omop_concept_id": "21492329",
-      "omop_concept_name": "Cells.CD3+CD4+CD8+ (Double positive)/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "3037816",
+      "omop_concept_name": "CD4+CD8+ cells/cells in Blood",
+      "reasoning": "CD4+CD8+ cells/cells bcs TEST_NAME `ly-cd4+8+` with unit `%` implies a ratio ; in Blood bcs default specimen. Denominator `/cells` is a reasonable proxy for `/lymphocytes` from `ly-` prefix in this context.",
+      "certainty": "medium"
     },
     {
       "row_id": 1534,
-      "omop_concept_id": "21492329",
-      "omop_concept_name": "Cells.CD3+CD4+CD8+ (Double positive)/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "3037816",
+      "omop_concept_name": "CD4+CD8+ cells/cells in Blood",
+      "reasoning": "CD4+CD8+ cells/cells bcs TEST_NAME `ly-cd4+8+` implies a ratio ; in Blood bcs default specimen. Denominator `/cells` is a reasonable proxy for `/lymphocytes` from `ly-` prefix in this context.",
+      "certainty": "medium"
     },
     {
       "row_id": 1535,
-      "omop_concept_id": "3042388",
-      "omop_concept_name": "CD3+CD4-CD8-CD45+ cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD4-CD8- (double negative) cells as a ratio of lymphocytes.",
+      "certainty": ""
     },
     {
       "row_id": 1536,
-      "omop_concept_id": "3042388",
-      "omop_concept_name": "CD3+CD4-CD8-CD45+ cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for CD4-CD8- (double negative) cells as a ratio of lymphocytes.",
+      "certainty": ""
     },
     {
       "row_id": 1537,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4-t` where `ly-` means per lymphocyte and `-t` is redundant ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1538,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4-t` where `ly-` means per lymphocyte and `-t` is redundant ; [# Ratio] bcs deciles `17.53...52.57` suggest a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1539,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-cd4/cd8` and LongName `Auttaja- ja tappajasolujen suhde` ; [# Ratio] bcs deciles `0.37...3.23` are typical for a ratio ; in Blood bcs this is the default specimen when not specified, and `ly-` codes are typically from blood",
+      "certainty": "high"
     },
     {
       "row_id": 1540,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-cd4/cd8suhde` where `suhde` means ratio ; [# Ratio] bcs deciles `0.5...3.97` are typical for a ratio ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1541,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-cd8` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1542,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-cd8` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1543,
       "omop_concept_id": "1175426",
       "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-t-cd3` where `ly-` means per lymphocyte and `t-` is redundant ; [# Ratio] bcs UNIT is `%` ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1544,
       "omop_concept_id": "1175426",
       "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "is_panel": false
+      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-t-cd3` where `ly-` means per lymphocyte and `t-` is redundant ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1545,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4` and LongName `Ly-Lymfosyytit, T-auttajasolujen osuus` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1546,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4` and LongName `Ly-Lymfosyytit, T-auttajasolujen osuus` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1547,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4.` where `ly-` means per lymphocyte and the dot is a typo ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1548,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494815",
+      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
+      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4.` where `ly-` means per lymphocyte and the dot is a typo ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1549,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-t-cd4/8` ; [# Ratio] bcs UNIT `ratio` and deciles `0.6...3.19` ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1550,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-t-cd4/8` ; [# Ratio] bcs deciles `0.48...3.69` indicate a ratio ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1551,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-t-cd8` and LongName `Ly-Lymfosyytit, T-estäjäsolujen osuus` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1552,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-t-cd8` and LongName `Ly-Lymfosyytit, T-estäjäsolujen osuus` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "high"
     },
     {
       "row_id": 1553,
       "omop_concept_id": "40757349",
       "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "is_panel": false
+      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-tcd4/8.` (typo) ; [# Ratio] bcs deciles `0.48...3.27` indicate a ratio ; in Blood bcs this is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1554,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-tt-cd8` where `ly-` means per lymphocyte and `tt` is likely a typo for `t` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "medium"
     },
     {
       "row_id": 1555,
-      "omop_concept_id": "3007449",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "21494814",
+      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
+      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-tt-cd8` where `ly-` means per lymphocyte and `tt` is likely a typo for `t` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "certainty": "medium"
     },
     {
       "row_id": 1556,
-      "omop_concept_id": "3003031",
-      "omop_concept_name": "Transferrin.carbohydrate deficient.disialo/Transferrin.total in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3052708",
+      "omop_concept_name": "Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma",
+      "reasoning": "Transferrin.carbohydrate deficient/Transferrin.total bcs TEST_NAME `s-gt-cdt` is a known abbreviation for CDT as % of total, often reported with GGT ; [Mass Ratio] bcs this is the property for this ratio, reported in % ; in Serum bcs TEST_NAME prefix `s-`",
+      "certainty": "high"
     },
     {
       "row_id": 1557,
-      "omop_concept_id": "3003031",
-      "omop_concept_name": "Transferrin.carbohydrate deficient.disialo/Transferrin.total in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3052708",
+      "omop_concept_name": "Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma",
+      "reasoning": "Transferrin.carbohydrate deficient/Transferrin.total bcs TEST_NAME `s-gt-cdt` is a known abbreviation for CDT as % of total ; [Mass Ratio] bcs deciles `2.6...4.86` are typical values for CDT % ; in Serum bcs TEST_NAME prefix `s-`",
+      "certainty": "high"
     },
     {
       "row_id": 1558,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3014686",
+      "omop_concept_name": "CD3 cells/100 cells in Specimen",
+      "reasoning": "CD3 cells/100 cells bcs TEST_NAME `so-t-cd3` with UNIT `%` indicates a ratio of CD3 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
+      "certainty": "medium"
     },
     {
       "row_id": 1559,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3014686",
+      "omop_concept_name": "CD3 cells/100 cells in Specimen",
+      "reasoning": "CD3 cells/100 cells bcs TEST_NAME `so-t-cd3` indicates a ratio of CD3 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
+      "certainty": "medium"
     },
     {
       "row_id": 1560,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3000739",
+      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Specimen",
+      "reasoning": "CD3+CD4+ cells/cells bcs TEST_NAME `so-t-cd4` with UNIT `%` indicates a ratio of CD4 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
+      "certainty": "medium"
     },
     {
       "row_id": 1561,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3000739",
+      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Specimen",
+      "reasoning": "CD3+CD4+ cells/cells bcs TEST_NAME `so-t-cd4` indicates a ratio of CD4 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
+      "certainty": "medium"
     },
     {
       "row_id": 1562,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "No suitable candidate found for CD8 T-cells as a ratio in a generic specimen. The candidates are for specific subtypes (CD8+CD57+) or incorrect combinations (CD8+CD3-).",
+      "certainty": ""
     },
     {
       "row_id": 1563,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "No suitable candidate found for CD8 T-cells as a ratio in a generic specimen. The candidates are for specific subtypes (CD8+CD57+) or incorrect combinations (CD8+CD3-).",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted primarily of lymphocyte subpopulation counts from blood and other specimens, measured either as absolute counts (`B-`, `#/volume`) or as fractions of a parent population (`Ly-`, `%`). Mapping was generally successful for standard markers like CD3, CD4, CD8, and the CD4/CD8 ratio, especially where `top2000` concepts with existing Finnish usage were available.\n\nA key challenge was interpreting LOINC concepts where the denominator is `.../cells` when the Finnish code (`Ly-` prefix) clearly indicates a fraction of lymphocytes. I mapped these to the `/cells` concepts (e.g., for `Ly-CD4` to `3014037 CD3+CD4+ .../cells`), assuming this is standard practice, supported by their `top2000` status and Finnish usage. The concept `1175426 CD3 cells/Lymphocytes in Blood` shows a more specific denominator is possible, but such options were not available for other markers.\n\nA significant gap in the candidate list was the absence of a concept for `B-lymphocytes/Lymphocytes in Blood` (e.g., LOINC 21087-9). This prevented mapping for several rows (1519, 1520, 1525-1528) measuring `Ly-CD19`.\n\nMeasurements from leukapheresis products (`LA-` prefix) were mostly mappable, though for CD4 and CD8 counts, only generic `Specimen` concepts were available. Rows with the unknown specimen prefix `so-` (1558-1563) could not be mapped."
+  "reflection": "This group consisted primarily of immunophenotyping codes (CD markers). The mapping was generally straightforward. The main division was between absolute counts (`B-` prefix, units `e6/l` or `e9/l`) and relative counts/ratios (`Ly-` prefix, unit `%`). \n\n**Successes:**\n*   Absolute counts in blood (e.g., `B-CD3`, `B-CD4`, `B-CD19`) were easily mapped to their `[#/volume] in Blood` LOINC equivalents. The `top2000` concepts for CD4 and CD8 (`CD3+CD4+` and `CD3+CD8+`) were correctly identified as the standard targets.\n*   CD4/CD8 ratios in blood were also clearly identifiable and mapped to the correct `top2000` concept.\n*   The `La-` prefix was correctly identified as referring to leukapheresis products ('Blood product unit' in LOINC), allowing for mapping of CD34 counts in that context.\n*   The `Ly-` prefix was correctly interpreted as a ratio with lymphocytes as the denominator.\n\n**Challenges:**\n*   **Missing specific concepts:** The candidate list lacked specific concepts for CD4 and CD8 counts in apheresis products (`la-t-cd4`, `la-t-cd8`), forcing these to be left unmapped. Similarly, concepts for `CD4-CD8-` cells were missing.\n*   **Ambiguous denominators:** For relative counts (`Ly-` prefix), the LOINC concepts sometimes use `/cells` as a denominator where the Finnish code implies `/Lymphocytes`. This is a common ambiguity in flow cytometry reporting (is 'cells' the whole population or the gated lymphocyte population?). I mapped them based on the best fit and `top2000` status but with medium certainty (e.g., `ly-cd16/56`).\n*   **Ambiguous specimen prefixes:** The `So-` prefix was unknown, forcing a fallback to the generic `Specimen` system, which is less precise. The low value ranges for these rows compared to blood supported the decision not to map to blood concepts.\n*   For `ly-cd4 %` and `ly-cd8 %`, the best available candidates were in `Specimen` rather than `Blood`. While `Specimen` is a valid supertype, a concept with `in Blood` would have been a better match. This seems like a gap in the search retrieval."
 }

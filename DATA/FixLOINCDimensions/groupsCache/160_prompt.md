@@ -3,6 +3,8 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
 You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
@@ -27,40 +29,62 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
 - `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
 - `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
-- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
 
 **The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
-- `UNIT` — the recorded unit; may be empty.
+- `UNIT` — the recorded unit; may be empty, and may be wrong.
+- `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
+- `deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
-- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
+- `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
+
+# How to read the evidence
+
+A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are naming. Two rows of the same code with different units are two different observations and may well belong to two different LOINC concepts. Decide each row on its own.
+
+**The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
+
+**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+
+**Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
+
+**What you may conclude depends on what the row actually has.** The `evidence_level` column states it. Every row has a name; the label says what is there *in addition*:
+
+| `evidence_level` | what the row has | what you may do |
+|---|---|---|
+| `name+unit+values` | a unit and a value distribution | The strongest case. If the values contradict the unit, distrust the **unit** — units are typed by hand at hundreds of source systems and are often wrong, especially at a low `unit_share` — and decide as if the unit were absent. |
+| `name+unit` | a unit, no values | Trust the unit. It is the only quantity evidence there is, and it is usually right. |
+| `name+values` | values, no unit | Read the quantity off the magnitudes. Creatinine at 60-110 is µmol/l and takes `[Moles/volume]`; the same analyte at 0.6-1.2 is mg/dl and takes `[Mass/volume]`. |
+| `name` | neither | **You cannot fix the quantity.** Do not guess one and do not copy a sibling. Choose a concept only when the name alone settles it — a panel, which carries no property at all, or an analyte that has exactly one LOINC form. Otherwise **leave `omop_concept_id` empty**. An honest gap is worth more than a concept resting on nothing. |
+
+**Some units are ratios, not concentrations.** `mmol/mol` is HbA1c IFCC, a substance ratio. `mg/mmol` is an albumin/creatinine ratio. `ml/min/173m2` is eGFR, a rate per body surface area. `%` is ambiguous by nature: it may be a fraction of a cell population, a fraction of a total mass, or activity as a percentage of normal.
+
+**A repeated lowest decile is a detection limit, not a measurement.** When the first deciles are the same round number — `[5, 5, 6.2, 8.3, ...]` — the assay is censored at that floor and everything below was reported as "<5". Read the floor as the assay's sensitivity rather than the population's real low end: a CRP censored at 5 mg/l is an ordinary CRP, while a high-sensitivity assay reads down to about 0.1 mg/l, so that floor argues *against* a high-sensitivity concept.
 
 # How to decide
 
 For each row:
 
 1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
-2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
-3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
-   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
-   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
+3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
-   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
-4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
-5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
+   The error to avoid is **inventing** a qualifier, not being specific. Measured against the curated Finnish mappings, this step added a method the reference leaves blank 59 times (usually `Automated count` on a bare blood-count code), took `--trough` variants for plain drug levels, and narrowed `Serum or Plasma` to `Capillary blood` on codes that said no such thing. Of every qualifier you are about to accept, ask: **which characters of this code say so?** If you cannot point at them, take the plainer concept.
+4. **A guess that is itself a real concept is weak evidence, never an instruction.** If `loinc_name_guess` appears in the candidate table as an exact name at a score of 1.000, the earlier pass — reading this same row — happened to write the exact name of a concept that exists. That is mildly reassuring and nothing more: the earlier pass writes a name for almost every code it can read anything out of, so landing on a real name can be recognition or coincidence. Never adopt a candidate *because* it equals the guess. Take a different candidate, including a more precise one, whenever the row's own name, unit and values support it better — and take none at all if none fits, however well the guess matched.
+5. **When two or more candidates still fit equally well**, prefer a candidate with a `top2000` rank. That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not. It breaks ties and nothing more: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+6. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+7. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **A panel is not its components.** If the code orders a bundle, the answer is a panel concept, not one of the bundled analytes: `B-PVK` (perusverenkuva, the basic blood count) and `B-TVK` (taydellinen verenkuva, the complete count with differential) are panels, not hemoglobin. Match the panel's breadth to the code: a basic count is not the same concept as a count with a differential. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
 - **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
-- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
-- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
+- **The group is a bag of look-alike codes, not a set of equivalent ones.** It was built by string similarity, so it mixes genuinely different tests whose names happen to resemble each other. Answer every row from its own name, unit and values; never give rows one id because they sit together.
+- **A row whose guess was empty can still be mapped** — the pooled list may hold the concept its own name points to. Map it on that row's own evidence, though, never because a neighbouring row was mapped there.
 
 # Output
 
@@ -68,7 +92,17 @@ Return one entry per input row, with `row_id` echoed exactly, and:
 
 - `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
 - `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
-- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Then justify and grade what you chose:
+
+- `reasoning` — why each part of the name you chose is right, as **one clause per part, separated by ` ; `**. Each clause names the part and then the evidence it rests on, pointing at the specific characters of the row that carry it. Cover the component, the bracketed property, the specimen, and the method when the name has one. Keep it terse — this is a justification trail, not prose:
+
+      <component> bcs <evidence> ; <[property]> bcs <evidence> ; in <system> bcs <evidence> ; by <method> bcs <evidence>
+
+  Where a part rests on nothing in the row, say that instead of inventing a reason — "no specimen stated in the code" is a useful thing for a reader to find here.
+
+  **When you choose no concept, `reasoning` still matters — it is the only thing you leave behind.** Say what blocked you, specifically: the code is too garbled to identify; it is not a laboratory test; the search returned nothing for this analyte; the candidates were all the wrong specimen; the evidence cannot settle the quantity. "Nothing fitted" is not an answer. A reader must be able to tell a code that is unidentifiable from one the search simply failed on, because those need opposite fixes.
+- `certainty` — `high`, `medium` or `low`: how sure you are, on all the evidence together, that this concept is the right one for this row. Weigh the parts by what a wrong answer would cost: a doubtful analyte makes the mapping useless, while an unstated method is a smaller error. A row whose `evidence_level` is `name` should rarely be `high`, since nothing fixes its quantity. Use `low` freely — these are read downstream to decide which mappings can be trusted without review, so a `high` you cannot defend is worse than an honest `low`. Leave it empty when you chose no concept.
 
 Return an entry for EVERY row, including ones you leave unmapped.
 
@@ -79,57 +113,58 @@ Here is group 160.
 
 ## Candidate OMOP concepts for this group
 
-| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
-|---|---|---|---|---|---|
-| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 16 | 21 | 5,367,314 |
-| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 19 | 14 |   513,305 |
-| 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 190 | 17 | 1,024,731 |
-| 46236949 | Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.975 |  |  0 |         0 |
-| 46235106 | Alanine aminotransferase [Enzymatic activity/volume] in Blood | 0.933 |  |  0 |         0 |
-| 3052577 | Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.912 |  |  0 |         0 |
-| 3052018 | Alanine aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.908 |  |  0 |         0 |
-| 3005755 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.907 |  |  0 |         0 |
-| 3037081 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.896 |  |  0 |         0 |
-| 3019056 | Alanine aminotransferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.890 |  |  0 |         0 |
-| 3003792 | Aspartate aminotransferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |  0 |         0 |
-| 3028465 | Gamma glutamyl transferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |  0 |         0 |
-| 649315 | Aspartate aminotransferase [Measurement] in Serum or Plasma | 0.886 |  |  0 |         0 |
-| 3042781 | Aspartate aminotransferase [Enzymatic activity/volume] (Maximum value during study) in Serum or Plasma | 0.885 |  |  0 |         0 |
-| 3000784 | Alanine aminotransferase [Enzymatic activity/volume] in Body fluid | 0.884 |  |  0 |         0 |
-| 645672 | Alanine aminotransferase [Measurement] in Serum or Plasma | 0.883 |  |  0 |         0 |
-| 3028515 | Gamma glutamyl transferase [Enzymatic activity/volume] in Urine | 0.879 |  |  0 |         0 |
-| 3027388 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.878 |  |  0 |         0 |
-| 36305398 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.869 |  |  0 |         0 |
-| 3022893 | Aspartate aminotransferase/Alanine aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.868 |  |  0 |         0 |
-| 3010307 | Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.864 |  |  0 |         0 |
-| 3022979 | Gamma glutamyl cysteine synthetase [Enzymatic activity/volume] in Serum | 0.833 |  |  0 |         0 |
-| 3026365 | Gamma glutamyl transferase [Enzymatic activity/volume] in Semen | 0.821 |  |  0 |         0 |
-| 36032012 | Gamma glutamyl transferase [Enzymatic activity/volume] in DBS | 0.821 |  |  0 |         0 |
-| 3021398 | Gamma glutamyl transferase [Enzymatic activity/volume] in Amniotic fluid | 0.819 |  |  0 |         0 |
+| omop_concept_id | omop_concept_name | score | top2000 |
+|---|---|---|---|
+| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 16 |
+| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 19 |
+| 46236949 | Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.975 |  |
+| 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 0.970 | 190 |
+| 46235106 | Alanine aminotransferase [Enzymatic activity/volume] in Blood | 0.933 |  |
+| 3052577 | Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.912 |  |
+| 3052018 | Alanine aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.908 |  |
+| 3005755 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.907 |  |
+| 3037081 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.896 |  |
+| 3019056 | Alanine aminotransferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.890 |  |
+| 3003792 | Aspartate aminotransferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |
+| 649315 | Aspartate aminotransferase [Measurement] in Serum or Plasma | 0.886 |  |
+| 3042781 | Aspartate aminotransferase [Enzymatic activity/volume] (Maximum value during study) in Serum or Plasma | 0.885 |  |
+| 3000784 | Alanine aminotransferase [Enzymatic activity/volume] in Body fluid | 0.884 |  |
+| 645672 | Alanine aminotransferase [Measurement] in Serum or Plasma | 0.883 |  |
+| 3027388 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.878 |  |
+| 3028515 | Gamma glutamyl transferase [Enzymatic activity/volume] in Urine | 0.871 |  |
+| 36305398 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P | 0.869 |  |
+| 3028465 | Gamma glutamyl transferase [Enzymatic activity/volume] in Body fluid | 0.869 |  |
+| 3022893 | Aspartate aminotransferase/Alanine aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.868 |  |
+| 3010307 | Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.850 |  |
+| 3022979 | Gamma glutamyl cysteine synthetase [Enzymatic activity/volume] in Serum | 0.839 |  |
+| 3026365 | Gamma glutamyl transferase [Enzymatic activity/volume] in Semen | 0.822 |  |
+| 3021398 | Gamma glutamyl transferase [Enzymatic activity/volume] in Amniotic fluid | 0.817 |  |
+| 3015045 | Beta glucuronidase [Enzymatic activity/volume] in Serum or Plasma | 0.814 |  |
+| 36032012 | Gamma glutamyl transferase [Enzymatic activity/volume] in DBS | 0.813 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1769 | alaniiniaminotransferaasi | u/l | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1770 | alaniiniaminotransferaasi |  | 1818 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1771 | alaniiniaminotransferaasi,plasmasta | u/l | 97 | 0 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1772 | alaniiniaminotransferaasi,plasmasta |  | 5 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1773 | aspartaattiaminotransferaasi | u/l | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1774 | aspartaattiaminotransferaasi |  | 112 | 100 |  |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1775 | fp-glutamyylitransferaasi | u/l | 102 | 0 |  |  | Fasting plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1776 | fs-alaniiniaminotransferaasi | u/l | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1777 | glutamyylitransferaasi | u/l | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1778 | glutamyylitransferaasi |  | 147 | 100 |  |  |  |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1779 | p-alaniiniaminotransferaasi | u/l | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1780 | p-alaniiniaminotransferaasi |  | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1781 | p-aspartaattiaminotransferaasi | u/l | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1782 | p-aspartaattiaminotransferaasi |  | 129 | 90.7 |  |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1783 | p-glutamyylitransferaasi | u/l | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1784 | p-glutamyylitransferaasi |  | 33 | 84.85 |  |  | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1785 | s-alaniiniaminotransferaasi | u/l | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1786 | s-alaniiniaminotransferaasi |  | 52 | 100 |  |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1787 | s-aspartaattiaminotransferaasi | u/l | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1788 | s-aspartaattiaminotransferaasi |  | 8 | 87.5 |  |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
-| 1789 | s-glutamyylitransferaasi | u/l | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | FALSE |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1769 | alaniiniaminotransferaasi | u/l | 90% | name+unit+values | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1770 | alaniiniaminotransferaasi |  | 10% | name | 1818 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1771 | alaniiniaminotransferaasi,plasmasta | u/l | 95% | name+unit | 97 | 0 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1772 | alaniiniaminotransferaasi,plasmasta |  | 5% | name | 5 | 100 |  |  |  |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1773 | aspartaattiaminotransferaasi | u/l | 75% | name+unit+values | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1774 | aspartaattiaminotransferaasi |  | 25% | name | 112 | 100 |  |  |  |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1775 | fp-glutamyylitransferaasi | u/l | 100% | name+unit | 102 | 0 |  |  | Fasting plasma |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1776 | fs-alaniiniaminotransferaasi | u/l | 100% | name+unit+values | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1777 | glutamyylitransferaasi | u/l | 90% | name+unit+values | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1778 | glutamyylitransferaasi |  | 10% | name | 147 | 100 |  |  |  |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1779 | p-alaniiniaminotransferaasi | u/l | 96% | name+unit+values | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1780 | p-alaniiniaminotransferaasi |  | 4% | name+values | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1781 | p-aspartaattiaminotransferaasi | u/l | 98% | name+unit+values | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1782 | p-aspartaattiaminotransferaasi |  | 2% | name | 129 | 90.7 |  |  | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1783 | p-glutamyylitransferaasi | u/l | 99% | name+unit+values | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1784 | p-glutamyylitransferaasi |  | 1% | name | 33 | 84.85 |  |  | Plasma |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1785 | s-alaniiniaminotransferaasi | u/l | 97% | name+unit+values | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1786 | s-alaniiniaminotransferaasi |  | 3% | name | 52 | 100 |  |  | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1787 | s-aspartaattiaminotransferaasi | u/l | 99% | name+unit+values | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1788 | s-aspartaattiaminotransferaasi |  | 1% | name | 8 | 87.5 |  |  | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma |
+| 1789 | s-glutamyylitransferaasi | u/l | 100% | name+unit+values | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  | Gamma-glutamyltransferase [Enzymatic activity/volume] in Serum or Plasma |
 

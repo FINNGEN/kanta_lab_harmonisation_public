@@ -2,220 +2,256 @@
   "rows": [
     {
       "row_id": 1241,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3013867",
+      "omop_concept_name": "Bacteria identified in Specimen by Aerobe culture",
+      "reasoning": "Bacteria identified bcs this is a microbiology culture result ; by Aerobe culture bcs code is `-aerobivi` (aerobic culture) ; in Specimen bcs no specimen is specified",
+      "certainty": "high"
     },
     {
       "row_id": 1242,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3011298",
+      "omop_concept_name": "Bacteria identified in Specimen by Anaerobe culture",
+      "reasoning": "Bacteria identified bcs this is a microbiology culture result ; by Anaerobe culture bcs code is `-anaerobi` (anaerobic, culture implied) ; in Specimen bcs no specimen is specified",
+      "certainty": "high"
     },
     {
       "row_id": 1243,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3035800",
+      "omop_concept_name": "Chlamydia trachomatis and Neisseria gonorrhoeae DNA [Identifier] in Specimen by NAA with probe detection",
+      "reasoning": "Chlamydia trachomatis and Neisseria gonorrhoeae DNA bcs code is `-omactgc`, a common abbreviation for CT/GC ; [Identifier] bcs this is a qualitative microbiology test ; in Specimen bcs no specimen is specified ; by NAA is the standard method",
+      "certainty": "medium"
     },
     {
       "row_id": 1244,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `annosvoim` appears to be 'annosvoimakkuus', which means 'dose strength'. This is not a laboratory test result.",
+      "certainty": ""
     },
     {
       "row_id": 1245,
       "omop_concept_id": "3026470",
       "omop_concept_name": "Cobalt [Mass/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Cobalt bcs code is `koboltti` ; [Mass/volume] bcs unit is `ug/l` ; in Blood bcs prefix is `B-`",
+      "certainty": "high"
     },
     {
       "row_id": 1246,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3026389",
+      "omop_concept_name": "Candida sp identified in Specimen by Organism specific culture",
+      "reasoning": "Candida sp bcs code is `cand` ; identified by culture bcs code ends in `odl`, likely Swedish 'odling' (culture) ; in Specimen bcs no specific source is named",
+      "certainty": "high"
     },
     {
       "row_id": 1247,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3047178",
+      "omop_concept_name": "Yeast [Presence] in Specimen by Wet preparation",
+      "reasoning": "Yeast bcs code is `cand` (Candida is a yeast, and Yeast is the common LOINC term for microscopy) ; [Presence] by Wet preparation bcs code is `nativ` (natiivitutkimus, wet mount) ; in Specimen bcs no specific source is named",
+      "certainty": "high"
     },
     {
       "row_id": 1248,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The unit `mm` indicates this is a skin prick test (wheal diameter), which is an in-vivo measurement. The available candidates are all for in-vitro serum antibody tests.",
+      "certainty": ""
     },
     {
       "row_id": 1249,
       "omop_concept_id": "3005136",
       "omop_concept_name": "Cladosporium herbarum IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Cladosporium herbarum bcs code is `cladosp.he` ; IgE Ab is the standard for this type of allergy testing ; [Units/volume] bcs unit is `u/ml` ; in Serum is the standard specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1250,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3005136",
+      "omop_concept_name": "Cladosporium herbarum IgE Ab [Units/volume] in Serum",
+      "reasoning": "Cladosporium herbarum bcs code is `cladosp.he` ; This is the same test code as the row with units (1249), so it's the quantitative IgE antibody test ; This row likely represents records where the numeric value was not recorded",
+      "certainty": "medium"
     },
     {
       "row_id": 1251,
-      "omop_concept_id": "3041642",
-      "omop_concept_name": "Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3965970",
+      "omop_concept_name": "Human coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Human coronavirus 229E bcs code is `corona229e` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
+      "certainty": "high"
     },
     {
       "row_id": 1252,
-      "omop_concept_id": "40765160",
-      "omop_concept_name": "Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3964787",
+      "omop_concept_name": "Human coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Human coronavirus HKU1 bcs code is `coronahku1` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
+      "certainty": "high"
     },
     {
       "row_id": 1253,
-      "omop_concept_id": "3040359",
-      "omop_concept_name": "Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3965395",
+      "omop_concept_name": "Human coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Human coronavirus NL63 bcs code is `coronanl63` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
+      "certainty": "high"
     },
     {
       "row_id": 1254,
-      "omop_concept_id": "3038546",
-      "omop_concept_name": "Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3966673",
+      "omop_concept_name": "Human coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Human coronavirus OC43 bcs code is `coronaoc43` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
+      "certainty": "high"
     },
     {
       "row_id": 1255,
-      "omop_concept_id": "3042198",
-      "omop_concept_name": "Norovirus genogroup I Ag [Presence] in Stool",
-      "is_panel": false
+      "omop_concept_id": "40758035",
+      "omop_concept_name": "Norovirus genogroup I RNA [Presence] in Stool by NAA with probe detection",
+      "reasoning": "Norovirus genogroup I bcs code is `norogi` ; RNA [Presence] is the standard for this PCR test ; in Stool bcs prefix is `F-` (Feces)",
+      "certainty": "high"
     },
     {
       "row_id": 1256,
-      "omop_concept_id": "1259564",
-      "omop_concept_name": "Norovirus genogroup II Ag [Presence] in Stool",
-      "is_panel": false
+      "omop_concept_id": "40758036",
+      "omop_concept_name": "Norovirus genogroup II RNA [Presence] in Stool by NAA with probe detection",
+      "reasoning": "Norovirus genogroup II bcs code is `norogii` ; RNA [Presence] is the standard for this PCR test ; in Stool bcs prefix is `F-` (Feces)",
+      "certainty": "high"
     },
     {
       "row_id": 1257,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The name `f-projekti` means 'feces project', indicating this is a non-standard or research-specific code, not a routine clinical test.",
+      "certainty": ""
     },
     {
       "row_id": 1258,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `hpvpapctgc` appears to be a local code for a bundled test including HPV, Pap smear, and Chlamydia/Gonorrhea. No single LOINC concept in the candidate list represents this specific combination of analytes.",
+      "certainty": ""
     },
     {
       "row_id": 1259,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `hpvrefctgc` appears to be a local code for a bundled or reflex test involving HPV and Chlamydia/Gonorrhea. The exact nature is unclear, and no single LOINC concept in the candidate list represents this combination.",
+      "certainty": ""
     },
     {
       "row_id": 1260,
-      "omop_concept_id": "3042198",
-      "omop_concept_name": "Norovirus genogroup I Ag [Presence] in Stool",
-      "is_panel": false
+      "omop_concept_id": "1616677",
+      "omop_concept_name": "Norovirus genogroup I RNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Norovirus genogroup I bcs code is `norogi` ; RNA [Presence] is the standard for this PCR test ; in Specimen bcs no specimen is specified in the code",
+      "certainty": "high"
     },
     {
       "row_id": 1261,
-      "omop_concept_id": "1259564",
-      "omop_concept_name": "Norovirus genogroup II Ag [Presence] in Stool",
-      "is_panel": false
+      "omop_concept_id": "1616915",
+      "omop_concept_name": "Norovirus genogroup II RNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Norovirus genogroup II bcs code is `norogii` ; RNA [Presence] is the standard for this PCR test ; in Specimen bcs no specimen is specified in the code",
+      "certainty": "high"
     },
     {
       "row_id": 1262,
       "omop_concept_id": "3020710",
       "omop_concept_name": "Acetone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Acetone bcs code is `asetoni` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs prefix is `P-`",
+      "certainty": "high"
     },
     {
       "row_id": 1263,
       "omop_concept_id": "3037286",
       "omop_concept_name": "Acetone [Presence] in Serum or Plasma by Screen method",
-      "is_panel": false
+      "reasoning": "Acetone bcs code is `asetoni` ; [Presence] bcs no units/values are provided and this likely represents a qualitative screen ; in Serum or Plasma bcs prefix is `P-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1264,
       "omop_concept_id": "3026493",
       "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `P-`",
+      "certainty": "high"
     },
     {
       "row_id": 1265,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1264), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
+      "certainty": "high"
     },
     {
       "row_id": 1266,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The name `projekti1` means 'project 1', indicating this is a non-standard or research-specific code, not a routine clinical test.",
+      "certainty": ""
     },
     {
       "row_id": 1267,
       "omop_concept_id": "3020710",
       "omop_concept_name": "Acetone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Acetone bcs code is `asetoni` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs prefix is `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1268,
       "omop_concept_id": "3037286",
       "omop_concept_name": "Acetone [Presence] in Serum or Plasma by Screen method",
-      "is_panel": false
+      "reasoning": "Acetone bcs code is `asetoni` ; [Presence] bcs no units/values are provided and this likely represents a qualitative screen ; in Serum or Plasma bcs prefix is `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1269,
       "omop_concept_id": "3026493",
       "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1270,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1269), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
+      "certainty": "high"
     },
     {
       "row_id": 1271,
       "omop_concept_id": "3009466",
       "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate bcs code is `valproaatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1272,
       "omop_concept_id": "3009466",
       "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate bcs code is `valproaatti` ; This is the same test code as the row with units (1271), and valproate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
+      "certainty": "high"
     },
     {
       "row_id": 1273,
-      "omop_concept_id": "40768804",
-      "omop_concept_name": "Tissue Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3007597",
+      "omop_concept_name": "Pathology report gross observation Narrative",
+      "reasoning": "bcs `Ts-abortti` and `Aborttikudoksen dissektiotutkimus` indicate a gross pathology examination of tissue from an abortion (products of conception) ; The chosen concept is a general term for this observation, as no more specific concept was available in the candidate list.",
+      "certainty": "low"
     },
     {
       "row_id": 1274,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": true
+      "omop_concept_id": "3045281",
+      "omop_concept_name": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection",
+      "reasoning": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA bcs code contains `ctgc` ; [Presence] is the nature of this screening test ; in Urine bcs prefix is `U-` ; by NAA is the standard method",
+      "certainty": "high"
     },
     {
       "row_id": 1275,
       "omop_concept_id": "3026493",
       "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs this is the default specimen for this test and the values are consistent with it",
+      "certainty": "high"
     },
     {
       "row_id": 1276,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1275), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
+      "certainty": "high"
     }
   ],
-  "reflection": "This was a varied group with clear mappings and some unmappable codes. The quantitative tests like Urate, Acetone, Valproate, and Cobalt were straightforward, with `UNIT` and `deciles` providing clear evidence for selecting the right LOINC concept based on property (Moles/volume or Mass/volume) and specimen. The `Top2000` flag was very helpful in resolving ambiguity, for instance, in choosing `Acetone [Presence] ... by Screen method` (3037286).\n\nSeveral rows could not be mapped. Administrative or procedural codes like `-aerobivi`, `annosvoim`, and `projekti` are outside the scope of LOINC lab tests. Some local codes were too fragmentary (`-omactgc`) or complex (`hpvpapctgc`) to decipher. The `cladosp.he` with unit `mm` (row 1248) was clearly a skin test, for which no candidates were available. Qualitative `uraatti` tests (rows 1265, 1270, 1276) also lacked a suitable `[Presence]` candidate in serum/plasma. Similarly, `u-omactgc` (row 1274), a CT/GC panel in urine, did not have a perfect panel candidate in the list — the available options either included an extra pathogen (Trichomonas) or were specific to rRNA, making a confident mapping impossible.\n\nFor the coronavirus RNA tests (1251-1254), I opted for the more general `Specimen` concepts over `Respiratory system specimen`, as this was safer without explicit specimen information and was consistent with existing mappings in Finland (`n_codes` > 0)."
+  "reflection": "This group contained a mix of microbiology, chemistry, and allergy tests, plus some unmappable administrative or pathology codes. Most mappings were straightforward, with clear evidence from the local code's prefix (specimen), name (analyte), and unit/values (property). For example, `b-koboltti` in `ug/l` was a clear match for Cobalt [Mass/volume] in Blood. Microbiology codes for specific pathogens (Coronaviruses, Noroviruses) were also clear matches. \n\nThe main challenges were:\n1.  **Ambiguous local codes**: `hpvpapctgc` and `hpvrefctgc` seem to represent local bundles of tests for which no single LOINC concept exists. These were left unmapped.\n2.  **Non-test codes**: `annosvoim` (dose strength) and `projekti` (project) were correctly identified as non-laboratory results and left unmapped.\n3.  **Lack of specific candidates**: For `ts-abortti` (gross examination of abortion tissue), the candidates were generic pathology terms. `Pathology report gross observation Narrative` was chosen as a best-fit, but it lacks the specimen information, hence the 'low' certainty.\n4.  **Quantitative vs. Qualitative**: For codes like `p-asetoni` that appeared both with and without units, I made a judgment call. For acetone, a qualitative screen is common, so I mapped the unit-less version to a `[Presence]` concept. For standard chemistries like `uraatti` and `valproaatti`, I mapped the unit-less versions to the same quantitative concept as their counterparts, assuming missing data rather than a different test type."
 }

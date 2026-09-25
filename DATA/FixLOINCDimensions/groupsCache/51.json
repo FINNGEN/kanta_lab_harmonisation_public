@@ -4,554 +4,646 @@
       "row_id": 711,
       "omop_concept_id": "3003330",
       "omop_concept_name": "Adenovirus Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Adenovirus Ag bcs `adenag` in `TEST_NAME` and `Adenovirus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` the most appropriate choice for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 712,
       "omop_concept_id": "3049806",
       "omop_concept_name": "Human bocavirus Ag [Presence] in Specimen by Immunofluorescence",
-      "is_panel": false
+      "reasoning": "Human bocavirus Ag bcs `bokaag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code ; method by Immunofluorescence is an assumption but plausible for this type of test",
+      "certainty": "medium"
     },
     {
       "row_id": 713,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3001684",
+      "omop_concept_name": "Respiratory syncytial virus Ag [Presence] in Specimen",
+      "reasoning": "Respiratory syncytial virus Ag bcs `rsv` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 714,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `inabrsv` represents a panel for Influenza A, Influenza B, and RSV antigens. No corresponding antigen panel concept was found in the candidate list; available candidates were for RNA tests or included SARS-CoV-2.",
+      "certainty": ""
     },
     {
       "row_id": 715,
-      "omop_concept_id": "3028459",
-      "omop_concept_name": "Influenza virus A Ag [Presence] in Specimen by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3002523",
+      "omop_concept_name": "Influenza virus A Ag [Presence] in Specimen",
+      "reasoning": "Influenza virus A Ag bcs `infaag` in `TEST_NAME` and `Influenssa A -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 716,
       "omop_concept_id": "3024891",
       "omop_concept_name": "Influenza virus A+B Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Influenza virus A+B Ag bcs `infabag` in `TEST_NAME` and `Influenssa A ja B -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 717,
       "omop_concept_id": "3965803",
       "omop_concept_name": "Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Influenza virus A+B RNA bcs `infabnh` in `TEST_NAME` where `-nh` indicates nucleic acid ; [Presence] bcs no units or values are given ; in Respiratory system specimen bcs this is a respiratory test context and this is a more specific specimen than `Specimen` ; by NAA bcs this is the method for `-nh` tests",
+      "certainty": "high"
     },
     {
       "row_id": 718,
-      "omop_concept_id": "3964727",
-      "omop_concept_name": "Influenza virus A H3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-infah03` is for Influenza A H3 antigen. The candidate list does not contain a suitable concept for an antigen test on a primary specimen; available options are for RNA or on an isolate.",
+      "certainty": ""
     },
     {
       "row_id": 719,
-      "omop_concept_id": "40758594",
-      "omop_concept_name": "Influenza virus A H1 2009 pandemic RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-infah09` is for Influenza A H1N1(2009) antigen. The candidate list does not contain a suitable concept for an antigen test; the available option is for an RNA test.",
+      "certainty": ""
     },
     {
       "row_id": 720,
-      "omop_concept_id": "3966116",
-      "omop_concept_name": "Influenza virus A H1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-infah1` is for Influenza A H1 antigen. The candidate list does not contain a suitable concept for an antigen test; the available option is for an RNA test.",
+      "certainty": ""
     },
     {
       "row_id": 721,
-      "omop_concept_id": "3964727",
-      "omop_concept_name": "Influenza virus A H3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-infah3` is for Influenza A H3 antigen. The candidate list does not contain a suitable concept for an antigen test on a primary specimen; available options are for RNA or on an isolate.",
+      "certainty": ""
     },
     {
       "row_id": 722,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3001507",
+      "omop_concept_name": "Influenza virus A identified in Specimen by Bioassay",
+      "reasoning": "Influenza virus A identified bcs `infa` for Influenza A and `vt` likely means virus typing/identified ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "medium"
     },
     {
       "row_id": 723,
-      "omop_concept_id": "3011688",
-      "omop_concept_name": "Influenza virus B Ag [Presence] in Specimen by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3003740",
+      "omop_concept_name": "Influenza virus B Ag [Presence] in Specimen",
+      "reasoning": "Influenza virus B Ag bcs `infbag` in `TEST_NAME` and `Influenssa B -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 724,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-infbvt` indicates 'Influenza virus B identified'. No candidate concept for identifying only Influenza B was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 725,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3002523",
+      "omop_concept_name": "Influenza virus A Ag [Presence] in Specimen",
+      "reasoning": "Influenza virus A Ag bcs `infl.a` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 726,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3003740",
+      "omop_concept_name": "Influenza virus B Ag [Presence] in Specimen",
+      "reasoning": "Influenza virus B Ag bcs `infl.b` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified by a prefix, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 727,
-      "omop_concept_id": "706162",
-      "omop_concept_name": "Respiratory viral pathogens DNA and RNA panel - Respiratory system specimen Qualitative by NAA with probe detection",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-infrpak` (`pak` for 'paketti' or panel) indicates a respiratory virus antigen panel. No generic panel concept for respiratory virus antigens was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 728,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-infrsv` suggests a panel for Influenza and RSV antigens. No such antigen panel concept was found in the candidate list; available panels were for RNA.",
+      "certainty": ""
     },
     {
       "row_id": 729,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-ivf-et` stands for 'in vitro fertilization - embryo transfer'. This is a clinical procedure, not a laboratory measurement, and cannot be mapped to a LOINC laboratory concept.",
+      "certainty": ""
     },
     {
       "row_id": 730,
-      "omop_concept_id": "723477",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen by Rapid immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3034661",
+      "omop_concept_name": "Human coronavirus Ag [Presence] in Specimen by Immunofluorescence",
+      "reasoning": "Human coronavirus Ag bcs `koroag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code. This concept is for common human coronaviruses, not SARS-CoV-2, which is appropriate.",
+      "certainty": "high"
     },
     {
       "row_id": 731,
       "omop_concept_id": "40763480",
       "omop_concept_name": "Human metapneumovirus Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Human metapneumovirus Ag bcs `metpnag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 732,
       "omop_concept_id": "3010464",
       "omop_concept_name": "Parainfluenza virus 1 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 1 Ag bcs `pin1ag` in `TEST_NAME` and `Parainfluenssa 1 -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 733,
       "omop_concept_id": "3021578",
       "omop_concept_name": "Parainfluenza virus 2 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 2 Ag bcs `pin2ag` in `TEST_NAME` and `Parainfluenssa 2 -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 734,
       "omop_concept_id": "3005880",
       "omop_concept_name": "Parainfluenza virus 3 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 3 Ag bcs `pin3ag` in `TEST_NAME` and `Parainfluenssa 3 -virus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 735,
       "omop_concept_id": "3010464",
       "omop_concept_name": "Parainfluenza virus 1 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 1 Ag bcs `pinf1ag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 736,
       "omop_concept_id": "3021578",
       "omop_concept_name": "Parainfluenza virus 2 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 2 Ag bcs `pinf2ag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 737,
       "omop_concept_id": "3005880",
       "omop_concept_name": "Parainfluenza virus 3 Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 3 Ag bcs `pinf3ag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 738,
       "omop_concept_id": "3003221",
       "omop_concept_name": "Pneumocystis jirovecii Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Pneumocystis jirovecii Ag bcs `pnjiag` in `TEST_NAME` and `Pneumocystis jirovecii, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 739,
-      "omop_concept_id": "40757376",
-      "omop_concept_name": "Respiratory virus Ag [Identifier] in Specimen by Immunofluorescence",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-rvirag` (`Respiratoristen virusten antigeeni`) indicates a respiratory virus antigen panel. No generic panel concept for respiratory virus antigens was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 740,
       "omop_concept_id": "3007625",
       "omop_concept_name": "Streptococcus pneumoniae Ag [Presence] in Specimen",
-      "is_panel": false
+      "reasoning": "Streptococcus pneumoniae Ag bcs `stpnag` in `TEST_NAME` and `Streptococcus pneumoniae, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Specimen bcs no specimen is specified, making the generic `Specimen` appropriate for this respiratory context code",
+      "certainty": "high"
     },
     {
       "row_id": 741,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bi-inflamm` is for an inflammatory marker in bile. This is too generic to be mapped to a specific LOINC concept. It is unclear which inflammatory marker is measured.",
+      "certainty": ""
     },
     {
       "row_id": 742,
       "omop_concept_id": "3020393",
       "omop_concept_name": "Adenovirus Ag [Presence] in Stool",
-      "is_panel": false
+      "reasoning": "Adenovirus Ag bcs `adenag` in `TEST_NAME` and `Adenovirus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Stool bcs the prefix `f-` stands for Feces",
+      "certainty": "high"
     },
     {
       "row_id": 743,
-      "omop_concept_id": "3008140",
-      "omop_concept_name": "Giardia lamblia Ag [Presence] in Stool by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3004762",
+      "omop_concept_name": "Giardia lamblia Ag [Presence] in Stool",
+      "reasoning": "Giardia lamblia Ag bcs `giarag` in `TEST_NAME` and `Giardia, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Stool bcs the prefix `f-` stands for Feces",
+      "certainty": "high"
     },
     {
       "row_id": 744,
       "omop_concept_id": "3052347",
       "omop_concept_name": "Giardia lamblia+Cryptosporidium sp Ag [Presence] in Stool",
-      "is_panel": false
+      "reasoning": "Giardia lamblia+Cryptosporidium sp Ag bcs `gicrag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no values ; in Stool bcs the prefix `f-` stands for Feces. The `sp` concept is chosen over `parvum` as the local code is not species-specific.",
+      "certainty": "high"
     },
     {
       "row_id": 745,
       "omop_concept_id": "3052592",
       "omop_concept_name": "Norovirus Ag [Presence] in Stool",
-      "is_panel": false
+      "reasoning": "Norovirus Ag bcs `noroag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no units or values ; in Stool bcs the prefix `f-` stands for Feces",
+      "certainty": "high"
     },
     {
       "row_id": 746,
-      "omop_concept_id": "3014352",
-      "omop_concept_name": "Rotavirus Ag [Presence] in Stool by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3008284",
+      "omop_concept_name": "Rotavirus Ag [Presence] in Stool",
+      "reasoning": "Rotavirus Ag bcs `rotaag` in `TEST_NAME` and `Rotavirus, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Stool bcs the prefix `f-` stands for Feces",
+      "certainty": "high"
     },
     {
       "row_id": 747,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `f-virag` indicates a panel for enteric virus antigens in feces. The candidate list contains specific panels (e.g., Adeno+Noro+Rota) but no generic panel concept for enteric virus antigens.",
+      "certainty": ""
     },
     {
       "row_id": 748,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-adenabg` is for Adenovirus IgG antibodies in cerebrospinal fluid. The candidate list does not contain a concept for IgG-specific adenovirus antibodies in CSF.",
+      "certainty": ""
     },
     {
       "row_id": 749,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-infaabg` is for Influenza A virus IgG antibodies in cerebrospinal fluid, reported quantitatively. The candidate list lacks a concept with this specific component, isotype, specimen, and property ([Units/volume]).",
+      "certainty": ""
     },
     {
       "row_id": 750,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-infaabg` is for Influenza A virus IgG antibodies in cerebrospinal fluid, reported qualitatively. The candidate list does not contain a concept for the presence of IgG-specific Influenza A antibodies in CSF.",
+      "certainty": ""
     },
     {
       "row_id": 751,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-infbabg` is for Influenza B virus IgG antibodies in cerebrospinal fluid, reported quantitatively. The candidate list lacks a concept with this specific component, isotype, specimen, and property ([Units/volume]).",
+      "certainty": ""
     },
     {
       "row_id": 752,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-infbabg` is for Influenza B virus IgG antibodies in cerebrospinal fluid, reported qualitatively. The candidate list does not contain a concept for the presence of IgG-specific Influenza B antibodies in CSF.",
+      "certainty": ""
     },
     {
       "row_id": 753,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-mypnab` is for total Mycoplasma pneumoniae antibodies in cerebrospinal fluid. The candidate list does not contain a `[Presence]` concept for total antibodies in CSF, only for `sp.` or quantitative measurements.",
+      "certainty": ""
     },
     {
       "row_id": 754,
       "omop_concept_id": "3002823",
       "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Cerebral spinal fluid",
-      "is_panel": false
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypn` for the organism and `abg` for IgG Ab in `TEST_NAME`, plus `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs of the unit `eiu` ; in Cerebral spinal fluid bcs of the `Li-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 755,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-mypnabg` is for Mycoplasma pneumoniae IgG antibodies in cerebrospinal fluid, reported qualitatively. The candidate list does not contain a concept for the presence of these specific antibodies in CSF.",
+      "certainty": ""
     },
     {
       "row_id": 756,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-mypnabm` is for Mycoplasma pneumoniae IgM antibodies in cerebrospinal fluid, reported qualitatively. The candidate list does not contain a `[Presence]` concept for these specific antibodies in CSF.",
+      "certainty": ""
     },
     {
       "row_id": 757,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-pin1abg` is for Parainfluenza virus 1 IgG antibodies in cerebrospinal fluid, reported quantitatively. No matching concept was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 758,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-pin1abg` is for Parainfluenza virus 1 IgG antibodies in cerebrospinal fluid, reported qualitatively. No matching concept was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 759,
-      "omop_concept_id": "43054998",
-      "omop_concept_name": "Influenza virus A+B Ag [Presence] in Nose by Rapid immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3044408",
+      "omop_concept_name": "Influenza virus A+B Ag [Presence] in Nose",
+      "reasoning": "Influenza virus A+B Ag bcs `infab` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no values ; in Nose bcs the prefix `ns-` stands for Nasal secretion",
+      "certainty": "high"
     },
     {
       "row_id": 760,
       "omop_concept_id": "3035162",
       "omop_concept_name": "Adenovirus Ag [Presence] in Nasopharynx",
-      "is_panel": false
+      "reasoning": "Adenovirus Ag bcs `adenag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no values ; in Nasopharynx bcs the prefix `ps-` means Pharyngeal secretion and the `LongName` specifies `(NPS-näyte)` which is nasopharyngeal swab",
+      "certainty": "high"
     },
     {
       "row_id": 761,
-      "omop_concept_id": "3046524",
-      "omop_concept_name": "Influenza virus A Ag [Presence] in Nasopharynx by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3003551",
+      "omop_concept_name": "Influenza virus A Ag [Presence] in Throat",
+      "reasoning": "Influenza virus A Ag bcs `infaag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no values ; in Throat bcs the prefix `ps-` stands for Pharyngeal secretion, which is equivalent to Throat",
+      "certainty": "high"
     },
     {
       "row_id": 762,
-      "omop_concept_id": "3029458",
-      "omop_concept_name": "Influenza virus A+B Ag [Presence] in Nasopharynx",
-      "is_panel": false
+      "omop_concept_id": "3000251",
+      "omop_concept_name": "Influenza virus B Ag [Presence] in Throat",
+      "reasoning": "Influenza virus B Ag bcs `infbag` in `TEST_NAME` ; [Presence] bcs it's an antigen test with no values ; in Throat bcs the prefix `ps-` stands for Pharyngeal secretion, which is equivalent to Throat",
+      "certainty": "high"
     },
     {
       "row_id": 763,
-      "omop_concept_id": "40757376",
-      "omop_concept_name": "Respiratory virus Ag [Identifier] in Specimen by Immunofluorescence",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `rvirag-o` indicates a qualitative respiratory virus antigen panel. No generic panel concept for respiratory virus antigens was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 764,
       "omop_concept_id": "3010959",
       "omop_concept_name": "Adenovirus IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Adenovirus IgG Ab bcs `adenabg` in `TEST_NAME` and `Adenovirus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 765,
       "omop_concept_id": "3040947",
       "omop_concept_name": "Adenovirus IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Adenovirus IgG Ab bcs `adenabg` in `TEST_NAME` and `Adenovirus, IgG-vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 766,
       "omop_concept_id": "3015147",
       "omop_concept_name": "Influenza virus A IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus A IgG Ab bcs `infaabg` in `TEST_NAME` and `Influenssa A -virus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 767,
       "omop_concept_id": "3015147",
       "omop_concept_name": "Influenza virus A IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus A IgG Ab bcs `infaabg` in `TEST_NAME` and `Influenssa A -virus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `u/ml` ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 768,
       "omop_concept_id": "3042885",
       "omop_concept_name": "Influenza virus A IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus A IgG Ab bcs `infaabg` in `TEST_NAME` and `Influenssa A -virus, IgG-vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 769,
       "omop_concept_id": "3018940",
       "omop_concept_name": "Influenza virus B Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B Ab bcs `infbab` in `TEST_NAME` and `Influenssa B -virus, vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 770,
       "omop_concept_id": "3018940",
       "omop_concept_name": "Influenza virus B Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B Ab bcs `infbab` in `TEST_NAME` and `Influenssa B -virus, vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `u/ml` ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 771,
       "omop_concept_id": "3042988",
       "omop_concept_name": "Influenza virus B Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B Ab bcs `infbab` in `TEST_NAME` and `Influenssa B -virus, vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 772,
       "omop_concept_id": "3016413",
       "omop_concept_name": "Influenza virus B IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B IgG Ab bcs `infbabg` in `TEST_NAME` and `Influenssa B -virus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 773,
       "omop_concept_id": "3016413",
       "omop_concept_name": "Influenza virus B IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B IgG Ab bcs `infbabg` in `TEST_NAME` and `Influenssa B -virus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `u/ml` ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 774,
       "omop_concept_id": "3045344",
       "omop_concept_name": "Influenza virus B IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Influenza virus B IgG Ab bcs `infbabg` in `TEST_NAME` and `Influenssa B -virus, IgG-vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 775,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infli` in `TEST_NAME` and `Infliksimabi` in `LongName` ; [Mass/volume] bcs the unit is `mg/l` and values are present ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 776,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infli` in `TEST_NAME` and `Infliksimabi` in `LongName` ; [Mass/volume] bcs the unit is `ug/l` ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 777,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infli` in `TEST_NAME` and `Infliksimabi` in `LongName` ; [Mass/volume] bcs the unit `âug/ml` is a typo for `ug/ml` which is a mass concentration ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 778,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infli` in `TEST_NAME` and `Infliksimabi` in `LongName` ; [Mass/volume] bcs the decile values are consistent with `mg/l` units seen in sibling rows ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 779,
       "omop_concept_id": "1175556",
       "omop_concept_name": "inFLIXimab Ab [Units/volume] in Serum by Immunoassay",
-      "is_panel": false
+      "reasoning": "inFLIXimab Ab bcs `infliab` in `TEST_NAME` and `Infliksimabi, vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `au/ml` (arbitrary units) ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 780,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-infliab` is for Infliximab antibodies. This row has no units and a high proportion of missing values, suggesting a qualitative result. However, there is no `[Presence]` concept for Infliximab antibodies in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 781,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infliks` in `TEST_NAME` ; [Mass/volume] bcs the unit is `mg/l` and values are present ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 782,
       "omop_concept_id": "3042299",
       "omop_concept_name": "inFLIXimab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "inFLIXimab bcs `infliks` in `TEST_NAME` ; [Mass/volume] bcs the decile values are consistent with `mg/l` units seen in sibling rows ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 783,
       "omop_concept_id": "1259853",
       "omop_concept_name": "Infliximab and Infliximab Ab Panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "Infliximab and Infliximab Ab Panel bcs `inflipa` in `TEST_NAME` where `pa` stands for 'paketti' (panel) ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 784,
       "omop_concept_id": "3013870",
       "omop_concept_name": "Mycophenolate glucuronide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Mycophenolate glucuronide bcs `micfaeg` in `TEST_NAME` (micfa=mycophenolic acid, eg=glucuronide) ; [Mass/volume] bcs the unit is `mg/l` ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 785,
       "omop_concept_id": "3013870",
       "omop_concept_name": "Mycophenolate glucuronide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Mycophenolate glucuronide bcs `micfaeg` in `TEST_NAME` (micfa=mycophenolic acid, eg=glucuronide) ; [Mass/volume] bcs although there are no units, the analyte is a drug metabolite typically measured by mass concentration ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "medium"
     },
     {
       "row_id": 786,
-      "omop_concept_id": "3027545",
-      "omop_concept_name": "Mycoplasma pneumoniae Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3035420",
+      "omop_concept_name": "Mycoplasma pneumoniae Ab [Presence] in Serum",
+      "reasoning": "Mycoplasma pneumoniae Ab bcs `mypnab` in `TEST_NAME` and `Mycoplasma pneumoniae, vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 787,
       "omop_concept_id": "3024072",
       "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay",
-      "is_panel": false
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypnabg` in `TEST_NAME` and `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `au/ml` and values are present ; in Serum bcs of the `S-` prefix ; by Immunoassay bcs this is the common method and the concept is in the top 2000",
+      "certainty": "high"
     },
     {
       "row_id": 788,
       "omop_concept_id": "3024072",
       "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay",
-      "is_panel": false
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypnabg` in `TEST_NAME` and `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix ; by Immunoassay bcs this is the common method and the concept is in the top 2000",
+      "certainty": "high"
     },
     {
       "row_id": 789,
-      "omop_concept_id": "3045068",
-      "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3046684",
+      "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum",
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypnabg` in `TEST_NAME` and `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Presence] bcs the unit `form` indicates a formulaic or qualitative result, and no values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 790,
       "omop_concept_id": "3024072",
       "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay",
-      "is_panel": false
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypnabg` in `TEST_NAME` and `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `ru/ml` and values are present ; in Serum bcs of the `S-` prefix ; by Immunoassay bcs this is the common method and the concept is in the top 2000",
+      "certainty": "high"
     },
     {
       "row_id": 791,
-      "omop_concept_id": "3045068",
-      "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3024072",
+      "omop_concept_name": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay",
+      "reasoning": "Mycoplasma pneumoniae IgG Ab bcs `mypnabg` in `TEST_NAME` and `Mycoplasma pneumoniae, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the decile values are consistent with arbitrary units ; in Serum bcs of the `S-` prefix ; by Immunoassay bcs this is the common method and the concept is in the top 2000",
+      "certainty": "high"
     },
     {
       "row_id": 792,
-      "omop_concept_id": "3010521",
-      "omop_concept_name": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3021082",
+      "omop_concept_name": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum",
+      "reasoning": "Mycoplasma pneumoniae IgM Ab bcs `mypnabm` in `TEST_NAME` and `Mycoplasma pneumoniae, IgM-vasta-aineet` in `LongName` ; [Presence] bcs the unit `form` indicates a formulaic or qualitative result, and no values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 793,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-mypnabm` with unit `index` represents a ratio measurement for Mycoplasma pneumoniae IgM antibodies. The candidate list does not contain a concept with the `[Ratio]` property for this analyte.",
+      "certainty": ""
     },
     {
       "row_id": 794,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-mypnabm` with unit `s/co` (signal-to-cutoff) represents a ratio measurement for Mycoplasma pneumoniae IgM antibodies. The candidate list does not contain a concept with the `[Ratio]` property for this analyte.",
+      "certainty": ""
     },
     {
       "row_id": 795,
-      "omop_concept_id": "3010521",
-      "omop_concept_name": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-mypnabm` with decile values around 1-10 represents a ratio measurement for Mycoplasma pneumoniae IgM antibodies. The candidate list does not contain a concept with the `[Ratio]` property for this analyte.",
+      "certainty": ""
     },
     {
       "row_id": 796,
       "omop_concept_id": "3035523",
       "omop_concept_name": "Parainfluenza virus 1 IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 1 IgG Ab bcs `pin1abg` in `TEST_NAME` and `Parainfluenssa 1 -virus, IgG-vasta-aineet` in `LongName` ; [Units/volume] bcs the unit is `eiu` and values are present ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 797,
       "omop_concept_id": "3034468",
       "omop_concept_name": "Parainfluenza virus 1 IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Parainfluenza virus 1 IgG Ab bcs `pin1abg` in `TEST_NAME` and `Parainfluenssa 1 -virus, IgG-vasta-aineet` in `LongName` ; [Presence] bcs there are no units or values, indicating a qualitative test ; in Serum bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 798,
       "omop_concept_id": "3005411",
       "omop_concept_name": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Squamous cell carcinoma Ag bcs `scc-ag` in `TEST_NAME` and `Squamous cell carsinoma, antigeeni` in `LongName` ; [Mass/volume] bcs the unit is `ug/l` and values are present ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 799,
       "omop_concept_id": "3005411",
       "omop_concept_name": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Squamous cell carcinoma Ag bcs `scc-ag` in `TEST_NAME` and `Squamous cell carsinoma, antigeeni` in `LongName` ; [Mass/volume] bcs this analyte is typically measured by mass concentration and sibling rows use `ug/l` ; in Serum or Plasma bcs of the `S-` prefix",
+      "certainty": "medium"
     },
     {
       "row_id": 800,
       "omop_concept_id": "3033152",
       "omop_concept_name": "Legionella pneumophila 1 Ag [Presence] in Urine by Immunoassay",
-      "is_panel": false
+      "reasoning": "Legionella pneumophila 1 Ag bcs `lepnag` in `TEST_NAME`, and the standard urine test is for serogroup 1 ; [Presence] bcs it's an antigen test with no units or values ; in Urine bcs of the `U-` prefix ; by Immunoassay bcs this is the standard method and the concept is in the top 2000",
+      "certainty": "high"
     },
     {
       "row_id": 801,
       "omop_concept_id": "3011363",
       "omop_concept_name": "Streptococcus pneumoniae Ag [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Streptococcus pneumoniae Ag bcs `pneuag` in `TEST_NAME` (`pneu` for pneumococcus) ; [Presence] bcs it's an antigen test with no units or values ; in Urine bcs of the `U-` prefix",
+      "certainty": "high"
     },
     {
       "row_id": 802,
       "omop_concept_id": "3011363",
       "omop_concept_name": "Streptococcus pneumoniae Ag [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Streptococcus pneumoniae Ag bcs `stpnag` in `TEST_NAME` and `Streptococcus pneumoniae, antigeeni` in `LongName` ; [Presence] bcs it's an antigen test with no units or values ; in Urine bcs of the `U-` prefix",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group covered a wide range of microbiology tests, mainly for respiratory and gastrointestinal pathogens, as well as some therapeutic drug monitoring (Infliximab, Mycophenolate) and tumor markers (SCC-Ag). \n\nThe mapping was largely successful. The provided data fields (`LongName`, specimen prefixes, `UNIT`, `p_missing`) were critical for distinguishing between antigen vs. nucleic acid tests, qualitative vs. quantitative results, and different specimen types (respiratory, stool, serum, CSF, urine). Preferring Top2000 concepts and those with existing Finnish usage (`n_codes` > 0) helped resolve ambiguities, especially for common rapid antigen tests.\n\nSeveral rows were left unmapped due to specific reasons:\n- **Ambiguous local codes:** Codes like `-coinrsv`, `-infavt`, and `f-virag` were too vague to confidently map to a specific panel or test.\n- **Missing candidates:** The candidate list lacked precise matches for several CSF antibody tests (e.g., Influenza IgG in CSF, Mycoplasma IgM `[Presence]` in CSF). It also lacked concepts for ratio-based antibody results (`index` or `s/co` units for `s-mypnabm`).\n- **Non-lab procedures:** `-ivf-et` is a clinical procedure (embryo transfer), not a lab test, and thus has no LOINC laboratory concept.\n\nFor `rvirag-o` and `rvirag`, I overrode `is_panel=TRUE` to `FALSE` because the best fitting LOINC concept (`40757376`) has the property `[Identifier]`, meaning the result is the name of the identified virus, which is a single observation, not a panel of separate results."
+  "reflection": "This group was dominated by infectious disease serology and antigen tests, mostly for respiratory and gastrointestinal pathogens, plus some therapeutic drug monitoring (Infliximab, Mycophenolate). Mapping was generally straightforward when the analyte, specimen, and property were all clearly specified.\n\nSeveral rows could not be mapped due to gaps in the candidate list:\n*   **Panel codes:** Several local codes for respiratory antigen panels (e.g., `-inabrsv`, `-infrpak`, `-rvirag`) and enteric virus panels (`f-virag`) had no corresponding generic panel concepts in the candidate list. The available panels were either for RNA or for different combinations of pathogens.\n*   **CSF serology:** A significant number of tests for antibodies in cerebrospinal fluid (`Li-` prefix) could not be mapped because the specific analyte-isotype combination (e.g., Adenovirus IgG, Influenza A/B IgG) was missing for the CSF specimen.\n*   **Ratio properties:** Rows for Mycoplasma pneumoniae IgM antibodies (793-795) were reported with units `index` and `s/co`, clearly indicating a ratio. No `[Ratio]` concept was available in the candidates, preventing a correct mapping.\n*   **Missing specific components:** Tests for specific Influenza A subtypes (H1, H3) as antigen tests on primary specimens were unmappable as candidates were for RNA or on isolates.\n*   **Vague codes:** A few codes like `bi-inflamm` (inflammatory marker in bile) and `-ivf-et` (a procedure) were unmappable by nature.\n\nThe `loinc_name_guess` was generally helpful in pointing to the right area, but the final decision always relied on dissecting the Finnish code and data, which often led to choosing a different, more precise, or more generic concept, or leaving the row unmapped."
 }

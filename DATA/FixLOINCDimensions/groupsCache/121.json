@@ -4,596 +4,695 @@
       "row_id": 1611,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-ctr-d` appears to be an administrative or control code ('ctr' for control, '-d' for DNA test) and does not specify a clinically relevant analyte.",
+      "certainty": ""
     },
     {
       "row_id": 1612,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-fishhyb` indicates a FISH analysis but does not specify the specimen or the target of the analysis, making it too generic to map to a specific LOINC concept.",
+      "certainty": ""
     },
     {
       "row_id": 1613,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-fishhyb` indicates a FISH analysis but does not specify the specimen or the target of the analysis, making it too generic to map to a specific LOINC concept.",
+      "certainty": ""
     },
     {
       "row_id": 1614,
       "omop_concept_id": "3011498",
       "omop_concept_name": "APOE gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "reasoning": "APOE gene mutations found bcs `apoe-d` in `TEST_NAME` and `Apolipoproteiini E, DNA-tutkimus` in `LongName` indicate a DNA test for ApoE genotyping ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for reporting these findings.",
+      "certainty": "high"
     },
     {
       "row_id": 1615,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte abbreviation `aso2` in the `TEST_NAME` is not identifiable.",
+      "certainty": ""
     },
     {
       "row_id": 1616,
-      "omop_concept_id": "3003648",
-      "omop_concept_name": "SERPINA1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `b-atrytyd` with LongName `B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus` clearly indicates genotyping of the Alpha-1-antitrypsin (SERPINA1) gene. No suitable candidate for genotyping was present in the list; all available candidates were for phenotyping.",
+      "certainty": ""
     },
     {
       "row_id": 1617,
-      "omop_concept_id": "3003648",
-      "omop_concept_name": "SERPINA1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `b-atrytyd` with LongName `B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus` clearly indicates genotyping of the Alpha-1-antitrypsin (SERPINA1) gene. No suitable candidate for genotyping was present in the list; all available candidates were for phenotyping.",
+      "certainty": ""
     },
     {
       "row_id": 1618,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte/test name `auria10` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 1619,
-      "omop_concept_id": "40771901",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3049056",
+      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "BCR-ABL1 fusion transcript bcs `bcr` in `TEST_NAME` and `BCR-ABL1 -geenien fuusio-RNA` in `LongName` ; /control transcript [# Ratio] bcs `qr` (quantitative ratio) in `TEST_NAME` and `(kvant)` in `LongName` ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1620,
-      "omop_concept_id": "40771901",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3049056",
+      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "BCR-ABL1 fusion transcript bcs `bcr` in `TEST_NAME` and `BCR-ABL1 -geenien fuusio-RNA` in `LongName` ; /control transcript [# Ratio] bcs `qr` (quantitative ratio) in `TEST_NAME` and `(kvant)` in `LongName` ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1621,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-blapcr` likely refers to B-lymphocyte clonality analysis by PCR. However, no suitable candidate for general B-cell (e.g., IGH) gene rearrangement by molecular genetics method was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1622,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte `bo3` in the `TEST_NAME` is not identifiable.",
+      "certainty": ""
     },
     {
       "row_id": 1623,
       "omop_concept_id": "3029984",
       "omop_concept_name": "BRCA1+BRCA2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": true
+      "reasoning": "BRCA1+BRCA2 gene targeted mutation analysis bcs `brcay-d` in `TEST_NAME` indicates a DNA test panel for BRCA genes ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1624,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name component `brovcore` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 1625,
       "omop_concept_id": "46237016",
       "omop_concept_name": "CALR gene exon 9 mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "reasoning": "CALR gene mutations found bcs `calr-d` in `TEST_NAME` indicates a DNA test for the CALR gene ; in Blood bcs `B-` prefix. This concept correctly identifies the common target (exon 9) and a general method.",
+      "certainty": "high"
     },
     {
       "row_id": 1626,
-      "omop_concept_id": "40771901",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3013321",
+      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "BCR-ABL1 fusion transcript bcs `cml` in `TEST_NAME` refers to Chronic Myeloid Leukemia, which is defined by this transcript ; [Presence] bcs the code `b-cmlpcr` does not specify quantitation (unlike `b-bcr-qr`) ; in Blood bcs `B-` prefix ; by Molecular genetics method bcs `pcr` in `TEST_NAME`. The chosen concept is `top2000` ranked.",
+      "certainty": "high"
     },
     {
       "row_id": 1627,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test abbreviation `crco` is ambiguous and cannot be confidently identified, though it may relate to colorectal cancer.",
+      "certainty": ""
     },
     {
       "row_id": 1628,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test abbreviation `crcoti` is ambiguous and cannot be confidently identified.",
+      "certainty": ""
     },
     {
       "row_id": 1629,
       "omop_concept_id": "21494571",
       "omop_concept_name": "CNBP gene CCTG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "CNBP gene CCTG repeat analysis bcs `b-dm2alld` and `LongName` 'Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin...' refer to a DNA test for Myotonic Dystrophy type 2, which is caused by repeats in the CNBP gene (formerly ZNF9) ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1630,
       "omop_concept_id": "21494571",
       "omop_concept_name": "CNBP gene CCTG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "CNBP gene CCTG repeat analysis bcs `b-dm2alld` and `LongName` 'Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin...' refer to a DNA test for Myotonic Dystrophy type 2, which is caused by repeats in the CNBP gene (formerly ZNF9) ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1631,
-      "omop_concept_id": "1001873",
-      "omop_concept_name": "DPYD gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3046976",
+      "omop_concept_name": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "DPYD gene mutations found bcs `dpyd-d` in `TEST_NAME` specifies a DNA test for the DPYD gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1632,
-      "omop_concept_id": "1001873",
-      "omop_concept_name": "DPYD gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3046976",
+      "omop_concept_name": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "DPYD gene mutations found bcs `dpyd-d` in `TEST_NAME` specifies a DNA test for the DPYD gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1633,
-      "omop_concept_id": "36659909",
-      "omop_concept_name": "DPYD gene full mutation analysis in Blood or Tissue by Sequencing",
-      "is_panel": true
+      "omop_concept_id": "1001873",
+      "omop_concept_name": "DPYD gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "DPYD gene targeted mutation analysis bcs `dpydl-d` in `TEST_NAME` suggests an extensive (`l` for `laaja`) panel DNA test for DPYD ; in Blood bcs `B-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1634,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name component `exkon` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 1635,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name component `extri` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 1636,
       "omop_concept_id": "3039049",
       "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "is_panel": true
+      "reasoning": "Pharmacogenetic DNA analysis panel bcs `farma-d` in `TEST_NAME` stands for a pharmacogenetic DNA test ; the code implies a panel and the specimen is Blood (`B-` prefix).",
+      "certainty": "high"
     },
     {
       "row_id": 1637,
       "omop_concept_id": "3039049",
       "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "is_panel": true
+      "reasoning": "Pharmacogenetic DNA analysis panel bcs `farml-d` in `TEST_NAME` stands for an extensive (`l` for `laaja`) pharmacogenetic DNA test ; this is the most suitable panel concept available. Specimen is Blood (`B-` prefix).",
+      "certainty": "medium"
     },
     {
       "row_id": 1638,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-fii-d` and `LongName` `B -Protrombiinigeeni, DNA-tutkimus` clearly specify a DNA test for the Prothrombin (Factor II) gene mutation. No suitable LOINC candidate was found in the provided list.",
+      "certainty": ""
     },
     {
       "row_id": 1639,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-fii-d` and `LongName` `B -Protrombiinigeeni, DNA-tutkimus` clearly specify a DNA test for the Prothrombin (Factor II) gene mutation. No suitable LOINC candidate was found in the provided list.",
+      "certainty": ""
     },
     {
       "row_id": 1640,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-finngen` refers to the FinnGen research project and is likely an administrative or sample tracking code, not a standard clinical laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1641,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `b-fishhem` specifies a FISH panel for hematologic disorders in blood, but the available candidates are more specific (e.g., AML panel, or distinguishing metaphase/interphase) than the generic local code allows for a confident mapping.",
+      "certainty": ""
     },
     {
       "row_id": 1642,
-      "omop_concept_id": "21494429",
-      "omop_concept_name": "FMR1 gene CGG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3035795",
+      "omop_concept_name": "FMR1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "FMR1 gene targeted mutation analysis bcs `frax-d` and `LongName` indicate a DNA test for Fragile-X (FMR1 gene) ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 1643,
-      "omop_concept_id": "21494429",
-      "omop_concept_name": "FMR1 gene CGG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3035795",
+      "omop_concept_name": "FMR1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "FMR1 gene targeted mutation analysis bcs `frax-d` and `LongName` indicate a DNA test for Fragile-X (FMR1 gene) ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 1644,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-fuus-mr` indicates a fusion gene analysis (`fuus`) from blood (`B-`), but does not specify which fusion gene is being tested, making it impossible to map.",
+      "certainty": ""
     },
     {
       "row_id": 1645,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-fuus-mr` indicates a fusion gene analysis (`fuus`) from blood (`B-`), but does not specify which fusion gene is being tested, making it impossible to map.",
+      "certainty": ""
     },
     {
       "row_id": 1646,
       "omop_concept_id": "3015816",
       "omop_concept_name": "F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "F5 gene p.Arg506Gln [Presence] bcs `b-fv-d` and `LongName` indicate a DNA test for the Factor V gene, which primarily targets the Factor V Leiden mutation (p.Arg506Gln) ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1647,
       "omop_concept_id": "3015816",
       "omop_concept_name": "F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "F5 gene p.Arg506Gln [Presence] bcs `b-fv-d` and `LongName` indicate a DNA test for the Factor V gene, which primarily targets the Factor V Leiden mutation (p.Arg506Gln) ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1648,
       "omop_concept_id": "1092115",
       "omop_concept_name": "Hereditary thrombosis disorders multigene analysis in Blood by Molecular genetics method",
-      "is_panel": true
+      "reasoning": "Hereditary thrombosis disorders multigene analysis bcs `fvfii-d` in `TEST_NAME` indicates a combined DNA test for Factor V and Factor II, a common thrombophilia panel ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1649,
       "omop_concept_id": "1092115",
       "omop_concept_name": "Hereditary thrombosis disorders multigene analysis in Blood by Molecular genetics method",
-      "is_panel": true
+      "reasoning": "Hereditary thrombosis disorders multigene analysis bcs `fvfii-d` in `TEST_NAME` indicates a combined DNA test for Factor V and Factor II, a common thrombophilia panel ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1650,
-      "omop_concept_id": "3027955",
-      "omop_concept_name": "HFE gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "omop_concept_id": "3026001",
+      "omop_concept_name": "HFE gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "HFE gene mutations found bcs `hfe-d` in `TEST_NAME` and `LongName` specify a DNA test for major mutations ('valtamutaatioiden') in the HFE gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1651,
-      "omop_concept_id": "1092197",
-      "omop_concept_name": "Hereditary nonpolyposis colorectal cancer multigene analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "46235504",
+      "omop_concept_name": "MSH2 gene+MLH1 gene+MSH6 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
+      "reasoning": "MSH2 gene+MLH1 gene+MSH6 gene mutation analysis limited to known familial mutations bcs `LongName` specifies a test for a single known mutation in one of these genes for HNPCC (`hnpcy` in `TEST_NAME`) ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1652,
       "omop_concept_id": "3046498",
       "omop_concept_name": "JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "JAK2 gene p.Val617Phe [Presence] bcs `jak2-d` in `TEST_NAME` and `LongName` indicate a DNA test for the JAK2 mutation, which is overwhelmingly the V617F mutation ; in Blood bcs `B-` prefix. The concept is a `top2000` code.",
+      "certainty": "high"
     },
     {
       "row_id": 1653,
       "omop_concept_id": "3046498",
       "omop_concept_name": "JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "JAK2 gene p.Val617Phe [Presence] bcs `jak2-d` in `TEST_NAME` and `LongName` indicate a DNA test for the JAK2 mutation, which is overwhelmingly the V617F mutation ; in Blood bcs `B-` prefix. The concept is a `top2000` code.",
+      "certainty": "high"
     },
     {
       "row_id": 1654,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "1092212",
+      "omop_concept_name": "Cells.recipient derived/Cells in Blood or Tissue by Molecular genetics method --post stem cell transplant",
+      "reasoning": "Cells.recipient derived/Cells bcs `kim-d` in `TEST_NAME` stands for a chimerism (`kimerismi`) DNA test, which measures the proportion of recipient vs donor cells post-transplant ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1655,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3964788",
+      "omop_concept_name": "Bone marrow transplant chimerism panel - Plasma cell-free DNA by Sequencing",
+      "reasoning": "Bone marrow transplant chimerism panel bcs `kim-fd` in `TEST_NAME` suggests a panel for chimerism analysis, possibly follow-up (`f`) ; in Blood bcs `B-` prefix. This is the best available panel candidate, though it specifies Plasma cfDNA and Sequencing, which is more specific than the source code.",
+      "certainty": "medium"
     },
     {
       "row_id": 1656,
-      "omop_concept_id": "40771901",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3049056",
+      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "BCR-ABL1 fusion transcript bcs `kml` (KML, Kronisk Myeloisk Leukemi/CML) in `TEST_NAME` is defined by this transcript ; /control transcript [# Ratio] bcs `qr` suffix means quantitative ratio ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1657,
-      "omop_concept_id": "43534045",
-      "omop_concept_name": "MCM6 gene c.-13910C>T and -13915T>G [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs `lakt-d` in `TEST_NAME` and `LongName` specify a DNA test for lactose intolerance, which is a test of the LCT gene ; in Blood bcs `B-` prefix. The `[Type]` property is appropriate for a genotype result.",
+      "certainty": "high"
     },
     {
       "row_id": 1658,
-      "omop_concept_id": "43534045",
-      "omop_concept_name": "MCM6 gene c.-13910C>T and -13915T>G [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "is_panel": false
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs `lakt-d` in `TEST_NAME` and `LongName` specify a DNA test for lactose intolerance, which is a test of the LCT gene ; in Blood bcs `B-` prefix. The `[Type]` property is appropriate for a genotype result.",
+      "certainty": "high"
     },
     {
       "row_id": 1659,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The meaning of `ldlre-4` is unclear, although `ldlre` may refer to the LDLR gene. The `-4` suffix is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 1660,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The meaning of `ldlre-4` is unclear, although `ldlre` may refer to the LDLR gene. The `-4` suffix is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 1661,
-      "omop_concept_id": "42870546",
-      "omop_concept_name": "LDLR gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "40759280",
+      "omop_concept_name": "LDLR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "LDLR gene mutations found bcs `ldlre-d` in `TEST_NAME` and `LongName` 'LDL-reseptorigeenin mutaatio' specify a DNA test for the LDL receptor gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1662,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3049122",
+      "omop_concept_name": "Sequencing methodology panel - Blood or Tissue by Molecular genetics method",
+      "reasoning": "Sequencing methodology panel bcs `ngs-d` in `TEST_NAME` specifies a Next-Generation Sequencing DNA test, which is a method panel rather than a specific analyte panel ; in Blood bcs `B-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1663,
       "omop_concept_id": "3044589",
       "omop_concept_name": "NPHS1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "NPHS1 gene targeted mutation analysis bcs `nphs1-d` in `TEST_NAME` and `LongName` specifying a test for two major mutations indicate a targeted analysis of the NPHS1 gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1664,
       "omop_concept_id": "3039049",
       "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "is_panel": true
+      "reasoning": "Pharmacogenetic DNA analysis panel bcs `pgx-d` in `TEST_NAME` stands for a pharmacogenomics DNA test, which is a panel ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1665,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-sekvy-d` indicates a sequencing (`sekvensointi`) DNA test but does not specify the gene or panel being sequenced, making it too generic to map.",
+      "certainty": ""
     },
     {
       "row_id": 1666,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b-sekvy-d` indicates a sequencing (`sekvensointi`) DNA test but does not specify the gene or panel being sequenced, making it too generic to map.",
+      "certainty": ""
     },
     {
       "row_id": 1667,
-      "omop_concept_id": "1259990",
-      "omop_concept_name": "TP53 gene full mutation analysis in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "3009106",
+      "omop_concept_name": "TP53 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "TP53 gene mutations found bcs `tp53-d` in `TEST_NAME` specifies a DNA test for the TP53 gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1668,
-      "omop_concept_id": "42870298",
-      "omop_concept_name": "TPMT gene c.238G>C+460G>A+719A>G [Identifier] in Blood or Tissue by Molecular genetics method Narrative",
-      "is_panel": false
+      "omop_concept_id": "3042168",
+      "omop_concept_name": "TPMT gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "TPMT gene mutations found bcs `tpmt-d` in `TEST_NAME` specifies a DNA test for the TPMT gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1669,
-      "omop_concept_id": "42870298",
-      "omop_concept_name": "TPMT gene c.238G>C+460G>A+719A>G [Identifier] in Blood or Tissue by Molecular genetics method Narrative",
-      "is_panel": false
+      "omop_concept_id": "3042168",
+      "omop_concept_name": "TPMT gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "TPMT gene mutations found bcs `tpmt-d` in `TEST_NAME` specifies a DNA test for the TPMT gene ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1670,
       "omop_concept_id": "40757581",
       "omop_concept_name": "CYP2C9 and VKORC1 panel - Blood or Tissue by Molecular genetics method",
-      "is_panel": true
+      "reasoning": "CYP2C9 and VKORC1 panel bcs the `LongName` explicitly names these two genes for warfarin (`varfa`) response testing ; in Blood bcs `B-` prefix and `verestä` in `LongName`.",
+      "certainty": "high"
     },
     {
       "row_id": 1671,
       "omop_concept_id": "3034599",
       "omop_concept_name": "Y chromosome deletion [Identifier] in Blood or Tissue Nominal",
-      "is_panel": false
+      "reasoning": "Y chromosome deletion bcs `ykrom-d` in `TEST_NAME` and `LongName` ('Y-kromosomin poikkeavuuksia') indicate a test for Y chromosome abnormalities, typically microdeletions ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1672,
       "omop_concept_id": "3034599",
       "omop_concept_name": "Y chromosome deletion [Identifier] in Blood or Tissue Nominal",
-      "is_panel": false
+      "reasoning": "Y chromosome deletion bcs `ykrom-d` in `TEST_NAME` and `LongName` ('Y-kromosomin poikkeavuuksia') indicate a test for Y chromosome abnormalities, typically microdeletions ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1673,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code is an administrative placeholder for a hospital-specific panel ('sairaalkohtainen ryhmätutkimus') with variable content, as stated in the `LongName`. It does not correspond to a single standard LOINC concept.",
+      "certainty": ""
     },
     {
       "row_id": 1674,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bl-bal-1` and `LongName` 'solututkimus' (cell study) refer to a cell count and differential panel on BAL fluid. No candidate for this specific panel was available in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1675,
-      "omop_concept_id": "1616714",
-      "omop_concept_name": "Lymphocyte T-cell and B-cell and Natural killer subsets panel - Lower respiratory specimen by Flow cytometry (FC)",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bl-balfc` indicates a flow cytometry panel on BAL fluid. The candidate list only contains component concepts (e.g., CD3, CD4 counts), not the panel itself.",
+      "certainty": ""
     },
     {
       "row_id": 1676,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte abbreviation `aso` in `TEST_NAME` is not identifiable.",
+      "certainty": ""
     },
     {
       "row_id": 1677,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte abbreviation `aso2` in `TEST_NAME` is not identifiable.",
+      "certainty": ""
     },
     {
       "row_id": 1678,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The analyte abbreviation `aso2` in `TEST_NAME` is not identifiable.",
+      "certainty": ""
     },
     {
       "row_id": 1679,
       "omop_concept_id": "3048879",
       "omop_concept_name": "Bone marrow aspiration report",
-      "is_panel": false
+      "reasoning": "Bone marrow aspiration report bcs `bm-aspir` in `TEST_NAME` refers to a bone marrow aspirate examination, and this concept represents the overall report/procedure.",
+      "certainty": "high"
     },
     {
       "row_id": 1680,
-      "omop_concept_id": "42868452",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) e1a2 fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-bcr-qr` specifies a quantitative ratio of the BCR-ABL1 fusion transcript in bone marrow. No suitable candidate for a general (non-log, non-transcript-specific) ratio in bone marrow was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1681,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-blapcr` likely refers to B-lymphocyte clonality analysis by PCR in bone marrow. No suitable candidate for general B-cell (e.g., IGH) gene rearrangement by molecular genetics method was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1682,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name component `bpvalm` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 1683,
-      "omop_concept_id": "3029715",
-      "omop_concept_name": "Chromosome analysis.interphase [Interpretation] in Bone marrow by FISH Narrative",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-fish` indicates a FISH analysis on bone marrow but does not specify the target panel (e.g., for myeloma, AML), making it too generic to map to a specific LOINC concept.",
+      "certainty": ""
     },
     {
       "row_id": 1684,
-      "omop_concept_id": "3029715",
-      "omop_concept_name": "Chromosome analysis.interphase [Interpretation] in Bone marrow by FISH Narrative",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-fish` indicates a FISH analysis on bone marrow but does not specify the target panel (e.g., for myeloma, AML), making it too generic to map to a specific LOINC concept.",
+      "certainty": ""
     },
     {
       "row_id": 1685,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bm-fish-mm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1686,
-      "omop_concept_id": "3029715",
-      "omop_concept_name": "Chromosome analysis.interphase [Interpretation] in Bone marrow by FISH Narrative",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-fish2` is ambiguous; the meaning of the '2' suffix is unknown.",
+      "certainty": ""
     },
     {
       "row_id": 1687,
-      "omop_concept_id": "3029715",
-      "omop_concept_name": "Chromosome analysis.interphase [Interpretation] in Bone marrow by FISH Narrative",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-fish2` is ambiguous; the meaning of the '2' suffix is unknown.",
+      "certainty": ""
     },
     {
       "row_id": 1688,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bm-fishhem` specifies a FISH panel for hematologic disorders in bone marrow, but does not specify the disease context (e.g., AML, MDS, MM), making it too generic to map to a specific panel concept.",
+      "certainty": ""
     },
     {
       "row_id": 1689,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bm-fishhem` specifies a FISH panel for hematologic disorders in bone marrow, but does not specify the disease context (e.g., AML, MDS, MM), making it too generic to map to a specific panel concept.",
+      "certainty": ""
     },
     {
       "row_id": 1690,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bm-fishmm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1691,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code `bm-fishmm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1692,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name component `fishvar` is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 1693,
       "omop_concept_id": "40757578",
       "omop_concept_name": "FLT3 gene targeted mutation analysis in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "FLT3 gene targeted mutation analysis bcs `flt3-d` in `TEST_NAME` specifies a DNA test for the FLT3 gene, which typically involves a targeted analysis for key mutations (ITD and TKD) ; in Bone marrow bcs `Bm-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1694,
       "omop_concept_id": "40757578",
       "omop_concept_name": "FLT3 gene targeted mutation analysis in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "reasoning": "FLT3 gene targeted mutation analysis bcs `flt3-d` in `TEST_NAME` specifies a DNA test for the FLT3 gene, which typically involves a targeted analysis for key mutations (ITD and TKD) ; in Bone marrow bcs `Bm-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1695,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-fuus-mr` indicates a fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
+      "certainty": ""
     },
     {
       "row_id": 1696,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-fuus-mr` indicates a fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
+      "certainty": ""
     },
     {
       "row_id": 1697,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-fuus-qr` indicates a quantitative fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
+      "certainty": ""
     },
     {
       "row_id": 1698,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-fuus-qr` indicates a quantitative fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
+      "certainty": ""
     },
     {
       "row_id": 1699,
       "omop_concept_id": "3014837",
       "omop_concept_name": "Microscopic observation [Identifier] in Bone marrow by Wright Giemsa stain",
-      "is_panel": false
+      "reasoning": "Microscopic observation bcs this is an examination of a smear ; in Bone marrow bcs `Bm-` prefix ; by Wright Giemsa stain bcs `mgg` (May-Grünwald-Giemsa) is a Romanowsky-type stain functionally equivalent to Wright-Giemsa, and this is a `top2000` concept.",
+      "certainty": "high"
     },
     {
       "row_id": 1700,
-      "omop_concept_id": "3048879",
-      "omop_concept_name": "Bone marrow aspiration report",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-mggfe` and `LongName` 'Bm-Luuydintutkimus, MGG- ja rautavärjäys' specify a panel including MGG and Iron (Fe) staining of bone marrow. No single LOINC concept for this panel was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1701,
-      "omop_concept_id": "3048879",
-      "omop_concept_name": "Bone marrow aspiration report",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-mggfe` and `LongName` 'Bm-Luuydintutkimus, MGG- ja rautavärjäys' specify a panel including MGG and Iron (Fe) staining of bone marrow. No single LOINC concept for this panel was found in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1702,
       "omop_concept_id": "37020002",
       "omop_concept_name": "Multiple myeloma minimal residual disease panel - Bone marrow by Flow cytometry (FC)",
-      "is_panel": true
+      "reasoning": "Multiple myeloma minimal residual disease panel bcs `mm-ift` in `TEST_NAME` indicates an immunophenotyping panel for Multiple Myeloma, and MRD detection is a primary use for this ; in Bone marrow bcs `Bm-` prefix ; by Flow cytometry (FC) bcs immunophenotyping (`ift`) is performed by FC.",
+      "certainty": "medium"
     },
     {
       "row_id": 1703,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "40763629",
+      "omop_concept_name": "HC gene rearrangements [Presence] in Bone marrow by Molecular genetics method",
+      "reasoning": "HC gene rearrangements [Presence] bcs `mmpcr` in `TEST_NAME` indicates a PCR test for Multiple Myeloma clonality, which targets Immunoglobulin Heavy Chain (HC/IGH) gene rearrangements ; in Bone marrow bcs `Bm-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1704,
-      "omop_concept_id": "3014837",
-      "omop_concept_name": "Microscopic observation [Identifier] in Bone marrow by Wright Giemsa stain",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name component `morflkl` is ambiguous, though `morf` likely means morphology.",
+      "certainty": ""
     },
     {
       "row_id": 1705,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-mrd-all` specifies a minimal residual disease panel for ALL in bone marrow, but does not distinguish between B-cell ALL and T-cell ALL, and no generic ALL MRD panel is available in the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 1706,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-mrd-vs` indicates an MRD panel by flow cytometry (`vs` for `virtaussytometria`) but does not specify the disease (e.g., ALL, AML, MM), making it too generic to map.",
+      "certainty": ""
     },
     {
       "row_id": 1707,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `bm-mrdmut` indicates a mutation-based MRD test but does not specify the gene or mutation, making it too generic to map.",
+      "certainty": ""
     },
     {
       "row_id": 1708,
-      "omop_concept_id": "43054969",
-      "omop_concept_name": "NPM1 gene c.956dupTCTG transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-npm1-qd` specifies a quantitative (`q`) test for NPM1 mutations in bone marrow. The available candidate `44816925` is nominal/qualitative, and the other quantitative candidates are for specific transcript variants, so no suitable general quantitative concept is available.",
+      "certainty": ""
     },
     {
       "row_id": 1709,
-      "omop_concept_id": "43054969",
-      "omop_concept_name": "NPM1 gene c.956dupTCTG transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `bm-npm1-qd` specifies a quantitative (`q`) test for NPM1 mutations in bone marrow. The available candidate `44816925` is nominal/qualitative, and the other quantitative candidates are for specific transcript variants, so no suitable general quantitative concept is available.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted almost entirely of molecular genetics and cytogenetics tests. Many were standard pharmacogenomic or hematologic oncology tests that were readily mappable thanks to `LongName` descriptions and informative abbreviations (e.g., `B-LAKT-D`, `B-FV-D`, `B-JAK2-D`, `B-BCR-QR`).\n\nThe candidate list was generally very good. However, a crucial concept for Prothrombin (Factor II) gene analysis (`B-FII-D`, rows 1638-1639) was missing, preventing a mapping for this common thrombophilia test. Similarly, several requests for FISH panels (`B-FISHHEM`, `BM-FISH-MM`) were for panels more generic than the specific disease panels available in the candidate list, leading to no mapping.\n\nA few codes were too cryptic to map (e.g., `-ctr-d`, `b-auria10`, `b-blapcr`). For quantitative MRD tests (`bm-aso-qd`, `bm-mrdmut`), the specific LOINC concepts for quantitative PCR-based monitoring of clone-specific markers were not present, though the guess was accurate. I mapped what I could to the most specific available concepts, leveraging `top2000` status and existing Finnish usage data (`n_events`) as strong indicators (e.g., for `B-LAKT-D` and `B-TPMT-D`)."
+  "reflection": "This group was dominated by molecular genetics and cytogenetics tests. Mapping was successful for codes where the gene name was clear (e.g., `b-jak2-d`, `b-apoe-d`, `b-fv-d`) and a corresponding LOINC concept was available. \n\nSeveral challenges arose:\n1.  **Ambiguous/Generic Codes**: Many codes were unmappable because they were too generic (e.g., `-fishhyb`, `b-fuus-mr`, `bm-mrd-vs`). These codes specify a method or a broad category without naming the specific analyte or panel, making a precise mapping impossible.\n2.  **Missing Candidates**: Some clearly identifiable tests could not be mapped because the correct LOINC concept was absent from the candidate list. This happened for `b-atrytyd` (Alpha-1-antitrypsin genotyping), `b-fii-d` (Prothrombin gene mutation), and several panels like `bm-mggfe` (MGG + Iron stain) and `bl-bal-1` (BAL cell differential). This suggests the initial search query, while good, could not retrieve all necessary concepts.\n3.  **Panel Ambiguity**: Codes for panels were difficult. For example, `bm-fishhem` (hematologic FISH) could refer to multiple different panels (AML, MDS, etc.), and no general \"hematologic FISH panel\" concept was available to match the code's level of abstraction.\n4.  **Local/Administrative Codes**: Some codes like `-ctr-d` (control) and `b-finngen` (FinnGen project) are clearly not standard clinical tests and are correctly left unmapped."
 }

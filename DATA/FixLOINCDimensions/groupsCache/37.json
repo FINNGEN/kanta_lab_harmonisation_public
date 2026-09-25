@@ -4,704 +4,821 @@
       "row_id": 222,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code describes a pathology preparation procedure (histological cell block from a cytology sample). The candidate list does not contain a suitable concept for this procedure; available concepts are for reporting findings, not sample preparation.",
+      "certainty": ""
     },
     {
       "row_id": 223,
       "omop_concept_id": "40764133",
       "omop_concept_name": "Human papilloma virus 16 DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human papilloma virus 16 bcs TEST_NAME 'humanpapillomavirusgenotyyppi16' ; DNA [Presence] bcs TEST_NAME 'genotyyppi' implies a qualitative DNA test ; in Specimen bcs the code does not specify a more precise specimen type ; by NAA with probe detection bcs this is the standard method for HPV genotyping.",
+      "certainty": "high"
     },
     {
       "row_id": 224,
       "omop_concept_id": "40764134",
       "omop_concept_name": "Human papilloma virus 18 DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human papilloma virus 18 bcs TEST_NAME 'humanpapillomavirusgenotyyppi18' ; DNA [Presence] bcs TEST_NAME 'genotyyppi' implies a qualitative DNA test ; in Specimen bcs the code does not specify a more precise specimen type ; by NAA with probe detection bcs this is the standard method for HPV genotyping.",
+      "certainty": "high"
     },
     {
       "row_id": 225,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3029511",
+      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Human papilloma virus DNA bcs TEST_NAME 'humanpapillomavirus' ; [Presence] bcs TEST_NAME 'muupatogeeninenhpv' (other pathogenic HPV) indicates a qualitative result, likely from a panel ; in Specimen bcs not specified otherwise. This is the best available generic concept for HPV DNA, as there is no specific concept for 'other pathogenic types'.",
+      "certainty": "medium"
     },
     {
       "row_id": 226,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative/billing code ('lisämaksu' = surcharge for an urgent sample) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 227,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative code ('lisätutkimuspyyntö' = add-on test request) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 228,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative/billing code ('lisävastaus' = additional result) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 229,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative/billing code ('lisävastaus' = additional result) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 230,
       "omop_concept_id": "21491103",
       "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
-      "is_panel": false
+      "reasoning": "Multiple drug resistant gram negative organism bcs TEST_NAME 'moniresistentit gram-negatiiviset sauvat' ; [Identifier] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Culture bcs TEST_NAME includes 'viljely'.",
+      "certainty": "high"
     },
     {
       "row_id": 231,
       "omop_concept_id": "21491103",
       "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
-      "is_panel": false
+      "reasoning": "Multiple drug resistant gram negative organism bcs TEST_NAME 'moniresistentit gramnegatiivisetsauvat' ; [Identifier] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Culture bcs TEST_NAME includes 'viljely'.",
+      "certainty": "high"
     },
     {
       "row_id": 232,
-      "omop_concept_id": "21491103",
-      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code specifies 'resistentit' (resistant) gram-negative rods, which is less specific than 'moniresistentit' (multidrug-resistant). The candidate list lacks a general concept for 'resistant' organisms without specifying the resistance pattern or drug, so no suitable mapping is available.",
+      "certainty": ""
     },
     {
       "row_id": 233,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "is_panel": false
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs TEST_NAME 'staphylococcusaureus, metilliiniresist' (MRSA) ; [Presence] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Organism specific culture bcs TEST_NAME includes 'viljely' (culture) and targets a specific organism.",
+      "certainty": "high"
     },
     {
       "row_id": 234,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "is_panel": false
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs TEST_NAME 'staphylococcusaureus, metisilliiniresistentti' (MRSA) ; [Presence] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Organism specific culture bcs TEST_NAME includes 'v' (viljely, culture) and targets a specific organism.",
+      "certainty": "high"
     },
     {
       "row_id": 235,
-      "omop_concept_id": "43055143",
-      "omop_concept_name": "Glucose [Moles/volume] in Blood by Automated test strip",
-      "is_panel": false
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME 'b-glukoosi' ; [Moles/volume] bcs deciles [5.55...14.28] are consistent with mmol/L ; in Blood bcs TEST_NAME has prefix 'b-' and 'kokoveri' (whole blood). While this is a POC test ('vieritesti'), this concept accurately reflects the analyte and specimen.",
+      "certainty": "high"
     },
     {
       "row_id": 236,
-      "omop_concept_id": "40765089",
-      "omop_concept_name": "Chromosome analysis panel - Blood by G-banded",
-      "is_panel": true
+      "omop_concept_id": "3025939",
+      "omop_concept_name": "Karyotype [Identifier] in Blood or Tissue Nominal",
+      "reasoning": "Karyotype bcs TEST_NAME 'peruskaryotyypinmääritys' (basic karyotype determination) ; [Identifier]/Nominal bcs karyotype is a nominal finding ; in Blood bcs TEST_NAME has prefix 'b-'. The context 'hematologisenpotilaan' (for hematology patient) supports this choice.",
+      "certainty": "high"
     },
     {
       "row_id": 237,
       "omop_concept_id": "40762887",
       "omop_concept_name": "Creatinine [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Creatinine bcs TEST_NAME 'b-kreatiniini' ; [Moles/volume] bcs deciles [58.29...170] are consistent with µmol/L ; in Blood bcs TEST_NAME has prefix 'b-' and 'veri' (blood).",
+      "certainty": "high"
     },
     {
       "row_id": 238,
       "omop_concept_id": "3031040",
       "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "reasoning": "Bacteria bcs TEST_NAME 'bakteerit' ; [#/volume] bcs this is a particle count ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated count bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 239,
-      "omop_concept_id": "40757357",
-      "omop_concept_name": "Lymphoma panel - Specimen by Flow cytometry (FC)",
-      "is_panel": true
+      "omop_concept_id": "3966204",
+      "omop_concept_name": "Leukemia and lymphoma immunophenotyping in Specimen Document by Flow cytometry (FC)",
+      "reasoning": "Leukemia and lymphoma immunophenotyping panel bcs TEST_NAME 'pahanlaatuisenveritaudinimmunofenotyypitys' (immunophenotyping of malignant blood disease) ; in Specimen bcs this is the best available candidate, although the local code specifies 'BM-' (Bone Marrow).",
+      "certainty": "medium"
     },
     {
       "row_id": 240,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code is for a generic minimal residual disease (MRD) analysis for 'malignant blood disease' ('pahanlaatuisenveritaudin...jäännöstautianalyysi'). All available candidate concepts are for MRD in specific diseases (MM, B-ALL, CLL, AML) and are therefore too specific.",
+      "certainty": ""
     },
     {
       "row_id": 241,
       "omop_concept_id": "3006184",
       "omop_concept_name": "Hemoglobin [Mass/volume] in Capillary blood",
-      "is_panel": false
+      "reasoning": "Hemoglobin bcs TEST_NAME 'hemoglobiini' ; [Mass/volume] bcs UNIT 'g/l' and deciles [84.5...146] ; in Capillary blood bcs TEST_NAME has prefix 'cb-'.",
+      "certainty": "high"
     },
     {
       "row_id": 242,
       "omop_concept_id": "3001501",
       "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "is_panel": false
+      "reasoning": "Glucose bcs TEST_NAME 'glukoosi' ; [Moles/volume] bcs UNIT 'mmol/l' and deciles [5.2...16.77] ; in Capillary blood bcs TEST_NAME includes 'ihopistosn' (skin puncture sample), despite the 'cp-' prefix possibly indicating plasma calibration ; by Glucometer bcs TEST_NAME 'vieritestihoitoyksikössä' (POC test in care unit) implies a glucometer.",
+      "certainty": "high"
     },
     {
       "row_id": 243,
       "omop_concept_id": "3001501",
       "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "is_panel": false
+      "reasoning": "Glucose bcs TEST_NAME 'glukoosi' ; [Moles/volume] bcs deciles [5.33...16.96] are consistent with mmol/L ; in Capillary blood bcs TEST_NAME includes 'ihopistosn' (skin puncture sample), despite the 'cp-' prefix possibly indicating plasma calibration ; by Glucometer bcs TEST_NAME 'vieritestihoitoyksikössä' (POC test in care unit) implies a glucometer.",
+      "certainty": "high"
     },
     {
       "row_id": 244,
-      "omop_concept_id": "3051387",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
-      "is_panel": false
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'crp-pitoisuus' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [2.6...106.84] ; in Serum, Plasma or Blood bcs a POC test could use any of these ; by Rapid immunoassay bcs TEST_NAME specifies 'vieritestilaitteella' (with a POC device), which is typically a rapid immunoassay.",
+      "certainty": "high"
     },
     {
       "row_id": 245,
-      "omop_concept_id": "3051387",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
-      "is_panel": false
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'crp-pitoisuus' ; [Mass/volume] bcs this is the standard property for CRP ; in Serum, Plasma or Blood bcs a POC test could use any of these ; by Rapid immunoassay bcs TEST_NAME specifies 'vieritestilaitteella' (with a POC device), which is typically a rapid immunoassay.",
+      "certainty": "high"
     },
     {
       "row_id": 246,
-      "omop_concept_id": "3029080",
-      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes",
-      "is_panel": false
+      "omop_concept_id": "42869451",
+      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes by Automated count",
+      "reasoning": "Hemoglobin in Reticulocytes (Ret-He) bcs TEST_NAME 'retikulosyyttienkeskimääräinenhemoglobiininmäärä' ; [Entitic mass] bcs UNIT 'pg' is mass per cell ; by Automated count bcs this is the standard method for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 247,
-      "omop_concept_id": "3029080",
-      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes",
-      "is_panel": false
+      "omop_concept_id": "42869451",
+      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes by Automated count",
+      "reasoning": "Hemoglobin in Reticulocytes (Ret-He) bcs TEST_NAME 'retikulosyyttienkeskimääräinenhemoglobiininmäärä' ; [Entitic mass] bcs this is the standard property (mass per cell) ; by Automated count bcs this is the standard method for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 248,
       "omop_concept_id": "3002032",
       "omop_concept_name": "Base excess in Venous blood by calculation",
-      "is_panel": false
+      "reasoning": "Base excess bcs TEST_NAME 'emäsylimäärä' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Venous blood bcs TEST_NAME 'laskimoverestä' ; by calculation bcs base excess is always a calculated value from a blood gas analysis.",
+      "certainty": "high"
     },
     {
       "row_id": 249,
       "omop_concept_id": "3002032",
       "omop_concept_name": "Base excess in Venous blood by calculation",
-      "is_panel": false
+      "reasoning": "Base excess bcs TEST_NAME 'emäsylimäärä' ; [Moles/volume] bcs this is the standard property ; in Venous blood bcs TEST_NAME 'laskimoverestä' ; by calculation bcs base excess is always a calculated value from a blood gas analysis.",
+      "certainty": "high"
     },
     {
       "row_id": 250,
       "omop_concept_id": "36303442",
       "omop_concept_name": "Epithelial cells [#/volume] in Urine by Automated",
-      "is_panel": false
+      "reasoning": "Epithelial cells bcs TEST_NAME 'epiteelisolut' ; [#/volume] bcs UNIT 'e6/l' ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 251,
       "omop_concept_id": "36303442",
       "omop_concept_name": "Epithelial cells [#/volume] in Urine by Automated",
-      "is_panel": false
+      "reasoning": "Epithelial cells bcs TEST_NAME 'epiteelisolut' ; [#/volume] bcs this is the standard property ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 252,
       "omop_concept_id": "3043849",
       "omop_concept_name": "Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Epstein Barr virus DNA bcs TEST_NAME 'epstein-barrvirus(ebv),nhk' (nukleiinihappo=nucleic acid) ; [Units/volume] bcs UNIT 'iu/ml' and TEST_NAME 'kvantitatiivinen' ; in Plasma bcs TEST_NAME 'plasmasta', covered by 'Serum or Plasma' ; by NAA with probe detection bcs this is the standard method for quantitative viral load.",
+      "certainty": "high"
     },
     {
       "row_id": 253,
-      "omop_concept_id": "648782",
-      "omop_concept_name": "Epstein Barr virus DNA [Presence] in Serum or Plasma by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3043849",
+      "omop_concept_name": "Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection",
+      "reasoning": "Epstein Barr virus DNA bcs TEST_NAME 'epstein-barrvirus(ebv),nhk' (nukleiinihappo=nucleic acid) ; [Units/volume] bcs TEST_NAME 'kvantitatiivinen' implies a quantitative measure, and this is a common property ; in Plasma bcs TEST_NAME 'plasmasta', covered by 'Serum or Plasma' ; by NAA with probe detection bcs this is the standard method for quantitative viral load.",
+      "certainty": "high"
     },
     {
       "row_id": 254,
       "omop_concept_id": "3002864",
       "omop_concept_name": "Erythrocytes [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs TEST_NAME 'erytrosyytit' ; [#/volume] bcs UNIT 'e6/l' ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated count bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 255,
       "omop_concept_id": "3002864",
       "omop_concept_name": "Erythrocytes [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs TEST_NAME 'erytrosyytit' ; [#/volume] bcs this is the standard property ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated count bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 256,
       "omop_concept_id": "3041449",
       "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Collagen crosslinked C-telopeptide (CTX) bcs TEST_NAME 'kollageenii:nbeta-karboksiterminaalinentelopeptidi' ; [Mass/volume] bcs UNIT 'ug/l' and deciles [0.08...0.63] ; in Serum or Plasma bcs TEST_NAME has prefix 'fp-' (fasting plasma), which is covered.",
+      "certainty": "high"
     },
     {
       "row_id": 257,
       "omop_concept_id": "3009343",
       "omop_concept_name": "pH of Capillary blood",
-      "is_panel": false
+      "reasoning": "pH bcs TEST_NAME 'happamusaste' (acidity level) ; in Capillary blood bcs TEST_NAME 'kapillaariverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 258,
       "omop_concept_id": "3012544",
       "omop_concept_name": "pH of Venous blood",
-      "is_panel": false
+      "reasoning": "pH bcs TEST_NAME 'happamuusaste' (acidity level) ; in Venous blood bcs TEST_NAME 'laskimoverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 259,
       "omop_concept_id": "3028626",
       "omop_concept_name": "Oxygen [Partial pressure] in Capillary blood",
-      "is_panel": false
+      "reasoning": "Oxygen bcs TEST_NAME 'happi' ; [Partial pressure] bcs TEST_NAME 'osapaine' and UNIT 'kpa' ; in Capillary blood bcs TEST_NAME 'kapillaariverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 260,
       "omop_concept_id": "3000991",
       "omop_concept_name": "Gas panel - Venous blood",
-      "is_panel": true
+      "reasoning": "Gas panel bcs TEST_NAME 'happoemästasejahappi' (acid-base balance and oxygen) ; in Venous blood bcs TEST_NAME 'laskimoverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 261,
       "omop_concept_id": "3021125",
       "omop_concept_name": "Hepatitis C virus RNA [Presence] in Serum or Plasma by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Hepatitis C virus RNA bcs TEST_NAME 'hepatiittic-virus,nh' (nucleic acid) ; [Presence] bcs this is a qualitative detection test ; in Serum or Plasma bcs TEST_NAME 'plasmasta', covered by S/P ; by NAA with probe detection bcs this is the standard method for RNA detection.",
+      "certainty": "high"
     },
     {
       "row_id": 262,
       "omop_concept_id": "3021447",
       "omop_concept_name": "Carbon dioxide [Partial pressure] in Venous blood",
-      "is_panel": false
+      "reasoning": "Carbon dioxide bcs TEST_NAME 'hiilidioksidi' ; [Partial pressure] bcs TEST_NAME 'osapaine' and UNIT 'kpa' ; in Venous blood bcs TEST_NAME 'laskimoverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 263,
       "omop_concept_id": "3021447",
       "omop_concept_name": "Carbon dioxide [Partial pressure] in Venous blood",
-      "is_panel": false
+      "reasoning": "Carbon dioxide bcs TEST_NAME 'hiilidioksidi' ; [Partial pressure] bcs TEST_NAME 'osapaine' ; in Venous blood bcs TEST_NAME 'laskimoverestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 264,
-      "omop_concept_id": "42528601",
-      "omop_concept_name": "Human papilloma virus 16 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an internal, administrative code for result routing from a specific analyzer ('apututkimustulostensiirtoon' = helper test for result transfer). It does not represent a patient observation.",
+      "certainty": ""
     },
     {
       "row_id": 265,
-      "omop_concept_id": "46235476",
-      "omop_concept_name": "Human papilloma virus 18+45 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an internal, administrative code for result routing from a specific analyzer ('apututkimustulostensiirtoon' = helper test for result transfer). It does not represent a patient observation.",
+      "certainty": ""
     },
     {
       "row_id": 266,
-      "omop_concept_id": "40771527",
-      "omop_concept_name": "Human papilloma virus E6+E7 mRNA [Presence] in Cervix by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an internal, administrative code for result routing from a specific analyzer ('apututkimustulostensiirtoon' = helper test for result transfer). It does not represent a patient observation.",
+      "certainty": ""
     },
     {
       "row_id": 267,
       "omop_concept_id": "40760007",
       "omop_concept_name": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay",
-      "is_panel": false
+      "reasoning": "HIV 1+2 Ab+HIV1 p24 Ag bcs TEST_NAME 'humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd' (HIV antigen and antibodies, combination) ; [Presence] bcs this is a screening test ; in Serum or Plasma bcs this is the standard specimen ; by Immunoassay bcs this is the standard method for combo screens.",
+      "certainty": "high"
     },
     {
       "row_id": 268,
       "omop_concept_id": "40760007",
       "omop_concept_name": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay",
-      "is_panel": false
+      "reasoning": "HIV 1+2 Ab+HIV1 p24 Ag bcs TEST_NAME 'humanimmunodeficiencyvirus,antigeenijavasta-aineet,yhd' (HIV antigen and antibodies, combination) ; [Presence] bcs this is a screening test ; in Serum or Plasma bcs this is the standard specimen ; by Immunoassay bcs this is the standard method for combo screens.",
+      "certainty": "high"
     },
     {
       "row_id": 269,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code describes a broad confirmation panel for drugs ('laaja, varmistus'). The candidate list lacks a generic drug confirmation panel. Available concepts are for screening or specific drug classes.",
+      "certainty": ""
     },
     {
       "row_id": 270,
       "omop_concept_id": "42870589",
       "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "is_panel": true
+      "reasoning": "Drugs of abuse panel bcs TEST_NAME 'huumeseulonta' (drug screen) ; in Urine bcs TEST_NAME 'virtsasta' ; by Screen method bcs this is explicitly a screening test.",
+      "certainty": "high"
     },
     {
       "row_id": 271,
       "omop_concept_id": "3005456",
       "omop_concept_name": "Potassium [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Potassium bcs TEST_NAME 'kalium' ; [Moles/volume] bcs UNIT 'mmol/l' and deciles [3.34...4.6] ; in Blood bcs TEST_NAME 'veri'.",
+      "certainty": "high"
     },
     {
       "row_id": 272,
       "omop_concept_id": "3005456",
       "omop_concept_name": "Potassium [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Potassium bcs TEST_NAME 'kalium' ; [Moles/volume] bcs deciles [3.4...5] are consistent with mmol/L ; in Blood bcs TEST_NAME 'veri'.",
+      "certainty": "high"
     },
     {
       "row_id": 273,
       "omop_concept_id": "40762887",
       "omop_concept_name": "Creatinine [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Creatinine bcs TEST_NAME 'kreatiniini' ; [Moles/volume] bcs deciles [61.44...146.53] are consistent with µmol/L ; in Blood bcs TEST_NAME 'veri'.",
+      "certainty": "high"
     },
     {
       "row_id": 274,
       "omop_concept_id": "3009508",
       "omop_concept_name": "Creatinine [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Creatinine bcs TEST_NAME 'kreatiniini' ; [Moles/volume] bcs UNIT 'mmol/l' and deciles [2.21...17.82] ; in Urine bcs TEST_NAME 'virtsasta'.",
+      "certainty": "high"
     },
     {
       "row_id": 275,
       "omop_concept_id": "3009508",
       "omop_concept_name": "Creatinine [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Creatinine bcs TEST_NAME 'kreatiniini' ; [Moles/volume] bcs this is the standard property ; in Urine bcs TEST_NAME 'virtsasta'.",
+      "certainty": "high"
     },
     {
       "row_id": 276,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code describes a broad confirmation panel for drugs ('laajahuumeseulonta,varmistustasoinen'). The candidate list lacks a generic drug confirmation panel. Available concepts are for screening or specific drug classes.",
+      "certainty": ""
     },
     {
       "row_id": 277,
       "omop_concept_id": "3030467",
       "omop_concept_name": "Casts [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "reasoning": "Casts bcs TEST_NAME 'lieriöt' ; [#/volume] bcs UNIT 'e6/l' ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated count bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 278,
       "omop_concept_id": "3030467",
       "omop_concept_name": "Casts [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "reasoning": "Casts bcs TEST_NAME 'lieriöt' ; [#/volume] bcs this is the standard property ; in Urine bcs TEST_NAME 'virtsasta' ; by Automated count bcs TEST_NAME 'partikkelinlaskijalla' (by particle counter).",
+      "certainty": "high"
     },
     {
       "row_id": 279,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative/billing code ('lisävastaus' = additional result) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 280,
       "omop_concept_id": "42529473",
       "omop_concept_name": "Bone density quantitative measurement by DXA panel",
-      "is_panel": true
+      "reasoning": "Bone density quantitative measurement by DXA panel bcs TEST_NAME 'luuntiheysmittaus,2kohdetta' (bone density measurement, 2 sites) describes a DXA study panel.",
+      "certainty": "high"
     },
     {
       "row_id": 281,
       "omop_concept_id": "3051593",
       "omop_concept_name": "INR in Capillary blood by Coagulation assay",
-      "is_panel": false
+      "reasoning": "INR bcs TEST_NAME 'marevan-hoidonseur.tatesti' indicates warfarin monitoring for which INR is the standard test ; [Ratio] bcs INR is a ratio ; in Capillary blood bcs TEST_NAME 'sormenpäänäyte' (fingertip sample).",
+      "certainty": "high"
     },
     {
       "row_id": 282,
       "omop_concept_id": "21491103",
       "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
-      "is_panel": false
+      "reasoning": "Multiple drug resistant gram negative organism bcs TEST_NAME 'moniresistentit gramnegatiivisetsauvat' ; [Identifier] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Culture bcs TEST_NAME includes 'viljely'.",
+      "certainty": "high"
     },
     {
       "row_id": 283,
       "omop_concept_id": "3000285",
       "omop_concept_name": "Sodium [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Sodium bcs TEST_NAME 'natrium' ; [Moles/volume] bcs UNIT 'mmol/l' and deciles [133.07...142] ; in Blood bcs TEST_NAME 'veri'.",
+      "certainty": "high"
     },
     {
       "row_id": 284,
       "omop_concept_id": "3000285",
       "omop_concept_name": "Sodium [Moles/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Sodium bcs TEST_NAME 'natrium' ; [Moles/volume] bcs deciles [131.17...142] are consistent with mmol/L ; in Blood bcs TEST_NAME 'veri'.",
+      "certainty": "high"
     },
     {
       "row_id": 285,
-      "omop_concept_id": "3029187",
-      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "42529224",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal bcs TEST_NAME 'natriureettinenpeptidi,b-tyypinn-terminaalinenpropeptidi' (NT-proBNP) ; [Mass/volume] bcs UNIT 'ng/l' and deciles ; in Serum or Plasma bcs TEST_NAME specifies 'plasmasta', which is covered ; by Immunoassay bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 286,
-      "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for NK cell proportion ('osuus') with unit '%', indicating a ratio. The candidate concepts, such as 3025271, are for absolute counts ([#/volume]) and not ratios. No suitable candidate for NK cell percentage was found.",
+      "certainty": ""
     },
     {
       "row_id": 287,
       "omop_concept_id": "3026782",
       "omop_concept_name": "Osmolality of Urine",
-      "is_panel": false
+      "reasoning": "Osmolality bcs TEST_NAME 'osmolaliteetti' and UNIT 'mosm/kgh2o' ; of Urine bcs TEST_NAME 'virtsasta'.",
+      "certainty": "high"
     },
     {
       "row_id": 288,
       "omop_concept_id": "3026782",
       "omop_concept_name": "Osmolality of Urine",
-      "is_panel": false
+      "reasoning": "Osmolality bcs TEST_NAME 'osmolaliteetti' ; of Urine bcs TEST_NAME 'virtsasta'.",
+      "certainty": "high"
     },
     {
       "row_id": 289,
       "omop_concept_id": "1469712",
       "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "is_panel": false
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal (NT-proBNP) bcs TEST_NAME 'p-natriureett.peptidin-termin.propept' ; [Mass/volume] bcs UNIT 'ng/l' ; in Serum, Plasma or Blood bcs a POC test could use any of these, and P- is plasma ; by Rapid immunoassay bcs TEST_NAME 'vieritl' (vieritesti, POC test) implies a rapid method.",
+      "certainty": "high"
     },
     {
       "row_id": 290,
       "omop_concept_id": "1469712",
       "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "is_panel": false
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal (NT-proBNP) bcs TEST_NAME 'p-natriureett.peptidin-termin.propept' ; [Mass/volume] bcs this is the standard property ; in Serum, Plasma or Blood bcs a POC test could use any of these, and P- is plasma ; by Rapid immunoassay bcs TEST_NAME 'vieritl' (vieritesti, POC test) implies a rapid method.",
+      "certainty": "high"
     },
     {
       "row_id": 291,
-      "omop_concept_id": "3029187",
-      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "42529224",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal bcs TEST_NAME 'p-natriureettinenpeptidi,b-tyypinn-terminaalin' (NT-proBNP) ; [Mass/volume] bcs UNIT 'ng/l' and deciles ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (plasma), which is covered ; by Immunoassay bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 292,
-      "omop_concept_id": "3029187",
-      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "42529224",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal bcs TEST_NAME 'p-natriureettinenpeptidi,b-tyypinn-terminaalin' (NT-proBNP) ; [Mass/volume] bcs this is the standard property ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (plasma), which is covered ; by Immunoassay bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 293,
-      "omop_concept_id": "3029187",
-      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "42529224",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal bcs TEST_NAME 'p-natriureettinenpeptidi,b-tyypn-term.propeptidi' (NT-proBNP) ; [Mass/volume] bcs UNIT 'ng/l' and deciles ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (plasma), which is covered ; by Immunoassay bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 294,
-      "omop_concept_id": "3029187",
-      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "42529224",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Natriuretic peptide.B prohormone N-Terminal bcs TEST_NAME 'p-natriureettinenpeptidi,b-tyypn-term.propeptidi' (NT-proBNP) ; [Mass/volume] bcs this is the standard property ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (plasma), which is covered ; by Immunoassay bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 295,
       "omop_concept_id": "3003327",
       "omop_concept_name": "Ova and parasites identified in Stool by Light microscopy",
-      "is_panel": false
+      "reasoning": "Ova and parasites bcs TEST_NAME 'parasiitit...alkueläintenkystat,madot,madonmunat,toukat' (parasites...cysts, worms, eggs, larvae) ; identified in Stool bcs TEST_NAME 'ulosteesta' ; by Light microscopy bcs this is the general method for an O&P exam.",
+      "certainty": "high"
     },
     {
       "row_id": 296,
-      "omop_concept_id": "40768804",
-      "omop_concept_name": "Tissue Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3039150",
+      "omop_concept_name": "Biopsy [Interpretation] in Specimen Narrative",
+      "reasoning": "Biopsy bcs TEST_NAME 'pienikudoskoepala' (small tissue biopsy) ; [Interpretation] in Specimen bcs this concept represents the pathologist's report on a biopsy specimen. The number of samples is a billing/workload detail.",
+      "certainty": "high"
     },
     {
       "row_id": 297,
       "omop_concept_id": "36031861",
       "omop_concept_name": "Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection",
-      "is_panel": true
+      "reasoning": "Influenza A/B + RSV + SARS-CoV-2 panel bcs TEST_NAME 'inabnhp,rsvnhp,cv19nhp,yhdistelmävierit.' ; RNA panel bcs TEST_NAME includes 'nhp' (nucleic acid test) ; in Respiratory specimen bcs this is the standard specimen for this panel ; by NAA with probe detection bcs this is the method implied by 'nhp'.",
+      "certainty": "high"
     },
     {
       "row_id": 298,
       "omop_concept_id": "3008905",
       "omop_concept_name": "Diffusion capacity.carbon monoxide",
-      "is_panel": false
+      "reasoning": "Diffusion capacity.carbon monoxide (DLCO) bcs TEST_NAME 'pt-diffuusiokapasiteetti' ; using single-breath method is standard and implied by this concept.",
+      "certainty": "high"
     },
     {
       "row_id": 299,
-      "omop_concept_id": "46235180",
-      "omop_concept_name": "Neurology study",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for a report ('lausunto') from a neurophysiology study, not a measurement itself.",
+      "certainty": ""
     },
     {
       "row_id": 300,
       "omop_concept_id": "42529473",
       "omop_concept_name": "Bone density quantitative measurement by DXA panel",
-      "is_panel": true
+      "reasoning": "Bone density quantitative measurement by DXA panel bcs TEST_NAME 'luuntiheysmittaus,2kohdetta' (bone density measurement, 2 sites) describes a DXA study panel.",
+      "certainty": "high"
     },
     {
       "row_id": 301,
-      "omop_concept_id": "3009203",
-      "omop_concept_name": "Cardiac echo study Procedure",
-      "is_panel": true
+      "omop_concept_id": "3044933",
+      "omop_concept_name": "Cardiac 2D echo panel",
+      "reasoning": "Cardiac 2D echo panel bcs TEST_NAME 'sydämenkattavarakenteellinenjatoiminnallinenuä' (comprehensive structural and functional ultrasound of the heart) describes a comprehensive echocardiogram.",
+      "certainty": "high"
     },
     {
       "row_id": 302,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code is for monitoring the diurnal variation of peak expiratory flow ('uloshengityksenhuippuvirtaus,vuorokausivaihtelunseuranta'). The candidate list contains concepts for single PEF measurements but not for diurnal variation analysis.",
+      "certainty": ""
     },
     {
       "row_id": 303,
-      "omop_concept_id": "1002224",
-      "omop_concept_name": "Polysomnography panel",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code describes a 'hyvin suppea' (very limited) ambulatory home sleep study ('yöpolygrafia'). The candidate list does not contain a suitable generic concept for a limited home sleep apnea test (HSAT).",
+      "certainty": ""
     },
     {
       "row_id": 304,
-      "omop_concept_id": "1002224",
-      "omop_concept_name": "Polysomnography panel",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code describes an ambulatory home sleep study ('yöpolygrafia') with leg movement recording. The candidate list does not contain a suitable generic concept for a home sleep study panel.",
+      "certainty": ""
     },
     {
       "row_id": 305,
-      "omop_concept_id": "1469525",
-      "omop_concept_name": "Bacteria identified in Pus by Culture",
-      "is_panel": false
+      "omop_concept_id": "46234833",
+      "omop_concept_name": "Bacteria identified in Abscess by Anaerobe+Aerobe culture",
+      "reasoning": "Bacteria identified by Anaerobe+Aerobe culture bcs TEST_NAME 'aerobinenjaanaerobinenbakteerityypitys' ; in Abscess bcs the specimen is 'Pu-' (Pus), which is collected from an abscess.",
+      "certainty": "high"
     },
     {
       "row_id": 306,
-      "omop_concept_id": "21491103",
-      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code specifies 'resistentit' (resistant) gram-negative rods, which is less specific than 'moniresistentit' (multidrug-resistant). The candidate list lacks a general concept for 'resistant' organisms without specifying the resistance pattern or drug, so no suitable mapping is available.",
+      "certainty": ""
     },
     {
       "row_id": 307,
-      "omop_concept_id": "3029080",
-      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes",
-      "is_panel": false
+      "omop_concept_id": "42869451",
+      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes by Automated count",
+      "reasoning": "Hemoglobin in Reticulocytes (Ret-He) bcs TEST_NAME 'retikulosyyttienkeskimääräinenhemoglobiininmäärä' ; [Entitic mass] bcs UNIT 'pg' is mass per cell ; by Automated count bcs this is the standard method for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 308,
-      "omop_concept_id": "3029080",
-      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes",
-      "is_panel": false
+      "omop_concept_id": "42869451",
+      "omop_concept_name": "Hemoglobin [Entitic mass] in Reticulocytes by Automated count",
+      "reasoning": "Hemoglobin in Reticulocytes (Ret-He) bcs TEST_NAME 'retikulosyyttienkeskimääräinenhemoglobiininmäärä' ; [Entitic mass] bcs this is the standard property (mass per cell) ; by Automated count bcs this is the standard method for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 309,
       "omop_concept_id": "40760007",
       "omop_concept_name": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay",
-      "is_panel": false
+      "reasoning": "HIV 1+2 Ab+HIV1 p24 Ag bcs TEST_NAME 'humanimmunodeficiencyvirus,antigeenijavast' (HIV antigen and antibodies) ; [Presence] bcs this is a screening test ; in Serum or Plasma bcs TEST_NAME has prefix 's-' (Serum), which is covered ; by Immunoassay bcs this is the standard method for combo screens.",
+      "certainty": "high"
     },
     {
       "row_id": 310,
-      "omop_concept_id": "46236732",
-      "omop_concept_name": "Noninvasive prenatal fetal 13 and 18 and 21 aneuploidy panel - Plasma cell-free DNA by Sequencing",
-      "is_panel": true
+      "omop_concept_id": "43533989",
+      "omop_concept_name": "Noninvasive prenatal fetal aneuploidy panel - Plasma cell-free DNA",
+      "reasoning": "Noninvasive prenatal fetal aneuploidy panel bcs TEST_NAME 'sikiöperäisendna:ntutkimusäidinverinäytteestä' (study of fetal DNA from mother's blood sample) ; based on cell-free DNA from Plasma bcs this is the standard methodology for NIPT/NIPS.",
+      "certainty": "high"
     },
     {
       "row_id": 311,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "is_panel": false
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs TEST_NAME 'staphylococcusaureus,metisilliiniresistenssi' (MRSA) ; [Presence] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Organism specific culture bcs TEST_NAME includes 'viljely' (culture) and targets a specific organism.",
+      "certainty": "high"
     },
     {
       "row_id": 312,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "is_panel": false
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs TEST_NAME 'staphylococcusaureus,metisilliiniresistentti(mrsa)' ; [Presence] bcs this is a qualitative culture result ; in Specimen bcs not specified ; by Organism specific culture bcs TEST_NAME includes 'viljely' (culture) and targets a specific organism.",
+      "certainty": "high"
     },
     {
       "row_id": 313,
-      "omop_concept_id": "3014037",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/100 cells in Blood",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for T-helper cell proportion ('osuus') with unit '%', indicating a ratio (CD4%). The candidate concepts, such as 3028167, are for absolute counts ([#/volume]) and not ratios. No suitable candidate for CD4 percentage was found.",
+      "certainty": ""
     },
     {
       "row_id": 314,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "is_panel": false
+      "omop_concept_id": "3007449",
+      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells/cells in Blood",
+      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME 't-estäjäsolujen...cd3+cd8+soluina' ; /cells [# Ratio] bcs TEST_NAME 'osuus' and UNIT '%' indicate a percentage of a parent population, which LOINC represents with property 'Cells' ; in Blood bcs this is the standard specimen.",
+      "certainty": "high"
     },
     {
       "row_id": 315,
-      "omop_concept_id": "1469858",
+      "omop_concept_id": "1469828",
       "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "is_panel": false
+      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'troponiini-t' ; [Mass/volume] bcs TEST_NAME 'pit.' (pitoisuus=concentration) and UNIT 'ng/l' ; in Serum, Plasma or Blood bcs a POC test could use any of these ; by Rapid immunoassay bcs TEST_NAME 'vieritestilaitteella' (by POC device) implies a rapid method.",
+      "certainty": "high"
     },
     {
       "row_id": 316,
-      "omop_concept_id": "1469858",
+      "omop_concept_id": "1469828",
       "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "is_panel": false
+      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'troponiini-t' ; [Mass/volume] bcs TEST_NAME 'pit.' (pitoisuus=concentration) ; in Serum, Plasma or Blood bcs a POC test could use any of these ; by Rapid immunoassay bcs TEST_NAME 'vieritestilaitteella' (by POC device) implies a rapid method.",
+      "certainty": "high"
     },
     {
       "row_id": 317,
-      "omop_concept_id": "40768804",
-      "omop_concept_name": "Tissue Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3039150",
+      "omop_concept_name": "Biopsy [Interpretation] in Specimen Narrative",
+      "reasoning": "Biopsy bcs TEST_NAME 'ts-histologinentutkimus,1-3kudosnäytettä' (tissue histological study, 1-3 tissue samples) ; [Interpretation] in Specimen bcs this concept represents the pathologist's report on a biopsy specimen. The number of samples is a billing/workload detail.",
+      "certainty": "high"
     },
     {
       "row_id": 318,
-      "omop_concept_id": "40768804",
-      "omop_concept_name": "Tissue Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3039150",
+      "omop_concept_name": "Biopsy [Interpretation] in Specimen Narrative",
+      "reasoning": "Biopsy bcs TEST_NAME 'ts-histologinentutkimus,1-3näytettä' (tissue histological study, 1-3 samples) ; [Interpretation] in Specimen bcs this concept represents the pathologist's report on a biopsy specimen. The number of samples is a billing/workload detail.",
+      "certainty": "high"
     },
     {
       "row_id": 319,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code is for a 'Workplace drug screen and confirmation, 4 compounds'. The candidate list does not contain a specific panel for this.",
+      "certainty": ""
     },
     {
       "row_id": 320,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code is for a 'Workplace drug screen and confirmation, 7 compounds'. The candidate list does not contain a specific panel for this.",
+      "certainty": ""
     },
     {
       "row_id": 321,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This is an administrative/billing code ('näytteenotto 0 maksu' = phlebotomy 0 charge) and does not represent a laboratory observation.",
+      "certainty": ""
     },
     {
       "row_id": 322,
       "omop_concept_id": "40760140",
       "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "is_panel": true
+      "reasoning": "CBC W Auto Differential panel bcs TEST_NAME 'täydellinenverenkuva...sis...leukosyyttienerittelylaskennan' (complete blood count including leukocyte differential) ; in Blood bcs this is the required specimen.",
+      "certainty": "high"
     },
     {
       "row_id": 323,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code specifies an enantiomer separation for amphetamine and methamphetamine ('enantiomeerienerittely'). The candidate list does not contain a concept for this specific analysis.",
+      "certainty": ""
     },
     {
       "row_id": 324,
       "omop_concept_id": "3035350",
       "omop_concept_name": "Ketones [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Ketones bcs TEST_NAME 'asetoniaineet' ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 325,
       "omop_concept_id": "3011397",
       "omop_concept_name": "Hemoglobin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Hemoglobin bcs urine dipstick tests for erythrocytes actually detect hemoglobin/myoglobin ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 326,
       "omop_concept_id": "3009261",
       "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Glucose bcs TEST_NAME 'glukoosi' ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 327,
       "omop_concept_id": "3022621",
       "omop_concept_name": "pH of Urine by Test strip",
-      "is_panel": false
+      "reasoning": "pH bcs TEST_NAME 'happamuusaste' (acidity) and deciles [5.5...7] ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 328,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code describes a broad confirmation panel for drugs ('laaja, varmistus'). The candidate list lacks a generic drug confirmation panel. Available concepts are for screening or specific drug classes.",
+      "certainty": ""
     },
     {
       "row_id": 329,
       "omop_concept_id": "42870589",
       "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "is_panel": true
+      "reasoning": "Drugs of abuse panel bcs TEST_NAME 'huume-jalääkeainetutkimus' ; in Urine bcs TEST_NAME has prefix 'u-' ; by Screen method bcs 'semikvantitatiivinen' implies a screening method.",
+      "certainty": "medium"
     },
     {
       "row_id": 330,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": true
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel bcs TEST_NAME 'huumeseulonta,laaja' (broad drug screen) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Screen method bcs this is explicitly a screening test.",
+      "certainty": "high"
     },
     {
       "row_id": 331,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel bcs TEST_NAME 'kemiallinenseulonta' (chemical screen) via 'vieritesti' (POC test) in urine implies a dipstick panel ; in Urine bcs TEST_NAME has prefix 'u-'.",
+      "certainty": "high"
     },
     {
       "row_id": 332,
       "omop_concept_id": "3009508",
       "omop_concept_name": "Creatinine [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Creatinine bcs TEST_NAME 'kreatiniini' ; [Moles/volume] bcs UNIT 'mmol/l' and deciles [2.13...16.61] ; in Urine bcs TEST_NAME has prefix 'u-'.",
+      "certainty": "high"
     },
     {
       "row_id": 333,
       "omop_concept_id": "42870589",
       "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "is_panel": true
+      "reasoning": "Drugs of abuse panel bcs TEST_NAME 'laajahuume-jalääkeainetutkimus' (broad drug/medicine study) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Screen method bcs 'semikvantitatiivinen' implies a screening method.",
+      "certainty": "medium"
     },
     {
       "row_id": 334,
       "omop_concept_id": "3000348",
       "omop_concept_name": "Leukocyte esterase [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Leukocyte esterase bcs this is what a dipstick measures for leukocytes ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 335,
       "omop_concept_id": "3021601",
       "omop_concept_name": "Nitrite [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Nitrite bcs TEST_NAME 'nitriitti' ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 336,
       "omop_concept_id": "3014051",
       "omop_concept_name": "Protein [Presence] in Urine by Test strip",
-      "is_panel": false
+      "reasoning": "Protein bcs TEST_NAME 'proteiini' ; [Presence] bcs TEST_NAME 'kval' (qualitative) ; in Urine bcs TEST_NAME has prefix 'u-' ; by Test strip bcs TEST_NAME 'vieritesti' (POC test) for urine chemistry is a dipstick.",
+      "certainty": "high"
     },
     {
       "row_id": 337,
       "omop_concept_id": "3000991",
       "omop_concept_name": "Gas panel - Venous blood",
-      "is_panel": true
+      "reasoning": "Gas panel bcs TEST_NAME 'verikaasuanalyysi' (blood gas analysis) ; in Venous blood bcs TEST_NAME 'laskimonäytteestä'.",
+      "certainty": "high"
     },
     {
       "row_id": 338,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "The code describes a multiplex nucleic acid test for three Yersinia species (enterocolitica, pseudotuberculosis, pestis). The candidate list does not contain a panel concept for these three targets together.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group was a mix of standard chemistry, hematology, microbiology, and more specialized tests. The point-of-care (POC) tests were generally easy to map, either to a specific POC concept (e.g., 'by Glucometer', 'by Rapid immunoassay') or to a general concept if a specific one wasn't available.\n\nI was able to map most rows successfully. The unmapped rows fell into several categories:\n1.  **Administrative/Billing Codes**: Rows like 226, 227, 279, and 321 are for billing or process management and have no clinical LOINC equivalent.\n2.  **Lab Procedures**: Row 222 (`-histologinensolublokki...`) describes a sample preparation step, not an observation, so it doesn't map to a result LOINC.\n3.  **Missing Panel Concepts**: Several local panels did not have a corresponding LOINC panel in the candidate list. This includes a generic bone marrow MRD panel (240), PEF monitoring panel (302), various drug panels with specific compound counts (276, 319, 320, 323, 328, 330), and a Yersinia species panel (338). Mapping these to a single component or a non-matching panel would be incorrect.\n4.  ** overly specific local codes**: Row 225 for 'other pathogenic HPV' doesn't have a direct LOINC counterpart, which usually list specific genotypes or just test for 'HPV DNA'.\n\nThe candidate list was very comprehensive for single analyte tests, especially for common POC and urine dipstick measurements. For panels, especially in toxicology and microbiology, the granularity of the local codes sometimes exceeded what was available in the candidate list."
+  "reflection": "This group contained a wide variety of tests, from routine chemistry and hematology to microbiology, pathology, and complex panels. Many codes were for point-of-care ('vieritesti') or automated system sub-components ('osatutk.').\n\n**Successful Mappings:** Most standard analytes (glucose, creatinine, electrolytes, blood gases, CBC, urine dipstick components) were mapped with high certainty. The Finnish names were generally descriptive, and the presence of units and values was very helpful. POC test concepts were well-represented, allowing for more specific mappings (e.g., CRP by rapid immunoassay, INR in capillary blood).\n\n**Challenges and Unmapped Rows:**\n- **Administrative/Billing Codes:** Several rows (e.g., 226-229, 264-266, 279, 299, 321) were clearly administrative and unmappable.\n- **Missing Ratio Concepts:** Percentage-based flow cytometry results (NK cells % in row 286, T-helper cells % in row 313) could not be mapped because the candidates only included absolute counts ([#/volume]). This is a significant gap. I could map CD8% (row 314) because a candidate with the `Cells` property (implying a ratio) was available.\n- **Vague/Generic vs. Specific Concepts:** A generic MRD analysis (row 240) couldn't be mapped as all candidates were disease-specific. Similarly, a generic 'resistant' bacteria culture (rows 232, 306) was too vague. Conversely, some local codes were for panels not present in the candidate list (e.g., Yersinia multiplex panel row 338, drug enantiomer panel row 323).\n- **Pathology/Procedure Codes:** Codes for histological preparation (row 222) and complex procedural descriptions (e.g., sleep studies, PEF diurnal variation) often lacked corresponding observational or panel concepts in the LOINC list provided.\n\nThe `loinc_name_guess` was generally very accurate and a good starting point, but the candidate list was the limiting factor in several cases. For flow cytometry percentages, a broader search retrieving ratio concepts would be necessary."
 }

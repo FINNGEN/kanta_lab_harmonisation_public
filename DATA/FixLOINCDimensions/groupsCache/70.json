@@ -4,938 +4,1094 @@
       "row_id": 948,
       "omop_concept_id": "42529010",
       "omop_concept_name": "Calprotectin [Mass/volume] in Stool",
-      "is_panel": false
+      "reasoning": "Calprotectin bcs `calpro` ; [Mass/volume] bcs unit `mg/l` and deciles ; in Stool bcs the value range is more consistent with stool than serum/plasma, although the specimen is not named",
+      "certainty": "medium"
     },
     {
       "row_id": 949,
       "omop_concept_id": "3048689",
       "omop_concept_name": "Calprotectin [Mass/mass] in Stool",
-      "is_panel": false
+      "reasoning": "Calprotectin bcs `calpro` ; [Mass/mass] bcs unit `ug/g` ; in Stool bcs this is the typical specimen for a mass/mass measurement",
+      "certainty": "high"
     },
     {
       "row_id": 950,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-calpro` indicates Calprotectin, but without a unit or values, the property ([Mass/mass] vs [Mass/volume]) cannot be determined, so a specific LOINC concept cannot be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 951,
-      "omop_concept_id": "40768443",
-      "omop_concept_name": "Skin Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Microscopic observation bcs `padihot` likely refers to pathology/histology ; in Tissue bcs `sk` means skin, which is a tissue, and this is the best available specimen candidate ; by Hematoxylin and eosin stain bcs this is the standard histology stain for `hot` (histologinen tutkimus)",
+      "certainty": "medium"
     },
     {
       "row_id": 952,
-      "omop_concept_id": "40765089",
-      "omop_concept_name": "Chromosome analysis panel - Blood by G-banded",
-      "is_panel": false
+      "omop_concept_id": "3025939",
+      "omop_concept_name": "Karyotype [Identifier] in Blood or Tissue Nominal",
+      "reasoning": "Karyotype bcs `karyot` ; in Blood or Tissue bcs prefix `B-` means Blood ; Nominal is the standard result type and this concept is on the top2000 list",
+      "certainty": "high"
     },
     {
       "row_id": 953,
-      "omop_concept_id": "3038458",
-      "omop_concept_name": "Plasmodium sp [Presence] in Blood by Light microscopy",
-      "is_panel": false
+      "omop_concept_id": "3004446",
+      "omop_concept_name": "Plasmodium sp identified in Blood by Light microscopy",
+      "reasoning": "Plasmodium sp identified bcs `malar` refers to malaria ; in Blood bcs prefix `B-` ; by Light microscopy bcs this is the standard method not otherwise specified by the code",
+      "certainty": "high"
     },
     {
       "row_id": 954,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The component `nakkrea` in the test name `b-nakkrea` is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 955,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakk` likely for 'frozen sample'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 956,
-      "omop_concept_id": "3044640",
-      "omop_concept_name": "Blood type and Crossmatch panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be a local administrative code (`vara` likely for 'spare sample'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 957,
-      "omop_concept_id": "3044640",
-      "omop_concept_name": "Blood type and Crossmatch panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be a local administrative code (`vara` for 'spare sample', `spr` for 'separated'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 958,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `b.parapert` for Bordetella parapertussis in Blood is ambiguous about what is being detected (Antibody, Antigen, DNA, Culture), and no single candidate covers this general request in Blood.",
+      "certainty": ""
     },
     {
       "row_id": 959,
       "omop_concept_id": "3044927",
       "omop_concept_name": "Protein electrophoresis panel - Urine",
-      "is_panel": false
+      "reasoning": "Protein electrophoresis panel bcs `parprot` stands for paraprotein, which is identified via a protein electrophoresis panel ; in Urine bcs `du-` indicates 24-hour urine, a valid specimen for this panel",
+      "certainty": "medium"
     },
     {
       "row_id": 960,
       "omop_concept_id": "3048689",
       "omop_concept_name": "Calprotectin [Mass/mass] in Stool",
-      "is_panel": false
+      "reasoning": "Calprotectin bcs `calpro` and LongName ; [Mass/mass] bcs unit `ug/g` ; in Stool bcs prefix `F-`",
+      "certainty": "high"
     },
     {
       "row_id": 961,
       "omop_concept_id": "3048689",
       "omop_concept_name": "Calprotectin [Mass/mass] in Stool",
-      "is_panel": false
+      "reasoning": "Calprotectin bcs `calpro` and LongName ; [Mass/mass] bcs the decile magnitudes are consistent with the `ug/g` unit typical for this test ; in Stool bcs prefix `F-`",
+      "certainty": "high"
     },
     {
       "row_id": 962,
       "omop_concept_id": "3048689",
       "omop_concept_name": "Calprotectin [Mass/mass] in Stool",
-      "is_panel": false
+      "reasoning": "Calprotectin bcs `calpro` ; [Mass/mass] bcs unit `ug/g` ; in Stool bcs prefix `F-`. The `2` is a local qualifier.",
+      "certainty": "high"
     },
     {
       "row_id": 963,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `f-calpro2` indicates Calprotectin in Feces, but without a unit or values, the property ([Mass/mass] vs [Mass/volume]) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 964,
-      "omop_concept_id": "3011592",
-      "omop_concept_name": "Carotene [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The Finnish code `fs-bkarot` and LongName `fS-Beetakaroteeni` specifically measure Beta-carotene, but no LOINC concept for Beta-carotene was present in the candidate list. The available concept for total carotene is too general.",
+      "certainty": ""
     },
     {
       "row_id": 965,
-      "omop_concept_id": "3011592",
-      "omop_concept_name": "Carotene [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The Finnish code `fs-bkarot` and LongName `fS-Beetakaroteeni` specifically measure Beta-carotene, but no LOINC concept for Beta-carotene was present in the candidate list. The available concept for total carotene is too general.",
+      "certainty": ""
     },
     {
       "row_id": 966,
       "omop_concept_id": "3034274",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum --fasting",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappih` (sappihapot) ; [Moles/volume] bcs unit `umol/l` ; in Serum --fasting bcs prefix `fS-` means fasting serum",
+      "certainty": "high"
     },
     {
       "row_id": 967,
       "omop_concept_id": "3034274",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum --fasting",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappih` (sappihapot) ; [Moles/volume] bcs decile magnitudes are consistent with `umol/l` ; in Serum --fasting bcs prefix `fS-` means fasting serum",
+      "certainty": "high"
     },
     {
       "row_id": 968,
       "omop_concept_id": "3034274",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum --fasting",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappihapot` ; [Moles/volume] bcs unit `umol/l` ; in Serum --fasting bcs prefix `fS-` means fasting serum",
+      "certainty": "high"
     },
     {
       "row_id": 969,
-      "omop_concept_id": "3044476",
-      "omop_concept_name": "Bile acid [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `fs-sappihapot` specifies Bile acids in Fasting serum, but without a unit or values, the property (e.g., [Moles/volume] vs [Mass/volume]) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 970,
-      "omop_concept_id": "3006157",
-      "omop_concept_name": "Reagin Ab [Titer] in Cerebral spinal fluid by VDRL",
-      "is_panel": false
+      "omop_concept_id": "3044788",
+      "omop_concept_name": "Reagin Ab [Titer] in Cerebral spinal fluid",
+      "reasoning": "Reagin Ab bcs LongName includes `(VDRL)`, which is a test for reagin antibodies using cardiolipin antigen (`kardab`) ; [Titer] bcs unit is `titre` ; in Cerebral spinal fluid bcs prefix `Li-`",
+      "certainty": "high"
     },
     {
       "row_id": 971,
-      "omop_concept_id": "3002446",
-      "omop_concept_name": "Reagin Ab [Presence] in Cerebral spinal fluid by VDRL",
-      "is_panel": false
+      "omop_concept_id": "3044788",
+      "omop_concept_name": "Reagin Ab [Titer] in Cerebral spinal fluid",
+      "reasoning": "Reagin Ab bcs LongName includes `(VDRL)`, which is a test for reagin antibodies using cardiolipin antigen (`kardab`) ; [Titer] bcs this is the typical property for VDRL tests ; in Cerebral spinal fluid bcs prefix `Li-`",
+      "certainty": "high"
     },
     {
       "row_id": 972,
-      "omop_concept_id": "3016894",
-      "omop_concept_name": "Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be a local administrative code (`vara` for 'spare', `likv` for 'CSF'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 973,
       "omop_concept_id": "3035544",
       "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs unit `gpl` is an arbitrary unit per volume ; in Serum or Plasma bcs prefix `P-` means Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 974,
       "omop_concept_id": "3035544",
       "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs unit `u/ml` is an arbitrary unit per volume ; in Serum or Plasma bcs prefix `P-` means Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 975,
-      "omop_concept_id": "3028333",
-      "omop_concept_name": "Cardiolipin IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3035544",
+      "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs decile values are consistent with arbitrary units ; in Serum or Plasma bcs prefix `P-` means Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 976,
-      "omop_concept_id": "3037492",
-      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3015813",
+      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum by Immunoassay",
+      "reasoning": "Cardiolipin IgM Ab bcs `kardabm` and LongName `Kardiolipiini, IgM-vasta-aineet` ; [Units/volume] bcs unit `mpl` is an arbitrary unit per volume ; in Serum bcs prefix `P-` implies a blood draw for serum or plasma, and this top-2000 concept is a good fit ; by Immunoassay bcs it is the standard method for this top-2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 977,
-      "omop_concept_id": "3037492",
-      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3015813",
+      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum by Immunoassay",
+      "reasoning": "Cardiolipin IgM Ab bcs `kardabm` and LongName `Kardiolipiini, IgM-vasta-aineet` ; [Units/volume] bcs unit `u/ml` is an arbitrary unit per volume ; in Serum bcs prefix `P-` implies a blood draw for serum or plasma, and this top-2000 concept is a good fit ; by Immunoassay bcs it is the standard method for this top-2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 978,
-      "omop_concept_id": "3006441",
-      "omop_concept_name": "Cardiolipin IgM Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "3015813",
+      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum by Immunoassay",
+      "reasoning": "Cardiolipin IgM Ab bcs `kardabm` and LongName `Kardiolipiini, IgM-vasta-aineet` ; [Units/volume] bcs decile values are consistent with arbitrary units ; in Serum bcs prefix `P-` implies a blood draw for serum or plasma, and this top-2000 concept is a good fit ; by Immunoassay bcs it is the standard method for this top-2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 979,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakk` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 980,
-      "omop_concept_id": "3032080",
-      "omop_concept_name": "INR in Blood by Coagulation assay",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be a local administrative code (`vara` for 'spare'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 981,
-      "omop_concept_id": "3036489",
-      "omop_concept_name": "Thrombin time",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The abbreviation `varmtr` is unclear. While `P-` indicates plasma and `s` indicates a time-based coagulation assay, the specific test (e.g., Thrombin Time, Prothrombin Time) cannot be identified from the name.",
+      "certainty": ""
     },
     {
       "row_id": 982,
-      "omop_concept_id": "3036489",
-      "omop_concept_name": "Thrombin time",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The abbreviation `varmtr` is unclear. Without unit or values, the test cannot be identified.",
+      "certainty": ""
     },
     {
       "row_id": 983,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "omop_concept_id": "42870499",
+      "omop_concept_name": "Thrombin time actual/Normal",
+      "reasoning": "Thrombin time bcs `tt` is a common abbreviation for Thrombin time and this code's pair is time-based ; actual/Normal (Ratio) bcs unit is `%` and deciles are centered around 100 ; in Platelet poor plasma bcs prefix `P-` means Plasma",
+      "certainty": "medium"
     },
     {
       "row_id": 984,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The abbreviation `varmtt` is unclear. Without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 985,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-afmakro` clearly indicates Macroalkaline phosphatase, but no candidate for this specific analyte was present in the list.",
+      "certainty": ""
     },
     {
       "row_id": 986,
-      "omop_concept_id": "1761414",
-      "omop_concept_name": "Alkaline phosphatase.macromolecular [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-afmakro` clearly indicates Macroalkaline phosphatase, but no candidate for this specific analyte was present in the list.",
+      "certainty": ""
     },
     {
       "row_id": 987,
       "omop_concept_id": "3035062",
       "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alkaline phosphatase.liver 1 bcs `af` is Alk Phos, `maks` is liver, `1` is isoenzyme 1 ; [Enzymatic activity/volume] bcs unit `u/l` and deciles ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 988,
-      "omop_concept_id": "3035062",
-      "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-afmaks1` indicates Alkaline phosphatase liver isoenzyme 1 in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 989,
       "omop_concept_id": "3036185",
       "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alkaline phosphatase.liver 2 bcs `af` is Alk Phos, `maks` is liver, `2` is isoenzyme 2 ; [Enzymatic activity/volume] bcs unit `u/l` and deciles ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 990,
-      "omop_concept_id": "3036185",
-      "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-afmaks2` indicates Alkaline phosphatase liver isoenzyme 2 in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 991,
-      "omop_concept_id": "3028993",
-      "omop_concept_name": "Alkaline phosphatase.macro/Alkaline phosphatase.total in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3036955",
+      "omop_concept_name": "Alkaline phosphatase.liver/Alkaline phosphatase.total in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.liver/Alkaline phosphatase.total bcs `afmaksa` implies the liver fraction of total ALP ; [Enzymatic activity Ratio] bcs the property is inferred from the component and the unit is `%` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 992,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3035400",
+      "omop_concept_name": "Alkaline phosphatase.liver [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.liver bcs `afmaksa` indicates the liver isoenzyme of ALP ; [Enzymatic activity/volume] bcs unit is `u/l` and deciles are consistent ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 993,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3035400",
+      "omop_concept_name": "Alkaline phosphatase.liver [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.liver bcs `afmaksa` indicates the liver isoenzyme of ALP ; [Enzymatic activity/volume] bcs decile values are consistent with `u/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 994,
       "omop_concept_id": "3007015",
       "omop_concept_name": "Cashew nut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Cashew nut IgE Ab bcs `caspähe` is cashew nut (`cashew-pähkinä`) and the final `e` often indicates IgE ; [Units/volume] bcs unit is `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 995,
-      "omop_concept_id": "3966731",
-      "omop_concept_name": "Cashew nut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-caspähe` indicates Cashew nut IgE Ab in Serum, but without a unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 996,
       "omop_concept_id": "3012932",
       "omop_concept_name": "Hazelnut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Hazelnut IgE Ab bcs `haspähe` and LongName `Hasselpähkinä ... IgE-vasta-aineet` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 997,
-      "omop_concept_id": "3966068",
-      "omop_concept_name": "Hazelnut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-haspähe` and LongName specify Hazelnut IgE Ab in Serum, but without a unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 998,
       "omop_concept_id": "3012932",
       "omop_concept_name": "Hazelnut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Hazelnut IgE Ab bcs `hasspäe` is a variant of hazelnut (`hasselpähkinä`) IgE ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 999,
-      "omop_concept_id": "3966068",
-      "omop_concept_name": "Hazelnut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-hasspäe` indicates Hazelnut IgE Ab in Serum, but without a unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1000,
       "omop_concept_id": "3018980",
       "omop_concept_name": "carBAMazepine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "carBAMazepine bcs `karba` and LongName `Karbamatsepiini` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1001,
       "omop_concept_id": "3018980",
       "omop_concept_name": "carBAMazepine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "carBAMazepine bcs `karba` and LongName `Karbamatsepiini` ; [Moles/volume] bcs decile magnitudes are consistent with `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1002,
       "omop_concept_id": "3014435",
       "omop_concept_name": "Carbamazepine 10,11-Epoxide [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Carbamazepine 10,11-Epoxide bcs `karbae` and LongName `Karbamatsepiiniepoksidi` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1003,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-karbae` specifies Carbamazepine 10,11-Epoxide in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1004,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-kardab` is for total cardiolipin antibodies with a `titre` property. No suitable candidate for `Cardiolipin Ab` with property `[Titer]` exists in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1005,
-      "omop_concept_id": "3021583",
-      "omop_concept_name": "Cardiolipin Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-kardab` for Cardiolipin antibodies is ambiguous as to property (Titer, Units, Presence) without a unit or values.",
+      "certainty": ""
     },
     {
       "row_id": 1006,
       "omop_concept_id": "3035544",
       "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs unit `gpl` is an arbitrary unit per volume ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1007,
       "omop_concept_id": "3035544",
       "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs unit `u/ml` is an arbitrary unit per volume ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1008,
-      "omop_concept_id": "3028333",
-      "omop_concept_name": "Cardiolipin IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3035544",
+      "omop_concept_name": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma",
+      "reasoning": "Cardiolipin IgG Ab bcs `kardabg` and LongName `Kardiolipiini, IgG-vasta-aineet` ; [Units/volume] bcs decile values are consistent with arbitrary units ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1009,
-      "omop_concept_id": "3037492",
-      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3015813",
+      "omop_concept_name": "Cardiolipin IgM Ab [Units/volume] in Serum by Immunoassay",
+      "reasoning": "Cardiolipin IgM Ab bcs `kardabm` and LongName `Kardiolipiini, IgM-vasta-aineet` ; [Units/volume] bcs unit `mpl` is an arbitrary unit per volume ; in Serum bcs prefix `S-` ; by Immunoassay bcs it is the standard method for this top-2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1010,
-      "omop_concept_id": "3006441",
-      "omop_concept_name": "Cardiolipin IgM Ab [Presence] in Serum by Immunoassay",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-kardabm` specifies Cardiolipin IgM Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1011,
       "omop_concept_id": "3033882",
       "omop_concept_name": "Carnitine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Carnitine bcs `karni` and LongName `S -Karnitiini` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1012,
-      "omop_concept_id": "3003388",
-      "omop_concept_name": "Carnitine [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-karni` specifies Carnitine in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1013,
       "omop_concept_id": "3000722",
       "omop_concept_name": "Carnitine free (C0) [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Carnitine free (C0) bcs `karni-v` and LongName `S -Karnitiini, vapaa` (free) ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1014,
-      "omop_concept_id": "3019271",
-      "omop_concept_name": "Carnitine free (C0) [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-karni-v` specifies free Carnitine in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1015,
       "omop_concept_id": "3005398",
       "omop_concept_name": "Coconut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Coconut IgE Ab bcs `koopähe` and LongName `Kookospähkinä ... IgE-vasta-aineet` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1016,
-      "omop_concept_id": "3964953",
-      "omop_concept_name": "Coconut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-koopähe` specifies Coconut IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1017,
       "omop_concept_id": "3028136",
       "omop_concept_name": "Grey Alder IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Grey Alder IgE Ab bcs `leppäe` (alder IgE) and LongName specifies allergen `t2` (Grey Alder) ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1018,
-      "omop_concept_id": "3965417",
-      "omop_concept_name": "Grey Alder IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-leppäe` specifies Alder IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1019,
       "omop_concept_id": "3012494",
       "omop_concept_name": "Peanut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Peanut IgE Ab bcs `maapähe` and LongName `Maapähkinä (f13)` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1020,
-      "omop_concept_id": "3965920",
-      "omop_concept_name": "Peanut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "3012494",
+      "omop_concept_name": "Peanut IgE Ab [Units/volume] in Serum",
+      "reasoning": "Peanut IgE Ab bcs `maapähe` and LongName `Maapähkinä (f13)` ; [Units/volume] bcs decile values are consistent with `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1021,
-      "omop_concept_id": "1761414",
-      "omop_concept_name": "Alkaline phosphatase.macromolecular [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3013094",
+      "omop_concept_name": "Hepatic function 2000 panel - Serum or Plasma",
+      "reasoning": "Hepatic function panel bcs `s-maksa` (serum-liver) is an order for a liver function panel ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1022,
-      "omop_concept_id": "3035062",
-      "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs `s-maksa-1` is a local code for a primary liver enzyme, conventionally ALT ; [Enzymatic activity/volume] bcs unit `u/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1023,
-      "omop_concept_id": "3035062",
-      "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-maksa-1` likely represents a liver enzyme, but without a unit or values, the specific test and property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1024,
-      "omop_concept_id": "3036185",
-      "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs `s-maksa-2` is a local code for a secondary liver enzyme, conventionally AST ; [Enzymatic activity/volume] bcs unit `u/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1025,
-      "omop_concept_id": "3036185",
-      "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-maksa-2` likely represents a liver enzyme, but without a unit or values, the specific test and property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1026,
-      "omop_concept_id": "3035062",
-      "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs `s-maksa1` is a local code for a primary liver enzyme, conventionally ALT ; [Enzymatic activity/volume] bcs unit `u/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1027,
-      "omop_concept_id": "3035062",
-      "omop_concept_name": "Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-maksa1` likely represents a liver enzyme, but without a unit or values, the specific test and property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1028,
-      "omop_concept_id": "3036185",
-      "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs `s-maksa2` is a local code for a secondary liver enzyme, conventionally AST ; [Enzymatic activity/volume] bcs unit `u/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1029,
-      "omop_concept_id": "3036185",
-      "omop_concept_name": "Alkaline phosphatase.liver 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-maksa2` likely represents a liver enzyme, but without a unit or values, the specific test and property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1030,
       "omop_concept_id": "36659620",
       "omop_concept_name": "Liver diseases autoimmune Ab panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "Liver diseases autoimmune Ab panel bcs `s-maksaab` (serum-liver-antibodies) is an order for a liver autoantibody panel ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1031,
       "omop_concept_id": "3013094",
       "omop_concept_name": "Hepatic function 2000 panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "Hepatic function panel bcs `s-maksap` (serum-liver-panel) is an order for a liver function panel ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1032,
       "omop_concept_id": "3013094",
       "omop_concept_name": "Hepatic function 2000 panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "Hepatic function panel bcs `s-makspak` (serum-liver-package) is an order for a liver function panel ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1033,
       "omop_concept_id": "3048469",
       "omop_concept_name": "10-Hydroxycarbazepine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "10-Hydroxycarbazepine bcs `s-ohkarba` and LongName `S -Hydroksikarbatsepiini (10-)` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1034,
       "omop_concept_id": "3048469",
       "omop_concept_name": "10-Hydroxycarbazepine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "10-Hydroxycarbazepine bcs `s-ohkarba` and LongName `S -Hydroksikarbatsepiini (10-)` ; [Moles/volume] bcs decile values are consistent with `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1035,
       "omop_concept_id": "3027159",
       "omop_concept_name": "OXcarbazepine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "OXcarbazepine bcs `s-okarba` and LongName `S -Okskarbatsepiini` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1036,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-okarba` specifies Oxcarbazepine in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1037,
       "omop_concept_id": "3044866",
       "omop_concept_name": "Ovary Ab [Titer] in Serum",
-      "is_panel": false
+      "reasoning": "Ovary Ab bcs `ovarab` and LongName `S -Munasarja, vasta-aineet` (ovary antibodies) ; [Titer] bcs unit is `titre` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1038,
-      "omop_concept_id": "3018359",
-      "omop_concept_name": "Ovary Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3044866",
+      "omop_concept_name": "Ovary Ab [Titer] in Serum",
+      "reasoning": "Ovary Ab bcs `ovarab` and LongName `S -Munasarja, vasta-aineet` (ovary antibodies) ; [Titer] bcs this is the property specified by the sibling row with a unit ; in Serum bcs prefix `S-`",
+      "certainty": "medium"
     },
     {
       "row_id": 1039,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakast` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1040,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakast` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1041,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakaste` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1042,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkas` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1043,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkase` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1044,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkask` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1045,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkasl` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1046,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkasn` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1047,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`pakkasv` for 'frozen'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1048,
       "omop_concept_id": "3021584",
       "omop_concept_name": "Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Pregnancy associated plasma protein A bcs `papp-a` ; [Units/volume] bcs unit `mu/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1049,
       "omop_concept_id": "3021584",
       "omop_concept_name": "Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Pregnancy associated plasma protein A bcs `papp-a` ; [Units/volume] bcs decile values are consistent with `mu/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1050,
       "omop_concept_id": "3021584",
       "omop_concept_name": "Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Pregnancy associated plasma protein A bcs `pappa` and LongName `Plasmaproteiini A, raskauteen liittyvä` ; [Units/volume] bcs decile values are consistent with `mu/l`, the unit of the sibling row ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1051,
       "omop_concept_id": "3021584",
       "omop_concept_name": "Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Pregnancy associated plasma protein A bcs `pappa` and LongName `Plasmaproteiini A, raskauteen liittyvä` ; [Units/volume] bcs unit `mu/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1052,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3021584",
+      "omop_concept_name": "Pregnancy associated plasma protein A [Units/volume] in Serum or Plasma",
+      "reasoning": "Pregnancy associated plasma protein A bcs `pappa` and LongName `Plasmaproteiini A, raskauteen liittyvä` ; [Units/volume] bcs decile values are consistent with `mu/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1053,
       "omop_concept_id": "3014064",
       "omop_concept_name": "Pregnancy associated plasma protein A [Multiple of the median] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Pregnancy associated plasma protein A bcs `papp` ; [Multiple of the median] bcs `mom` in name and unit ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1054,
       "omop_concept_id": "3007315",
       "omop_concept_name": "Brazil Nut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Brazil Nut IgE Ab bcs `parapäe` is Brazil nut (`parapähkinä`) IgE ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1055,
-      "omop_concept_id": "3966408",
-      "omop_concept_name": "Brazil Nut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-parapäe` specifies Brazil nut IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1056,
       "omop_concept_id": "3020485",
       "omop_concept_name": "Acetaminophen [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Acetaminophen bcs `paras` and LongName `S -Parasetamoli` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1057,
-      "omop_concept_id": "3003709",
-      "omop_concept_name": "Acetaminophen [Presence] in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-paras` specifies Acetaminophen in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1058,
       "omop_concept_id": "3035903",
       "omop_concept_name": "Mumps virus Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Mumps virus Ab bcs `paroab` and LongName `S -Sikotautivirus, vasta-aineet` (mumps virus antibodies) ; [Presence] bcs it's a qualitative screening test ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1059,
       "omop_concept_id": "3018867",
       "omop_concept_name": "Mumps virus IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Mumps virus IgG Ab bcs `paroabg` and LongName ; [Units/volume] bcs unit `au/ml` is arbitrary units ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1060,
       "omop_concept_id": "3024981",
       "omop_concept_name": "Mumps virus IgG Ab [Titer] in Serum",
-      "is_panel": false
+      "reasoning": "Mumps virus IgG Ab bcs `paroabg` and LongName ; [Titer] bcs unit is `titre` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1061,
-      "omop_concept_id": "3028498",
-      "omop_concept_name": "Mumps virus IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3018867",
+      "omop_concept_name": "Mumps virus IgG Ab [Units/volume] in Serum",
+      "reasoning": "Mumps virus IgG Ab bcs `paroabg` and LongName ; [Units/volume] bcs this is the most common quantitative property for this test, as seen in sibling rows ; in Serum bcs prefix `S-`",
+      "certainty": "low"
     },
     {
       "row_id": 1062,
       "omop_concept_id": "3011268",
       "omop_concept_name": "Mumps virus IgM Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Mumps virus IgM Ab bcs `paroabm` and LongName ; [Presence] bcs it's a qualitative screening test ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1063,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "36660625",
+      "omop_concept_name": "Protein.monoclonal [Presence] in Serum or Plasma",
+      "reasoning": "Protein.monoclonal bcs `parprot` means paraprotein, i.e. monoclonal protein ; [Presence] bcs this is an order code for a qualitative identification ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1064,
       "omop_concept_id": "3007315",
       "omop_concept_name": "Brazil Nut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Brazil Nut IgE Ab bcs `parpäh` (parapähkinä) and LongName `Parapähkinä (f18)` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1065,
-      "omop_concept_id": "3966408",
-      "omop_concept_name": "Brazil Nut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-parpäh` specifies Brazil nut IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1066,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-parvab` for Parvovirus antibodies is ambiguous. It could be for total Ab, IgG, or IgM, and could be qualitative or quantitative. No single candidate fits this general code.",
+      "certainty": ""
     },
     {
       "row_id": 1067,
       "omop_concept_id": "3006120",
       "omop_concept_name": "Parvovirus B19 IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 IgG Ab bcs `parvabg` and LongName ; [Units/volume] bcs unit `eiu` is an arbitrary unit per volume ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1068,
       "omop_concept_id": "3006120",
       "omop_concept_name": "Parvovirus B19 IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 IgG Ab bcs `parvabg` and LongName ; [Units/volume] bcs unit `ie/ml` is an arbitrary unit per volume ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1069,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The unit `index` for Parvovirus B19 IgG Ab is ambiguous and does not clearly map to a standard LOINC property like Titer, Ratio, or Units/volume.",
+      "certainty": ""
     },
     {
       "row_id": 1070,
       "omop_concept_id": "3006120",
       "omop_concept_name": "Parvovirus B19 IgG Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 IgG Ab bcs `parvabg` and LongName ; [Units/volume] bcs unit `iu/ml` is an arbitrary unit per volume ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1071,
       "omop_concept_id": "3009550",
       "omop_concept_name": "Parvovirus B19 IgG Ab [Titer] in Serum",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 IgG Ab bcs `parvabg` and LongName ; [Titer] bcs unit is `titre` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1072,
-      "omop_concept_id": "3006410",
-      "omop_concept_name": "Parvovirus B19 IgG Ab [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3009550",
+      "omop_concept_name": "Parvovirus B19 IgG Ab [Titer] in Serum",
+      "reasoning": "Parvovirus B19 IgG Ab bcs `parvabg` and LongName ; [Titer] bcs decile values are consistent with titer results ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1073,
       "omop_concept_id": "3008321",
       "omop_concept_name": "Parvovirus B19 IgM Ab [Presence] in Serum",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 IgM Ab bcs `parvabm` and LongName ; [Presence] bcs it is a qualitative screening test ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1074,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-parvavi` is for Parvovirus avidity. No candidate for Parvovirus B19 Ab avidity was present in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1075,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-parvavi` is for Parvovirus avidity. No candidate for Parvovirus B19 Ab avidity was present in the list.",
+      "certainty": ""
     },
     {
       "row_id": 1076,
       "omop_concept_id": "3013226",
       "omop_concept_name": "Pecan or Hickory Nut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "reasoning": "Pecan or Hickory Nut IgE Ab bcs `pekpähe` is pecan nut (`pekaanipähkinä`) IgE ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1077,
-      "omop_concept_id": "3965196",
-      "omop_concept_name": "Pecan or Hickory Nut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-pekpähe` specifies Pecan nut IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1078,
-      "omop_concept_id": "3011841",
-      "omop_concept_name": "English Walnut IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "omop_concept_id": "3006451",
+      "omop_concept_name": "Walnut IgE Ab [Units/volume] in Serum",
+      "reasoning": "Walnut IgE Ab bcs `sakspäe` is walnut (`saksanpähkinä`) IgE ; [Units/volume] bcs unit `u/ml` ; in Serum bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1079,
-      "omop_concept_id": "3966719",
-      "omop_concept_name": "English Walnut IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-sakspäe` specifies Walnut IgE Ab in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1080,
       "omop_concept_id": "3028110",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappih` (sappihapot) ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1081,
       "omop_concept_id": "3028110",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappih` (sappihapot) ; [Moles/volume] bcs decile values are consistent with `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1082,
-      "omop_concept_id": "3023456",
-      "omop_concept_name": "Valproate Free/Valproate.total in Serum or Plasma",
-      "is_panel": false
+      "omop_concept_id": "3009466",
+      "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Valproate bcs `valpr` and LongName ; [Moles/volume] bcs the property is inferred from sibling rows with `umol/l` unit ; in Serum or Plasma bcs prefix `S-`. The unit `%` seems erroneous.",
+      "certainty": "low"
     },
     {
       "row_id": 1083,
       "omop_concept_id": "3009466",
       "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate bcs `valpr` and LongName `S -Valproaatti` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1084,
       "omop_concept_id": "3009466",
       "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate bcs `valpr` and LongName `S -Valproaatti` ; [Moles/volume] bcs decile values are consistent with `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1085,
       "omop_concept_id": "3022915",
       "omop_concept_name": "Valproate Free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate Free bcs `valpr-v` and LongName `vapaa` (free) ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1086,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-valpr-v` specifies free Valproate in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1087,
       "omop_concept_id": "3009466",
       "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Valproate bcs `valpro` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs prefix `S-`",
+      "certainty": "high"
     },
     {
       "row_id": 1088,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `s-valpro` specifies Valproate in Serum, but without a unit or values, the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1089,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`vara` likely for 'spare sample'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1090,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`varah` likely for 'spare sample'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1091,
       "omop_concept_id": "3028110",
       "omop_concept_name": "Bile acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Bile acid bcs `sappihapot` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs no specimen prefix, but this is the standard specimen",
+      "certainty": "high"
     },
     {
       "row_id": 1092,
-      "omop_concept_id": "3044476",
-      "omop_concept_name": "Bile acid [Presence] in Serum",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `sappihapot` specifies Bile acids, but without a specimen, unit, or values, a specific concept cannot be chosen.",
+      "certainty": ""
     },
     {
       "row_id": 1093,
-      "omop_concept_id": "40768443",
-      "omop_concept_name": "Skin Pathology biopsy report",
-      "is_panel": false
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Microscopic observation bcs LongName `Ihottumanäytteen histologinen tutkimus` (Histological investigation of skin rash sample) ; in Tissue bcs `Sk` means skin, which is a tissue ; by Hematoxylin and eosin stain bcs this is the standard histology stain",
+      "certainty": "high"
     },
     {
       "row_id": 1094,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `tupakka` (tobacco) with unit `u/24h` is ambiguous. `u` is not a standard mass unit and no candidate with property `[Mass/time]` is available.",
+      "certainty": ""
     },
     {
       "row_id": 1095,
       "omop_concept_id": "3015883",
       "omop_concept_name": "Cotinine [Presence] in Urine",
-      "is_panel": false
+      "reasoning": "Cotinine bcs `tupakka` (tobacco) use is monitored via cotinine ; [Presence] bcs no quantitative information is provided ; in Urine bcs this is the standard specimen for this screening",
+      "certainty": "medium"
     },
     {
       "row_id": 1096,
       "omop_concept_id": "3043821",
       "omop_concept_name": "Protein and Glucose panel - Urine by Test strip",
-      "is_panel": true
+      "reasoning": "Protein and Glucose panel bcs `u-gluprot` (urine-glucose-protein) is an order for this panel ; in Urine bcs prefix `U-` ; by Test strip bcs this is the standard method for this screening panel",
+      "certainty": "high"
     },
     {
       "row_id": 1097,
-      "omop_concept_id": "3029287",
-      "omop_concept_name": "Urinalysis microscopic panel [#/volume] - Urine by Automated count",
-      "is_panel": true
+      "omop_concept_id": "3022113",
+      "omop_concept_name": "Urinalysis microscopic panel - Urine sediment",
+      "reasoning": "Urinalysis microscopic panel bcs `u-partik` means urine particles, which are examined in a sediment microscopy panel ; in Urine sediment bcs prefix `U-` and `partik`",
+      "certainty": "high"
     },
     {
       "row_id": 1098,
-      "omop_concept_id": "3029287",
-      "omop_concept_name": "Urinalysis microscopic panel [#/volume] - Urine by Automated count",
-      "is_panel": true
+      "omop_concept_id": "3022113",
+      "omop_concept_name": "Urinalysis microscopic panel - Urine sediment",
+      "reasoning": "Urinalysis microscopic panel bcs `u-partikk` means urine particles, which are examined in a sediment microscopy panel ; in Urine sediment bcs prefix `U-` and `partikk`",
+      "certainty": "high"
     },
     {
       "row_id": 1099,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `u-rakkoai` means 'bladder dwell time', which is a clinical observation, not a laboratory test, and has no corresponding LOINC concept in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1100,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `u-rakkoai` means 'bladder dwell time', which is a clinical observation, not a laboratory test, and has no corresponding LOINC concept in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1101,
       "omop_concept_id": "3022113",
       "omop_concept_name": "Urinalysis microscopic panel - Urine sediment",
-      "is_panel": true
+      "reasoning": "Urinalysis microscopic panel bcs `u-sakka` means urine sediment, which is examined in a sediment microscopy panel ; in Urine sediment bcs prefix `U-` and `sakka`",
+      "certainty": "high"
     },
     {
       "row_id": 1102,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`valvott` for 'supervised'), not a specific laboratory test.",
+      "certainty": ""
     },
     {
       "row_id": 1103,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "This appears to be a local administrative code (`vara` for 'spare', `bak` for 'bacteriology'), not a specific laboratory test.",
+      "certainty": ""
     }
   ],
-  "reflection": "This was a large and diverse group of tests. Most rows were mappable thanks to a comprehensive candidate list. The tests covered therapeutic drug monitoring (carbamazepine, valproate), infectious disease serology (Parvo, Mumps), allergy testing (various nuts), coagulation (INR, PT, TT), and specialized chemistry (calprotectin, bile acids, carnitine).\n\nKey points:\n* **Calprotectin:** The distinction between `mass/mass` (ug/g) and `mass/volume` (mg/l) was clear and candidates were available for both (`3048689`, `42529010`).\n* **Alkaline Phosphatase Isoenzymes:** The codes for macro-AP fractions (`s-afmaks1`, `s-afmaks2`) mapped well to `Alkaline phosphatase.liver 1/2` (`3035062`, `3036185`), but a quantitative concept for total macro-AP (`s-afmakro` and `s-afmaksa` with `u/l`) was missing from the candidates.\n* **Allergies:** The candidate list was good, but for some allergens like Alder (`s-leppäe`), the local code is generic while LOINC is specific (Grey Alder, White Alder etc.). I chose Grey Alder (`t2`) as it is a common mapping target, but this is an assumption.\n* **Administrative codes:** Several codes like `s-pakast*` (frozen sample), `u-valvott` (supervised collection) are administrative and correctly unmapped.\n* **Panels:** Several panel codes (`b-vara` for crossmatch, `s-maksaab` for liver autoantibodies, `u-partik` for urine microscopy) were successfully mapped to appropriate panel concepts.\n* **Missing concepts:** Some tests like Parvovirus IgG avidity (`s-parvavi`) and Parvovirus total Ab (`s-parvab`) lacked suitable candidates.\n* **Data inconsistency:** Some rows (e.g., 961, 967) had `p_missing`=100% but also had decile values, which is contradictory. I used the deciles as the primary evidence in these cases, assuming they were quantitative tests with some data entry issues."
+  "reflection": "This group was large and contained a mix of well-defined tests, ambiguous codes, and administrative codes. The well-defined codes, especially for therapeutic drug monitoring (carbamazepine, valproate), allergens (nuts, pollen), and common chemistry (bile acids, calprotectin, ALP isoenzymes), were generally straightforward to map, aided by clear prefixes (`S-`, `F-`), units, and `LongName`s.\n\nSeveral challenges arose:\n1.  **Missing candidates:** The candidate list was missing concepts for Beta-carotene (`fs-bkarot`), Macro-alkaline phosphatase (`s-afmakro`), and Parvovirus avidity (`s-parvavi`), preventing mapping for these rows.\n2.  **Ambiguous local codes:** Codes like `b-nakkrea`, `p-varmtr`, and `p-varmtt` were difficult to interpret. While `p-varmtt` was mapped to a Thrombin time ratio based on the unit `%` and a likely pairing with the `p-varmtr` (time) code, this was a medium-certainty decision. The others were unmappable.\n3.  **Administrative codes:** Many codes (`b-vara`, `s-pakast*`, etc.) clearly referred to sample handling (spare, frozen) rather than a specific test and were correctly left unmapped.\n4.  **Property ambiguity:** For many codes, especially when a unit or values were missing (`name` evidence level), it was impossible to determine the property (e.g., Moles/volume vs Mass/volume, Titer vs Units/volume), forcing a 'no map' decision to avoid guessing.\n5.  **Panel vs. Component:** Codes like `s-maksa` (liver) or `u-gluprot` (glucose-protein) were correctly identified as panels. `du-parprot` (paraprotein in 24h urine) was mapped to a protein electrophoresis panel, which is the procedure to identify it.\n\nThe presence of both `s-afmaksa` as a ratio (`%`) and as an absolute activity (`u/l`) was interesting, highlighting the importance of checking the unit for every single row, even with identical test names."
 }

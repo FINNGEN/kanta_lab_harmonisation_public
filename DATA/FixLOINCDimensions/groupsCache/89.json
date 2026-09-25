@@ -2,172 +2,200 @@
   "rows": [
     {
       "row_id": 1277,
-      "omop_concept_id": "3029511",
-      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "1091602",
+      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen",
+      "reasoning": "Human papilloma virus from `hpv` and `Papilloomavirus` ; DNA [Presence] is the standard modality for HPV screening ; in Specimen as no specimen is explicitly mentioned, but is typically a genital specimen.",
+      "certainty": "medium"
     },
     {
       "row_id": 1278,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The test name `hoikemseul` is too abbreviated and ambiguous to be reliably identified. `seul` means screen, but `hoikem` is unclear.",
+      "certainty": ""
     },
     {
       "row_id": 1279,
-      "omop_concept_id": "3029511",
-      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "1091602",
+      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen",
+      "reasoning": "Human papilloma virus from `hpv` ; DNA [Presence] is the standard modality for HPV screening (`seul`) ; in Specimen as no specimen is explicitly mentioned.",
+      "certainty": "medium"
     },
     {
       "row_id": 1280,
       "omop_concept_id": "3050943",
       "omop_concept_name": "Newborn hearing screening panel",
-      "is_panel": true
+      "reasoning": "Hearing screening from `hörsel` (Swedish for hearing) ; Panel is appropriate for an orderable screening test ; Newborn is assumed as this is the most common context for a population-wide hearing screen.",
+      "certainty": "medium"
     },
     {
       "row_id": 1281,
-      "omop_concept_id": "1175857",
-      "omop_concept_name": "Donor blood study",
-      "is_panel": true
+      "omop_concept_id": "646145",
+      "omop_concept_name": "Sexually transmitted blood borne infections panel - Serum by Immunoassay",
+      "reasoning": "Panel for sexually transmitted/blood borne infections is inferred from `luov.seul.` which means 'donor screen', a procedure that tests for these infections ; in Serum is the typical specimen, although not explicitly stated ; by Immunoassay is a common method, though not specified in the code. This is the closest panel concept available.",
+      "certainty": "low"
     },
     {
       "row_id": 1282,
       "omop_concept_id": "1989068",
       "omop_concept_name": "Visual acuity panel",
-      "is_panel": true
+      "reasoning": "Visual acuity from `näköseula` (vision screen), which most commonly refers to a test of visual acuity ; Panel concept is appropriate for a screening procedure.",
+      "certainty": "medium"
     },
     {
       "row_id": 1283,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseu` (chemical screen) ; in Urine is implied by the context of a chemical screen at point-of-care (`oma`).",
+      "certainty": "high"
     },
     {
       "row_id": 1284,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseula` (chemical screen) ; in Urine is implied by the context of a chemical screen at point-of-care (`oma`).",
+      "certainty": "high"
     },
     {
       "row_id": 1285,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kems` (chemical screen) ; in Urine from `u-` prefix and point-of-care context (`oma`).",
+      "certainty": "high"
     },
     {
       "row_id": 1286,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` (chemical screen) ; in Urine from `u-` prefix and point-of-care context (`oma`).",
+      "certainty": "high"
     },
     {
       "row_id": 1287,
-      "omop_concept_id": "3017645",
-      "omop_concept_name": "D Ag [Presence] on Red Blood Cells",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `rhdnegseul` indicates a screening for Rh(D) antibodies in an RhD-negative individual. No suitable candidate concept for this test was available in the provided list.",
+      "certainty": ""
     },
     {
       "row_id": 1288,
       "omop_concept_id": "3029075",
       "omop_concept_name": "Extractable nuclear Ab panel - Serum",
-      "is_panel": true
+      "reasoning": "Extractable nuclear Ab panel from `enaseul` (ENA screen) ; in Serum from `S-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1289,
-      "omop_concept_id": "646451",
+      "omop_concept_id": "646145",
       "omop_concept_name": "Sexually transmitted blood borne infections panel - Serum by Immunoassay",
-      "is_panel": true
+      "reasoning": "Panel for sexually transmitted/blood borne infections is inferred from `ivfseul` (IVF screen), a procedure that typically tests for these infections ; in Serum from `S-` prefix ; by Immunoassay is a common method, though not specified in the code. This is the best available panel concept.",
+      "certainty": "medium"
     },
     {
       "row_id": 1290,
       "omop_concept_id": "3050129",
       "omop_concept_name": "First trimester maternal screen panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "First trimester maternal screen panel from `tr1seul` and `LongName` ('screening... first trimester') ; in Serum or Plasma from `S-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1291,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-tr2seul` and its `LongName` specify a second trimester maternal screen. The candidate list only provides specific panels (triple, quad, penta), and it is not possible to determine from the code which one is correct. A generic 'Second trimester maternal screen panel' concept was not available.",
+      "certainty": ""
     },
     {
       "row_id": 1292,
       "omop_concept_id": "3029318",
       "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "is_panel": true
+      "reasoning": "Maternal screen panel from `trseul` (trimester screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1293,
-      "omop_concept_id": "3033521",
-      "omop_concept_name": "Obstetric 1996 panel - Serum and Blood",
-      "is_panel": true
+      "omop_concept_id": "3029318",
+      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
+      "reasoning": "Maternal screen panel from `äit-seul` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1294,
-      "omop_concept_id": "3033521",
-      "omop_concept_name": "Obstetric 1996 panel - Serum and Blood",
-      "is_panel": true
+      "omop_concept_id": "3029318",
+      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
+      "reasoning": "Maternal screen panel from `äit-seula` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1295,
-      "omop_concept_id": "3033521",
-      "omop_concept_name": "Obstetric 1996 panel - Serum and Blood",
-      "is_panel": true
+      "omop_concept_id": "3029318",
+      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
+      "reasoning": "Maternal screen panel from `äitseul` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "certainty": "medium"
     },
     {
       "row_id": 1296,
       "omop_concept_id": "42870589",
       "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "is_panel": true
+      "reasoning": "Drugs of abuse panel from `huseula` (huume = drug, seula = screen) ; in Urine from `U-` prefix ; by Screen method from `seula`.",
+      "certainty": "high"
     },
     {
       "row_id": 1297,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseu` (chemical screen) ; in Urine from `U-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1298,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. Unit `form` is ignored as `unit_share` is 0%.",
+      "certainty": "high"
     },
     {
       "row_id": 1299,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. Unit `h` is ignored as `unit_share` is 0%.",
+      "certainty": "high"
     },
     {
       "row_id": 1300,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. The decile values around 1.01-1.02 are consistent with specific gravity, a component of this panel.",
+      "certainty": "high"
     },
     {
       "row_id": 1301,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul,` (chemical screen) ; in Urine from `u-` prefix in similar codes.",
+      "certainty": "high"
     },
     {
       "row_id": 1302,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseula` (chemical screen) ; in Urine from `u-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1303,
       "omop_concept_id": "3037467",
       "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "reasoning": "Urinalysis macro (dipstick) panel from `kemseup` (chemical screen) ; in Urine from `u-` prefix.",
+      "certainty": "high"
     },
     {
       "row_id": 1304,
-      "omop_concept_id": "3033521",
-      "omop_concept_name": "Obstetric 1996 panel - Serum and Blood",
-      "is_panel": true
+      "omop_concept_id": "3029318",
+      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
+      "reasoning": "Maternal screen panel from `äit-seula` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma is the implied specimen for this test.",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group consisted almost entirely of screening tests (`seul` or `seula`), mostly panels. The mappings were generally straightforward by combining the prefix (e.g., `S-`, `U-`) with the core test name (`hpv`, `kem`, `ena`, `äit`).\n\n*   **Mappable**: The urine chemical screens (`u-kemseul`), maternal screens (`s-äit-seul`, `s-tr1seul`), ENA screen (`s-enaseul`), and drug screen (`u-huseula`) had clear, well-established panel candidates.\n*   **Slight Ambiguity**: For the generic second-trimester screen (`s-tr2seul`), the candidate list offered specific panels (triple, quad, penta) but no generic one. I chose a broader panel concept (`3029318`) that covers the purpose of second-trimester screening for fetal abnormalities.\n*   **Unmappable**: `hoikemseul` (row 1278) was too ambiguous without a `LongName` or other context clues; the `hoi` prefix could have several meanings.\n*   **Single Tests vs. Panels**: It was important to distinguish panels from single tests. For example, `hpvseul` (HPV screen) and `rhdnegseul` (RhD screen) are screening tests but report a single result (Presence/Absence), so I mapped them to single concepts and set `is_panel` to false."
+  "reflection": "This group consisted almost entirely of screening panels (`seul`, `seula`). The mappings were generally straightforward when a clear match was present in the candidates, such as for urinalysis (`u-kemseul`), first-trimester maternal screens (`s-tr1seul`), and ENA screens (`s-enaseul`).\n\nThe main challenges were:\n1.  **Missing candidates**: The correct concepts for an Rh(D) antibody screen (`rhdnegseul`) and a generic second-trimester maternal screen (`s-tr2seul`) were not in the candidate list. The list for the latter only contained specific triple/quad/penta panels, which were too specific for the generic Finnish code.\n2.  **Ambiguous local codes**: One code (`hoikemseul`) was too truncated to interpret.\n3.  **Generic-to-specific mapping**: For generic screening codes like `luov.seul.` (donor screen) and `s-ivfseul` (IVF screen), I had to map to a plausible panel (`Sexually transmitted blood borne infections panel`), which is an interpretation but likely correct in practice. The certainty for these is lower. Similarly, the generic 'mother screen' codes (`äit-seul`) were mapped to a general maternal screen panel."
 }

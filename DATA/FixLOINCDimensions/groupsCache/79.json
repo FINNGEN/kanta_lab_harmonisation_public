@@ -4,326 +4,380 @@
       "row_id": 1161,
       "omop_concept_id": "3050449",
       "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME and LongName ; [Mass/time] bcs UNIT is 'ug/min' ; in Urine collected for unspecified duration bcs 'cU-' prefix means 'Collected urine' ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1162,
       "omop_concept_id": "3050449",
       "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME and LongName ; [Mass/time] bcs deciles are consistent with ug/min, as seen in sibling row ; in Urine collected for unspecified duration bcs 'cU-' prefix means 'Collected urine' ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1163,
       "omop_concept_id": "3043771",
       "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
-      "is_panel": false
+      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] in 12 hour Urine bcs UNIT is 'mg/12h' and 'nU-' prefix means night urine, typically an overnight collection ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1164,
-      "omop_concept_id": "3050449",
-      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "is_panel": false
+      "omop_concept_id": "3043771",
+      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
+      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] bcs UNIT is 'ug/min' ; in 12 hour Urine bcs 'nU-' prefix means night urine, which corresponds to a timed, typically 12-hour, collection ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1165,
-      "omop_concept_id": "3050449",
-      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "is_panel": false
+      "omop_concept_id": "3043771",
+      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
+      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] in 12 hour Urine bcs 'nU-' prefix implies a timed collection for which Mass/time is the appropriate property ; method not specified",
+      "certainty": "low"
     },
     {
       "row_id": 1166,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for it ; in Urine bcs 'nU-' prefix means Urine ; method not specified. Using Microalbumin concept as it's the Top 2000 target for this test.",
+      "certainty": "high"
     },
     {
       "row_id": 1167,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' unit and this is the Top 2000 concept ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1168,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for it ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1169,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' unit and this is the Top 2000 concept ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1170,
       "omop_concept_id": "3051409",
       "omop_concept_name": "Alpha-1-Microglobulin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Alpha-1-Microglobulin/Creatinine bcs 'a1mikre' in TEST_NAME ; [Mass Ratio] bcs this is the standard property for this ratio ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1171,
-      "omop_concept_id": "3029937",
-      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "omop_concept_id": "3025987",
+      "omop_concept_name": "Albumin [Presence] in Urine",
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Presence] bcs '-0' suffix suggests a qualitative or screening test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1172,
       "omop_concept_id": "3012516",
       "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Mass/volume] bcs UNIT is 'mg/l' ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1173,
-      "omop_concept_id": "3012516",
-      "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-alb-lb' indicates albumin in urine, but with no unit or values, the property (e.g., mass concentration, presence) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1174,
       "omop_concept_id": "3012516",
       "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME (the '-mi' for micro indicates clinical context, not a different analyte) ; [Mass/volume] bcs UNIT is 'mg/l' ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1175,
       "omop_concept_id": "3012516",
       "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Mass/volume] bcs deciles are consistent with 'mg/l' as seen in sibling row ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1176,
-      "omop_concept_id": "3029937",
-      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "omop_concept_id": "3025987",
+      "omop_concept_name": "Albumin [Presence] in Urine",
+      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1177,
-      "omop_concept_id": "3029937",
-      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "omop_concept_id": "3025987",
+      "omop_concept_name": "Albumin [Presence] in Urine",
+      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test, and values are all 0 ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1178,
-      "omop_concept_id": "3029937",
-      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "omop_concept_id": "3025987",
+      "omop_concept_name": "Albumin [Presence] in Urine",
+      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test, and values are all 0 ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1179,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'alb/kre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1180,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'alb/kre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1181,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-alb/kre' indicates albumin/creatinine ratio in urine, but with no unit or values, the property (Mass Ratio vs Molar Ratio) cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1182,
       "omop_concept_id": "3012516",
       "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin bcs 'u-alb' in TEST_NAME specifies the albumin component ; [Mass/volume] bcs decile values are consistent with albumin in mg/L ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1183,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'u-alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1184,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-alb/kre,u-alb/krea' indicates albumin/creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1185,
       "omop_concept_id": "3009508",
       "omop_concept_name": "Creatinine [Moles/volume] in Urine",
-      "is_panel": false
+      "reasoning": "Creatinine bcs 'u-krea' in TEST_NAME ; [Moles/volume] bcs decile values [3.67-12.92] are typical for urine creatinine in mmol/L ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1186,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1187,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1188,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-alb/krea' indicates albumin/creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1189,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1190,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1191,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1192,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1193,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The UNIT 'mg/mmol/l' is invalid and there are no values, so the property cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1194,
       "omop_concept_id": "3001802",
       "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "medium"
     },
     {
       "row_id": 1195,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code 'u-alvhu4a' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
+      "certainty": ""
     },
     {
       "row_id": 1196,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code 'u-alvhu5b' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
+      "certainty": ""
     },
     {
       "row_id": 1197,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code 'u-alvhu6a' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
+      "certainty": ""
     },
     {
       "row_id": 1198,
-      "omop_concept_id": "3017754",
-      "omop_concept_name": "Calcium/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-cakre' identifies Calcium/Creatinine ratio in urine, but without a unit or values, the property (Mass Ratio vs Molar Ratio) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 1199,
       "omop_concept_id": "3015736",
       "omop_concept_name": "pH of Urine",
-      "is_panel": false
+      "reasoning": "pH bcs 'happamuus' in TEST_NAME means 'acidity' ; of Urine bcs 'U-' prefix means Urine. Deciles [6.5-8] confirm pH values.",
+      "certainty": "high"
     },
     {
       "row_id": 1200,
       "omop_concept_id": "3001582",
       "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Protein/Creatinine bcs 'prokre' in TEST_NAME and 'Proteiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'g/mol' is a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1201,
       "omop_concept_id": "3001582",
       "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Protein/Creatinine bcs 'prokre' in TEST_NAME and 'Proteiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1202,
-      "omop_concept_id": "3001582",
-      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-prokre' indicates Protein/Creatinine ratio in urine, but with no unit or values, the property (Mass Ratio vs Molar Ratio) cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1203,
       "omop_concept_id": "3001582",
       "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "reasoning": "Protein/Creatinine bcs 'protkre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "certainty": "high"
     },
     {
       "row_id": 1204,
-      "omop_concept_id": "3001582",
-      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-protkre' indicates Protein/Creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
+      "certainty": ""
     },
     {
       "row_id": 1205,
       "omop_concept_id": "3004562",
       "omop_concept_name": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "reasoning": "Bacteria bcs 'bakt' in TEST_NAME ; [Presence] bcs this is a qualitative microscopy finding ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Light microscopy bcs 'sakka' implies microscopy and this is the Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1206,
       "omop_concept_id": "3010189",
       "omop_concept_name": "Epithelial cells [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Epithelial cells bcs 'epit' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1207,
       "omop_concept_id": "3035124",
       "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs 'eryt' in TEST_NAME ; [#/area] bcs UNIT is 'u/field' ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1208,
       "omop_concept_id": "3035124",
       "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs 'eryt' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1209,
       "omop_concept_id": "3035583",
       "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs 'leuk' in TEST_NAME ; [#/area] bcs UNIT is 'u/field' ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1210,
       "omop_concept_id": "3035583",
       "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs 'leuk' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1211,
-      "omop_concept_id": "3005658",
-      "omop_concept_name": "Casts [#/area] in Urine sediment by Microscopy low power field",
-      "is_panel": false
+      "omop_concept_id": "3009292",
+      "omop_concept_name": "Casts [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Casts bcs 'lier' in TEST_NAME is lieriö (cast) ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "certainty": "high"
     },
     {
       "row_id": 1212,
       "omop_concept_id": "43055190",
       "omop_concept_name": "Macrophages [#/area] in Urine sediment by Microscopy high power field",
-      "is_panel": false
+      "reasoning": "Macrophages bcs 'makrof' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy",
+      "certainty": "high"
     },
     {
       "row_id": 1213,
-      "omop_concept_id": "40761543",
-      "omop_concept_name": "Other elements [Identifier] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "omop_concept_id": "3038224",
+      "omop_concept_name": "Microscopic observation [Identifier] in Urine sediment by Light microscopy",
+      "reasoning": "Microscopic observation bcs 'muuta' means 'other', a catch-all for various findings ; [Identifier] bcs this is a nominal result ; in Urine sediment bcs 'U-sakka' means urine sediment ; by Light microscopy bcs 'sakka' implies microscopy and this is the Top 2000 concept for general microscopic findings",
+      "certainty": "high"
     },
     {
       "row_id": 1214,
-      "omop_concept_id": "40761539",
-      "omop_concept_name": "Cells [Type] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'u-solut,muut' means 'other cells in urine'. It is ambiguous whether this is from sediment or uncentrifuged urine, and 'other' is not a specific cell type. No candidate fits this well.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group was dominated by urine albumin and protein tests, especially albumin/creatinine ratio (ACR) and urine sediment microscopy. Mapping was generally straightforward due to the excellent candidate list, which included the key Top 2000 LOINC codes for these common tests.\n\n*   **Albumin/Creatinine Ratios:** Multiple local codes (`u-alb/kre`, `u-albkre`, `u-albkrea`, `nu-albkre`) all map to the same concept. I consistently chose the Top 2000 code `3001802` (Microalbumin/Creatinine [Mass Ratio] in Urine), which is the recommended target despite the \"Microalbumin\" term, as it fits the `mg/mmol` unit (a mass/mole ratio that LOINC files under Mass Ratio) and is the standard for this measurement.\n*   **Urine Sediment:** The `U-Sakka` (sediment) components were easily mapped to their corresponding Top 2000 microscopy codes (Erythrocytes, Leukocytes, Epithelial cells, Bacteria, Casts). For casts (`lieriö`), I chose the low-power field concept (`3005658`), as this is the standard method for observing them. For 'other' (`muuta`), I found a more specific concept (`40761543`, Other elements) than the generic `Microscopic observation`.\n*   **Timed vs. Spot Samples:** I was able to distinguish between timed collections (e.g., `cU-Alb-mi` in `ug/min`, `nU-Alb-mi` in `mg/12h`) and spot samples (e.g., `U-Alb-mi` in `mg/l`).\n*   **Unmappable Codes:** The codes `u-alvhu4a`, `u-alvhu5b`, and `u-alvhu6a` were opaque and had no supporting data, so I correctly left them unmapped."
+  "reflection": "This group was mostly about urine chemistry, particularly albumin, creatinine, and their ratios, along with urine sediment microscopy. The mappings were generally straightforward.\n\nThe main challenge was deciding between `Albumin/Creatinine` and `Microalbumin/Creatinine` concepts for the various `u-albkre` codes. The Finnish codes themselves don't distinguish, but the test is clinically for microalbuminuria. I decided to standardize on the LOINC Top 2000 concept `3001802 (Microalbumin/Creatinine [Mass Ratio] in Urine)` for all quantitative ratios, as this seems to be the recommended practice for this common test, promoting consistency over a literal interpretation of the absence of 'micro' in the source code.\n\nTimed collections (`cU-`, `nU-`) were handled by selecting specific LOINC concepts where available (e.g., `12 hour Urine` for `nU-`).\n\nThe urine sediment (`U-sakka`) codes were very clear and mapped well to the standard Top 2000 LOINC concepts for microscopy findings (bacteria, erythrocytes, leukocytes, casts). The code `u-sakka,muuta` (other findings) was mapped to the generic `Microscopic observation` concept.\n\nA few codes (`u-alvhu...`) were uninterpretable gibberish and were left unmapped. Rows without sufficient evidence for the property (e.g., a ratio test with no unit or values) were also correctly left unmapped."
 }

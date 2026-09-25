@@ -4,164 +4,191 @@
       "row_id": 1134,
       "omop_concept_id": "3033060",
       "omop_concept_name": "Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Aspergillus sp from `-aspe-` and LongName `Aspergillus` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1135,
       "omop_concept_id": "1092116",
       "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bacteria from `-bakt-` and LongName `Bakteeri` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1136,
       "omop_concept_id": "40765161",
       "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human bocavirus from `-boca-` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1137,
       "omop_concept_id": "40765161",
       "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human bocavirus from `-boka-` and LongName `Bokavirus` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1138,
-      "omop_concept_id": "3037875",
-      "omop_concept_name": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "3012477",
+      "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Bordetella pertussis from `-bopa-`, interpreted as a common typo/variant for `bopen` (pertussis), consistent with loinc_name_guess ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "medium"
     },
     {
       "row_id": 1139,
       "omop_concept_id": "3012477",
       "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bordetella pertussis from `-bopen-` and LongName ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1140,
       "omop_concept_id": "3012477",
       "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bordetella pertussis from `-bopenho.` which is a clear code despite the trailing dot ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1141,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "40766162",
+      "omop_concept_name": "Bordetella sp DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Bordetella sp from `-bopp-` which indicates a test for both pertussis and parapertussis ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo). The more specific combined concept was not available, so the genus-level concept is the best fit.",
+      "certainty": "medium"
     },
     {
       "row_id": 1142,
       "omop_concept_id": "648686",
       "omop_concept_name": "Borrelia sp DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Borrelia sp from `-borr-` and LongName `Borrelia` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1143,
       "omop_concept_id": "3037875",
       "omop_concept_name": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bordetella parapertussis from `-bpar-` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1144,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `-rbaktnho` indicates a test for bacterial nucleic acid in a respiratory specimen (`r-`). No candidate concept for this specific combination is available in the provided list. Mapping to a generic specimen concept would be inaccurate.",
+      "certainty": ""
     },
     {
       "row_id": 1145,
       "omop_concept_id": "1092116",
       "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bacteria from `bakt` ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1146,
       "omop_concept_id": "40765161",
       "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human bocavirus from `boka` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1147,
       "omop_concept_id": "3012477",
       "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bordetella pertussis from `bopen` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1148,
       "omop_concept_id": "3037875",
       "omop_concept_name": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Bordetella parapertussis from `bpara` abbreviation, a variant of `bpar` ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1149,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `f-baktnho` specifies a test for bacterial nucleic acid in a stool (`f-`) specimen. No candidate concept for this specific combination exists. The available options are for specific pathogen panels, not general bacterial DNA.",
+      "certainty": ""
     },
     {
       "row_id": 1150,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "1092353",
+      "omop_concept_name": "Enteric parasite panel - Stool by NAA with probe detection",
+      "reasoning": "Enteric parasite panel from `f-para-` and LongName `Parasiitit` (parasites, plural) ; in Stool from `f-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1151,
       "omop_concept_id": "1616933",
       "omop_concept_name": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Salmonella sp from `salm` and LongName ; [Presence] from `-nho` (kval) ; in Stool from `f-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1152,
-      "omop_concept_id": "37020957",
-      "omop_concept_name": "Sapovirus genogroups I+II+IV+V RNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `f-saponho` specifies Sapovirus RNA detection in a stool (`f-`) specimen. The ideal concept `Sapovirus RNA [Presence] in Stool by NAA with probe detection` is not in the candidate list. Available options are for generic `Specimen` or specific genogroup panels, which are not correct.",
+      "certainty": ""
     },
     {
       "row_id": 1153,
       "omop_concept_id": "3041642",
       "omop_concept_name": "Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human coronavirus 229E from `kv229e` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1154,
       "omop_concept_id": "40765160",
       "omop_concept_name": "Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human coronavirus HKU1 from `kvhku1` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1155,
       "omop_concept_id": "3040359",
       "omop_concept_name": "Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human coronavirus NL63 from `kvnl63` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1156,
       "omop_concept_id": "3038546",
       "omop_concept_name": "Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Human coronavirus OC43 from `kvoc43` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1157,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `li-baktnho` specifies a test for bacterial nucleic acid in a cerebrospinal fluid (`li-`) specimen. No candidate concept for this specific combination exists. The available candidates are for specific bacteria in CSF (e.g., E. coli, Listeria), not a general bacterial screen.",
+      "certainty": ""
     },
     {
       "row_id": 1158,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "The code `resbaktnho` indicates a test for bacterial nucleic acid in a respiratory specimen (`res`). No candidate concept for this specific combination is available in the provided list. Mapping to a generic specimen concept would be inaccurate.",
+      "certainty": ""
     },
     {
       "row_id": 1159,
       "omop_concept_id": "3015822",
       "omop_concept_name": "Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Parvovirus B19 from `parv` and LongName ; [Presence] from `-nho` (kval) ; in Serum from `S-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "certainty": "high"
     },
     {
       "row_id": 1160,
       "omop_concept_id": "3032674",
       "omop_concept_name": "Salmonella sp DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Salmonella sp from `salm` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group consisted entirely of qualitative nucleic acid tests (`-nho`). Mapping was generally successful where the Finnish code specified an analyte and either a specific specimen (e.g., `S-` for Serum, `F-` for Feces) or no specimen at all. For codes without a specimen prefix (e.g., `-bopenho`, `bopenho`), I consistently mapped to the LOINC concept with the generic `Specimen` system, as this is the most accurate representation.\n\nSeveral rows could not be mapped because the candidate list was missing the required concepts. This was particularly evident for:\n-   Generic bacterial NAA tests in specific specimens: `li-baktnho` (CSF), `f-baktnho` (Stool), and `-rbaktnho`/`resbaktnho` (Respiratory) all had plausible LOINC analogues, but those concepts were not among the candidates.\n-   Panel tests: `f-paranho` (`-Parasiitit`, parasites plural) and `-boppnho` (`B. pertussis` + `B. parapertussis`) clearly represent multiplex tests, but no corresponding panel LOINC codes were retrieved.\n\nThe distinction between a generic code like `-borrnho` (Borrelia) and a specific one (`Borrelia burgdorferi`) was important; I chose the more general `Borrelia sp` concept (`648686`) as the better fit."
+  "reflection": "This group consisted entirely of qualitative nucleic acid amplification tests, identifiable by the `-nho` suffix. Most local codes were clear and had direct mappings in the candidate list, especially for specific pathogens with an unspecified specimen, or with a common specimen like Serum or Stool. The coronavirus tests (229E, HKU1, NL63, OC43) were particularly straightforward.\n\nThe main difficulty was the absence of certain concepts in the candidate list. Specifically, several general tests for 'Bacteria' combined with specific specimens (Respiratory, Stool, CSF) could not be mapped (rows 1144, 1149, 1157, 1158). Similarly, a concept for Sapovirus in Stool was missing (row 1152), and a combined Bordetella pertussis+parapertussis concept was absent (row 1141), forcing a fallback to a less specific `Bordetella sp` concept. This suggests the search for candidates might be improved by including more combinations of common analytes and common specimens, even if they don't exactly match the initial `loinc_name_guess`."
 }

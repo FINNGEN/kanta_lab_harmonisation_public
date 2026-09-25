@@ -4,278 +4,324 @@
       "row_id": 109,
       "omop_concept_id": "3020489",
       "omop_concept_name": "Escherichia coli shiga-like toxin [Presence] in Stool by Immunoassay",
-      "is_panel": false
+      "reasoning": "EHEC (enterohemorrhagic E. coli) is defined by production of shiga-like toxin, so this component is correct ; [Presence] bcs this is a qualitative test ; in Stool bcs EHEC is a diarrheal pathogen and this is the default specimen ; by Immunoassay bcs the name 'ehec(...)' lacks the '-nho' or 'nukl.haponos' suffix indicating a nucleic acid test, making immunoassay a common and plausible alternative method, and this concept is on the LOINC Top 2000 list.",
+      "certainty": "medium"
     },
     {
       "row_id": 110,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'ekg, 12 kytkentää' means 'EKG, 12 leads'. An EKG is a panel of measurements and interpretations. 'levossa' means 'at rest', a detail not usually specified in the LOINC panel name.",
+      "certainty": "high"
     },
     {
       "row_id": 111,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'ekg, 12 kytkentää' means 'EKG, 12 leads'. An EKG is a panel of measurements and interpretations. 'levossa (asi)' means 'at rest (customer)', contextual details not part of the core LOINC concept.",
+      "certainty": "high"
     },
     {
       "row_id": 112,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'ekg, 12 kytkentää' means 'EKG, 12 leads'. An EKG is a panel of measurements and interpretations. 'levossa (asiakkaan ottama)' means 'at rest (taken by customer)', contextual details not part of the core LOINC concept.",
+      "certainty": "high"
     },
     {
       "row_id": 113,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'ekg, 12 kytkentää' means 'EKG, 12 leads'. An EKG is a panel of measurements and interpretations. 'levossa (asiakkanottama)' is a likely misspelling of 'at rest (taken by customer)', contextual details not part of the core LOINC concept.",
+      "certainty": "high"
     },
     {
       "row_id": 114,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'ekg-12 kytkentää levossa' means 'EKG-12 leads at rest'. An EKG is a panel of measurements and interpretations.",
+      "certainty": "high"
     },
     {
       "row_id": 115,
       "omop_concept_id": "1616645",
       "omop_concept_name": "Escherichia coli enteroaggregative DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli enteroaggregative DNA bcs the name is 'enteroaggregatiivinen e.coli' ; by NAA bcs the suffix is '-nho' (nukleiinihapon osoitus) ; in Stool bcs this is a diarrheal pathogen test, although not explicitly stated in the name ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 116,
       "omop_concept_id": "1469822",
       "omop_concept_name": "Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli shiga-like toxin DNA bcs the name is 'enterohemorraginen e.coli' (EHEC), which is defined by production of shiga-like toxin ; by NAA bcs the suffix is '-nho' (nukleiinihapon osoitus) ; in Stool bcs this is a diarrheal pathogen test ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 117,
       "omop_concept_id": "1616308",
       "omop_concept_name": "Escherichia coli enteropathogenic DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli enteropathogenic DNA bcs the name is 'enteropatogeeninen e.coli' ; by NAA bcs the suffix is '-nho' (nukleiinihapon osoitus) ; in Stool bcs this is a diarrheal pathogen test ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 118,
       "omop_concept_id": "1617228",
       "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli enterotoxigenic DNA bcs the name is 'enterotoksigeeninen e.coli' ; by NAA bcs the suffix is '-nho' (nukleiinihapon osoitus) ; in Stool bcs this is a diarrheal pathogen test ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 119,
-      "omop_concept_id": "1617228",
-      "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'etec(enterotoksigeeninen e.coli)' does not specify a method. The lab system has separate codes for NAA tests (e.g., row 118 with '-nho' suffix), so the absence of a method specifier is meaningful. The candidate list consists almost exclusively of NAA-based tests, making it impossible to choose a method-specific concept with confidence. No appropriate method-agnostic or immunoassay-based concept for ETEC is available.",
+      "certainty": ""
     },
     {
       "row_id": 120,
       "omop_concept_id": "1469649",
       "omop_concept_name": "Campylobacter sp DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Campylobacter sp DNA bcs the name is 'campylobacter spp.'. The note '(jejuni&coli)' clarifies the common species but the test is for the genus ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 121,
       "omop_concept_id": "1469822",
       "omop_concept_name": "Escherichia coli shiga-like toxin DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli shiga-like toxin DNA bcs the name is 'ehec (enterohemorraginen e.coli)', which is defined by producing shiga-like toxin ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 122,
       "omop_concept_id": "1617228",
       "omop_concept_name": "Escherichia coli enterotoxigenic DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli enterotoxigenic DNA bcs the name is 'etec (enterotoksigeeninen e.coli)' ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 123,
       "omop_concept_id": "42868767",
       "omop_concept_name": "Plesiomonas shigelloides DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Plesiomonas shigelloides DNA bcs the name is 'plesiomonas shigelloides' ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 124,
       "omop_concept_id": "1616933",
       "omop_concept_name": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Salmonella sp DNA bcs the name is 'salmonella spp.' ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 125,
-      "omop_concept_id": "42868716",
-      "omop_concept_name": "Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "1469633",
+      "omop_concept_name": "Shigella species+EIEC DNA [Presence] in Stool by NAA with probe detection",
+      "reasoning": "Shigella species+EIEC DNA bcs the name is 'shigella spp./eiec (enteroinvasiivinen e.coli)', which are commonly grouped ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 126,
       "omop_concept_id": "37020818",
       "omop_concept_name": "Yersinia enterocolitica DNA [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Yersinia enterocolitica DNA bcs the name is 'yersinia enterocolitica' ; in Stool bcs of the 'F-' prefix (Feces) ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 127,
       "omop_concept_id": "1988916",
       "omop_concept_name": "Cryptococcus gattii+neoformans DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Cryptococcus ... DNA bcs the name is 'cryptococcus neoformans' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test. The chosen concept also includes C. gattii, which is not in the local name, but this is the best available candidate and a common grouping in PCR assays.",
+      "certainty": "medium"
     },
     {
       "row_id": 128,
       "omop_concept_id": "3011927",
       "omop_concept_name": "Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Cytomegalovirus DNA bcs the name is 'cytomegalovirus' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 129,
       "omop_concept_id": "1988643",
       "omop_concept_name": "Escherichia coli K1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Escherichia coli K1 DNA bcs the name is 'escherichia coli k1' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 130,
       "omop_concept_id": "3023671",
       "omop_concept_name": "Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Herpes simplex virus 1 DNA bcs the name is 'herpes simplex 1' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 131,
       "omop_concept_id": "3033564",
       "omop_concept_name": "Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Herpes simplex virus 2 DNA bcs the name is 'herpes simplex 2' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 132,
       "omop_concept_id": "1988744",
       "omop_concept_name": "Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Listeria monocytogenes DNA bcs the name is 'l.monocytogenes' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 133,
       "omop_concept_id": "1988730",
       "omop_concept_name": "Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Neisseria meningitidis DNA bcs the name is 'neisseria meningitidis' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 134,
       "omop_concept_id": "1988894",
       "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Streptococcus agalactiae DNA bcs the name is 'streptococcus agalactiae' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 135,
       "omop_concept_id": "1988899",
       "omop_concept_name": "Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Streptococcus pneumoniae DNA bcs the name is 'streptococcus pneumoniae' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 136,
       "omop_concept_id": "3016894",
       "omop_concept_name": "Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "reasoning": "Varicella zoster virus DNA bcs the name is 'varicella-zoster' ; in Cerebral spinal fluid bcs of the 'Li-' prefix ; by NAA bcs of 'nukl.hapon os.' (nucleic acid detection) ; [Presence] bcs it is a detection test.",
+      "certainty": "high"
     },
     {
       "row_id": 137,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. An EKG is a panel of measurements and interpretations. The 'Pt-' prefix confirms it is a patient-level procedure.",
+      "certainty": "high"
     },
     {
       "row_id": 138,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää' means 'Patient-EKG, 12 leads'. The '6tk' part is unclear but does not detract from the core procedure being a 12-lead EKG panel.",
+      "certainty": "high"
     },
     {
       "row_id": 139,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää' means 'Patient-EKG, 12 leads'. 'ep-terveyskeskus' is a location detail (emergency dept / health center), not part of the core test.",
+      "certainty": "high"
     },
     {
       "row_id": 140,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. The unit '1' with 0% share is an anomaly and should be ignored, as an EKG is a panel, not a single numeric result.",
+      "certainty": "high"
     },
     {
       "row_id": 141,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. An EKG is a panel of measurements and interpretations.",
+      "certainty": "high"
     },
     {
       "row_id": 142,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. The parenthetical text likely refers to a location or context and is not part of the core test.",
+      "certainty": "high"
     },
     {
       "row_id": 143,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. The parenthetical '(ot.tk:ssa)' likely means 'taken at health center', a contextual detail.",
+      "certainty": "high"
     },
     {
       "row_id": 144,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. The suffix 'omarekisteröinti museen' might relate to self-registration or a specific system, which are contextual details.",
+      "certainty": "high"
     },
     {
       "row_id": 145,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa osastolla' means 'Patient-EKG, 12 leads at rest on the ward'. 'osastolla' is a location detail.",
+      "certainty": "high"
     },
     {
       "row_id": 146,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs the name 'pt-ekg, 12 kytkentää levossa' means 'Patient-EKG, 12 leads at rest'. The trailing character is noise.",
+      "certainty": "high"
     },
     {
       "row_id": 147,
-      "omop_concept_id": "3007355",
-      "omop_concept_name": "Rhythm segment [Interpretation] by EKG",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg' is highly specific, meaning 'atrial fibrillation screening, monitoring EKG'. No candidate in the provided list matches this specific indication (atrial fibrillation screening) or method (monitor EKG). Mapping to a generic EKG panel would lose significant information.",
+      "certainty": ""
     },
     {
       "row_id": 148,
-      "omop_concept_id": "3007355",
-      "omop_concept_name": "Rhythm segment [Interpretation] by EKG",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne' is highly specific, meaning 'atrial fibrillation screening, monitoring EKG, additional recording'. No candidate in the provided list matches this specific indication (atrial fibrillation screening) or method (monitor EKG). Mapping to a generic EKG panel would lose significant information.",
+      "certainty": ""
     },
     {
       "row_id": 149,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs this is a variant of an EKG test. 'sisältäen tietokoneanalyysin' means 'including computer analysis', which is a common feature of a standard 12-lead EKG and doesn't change the base concept.",
+      "certainty": "high"
     },
     {
       "row_id": 150,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs this is a variant of an EKG test. 'sisältäen tietokoneanalyysin' means 'including computer analysis'. The parenthetical text refers to location/context, not the test itself.",
+      "certainty": "high"
     },
     {
       "row_id": 151,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs this is a variant of an EKG test. 'sisältää tietokoneanalyysin' means 'includes computer analysis', which is a common feature of a standard 12-lead EKG and doesn't change the base concept.",
+      "certainty": "high"
     },
     {
       "row_id": 152,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs this is a garbled variant of 'Pt-EKG sisältäen tietokoneanalyysin' ('Pt-EKG including computer analysis'). The core test is an EKG panel.",
+      "certainty": "high"
     },
     {
       "row_id": 153,
       "omop_concept_id": "3044889",
       "omop_concept_name": "12 lead EKG panel",
-      "is_panel": true
+      "reasoning": "12 lead EKG panel bcs this is a variant of 'Pt-EKG sisältäen tietokoneanalyysin' ('Pt-EKG including computer analysis'). The core test is an EKG panel.",
+      "certainty": "high"
     },
     {
       "row_id": 154,
-      "omop_concept_id": "42868716",
-      "omop_concept_name": "Shigella species+EIEC invasion plasmid antigen H ipaH gene [Presence] in Stool by NAA with probe detection",
-      "is_panel": false
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'shigella/eiec(enteroinvasiivinen e.coli)' does not specify a method. The lab system has a separate code for the NAA test (row 125, with 'F-' and 'nukl.haponos' parts), so the absence of a method specifier is meaningful. The candidate list does not contain a suitable method-agnostic or non-NAA concept that covers both Shigella and EIEC.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted primarily of microbiology nucleic acid amplification tests (NAA/PCR) and electrocardiogram (EKG) panels. The candidate concepts were excellent and highly specific, allowing for confident mapping of nearly all rows.\n\n*   **NAA Tests**: Rows with `F-` (Feces) or `Li-` (CSF) prefixes and the `-nukl.haponos.` (`-Nh`) suffix were straightforward to map to the corresponding NAA-based LOINC codes. The candidate list provided perfect matches for each pathogen and specimen combination.\n*   **EKG Panels**: The numerous variations of `pt-ekg, 12 kytkentää` (12-lead EKG) were all correctly mapped to the standard `12 lead EKG panel` concept (`3044889`), which also has high existing usage in Finland.\n*   **Ambiguous Methods**: A few rows lacked explicit prefixes or method suffixes (e.g., `ehec...`, `etec...`). For EHEC (row 109), I chose a common immunoassay screen (`3020489`) which is also a Top2000 concept, as it seemed more appropriate for a generic code than the specific NAA test. For other pathogens where only an NAA candidate was available, I mapped to the NAA concept, assuming the generic name referred to the same common test.\n*   **EKG Screening**: Rows 147-148 for atrial fibrillation screening were mapped to a `Rhythm segment [Interpretation]` concept (`3007355`), as there was no specific \"rhythm screening panel\" available, and an interpretation fits the purpose of screening."
+  "reflection": "This group was a mix of EKG procedures and microbiology NAA tests. Mapping was straightforward for most rows.\n\n**Successes:**\n*   The numerous variations of '12 lead EKG' were all confidently mapped to the single `12 lead EKG panel` concept (3044889), correctly identifying the local variations as contextual details rather than different tests.\n*   The microbiology tests with explicit specimen prefixes (`F-`, `Li-`) and method suffixes (`-nho`, `-nukl.haponos`) were a perfect fit for specific LOINC concepts for NAA tests in Stool or CSF.\n\n**Challenges:**\n*   Rows 147 and 148 (`pt-ekg,eteisvärinänseulonta...`) were too specific for the available candidates. The Finnish name clearly indicates 'atrial fibrillation screening via monitor EKG', and no candidate captured this. A concept like `Atrial fibrillation [Interpretation] by EKG.monitor` was guessed by the previous step but was not in the candidate list, indicating a potential search failure or vocabulary gap.\n*   Rows without an explicit method (109, 119, 154) were difficult. I mapped row 109 (EHEC) to a Shiga Toxin Immunoassay concept as a plausible non-NAA alternative, but left rows 119 (ETEC) and 154 (Shigella/EIEC) unmapped because no good non-NAA alternative was present. The fact that the coding system has specific codes for NAA tests strengthens the case that these method-agnostic codes are for something else (e.g., culture, immunoassay) or are umbrella codes. Without better candidates, leaving them unmapped is the safest option."
 }

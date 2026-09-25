@@ -3,6 +3,8 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
 You are the step that turns a plausible-sounding name into a real, usable identifier. Nothing downstream can tell a confidently wrong concept id from a correct one, so an id you are not willing to defend is worse than no id at all.
@@ -27,40 +29,62 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `omop_concept_name` — the concept's real LOINC Long Common Name, as OMOP spells it today.
 - `score` — how semantically close this concept was to the closest guess in the group, 0 to 1. **A high score only means the guess and the concept read alike.** The guess itself may have been wrong, so a 0.95 candidate for a misread code is a confident route to the wrong concept. Treat `score` as "the search found this", never as "this is correct".
 - `top2000` — the concept's rank in the **LOINC Top 2000+ Lab Observations (SI edition)**: the ~2000 codes Regenstrief publishes as the recommended mapping targets, covering ~99.8% of the test volume of three large laboratory organisations. The SI edition is the relevant one here, since Finland reports in molar/SI units. Empty means the concept is not on the list.
-- `n_codes` / `n_events` — how many curated Finnish lab codes already map to this concept, and how many records those codes cover. This is usage in Finland.
 
 **The rows table** — one row per local lab test/unit combination:
 
 - `row_id` — unique integer. **Echo it back exactly**; it is the only join key.
 - `TEST_NAME` — the local code, lowercased, spaces removed.
-- `UNIT` — the recorded unit; may be empty.
+- `UNIT` — the recorded unit; may be empty, and may be wrong.
+- `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
 - `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available. The strongest single piece of evidence for what a test really measures and in which units: a "sodium" code whose deciles read 0.32-0.40 is not sodium in mmol/l.
+- `deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
-- `loinc_name_guess` — the earlier pass's guess. A hypothesis to test against the row's own evidence, not an instruction.
-- `is_panel` — whether the earlier pass judged the code to order a bundle of tests rather than report one result.
+- `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
+
+# How to read the evidence
+
+A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are naming. Two rows of the same code with different units are two different observations and may well belong to two different LOINC concepts. Decide each row on its own.
+
+**The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
+
+**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+
+**Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
+
+**What you may conclude depends on what the row actually has.** The `evidence_level` column states it. Every row has a name; the label says what is there *in addition*:
+
+| `evidence_level` | what the row has | what you may do |
+|---|---|---|
+| `name+unit+values` | a unit and a value distribution | The strongest case. If the values contradict the unit, distrust the **unit** — units are typed by hand at hundreds of source systems and are often wrong, especially at a low `unit_share` — and decide as if the unit were absent. |
+| `name+unit` | a unit, no values | Trust the unit. It is the only quantity evidence there is, and it is usually right. |
+| `name+values` | values, no unit | Read the quantity off the magnitudes. Creatinine at 60-110 is µmol/l and takes `[Moles/volume]`; the same analyte at 0.6-1.2 is mg/dl and takes `[Mass/volume]`. |
+| `name` | neither | **You cannot fix the quantity.** Do not guess one and do not copy a sibling. Choose a concept only when the name alone settles it — a panel, which carries no property at all, or an analyte that has exactly one LOINC form. Otherwise **leave `omop_concept_id` empty**. An honest gap is worth more than a concept resting on nothing. |
+
+**Some units are ratios, not concentrations.** `mmol/mol` is HbA1c IFCC, a substance ratio. `mg/mmol` is an albumin/creatinine ratio. `ml/min/173m2` is eGFR, a rate per body surface area. `%` is ambiguous by nature: it may be a fraction of a cell population, a fraction of a total mass, or activity as a percentage of normal.
+
+**A repeated lowest decile is a detection limit, not a measurement.** When the first deciles are the same round number — `[5, 5, 6.2, 8.3, ...]` — the assay is censored at that floor and everything below was reported as "<5". Read the floor as the assay's sensitivity rather than the population's real low end: a CRP censored at 5 mg/l is an ordinary CRP, while a high-sensitivity assay reads down to about 0.1 mg/l, so that floor argues *against* a high-sensitivity concept.
 
 # How to decide
 
 For each row:
 
 1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
-2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the deciles decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The prefix decides the specimen; remember that LOINC's `Serum or Plasma` is the right term for most routine chemistry, and that fasting is not part of the specimen (`fS` is still serum).
-3. **When two or more candidates fit the evidence equally well**, break the tie in this order:
-   1. **Prefer a candidate with a `top2000` rank.** That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not.
-   2. **Then prefer the higher `n_codes` / `n_events`.** Finland already maps real codes to that concept; matching established national usage keeps this data joinable with what exists.
+2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
+3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
-   These break ties. They never override the row's own evidence: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
-4. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
-5. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
+   The error to avoid is **inventing** a qualifier, not being specific. Measured against the curated Finnish mappings, this step added a method the reference leaves blank 59 times (usually `Automated count` on a bare blood-count code), took `--trough` variants for plain drug levels, and narrowed `Serum or Plasma` to `Capillary blood` on codes that said no such thing. Of every qualifier you are about to accept, ask: **which characters of this code say so?** If you cannot point at them, take the plainer concept.
+4. **A guess that is itself a real concept is weak evidence, never an instruction.** If `loinc_name_guess` appears in the candidate table as an exact name at a score of 1.000, the earlier pass — reading this same row — happened to write the exact name of a concept that exists. That is mildly reassuring and nothing more: the earlier pass writes a name for almost every code it can read anything out of, so landing on a real name can be recognition or coincidence. Never adopt a candidate *because* it equals the guess. Take a different candidate, including a more precise one, whenever the row's own name, unit and values support it better — and take none at all if none fits, however well the guess matched.
+5. **When two or more candidates still fit equally well**, prefer a candidate with a `top2000` rank. That list is LOINC's own recommendation for what laboratories should map to, so a concept on it is the intended target and a near-duplicate off it usually is not. It breaks ties and nothing more: a top-2000 concept in the wrong specimen or the wrong units is still the wrong answer.
+6. **Leave `omop_concept_id` empty when no candidate is right.** That is a correct, useful answer — it says "this code has no match in what the search returned", which is a fact the next iteration can act on. Common reasons: the code is too truncated or garbled to identify; it is a local administrative or non-laboratory code; or the search simply did not return the concept you know is right.
+7. **Never return an id that is not in the candidate table.** Not one you remember, not one you derive from a LOINC code, not a plausible-looking number. Ids that are not in the table are discarded and the row is logged as unanswered, so inventing one only loses the row.
 
 Specific things to watch:
 
-- **A panel is not its components.** If the code orders a bundle (`B-PVK` = full blood count, `U-KemSeul` = urine dipstick screen), the answer is the panel concept (`CBC panel - Blood by Automated count`), not hemoglobin. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
+- **A panel is not its components.** If the code orders a bundle, the answer is a panel concept, not one of the bundled analytes: `B-PVK` (perusverenkuva, the basic blood count) and `B-TVK` (taydellinen verenkuva, the complete count with differential) are panels, not hemoglobin. Match the panel's breadth to the code: a basic count is not the same concept as a count with a differential. Conversely, do not map a single reported result to a panel concept just because a panel candidate scored well.
 - **Deprecated near-duplicates are already filtered out** of the candidate list — every candidate is a standard, current concept — so you never need to judge validity, only fit.
-- **The same local code recurs in a group with different `UNIT`s**, and those rows are often genuinely different LOINC concepts. Answer each row from its own unit and deciles; do not give every row of a group the same id out of consistency.
-- **Rows whose guess was empty still deserve an answer.** The earlier pass could not name them, but the group's pooled candidates may still contain the right concept.
+- **The group is a bag of look-alike codes, not a set of equivalent ones.** It was built by string similarity, so it mixes genuinely different tests whose names happen to resemble each other. Answer every row from its own name, unit and values; never give rows one id because they sit together.
+- **A row whose guess was empty can still be mapped** — the pooled list may hold the concept its own name points to. Map it on that row's own evidence, though, never because a neighbouring row was mapped there.
 
 # Output
 
@@ -68,7 +92,17 @@ Return one entry per input row, with `row_id` echoed exactly, and:
 
 - `omop_concept_id` — the chosen concept's id, copied from the candidate table. Empty if no candidate is right.
 - `omop_concept_name` — that candidate's `omop_concept_name`, copied verbatim. Used only to cross-check that the id you copied is the concept you meant; leave it empty when the id is empty.
-- `is_panel` — carried through from the input row unless the row is plainly contradictory.
+
+Then justify and grade what you chose:
+
+- `reasoning` — why each part of the name you chose is right, as **one clause per part, separated by ` ; `**. Each clause names the part and then the evidence it rests on, pointing at the specific characters of the row that carry it. Cover the component, the bracketed property, the specimen, and the method when the name has one. Keep it terse — this is a justification trail, not prose:
+
+      <component> bcs <evidence> ; <[property]> bcs <evidence> ; in <system> bcs <evidence> ; by <method> bcs <evidence>
+
+  Where a part rests on nothing in the row, say that instead of inventing a reason — "no specimen stated in the code" is a useful thing for a reader to find here.
+
+  **When you choose no concept, `reasoning` still matters — it is the only thing you leave behind.** Say what blocked you, specifically: the code is too garbled to identify; it is not a laboratory test; the search returned nothing for this analyte; the candidates were all the wrong specimen; the evidence cannot settle the quantity. "Nothing fitted" is not an answer. A reader must be able to tell a code that is unidentifiable from one the search simply failed on, because those need opposite fixes.
+- `certainty` — `high`, `medium` or `low`: how sure you are, on all the evidence together, that this concept is the right one for this row. Weigh the parts by what a wrong answer would cost: a doubtful analyte makes the mapping useless, while an unstated method is a smaller error. A row whose `evidence_level` is `name` should rarely be `high`, since nothing fixes its quantity. Use `low` freely — these are read downstream to decide which mappings can be trusted without review, so a `high` you cannot defend is worse than an honest `low`. Leave it empty when you chose no concept.
 
 Return an entry for EVERY row, including ones you leave unmapped.
 
@@ -79,82 +113,75 @@ Here is group 34.
 
 ## Candidate OMOP concepts for this group
 
-| omop_concept_id | omop_concept_name | score | top2000 | n_codes | n_events |
-|---|---|---|---|---|---|
-| 1175573 | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | 1.000 |  | 0 |       0 |
-| 1260031 | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | 1.000 |  | 0 |       0 |
-| 3024135 | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | 1.000 | 521 | 1 | 159,335 |
-| 3024740 | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | 1.000 | 334 | 0 |       0 |
-| 3048882 | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | 1.000 | 1156 | 0 |       0 |
-| 40763543 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | 1.000 |  | 0 |       0 |
-| 3964796 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with non-probe detection | 0.975 |  | 0 |       0 |
-| 37020939 | Streptococcus agalactiae DNA [Presence] in Genital specimen by NAA with probe detection | 0.964 |  | 0 |       0 |
-| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 0.961 | 1051 | 0 |       0 |
-| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.939 |  | 0 |       0 |
-| 3032732 | Streptococcus pyogenes DNA [Identifier] in Specimen by NAA with probe detection | 0.931 |  | 0 |       0 |
-| 37019817 | Streptococcus agalactiae DNA [Presence] in Vag+Rectum by NAA with probe detection | 0.930 |  | 0 |       0 |
-| 3017906 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay | 0.929 |  | 0 |       0 |
-| 36660467 | Streptococcus pyogenes DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.925 |  | 0 |       0 |
-| 37021509 | Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture | 0.922 |  | 0 |       0 |
-| 36659688 | Streptococcus agalactiae DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.921 |  | 0 |       0 |
-| 1988536 | Streptococcus agalactiae DNA [Presence] in Urine by NAA with probe detection | 0.920 |  | 0 |       0 |
-| 37020473 | Streptococcus pyogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.914 |  | 0 |       0 |
-| 3966418 | Streptococcus pyogenes DNA [Presence] in Wound by NAA with probe detection | 0.912 |  | 0 |       0 |
-| 1091604 | Streptococcus agalactiae DNA [Presence] in Specimen by Molecular genetics method | 0.909 |  | 0 |       0 |
-| 3002281 | Mycoplasma agalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.907 |  | 0 |       0 |
-| 36203570 | Streptococcus agalactiae DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.907 |  | 0 |       0 |
-| 1091027 | Streptococcus pyogenes DNA [Presence] in Specimen | 0.904 |  | 0 |       0 |
-| 1091240 | Streptococcus dysgalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.899 |  | 0 |       0 |
-| 1091594 | Streptococcus.beta-hemolytic [Presence] in Specimen | 0.899 |  | 0 |       0 |
-| 3005214 | Streptococcus.beta-hemolytic [Presence] in Genital specimen by Organism specific culture | 0.897 |  | 0 |       0 |
-| 1469780 | Streptococcus agalactiae DNA [Presence] in Body fluid by NAA with non-probe detection | 0.894 |  | 0 |       0 |
-| 1469570 | Streptococcus pyogenes DNA [Presence] in Body fluid by NAA with non-probe detection | 0.892 |  | 0 |       0 |
-| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.887 |  | 0 |       0 |
-| 1092202 | Streptococcus pyogenes [Presence] in Specimen | 0.884 |  | 0 |       0 |
-| 1469941 | Gardnerella vaginalis DNA [Presence] in Vaginal fluid by NAA with probe detection | 0.879 |  | 0 |       0 |
-| 1616546 | Streptococcus agalactiae DNA [Presence] in Synovial fluid by NAA with non-probe detection | 0.879 |  | 0 |       0 |
-| 3964996 | Streptococcus dysgalactiae subspecies equisimilis DNA [Presence] in Throat by NAA with non-probe detection | 0.878 |  | 0 |       0 |
-| 36203572 | Streptococcus pyogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.872 |  | 0 |       0 |
-| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.866 | 337 | 4 |  86,750 |
-| 3008051 | Streptococcus pyogenes Ag [Presence] in Specimen | 0.862 |  | 0 |       0 |
-| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.861 |  | 1 |   8,058 |
-| 3018201 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunofluorescence | 0.853 |  | 0 |       0 |
-| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.849 |  | 0 |       0 |
-| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.834 |  | 0 |       0 |
-| 3022562 | Streptococcus pyogenes [Presence] in Specimen by Organism specific culture | 0.829 |  | 0 |       0 |
-| 40771489 | Streptococcus pyogenes rRNA [Presence] in Throat by Probe | 0.820 |  | 0 |       0 |
-| 3009769 | Streptococcus pyogenes rRNA [Presence] in Specimen by Probe | 0.805 | 1470 | 0 |       0 |
-| 43055233 | Streptococcus pyogenes exotoxin B speB gene [Presence] in Specimen by NAA with probe detection | 0.802 |  | 0 |       0 |
-| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.799 |  | 0 |       0 |
-| 3011263 | Bordetella pertussis [Presence] in Throat by Organism specific culture | 0.776 |  | 0 |       0 |
-| 3036000 | Streptococcus agalactiae [Presence] in Specimen by Organism specific culture | 0.775 |  | 0 |       0 |
-| 1761890 | Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.774 |  | 0 |       0 |
-| 36305005 | Neisseria meningitidis [Presence] in Throat by Organism specific culture | 0.766 |  | 0 |       0 |
-| 3026966 | Neisseria gonorrhoeae [Presence] in Throat by Organism specific culture | 0.764 |  | 0 |       0 |
-| 46236183 | Bacillus cereus [Presence] in Specimen by Organism specific culture | 0.751 |  | 0 |       0 |
-| 3028450 | Bacillus anthracis [Presence] in Specimen by Organism specific culture | 0.744 |  | 0 |       0 |
-| 3053028 | Streptococcus sp identified in Specimen by Organism specific culture | 0.741 |  | 1 |   3,206 |
+| omop_concept_id | omop_concept_name | score | top2000 |
+|---|---|---|---|
+| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 1.000 | 1051 |
+| 40763543 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | 1.000 |  |
+| 1175573 | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | 0.977 |  |
+| 3964796 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with non-probe detection | 0.975 |  |
+| 3048882 | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.966 | 1156 |
+| 37021509 | Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture | 0.944 |  |
+| 37019817 | Streptococcus agalactiae DNA [Presence] in Vag+Rectum by NAA with probe detection | 0.941 |  |
+| 37020939 | Streptococcus agalactiae DNA [Presence] in Genital specimen by NAA with probe detection | 0.940 |  |
+| 1260031 | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | 0.932 |  |
+| 1988536 | Streptococcus agalactiae DNA [Presence] in Urine by NAA with probe detection | 0.932 |  |
+| 36203570 | Streptococcus agalactiae DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.927 |  |
+| 3024135 | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | 0.918 | 521 |
+| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.917 |  |
+| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.911 | 337 |
+| 3017906 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay | 0.910 |  |
+| 3024740 | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | 0.909 | 334 |
+| 1469780 | Streptococcus agalactiae DNA [Presence] in Body fluid by NAA with non-probe detection | 0.905 |  |
+| 36659688 | Streptococcus agalactiae DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.904 |  |
+| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.901 |  |
+| 36660467 | Streptococcus pyogenes DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.900 |  |
+| 3966418 | Streptococcus pyogenes DNA [Presence] in Wound by NAA with probe detection | 0.900 |  |
+| 1469570 | Streptococcus pyogenes DNA [Presence] in Body fluid by NAA with non-probe detection | 0.892 |  |
+| 37020473 | Streptococcus pyogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.888 |  |
+| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.879 |  |
+| 3964996 | Streptococcus dysgalactiae subspecies equisimilis DNA [Presence] in Throat by NAA with non-probe detection | 0.878 |  |
+| 36203572 | Streptococcus pyogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.872 |  |
+| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.854 |  |
+| 3008051 | Streptococcus pyogenes Ag [Presence] in Specimen | 0.847 |  |
+| 3053028 | Streptococcus sp identified in Specimen by Organism specific culture | 0.843 |  |
+| 3002949 | Streptococcus pyogenes Ag [Presence] in Serum by Agglutination | 0.838 |  |
+| 3018201 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunofluorescence | 0.836 |  |
+| 3038101 | Streptococcus agalactiae Ag [Presence] in Throat by Immunofluorescence | 0.835 |  |
+| 3005214 | Streptococcus.beta-hemolytic [Presence] in Genital specimen by Organism specific culture | 0.835 |  |
+| 3018121 | Streptococcus pyogenes Ag [Presence] in Serum | 0.831 |  |
+| 37020272 | Bordetella sp identified in Throat by Organism specific culture | 0.795 |  |
+| 1091594 | Streptococcus.beta-hemolytic [Presence] in Specimen | 0.793 |  |
+| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.792 |  |
+| 3025722 | Staphylococcus sp identified in Specimen by Organism specific culture | 0.789 |  |
+| 3013103 | Diphtheria identified in Throat by Organism specific culture | 0.786 |  |
+| 3047233 | Neisseria sp identified in Throat by Organism specific culture | 0.783 |  |
+| 3010629 | Chlamydia sp identified in Throat by Organism specific culture | 0.782 |  |
+| 3011116 | Haemophilus sp identified in Specimen by Organism specific culture | 0.776 |  |
+| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.770 |  |
+| 3042975 | Streptococcus sp identified in Isolate by Organism specific culture | 0.763 |  |
+| 3048292 | Bartonella sp identified in Specimen by Organism specific culture | 0.736 |  |
+| 3005169 | Diphtheria identified in Specimen by Organism specific culture | 0.735 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess | is_panel |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 204 | -streptococcusagalactie(str.ryhmäb,gbs),nukleiinihaponosoitus |  | 140 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | FALSE |
-| 205 | fl-streptococcusagalactie(b),nukleiinihaponosoitus |  | 354 | 100 |  |  | Vaginal discharge |  | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | FALSE |
-| 206 | ps-streptococcus,viljely(-hemolyyttisetstrepto |  | 151 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 207 | ps-streptococcus,viljely(beeta-hemolyyttisetstr |  | 110 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 208 | ps-streptococcus,viljely(hemolyytt.streptokokit) |  | 327 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 209 | ps-streptococcus,viljely(hemolyytt.streptokokitnielusta) |  | 414 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 210 | ps-streptococcus,viljely(hemolyyttisetstreptok) |  | 162 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 211 | ps-streptococcus,viljely(hemolyyttisetstreptokokit) |  | 339 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 212 | ps-streptococcus,viljelynielusta(hemolyytt) |  | 238 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 213 | ps-streptococcuspyogenes(a),antigeeni |  | 735 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat by Rapid immunoassay | FALSE |
-| 214 | ps-streptococcuspyogenes(a),nukleiinihappo(kval) |  | 150 | 99.33 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | FALSE |
-| 215 | ps-streptococcuspyogenis(a)antig,vierithoitoy |  | 124 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat by Rapid immunoassay | FALSE |
-| 216 | streptococcus,viljely(hemolyyt.streptokokitnielusta) |  | 333 | 100 |  |  |  |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | FALSE |
-| 217 | streptococcus,viljely(hemolyytt.streptokokit) |  | 454 | 100 |  |  |  |  | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | FALSE |
-| 218 | streptococcusagalactiae(b),nukleiinihaponosoitus,fluori,vieritesti |  | 304 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | FALSE |
-| 219 | streptococcusagalactie(b),nukleiinihaponosoitus |  | 242 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | FALSE |
-| 220 | streptococcuspyogenes(a),nukleiinihappo-osoitus |  | 228 | 100 |  |  |  |  | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | FALSE |
-| 221 | streptococcuspyogenes(a),osoituskoe |  | 396 | 100 |  |  |  |  | Streptococcus pyogenes [Presence] in Specimen by Rapid immunoassay | FALSE |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 204 | -streptococcusagalactie(str.ryhmäb,gbs),nukleiinihaponosoitus |  | 100% | name | 140 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] by NAA with probe detection |
+| 205 | fl-streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 354 | 100 |  |  | Vaginal discharge |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
+| 206 | ps-streptococcus,viljely(-hemolyyttisetstrepto |  | 100% | name | 151 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 207 | ps-streptococcus,viljely(beeta-hemolyyttisetstr |  | 100% | name | 110 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 208 | ps-streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 327 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 209 | ps-streptococcus,viljely(hemolyytt.streptokokitnielusta) |  | 100% | name | 414 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 210 | ps-streptococcus,viljely(hemolyyttisetstreptok) |  | 100% | name | 162 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 211 | ps-streptococcus,viljely(hemolyyttisetstreptokokit) |  | 100% | name | 339 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 212 | ps-streptococcus,viljelynielusta(hemolyytt) |  | 100% | name | 238 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 213 | ps-streptococcuspyogenes(a),antigeeni |  | 100% | name | 735 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 214 | ps-streptococcuspyogenes(a),nukleiinihappo(kval) |  | 100% | name | 150 | 99.33 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection |
+| 215 | ps-streptococcuspyogenis(a)antig,vierithoitoy |  | 100% | name | 124 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay |
+| 216 | streptococcus,viljely(hemolyyt.streptokokitnielusta) |  | 100% | name | 333 | 100 |  |  |  |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 217 | streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 454 | 100 |  |  |  |  | Streptococcus.beta-hemolytic identified in Specimen by Organism specific culture |
+| 218 | streptococcusagalactiae(b),nukleiinihaponosoitus,fluori,vieritesti |  | 100% | name | 304 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
+| 219 | streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 242 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
+| 220 | streptococcuspyogenes(a),nukleiinihappo-osoitus |  | 100% | name | 228 | 100 |  |  |  |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection |
+| 221 | streptococcuspyogenes(a),osoituskoe |  | 100% | name | 396 | 100 |  |  |  |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
 

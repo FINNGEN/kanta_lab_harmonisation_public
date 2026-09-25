@@ -15,12 +15,12 @@ concept the search did not return.
 | bucket | n | pct |
 |---|---|---|
 | total rows | 1984 | 100.0% |
-| named by FindLOINCDimensions | 1790 | 90.2% |
-| mapped to an OMOP concept | 1599 | 80.6% |
-| named but left unmapped |  200 | 10.1% |
-| unnamed and unmapped |  185 | 9.3% |
-| unnamed but still mapped |    9 | 0.5% |
-| distinct concepts chosen |  631 |  |
+| named by FindLOINCDimensions | 1890 | 95.3% |
+| mapped to an OMOP concept | 1566 | 78.9% |
+| named but left unmapped |  326 | 16.4% |
+| unnamed and unmapped |   92 | 4.6% |
+| unnamed but still mapped |    2 | 0.1% |
+| distinct concepts chosen |  605 |  |
 
 ## Did the search find anything?
 
@@ -32,27 +32,30 @@ the row.
 
 | bucket | n | pct |
 |---|---|---|
-| distinct names guessed | 785 | 100.0% |
-| returned at least one concept | 785 | 100.0% |
-| returned nothing |   0 | 0.0% |
-| best hit scored >= 0.90 | 545 | 69.4% |
-| best hit scored 0.75 - 0.90 | 213 | 27.1% |
-| best hit scored < 0.75 |  27 | 3.4% |
+| distinct names guessed | 843 | 100.0% |
+| returned at least one concept | 842 | 99.9% |
+| returned nothing |   1 | 0.1% |
+| best hit scored >= 0.90 | 531 | 63.0% |
+| best hit scored 0.75 - 0.90 | 264 | 31.3% |
+| best hit scored < 0.75 |  47 | 5.6% |
 
 ## What kind of concept was chosen
 
 The prompt asks the model to break ties by preferring a concept on the **LOINC
-Top 2000+ (SI)** recommended list, and then one Finland already maps codes to.
+Top 2000+ (SI)** recommended list — an external recommendation. The Finnish
+usage column is a *diagnostic here only*: it comes from the curated reference
+mappings, which the prompt is never shown, since feeding the thing this
+pipeline is measured against back into it would make the evaluation circular.
 A high share in neither bucket means the model is routinely landing on obscure
 concepts, which is worth a look even when the concept is defensible.
 
 | bucket | n | pct |
 |---|---|---|
-| mapped rows | 1599 | 100.0% |
-| chose a LOINC Top 2000 concept |  746 | 46.7% |
-| chose a concept already used in Finnish mappings | 1026 | 64.2% |
-| chose one that is both |  563 | 35.2% |
-| chose one that is neither |  390 | 24.4% |
+| mapped rows | 1566 | 100.0% |
+| chose a LOINC Top 2000 concept |  743 | 47.4% |
+| chose a concept already used in Finnish mappings |  903 | 57.7% |
+| chose one that is both |  530 | 33.8% |
+| chose one that is neither |  450 | 28.7% |
 
 ## Most chosen concepts
 
@@ -63,26 +66,52 @@ not tell apart ended up.
 
 | omop_concept_id | omop_concept_name | n_rows | top2000 |
 |---|---|---|---|
-| 3020460 | C reactive protein [Mass/volume] in Serum or Plasma | 69 | yes |
+| 1469985 | C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 47 |  |
+| 3020460 | C reactive protein [Mass/volume] in Serum or Plasma | 33 | yes |
+| 36033641 | SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay | 24 |  |
 | 3044889 | 12 lead EKG panel | 22 |  |
+| 3019550 | Sodium [Moles/volume] in Serum or Plasma | 21 | yes |
 | 3009814 | Iron saturation [Molar fraction] in Serum or Plasma | 19 | yes |
-| 3019897 | Erythrocyte [DistWidth] in Red Blood Cells by Automated count | 19 | yes |
-| 3001802 | Microalbumin/Creatinine [Mass Ratio] in Urine | 18 | yes |
-| 3019550 | Sodium [Moles/volume] in Serum or Plasma | 18 | yes |
-| 36660087 | Specimen Collection procedure comment | 18 |  |
-| 40758558 | Short blood count panel - Blood | 18 |  |
-| 36033641 | SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay | 16 |  |
-| 3035995 | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma | 14 | yes |
+| 21493451 | Spirometry panel | 17 |  |
+| 3019897 | Erythrocyte [DistWidth] in Red Blood Cells by Automated count | 16 | yes |
+| 3035995 | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma | 16 | yes |
+| 3046538 | Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay | 16 | yes |
+| 3001802 | Microalbumin/Creatinine [Mass Ratio] in Urine | 14 | yes |
 | 3015399 | Transferrin receptor.soluble [Mass/volume] in Serum or Plasma | 13 |  |
-| 3051387 | C reactive protein [Mass/volume] in Capillary blood | 13 |  |
+| 40760140 | CBC W Auto Differential panel - Blood | 13 |  |
 | 3021337 | Troponin I.cardiac [Mass/volume] in Serum or Plasma | 12 | yes |
 | 3037467 | Urinalysis macro (dipstick) panel - Urine | 12 |  |
-| 3026008 | Bacteria identified in Urine by Culture | 11 | yes |
+| 40761511 | CBC panel - Blood by Automated count | 12 |  |
+| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 11 | yes |
 | 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 11 | yes |
-| 3001784 | Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma |  9 | yes |
-| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma |  9 | yes |
-| 3014037 | CD3+CD4+ (T4 helper) cells/cells in Blood |  9 | yes |
-| 3018251 | Fasting glucose [Moles/volume] in Serum or Plasma |  9 | yes |
+| 3019900 | Cholesterol [Moles/volume] in Serum or Plasma | 10 | yes |
+| 3019902 | Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 10 | yes |
+
+## How sure the model says it is
+
+One overall certainty per mapped row, self-reported. It is a claim, not a
+measurement — but a `low` row is one the model is telling you to check, and
+those are cheap to act on.
+
+| certainty | n_rows | pct |
+|---|---|---|
+| high | 1296 | 82.8% |
+| medium |  246 | 15.7% |
+| low |   24 | 1.5% |
+| (not stated) |    0 | 0.0% |
+
+A reasoning trail — why each part of the chosen name is right, clause by clause — was given for **1566 / 1566** mapped rows. It is in the `reasoning` column of `codesWithOmopConcepts.tsv`, and it is what makes a mapping reviewable without re-deriving it.
+
+Certainty against the evidence the row actually carried. A concept claimed
+`high` on a `name` row is worth checking, since such a row has no unit
+and no values to fix a quantity with:
+
+| evidence_level | high | low | medium |
+|---|---|---|---|
+| name | 483 |  9 | 192 |
+| name+unit | 141 | 13 |  17 |
+| name+unit+values | 516 |  1 |  23 |
+| name+values | 156 |  1 |  14 |
 
 ## Findings
 
@@ -90,23 +119,30 @@ Distilled by `gemini-2.5-pro` from the per-group reflections in `DATA/FixLOINCDi
 
 ### Key findings
 
-- The candidate lists frequently lack necessary LOINC concepts, which is the most common reason for being unable to map a code. This includes missing panel concepts (especially for toxicology, microbiology, and genetics), qualitative '[Presence]' concepts, concepts for specific specimen-analyte combinations, and generic concepts (e.g., 'total antibody') when only specific ones are offered.
-- Successful mapping critically depends on combining multiple source data attributes, particularly specimen prefixes, units, `LongName` keywords, and the presence of decile values, which help distinguish between quantitative and qualitative tests, especially when units are missing.
-- Strategic mapping decisions are necessary to handle ambiguity, such as preferring Top 2000 concepts or those with high pre-existing usage in Finland, selecting more general LOINC concepts for generic local codes, and occasionally mapping to a parent or superset concept as a 'best fit' approximation.
-- A core task is distinguishing between different test types based on the data, such as quantitative vs. qualitative, absolute vs. relative counts, panels vs. single analytes, and timed vs. spot collections.
-- Local data contains many synonyms and variations for the same test (e.g., 'S-', 'P-', 'fS-' prefixes for serum/plasma; multiple names for ACR or RDW), which must be collapsed into a single standard LOINC concept.
+- The systematic nature of Finnish local codes, using prefixes for specimen (e.g., S-, P-, Li-) and suffixes for method (e.g., -nho, -vi), is a major facilitator of accurate mapping.
+- The presence of quantitative data (units and value distributions) is critical for correctly identifying the LOINC property (e.g., Mass vs. Moles, Quantitative vs. Qualitative, Absolute count vs. Ratio) and is often the deciding factor in whether a code can be mapped.
+- The candidate lists generated by semantic search are frequently of high quality and contain the correct concepts, especially for common analytes.
+- Prioritizing 'Top-2000' LOINC concepts is a useful heuristic for mapping common, standardized tests, promoting consistency.
+- Mapping local panel codes is a recurring challenge, often requiring a compromise between mapping to a more generic panel or leaving the code unmapped if no suitable candidate exists.
+- A common and effective mapping strategy involves generalizing when a specific concept is unavailable, for instance by mapping to a 'Specimen' concept when a specific site is not in the candidate list.
+- Specific Finnish terms such as 'pika' and 'vieritesti' reliably identify point-of-care or rapid tests, allowing for more specific mappings when corresponding LOINC concepts are available.
+- The automatically generated 'loinc_name_guess' serves as a good initial starting point, but expert review is essential to select the most appropriate concept based on all available evidence.
 
 ### Suggested improvements
 
-- Enrich the candidate lists by adding missing panel concepts for toxicology, microbiology, and hematology; qualitative `[Presence]` concepts for common analytes; and concepts for specific but common tests that were frequently absent (e.g., Factor II gene analysis, lupus screen/confirm pairs, platelet function tests).
-- Improve the candidate retrieval logic to ensure it fetches both generic and specific versions of a test (e.g., total antibody vs. IgG; generic panel vs. specific panel) and includes concepts for all relevant properties (e.g., Mass/volume, Moles/volume, and Presence) for an analyte.
-- Provide clear guidelines on when it is acceptable to use a proxy mapping, such as to a less specific parent concept, a superset panel, or a concept with a similar but not identical specimen.
-- Allow mappers to override incorrect source data flags, such as changing `is_panel` from false to true when the local data or LOINC concept indicates it is a panel.
+- Improve the candidate search to more reliably retrieve concepts with ratio or fraction properties (e.g., %, index, molar fraction), as these are frequently missing for flow cytometry and serology tests.
+- Improve the candidate search to better handle panels, including retrieving concepts for common combinations (e.g., CBC with reticulocytes), and providing more generic panel options when a specific local panel does not have an exact LOINC match.
+- Broaden the candidate search to include concepts for a wider variety of specimen types for a given analyte, as candidates are often missing for less common but valid specimens like CSF, amniotic fluid, or pancreatic juice.
+- Enhance the candidate search to better recognize and retrieve concepts with specific timing or challenge details (e.g., '1 hour post meal', 'post challenge', 'screening' vs 'confirmatory').
+- For source codes that describe a procedure (e.g., 'specimen collection'), the candidate search should retrieve LOINC procedure concepts, not just descriptive attribute concepts like 'collection method'.
+- Ensure the candidate search retrieves all relevant property types for an analyte (e.g., both Mass/volume and Moles/volume) when multiple exist, to avoid unmappable rows due to property mismatches.
 
 ### Systematic data problems
 
-- Many local codes are unmappable because their names are ambiguous, cryptic, or overly truncated abbreviations with no clarifying `LongName` (e.g., 'p-fs', 'u-alvhu4a', 'hoikemseul').
-- Source data contains numerous codes for administrative, billing, or pre-analytical procedural steps (e.g., 'specimen collection', 'frozen sample', 'billing package') that do not correspond to a LOINC laboratory observation.
-- The source data has inconsistencies and errors, such as having quantitative decile values for a row with 100% missing values, reporting nonsensical quantitative units for qualitative tests, or having incorrect `is_panel` flags.
-- Some local test names are too generic to allow for a precise mapping, such as not specifying an immunoglobulin class for an antibody test or not listing the components of a local panel.
+- A significant number of local codes are ambiguous, uninterpretable, or truncated abbreviations, making them impossible to map with confidence.
+- The source data contains many codes that do not represent laboratory results, but rather administrative/billing actions, sample handling procedures (e.g., 'frozen sample'), or internal lab workflow steps (e.g., 'subculture').
+- The frequent absence of unit or value distribution data for a given local code is a primary blocker to mapping, as it makes it impossible to reliably determine the measurement's property.
+- Some local codes are too generic for a precise mapping, such as not specifying an immunoglobulin subclass (IgA vs IgG), the exact components of a panel, or the specific analyte in a screening test.
+- Many local codes represent locally defined, non-standard panels or bundles of tests that do not correspond to any available LOINC panel concept.
+- There are occasional conflicts within the source data, such as a test name suggesting a qualitative result being paired with quantitative units and values.
 

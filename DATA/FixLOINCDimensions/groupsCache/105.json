@@ -4,554 +4,646 @@
       "row_id": 1305,
       "omop_concept_id": "3019897",
       "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocyte distribution width bcs code `b-pvk` is a blood count panel which includes RDW and unit `%` with deciles [12.98...14.9] are characteristic for RDW-CV ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1306,
       "omop_concept_id": "3020416",
       "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs code `b-pvk` is a blood count panel which includes erythrocytes ; [#/volume] bcs unit `e12/l` is specific for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1307,
       "omop_concept_id": "3000905",
       "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs code `b-pvk` is a blood count panel which includes leukocytes ; [#/volume] bcs unit `e9/l` is used for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1308,
       "omop_concept_id": "3023599",
       "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCV bcs code `b-pvk` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1309,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1310,
-      "omop_concept_id": "300963",
+      "omop_concept_id": "3000963",
       "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Hemoglobin bcs code `b-pvk` is a blood count panel which includes hemoglobin ; [Mass/volume] bcs unit `g/l` and deciles [130.49...169.87] are characteristic for hemoglobin concentration ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1311,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1312,
       "omop_concept_id": "3012030",
       "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "is_panel": false
+      "reasoning": "MCH bcs code `b-pvk` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` is specific for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1313,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and this row with no unit/values represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1314,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk` is a basic blood count panel and this row represents the panel order ; the `(pi)` suffix is local and does not change the panel identity ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1315,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+eo` is a basic blood count (`PVK`) with an added Eosinophil count (`eo`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1316,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+kd` specifies a basic blood count (`PVK`) with an automated differential (`kd` for `koneellinen differentiaali`) ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1317,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+ne` is a basic blood count (`PVK`) with an added Neutrophil count (`ne`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1318,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No mapping chosen because the suffix `+ner` in `b-pvk+ner` is ambiguous and not a standard Finnish lab abbreviation. It could mean neutrophils and reticulocytes, but this is a guess.",
+      "certainty": ""
     },
     {
       "row_id": 1319,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3008342",
+      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
+      "reasoning": "Neutrophils/Leukocytes bcs this is a differential percentage, and sibling rows specify `%l` (lymphocytes) and `%m` (monocytes), leaving neutrophils as the most likely component for the generic `%` unit ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method. The deciles [8.54...48.89] are low for a general population but plausible.",
+      "certainty": "low"
     },
     {
       "row_id": 1320,
-      "omop_concept_id": "3035933",
-      "omop_concept_name": "Granulocytes/Leukocytes in Blood",
-      "is_panel": false
+      "omop_concept_id": "3011185",
+      "omop_concept_name": "Granulocytes/Leukocytes in Blood by Automated count",
+      "reasoning": "Granulocytes/Leukocytes bcs the unit `%g` suggests Granulocyte percentage ; [Ratio] bcs unit is `%g` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1321,
-      "omop_concept_id": "3002030",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "omop_concept_id": "3037511",
+      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
+      "reasoning": "Lymphocytes/Leukocytes bcs the unit `%l` suggests Lymphocyte percentage ; [Ratio] bcs unit `%l` and deciles [15.3...37.88] are characteristic for lymphocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1322,
-      "omop_concept_id": "3019069",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "omop_concept_id": "3011948",
+      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
+      "reasoning": "Monocytes/Leukocytes bcs the unit `%m` suggests Monocyte percentage ; [Ratio] bcs unit `%m` and deciles [9...13.3] are characteristic for monocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1323,
       "omop_concept_id": "3020416",
       "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs `b-pvk+t` is a blood count panel which includes erythrocytes ; [#/volume] bcs unit `e12/l` is specific for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1324,
       "omop_concept_id": "3000905",
       "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs `b-pvk+t` is a blood count panel which includes leukocytes ; [#/volume] bcs unit `e9/l` and deciles [0...8.91] are characteristic for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1325,
       "omop_concept_id": "3023599",
       "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCV bcs `b-pvk+t` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1326,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1327,
       "omop_concept_id": "3009744",
       "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCHC bcs `b-pvk+t` is a blood count panel which includes MCHC ; [Entitic Mass/volume] bcs unit `g/l` and deciles [312.86...355.56] are characteristic for MCHC ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1328,
-      "omop_concept_id": "3009542",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "omop_concept_id": "3023314",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
+      "reasoning": "Hematocrit bcs `b-pvk+t` is a blood count panel which includes hematocrit ; [Volume Fraction] bcs unit `l/l` is specific for hematocrit ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1329,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1330,
       "omop_concept_id": "3012030",
       "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "is_panel": false
+      "reasoning": "MCH bcs `b-pvk+t` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` and deciles [29...34.11] are characteristic for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1331,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets, and this row with no unit/values represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1332,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+e` is a basic blood count with platelets (`pvk+t`) and an added Eosinophil count (`e`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1333,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+n` is a basic blood count with platelets (`pvk+t`) and an added Neutrophil count (`n`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1334,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+ne` is a basic blood count with platelets (`pvk+t`) and an added Neutrophil count (`ne`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1335,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No mapping chosen because the test `b-pvk+t+r` (CBC with platelets and reticulocytes) corresponds to a LOINC panel concept (e.g., 57021-8) that is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1336,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk+tk` is interpreted as a typo for `b-pvk+t`, a basic blood count with platelets, and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1337,
       "omop_concept_id": "3037511",
       "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Lymphocytes/Leukocytes bcs the code `b-pvk+tkd` is a CBC with differential and the deciles [10.52...43.1] (median 30.21) for the unit `%` are a good fit for lymphocyte percentage ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1338,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "No mapping chosen because the code `b-pvk+tkd` is a panel and the unit `e9/l` without values is ambiguous; it could refer to multiple different absolute counts from the panel (leukocytes, platelets, neutrophils, etc.).",
+      "certainty": ""
     },
     {
       "row_id": 1339,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+tkd` and its `LongName` specify a basic blood count with automated differential and platelets ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1340,
       "omop_concept_id": "3013869",
       "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Basophils/Leukocytes bcs the test name `b-pvk+tkd,baso` specifies basophils from a differential count ; [Ratio] bcs unit is `%` and deciles [0.13...0.91] are characteristic for basophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1341,
       "omop_concept_id": "3013429",
       "omop_concept_name": "Basophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Basophils bcs the test name `b-pvk+tkd,baso` specifies basophils ; [#/volume] bcs unit `e9/l` and deciles [0.01...0.06] are characteristic for basophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1342,
       "omop_concept_id": "3013869",
       "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Basophils/Leukocytes bcs the test name `b-pvk+tkd,baso` specifies basophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1343,
       "omop_concept_id": "3010457",
       "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Eosinophils/Leukocytes bcs the test name `b-pvk+tkd,eo` specifies eosinophils from a differential count ; [Ratio] bcs unit is `%` and deciles [0.28...5.77] are characteristic for eosinophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1344,
       "omop_concept_id": "3028615",
       "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Eosinophils bcs the test name `b-pvk+tkd,eo` specifies eosinophils ; [#/volume] bcs unit `e9/l` and deciles [0.02...0.39] are characteristic for eosinophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1345,
       "omop_concept_id": "3010457",
       "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Eosinophils/Leukocytes bcs the test name `b-pvk+tkd,eo` specifies eosinophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1346,
       "omop_concept_id": "3020416",
       "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs the test name `b-pvk+tkd,eryt` specifies erythrocytes ; [#/volume] bcs unit `e12/l` and deciles [3.69...5.08] are characteristic for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1347,
       "omop_concept_id": "3020416",
       "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocytes bcs the test name `b-pvk+tkd,eryt` specifies erythrocytes ; [#/volume] bcs sibling row with unit `e12/l` confirms this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1348,
-      "omop_concept_id": "300963",
+      "omop_concept_id": "3000963",
       "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Hemoglobin bcs the test name `b-pvk+tkd,hb` specifies hemoglobin ; [Mass/volume] bcs unit `g/l` and deciles [109.63...151.58] are characteristic for hemoglobin concentration ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1349,
-      "omop_concept_id": "300963",
+      "omop_concept_id": "3000963",
       "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "reasoning": "Hemoglobin bcs the test name `b-pvk+tkd,hb` specifies hemoglobin ; [Mass/volume] bcs sibling row with unit `g/l` confirms this is a mass concentration ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1350,
-      "omop_concept_id": "3009542",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "omop_concept_id": "3023314",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
+      "reasoning": "Hematocrit bcs the test name `b-pvk+tkd,hkr` specifies hematocrit ; [Volume Fraction] bcs unit `osuus` (fraction) and deciles [0.34...0.45] are characteristic for hematocrit ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1351,
-      "omop_concept_id": "3009542",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "omop_concept_id": "3023314",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
+      "reasoning": "Hematocrit bcs the test name `b-pvk+tkd,hkr` specifies hematocrit ; [Volume Fraction] bcs sibling row with unit `osuus` (fraction) confirms this is a volume fraction ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1352,
       "omop_concept_id": "42869452",
       "omop_concept_name": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Immature granulocytes/Leukocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [0...0.66] are characteristic for IG percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1353,
       "omop_concept_id": "3041084",
       "omop_concept_name": "Immature granulocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Immature granulocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes ; [#/volume] bcs unit `e9/l` and deciles [0...0.06] are characteristic for IG absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1354,
       "omop_concept_id": "42869452",
       "omop_concept_name": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Immature granulocytes/Leukocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1355,
       "omop_concept_id": "3000905",
       "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs the test name `b-pvk+tkd,leuk` specifies leukocytes ; [#/volume] bcs unit `e9/l` and deciles [4.64...10.91] are characteristic for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1356,
       "omop_concept_id": "3000905",
       "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Leukocytes bcs the test name `b-pvk+tkd,leuk` specifies leukocytes ; [#/volume] bcs sibling row with unit `e9/l` and similar deciles confirm this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1357,
       "omop_concept_id": "3037511",
       "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Lymphocytes/Leukocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [14.51...42.79] are characteristic for lymphocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1358,
       "omop_concept_id": "3004327",
       "omop_concept_name": "Lymphocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Lymphocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes ; [#/volume] bcs unit `e9/l` and deciles [1.07...3.03] are characteristic for lymphocyte absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1359,
       "omop_concept_id": "3037511",
       "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Lymphocytes/Leukocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1360,
       "omop_concept_id": "3012030",
       "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "is_panel": false
+      "reasoning": "MCH bcs the test name `b-pvk+tkd,mch` specifies MCH ; [Entitic mass] bcs unit `pg` and deciles [27.35...32.41] are characteristic for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1361,
       "omop_concept_id": "3012030",
       "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "is_panel": false
+      "reasoning": "MCH bcs the test name `b-pvk+tkd,mch` specifies MCH ; [Entitic mass] bcs sibling row with unit `pg` confirms this is an entitic mass ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1362,
       "omop_concept_id": "3009744",
       "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCHC bcs the test name `b-pvk+tkd,mchc` specifies MCHC ; [Entitic Mass/volume] bcs unit `g/l` and deciles [316.84...348.74] are characteristic for MCHC ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1363,
       "omop_concept_id": "3009744",
       "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCHC bcs the test name `b-pvk+tkd,mchc` specifies MCHC ; [Entitic Mass/volume] bcs sibling row with unit `g/l` confirms this is a mass concentration ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1364,
       "omop_concept_id": "3023599",
       "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCV bcs the test name `b-pvk+tkd,mcv` specifies MCV ; [Entitic mean volume] bcs unit `fl` and deciles [83.81...96.04] are characteristic for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1365,
       "omop_concept_id": "3023599",
       "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCV bcs the test name `b-pvk+tkd,mcv` specifies MCV ; [Entitic mean volume] bcs sibling row with unit `fl` confirms this is an entitic volume ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1366,
       "omop_concept_id": "3011948",
       "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Monocytes/Leukocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [6.39...13.06] are characteristic for monocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1367,
       "omop_concept_id": "3033575",
       "omop_concept_name": "Monocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Monocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes ; [#/volume] bcs unit `e9/l` and deciles [0.41...1.03] are characteristic for monocyte absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1368,
       "omop_concept_id": "3011948",
       "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Monocytes/Leukocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1369,
       "omop_concept_id": "3008342",
       "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Neutrophils/Leukocytes bcs the test name `b-pvk+tkd,neut` specifies neutrophils from a differential count ; [Ratio] bcs unit is `%` and deciles [43.3...74.25] are characteristic for neutrophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1370,
       "omop_concept_id": "3013650",
       "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Neutrophils bcs the test name `b-pvk+tkd,neut` specifies neutrophils ; [#/volume] bcs unit `e9/l` and deciles [2.18...7.37] are characteristic for neutrophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1371,
       "omop_concept_id": "3008342",
       "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Neutrophils/Leukocytes bcs the test name `b-pvk+tkd,neut` specifies neutrophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1372,
       "omop_concept_id": "3019897",
       "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocyte distribution width bcs the test name `b-pvk+tkd,rdw` specifies RDW ; [Ratio] bcs unit is `%` and deciles [12.5...16.52] are characteristic for RDW-CV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1373,
       "omop_concept_id": "3019897",
       "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Erythrocyte distribution width bcs the test name `b-pvk+tkd,rdw` specifies RDW ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1374,
       "omop_concept_id": "3024929",
       "omop_concept_name": "Platelets [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Platelets bcs the test name `b-pvk+tkd,trom` specifies thrombocytes (platelets) ; [#/volume] bcs unit `eg/l` (e9/l) and deciles [163.91...371.27] are characteristic for platelet count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1375,
       "omop_concept_id": "3024929",
       "omop_concept_name": "Platelets [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Platelets bcs the test name `b-pvk+tkd,trom` specifies thrombocytes (platelets) ; [#/volume] bcs sibling row with unit `eg/l` (e9/l) confirms this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
+      "certainty": "high"
     },
     {
       "row_id": 1376,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": false
+      "reasoning": "No mapping chosen because the code `b-pvk+tmd` is a 3-part differential panel and the unit `%` without values is ambiguous; it could refer to lymphocytes, granulocytes or mixed cells.",
+      "certainty": ""
     },
     {
       "row_id": 1377,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No mapping chosen because the test `b-pvk+tmd` (CBC with platelets and 3-part mini-differential) corresponds to a LOINC panel concept (e.g., 59055-3) that is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1378,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk` is a basic blood count and `-päi` (likely `päivystys`/emergency) doesn't change the panel content ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1379,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvk-t` is a basic blood count with platelets (`pvk-t` is a variant of `pvk+t`), and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1380,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvk-tkd` is a variant of `b-pvk+tkd`, a basic blood count with automated differential and platelets ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1381,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvkt` is a common abbreviation for `b-pvk+t`, a basic blood count with platelets, and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1382,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "No mapping chosen because the test `b-pvkt+re` (CBC with platelets and reticulocytes) corresponds to a LOINC panel concept (e.g., 57021-8) that is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1383,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "No mapping chosen because the test `b-pvktkdr` (CBC with auto differential and reticulocytes) corresponds to a LOINC panel concept (e.g., 57782-5) that is not present in the candidate list.",
+      "certainty": ""
     },
     {
       "row_id": 1384,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No mapping chosen because the suffix `mdl` in `b-pvktmdl` is ambiguous and not a standard Finnish lab abbreviation.",
+      "certainty": ""
     },
     {
       "row_id": 1385,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No mapping chosen because the suffix `mdp` in `b-pvktmdp` is ambiguous and not a standard Finnish lab abbreviation.",
+      "certainty": ""
     },
     {
       "row_id": 1386,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-pvktnee` is a CBC (`pvkt`) with added neutrophils (`ne`) and eosinophils (`e`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "medium"
     },
     {
       "row_id": 1387,
-      "omop_concept_id": "40758558",
-      "omop_concept_name": "Short blood count panel - Blood",
-      "is_panel": true
+      "omop_concept_id": "40761511",
+      "omop_concept_name": "CBC panel - Blood by Automated count",
+      "reasoning": "CBC panel bcs `b-pvktp` is interpreted as a typo for `b-pvkt` (basic blood count with platelets), and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1388,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "omop_concept_id": "3010457",
+      "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
+      "reasoning": "Eosinophils/Leukocytes bcs the code `b-tvk` is a CBC with differential and the deciles [0...62.13] (median 2.55) for the unit `%` are a good fit for eosinophil percentage ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "medium"
     },
     {
       "row_id": 1389,
       "omop_concept_id": "3013429",
       "omop_concept_name": "Basophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "reasoning": "Basophils bcs the code `b-tvk` is a CBC with differential ; [#/volume] bcs unit `e9/l` and deciles [0.03...0.09] are characteristic for basophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "certainty": "high"
     },
     {
       "row_id": 1390,
       "omop_concept_id": "3023599",
       "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "is_panel": false
+      "reasoning": "MCV bcs `b-tvk` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1391,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1392,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "is_panel": false
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `b-tvk` is a blood count panel which includes hemoglobin ; [Mass/volume] bcs unit `g/l` is appropriate for hemoglobin ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1393,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1394,
       "omop_concept_id": "3012030",
       "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "is_panel": false
+      "reasoning": "MCH bcs `b-tvk` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` is specific for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "certainty": "high"
     },
     {
       "row_id": 1395,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and this row represents the panel order ; in Blood bcs prefix `B-` means blood.",
+      "certainty": "high"
     },
     {
       "row_id": 1396,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "is_panel": true
+      "reasoning": "No mapping chosen because the test `b-tvk+r` (CBC with auto differential and reticulocytes) corresponds to a LOINC panel concept (e.g., 57782-5) that is not present in the candidate list.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consists of various complete blood count (CBC) panels and their components. The Finnish codes `B-PVK` (basic blood count), `B-PVK+T` (with platelets), `B-PVK+TKD` (with automated differential), and `B-TVK` (complete blood count) were generally straightforward to map.\n\nFor individual result components, I consistently chose LOINC concepts specifying `by Automated count` when available and on the Top2000 list, as these tests are performed on automated hematology analyzers. This provides more specific mapping than the generic codes, even if the generic codes had higher existing usage in Finland.\n\nThe panel codes were mostly mapped successfully. `B-PVK` and `B-PVK+T` were mapped to `Short blood count panel - Blood` (40758558). `B-PVK+TKD` and `B-TVK` were mapped to `CBC panel - Blood by Automated count` (40761511).\n\nSome rows could not be mapped:\n- Rows with ambiguous units like `form` (1309, 1326, 1391) or unclear measurements (1319, 1392) were left unmapped.\n- The candidate list was missing concepts for certain panels. Specifically, panels including reticulocytes (e.g., `b-pvkt+re`, `b-pvktkdr`, `b-tvk+r`) and panels with a 3-part 'minidiff' (`b-pvk+tmd`) did not have exact matches. For the 3-part diff panels, I mapped to the 5-part diff panel (`40761511`) as the closest available superset. The reticulocyte panels were left unmapped due to a lack of a suitable candidate panel."
+  "reflection": "This large group centered on Finnish blood count panels (`PVK` and `TVK`) was mostly straightforward to map. The key was to distinguish between panel orders and results for individual components of those panels. The `LongName`, `TEST_NAME` structure, units, and decile values were crucial for this.\n\n`B-PVK` and its variants (`B-PVK+T`, `B-PVKT`) were mapped to the general `CBC panel - Blood by Automated count` (40761511), as this corresponds to a basic blood count without differential, which is the definition of `Perusverenkuva`.\n`B-TVK` and `B-PVK+TKD` were mapped to `CBC W Auto Differential panel - Blood` (40760140), as these codes (`Täydellinen verenkuva` and `...koneellinen erittelylaskenta`) explicitly call for a differential count.\n\nRows with specific units and values were mapped to the corresponding component concepts (e.g., Hemoglobin, Leukocytes, MCV, etc.). The highly structured nature of the `b-pvk+tkd,*` codes made this part very clear.\n\nSeveral rows could not be mapped because they requested panel combinations for which the correct LOINC panel concept was not available in the candidate list. These were primarily panels including reticulocytes (`+r`) or a 3-part differential (`+tmd`). Specifically, panels for CBC+retics, CBC+diff+retics, and CBC+3-part-diff were missing. Forcing these to a more generic panel would lose important information, so leaving them unmapped was the correct choice.\n\nA few rows were left unmapped due to ambiguity in the local code (e.g., `b-pvk+ner`, `b-pvk+tmdl`) or because the evidence was insufficient to distinguish between multiple possible components (e.g., `b-pvk+tkd` with unit `e9/l` but no values)."
 }

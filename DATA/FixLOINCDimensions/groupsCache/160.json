@@ -4,128 +4,149 @@
       "row_id": 1769,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1770,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1771,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'alaniiniaminotransferaasi,plasmasta' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME contains 'plasmasta' (from plasma) ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1772,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'alaniiniaminotransferaasi,plasmasta' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs TEST_NAME contains 'plasmasta' (from plasma) ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1773,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 'aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1774,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 'aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1775,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 'fp-glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs prefix 'fP-' means Fasting Plasma (fasting is context, specimen is plasma) ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1776,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'fs-alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'fS-' means Fasting Serum (fasting is context, specimen is serum) ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1777,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 'glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1778,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 'glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs this is the default specimen when none is specified ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1779,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'p-alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1780,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 'p-alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs decile values are consistent with U/L ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1781,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 'p-aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1782,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 'p-aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1783,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 'p-glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1784,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 'p-glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs prefix 'P-' means Plasma ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1785,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 's-alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'S-' means Serum ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1786,
       "omop_concept_id": "3006923",
       "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME is 's-alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs prefix 'S-' means Serum ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1787,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 's-aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'S-' means Serum ; no method stated",
+      "certainty": "high"
     },
     {
       "row_id": 1788,
       "omop_concept_id": "3013721",
       "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Aspartate aminotransferase bcs TEST_NAME is 's-aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the overwhelmingly common property for this analyte ; in Serum or Plasma bcs prefix 'S-' means Serum ; no method stated",
+      "certainty": "medium"
     },
     {
       "row_id": 1789,
       "omop_concept_id": "3026910",
       "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME is 's-glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and deciles are consistent ; in Serum or Plasma bcs prefix 'S-' means Serum ; no method stated",
+      "certainty": "high"
     }
   ],
-  "reflection": "This was a very straightforward group. The local test names clearly corresponded to three common liver enzymes: Alanine aminotransferase (ALAT/ALT), Aspartate aminotransferase (ASAT/AST), and Gamma glutamyl transferase (GT/GGT). The candidate list provided the exact, top-ranked, highly-used LOINC concepts for these three tests in Serum/Plasma with the property of Enzymatic activity/volume, which matched the `U/l` unit in the data. All rows could be confidently mapped. The variations in local names (e.g., `s-`, `p-`, `fs-`, `fp-`) correctly collapsed into the standard LOINC 'Serum or Plasma' specimen type. Rows with missing units and values were clearly orders for these same tests and were mapped accordingly."
+  "reflection": "This was a straightforward group of common liver function tests: ALT, AST, and GGT. The local names were clear, and the candidate list contained the three correct LOINC concepts, all of which were on the top-2000 list. The mapping was unambiguous for all rows.\n\nThe main distinction was between rows with full evidence (unit and/or values) and those with only the test name. For the latter, I assigned a 'medium' certainty as per the instructions, since the property (`[Enzymatic activity/volume]`) had to be inferred. However, for these specific analytes, this property is so standard that the inference is very safe. The specimen was either explicitly stated via a prefix (`P-`, `S-`, `fP-`, `fS-`) or a word (`plasmasta`), or could be safely assumed to be Serum/Plasma as is standard."
 }
