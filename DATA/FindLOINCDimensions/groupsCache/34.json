@@ -2,94 +2,76 @@
   "rows": [
     {
       "row_id": 1833,
-      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] by NAA with probe detection"
     },
     {
       "row_id": 1834,
-      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection"
     },
     {
       "row_id": 1835,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1836,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1837,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1838,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1839,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1840,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1841,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1842,
-      "loinc_name_guess": "Streptococcus pyogenes [Presence] in Throat by Rapid immunoassay",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay"
     },
     {
       "row_id": 1843,
-      "loinc_name_guess": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection"
     },
     {
       "row_id": 1844,
-      "loinc_name_guess": "Streptococcus pyogenes [Presence] in Throat by Rapid immunoassay",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay"
     },
     {
       "row_id": 1845,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Throat by Organism specific culture"
     },
     {
       "row_id": 1846,
-      "loinc_name_guess": "Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus.beta-hemolytic identified in Specimen by Organism specific culture"
     },
     {
       "row_id": 1847,
-      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection"
     },
     {
       "row_id": 1848,
-      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection"
     },
     {
       "row_id": 1849,
-      "loinc_name_guess": "Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection"
     },
     {
       "row_id": 1850,
-      "loinc_name_guess": "Streptococcus pyogenes [Presence] in Specimen by Rapid immunoassay",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay"
     }
   ],
-  "reflection": "This group focused on Streptococcus microbiology tests. The key was to differentiate between Streptococcus pyogenes (Group A), Streptococcus agalactiae (Group B), and the broader group of beta-hemolytic streptococci. It was also critical to distinguish the method: culture (`viljely`), antigen detection (`antigeeni`), and nucleic acid amplification (`nukleiinihaponosoitus`).\n\nThe grouping was very effective, as it placed many textual variations of the same test concept together (e.g., multiple spellings and truncations for 'beta-hemolytic streptococci culture from throat'). The Finnish system prefixes like `Ps-` (pharyngeal secretion/throat) and `Fl-` (vaginal discharge) were invaluable for determining the LOINC System. For rows lacking a prefix or an explicit source in the name, I defaulted to the generic `in Specimen`.\n\nThe term `osoituskoe` ('detection test') was ambiguous, as it could refer to either an antigen or a nucleic acid test. I chose the most common rapid antigen test as the likely meaning. Having the official Finnish 4-digit laboratory code for each `TEST_NAME` would have been a great help in resolving such ambiguities."
+  "reflection": "This group focused on microbiology tests for Streptococcus. The main challenge was the lack of an explicit specimen (system) in many of the test names. I inferred the most likely specimen based on clinical context: `Throat` for Streptococcus pyogenes (Group A) and `Vagina` for Streptococcus agalactiae (Group B). This is a reasonable and necessary guess, as an unspecified system would make the search query less effective.\n\nThe Finnish terms `nukleiinihaponosoitus` (nucleic acid detection), `viljely` (culture), and `antigeeni` (antigen) were clear indicators of the method. The various truncated and misspelled versions of `hemolyyttiset streptokokit` (hemolytic streptococci) for throat culture were easily resolved because the rows were grouped by string similarity.\n\nA specific ambiguity arose with `osoituskoe` ('detection test'), which is non-specific about the method. I interpreted it as a rapid antigen test, which is a common screening method for Strep A, but it could also refer to a nucleic acid test. More specific terminology in the source data would have resolved this."
 }

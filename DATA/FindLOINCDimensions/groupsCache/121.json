@@ -2,499 +2,400 @@
   "rows": [
     {
       "row_id": 10066,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10067,
-      "loinc_name_guess": "FISH analysis [Identifier] in Unspecified specimen",
-      "is_panel": false
+      "loinc_name_guess": "FISH analysis [Identifier] in Tissue by FISH"
     },
     {
       "row_id": 10068,
-      "loinc_name_guess": "FISH analysis [Identifier] in Unspecified specimen",
-      "is_panel": false
+      "loinc_name_guess": "FISH analysis [Identifier] in Tissue by FISH"
     },
     {
       "row_id": 10069,
-      "loinc_name_guess": "Apolipoprotein E gene [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Apolipoprotein E gene genotype [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10070,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10071,
-      "loinc_name_guess": "SERPINA1 gene [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-antitrypsin genotype [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10072,
-      "loinc_name_guess": "SERPINA1 gene [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-antitrypsin genotype [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10073,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10074,
-      "loinc_name_guess": "BCR-ABL1 fusion gene/Control gene [# Ratio] in Blood by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
     },
     {
       "row_id": 10075,
-      "loinc_name_guess": "BCR-ABL1 fusion gene/Control gene [# Ratio] in Blood by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
     },
     {
       "row_id": 10076,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "B-lymphocyte Ig gene rearrangement analysis [Presence] in Blood by PCR"
     },
     {
       "row_id": 10077,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10078,
-      "loinc_name_guess": "BRCA1+BRCA2 gene mutations found [Identifier] in Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "BRCA gene analysis panel - Blood"
     },
     {
       "row_id": 10079,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10080,
-      "loinc_name_guess": "CALR gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "CALR gene mutation [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10081,
-      "loinc_name_guess": "BCR-ABL1 fusion gene/Control gene [# Ratio] in Blood by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [Presence] in Blood by PCR"
     },
     {
       "row_id": 10082,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10083,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10084,
-      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10085,
-      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10086,
-      "loinc_name_guess": "DPYD gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "DPYD gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10087,
-      "loinc_name_guess": "DPYD gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "DPYD gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10088,
-      "loinc_name_guess": "DPYD gene mutation analysis panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "DPYD gene mutation analysis panel - Blood"
     },
     {
       "row_id": 10089,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10090,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10091,
-      "loinc_name_guess": "Pharmacogenomic panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "Pharmacogenetics panel - Blood"
     },
     {
       "row_id": 10092,
-      "loinc_name_guess": "Pharmacogenomic panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "Pharmacogenetics extensive panel - Blood"
     },
     {
       "row_id": 10093,
-      "loinc_name_guess": "Coagulation factor II gene.G20210A mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin gene.G20210A mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10094,
-      "loinc_name_guess": "Coagulation factor II gene.G20210A mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin gene.G20210A mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10095,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10096,
-      "loinc_name_guess": "FISH for hematologic disorders panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Blood"
     },
     {
       "row_id": 10097,
-      "loinc_name_guess": "FMR1 gene CGG repeat number [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "FMR1 gene repeat analysis [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10098,
-      "loinc_name_guess": "FMR1 gene CGG repeat number [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "FMR1 gene repeat analysis [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10099,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10100,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10101,
-      "loinc_name_guess": "Coagulation factor V gene.Leiden mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor V gene.R506Q mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10102,
-      "loinc_name_guess": "Coagulation factor V gene.Leiden mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor V gene.R506Q mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10103,
-      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood"
     },
     {
       "row_id": 10104,
-      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood"
     },
     {
       "row_id": 10105,
-      "loinc_name_guess": "HFE gene mutations found [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "HFE gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10106,
-      "loinc_name_guess": "Hereditary nonpolyposis colon cancer gene targeted mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "MLH1+MSH2+MSH6 gene targeted mutation analysis [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10107,
-      "loinc_name_guess": "JAK2 gene.V617F mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "JAK2 gene.V617F mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10108,
-      "loinc_name_guess": "JAK2 gene.V617F mutation [Presence] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "JAK2 gene.V617F mut [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10109,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Chimerism analysis [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10110,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Post-transplant chimerism analysis panel - Blood"
     },
     {
       "row_id": 10111,
-      "loinc_name_guess": "BCR-ABL1 fusion gene/Control gene [# Ratio] in Blood by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
     },
     {
       "row_id": 10112,
-      "loinc_name_guess": "Lactase gene.C-13910T [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Lactase gene genotype [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10113,
-      "loinc_name_guess": "Lactase gene.C-13910T [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Lactase gene genotype [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10114,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10115,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10116,
-      "loinc_name_guess": "LDLR gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "LDLR gene mutation [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10117,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Next generation sequencing panel - Blood"
     },
     {
       "row_id": 10118,
-      "loinc_name_guess": "NPHS1 gene targeted mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "NPHS1 gene targeted mutations [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10119,
-      "loinc_name_guess": "Pharmacogenomic panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "Pharmacogenetics panel - Blood"
     },
     {
       "row_id": 10120,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10121,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10122,
-      "loinc_name_guess": "TP53 gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "TP53 gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10123,
-      "loinc_name_guess": "TPMT gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "TPMT gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10124,
-      "loinc_name_guess": "TPMT gene mutation analysis [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "TPMT gene mutations found [Identifier] in Blood by Molgen"
     },
     {
       "row_id": 10125,
-      "loinc_name_guess": "CYP2C9 gene and VKORC1 gene panel - Blood by Molecular genetics method",
-      "is_panel": true
+      "loinc_name_guess": "VKORC1 gene and CYP2C9 gene panel - Blood"
     },
     {
       "row_id": 10126,
-      "loinc_name_guess": "Y chromosome microdeletions found [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Y chromosome microdeletions analysis [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10127,
-      "loinc_name_guess": "Y chromosome microdeletions found [Identifier] in Blood by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "Y chromosome microdeletions analysis [Presence] in Blood by Molgen"
     },
     {
       "row_id": 10128,
-      "loinc_name_guess": "Bronchoalveolar lavage cell analysis panel - Bronchoalveolar lavage",
-      "is_panel": true
+      "loinc_name_guess": "Bronchoalveolar lavage fluid analysis panel - Bronchoalveolar lavage fluid"
     },
     {
       "row_id": 10129,
-      "loinc_name_guess": "Bronchoalveolar lavage cell analysis panel - Bronchoalveolar lavage",
-      "is_panel": true
+      "loinc_name_guess": "Leukocyte differential count panel - Bronchoalveolar lavage fluid"
     },
     {
       "row_id": 10130,
-      "loinc_name_guess": "Immunophenotyping panel - Bronchoalveolar lavage by Flow cytometry (FC)",
-      "is_panel": true
+      "loinc_name_guess": "Flow cytometry immunophenotyping panel - Bronchoalveolar lavage fluid"
     },
     {
       "row_id": 10131,
-      "loinc_name_guess": "Neoplastic cells.clone specific marker [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10132,
-      "loinc_name_guess": "Neoplastic cells.clone specific marker [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10133,
-      "loinc_name_guess": "Neoplastic cells.clone specific marker [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10134,
-      "loinc_name_guess": "Bone marrow aspirate report",
-      "is_panel": false
+      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by Light microscopy"
     },
     {
       "row_id": 10135,
-      "loinc_name_guess": "BCR-ABL1 fusion gene/Control gene [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Bone marrow by NAA"
     },
     {
       "row_id": 10136,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "B-lymphocyte Ig gene rearrangement analysis [Presence] in Bone marrow by PCR"
     },
     {
       "row_id": 10137,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10138,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow",
-      "is_panel": false
+      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow by FISH"
     },
     {
       "row_id": 10139,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow",
-      "is_panel": false
+      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow by FISH"
     },
     {
       "row_id": 10140,
-      "loinc_name_guess": "FISH for multiple myeloma panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
     },
     {
       "row_id": 10141,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10142,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10143,
-      "loinc_name_guess": "FISH for hematologic disorders panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Bone marrow"
     },
     {
       "row_id": 10144,
-      "loinc_name_guess": "FISH for hematologic disorders panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Bone marrow"
     },
     {
       "row_id": 10145,
-      "loinc_name_guess": "FISH for multiple myeloma panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
     },
     {
       "row_id": 10146,
-      "loinc_name_guess": "FISH for multiple myeloma panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
     },
     {
       "row_id": 10147,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10148,
-      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molgen"
     },
     {
       "row_id": 10149,
-      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molgen"
     },
     {
       "row_id": 10150,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10151,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10152,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10153,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10154,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by MGG stain",
-      "is_panel": false
+      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by MGG stain"
     },
     {
       "row_id": 10155,
-      "loinc_name_guess": "Bone marrow aspirate MGG and Iron stain panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "Bone marrow aspirate morphology and iron stain panel - Bone marrow"
     },
     {
       "row_id": 10156,
-      "loinc_name_guess": "Bone marrow aspirate MGG and Iron stain panel - Bone marrow",
-      "is_panel": true
+      "loinc_name_guess": "Bone marrow aspirate morphology and iron stain panel - Bone marrow"
     },
     {
       "row_id": 10157,
-      "loinc_name_guess": "Immunophenotyping panel - Bone marrow by Immunofluorescence",
-      "is_panel": true
+      "loinc_name_guess": "Multiple myeloma immunophenotyping panel - Bone marrow"
     },
     {
       "row_id": 10158,
-      "loinc_name_guess": "Neoplastic cells.clone specific marker [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "IgH gene rearrangement analysis [Presence] in Bone marrow by PCR"
     },
     {
       "row_id": 10159,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by MGG stain",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10160,
-      "loinc_name_guess": "Leukemia, Acute lymphoblastic cells [# Ratio] in Bone marrow by Minimal residual disease method",
-      "is_panel": false
+      "loinc_name_guess": "Minimal residual disease for ALL panel - Bone marrow"
     },
     {
       "row_id": 10161,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Minimal residual disease panel - Bone marrow"
     },
     {
       "row_id": 10162,
-      "loinc_name_guess": "Neoplastic cells.clone specific marker [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Minimal residual disease [Presence] in Bone marrow by NAA"
     },
     {
       "row_id": 10163,
-      "loinc_name_guess": "NPM1 gene mutation [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "NPM1 gene mutation [Presence] in Bone marrow by Molgen"
     },
     {
       "row_id": 10164,
-      "loinc_name_guess": "NPM1 gene mutation [# Ratio] in Bone marrow by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "NPM1 gene mutation [Presence] in Bone marrow by Molgen"
     }
   ],
-  "reflection": "This group was dominated by molecular genetics and hematopathology tests. The `LongName` and `suffix_meaning` columns were crucial for disambiguation. For example, the `-D` suffix (DNA test) and `p_missing=100` immediately pointed towards qualitative or nominal genetic tests.\n\nThe abbreviations were largely decodable for common genetic targets (e.g., `FV` for Factor V, `JAK2`, `BCR`, `LAKT`). The system prefixes (`B-` for Blood, `Bm-` for Bone Marrow) were also highly consistent and useful. Many tests were identifiable as panels (e.g., `b-varfa-d` for warfarin pharmacogenomics, `bm-mggfe` for bone marrow morphology + iron stain), which required creating panel-type names.\n\nAmbiguities arose from very generic codes like `b-fuus-mr` (fusion gene), `b-sekvy-d` (sequencing), or un-annotated acronyms like `b-auria10`. Without more context or a `LongName`, these are impossible to map. The `form` unit was a useful clue indicating a structured/narrative report, reinforcing the qualitative nature of many of these tests."
+  "reflection": "This group was dominated by molecular genetics tests, identifiable by the `-D` suffix (DNA test), `LongName` descriptions, and abbreviations for genes (e.g., `APOE`, `JAK2`, `TPMT`) or methods (e.g., `FISH`, `PCR`). The `p_missing=100%` on almost all rows was expected for these kinds of tests, which are typically reported as nominal or qualitative findings, not numbers.\n\nThe main challenge was interpreting the local, non-standard abbreviations. For many, like `B-AURIA10` or `B-BO3-D`, there was insufficient information to make a reasonable guess. For others, I had to infer the meaning from common practice, e.g., `B-BLAPCR` as a B-lymphocyte clonality assay, or `BM-MM-IFT` as immunophenotyping for Multiple Myeloma.\n\nThe distinction between qualitative (`[Presence]`), identifying (`[Identifier]`), and quantitative (`[# Ratio]`) properties was crucial. `-QR` (quantitative real-time) clearly indicated a quantitative test like `BCR-ABL1`. For genotyping tests (`-tyypitys` in `LongName`) or tests for multiple mutations (`valtamutaatioiden tutkimus`), `[Identifier]` was appropriate. For tests targeting a single, well-known mutation (e.g., Factor V Leiden, JAK2 V617F), `[Presence]` seemed the best fit. I often specified `by Molgen` as a general method for DNA tests, as it's more specific than nothing but not overly presumptive.\n\nPanel names were necessary for codes covering multiple genes (`B-FVFII-D`, `B-VARFA-D`), broad test categories (`B-FARMA-D`, `B-NGS-D`), or multiple stains (`BM-MGGFE`). This requires recognizing when a single code represents a bundle of results."
 }

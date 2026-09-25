@@ -2,184 +2,148 @@
   "rows": [
     {
       "row_id": 6680,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria aerobic identified in Unspecified specimen by Culture"
     },
     {
       "row_id": 6681,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria anaerobic identified in Unspecified specimen by Culture"
     },
     {
       "row_id": 6682,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Unspecified specimen by NAA"
     },
     {
       "row_id": 6683,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6684,
-      "loinc_name_guess": "Cobalt [Mass/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Cobalt [Mass/volume] in Blood"
     },
     {
       "row_id": 6685,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Candida sp identified in Unspecified specimen by Culture"
     },
     {
       "row_id": 6686,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Candida sp [Presence] in Unspecified specimen by Wet mount"
     },
     {
       "row_id": 6687,
-      "loinc_name_guess": "Cladosporium herbarum IgE Ab response to skin test",
-      "is_panel": false
+      "loinc_name_guess": "Cladosporium herbarum Ab [Length] in Skin by Skin test"
     },
     {
       "row_id": 6688,
-      "loinc_name_guess": "Cladosporium herbarum Ab.IgE [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Cladosporium herbarum IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 6689,
-      "loinc_name_guess": "Cladosporium herbarum Ab.IgE [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Cladosporium herbarum IgE Ab [Presence] in Serum"
     },
     {
       "row_id": 6690,
-      "loinc_name_guess": "Human coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Coronavirus 229E RNA [Presence] in Respiratory specimen by NAA"
     },
     {
       "row_id": 6691,
-      "loinc_name_guess": "Human coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Coronavirus HKU1 RNA [Presence] in Respiratory specimen by NAA"
     },
     {
       "row_id": 6692,
-      "loinc_name_guess": "Human coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Coronavirus NL63 RNA [Presence] in Respiratory specimen by NAA"
     },
     {
       "row_id": 6693,
-      "loinc_name_guess": "Human coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Coronavirus OC43 RNA [Presence] in Respiratory specimen by NAA"
     },
     {
       "row_id": 6694,
-      "loinc_name_guess": "Norovirus genogroup I [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Norovirus G1 RNA [Presence] in Stool by NAA"
     },
     {
       "row_id": 6695,
-      "loinc_name_guess": "Norovirus genogroup II [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Norovirus G2 RNA [Presence] in Stool by NAA"
     },
     {
       "row_id": 6696,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6697,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Human papillomavirus DNA+Chlamydia trachomatis DNA+Neisseria gonorrhoeae DNA [Presence] in Cervix by NAA"
     },
     {
       "row_id": 6698,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervix by NAA"
     },
     {
       "row_id": 6699,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Norovirus G1 RNA [Presence] in Unspecified specimen by NAA"
     },
     {
       "row_id": 6700,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Norovirus G2 RNA [Presence] in Unspecified specimen by NAA"
     },
     {
       "row_id": 6701,
-      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6702,
-      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma"
     },
     {
       "row_id": 6703,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6704,
-      "loinc_name_guess": "Urate [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6705,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6706,
-      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6707,
-      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma"
     },
     {
       "row_id": 6708,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6709,
-      "loinc_name_guess": "Urate [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6710,
-      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6711,
-      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6712,
-      "loinc_name_guess": "Tissue Pathology biopsy report",
-      "is_panel": false
+      "loinc_name_guess": "Gross description in Products of conception by Macroscopy"
     },
     {
       "row_id": 6713,
-      "loinc_name_guess": "Chlamydia trachomatis and Neisseria gonorrhoeae DNA and RNA panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA"
     },
     {
       "row_id": 6714,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 6715,
-      "loinc_name_guess": "Urate [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     }
   ],
-  "reflection": "This group contained a mix of clearly defined chemical analytes (Urate, Acetone, Valproate), microbiology, and some very cryptic local codes. The main challenge was dealing with missing system information. For `uraatti` (row 6714), the deciles were a perfect match for `p-uraatti`, allowing a confident inference of the `Serum or Plasma` system. For others like `norogi` (row 6699) or `cand.nativ` (row 6686), the lack of a system prefix made them unmappable, even though the component was clear. Local abbreviations like `-omactgc` (rows 6682, 6713) are also tricky; `ctgc` appears to be a common localism for CT/GC testing, and recognizing this pattern was key to mapping `u-omactgc` to a panel. The `LongName` for `ts-abortti` was crucial for identifying it as a pathology report on products of conception. Finally, the unit was essential for distinguishing the allergy skin test `cladosp.he` in `mm` from the serum IgE test in `u/ml`."
+  "reflection": "This group presented several challenges. \n\n1.  **Ambiguous and concatenated codes**: Codes like `-omactgc`, `hpvpapctgc`, and `hpvrefctgc` are difficult to parse. They seem to be local abbreviations, possibly concatenating multiple tests (like CT/GC) or using parts of a method name. My interpretation of `omactgc` as Chlamydia/Gonorrhea is a strong hypothesis, especially with the `u-` prefix (row 6713), but remains a guess.\n\n2.  **Administrative codes**: `annosvoim` (dose strength) and codes like `f-projekti` (project) are not lab tests. It's crucial to identify these and leave them empty rather than forcing a mapping.\n\n3.  **Context from different rows**: Seeing `cladosp.he` with `mm` units (row 6687) and `U/ml` units (row 6688) on separate rows was key to understanding that the same abbreviation was used for two completely different allergy testing methods (skin prick vs. serum IgE). This highlights the importance of not assuming a single mapping for one `TEST_NAME` string.\n\n4.  **Value of `LongName`**: The `LongName` for `ts-abortti` (row 6712), \"Dissection study of abortion tissue\", was indispensable. Without it, the code would have been unmappable. It allowed translation of a pathology procedure into a LOINC concept, a different type of test from the usual chemistry or microbiology.\n\n5.  **Qualitative vs. Quantitative**: For analytes like `asetoni`, where both qualitative and quantitative tests exist, the absence of units and values (e.g., rows 6702, 6707) makes it a judgment call. I opted for `[Presence]` as a safer guess for a screening-type purpose, given the 100% missing values."
 }

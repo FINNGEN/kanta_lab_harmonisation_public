@@ -1,4 +1,3 @@
---clean: removing cached LLM answers in DATA/FindLOINCDimensions/groupsCache
 - The project is out-of-sync -- use `renv::status()` for details.
 
 Attaching package: ‘dplyr’
@@ -13,11 +12,9 @@ The following objects are masked from ‘package:base’:
 
 Configuration:
   inputFile = DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
-  frequencyFile = DATA/SourceLabelingData/loinc_names_frequency.tsv
   outDir = DATA/FindLOINCDimensions
   nGroups = 30
   seed = 1
-  nExamples = 100
   provider = google_vertex
   model = gemini-2.5-pro
   project = atlas-development-270609
@@ -25,23 +22,15 @@ Configuration:
   workers = 6
   cacheDir = DATA/FindLOINCDimensions/groupsCache
 Read 13804 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
-Read 1488 Finnish name-frequency rows from DATA/SourceLabelingData/loinc_names_frequency.tsv
+Evidence levels: name=6954, name+unit=1578, name+unit+values=3814, name+values=1458
 Processing 30 of 170 groups (random sample, seed 1)
-Injected 100 Finnish name examples into the system prompt
-Groups to send to the LLM: 30 (0 already cached)
-Resolving 30 groups across 6 workers
-Initiating cluster with 6 threads
-- The project is out-of-sync -- use `renv::status()` for details.
-- The project is out-of-sync -- use `renv::status()` for details.
-- The project is out-of-sync -- use `renv::status()` for details.
-- The project is out-of-sync -- use `renv::status()` for details.
-- The project is out-of-sync -- use `renv::status()` for details.
-- The project is out-of-sync -- use `renv::status()` for details.
-  |                                                                              |                                                                      |   0%  |                                                                              |==                                                                    |   3%  |                                                                              |=====                                                                 |   7%  |                                                                              |=======                                                               |  10%  |                                                                              |=========                                                             |  13%  |                                                                              |============                                                          |  17%  |                                                                              |==============                                                        |  20%  |                                                                              |================                                                      |  23%  |                                                                              |===================                                                   |  27%  |                                                                              |=====================                                                 |  30%  |                                                                              |=======================                                               |  33%  |                                                                              |==========================                                            |  37%  |                                                                              |============================                                          |  40%  |                                                                              |==============================                                        |  43%  |                                                                              |=================================                                     |  47%  |                                                                              |===================================                                   |  50%  |                                                                              |=====================================                                 |  53%  |                                                                              |========================================                              |  57%  |                                                                              |==========================================                            |  60%  |                                                                              |============================================                          |  63%  |                                                                              |===============================================                       |  67%  |                                                                              |=================================================                     |  70%  |                                                                              |===================================================                   |  73%  |                                                                              |======================================================                |  77%  |                                                                              |========================================================              |  80%  |                                                                              |==========================================================            |  83%  |                                                                              |=============================================================         |  87%  |                                                                              |===============================================================       |  90%  |                                                                              |=================================================================     |  93%  |                                                                              |====================================================================  |  97%  |                                                                              |======================================================================| 100%
-Resolved 30 groups this run (LLM cost USD 3.2832)
-Collected 2073 per-row answers from 30 groups
-89 row_id(s) returned more than once; keeping the first of each
-1790 / 1984 rows got a LOINC name guess
+Read 17911 characters of system prompt from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/STEPS/FindLOINCDimensions/scripts/systemPrompt.md
+Groups to send to the LLM: 0 (30 already cached)
+Resolved 0 groups this run (LLM cost USD 0.0000)
+Collected 1984 per-row answers from 30 groups
+1 returned row_id(s) are not in the processed groups; dropping them
+1 row(s) got no answer from the model; their name stays empty
+1890 / 1984 rows got a LOINC name guess
 Wrote 1984 rows to DATA/FindLOINCDimensions/codesWithLoincNames.tsv
 Wrote 30 group reflections to DATA/FindLOINCDimensions/reflections.md
 - The project is out-of-sync -- use `renv::status()` for details.
@@ -63,9 +52,9 @@ Configuration:
   provider = google_vertex
   model = gemini-2.5-pro
 Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincNames.tsv
-Read 40130 characters of reflections from DATA/FindLOINCDimensions/reflections.md
-1790 / 1984 rows named; 1380 carry the full '<Component> [<Property>] in <System>' shape
-Summarised reflections into 8 findings, 5 improvements, 8 data problems
+Read 42202 characters of reflections from DATA/FindLOINCDimensions/reflections.md
+1890 / 1984 rows named; 1510 carry the full '<Component> [<Property>] in <System>' shape
+Summarised reflections into 10 findings, 5 improvements, 7 data problems
 Wrote stats report to DATA/FindLOINCDimensions/loincNamesStats.md
 Wrote DATA/FindLOINCDimensions/codesWithLoincNames.tsv
 Wrote DATA/FindLOINCDimensions/reflections.md

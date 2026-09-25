@@ -2,529 +2,424 @@
   "rows": [
     {
       "row_id": 2630,
-      "loinc_name_guess": "Nuclear Ab [Titer] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
     },
     {
       "row_id": 2631,
-      "loinc_name_guess": "Nuclear Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
     },
     {
       "row_id": 2632,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
     },
     {
       "row_id": 2633,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
     },
     {
       "row_id": 2634,
-      "loinc_name_guess": "Erythropoietin [Presence] in Amniotic fluid",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
     },
     {
       "row_id": 2635,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Platelet aggregation ADP induced [Area under curve] in Blood"
     },
     {
       "row_id": 2636,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Platelet aggregation ADP induced [Area under curve] in Blood"
     },
     {
       "row_id": 2637,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Platelet aggregation arachidonic acid induced [Area under curve] in Blood"
     },
     {
       "row_id": 2638,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Platelet aggregation arachidonic acid induced [Area under curve] in Blood"
     },
     {
       "row_id": 2639,
-      "loinc_name_guess": "Vasodilator-stimulated phosphoprotein phosphorylation platelet reactivity index [Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets"
     },
     {
       "row_id": 2640,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets"
     },
     {
       "row_id": 2641,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2642,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2643,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in 24 hour Urine"
     },
     {
       "row_id": 2644,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2645,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2646,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2647,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Apolipoprotein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2648,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma --fasting",
-      "is_panel": false
+      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2649,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma --fasting",
-      "is_panel": false
+      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2650,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2651,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2652,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2653,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2654,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Agglutination",
-      "is_panel": false
+      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination"
     },
     {
       "row_id": 2655,
-      "loinc_name_guess": "Treponema pallidum Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination"
     },
     {
       "row_id": 2656,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2657,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2658,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2659,
-      "loinc_name_guess": "Choriogonadotropin [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2660,
-      "loinc_name_guess": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2661,
-      "loinc_name_guess": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2662,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2663,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2664,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2665,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2666,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2667,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2668,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2669,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2670,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2671,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2672,
-      "loinc_name_guess": "Alpha-fetoprotein [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2673,
-      "loinc_name_guess": "Alpha-fetoprotein [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-fetoprotein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2674,
-      "loinc_name_guess": "Alpha-fetoprotein [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2675,
-      "loinc_name_guess": "Alpha-fetoprotein [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2676,
-      "loinc_name_guess": "Alpha-fetoprotein [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2677,
-      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2678,
-      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2679,
-      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2680,
-      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2681,
-      "loinc_name_guess": "Nuclear Ab [Titer] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
     },
     {
       "row_id": 2682,
-      "loinc_name_guess": "Nuclear Ab [Titer] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
     },
     {
       "row_id": 2683,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Apolipoprotein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2684,
-      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2685,
-      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2686,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2687,
-      "loinc_name_guess": "Streptolysin O Ab [Titer] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Streptolysin O Ab [Titer] in Serum"
     },
     {
       "row_id": 2688,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2689,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2690,
-      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2691,
-      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2692,
-      "loinc_name_guess": "Staphylolysin Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
     },
     {
       "row_id": 2693,
-      "loinc_name_guess": "Bromide [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Bromide [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2694,
-      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2695,
-      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2696,
-      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2697,
-      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2698,
-      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2699,
-      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2700,
-      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2701,
-      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2702,
-      "loinc_name_guess": "Endomysial Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Endomysial Ab [Titer] in Serum"
     },
     {
       "row_id": 2703,
-      "loinc_name_guess": "Extractable nuclear Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Extractable nuclear Ab [Ratio] in Serum"
     },
     {
       "row_id": 2704,
-      "loinc_name_guess": "Extractable nuclear Ab panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Extractable nuclear Ab panel - Serum"
     },
     {
       "row_id": 2705,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2706,
-      "loinc_name_guess": "Erythropoietin [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2707,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2708,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2709,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2710,
-      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2711,
-      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2712,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2713,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2714,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2715,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2716,
-      "loinc_name_guess": "Choriogonadotropin [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 2717,
-      "loinc_name_guess": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2718,
-      "loinc_name_guess": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2719,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2720,
-      "loinc_name_guess": "Cold agglutinin [Titer] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Cold agglutinin [Titer] in Serum"
     },
     {
       "row_id": 2721,
-      "loinc_name_guess": "Cold agglutinin [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Cold agglutinin [Titer] in Serum"
     },
     {
       "row_id": 2722,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2723,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2724,
-      "loinc_name_guess": "Tumor-associated trypsin inhibitor [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2725,
-      "loinc_name_guess": "Tumor-associated trypsin inhibitor [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tumor associated trypsin inhibitor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2726,
-      "loinc_name_guess": "Tumor-associated trypsin inhibitor [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2727,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Serum by Agglutination",
-      "is_panel": false
+      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination"
     },
     {
       "row_id": 2728,
-      "loinc_name_guess": "Treponema pallidum Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination"
     },
     {
       "row_id": 2729,
-      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2730,
-      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2731,
-      "loinc_name_guess": "Hormone receptor panel - Tissue",
-      "is_panel": true
+      "loinc_name_guess": "Estrogen and Progesterone receptor panel - Tissue"
     },
     {
       "row_id": 2732,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine"
     },
     {
       "row_id": 2733,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine"
     },
     {
       "row_id": 2734,
-      "loinc_name_guess": "Choriogonadotropin [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Choriogonadotropin [Presence] in Urine"
     }
   ],
-  "reflection": "This group was dominated by immunoassays and endocrinology tests. The presence of `LongName` for most was very helpful.\n\nGotchas and ambiguities:\n*   **Platelet function tests** (rows 2635-2638, `b-adp`, `b-aspi`): The unit `auc` (Area Under Curve) is specific to the instrument/method and does not map cleanly to a standard LOINC property like `[Ratio]` or `[Time]`. Without knowing the exact test platform, creating a precise LOINC name is difficult. I opted to leave these blank rather than guess a potentially incorrect property.\n*   **Ambiguous abbreviations**: `fs-apot`, `s-apot`, `p-hae`, `s-hae`, `s-hbe`, `s-kem` were too generic or unclear to map reliably.\n*   **ENA screen vs. panel** (rows 2703, 2704): Differentiating between the initial screen (`S-Ena`, often an index value) and the follow-up identification panel (`S-EnaL`, a qualitative report or set of results) was key. I mapped `S-Ena` to a quantitative index (`[Units/volume]`) and `S-EnaL` to a panel.\n*   **Multiple units for the same test**: AFP, EPO, and TATI appeared with both mass (`ug/L`), molar (`pmol/L`), and/or activity units (`U/L`), requiring distinct LOINC names for what is clinically the same analyte."
+  "reflection": "This group contained several ambiguous abbreviations that were difficult to map without a LongName, leading to empty guesses. Examples include `p-hae`/`s-hae`, `s-hbe`, `p-hepg`, `p-hok`, and `s-kem`. The `fs-tp-*` series was also unidentifiable. The distinction between a screening test (`S-Ena`, row 2703) and a speciation panel (`S-Enal`, row 2704) was subtle but inferable from national code lists; the presence of quantitative values for the screen (a ratio) was a key piece of evidence.\n\nThe code `-ana` (row 2630-2631) with a leading dash is unusual and likely a data entry error, though its meaning was clear. Similarly, `s-afp/d` (row 2675) has an unclear `/d` suffix which I assumed was a local, non-mappable modifier.\n\nFor `U-hCG` without a unit (row 2734), I inferred a qualitative test (`[Presence]`) based on the most common clinical use case for urine hCG (i.e., pregnancy screening dipstick) and the high percentage of missing values, in contrast to the explicitly quantitative `iu/l` and `u/l` units on other rows for the same code. This is an interpretative leap but a pragmatic one."
 }

@@ -2,719 +2,576 @@
   "rows": [
     {
       "row_id": 2487,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial blood",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial blood"
     },
     {
       "row_id": 2488,
-      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2489,
-      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2490,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2491,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2492,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2493,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2494,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2495,
-      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Arterial plasma"
     },
     {
       "row_id": 2496,
-      "loinc_name_guess": "Sodium and Potassium panel - Arterial plasma",
-      "is_panel": true
+      "loinc_name_guess": "Sodium and Potassium panel - Arterial plasma"
     },
     {
       "row_id": 2497,
-      "loinc_name_guess": "Sodium [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
     },
     {
       "row_id": 2498,
-      "loinc_name_guess": "Sodium [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
     },
     {
       "row_id": 2499,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Capillary plasma"
     },
     {
       "row_id": 2500,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Capillary plasma"
     },
     {
       "row_id": 2501,
-      "loinc_name_guess": "Sodium [Moles/volume] in Dialysis fluid",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Dialysis fluid"
     },
     {
       "row_id": 2502,
-      "loinc_name_guess": "Sodium [Moles/volume] in Dialysis fluid",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Dialysis fluid"
     },
     {
       "row_id": 2503,
-      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2504,
-      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2505,
-      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 2506,
-      "loinc_name_guess": "Collagen type I C-telopeptide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2507,
-      "loinc_name_guess": "Collagen type I C-telopeptide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2508,
-      "loinc_name_guess": "Collagen type I C-telopeptide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2509,
-      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2510,
-      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2511,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2512,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2513,
-      "loinc_name_guess": "Adrenocorticotropic hormone [Mass/volume] in Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adrenocorticotropic hormone [Mass/volume] in Plasma"
     },
     {
       "row_id": 2514,
-      "loinc_name_guess": "Adrenocorticotropic hormone [Moles/volume] in Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adrenocorticotropic hormone [Moles/volume] in Plasma"
     },
     {
       "row_id": 2515,
-      "loinc_name_guess": "Adrenocorticotropic hormone [Mass/volume] in Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adrenocorticotropic hormone [Mass/volume] in Plasma"
     },
     {
       "row_id": 2516,
-      "loinc_name_guess": "Antithrombin III [Arbitrary concentration] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Antithrombin III activity [Ratio] in Plasma"
     },
     {
       "row_id": 2517,
-      "loinc_name_guess": "Antithrombin III [Arbitrary concentration] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Antithrombin III activity [Ratio] in Plasma"
     },
     {
       "row_id": 2518,
-      "loinc_name_guess": "Antithrombin III [Arbitrary concentration] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Antithrombin III activity [Ratio] in Plasma"
     },
     {
       "row_id": 2519,
-      "loinc_name_guess": "Antithrombin III [Arbitrary concentration] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Antithrombin III activity [Ratio] in Plasma"
     },
     {
       "row_id": 2520,
-      "loinc_name_guess": "Antithrombin III [Arbitrary concentration] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Antithrombin III activity [Ratio] in Plasma"
     },
     {
       "row_id": 2521,
-      "loinc_name_guess": "Essential fatty acids panel - Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Essential fatty acids panel - Plasma"
     },
     {
       "row_id": 2522,
-      "loinc_name_guess": "Essential fatty acids panel - Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Essential fatty acids panel - Plasma"
     },
     {
       "row_id": 2523,
-      "loinc_name_guess": "Complement factor B [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Complement factor B [Mass/volume] in Plasma"
     },
     {
       "row_id": 2524,
-      "loinc_name_guess": "Complement factor B [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Complement factor B [Mass/volume] in Plasma"
     },
     {
       "row_id": 2525,
-      "loinc_name_guess": "Iron [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Iron [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2526,
-      "loinc_name_guess": "Iron [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Iron [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2527,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Thrombin time [Time] in Plasma"
     },
     {
       "row_id": 2528,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Thrombin time [Time] in Plasma"
     },
     {
       "row_id": 2529,
-      "loinc_name_guess": "Coagulation factor V [Activity] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor V activity [Ratio] in Plasma"
     },
     {
       "row_id": 2530,
-      "loinc_name_guess": "Coagulation factor V [Activity] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor V activity [Ratio] in Plasma"
     },
     {
       "row_id": 2531,
-      "loinc_name_guess": "Coagulation factor X [Activity] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor X activity [Ratio] in Plasma"
     },
     {
       "row_id": 2532,
-      "loinc_name_guess": "Coagulation factor X [Activity] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Coagulation factor X activity [Ratio] in Plasma"
     },
     {
       "row_id": 2533,
-      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2534,
-      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2535,
-      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2536,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method"
     },
     {
       "row_id": 2537,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium and Sodium panel - Plasma"
     },
     {
       "row_id": 2538,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium and Sodium panel - Plasma"
     },
     {
       "row_id": 2539,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium and Sodium panel - Plasma"
     },
     {
       "row_id": 2540,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium and Sodium panel - Plasma"
     },
     {
       "row_id": 2541,
-      "loinc_name_guess": "Potassium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Potassium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2542,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium/Sodium [Molar ratio] in Plasma"
     },
     {
       "row_id": 2543,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2544,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2545,
-      "loinc_name_guess": "Lupus anticoagulant dRVVT screen [Time] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lupus anticoagulant screen [Time] in Platelet poor plasma"
     },
     {
       "row_id": 2546,
-      "loinc_name_guess": "Lupus anticoagulant dRVVT screen [Time] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lupus anticoagulant screen [Time] in Platelet poor plasma"
     },
     {
       "row_id": 2547,
-      "loinc_name_guess": "Lupus anticoagulant dRVVT confirm [Time] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lupus anticoagulant confirm [Time] in Platelet poor plasma"
     },
     {
       "row_id": 2548,
-      "loinc_name_guess": "Lupus anticoagulant dRVVT confirm [Time] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Lupus anticoagulant confirm [Time] in Platelet poor plasma"
     },
     {
       "row_id": 2549,
-      "loinc_name_guess": "Mycophenolic acid [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycophenolic acid [Mass/volume] in Plasma"
     },
     {
       "row_id": 2550,
-      "loinc_name_guess": "Mycophenolic acid [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycophenolic acid [Mass/volume] in Plasma"
     },
     {
       "row_id": 2551,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2552,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2553,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2554,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2555,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2556,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2557,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2558,
-      "loinc_name_guess": "Sodium and Potassium panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Potassium and Sodium panel - Plasma"
     },
     {
       "row_id": 2559,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2560,
-      "loinc_name_guess": "Urokinase plasminogen activator receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma"
     },
     {
       "row_id": 2561,
-      "loinc_name_guess": "Urokinase plasminogen activator receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma"
     },
     {
       "row_id": 2562,
-      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2563,
-      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2564,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2565,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2566,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2567,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2568,
-      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2569,
-      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2570,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2571,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2572,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2573,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2574,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2575,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2576,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method"
     },
     {
       "row_id": 2577,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method"
     },
     {
       "row_id": 2578,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2579,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2580,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2581,
-      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2582,
-      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2583,
-      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Plasma"
     },
     {
       "row_id": 2584,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2585,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2586,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2587,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2588,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2589,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2590,
-      "loinc_name_guess": "Prothrombin time (PT) actual/Normal",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2591,
-      "loinc_name_guess": "Time in therapeutic range [Time Fraction] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2592,
-      "loinc_name_guess": "Time in therapeutic range [Time Fraction] in Platelet poor plasma",
-      "is_panel": false
+      "loinc_name_guess": "Prothrombin time [Ratio] in Plasma"
     },
     {
       "row_id": 2593,
-      "loinc_name_guess": "PDGFRA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method",
-      "is_panel": false
+      "loinc_name_guess": "PDGFR gene targeted mutation analysis"
     },
     {
       "row_id": 2594,
-      "loinc_name_guess": "Expiratory flow.peak [Volume Rate] by Spirometry",
-      "is_panel": false
+      "loinc_name_guess": "Peak expiratory flow rate [Volume Rate]"
     },
     {
       "row_id": 2595,
-      "loinc_name_guess": "Expiratory flow.peak [Volume Rate] by Spirometry",
-      "is_panel": false
+      "loinc_name_guess": "Peak expiratory flow rate [Volume Rate]"
     },
     {
       "row_id": 2596,
-      "loinc_name_guess": "Peak expiratory flow monitoring panel",
-      "is_panel": true
+      "loinc_name_guess": "Peak expiratory flow rate during monitoring period"
     },
     {
       "row_id": 2597,
-      "loinc_name_guess": "Peak expiratory flow post exercise panel",
-      "is_panel": true
+      "loinc_name_guess": "Peak expiratory flow rate [Volume Rate] --post exercise"
     },
     {
       "row_id": 2598,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 2599,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 2600,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 2601,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 2602,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2603,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2604,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2605,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2606,
-      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2607,
-      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2608,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2609,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2610,
-      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Thyroxine (T4).free [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2611,
-      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2612,
-      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2613,
-      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2614,
-      "loinc_name_guess": "Tumor necrosis factor alpha [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tumor necrosis factor alpha [Mass/volume] in Serum"
     },
     {
       "row_id": 2615,
-      "loinc_name_guess": "Tumor necrosis factor alpha [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tumor necrosis factor alpha [Mass/volume] in Serum"
     },
     {
       "row_id": 2616,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum"
     },
     {
       "row_id": 2617,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum"
     },
     {
       "row_id": 2618,
-      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin I.cardiac [Mass/volume] in Serum"
     },
     {
       "row_id": 2619,
-      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum"
     },
     {
       "row_id": 2620,
-      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Troponin T.cardiac [Mass/volume] in Serum"
     },
     {
       "row_id": 2621,
-      "loinc_name_guess": "Tobramycin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tobramycin [Mass/volume] in Serum"
     },
     {
       "row_id": 2622,
-      "loinc_name_guess": "Tobramycin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Tobramycin [Mass/volume] in Serum"
     },
     {
       "row_id": 2623,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 2624,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 2625,
-      "loinc_name_guess": "Sodium [Moles/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Urine"
     },
     {
       "row_id": 2626,
-      "loinc_name_guess": "Sodium [Moles/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Urine"
     },
     {
       "row_id": 2627,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
     },
     {
       "row_id": 2628,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2629,
-      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Sodium [Moles/volume] in Serum or Plasma"
     }
   ],
-  "reflection": "This was a large and diverse group of tests, not clustered by a single analyte. The primary challenge was interpreting a wide variety of Finnish abbreviations, some standard (`P-T4-V`, `P-ACTH`) and some ambiguous or local (`p-fs`, `p-ked.`). The `LongName` column was crucial where available, such as for identifying `P-TT` as Prothrombin Time, not Thrombin Time.\n\nSeveral specific issues arose:\n1.  **Ambiguous Codes:** `p-fs` with unit `s` looked like a coagulation time, but `fs` is not a standard abbreviation. Without a `LongName` or more context, I had to leave it blank. Similarly, `p-ked.` and `p-kjd.` were unidentifiable.\n2.  **Panel Identification:** Codes like `p-nak` and `sp-pak` were clearly panels, identifiable by the combined analyte name (`NaK`) or suffix (`-pak`), and confirmed by `p_missing` being 100%. This is a reliable pattern.\n3.  **Property and System Specificity:** Mapping coagulation tests (e.g., `P-AT3`, `P-FV`) required choosing the correct property (`[Activity]` or `[Arbitrary concentration]`) and system (`in Platelet poor plasma`). Mapping `P-TT` to `Prothrombin time (PT) actual/Normal` (a ratio) instead of a simple time was a key distinction based on the `%` unit.\n4.  **Suffix Interpretation:** The suffix `-pa` (long-term) on `p-k-pa` was confusing for a spot potassium test. I chose to map it to the standard potassium concept, assuming the suffix was an ordering instruction rather than part of the result's definition.\n5.  **Data Quality:** Numerous rows had incorrect units (e.g., `g/l` for Sodium). In these cases, the `TEST_NAME` and `deciles` were the deciding factors, and the unit was ignored as a data entry error. The presence of deciles for some rows with high `p_missing` was also a useful hint."
+  "reflection": "This group was dominated by sodium (`Na`) measurements in various specimens, which were straightforward. The main challenges were:\n\n1.  **Ambiguous abbreviations**: `P-fs` (2527), `P-ttr` (2591), `P-ked.` (2543), `P-kjd.` (2544), and `pneag` (2602) were not standard. For `P-fs` and `P-ttr`, I used the unit and value ranges to infer they were `Thrombin time` and `Prothrombin time`, respectively. For the others, I had to leave the name empty as there wasn't enough information to form a reasonable hypothesis.\n2.  **Panel identification**: Several codes like `P-NaK`, `P-K+Na`, and `ap-nak` clearly indicated panels. The `100% p_missing` for these rows supported the interpretation that they are orderables, not resultables. I named them as panels.\n3.  **Pulmonary function tests**: `PEF` codes were present. The Finnish suffixes `-pa` (long-term) and `-ras` (exercise) were crucial for selecting the correct LOINC concept type (monitoring vs. challenge test).\n4.  **Troponin versions**: The data contained codes for standard troponin (`P-TnI`), high-sensitivity (`P-hsTnI`, `P-TNIH`), and Troponin T vs. I. Distinguishing these required careful attention to the abbreviations. I added `by High sensitivity method` where the code implied it.\n5.  **Specimen nuances**: Most plasma/serum chemistry was mapped to `Serum or Plasma`. Coagulation tests (`P-AT3`, `P-FV`, `P-TT`) were mapped specifically to `Plasma`. Arterial samples (`aB-`, `aP-`) were also specifically named."
 }

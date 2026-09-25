@@ -2,924 +2,384 @@
   "rows": [
     {
       "row_id": 8999,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9000,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9001,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9002,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells [#/volume] in Blood"
     },
     {
       "row_id": 9003,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells [#/volume] in Blood"
     },
     {
       "row_id": 9004,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells [#/volume] in Blood"
     },
     {
       "row_id": 9005,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells [#/volume] in Blood"
     },
     {
       "row_id": 9006,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells [#/volume] in Blood"
     },
     {
       "row_id": 9007,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9008,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9009,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9010,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9011,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9012,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9013,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Blood"
     },
     {
       "row_id": 9014,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Blood"
     },
     {
       "row_id": 9015,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9016,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9017,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9018,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9019,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9020,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9021,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Blood"
     },
     {
       "row_id": 9022,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Blood"
     },
     {
       "row_id": 9023,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Blood"
     },
     {
       "row_id": 9024,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9025,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9026,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9027,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9028,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9029,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9030,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9031,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9032,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9033,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 9034,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Bronchoalveolar lavage",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Bronchoalveolar lavage"
     },
     {
       "row_id": 9035,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Bronchoalveolar lavage",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Bronchoalveolar lavage"
     },
     {
       "row_id": 9036,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9037,
-      "loinc_name_guess": "CD34+ cells/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9038,
-      "loinc_name_guess": "CD34+ cells/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9039,
-      "loinc_name_guess": "CD34+ cells [#/mass] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/Mass] in Apheresis product"
     },
     {
       "row_id": 9040,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#/volume] in Apheresis product"
     },
     {
       "row_id": 9041,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells [#] in Apheresis product"
     },
     {
       "row_id": 9042,
-      "loinc_name_guess": "CD34+ cells/Total nucleated cells in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD34+ cells/Nucleated cells [# Ratio] in Apheresis product"
     },
     {
       "row_id": 9043,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9044,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9045,
-      "loinc_name_guess": "T-helper cells [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9046,
-      "loinc_name_guess": "T-helper cells [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9047,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9048,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Leukapheresis product",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes [#/volume] in Apheresis product"
     },
     {
       "row_id": 9049,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9050,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9051,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9052,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9053,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9054,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9055,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9056,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9057,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9058,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9059,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9060,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9061,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9062,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9063,
-      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9064,
-      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9065,
-      "loinc_name_guess": "CD4-CD8- T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4-CD8- cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9066,
-      "loinc_name_guess": "CD4-CD8- T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4-CD8- cells/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9067,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9068,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9069,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9070,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9071,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9072,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9073,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9074,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9075,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9076,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9077,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9078,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9079,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9080,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9081,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9082,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9083,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9084,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9085,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood"
     },
     {
       "row_id": 9086,
-      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin.total [Mass Ratio] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin [Mass Ratio] in Serum"
     },
     {
       "row_id": 9087,
-      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin.total [Mass Ratio] in Serum or Plasma",
-      "is_panel": false
-    },
-    {
-      "row_id": 8999,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9000,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9001,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9002,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9003,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9004,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9005,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9006,
-      "loinc_name_guess": "NK cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9007,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9008,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9009,
-      "loinc_name_guess": "B-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9010,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9011,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9012,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9013,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9014,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9015,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9016,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9017,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9018,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9019,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9020,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9021,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9022,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9023,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9024,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9025,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9026,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9027,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9028,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9029,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9030,
-      "loinc_name_guess": "T-helper cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9031,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9032,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9033,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9034,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Bronchoalveolar lavage",
-      "is_panel": false
-    },
-    {
-      "row_id": 9035,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Bronchoalveolar lavage",
-      "is_panel": false
-    },
-    {
-      "row_id": 9036,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9037,
-      "loinc_name_guess": "CD34+ cells/Leukocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9038,
-      "loinc_name_guess": "CD34+ cells/Leukocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9039,
-      "loinc_name_guess": "CD34+ cells [#/mass] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9040,
-      "loinc_name_guess": "CD34+ cells [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9041,
-      "loinc_name_guess": "",
-      "is_panel": false
-    },
-    {
-      "row_id": 9042,
-      "loinc_name_guess": "CD34+ cells/Total nucleated cells in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9043,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9044,
-      "loinc_name_guess": "T-lymphocytes [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9045,
-      "loinc_name_guess": "T-helper cells [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9046,
-      "loinc_name_guess": "T-helper cells [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9047,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9048,
-      "loinc_name_guess": "T-suppressor cells [#/volume] in Leukapheresis product",
-      "is_panel": false
-    },
-    {
-      "row_id": 9049,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9050,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9051,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9052,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9053,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9054,
-      "loinc_name_guess": "NK cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9055,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9056,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9057,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9058,
-      "loinc_name_guess": "B-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9059,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9060,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9061,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9062,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9063,
-      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9064,
-      "loinc_name_guess": "CD4+CD8+ T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9065,
-      "loinc_name_guess": "CD4-CD8- T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9066,
-      "loinc_name_guess": "CD4-CD8- T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9067,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9068,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9069,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9070,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9071,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9072,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9073,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9074,
-      "loinc_name_guess": "T-lymphocytes/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9075,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9076,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9077,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9078,
-      "loinc_name_guess": "T-helper cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9079,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9080,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9081,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9082,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9083,
-      "loinc_name_guess": "T-helper cells/T-suppressor cells [# Ratio] in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9084,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9085,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes in Blood",
-      "is_panel": false
-    },
-    {
-      "row_id": 9086,
-      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin.total [Mass Ratio] in Serum or Plasma",
-      "is_panel": false
-    },
-    {
-      "row_id": 9087,
-      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin.total [Mass Ratio] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin [Mass Ratio] in Serum"
     },
     {
       "row_id": 9088,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     },
     {
       "row_id": 9089,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     },
     {
       "row_id": 9090,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     },
     {
       "row_id": 9091,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     },
     {
       "row_id": 9092,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     },
     {
       "row_id": 9093,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen"
     }
   ],
-  "reflection": "This group was dominated by immunophenotyping tests (CD markers). The main challenges were:\n\n1.  **Differentiating absolute vs. relative counts:** The local codes use prefixes (`B-` vs `Ly-`) and units (`e9/l` vs `%`) to distinguish between absolute counts (cells/L) and relative counts (percentage of a parent population). This was a critical distinction for constructing the correct LOINC name (`Component [#/volume] in System` vs. `Child/Parent in System`). The `LongName` entries, when available, confirmed these interpretations.\n\n2.  **Non-standard prefixes:** The prefixes `La-` and `So-` were not standard. I inferred `La-` as `Leukapheresis product` from the context of CD34 counts and the `e6/kg` unit, which is specific to stem cell transplant dosing. This was an educated guess but a strong one. The `So-` prefix remained ambiguous; without knowing the system (specimen), I could not create a valid LOINC name and had to leave those rows blank.\n\n3.  **Redundant or mistyped codes:** Many codes contained redundant information (e.g., `B-T-CD3` where CD3 already implies T-cell) or typos (`b-b-cd19`, `ly-tt-cd8`). Grouping similar codes was essential to see they all represented the same underlying test concept.\n\n4.  **`S-GT-CDT`:** This was a tricky one. The code appeared to conflate two different markers, GGT and CDT. However, the unit (`%`) and deciles strongly suggested it was the standard CDT test, which is a ratio (`Carbohydrate deficient transferrin/Transferrin.total`). I concluded that `GT-CDT` was a local, perhaps misleading, name for the CDT test.\n\nOverall, the process worked well for this group because immunophenotyping has a very regular structure that aligns with LOINC's compositional model. The deciles and units were crucial for disambiguation."
+  "reflection": "This group was overwhelmingly composed of lymphocyte subset analyses (CD markers), which are well-structured in LOINC. The primary challenge was distinguishing between absolute counts ([#/volume] in Blood) and relative counts ([# Ratio] of a parent population). The Finnish prefixes (`B-` for blood vs. `Ly-` for lymphocyte) and the units (`e9/l` vs. `%`) were the key differentiators.\n\nThe `la-` prefix was not standard but contextually decipherable as referring to apheresis products, especially given the `e6/kg` unit, which is characteristic of stem cell dosing. This allowed for guessing the `Apheresis product` system.\n\nThe `so-` prefix remains ambiguous. I mapped it to the generic `Specimen` system, which is a safe but not very informative choice. If this prefix recurs, it would be valuable to find its meaning.\n\nTwo rows (`s-gt-cdt`) appeared to be erroneously grouped by string similarity with the T-cell markers (`t-cd...`). I mapped them based on their own content (Carbohydrate-Deficient Transferrin), ignoring the group's theme. This highlights the importance of evaluating each row independently.\n\nThe large number of similar but slightly different local codes for the same concept (e.g., `ly-cd4`, `ly-cd4-t`, `ly-t-cd4`) shows the value of this mapping effort to standardize them to a single LOINC concept."
 }

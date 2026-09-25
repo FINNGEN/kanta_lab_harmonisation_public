@@ -2,134 +2,108 @@
   "rows": [
     {
       "row_id": 6654,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Drug screen specimen collection procedure"
     },
     {
       "row_id": 6655,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Bone marrow specimen collection procedure"
     },
     {
       "row_id": 6656,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Cervical specimen collection procedure"
     },
     {
       "row_id": 6657,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Drug screen specimen collection procedure"
     },
     {
       "row_id": 6658,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6659,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6660,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6661,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection and counseling procedure"
     },
     {
       "row_id": 6662,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6663,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6664,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "SARS-CoV-2 (COVID-19) specimen collection"
     },
     {
       "row_id": 6665,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6666,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Blood specimen collection procedure"
     },
     {
       "row_id": 6667,
-      "loinc_name_guess": "Specimen processing procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen processing procedure"
     },
     {
       "row_id": 6668,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6669,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6670,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6671,
-      "loinc_name_guess": "Specimen transport procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen transport procedure"
     },
     {
       "row_id": 6672,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6673,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6674,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection procedure"
     },
     {
       "row_id": 6675,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection method"
     },
     {
       "row_id": 6676,
-      "loinc_name_guess": "Collection method",
-      "is_panel": false
+      "loinc_name_guess": "Specimen collection method"
     },
     {
       "row_id": 6677,
-      "loinc_name_guess": "Collection method",
-      "is_panel": false
+      "loinc_name_guess": "Urine specimen collection method"
     },
     {
       "row_id": 6678,
-      "loinc_name_guess": "Collection method",
-      "is_panel": false
+      "loinc_name_guess": "Urine specimen collection method"
     },
     {
       "row_id": 6679,
-      "loinc_name_guess": "Specimen collection procedure",
-      "is_panel": false
+      "loinc_name_guess": "Supervised specimen collection procedure"
     }
   ],
-  "reflection": "This group consists almost entirely of administrative or procedural codes related to specimen handling, not laboratory tests that produce a result. This is evident from the names (`näytteenotto` = sample collection, `näytteen käsittely` = sample processing, `näytteen kuljetus` = sample transport, `ottotapa` = collection method) and the fact that nearly all rows have 100% missing numeric values.\n\nThe mapping challenge here is that these local codes often contain more specific context (e.g., `bm-` for bone marrow, `gyn.` for gynecologic, `valv.` for supervised) than is available in a single general LOINC procedural code. I mapped these to generic LOINC concepts like `Specimen collection procedure` because it's the most appropriate general fit, even if it loses some local detail. These are likely used for workflow tracking or billing rather than clinical reporting.\n\nA significant data quality issue was present in row 6675 (`ottotapa`), which had a unit of `h` (hours) and numeric deciles. This makes no sense for a concept meaning \"collection method\" and was therefore left unmapped as it's impossible to interpret."
+  "reflection": "This group consists entirely of administrative or procedural codes related to specimen collection, not laboratory tests that measure an analyte. The Finnish term 'näytteenotto' (sample collection) and its many abbreviations ('notto', 'n.otto') are the central theme. The lack of numeric values (`p_missing` is ~100%) confirms their nature.\n\nMy approach was to map these to LOINC's procedure or 'Ask at Order Entry' (AOE) concepts rather than to standard laboratory test concepts. This means the names do not follow the typical `Component [Property] in System` structure. Instead, they are descriptive phrases like `Specimen collection procedure` or `Specimen collection method`.\n\nGotchas and ambiguities:\n*   Many codes include administrative suffixes (e.g., `-tyks` for a hospital, `-pkl` for a clinic) which needed to be ignored to find the core clinical concept.\n*   One code, `ottotapa` (row 6675), had a nonsensical unit ('h') and value distribution. Given its low `unit_share` (1%) and the meaning of the code ('collection method'), I concluded this was data noise and disregarded it.\n*   Distinguishing between a procedure (`Specimen collection procedure`) and an observation about that procedure (`Specimen collection method`) was key. 'Notto' (collection) implies the action, while 'ottotapa' (collection method) implies describing the action."
 }

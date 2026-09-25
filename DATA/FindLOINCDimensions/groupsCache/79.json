@@ -2,274 +2,220 @@
   "rows": [
     {
       "row_id": 6250,
-      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine"
     },
     {
       "row_id": 6251,
-      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine"
     },
     {
       "row_id": 6252,
-      "loinc_name_guess": "Albumin [Mass/time] in 12 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/time] in 12 hour Urine"
     },
     {
       "row_id": 6253,
-      "loinc_name_guess": "Albumin [Mass/time] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/time] in Timed Urine"
     },
     {
       "row_id": 6254,
-      "loinc_name_guess": "Albumin [Mass/time] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/time] in Timed Urine"
     },
     {
       "row_id": 6255,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
     },
     {
       "row_id": 6256,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
     },
     {
       "row_id": 6257,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
     },
     {
       "row_id": 6258,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
     },
     {
       "row_id": 6259,
-      "loinc_name_guess": "Alpha 1 microglobulin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Alpha-1-Microglobulin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6260,
-      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Presence] in Urine"
     },
     {
       "row_id": 6261,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
     },
     {
       "row_id": 6262,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
     },
     {
       "row_id": 6263,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
     },
     {
       "row_id": 6264,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
     },
     {
       "row_id": 6265,
-      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Presence] in Urine"
     },
     {
       "row_id": 6266,
-      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Presence] in Urine"
     },
     {
       "row_id": 6267,
-      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Presence] in Urine"
     },
     {
       "row_id": 6268,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6269,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6270,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6271,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
     },
     {
       "row_id": 6272,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6273,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6274,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
     },
     {
       "row_id": 6275,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6276,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6277,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6278,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6279,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6280,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6281,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6282,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6283,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6284,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6285,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6286,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 6287,
-      "loinc_name_guess": "Calcium/Creatinine [Molar ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Calcium/Creatinine [Ratio] in Urine"
     },
     {
       "row_id": 6288,
-      "loinc_name_guess": "pH of Urine",
-      "is_panel": false
+      "loinc_name_guess": "pH of Urine"
     },
     {
       "row_id": 6289,
-      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6290,
-      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6291,
-      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6292,
-      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6293,
-      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
     },
     {
       "row_id": 6294,
-      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6295,
-      "loinc_name_guess": "Epithelial cells [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Epithelial cells [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6296,
-      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6297,
-      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6298,
-      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6299,
-      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6300,
-      "loinc_name_guess": "Casts [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Casts [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6301,
-      "loinc_name_guess": "Macrophages [#/area] in Urine sediment by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Macrophages [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 6302,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Urine sediment",
-      "is_panel": false
+      "loinc_name_guess": "Microscopic observation [Identifier] in Urine sediment"
     },
     {
       "row_id": 6303,
-      "loinc_name_guess": "Cells.other [Identifier] in Urine by Light microscopy",
-      "is_panel": false
+      "loinc_name_guess": "Cells.other [#/area] in Urine sediment by Microscopy"
     }
   ],
-  "reflection": "This group was a good example of how a single clinical concept (urinary albumin) can manifest as many different LOINC terms depending on the property and system. The main challenges were:\n\n1.  **Differentiating properties**: It was crucial to distinguish between mass concentration (`mg/l`), mass rate (`ug/min`, `mg/12h`), and mass ratio (`mg/mmol`). The `UNIT` and `deciles` columns were essential for this.\n2.  **Decoding abbreviations**: I had to correctly interpret `cU` (collected), `nU` (night), `-Mi` (micro), `-O` (qualitative), and `Kre`/`Krea` (creatinine). The `LongName` and `suffix_meaning` columns were very helpful when present.\n3.  **Ambiguous and concatenated `TEST_NAME`s**: Rows like 6271 (`u-alb/kre,u-alb`) and 6274 (`u-alb/kre,u-krea`) were problematic. The only way to resolve them was to look at the `deciles`, which strongly suggested they were actually measuring just one of the named components (albumin in the first case, creatinine in the second). This is a tricky data quality issue where the `TEST_NAME` is misleading.\n4.  **Handling urine sediment components**: The `U-Sakka` tests required recognizing them as individual components of a manual microscopy exam. The unit `u/field` in some rows was the key clue to select `[#/area]` as the property and `...by Light microscopy` as the method.\n5.  **Speculative mapping**: For `u-a1mikre` (row 6259), the guess of `Alpha 1 microglobulin/Creatinine` is plausible but not certain without a `LongName`. It's a reasonable interpretation given the `A1M` pattern and the context of other urine ratios.\n\nOverall, the combination of code structure, units, and deciles made it possible to untangle the different test variations effectively."
+  "reflection": "This group focused heavily on urine tests, including albumin, protein, their creatinine ratios, and sediment microscopy. \n\nKey takeaways:\n- Prefixes like `cU-` (Collected), `nU-` (Night/Timed), and `U-` (spot) were essential for determining the LOINC System, leading to `in Collected Urine`, `in Timed Urine`, or `in Urine`.\n- Many local variations for the same test existed (e.g., `u-alb/kre`, `u-alb/krea`, `u-albkre`). Recognizing these as synonyms for the Albumin/Creatinine ratio was crucial. The units `g/mol` and `mg/mmol` both correspond to the LOINC property `[Mass Ratio]`.\n- Garbled test names combining multiple codes (e.g., `u-alb/kre,u-alb`) were a significant challenge. The decile values were indispensable for disambiguation; by comparing the value range to typical ranges for each component, I could infer which test the result actually represented. Without deciles, these would have been ambiguous.\n- The `u-sakka` family of codes clearly pointed to urine sediment microscopy. I inferred the method `by Microscopy` and used `[#/area]` as the property for cell counts per field.\n- A few codes like `u-alvhu4a` were completely uninterpretable due to non-standard abbreviations and were left empty.\n- There were several instances where `p_missing` was 100% but deciles were present. I trusted the deciles over the `p_missing` field, assuming the latter was a data processing artifact."
 }

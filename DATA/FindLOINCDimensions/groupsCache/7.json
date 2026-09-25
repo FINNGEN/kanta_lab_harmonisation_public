@@ -2,114 +2,92 @@
   "rows": [
     {
       "row_id": 364,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 365,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 366,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 367,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 368,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 369,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 370,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 371,
-      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgG Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 372,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 373,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 374,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 375,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 376,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 377,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 378,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 379,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 380,
-      "loinc_name_guess": "Transglutaminase.tissue IgA Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgA Ab [Units/volume] in Serum"
     },
     {
       "row_id": 381,
-      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 382,
-      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 383,
-      "loinc_name_guess": "Transglutaminase.tissue IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 384,
-      "loinc_name_guess": "Transglutaminase.tissue Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase Ab [Units/volume] in Serum"
     },
     {
       "row_id": 385,
-      "loinc_name_guess": "Transglutaminase.tissue Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Transglutaminase Ab [Units/volume] in Serum"
     }
   ],
-  "reflection": "This group was relatively straightforward due to the clear common analyte, tissue transglutaminase antibodies (`kudostransglutaminaasi...vasta-aineet`), a marker for celiac disease. The main challenge was distinguishing between quantitative and qualitative tests. This was reliably achieved by checking for a `UNIT` (`u/ml`) and a low `p_missing` for quantitative tests, versus a missing `UNIT` and a `p_missing` of ~100% for qualitative tests (or test orders).\n\nSeveral rows demonstrated common data quality issues: some test names contained the specimen type (`seerumista`) explicitly, which was helpful when a standard `S-` prefix was missing. Other names included contextual information like `(keliakia)` or suffixes like `osatutk.` (partial investigation) or `keliakiatutkimus` (celiac investigation). While these could ambiguously suggest a panel, in this context they appear to be single component tests where the name adds clinical context. I interpreted them as single tests, not panels.\n\nFinally, the data included abbreviations (`iggva` for `igg-vasta-aineet`) and minor variations in spelling and spacing, but the grouping by string similarity made it easy to see they all referred to the same set of concepts: tissue transglutaminase IgA, IgG, or total antibodies."
+  "reflection": "This group was straightforward, focused on tissue transglutaminase antibodies (IgA and IgG). The Finnish names were quite descriptive.\n\n*   **Gotcha**: The name `s-transglutaminaasivasta-aineet` (rows 384, 385) does not specify the immunoglobulin class. I mapped this to a generic `Transglutaminase Ab` component. This is a safe search query, as it could represent a total antibody measurement or a screening test where the lab system didn't specify the class. The alternative, assuming it's IgA because that's the primary screening test, would be a stronger but potentially incorrect assumption.\n*   **Data Quality**: Suffixes like `(keliakia)` (celiac disease), `keliakiatutkimus` (celiac investigation), and `osatutk.` (part of study) provided clinical context but didn't change the analyte. My interpretation was to ignore these for the LOINC name construction, as they describe the reason for the test rather than the test itself, which aligns with LOINC's principles. Similarly, the `eliau/ml` unit hinted at an ELISA method, but I correctly omitted the method to create a broader, more robust search query.\n*   **Process Improvement**: The high number of rows with missing units and values for tests that are clearly quantitative highlights the importance of the instruction to guess the property based on the most common form of the test. Consistently assuming `[Units/volume]` for these antibody tests, based on the rows that did have a `U/ml` unit, was the key to handling this group effectively."
 }

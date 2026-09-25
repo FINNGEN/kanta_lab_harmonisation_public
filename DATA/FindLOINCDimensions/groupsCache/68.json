@@ -2,729 +2,584 @@
   "rows": [
     {
       "row_id": 5245,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5246,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5247,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5248,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5249,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5250,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5251,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Peritoneal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Ascitic fluid"
     },
     {
       "row_id": 5252,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Peritoneal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Ascitic fluid"
     },
     {
       "row_id": 5253,
-      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 5254,
-      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 5255,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in 24 hour Urine"
     },
     {
       "row_id": 5256,
-      "loinc_name_guess": "Aldosterone [Mass/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Mass/time] in 24 hour Urine"
     },
     {
       "row_id": 5257,
-      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
       "row_id": 5258,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5259,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
       "row_id": 5260,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
       "row_id": 5261,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5262,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5263,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5264,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
       "row_id": 5265,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
       "row_id": 5266,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5267,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5268,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5269,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5270,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5271,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 5272,
-      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "LDL cholesterol.small dense [Moles/volume] in Plasma"
     },
     {
       "row_id": 5273,
-      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "LDL cholesterol.small dense [Moles/volume] in Plasma"
     },
     {
       "row_id": 5274,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid"
     },
     {
       "row_id": 5275,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid"
     },
     {
       "row_id": 5276,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 5277,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid"
     },
     {
       "row_id": 5278,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
     },
     {
       "row_id": 5279,
-      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5280,
-      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5281,
-      "loinc_name_guess": "Adalimumab Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 5282,
-      "loinc_name_guess": "Adalimumab Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 5283,
-      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5284,
-      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5285,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5286,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5287,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone/Alkaline phosphatase.total [Enzyme fraction] in Serum"
     },
     {
       "row_id": 5288,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5289,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5290,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5291,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5292,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.other [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5293,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.other [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5294,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5295,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5296,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5297,
-      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum"
     },
     {
       "row_id": 5298,
-      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum"
     },
     {
       "row_id": 5299,
-      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5300,
-      "loinc_name_guess": "Alkaline phosphatase.bone [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Mass/volume] in Serum"
     },
     {
       "row_id": 5301,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5302,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5303,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5304,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5305,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5306,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5307,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5308,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5309,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5310,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total [Enzyme fraction] in Serum"
     },
     {
       "row_id": 5311,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5312,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5313,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5314,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5315,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5316,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5317,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5318,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
     },
     {
       "row_id": 5319,
-      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5320,
-      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 5321,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
     },
     {
       "row_id": 5322,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
     },
     {
       "row_id": 5323,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --supine"
     },
     {
       "row_id": 5324,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --supine"
     },
     {
       "row_id": 5325,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --upright"
     },
     {
       "row_id": 5326,
-      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --upright"
     },
     {
       "row_id": 5327,
-      "loinc_name_guess": "Alpha 1 globulin/Protein.total [Mass Fraction] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin/Protein.total [Mass Fraction] in Serum"
     },
     {
       "row_id": 5328,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5329,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5330,
-      "loinc_name_guess": "Alpha 2 globulin/Protein.total [Mass Fraction] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin/Protein.total [Mass Fraction] in Serum"
     },
     {
       "row_id": 5331,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5332,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5333,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5334,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5335,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5336,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
       "row_id": 5337,
-      "loinc_name_guess": "Allergen specific IgE Ab [Mass/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Allergen specific IgE Ab [Mass/volume] in Serum"
     },
     {
       "row_id": 5338,
-      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5339,
-      "loinc_name_guess": "Allergen specific IgE Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5340,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5341,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5342,
-      "loinc_name_guess": "Amylase isoenzymes panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Amylase isoenzymes panel - Serum"
     },
     {
       "row_id": 5343,
-      "loinc_name_guess": "Amylase isoenzymes panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Amylase isoenzymes panel - Serum"
     },
     {
       "row_id": 5344,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5345,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5346,
-      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5347,
-      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5348,
-      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5349,
-      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5350,
-      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5351,
-      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5352,
-      "loinc_name_guess": "Gliadin deamidated Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Gliadin deamidated Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5353,
-      "loinc_name_guess": "Gliadin deamidated Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Gliadin deamidated Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5354,
-      "loinc_name_guess": "Gliadin deamidated IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Gliadin deamidated IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5355,
-      "loinc_name_guess": "Gliadin deamidated IgE Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Gliadin deamidated IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5356,
-      "loinc_name_guess": "HLA donor specific Ab panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "HLA donor specific Ab [Presence] in Serum"
     },
     {
       "row_id": 5357,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5358,
-      "loinc_name_guess": "Dog (Canis familiaris) dander IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Dog (Canis familiaris) dander IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5359,
-      "loinc_name_guess": "Dog (Canis familiaris) dander IgE Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Dog (Canis familiaris) dander IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5360,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Tissue Ab [Presence] in Serum"
     },
     {
       "row_id": 5361,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5362,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
     },
     {
       "row_id": 5363,
-      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5364,
-      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5365,
-      "loinc_name_guess": "Ovalbumin IgE Ab [Units/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Ovalbumin IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5366,
-      "loinc_name_guess": "Ovalbumin IgE Ab [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Ovalbumin IgE Ab [Units/volume] in Serum"
     },
     {
       "row_id": 5367,
-      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5368,
-      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5369,
-      "loinc_name_guess": "Salicylate [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 5370,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Scl 70 Ab [Presence] in Serum"
     },
     {
       "row_id": 5371,
-      "loinc_name_guess": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase 1 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5372,
-      "loinc_name_guess": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase 1 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5373,
-      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "LDL cholesterol.small dense [Moles/volume] in Serum"
     },
     {
       "row_id": 5374,
-      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "LDL cholesterol.small dense [Moles/volume] in Serum"
     },
     {
       "row_id": 5375,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5376,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5377,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5378,
-      "loinc_name_guess": "Alkaline phosphatase.intestinal [Presence] in Serum",
-      "is_panel": false
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
     },
     {
       "row_id": 5379,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
     },
     {
       "row_id": 5380,
-      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5381,
-      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 5382,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5383,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion"
     },
     {
       "row_id": 5384,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion"
     },
     {
       "row_id": 5385,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5386,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine"
     },
     {
       "row_id": 5387,
-      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine"
     },
     {
       "row_id": 5388,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine"
     },
     {
       "row_id": 5389,
-      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine"
     }
   ],
-  "reflection": "This was a large and diverse group. The Finnish national code table `LongName` and decoded prefixes (`prefix_meaning`) were extremely helpful in disambiguating tests.\n\n**Gotchas and Ambiguities:**\n*   **Missing Prefixes:** Codes like `alfa-1` (5247) and `-amyl` (5245) lack a specimen prefix. I inferred Serum/Plasma for `alfa-1` based on later `S-alfa-1` codes and typical use, but left `-amyl` empty because the deciles were unusual for a blood sample, suggesting a different fluid type where I couldn't be certain.\n*   **Unusual Values:** `s-oaldos` (5362) and `s-valdos` (5379) had astronomically high deciles for aldosterone, making them unmappable. These are likely data errors or represent extremely specific, unidentifiable clinical contexts (e.g., sampling from an adrenal vein, massive drug interference).\n*   **Vague Abbreviations:** Many codes were too ambiguous to map, e.g., `s-kudosab` ('tissue antibodies'), `s-afospit`, `s-hladsa` (mapped as a panel, but specificities are unknown), `s-afluu`, and `saline` (which isn't a lab result).\n*   **Allelic IgE:** `s-kolaige` was a guess for dog IgE. A catalogue of common allergen codes would be helpful for these.\n*   **Fractions vs. Specific Analytes:** `s-alfa-1` could be the globulin fraction or alpha-1-antitrypsin. The deciles supported either. I chose the globulin fraction as it's the more direct interpretation of the name, but this is an ambiguity.\n\n**Process Improvements:**\n*   Having the official Finnish long name (`LongName`) for every row would be the single most impactful improvement. It instantly clarifies abbreviations like `P-Afos` into 'Alkaline phosphatase'.\n*   Context from other similar codes is key. Seeing `P-Amyl`, `S-Amyl`, `As-Amyl`, and `U-Amyl` together makes it clear that `Amyl` is amylase and the prefixes denote the specimen."
+  "reflection": "This group was characterized by many variations of a few core analytes, particularly Amylase and Alkaline Phosphatase (AFOS). The Finnish abbreviations for AFOS isoenzymes (`-luu` for bone, `-suoli` for intestinal, `-muut` for other) were quite systematic and easy to interpret once the pattern was recognized. This allowed for specific LOINC component guesses like `Alkaline phosphatase.bone`.\n\nA significant ambiguity arose with several Aldosterone (`aldos`) tests that had cryptic prefixes (`a-`, `o-`, `v-`) and extremely high, non-physiological values (e.g., `s-valdos`, `s-oaldos`). While the core analyte was clear, the context (which is crucial for these values) was lost. I mapped them to the base Aldosterone concept, but these almost certainly represent specific collection sites (e.g., adrenal vein sampling) or post-stimulation tests. Without more information, a more precise guess is impossible.\n\nThere were also several completely unmappable codes like `s-kalatue`, `s-ngmuut`, and `saline`, which appear to be either very obscure abbreviations, data entry errors, or administrative codes rather than lab tests. Correctly identifying these as unmappable is an important part of the process."
 }

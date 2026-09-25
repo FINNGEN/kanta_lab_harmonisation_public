@@ -2,179 +2,144 @@
   "rows": [
     {
       "row_id": 13496,
-      "loinc_name_guess": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Nucleated erythrocytes [#/volume] in Blood"
     },
     {
       "row_id": 13497,
-      "loinc_name_guess": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Nucleated erythrocytes [#/volume] in Blood"
     },
     {
       "row_id": 13498,
-      "loinc_name_guess": "Normoblasts [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Nucleated erythrocytes [#/volume] in Blood"
     },
     {
       "row_id": 13499,
-      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13500,
-      "loinc_name_guess": "Basophils [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Basophils [#/volume] in Blood"
     },
     {
       "row_id": 13501,
-      "loinc_name_guess": "Basophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 13502,
-      "loinc_name_guess": "Basophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 13503,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood"
     },
     {
       "row_id": 13504,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood"
     },
     {
       "row_id": 13505,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood"
     },
     {
       "row_id": 13506,
-      "loinc_name_guess": "Eosinophils [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils [#/volume] in Blood"
     },
     {
       "row_id": 13507,
-      "loinc_name_guess": "Eosinophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 13508,
-      "loinc_name_guess": "Eosinophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 13509,
-      "loinc_name_guess": "Eosinophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 13510,
-      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 13511,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 13512,
-      "loinc_name_guess": "Lymphocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes [#/volume] in Blood"
     },
     {
       "row_id": 13513,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 13514,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 13515,
-      "loinc_name_guess": "Monocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes [#/volume] in Blood"
     },
     {
       "row_id": 13516,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 13517,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood"
     },
     {
       "row_id": 13518,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 13519,
-      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 13520,
-      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13521,
-      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13522,
-      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13523,
-      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13524,
-      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13525,
-      "loinc_name_guess": "Gamma globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Gamma globulin [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13526,
-      "loinc_name_guess": "M-protein [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Monoclonal protein 1 [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13527,
-      "loinc_name_guess": "M-protein [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Monoclonal protein 1 [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13528,
-      "loinc_name_guess": "M-protein [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Monoclonal protein 2 [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13529,
-      "loinc_name_guess": "M-protein [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Monoclonal protein 2 [Mass/volume] in Serum or Plasma by Electrophoresis"
     },
     {
       "row_id": 13530,
-      "loinc_name_guess": "M-protein [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "is_panel": false
+      "loinc_name_guess": "Monoclonal protein 3 [Mass/volume] in Serum or Plasma by Electrophoresis"
     }
   ],
-  "reflection": "This group was a good example of how local test names encode a lot of context. The term \"osatutkimus\" (component test) consistently indicated that the code represents a single result from a larger analysis, correctly setting `is_panel` to `false`.\n\nThe distinction between absolute (`[#/volume]`) and relative (`/Leukocytes`) cell counts was very clear. Codes with a `b-` prefix, `e9/l` unit, and terms like \"absol.arvot\" pointed to absolute counts. In contrast, codes with an `l-` prefix or `%` unit pointed to relative counts (fractions of leukocytes).\n\nThe protein electrophoresis results were also quite clear. The text `osatutkimus s-prot-fr` in the `TEST_NAME` was a strong signal that these were components of a serum protein fraction analysis, making it appropriate to add `by Electrophoresis` to the LOINC name guesses for albumin, globulins, and the M-components. The `(valetietue...)` or 'dummy record' text for M-components was an interesting detail, showing how labs embed metadata for data entry purposes."
+  "reflection": "This group consisted of two well-defined sets of tests: components of a complete blood count with differential, and fractions from a serum protein electrophoresis. The Finnish term `osatutkimus` (sub-study/component test) was a key clue that these were individual results from larger panels.\n\nFor the hematology tests, I distinguished between absolute counts (e.g., `B-Neut`, `absol.arvot`, unit `E9/l`) and relative differential counts (e.g., `L-Neut`, unit `%`). I translated absolute counts to `[#/volume]` property and relative counts to `[# Ratio]` with a `Component/Leukocytes` structure. The term `konediffi` (machine differential) provided strong evidence to add `by Automated count` to the method.\n\nFor the protein fractions, the context `s-prot-fr` strongly implied the results were from electrophoresis. I therefore added `by Electrophoresis` to the method for all these components (albumin, globulin fractions, M-components). The unit `g/l` consistently pointed to `[Mass/volume]` property. The `M-komponentti-1`, `-2`, `-3` codes were straightforwardly mapped to `Monoclonal protein 1`, `2`, `3`, which exist as distinct concepts in LOINC."
 }

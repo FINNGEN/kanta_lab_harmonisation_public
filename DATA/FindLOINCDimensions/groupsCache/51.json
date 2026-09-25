@@ -2,464 +2,372 @@
   "rows": [
     {
       "row_id": 3431,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3432,
-      "loinc_name_guess": "Human bocavirus Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Human bocavirus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3433,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3434,
-      "loinc_name_guess": "Influenza virus A+Influenza virus B+Respiratory syncytial virus Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3435,
-      "loinc_name_guess": "Influenza virus A Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3436,
-      "loinc_name_guess": "Influenza virus A+B Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3437,
-      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA"
     },
     {
       "row_id": 3438,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A H3 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3439,
-      "loinc_name_guess": "Influenza virus A H1N1 2009 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A H1N1(2009) Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3440,
-      "loinc_name_guess": "Influenza virus A H1 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A H1 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3441,
-      "loinc_name_guess": "Influenza virus A H3 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A H3 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3442,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A identified in Respiratory specimen"
     },
     {
       "row_id": 3443,
-      "loinc_name_guess": "Influenza virus B Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3444,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B identified in Respiratory specimen"
     },
     {
       "row_id": 3445,
-      "loinc_name_guess": "Influenza virus A [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3446,
-      "loinc_name_guess": "Influenza virus B [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3447,
-      "loinc_name_guess": "Respiratory virus panel - Respiratory system specimen",
-      "is_panel": true
+      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
     },
     {
       "row_id": 3448,
-      "loinc_name_guess": "Influenza virus+Respiratory syncytial virus Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus+Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3449,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Embryo transfer"
     },
     {
       "row_id": 3450,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Coronavirus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3451,
-      "loinc_name_guess": "Human metapneumovirus Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Human metapneumovirus Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3452,
-      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3453,
-      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3454,
-      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3455,
-      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3456,
-      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3457,
-      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3458,
-      "loinc_name_guess": "Pneumocystis jirovecii Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Pneumocystis jirovecii Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3459,
-      "loinc_name_guess": "Respiratory virus Ag panel - Respiratory system specimen",
-      "is_panel": true
+      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
     },
     {
       "row_id": 3460,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Respiratory system specimen",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Respiratory specimen"
     },
     {
       "row_id": 3461,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Inflammatory marker [Presence] in Bile"
     },
     {
       "row_id": 3462,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus Ag [Presence] in Stool"
     },
     {
       "row_id": 3463,
-      "loinc_name_guess": "Giardia lamblia Ag [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Giardia lamblia Ag [Presence] in Stool"
     },
     {
       "row_id": 3464,
-      "loinc_name_guess": "Giardia lamblia+Cryptosporidium sp Ag [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Giardia lamblia+Cryptosporidium Ag [Presence] in Stool"
     },
     {
       "row_id": 3465,
-      "loinc_name_guess": "Norovirus Ag [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Norovirus Ag [Presence] in Stool"
     },
     {
       "row_id": 3466,
-      "loinc_name_guess": "Rotavirus A Ag [Presence] in Stool",
-      "is_panel": false
+      "loinc_name_guess": "Rotavirus Ag [Presence] in Stool"
     },
     {
       "row_id": 3467,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Enteric viruses Ag panel - Stool"
     },
     {
       "row_id": 3468,
-      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3469,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Cerebral spinal fluid"
     },
     {
       "row_id": 3470,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3471,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Cerebral spinal fluid"
     },
     {
       "row_id": 3472,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3473,
-      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3474,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Cerebral spinal fluid"
     },
     {
       "row_id": 3475,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3476,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3477,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Cerebral spinal fluid"
     },
     {
       "row_id": 3478,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Cerebral spinal fluid",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Cerebral spinal fluid"
     },
     {
       "row_id": 3479,
-      "loinc_name_guess": "Influenza virus A+B [Presence] in Nasal mucosa",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus Ag [Presence] in Nasal specimen"
     },
     {
       "row_id": 3480,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Pharynx",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus Ag [Presence] in Nasopharynx"
     },
     {
       "row_id": 3481,
-      "loinc_name_guess": "Influenza virus A Ag [Presence] in Pharynx",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A Ag [Presence] in Pharynx"
     },
     {
       "row_id": 3482,
-      "loinc_name_guess": "Influenza virus A+B Ag [Presence] in Pharynx",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ag [Presence] in Pharynx"
     },
     {
       "row_id": 3483,
-      "loinc_name_guess": "Respiratory virus Ag panel - Respiratory system specimen",
-      "is_panel": true
+      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
     },
     {
       "row_id": 3484,
-      "loinc_name_guess": "Adenovirus IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3485,
-      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Serum"
     },
     {
       "row_id": 3486,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3487,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3488,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Serum"
     },
     {
       "row_id": 3489,
-      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3490,
-      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3491,
-      "loinc_name_guess": "Influenza virus B Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B Ab [Presence] in Serum"
     },
     {
       "row_id": 3492,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3493,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3494,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Serum"
     },
     {
       "row_id": 3495,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3496,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3497,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3498,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3499,
-      "loinc_name_guess": "Infliximab Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab Ab [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 3500,
-      "loinc_name_guess": "Infliximab Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab Ab [Presence] in Serum or Plasma"
     },
     {
       "row_id": 3501,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3502,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3503,
-      "loinc_name_guess": "Infliximab and Infliximab Ab panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Infliximab and Infliximab Ab panel - Serum or Plasma"
     },
     {
       "row_id": 3504,
-      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3505,
-      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3506,
-      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Serum"
     },
     {
       "row_id": 3507,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3508,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3509,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum"
     },
     {
       "row_id": 3510,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3511,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3512,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum"
     },
     {
       "row_id": 3513,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
     },
     {
       "row_id": 3514,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
     },
     {
       "row_id": 3515,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
     },
     {
       "row_id": 3516,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Serum"
     },
     {
       "row_id": 3517,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Serum"
     },
     {
       "row_id": 3518,
-      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3519,
-      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 3520,
-      "loinc_name_guess": "Legionella pneumophila serogroup 1 Ag [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Legionella pneumophila serogroup 1 Ag [Presence] in Urine"
     },
     {
       "row_id": 3521,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine"
     },
     {
       "row_id": 3522,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine"
     }
   ],
-  "reflection": "This group was dominated by infectious disease diagnostics, primarily antigen and antibody tests. A key challenge was differentiating between qualitative `[Presence]` tests and quantitative tests. The combination of `p_missing=100` and no `UNIT` was a strong signal for qualitative tests. Conversely, the presence of deciles and units like `eiu`, `au/ml`, `index`, or `mg/l` indicated quantitative tests, leading to properties like `[Units/volume]`, `[Ratio]`, or `[Mass/volume]`.\n\nSeveral codes lacked an explicit system prefix (e.g., `-adenag`). Given the context of respiratory viruses, I inferred the system as `Respiratory system specimen`, which is a safe, general choice. Differentiating between pharynx (`Ps-`) and nasal (`Ns-`) specimens was straightforward thanks to the prefixes.\n\nIdentifying panels (`is_panel: true`) was based on abbreviations like `-infrpak` (package) and `-rvirag` (respiratory viruses, plural). I distinguished these from multiplex single tests like `-inabrsv` (Influenza A+B+RSV), which are single LOINC concepts. The guess for `S-InfliPa` as an Infliximab panel (drug level + antibodies) is an educated one based on clinical practice.\n\nThe code `-ivf-et` (IVF Embryo Transfer) was clearly a procedure, not a laboratory test, and was correctly left blank. Some codes like `-coinrsv` or `-infah03` were too ambiguous to map confidently."
+  "reflection": "This group was dominated by microbiology tests, particularly viral antigens and antibodies. The leading hyphen in many codes (e.g., `-adenag`) made it impossible to determine the specimen system from the code alone. In these cases, I inferred a `Respiratory specimen` based on the analytes (Influenza, RSV, etc.), which is a reasonable but not guaranteed assumption. The `LongName` was very helpful when present, confirming analytes and sometimes specimens, as with `ps-adenag` which specified a nasopharyngeal sample.\n\nThere were many instances of the same test code appearing with and without quantitative information. I systematically mapped rows with units like `eiu`, `u/ml`, `index`, or `s/co` to quantitative properties (`[Units/volume]`, `[Ratio]`) and those without to qualitative `[Presence]`. This distinction is crucial. Units like `form` were interpreted as qualitative.\n\nSome abbreviations were ambiguous (`-coinrsv`, `bi-inflamm`) or likely misspelled (`s-micfaeg`), requiring interpretation from context or knowledge of common tests. The code `-ivf-et` (Embryo transfer) was a procedure rather than a lab test, which is a different category of concept in LOINC. Finally, several codes clearly represented panels (`-inabrsv`, `-infrpak`, `s-inflipa`), which I named using the LOINC panel convention."
 }

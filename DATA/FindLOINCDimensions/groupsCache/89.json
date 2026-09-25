@@ -2,144 +2,116 @@
   "rows": [
     {
       "row_id": 7014,
-      "loinc_name_guess": "Human papillomavirus High Risk DNA [Presence] in Genital specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervicovaginal specimen"
     },
     {
       "row_id": 7015,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 7016,
-      "loinc_name_guess": "Human papillomavirus High Risk DNA [Presence] in Genital specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervicovaginal specimen"
     },
     {
       "row_id": 7017,
-      "loinc_name_guess": "Hearing screen panel",
-      "is_panel": true
+      "loinc_name_guess": "Hearing screen"
     },
     {
       "row_id": 7018,
-      "loinc_name_guess": "Blood donor screening panel",
-      "is_panel": true
+      "loinc_name_guess": "Blood donor infectious disease screen panel - Serum or Plasma"
     },
     {
       "row_id": 7019,
-      "loinc_name_guess": "Vision screen panel",
-      "is_panel": true
+      "loinc_name_guess": "Vision screen"
     },
     {
       "row_id": 7020,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7021,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7022,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7023,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7024,
-      "loinc_name_guess": "RhD Ag [Presence] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Rh(D) Ab [Presence] in Serum or Plasma"
     },
     {
       "row_id": 7025,
-      "loinc_name_guess": "Extractable nuclear Ab panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Extractable nuclear Ab panel - Serum"
     },
     {
       "row_id": 7026,
-      "loinc_name_guess": "Infectious agent screening panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "IVF screen panel - Serum"
     },
     {
       "row_id": 7027,
-      "loinc_name_guess": "Maternal screening 1st trimester panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "First trimester maternal screen panel - Serum"
     },
     {
       "row_id": 7028,
-      "loinc_name_guess": "Maternal screening 2nd trimester panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Second trimester maternal screen panel - Serum"
     },
     {
       "row_id": 7029,
-      "loinc_name_guess": "Maternal screening panel - Serum",
-      "is_panel": true
+      "loinc_name_guess": "Maternal screen panel - Serum"
     },
     {
       "row_id": 7030,
-      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Maternal screen panel - Serum"
     },
     {
       "row_id": 7031,
-      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Maternal screen panel - Serum"
     },
     {
       "row_id": 7032,
-      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Maternal screen panel - Serum"
     },
     {
       "row_id": 7033,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
     },
     {
       "row_id": 7034,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7035,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7036,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7037,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7038,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7039,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7040,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine",
-      "is_panel": true
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
     },
     {
       "row_id": 7041,
-      "loinc_name_guess": "Obstetric panel - Serum or Plasma",
-      "is_panel": true
+      "loinc_name_guess": "Maternal screen panel - Serum"
     }
   ],
-  "reflection": "This group was dominated by codes ending in `-seul` or `-seula`, Finnish for \"screening\". This was a powerful hint, almost always indicating a panel of tests. Correctly identifying these as panels (`is_panel: true`) was the main task. The high `p_missing` rate for these codes reinforced this, as panel orders typically don't have a single value themselves.\n\nThe group covered a wide range of common screening procedures, from lab panels (`U-KemSeul` for urinalysis, `S-Tr1Seul` for first-trimester maternal screening) to clinical assessments (`hörsel` for hearing, `näköseula` for vision). This required knowledge beyond pure lab terminology. The presence of a Swedish word (`hörsel`) also highlights the bilingual nature of some data sources in Finland.\n\nWhen available, the `LongName` column was invaluable for confirming the meaning of abbreviations, as seen with the maternal screening tests (`S-Tr1Seul`, `S-Tr2Seul`). For ambiguous codes like `hoikemseul` with no supporting information, leaving the guess empty was the only responsible action."
+  "reflection": "This group was characterized by the suffix `-seul` or `-seula` (from `seulonta`, screening), making it clear that these were all screening tests. The main task was to determine whether a code represented a single-analyte screen (like HPV) or a multi-test panel (like maternal screens or urine chemical screens).\n\nKey takeaways:\n- **Panel Recognition**: Finnish codes like `S-Tr1Seul` (1st trimester screen), `U-Kemseul` (urine chemical screen), and `S-ENAScul` (ENA screen) are standard abbreviations for panels. Recognizing these and using the LOINC `Panel name - System` format was crucial.\n- **Non-Lab Procedures**: The presence of `hörsel` (hearing screen) and `näköseula` (vision screen) highlights that LOINC covers more than just laboratory tests. These were mapped to simple screen names without properties or systems.\n- **Ambiguity**: A code like `hoikemseul` (row 7015) was too garbled to interpret confidently, so leaving the guess empty was the correct action. In contrast, `s-ivfseul` (IVF screen) was specific enough to warrant a targeted panel guess, even if it might map to a more generic infectious disease panel in practice.\n- **Interpreting Data**: The decile values for `u-kemseul` (row 7037), which clearly matched urine specific gravity, were an excellent example of how quantitative data can exist for a test that is conceptually a panel. This reinforces the rule to prioritize the test's identity (a chemical screen panel) over the presence of values for one of its components."
 }

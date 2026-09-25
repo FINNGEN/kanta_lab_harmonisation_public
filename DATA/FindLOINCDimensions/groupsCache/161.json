@@ -2,259 +2,208 @@
   "rows": [
     {
       "row_id": 13017,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13018,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13019,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13020,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13021,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13022,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13023,
-      "loinc_name_guess": "Haemophilus influenzae [Presence] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Haemophilus influenzae [Presence] in Blood"
     },
     {
       "row_id": 13024,
-      "loinc_name_guess": "Large unstained cells [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Large unstained cells [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 13025,
-      "loinc_name_guess": "Chlamydia pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Chlamydia pneumoniae DNA [Presence] in Specimen by NAA"
     },
     {
       "row_id": 13026,
-      "loinc_name_guess": "Follicle-stimulating hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Follicle stimulating hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13027,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13028,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13029,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13030,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13031,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13032,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13033,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13034,
-      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Phosphatidylethanol [Moles/volume] in Blood"
     },
     {
       "row_id": 13035,
-      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Specimen by NAA"
     },
     {
       "row_id": 13036,
-      "loinc_name_guess": "Human metapneumovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Human metapneumovirus RNA [Presence] in Specimen by NAA"
     },
     {
       "row_id": 13037,
-      "loinc_name_guess": "Human metapneumovirus Ag [Presence] in Respiratory system specimen by Immunoassay",
-      "is_panel": false
+      "loinc_name_guess": "Human metapneumovirus Ag [Presence] in Specimen by Immunoassay"
     },
     {
       "row_id": 13038,
-      "loinc_name_guess": "Large unstained cells/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Large unstained cells/Leukocytes in Blood by Automated count"
     },
     {
       "row_id": 13039,
-      "loinc_name_guess": "Legionella pneumophila DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Legionella pneumophila DNA [Presence] in Specimen by NAA"
     },
     {
       "row_id": 13040,
-      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Cerebral spinal fluid by NAA"
     },
     {
       "row_id": 13041,
-      "loinc_name_guess": "Mycoplasma pneumoniae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Mycoplasma pneumoniae DNA [Presence] in Specimen by NAA"
     },
     {
       "row_id": 13042,
-      "loinc_name_guess": "Follicle-stimulating hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Follicle stimulating hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13043,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma --2 hours post meal"
     },
     {
       "row_id": 13044,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma --1 hour post 75 g glucose PO"
     },
     {
       "row_id": 13045,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma --2 hours post 75 g glucose PO"
     },
     {
       "row_id": 13046,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma --pre 75 g glucose PO"
     },
     {
       "row_id": 13047,
-      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13048,
-      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13049,
-      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Glucose meter",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Test strip"
     },
     {
       "row_id": 13050,
-      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Glucose meter",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Test strip"
     },
     {
       "row_id": 13051,
-      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Glucose meter",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood by Test strip"
     },
     {
       "row_id": 13052,
-      "loinc_name_guess": "Glucose [Moles/volume] in Interstitial fluid by Glucose monitoring device",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Interstitial fluid by Continuous glucose monitoring"
     },
     {
       "row_id": 13053,
-      "loinc_name_guess": "Glucose [Moles/volume] in Interstitial fluid by Glucose monitoring device",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Interstitial fluid by Continuous glucose monitoring"
     },
     {
       "row_id": 13054,
-      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --1 hour post meal",
-      "is_panel": false
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --1 hour post meal"
     },
     {
       "row_id": 13055,
-      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --1 hour post meal",
-      "is_panel": false
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --1 hour post meal"
     },
     {
       "row_id": 13056,
-      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --post meal",
-      "is_panel": false
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum or Plasma --post meal"
     },
     {
       "row_id": 13057,
-      "loinc_name_guess": "Follicle-stimulating hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Follicle stimulating hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13058,
-      "loinc_name_guess": "Follicle--stimulating hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Follicle stimulating hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13059,
-      "loinc_name_guess": "Follicle-stimulating hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Follicle stimulating hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13060,
-      "loinc_name_guess": "Fatty acids.monounsaturated [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Monounsaturated fatty acids [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 13061,
-      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13062,
-      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13063,
-      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Luteinizing hormone [Units/volume] in Serum or Plasma"
     },
     {
       "row_id": 13064,
-      "loinc_name_guess": "Fatty acids.polyunsaturated [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Polyunsaturated fatty acids [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 13065,
-      "loinc_name_guess": "Fatty acids.polyunsaturated [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Polyunsaturated fatty acids [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 13066,
-      "loinc_name_guess": "Fatty acids.saturated [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Saturated fatty acids [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 13067,
-      "loinc_name_guess": "Viral agents causing diarrhea panel - Stool by NAA",
-      "is_panel": true
+      "loinc_name_guess": "Viral gastroenteritis panel - Stool by NAA"
     }
   ],
-  "reflection": "This group was a mix of many different tests, requiring individual analysis for each concept rather than leveraging group context for a single concept. The main challenges were:\n\n1.  **Implicit Systems:** Many microbiology tests (e.g., `Chlamydia pneumoniae`, `Haemophilus influenzae`) lacked a system prefix. I had to infer the most likely specimen type (e.g., Respiratory system specimen) based on the pathogen's typical presentation. The presence of `Li-` (CSF) for `H. influenzae` in one row (13040) helped confirm that system-less codes likely referred to a different specimen type.\n\n2.  **Challenge/Timing Nuances:** The glucose and C-peptide tests required careful parsing of Finnish terms like `aterian jälkeen` (after meal), `toimintakokeissa` (in functional test), and specific timings (0h, 1h, 2h) to map to appropriate LOINC challenge terms (e.g., `--2 hours post dose glucose`, `--post meal`).\n\n3.  **Specific vs. General:** Differentiating between patient-measured capillary glucose (`ihopisto` = skin prick, row 13050) and continuous sensor glucose (`sensori`, row 13052) was crucial, as they map to different LOINC systems (`Capillary blood` vs. `Interstitial fluid`).\n\n4.  **Panel Identification:** A test like `ulosteen ripulivirukset` (fecal diarrhea viruses, row 13067) is clearly a panel, and requires mapping to a panel concept, not a single analyte. Identifying these is key.\n\nHaving the `prefix_meaning` was extremely helpful, as seen with `B-` (Blood) and `Li-` (CSF). When it was missing, the task became significantly more ambiguous."
+  "reflection": "This group demonstrated several key challenges. \n\nFirstly, the prevalence of microbiology nucleic acid tests (NAA) without a specified specimen (e.g., `chlamydiapneumoniae,nukleiin`, `haemophilusinfluenzaenukleii`) required defaulting to the generic `in Specimen`. Access to the original specimen type would significantly improve mapping accuracy. For `ulosteenripulivirukset,nukle` (diarrhea viruses in stool, by NAA), I had to infer a panel concept like `Viral gastroenteritis panel - Stool by NAA`, which is an educated guess based on common clinical practice.\n\nSecondly, the point-of-care glucose tests (`potilasmittari glukoosi`) were interesting. The Finnish terms `ihopisto` (skin prick) and `sensori` (sensor) allowed for a precise distinction between `Capillary blood` (for glucometers) and `Interstitial fluid` (for CGMs). This highlights the importance of understanding both the technology and the local language. One code, `p-omagluk,,potilasmittaringlukoosi`, had a `P-` (Plasma) prefix that contradicted the test name, reinforcing the rule to trust the name's descriptive content over potentially erroneous prefixes.\n\nFinally, distinguishing between absolute counts and ratios was crucial for `suuret värjäytymättömät solut` (Large unstained cells). The `B-` (Blood) prefix pointed to an absolute count (`[#/volume]`), while the `L-` (Leukocyte) prefix with a unit of `%` indicated a ratio, leading to the component `Large unstained cells/Leukocytes`."
 }

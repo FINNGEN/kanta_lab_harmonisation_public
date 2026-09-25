@@ -2,154 +2,124 @@
   "rows": [
     {
       "row_id": 10836,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10837,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10838,
-      "loinc_name_guess": "Spirometry panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10839,
-      "loinc_name_guess": "Spirometry panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10840,
-      "loinc_name_guess": "Spirometry panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10841,
-      "loinc_name_guess": "Spirometry panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10842,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10843,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10844,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10845,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10846,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10847,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10848,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10849,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10850,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10851,
-      "loinc_name_guess": "Semen analysis panel",
-      "is_panel": true
+      "loinc_name_guess": "Semen analysis panel - Semen"
     },
     {
       "row_id": 10852,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10853,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10854,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10855,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry with bronchodilator panel"
     },
     {
       "row_id": 10856,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Spirometry with bronchodilator panel"
     },
     {
       "row_id": 10857,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10858,
-      "loinc_name_guess": "Spirometry W bronchodilator panel",
-      "is_panel": true
+      "loinc_name_guess": "Spirometry panel"
     },
     {
       "row_id": 10859,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Semen analysis panel - Washed semen"
     },
     {
       "row_id": 10860,
-      "loinc_name_guess": "Temperature sensation study",
-      "is_panel": true
+      "loinc_name_guess": "Thermal sensory test panel"
     },
     {
       "row_id": 10861,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Myocardium perfusion study"
     },
     {
       "row_id": 10862,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Myocardium perfusion study"
     },
     {
       "row_id": 10863,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Exercise stress test panel"
     },
     {
       "row_id": 10864,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Stress echocardiography study"
     },
     {
       "row_id": 10865,
-      "loinc_name_guess": "Echocardiogram study",
-      "is_panel": true
+      "loinc_name_guess": "Echocardiography study"
     }
   ],
-  "reflection": "This group was dominated by `Pt-` (Patient) prefixed codes, which typically denote whole-patient investigations or panels rather than specimen-based lab tests. This made the `is_panel` flag crucial. The primary difficulty was deciphering the heavily abbreviated and sometimes non-standard test names. For example, `pt-fvspiro` likely means 'Patient - Flow Volume Spirometry with bRonchodilator', but this requires inferring `spiro` from `spi`, and `r` (for the standard Finnish suffix `-R`) from `o`. Having the Finnish long name (`LongName`) for more rows would have been extremely helpful, as seen with `pt-sper-*` (Semen analysis) and `pt-st-temp` (Thermal sensory threshold). The presence of `form` in the `UNIT` column and 100% missing values for many rows reinforces the idea that these codes often represent orders for complex studies or entire reports, not individual measurable results. A significant number of codes remained too ambiguous to map, highlighting the challenge of working with truncated or idiosyncratic local variations."
+  "reflection": "This group consists entirely of `Pt-` (Patient) prefixed tests, which are procedures, panels, and functional tests rather than specimen-based measurements. This makes naming them as LOINC panels or studies the correct approach.\n\nA significant challenge was the large number of `pt-fvs...` codes (`pt-fvsirod`, `pt-fvspido`, etc.). The `FVS` prefix points to spirometry (`toiminnallinen vitaalikapasiteetti, spirometria`), but the suffixes are non-standard and likely represent local administrative codes for different report types or sub-results. As the goal is to identify the ordered procedure, I've mapped all of these to the general `Spirometry panel`.\n\nSome codes allowed for more specific interpretation. `pt-spirob` was interpreted as `Spirometry with bronchodilator panel` based on `b` for `bronkodilataatio`. The code `pt-sppesu` was interpreted as `Semen analysis panel - Washed semen`, with `pesu` meaning `wash`. The cardiac tests (`pt-syd...`) were decipherable from their components: `perg` (perfusion), `ras` (rasitus/stress), and `uä` (ultraääni/ultrasound).\n\nThe code `pt-spiromd` was ambiguous. The `d` could potentially stand for `diffuusio` (diffusion capacity, DLCO), but this is not a standard abbreviation. Given the uncertainty, I opted for the more conservative guess `Spirometry panel`."
 }

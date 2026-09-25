@@ -2,364 +2,292 @@
   "rows": [
     {
       "row_id": 8649,
-      "loinc_name_guess": "Bacteria identified [Susceptibility]",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria susceptibility panel - Isolate"
     },
     {
       "row_id": 8650,
-      "loinc_name_guess": "Bacteria identified",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Isolate"
     },
     {
       "row_id": 8651,
-      "loinc_name_guess": "Bacteria identified by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Specimen by Culture"
     },
     {
       "row_id": 8652,
-      "loinc_name_guess": "Bacteria identified by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
     },
     {
       "row_id": 8653,
-      "loinc_name_guess": "Bacteria identified in Body fluid by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Aspirate by Culture"
     },
     {
       "row_id": 8654,
-      "loinc_name_guess": "Bacteria identified in Peritoneal fluid by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Ascites by Stain"
     },
     {
       "row_id": 8655,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
     },
     {
       "row_id": 8656,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
     },
     {
       "row_id": 8657,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
     },
     {
       "row_id": 8658,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
     },
     {
       "row_id": 8659,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
     },
     {
       "row_id": 8660,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
     },
     {
       "row_id": 8661,
-      "loinc_name_guess": "Bacteria",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Specimen"
     },
     {
       "row_id": 8662,
-      "loinc_name_guess": "Bacteria identified",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Isolate"
     },
     {
       "row_id": 8663,
-      "loinc_name_guess": "Bacteria identified by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
     },
     {
       "row_id": 8664,
-      "loinc_name_guess": "Bacteria identified in Bronchoalveolar lavage by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Bronchoalveolar lavage by Culture"
     },
     {
       "row_id": 8665,
-      "loinc_name_guess": "Bacteria identified in Bone by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Bone by Culture"
     },
     {
       "row_id": 8666,
-      "loinc_name_guess": "Bacteria identified in Catheter tip by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Catheter tip by Culture"
     },
     {
       "row_id": 8667,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Drainage fluid by Culture"
     },
     {
       "row_id": 8668,
-      "loinc_name_guess": "Bacteria identified in Sputum by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Sputum by Culture"
     },
     {
       "row_id": 8669,
-      "loinc_name_guess": "Bacteria identified in Sputum by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Sputum by Stain"
     },
     {
       "row_id": 8670,
-      "loinc_name_guess": "Bacteria identified in Stool by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Stool by Subculture"
     },
     {
       "row_id": 8671,
-      "loinc_name_guess": "Bacteria identified in Stool by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Enteric organisms panel - Stool by Culture"
     },
     {
       "row_id": 8672,
-      "loinc_name_guess": "Bacteria and Fungus identified in Stool by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Stool pathogens panel - Stool by Culture"
     },
     {
       "row_id": 8673,
-      "loinc_name_guess": "Bacteria identified in Stool by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Enteric organisms panel - Stool by Culture"
     },
     {
       "row_id": 8674,
-      "loinc_name_guess": "Bacteria identified in Stool by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Stool by Culture"
     },
     {
       "row_id": 8675,
-      "loinc_name_guess": "Bacteria RNA/DNA [Presence] in Vagina by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria DNA [Presence] in Vaginal fluid by NAA"
     },
     {
       "row_id": 8676,
-      "loinc_name_guess": "Bacteria identified in Vagina by Gram stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Vaginal fluid by Gram stain"
     },
     {
       "row_id": 8677,
-      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Culture"
     },
     {
       "row_id": 8678,
-      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Gram stain"
     },
     {
       "row_id": 8679,
-      "loinc_name_guess": "Bacteria identified in Dialysis fluid (peritoneal) by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Peritoneal dialysis fluid by Culture"
     },
     {
       "row_id": 8680,
-      "loinc_name_guess": "Bacteria identified in Pleural fluid by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Pleural fluid by Stain"
     },
     {
       "row_id": 8681,
-      "loinc_name_guess": "Bacteria RNA/DNA [#/volume] in Subgingival plaque by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria DNA [#/volume] in Gingival crevicular fluid by NAA"
     },
     {
       "row_id": 8682,
-      "loinc_name_guess": "Bacteria identified in Throat by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Throat by Culture"
     },
     {
       "row_id": 8683,
-      "loinc_name_guess": "Bacteria identified in Pus by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Pus by Culture"
     },
     {
       "row_id": 8684,
-      "loinc_name_guess": "Bacteria identified in Wound by Aerobic culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Pus by Aerobic culture"
     },
     {
       "row_id": 8685,
-      "loinc_name_guess": "Bacteria identified in Synovial fluid by Stain",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Synovial fluid by Stain"
     },
     {
       "row_id": 8686,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8687,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8688,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy light"
     },
     {
       "row_id": 8689,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy high power",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
     },
     {
       "row_id": 8690,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy light"
     },
     {
       "row_id": 8691,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
     },
     {
       "row_id": 8692,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy high power",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
     },
     {
       "row_id": 8693,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy high power",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
     },
     {
       "row_id": 8694,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine sediment"
     },
     {
       "row_id": 8695,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Slide culture"
     },
     {
       "row_id": 8696,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8697,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8698,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8699,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
     },
     {
       "row_id": 8700,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8701,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
       "row_id": 8702,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
     },
     {
       "row_id": 8703,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
     },
     {
       "row_id": 8704,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
     },
     {
       "row_id": 8705,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
     },
     {
       "row_id": 8706,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
     },
     {
       "row_id": 8707,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
     },
     {
       "row_id": 8708,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine by Test strip"
     },
     {
       "row_id": 8709,
-      "loinc_name_guess": "Bacteria [Presence] in Urine",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [Presence] in Urine by Test strip"
     },
     {
       "row_id": 8710,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 8711,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
     },
     {
       "row_id": 8712,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 8713,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
     },
     {
       "row_id": 8714,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
     },
     {
       "row_id": 8715,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 8716,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
     },
     {
       "row_id": 8717,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 8718,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 8719,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
     },
     {
       "row_id": 8720,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Bacteria identified in Urine"
     }
   ],
-  "reflection": "This group was large but highly structured around the `Bakt` (bacteria) component and a consistent set of suffixes (`-vi`, `-vr`, `-lm`, etc.) and specimen prefixes. The primary challenge was distinguishing between different types of tests that share a similar local code, particularly in the large `U-Bakt` (urine bacteria) section.\n\nThe key to disambiguation was to carefully use the `UNIT`, `deciles`, and `p_missing` columns. For instance, `U-Bakt` with `UNIT` `e6/l` and low `p_missing` clearly pointed to a quantitative automated count (`Bacteria [#/volume] in Urine by Automated count`). In contrast, the same base code with a `UNIT` of `/sunf` (field of view) indicated microscopy (`Bacteria [#/area] in Urine sediment...`). Finally, `U-BaktVi` (urine culture) with deciles showing large colony counts (10^4, 10^5) mapped to a quantitative culture (`Bacteria [#/volume] in Urine by Culture`), while variants with 100% missing values were interpreted as the identification part of the culture (`Bacteria identified in Urine by Culture`).\n\nThe `LongName` field was very helpful, for example in identifying `Ca-` as catheter tip culture, `Pu-BaktVi1` as anaerobic/aerobic, and `Pu-BaktVi2` as aerobic-only. The presence of `Candida` in the `LongName` for `F-BaktVi2` (row 8672) was a crucial detail, prompting a more specific guess (`Bacteria and Fungus identified...`).\n\nSome codes remained ambiguous (e.g., `d-baktvi`, `u-baktla`), and were correctly left blank. This group highlights the necessity of using all available data columns to differentiate clinically distinct tests that may be represented by very similar local codes."
+  "reflection": "This group was focused entirely on bacteriology. The Finnish abbreviations (`-vi` for culture, `-vr` for stain, `-lm` for identification, `-he` for sensitivity) were very consistent and helpful. The specimen prefixes were also clear for the most part. The main challenge was differentiating the multiple concepts hiding behind the simple `u-bakt` (urine bacteria) code. Here, the combination of `UNIT` and `deciles` was crucial. It allowed for distinguishing between automated quantitative counts (`e6/l`, `[#/volume]`), microscopic counts (`/sunf`, `[#/area]`), and qualitative/screening tests (`[Presence]`). Similarly, for urine culture (`u-baktvi`), the values showed it was a quantitative culture (`[#/volume]`) rather than just a nominal identification. The `LongName` for the fecal culture panels (`f-baktvi1`, `f-baktvi2`, `f-baktvi3`) was essential for recognizing them as panels targeting specific enteric pathogens. Without the LongName, they would have appeared as simple cultures. This highlights the value of having as much metadata as possible."
 }

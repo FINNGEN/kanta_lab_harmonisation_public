@@ -2,149 +2,120 @@
   "rows": [
     {
       "row_id": 10591,
-      "loinc_name_guess": "Glucose time below range [# Ratio] in Interstitial fluid",
-      "is_panel": false
+      "loinc_name_guess": "Glucose.time below range (TBR) [Time Fraction] in Interstitial fluid"
     },
     {
       "row_id": 10592,
-      "loinc_name_guess": "Glucose time in range [# Ratio] in Interstitial fluid",
-      "is_panel": false
+      "loinc_name_guess": "Glucose.time in range (TIR) [Time Fraction] in Interstitial fluid"
     },
     {
       "row_id": 10593,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
     },
     {
       "row_id": 10594,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10595,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10596,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10597,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10598,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
     },
     {
       "row_id": 10599,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10600,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10601,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose"
     },
     {
       "row_id": 10602,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
     },
     {
       "row_id": 10603,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10604,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10605,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10606,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10607,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
     },
     {
       "row_id": 10608,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10609,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10610,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10611,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
     },
     {
       "row_id": 10612,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10613,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10614,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10615,
-      "loinc_name_guess": "Fasting glucose [Moles/volume] in Serum or Plasma",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 10616,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
       "row_id": 10617,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10618,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
     },
     {
       "row_id": 10619,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
     }
   ],
-  "reflection": "This group was straightforward as it revolved entirely around glucose ('gluk'). The main challenge was differentiating between fasting/baseline samples, timed samples from a glucose tolerance test (GTT), and point-of-care tests. The numeric suffixes (0, 30, 60, 1h, 120, 2h) and the deciles were key to identifying the timed GTT samples. Finnish abbreviations like 'vieri' (point-of-care), 'ras' (rasitus, challenge), and 'valm' (valmistelu, preparation) were very helpful. Codes with 'valm' or 100% missing values were clearly procedural/order codes, not results.\n\nThe most unusual codes were `-gluk-tbr` and `-gluk-tir` with unit `%`. The deciles strongly suggested 'Time Below Range' and 'Time In Range' from Continuous Glucose Monitoring (CGM). This is a newer type of measurement, and it was interesting to see it appear in this dataset. Mapping them to the generic LOINC CGM concepts felt correct as the local codes didn't specify the exact glucose thresholds for the range. The leading hyphen in these codes is odd, perhaps indicating they are derived or calculated values within a specific system's report format."
+  "reflection": "This group was centered on glucose tests, primarily from glucose tolerance tests (GTT). The naming conventions were quite varied for the same underlying concept. For example, a 2-hour post-challenge glucose was represented by `gluk2h`, `gluk120min`, `glukoosi120min`, `glukr-2h`, `glukr2h`, and `glukras120`. This highlights the necessity of recognizing multiple synonyms for timings (`2h`, `120min`) and for challenge tests (`-r`, `ras`).\n\nThe most difficult codes were administrative ones. `glukr1valm` and `glukrvalm` likely mean \"glucose challenge preparation\" (`valmistelu`). These are not lab results and have no measurable value, so I left their names empty. A process to identify and flag such procedural or administrative codes would be beneficial.\n\nTwo codes, `-gluk-tbr` and `-gluk-tir`, were interesting as they represent modern Continuous Glucose Monitoring (CGM) metrics: Time Below Range and Time In Range. Recognizing these newer abbreviations (`TBR`, `TIR`) was key to correctly identifying them as `[Time Fraction]` in `Interstitial fluid`.\n\nThe `gluk-vieri` codes were clearly point-of-care tests, which I mapped to `Blood` as the system and `Test strip` as a likely method, which is a common LOINC pattern for such tests."
 }

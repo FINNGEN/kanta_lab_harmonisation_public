@@ -2,154 +2,124 @@
   "rows": [
     {
       "row_id": 5775,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5776,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5777,
-      "loinc_name_guess": "Influenza virus A+B RNA panel - Respiratory system specimen by NAA with probe detection",
-      "is_panel": true
+      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5778,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5779,
-      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection",
-      "is_panel": true
+      "loinc_name_guess": "Influenza virus A+B and Respiratory syncytial virus RNA panel - Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5780,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5781,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5782,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5783,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5784,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5785,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5786,
-      "loinc_name_guess": "Influenza virus A variant [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A subtype identified in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5787,
-      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5788,
-      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5789,
-      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5790,
-      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5791,
-      "loinc_name_guess": "Parainfluenza virus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5792,
-      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5793,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": ""
     },
     {
       "row_id": 5794,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5795,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5796,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5797,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5798,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5799,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Influenza virus RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5800,
-      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5801,
-      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5802,
-      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5803,
-      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
       "row_id": 5804,
-      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "is_panel": false
+      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory specimen by NAA with probe detection"
     }
   ],
-  "reflection": "This group consists entirely of qualitative nucleic acid tests for respiratory viruses, identified by the `-nho` suffix (`nukleiinihappo, kval`). The `LongName`s, when available, confirmed the abbreviations. The lack of specimen prefixes in the codes meant inferring the `System` as 'Respiratory system specimen', which is the standard for these analytes. \n\nSeveral codes were clearly typos or garbled (`-inabnhoho`, `-hinnho`) and were left unmapped. The code `hinflnho` was ambiguous between a typo for 'Influenza' and a test for *Haemophilus influenzae*; given the viral context of the group, a typo is more likely, but to be safe, I left it unmapped. \n\nThe primary point of ambiguity was whether a code for multiple pathogens (e.g., `-inabnho` for Influenza A and B) represented a single multiplex result or a panel ordering two separate tests. I interpreted these as panels, as this often reflects laboratory ordering practice, and suitable LOINC panel concepts exist. This assumption is a potential source of error if the source system uses a single code for a combined positive/negative result."
+  "reflection": "This group was dominated by nucleic acid tests for respiratory pathogens. The local suffix `-nho` was a very reliable indicator for 'nukleiinihappo (kval)', which translates to a qualitative nucleic acid test. This allowed for consistent mapping to a `[Presence]` property and a `by NAA with probe detection` method.\n\nThe main challenges were:\n1.  **Ambiguous abbreviations**: Codes like `-hinnho` and `-tintnho` were too garbled to interpret reliably and were left empty.\n2.  **Context vs. direct reading**: The code `hinfnho` strongly suggests *Haemophilus influenzae*, a bacterium, even though it's surrounded by viral tests. I chose to map it as a bacterial DNA test, assuming it's a valid part of a differential diagnosis panel for respiratory symptoms.\n3.  **Data artifacts**: Many codes had a leading dash (`-`) or a stuttered suffix (`-hoho`), which were clearly artifacts and ignored in the mapping.\n4.  **Panel vs. single test**: The code `-inabrsnho` was interpreted as a panel for Influenza A, B, and RSV. The code `-inabnho` for Influenza A and B was interpreted as a single combined test rather than a panel, as LOINC has concepts for this pattern.\n\nSince no specimen information was provided in the codes, `Respiratory specimen` was used as a default, which is a safe and common choice for these pathogens."
 }

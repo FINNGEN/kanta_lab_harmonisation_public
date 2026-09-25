@@ -2,464 +2,372 @@
   "rows": [
     {
       "row_id": 8557,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8558,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8559,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8560,
-      "loinc_name_guess": "MCV [Entitic mean volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
     },
     {
       "row_id": 8561,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8562,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
     },
     {
       "row_id": 8563,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8564,
-      "loinc_name_guess": "MCH [Entitic mass]",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
     },
     {
       "row_id": 8565,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8566,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8567,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8568,
-      "loinc_name_guess": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8569,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8570,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8571,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8572,
-      "loinc_name_guess": "Granulocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8573,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8574,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8575,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8576,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8577,
-      "loinc_name_guess": "MCV [Entitic mean volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
     },
     {
       "row_id": 8578,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8579,
-      "loinc_name_guess": "MCHC [Entitic Mass/volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
     },
     {
       "row_id": 8580,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
     },
     {
       "row_id": 8581,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8582,
-      "loinc_name_guess": "MCH [Entitic mass]",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
     },
     {
       "row_id": 8583,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8584,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8585,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8586,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8587,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet and reticulocyte panel - Blood by Automated count"
     },
     {
       "row_id": 8588,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8589,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8590,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8591,
-      "loinc_name_guess": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8592,
-      "loinc_name_guess": "Basophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8593,
-      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8594,
-      "loinc_name_guess": "Basophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8595,
-      "loinc_name_guess": "Eosinophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8596,
-      "loinc_name_guess": "Eosinophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8597,
-      "loinc_name_guess": "Eosinophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8598,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8599,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8600,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
     },
     {
       "row_id": 8601,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
     },
     {
       "row_id": 8602,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
     },
     {
       "row_id": 8603,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] of Blood by calculation",
-      "is_panel": false
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
     },
     {
       "row_id": 8604,
-      "loinc_name_guess": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Immature granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8605,
-      "loinc_name_guess": "Immature granulocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Immature granulocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8606,
-      "loinc_name_guess": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Immature granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8607,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8608,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8609,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8610,
-      "loinc_name_guess": "Lymphocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8611,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8612,
-      "loinc_name_guess": "MCH [Entitic mass]",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
     },
     {
       "row_id": 8613,
-      "loinc_name_guess": "MCH [Entitic mass]",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
     },
     {
       "row_id": 8614,
-      "loinc_name_guess": "MCHC [Entitic Mass/volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
     },
     {
       "row_id": 8615,
-      "loinc_name_guess": "MCHC [Entitic Mass/volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
     },
     {
       "row_id": 8616,
-      "loinc_name_guess": "MCV [Entitic mean volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
     },
     {
       "row_id": 8617,
-      "loinc_name_guess": "MCV [Entitic mean volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
     },
     {
       "row_id": 8618,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8619,
-      "loinc_name_guess": "Monocytes [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8620,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8621,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8622,
-      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8623,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8624,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8625,
-      "loinc_name_guess": "Erythrocyte [DistWidth] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
     },
     {
       "row_id": 8626,
-      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8627,
-      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8628,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
     },
     {
       "row_id": 8629,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
     },
     {
       "row_id": 8630,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8631,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8632,
-      "loinc_name_guess": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8633,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8634,
-      "loinc_name_guess": "CBC with reticulocyte panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet and reticulocyte panel - Blood by Automated count"
     },
     {
       "row_id": 8635,
-      "loinc_name_guess": "CBC W Auto Differential and Reticulocyte panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential and reticulocyte panel - Blood"
     },
     {
       "row_id": 8636,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
     },
     {
       "row_id": 8637,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
     },
     {
       "row_id": 8638,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8639,
-      "loinc_name_guess": "Short blood count panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
     },
     {
       "row_id": 8640,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood",
-      "is_panel": false
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8641,
-      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count",
-      "is_panel": false
+      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count"
     },
     {
       "row_id": 8642,
-      "loinc_name_guess": "MCV [Entitic mean volume] in Red Blood Cells",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
     },
     {
       "row_id": 8643,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8644,
-      "loinc_name_guess": "",
-      "is_panel": false
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
     },
     {
       "row_id": 8645,
-      "loinc_name_guess": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8646,
-      "loinc_name_guess": "MCH [Entitic mass]",
-      "is_panel": false
+      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
     },
     {
       "row_id": 8647,
-      "loinc_name_guess": "CBC panel - Blood by Automated count",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential panel - Blood"
     },
     {
       "row_id": 8648,
-      "loinc_name_guess": "CBC W Auto Differential and Reticulocyte panel - Blood",
-      "is_panel": true
+      "loinc_name_guess": "CBC with automated differential and reticulocyte panel - Blood"
     }
   ],
-  "reflection": "This group was a textbook example of how a single panel code (like `B-PVK`) can be used in source data to represent both the panel order itself and the individual component results within that panel. The key was to distinguish these two use cases based on whether `UNIT` and `deciles` were present.\n\nGotchas:\n*   **Panel vs Component:** Rows with `p_missing=100` and no unit were clearly panel orders. Rows with specific units (`g/l`, `fl`, `e9/l`, etc.) and numeric data were unpacked components.\n*   **Code variations:** `B-PVK`, `B-PVK+T`, `B-PVK+TKD`, and `B-TVK` represent different levels of a complete blood count: short/basic (`PVK`, `PVK+T`), with automated differential (`TKD`, `TVK`), or with a mini-differential (`TMD`). Mapping them to appropriate LOINC panels (`Short blood count panel`, `CBC panel by Automated count`, etc.) was crucial.\n*   **Unpacking components:** The `b-pvk+tkd,<analyte>` codes were very helpful as they explicitly named the component. This helped confirm the mappings for less specific codes, e.g., identifying that `g/l` with deciles ~330 is MCHC (row 8579) and not Hemoglobin (deciles ~140, row 8562).\n*   **Ambiguous units:** The unit `form` (rows 8561, 8578, 8643) was uninterpretable. The unit `eg/l` (row 8626) was a clear typo for `E9/l`, confirmed by the deciles for platelets.\n\nThe logic was to first identify the base panel, then for each row, determine if it's a panel order or a component result. If a component, use the `unit` and `deciles` to identify the analyte. This strategy worked well for this highly structured hematology group."
+  "reflection": "This group was challenging due to the pervasive use of panel codes (`B-PVK`, `B-TVK`) to report individual component results. The primary task was to distinguish between an order for a panel and a single result from that panel.\n\nThe `unit` and `deciles` columns were critical for this disambiguation. When a row had a specific unit (like `g/l`, `e12/l`, `fl`, `pg`) and a plausible value range, I mapped it to the corresponding component (e.g., Hemoglobin, Erythrocytes, MCV, MCH). When the unit was missing or ambiguous (`%`, `form`), or explicitly a 'package' (`paketti`), I mapped it to the panel concept (`CBC panel`, `CBC with automated differential panel`, etc.).\n\nA significant gotcha was interpreting the different flavors of CBC panels from the Finnish abbreviations:\n*   `B-PVK`: Perusverenkuva (Basic blood count). Mapped to `CBC with platelet panel` as platelets are standard.\n*   `B-PVK+T`: Explicitly includes trombosyytit (platelets), confirming the above.\n*   `B-PVK+TKD`: Includes koneellinen erittelylaskenta (automated differential). Mapped to `CBC with automated differential panel`.\n*   `B-TVK`: Täydellinen verenkuva (Complete blood count). Considered synonymous with `B-PVK+TKD`.\n*   `B-PVK+TMD`: Minidiffi. Mapped to `CBC with 3 part differential panel`.\n\nThe detailed `b-pvk+tkd,[component]` codes were straightforward, clearly indicating a specific result from the differential count. The main task was to choose the correct LOINC property (`[# Ratio]` for `%` and `[#/volume]` for `e9/l`) and component name format (`CellType/Leukocytes` vs. `CellType`).\n\nThe many garbled/concatenated codes (`b-pvkt`, `b-pvktkdr`) were handled by parsing the constituent parts and mapping to the corresponding panel."
 }
