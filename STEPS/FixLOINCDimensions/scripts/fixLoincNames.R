@@ -266,7 +266,7 @@ ParallelLogger::logInfo("Kept ", nrow(candidates), " candidate rows at score >= 
 
 ## Step 2: one LLM call per group, with its rows plus the pooled candidate list.
 promptColumns <- c(
-  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "p_missing", "deciles",
+  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "value_missing_p", "value_deciles",
   "LongName", "prefix_meaning", "suffix_meaning",
   "loinc_name_guess"
 )

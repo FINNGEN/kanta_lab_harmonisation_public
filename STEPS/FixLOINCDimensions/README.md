@@ -112,7 +112,7 @@ both derived from measuring the first run against the curated Finnish mappings:
   a near-miss still retrieves the right neighbourhood — so its guesses are not
   calibrated: a fluent name may rest on very little, and nothing in the row
   marks which. The prompt therefore has this step re-read `TEST_NAME`,
-  `LongName`, `UNIT` and `deciles` *before* looking at the guess, and when the
+  `LongName`, `UNIT` and `value_deciles` *before* looking at the guess, and when the
   row's evidence and the guess disagree, the row wins.
 
   A guess that is itself a real concept name at score 1.000 is mildly
