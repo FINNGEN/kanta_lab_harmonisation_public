@@ -250,7 +250,7 @@ md <- c(
   "## Coverage by evidence level",
   "",
   "`evidence_level` is computed from the row itself: whether it carries a `UNIT`,",
-  "a `deciles` distribution, both, or neither. The named rate should be high at",
+  "a `value_deciles` distribution, both, or neither. The named rate should be high at",
   "every level: the name is a search query, so the prompt asks for one whenever",
   "the code carries any usable hint and reserves an empty name for text nothing",
   "can be read out of. A `name` row still cannot fix its quantity — it is named",

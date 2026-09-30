@@ -5,7 +5,7 @@ Guesses the **LOINC Long Common Name** of every local Finnish lab code.
 ## Inputs
 
 - `DATA/GroupKnownInformationTable/knownInformationGrouped.tsv` — one row per
-  local `TEST_NAME`/`UNIT`, with `n`, `p_missing`, `deciles`, `LongName`,
+  local `TEST_NAME`/`UNIT`, with `n`, `value_missing_p`, `value_deciles`, `LongName`,
   `prefix_meaning`, `suffix_meaning`, clustered into similarity groups by
   `group_id` / `group_path`.
 - `scripts/systemPrompt.md` — the system prompt: the LOINC-expert role, the
@@ -28,7 +28,7 @@ Guesses the **LOINC Long Common Name** of every local Finnish lab code.
     of a code's records while another unit holds the rest is far more likely a
     data-entry error than a second real test.
   - `evidence_level` — `name+unit+values`, `name+unit`, `name+values`, or
-    `name`, from whether the row has a `UNIT` and a `deciles`
+    `name`, from whether the row has a `UNIT` and a `value_deciles`
     distribution. This is what bounds how far a row may be pushed: a
     `name` row has nothing to fix the quantity with, and the prompt
     requires it to be left unnamed unless the name alone settles the concept.
@@ -98,7 +98,7 @@ exactly right.
 ### Reading the evidence
 
 The prompt carries an explicit hierarchy for combining `TEST_NAME`, `UNIT` and
-`deciles`, because the obvious readings of this data are wrong:
+`value_deciles`, because the obvious readings of this data are wrong:
 
 - **A row is a `TEST_NAME` + `UNIT` pair, and that pair is what gets named.**
   Two rows of the same code with different units are two observations and may
@@ -110,8 +110,8 @@ The prompt carries an explicit hierarchy for combining `TEST_NAME`, `UNIT` and
   a prefix — `veri`, `seerumi`, `virtsa` — and
   `c-reaktiivinenproteiini,pikatesti,veri` names blood with no decoded prefix
   at all, its leading `c-` being the start of "C-reactive".
-- **Missing values say nothing about the test.** `p_missing` is a fact about
-  this extract, not about the laboratory test, so an empty `deciles` column is
+- **Missing values say nothing about the test.** `value_missing_p` is a fact about
+  this extract, not about the laboratory test, so an empty `value_deciles` column is
   never grounds for a `[Presence]` (qualitative) name. Scale comes from the
   code — the `-O` suffix, the `LongName` — never from how much was recorded.
 - **Nothing is borrowed between rows.** The group is a string-similarity
@@ -163,7 +163,7 @@ whether two similar codes are genuinely the same test or deliberately differ
 The model returns **only the two new fields per row**, keyed by a `row_id` the
 script assigns before prompting — not the whole table back. This keeps the
 payload small, makes it impossible for the model to silently alter source
-values (`n`, `deciles`, ...), and gives an unambiguous integer join key;
+values (`n`, `value_deciles`, ...), and gives an unambiguous integer join key;
 `TEST_NAME` alone would not work, since the same code recurs within a group
 with different `UNIT`s. The join is guarded: `row_id`s that were never sent, or
 returned twice, are dropped with a warning, and rows the model skipped keep an

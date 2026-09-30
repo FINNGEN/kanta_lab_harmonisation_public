@@ -20,7 +20,7 @@
 # appended to scripts/systemPrompt.md; the model returns, per row, only the ONE
 # new field keyed by `row_id` (not the whole table back). That keeps the
 # payload small, makes it impossible for the model to silently alter source
-# values (n, deciles, ...), and gives an unambiguous integer join key --
+# values (n, value_deciles, ...), and gives an unambiguous integer join key --
 # TEST_NAME alone is not unique within a group (the same code recurs with
 # different UNITs).
 #
@@ -172,7 +172,7 @@ grouped <- grouped |>
 grouped <- grouped |>
   dplyr::mutate(
     hasUnit = !is.na(.data$UNIT) & nzchar(.data$UNIT),
-    hasValues = !is.na(.data$deciles) & nzchar(.data$deciles),
+    hasValues = !is.na(.data$value_deciles) & nzchar(.data$value_deciles),
     # Every row has a name -- that is the one thing never missing -- so each
     # label names it explicitly. "unit only" read as though the name were
     # absent, which is the opposite of the truth.
@@ -242,7 +242,7 @@ ParallelLogger::logInfo("Read ", nchar(systemPrompt), " characters of system pro
 # test, plus row_id as the key. group_path is dropped (it encodes the clustering
 # tree, not the test) and group_id is constant within a call.
 promptColumns <- c(
-  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "p_missing", "deciles",
+  "row_id", "TEST_NAME", "UNIT", "unit_share", "evidence_level", "n", "value_missing_p", "value_deciles",
   "LongName", "prefix_meaning", "suffix_meaning"
 )
 
