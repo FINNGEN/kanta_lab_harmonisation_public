@@ -1,670 +1,649 @@
 {
   "rows": [
     {
-      "row_id": 1469,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs UNIT `e6/l` and deciles `10.41...407.08` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
+      "row_id": 1731,
+      "omop_concept_id": "3028371",
+      "omop_concept_name": "Actinomyces sp identified in Specimen by Organism specific culture",
+      "reasoning": "Actinomyces sp from `-acti` and `LongName` (Actinomyces) ; identified by Organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified in the code.",
       "certainty": "high"
     },
     {
-      "row_id": 1470,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.48` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1471,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-b-cd19` ; [#/volume] bcs deciles `0...0.47` suggest an absolute count reported in e9/l ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1472,
-      "omop_concept_id": "3020358",
-      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
-      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1473,
-      "omop_concept_id": "3020358",
-      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
-      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs UNIT `e9/l` and deciles `0.06...0.44` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1474,
-      "omop_concept_id": "3020358",
-      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
-      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/56` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1475,
-      "omop_concept_id": "3020358",
-      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
-      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/cd56` ; [#/volume] bcs UNIT `e9/l` and deciles `0.09...0.44` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1476,
-      "omop_concept_id": "3020358",
-      "omop_concept_name": "CD16+CD56+ cells [#/volume] in Blood",
-      "reasoning": "CD16+CD56+ cells bcs TEST_NAME `b-cd16/cd56` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1477,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs UNIT `e6/l` and deciles `0...336.97` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1478,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.29` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1479,
-      "omop_concept_id": "3010503",
-      "omop_concept_name": "CD19 cells [#/volume] in Blood",
-      "reasoning": "CD19 cells bcs TEST_NAME `b-cd19` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1480,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1481,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs UNIT `e9/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1482,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1483,
-      "omop_concept_id": "3019724",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "reasoning": "CD34 cells bcs TEST_NAME `b-cd34` ; [#/volume] bcs UNIT `e6/l` and deciles `5.27...156.93` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1484,
-      "omop_concept_id": "3019724",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "reasoning": "CD34 cells bcs TEST_NAME `b-cd34` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1485,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e6/l` and deciles `134.07...1335.05` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1486,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.14...1.07` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1487,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1488,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e6/l` and deciles `117.75...1214.03` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1489,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.11...1` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1490,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-cd8` refers to CD8 T-suppressor/cytotoxic cells, which are CD3+CD8+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1491,
-      "omop_concept_id": "3019724",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs UNIT `e6/l` and deciles `3...64.2` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1492,
-      "omop_concept_id": "3019724",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs UNIT `e9/l` and deciles `0...0.13` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1493,
-      "omop_concept_id": "3019724",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood",
-      "reasoning": "CD34 cells bcs TEST_NAME `b-lcd34` and LongName `B -Leukosyytit, CD34 alaluokka` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1494,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-lycd4` and LongName `B -Lymfosyytti CD4-alaluokka` refer to CD4 T-helper cells ; [#/volume] bcs this is the standard property for an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1495,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs UNIT `e6/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1496,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs UNIT `e9/l` indicates an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1497,
-      "omop_concept_id": "3011412",
-      "omop_concept_name": "CD3 cells [#/volume] in Blood",
-      "reasoning": "CD3 cells bcs TEST_NAME `b-t-cd3` where `t-` for T-cell is redundant with `cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1498,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e6/l` and deciles `168.06...1254.62` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1499,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.16...1.28` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1500,
-      "omop_concept_id": "3028167",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD4+ (T4 helper) cells bcs TEST_NAME `b-t-cd4` refers to CD4 T-helper cells, which are CD3+CD4+ ; [#/volume] bcs deciles `0.2...1.29` suggest an absolute count reported in e9/l ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1501,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e6/l` and deciles `141.94...1179.47` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1502,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs UNIT `e9/l` and deciles `0.14...1.1` are an absolute count ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1503,
-      "omop_concept_id": "3001405",
-      "omop_concept_name": "CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood",
-      "reasoning": "CD3+CD8+ (T8 suppressor) cells bcs TEST_NAME `b-t-cd8` refers to CD8 T-cells, which are CD3+CD8+ ; [#/volume] bcs this is the standard property for this measurement ; in Blood bcs TEST_NAME prefix `b-` means Blood",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1504,
-      "omop_concept_id": "1469655",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchoalveolar lavage by Flow cytometry (FC)",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs UNIT `form` implies a formula or ratio ; in Bronchoalveolar lavage bcs prefix `bl-` ; by Flow cytometry bcs this is the standard method for this test",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1505,
-      "omop_concept_id": "1469655",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchoalveolar lavage by Flow cytometry (FC)",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs this is the standard property ; in Bronchoalveolar lavage bcs prefix `bl-` ; by Flow cytometry bcs this is the standard method for this test",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1506,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `cd4/cd8` ; [# Ratio] bcs deciles `0.29...3.26` are typical for a ratio ; in Blood bcs this is the default specimen for this test when not otherwise specified",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1507,
-      "omop_concept_id": "3023256",
-      "omop_concept_name": "CD34 cells/cells in Blood",
-      "reasoning": "CD34 cells/cells bcs TEST_NAME `l-cd34` where `l-` means per leukocyte and UNIT is `%`, which is a ratio per cells ; in Blood bcs implied by context",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1508,
-      "omop_concept_id": "3023256",
-      "omop_concept_name": "CD34 cells/cells in Blood",
-      "reasoning": "CD34 cells/cells bcs TEST_NAME `l-cd34` where `l-` means per leukocyte, implying a ratio per cells ; in Blood bcs implied by context",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1509,
-      "omop_concept_id": "46236971",
-      "omop_concept_name": "CD34 dose in hematopoietic progenitor cell transfusion [#/mass] per recipient body mass",
-      "reasoning": "CD34 dose bcs TEST_NAME `la-cd34` where `la-` likely means leukapheresis, used for stem cell collection ; [#/mass] per recipient body mass bcs UNIT `e6/kg` is a cell count per kg body weight",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1510,
-      "omop_concept_id": "3045389",
-      "omop_concept_name": "CD34 cells [#/volume] in Blood from Blood product unit",
-      "reasoning": "CD34 cells bcs TEST_NAME `la-cd34` ; [#/volume] bcs UNIT `e9/l` is an absolute concentration ; in Blood from Blood product unit bcs `la-` likely means leukapheresis product",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1511,
-      "omop_concept_id": "36032071",
-      "omop_concept_name": "CD34 cells [#] in Blood product unit",
-      "reasoning": "CD34 cells bcs TEST_NAME `la-cd34` ; [#] bcs suffix `-ks` likely means 'kappalemääräinen summa' (total count) ; in Blood product unit bcs `la-` likely means leukapheresis product",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1512,
-      "omop_concept_id": "3030044",
-      "omop_concept_name": "CD34 cells/100 cells in Blood from Blood product unit",
-      "reasoning": "CD34 cells/100 cells bcs TEST_NAME `la-cd34-os` where `-os` means 'osuus' (share) and UNIT is `%` ; in Blood from Blood product unit bcs `la-` likely means leukapheresis product",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1513,
-      "omop_concept_id": "1470003",
-      "omop_concept_name": "CD3 cells [#/volume] in Hematopoietic progenitor cells from Blood product unit",
-      "reasoning": "CD3 cells bcs TEST_NAME `la-t-cd3` ; [#/volume] bcs UNIT `e9/l` is an absolute concentration ; in Hematopoietic progenitor cells from Blood product unit bcs `la-` likely means leukapheresis product, which is a source of HPCs",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1514,
-      "omop_concept_id": "1470003",
-      "omop_concept_name": "CD3 cells [#/volume] in Hematopoietic progenitor cells from Blood product unit",
-      "reasoning": "CD3 cells bcs TEST_NAME `la-t-cd3` ; [#/volume] bcs this is the standard property for this measurement ; in Hematopoietic progenitor cells from Blood product unit bcs `la-` likely means leukapheresis product, which is a source of HPCs",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1515,
+      "row_id": 1732,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD4 cell count [#/volume] specifically in an apheresis or blood product unit. Candidates with specimen 'Specimen' or 'Tissue' are not specific enough.",
+      "reasoning": "No suitable candidate found for an amoeba trophozoite stain on a generic specimen. The `LongName` specifies 'Ameeba, värjäys (trofozoiitit)', but candidates are for specific species (E. histolytica), different specimens (Stool), or different methods (Ag, DNA).",
       "certainty": ""
     },
     {
-      "row_id": 1516,
+      "row_id": 1733,
+      "omop_concept_id": "1175680",
+      "omop_concept_name": "Candida auris [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Candida auris from `-caau` and `LongName` ; [Presence] by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1734,
+      "omop_concept_id": "3026389",
+      "omop_concept_name": "Candida sp identified in Specimen by Organism specific culture",
+      "reasoning": "Candida sp from `-cand-` ; identified by organism specific culture from `-vi` suffix meaning 'Culture' ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1735,
+      "omop_concept_id": "3034171",
+      "omop_concept_name": "Yeast [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Yeast from `LongName` 'Hiiva, viljely' ; [Presence] by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified. This is preferred over Candida sp as the LongName specifies Yeast.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1736,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD4 cell count [#/volume] specifically in an apheresis or blood product unit. Candidates with specimen 'Specimen' or 'Tissue' are not specific enough.",
+      "reasoning": "The test code `-em-bl` is too abbreviated or cryptic to be reliably identified.",
       "certainty": ""
     },
     {
-      "row_id": 1517,
+      "row_id": 1737,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD8 cell count [#/volume] specifically in an apheresis or blood product unit. Candidate with specimen 'Specimen' is not specific enough.",
+      "reasoning": "The test code `-ervr` is too abbreviated or cryptic to be reliably identified.",
       "certainty": ""
     },
     {
-      "row_id": 1518,
+      "row_id": 1738,
+      "omop_concept_id": "1761775",
+      "omop_concept_name": "Enterobacteriaceae.extended spectrum beta lactamase resistance phenotype [Identifier] in Specimen by Organism specific culture",
+      "reasoning": "Extended spectrum beta lactamase resistance from `esbl` and `LongName` ; phenotype by Organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified. The target organism is inferred to be Enterobacteriaceae as this is the standard context for ESBL testing.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1739,
+      "omop_concept_id": "3028334",
+      "omop_concept_name": "Neisseria gonorrhoeae [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Neisseria gonorrhoeae from `-gc` (gonococcus) and `LongName` ; [Presence] by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1740,
+      "omop_concept_id": "3045634",
+      "omop_concept_name": "Herpes simplex virus identified in Specimen by Shell vial culture",
+      "reasoning": "Herpes simplex virus from `hsv` and `LongName` ; identified by Shell vial culture, which corresponds to rapid culture (`pikaviljely` in `LongName` and `-p-` in code) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1741,
+      "omop_concept_id": "3010254",
+      "omop_concept_name": "Herpes simplex virus identified in Specimen by Organism specific culture",
+      "reasoning": "Herpes simplex virus from `hsv` and `LongName` ; identified by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1742,
+      "omop_concept_id": "3026167",
+      "omop_concept_name": "Bacteria identified in Specimen by Environmental culture",
+      "reasoning": "Bacteria as the implied component of a hygiene test ; identified by Environmental culture based on `hyg-vi` ('hygiene culture') and `LongName` ('Hygienianäyte, viljely') ; in Specimen, referring to an environmental sample.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1743,
+      "omop_concept_id": "3024536",
+      "omop_concept_name": "Nuclear Ab pattern [Interpretation] in Serum by Immunofluorescence",
+      "reasoning": "Nuclear Ab pattern from `-kuvio` (pattern) in the context of `if` ; [Interpretation] is the correct property ; in Serum as the standard specimen ; by Immunofluorescence from `-if-`.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1744,
+      "omop_concept_id": "3009986",
+      "omop_concept_name": "Bacteria identified in Catheter tip by Culture",
+      "reasoning": "Bacteria as the implied component ; in Catheter tip from `-kat-` ; by Culture from the `-vi` suffix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1745,
+      "omop_concept_id": "21491103",
+      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
+      "reasoning": "Multiple drug resistant gram negative organism from `mdrs` and `LongName` (Moniresistentit gramnegatiiviset sauvat) ; by Culture from `-vi` ; in Specimen as none is specified. The `j` for `jatkoviljely` (follow-up culture) is an administrative qualifier.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1746,
+      "omop_concept_id": "21491103",
+      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
+      "reasoning": "Multiple drug resistant gram negative organism from `mdrs` and `LongName` (Moniresistentit gramnegatiiviset sauvat) ; by Culture from `-vi` ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1747,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` and `LongName` ; [Presence] by organism specific culture from `-vi` ; in Specimen as none is specified. The `j` for `jatkoviljely` (follow-up culture) is an administrative qualifier.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1748,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` and `LongName` ; [Presence] by organism specific culture from `-vi` ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1749,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `-vi` ; in Specimen as none is specified. The trailing `-ne` is interpreted as a local variant not changing the core test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1750,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `-vi` ; in Specimen as none is specified. The trailing `-ni` is interpreted as a local variant not changing the core test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1751,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrs` ; [Presence] by organism specific culture from `vi` ; in Specimen as none is specified. The code `-mrsrivi` is interpreted as a local variant of MRSA culture.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1752,
+      "omop_concept_id": "3046983",
+      "omop_concept_name": "Nocardia sp identified in Specimen by Organism specific culture",
+      "reasoning": "Nocardia sp from `-noca` and `LongName` (Nokardia) ; identified by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1753,
+      "omop_concept_id": "3003714",
+      "omop_concept_name": "Bacteria identified in Wound by Culture",
+      "reasoning": "Bacteria as the implied component ; in Wound from `-palov` interpreted as `palovamma` (burn wound) ; by Culture from `-vi`.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1754,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD8 cell count [#/volume] specifically in an apheresis or blood product unit. Candidate with specimen 'Specimen' is not specific enough.",
+      "reasoning": "The test code `-psvs` is too abbreviated or cryptic to be reliably identified. It is not a recognizable laboratory test code.",
       "certainty": ""
     },
     {
-      "row_id": 1519,
-      "omop_concept_id": "1092118",
-      "omop_concept_name": "CD19 cells/Lymphocytes in Blood",
-      "reasoning": "CD19 cells/Lymphocytes bcs TEST_NAME `ly-b-cd19` where `ly-` means per lymphocyte and `b-cd19` is B-cell CD19 ; [# Ratio] bcs UNIT is `%` ; in Blood bcs this is the default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1520,
-      "omop_concept_id": "1092118",
-      "omop_concept_name": "CD19 cells/Lymphocytes in Blood",
-      "reasoning": "CD19 cells/Lymphocytes bcs TEST_NAME `ly-b-cd19` where `ly-` means per lymphocyte and `b-cd19` is B-cell CD19 ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs this is the default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1521,
-      "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
-      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio and UNIT is `%`. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1522,
-      "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
-      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1523,
-      "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
-      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/cd56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio and UNIT is `%`. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1524,
-      "omop_concept_id": "3027831",
-      "omop_concept_name": "CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood",
-      "reasoning": "CD3-CD16+CD56+ (Natural killer) cells bcs TEST_NAME `ly-cd16/cd56` for NK cells, which are CD3- ; /100 cells bcs TEST_NAME prefix `ly-` implies a ratio. Although `Ly-` means /Lymphocytes, /cells is often used for the gated lymphocyte population ; in Blood bcs default specimen",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1525,
-      "omop_concept_id": "3016228",
-      "omop_concept_name": "CD19 cells/100 cells in Blood",
-      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19` (`ly-` = /Lymphocytes) and UNIT `%`. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1526,
-      "omop_concept_id": "3016228",
-      "omop_concept_name": "CD19 cells/100 cells in Blood",
-      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19` (`ly-` = /Lymphocytes) implies a percentage. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1527,
-      "omop_concept_id": "3016228",
-      "omop_concept_name": "CD19 cells/100 cells in Blood",
-      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19-b` (`ly-` = /Lymphocytes) and UNIT `%`. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1528,
-      "omop_concept_id": "3016228",
-      "omop_concept_name": "CD19 cells/100 cells in Blood",
-      "reasoning": "CD19 cells/100 cells bcs TEST_NAME `ly-cd19-b` (`ly-` = /Lymphocytes) implies a percentage. Gated lymphocytes are often the denominator referred to as 'cells' ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1529,
-      "omop_concept_id": "1175426",
-      "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-cd3` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1530,
-      "omop_concept_id": "1175426",
-      "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-cd3` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1531,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1532,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1533,
-      "omop_concept_id": "3037816",
-      "omop_concept_name": "CD4+CD8+ cells/cells in Blood",
-      "reasoning": "CD4+CD8+ cells/cells bcs TEST_NAME `ly-cd4+8+` with unit `%` implies a ratio ; in Blood bcs default specimen. Denominator `/cells` is a reasonable proxy for `/lymphocytes` from `ly-` prefix in this context.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1534,
-      "omop_concept_id": "3037816",
-      "omop_concept_name": "CD4+CD8+ cells/cells in Blood",
-      "reasoning": "CD4+CD8+ cells/cells bcs TEST_NAME `ly-cd4+8+` implies a ratio ; in Blood bcs default specimen. Denominator `/cells` is a reasonable proxy for `/lymphocytes` from `ly-` prefix in this context.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1535,
+      "row_id": 1755,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD4-CD8- (double negative) cells as a ratio of lymphocytes.",
+      "reasoning": "Code `-respvt` likely refers to a respiratory virus panel, but without knowing the method (e.g., culture, NAA, antigen) or the exact components, a specific LOINC panel concept cannot be chosen from the available candidates.",
       "certainty": ""
     },
     {
-      "row_id": 1536,
+      "row_id": 1756,
+      "omop_concept_id": "3001684",
+      "omop_concept_name": "Respiratory syncytial virus Ag [Presence] in Specimen",
+      "reasoning": "Respiratory syncytial virus Ag from the common abbreviation `rsv` ; [Presence] is the typical property for a rapid antigen test ; in Specimen as none is specified.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1757,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept found for CD4-CD8- (double negative) cells as a ratio of lymphocytes.",
+      "reasoning": "Code `-rsvvt` is ambiguous. It specifies RSV, but the `vt` suffix does not clearly indicate the method (antigen, NAA, or culture), and candidates exist for all these methods. Cannot be mapped reliably.",
       "certainty": ""
     },
     {
-      "row_id": 1537,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4-t` where `ly-` means per lymphocyte and `-t` is redundant ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1758,
+      "omop_concept_id": "3053312",
+      "omop_concept_name": "Staphylococcus aureus Panton-Valentine leukocidin gene [Presence] in Isolate or Specimen by Molecular genetics method",
+      "reasoning": "Staphylococcus aureus Panton-Valentine leukocidin gene from the abbreviation `staupvl` ; [Presence] by Molecular genetics method is the standard for this gene detection test ; in Isolate or Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1538,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-cd4-t` where `ly-` means per lymphocyte and `-t` is redundant ; [# Ratio] bcs deciles `17.53...52.57` suggest a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1759,
+      "omop_concept_id": "1761890",
+      "omop_concept_name": "Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Staphylococcus aureus from `-stau-` ; [Presence] by organism specific culture from `-vi` (culture) ; in Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1539,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-cd4/cd8` and LongName `Auttaja- ja tappajasolujen suhde` ; [# Ratio] bcs deciles `0.37...3.23` are typical for a ratio ; in Blood bcs this is the default specimen when not specified, and `ly-` codes are typically from blood",
+      "row_id": 1760,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes (Group A) Ag from `-strag` and `LongName` (Streptococcus, antigeeni), as this is the standard target for a rapid strep test ; [Presence] is the typical property ; in Throat is the standard assumed specimen.",
       "certainty": "high"
     },
     {
-      "row_id": 1540,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-cd4/cd8suhde` where `suhde` means ratio ; [# Ratio] bcs deciles `0.5...3.97` are typical for a ratio ; in Blood bcs this is the default specimen",
+      "row_id": 1761,
+      "omop_concept_id": "3053028",
+      "omop_concept_name": "Streptococcus sp identified in Specimen by Organism specific culture",
+      "reasoning": "Streptococcus sp from `-str-` and `LongName` ; identified by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as none is specified. `j` for `jatkoviljely` (follow-up culture) is an administrative qualifier.",
       "certainty": "high"
     },
     {
-      "row_id": 1541,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-cd8` where `ly-` means per lymphocyte ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1762,
+      "omop_concept_id": "3053028",
+      "omop_concept_name": "Streptococcus sp identified in Specimen by Organism specific culture",
+      "reasoning": "Streptococcus sp from `-str-` ; identified by organism specific culture from `-vi` (culture) ; in Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1542,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-cd8` where `ly-` means per lymphocyte ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1763,
+      "omop_concept_id": "3005702",
+      "omop_concept_name": "Mycobacterium sp identified in Specimen by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `-tb` (for Tuberculosis) and `LongName` ; identified by organism specific culture from `-evi` ('erikoisviljely', special culture) ; in Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1543,
-      "omop_concept_id": "1175426",
-      "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-t-cd3` where `ly-` means per lymphocyte and `t-` is redundant ; [# Ratio] bcs UNIT is `%` ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1544,
-      "omop_concept_id": "1175426",
-      "omop_concept_name": "CD3 cells/Lymphocytes in Blood",
-      "reasoning": "CD3 cells/Lymphocytes bcs TEST_NAME `ly-t-cd3` where `ly-` means per lymphocyte and `t-` is redundant ; [# Ratio] bcs this is the property for a percentage ; in Blood bcs default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1545,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4` and LongName `Ly-Lymfosyytit, T-auttajasolujen osuus` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1546,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4` and LongName `Ly-Lymfosyytit, T-auttajasolujen osuus` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1547,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4.` where `ly-` means per lymphocyte and the dot is a typo ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1548,
-      "omop_concept_id": "21494815",
-      "omop_concept_name": "CD4 cells/Lymphocytes in Specimen",
-      "reasoning": "CD4 cells/Lymphocytes bcs TEST_NAME `ly-t-cd4.` where `ly-` means per lymphocyte and the dot is a typo ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1549,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-t-cd4/8` ; [# Ratio] bcs UNIT `ratio` and deciles `0.6...3.19` ; in Blood bcs this is the default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1550,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-t-cd4/8` ; [# Ratio] bcs deciles `0.48...3.69` indicate a ratio ; in Blood bcs this is the default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1551,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-t-cd8` and LongName `Ly-Lymfosyytit, T-estäjäsolujen osuus` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1552,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-t-cd8` and LongName `Ly-Lymfosyytit, T-estäjäsolujen osuus` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1553,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `ly-tcd4/8.` (typo) ; [# Ratio] bcs deciles `0.48...3.27` indicate a ratio ; in Blood bcs this is the default specimen",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1554,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-tt-cd8` where `ly-` means per lymphocyte and `tt` is likely a typo for `t` ; [# Ratio] bcs UNIT is `%` ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1764,
+      "omop_concept_id": "43054991",
+      "omop_concept_name": "Microscopic observation [Presence] in Specimen by Acid fast stain",
+      "reasoning": "Microscopic observation from `-vr` (värjäys=stain) for `-tb-` (Tuberculosis) ; [Presence] is the typical property ; by Acid fast stain, the standard method for TB staining ; in Specimen as none is specified.",
       "certainty": "medium"
     },
     {
-      "row_id": 1555,
-      "omop_concept_id": "21494814",
-      "omop_concept_name": "CD8 cells/Lymphocytes in Specimen",
-      "reasoning": "CD8 cells/Lymphocytes bcs TEST_NAME `ly-tt-cd8` where `ly-` means per lymphocyte and `tt` is likely a typo for `t` ; [# Ratio] bcs this is the property for a percentage ; in Specimen bcs this is the best available candidate, Blood is implied but Specimen is an acceptable supertype",
+      "row_id": 1765,
+      "omop_concept_id": "3005702",
+      "omop_concept_name": "Mycobacterium sp identified in Specimen by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `-tb-` and `LongName` ; identified by organism specific culture from `-vi` and `LongName` ; in Specimen as none is specified. This is a compromise, as the `LongName` specifies M. tuberculosis, but the best available candidate is for Mycobacterium sp.",
       "certainty": "medium"
     },
     {
-      "row_id": 1556,
-      "omop_concept_id": "3052708",
-      "omop_concept_name": "Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma",
-      "reasoning": "Transferrin.carbohydrate deficient/Transferrin.total bcs TEST_NAME `s-gt-cdt` is a known abbreviation for CDT as % of total, often reported with GGT ; [Mass Ratio] bcs this is the property for this ratio, reported in % ; in Serum bcs TEST_NAME prefix `s-`",
+      "row_id": 1766,
+      "omop_concept_id": "36659777",
+      "omop_concept_name": "Mycobacterial stain and culture panel - Specimen",
+      "reasoning": "Mycobacterial stain and culture panel from the combination of `-tb-` (tuberculosis), `-vi-` (viljely/culture), and `-vr` (värjäys/stain) ; in Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1557,
-      "omop_concept_id": "3052708",
-      "omop_concept_name": "Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma",
-      "reasoning": "Transferrin.carbohydrate deficient/Transferrin.total bcs TEST_NAME `s-gt-cdt` is a known abbreviation for CDT as % of total ; [Mass Ratio] bcs deciles `2.6...4.86` are typical values for CDT % ; in Serum bcs TEST_NAME prefix `s-`",
+      "row_id": 1767,
+      "omop_concept_id": "43054991",
+      "omop_concept_name": "Microscopic observation [Presence] in Specimen by Acid fast stain",
+      "reasoning": "Microscopic observation from `-vr` (värjäys=stain) for `-tb-` (Tuberculosis), confirmed by `LongName` ; [Presence] is the typical property ; by Acid fast stain, the standard method for TB staining ; in Specimen as none is specified.",
       "certainty": "high"
     },
     {
-      "row_id": 1558,
-      "omop_concept_id": "3014686",
-      "omop_concept_name": "CD3 cells/100 cells in Specimen",
-      "reasoning": "CD3 cells/100 cells bcs TEST_NAME `so-t-cd3` with UNIT `%` indicates a ratio of CD3 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
+      "row_id": 1768,
+      "omop_concept_id": "36659777",
+      "omop_concept_name": "Mycobacterial stain and culture panel - Specimen",
+      "reasoning": "Mycobacterial stain and culture panel from the combination of `-tb-` (tuberculosis), `-vr` (värjäys/stain), and `-vi` (viljely/culture) ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1769,
+      "omop_concept_id": "3025892",
+      "omop_concept_name": "Trichomonas vaginalis Ag [Presence] in Genital specimen",
+      "reasoning": "Trichomonas vaginalis Ag from `trvaag` and `LongName` ; [Presence] is the property ; in Genital specimen, which is the typical source for this test, though not explicitly stated in the code.",
       "certainty": "medium"
     },
     {
-      "row_id": 1559,
-      "omop_concept_id": "3014686",
-      "omop_concept_name": "CD3 cells/100 cells in Specimen",
-      "reasoning": "CD3 cells/100 cells bcs TEST_NAME `so-t-cd3` indicates a ratio of CD3 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
-      "certainty": "medium"
+      "row_id": 1770,
+      "omop_concept_id": "3002619",
+      "omop_concept_name": "Bacteria identified in Specimen by Culture",
+      "reasoning": "Bacteria as the implied component for a generic culture request (`-vi`) ; identified by Culture from the `-vi` suffix ; in Specimen as none is specified.",
+      "certainty": "high"
     },
     {
-      "row_id": 1560,
-      "omop_concept_id": "3000739",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Specimen",
-      "reasoning": "CD3+CD4+ cells/cells bcs TEST_NAME `so-t-cd4` with UNIT `%` indicates a ratio of CD4 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
-      "certainty": "medium"
+      "row_id": 1771,
+      "omop_concept_id": "3028433",
+      "omop_concept_name": "Virus identified in Specimen by Culture",
+      "reasoning": "Virus from `-vir-` and `LongName` ; identified by Culture from `-vi` and `LongName` (viljely) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
     },
     {
-      "row_id": 1561,
-      "omop_concept_id": "3000739",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/cells in Specimen",
-      "reasoning": "CD3+CD4+ cells/cells bcs TEST_NAME `so-t-cd4` indicates a ratio of CD4 T-cells ; in Specimen bcs prefix `so-` is unknown and this is the most generic safe option",
-      "certainty": "medium"
+      "row_id": 1772,
+      "omop_concept_id": "3023601",
+      "omop_concept_name": "Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Vancomycin resistant enterococcus from `vre` and `LongName` ; [Presence] by organism specific culture from `-vi` and `LongName` (viljely) ; in Specimen as none is specified.",
+      "certainty": "high"
     },
     {
-      "row_id": 1562,
+      "row_id": 1773,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No suitable candidate found for CD8 T-cells as a ratio in a generic specimen. The candidates are for specific subtypes (CD8+CD57+) or incorrect combinations (CD8+CD3-).",
+      "reasoning": "The code `-väri` (stain/color) is too generic to be mapped to a specific laboratory test without further context.",
       "certainty": ""
     },
     {
-      "row_id": 1563,
+      "row_id": 1774,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No suitable candidate found for CD8 T-cells as a ratio in a generic specimen. The candidates are for specific subtypes (CD8+CD57+) or incorrect combinations (CD8+CD3-).",
+      "reasoning": "Code `1.savuk` refers to the number of cigarettes smoked, which is a patient-reported outcome, not a laboratory test. No suitable candidate concept for this observation is present in the list.",
       "certainty": ""
+    },
+    {
+      "row_id": 1775,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Code `1.savuk` refers to the number of cigarettes smoked, which is a patient-reported outcome, not a laboratory test. No suitable candidate concept for this observation is present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1776,
+      "omop_concept_id": "3015479",
+      "omop_concept_name": "Mycobacterium sp identified in Blood by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `tb` (for Tuberculosis) and `LongName` ; identified by organism specific culture from `-evi` ('erikoisviljely', special culture) ; in Blood from the `B-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1777,
+      "omop_concept_id": "3026389",
+      "omop_concept_name": "Candida sp identified in Specimen by Organism specific culture",
+      "reasoning": "Candida sp from `cand` ; identified by organism specific culture from `vi` (culture) ; in Specimen as no specimen is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1778,
+      "omop_concept_id": "3027544",
+      "omop_concept_name": "Mycobacterium sp identified in Sputum by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `tb` and `LongName` ; identified by organism specific culture from `vi` and `LongName` ; in Sputum from `Ex-` prefix. Mapped to `sp` as no `tuberculosis` specific candidate was available.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1779,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Code `ex-tbvivr` is for a Mycobacterium stain and culture panel from sputum, but no matching panel concept for this specific specimen is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1780,
+      "omop_concept_id": "3011588",
+      "omop_concept_name": "Microscopic observation [Identifier] in Sputum by Acid fast stain",
+      "reasoning": "Microscopic observation from `vr` (stain) for `tb` (tuberculosis) ; by Acid fast stain is the standard method ; in Sputum from the `Ex-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1781,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Code `ex-tbvrvi` is for a Mycobacterium stain and culture panel from sputum, but no matching panel concept for this specific specimen is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1782,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for Staphylococcus aureus culture (`aurvi`) in a stool specimen (`F-`).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1783,
+      "omop_concept_id": "46236183",
+      "omop_concept_name": "Bacillus cereus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Bacillus cereus from `bace` ; [Presence] by organism specific culture from `vi` ; in Specimen, which is a good super-class for the specified `F-` (Feces).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1784,
+      "omop_concept_id": "3013978",
+      "omop_concept_name": "Campylobacter sp identified in Stool by Organism specific culture",
+      "reasoning": "Campylobacter sp from `camp` ; identified by organism specific culture from `-vi` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1785,
+      "omop_concept_id": "3013978",
+      "omop_concept_name": "Campylobacter sp identified in Stool by Organism specific culture",
+      "reasoning": "Campylobacter sp from `camp` and `LongName` ; identified by organism specific culture from `vi` and `LongName` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1786,
+      "omop_concept_id": "46236183",
+      "omop_concept_name": "Bacillus cereus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Bacillus cereus from `cereu` ; [Presence] by organism specific culture from `vi` ; in Specimen, which is a good super-class for the specified `F-` (Feces).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1787,
+      "omop_concept_id": "46236184",
+      "omop_concept_name": "Clostridium perfringens [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Clostridium perfringens from `clpe` ; [Presence] by organism specific culture from `vi` ; in Specimen, which is a good super-class for the specified `F-` (Feces).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1788,
+      "omop_concept_id": "3004716",
+      "omop_concept_name": "Salmonella sp identified in Stool by Organism specific culture",
+      "reasoning": "Salmonella sp from `salm` ; identified by organism specific culture from `-vi` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1789,
+      "omop_concept_id": "3004716",
+      "omop_concept_name": "Salmonella sp identified in Stool by Organism specific culture",
+      "reasoning": "Salmonella sp from `salm` and `LongName` ; identified by organism specific culture from `vi` and `LongName` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1790,
+      "omop_concept_id": "3004716",
+      "omop_concept_name": "Salmonella sp identified in Stool by Organism specific culture",
+      "reasoning": "Salmonella sp from `salm` and `LongName` ; identified by organism specific culture from `vi` and `LongName` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1791,
+      "omop_concept_id": "36305818",
+      "omop_concept_name": "Shigella sp identified in Stool by Organism specific culture",
+      "reasoning": "Shigella sp from `shig` and `LongName` ; identified by organism specific culture from `vi` and `LongName` ; in Stool from the `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1792,
+      "omop_concept_id": "3025722",
+      "omop_concept_name": "Staphylococcus sp identified in Specimen by Organism specific culture",
+      "reasoning": "Staphylococcus sp from `staf` ; identified by organism specific culture from `vi` ; in Specimen, which is a good super-class for the specified `F-` (Feces).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1793,
+      "omop_concept_id": "3042263",
+      "omop_concept_name": "Yeast identified in Genital specimen by Organism specific culture",
+      "reasoning": "Yeast (implied by `cand`) identified by organism specific culture from `vi` ; in Genital specimen as a match for `Fl-` (vaginal discharge).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1794,
+      "omop_concept_id": "3045634",
+      "omop_concept_name": "Herpes simplex virus identified in Specimen by Shell vial culture",
+      "reasoning": "Herpes simplex virus from `hsv` ; identified by Shell vial culture, which corresponds to rapid culture (`pika-viljely` implied by `pvi`) ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1795,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] from unit `%` and value distribution ; in Blood implied by context of a differential count ; by Automated count as the default modern method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1796,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] is the expected property for a % result ; in Blood implied by context ; by Automated count as the default method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1797,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] from unit `%` and value distribution ; in Blood implied by context ; by Automated count from `a` suffix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1798,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] implied by value distribution which are percentages ; in Blood implied by context ; by Automated count from `a` suffix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1799,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] from unit `%` and value distribution ; in Blood implied by context ; by Automated count from `at` suffix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1800,
+      "omop_concept_id": "1989444",
+      "omop_concept_name": "Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count",
+      "reasoning": "Band form neutrophils/Leukocytes from `L-sauv` (Leukocyte-band form) ; [Pure number fraction] is the expected property for a % result ; in Blood implied by context ; by Automated count from `at` suffix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1801,
+      "omop_concept_id": "1469856",
+      "omop_concept_name": "Bacteria identified in Mother's milk by Culture",
+      "reasoning": "Bacteria as the implied component of a hygiene test ; identified by Culture from `hygvi` ; in Mother's milk from `Mm-` prefix and `LongName` (äidinmaito).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1802,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `vi` ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1803,
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `vi` ; in Nose from `Ns-` prefix (Nasal secretion).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1804,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for Staphylococcus aureus culture (`staurvi`) specifically in a nasal specimen (`Ns-`).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1805,
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `vi` ; in Pharynx from `Ps-` prefix (Pharyngeal secretion).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1806,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test code `rasvat` is too ambiguous to be reliably identified.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1807,
+      "omop_concept_id": "21491103",
+      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
+      "reasoning": "Multiple drug resistant gram negative organism from `resgns` (resistant gram-negative rods) ; by Culture from `-vi` ; in Specimen as none is specified. This code is interpreted as equivalent to MDR GNR screening.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1808,
+      "omop_concept_id": "3001684",
+      "omop_concept_name": "Respiratory syncytial virus Ag [Presence] in Specimen",
+      "reasoning": "Respiratory syncytial virus Ag from the common abbreviation `rsv` ; [Presence] is the typical property for a rapid antigen test ; in Specimen as none is specified.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1809,
+      "omop_concept_id": "3026167",
+      "omop_concept_name": "Bacteria identified in Specimen by Environmental culture",
+      "reasoning": "Bacteria as the implied component ; by Environmental culture from `hygvi` ('hygiene culture') ; in Specimen. The `Sc-` prefix likely specifies a surface (skin?) but the test is an environmental one.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1810,
+      "omop_concept_id": "1091581",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Skin by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus from `mrsa` ; [Presence] by organism specific culture from `vi` ; in Skin from the `Sk-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1811,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes (Group A) Ag from `straag`, as this is the overwhelmingly common target for a rapid strep test ; [Presence] is the property for an Ag test ; in Throat is the standard assumed specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1812,
+      "omop_concept_id": "3053028",
+      "omop_concept_name": "Streptococcus sp identified in Specimen by Organism specific culture",
+      "reasoning": "Streptococcus sp from `str` ; identified by organism specific culture from `vi` (culture) ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1813,
+      "omop_concept_id": "3005702",
+      "omop_concept_name": "Mycobacterium sp identified in Specimen by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `tb` (Tuberculosis) ; identified by organism specific culture from `vi` (culture) ; in Specimen as none is specified. Mapped to `sp` as no `tuberculosis` specific candidate was available.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1814,
+      "omop_concept_id": "43054991",
+      "omop_concept_name": "Microscopic observation [Presence] in Specimen by Acid fast stain",
+      "reasoning": "Microscopic observation from `vr` (stain) for `tb` (Tuberculosis) ; [Presence] is the typical property ; by Acid fast stain, the standard method for TB staining ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1815,
+      "omop_concept_id": "36659777",
+      "omop_concept_name": "Mycobacterial stain and culture panel - Specimen",
+      "reasoning": "Mycobacterial stain and culture panel from the combination of `tb` (tuberculosis), `vr` (stain), and `vi` (culture) ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1816,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept found for MRSA culture (`mrsavi`) in a urine specimen (`U-`).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1817,
+      "omop_concept_id": "3004178",
+      "omop_concept_name": "Mycobacterium sp identified in Urine by Organism specific culture",
+      "reasoning": "Mycobacterium sp from `tb` (Tuberculosis) ; identified by organism specific culture from `vi` (culture) ; in Urine from the `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1818,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `veri` (blood) is too generic to be mapped to a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1819,
+      "omop_concept_id": "3002619",
+      "omop_concept_name": "Bacteria identified in Specimen by Culture",
+      "reasoning": "Bacteria as the implied component for a generic culture request (`vi`) ; identified by Culture from the `vi` code ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1820,
+      "omop_concept_id": "3002619",
+      "omop_concept_name": "Bacteria identified in Specimen by Culture",
+      "reasoning": "Bacteria as the implied component for a generic culture request (`vi`) ; identified by Culture from the `vi` code ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1821,
+      "omop_concept_id": "3023601",
+      "omop_concept_name": "Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Vancomycin resistant enterococcus from `vre` ; [Presence] by organism specific culture from `-vi` (culture) ; in Specimen as none is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1822,
+      "omop_concept_id": "3023601",
+      "omop_concept_name": "Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Vancomycin resistant enterococcus from `vre` ; [Presence] by organism specific culture from `vi` (culture) ; in Specimen as none is specified.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group consisted primarily of immunophenotyping codes (CD markers). The mapping was generally straightforward. The main division was between absolute counts (`B-` prefix, units `e6/l` or `e9/l`) and relative counts/ratios (`Ly-` prefix, unit `%`). \n\n**Successes:**\n*   Absolute counts in blood (e.g., `B-CD3`, `B-CD4`, `B-CD19`) were easily mapped to their `[#/volume] in Blood` LOINC equivalents. The `top2000` concepts for CD4 and CD8 (`CD3+CD4+` and `CD3+CD8+`) were correctly identified as the standard targets.\n*   CD4/CD8 ratios in blood were also clearly identifiable and mapped to the correct `top2000` concept.\n*   The `La-` prefix was correctly identified as referring to leukapheresis products ('Blood product unit' in LOINC), allowing for mapping of CD34 counts in that context.\n*   The `Ly-` prefix was correctly interpreted as a ratio with lymphocytes as the denominator.\n\n**Challenges:**\n*   **Missing specific concepts:** The candidate list lacked specific concepts for CD4 and CD8 counts in apheresis products (`la-t-cd4`, `la-t-cd8`), forcing these to be left unmapped. Similarly, concepts for `CD4-CD8-` cells were missing.\n*   **Ambiguous denominators:** For relative counts (`Ly-` prefix), the LOINC concepts sometimes use `/cells` as a denominator where the Finnish code implies `/Lymphocytes`. This is a common ambiguity in flow cytometry reporting (is 'cells' the whole population or the gated lymphocyte population?). I mapped them based on the best fit and `top2000` status but with medium certainty (e.g., `ly-cd16/56`).\n*   **Ambiguous specimen prefixes:** The `So-` prefix was unknown, forcing a fallback to the generic `Specimen` system, which is less precise. The low value ranges for these rows compared to blood supported the decision not to map to blood concepts.\n*   For `ly-cd4 %` and `ly-cd8 %`, the best available candidates were in `Specimen` rather than `Blood`. While `Specimen` is a valid supertype, a concept with `in Blood` would have been a better match. This seems like a gap in the search retrieval."
+  "reflection": "This group consisted primarily of microbiology culture codes, many of which were clearly identifiable from their abbreviations (e.g., `-gcvi` for Gonococcus culture, `-mrsavi` for MRSA culture). Most codes were successfully mapped with high certainty. \n\nSeveral challenges arose: \n1.  **Missing specific candidates:** For some common tests, the candidate list was missing the most precise concept. For example, `ex-tbvivr` (TB smear and culture from sputum) had no corresponding panel in the list. Similarly, `u-mrsavi` (MRSA from urine) and `ns-staurvi` (S. aureus from nose) had no specimen-specific candidates. A broader search might have found these.\n2.  **Genus vs. Species:** For Mycobacterium tuberculosis cultures (`-tbvi`, `ex-tbvi`), the `LongName` specified *tuberculosis*, but the best available candidate was for *Mycobacterium sp*. I mapped to the genus-level concept as a compromise.\n3.  **Ambiguous codes:** A few codes like `-em-bl`, `-ervr`, and `-respvt` were too cryptic or generic to map reliably without more information on the test method or components. \n4.  **Non-lab codes:** One code (`1.savuk`) was for a patient-reported observation (cigarettes smoked) and was correctly left unmapped as it's not a laboratory test and had no fitting LOINC code in the provided list."
 }

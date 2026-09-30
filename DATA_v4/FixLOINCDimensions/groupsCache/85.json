@@ -1,257 +1,222 @@
 {
   "rows": [
     {
-      "row_id": 1241,
-      "omop_concept_id": "3013867",
-      "omop_concept_name": "Bacteria identified in Specimen by Aerobe culture",
-      "reasoning": "Bacteria identified bcs this is a microbiology culture result ; by Aerobe culture bcs code is `-aerobivi` (aerobic culture) ; in Specimen bcs no specimen is specified",
+      "row_id": 1354,
+      "omop_concept_id": "3027184",
+      "omop_concept_name": "Lupus anticoagulant [Interpretation] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant bcs LongName 'P -Lupusantikoagulantti' and TEST_NAME 'lupusak' ; [Interpretation] bcs this is a complex workup often summarized as an interpretation, and unit 'form' suggests a report ; in Platelet poor plasma bcs prefix 'P-' means Plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1242,
-      "omop_concept_id": "3011298",
-      "omop_concept_name": "Bacteria identified in Specimen by Anaerobe culture",
-      "reasoning": "Bacteria identified bcs this is a microbiology culture result ; by Anaerobe culture bcs code is `-anaerobi` (anaerobic, culture implied) ; in Specimen bcs no specimen is specified",
+      "row_id": 1355,
+      "omop_concept_id": "3027184",
+      "omop_concept_name": "Lupus anticoagulant [Interpretation] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant bcs LongName 'P -Lupusantikoagulantti' and TEST_NAME 'lupusak' ; [Interpretation] bcs this is a complex workup often summarized as an interpretation ; in Platelet poor plasma bcs prefix 'P-' means Plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1243,
-      "omop_concept_id": "3035800",
-      "omop_concept_name": "Chlamydia trachomatis and Neisseria gonorrhoeae DNA [Identifier] in Specimen by NAA with probe detection",
-      "reasoning": "Chlamydia trachomatis and Neisseria gonorrhoeae DNA bcs code is `-omactgc`, a common abbreviation for CT/GC ; [Identifier] bcs this is a qualitative microbiology test ; in Specimen bcs no specimen is specified ; by NAA is the standard method",
+      "row_id": 1356,
+      "omop_concept_id": "3027184",
+      "omop_concept_name": "Lupus anticoagulant [Interpretation] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant bcs TEST_NAME 'p-lupusak' ; [Interpretation] bcs this is a complex workup often summarized as an interpretation ; in Platelet poor plasma bcs prefix 'P-' means Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1357,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-pbmcbio' is uninterpretable. The prefix 'p-' suggests Plasma, but 'pbmc' stands for Peripheral Blood Mononuclear Cells, which are found in whole blood, not plasma. This contradiction makes the intended specimen and test unclear.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1358,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'patlislaus' likely stands for 'patologian lisälausunto' (pathology additional report). This is an administrative code for a type of report, not a specific test, and no suitable generic report concept is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1359,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'ps-nieluag' means 'Antigen in pharyngeal secretion/throat'. However, the specific antigen being tested for (e.g., Streptococcus, Influenza) is not specified in the code. It is not possible to map to a specific antigen test without this information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1360,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'aud' (audiometry) and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel. The exact type of audiometry is not specified, so a general panel is most appropriate.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1361,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1362,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1363,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel. The suffix ',tk' is uninterpretable but does not change the core meaning.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1364,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1365,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1366,
+      "omop_concept_id": "1617160",
+      "omop_concept_name": "Diagnostic audiology results panel",
+      "reasoning": "Diagnostic audiology panel bcs TEST_NAME contains 'audio' and prefix 'Pt-' (patient) indicates a whole-patient investigation, which fits a comprehensive diagnostic panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1367,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-audit' refers to the AUDIT (Alcohol Use Disorders Identification Test) score, as confirmed by the loinc_name_guess and value_deciles. The candidate list does not contain the specific LOINC concept for the AUDIT score (e.g., 72109-5). Mapping to a generic 'Substance use disorder score' would be inaccurate.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1368,
+      "omop_concept_id": "3022227",
+      "omop_concept_name": "Pathologist review of Blood tests",
+      "reasoning": "Pathologist review of Blood tests bcs TEST_NAME 'pt-hembio' likely stands for 'hematologinen biopsia/tutkimus' (hematologic biopsy/study), often a pathologist's review of a blood smear or bone marrow. This concept for specialist review is a plausible match.",
       "certainty": "medium"
     },
     {
-      "row_id": 1244,
+      "row_id": 1369,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `annosvoim` appears to be 'annosvoimakkuus', which means 'dose strength'. This is not a laboratory test result.",
+      "reasoning": "The code 'pt-imutieg' is uninterpretable. 'imu' could mean lymph, but 'tieg' does not correspond to a standard Finnish medical term. Without a clear meaning, no mapping is possible.",
       "certainty": ""
     },
     {
-      "row_id": 1245,
-      "omop_concept_id": "3026470",
-      "omop_concept_name": "Cobalt [Mass/volume] in Blood",
-      "reasoning": "Cobalt bcs code is `koboltti` ; [Mass/volume] bcs unit is `ug/l` ; in Blood bcs prefix is `B-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1246,
-      "omop_concept_id": "3026389",
-      "omop_concept_name": "Candida sp identified in Specimen by Organism specific culture",
-      "reasoning": "Candida sp bcs code is `cand` ; identified by culture bcs code ends in `odl`, likely Swedish 'odling' (culture) ; in Specimen bcs no specific source is named",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1247,
-      "omop_concept_id": "3047178",
-      "omop_concept_name": "Yeast [Presence] in Specimen by Wet preparation",
-      "reasoning": "Yeast bcs code is `cand` (Candida is a yeast, and Yeast is the common LOINC term for microscopy) ; [Presence] by Wet preparation bcs code is `nativ` (natiivitutkimus, wet mount) ; in Specimen bcs no specific source is named",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1248,
+      "row_id": 1370,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The unit `mm` indicates this is a skin prick test (wheal diameter), which is an in-vivo measurement. The available candidates are all for in-vitro serum antibody tests.",
+      "reasoning": "The code 'pt-kudsop' stands for 'kudossopivuus' (histocompatibility). This is a general term for HLA typing. The available candidate concepts are for specific HLA classes (I or II) and resolutions (low or high), making them too specific for this generic code.",
       "certainty": ""
     },
     {
-      "row_id": 1249,
-      "omop_concept_id": "3005136",
-      "omop_concept_name": "Cladosporium herbarum IgE Ab [Units/volume] in Serum",
-      "reasoning": "Cladosporium herbarum bcs code is `cladosp.he` ; IgE Ab is the standard for this type of allergy testing ; [Units/volume] bcs unit is `u/ml` ; in Serum is the standard specimen",
-      "certainty": "high"
+      "row_id": 1371,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-lausklf' likely stands for 'lausunto, kliininen fysiologia' (report, clinical physiology). This is an administrative code for a report type, not a specific laboratory test, and has no corresponding concept among the candidates.",
+      "certainty": ""
     },
     {
-      "row_id": 1250,
-      "omop_concept_id": "3005136",
-      "omop_concept_name": "Cladosporium herbarum IgE Ab [Units/volume] in Serum",
-      "reasoning": "Cladosporium herbarum bcs code is `cladosp.he` ; This is the same test code as the row with units (1249), so it's the quantitative IgE antibody test ; This row likely represents records where the numeric value was not recorded",
+      "row_id": 1372,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-lisäla2' stands for 'lisälausunto 2' (additional report 2). This is a generic administrative code for a report addendum and does not represent a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1373,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-lisäla3' stands for 'lisälausunto 3' (additional report 3). This is a generic administrative code for a report addendum and does not represent a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1374,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-lisälau' stands for 'lisälausunto' (additional report). This is a generic administrative code for a report addendum and does not represent a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1375,
+      "omop_concept_id": "3049361",
+      "omop_concept_name": "Cytology report of Specimen Cyto stain",
+      "reasoning": "Cytology report bcs TEST_NAME 'pt-lisäsyt' stands for 'lisä-sytologia' (additional cytology) ; of Specimen bcs the code is generic and does not specify a source (e.g., urine, cervical).",
       "certainty": "medium"
     },
     {
-      "row_id": 1251,
-      "omop_concept_id": "3965970",
-      "omop_concept_name": "Human coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus 229E bcs code is `corona229e` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1252,
-      "omop_concept_id": "3964787",
-      "omop_concept_name": "Human coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus HKU1 bcs code is `coronahku1` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1253,
-      "omop_concept_id": "3965395",
-      "omop_concept_name": "Human coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus NL63 bcs code is `coronanl63` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1254,
-      "omop_concept_id": "3966673",
-      "omop_concept_name": "Human coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus OC43 bcs code is `coronaoc43` ; RNA [Presence] is the standard for this PCR test ; in Respiratory system specimen is the appropriate general specimen for this test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1255,
-      "omop_concept_id": "40758035",
-      "omop_concept_name": "Norovirus genogroup I RNA [Presence] in Stool by NAA with probe detection",
-      "reasoning": "Norovirus genogroup I bcs code is `norogi` ; RNA [Presence] is the standard for this PCR test ; in Stool bcs prefix is `F-` (Feces)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1256,
-      "omop_concept_id": "40758036",
-      "omop_concept_name": "Norovirus genogroup II RNA [Presence] in Stool by NAA with probe detection",
-      "reasoning": "Norovirus genogroup II bcs code is `norogii` ; RNA [Presence] is the standard for this PCR test ; in Stool bcs prefix is `F-` (Feces)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1257,
+      "row_id": 1376,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The name `f-projekti` means 'feces project', indicating this is a non-standard or research-specific code, not a routine clinical test.",
+      "reasoning": "The code 'pt-luuspeg' means 'luuston SPECT-kuvaus' (Bone SPECT imaging). The candidate list does not contain any concepts for Bone SPECT; the available SPECT concepts are for Myocardium.",
       "certainty": ""
     },
     {
-      "row_id": 1258,
+      "row_id": 1377,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `hpvpapctgc` appears to be a local code for a bundled test including HPV, Pap smear, and Chlamydia/Gonorrhea. No single LOINC concept in the candidate list represents this specific combination of analytes.",
+      "reasoning": "The code 'pt-luustog' means 'luuston gammakuvaus' (bone scan / scintigraphy). There is no candidate concept for a bone scan study in the provided list.",
       "certainty": ""
     },
     {
-      "row_id": 1259,
+      "row_id": 1378,
+      "omop_concept_id": "42529473",
+      "omop_concept_name": "Bone density quantitative measurement by DXA panel",
+      "reasoning": "Bone density by DXA panel bcs TEST_NAME 'pt-luutih' means 'luun tiheys' (bone density), a test typically performed by DXA. The code represents the overall study, making the panel concept the best fit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1379,
+      "omop_concept_id": "42529473",
+      "omop_concept_name": "Bone density quantitative measurement by DXA panel",
+      "reasoning": "Bone density by DXA panel bcs TEST_NAME 'pt-luutih' means 'luun tiheys' (bone density), a test typically performed by DXA. The code represents the overall study, making the panel concept the best fit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1380,
+      "omop_concept_id": "42529473",
+      "omop_concept_name": "Bone density quantitative measurement by DXA panel",
+      "reasoning": "Bone density by DXA panel bcs TEST_NAME 'pt-luutil' is a common misspelling of 'pt-luutih' ('luun tiheys', bone density), a test typically performed by DXA. The code represents the overall study, making the panel concept the best fit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1381,
+      "omop_concept_id": "42529473",
+      "omop_concept_name": "Bone density quantitative measurement by DXA panel",
+      "reasoning": "Bone density by DXA panel bcs TEST_NAME 'pt-luutil' is a common misspelling of 'pt-luutih' ('luun tiheys', bone density), a test typically performed by DXA. The code represents the overall study, making the panel concept the best fit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1382,
+      "omop_concept_id": "40762373",
+      "omop_concept_name": "Cardiac stress echo study",
+      "reasoning": "Cardiac stress echo study bcs TEST_NAME 'pt-rasukg' is a standard abbreviation for 'rasitus-ultraäänikardiografia' (stress echocardiography).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1383,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `hpvrefctgc` appears to be a local code for a bundled or reflex test involving HPV and Chlamydia/Gonorrhea. The exact nature is unclear, and no single LOINC concept in the candidate list represents this combination.",
+      "reasoning": "The code 'puheaudio' means 'puheaudiometria' (speech audiometry). The candidate list does not contain a concept for a speech audiometry panel or study.",
       "certainty": ""
     },
     {
-      "row_id": 1260,
-      "omop_concept_id": "1616677",
-      "omop_concept_name": "Norovirus genogroup I RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Norovirus genogroup I bcs code is `norogi` ; RNA [Presence] is the standard for this PCR test ; in Specimen bcs no specimen is specified in the code",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1261,
-      "omop_concept_id": "1616915",
-      "omop_concept_name": "Norovirus genogroup II RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Norovirus genogroup II bcs code is `norogii` ; RNA [Presence] is the standard for this PCR test ; in Specimen bcs no specimen is specified in the code",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1262,
-      "omop_concept_id": "3020710",
-      "omop_concept_name": "Acetone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Acetone bcs code is `asetoni` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs prefix is `P-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1263,
-      "omop_concept_id": "3037286",
-      "omop_concept_name": "Acetone [Presence] in Serum or Plasma by Screen method",
-      "reasoning": "Acetone bcs code is `asetoni` ; [Presence] bcs no units/values are provided and this likely represents a qualitative screen ; in Serum or Plasma bcs prefix is `P-`",
+      "row_id": 1384,
+      "omop_concept_id": "36305393",
+      "omop_concept_name": "Pure tone air conduction threshold audiometry panel",
+      "reasoning": "Pure tone air conduction threshold audiometry panel bcs TEST_NAME 'äänesaudio' refers to 'äänesaudiometria' (pure tone audiometry), distinguishing it from speech audiometry. This concept represents the primary component of pure tone testing.",
       "certainty": "medium"
-    },
-    {
-      "row_id": 1264,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `P-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1265,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1264), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1266,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `projekti1` means 'project 1', indicating this is a non-standard or research-specific code, not a routine clinical test.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1267,
-      "omop_concept_id": "3020710",
-      "omop_concept_name": "Acetone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Acetone bcs code is `asetoni` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs prefix is `S-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1268,
-      "omop_concept_id": "3037286",
-      "omop_concept_name": "Acetone [Presence] in Serum or Plasma by Screen method",
-      "reasoning": "Acetone bcs code is `asetoni` ; [Presence] bcs no units/values are provided and this likely represents a qualitative screen ; in Serum or Plasma bcs prefix is `S-`",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1269,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `S-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1270,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1269), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1271,
-      "omop_concept_id": "3009466",
-      "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Valproate bcs code is `valproaatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs prefix is `S-`",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1272,
-      "omop_concept_id": "3009466",
-      "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Valproate bcs code is `valproaatti` ; This is the same test code as the row with units (1271), and valproate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1273,
-      "omop_concept_id": "3007597",
-      "omop_concept_name": "Pathology report gross observation Narrative",
-      "reasoning": "bcs `Ts-abortti` and `Aborttikudoksen dissektiotutkimus` indicate a gross pathology examination of tissue from an abortion (products of conception) ; The chosen concept is a general term for this observation, as no more specific concept was available in the candidate list.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1274,
-      "omop_concept_id": "3045281",
-      "omop_concept_name": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection",
-      "reasoning": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA bcs code contains `ctgc` ; [Presence] is the nature of this screening test ; in Urine bcs prefix is `U-` ; by NAA is the standard method",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1275,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; [Moles/volume] bcs unit is `umol/l` ; in Serum or Plasma bcs this is the default specimen for this test and the values are consistent with it",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1276,
-      "omop_concept_id": "3026493",
-      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urate bcs code is `uraatti` ; This is the same test code as the row with units (1275), and urate is a standard quantitative test ; This row likely represents records where the numeric value was not recorded",
-      "certainty": "high"
     }
   ],
-  "reflection": "This group contained a mix of microbiology, chemistry, and allergy tests, plus some unmappable administrative or pathology codes. Most mappings were straightforward, with clear evidence from the local code's prefix (specimen), name (analyte), and unit/values (property). For example, `b-koboltti` in `ug/l` was a clear match for Cobalt [Mass/volume] in Blood. Microbiology codes for specific pathogens (Coronaviruses, Noroviruses) were also clear matches. \n\nThe main challenges were:\n1.  **Ambiguous local codes**: `hpvpapctgc` and `hpvrefctgc` seem to represent local bundles of tests for which no single LOINC concept exists. These were left unmapped.\n2.  **Non-test codes**: `annosvoim` (dose strength) and `projekti` (project) were correctly identified as non-laboratory results and left unmapped.\n3.  **Lack of specific candidates**: For `ts-abortti` (gross examination of abortion tissue), the candidates were generic pathology terms. `Pathology report gross observation Narrative` was chosen as a best-fit, but it lacks the specimen information, hence the 'low' certainty.\n4.  **Quantitative vs. Qualitative**: For codes like `p-asetoni` that appeared both with and without units, I made a judgment call. For acetone, a qualitative screen is common, so I mapped the unit-less version to a `[Presence]` concept. For standard chemistries like `uraatti` and `valproaatti`, I mapped the unit-less versions to the same quantitative concept as their counterparts, assuming missing data rather than a different test type."
+  "reflection": "This group was a mix of clearly identifiable tests, generic/administrative codes, and tests where the correct LOINC concept was missing from the candidate list. \n\n**Successfully mapped:**\n- `p-lupusak` was clearly Lupus Anticoagulant, and the interpretation concept was a good fit for the overall result.\n- The various `pt-audio` codes were well-matched to the general `Diagnostic audiology results panel`.\n- Bone density (`pt-luutih`/`pt-luutil`) and stress echo (`pt-rasukg`) had perfect panel matches.\n\n**Unmapped due to ambiguity/genericity:**\n- `p-pbmcbio` was contradictory.\n- `ps-nieluag` was underspecified (missing the antigen name).\n- `pt-kudsop` (histocompatibility) was too generic for the specific HLA panels offered.\n- Several codes like `patlislaus` and `pt-lisälau` were clearly administrative codes for 'additional reports' with no direct test equivalent.\n\n**Unmapped due to missing candidates:**\n- The search failed to retrieve appropriate concepts for several clear tests: `pt-audit` (AUDIT score), `pt-luuspeg` (Bone SPECT), `pt-luustog` (Bone Scan), and `puheaudio` (Speech audiometry). The `loinc_name_guess` was often correct, but the subsequent search did not provide the right target, highlighting a weakness in the search step for these specific terms."
 }

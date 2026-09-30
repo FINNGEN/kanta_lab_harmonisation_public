@@ -1,215 +1,901 @@
 {
   "rows": [
     {
-      "row_id": 1739,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1740,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1741,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1742,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1743,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the values of 1 are likely a flag indicating completion and do not change the underlying test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1744,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1745,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the unit 'form' and large numeric values suggest identifiers, not measurements",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1746,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvs` is a common abbreviation for Flow-Volume-Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1747,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvspiro` indicates flow-volume spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1748,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-fvspiro` indicates flow-volume spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the values of 1 are likely a flag indicating completion and do not change the underlying test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1749,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, suppea' (Semen analysis, limited) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1750,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, suppea' (Semen analysis, limited) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1751,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, laaja' (Semen analysis, extensive) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the general panel is chosen as no 'extensive' variant is available",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1752,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, laaja' (Semen analysis, extensive) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the general panel is chosen as no 'extensive' variant is available",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1753,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, laaja lisätutkimuksin' (Semen analysis, extensive with additional tests) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the general panel is chosen as no more specific variant is available",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1754,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs `pt-sperma` means patient-semen ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1755,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-spird` is an abbreviation for Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1756,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-spir` is an abbreviation for Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1757,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-spiro` is an abbreviation for Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1758,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry with bronchodilator bcs `pt-spirob` indicates Spirometry, with `b` likely for bronchodilator ; property: panel bcs `Pt-` indicates a patient-level investigation ; choice: The general spirometry panel is chosen as no specific bronchodilator challenge panel is in the candidate list",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1759,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry with bronchodilator bcs `pt-spirob` indicates Spirometry, with `b` likely for bronchodilator ; property: panel bcs `Pt-` indicates a patient-level investigation ; choice: The general spirometry panel is chosen as no specific bronchodilator challenge panel is in the candidate list",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1760,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-spirom` is an abbreviation for Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1761,
-      "omop_concept_id": "21493451",
-      "omop_concept_name": "Spirometry panel",
-      "reasoning": "component: Spirometry bcs `pt-spirom` is an abbreviation for Spirometry ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1762,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "component: Semen analysis bcs `pt-sp` suggests spermatozoa and `pesu` means 'wash' ; property: panel bcs `Pt-` indicates a patient-level investigation ; choice: The general semen analysis panel is used as no specific 'washed semen' panel is available",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1763,
+      "row_id": 2275,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `pt-st-temp` with LongName 'Pt-Terminen tuntokynnysmittaus' (Thermal sensory threshold measurement) is for a thermal sensory test. No matching concept for a thermal sensory threshold test panel or procedure is available in the candidate list.",
+      "reasoning": "The code `-bakt-he` indicates antibiotic sensitivity (`he` for herkkyys) for bacteria (`bakt`), but it does not specify the antibiotic or the organism. The candidates are either for specific antibiotics or too generic (e.g., 'Other antibiotic'). Without more information, a reliable mapping is not possible.",
       "certainty": ""
     },
     {
-      "row_id": 1764,
+      "row_id": 2276,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `pt-sydperg` likely refers to a myocardial ('syd') perfusion ('per') study. The candidate list contains results of such studies (e.g., SPECT scores) but not a general panel or procedure concept for ordering a myocardial perfusion study.",
+      "reasoning": "The code `-bakt-lm` indicates species identification (`lm` for lajimääritys) for bacteria. However, it lacks a specimen (indicated by the leading hyphen) and method context. Mapping to a generic concept like 'Bacteria identified in Specimen' is possible but has low utility and high risk of being incorrect without more context. Thus, it's safer to leave unmapped.",
       "certainty": ""
     },
     {
-      "row_id": 1765,
+      "row_id": 2277,
+      "omop_concept_id": "3002619",
+      "omop_concept_name": "Bacteria identified in Specimen by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` and `LongName` (Bakteeri) ; by Culture bcs `-vi` suffix and `LongName` (viljely) ; in Specimen bcs no specimen is specified in the code (leading hyphen).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2278,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `pt-sydperq` likely refers to a myocardial ('syd') perfusion ('per') study. The candidate list contains results of such studies (e.g., SPECT scores) but not a general panel or procedure concept for ordering a myocardial perfusion study.",
+      "reasoning": "The code `-baktvr` with `LongName` '-Bakteeri, värjäys' specifies a bacterial stain from an unspecified specimen. The candidate list does not contain a generic concept for 'Bacteria identified by Stain' in 'Specimen'. The available stain concepts are specific to specimen types (e.g., urine, CSF) or stain methods (e.g., Gram stain), none of which can be confirmed here.",
       "certainty": ""
     },
     {
-      "row_id": 1766,
-      "omop_concept_id": "3019512",
-      "omop_concept_name": "Cardiac stress study Procedure",
-      "reasoning": "component: Cardiac stress study bcs `pt-sydrasq` combines 'sydän' (heart) and 'rasitus' (stress) ; property: study/procedure bcs this is a patient-level investigation",
+      "row_id": 2279,
+      "omop_concept_id": "3018405",
+      "omop_concept_name": "Lactate [Moles/volume] in Arterial blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and `value_deciles` are consistent ; in Arterial blood bcs `aB-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1767,
-      "omop_concept_id": "40762373",
-      "omop_concept_name": "Cardiac stress echo study",
-      "reasoning": "component: Cardiac stress echo study bcs `pt-sydrtuä` is a likely abbreviation for 'sydän rasitus-ultraääni' (heart stress ultrasound) ; property: study bcs this is a patient-level investigation",
+      "row_id": 2280,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `ab-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2281,
+      "omop_concept_id": "3018405",
+      "omop_concept_name": "Lactate [Moles/volume] in Arterial blood",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and `value_deciles` are consistent ; in Arterial blood bcs `aB-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1768,
-      "omop_concept_id": "3009203",
-      "omop_concept_name": "Cardiac echo study Procedure",
-      "reasoning": "component: Cardiac echo study bcs `pt-sydänuä` is 'sydän-ultraääni' (heart ultrasound / echocardiography) ; property: study/procedure bcs this is a patient-level investigation",
+      "row_id": 2282,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `ab-laktaatti` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2283,
+      "omop_concept_id": "3043614",
+      "omop_concept_name": "Bacteria identified in Aspirate by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Aspirate bcs `af-` prefix meaning 'Aspiration fluid'.",
       "certainty": "high"
+    },
+    {
+      "row_id": 2284,
+      "omop_concept_id": "3020410",
+      "omop_concept_name": "Lactate [Moles/volume] in Arterial plasma",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and `value_deciles` are consistent ; in Arterial plasma bcs `aP-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2285,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `ap-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2286,
+      "omop_concept_id": "3020410",
+      "omop_concept_name": "Lactate [Moles/volume] in Arterial plasma",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and `value_deciles` are consistent ; in Arterial plasma bcs `aP-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2287,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `ap-laktaatti` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2288,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `as-baktvr` specifies a bacterial stain (`vr` for värjäys) in ascitic fluid (`as`). There is no matching candidate for a bacterial stain in ascitic/peritoneal fluid.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2289,
+      "omop_concept_id": "3023368",
+      "omop_concept_name": "Bacteria identified in Blood by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Blood bcs `B-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2290,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `b-baktjvi` with `LongName` 'Bakteeri, jatkoviljely' specifies a bacterial subculture from blood. LOINC does not typically model subcultures as separate observable entities, and no such concept exists in the candidates. This is a laboratory process step, not a primary result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2291,
+      "omop_concept_id": "3023368",
+      "omop_concept_name": "Bacteria identified in Blood by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Blood bcs `B-` prefix. The `s` in `baktsvi` likely stands for 'seulonta' (screening), but the result of a culture is identification, making the standard culture concept the most appropriate target.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2292,
+      "omop_concept_id": "3023368",
+      "omop_concept_name": "Bacteria identified in Blood by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` and `LongName` ; by Culture bcs `-vi` and `LongName` (viljely) ; in Blood bcs `B-` prefix and `LongName`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2293,
+      "omop_concept_id": "3023368",
+      "omop_concept_name": "Bacteria identified in Blood by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Blood bcs `B-` prefix. The trailing dot is considered noise.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2294,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `b-baktvij` is likely a typo for `b-baktjvi` (subculture). LOINC does not typically model subcultures as separate observable entities. This is a laboratory process step.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2295,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Blood bcs `B-` prefix, which denotes unqualified blood.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2296,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `b-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2297,
+      "omop_concept_id": "3042736",
+      "omop_concept_name": "Bacteria [Presence] in Specimen",
+      "reasoning": "Bacteria bcs `bakteerit` (bacteria) ; [Presence] bcs the term is generic and lacks any quantitative or methodological detail, suggesting a simple qualitative finding ; in Specimen bcs no specimen is specified.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2298,
+      "omop_concept_id": "3027247",
+      "omop_concept_name": "Bacteria identified in Specimen",
+      "reasoning": "Bacteria identified bcs `baktlm` (`lm` for `lajimääritys`, species identification) ; in Specimen bcs no specimen is specified in the code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2299,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `baktvr` specifies a bacterial stain (`vr` for värjäys) from an unspecified specimen. The candidate list does not contain a generic concept for 'Bacteria by Stain' in 'Specimen'.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2300,
+      "omop_concept_id": "1092251",
+      "omop_concept_name": "Bacteria identified in Bronchoalveolar lavage by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Bronchoalveolar lavage bcs `bl-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2301,
+      "omop_concept_id": "3044495",
+      "omop_concept_name": "Bacteria identified in Tissue by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Tissue bcs `bo-` prefix for Bone. Since no candidate for generic bone culture exists, the broader 'Tissue' concept is the best fit.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2302,
+      "omop_concept_id": "3009986",
+      "omop_concept_name": "Bacteria identified in Catheter tip by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` and `LongName` ; by Culture bcs `-vi` and `LongName` (viljely) ; in Catheter tip bcs `Ca-` prefix and `LongName` (suonikanyylista, from cannula).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2303,
+      "omop_concept_id": "3028271",
+      "omop_concept_name": "Lactate [Moles/volume] in Capillary blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Capillary blood bcs `cb-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2304,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `cb-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2305,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `cP-` prefix is likely Capillary Plasma, for which the general `Serum or Plasma` is a suitable parent concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2306,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `cp-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2307,
+      "omop_concept_id": "3008334",
+      "omop_concept_name": "Bacteria identified in Drain by Aerobe culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Aerobe culture bcs `-vi` (culture) and aerobic culture is the most common specific type for this specimen ; in Drain bcs `d-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2308,
+      "omop_concept_id": "3023419",
+      "omop_concept_name": "Bacteria identified in Sputum by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Sputum bcs `ex-` prefix for 'Expectorate'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2309,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `ex-baktvr` specifies a bacterial stain (`vr`) in sputum (`ex`). There is no matching candidate for a bacterial stain in sputum.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2310,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `f-baktjvi` specifies a bacterial subculture (`jvi`) from feces (`f`). LOINC does not typically model subcultures as separate observable entities. This is a laboratory process step.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2311,
+      "omop_concept_id": "1259619",
+      "omop_concept_name": "Campylobacter and Salmonella and Shigella and Yersinia sp identified in Stool by Organism specific culture",
+      "reasoning": "Campylobacter and Salmonella and Shigella and Yersinia sp identified bcs the `LongName` explicitly lists these organisms for 'viljely 1' ; by Organism specific culture bcs `-vi` (culture) is specified ; in Stool bcs `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2312,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `f-baktvi2` specifies a culture panel from feces for 'Clostridium difficile, Staphylococcus aureus, candida' according to its `LongName`. No candidate concept for this specific panel exists in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2313,
+      "omop_concept_id": "42529411",
+      "omop_concept_name": "Gastrointestinal pathogens panel - Stool by Culture",
+      "reasoning": "Gastrointestinal pathogens panel bcs the `LongName` for 'viljely 3' specifies an extended panel of enteric pathogens ; by Culture bcs `-vi` suffix and `LongName` ; in Stool bcs `F-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2314,
+      "omop_concept_id": "3025941",
+      "omop_concept_name": "Bacteria identified in Stool by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Stool bcs `F-` prefix. The `p` is a local modifier that does not prevent mapping to the general culture concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2315,
+      "omop_concept_id": "3000570",
+      "omop_concept_name": "Elastase.pancreatic [Mass/mass] in Stool",
+      "reasoning": "Elastase.pancreatic bcs `elastaasi-1` ; [Mass/mass] bcs unit `ug/g` ; in Stool bcs `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2316,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `f-elastaasi-1` lacks a unit and value distribution, making it impossible to determine the property (e.g., Mass/mass, Mass/volume).",
+      "certainty": ""
+    },
+    {
+      "row_id": 2317,
+      "omop_concept_id": "3000570",
+      "omop_concept_name": "Elastase.pancreatic [Mass/mass] in Stool",
+      "reasoning": "Elastase.pancreatic bcs `elastaasi1` ; [Mass/mass] bcs unit `ug/g` ; in Stool bcs `F-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2318,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `f-elastaasi1` lacks a unit and value distribution, making it impossible to determine the property (e.g., Mass/mass, Mass/volume).",
+      "certainty": ""
+    },
+    {
+      "row_id": 2319,
+      "omop_concept_id": "1092116",
+      "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Bacteria DNA [Presence] by NAA with probe detection bcs `baktna` means bacterial nucleic acid test ; in Specimen bcs `fl-` (Vaginal fluid) is specified but no candidate exists for this specimen, making the generic 'Specimen' concept the only available option.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2320,
+      "omop_concept_id": "3000855",
+      "omop_concept_name": "Microscopic observation [Identifier] in Vaginal fluid by Gram stain",
+      "reasoning": "Microscopic observation bcs `baktvr` (bacterial stain) implies microscopy ; by Gram stain bcs it is the standard stain for bacteria in vaginal fluid ; in Vaginal fluid bcs `Fl-` prefix (Fluor vaginalis).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2321,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `fP-` prefix for Fasting Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2322,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `fp-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2323,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `fP-` prefix for Fasting Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2324,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `fp-laktaatti` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2325,
+      "omop_concept_id": "3000067",
+      "omop_concept_name": "Parathyrin.intact [Mass/volume] in Serum or Plasma",
+      "reasoning": "Parathyrin.intact bcs `parathormoni` without qualifiers typically refers to the intact molecule, the standard test ; [Mass/volume] bcs unit `ng/l` ; in Serum or Plasma bcs `fP-` prefix for Fasting Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2326,
+      "omop_concept_id": "3010566",
+      "omop_concept_name": "Parathyrin.intact [Moles/volume] in Serum or Plasma",
+      "reasoning": "Parathyrin.intact bcs `parathormoni` without qualifiers typically refers to the intact molecule, the standard test ; [Moles/volume] bcs unit `pmol/l` ; in Serum or Plasma bcs `fP-` prefix for Fasting Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2327,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `fp-parathormoni` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2328,
+      "omop_concept_id": "3022948",
+      "omop_concept_name": "Iron [Moles/volume] in Serum or Plasma",
+      "reasoning": "Iron bcs `rauta` ; [Moles/volume] bcs unit `umol/l` ; in Serum or Plasma bcs `fP-` prefix for Fasting Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2329,
+      "omop_concept_id": "3016914",
+      "omop_concept_name": "Bacteria identified in Cerebral spinal fluid by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Cerebral spinal fluid bcs `Li-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2330,
+      "omop_concept_id": "3001886",
+      "omop_concept_name": "Microscopic observation [Identifier] in Cerebral spinal fluid by Gram stain",
+      "reasoning": "Microscopic observation bcs `baktvr` (bacterial stain) implies microscopy ; by Gram stain bcs it is the standard and most critical stain for bacteria in CSF ; in Cerebral spinal fluid bcs `Li-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2331,
+      "omop_concept_id": "3035999",
+      "omop_concept_name": "Lactate [Moles/volume] in Cerebral spinal fluid",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Cerebral spinal fluid bcs `Li-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2332,
+      "omop_concept_id": "3035999",
+      "omop_concept_name": "Lactate [Moles/volume] in Cerebral spinal fluid",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs `value_deciles` are in the typical range for mmol/L ; in Cerebral spinal fluid bcs `Li-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2333,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs `mmol/l` ; in Blood bcs `mb-` prefix is not standard but implies some type of blood, making the generic Blood concept the safest choice over guessing 'Mixed venous'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2334,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `mb-laktaat` lacks a unit and value distribution. The property cannot be determined, and the specimen `mb-` is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2335,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `p-laboratorio` (Plasma - laboratory) appears to be an administrative or placeholder code, not a clinical observation. It cannot be mapped to a LOINC concept.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2336,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `P-` prefix for Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2337,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `p-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2338,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `P-` prefix for Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2339,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `p-laktaatti` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2340,
+      "omop_concept_id": "40763091",
+      "omop_concept_name": "Bacteria identified in Peritoneal dialysis fluid by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` and `LongName` ; by Culture bcs `-vi` and `LongName` (viljely) ; in Peritoneal dialysis fluid bcs `Pd-` prefix and `LongName`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2341,
+      "omop_concept_id": "3005384",
+      "omop_concept_name": "Microscopic observation [Identifier] in Pleural fluid by Gram stain",
+      "reasoning": "Microscopic observation bcs `baktvr` (bacterial stain) implies microscopy ; by Gram stain bcs it is the standard stain for bacteria in pleural fluid ; in Pleural fluid bcs `Pf-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2342,
+      "omop_concept_id": "3023383",
+      "omop_concept_name": "Lactate [Moles/volume] in Pleural fluid",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Pleural fluid bcs `Pf-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2343,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `pf-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2344,
+      "omop_concept_id": "3023383",
+      "omop_concept_name": "Lactate [Moles/volume] in Pleural fluid",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Pleural fluid bcs `Pf-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2345,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pp-baktnh` specifies a quantitative bacterial nucleic acid test from a periodontal pocket (`ientasku`). No candidate concept matches this specific combination of component, property, specimen, and method.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2346,
+      "omop_concept_id": "3012475",
+      "omop_concept_name": "Bacteria identified in Throat by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Throat bcs `Ps-` prefix for Pharyngeal secretion.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2347,
+      "omop_concept_id": "46234833",
+      "omop_concept_name": "Bacteria identified in Abscess by Anaerobe+Aerobe culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Anaerobe+Aerobe culture bcs `LongName` specifies this for 'viljely 1' ; in Abscess bcs `Pu-` (pus) from a `syvämärkä` (deep pus) source is equivalent to an abscess specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2348,
+      "omop_concept_id": "3013146",
+      "omop_concept_name": "Bacteria identified in Wound by Aerobe culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Aerobe culture bcs `LongName` specifies this for 'viljely 2' ; in Wound bcs `Pu-` (pus) from a `pintamärkä` (surface pus) source is equivalent to a wound specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2349,
+      "omop_concept_id": "3014111",
+      "omop_concept_name": "Lactate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Lactate bcs `laktaatti` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Serum or Plasma bcs `S-` prefix for Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2350,
+      "omop_concept_id": "3002389",
+      "omop_concept_name": "Microscopic observation [Identifier] in Synovial fluid by Gram stain",
+      "reasoning": "Microscopic observation bcs `baktvr` (bacterial stain) implies microscopy ; by Gram stain bcs it is the standard stain for bacteria in synovial fluid ; in Synovial fluid bcs `Sy-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2351,
+      "omop_concept_id": "3009015",
+      "omop_concept_name": "Lactate [Moles/volume] in Synovial fluid",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Synovial fluid bcs `Sy-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2352,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `sy-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2353,
+      "omop_concept_id": "3031040",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
+      "reasoning": "Bacteria bcs `bact` ; [#/volume] bcs the `value_deciles` are consistent with a quantitative particle count ; in Urine bcs `U-` prefix ; by Automated count bcs this is the standard method for such counts.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2354,
+      "omop_concept_id": "3031040",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs unit `e6/l` ; in Urine bcs `U-` prefix ; by Automated count bcs this is the standard method for this quantitative test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2355,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs the unit `estimate` indicates a qualitative or semi-quantitative observation ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2356,
+      "omop_concept_id": "1092248",
+      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy",
+      "reasoning": "Bacteria bcs `bakt` ; [#/area] bcs the unit `u/field` signifies a count per microscopic field ; in Urine sediment by Microscopy bcs this is the context for reporting per field.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2357,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs the `value_deciles` are all zero, which is typical for a qualitative screening test where most results are negative ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2358,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2359,
+      "omop_concept_id": "1092248",
+      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy",
+      "reasoning": "Bacteria bcs `bakt` ; [#/area] bcs the unit `/sunf` (per field) signifies a count per microscopic field ; in Urine sediment by Microscopy bcs this is the context for reporting per field.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2360,
+      "omop_concept_id": "1092248",
+      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy",
+      "reasoning": "Bacteria bcs `bakt` ; [#/area] bcs the unit `/sunfält` (per field) signifies a count per microscopic field ; in Urine sediment by Microscopy bcs this is the context for reporting per field.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2361,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs the code is generic with no unit, suggesting a qualitative observation ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2362,
+      "omop_concept_id": "1761482",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs `LongName` specifies 'aluslasiviljely' (slide culture), which yields a semi-quantitative colony count ; by Culture bcs `LongName` ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2363,
+      "omop_concept_id": "3031040",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs the `value_deciles` are consistent with a quantitative particle count ; in Urine bcs `U-` prefix ; by Automated count bcs this is the likely method for this type of result.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2364,
+      "omop_concept_id": "3031040",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs unit `e6/l` ; in Urine bcs `U-` prefix ; by Automated count bcs this is the standard method for this quantitative test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2365,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `u-baktbv` lacks a unit and value distribution. The property cannot be determined.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2366,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakteeri` ; [Presence] bcs the code is generic and lacks quantitative information ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2367,
+      "omop_concept_id": "3031040",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
+      "reasoning": "Bacteria bcs `bakteerit` ; [#/volume] bcs unit `e6/l` ; in Urine bcs `U-` prefix ; by Automated count as this is the standard method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2368,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Although the code `u-bakteerit` implies a quantitative count, this row has no unit or values, so the property cannot be confirmed.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2369,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix. The `e` in `baktevi` stands for 'erikoisviljely' (special culture), which is a type of culture for identification, best mapped to the standard concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2370,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-baktjvi` with `LongName` 'Bakteeri, jatkoviljely' specifies a bacterial subculture from urine. LOINC does not typically model subcultures as separate observable entities. This is a laboratory process step.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2371,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-baktjvi.` specifies a bacterial subculture from urine. LOINC does not typically model subcultures as separate observable entities. This is a laboratory process step.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2372,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs `-la` suffix likely stands for 'laatu' (quality), indicating a qualitative test ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2373,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `baktlm` (`lm` for `lajimääritys`, species identification) is the result of a culture ; by Culture bcs this is the context for species ID in urine ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2374,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-baktnim` (`nim` for `nimi`/name or `nimike`/item) appears to be an administrative code, not a clinical observation.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2375,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs `-s` suffix stands for 'seulonta' (screening), which is a qualitative test ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2376,
+      "omop_concept_id": "36304419",
+      "omop_concept_name": "Bacteria [Presence] in Urine",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs `seu` in the name stands for 'seulonta' (screening), a qualitative test ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2377,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-baktsjvi` is ambiguous. It could be a combination of 'screening' and 'subculture', or a typo. It cannot be mapped reliably.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2378,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakttun` (`tun` for `tunnistus`, identification) is the result of a culture ; by Culture bcs this is the context for identification in urine ; in Urine bcs `U-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2379,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-v` is interpreted as a typo for `-vi` (culture) ; in Urine bcs `U-` prefix.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2380,
+      "omop_concept_id": "1761482",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs the unit `e6` implies a count per volume (10^6 per Liter) ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2381,
+      "omop_concept_id": "1761482",
+      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
+      "reasoning": "Bacteria bcs `bakt` ; [#/volume] bcs the unit `e6/l` is a count per volume ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2382,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs the unit `form` implies identification of a specific organism ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2383,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix and `LongName` (viljely) ; in Urine bcs `U-` prefix. The high number of records with no values indicates a qualitative identification result.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2384,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix. The trailing slash is noise.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2385,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix. The suffix `/oma` is a local modifier not affecting the core test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2386,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix. The suffix `2` indicates a secondary or different type of culture, but is best mapped to the general identification concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2387,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified bcs `bakt` ; by Culture bcs `-vi` suffix ; in Urine bcs `U-` prefix. The suffix `vtk` is a local modifier not affecting the core test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2388,
+      "omop_concept_id": "3015736",
+      "omop_concept_name": "pH of Urine",
+      "reasoning": "pH bcs `happamuus` means acidity ; of Urine bcs `U-` prefix. The `value_deciles` are in the typical range for urine pH.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2389,
+      "omop_concept_id": "1092182",
+      "omop_concept_name": "Bacteria [Presence] in Urine sediment by Microscopy",
+      "reasoning": "Bacteria bcs `bakt` ; [Presence] bcs this is a qualitative microscopy finding ; in Urine sediment by Microscopy bcs `U-sakka` (urine sediment) is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2390,
+      "omop_concept_id": "1091601",
+      "omop_concept_name": "Epithelial cells [#/area] in Urine sediment",
+      "reasoning": "Epithelial cells bcs `epit` ; [#/area] bcs this is a microscopy finding from sediment, typically reported per field (`value_deciles` are consistent) ; in Urine sediment bcs `U-sakka` is specified.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2391,
+      "omop_concept_id": "3035124",
+      "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Erythrocytes bcs `eryt` ; [#/area] bcs unit `u/field` ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is the recommended top-2000 target.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2392,
+      "omop_concept_id": "3035124",
+      "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Erythrocytes bcs `eryt` ; [#/area] assumed for microscopy of sediment ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is the recommended top-2000 target.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2393,
+      "omop_concept_id": "3035583",
+      "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Leukocytes bcs `leuk` ; [#/area] bcs unit `u/field` ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is the recommended top-2000 target.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2394,
+      "omop_concept_id": "3035583",
+      "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Leukocytes bcs `leuk` ; [#/area] assumed for microscopy of sediment ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is the recommended top-2000 target.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2395,
+      "omop_concept_id": "3009292",
+      "omop_concept_name": "Casts [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Casts bcs `lier` (lieriö) ; [#/area] assumed for microscopy of sediment ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is the recommended top-2000 target.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2396,
+      "omop_concept_id": "43055190",
+      "omop_concept_name": "Macrophages [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Macrophages bcs `makrof` ; [#/area] assumed for microscopy of sediment ; in Urine sediment by Microscopy high power field bcs `U-sakka` implies sediment microscopy and this is a specific concept that fits.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2397,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-sakka,muuta` means 'other findings in urine sediment'. This is too non-specific to be mapped to a standard concept.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2398,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-solut,muut` means 'other cells in urine'. This is too non-specific to be mapped to a standard concept.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2399,
+      "omop_concept_id": "3008037",
+      "omop_concept_name": "Lactate [Moles/volume] in Venous blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Venous blood bcs `vB-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2400,
+      "omop_concept_id": "3008037",
+      "omop_concept_name": "Lactate [Moles/volume] in Venous blood",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs the `value_deciles` are in the typical range for mmol/L ; in Venous blood bcs `vB-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2401,
+      "omop_concept_id": "3005491",
+      "omop_concept_name": "Lactate [Moles/volume] in Plasma venous",
+      "reasoning": "Lactate bcs `laktaat` ; [Moles/volume] bcs unit `mmol/l` and consistent `value_deciles` ; in Plasma venous bcs `vP-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2402,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row for `vp-laktaat` lacks a unit and value distribution. The property could be Moles/volume or Mass/volume, and without this information, a specific LOINC concept cannot be chosen.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted primarily of patient-level (`Pt-`) investigation codes, which are orders for panels or procedures. The mappings were generally successful where a suitable panel or study concept was available. \n\n**Successes:** Most spirometry, semen analysis, and cardiac imaging codes (`echocardiography`, `stress echo`, `stress study`) found good matches in the candidate list. The Finnish abbreviations like `syd` (heart), `ras` (stress), `uä` (ultrasound), `sper` (semen), and `fvs`/`spiro` (spirometry) were quite clear.\n\n**Challenges & Gaps:**\n*   **Specificity:** For `pt-sper-1/2/3`, which represent different levels of semen analysis ('limited', 'extensive'), a single general `Semen analysis panel` had to be used. Similarly, for spirometry with a bronchodilator (`pt-spirob`), a specific panel was not available, forcing a mapping to the general `Spirometry panel`. These are acceptable generalizations but lose some detail.\n*   **Missing Concepts:** Several codes could not be mapped because the candidate list lacked a suitable concept. `pt-st-temp` (Thermal sensory threshold test), `pt-sydperg`, and `pt-sydperq` (Myocardial perfusion study) are clear examples where the local code is identifiable, but the search did not return the correct LOINC panel/procedure. A future search should specifically look for panels related to 'thermal sensory testing' and 'myocardial perfusion study'."
+  "reflection": "This group was large and covered two main areas: lactate measurements and bacteriology. \n\n**Lactate tests** were generally easy to map. The Finnish prefixes (`aB`, `vB`, `fP`, `Li`, etc.) corresponded well to LOINC specimens (Arterial blood, Venous blood, Plasma, CSF). The unit `mmol/l` and value distributions reliably indicated the `[Moles/volume]` property. Rows without units or values were left unmapped as the property (moles vs. mass) could not be determined.\n\n**Bacteriology tests** were more complex. \n- **Cultures (`-vi`)**: These were mostly straightforward, mapping to 'Bacteria identified in [Specimen] by Culture'. Specimen prefixes (`B-`, `Li-`, `Ex-`, `Pu-`, etc.) were key. Some culture panels (`f-baktvi1`) had exact LOINC matches, while others (`f-baktvi2`) did not. For `pu-baktvi1/2`, the `LongName` provided crucial detail about 'deep' vs 'surface' pus, allowing mapping to 'Abscess' and 'Wound' respectively.\n- **Stains (`-vr`)**: These were difficult. The candidate list often lacked generic stain concepts. I mapped `li-baktvr` (CSF) and `pf-baktvr` (pleural) to their respective 'Microscopic observation by Gram stain' concepts, as Gram stain is the standard method in these contexts. However, more generic codes like `-baktvr` were unmappable.\n- **Subcultures (`-jvi`)**: Codes for subculture (e.g., `b-baktjvi`, `u-baktjvi`) are common in the source data but represent a laboratory workflow step (re-culturing from a primary positive plate) that doesn't have a direct equivalent LOINC concept for a reportable result. These were left unmapped.\n- **Urine bacteriology**: This was a varied set. I distinguished between quantitative automated counts (`u-bakt` with values or `e6/l` unit), qualitative screens (`u-baktseu`), microscopy of sediment (`u-sakka,bakt`), and cultures (`u-baktvi`). The evidence in each row (unit, values, name qualifiers) was essential for differentiation.\n\nOverall, the candidate list was very good for the common tests but had gaps for less common specimens (e.g., nucleic acid test in periodontal pocket) or methods (generic stains, subcultures). The provided `LongName` and prefix/suffix meanings were invaluable."
 }

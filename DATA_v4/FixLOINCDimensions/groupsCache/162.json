@@ -1,768 +1,460 @@
 {
   "rows": [
     {
-      "row_id": 1841,
-      "omop_concept_id": "40757349",
-      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
-      "reasoning": "CD4/CD8 ratio bcs TEST_NAME `-cd4-solujensuhdecd8-soluihin` means 'ratio of cd4 cells to cd8 cells' ; [# Ratio] bcs `suhde` (ratio) in name and deciles are typical for a ratio around 1 ; in Blood bcs this is a standard blood immunology test.",
+      "row_id": 2623,
+      "omop_concept_id": "3028615",
+      "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
+      "reasoning": "Eosinophils bcs TEST_NAME contains `eosinofiilit` ; [#/volume] bcs UNIT is `e9/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-` and name `b-diffiosatutkimus` (blood differential) ; by Automated count bcs this is the standard method for a differential count and the concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1842,
+      "row_id": 2624,
+      "omop_concept_id": "3028615",
+      "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
+      "reasoning": "Eosinophils bcs TEST_NAME contains `eosinofiilit` ; [#/volume] bcs this is the standard property for this test ; in Blood bcs TEST_NAME has prefix `b-` and name `b-diffiosatutkimus` (blood differential) ; by Automated count bcs this is the standard method for a differential count and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2625,
+      "omop_concept_id": "3007238",
+      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood by Automated count",
+      "reasoning": "Nucleated erythrocytes bcs TEST_NAME contains `erybla`, an abbreviation for erythroblasts ; [#/volume] bcs UNIT is `e9/l` ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the typical method and a LOINC Top 2000 concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2626,
+      "omop_concept_id": "3009055",
+      "omop_concept_name": "F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "F5 gene mutations found bcs TEST_NAME is `b-hyytymistekijävgeeni,dna-tutkimus` (blood coagulation factor V gene, DNA study) ; in Blood or Tissue bcs TEST_NAME has prefix `b-` (blood) ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2627,
+      "omop_concept_id": "3046498",
+      "omop_concept_name": "JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "JAK2 gene p.Val617Phe [Presence] bcs TEST_NAME is `b-jak2-geeninmutaatio,dna-tutkimus` (JAK2 gene mutation, DNA study) and the p.Val617Phe mutation is the overwhelmingly common target for this test, and the concept is in the LOINC Top 2000 ; in Blood or Tissue bcs TEST_NAME has prefix `b-` (blood) ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2628,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains `laktaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2629,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains `laktaatti` ; [Moles/volume] bcs this is the standard property for this test ; in Blood bcs TEST_NAME has prefix `b-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2630,
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs TEST_NAME is `b-laktoosi-intoleranssi,dna-tutkimus` (lactose intolerance, DNA study), which tests for mutations in the LCT gene ; in Blood or Tissue bcs TEST_NAME has prefix `b-` ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2631,
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs TEST_NAME is `b-laktoosimalabsorptioonliityvägeenimuutos,dna` (gene change related to lactose malabsorption, DNA), which tests for mutations in the LCT gene ; in Blood or Tissue bcs TEST_NAME has prefix `b-` ; by Molecular genetics method bcs TEST_NAME includes `dna`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2632,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiili` ; [#/volume] bcs UNIT is `e9/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2633,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiili` ; [#/volume] bcs this is the standard property ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2634,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiilit` ; [#/volume] bcs UNIT is `e9/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method for a differential count (`b-diffiosatutkimus`) and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2635,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiilit` ; [#/volume] bcs UNIT is `e9/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2636,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiilit` ; [#/volume] bcs this is the standard property ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2637,
+      "omop_concept_id": "3013650",
+      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
+      "reasoning": "Neutrophils bcs TEST_NAME contains `neutrofiilit` ; [#/volume] bcs UNIT is `e9/l` and values are in a plausible range ; in Blood bcs TEST_NAME has prefix `b-` ; by Automated count bcs this is the standard method and the concept is in the LOINC Top 2000.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2638,
+      "omop_concept_id": "3025008",
+      "omop_concept_name": "F2 gene c.20210G>A [Genotype] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "F2 gene c.20210G>A [Genotype] bcs TEST_NAME is `b-protrombiinigeeni,dna-tutkimus` (prothrombin gene/F2, DNA study) and c.20210G>A is the standard mutation tested, and this concept is in the LOINC Top 2000 ; in Blood or Tissue bcs TEST_NAME has prefix `b-` ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2639,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test is Kt/V dialysis adequacy (`-kt/v,daugirdaksenkaava`), a standard measure, but no matching LOINC concept was present in the candidate list.",
+      "reasoning": "The test is for general exfoliative cytology (`irtosolututkimus`) of bronchial fluid (`bf-bronkuserite`). No candidate concept for general cytology of bronchial fluid was available; candidates were for specific cell types (e.g., epithelial cells) or different specimens.",
       "certainty": ""
     },
     {
-      "row_id": 1843,
-      "omop_concept_id": "40758434",
-      "omop_concept_name": "Fungus [Presence] in Specimen by KOH preparation",
-      "reasoning": "Fungus bcs `sieni` ; [Presence] bcs this is a qualitative test ; in Specimen bcs not specified ; by KOH preparation bcs `natiivivalmiste` (native preparation) implies direct microscopic examination like a wet mount or KOH prep.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1844,
-      "omop_concept_id": "3008152",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Arterial blood",
-      "reasoning": "Bicarbonate bcs `aktuaalibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Arterial blood bcs of the `ab-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1845,
-      "omop_concept_id": "3008152",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Arterial blood",
-      "reasoning": "Bicarbonate bcs `aktuaalibikarbonaatti` ; [Moles/volume] is the standard property for this measurement ; in Arterial blood bcs of the `ab-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1846,
-      "omop_concept_id": "3020891",
-      "omop_concept_name": "Body temperature",
-      "reasoning": "Body temperature bcs TEST_NAME is `lämpötila` (temperature) and deciles are around 37 `aste` (degrees). The `ab-` prefix indicates it was measured in the context of an arterial blood gas test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1847,
-      "omop_concept_id": "3014218",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Arterial blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Arterial blood bcs of the `ab-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1848,
-      "omop_concept_id": "3014218",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Arterial blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] is the standard property for this measurement ; in Arterial blood bcs of the `ab-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1849,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1850,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1851,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs `angiotensiini-1-konvertaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs it is the standard specimen for this test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1852,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs `angiotensiini-1-konvertaasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs it is the standard specimen for this test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1853,
+      "row_id": 2640,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-diffi,erittelylaskenta,klooni` requests a clonality assessment in a blood differential. This is likely a morphological search for a clonal population. The available candidate concepts relate to molecular genetics methods, which may not be equivalent. No clear match found.",
+      "reasoning": "The test is for general exfoliative cytology (`irtosolututkimus`) of bronchial secretion (`bronkuserite`). No candidate concept for general cytology of bronchial fluid was available; candidates were for specific cell types or different specimens.",
       "certainty": ""
     },
     {
-      "row_id": 1854,
-      "omop_concept_id": "3004490",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Capillary blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Capillary blood bcs of the `cb-` prefix.",
+      "row_id": 2641,
+      "omop_concept_id": "3049410",
+      "omop_concept_name": "CYP2D6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "CYP2D6 gene targeted mutation analysis bcs TEST_NAME is `cyp2d6-geeninvariaatiot,dna-tutkimus` (CYP2D6 gene variations, DNA study) ; in Blood or Tissue bcs the test is pharmacogenetic and typically performed on blood ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
       "certainty": "high"
     },
     {
-      "row_id": 1855,
-      "omop_concept_id": "3004490",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Capillary blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] is the standard property for this measurement ; in Capillary blood bcs of the `cb-` prefix.",
+      "row_id": 2642,
+      "omop_concept_id": "3046976",
+      "omop_concept_name": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "DPYD gene mutations found bcs TEST_NAME is `dpyd-geeninvarianttientutkimusverestä` (DPYD gene variants study from blood) ; in Blood or Tissue bcs TEST_NAME includes `verestä` (from blood) ; by Molecular genetics method bcs it is a gene variant study.",
       "certainty": "high"
     },
     {
-      "row_id": 1856,
-      "omop_concept_id": "40771025",
-      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
-      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `d-vitamiini-25-oh,d3-jad2-muodot` explicitly names D3 and D2 forms ; [Moles/volume] bcs UNIT is `nmol/l` and deciles are in the typical range ; in Serum or Plasma bcs this is the standard specimen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1857,
-      "omop_concept_id": "40771025",
-      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
-      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `d-vitamiini-25-oh` is the common name for the total 25-OH vitamin D test which measures both D2 and D3 forms ; [Moles/volume] bcs UNIT is `nmol/l` and deciles are in the typical range ; in Serum or Plasma bcs TEST_NAME specifies `plasmasta` (from plasma).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1858,
+      "row_id": 2643,
       "omop_concept_id": "3019897",
       "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-punasolujenkokojakaum` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "reasoning": "Erythrocyte [DistWidth] bcs TEST_NAME is `e-rdw` (Erythrocyte Red cell Distribution Width) ; in Blood bcs this is a standard blood count parameter ; by Automated count bcs RDW is always calculated by an automated analyzer, and this concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1859,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-punasolujenkokojakaum` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to a % unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2644,
+      "omop_concept_id": "3039049",
+      "omop_concept_name": "Pharmacogenetic DNA analysis panel",
+      "reasoning": "Pharmacogenetic DNA analysis panel bcs TEST_NAME is `farmakogeneettinenpaneeli,dna-tutkimusverestä` (pharmacogenetic panel, DNA study from blood). The concept is a direct match for a pharmacogenetic panel.",
       "certainty": "high"
     },
     {
-      "row_id": 1860,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-punasolujenkokojakauma` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2645,
+      "omop_concept_id": "3039049",
+      "omop_concept_name": "Pharmacogenetic DNA analysis panel",
+      "reasoning": "Pharmacogenetic DNA analysis panel bcs TEST_NAME is `farmakogeneettinenpaneelitutkimus` (pharmacogenetic panel study). The concept is a direct match for a pharmacogenetic panel.",
       "certainty": "high"
     },
     {
-      "row_id": 1861,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-punasolujenkokojakauma` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to a % unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2646,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `gynegologinenirtosolututkimus` (gynecological exfoliative cytology study), which is a Pap smear.",
       "certainty": "high"
     },
     {
-      "row_id": 1862,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-rdw,punasolujenkokojakauma` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2647,
+      "omop_concept_id": "3966445",
+      "omop_concept_name": "Human papilloma virus cytology and high-risk genotypes panel - Cervix",
+      "reasoning": "Human papilloma virus cytology and high-risk genotypes panel bcs TEST_NAME specifies both HPV testing and cytology (`hpvnho+tarvnestepapa`, HPV screening + LBC Pap if necessary), which corresponds to this panel ; in Cervix bcs this is a gynecological sample.",
       "certainty": "high"
     },
     {
-      "row_id": 1863,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `e-rdw,punasolujenkokojakauma` means erythrocyte size distribution (RDW) ; property is implicit in DistWidth component which corresponds to a % unit ; in Blood bcs `e-` prefix ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2648,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `gynekologinenirtosolututkimus` (gynecological exfoliative cytology study), which is a Pap smear.",
       "certainty": "high"
     },
     {
-      "row_id": 1864,
-      "omop_concept_id": "3044889",
-      "omop_concept_name": "12 lead EKG panel",
-      "reasoning": "12 lead EKG panel bcs `ekg` is the standard name for this procedure. The qualifier `hoitoyksikön ottama` (taken by care unit) describes context, not the test itself.",
+      "row_id": 2649,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `gynekologinenirtosolututkimus,seulonta` (gynecological exfoliative cytology study, screening), which is a Pap smear.",
       "certainty": "high"
     },
     {
-      "row_id": 1865,
-      "omop_concept_id": "3044889",
-      "omop_concept_name": "12 lead EKG panel",
-      "reasoning": "12 lead EKG panel bcs `ekg` is the standard name for this procedure. The qualifier `asiakkaan ottama` (taken by customer) describes context, not the test itself.",
+      "row_id": 2650,
+      "omop_concept_id": "3009055",
+      "omop_concept_name": "F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "F5 gene mutations found bcs TEST_NAME is `hyytymistekijävgeeni,dna-tutkimus` (coagulation factor V gene, DNA study) ; in Blood or Tissue bcs the test is typically performed on blood ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
       "certainty": "high"
     },
     {
-      "row_id": 1866,
+      "row_id": 2651,
+      "omop_concept_id": "40758358",
+      "omop_concept_name": "Immune stain study",
+      "reasoning": "Immune stain study bcs TEST_NAME `immunohistokemiallinentutkimus` is a direct translation of immunohistochemical study.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2652,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `erikoislääkärinkonsultaatio` means 'specialist physician consultation', which is an administrative or procedural code, not a laboratory measurement.",
+      "reasoning": "TEST_NAME `k-vitamiinitk1jak2,pakettitutkimus` is a panel for Vitamin K1 and K2. There is no candidate concept for a Vitamin K1 and K2 panel.",
       "certainty": ""
     },
     {
-      "row_id": 1867,
-      "omop_concept_id": "3019309",
-      "omop_concept_name": "Folate [Moles/volume] in Red Blood Cells",
-      "reasoning": "Folate bcs `folaatti` ; [Moles/volume] bcs UNIT is `nmol/l` ; in Red Blood Cells bcs the decile values (1456-2775) are characteristic of RBC folate, not serum folate.",
+      "row_id": 2653,
+      "omop_concept_id": "3002431",
+      "omop_concept_name": "Phytonadione [Mass/volume] in Serum or Plasma",
+      "reasoning": "Phytonadione bcs TEST_NAME `k1-vitamiini(fyllokinoni)` identifies Vitamin K1 (phylloquinone/phytonadione) ; [Mass/volume] bcs UNIT is `ug/l` and values are in a plausible range ; in Serum or Plasma bcs it is a standard chemistry test.",
       "certainty": "high"
     },
     {
-      "row_id": 1868,
-      "omop_concept_id": "3019309",
-      "omop_concept_name": "Folate [Moles/volume] in Red Blood Cells",
-      "reasoning": "Folate bcs `folaatti` ; [Moles/volume] is the standard property for this measurement ; in Red Blood Cells bcs `fe-folaat` likely indicates erythrocyte folate, which is the only form with values in the thousands of nmol/l.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1869,
-      "omop_concept_id": "3003458",
-      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Phosphate bcs `fosfaatti,epäorgaaninen` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1870,
-      "omop_concept_id": "3003458",
-      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Phosphate bcs `fosfaatti,epäorgaaninen` ; [Moles/volume] is the standard property for this measurement ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1871,
-      "omop_concept_id": "3003458",
-      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Phosphate bcs `fosfaatti,epäorgaaninen` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1872,
-      "omop_concept_id": "3003458",
-      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Phosphate bcs `fosfaatti,epäorgaaninen` ; [Moles/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1873,
-      "omop_concept_id": "3000067",
-      "omop_concept_name": "Parathyrin.intact [Mass/volume] in Serum or Plasma",
-      "reasoning": "Parathyrin.intact bcs `parathormoni(intakti)` ; [Mass/volume] bcs UNIT is `ng/l` ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1874,
-      "omop_concept_id": "3000067",
-      "omop_concept_name": "Parathyrin.intact [Mass/volume] in Serum or Plasma",
-      "reasoning": "Parathyrin.intact bcs `parathormoni,intakti` ; [Mass/volume] bcs UNIT is `ng/l` ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1875,
-      "omop_concept_id": "3010566",
-      "omop_concept_name": "Parathyrin.intact [Moles/volume] in Serum or Plasma",
-      "reasoning": "Parathyrin.intact bcs `parathormoni,intakti` ; [Moles/volume] bcs UNIT is `pmol/l` ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1876,
-      "omop_concept_id": "3000067",
-      "omop_concept_name": "Parathyrin.intact [Mass/volume] in Serum or Plasma",
-      "reasoning": "Parathyrin.intact bcs `parathormoni,intakti` ; [Mass/volume] bcs this is a common property for PTH and the sibling rows use `ng/l` ; in Serum or Plasma bcs the `fp-` prefix indicates Fasting Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1877,
-      "omop_concept_id": "3011985",
-      "omop_concept_name": "Renin [Units/volume] in Plasma",
-      "reasoning": "Renin bcs `reniini` ; [Units/volume] bcs `konsentraatio` is specified and UNIT is `mu/l` ; in Plasma bcs of the `fp-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1878,
-      "omop_concept_id": "3011985",
-      "omop_concept_name": "Renin [Units/volume] in Plasma",
-      "reasoning": "Renin bcs `reniini` ; [Units/volume] is the property consistent with `mu/l` used in the sibling row ; in Plasma bcs of the `fp-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1879,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name `fras,oksidatiivinenstressi` refers to a specific proprietary assay system (Free Radical Analytical System) for which no standard LOINC concept was found in the candidate list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1880,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` ; in Serum or Plasma bcs the `fs-` prefix indicates Fasting Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1881,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs `angiotensiini-1-konvertaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `fs-` prefix indicates Fasting Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1882,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs `angiotensiini-1-konvertaasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `fs-` prefix indicates Fasting Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1883,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "This code, `fs-monikanava4-7tthperuspaketti`, refers to a 'multichannel occupational health basic package', which is a locally defined panel with no standard LOINC equivalent.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1884,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "This code, `fs-työterveyshuollonperuspaketti`, refers to an 'occupational health basic package', which is a locally defined panel with no standard LOINC equivalent.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1885,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `ilmajohtotarv.luujohto` means 'air conduction, if needed bone conduction'. This describes a conditional workflow for audiometry testing rather than a single, standard test panel. No single candidate concept accurately represents this.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1886,
-      "omop_concept_id": "36031861",
-      "omop_concept_name": "Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Panel for Influenza, SARS-CoV-2, and RSV bcs `korona-rs-influenssa` ; RNA panel by NAA bcs `pcrpikatesti` (rapid PCR test) implies a nucleic acid amplification method ; in Respiratory system specimen bcs this is the standard specimen for these viruses.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1887,
-      "omop_concept_id": "3007220",
-      "omop_concept_name": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Creatine kinase bcs `kreatiinikinaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1888,
-      "omop_concept_id": "3013869",
-      "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Basophils/Leukocytes bcs `l-basofiilit` means basophils as a fraction of leukocytes ; property is a number fraction, which corresponds to the `%` unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1889,
-      "omop_concept_id": "3010457",
-      "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Eosinophils/Leukocytes bcs `l-eosinofiilit` means eosinophils as a fraction of leukocytes ; property is a number fraction, which corresponds to the `%` unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1890,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs `l-lymfosyytit` means lymphocytes as a fraction of leukocytes ; property is a number fraction, which corresponds to the `%` unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1891,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs `l-lymfosyytit` means lymphocytes as a fraction of leukocytes ; property is a number fraction, which corresponds to a % unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1892,
-      "omop_concept_id": "3011948",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Monocytes/Leukocytes bcs `l-monosyytit` means monocytes as a fraction of leukocytes ; property is a number fraction, which corresponds to the `%` unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1893,
-      "omop_concept_id": "3011948",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Monocytes/Leukocytes bcs `l-monosyytit` means monocytes as a fraction of leukocytes ; property is a number fraction, which corresponds to a % unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1894,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Neutrophils/Leukocytes bcs `l-neutrofiilit` means neutrophils as a fraction of leukocytes ; property is a number fraction, which corresponds to the `%` unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1895,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Neutrophils/Leukocytes bcs `l-neutrofiilit` means neutrophils as a fraction of leukocytes ; property is a number fraction, which corresponds to a % unit ; in Blood bcs `l-` prefix refers to leukocytes in blood ; by Automated count bcs `automaatio` is in the name.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1896,
-      "omop_concept_id": "3016436",
-      "omop_concept_name": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Lactate dehydrogenase bcs `laktaattidehydrogenaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs it is the default specimen when not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1897,
-      "omop_concept_id": "3016293",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Bicarbonate bcs `aktuaalinenbikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1898,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkaalinenfosfataasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1899,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkaalinenfosfataasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1900,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1901,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1902,
-      "omop_concept_id": "3005772",
-      "omop_concept_name": "Bilirubin.conjugated [Moles/volume] in Serum or Plasma",
-      "reasoning": "Bilirubin.conjugated bcs `bilirubiinikonjugaatit` ; [Moles/volume] bcs UNIT is `umol/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1903,
-      "omop_concept_id": "3005772",
-      "omop_concept_name": "Bilirubin.conjugated [Moles/volume] in Serum or Plasma",
-      "reasoning": "Bilirubin.conjugated bcs `bilirubiinikonjugaatit` ; [Moles/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1904,
-      "omop_concept_id": "3003458",
-      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
-      "reasoning": "Phosphate bcs `fosfaatti,epäorgaaninen` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1905,
-      "omop_concept_id": "3007220",
-      "omop_concept_name": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Creatine kinase bcs `kreatiinikinaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1906,
-      "omop_concept_id": "3007220",
-      "omop_concept_name": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Creatine kinase bcs `kreatiinikinaasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1907,
-      "omop_concept_id": "3016436",
-      "omop_concept_name": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Lactate dehydrogenase bcs `laktaattidehydrogenaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1908,
-      "omop_concept_id": "3016436",
-      "omop_concept_name": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Lactate dehydrogenase bcs `laktaattidehydrogenaasi` ; [Enzymatic activity/volume] is the standard property for this measurement ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1909,
-      "omop_concept_id": "3027184",
-      "omop_concept_name": "Lupus anticoagulant [Interpretation] in Platelet poor plasma",
-      "reasoning": "Lupus anticoagulant [Interpretation] bcs `lupusantikoagulantti` is an interpretive test ; in Platelet poor plasma bcs the `p-` prefix indicates Plasma, and PPP is the required specimen for this test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1910,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psavapaanosuustotaalista` means 'free PSA portion of total' ; property is a ratio implicit in the component, matching the `%` unit and deciles ; in Serum or Plasma bcs the `p-` prefix indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1911,
-      "omop_concept_id": "3020779",
-      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma",
-      "reasoning": "Urea bcs `urea` ; [Moles/volume] bcs UNIT is `mmol/l` ; in Serum or Plasma bcs the `p-` prefix indicates Plasma ; the context `resirkulaatio` (recirculation) does not change the analyte measured.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1912,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psa-vapaa/totaali-suhde` means 'PSA free/total ratio' ; property is a ratio implicit in the component, matching the `%` unit and deciles ; in Serum or Plasma bcs `plasmasta` indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1913,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psa-vapaa/totaali-suhde` means 'PSA free/total ratio' ; property is a ratio implicit in the component, corresponding to a % unit ; in Serum or Plasma bcs `plasmasta` indicates Plasma.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1914,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psavapaanjatotaalinsuhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, matching the `%` unit ; in Serum or Plasma bcs this is the standard specimen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1915,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psavapaanjatotaalinsuhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, corresponding to a % unit ; in Serum or Plasma bcs this is the standard specimen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1916,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `pt-vaativainhalaatiohoito` means 'demanding inhalation therapy', which is a therapeutic procedure, not a laboratory measurement.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1917,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkokojakauma` means red cell size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1918,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkokojakauma` means red cell size distribution (RDW) ; property is implicit in DistWidth component which corresponds to a % unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1919,
-      "omop_concept_id": "40761509",
-      "omop_concept_name": "Erythrocyte morphology panel - Blood",
-      "reasoning": "Erythrocyte morphology panel bcs `punasolujenerittelylaskenta` means 'red blood cell differential count', which involves assessing and reporting on multiple morphological features ; in Blood bcs this is a standard blood smear examination.",
+      "row_id": 2654,
+      "omop_concept_id": "3002431",
+      "omop_concept_name": "Phytonadione [Mass/volume] in Serum or Plasma",
+      "reasoning": "Phytonadione bcs TEST_NAME `k1-vitamiini(fyllokinoni)` identifies Vitamin K1 (phylloquinone/phytonadione) ; [Mass/volume] bcs this is the standard property for this test ; in Serum or Plasma bcs it is a standard chemistry test.",
       "certainty": "medium"
     },
     {
-      "row_id": 1920,
-      "omop_concept_id": "40761509",
-      "omop_concept_name": "Erythrocyte morphology panel - Blood",
-      "reasoning": "Erythrocyte morphology panel bcs `punasolujenerittelylaskenta` means 'red blood cell differential count', which involves assessing and reporting on multiple morphological features ; in Blood bcs this is a standard blood smear examination.",
+      "row_id": 2655,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Vitamin K2, specifically menaquinone-4 (`menakinoni-4(mk4)`). No candidate concept for menaquinone-4 was available. The closest, for Menadione (K3), is incorrect.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2656,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Vitamin K2, specifically menaquinone-4 (`menakinoni-4(mk4)`). No candidate concept for menaquinone-4 was available. The closest, for Menadione (K3), is incorrect.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2657,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Vitamin K2, specifically menaquinone-7 (`menakinoni-7(mk7)`). No candidate concept for menaquinone-7 was available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2658,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Vitamin K2, specifically menaquinone-7 (`menakinoni-7(mk7)`). No candidate concept for menaquinone-7 was available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2659,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains `laktaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and values are in a plausible range ; in Blood bcs TEST_NAME includes `verestä` (from blood).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2660,
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs TEST_NAME is `laktoosi-intoleranssi,dna-tutkimus` (lactose intolerance, DNA study), which tests for mutations in the LCT gene ; in Blood or Tissue bcs this is a standard genetic test from blood ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2661,
+      "omop_concept_id": "40762031",
+      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
+      "reasoning": "LCT gene mutations found bcs TEST_NAME is `laktoosi-intoleranssi,dna-tutkimus,verestä` (lactose intolerance, DNA study, from blood), which tests for mutations in the LCT gene ; in Blood or Tissue bcs TEST_NAME includes `verestä` (from blood) ; by Molecular genetics method bcs TEST_NAME includes `dna-tutkimus`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2662,
+      "omop_concept_id": "40771570",
+      "omop_concept_name": "Coagulation specialist review of results",
+      "reasoning": "Coagulation specialist review of results bcs TEST_NAME is `lausunto,hemostaasi-jatrombosyyttitutkimukset` (interpretation, hemostasis and thrombocyte studies), which is a specialist review of coagulation results.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2663,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME `mikrobiologianerikoistutkimuk` (microbiology special study) is too generic and administrative to be mapped to a specific LOINC concept.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2664,
+      "omop_concept_id": "3033521",
+      "omop_concept_name": "Obstetric 1996 panel - Serum and Blood",
+      "reasoning": "Obstetric 1996 panel bcs TEST_NAME `neuvola1,äitiysneuvolatutkimukset` (maternity clinic 1, maternity clinic studies) refers to a standard panel of tests for the first antenatal visit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2665,
+      "omop_concept_id": "3020059",
+      "omop_concept_name": "Calcium [Moles/volume] corrected for albumin in Serum or Plasma",
+      "reasoning": "Calcium corrected for albumin bcs TEST_NAME is `p-ca-albk` and `laskennallinentutkimus` (calculated study) ; [Moles/volume] bcs UNIT is `mmol/l` and values are plausible ; in Serum or Plasma bcs prefix is `p-` (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2666,
+      "omop_concept_id": "3023383",
+      "omop_concept_name": "Lactate [Moles/volume] in Pleural fluid",
+      "reasoning": "Lactate bcs TEST_NAME contains `laktaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and values are in a plausible range ; in Pleural fluid bcs TEST_NAME has prefix `pf-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2667,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for general exfoliative cytology (`irtosolututkimus`) of pleural fluid (`pleuraneste`). No candidate concept for general cytology of pleural fluid was available; candidates were for quantitative cell counts.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2668,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `pt-gynegologinenirtosolututkimus` (patient-level gynecological exfoliative cytology study), which is a Pap smear.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2669,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `pt-gynekologinenirtosolututkimus` (patient-level gynecological exfoliative cytology study), which is a Pap smear.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2670,
+      "omop_concept_id": "3043090",
+      "omop_concept_name": "Cervical AndOr vaginal cytology study",
+      "reasoning": "Cervical AndOr vaginal cytology study bcs TEST_NAME is `pt-gynekologinenirtosolututkimus,seulonta` (patient-level gynecological exfoliative cytology study, screening), which is a Pap smear.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2671,
+      "omop_concept_id": "3016888",
+      "omop_concept_name": "Borrelia burgdorferi IgG Ab [Units/volume] in Serum",
+      "reasoning": "Borrelia burgdorferi IgG Ab bcs TEST_NAME is `s-borrelia,vasta-aineetigg` (serum borrelia antibodies IgG) ; [Units/volume] bcs UNIT is `au/ml` and values are present ; in Serum bcs TEST_NAME prefix is `s-`. The term `varmistustutkimus` (confirmation test) suggests a specific method like immunoblot, but no such quantitative candidate was available. This concept correctly identifies component, property, and system without specifying a potentially incorrect method.",
       "certainty": "medium"
     },
     {
-      "row_id": 1921,
-      "omop_concept_id": "3001490",
-      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood",
-      "reasoning": "Nucleated erythrocytes bcs `punasolujen esiasteet (erytroblastit)` (red cell precursors/erythroblasts) are also known as nucleated RBCs ; [#/volume] bcs UNIT is `e9/l` ; in Blood bcs this is a peripheral blood measurement.",
+      "row_id": 2672,
+      "omop_concept_id": "3016888",
+      "omop_concept_name": "Borrelia burgdorferi IgG Ab [Units/volume] in Serum",
+      "reasoning": "Borrelia burgdorferi IgG Ab bcs TEST_NAME is `s-borrelia,vasta-aineetigg` (serum borrelia antibodies IgG) ; [Units/volume] bcs this is a quantitative antibody test ; in Serum bcs TEST_NAME prefix is `s-`. The term `varmistustutkimus` (confirmation test) suggests a specific method like immunoblot, but no such quantitative candidate was available. This concept correctly identifies component, property, and system without specifying a potentially incorrect method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2673,
+      "omop_concept_id": "3008230",
+      "omop_concept_name": "Borrelia burgdorferi IgM Ab [Units/volume] in Serum",
+      "reasoning": "Borrelia burgdorferi IgM Ab bcs TEST_NAME is `s-borrelia,vasta-aineetigm` (serum borrelia antibodies IgM) ; [Units/volume] bcs UNIT is `au/ml` and values are present ; in Serum bcs TEST_NAME prefix is `s-`. The term `varmistustutkimus` (confirmation test) suggests a specific method like immunoblot, but no such quantitative candidate was available. This concept correctly identifies component, property, and system without specifying a potentially incorrect method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2674,
+      "omop_concept_id": "3008230",
+      "omop_concept_name": "Borrelia burgdorferi IgM Ab [Units/volume] in Serum",
+      "reasoning": "Borrelia burgdorferi IgM Ab bcs TEST_NAME is `s-borrelia,vasta-aineetigm` (serum borrelia antibodies IgM) ; [Units/volume] bcs this is a quantitative antibody test ; in Serum bcs TEST_NAME prefix is `s-`. The term `varmistustutkimus` (confirmation test) suggests a specific method like immunoblot, but no such quantitative candidate was available. This concept correctly identifies component, property, and system without specifying a potentially incorrect method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2675,
+      "omop_concept_id": "3035962",
+      "omop_concept_name": "HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay",
+      "reasoning": "HIV 1+2 Ab [Presence] bcs TEST_NAME is `s-hi-virus,vasta-aineet` (serum HI-virus antibodies) ; in Serum or Plasma bcs TEST_NAME prefix is `s-` (Serum) ; by Immunoassay bcs this is the standard screening method and the concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1922,
-      "omop_concept_id": "3001490",
-      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood",
-      "reasoning": "Nucleated erythrocytes bcs `punasolujen esiasteet (erytroblastit)` (red cell precursors/erythroblasts) are also known as nucleated RBCs ; [#/volume] is the standard property for this count ; in Blood bcs this is a peripheral blood measurement.",
+      "row_id": 2676,
+      "omop_concept_id": "44816563",
+      "omop_concept_name": "Monoclonal band observed [Identifier] in Serum or Plasma by Immunofixation",
+      "reasoning": "Monoclonal band observed bcs the purpose of immunofixation is to identify monoclonal proteins ; by Immunofixation bcs TEST_NAME is `s-immunofiksaatiotutkimus` ; in Serum or Plasma bcs prefix is `s-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1923,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkokojakauma` means red cell size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2677,
+      "omop_concept_id": "40761539",
+      "omop_concept_name": "Cells [Type] in Urine sediment by Light microscopy",
+      "reasoning": "Cells [Type] bcs TEST_NAME is `sytologinenirtosolututkimus` (cytological exfoliative cell study) ; in Urine sediment bcs TEST_NAME includes `virtsasta` (from urine) ; by Light microscopy bcs cytology is performed by light microscopy.",
       "certainty": "high"
     },
     {
-      "row_id": 1924,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkokojakauma` means red cell size distribution (RDW) ; property is implicit in DistWidth component which corresponds to a % unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2678,
+      "omop_concept_id": "36203795",
+      "omop_concept_name": "Cancer pathology panel - Breast cancer specimen by CAP cancer protocols",
+      "reasoning": "Cancer pathology panel - Breast cancer specimen bcs TEST_NAME is `ts-rintasyövänennustekijätutkimus` (tissue breast cancer prognostic factor study). This LOINC concept represents the standard pathology panel for breast cancer.",
       "certainty": "high"
     },
     {
-      "row_id": 1925,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkokojakautuma` means red cell size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2679,
+      "omop_concept_id": "3001019",
+      "omop_concept_name": "Free T4 and TSH panel - Serum or Plasma",
+      "reasoning": "Free T4 and TSH panel bcs TEST_NAME `tyreotropiinirefleksointitutkimus` is a TSH reflex test, which typically reflexes to Free T4. While not a true reflex concept, this panel represents the analytes measured and is the closest available candidate.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2680,
+      "omop_concept_id": "3035350",
+      "omop_concept_name": "Ketones [Presence] in Urine by Test strip",
+      "reasoning": "Ketones [Presence] bcs TEST_NAME is `u-asetoniaineet(kval)` (urine acetone bodies, qualitative) ; in Urine bcs prefix is `u-` ; by Test strip bcs it is a qualitative `osatutkimus` (part of a larger study), typical for urine dipsticks, and the concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1926,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolujenkoonvaihtelu` means red cell size variation (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2681,
+      "omop_concept_id": "36303442",
+      "omop_concept_name": "Epithelial cells [#/volume] in Urine by Automated",
+      "reasoning": "Epithelial cells bcs TEST_NAME is `u-epiteelisolut` ; [#/volume] bcs UNIT is `e6/l` and values are plausible ; in Urine bcs prefix is `u-` ; by Automated bcs this is the standard method for urine particle analysis.",
       "certainty": "high"
     },
     {
-      "row_id": 1927,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte [DistWidth] bcs `punasolut, kokojakauma` means red cells, size distribution (RDW) ; property is implicit in DistWidth component which corresponds to the `%` unit ; in Blood bcs this is a blood count parameter ; by Automated count bcs this is a standard CBC parameter.",
+      "row_id": 2682,
+      "omop_concept_id": "36303442",
+      "omop_concept_name": "Epithelial cells [#/volume] in Urine by Automated",
+      "reasoning": "Epithelial cells bcs TEST_NAME is `u-epiteelisolut` ; [#/volume] bcs this is the standard property for this quantitative test ; in Urine bcs prefix is `u-` ; by Automated bcs this is the standard method for urine particle analysis.",
       "certainty": "high"
     },
     {
-      "row_id": 1928,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase bcs `alkalinenfosfataasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
+      "row_id": 2683,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel - Urine by Screen method bcs TEST_NAME `u-laajahuume-jalääkeainetutkimus` means 'broad drug and medicine study in urine', which corresponds to a drug screen panel.",
       "certainty": "high"
     },
     {
-      "row_id": 1929,
-      "omop_concept_id": "3028564",
-      "omop_concept_name": "Alkaline phosphatase isoenz panel - Serum or Plasma",
-      "reasoning": "Alkaline phosphatase isoenz panel bcs `alkalinenfosfataasi,isoentsyymit` means alkaline phosphatase, isoenzymes ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
+      "row_id": 2684,
+      "omop_concept_id": "3014051",
+      "omop_concept_name": "Protein [Presence] in Urine by Test strip",
+      "reasoning": "Protein [Presence] bcs TEST_NAME is `u-proteiini(kval)` (urine protein, qualitative) ; in Urine bcs prefix is `u-` ; by Test strip bcs it is a qualitative `osatutkimus` (part of a larger study), typical for urine dipsticks, and the concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1930,
-      "omop_concept_id": "42528887",
-      "omop_concept_name": "GlycA [Moles/volume] in Serum or Plasma",
-      "reasoning": "GlycA bcs this is the common name for the glycoprotein acetylation signal measured by NMR, matching `glykoproteiininasetylaatio` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles match known ranges ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
+      "row_id": 2685,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Specific gravity bcs TEST_NAME is `u-suhteellinentiheys` (urine relative density) and values are in the typical range for specific gravity ; in Urine bcs prefix is `u-` ; by Test strip bcs it is an `osatutkimus` (part of a study), typical for urine dipsticks, and the concept is in the LOINC Top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1931,
-      "omop_concept_id": "3028531",
-      "omop_concept_name": "Enolase.neuron specific [Mass/volume] in Serum or Plasma",
-      "reasoning": "Enolase.neuron specific bcs `neuronispesifinen enolaasi` ; [Mass/volume] bcs UNIT is `ug/l` ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
+      "row_id": 2686,
+      "omop_concept_id": "40761539",
+      "omop_concept_name": "Cells [Type] in Urine sediment by Light microscopy",
+      "reasoning": "Cells [Type] bcs TEST_NAME is `u-virtsanirtosolututkimus` (urine exfoliative cell study) ; in Urine sediment bcs prefix `u-` indicates urine ; by Light microscopy bcs cytology is performed by light microscopy.",
       "certainty": "high"
     },
     {
-      "row_id": 1932,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `s-nightingale-mittaus` refers to the proprietary Nightingale Health NMR metabolomics platform, not a standard LOINC test or panel.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1933,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psavapaanjatotaalinsuhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, matching the `%` unit and deciles ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1934,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `psavapaanjatotaalinsuhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, corresponding to a % unit ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1935,
-      "omop_concept_id": "3045066",
-      "omop_concept_name": "Thymidine kinase [Enzymatic activity/volume] in Serum",
-      "reasoning": "Thymidine kinase bcs `tymidiinikinaasi` ; [Enzymatic activity/volume] bcs UNIT is `u/l` and deciles are in the typical range ; in Serum bcs the `s-` prefix indicates Serum and the concept is specific to Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1936,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `vapaan ja kokonais-psa:n suhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, matching the `%` unit and deciles ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1937,
-      "omop_concept_id": "3001784",
-      "omop_concept_name": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma",
-      "reasoning": "Prostate Specific Ag Free/Prostate specific Ag.total bcs `vapaan ja kokonais-psa:n suhde` means 'ratio of free and total PSA' ; property is a ratio implicit in the component, corresponding to a % unit ; in Serum or Plasma bcs the `s-` prefix indicates Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1938,
-      "omop_concept_id": "36661376",
-      "omop_concept_name": "Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Panel for Influenza A/B and SARS-CoV-2 bcs `sars-cov-2,influenssaa,bja` ; RNA panel by NAA is the method for this combination ; in Respiratory system specimen bcs this is the standard specimen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1939,
-      "omop_concept_id": "723477",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs `sars-cov-2-antigeenitesti` ; [Presence] bcs this is a qualitative test ; in Respiratory system specimen bcs this is the standard specimen ; by Rapid immunoassay bcs `pikatesti` (rapid test).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1940,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `tth-pakettia(ilmanpaastoa)` refers to an 'occupational health package (non-fasting)', which is a locally defined panel with no standard LOINC equivalent.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1941,
-      "omop_concept_id": "3043821",
-      "omop_concept_name": "Protein and Glucose panel - Urine by Test strip",
-      "reasoning": "Protein and Glucose panel bcs `virtsan prot ja gluk` means urine protein and glucose ; in Urine bcs `virtsan` ; by Test strip bcs this combination is a standard dipstick test, often used in occupational health (`tth:ssa`).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1942,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `u-solut, peruslaskenta` (urine cells, basic count) is ambiguous. It could refer to a panel of different cell counts, just leukocytes, or a total cell count. No single candidate concept is a definitive match.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1943,
-      "omop_concept_id": "3027273",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Venous blood",
-      "reasoning": "Bicarbonate bcs `aktuaalibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Venous blood bcs of the `vb-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1944,
-      "omop_concept_id": "3027273",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Venous blood",
-      "reasoning": "Bicarbonate bcs `aktuaalibikarbonaatti` ; [Moles/volume] bcs deciles are consistent with mmol/l unit ; in Venous blood bcs of the `vb-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1945,
-      "omop_concept_id": "3007628",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Venous blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Venous blood bcs of the `vb-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1946,
-      "omop_concept_id": "3007628",
-      "omop_concept_name": "Bicarbonate [Moles/volume] standard in Venous blood",
-      "reasoning": "Bicarbonate.standard bcs `standardibikarbonaatti` ; [Moles/volume] is the standard property for this measurement ; in Venous blood bcs of the `vb-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1947,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `virtsansolujenhl7-siirtoon` means 'for HL7 transfer of urine cells', which describes a data handling purpose, not a laboratory test.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1948,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `virtsansolujenhl7-siirtoon` means 'for HL7 transfer of urine cells', which describes a data handling purpose, not a laboratory test.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1949,
-      "omop_concept_id": "1616794",
-      "omop_concept_name": "Bicarbonate [Moles/volume] in Central venous blood",
-      "reasoning": "Bicarbonate bcs `aktuaalibikarbonaatti` ; [Moles/volume] bcs UNIT is `mmol/l` and deciles are in the typical range ; in Central venous blood bcs of the `zb-` prefix (for central blood).",
+      "row_id": 2687,
+      "omop_concept_id": "40761539",
+      "omop_concept_name": "Cells [Type] in Urine sediment by Light microscopy",
+      "reasoning": "Cells [Type] bcs TEST_NAME is `virtsanirtosolututkimus` (urine exfoliative cell study) ; in Urine sediment bcs the name specifies `virtsan` (of urine) ; by Light microscopy bcs cytology is performed by light microscopy.",
       "certainty": "high"
     }
   ],
-  "reflection": "This group was a good mix of standard laboratory tests and unmappable local codes. The standard tests, particularly for blood gases (bicarbonate), routine chemistry (ALP, CK, LDH, ACE), and hematology (differential counts, RDW), were generally easy to map with high certainty. The Finnish prefixes for specimen (`ab-`, `vb-`, `p-`, `s-`, etc.) were extremely reliable guides. Quantitative evidence (`UNIT` and `deciles`) was crucial for distinguishing mass from mole units (for PTH) and confirming specimen (RBC folate vs serum folate).\n\nSeveral codes could not be mapped because they were not laboratory tests, but rather administrative codes (`erikoislääkärinkonsultaatio`), procedure codes (`pt-vaativainhalaatiohoito`), or local panel definitions (`tth-peruspaketti`). The code for Kt/V dialysis adequacy was identifiable, but the correct LOINC concept was missing from the candidate list, indicating a gap in the search retrieval for that item.\n\nA few codes like `u-solut, peruslaskenta` (urine cells, basic count) were too ambiguous to map confidently, as 'basic count' isn't specific enough to distinguish between a panel, a total count, or just a leukocyte count. Overall, the evidence provided was sufficient for making confident decisions for the majority of rows."
+  "reflection": "This was a diverse group with a mix of routine chemistry, hematology, genetics, and cytology. The mappings were generally successful. Many local codes mapped well to specific, Top 2000 LOINC concepts, especially for common hematology (Eosinophils, Neutrophils) and genetic tests (F5, F2, JAK2, LCT). \n\nThe main challenge was the lack of appropriate candidates for some tests. Specifically:\n- Cytology tests for bronchial fluid (rows 2639, 2640) and pleural fluid (row 2667) could not be mapped because the candidate list only contained quantitative cell counts, not general cytology/pathology review concepts for those specimens.\n- Vitamin K2 tests (rows 2655-2658) for menaquinone-4 and menaquinone-7 had no matching candidates; the available concept was for Vitamin K3 (menadione).\n- A panel for Vitamin K1 and K2 (row 2652) was also missing a candidate.\n\nFor Borrelia confirmation tests (2671-2674), the local name specified a 'confirmation test' (`varmistustutkimus`), which strongly implies immunoblot. However, no quantitative immunoblot candidate was available. I chose the concept with the correct component/property/system but an unspecified method, which felt like the safest and most accurate choice given the options.\n\nFor the TSH reflex test (row 2679), no true reflex LOINC was available, so I mapped it to the panel of the involved analytes (TSH and Free T4) as a pragmatic solution."
 }

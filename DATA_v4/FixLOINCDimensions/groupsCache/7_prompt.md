@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,45 +115,42 @@ Here is group 7.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum | 0.962 | 384 |
-| 3046870 | Tissue transglutaminase IgG Ab [Units/volume] in Serum | 0.955 | 529 |
-| 3046538 | Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay | 0.929 | 1948 |
-| 647325 | Tissue transglutaminase IgG Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.928 |  |
-| 40759657 | Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay | 0.924 | 530 |
-| 3036688 | Tissue transglutaminase IgM Ab [Units/volume] in Serum | 0.917 |  |
-| 3036637 | Gluten IgG Ab [Units/volume] in Serum | 0.878 |  |
-| 3037820 | Gliadin IgA Ab [Units/volume] in Serum | 0.877 | 878 |
-| 647093 | Tissue transglutaminase IgA Ab [Measurement] in Serum | 0.872 |  |
-| 3003966 | Gliadin IgG Ab [Units/volume] in Serum | 0.869 | 1637 |
-| 646194 | Tissue transglutaminase IgG Ab [Measurement] in Serum | 0.867 |  |
-| 3015174 | Gliadin IgA Ab [Units/volume] in Serum by Immunoassay | 0.860 | 694 |
-| 646545 | Gliadin IgG Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.840 |  |
-| 3017726 | Gliadin Ab [Units/volume] in Serum | 0.822 | 1663 |
+| 3046870 | Tissue transglutaminase IgG Ab [Units/volume] in Serum | 0.981 | 529 |
+| 3019050 | Tissue transglutaminase IgA Ab [Units/volume] in Serum | 0.980 | 384 |
+| 647325 | Tissue transglutaminase IgG Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.959 |  |
+| 40759657 | Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay | 0.952 | 530 |
+| 3046538 | Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay | 0.947 | 1948 |
+| 3036688 | Tissue transglutaminase IgM Ab [Units/volume] in Serum | 0.942 |  |
+| 647093 | Tissue transglutaminase IgA Ab [Measurement] in Serum | 0.898 |  |
+| 646194 | Tissue transglutaminase IgG Ab [Measurement] in Serum | 0.898 |  |
+| 3033171 | Tissue transglutaminase IgA Ab [Presence] in Serum by Immunoassay | 0.873 |  |
+| 3030555 | Tissue transglutaminase IgA Ab [Presence] in Serum | 0.868 |  |
+| 3041421 | Tissue transglutaminase IgG Ab [Presence] in Serum | 0.857 |  |
+| 3041414 | Tissue transglutaminase Ab [Presence] in Serum | 0.855 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 95% | name+unit+values | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.81, 1.01, 1.43] |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum or Plasma |
-| 2 | kudostransglutaminaasi,iga-vasta-aineet |  | 5% | name | 36 | 100 |  |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum or Plasma |
-| 3 | kudostransglutaminaasi,iga-vasta-aineet,seerumista |  | 100% | name | 134 | 100 |  |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 4 | kudostransglutaminaasi,igavasta-aineet | u/ml | 53% | name+unit+values | 70 | 0 | [0.2, 0.3, 0.3, 0.4, 0.5, 0.6, 0.75, 1.05, 2.8] |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum or Plasma |
-| 5 | kudostransglutaminaasi,igavasta-aineet |  | 47% | name | 62 | 100 |  |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum or Plasma |
-| 6 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 25% | name+unit | 169 | 0 |  |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 7 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ |  | 75% | name | 508 | 100 |  |  |  |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 8 | kudostransglutaminaasi,igg-vasta-aineet |  | 100% | name | 131 | 100 |  |  |  |  | Transglutaminase IgG Ab [Units/volume] in Serum or Plasma |
-| 9 | s-kudostransglutaminaasi,iga-vasta-aineet | u/ml | 11% | name+unit | 36 | 0 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 10 | s-kudostransglutaminaasi,iga-vasta-aineet |  | 89% | name | 300 | 100 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 11 | s-kudostransglutaminaasi,iga-vasta-aineetosatutk. |  | 100% | name | 426 | 100 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 12 | s-kudostransglutaminaasi,igavasta-aineet | eliau/ml | 0% | name+unit | 10 | 0 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 13 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 39% | name+unit+values | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.77, 0.99, 1.51] |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 14 | s-kudostransglutaminaasi,igavasta-aineet |  | 61% | name | 3189 | 99.94 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 15 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) | u/ml | 3% | name+unit | 5 | 0 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 16 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 97% | name | 149 | 100 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 17 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 100% | name | 118 | 100 |  |  | Serum |  | Transglutaminase IgA Ab [Units/volume] in Serum |
-| 18 | s-kudostransglutaminaasi,iggva(keliakia) |  | 100% | name | 133 | 100 |  |  | Serum |  | Transglutaminase IgG Ab [Units/volume] in Serum |
-| 19 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 0% | name+unit | 6 | 0 |  |  | Serum |  | Transglutaminase IgG Ab [Units/volume] in Serum |
-| 20 | s-kudostransglutaminaasi,iggvasta-aineet |  | 100% | name | 2026 | 100 |  |  | Serum |  | Transglutaminase IgG Ab [Units/volume] in Serum |
-| 21 | s-transglutaminaasivasta-aineet | u/ml | 3% | name+unit | 12 | 0 |  |  | Serum |  | Transglutaminase Ab [Units/volume] in Serum |
-| 22 | s-transglutaminaasivasta-aineet |  | 97% | name | 454 | 100 |  |  | Serum |  | Transglutaminase Ab [Units/volume] in Serum |
+| 1 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 95% | name+unit+values | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.69, 0.8, 1.03, 1.41] |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum or Plasma |
+| 2 | kudostransglutaminaasi,iga-vasta-aineet |  | 5% | name | 36 | 100 |  |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum or Plasma |
+| 3 | kudostransglutaminaasi,iga-vasta-aineet,seerumista |  | 100% | name | 134 | 100 |  |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 4 | kudostransglutaminaasi,igavasta-aineet | u/ml | 53% | name+unit+values | 70 | 0 | [0.2, 0.3, 0.3, 0.4, 0.5, 0.6, 0.75, 1.05, 2.8] |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum or Plasma |
+| 5 | kudostransglutaminaasi,igavasta-aineet |  | 47% | name | 62 | 100 |  |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum or Plasma |
+| 6 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 25% | name+unit+values | 169 | 0 | [1, 1.1, 1.2, 1.3, 1.54, 1.7, 2.09, 3, 9.07] |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 7 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ |  | 75% | name | 508 | 100 |  |  |  |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 8 | kudostransglutaminaasi,igg-vasta-aineet |  | 100% | name | 131 | 100 |  |  |  |  | Tissue transglutaminase Ab.IgG [Units/volume] in Serum or Plasma |
+| 9 | s-kudostransglutaminaasi,iga-vasta-aineet | u/ml | 11% | name+unit | 36 | 0 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 10 | s-kudostransglutaminaasi,iga-vasta-aineet |  | 89% | name | 300 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 11 | s-kudostransglutaminaasi,iga-vasta-aineetosatutk. |  | 100% | name | 426 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 12 | s-kudostransglutaminaasi,igavasta-aineet | eliau/ml | 0% | name+unit | 10 | 0 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 13 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 39% | name+unit+values | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.76, 0.99, 1.52] |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 14 | s-kudostransglutaminaasi,igavasta-aineet |  | 61% | name | 3189 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 15 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 100% | name | 149 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 16 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 100% | name | 118 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 17 | s-kudostransglutaminaasi,iggva(keliakia) |  | 100% | name | 133 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgG [Units/volume] in Serum |
+| 18 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 0% | name+unit | 6 | 0 |  |  | Serum |  | Tissue transglutaminase Ab.IgG [Units/volume] in Serum |
+| 19 | s-kudostransglutaminaasi,iggvasta-aineet |  | 100% | name | 2026 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgG [Units/volume] in Serum |
+| 20 | s-transglutaminaasivasta-aineet | u/ml | 3% | name+unit | 12 | 0 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
+| 21 | s-transglutaminaasivasta-aineet |  | 97% | name | 454 | 100 |  |  | Serum |  | Tissue transglutaminase Ab.IgA [Units/volume] in Serum |
 

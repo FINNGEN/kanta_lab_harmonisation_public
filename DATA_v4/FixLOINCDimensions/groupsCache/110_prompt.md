@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,225 +115,414 @@ Here is group 110.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3019724 | CD34 cells [#/volume] in Blood | 0.983 |  |
-| 3011412 | CD3 cells [#/volume] in Blood | 0.954 | 427 |
-| 3020358 | CD16+CD56+ cells [#/volume] in Blood | 0.945 | 1410 |
-| 3012302 | CD16C+CD56+ cells [#/volume] in Blood | 0.939 |  |
-| 3010503 | CD19 cells [#/volume] in Blood | 0.939 | 1127 |
-| 36303864 | CD3+CD45+ cells [#/volume] in Blood | 0.931 |  |
-| 36305673 | CD3-CD45+ cells [#/volume] in Blood | 0.921 |  |
-| 3032382 | CD3+TCR alpha beta+ cells [#/volume] in Blood | 0.914 |  |
-| 3028167 | CD3+CD4+ (T4 helper) cells [#/volume] in Blood | 0.913 | 515 |
-| 3025271 | CD3-CD16+CD56+ (Natural killer) cells [#/volume] in Blood | 0.910 |  |
-| 44816730 | CD34 cells [#/volume] in Specimen | 0.907 |  |
-| 3045389 | CD34 cells [#/volume] in Blood from Blood product unit | 0.906 |  |
-| 40757349 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood | 0.905 | 362 |
-| 1469655 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchoalveolar lavage by Flow cytometry (FC) | 0.905 |  |
-| 36304682 | CD19+IgM+ cells [#/volume] in Blood | 0.904 |  |
-| 3032842 | CD3+CD16+CD56+ cells [#/volume] in Blood | 0.903 |  |
-| 36305810 | CD19+CD27+IgD+IgM+ cells [#/volume] in Blood | 0.901 |  |
-| 3019424 | CD4+CD45+ cells [#/volume] in Blood | 0.900 |  |
-| 3013936 | CD3+HLA-DR+ cells [#/volume] in Blood | 0.899 |  |
-| 36304345 | CD19+21- cells [#/volume] in Blood | 0.899 |  |
-| 3029962 | CD19+Lambda+ cells [#/volume] in Blood | 0.896 |  |
-| 36303647 | CD19+CD27+IgD-IgM- cells [#/volume] in Blood | 0.896 |  |
-| 36305872 | CD19+CD27+IgD-IgM+ cells [#/volume] in Blood | 0.895 |  |
-| 40762032 | CD34 cells [#/volume] in Body fluid | 0.894 |  |
-| 3029900 | CD19+Kappa+ cells [#/volume] in Blood | 0.892 |  |
-| 36303696 | CD19+CD27+ cells [#/volume] in Blood | 0.891 |  |
-| 3043219 | CD3 cells/CD4 cells [# Ratio] in Specimen | 0.891 |  |
-| 3023256 | CD34 cells/cells in Blood | 0.888 |  |
-| 36303232 | CD19+CD38+IgM- cells [#/volume] in Blood | 0.885 |  |
-| 3026471 | CD8+CD11b+ cells [#/volume] in Blood | 0.885 |  |
-| 21494814 | CD8 cells/Lymphocytes in Specimen | 0.885 |  |
-| 3000713 | CD3+IL2R1+ cells [#/volume] in Blood | 0.883 |  |
-| 1175635 | Transferrin.carbohydrate deficient.trisialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.882 |  |
-| 40762014 | CD4+CD45RO+ cells/CD3+CD4+ (T4 helper) cells [# Ratio] in Blood | 0.879 |  |
-| 3035120 | CD16 cells [#/volume] in Blood | 0.878 |  |
-| 3026757 | CD56 cells [#/volume] in Blood | 0.877 |  |
-| 3034238 | Transferrin.carbohydrate deficient.disialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.877 |  |
-| 3018500 | CD3-CD16+ cells [#/volume] in Blood | 0.876 |  |
-| 40763883 | CD8-CD57+ cells [#/volume] in Blood | 0.875 |  |
-| 3006178 | CD8+CD25+ cells [#/volume] in Blood | 0.875 |  |
-| 3016761 | CD8+CD57+ cells [#/volume] in Blood | 0.875 |  |
-| 3002234 | CD8+HLA-DR+ cells [#/volume] in Blood | 0.875 |  |
-| 36203592 | CD3+CD4+CD45RO+ cells [#/volume] in Blood | 0.874 |  |
-| 36032071 | CD34 cells [#] in Blood product unit | 0.871 |  |
-| 3020073 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Specimen | 0.871 |  |
-| 3019203 | CD3+CD26+ cells [#/volume] in Blood | 0.870 |  |
-| 3017295 | CD8+CD38+ cells [#/volume] in Blood | 0.869 |  |
-| 3015455 | CD16+CD56+ cells/cells in Blood | 0.869 | 1406 |
-| 3003048 | CD16+CD56+ cells [#/volume] in Specimen | 0.869 |  |
-| 21494815 | CD4 cells/Lymphocytes in Specimen | 0.869 |  |
-| 3019082 | CD3+CD56+ cells [#/volume] in Blood | 0.869 |  |
-| 3039219 | CD3-CD56+ cells [#/volume] in Blood | 0.866 |  |
-| 3035479 | CD8+CD95+ cells [#/volume] in Blood | 0.865 |  |
-| 3024672 | CD33 cells [#/volume] in Blood | 0.863 |  |
-| 3046399 | Transferrin.carbohydrate deficient.monosialo/Transferrin.carbohydrate deficient.disialo [Mass Ratio] in Serum or Plasma | 0.862 |  |
-| 3036413 | Transferrin.carbohydrate deficient.asialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.862 |  |
-| 3043266 | Transferrin.carbohydrate deficient.asialo/Transferrin.carbohydrate deficient.disialo [Mass Ratio] in Serum or Plasma | 0.862 |  |
-| 36203590 | CD3+CD8+CD45RO+ cells [#/volume] in Blood | 0.861 |  |
-| 3034458 | CD4+CD45RA+ cells/CD8 Cells [# Ratio] in Blood | 0.861 |  |
-| 3003410 | CD8+CD28+ cells [#/volume] in Blood | 0.860 |  |
-| 3026022 | CD4+HLA-DR+ cells [#/volume] in Blood | 0.856 |  |
-| 3045776 | CD4+CD45RO+ cells [#/volume] in Blood | 0.856 |  |
-| 3001405 | CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood | 0.856 | 441 |
-| 3019198 | Lymphocytes [#/volume] in Blood | 0.849 | 70 |
-| 3025059 | Transferrin.carbohydrate deficient [Mass/volume] in Serum or Plasma | 0.848 |  |
-| 1175426 | CD3 cells/Lymphocytes in Blood | 0.846 |  |
-| 3045450 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bronchial specimen | 0.844 |  |
-| 3010993 | CD3 cells [#/volume] in Specimen | 0.841 |  |
-| 3025183 | CD4+CD25+ cells [#/volume] in Blood | 0.840 |  |
-| 3011211 | CD41 cells [#/volume] in Blood | 0.840 |  |
-| 3023834 | CD24 cells [#/volume] in Blood | 0.839 |  |
-| 37021413 | CD3+CD4+ (T4 helper) cells [#/volume] in Blood by Rapid immunoassay | 0.838 |  |
-| 1092118 | CD19 cells/Lymphocytes in Blood | 0.837 |  |
-| 3035166 | CD4+CD95+ cells [#/volume] in Blood | 0.837 |  |
-| 1470025 | CD3+CD4+ (T4 helper) cells/Lymphocytes in Bronchoalveolar lavage by Flow cytometry (FC) | 0.836 |  |
-| 3045740 | CD56 cells/CD38 Cells [# Ratio] in Blood | 0.835 |  |
-| 3009722 | CD16C+CD56+ cells/cells in Blood | 0.834 |  |
-| 3014859 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Body fluid | 0.831 |  |
-| 3001694 | CD3+CD4+ (T4 helper) cells [#/volume] in Specimen | 0.826 | 602 |
-| 1091820 | CD3+HLA-DR+ cells/Lymphocytes in Bronchoalveolar lavage | 0.825 |  |
-| 3030044 | CD34 cells/100 cells in Blood from Blood product unit | 0.825 |  |
-| 3041326 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Tissue | 0.825 |  |
-| 3037816 | CD4+CD8+ cells/cells in Blood | 0.819 |  |
-| 1470003 | CD3 cells [#/volume] in Hematopoietic progenitor cells from Blood product unit | 0.819 |  |
-| 647458 | Viable cells.CD34 [#] in Blood product unit | 0.818 |  |
-| 36032412 | CD3 cells [#] in Blood product unit | 0.815 |  |
-| 3047843 | CD2+CD3+ cells [#/volume] in Specimen | 0.813 |  |
-| 3005268 | Transferrin.carbohydrate deficient [Units/volume] in Serum or Plasma | 0.809 |  |
-| 3026696 | CD34 cells/cells in Specimen | 0.809 |  |
-| 3049541 | CD25+CD127Low cells/CD4 cells [# Ratio] in Specimen | 0.808 |  |
-| 3052708 | Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma | 0.806 |  |
-| 3046367 | CD3+HLA-DR+ cells [#/volume] in Specimen | 0.804 |  |
-| 3014686 | CD3 cells/100 cells in Specimen | 0.803 |  |
-| 40763402 | Viable CD34 cells [#/volume] in Body fluid | 0.802 |  |
-| 3005533 | CD34+DR+ cells/100 cells in Blood | 0.802 |  |
-| 3965484 | CD3 cells [#/volume] in Blood from Donor | 0.802 |  |
-| 3047764 | CD33+CD34+ cells/100 cells in Blood | 0.801 |  |
-| 1092254 | CD3+CD25+ cells/Lymphocytes in Bronchoalveolar lavage | 0.801 |  |
-| 646278 | CD3 cells/Lymphocytes in Specimen by Flow cytometry (FC) | 0.800 |  |
-| 1469914 | CD3 cells/Lymphocytes in Bronchoalveolar lavage by Flow cytometry (FC) | 0.799 |  |
-| 3011065 | CD19+Lambda+ cells/100 cells in Blood | 0.798 | 1634 |
-| 1091665 | Lymphocytes [#/volume] in Specimen | 0.796 |  |
-| 46236971 | CD34 dose in hematopoietic progenitor cell transfusion [#/mass] per recipient body mass | 0.796 |  |
-| 1469804 | Lymphocytes/Cells in Bronchoalveolar lavage | 0.796 |  |
-| 3015209 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bone marrow | 0.795 |  |
-| 3016228 | CD19 cells/100 cells in Blood | 0.795 | 868 |
-| 1469794 | CD3+CD8+ (T8 suppressor) cells/Lymphocytes in Bronchoalveolar lavage by Flow cytometry (FC) | 0.793 |  |
-| 3027831 | CD3-CD16+CD56+ (Natural killer) cells/100 cells in Blood | 0.790 | 944 |
-| 3038211 | CD3+CD8+ (T8 suppressor) cells [#/volume] in Specimen | 0.788 |  |
-| 3000739 | CD3+CD4+ (T4 helper) cells/cells in Specimen | 0.788 |  |
-| 3003031 | Transferrin.carbohydrate deficient.disialo/Transferrin.total in Serum or Plasma | 0.786 |  |
-| 46236877 | CD8+CD3- cells/100 cells in Specimen | 0.786 |  |
-| 37020917 | Transferrin.carbohydrate deficient.disialo/Transferrin.total standardized per IFCC-RMP for CDT in Serum or Plasma | 0.785 |  |
-| 1616698 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Lower respiratory specimen by Flow cytometry (FC) | 0.784 |  |
-| 40760572 | Activated T cells lymphocytes/100 lymphocytes.small in Bronchoalveolar lavage | 0.767 |  |
-| 3022312 | CD3+CD25+ cells [#/volume] in Blood | 0.765 |  |
-| 44816733 | CD8+CD57+ cells/cells in Specimen | 0.765 |  |
-| 21493667 | Viable CD34 cells/CD34 cells in Hematopoietic progenitor cells from Blood product unit | 0.757 |  |
-| 36660486 | Leukocytes [#/volume] in Stem cell product | 0.752 |  |
-| 3012292 | CD4+CD29+ cells [#/volume] in Blood | 0.749 |  |
-| 3040697 | CD3+CD4+ (T4 helper) cells [#/volume] in Tissue | 0.744 |  |
+| 3003714 | Bacteria identified in Wound by Culture | 1.000 | 270 |
+| 3009986 | Bacteria identified in Catheter tip by Culture | 1.000 | 946 |
+| 3001684 | Respiratory syncytial virus Ag [Presence] in Specimen | 0.987 |  |
+| 3013978 | Campylobacter sp identified in Stool by Organism specific culture | 0.984 | 588 |
+| 36305818 | Shigella sp identified in Stool by Organism specific culture | 0.978 |  |
+| 3004716 | Salmonella sp identified in Stool by Organism specific culture | 0.972 |  |
+| 1469856 | Bacteria identified in Mother's milk by Culture | 0.951 |  |
+| 3026167 | Bacteria identified in Specimen by Environmental culture | 0.947 |  |
+| 3025892 | Trichomonas vaginalis Ag [Presence] in Genital specimen | 0.936 |  |
+| 1092302 | Bacteria identified in Surgical wound by Culture | 0.935 |  |
+| 3028433 | Virus identified in Specimen by Culture | 0.934 | 655 |
+| 3028371 | Actinomyces sp identified in Specimen by Organism specific culture | 0.933 |  |
+| 3043814 | Bacteria identified in Wound deep by Culture | 0.932 |  |
+| 3020426 | Respiratory syncytial virus Ag [Presence] in Specimen by Immunoassay | 0.932 | 881 |
+| 3053028 | Streptococcus sp identified in Specimen by Organism specific culture | 0.932 |  |
+| 3026389 | Candida sp identified in Specimen by Organism specific culture | 0.931 |  |
+| 3046983 | Nocardia sp identified in Specimen by Organism specific culture | 0.931 |  |
+| 3042645 | Salmonella and Shigella sp identified in Stool by Organism specific culture | 0.929 | 587 |
+| 3005444 | Respiratory syncytial virus Ag [Presence] in Specimen by Immunofluorescence | 0.926 | 1674 |
+| 1176221 | Bacteria identified in Catheter tip by Aerobe culture | 0.926 |  |
+| 1761492 | Campylobacter sp [Presence] in Stool by Organism specific culture | 0.923 |  |
+| 1175370 | Bacteria identified in Catheter tip by Anaerobe culture | 0.922 |  |
+| 3014940 | Shigella sp identified in Specimen by Organism specific culture | 0.922 |  |
+| 3002619 | Bacteria identified in Specimen by Culture | 0.917 | 39 |
+| 36304759 | Respiratory syncytial virus Ag [Presence] in Lower respiratory specimen by Immunofluorescence | 0.917 |  |
+| 46235760 | Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture | 0.915 |  |
+| 3025722 | Staphylococcus sp identified in Specimen by Organism specific culture | 0.911 |  |
+| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.910 | 337 |
+| 3013146 | Bacteria identified in Wound by Aerobe culture | 0.908 |  |
+| 3012568 | Campylobacter sp identified in Specimen by Organism specific culture | 0.907 |  |
+| 1091581 | Methicillin resistant Staphylococcus aureus [Presence] in Skin by Organism specific culture | 0.906 |  |
+| 3010254 | Herpes simplex virus identified in Specimen by Organism specific culture | 0.904 | 678 |
+| 1259757 | Campylobacter and Salmonella and Shigella sp identified in Stool by Organism specific culture | 0.903 |  |
+| 3021508 | Respiratory syncytial virus Ag [Presence] in Throat | 0.901 |  |
+| 3024328 | Herpes virus identified in Specimen by Organism specific culture | 0.899 |  |
+| 3032246 | Trichomonas vaginalis Ag [Presence] in Vaginal fluid | 0.898 |  |
+| 3046856 | Respiratory syncytial virus Ag [Presence] in Nose | 0.896 |  |
+| 3027150 | Campylobacter sp identified in Isolate by Organism specific culture | 0.895 |  |
+| 1175680 | Candida auris [Presence] in Specimen by Organism specific culture | 0.895 |  |
+| 3027969 | Bacteria identified in Wound by Anaerobe culture | 0.894 |  |
+| 3024522 | Salmonella sp identified in Specimen by Organism specific culture | 0.894 |  |
+| 40771500 | Respiratory syncytial virus Ag [Presence] in Nasopharynx by Immunoassay | 0.893 |  |
+| 1091847 | Trichomonas vaginalis [Presence] in Specimen | 0.892 |  |
+| 3027190 | Salmonella enteritidis [Presence] in Stool by Organism specific culture | 0.888 |  |
+| 43534059 | Respiratory syncytial virus Ag [Presence] in Nasopharynx by Rapid immunoassay | 0.888 |  |
+| 3023609 | Respiratory syncytial virus Ag [Presence] in Throat by Immunoassay | 0.887 |  |
+| 46236091 | Respiratory syncytial virus Ag [Presence] in Nasopharynx by Immunofluorescence | 0.886 |  |
+| 40758230 | Respiratory syncytial virus [Presence] in Specimen by Organism specific culture | 0.886 |  |
+| 1091323 | Fungus identified in Catheter tip by Culture | 0.884 |  |
+| 3004998 | Trichomonas vaginalis Ag [Presence] in Genital specimen by Immunoassay | 0.884 |  |
+| 3015479 | Mycobacterium sp identified in Blood by Organism specific culture | 0.884 | 1870 |
+| 37020439 | Respiratory syncytial virus [Presence] in Upper respiratory specimen by Organism specific culture | 0.884 |  |
+| 3005702 | Mycobacterium sp identified in Specimen by Organism specific culture | 0.883 | 425 |
+| 1091465 | Bacteria # 2 identified in Catheter tip by Aerobe culture | 0.880 |  |
+| 3020227 | Campylobacter sp identified in Blood by Organism specific culture | 0.880 |  |
+| 36305181 | Actinomyces sp identified in Tissue by Organism specific culture | 0.879 |  |
+| 3006418 | Campylobacter sp identified in Tissue by Organism specific culture | 0.879 |  |
+| 1259619 | Campylobacter and Salmonella and Shigella and Yersinia sp identified in Stool by Organism specific culture | 0.878 |  |
+| 3013430 | Campylobacter sp identified in Body fluid by Organism specific culture | 0.877 |  |
+| 37019563 | Respiratory syncytial virus [Presence] in Lower respiratory specimen by Organism specific culture | 0.876 |  |
+| 3042631 | Mycobacterium sp identified in Specimen | 0.876 |  |
+| 1091909 | Bacteria # 2 identified in Catheter tip by Anaerobe culture | 0.875 |  |
+| 1176155 | Actinomyces sp identified in Aspirate by Organism specific culture | 0.875 |  |
+| 3035133 | Fungus identified in Wound by Culture | 0.874 |  |
+| 3020635 | Virus # 2 identified in Specimen by Culture | 0.873 |  |
+| 1259916 | Salmonella and Shigella and Campylobacter and E. coli sp identified in Stool by Organism specific culture | 0.872 |  |
+| 3015409 | Nocardia sp identified in Isolate by Organism specific culture | 0.872 |  |
+| 1761558 | Vancomycin resistant enterococcus [Identifier] in Specimen by Organism specific culture | 0.870 |  |
+| 3023899 | Escherichia coli shiga-like toxin identified in Stool by Organism specific culture | 0.870 |  |
+| 3017227 | Bacteria identified in Wound deep by Anaerobe culture | 0.869 |  |
+| 3032530 | Salmonella and Shigella sp identified in Specimen by Organism specific culture | 0.869 |  |
+| 3018368 | Bacteria identified in Wound deep by Aerobe culture | 0.869 |  |
+| 3021732 | Shigella sp identified in Feed by Organism specific culture | 0.868 |  |
+| 3025633 | Candida sp identified in Saliva (oral fluid) by Organism specific culture | 0.868 |  |
+| 3012167 | Candida sp identified in Stool by Organism specific culture | 0.868 |  |
+| 3004178 | Mycobacterium sp identified in Urine by Organism specific culture | 0.867 |  |
+| 1091623 | Bacteria # 3 identified in Catheter tip by Anaerobe culture | 0.866 |  |
+| 1092431 | Bacteria # 3 identified in Catheter tip by Aerobe culture | 0.866 |  |
+| 42529408 | Campylobacter sp [Presence] in Stool by Culture | 0.866 |  |
+| 3044254 | Respiratory syncytial virus RNA [Presence] in Specimen by NAA with probe detection | 0.865 |  |
+| 3045560 | Bacteria # 2 identified in Specimen by Culture | 0.865 |  |
+| 3014536 | Streptococcus agalactiae Ag [Presence] in Throat | 0.864 |  |
+| 1092081 | Respiratory syncytial virus RNA [Presence] in Specimen by Molecular genetics method | 0.864 |  |
+| 3007473 | Trichomonas vaginalis Ag [Presence] in Genital specimen by Immunofluorescence | 0.863 |  |
+| 37020053 | Nocardia sp identified in Aspirate by Organism specific culture | 0.862 |  |
+| 3039355 | Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture | 0.862 |  |
+| 40765191 | Herpes simplex virus and Varicella zoster virus identified in Specimen by Organism specific culture | 0.862 |  |
+| 3043867 | Bacteria # 8 identified in Specimen by Culture | 0.862 |  |
+| 3044670 | Neisseria sp identified in Specimen by Organism specific culture | 0.862 |  |
+| 3036675 | Virus # 3 identified in Specimen by Culture | 0.862 |  |
+| 3005156 | Respiratory syncytial virus A RNA [Presence] in Specimen by NAA with probe detection | 0.861 |  |
+| 3045058 | Bacteria # 3 identified in Specimen by Culture | 0.860 |  |
+| 3046647 | Bacteria # 4 identified in Specimen by Culture | 0.860 |  |
+| 3015969 | Actinobacillus sp identified in Specimen by Organism specific culture | 0.859 |  |
+| 1176383 | Actinomyces sp identified in Lower respiratory specimen by Organism specific culture | 0.859 |  |
+| 3019902 | Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.858 | 146 |
+| 3028334 | Neisseria gonorrhoeae [Presence] in Specimen by Organism specific culture | 0.857 | 1609 |
+| 3044537 | Virus identified in Genital specimen by Culture | 0.857 |  |
+| 1176258 | Nocardia sp identified in Lower respiratory specimen by Organism specific culture | 0.857 |  |
+| 3045634 | Herpes simplex virus identified in Specimen by Shell vial culture | 0.857 |  |
+| 3028116 | Herpes simplex virus identified in Genital specimen by Organism specific culture | 0.856 |  |
+| 3046136 | Bacteria # 7 identified in Specimen by Culture | 0.856 |  |
+| 3005296 | Entamoeba histolytica [Presence] in Stool by Trichrome stain | 0.855 |  |
+| 3053312 | Staphylococcus aureus Panton-Valentine leukocidin gene [Presence] in Isolate or Specimen by Molecular genetics method | 0.855 |  |
+| 3044420 | Bacteria # 6 identified in Specimen by Culture | 0.855 |  |
+| 3051608 | Shigella sp [Presence] in Specimen by Organism specific culture | 0.855 |  |
+| 3024461 | Microorganism identified in Specimen by Culture | 0.854 |  |
+| 3004761 | Bacteria identified in Water by Culture | 0.853 |  |
+| 3042263 | Yeast identified in Genital specimen by Organism specific culture | 0.853 |  |
+| 3014137 | Bacteria identified in Wound shallow by Aerobe culture | 0.853 |  |
+| 3038154 | Virus identified in Tissue by Culture | 0.851 |  |
+| 42529406 | Shigella sp [Presence] in Stool by Culture | 0.851 |  |
+| 1469525 | Bacteria identified in Pus by Culture | 0.851 |  |
+| 3027247 | Bacteria identified in Specimen | 0.851 |  |
+| 3017339 | Salmonella sp identified in Tissue by Organism specific culture | 0.849 |  |
+| 3043578 | Bacteria # 5 identified in Specimen by Culture | 0.848 |  |
+| 3044790 | Chlamydia sp identified in Vaginal fluid by Organism specific culture | 0.848 |  |
+| 3001098 | Virus identified in Isolate by Culture | 0.848 |  |
+| 3043183 | Mycobacterium sp # 2 identified in Specimen by Organism specific culture | 0.848 |  |
+| 3005074 | Virus identified in Blood by Culture | 0.848 |  |
+| 3027244 | Fungus identified in Specimen by Environmental culture | 0.846 |  |
+| 3045340 | Mycobacterium sp # 4 identified in Specimen by Organism specific culture | 0.846 |  |
+| 3042975 | Streptococcus sp identified in Isolate by Organism specific culture | 0.846 |  |
+| 3006928 | Escherichia coli enterotoxic identified in Stool by Organism specific culture | 0.846 |  |
+| 3008871 | Neisseria gonorrhoeae [Presence] in Genital specimen by Organism specific culture | 0.846 |  |
+| 46236184 | Clostridium perfringens [Presence] in Specimen by Organism specific culture | 0.843 |  |
+| 1989444 | Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count | 0.843 |  |
+| 3028793 | Virus identified in Specimen | 0.841 |  |
+| 3047316 | Mycobacterium sp # 3 identified in Specimen by Organism specific culture | 0.841 |  |
+| 3023601 | Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture | 0.840 |  |
+| 3044978 | Mycobacterium sp # 5 identified in Specimen by Organism specific culture | 0.840 |  |
+| 3001465 | Band form neutrophils [#/volume] in Blood by Automated count | 0.839 |  |
+| 3043973 | Virus identified in Body fluid by Culture | 0.839 |  |
+| 1092208 | Mycobacterium sp identified in Stool by Organism specific culture | 0.838 |  |
+| 3027544 | Mycobacterium sp identified in Sputum by Organism specific culture | 0.838 |  |
+| 3013867 | Bacteria identified in Specimen by Aerobe culture | 0.838 | 276 |
+| 3044413 | Neisseria sp identified in Urethra by Organism specific culture | 0.838 | 3000 |
+| 3036393 | Herpes simplex virus identified in Tissue by Organism specific culture | 0.838 |  |
+| 1175708 | Actinomyces sp identified in Implanted device by Organism specific culture | 0.836 |  |
+| 1761890 | Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.836 |  |
+| 37019895 | Staphylococcus sp identified in Isolate by Organism specific culture | 0.834 |  |
+| 46236183 | Bacillus cereus [Presence] in Specimen by Organism specific culture | 0.834 |  |
+| 3025941 | Bacteria identified in Stool by Culture | 0.834 | 469 |
+| 37020336 | Herpes simplex virus identified in Aspirate by Organism specific culture | 0.834 |  |
+| 3035839 | Band form neutrophils/Leukocytes in Blood by Automated count | 0.834 |  |
+| 3043836 | Herpes virus identified in Specimen by Shell vial culture | 0.833 |  |
+| 3028072 | Vibrio sp identified in Stool by Organism specific culture | 0.833 |  |
+| 3035834 | Herpes simplex virus identified in Urine by Organism specific culture | 0.833 |  |
+| 21492393 | Bacteria identified in Implanted device by Culture | 0.833 |  |
+| 36659777 | Mycobacterial stain and culture panel - Specimen | 0.832 |  |
+| 36304786 | Virus identified in Lower respiratory specimen by Culture | 0.831 |  |
+| 1469798 | Fungus identified in Vaginal fluid by Culture | 0.831 |  |
+| 3024901 | Mycobacterium sp identified in Bronchial specimen by Organism specific culture | 0.830 |  |
+| 3009171 | Fungus identified in Blood by Culture | 0.829 | 1476 |
+| 646199 | Trichomonas vaginalis Ag [Measurement] in Genital specimen | 0.827 |  |
+| 3023368 | Bacteria identified in Blood by Culture | 0.826 | 131 |
+| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 0.826 | 1051 |
+| 1175764 | Mycobacterium sp identified in Specimen by Sequencing | 0.824 |  |
+| 40767123 | Mycobacterium sp [Presence] in Blood by Organism specific culture | 0.823 |  |
+| 3027809 | Neisseria gonorrhoeae [Presence] in Urethra by Organism specific culture | 0.822 | 3000 |
+| 36303984 | Clostridium botulinum [Presence] in Stool by Organism specific culture | 0.820 |  |
+| 3000494 | Fungus identified in Specimen by Culture | 0.820 | 328 |
+| 40762244 | Vancomycin resistant enterococcus [Presence] in Urine by Organism specific culture | 0.820 |  |
+| 1617249 | Fungus and Mycobacterium sp identified in Blood by Organism specific culture | 0.819 |  |
+| 3050209 | Cryptococcus sp identified in Specimen by Organism specific culture | 0.817 |  |
+| 3045744 | Candida sp identified in Vaginal fluid by Cyto stain | 0.817 |  |
+| 3013566 | Clostridioides difficile [Presence] in Stool by Organism specific culture | 0.816 |  |
+| 3014506 | Trichomonas vaginalis [Presence] in Genital specimen by Wet preparation | 0.816 | 824 |
+| 46235279 | Trichomonas vaginalis [Presence] in Specimen by Gram stain | 0.816 |  |
+| 1175365 | Mycobacterium sp identified in Lower respiratory specimen by Organism specific culture | 0.816 |  |
+| 3047204 | Trichomonas vaginalis [Presence] in Specimen by Wet preparation | 0.815 | 1421 |
+| 3024483 | Escherichia coli verotoxic identified in Stool by Organism specific culture | 0.814 |  |
+| 3006210 | Bacteria identified in Milk by Aerobe culture | 0.813 |  |
+| 3024536 | Nuclear Ab pattern [Interpretation] in Serum by Immunofluorescence | 0.812 | 925 |
+| 1092070 | Trichomonas vaginalis [Presence] in Urine sediment | 0.812 |  |
+| 1176346 | Nocardia sp identified in Implanted device by Organism specific culture | 0.812 |  |
+| 43055369 | Neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count | 0.811 |  |
+| 3038614 | Chromosomal nuclear Ab pattern [Presence] in Serum by Immunofluorescence | 0.811 |  |
+| 37020517 | Yeast identified in Upper respiratory specimen by Organism specific culture | 0.809 |  |
+| 43055363 | Band form neutrophils/Leukocytes [Pure number fraction] in Blood by Manual count | 0.809 |  |
+| 3008342 | Neutrophils/Leukocytes in Blood by Automated count | 0.809 | 25 |
+| 3008258 | Mycobacterium sp identified in Body fluid by Organism specific culture | 0.809 |  |
+| 3050898 | Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture | 0.807 |  |
+| 40762243 | Vancomycin resistant enterococcus [Presence] in Anal by Organism specific culture | 0.807 |  |
+| 1091745 | Staphylococcus sp identified in Specimen | 0.806 |  |
+| 3042752 | Neisseria sp identified in Cervix by Organism specific culture | 0.806 |  |
+| 3023419 | Bacteria identified in Sputum by Culture | 0.804 | 1768 |
+| 3026008 | Bacteria identified in Urine by Culture | 0.804 | 93 |
+| 3043185 | Neisseria sp identified in Anal by Organism specific culture | 0.804 |  |
+| 1091253 | Methicillin resistant Staphylococcus aureus [Presence] in Axilla by Organism specific culture | 0.803 |  |
+| 3034583 | Herpes simplex virus identified in Vaginal fluid by Organism specific culture | 0.802 |  |
+| 3009000 | Neisseria gonorrhoeae [Presence] in Conjunctival specimen by Organism specific culture | 0.801 | 3000 |
+| 37020456 | Neisseria gonorrhoeae [Presence] in Aspirate by Organism specific culture | 0.801 |  |
+| 3016981 | Virus identified in Sputum by Culture | 0.801 |  |
+| 3008939 | Band form neutrophils [#/volume] in Blood by Manual count | 0.801 | 347 |
+| 3012431 | Thermophilic Actinomycetes identified in Specimen by Organism specific culture | 0.801 |  |
+| 3045469 | Band form neutrophils [Presence] in Blood by Automated count | 0.800 | 1297 |
+| 3010088 | Chlamydia sp identified in Genital specimen by Organism specific culture | 0.799 |  |
+| 1761571 | Yeast and Candida sp identification panel - Specimen by Organism specific culture | 0.799 |  |
+| 3015241 | Mycobacterium sp identified in Aspirate by Organism specific culture | 0.799 |  |
+| 3011116 | Haemophilus sp identified in Specimen by Organism specific culture | 0.798 |  |
+| 40761514 | Nucleated erythrocytes/Leukocytes [Ratio] in Blood by Automated count | 0.798 | 326 |
+| 3017611 | Mycoplasma sp identified in Specimen by Organism specific culture | 0.797 |  |
+| 3014765 | Yersinia sp identified in Stool by Organism specific culture | 0.797 |  |
+| 3007161 | Mycobacterium sp identified in Bone marrow by Organism specific culture | 0.796 |  |
+| 3038950 | Acinetobacter sp multidrug resistant identified in Specimen by Organism specific culture | 0.796 |  |
+| 36659876 | Respiratory viral pathogens DNA and RNA panel - Lower respiratory specimen by NAA with probe detection | 0.796 |  |
+| 3042547 | Nuclear matrix Ab pattern [Presence] in Serum by Immunofluorescence | 0.795 |  |
+| 37020541 | Yeast identified in Isolate by Organism specific culture | 0.794 |  |
+| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.794 |  |
+| 1469540 | Mycobacterium sp identified in Skin by Organism specific culture | 0.793 |  |
+| 3034171 | Yeast [Presence] in Specimen by Organism specific culture | 0.793 | 1855 |
+| 3011588 | Microscopic observation [Identifier] in Sputum by Acid fast stain | 0.792 |  |
+| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.792 |  |
+| 3041732 | Fungus identified in Genital specimen by Culture | 0.791 |  |
+| 3035538 | Herpes simplex virus identified in Bronchial specimen by Organism specific culture | 0.791 |  |
+| 42527956 | Other nuclear IgG pattern [Titer] in Serum by Immunofluorescence | 0.789 |  |
+| 3008051 | Streptococcus pyogenes Ag [Presence] in Specimen | 0.789 |  |
+| 706162 | Respiratory viral pathogens DNA and RNA panel - Respiratory system specimen Qualitative by NAA with probe detection | 0.789 |  |
+| 3050605 | Nucleolar nuclear Ab pattern [Presence] in Serum by Immunofluorescence | 0.788 |  |
+| 36305460 | Bordetella sp identified in Nasopharynx by Organism specific culture | 0.788 |  |
+| 36660725 | Microscopic observation [Presence] in Sputum by Acid fast stain --3rd specimen | 0.788 |  |
+| 1176136 | Gardnerella vaginalis [Presence] in Vaginal fluid by Organism specific culture | 0.788 |  |
+| 3034456 | Yeast [Presence] in Genital specimen by Organism specific culture | 0.787 |  |
+| 648704 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Specimen by NAA with probe detection | 0.786 |  |
+| 3005988 | Vibrio sp identified in Specimen by Organism specific culture | 0.786 |  |
+| 36203320 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection | 0.785 |  |
+| 3037470 | Ureaplasma sp identified in Specimen by Organism specific culture | 0.785 |  |
+| 37020245 | Staphylococcus species methicillin resistant identified in Isolate or Specimen by Molecular genetics method | 0.784 |  |
+| 3050143 | Nuclear Ab pattern [Interpretation] in Serum by Immunofluorescence Narrative | 0.784 |  |
+| 37020688 | Human metapneumovirus and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection | 0.783 |  |
+| 3050917 | Atypic speckled nuclear Ab pattern [Presence] in Serum by Immunofluorescence | 0.783 |  |
+| 3038101 | Streptococcus agalactiae Ag [Presence] in Throat by Immunofluorescence | 0.783 |  |
+| 43054991 | Microscopic observation [Presence] in Specimen by Acid fast stain | 0.782 |  |
+| 3015055 | Bacteria identified in Amniotic fluid by Culture | 0.782 |  |
+| 3041935 | Fine speckled nuclear Ab pattern [Titer] in Serum by Immunofluorescence | 0.782 |  |
+| 37020812 | Human metapneumovirus and Respiratory syncytial virus RNA panel - Lower respiratory specimen by NAA with probe detection | 0.781 |  |
+| 37021212 | Respiratory pathogens DNA and RNA panel - Respiratory system specimen by NAA with probe detection | 0.780 |  |
+| 36303760 | Microscopic observation [Presence] in Pleural fluid by Acid fast stain | 0.780 |  |
+| 3042671 | Burkholderia sp identified in Specimen by Organism specific culture | 0.780 |  |
+| 40758231 | Respiratory pathogens panel - Specimen by Organism specific culture | 0.779 |  |
+| 21491103 | Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture | 0.779 |  |
+| 3043237 | Aspergillus sp identified in Specimen by Organism specific culture | 0.778 |  |
+| 1175485 | Acinetobacter sp identified in Specimen by Organism specific culture | 0.778 |  |
+| 3019415 | Bacteria identified in Food by Culture | 0.778 |  |
+| 3039212 | Fine speckled nuclear Ab pattern [Presence] in Serum by Immunofluorescence | 0.777 |  |
+| 3050594 | Chromosomal nuclear Ab pattern [Titer] in Serum by Immunofluorescence | 0.777 |  |
+| 3005910 | Mycobacterium avium ss paratuberculosis [Presence] in Stool by Acid fast stain.Ziehl-Neelsen | 0.776 |  |
+| 46234883 | Staphylococcus aureus sau3AI gene [Presence] in Swab specimen by NAA with probe detection | 0.776 |  |
+| 36659990 | Microscopic observation [Presence] in Sputum by Acid fast stain --2nd specimen | 0.776 |  |
+| 647875 | Respiratory pathogens DNA and RNA panel - Specimen by NAA with non-probe detection | 0.775 |  |
+| 43533858 | Bacteria.extended spectrum beta lactamase resistance [Identifier] in Anal by Organism specific culture | 0.774 |  |
+| 36304271 | Microscopic observation [Presence] in Lower respiratory specimen by Acid fast stain.Kinyoun | 0.771 |  |
+| 1092180 | Entamoeba histolytica DNA [Presence] in Stool | 0.771 |  |
+| 36659824 | Bacteria.carbapenem resistant identified in Specimen by Organism specific culture | 0.771 |  |
+| 1091341 | Vancomycin resistant enterococcus [Presence] in Specimen | 0.770 |  |
+| 3045617 | Chlamydia sp identified in Nasopharynx by Organism specific culture | 0.769 |  |
+| 36304167 | Respiratory pathogens panel - Nasopharynx by Immunofluorescence | 0.769 |  |
+| 3003551 | Influenza virus A Ag [Presence] in Throat | 0.768 |  |
+| 3047233 | Neisseria sp identified in Throat by Organism specific culture | 0.768 |  |
+| 1175890 | Mycobacterium preliminary growth [Presence] in Sputum by Organism specific culture | 0.767 |  |
+| 3038590 | Bacteria identified in Semen by Culture | 0.767 |  |
+| 1761466 | Staph aureus and MRSA screening panel - Specimen by Organism specific culture | 0.767 |  |
+| 3039197 | Mycobacterium sp identified in Pleural fluid by Organism specific culture | 0.766 |  |
+| 36304858 | Microscopic observation [Presence] in Isolate by Acid fast stain | 0.765 |  |
+| 3010629 | Chlamydia sp identified in Throat by Organism specific culture | 0.765 |  |
+| 3034361 | Cryptosporidium sp [Presence] in Specimen by Acid fast stain | 0.765 |  |
+| 43533982 | Bacteria identified in Mouth by Culture | 0.765 |  |
+| 3005012 | Respiratory Mycoplasma identified in Throat by Organism specific culture | 0.765 |  |
+| 3000450 | Mycobacterium avium ss paratuberculosis [Presence] in Tissue by Acid fast stain.Ziehl-Neelsen | 0.764 |  |
+| 3049146 | Mycoplasma sp identified in Urine by Organism specific culture | 0.763 |  |
+| 1092318 | Mycobacterium sp identified in Pus by Organism specific culture | 0.762 |  |
+| 645112 | Stenotrophomonas maltophilia.multidrug resistant [Presence] in Specimen by Organism specific culture | 0.761 |  |
+| 3016727 | Bacteria identified in Body fluid by Culture | 0.760 | 1786 |
+| 37020690 | Gram negative bacilli identified in Isolate by Organism specific culture | 0.760 |  |
+| 1469829 | Mycobacterium sp identified in Semen by Organism specific culture | 0.759 |  |
+| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.758 |  |
+| 21492788 | Serial sputum smears for diagnosing pulmonary tuberculosis panel - by Acid fast stain | 0.757 |  |
+| 3030526 | Mycobacterium sp [Presence] in Specimen by Organism specific culture | 0.756 |  |
+| 3016439 | Virus identified in Urine by Culture | 0.755 |  |
+| 40764165 | Staphylococcus aureus DNA [Presence] in Specimen by NAA with probe detection | 0.754 |  |
+| 3022193 | Influenza virus A+B Ag [Presence] in Throat | 0.754 |  |
+| 40766210 | Pseudomonas aeruginosa.multidrug resistant isolate [Presence] in Specimen by Organism specific culture | 0.753 |  |
+| 1761484 | Gram negative bacteria.colistin resistant identified in Stool by Organism specific culture | 0.752 |  |
+| 1761775 | Enterobacteriaceae.extended spectrum beta lactamase resistance phenotype [Identifier] in Specimen by Organism specific culture | 0.751 |  |
+| 36659989 | Staphylococcus aureus DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.751 |  |
+| 1091951 | Staphylococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.749 |  |
+| 3028018 | Entamoeba histolytica Ag [Presence] in Stool by Immunoassay | 0.748 |  |
+| 3964720 | Bacteria.extended spectrum beta lactamase (ESBL) [Presence] in Stool based on lab data | 0.741 |  |
+| 3966166 | Staphylococcus aureus DNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.741 |  |
+| 1091649 | Staphylococcus aureus DNA [Presence] in Specimen by Molecular genetics method | 0.739 |  |
+| 42869541 | Staphylococcus aureus exfoliative toxin A eta gene [Presence] in Specimen by NAA with probe detection | 0.739 |  |
+| 46234878 | Streptococcus pneumoniae nanA gene [Presence] in Swab specimen by NAA with probe detection | 0.738 |  |
+| 3047049 | Staphylococcus aureus toxic shock syndrome toxin gene [Presence] in Specimen by NAA with probe detection | 0.735 |  |
+| 1176246 | Microscopic observation [Identifier] in Lower respiratory specimen by Acid fast stain | 0.735 |  |
+| 43533857 | Bacteria.carbapenem resistant identified in Anal by Organism specific culture | 0.734 |  |
+| 1175839 | Microscopic observation [Identifier] in Upper respiratory specimen by Acid fast stain | 0.731 |  |
+| 3019883 | Entamoeba histolytica Ab [Presence] in Serum | 0.727 |  |
+| 3036500 | Entamoeba histolytica DNA [Presence] in Specimen by NAA with probe detection | 0.726 |  |
+| 37020799 | Gram positive bacilli identified in Isolate by Organism specific culture | 0.724 |  |
+| 3032808 | Multiple drug resistant organism identified in Urine | 0.720 |  |
+| 3009070 | Entamoeba sp Ab [Presence] in Serum | 0.709 |  |
+| 42868764 | Entamoeba histolytica+Entamoeba dispar+Entamoeba ecuadoriensis+Entamoeba nuttalli DNA [Presence] in Specimen by NAA with probe detection | 0.709 |  |
+| 3013799 | Entamoeba histolytica Ag [Units/volume] in Specimen | 0.708 |  |
+| 36659890 | Mycobacterial identification panel - Specimen by Molecular genetics method | 0.707 |  |
+| 40760040 | Entamoeba histolytica Ab [Presence] in Serum by Immunofluorescence | 0.705 |  |
+| 646804 | Entamoeba histolytica Ag [Measurement] in Stool | 0.705 |  |
+| 3037952 | Mycoplasma sp and Ureaplasma sp panel - Specimen by Organism specific culture | 0.686 |  |
+| 36306120 | Microbiology CNAMTS panel - Sputum | 0.680 |  |
+| 44786924 | Mycobacterium tuberculosis stimulated gamma interferon and spot count panel - Blood | 0.672 |  |
+| 3018821 | Respiratory Mycoplasma identified in Sputum by Organism specific culture | 0.672 |  |
+| 3019711 | Mycobacterium sp DNA [Presence] in Sputum by NAA with probe detection | 0.671 |  |
+| 36305032 | Tobacco use panel | 0.610 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1469 | b-b-cd19 | e6/l | 20% | name+unit+values | 913 | 0 | [10.41, 31.05, 55.36, 87.14, 120.42, 155.29, 201.58, 263.7, 407.08] |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1470 | b-b-cd19 | e9/l | 68% | name+unit+values | 3083 | 0 | [0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.29, 0.48] |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1471 | b-b-cd19 |  | 12% | name+values | 569 | 89.28 | [0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.31, 0.47] |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1472 | b-cd16/56 | e6/l | 0% | name+unit | 12 | 0 |  |  | Blood |  | CD16+56+ NK cells [#/volume] in Blood |
-| 1473 | b-cd16/56 | e9/l | 96% | name+unit+values | 2606 | 0.65 | [0.06, 0.09, 0.12, 0.15, 0.18, 0.22, 0.26, 0.33, 0.44] |  | Blood |  | CD16+56+ NK cells [#/volume] in Blood |
-| 1474 | b-cd16/56 |  | 4% | name | 108 | 84.26 |  |  | Blood |  | CD16+56+ NK cells [#/volume] in Blood |
-| 1475 | b-cd16/cd56 | e9/l | 95% | name+unit+values | 263 | 0 | [0.09, 0.12, 0.15, 0.17, 0.21, 0.24, 0.3, 0.36, 0.44] |  | Blood |  | CD16+56+ NK cells [#/volume] in Blood |
-| 1476 | b-cd16/cd56 |  | 5% | name | 15 | 100 |  |  | Blood |  | CD16+56+ NK cells [#/volume] in Blood |
-| 1477 | b-cd19 | e6/l | 56% | name+unit+values | 3891 | 0 | [0, 1.97, 16.17, 41.05, 70.27, 108.04, 158.42, 221.57, 336.97] |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1478 | b-cd19 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0, 0, 0.01, 0.03, 0.06, 0.09, 0.14, 0.19, 0.29] |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1479 | b-cd19 |  | 3% | name | 175 | 66.29 |  |  | Blood |  | CD19+ B-lymphocytes [#/volume] in Blood |
-| 1480 | b-cd3 | e6/l | 56% | name+unit | 3892 | 0 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1481 | b-cd3 | e9/l | 41% | name+unit | 2868 | 0.59 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1482 | b-cd3 |  | 3% | name | 204 | 71.57 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1483 | b-cd34 | e6/l | 88% | name+unit+values | 193 | 0 | [5.27, 13.75, 20.31, 28.86, 37.69, 50.47, 63.07, 93.98, 156.93] |  | Blood |  | CD34+ cells [#/volume] in Blood |
-| 1484 | b-cd34 |  | 12% | name | 27 | 29.63 |  |  | Blood |  | CD34+ cells [#/volume] in Blood |
-| 1485 | b-cd4 | e6/l | 56% | name+unit+values | 3893 | 0 | [134.07, 213.38, 284.14, 381.8, 505.45, 647.7, 819.98, 1038.04, 1335.05] |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1486 | b-cd4 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0.14, 0.2, 0.25, 0.32, 0.4, 0.51, 0.63, 0.8, 1.07] |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1487 | b-cd4 |  | 2% | name | 172 | 66.28 |  |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1488 | b-cd8 | e6/l | 56% | name+unit+values | 3892 | 0 | [117.75, 200.41, 277.17, 351.98, 433.16, 541.85, 672.5, 850.74, 1214.03] |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1489 | b-cd8 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0.11, 0.16, 0.23, 0.29, 0.36, 0.46, 0.57, 0.73, 1] |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1490 | b-cd8 |  | 2% | name | 172 | 66.28 |  |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1491 | b-lcd34 | e6/l | 32% | name+unit+values | 251 | 0 | [3, 7.11, 11.11, 14.14, 17.55, 23.82, 31.86, 44, 64.2] | B -Leukosyytit, CD34 alaluokka | Blood |  | CD34+ cells [#/volume] in Blood |
-| 1492 | b-lcd34 | e9/l | 60% | name+unit+values | 475 | 0 | [0, 0.01, 0.02, 0.03, 0.03, 0.04, 0.06, 0.09, 0.13] | B -Leukosyytit, CD34 alaluokka | Blood |  | CD34+ cells [#/volume] in Blood |
-| 1493 | b-lcd34 |  | 8% | name | 66 | 100 |  | B -Leukosyytit, CD34 alaluokka | Blood |  | CD34+ cells [#/volume] in Blood |
-| 1494 | b-lycd4 |  | 100% | name | 496 | 100 |  | B -Lymfosyytti CD4-alaluokka | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1495 | b-t-cd3 | e6/l | 28% | name+unit | 1174 | 0 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1496 | b-t-cd3 | e9/l | 65% | name+unit | 2692 | 0 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1497 | b-t-cd3 |  | 7% | name | 304 | 81.91 |  |  | Blood |  | CD3+ T-lymphocytes [#/volume] in Blood |
-| 1498 | b-t-cd4 | e6/l | 20% | name+unit+values | 1609 | 0 | [168.06, 247.56, 335.09, 433.05, 551.26, 672.04, 816.88, 957.34, 1254.62] |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1499 | b-t-cd4 | e9/l | 75% | name+unit+values | 6105 | 0 | [0.16, 0.25, 0.34, 0.43, 0.52, 0.64, 0.79, 0.96, 1.28] |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1500 | b-t-cd4 |  | 6% | name+values | 475 | 69.89 | [0.2, 0.26, 0.34, 0.42, 0.55, 0.68, 0.8, 0.95, 1.29] |  | Blood |  | CD4+ T-lymphocytes [#/volume] in Blood |
-| 1501 | b-t-cd8 | e6/l | 28% | name+unit+values | 1174 | 0 | [141.94, 210.82, 289.62, 366.11, 450.98, 530.13, 639.55, 796.16, 1179.47] |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1502 | b-t-cd8 | e9/l | 65% | name+unit+values | 2753 | 0 | [0.14, 0.21, 0.27, 0.35, 0.43, 0.52, 0.65, 0.83, 1.1] |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1503 | b-t-cd8 |  | 7% | name | 311 | 79.42 |  |  | Blood |  | CD8+ T-lymphocytes [#/volume] in Blood |
-| 1504 | bl-cd4/cd8 | form | 32% | name+unit | 42 | 100 |  |  | Bronchoalveolar lavage |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Bronchoalveolar lavage |
-| 1505 | bl-cd4/cd8 |  | 68% | name | 91 | 100 |  |  | Bronchoalveolar lavage |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Bronchoalveolar lavage |
-| 1506 | cd4/cd8 |  | 100% | name+values | 3940 | 0.23 | [0.29, 0.47, 0.68, 0.91, 1.2, 1.57, 1.94, 2.45, 3.26] |  |  |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1507 | l-cd34 | % | 92% | name+unit+values | 481 | 0 | [0.05, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.32, 0.61] |  | Leukocyte |  | CD34+ cells/Leukocytes [# Ratio] in Blood |
-| 1508 | l-cd34 |  | 8% | name | 41 | 100 |  |  | Leukocyte |  | CD34+ cells/Leukocytes [# Ratio] in Blood |
-| 1509 | la-cd34 | e6/kg | 28% | name+unit+values | 156 | 0 | [0.6, 0.9, 1.18, 1.41, 1.69, 2.1, 2.53, 3.4, 4.94] |  |  |  | CD34+ cells [#/Mass] in Apheresis product |
-| 1510 | la-cd34 | e9/l | 72% | name+unit+values | 393 | 0 | [0.41, 0.56, 0.72, 0.84, 1.03, 1.27, 1.77, 2.36, 3.2] |  |  |  | CD34+ cells [#/volume] in Apheresis product |
-| 1511 | la-cd34-ks |  | 100% | name | 395 | 100 |  |  |  |  | CD34+ cells [#] in Apheresis product |
-| 1512 | la-cd34-os | % | 100% | name+unit+values | 393 | 0 | [0.22, 0.3, 0.39, 0.49, 0.59, 0.69, 0.84, 1.12, 1.67] |  |  |  | CD34+ cells/Nucleated cells [# Ratio] in Apheresis product |
-| 1513 | la-t-cd3 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  | CD3+ T-lymphocytes [#/volume] in Apheresis product |
-| 1514 | la-t-cd3 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD3+ T-lymphocytes [#/volume] in Apheresis product |
-| 1515 | la-t-cd4 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  | CD4+ T-lymphocytes [#/volume] in Apheresis product |
-| 1516 | la-t-cd4 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD4+ T-lymphocytes [#/volume] in Apheresis product |
-| 1517 | la-t-cd8 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  | CD8+ T-lymphocytes [#/volume] in Apheresis product |
-| 1518 | la-t-cd8 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD8+ T-lymphocytes [#/volume] in Apheresis product |
-| 1519 | ly-b-cd19 | % | 61% | name+unit+values | 1504 | 0 | [0, 0, 0.45, 2.91, 5.54, 7.86, 10.24, 13.34, 18.94] |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1520 | ly-b-cd19 |  | 39% | name | 950 | 99.05 |  |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1521 | ly-cd16/56 | % | 97% | name+unit+values | 3462 | 0.49 | [5.28, 8.01, 10.25, 12.46, 15.08, 18.07, 21.55, 26.37, 33.4] |  | Lymphocyte |  | CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood |
-| 1522 | ly-cd16/56 |  | 3% | name | 107 | 86.92 |  |  | Lymphocyte |  | CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood |
-| 1523 | ly-cd16/cd56 | % | 95% | name+unit+values | 262 | 0 | [5.52, 8.16, 10.06, 12.71, 14.93, 17.65, 20.63, 27.5, 36.58] |  | Lymphocyte |  | CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood |
-| 1524 | ly-cd16/cd56 |  | 5% | name | 15 | 100 |  |  | Lymphocyte |  | CD16+56+ NK cells/Lymphocytes [# Ratio] in Blood |
-| 1525 | ly-cd19 | % | 97% | name+unit+values | 3462 | 0.49 | [0, 0, 1.17, 3.24, 5.55, 8.08, 10.86, 14.11, 20.27] |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1526 | ly-cd19 |  | 3% | name | 107 | 85.98 |  |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1527 | ly-cd19-b | % | 99% | name+unit+values | 2507 | 0 | [0, 0, 1, 3.95, 7.56, 10.5, 13.61, 17.58, 25.6] |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1528 | ly-cd19-b |  | 1% | name | 19 | 100 |  |  | Lymphocyte |  | CD19+ B-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1529 | ly-cd3 | % | 97% | name+unit+values | 3726 | 0.46 | [52.12, 61.25, 67.07, 71.15, 74.98, 78.39, 81.66, 85.36, 89.48] |  | Lymphocyte |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1530 | ly-cd3 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1531 | ly-cd4 | % | 97% | name+unit+values | 3726 | 0.46 | [16.32, 22.56, 27.91, 32.59, 37.02, 41.75, 46.47, 51.76, 58.99] |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1532 | ly-cd4 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1533 | ly-cd4+8+ | % | 35% | name+unit | 41 | 41.46 |  |  | Lymphocyte |  | CD4+CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1534 | ly-cd4+8+ |  | 65% | name | 75 | 100 |  |  | Lymphocyte |  | CD4+CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1535 | ly-cd4-8- | % | 73% | name+unit+values | 207 | 8.21 | [7, 8, 8, 8.88, 9.82, 10.9, 12, 14, 16] |  | Lymphocyte |  | CD4-CD8- cells/Lymphocytes [# Ratio] in Blood |
-| 1536 | ly-cd4-8- |  | 27% | name | 77 | 100 |  |  | Lymphocyte |  | CD4-CD8- cells/Lymphocytes [# Ratio] in Blood |
-| 1537 | ly-cd4-t | % | 96% | name+unit+values | 4576 | 0 | [15.23, 21.8, 27.31, 31.42, 35.47, 39.26, 43.26, 48.23, 54.7] |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1538 | ly-cd4-t |  | 4% | name+values | 170 | 22.94 | [17.53, 21.58, 24.78, 29.15, 33.2, 38.25, 41.67, 47.37, 52.57] |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1539 | ly-cd4/cd8 |  | 100% | name+values | 2752 | 4.18 | [0.37, 0.55, 0.75, 0.96, 1.18, 1.48, 1.83, 2.29, 3.23] | Ly-Auttaja- ja tappajasolujen suhde, immunofenotyypitys | Lymphocyte |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1540 | ly-cd4/cd8suhde |  | 100% | name+values | 278 | 5.4 | [0.5, 0.76, 1.02, 1.29, 1.66, 1.95, 2.26, 2.73, 3.97] |  | Lymphocyte |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1541 | ly-cd8 | % | 97% | name+unit+values | 3725 | 0.46 | [14.46, 19.13, 22.75, 26.46, 30.35, 34.98, 40.06, 46.74, 56.02] |  | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1542 | ly-cd8 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1543 | ly-t-cd3 | % | 94% | name+unit+values | 3926 | 0 | [56.23, 64.92, 70.33, 74.35, 77.57, 80.54, 84.02, 87.72, 92.04] |  | Lymphocyte |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1544 | ly-t-cd3 |  | 6% | name | 264 | 98.48 |  |  | Lymphocyte |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1545 | ly-t-cd4 | % | 34% | name+unit+values | 2006 | 0 | [18.72, 24.57, 29.84, 34.47, 38.67, 43.22, 47.75, 52.18, 58.04] | Ly-Lymfosyytit, T-auttajasolujen osuus | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1546 | ly-t-cd4 |  | 66% | name | 3875 | 99.92 |  | Ly-Lymfosyytit, T-auttajasolujen osuus | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1547 | ly-t-cd4. | % | 98% | name+unit+values | 1462 | 0 | [18.57, 26.32, 32.42, 36.77, 41.27, 46.47, 51.47, 56.35, 63.05] |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1548 | ly-t-cd4. |  | 2% | name | 36 | 72.22 |  |  | Lymphocyte |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1549 | ly-t-cd4/8 | ratio | 89% | name+unit+values | 1816 | 0 | [0.6, 0.8, 0.99, 1.23, 1.56, 1.85, 2.06, 2.47, 3.19] |  | Lymphocyte |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1550 | ly-t-cd4/8 |  | 11% | name+values | 224 | 100 | [0.48, 0.79, 1.06, 1.31, 1.55, 1.83, 2.13, 2.62, 3.69] |  | Lymphocyte |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1551 | ly-t-cd8 | % | 92% | name+unit+values | 2895 | 0 | [14.95, 19.45, 23.24, 27.01, 30.29, 33.79, 38.05, 43.59, 52.29] | Ly-Lymfosyytit, T-estäjäsolujen osuus | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1552 | ly-t-cd8 |  | 8% | name | 245 | 99.59 |  | Ly-Lymfosyytit, T-estäjäsolujen osuus | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1553 | ly-tcd4/8. |  | 100% | name+values | 2179 | 0.83 | [0.48, 0.75, 1, 1.21, 1.42, 1.69, 2, 2.51, 3.27] |  | Lymphocyte |  | CD4+ T-lymphocytes/CD8+ T-lymphocytes [# Ratio] in Blood |
-| 1554 | ly-tt-cd8 | % | 100% | name+unit+values | 1219 | 0 | [13.33, 17.86, 21.01, 24.35, 28, 31.32, 36.22, 42.56, 52.88] |  | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1555 | ly-tt-cd8 |  | 0% | name | 5 | 40 |  |  | Lymphocyte |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Blood |
-| 1556 | s-gt-cdt | % | 0% | name+unit | 13 | 0 |  |  | Serum |  | Carbohydrate deficient transferrin/Transferrin [Mass Ratio] in Serum |
-| 1557 | s-gt-cdt |  | 100% | name+values | 2807 | 3.35 | [2.6, 2.87, 3.04, 3.25, 3.47, 3.7, 3.96, 4.27, 4.86] |  | Serum |  | Carbohydrate deficient transferrin/Transferrin [Mass Ratio] in Serum |
-| 1558 | so-t-cd3 | % | 96% | name+unit+values | 149 | 0 | [16.66, 19.73, 21.87, 23.49, 24.84, 27.82, 29.85, 33.41, 49.51] |  |  |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
-| 1559 | so-t-cd3 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD3+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
-| 1560 | so-t-cd4 | % | 96% | name+unit+values | 149 | 0 | [9.42, 10.93, 12.3, 13.53, 14.67, 15.99, 17.4, 19.67, 23.42] |  |  |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
-| 1561 | so-t-cd4 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD4+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
-| 1562 | so-t-cd8 | % | 96% | name+unit+values | 149 | 0 | [5.87, 7, 7.83, 8.57, 9.8, 10.57, 12.18, 14.02, 21.4] |  |  |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
-| 1563 | so-t-cd8 |  | 4% | name | 6 | 16.67 |  |  |  |  | CD8+ T-lymphocytes/Lymphocytes [# Ratio] in Specimen |
+| 1731 | -activi |  | 100% | name | 523 | 100 |  | -Actinomyces, viljely |  |  | Actinomyces identified in Unspecified specimen by Organism specific culture |
+| 1732 | -amebvr |  | 100% | name | 732 | 100 |  | -Ameeba, värjäys (trofozoiitit) |  |  | Entamoeba histolytica trophozoite [Presence] in Unspecified specimen by Stain |
+| 1733 | -caauvi |  | 100% | name | 468 | 100 |  | -Candida auris, viljely |  |  | Candida auris identified in Unspecified specimen by Organism specific culture |
+| 1734 | -cand-vi |  | 100% | name | 285 | 100 |  |  |  | Culture | Candida identified in Unspecified specimen by Organism specific culture |
+| 1735 | -candvi |  | 100% | name | 9492 | 100 |  | -Hiiva, viljely |  |  | Yeast identified in Unspecified specimen by Culture |
+| 1736 | -em-bl |  | 100% | name | 104 | 100 |  |  |  |  |  |
+| 1737 | -ervr |  | 100% | name | 185 | 100 |  |  |  |  |  |
+| 1738 | -esblvi |  | 100% | name | 2644 | 100 |  | -Bakteeri, laajakirjoista beta-laktamaasia tuottava, viljely |  |  | Bacteria.ESBL producing identified in Unspecified specimen by Culture |
+| 1739 | -gcvi |  | 100% | name | 2115 | 100 |  | -Neisseria gonorrhoeae, viljely |  |  | Neisseria gonorrhoeae identified in Unspecified specimen by Organism specific culture |
+| 1740 | -hsvpvi |  | 100% | name | 1154 | 100 |  | -Herpes simplex -virus, pikaviljely |  |  | Herpes simplex virus identified in Unspecified specimen by Rapid culture |
+| 1741 | -hsvvi |  | 100% | name | 1451 | 100 |  | -Herpes simplex -virus, viljely |  |  | Herpes simplex virus identified in Unspecified specimen by Culture |
+| 1742 | -hygvi |  | 100% | name | 276 | 100 |  | -Hygienianäyte, viljely |  |  | Bacteria identified in Environmental specimen by Culture |
+| 1743 | -ifkuvio |  | 100% | name | 330 | 100 |  |  |  |  | Nuclear antibody staining pattern [Type] in Serum by Immunofluorescence |
+| 1744 | -kat-vi |  | 100% | name | 205 | 100 |  |  |  | Culture | Bacteria identified in Catheter tip by Culture |
+| 1745 | -mdrsjvi |  | 100% | name | 152 | 100 |  | -Moniresistentit gramnegatiiviset sauvat, jatkoviljely |  |  | Gram negative bacilli.multidrug resistant identified in Unspecified specimen by Culture |
+| 1746 | -mdrsvi |  | 100% | name | 4893 | 100 |  | -Moniresistentit gramnegatiiviset sauvat, viljely |  |  | Gram negative bacilli.multidrug resistant identified in Unspecified specimen by Culture |
+| 1747 | -mrsajvi |  | 100% | name | 143 | 100 |  | -Staphylococcus aureus, metisilliiniresistentti, jatkoviljely |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1748 | -mrsavi |  | 100% | name | 147348 | 100 |  | -Staphylococcus aureus, metisilliiniresistenssi viljely |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1749 | -mrsavine |  | 100% | name | 825 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1750 | -mrsavini |  | 100% | name | 835 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1751 | -mrsrivi |  | 100% | name | 260 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1752 | -nocavi |  | 100% | name | 2268 | 100 |  | -Nokardia, viljely |  |  | Nocardia identified in Unspecified specimen by Organism specific culture |
+| 1753 | -palovvi |  | 100% | name | 704 | 100 |  |  |  |  | Bacteria identified in Wound by Culture |
+| 1754 | -psvs |  | 100% | name | 161 | 100 |  |  |  |  |  |
+| 1755 | -respvt |  | 100% | name | 1271 | 100 |  |  |  |  | Respiratory virus panel - Respiratory specimen |
+| 1756 | -rsv |  | 100% | name | 220 | 100 |  |  |  |  | Respiratory syncytial virus Ag [Presence] in Respiratory specimen |
+| 1757 | -rsvvt |  | 100% | name | 1271 | 100 |  |  |  |  | Respiratory syncytial virus [Presence] in Respiratory specimen |
+| 1758 | -staupvl |  | 100% | name | 146 | 100 |  |  |  |  | Staphylococcus aureus.Panton-Valentine leukocidin gene [Presence] in Unspecified specimen by NAA |
+| 1759 | -stauvi |  | 100% | name | 681 | 100 |  |  |  |  | Staphylococcus aureus identified in Unspecified specimen by Organism specific culture |
+| 1760 | -strag |  | 100% | name | 276 | 100 |  | -Streptococcus, antigeeni |  |  | Streptococcus group A Ag [Presence] in Throat |
+| 1761 | -strjvi |  | 100% | name | 4196 | 100 |  | -Streptococcus, jatkoviljely (seulottu näyte) |  |  | Streptococcus identified in Unspecified specimen by Organism specific culture |
+| 1762 | -strvi |  | 100% | name | 1015 | 100 |  |  |  |  | Streptococcus identified in Unspecified specimen by Organism specific culture |
+| 1763 | -tbevi |  | 100% | name | 4326 | 100 |  | -Mycobacterium, erikoisviljely |  |  | Mycobacterium identified in Unspecified specimen by Culture |
+| 1764 | -tbpvr |  | 100% | name | 395 | 100 |  |  |  |  | Mycobacterium tuberculosis [Presence] in Unspecified specimen by Acid fast stain |
+| 1765 | -tbvi |  | 100% | name | 25319 | 100 |  | -Mycobacterium tuberculosis, viljely |  |  | Mycobacterium tuberculosis identified in Unspecified specimen by Culture |
+| 1766 | -tbvivr |  | 100% | name | 131 | 100 |  |  |  |  | Mycobacterium tuberculosis smear and culture panel - Unspecified specimen |
+| 1767 | -tbvr |  | 100% | name | 14513 | 100 |  | -Mycobacterium tuberculosis, värjäys |  |  | Mycobacterium tuberculosis [Presence] in Unspecified specimen by Acid fast stain |
+| 1768 | -tbvrvi |  | 100% | name | 9619 | 100 |  |  |  |  | Mycobacterium tuberculosis smear and culture panel - Unspecified specimen |
+| 1769 | -trvaag |  | 100% | name | 740 | 100 |  | -Trichomonas vaginalis, antigeeni |  |  | Trichomonas vaginalis Ag [Presence] in Unspecified specimen |
+| 1770 | -vi |  | 100% | name | 110 | 100 |  |  |  | Culture | Bacteria identified in Unspecified specimen by Culture |
+| 1771 | -virvi |  | 100% | name | 1652 | 100 |  | -Virus, viljely |  |  | Virus identified in Unspecified specimen by Culture |
+| 1772 | -vrevi |  | 100% | name | 10787 | 100 |  | -Enterokokki, vankomysiiniresistentti, viljely |  |  | Enterococcus.vancomycin resistant identified in Unspecified specimen by Organism specific culture |
+| 1773 | -väri |  | 100% | name | 1665 | 100 |  |  |  |  |  |
+| 1774 | 1.savuk | u | 77% | name+unit+values | 83 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 10] |  |  |  | Cigarettes smoked [#] by Report |
+| 1775 | 1.savuk |  | 23% | name | 25 | 100 |  |  |  |  | Cigarettes smoked [#] by Report |
+| 1776 | b-tbevi |  | 100% | name | 1076 | 100 |  | B -Mycobacterium, erikoisviljely | Blood |  | Mycobacterium identified in Blood by Culture |
+| 1777 | candvi |  | 100% | name | 508 | 100 |  |  |  |  | Candida identified in Unspecified specimen by Organism specific culture |
+| 1778 | ex-tbvi |  | 100% | name | 7823 | 100 |  | Ex-Mycobacterium tuberculosis, viljely | Expectorate (sputum) |  | Mycobacterium tuberculosis identified in Sputum by Culture |
+| 1779 | ex-tbvivr |  | 100% | name | 807 | 100 |  |  | Expectorate (sputum) |  | Mycobacterium tuberculosis smear and culture panel - Sputum |
+| 1780 | ex-tbvr |  | 100% | name | 853 | 100 |  |  | Expectorate (sputum) |  | Mycobacterium tuberculosis [Presence] in Sputum by Acid fast stain |
+| 1781 | ex-tbvrvi |  | 100% | name | 15922 | 100 |  |  | Expectorate (sputum) |  | Mycobacterium tuberculosis smear and culture panel - Sputum |
+| 1782 | f-aurvi |  | 100% | name | 116 | 100 |  |  | Feces |  | Staphylococcus aureus identified in Stool by Organism specific culture |
+| 1783 | f-bacevi |  | 100% | name | 114 | 100 |  |  | Feces |  | Bacillus cereus identified in Stool by Organism specific culture |
+| 1784 | f-camp-vi |  | 100% | name | 167 | 100 |  |  | Feces | Culture | Campylobacter identified in Stool by Organism specific culture |
+| 1785 | f-campvi |  | 100% | name | 14627 | 100 |  | F -Campylobacter, viljely | Feces |  | Campylobacter identified in Stool by Organism specific culture |
+| 1786 | f-cereuvi |  | 100% | name | 198 | 100 |  |  | Feces |  | Bacillus cereus identified in Stool by Organism specific culture |
+| 1787 | f-clpevi |  | 100% | name | 114 | 100 |  |  | Feces |  | Clostridium perfringens identified in Stool by Organism specific culture |
+| 1788 | f-salm-vi |  | 100% | name | 607 | 100 |  |  | Feces | Culture | Salmonella identified in Stool by Organism specific culture |
+| 1789 | f-salmvi | form | 0% | name+unit | 18 | 0 |  | F -Salmonella, viljely | Feces |  | Salmonella identified in Stool by Organism specific culture |
+| 1790 | f-salmvi |  | 100% | name | 33355 | 100 |  | F -Salmonella, viljely | Feces |  | Salmonella identified in Stool by Organism specific culture |
+| 1791 | f-shigvi |  | 100% | name | 14849 | 100 |  | F -Shigella, viljely | Feces |  | Shigella identified in Stool by Organism specific culture |
+| 1792 | f-stafvi |  | 100% | name | 107 | 100 |  |  | Feces |  | Staphylococcus identified in Stool by Organism specific culture |
+| 1793 | fl-candvi |  | 100% | name | 786 | 100 |  |  | Vaginal discharge |  | Candida identified in Vaginal fluid by Organism specific culture |
+| 1794 | hsvpvi |  | 100% | name | 246 | 100 |  |  |  |  | Herpes simplex virus identified in Unspecified specimen by Rapid culture |
+| 1795 | l-sauv | % | 99% | name+unit+values | 3700 | 0 | [0, 0, 0, 0, 0.48, 1, 1.78, 2.98, 5.83] |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1796 | l-sauv |  | 1% | name | 36 | 100 |  |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1797 | l-sauva | % | 95% | name+unit+values | 4826 | 0 | [0, 0, 0, 0.02, 0.78, 1.03, 2.02, 3.39, 6.06] |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1798 | l-sauva |  | 5% | name+values | 244 | 100 | [0, 0, 0, 0.06, 1, 1, 2, 2.4, 4] |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1799 | l-sauvat | % | 93% | name+unit+values | 3136 | 0 | [0, 0, 0, 0.1, 1, 1, 1.97, 2.83, 4.14] |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1800 | l-sauvat |  | 7% | name | 224 | 100 |  |  | Leukocyte |  | Neutrophils.band form/Leukocytes [# Ratio] in Blood by Automated count |
+| 1801 | mm-hygvi |  | 100% | name | 702 | 100 |  | Mm-Hygienianäyte, viljely (äidinmaito) | Maternal milk |  | Bacteria identified in Breast milk by Culture |
+| 1802 | mrsavi |  | 100% | name | 879 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant identified in Unspecified specimen by Organism specific culture |
+| 1803 | ns-mrsavi |  | 100% | name | 697 | 100 |  |  | Nasal secretion |  | Staphylococcus aureus.methicillin resistant identified in Nasal specimen by Organism specific culture |
+| 1804 | ns-staurvi |  | 100% | name | 1639 | 100 |  |  | Nasal secretion |  | Staphylococcus aureus identified in Nasal specimen by Organism specific culture |
+| 1805 | ps-mrsavi |  | 100% | name | 694 | 100 |  |  | Pharyngeal secretion |  | Staphylococcus aureus.methicillin resistant identified in Pharynx by Organism specific culture |
+| 1806 | rasvat |  | 100% | name | 811 | 100 |  |  |  |  |  |
+| 1807 | resgnsvi |  | 100% | name | 2065 | 100 |  |  |  |  | Gram negative bacilli.multidrug resistant identified in Unspecified specimen by Culture |
+| 1808 | rsv |  | 100% | name | 1507 | 100 |  |  |  |  | Respiratory syncytial virus Ag [Presence] in Respiratory specimen |
+| 1809 | sc-hygvi |  | 100% | name | 251 | 100 |  |  |  |  | Bacteria identified in Environmental specimen by Culture |
+| 1810 | sk-mrsavi |  | 100% | name | 165 | 100 |  |  | Skin |  | Staphylococcus aureus.methicillin resistant identified in Skin by Organism specific culture |
+| 1811 | straag |  | 100% | name | 525 | 100 |  |  |  |  | Streptococcus group A Ag [Presence] in Throat |
+| 1812 | strvi |  | 100% | name | 175 | 100 |  |  |  |  | Streptococcus identified in Unspecified specimen by Organism specific culture |
+| 1813 | tbvi |  | 100% | name | 1001 | 100 |  |  |  |  | Mycobacterium tuberculosis identified in Unspecified specimen by Culture |
+| 1814 | tbvr |  | 100% | name | 863 | 100 |  |  |  |  | Mycobacterium tuberculosis [Presence] in Unspecified specimen by Acid fast stain |
+| 1815 | tbvrvi |  | 100% | name | 174 | 100 |  |  |  |  | Mycobacterium tuberculosis smear and culture panel - Unspecified specimen |
+| 1816 | u-mrsavi |  | 100% | name | 3760 | 100 |  |  | Urine |  | Staphylococcus aureus.methicillin resistant identified in Urine by Organism specific culture |
+| 1817 | u-tbvi |  | 100% | name | 564 | 100 |  |  | Urine |  | Mycobacterium tuberculosis identified in Urine by Culture |
+| 1818 | veri |  | 100% | name | 122 | 100 |  |  |  |  |  |
+| 1819 | vi | form | 30% | name+unit | 101 | 0 |  |  |  |  | Bacteria identified in Unspecified specimen by Culture |
+| 1820 | vi |  | 70% | name | 233 | 100 |  |  |  |  | Bacteria identified in Unspecified specimen by Culture |
+| 1821 | vre-vi |  | 100% | name | 1349 | 100 |  |  |  | Culture | Enterococcus.vancomycin resistant identified in Unspecified specimen by Organism specific culture |
+| 1822 | vrevi |  | 100% | name | 5662 | 100 |  |  |  |  | Enterococcus.vancomycin resistant identified in Unspecified specimen by Organism specific culture |
 

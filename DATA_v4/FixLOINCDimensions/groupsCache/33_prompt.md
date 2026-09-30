@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,81 +115,86 @@ Here is group 33.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3039355 | Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture | 0.979 |  |
-| 3019902 | Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.965 | 146 |
-| 46235760 | Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture | 0.935 |  |
-| 1761890 | Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.899 |  |
-| 1091581 | Methicillin resistant Staphylococcus aureus [Presence] in Skin by Organism specific culture | 0.892 |  |
-| 3050898 | Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture | 0.880 |  |
-| 1091253 | Methicillin resistant Staphylococcus aureus [Presence] in Axilla by Organism specific culture | 0.841 |  |
-| 3013512 | EKG study | 0.835 |  |
-| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.833 |  |
-| 645112 | Stenotrophomonas maltophilia.multidrug resistant [Presence] in Specimen by Organism specific culture | 0.826 |  |
-| 36305005 | Neisseria meningitidis [Presence] in Throat by Organism specific culture | 0.820 |  |
-| 43534061 | Staphylococcus aureus methicillin resistance SCCmec [Presence] in Nose by NAA with probe detection | 0.815 |  |
-| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.802 |  |
-| 1175793 | Methicillin resistant Staphylococcus aureus (MRSA) DNA [Presence] in Nose by NAA with probe detection | 0.799 |  |
-| 3023601 | Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture | 0.794 |  |
-| 40766210 | Pseudomonas aeruginosa.multidrug resistant isolate [Presence] in Specimen by Organism specific culture | 0.793 |  |
-| 46236372 | Staphylococcus aureus methicillin resistance SCCmec+orfX junction [Presence] in Nose by NAA with probe detection | 0.786 |  |
-| 3042517 | Benzodiazepines panel - Urine | 0.775 |  |
-| 42870589 | Drugs of abuse panel - Urine by Screen method | 0.760 |  |
-| 3038341 | Cocaine panel - Urine | 0.760 |  |
-| 3009544 | EKG Study overall | 0.757 |  |
-| 40762243 | Vancomycin resistant enterococcus [Presence] in Anal by Organism specific culture | 0.755 |  |
-| 40758548 | Home drug screening panel - Urine | 0.753 |  |
-| 1988185 | Stimulants drug panel - Urine by Screen method | 0.750 |  |
-| 3010479 | Ambulatory cardiac rhythm monitor (Holter) study | 0.750 |  |
-| 3021257 | Drugs of abuse 5 panel - Urine | 0.749 |  |
-| 46236285 | Enterobacteriaceae.carbapenem resistant [Presence] in Anorectal or stool specimen by Organism specific culture | 0.749 |  |
-| 3013792 | Study duration by EKG | 0.748 |  |
-| 36032057 | Opioids panel - Urine by Screen method | 0.746 |  |
-| 40768439 | Drugs of abuse 5 panel - Urine by Screen method | 0.745 |  |
-| 1616954 | Amphetamines panel - Urine by Confirmatory method | 0.743 |  |
-| 3965448 | Natural cannabinoids panel - Urine | 0.737 |  |
-| 21492856 | Neisseria gonorrhoeae [Presence] in Anorectal by Organism specific culture | 0.737 | 3000 |
-| 1001641 | Benzodiazepines panel [Presence] - Urine by Screen method | 0.734 |  |
-| 40765118 | Chromosome copy number change panel | 0.721 |  |
-| 40765084 | Chromosome analysis copy number change panel by Microarray | 0.703 |  |
-| 3049172 | Sequence variation panel - Blood or Tissue by Molecular genetics method | 0.701 |  |
-| 3005548 | EKG Comparison study (narrative) | 0.700 |  |
-| 3004182 | Recording duration by EKG | 0.696 |  |
-| 3021659 | Heart rate 24 hour | 0.696 |  |
-| 647789 | Hematologic malignancy gene fusion panel - Specimen by Molecular genetics method | 0.694 |  |
-| 3003981 | EKG Study observation overall (narrative) | 0.688 |  |
-| 46235184 | Cardiac stress test EKG study Type | 0.688 |  |
-| 21495008 | Discrete genetic variant panel | 0.683 |  |
-| 21495009 | Complex genetic variant panel | 0.677 |  |
-| 21492986 | Master HL7 genetic variant reporting panel | 0.668 |  |
-| 36033651 | SARS-CoV-2 (COVID-19) sequencing and identification panel - Specimen by Molecular genetics method | 0.665 |  |
-| 3020855 | Comparison study [Interpretation] by EKG | 0.665 |  |
-| 42529179 | NRAS gene [VCF] in Cancer specimen by Sequencing | 0.659 |  |
-| 3965027 | Copy number variation analysis in Blood or Tissue by Sequencing | 0.646 |  |
-| 3001473 | Type of EKG device | 0.638 |  |
+| 3021257 | Drugs of abuse 5 panel - Urine | 0.962 |  |
+| 40768439 | Drugs of abuse 5 panel - Urine by Screen method | 0.935 |  |
+| 3039355 | Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture | 0.922 |  |
+| 3019902 | Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.914 | 146 |
+| 46235760 | Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture | 0.884 |  |
+| 42870589 | Drugs of abuse panel - Urine by Screen method | 0.879 |  |
+| 3050898 | Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture | 0.847 |  |
+| 1761890 | Staphylococcus aureus [Presence] in Specimen by Organism specific culture | 0.842 |  |
+| 1091581 | Methicillin resistant Staphylococcus aureus [Presence] in Skin by Organism specific culture | 0.837 |  |
+| 43534061 | Staphylococcus aureus methicillin resistance SCCmec [Presence] in Nose by NAA with probe detection | 0.835 |  |
+| 3049172 | Sequence variation panel - Blood or Tissue by Molecular genetics method | 0.824 |  |
+| 1175793 | Methicillin resistant Staphylococcus aureus (MRSA) DNA [Presence] in Nose by NAA with probe detection | 0.815 |  |
+| 43533384 | Drugs of abuse panel - Blood by Screen method | 0.813 |  |
+| 40758548 | Home drug screening panel - Urine | 0.803 |  |
+| 1175703 | Drugs of abuse panel - Body fluid | 0.803 |  |
+| 1175629 | Drugs of abuse panel - Hair | 0.800 |  |
+| 3033966 | Methicillin resistant Staphylococcus aureus (MRSA) DNA [Presence] in Specimen by NAA with probe detection | 0.797 | 406 |
+| 36305828 | Drugs of abuse screen W Reflex confirm panel - Urine | 0.797 |  |
+| 1091253 | Methicillin resistant Staphylococcus aureus [Presence] in Axilla by Organism specific culture | 0.796 |  |
+| 46236372 | Staphylococcus aureus methicillin resistance SCCmec+orfX junction [Presence] in Nose by NAA with probe detection | 0.792 |  |
+| 46235542 | Methicillin susceptible Staphylococcus aureus DNA [Presence] in Specimen by NAA with probe detection | 0.791 |  |
+| 3039059 | Drugs of abuse 7 and Alcohol and Tricyclics panel - Urine by Screen method | 0.790 |  |
+| 1761466 | Staph aureus and MRSA screening panel - Specimen by Organism specific culture | 0.788 |  |
+| 645112 | Stenotrophomonas maltophilia.multidrug resistant [Presence] in Specimen by Organism specific culture | 0.785 |  |
+| 3965027 | Copy number variation analysis in Blood or Tissue by Sequencing | 0.781 |  |
+| 3050167 | Methicillin resistance mecA gene [Presence] by Molecular method | 0.778 |  |
+| 3049122 | Sequencing methodology panel - Blood or Tissue by Molecular genetics method | 0.777 |  |
+| 37021170 | Staphylococcus aureus DNA [Presence] in Nose by NAA with probe detection | 0.776 |  |
+| 3051704 | Genechip kit panel - Blood or Tissue by Molecular genetics method | 0.775 |  |
+| 3052990 | Drugs of abuse panel - Meconium | 0.775 |  |
+| 1091341 | Vancomycin resistant enterococcus [Presence] in Specimen | 0.773 |  |
+| 36203839 | Methicillin resistance mecA+mecC genes [Presence] in Nose by NAA with probe detection | 0.772 |  |
+| 36305005 | Neisseria meningitidis [Presence] in Throat by Organism specific culture | 0.769 |  |
+| 1091173 | Corynebacterium diphtheriae [Presence] in Throat by Culture | 0.766 |  |
+| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.763 |  |
+| 3044889 | 12 lead EKG panel | 0.749 |  |
+| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.749 |  |
+| 40757581 | CYP2C9 and VKORC1 panel - Blood or Tissue by Molecular genetics method | 0.746 |  |
+| 21493868 | CYP3A4 and CYP3A5 gene targeted mutation analysis panel - Blood or Tissue by Molecular genetics method | 0.738 |  |
+| 46236023 | DNA analysis discrete sequence variation basic associated observations panel - Blood or Tissue by Molecular genetics method | 0.737 |  |
+| 3040040 | HTT gene mutation panel - Blood or Tissue by Molecular genetics method | 0.733 |  |
+| 42529070 | Genetic variant details in Blood or Tissue by Molecular genetics method Narrative | 0.729 |  |
+| 43534060 | CYP2D6 gene and CYP2C19 gene targeted mutation analysis panel - Blood or Tissue by Molecular genetics method | 0.728 |  |
+| 3010479 | Ambulatory cardiac rhythm monitor (Holter) study | 0.725 |  |
+| 40762243 | Vancomycin resistant enterococcus [Presence] in Anal by Organism specific culture | 0.707 |  |
+| 46236285 | Enterobacteriaceae.carbapenem resistant [Presence] in Anorectal or stool specimen by Organism specific culture | 0.706 |  |
+| 3043216 | Cardiovascular physiologic and EKG assessment panel | 0.696 |  |
+| 3013512 | EKG study | 0.667 |  |
+| 1988318 | Temporary pacemaker panel | 0.666 |  |
+| 3001473 | Type of EKG device | 0.665 |  |
+| 40771965 | Cardiology monitoring | 0.663 |  |
+| 1988411 | Permanent pacemaker panel | 0.659 |  |
+| 3021659 | Heart rate 24 hour | 0.647 |  |
+| 1616739 | Blood pressure panel 24 hour mean | 0.643 |  |
+| 3004182 | Recording duration by EKG | 0.635 |  |
+| 1259654 | Diagnostic multisection transesophageal and cardioversion panel Heart | 0.627 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 183 | -metisilliiniresistentinstaphylococcusaureus(mrsa),viljely |  | 100% | name | 161 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture |
-| 184 | -metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 578 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture |
-| 185 | -metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 578 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture |
-| 186 | -metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 576 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture |
-| 187 | ennaltamääritellyngeenineksonienemäsmuutostenjapientenkopiolukumuutostentutkimusngs-menetelmällä |  | 100% | name | 160 | 100 |  |  |  |  | Gene variants and Copy number variants panel - Specimen by NGS |
-| 188 | huumeseula(amfet,bents,opiaat,kannab,koka) |  | 100% | name | 129 | 100 |  |  |  |  | Amphetamines & Benzodiazepines & Cannabinoids & Cocaine & Opiates screen panel - Urine |
-| 189 | huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 544 | 100 |  |  |  |  | Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine |
-| 190 | metisilliiniresistentinstaphylococcusaureus(mrs |  | 100% | name | 166 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture |
-| 191 | metisilliiniresistenttistaph.aureus,viljelyne |  | 100% | name | 294 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture |
-| 192 | metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 436 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture |
-| 193 | metisilliiniresistenttistaph.aureus,viljelyni |  | 100% | name | 295 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture |
-| 194 | metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 442 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture |
-| 195 | metisilliiniresistenttistaph.aureus,viljelype |  | 100% | name | 296 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture |
-| 196 | metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 433 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture |
-| 197 | metisilliiniresistenttistaphylococcusaureus(mrsa),seulontaviljely␤ |  | 100% | name | 111 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture |
-| 198 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analys,lausunto |  | 100% | name | 322 | 100 |  |  | Patient |  | EKG 24 hour study |
-| 199 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analysointi,lausunto |  | 100% | name | 138 | 100 |  |  | Patient |  | EKG 24 hour study |
-| 200 | pt-ekg,pitkäaikaisrekisteröinti(48h),kytkentä,analysointi,lausunto |  | 100% | name | 136 | 100 |  |  | Patient |  | EKG 48 hour study |
-| 201 | työpaikanhuumetutkimus6a(amfetamiini,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiini,opi |  | 100% | name | 108 | 100 |  |  |  |  | Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine |
-| 202 | u-huum6a:amfetamiinit,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiinijaopiaatit.vainsop. |  | 100% | name | 113 | 100 |  |  | Urine |  | Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine |
-| 203 | u-huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 731 | 100 |  |  | Urine |  | Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine |
+| 179 | -metisilliiniresistentinstaphylococcusaureus(mrsa),viljely |  | 100% | name | 161 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Culture |
+| 180 | -metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 578 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture |
+| 181 | -metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 578 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture |
+| 182 | -metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 576 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture |
+| 183 | ennaltamääritellyngeenineksonienemäsmuutostenjapientenkopiolukumuutostentutkimusngs-menetelmällä |  | 100% | name | 160 | 100 |  |  |  |  | Genetic variants and Copy number variations panel - Blood or Tissue by NGS |
+| 184 | huumeseula(amfet,bents,opiaat,kannab,koka) |  | 100% | name | 129 | 100 |  |  |  |  | Drugs of abuse 5 screen panel - Urine |
+| 185 | huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 544 | 100 |  |  |  |  | Drugs of abuse 6 screen panel - Urine |
+| 186 | metisilliiniresistentinstaphylococcusaureus(mrs |  | 100% | name | 166 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Specimen |
+| 187 | metisilliiniresistenttistaph.aureus,viljelyne |  | 100% | name | 294 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture |
+| 188 | metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 436 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture |
+| 189 | metisilliiniresistenttistaph.aureus,viljelyni |  | 100% | name | 295 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture |
+| 190 | metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 442 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture |
+| 191 | metisilliiniresistenttistaph.aureus,viljelype |  | 100% | name | 296 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture |
+| 192 | metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 433 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture |
+| 193 | metisilliiniresistenttistaphylococcusaureus(mrsa),seulontaviljely␤ |  | 100% | name | 111 | 100 |  |  |  |  | Staphylococcus aureus.methicillin resistant screen [Presence] in Specimen by Culture |
+| 194 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analys,lausunto |  | 100% | name | 322 | 100 |  |  | Patient |  | 24 hour ambulatory EKG panel |
+| 195 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analysointi,lausunto |  | 100% | name | 138 | 100 |  |  | Patient |  | 24 hour ambulatory EKG panel |
+| 196 | pt-ekg,pitkäaikaisrekisteröinti(48h),kytkentä,analysointi,lausunto |  | 100% | name | 136 | 100 |  |  | Patient |  | 48 hour ambulatory EKG panel |
+| 197 | työpaikanhuumetutkimus6a(amfetamiini,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiini,opi |  | 100% | name | 108 | 100 |  |  |  |  | Drugs of abuse 6 screen panel - Urine |
+| 198 | u-huum6a:amfetamiinit,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiinijaopiaatit.vainsop. |  | 100% | name | 113 | 100 |  |  | Urine |  | Drugs of abuse 6 screen panel - Urine |
+| 199 | u-huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 731 | 100 |  |  | Urine |  | Drugs of abuse 6 screen panel - Urine |
 

@@ -1,152 +1,152 @@
 {
   "rows": [
     {
-      "row_id": 183,
+      "row_id": 179,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentin staphylococcus aureus(mrsa)' ; [Presence] bcs this is a qualitative culture ; in Specimen bcs no specimen is specified in the local name ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentin staphylococcus aureus (mrsa)' ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs no specific specimen is named ; by Organism specific culture bcs 'viljely' (culture).",
       "certainty": "high"
     },
     {
-      "row_id": 184,
+      "row_id": 180,
       "omop_concept_id": "3039355",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Nose bcs local name specifies 'nenästä' (from nose) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Nose bcs 'nenästä' (from nose) ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 181,
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Pharynx bcs 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 182,
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs the specific site 'perineumista' (from perineum) does not have a matching candidate concept, so the general specimen is used ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 183,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept accurately represents an analysis of both base changes ('emäsmuutosten') and copy number variations ('kopiolukumuutosten') as specified in the test name. Mapping to a concept for only one of these would be incorrect.",
+      "certainty": ""
+    },
+    {
+      "row_id": 184,
+      "omop_concept_id": "40768439",
+      "omop_concept_name": "Drugs of abuse 5 panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse 5 panel bcs 'huumeseula' (drug screen) with 5 drugs listed (amfet, bents, opiaat, kannab, koka) ; in Urine bcs this is the default and implied specimen for a 'huumeseula' ; by Screen method bcs 'seula' (screen).",
       "certainty": "high"
     },
     {
       "row_id": 185,
-      "omop_concept_id": "46235760",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Pharynx bcs local name specifies 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel bcs 'huumeseulonta' (drug screening) with 6 drugs listed; no 6-panel concept is available, so a general panel is the best fit ; in Urine bcs this is the default and implied specimen for a 'huumeseulonta' ; by Screen method bcs 'seulonta' (screening).",
       "certainty": "high"
     },
     {
       "row_id": 186,
       "omop_concept_id": "3019902",
       "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Specimen bcs local name specifies 'perineumista' (from perineum), for which no specific LOINC candidate exists, so the general 'Specimen' is the best fit ; by Organism specific culture bcs local name includes 'viljely' (culture)",
-      "certainty": "high"
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentin staphylococcus aureus (mrs', truncated) ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs no specific specimen is named ; by Organism specific culture bcs this is the assumed method for a standard MRSA screening test when not specified.",
+      "certainty": "medium"
     },
     {
       "row_id": 187,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No candidate concept correctly represents a panel for both sequence variants ('emäsmuutokset') and copy number variants ('kopiolukumuutokset') as specified in the test name.",
-      "certainty": ""
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Nose bcs 'ne' is a clear truncation of 'nenästä' (from nose) ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "medium"
     },
     {
       "row_id": 188,
-      "omop_concept_id": "40768439",
-      "omop_concept_name": "Drugs of abuse 5 panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse 5 panel bcs local name 'huumeseula' lists 5 drug classes (amfet,bents,opiaat,kannab,koka) ; in Urine bcs this is the default specimen for drug screening ; by Screen method bcs 'seula' means screen",
+      "omop_concept_id": "3039355",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Nose bcs 'nenästä' (from nose) ; by Organism specific culture bcs 'viljely' (culture).",
       "certainty": "high"
     },
     {
       "row_id": 189,
-      "omop_concept_id": "42870589",
-      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse panel bcs the local name 'huumeseulonta' lists 6 drug classes (including buprenorphine), and no specific 6-panel candidate is available, making a general panel the best fit ; in Urine bcs this is the default specimen for drug screening ; by Screen method bcs 'seulonta' means screening",
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Pharynx bcs 'ni' is a clear truncation of 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs 'viljely' (culture).",
       "certainty": "medium"
     },
     {
       "row_id": 190,
-      "omop_concept_id": "3019902",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentin staphylococcus aureus(mrs', a clear, though truncated, reference to MRSA ; [Presence] bcs this is a qualitative screening test ; in Specimen bcs no specimen is specified in the local name ; by Organism specific culture bcs this is the implied method for MRSA screening",
+      "omop_concept_id": "46235760",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Pharynx bcs 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs 'viljely' (culture).",
       "certainty": "high"
     },
     {
       "row_id": 191,
-      "omop_concept_id": "3039355",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Nose bcs local name specifies 'ne', a clear truncation of 'nenästä' (from nose) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
-      "certainty": "high"
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs the truncated site 'pe' (for 'perineumista') does not have a matching candidate concept, so the general specimen is used ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "medium"
     },
     {
       "row_id": 192,
-      "omop_concept_id": "3039355",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Nose by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Nose bcs local name specifies 'nenästä' (from nose) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
-      "certainty": "high"
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs the specific site 'perineumista' (from perineum) does not have a matching candidate concept, so the general specimen is used ; by Organism specific culture bcs 'viljely' (culture).",
+      "certainty": "medium"
     },
     {
       "row_id": 193,
-      "omop_concept_id": "46235760",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Pharynx bcs local name specifies 'ni', a clear truncation of 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "omop_concept_id": "3019902",
+      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Methicillin resistant Staphylococcus aureus bcs 'metisilliiniresistentti staphylococcus aureus (mrsa)' ; [Presence] bcs this is a qualitative microbiology test ; in Specimen bcs no specific specimen is named ; by Organism specific culture bcs 'seulontaviljely' (screening culture).",
       "certainty": "high"
     },
     {
       "row_id": 194,
-      "omop_concept_id": "46235760",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Pharynx bcs local name specifies 'nielusta' (from throat/pharynx) ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs the name 'pt-ekg, pitkäaikaisrekisteröinti (24h)' describes a 24-hour ambulatory EKG study, which is a Holter study ; this is a panel bcs the name includes hookup ('kytkentä'), analysis, and report ('lausunto') and has the Pt- prefix.",
       "certainty": "high"
     },
     {
       "row_id": 195,
-      "omop_concept_id": "3019902",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Specimen bcs local name specifies 'pe', a clear truncation of 'perineumista' (from perineum), for which no specific LOINC candidate exists, so the general 'Specimen' is the best fit ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs the name 'pt-ekg, pitkäaikaisrekisteröinti (24h)' describes a 24-hour ambulatory EKG study, which is a Holter study ; this is a panel bcs the name includes hookup ('kytkentä'), analysis, and report ('lausunto') and has the Pt- prefix.",
       "certainty": "high"
     },
     {
       "row_id": 196,
-      "omop_concept_id": "3019902",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentti staph. aureus' ; [Presence] bcs this is a qualitative culture ; in Specimen bcs local name specifies 'perineumista' (from perineum), for which no specific LOINC candidate exists, so the general 'Specimen' is the best fit ; by Organism specific culture bcs local name includes 'viljely' (culture)",
+      "omop_concept_id": "3010479",
+      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
+      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs the name 'pt-ekg, pitkäaikaisrekisteröinti (48h)' describes a 48-hour ambulatory EKG study, which is a Holter study ; the LOINC concept is not specific to duration and covers this procedure ; this is a panel bcs the name includes hookup ('kytkentä'), analysis, and report ('lausunto') and has the Pt- prefix.",
       "certainty": "high"
     },
     {
       "row_id": 197,
-      "omop_concept_id": "3019902",
-      "omop_concept_name": "Methicillin resistant Staphylococcus aureus [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Methicillin resistant Staphylococcus aureus bcs local name is 'metisilliiniresistentin staphylococcus aureus(mrsa)' ; [Presence] bcs this is a qualitative culture ; in Specimen bcs no specimen is specified in the local name ; by Organism specific culture bcs local name includes 'seulontaviljely' (screening culture)",
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel bcs 'työpaikan huumetutkimus 6a' (workplace drug test 6a) with 6 drugs listed; no 6-panel concept is available, so a general panel is the best fit ; in Urine bcs this is the standard specimen for workplace drug testing ; by Screen method bcs this is an initial screen.",
       "certainty": "high"
     },
     {
       "row_id": 198,
-      "omop_concept_id": "3010479",
-      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
-      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs local name 'Pt-EKG, pitkäaikaisrekisteröinti(24h)' describes a 24-hour long-term EKG recording, which is a Holter study",
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel bcs 'huum6a' indicates a 6-drug panel; no 6-panel concept is available, so a general panel is the best fit ; in Urine bcs of the 'U-' prefix ; by Screen method bcs this is a screening test.",
       "certainty": "high"
     },
     {
       "row_id": 199,
-      "omop_concept_id": "3010479",
-      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
-      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs local name 'Pt-EKG, pitkäaikaisrekisteröinti(24h)' describes a 24-hour long-term EKG recording, which is a Holter study",
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel bcs 'huumeseulonta' (drug screening) with 6 drugs listed; no 6-panel concept is available, so a general panel is the best fit ; in Urine bcs of the 'U-' prefix ; by Screen method bcs 'seulonta' (screening).",
       "certainty": "high"
-    },
-    {
-      "row_id": 200,
-      "omop_concept_id": "3010479",
-      "omop_concept_name": "Ambulatory cardiac rhythm monitor (Holter) study",
-      "reasoning": "Ambulatory cardiac rhythm monitor (Holter) study bcs local name 'Pt-EKG, pitkäaikaisrekisteröinti(48h)' describes a 48-hour long-term EKG recording, which is a Holter study. The LOINC concept for the study does not specify duration.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 201,
-      "omop_concept_id": "42870589",
-      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse panel bcs the local name 'työpaikanhuumetutkimus6a' is a workplace drug investigation listing 6 drug classes, and no specific 6-panel candidate is available, making a general panel the best fit ; in Urine bcs this is the standard for workplace drug testing ; by Screen method bcs 'tutkimus' (investigation) usually starts with a screen",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 202,
-      "omop_concept_id": "42870589",
-      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse panel bcs the local name 'huum6a' specifies a 6-drug panel, and no specific 6-panel candidate is available, making a general panel the best fit ; in Urine bcs of the 'U-' prefix ; by Screen method bcs this is a screening panel",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 203,
-      "omop_concept_id": "42870589",
-      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse panel bcs the local name 'huumeseulonta' lists 6 drug classes, and no specific 6-panel candidate is available, making a general panel the best fit ; in Urine bcs of the 'U-' prefix ; by Screen method bcs 'seulonta' means screening",
-      "certainty": "medium"
     }
   ],
-  "reflection": "This group contained three main types of tests: MRSA cultures, drug screening panels, and Holter EKG studies. \n\nThe MRSA cultures were straightforward to map, with specific LOINC concepts available for Nose and Pharynx (Throat), and a general 'Specimen' concept for unspecified sites or sites like Perineum for which no specific LOINC was in the candidate list. Using the general 'Specimen' concept is a safe and correct approach in these cases.\n\nThe EKG studies for 24h or 48h long-term recording were well-described by the Finnish names and mapped clearly to the 'Ambulatory cardiac rhythm monitor (Holter) study' concept, which correctly represents the procedure without specifying the duration.\n\nThe drug panels were slightly more complex. A 5-drug panel mapped perfectly to a specific LOINC concept. However, several rows described a 6-drug panel (including Buprenorphine), for which no exact match was available in the candidates. I mapped these to a more generic 'Drugs of abuse panel' concept, which is a reasonable solution, though less precise.\n\nOne row (187) for a complex genetic test looking for both sequence variants and copy number variants by NGS could not be mapped, as no single candidate concept captured this specific combination of analyses. Leaving this unmapped was the correct action to avoid an inaccurate mapping."
+  "reflection": "This group contained three distinct types of tests: MRSA cultures, drug abuse screens, and ambulatory EKG (Holter) studies. The mappings were mostly straightforward.\n\nFor the MRSA cultures, candidates were available for specific body sites like Nose (`nenästä`) and Throat (`nielusta`), which allowed for precise mappings. However, for the site Perineum (`perineumista`), no specific candidate was available, forcing a mapping to the more general `Specimen` concept. This highlights a limitation in the candidate list where less common but still specific sites are missing.\n\nFor the drug screens, a 5-drug panel was perfectly matched. However, several local codes specified a 6-drug panel, for which no specific LOINC concept was in the candidate list. These were mapped to a generic `Drugs of abuse panel`, which is correct but loses the specific number of analytes.\n\nThe EKG rows were clearly Holter monitor studies and were mapped to the appropriate panel concept.\n\nOne row (183) for a genetic test was left unmapped. The Finnish name was very specific, describing an analysis for both sequence variations and copy number variations. No single candidate concept covered both aspects, and mapping to a concept covering only one would be incorrect and misleading."
 }

@@ -2,158 +2,151 @@
   "rows": [
     {
       "row_id": 1,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs this is the default specimen for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,iga-vasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' and value deciles ; in Serum bcs Serum is the standard specimen for this test and the best matching Top 2000 concept",
       "certainty": "high"
     },
     {
       "row_id": 2,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; in Serum bcs this is the default specimen ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,iga-vasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs Serum is the standard specimen and the best matching Top 2000 concept",
       "certainty": "medium"
     },
     {
       "row_id": 3,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; in Serum bcs name includes `seerumista` (from serum) ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,iga-vasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs TEST_NAME includes 'seerumista'",
       "certainty": "medium"
     },
     {
       "row_id": 4,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; [Units/volume] bcs unit `u/ml` ; in Serum bcs this is the default specimen for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' and value deciles ; in Serum bcs Serum is the standard specimen for this test and the best matching Top 2000 concept",
       "certainty": "high"
     },
     {
       "row_id": 5,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; in Serum bcs this is the default specimen ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs Serum is the standard specimen and the best matching Top 2000 concept",
       "certainty": "medium"
     },
     {
       "row_id": 6,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs name includes `seerumista` (from serum) ; [Units/volume] bcs unit `u/ml` ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' and value deciles ; in Serum bcs TEST_NAME includes 'seerumista'",
       "certainty": "high"
     },
     {
       "row_id": 7,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs name includes `seerumista` (from serum) ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 'kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs TEST_NAME includes 'seerumista'",
       "certainty": "medium"
     },
     {
       "row_id": 8,
-      "omop_concept_id": "40759657",
-      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgG Ab bcs name `kudostransglutaminaasi,igg-vasta-aineet` ; [Units/volume] bcs this is the standard property for this test ; in Serum bcs this is the default specimen ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3046870",
+      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgG Ab bcs TEST_NAME 'kudostransglutaminaasi,igg-vasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs Serum is the standard specimen for this test and the best matching Top 2000 concept",
       "certainty": "medium"
     },
     {
       "row_id": 9,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs unit `u/ml` ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,iga-vasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "high"
     },
     {
       "row_id": 10,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,iga-vasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 11,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. Suffix `osatutk` confirms it is a single component test.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,iga-vasta-aineet' ('osatutk.' is context) ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 12,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs unit `eliau/ml` implies Units/volume ; by Immunoassay bcs unit `eliau/ml` likely stands for Enzyme-Linked ImmunoAssay, explicitly supporting the method.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs UNIT 'eliau/ml' is a variant of U/mL ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "high"
     },
     {
       "row_id": 13,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs unit `u/ml` ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' and value deciles ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "high"
     },
     {
       "row_id": 14,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,igavasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 15,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs unit `u/ml` ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. The text `(keliakia)` is clinical context.",
-      "certainty": "high"
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,igavasta-aineet' ('keliakia' is clinical context) ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
+      "certainty": "medium"
     },
     {
       "row_id": 16,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. The text `(keliakia)` is clinical context.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-kudostransglutaminaasi,igavasta-aineet' ('keliakiatutkimus' is clinical context) ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 17,
-      "omop_concept_id": "3046538",
-      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,igavasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. The text `keliakiatutkimus` is clinical context.",
+      "omop_concept_id": "3046870",
+      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgG Ab bcs TEST_NAME 's-kudostransglutaminaasi,iggva' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 18,
-      "omop_concept_id": "40759657",
-      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgG Ab bcs name `kudostransglutaminaasi,iggva` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. The text `(keliakia)` is clinical context.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 19,
-      "omop_concept_id": "40759657",
-      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgG Ab bcs name `kudostransglutaminaasi,iggvasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs unit `u/ml` ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3046870",
+      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgG Ab bcs TEST_NAME 's-kudostransglutaminaasi,iggvasta-aineet' ; [Units/volume] bcs UNIT 'u/ml' ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "high"
     },
     {
+      "row_id": 19,
+      "omop_concept_id": "3046870",
+      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgG Ab bcs TEST_NAME 's-kudostransglutaminaasi,iggvasta-aineet' ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
+      "certainty": "medium"
+    },
+    {
       "row_id": 20,
-      "omop_concept_id": "40759657",
-      "omop_concept_name": "Tissue transglutaminase IgG Ab [Units/volume] in Serum by Immunoassay",
-      "reasoning": "Tissue transglutaminase IgG Ab bcs name `kudostransglutaminaasi,iggvasta-aineet` ; in Serum bcs prefix `s-` ; [Units/volume] bcs this is the standard property for this test ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target.",
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-transglutaminaasivasta-aineet' with IgA inferred as the default screening test isotype ; [Units/volume] bcs UNIT 'u/ml' ; in Serum bcs prefix_meaning 'Serum'",
       "certainty": "medium"
     },
     {
       "row_id": 21,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `s-transglutaminaasivasta-aineet` does not specify the immunoglobulin class (e.g., IgA, IgG), making the component ambiguous. No suitable candidate for total or unspecified transglutaminase antibodies was present in the candidate list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 22,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The name `s-transglutaminaasivasta-aineet` does not specify the immunoglobulin class (e.g., IgA, IgG), making the component ambiguous. No suitable candidate for total or unspecified transglutaminase antibodies was present in the candidate list.",
-      "certainty": ""
+      "omop_concept_id": "3019050",
+      "omop_concept_name": "Tissue transglutaminase IgA Ab [Units/volume] in Serum",
+      "reasoning": "Tissue transglutaminase IgA Ab bcs TEST_NAME 's-transglutaminaasivasta-aineet' with IgA inferred as the default screening test isotype ; [Units/volume] bcs this is the standard quantitative property for this test ; in Serum bcs prefix_meaning 'Serum'",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group was straightforward, focusing on tissue transglutaminase IgA and IgG antibodies. The Finnish names were clear, breaking down into `kudostransglutaminaasi` (tissue transglutaminase) and the specific immunoglobulin class (`iga-vasta-aineet` or `igg-vasta-aineet`). The candidate list was excellent, providing the preferred top-2000 LOINC codes which include the method (`by Immunoassay`), which is standard for these tests. The unit `eliau/ml` in row 12 provided strong confirmation for choosing the immunoassay-specific concept. Most rows could be mapped with high or medium certainty. Rows without units were mapped with medium certainty by assuming they followed the standard quantitative measurement. The only unmappable rows were 21 and 22, where the test name `s-transglutaminaasivasta-aineet` was ambiguous, not specifying the Ig class, and the candidate list lacked a concept for 'total' or 'unspecified' transglutaminase antibodies."
+  "reflection": "This group was straightforward to map. The test names were clear variations of 'tissue transglutaminase antibodies', specifying either IgA or IgG isotypes. The `S-` prefix or the word `seerumista` consistently indicated a Serum specimen. The unit `U/mL` matched the `[Units/volume]` property. For rows without a unit, this property could be safely inferred as this is the standard quantitative test format. The candidate list was excellent, containing the specific IgA and IgG concepts with the correct property and system, which were also high-ranking Top 2000 codes. For the two rows where the isotype was not specified, I inferred IgA as it's the primary screening test for celiac disease, mapping them with medium certainty. No candidates were missing."
 }

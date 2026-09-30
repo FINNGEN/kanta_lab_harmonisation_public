@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,241 +115,133 @@ Here is group 85.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3005136 | Cladosporium herbarum IgE Ab [Units/volume] in Serum | 1.000 | 718 |
-| 3020710 | Acetone [Moles/volume] in Serum or Plasma | 1.000 | 1019 |
-| 3022859 | Acetone [Presence] in Serum or Plasma | 1.000 |  |
-| 3026470 | Cobalt [Mass/volume] in Blood | 1.000 |  |
-| 3026493 | Urate [Moles/volume] in Serum or Plasma | 1.000 | 142 |
-| 3042123 | Cladosporium herbarum IgG Ab [Presence] in Serum | 0.965 |  |
-| 40759848 | Cladosporium cladosporioides IgE Ab [Units/volume] in Serum | 0.964 |  |
-| 3042514 | Cladosporium sp IgE Ab [Units/volume] in Serum | 0.963 |  |
-| 3045281 | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection | 0.962 |  |
-| 3006832 | Cladosporium herbarum IgG Ab [Units/volume] in Serum | 0.960 |  |
-| 3045260 | Cladosporium sp IgE Ab [Presence] in Serum | 0.955 |  |
-| 3019084 | Cladosporium sphaerospermum IgE Ab [Units/volume] in Serum | 0.955 | 1809 |
-| 647567 | Cladosporium herbarum IgE Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.952 |  |
-| 3038057 | Cladosporium herbarum IgM Ab [Units/volume] in Serum | 0.945 |  |
-| 3009466 | Valproate [Moles/volume] in Serum or Plasma | 0.944 | 408 |
-| 3008909 | Norovirus RNA [Presence] in Stool by NAA with probe detection | 0.942 |  |
-| 3023355 | Cladosporium herbarum IgG4 Ab [Units/volume] in Serum | 0.942 |  |
-| 3025848 | Cobalt [Moles/volume] in Blood | 0.932 |  |
-| 3966673 | Human coronavirus OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.928 |  |
-| 3965970 | Human coronavirus 229E RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.927 |  |
-| 3036736 | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Specimen by NAA with probe detection | 0.927 |  |
-| 3041642 | Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection | 0.927 |  |
-| 3019531 | Acetone [Mass/volume] in Serum or Plasma | 0.926 |  |
-| 36304464 | Human coronavirus OC43 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.924 |  |
-| 3003568 | Cladosporium cladosporioides IgG Ab [Units/volume] in Serum | 0.923 |  |
-| 21491446 | Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Urine by NAA with probe detection | 0.923 | 3000 |
-| 40764010 | Cladosporium herbarum IgE Ab/IgE total in Serum | 0.922 |  |
-| 3045789 | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Genital specimen by NAA with probe detection | 0.922 |  |
-| 40758036 | Norovirus genogroup II RNA [Presence] in Stool by NAA with probe detection | 0.921 |  |
-| 36304601 | Human coronavirus 229E RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.921 |  |
-| 3037556 | Urate [Mass/volume] in Serum or Plasma | 0.921 |  |
-| 3965395 | Human coronavirus NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.920 |  |
-| 3031825 | Cladosporium sp IgG Ab [Presence] in Serum | 0.918 |  |
-| 3038546 | Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection | 0.918 |  |
-| 3964787 | Human coronavirus HKU1 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.917 |  |
-| 3042090 | Cladosporium cladosporioides IgG Ab [Presence] in Serum | 0.917 |  |
-| 40758035 | Norovirus genogroup I RNA [Presence] in Stool by NAA with probe detection | 0.916 |  |
-| 36031212 | Human papilloma virus 31 DNA [Presence] in Cervix by NAA with probe detection | 0.914 |  |
-| 36304330 | Human coronavirus 229E RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.913 |  |
-| 37019702 | Norovirus genogroup I+II RNA [Presence] in Stool by NAA with probe detection | 0.912 |  |
-| 36304548 | Human coronavirus NL63 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.912 |  |
-| 646724 | Human coronavirus 229E RNA [Presence] in Specimen by NAA with non-probe detection | 0.911 |  |
-| 36660491 | Human coronavirus 229E RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.911 |  |
-| 1092421 | Human coronavirus OC43 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.910 |  |
-| 3965635 | Cladosporium herbarum IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST) | 0.910 |  |
-| 40763125 | Cobalt [Mass/volume] in Red Blood Cells | 0.910 |  |
-| 36305656 | Human coronavirus NL63 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.909 |  |
-| 36304961 | Human coronavirus OC43 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.908 |  |
-| 36305676 | Human coronavirus HKU1 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.908 |  |
-| 36660364 | Human coronavirus OC43 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.908 |  |
-| 21493479 | Norovirus genogroup I+II RNA [Presence] in Stool by NAA with non-probe detection | 0.907 |  |
-| 46236100 | Human papilloma virus 16 DNA [Presence] in Cervix by NAA with probe detection | 0.906 |  |
-| 3040359 | Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection | 0.906 |  |
-| 37020776 | Human coronavirus 229E+NL63 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.904 |  |
-| 645449 | Human coronavirus OC43 RNA [Presence] in Specimen by NAA with non-probe detection | 0.904 |  |
-| 36032296 | Human papilloma virus 52 DNA [Presence] in Cervix by NAA with probe detection | 0.903 |  |
-| 36660329 | Human coronavirus NL63 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.902 |  |
-| 1091709 | Human coronavirus NL63 RNA [Presence] in Bronchial specimen by NAA with probe detection | 0.902 |  |
-| 3026389 | Candida sp identified in Specimen by Organism specific culture | 0.901 |  |
-| 40765160 | Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection | 0.901 |  |
-| 3037286 | Acetone [Presence] in Serum or Plasma by Screen method | 0.900 | 1801 |
-| 36031312 | Human papilloma virus 45 DNA [Presence] in Cervix by NAA with probe detection | 0.899 |  |
-| 36305349 | Human coronavirus HKU1 RNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.899 |  |
-| 36032213 | Human papilloma virus 51 DNA [Presence] in Cervix by NAA with probe detection | 0.898 |  |
-| 646956 | Acetone [Measurement] in Serum or Plasma | 0.898 |  |
-| 3035526 | Acetoacetate [Moles/volume] in Serum or Plasma | 0.897 |  |
-| 3031021 | Cobalt [Mass/volume] in Body fluid | 0.897 |  |
-| 3028447 | Cobalt [Mass/volume] in Serum or Plasma | 0.896 |  |
-| 36659667 | Human coronavirus HKU1 RNA [Presence] in Lower respiratory specimen by NAA with non-probe detection | 0.895 |  |
-| 40759867 | Norovirus RNA [Presence] in Specimen by NAA with probe detection | 0.894 |  |
-| 1091933 | Human coronavirus OC43 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.894 |  |
-| 3045367 | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Cervix by NAA with probe detection | 0.893 | 2001 |
-| 1091444 | Human coronavirus 229E RNA [Presence] in Specimen | 0.892 |  |
-| 3016201 | Valproate [Mass/volume] in Serum or Plasma | 0.892 |  |
-| 36032027 | Human papilloma virus 56+59+66 DNA [Presence] in Cervix by NAA with probe detection | 0.891 |  |
-| 645895 | Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with non-probe detection | 0.890 |  |
-| 46236101 | Human papilloma virus 18 DNA [Presence] in Cervix by NAA with probe detection | 0.890 |  |
-| 3033714 | Cladosporium herbarum IgG Ab [Mass/volume] in Serum | 0.890 |  |
-| 1259531 | Human papilloma virus 31+33+52+58 DNA [Presence] in Cervix by NAA with probe detection | 0.889 |  |
-| 3024950 | Chlamydia trachomatis DNA [Presence] in Urine by NAA with probe detection | 0.887 | 726 |
-| 3964590 | Cladosporium herbarum IgG4 Ab [Presence] in Serum by Radioallergosorbent test (RAST) | 0.887 |  |
-| 36031448 | Human papilloma virus 33+58 DNA [Presence] in Cervix by NAA with probe detection | 0.887 |  |
-| 3028566 | Urate [Moles/volume] in Specimen | 0.886 |  |
-| 646769 | Human coronavirus NL63 RNA [Presence] in Specimen by NAA with non-probe detection | 0.886 |  |
-| 36031556 | Human papilloma virus 35+39+68 DNA [Presence] in Cervix by NAA with probe detection | 0.885 |  |
-| 1091921 | Human coronavirus OC43 RNA [Presence] in Bronchoalveolar lavage by NAA with probe detection | 0.885 |  |
-| 1616915 | Norovirus genogroup II RNA [Presence] in Specimen by NAA with probe detection | 0.885 |  |
-| 37019802 | Human coronavirus HKU1+OC43 RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.884 |  |
-| 21493148 | Human coronavirus OC43 RNA [Presence] in Nasopharynx by NAA with non-probe detection | 0.884 |  |
-| 21493147 | Human coronavirus 229E RNA [Presence] in Nasopharynx by NAA with non-probe detection | 0.883 |  |
-| 1091342 | Human coronavirus HKU1 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.882 |  |
-| 1091866 | Human coronavirus NL63 RNA [Presence] in Nasopharynx by NAA with probe detection | 0.882 |  |
-| 37020262 | Human coronavirus 229E+HKU1+NL63+OC43 RNA [Presence] in Upper respiratory specimen by NAA with probe detection | 0.881 |  |
-| 1091840 | Human coronavirus NL63 RNA [Presence] in Bronchoalveolar lavage by NAA with probe detection | 0.879 |  |
-| 646011 | Cladosporium herbarum IgG Ab [Measurement] in Serum | 0.879 |  |
-| 1616677 | Norovirus genogroup I RNA [Presence] in Specimen by NAA with probe detection | 0.879 |  |
-| 3024085 | Cobalt [Mass/volume] in Urine | 0.876 |  |
-| 3001791 | Acetoacetate [Presence] in Serum or Plasma | 0.875 |  |
-| 3022915 | Valproate Free [Moles/volume] in Serum or Plasma | 0.875 |  |
-| 3027874 | Urate [Moles/volume] in Urine | 0.874 | 1405 |
-| 36305615 | Human coronavirus NL63 RNA [Presence] in Aspirate by NAA with probe detection | 0.871 |  |
-| 647936 | Urate [Measurement] in Serum or Plasma | 0.870 |  |
-| 46235167 | Norovirus genogroup I and II RNA [Identifier] in Stool by NAA with probe detection | 0.869 |  |
-| 36305386 | Human coronavirus HKU1 RNA [Presence] in Aspirate by NAA with probe detection | 0.867 |  |
-| 21493330 | Human coronavirus HKU1 RNA [Presence] in Nasopharynx by NAA with non-probe detection | 0.867 |  |
-| 1176001 | Norovirus RNA [Presence] in Vomitus by NAA with probe detection | 0.867 |  |
-| 21492666 | Norovirus genogroup I+II orf1-orf2 junction region [Presence] in Stool by NAA with probe detection | 0.867 |  |
-| 46234794 | Acetone [Moles/volume] in Blood | 0.866 |  |
-| 21492850 | Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Vaginal fluid by NAA with probe detection | 0.865 | 3000 |
-| 3044280 | Acetone [Presence] in Blood | 0.865 |  |
-| 40763482 | Norovirus RNA [Presence] in Isolate by NAA with probe detection | 0.864 |  |
-| 3013867 | Bacteria identified in Specimen by Aerobe culture | 0.862 | 276 |
-| 3004527 | Acetone [Presence] in Specimen | 0.861 |  |
-| 3011298 | Bacteria identified in Specimen by Anaerobe culture | 0.859 | 333 |
-| 3008520 | Urate [Moles/volume] in Body fluid | 0.858 |  |
-| 3002322 | Acetone [Moles/volume] in Specimen | 0.857 |  |
-| 3020115 | Chlamydia trachomatis DNA [Presence] in Urethra by NAA with probe detection | 0.857 |  |
-| 3019205 | Cobalt [Mass/volume] in Specimen | 0.856 |  |
-| 3035800 | Chlamydia trachomatis and Neisseria gonorrhoeae DNA [Identifier] in Specimen by NAA with probe detection | 0.856 | 327 |
-| 3022033 | Acetone [Presence] in Body fluid | 0.856 |  |
-| 3029311 | Acetone [Moles/volume] in Body fluid | 0.855 |  |
-| 3035132 | Ketones [Presence] in Serum or Plasma | 0.853 | 1276 |
-| 3044125 | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Specimen by Probe with signal amplification | 0.853 |  |
-| 21492849 | Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Cervix by NAA with probe detection | 0.852 | 3000 |
-| 3030560 | Chlamydia sp DNA [Presence] in Urine by NAA with probe detection | 0.852 |  |
-| 42870622 | 2-Methylacetoacetate [Moles/volume] in Serum or Plasma | 0.851 |  |
-| 3029348 | Methyl ethyl ketone [Moles/volume] in Serum or Plasma | 0.851 |  |
-| 3019518 | Acetone [Presence] in Urine | 0.850 | 473 |
-| 1091339 | Norovirus genogroup I+II RNA [Presence] in Specimen | 0.850 |  |
-| 1175713 | Norovirus genogroup I and II RNA [Identifier] in Specimen by NAA with probe detection | 0.849 |  |
-| 3024421 | Chlamydia trachomatis DNA [Presence] in Genital specimen by NAA with probe detection | 0.849 |  |
-| 3006093 | Chlamydia trachomatis DNA [Presence] in Specimen by NAA with probe detection | 0.846 | 180 |
-| 3041890 | Norovirus RNA [Presence] in Specimen by Probe | 0.845 |  |
-| 3020779 | Urea [Moles/volume] in Serum or Plasma | 0.845 |  |
-| 3029886 | Cobalt [Moles/volume] in Red Blood Cells | 0.844 |  |
-| 3021311 | Cobalt [Moles/volume] in Serum or Plasma | 0.844 |  |
-| 3002619 | Bacteria identified in Specimen by Culture | 0.843 | 39 |
-| 3052265 | Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Specimen from Donor by NAA with probe detection | 0.842 |  |
-| 3024447 | Bacteria identified in Specimen by Anaerobe+Aerobe culture | 0.841 | 1062 |
-| 1175308 | Norovirus genogroup II RNA [Presence] in Vomitus by NAA with probe detection | 0.840 |  |
-| 40761050 | Cobalt [Mass/volume] in Cerebral spinal fluid | 0.838 |  |
-| 3022620 | Valproate [Mass/volume] in Serum or Plasma --trough | 0.836 |  |
-| 3046547 | Bacteria # 3 identified in Specimen by Anaerobe culture | 0.835 |  |
-| 3012713 | Urate [Moles/volume] in 24 hour Urine | 0.833 |  |
-| 3044387 | Bacteria # 2 identified in Specimen by Anaerobe culture | 0.833 |  |
-| 3043007 | Bacteria # 6 identified in Specimen by Anaerobe culture | 0.831 |  |
-| 3020200 | Chlamydia trachomatis DNA [Presence] in Cervix by NAA with probe detection | 0.830 | 751 |
-| 3043307 | Bacteria # 4 identified in Specimen by Anaerobe culture | 0.829 |  |
-| 3046504 | Bacteria # 5 identified in Specimen by Anaerobe culture | 0.829 |  |
-| 3048895 | Bacteria # 8 identified in Specimen by Aerobe culture | 0.829 |  |
-| 3042301 | Urate [Moles/volume] in Synovial fluid | 0.828 |  |
-| 21491327 | Allopurinol [Moles/volume] in Serum or Plasma | 0.828 |  |
-| 3043573 | Bacteria # 7 identified in Specimen by Anaerobe culture | 0.827 |  |
-| 3012167 | Candida sp identified in Stool by Organism specific culture | 0.825 |  |
-| 3021600 | Valproate Free [Mass/volume] in Serum or Plasma | 0.822 |  |
-| 3049818 | Bacteria # 7 identified in Specimen by Aerobe culture | 0.818 |  |
-| 3053009 | Bacteria # 3 identified in Specimen by Aerobe culture | 0.818 |  |
-| 43533702 | Valproate [Mass/volume] in Serum or Plasma --peak | 0.810 |  |
-| 3000494 | Fungus identified in Specimen by Culture | 0.810 | 328 |
-| 3037330 | Chlamydia sp DNA [Presence] in Cervix by NAA with probe detection | 0.808 |  |
-| 3043867 | Bacteria # 8 identified in Specimen by Culture | 0.808 |  |
-| 3026551 | Bacteria identified in Unknown substance by Aerobe culture | 0.807 |  |
-| 3047178 | Yeast [Presence] in Specimen by Wet preparation | 0.805 | 874 |
-| 3046136 | Bacteria # 7 identified in Specimen by Culture | 0.804 |  |
-| 37020691 | Bacteria identified in Upper respiratory specimen by Aerobe culture | 0.804 |  |
-| 40758651 | Acetazolamide [Moles/volume] in Serum or Plasma | 0.801 |  |
-| 3041732 | Fungus identified in Genital specimen by Culture | 0.795 |  |
-| 3050209 | Cryptococcus sp identified in Specimen by Organism specific culture | 0.793 |  |
-| 3025093 | Yeast [Presence] in Genital specimen by Wet preparation | 0.789 |  |
-| 3025633 | Candida sp identified in Saliva (oral fluid) by Organism specific culture | 0.788 |  |
-| 36305715 | Candida sp identified in Isolate | 0.787 |  |
-| 3020485 | Acetaminophen [Moles/volume] in Serum or Plasma | 0.785 | 402 |
-| 3046121 | Yeast.hyphae [Presence] in Specimen by Wet preparation | 0.784 |  |
-| 3019779 | Phenytoin [Moles/volume] in Serum or Plasma | 0.784 | 356 |
-| 3022515 | Vigabatrin [Moles/volume] in Serum or Plasma | 0.783 |  |
-| 1761571 | Yeast and Candida sp identification panel - Specimen by Organism specific culture | 0.781 |  |
-| 3042263 | Yeast identified in Genital specimen by Organism specific culture | 0.777 |  |
-| 1617523 | Candida sp identified in Isolate by Sequencing | 0.760 |  |
-| 3011034 | Cladosporium herbarum Ab [Units/volume] in Serum | 0.759 |  |
-| 3009648 | Yeast [Presence] in Cervix by Wet preparation | 0.758 |  |
-| 3001496 | Yeast [Presence] in Vaginal fluid by Wet preparation | 0.750 |  |
-| 3020030 | Yeast [Presence] in Urethra by Wet preparation | 0.745 |  |
-| 3046994 | Cladosporium herbarum Ab [Presence] in Serum by Immune diffusion (ID) | 0.745 |  |
-| 40758444 | Yeast [Presence] in Specimen by KOH preparation | 0.745 |  |
-| 40758437 | Yeast.pseudohyphae [Presence] in Specimen by KOH preparation | 0.743 |  |
-| 42868608 | Yeast.hyphae [Presence] in Specimen by KOH preparation | 0.739 |  |
-| 3002256 | Pathology report gross observation | 0.689 |  |
-| 3007597 | Pathology report gross observation Narrative | 0.660 | 248 |
-| 3964745 | Pathology report microscopic observation in Specimen | 0.617 |  |
-| 36305536 | Placenta examination findings Document | 0.615 |  |
-| 44817246 | Macroscopic observation [Interpretation] in Specimen Narrative | 0.607 |  |
-| 3002855 | Fetal Placenta Grade US (narrative) | 0.588 |  |
-| 36304944 | Microscopic observation [Identifier] in Placenta by Gram stain | 0.585 |  |
-| 1617280 | Sex [Type] in Products of Conception by Molecular genetics method | 0.584 |  |
-| 46237006 | Karyotype [Identifier] in Products of Conception Nominal | 0.575 |  |
-| 42529483 | Pathology report intraoperative observation in Specimen Document | 0.572 |  |
+| 42529473 | Bone density quantitative measurement by DXA panel | 0.911 |  |
+| 36305393 | Pure tone air conduction threshold audiometry panel | 0.909 |  |
+| 1761861 | Pure tone bone conduction threshold audiometry panel | 0.874 |  |
+| 40762373 | Cardiac stress echo study | 0.866 |  |
+| 1259791 | Lupus anticoagulant aPTT screening panel - Platelet poor plasma by Coagulation assay | 0.850 |  |
+| 1617160 | Diagnostic audiology results panel | 0.806 |  |
+| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.801 | 337 |
+| 3027184 | Lupus anticoagulant [Interpretation] in Platelet poor plasma | 0.794 |  |
+| 3014536 | Streptococcus agalactiae Ag [Presence] in Throat | 0.786 |  |
+| 46235689 | Lupus anticoagulant aPTT, dRVVT and PT screening panel W Reflex | 0.776 |  |
+| 3003551 | Influenza virus A Ag [Presence] in Throat | 0.776 |  |
+| 3005534 | Adenovirus Ag [Presence] in Throat | 0.772 |  |
+| 46235128 | Lupus anticoagulant aPTT and dRVVT screening panel W Reflex | 0.769 |  |
+| 3046644 | Herpes simplex virus 1 Ag [Presence] in Throat | 0.768 |  |
+| 3039189 | Lupus anticoagulant neutralization dilute phospholipid [Time] in Platelet poor plasma | 0.767 |  |
+| 3022193 | Influenza virus A+B Ag [Presence] in Throat | 0.764 |  |
+| 3009299 | Lupus anticoagulant neutralization platelet [Time] in Platelet poor plasma by Coagulation assay | 0.763 | 811 |
+| 3014424 | Cardiac echo study Procedure stress method | 0.763 |  |
+| 3017427 | Lupus anticoagulant neutralization dilute phospholipid [Presence] in Platelet poor plasma | 0.761 | 1189 |
+| 3038697 | Lupus anticoagulant neutralization platelet [Presence] in Platelet poor plasma by Coagulation assay | 0.759 |  |
+| 3007496 | Mumps virus Ag [Presence] in Throat | 0.757 |  |
+| 3012751 | Measles virus Ag [Presence] in Throat | 0.756 |  |
+| 3004641 | Pneumocystis jiroveci Ag [Presence] in Throat | 0.754 |  |
+| 3050489 | Study report Skeletal system DXA | 0.752 |  |
+| 1616467 | Auditory brainstem response panel | 0.750 |  |
+| 3033295 | Lupus anticoagulant neutralization dilute phospholipid actual/normal in Platelet poor plasma by Coagulation assay | 0.740 |  |
+| 3027627 | Lupus anticoagulant neutralization high phospholipid [Time] in Platelet poor plasma by Coagulation assay | 0.739 |  |
+| 46235184 | Cardiac stress test EKG study Type | 0.733 |  |
+| 3051343 | DXA Bone [Mass/Area] Bone density | 0.730 |  |
+| 3050943 | Newborn hearing screening panel | 0.724 |  |
+| 3019512 | Cardiac stress study Procedure | 0.723 |  |
+| 1091363 | DXA Spine [T-score] Bone density | 0.715 |  |
+| 3043090 | Cervical AndOr vaginal cytology study | 0.714 |  |
+| 36204417 | DXA Lumbar spine [Z-score] Bone density | 0.708 |  |
+| 3049581 | DXA Calcaneus [T-score] Bone density | 0.705 |  |
+| 3965513 | Bone DXA Calcaneus [Z-score] Bone density | 0.703 |  |
+| 36203242 | DXA Humerus [Mass/Area] Bone density | 0.703 |  |
+| 3021722 | DXA Femur [Mass/Area] Bone density | 0.702 |  |
+| 3002101 | DXA Radius and Ulna [Mass/Area] Bone density | 0.701 |  |
+| 43533765 | Newborn hearing screen panel of Ear - left | 0.694 |  |
+| 36031573 | HLA-A and B and C (class I) typing panel - Blood or Tissue by Low resolution | 0.685 |  |
+| 43533768 | Newborn hearing screen panel of Ear - right | 0.683 |  |
+| 36032168 | HLA-A and B and C (class I) typing panel - Blood or Tissue by High resolution | 0.683 |  |
+| 3013512 | EKG study | 0.682 |  |
+| 36031258 | HLA-A and B and C (class I) typing panel - Blood or Tissue from Donor by High resolution | 0.681 |  |
+| 3965290 | Total score (0 to 7) | 0.680 |  |
+| 36031724 | HLA-A and B and C (class I) typing panel - Blood or Tissue from Donor by Low resolution | 0.678 |  |
+| 1989068 | Visual acuity panel | 0.666 |  |
+| 3010908 | Cytology study comment Cervical or vaginal smear or scraping Cyto stain | 0.664 | 945 |
+| 3002256 | Pathology report gross observation | 0.662 |  |
+| 1002224 | Polysomnography panel | 0.660 |  |
+| 42528675 | Summed stress score Myocardium SPECT | 0.660 |  |
+| 36660223 | HLA-DQA1 and HLA-DQB1 typing panel - Blood or Tissue by Molecular genetics method | 0.659 |  |
+| 3047222 | HLA typing for narcolepsy panel - Blood | 0.659 |  |
+| 46236302 | HLA-C [Type] by High resolution typing | 0.657 |  |
+| 36032421 | HLA-DP and DQ and DR (class II) typing panel - Blood or Tissue by High resolution | 0.656 |  |
+| 36031422 | HLA-DP and DQ and DR (class II) typing panel - Blood or Tissue from Donor by High resolution | 0.648 |  |
+| 3964745 | Pathology report microscopic observation in Specimen | 0.648 |  |
+| 36032108 | HLA-DP and DQ and DR (class II) typing panel - Blood or Tissue by Low resolution | 0.645 |  |
+| 40765709 | PhenX - audiogram hearing test protocol 200101 | 0.641 |  |
+| 1988459 | Total score NRS_2002 | 0.639 |  |
+| 42529483 | Pathology report intraoperative observation in Specimen Document | 0.637 |  |
+| 3045178 | Pathology report final diagnosis | 0.637 | 775 |
+| 3010322 | Cardiac catheterization study | 0.635 |  |
+| 36305975 | PERC Total score | 0.634 |  |
+| 3028879 | Pathologic findings | 0.628 |  |
+| 3007597 | Pathology report gross observation Narrative | 0.626 | 248 |
+| 1175343 | PESI Total score | 0.621 |  |
+| 42528672 | Summed stress score for 20 segment model Myocardium SPECT | 0.619 |  |
+| 42528817 | Summed stress score for 17 segment model Myocardium SPECT | 0.618 |  |
+| 3042212 | Oral assessment panel | 0.615 |  |
+| 1002345 | Substance use disorder score | 0.610 |  |
+| 40768930 | Total balance tests score [PhenX] | 0.610 |  |
+| 1616600 | Auditory brainstem response threshold Ear - left --click | 0.608 |  |
+| 42869893 | Pathology report.section heading | 0.607 |  |
+| 3009544 | EKG Study overall | 0.606 |  |
+| 1617478 | Auditory brainstem response threshold Ear - right --click | 0.605 |  |
+| 40758359 | Immunophenotyping study | 0.605 |  |
+| 3028736 | Colposcopy study | 0.604 |  |
+| 40768804 | Tissue Pathology biopsy report | 0.601 |  |
+| 3049361 | Cytology report of Specimen Cyto stain | 0.597 |  |
+| 649445 | Total score Reported.MNA-SF | 0.592 |  |
+| 3022227 | Pathologist review of Blood tests | 0.591 | 1595 |
+| 1988902 | Total score age adjusted | 0.591 |  |
+| 40762347 | Cytologist who read Cyto stain of Specimen | 0.591 |  |
+| 40768443 | Skin Pathology biopsy report | 0.587 | 1793 |
+| 42527982 | Bone age method | 0.586 |  |
+| 40762529 | Hematologist review of results | 0.585 |  |
+| 3046857 | Flow cytometry study | 0.585 | 1054 |
+| 3050380 | Cytology report of Cervical or vaginal smear or scraping Cyto stain | 0.584 | 798 |
+| 3020692 | Microscopic exam [Interpretation] of Urine by Cytology | 0.580 | 163 |
+| 3026593 | Cytologist who read Cyto stain of Cervical or vaginal smear or scraping | 0.577 | 109 |
+| 3049717 | Cytology report of Urine Cyto stain | 0.574 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1241 | -aerobivi |  | 100% | name | 314 | 100 |  |  |  |  | Bacteria aerobic identified in Unspecified specimen by Culture |
-| 1242 | -anaerobi |  | 100% | name | 320 | 100 |  |  |  |  | Bacteria anaerobic identified in Unspecified specimen by Culture |
-| 1243 | -omactgc |  | 100% | name | 591 | 100 |  |  |  |  | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Unspecified specimen by NAA |
-| 1244 | annosvoim |  | 100% | name | 182 | 65.93 |  |  |  |  |  |
-| 1245 | b-koboltti | ug/l | 100% | name+unit+values | 157 | 0 | [0.5, 0.72, 0.96, 1.18, 1.68, 2.2, 3.97, 6.08, 10.46] |  | Blood |  | Cobalt [Mass/volume] in Blood |
-| 1246 | cand-odl. |  | 100% | name | 542 | 89.67 |  |  |  |  | Candida sp identified in Unspecified specimen by Culture |
-| 1247 | cand.nativ |  | 100% | name | 286 | 100 |  |  |  |  | Candida sp [Presence] in Unspecified specimen by Wet mount |
-| 1248 | cladosp.he | mm | 1% | name+unit | 11 | 0 |  |  |  |  | Cladosporium herbarum Ab [Length] in Skin by Skin test |
-| 1249 | cladosp.he | u/ml | 9% | name+unit+values | 69 | 0 | [0, 0.01, 0.01, 0.04, 0.13, 0.41, 0.5, 0.87, 4.4] |  |  |  | Cladosporium herbarum IgE Ab [Units/volume] in Serum |
-| 1250 | cladosp.he |  | 89% | name | 680 | 93.82 |  |  |  |  | Cladosporium herbarum IgE Ab [Presence] in Serum |
-| 1251 | corona229e |  | 100% | name | 619 | 100 |  |  |  |  | Coronavirus 229E RNA [Presence] in Respiratory specimen by NAA |
-| 1252 | coronahku1 |  | 100% | name | 619 | 100 |  |  |  |  | Coronavirus HKU1 RNA [Presence] in Respiratory specimen by NAA |
-| 1253 | coronanl63 |  | 100% | name | 619 | 100 |  |  |  |  | Coronavirus NL63 RNA [Presence] in Respiratory specimen by NAA |
-| 1254 | coronaoc43 |  | 100% | name | 619 | 100 |  |  |  |  | Coronavirus OC43 RNA [Presence] in Respiratory specimen by NAA |
-| 1255 | f-norogi |  | 100% | name | 261 | 100 |  |  | Feces |  | Norovirus G1 RNA [Presence] in Stool by NAA |
-| 1256 | f-norogii |  | 100% | name | 261 | 100 |  |  | Feces |  | Norovirus G2 RNA [Presence] in Stool by NAA |
-| 1257 | f-projekti |  | 100% | name | 469 | 100 |  |  | Feces |  |  |
-| 1258 | hpvpapctgc |  | 100% | name | 116 | 100 |  |  |  |  | Human papillomavirus DNA+Chlamydia trachomatis DNA+Neisseria gonorrhoeae DNA [Presence] in Cervix by NAA |
-| 1259 | hpvrefctgc |  | 100% | name | 135 | 100 |  |  |  |  | Human papillomavirus DNA [Presence] in Cervix by NAA |
-| 1260 | norogi |  | 100% | name | 139 | 100 |  |  |  |  | Norovirus G1 RNA [Presence] in Unspecified specimen by NAA |
-| 1261 | norogii |  | 100% | name | 139 | 100 |  |  |  |  | Norovirus G2 RNA [Presence] in Unspecified specimen by NAA |
-| 1262 | p-asetoni | mmol/l | 36% | name+unit+values | 171 | 0 | [0, 0, 0, 0, 0, 0, 0.99, 1.7, 3.4] |  | Plasma |  | Acetone [Moles/volume] in Serum or Plasma |
-| 1263 | p-asetoni |  | 64% | name | 305 | 100 |  |  | Plasma |  | Acetone [Presence] in Serum or Plasma |
-| 1264 | p-uraatti | umol/l | 100% | name+unit+values | 6902 | 0 | [234.14, 271.61, 301.37, 327.94, 355.71, 383.49, 416.66, 458.38, 518.94] |  | Plasma |  | Urate [Moles/volume] in Serum or Plasma |
-| 1265 | p-uraatti |  | 0% | name | 32 | 87.5 |  |  | Plasma |  | Urate [Moles/volume] in Serum or Plasma |
-| 1266 | projekti1 |  | 100% | name | 160 | 100 |  |  |  |  |  |
-| 1267 | s-asetoni | mmol/l | 9% | name+unit | 42 | 0 |  | S -Asetoni | Serum |  | Acetone [Moles/volume] in Serum or Plasma |
-| 1268 | s-asetoni |  | 91% | name | 414 | 100 |  | S -Asetoni | Serum |  | Acetone [Presence] in Serum or Plasma |
-| 1269 | s-uraatti | umol/l | 94% | name+unit+values | 621 | 0 | [231.75, 257.74, 279.08, 298.35, 317.34, 343.64, 366.52, 401.97, 449.54] |  | Serum |  | Urate [Moles/volume] in Serum or Plasma |
-| 1270 | s-uraatti |  | 6% | name | 38 | 100 |  |  | Serum |  | Urate [Moles/volume] in Serum or Plasma |
-| 1271 | s-valproaatti | umol/l | 96% | name+unit+values | 431 | 0 | [243.85, 308.03, 356.19, 396.72, 425.61, 467.25, 503.69, 550.21, 628.49] |  | Serum |  | Valproic acid [Moles/volume] in Serum or Plasma |
-| 1272 | s-valproaatti |  | 4% | name | 16 | 87.5 |  |  | Serum |  | Valproic acid [Moles/volume] in Serum or Plasma |
-| 1273 | ts-abortti |  | 100% | name | 315 | 100 |  | Ts-Aborttikudoksen dissektiotutkimus | Tissue |  | Gross description in Products of conception by Macroscopy |
-| 1274 | u-omactgc |  | 100% | name | 480 | 100 |  |  | Urine |  | Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA |
-| 1275 | uraatti | umol/l | 99% | name+unit+values | 3560 | 0 | [230.56, 267.35, 298.53, 325.87, 354.19, 383.04, 414.66, 454.9, 512.27] |  |  |  | Urate [Moles/volume] in Serum or Plasma |
-| 1276 | uraatti |  | 1% | name | 19 | 100 |  |  |  |  | Urate [Moles/volume] in Serum or Plasma |
+| 1354 | p-lupusak | form | 0% | name+unit | 9 | 0 |  | P -Lupusantikoagulantti | Plasma |  | Lupus anticoagulant panel - Plasma |
+| 1355 | p-lupusak |  | 100% | name | 2978 | 100 |  | P -Lupusantikoagulantti | Plasma |  | Lupus anticoagulant panel - Plasma |
+| 1356 | p-lupusak. |  | 100% | name | 6143 | 100 |  |  | Plasma |  | Lupus anticoagulant panel - Plasma |
+| 1357 | p-pbmcbio |  | 100% | name | 440 | 100 |  |  | Plasma |  |  |
+| 1358 | patlislaus |  | 100% | name | 454 | 100 |  |  |  |  |  |
+| 1359 | ps-nieluag |  | 100% | name | 2331 | 100 |  |  | Pharyngeal secretion |  | Antigen [Presence] in Throat |
+| 1360 | pt-aud-koj |  | 100% | name | 121 | 100 |  |  | Patient |  | Audiometry panel |
+| 1361 | pt-audio |  | 100% | name | 661 | 100 |  |  | Patient |  | Audiometry panel |
+| 1362 | pt-audio, |  | 100% | name | 249 | 100 |  |  | Patient |  | Audiometry panel |
+| 1363 | pt-audio,tk |  | 100% | name | 446 | 100 |  |  | Patient |  | Audiometry panel |
+| 1364 | pt-audio-1 | form | 2% | name+unit | 27 | 0 |  |  | Patient |  | Audiometry panel |
+| 1365 | pt-audio-1 |  | 98% | name | 1274 | 100 |  |  | Patient |  | Audiometry panel |
+| 1366 | pt-audio/i |  | 100% | name+values | 442 | 100 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  | Patient |  | Audiometry panel |
+| 1367 | pt-audit |  | 100% | name+values | 113 | 100 | [0, 1, 1, 2, 3, 3.56, 4.44, 5, 8] |  | Patient |  | AUDIT total score [Score] |
+| 1368 | pt-hembio |  | 100% | name | 128 | 100 |  |  | Patient |  | Hematopathology study |
+| 1369 | pt-imutieg |  | 100% | name | 198 | 100 |  |  | Patient |  | Surgical pathology study |
+| 1370 | pt-kudsop |  | 100% | name | 579 | 100 |  |  | Patient |  | Histocompatibility antigen typing |
+| 1371 | pt-lausklf |  | 100% | name | 685 | 100 |  |  | Patient |  |  |
+| 1372 | pt-lisäla2 |  | 100% | name | 886 | 100 |  |  | Patient |  |  |
+| 1373 | pt-lisäla3 |  | 100% | name | 131 | 100 |  |  | Patient |  |  |
+| 1374 | pt-lisälau |  | 100% | name | 11756 | 100 |  |  | Patient |  |  |
+| 1375 | pt-lisäsyt |  | 100% | name | 2727 | 100 |  |  | Patient |  | Cytology study |
+| 1376 | pt-luuspeg |  | 100% | name | 113 | 100 |  |  | Patient |  | Bone SPECT study |
+| 1377 | pt-luustog |  | 100% | name | 1368 | 100 |  |  | Patient |  | Bone scan |
+| 1378 | pt-luutih2 |  | 100% | name | 1595 | 100 |  |  | Patient |  | Bone density by DXA panel |
+| 1379 | pt-luutih3 |  | 100% | name | 136 | 100 |  |  | Patient |  | Bone density by DXA panel |
+| 1380 | pt-luutil2 |  | 100% | name | 1743 | 100 |  |  | Patient |  | Bone density by DXA panel |
+| 1381 | pt-luutil3 |  | 100% | name | 267 | 100 |  |  | Patient |  | Bone density by DXA panel |
+| 1382 | pt-rasukg |  | 100% | name | 109 | 100 |  |  | Patient |  | Stress echocardiogram study |
+| 1383 | puheaudio |  | 100% | name | 156 | 100 |  |  |  |  | Speech audiometry panel |
+| 1384 | äänesaudio |  | 100% | name | 2795 | 100 |  |  |  |  | Pure tone audiometry panel |
 

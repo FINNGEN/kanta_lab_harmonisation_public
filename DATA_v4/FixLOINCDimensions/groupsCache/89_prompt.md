@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,129 +115,169 @@ Here is group 89.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3029075 | Extractable nuclear Ab panel - Serum | 1.000 |  |
-| 3037467 | Urinalysis macro (dipstick) panel - Urine | 1.000 |  |
-| 1091602 | Human papilloma virus DNA [Presence] in Specimen | 0.945 |  |
-| 42870589 | Drugs of abuse panel - Urine by Screen method | 0.911 |  |
-| 3021257 | Drugs of abuse 5 panel - Urine | 0.899 |  |
-| 3050129 | First trimester maternal screen panel - Serum or Plasma | 0.887 |  |
-| 40759269 | Smith extractable nuclear Ab and Ribonucleoprotein extractable nuclear Ab panel - Serum | 0.885 |  |
-| 1176189 | Extractable nuclear antigen Ab.IgG panel - Serum | 0.883 |  |
-| 3043496 | Extractable nuclear Ab [Interpretation] in Serum | 0.877 |  |
-| 3013293 | Extractable nuclear Ab [Presence] in Serum | 0.876 |  |
-| 40768439 | Drugs of abuse 5 panel - Urine by Screen method | 0.875 |  |
-| 3005135 | Extractable nuclear Ab [Identifier] in Serum | 0.869 |  |
-| 3029511 | Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection | 0.866 |  |
-| 646451 | Extractable nuclear Ab [Measurement] in Serum | 0.866 |  |
-| 37019579 | Human papilloma virus DNA [Presence] in Genital specimen by NAA with probe detection | 0.863 |  |
-| 3032628 | Second trimester triple maternal screen panel - Serum or Plasma | 0.863 |  |
-| 40760543 | Extractable nuclear Ab [Presence] in Serum by Immunoblot | 0.861 |  |
-| 40766122 | Extractable nuclear Ab [Presence] in Serum by Immunoassay | 0.858 |  |
-| 3038083 | Human papilloma virus DNA [Presence] in Specimen by Probe with amplification | 0.855 |  |
-| 3045887 | Human papilloma virus DNA [Presence] in Cervix by Probe | 0.854 |  |
-| 3020210 | Human papilloma virus Ag [Presence] in Genital specimen | 0.854 |  |
-| 3000264 | Human papilloma virus Ag [Presence] in Cervix | 0.841 |  |
-| 3046697 | Human papilloma virus DNA [Presence] in Specimen by Probe with signal amplification | 0.841 | 1518 |
-| 40764136 | Human papilloma virus 31 DNA [Presence] in Specimen by NAA with probe detection | 0.839 |  |
-| 43533384 | Drugs of abuse panel - Blood by Screen method | 0.838 |  |
-| 3007564 | Human papilloma virus Ab [Presence] in Genital specimen | 0.838 |  |
-| 3023428 | Smith extractable nuclear Ab [Presence] in Serum | 0.836 |  |
-| 36305828 | Drugs of abuse screen W Reflex confirm panel - Urine | 0.835 |  |
-| 3049518 | Second trimester penta maternal screen panel - Serum or Plasma | 0.833 |  |
-| 3964669 | Hr^s Ab [Presence] in Serum or Plasma | 0.833 |  |
-| 1175703 | Drugs of abuse panel - Body fluid | 0.833 |  |
-| 3053322 | Second trimester quad maternal screen panel - Serum or Plasma | 0.832 |  |
-| 3029318 | Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma | 0.829 |  |
-| 3965591 | Dh^a Ab [Presence] in Serum or Plasma | 0.828 |  |
-| 3050402 | First trimester maternal screen with nuchal translucency panel | 0.826 |  |
-| 3048886 | First and Second trimester integrated maternal screen panel | 0.825 |  |
-| 40758548 | Home drug screening panel - Urine | 0.825 |  |
-| 3048596 | Maternal screen clinical predictors panel | 0.821 |  |
-| 1175629 | Drugs of abuse panel - Hair | 0.816 |  |
-| 3965130 | Hr^B Ab [Presence] in Serum or Plasma | 0.812 |  |
-| 3032802 | Second trimester triple maternal screen [Interpretation] in Serum or Plasma Narrative | 0.806 | 1554 |
-| 3039059 | Drugs of abuse 7 and Alcohol and Tricyclics panel - Urine by Screen method | 0.804 |  |
-| 3029361 | Urinalysis dipstick panel - Urine by Automated test strip | 0.800 |  |
-| 3052990 | Drugs of abuse panel - Meconium | 0.798 |  |
-| 3049557 | Second trimester penta maternal screen [Interpretation] in Serum or Plasma | 0.794 |  |
-| 3013055 | A Ab [Presence] in Serum or Plasma | 0.793 |  |
-| 3036941 | Urinalysis complete panel - Urine | 0.792 |  |
-| 40768030 | Rh32 Ab [Presence] in Serum or Plasma | 0.792 |  |
-| 3049229 | Second trimester quad maternal screen [Interpretation] in Serum or Plasma Narrative | 0.788 | 644 |
-| 3012597 | H Ab [Presence] in Serum or Plasma from Donor | 0.785 |  |
-| 3022468 | A Ab [Presence] in Serum or Plasma from Donor | 0.783 |  |
-| 3026986 | P1 Ab [Presence] in Serum or Plasma | 0.782 |  |
-| 3003502 | A,B Ab [Presence] in Serum or Plasma from Donor | 0.782 |  |
-| 40760139 | Urinalysis dipstick W Reflex Microscopic panel - Urine | 0.780 |  |
-| 21493397 | A IgG Ab [Presence] in Serum or Plasma | 0.780 |  |
-| 3022113 | Urinalysis microscopic panel - Urine sediment | 0.766 |  |
-| 3039353 | Urinalysis microscopic panel - Urine Qualitative by Automated | 0.758 |  |
-| 3966606 | Prenatal hepatitis B and C panel - Serum or Plasma | 0.756 |  |
-| 3030688 | Urinalysis panel - Urine by Auto | 0.755 |  |
-| 3039460 | Newborn hearing screen method | 0.753 | 3000 |
-| 36659896 | Hepatitis C virus Ab panel - Serum or Plasma | 0.744 |  |
-| 3051564 | Newborn hearing screen of Ear - left | 0.744 | 3000 |
-| 3051582 | Newborn hearing screen of Ear - right | 0.742 | 3000 |
-| 36660011 | Hepatitis B virus surface Ag panel - Serum or Plasma | 0.740 |  |
-| 36660717 | Hepatitis B virus surface Ab panel - Serum or Plasma | 0.736 |  |
-| 43533768 | Newborn hearing screen panel of Ear - right | 0.736 |  |
-| 42529218 | HIV 1+2 Ab and HIV1 p24 Ag panel - Serum or Plasma by Immunoassay | 0.735 |  |
-| 40760138 | Urinalysis dipstick W Reflex Culture panel - Urine | 0.734 |  |
-| 36660589 | Hepatitis B virus core Ab panel - Serum or Plasma | 0.733 |  |
-| 3033521 | Obstetric 1996 panel - Serum and Blood | 0.732 |  |
-| 43534079 | Neutrophil Ab and HLA Ab screen panel - Serum or Plasma | 0.732 |  |
-| 646145 | Sexually transmitted blood borne infections panel - Serum by Immunoassay | 0.727 |  |
-| 43533765 | Newborn hearing screen panel of Ear - left | 0.725 |  |
-| 1091593 | Neutrophil Ab screen panel - Serum or Plasma | 0.724 |  |
-| 36031335 | HIV 1 and 2 Ab panel - Serum or Plasma by Immunoassay | 0.717 |  |
-| 3050943 | Newborn hearing screening panel | 0.716 |  |
-| 3043821 | Protein and Glucose panel - Urine by Test strip | 0.684 |  |
-| 36305936 | Inhibin A and B panel - Serum or Plasma | 0.669 |  |
-| 3965382 | Torch Ab.IgG panel - Serum | 0.666 |  |
-| 3050392 | Hearing loss newborn screening interpretation | 0.662 |  |
-| 1989068 | Visual acuity panel | 0.657 |  |
-| 1259463 | Views screening for diabetic retinopathy of Eyes | 0.636 |  |
-| 43533767 | Screening duration of Ear - right | 0.630 |  |
-| 3002132 | Physical findings of Hearing | 0.624 |  |
-| 43533764 | Screening duration of Ear - left | 0.624 |  |
-| 1259934 | Views screening for diabetic retinopathy of Left eye | 0.610 |  |
-| 1259699 | Views screening for diabetic retinopathy of Right eye | 0.604 |  |
-| 3020479 | Eye Vision.binocular by Phoropter | 0.604 |  |
-| 1989469 | Color vision panel | 0.599 |  |
-| 3026129 | Physical findings of Vision | 0.593 |  |
-| 42869891 | General eye evaluation | 0.591 |  |
-| 21491759 | Subjective refraction panel | 0.572 |  |
+| 3021119 | Calcium.ionized [Moles/volume] in Blood | 1.000 | 130 |
+| 3021347 | Calcium.ionized [Moles/volume] in Serum or Plasma | 1.000 | 182 |
+| 3033705 | Calcium.ionized [Moles/volume] in Venous blood | 1.000 |  |
+| 3035279 | Calcium.ionized [Moles/volume] in Capillary blood | 1.000 |  |
+| 3044331 | Calcium.ionized [Moles/volume] in Arterial blood | 1.000 |  |
+| 3046516 | Calcium.ionized [Moles/volume] in Dialysis fluid | 1.000 |  |
+| 3041671 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Venous blood | 0.978 |  |
+| 3039602 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Capillary blood | 0.977 |  |
+| 3048816 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood | 0.976 |  |
+| 3041706 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood | 0.975 |  |
+| 3016431 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma | 0.973 |  |
+| 3023183 | Ammonium ion [Moles/volume] in Plasma | 0.951 |  |
+| 40762533 | Calcium.ionized [Mass/volume] in Venous blood | 0.944 |  |
+| 3021197 | Magnesium Ionized [Moles/volume] in Serum or Plasma | 0.943 |  |
+| 3027694 | Calcium.ionized [Mass/volume] in Serum or Plasma | 0.940 |  |
+| 3015774 | Calcium.ionized [Moles/volume] in Serum or Plasma by calculation | 0.934 |  |
+| 40762532 | Calcium.ionized [Mass/volume] in Arterial blood | 0.932 |  |
+| 3013784 | Calcium.ionized [Moles/volume] in Serum or Plasma by Ion-selective membrane electrode (ISE) | 0.930 | 1045 |
+| 3002991 | Calcium [Moles/volume] in Dialysis fluid | 0.928 |  |
+| 3036426 | Calcium.ionized [Mass/volume] in Blood | 0.927 |  |
+| 3032271 | Calcium.ionized [Moles/volume] in Mixed venous blood | 0.922 |  |
+| 3032543 | Calcium [Moles/volume] in Venous blood | 0.915 |  |
+| 647174 | Calcium.ionized [Measurement] in Serum or Plasma | 0.913 |  |
+| 3039352 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Nonbiological fluid | 0.912 |  |
+| 3029431 | Calcium.ionized [Moles/volume] in Body fluid | 0.911 |  |
+| 3031020 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Body fluid | 0.911 |  |
+| 1092214 | Calcium [Moles/volume] in Arterial blood | 0.909 |  |
+| 3022592 | Ammonium ion [Moles/volume] in Arterial blood | 0.905 |  |
+| 3034988 | Calcium [Moles/volume] in Capillary blood | 0.905 |  |
+| 3015377 | Calcium [Moles/volume] in Serum or Plasma | 0.904 | 12 |
+| 40757497 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Cord blood | 0.901 |  |
+| 40757498 | Calcium.ionized [Moles/volume] in Cord blood | 0.891 |  |
+| 3015205 | Calcium.ionized [Moles/volume] in Serum or Plasma --5th specimen post XXX challenge | 0.884 |  |
+| 3042811 | Magnesium Ionized [Mass/volume] in Serum or Plasma | 0.882 |  |
+| 3011958 | Ammonia [Moles/volume] in Plasma | 0.874 | 367 |
+| 3012095 | Magnesium [Moles/volume] in Serum or Plasma | 0.869 | 78 |
+| 3036773 | Calcium [Mass/volume] in Dialysis fluid | 0.863 |  |
+| 3005347 | Ammonia [Moles/volume] in Blood | 0.861 |  |
+| 42529185 | Calcium.ionized [Moles/volume] in Blood drawn from CRRT circuit | 0.847 |  |
+| 3049241 | Calcium [Moles/volume] in Peritoneal dialysis fluid | 0.842 |  |
+| 43533595 | Magnesium Ionized [Moles/volume] in Blood by Ion-selective membrane electrode (ISE) | 0.837 |  |
+| 3018418 | pH of Serum or Plasma | 0.831 | 160 |
+| 3033836 | Magnesium [Moles/volume] in Blood | 0.821 |  |
+| 1002144 | Ammonia [Moles/volume] in Arterial blood | 0.819 |  |
+| 3000092 | Ammonia [Moles/volume] in Body fluid | 0.818 |  |
+| 43533596 | Magnesium Ionized [Moles/volume] adjusted to pH 7.4 in Blood by Ion-selective membrane electrode (ISE) | 0.815 |  |
+| 3030942 | Ammonia [Mass/volume] in Blood | 0.808 |  |
+| 3036887 | Ammonia [Mass/volume] in Plasma | 0.806 | 366 |
+| 3001420 | Magnesium [Mass/volume] in Serum or Plasma | 0.797 |  |
+| 3015711 | Magnesium [Moles/volume] in Body fluid | 0.784 |  |
+| 3025665 | Magnesium [Moles/volume] in Specimen | 0.778 |  |
+| 3030308 | Hydrogen ion [Moles/volume] in Blood | 0.773 |  |
+| 3016238 | Ammonia [Moles/volume] in Urine | 0.770 |  |
+| 649292 | Ammonia [Measurement] in Plasma | 0.767 |  |
+| 3030171 | Hydrogen ion [Moles/volume] in Serum or Plasma | 0.749 |  |
+| 3039586 | Ammonia [Moles/volume] in Dialysis fluid | 0.740 |  |
+| 3038908 | pH of Blood product unit | 0.728 |  |
+| 3019715 | Histidine [Units/volume] in Serum or Plasma | 0.702 |  |
+| 3002342 | Phenylalanine [Units/volume] in Serum or Plasma | 0.689 |  |
+| 3016293 | Bicarbonate [Moles/volume] in Serum or Plasma | 0.673 |  |
+| 3023623 | Histidine [Mass/volume] in Serum or Plasma | 0.668 |  |
+| 3019225 | pH of Specimen | 0.667 |  |
+| 3013441 | Alpha subunit [Units/volume] in Serum or Plasma | 0.666 |  |
+| 3019508 | Histamine [Mass/volume] in Serum or Plasma | 0.666 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1277 | -hpvseul |  | 100% | name | 3483 | 100 |  | -Papilloomavirus, seulonta |  |  | Human papillomavirus DNA [Presence] in Cervicovaginal specimen |
-| 1278 | hoikemseul |  | 100% | name | 526 | 100 |  |  |  |  |  |
-| 1279 | hpvseul |  | 100% | name | 402 | 100 |  |  |  |  | Human papillomavirus DNA [Presence] in Cervicovaginal specimen |
-| 1280 | hörsel |  | 100% | name | 112 | 100 |  |  |  |  | Hearing screen |
-| 1281 | luov.seul. |  | 100% | name | 114 | 100 |  |  |  |  | Blood donor infectious disease screen panel - Serum or Plasma |
-| 1282 | näköseula |  | 100% | name+values | 207 | 3.86 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  |  |  | Vision screen |
-| 1283 | oma-kemseu |  | 100% | name | 242 | 100 |  |  |  |  | Urinalysis macro (dipstick) panel - Urine |
-| 1284 | oma-kemseula |  | 100% | name | 108 | 100 |  |  |  |  | Urinalysis macro (dipstick) panel - Urine |
-| 1285 | oma-u-kems |  | 100% | name | 761 | 100 |  |  |  |  | Urinalysis macro (dipstick) panel - Urine |
-| 1286 | oma-u-kemseul |  | 100% | name | 230 | 100 |  |  |  |  | Urinalysis macro (dipstick) panel - Urine |
-| 1287 | rhdnegseul |  | 100% | name | 161 | 100 |  |  |  |  | Rh(D) Ab [Presence] in Serum or Plasma |
-| 1288 | s-enaseul |  | 100% | name | 1344 | 99.78 |  |  | Serum |  | Extractable nuclear Ab panel - Serum |
-| 1289 | s-ivfseul |  | 100% | name | 168 | 100 |  |  | Serum |  | IVF screen panel - Serum |
-| 1290 | s-tr1seul |  | 100% | name | 26880 | 100 |  | S -Sikiön kehityshäiriöiden seulonta, ensimmäinen trimesteri | Serum |  | First trimester maternal screen panel - Serum |
-| 1291 | s-tr2seul |  | 100% | name | 527 | 100 |  | S -Sikiön kehityshäiriöiden seulonta, toinen trimesteri | Serum |  | Second trimester maternal screen panel - Serum |
-| 1292 | s-trseul |  | 100% | name | 125 | 100 |  |  | Serum |  | Maternal screen panel - Serum |
-| 1293 | s-äit-seul |  | 100% | name | 7521 | 100 |  |  | Serum |  | Maternal screen panel - Serum |
-| 1294 | s-äit-seula |  | 100% | name | 117 | 100 |  |  | Serum |  | Maternal screen panel - Serum |
-| 1295 | s-äitseul |  | 100% | name | 24752 | 100 |  |  | Serum |  | Maternal screen panel - Serum |
-| 1296 | u-huseula |  | 100% | name | 2519 | 100 |  |  | Urine |  | Drugs of abuse screen panel - Urine |
-| 1297 | u-kemseu |  | 100% | name | 15207 | 99.98 |  |  | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1298 | u-kemseul | form | 0% | name+unit | 1298 | 0 |  | U -Kemiallinen seulonta | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1299 | u-kemseul | h | 0% | name+unit | 100 | 0 |  | U -Kemiallinen seulonta | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1300 | u-kemseul |  | 100% | name+values | 1336031 | 100 | [0, 1.01, 1.01, 1.02, 1.02, 1.02, 4.17, 5.87, 6.26] | U -Kemiallinen seulonta | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1301 | u-kemseul, |  | 100% | name | 257 | 100 |  |  | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1302 | u-kemseula |  | 100% | name | 124 | 100 |  |  | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1303 | u-kemseup |  | 100% | name | 5478 | 99.91 |  |  | Urine |  | Urinalysis macro (dipstick) panel - Urine |
-| 1304 | äit-seula |  | 100% | name | 210 | 100 |  |  |  |  | Maternal screen panel - Serum |
+| 1451 | ab-ca++7.4 | mmol/l | 100% | name+unit+values | 1106 | 0 | [1.08, 1.12, 1.14, 1.16, 1.18, 1.2, 1.21, 1.23, 1.26] |  | Arterial blood |  | Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4 |
+| 1452 | ab-ca-i7.4 | mmol/l | 87% | name+unit+values | 52168 | 0 | [1, 1.05, 1.08, 1.1, 1.13, 1.15, 1.17, 1.2, 1.24] |  | Arterial blood |  | Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4 |
+| 1453 | ab-ca-i7.4 |  | 13% | name | 8114 | 100 |  |  | Arterial blood |  | Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4 |
+| 1454 | ab-ca-ion | mmol/l | 87% | name+unit+values | 52238 | 0 | [1, 1.04, 1.07, 1.1, 1.12, 1.14, 1.16, 1.18, 1.22] |  | Arterial blood | Ionized | Calcium.ionized [Moles/volume] in Arterial blood |
+| 1455 | ab-ca-ion |  | 13% | name | 8098 | 100 |  |  | Arterial blood | Ionized | Calcium.ionized [Moles/volume] in Arterial blood |
+| 1456 | ab-caionvt | mmol/l | 40% | name+unit+values | 84 | 1.19 | [1.12, 1.15, 1.18, 1.18, 1.2, 1.21, 1.22, 1.24, 1.28] |  | Arterial blood |  | Calcium.ionized [Moles/volume] in Arterial blood |
+| 1457 | ab-caionvt |  | 60% | name+values | 124 | 100 | [1.1, 1.14, 1.15, 1.17, 1.19, 1.2, 1.23, 1.25, 1.28] |  | Arterial blood |  | Calcium.ionized [Moles/volume] in Arterial blood |
+| 1458 | ap-ca-ion | mmol/l | 94% | name+unit+values | 1484 | 0 | [1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23] |  |  | Ionized | Calcium.ionized [Moles/volume] in Arterial plasma |
+| 1459 | ap-ca-ion |  | 6% | name | 102 | 100 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Arterial plasma |
+| 1460 | b-caionpf | mmol/l | 85% | name+unit | 652 | 0 |  |  | Blood |  | Calcium.ionized [Moles/volume] in Blood |
+| 1461 | b-caionpf |  | 15% | name | 111 | 100 |  |  | Blood |  | Calcium.ionized [Moles/volume] in Blood |
+| 1462 | ca++/7.40 | mmol/l | 100% | name+unit+values | 126152 | 0 | [1.14, 1.19, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.31] |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1463 | ca++/7.40 |  | 0% | name | 569 | 100 |  |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1464 | ca++/ph7.4 | mmol/l | 97% | name+unit+values | 18482 | 0 | [1.1, 1.15, 1.18, 1.2, 1.22, 1.23, 1.25, 1.27, 1.31] |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1465 | ca++/ph7.4 |  | 3% | name+values | 588 | 100 | [1.08, 1.12, 1.13, 1.14, 1.15, 1.16, 1.21, 1.26, 1.34] |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1466 | ca++ph7.4 | mmol/l | 99% | name+unit+values | 16678 | 0 | [1.13, 1.16, 1.18, 1.2, 1.22, 1.23, 1.24, 1.26, 1.29] |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1467 | ca++ph7.4 |  | 1% | name | 184 | 100 |  |  |  |  | Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4 |
+| 1468 | ca-ion | mmol/l | 100% | name+unit+values | 126458 | 0 | [1.15, 1.19, 1.21, 1.23, 1.24, 1.26, 1.27, 1.29, 1.33] |  |  | Ionized | Calcium.ionized [Moles/volume] in Serum or Plasma |
+| 1469 | ca-ion |  | 0% | name | 549 | 100 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Serum or Plasma |
+| 1470 | cb-ca-i7.4 | mmol/l | 89% | name+unit+values | 1450 | 0 | [1.11, 1.15, 1.17, 1.19, 1.21, 1.22, 1.23, 1.25, 1.29] |  | Capillary blood |  | Calcium.ionized [Moles/volume] in Capillary blood adjusted to pH 7.4 |
+| 1471 | cb-ca-i7.4 |  | 11% | name | 185 | 100 |  |  | Capillary blood |  | Calcium.ionized [Moles/volume] in Capillary blood adjusted to pH 7.4 |
+| 1472 | cb-ca-ion | mmol/l | 88% | name+unit+values | 1880 | 0 | [1.11, 1.15, 1.17, 1.19, 1.2, 1.22, 1.24, 1.26, 1.3] |  | Capillary blood | Ionized | Calcium.ionized [Moles/volume] in Capillary blood |
+| 1473 | cb-ca-ion |  | 12% | name | 250 | 100 |  |  | Capillary blood | Ionized | Calcium.ionized [Moles/volume] in Capillary blood |
+| 1474 | cp-ca-ion | mmol/l | 92% | name+unit+values | 307 | 0 | [1.04, 1.1, 1.13, 1.15, 1.16, 1.18, 1.2, 1.22, 1.25] |  |  | Ionized | Calcium.ionized [Moles/volume] in Capillary plasma |
+| 1475 | cp-ca-ion |  | 8% | name | 28 | 100 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Capillary plasma |
+| 1476 | di-ca-ion | mmol/l | 98% | name+unit | 450 | 0 |  |  | Dialysis fluid | Ionized | Calcium.ionized [Moles/volume] in Dialysis fluid |
+| 1477 | di-ca-ion |  | 2% | name | 8 | 100 |  |  | Dialysis fluid | Ionized | Calcium.ionized [Moles/volume] in Dialysis fluid |
+| 1478 | di-ca-iona | mmol/l | 100% | name+unit | 456 | 0 |  |  | Dialysis fluid |  | Calcium.ionized [Moles/volume] in Dialysis fluid |
+| 1479 | fb-nh4-ion | umol/l | 81% | name+unit+values | 298 | 0 | [11, 13.44, 17.68, 24.49, 31.79, 42.13, 54.77, 72.94, 100.99] | fB-Ammonium-ioni | Fasting blood; Foreign body / implant | Ionized | Ammonium.ionized [Moles/volume] in Blood |
+| 1480 | fb-nh4-ion |  | 19% | name | 69 | 100 |  | fB-Ammonium-ioni | Fasting blood; Foreign body / implant | Ionized | Ammonium.ionized [Moles/volume] in Blood |
+| 1481 | fp-ca-ion | mmol/l | 99% | name+unit+values | 1040 | 0 | [1.12, 1.15, 1.17, 1.19, 1.2, 1.21, 1.23, 1.25, 1.28] |  | Fasting plasma | Ionized | Calcium.ionized [Moles/volume] in Plasma |
+| 1482 | fp-ca-ion |  | 1% | name | 8 | 100 |  |  | Fasting plasma | Ionized | Calcium.ionized [Moles/volume] in Plasma |
+| 1483 | fp-ca-ion. | mmol/l | 99% | name+unit+values | 22635 | 0.13 | [1.05, 1.09, 1.11, 1.13, 1.15, 1.16, 1.18, 1.2, 1.23] |  | Fasting plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1484 | fp-ca-ion. |  | 1% | name | 196 | 100 |  |  | Fasting plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1485 | fp-ca-iona | mmol/l | 97% | name+unit+values | 383 | 0 | [1.16, 1.19, 1.2, 1.21, 1.22, 1.23, 1.25, 1.26, 1.29] |  | Fasting plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1486 | fp-ca-iona |  | 3% | name | 13 | 100 |  |  | Fasting plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1487 | fp-nh4-ion | umol/l | 90% | name+unit+values | 22919 | 0 | [17.32, 22.53, 27.24, 32.28, 37.91, 44.96, 54.51, 68.52, 92.89] | fP-Ammonium-ioni | Fasting plasma | Ionized | Ammonium.ionized [Moles/volume] in Plasma |
+| 1488 | fp-nh4-ion |  | 10% | name+values | 2418 | 100 | [18.27, 23.76, 29.8, 37.05, 45.85, 55.82, 65.3, 79.23, 103.94] | fP-Ammonium-ioni | Fasting plasma | Ionized | Ammonium.ionized [Moles/volume] in Plasma |
+| 1489 | fs-ca++/7.40 |  | 100% | name+values | 10897 | 100 | [1.18, 1.21, 1.22, 1.23, 1.24, 1.25, 1.27, 1.28, 1.32] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1490 | fs-ca++7.4 | mmol/l | 99% | name+unit+values | 8087 | 0 | [1.15, 1.19, 1.21, 1.22, 1.23, 1.25, 1.26, 1.28, 1.33] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1491 | fs-ca++7.4 |  | 1% | name | 47 | 100 |  |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1492 | fs-ca-7.40 | mmol/l | 100% | name+unit+values | 987 | 0 | [1.19, 1.23, 1.25, 1.26, 1.28, 1.29, 1.31, 1.34, 1.38] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1493 | fs-ca-ion | mmol/l | 39% | name+unit+values | 21952 | 0 | [1.18, 1.2, 1.22, 1.24, 1.25, 1.26, 1.28, 1.3, 1.34] |  | Fasting serum | Ionized | Calcium.ionized [Moles/volume] in Serum |
+| 1494 | fs-ca-ion |  | 61% | name | 33916 | 100 |  |  | Fasting serum | Ionized | Calcium.ionized [Moles/volume] in Serum |
+| 1495 | fs-ca-ion/ph7.40 | mmol/l | 99% | name+unit+values | 27031 | 0 | [1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1496 | fs-ca-ion/ph7.40 |  | 1% | name+values | 232 | 100 | [1.14, 1.31, 1.32, 1.33, 1.33, 1.34, 1.36, 1.38, 1.42] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1497 | fs-ca-iona | mmol/l | 87% | name+unit+values | 1052 | 0 | [1.14, 1.17, 1.19, 1.2, 1.22, 1.23, 1.25, 1.28, 1.35] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1498 | fs-ca-iona |  | 13% | name+values | 162 | 100 | [1.15, 1.16, 1.18, 1.19, 1.2, 1.21, 1.22, 1.24, 1.29] |  | Fasting serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1499 | fs-ph(ca-ion) |  | 100% | name+values | 1713 | 100 | [7.33, 7.35, 7.37, 7.38, 7.39, 7.4, 7.41, 7.42, 7.44] |  | Fasting serum |  | pH [Units] in Serum |
+| 1500 | mb-ca(7.4) | mmol/l | 96% | name+unit | 2502 | 0 |  |  |  |  | Calcium.ionized [Moles/volume] in Blood adjusted to pH 7.4 |
+| 1501 | mb-ca(7.4) |  | 4% | name | 108 | 100 |  |  |  |  | Calcium.ionized [Moles/volume] in Blood adjusted to pH 7.4 |
+| 1502 | mb-ca-ion | mmol/l | 96% | name+unit | 2504 | 0 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Blood |
+| 1503 | mb-ca-ion |  | 4% | name | 105 | 100 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Blood |
+| 1504 | p-ca(7.4) | mmol/l | 95% | name+unit+values | 23257 | 0 | [1.1, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.26] |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4 |
+| 1505 | p-ca(7.4) |  | 5% | name | 1266 | 100 |  |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4 |
+| 1506 | p-ca-ion | mmol/l | 28% | name+unit+values | 37155 | 0 | [1.09, 1.13, 1.15, 1.17, 1.18, 1.2, 1.21, 1.23, 1.27] | P -Kalsium, ionisoitunut | Plasma | Ionized | Calcium.ionized [Moles/volume] in Plasma |
+| 1507 | p-ca-ion |  | 72% | name+values | 93247 | 100 | [1.1, 1.13, 1.16, 1.18, 1.2, 1.21, 1.25, 1.29, 1.33] | P -Kalsium, ionisoitunut | Plasma | Ionized | Calcium.ionized [Moles/volume] in Plasma |
+| 1508 | p-ca-ion. | mmol/l | 100% | name+unit+values | 360997 | 0 | [1.03, 1.08, 1.11, 1.13, 1.16, 1.18, 1.2, 1.22, 1.26] |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1509 | p-ca-ion. |  | 0% | name | 756 | 100 |  |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1510 | p-ca-ion: | mmol/l | 100% | name+unit+values | 626 | 0 | [1.1, 1.14, 1.15, 1.17, 1.18, 1.19, 1.2, 1.22, 1.24] |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1511 | p-ca-iona | mmol/l | 100% | name+unit+values | 409206 | 0.01 | [1.04, 1.08, 1.11, 1.13, 1.15, 1.17, 1.19, 1.21, 1.25] |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1512 | p-ca-iona |  | 0% | name | 882 | 100 |  |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma |
+| 1513 | p-caio7.4: | mmol/l | 100% | name+unit+values | 608 | 0 | [1.1, 1.13, 1.15, 1.17, 1.19, 1.2, 1.21, 1.23, 1.25] |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4 |
+| 1514 | p-caion7.4 | mmol/l | 54% | name+unit | 58 | 0 |  |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4 |
+| 1515 | p-caion7.4 |  | 46% | name | 49 | 100 |  |  | Plasma |  | Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4 |
+| 1516 | p-nh4-ion | umol/l | 86% | name+unit+values | 1298 | 0 | [24, 30.04, 34.97, 40.74, 46.76, 54.98, 66.47, 82.91, 111.7] |  | Plasma | Ionized | Ammonium.ionized [Moles/volume] in Plasma |
+| 1517 | p-nh4-ion |  | 14% | name+values | 208 | 100 | [23, 29.64, 34, 40.9, 50.07, 57.7, 72.1, 92.36, 125.65] |  | Plasma | Ionized | Ammonium.ionized [Moles/volume] in Plasma |
+| 1518 | s-ca(7.4) | mmol/l | 99% | name+unit+values | 132501 | 0 | [1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1519 | s-ca(7.4) | nmol/l | 0% | name+unit+values | 93 | 0 | [1.18, 1.21, 1.23, 1.24, 1.25, 1.26, 1.28, 1.3, 1.37] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1520 | s-ca(7.4) |  | 1% | name | 1609 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1521 | s-ca++/7.40 |  | 100% | name+values | 5887 | 100 | [1.18, 1.2, 1.21, 1.23, 1.24, 1.25, 1.26, 1.28, 1.32] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1522 | s-ca-17.4 | mmol/l | 100% | name+unit+values | 835 | 0 | [1.18, 1.21, 1.22, 1.24, 1.25, 1.27, 1.28, 1.3, 1.33] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1523 | s-ca-i7.4 | mmol/l | 92% | name+unit+values | 46811 | 0 | [1.17, 1.2, 1.22, 1.24, 1.25, 1.27, 1.28, 1.3, 1.34] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1524 | s-ca-i7.4 |  | 8% | name | 4102 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1525 | s-ca-ion | mmol/l | 72% | name+unit+values | 507827 | 0 | [1.14, 1.18, 1.2, 1.21, 1.23, 1.24, 1.26, 1.28, 1.32] | S -Kalsium, ionisoitunut | Serum | Ionized | Calcium.ionized [Moles/volume] in Serum |
+| 1526 | s-ca-ion |  | 28% | name | 192950 | 100 |  | S -Kalsium, ionisoitunut | Serum | Ionized | Calcium.ionized [Moles/volume] in Serum |
+| 1527 | s-ca-iona | mmol/l | 99% | name+unit+values | 394912 | 0 | [1.14, 1.18, 1.2, 1.22, 1.23, 1.25, 1.26, 1.29, 1.32] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1528 | s-ca-iona |  | 1% | name | 2820 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1529 | s-caio7.4 | mmol/l | 100% | name+unit+values | 860 | 0 | [1.17, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.35] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1530 | s-caion7.4 | mmol/l | 99% | name+unit+values | 5310 | 0 | [1.16, 1.19, 1.21, 1.22, 1.23, 1.24, 1.25, 1.27, 1.29] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1531 | s-caion7.4 |  | 1% | name | 57 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1532 | s-caionac | mmol/l | 98% | name+unit+values | 863 | 0 | [1.16, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.34] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1533 | s-caionac |  | 2% | name | 15 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum |
+| 1534 | s-caph7.4 | mmol/l | 99% | name+unit+values | 5238 | 0 | [1.16, 1.19, 1.21, 1.22, 1.23, 1.25, 1.26, 1.28, 1.31] |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1535 | s-caph7.4 |  | 1% | name | 67 | 100 |  |  | Serum |  | Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 |
+| 1536 | s-mg-ion | mmol/l | 95% | name+unit+values | 4664 | 0 | [0.5, 0.54, 0.56, 0.58, 0.6, 0.62, 0.64, 0.67, 0.71] |  | Serum | Ionized | Magnesium.ionized [Moles/volume] in Serum |
+| 1537 | s-mg-ion |  | 5% | name+values | 253 | 100 | [0.55, 0.58, 0.6, 0.62, 0.63, 0.65, 0.67, 0.69, 0.74] |  | Serum | Ionized | Magnesium.ionized [Moles/volume] in Serum |
+| 1538 | vb-ca-i7.4 | mmol/l | 81% | name+unit+values | 2427 | 0 | [0.99, 1.06, 1.1, 1.13, 1.15, 1.17, 1.19, 1.22, 1.26] |  | Venous blood |  | Calcium.ionized [Moles/volume] in Venous blood adjusted to pH 7.4 |
+| 1539 | vb-ca-i7.4 |  | 19% | name | 580 | 100 |  |  | Venous blood |  | Calcium.ionized [Moles/volume] in Venous blood adjusted to pH 7.4 |
+| 1540 | vb-ca-ion | mmol/l | 81% | name+unit+values | 2428 | 0 | [1.02, 1.08, 1.11, 1.14, 1.16, 1.18, 1.2, 1.22, 1.26] |  | Venous blood | Ionized | Calcium.ionized [Moles/volume] in Venous blood |
+| 1541 | vb-ca-ion |  | 19% | name | 567 | 100 |  |  | Venous blood | Ionized | Calcium.ionized [Moles/volume] in Venous blood |
+| 1542 | vb-caionvt | 1 | 5% | name+unit | 40 | 0 |  |  | Venous blood |  | Calcium.ionized [Moles/volume] in Venous blood |
+| 1543 | vb-caionvt | mmol/l | 40% | name+unit+values | 308 | 0 | [1.1, 1.13, 1.15, 1.18, 1.19, 1.21, 1.22, 1.24, 1.27] |  | Venous blood |  | Calcium.ionized [Moles/volume] in Venous blood |
+| 1544 | vb-caionvt |  | 55% | name+values | 422 | 100 | [1.12, 1.15, 1.17, 1.18, 1.2, 1.22, 1.23, 1.25, 1.27] |  | Venous blood |  | Calcium.ionized [Moles/volume] in Venous blood |
+| 1545 | vp-ca-ion | mmol/l | 98% | name+unit+values | 10809 | 0 | [1.13, 1.16, 1.17, 1.19, 1.2, 1.21, 1.23, 1.24, 1.27] |  |  | Ionized | Calcium.ionized [Moles/volume] in Venous plasma |
+| 1546 | vp-ca-ion |  | 2% | name | 173 | 100 |  |  |  | Ionized | Calcium.ionized [Moles/volume] in Venous plasma |
 

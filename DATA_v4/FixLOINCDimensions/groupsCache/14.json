@@ -1,607 +1,593 @@
 {
   "rows": [
     {
+      "row_id": 22,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs prefix 'b-' meaning Blood",
+      "certainty": "high"
+    },
+    {
       "row_id": 23,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs 'B-' prefix typically means a venous blood draw from which serum or plasma is prepared for analysis, which is the standard matrix for lab-based CRP, and this is the preferred Top2000 concept",
-      "certainty": "medium"
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles starting at 6 are consistent with mg/l ; in Serum, Plasma or Blood bcs prefix 'b-' meaning Blood",
+      "certainty": "high"
     },
     {
       "row_id": 24,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6, 7.5, ...] are consistent with mg/L ; in Serum or Plasma bcs 'B-' prefix typically means a venous blood draw from which serum or plasma is prepared for analysis, which is the standard matrix for lab-based CRP, and this is the preferred Top2000 concept",
-      "certainty": "medium"
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles starting at 7 are consistent with mg/l ; in Serum, Plasma or Blood bcs prefix 'b-' meaning Blood ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
+      "certainty": "high"
     },
     {
       "row_id": 25,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [7, 10.22, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'B-' prefix indicates a blood sample, and rapid tests may use whole blood ; by Rapid immunoassay bcs 'pika' means 'rapid'",
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-resktiivinenproteiini' is a typo for C-reactive protein ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles starting at 6.01 ; in Serum, Plasma or Blood bcs prefix 'b-' meaning Blood",
       "certainty": "high"
     },
     {
       "row_id": 26,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-resktiivinenproteiini' is a misspelling of 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [6, 8.11, ...] are consistent ; in Serum or Plasma bcs 'B-' prefix typically means a venous blood draw from which serum or plasma is prepared for analysis, which is the standard matrix for lab-based CRP, and this is the preferred Top2000 concept",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 27,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-resktiivinenproteiini' is a misspelling of 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'B-' prefix typically means a venous blood draw from which serum or plasma is prepared for analysis, which is the standard matrix for lab-based CRP, and this is the preferred Top2000 concept",
-      "certainty": "low"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles starting at 6.19 are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when not specified",
+      "certainty": "high"
     },
     {
       "row_id": 28,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6.19, 8.89, ...] are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when none is specified",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles starting at 4.01 ; in Serum or Plasma bcs it is the default specimen when not specified",
       "certainty": "high"
     },
     {
       "row_id": 29,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [4.01, 6.22, ...] ; in Serum or Plasma bcs it is the default specimen when none is specified",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles starting at 6.33 are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when not specified",
       "certainty": "high"
     },
     {
       "row_id": 30,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6.55, 8.84, ...] are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when none is specified",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum or Plasma bcs TEST_NAME includes '(p-crp)' indicating Plasma",
       "certainty": "high"
     },
     {
       "row_id": 31,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [1, 1.79, ...] ; in Serum or Plasma bcs parenthetical '(p-crp)' indicates Plasma",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 32,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs parenthetical '(p-crp)' indicates Plasma",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum or Plasma bcs it is the default specimen when not specified",
+      "certainty": "high"
     },
     {
       "row_id": 33,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [1.23, 1.51, ...] ; in Serum or Plasma bcs it is the default specimen when none is specified",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 34,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs it is the default specimen when none is specified",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum or Plasma bcs TEST_NAME includes '(p-crp)' indicating Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 35,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [1, 2, ...] ; in Serum or Plasma bcs parenthetical '(p-crp)' indicates Plasma",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 36,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs parenthetical '(p-crp)' indicates Plasma",
-      "certainty": "medium"
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles (0.22-6.24) ; in Serum or Plasma bcs it is the default specimen ; by High sensitivity method bcs TEST_NAME contains 'herkkä' (sensitive) and low value deciles",
+      "certainty": "high"
     },
     {
       "row_id": 37,
-      "omop_concept_id": "3010156",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [0.22, 0.41, ...] ; in Serum or Plasma bcs it is the default specimen when none is specified ; by High sensitivity method bcs 'herkkä' means 'sensitive' and deciles confirm",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for hs-CRP.",
+      "certainty": ""
     },
     {
       "row_id": 38,
       "omop_concept_id": "3010156",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs it is the default specimen when none is specified ; by High sensitivity method bcs 'herkkä' means 'sensitive'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles (0.29-4.64) ; in Serum or Plasma bcs TEST_NAME includes 'seerumista' (from serum) ; by High sensitivity method bcs TEST_NAME contains 'herkkä' (sensitive) and low value deciles",
+      "certainty": "high"
     },
     {
       "row_id": 39,
-      "omop_concept_id": "3010156",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [0.28, 0.41, ...] ; in Serum or Plasma bcs 'seerumista' means 'from serum' ; by High sensitivity method bcs 'herkkä' means 'sensitive' and deciles confirm",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for hs-CRP.",
+      "certainty": ""
     },
     {
       "row_id": 40,
-      "omop_concept_id": "3010156",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'seerumista' means 'from serum' ; by High sensitivity method bcs 'herkkä' means 'sensitive'",
-      "certainty": "medium"
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits in this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
+      "certainty": "high"
     },
     {
       "row_id": 41,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 5.05, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pika' means 'rapid' and the deciles show a floor at 5, typical for rapid tests",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 42,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pika' means 'rapid'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits in this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
+      "certainty": "high"
     },
     {
       "row_id": 43,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 5, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pika' and 'tehdään itse' (do it yourself) mean 'rapid' / 'point-of-care', and the deciles show a floor at 5",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 44,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pika' and 'tehdään itse' (do it yourself) mean 'rapid' / 'point-of-care'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs TEST_NAME includes 'veri' (blood) ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
+      "certainty": "high"
     },
     {
       "row_id": 45,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [6, 7, ...] ; in Serum, Plasma or Blood bcs 'veri' means 'blood' ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs TEST_NAME includes 'veri' (blood) ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
       "certainty": "high"
     },
     {
       "row_id": 46,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6.55, 9.61, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'veri' means 'blood' ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs TEST_NAME includes 'veri' (blood) and '(b-crp-pt)' ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
       "certainty": "high"
     },
     {
       "row_id": 47,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [4.99, 5.34, ...] ; in Serum, Plasma or Blood bcs 'veri' means 'blood' and parenthetical '(b-crp)' confirms ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 48,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'veri' means 'blood' and parenthetical '(b-crp)' confirms ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pikatutkimus' (rapid study/test)",
+      "certainty": "high"
     },
     {
       "row_id": 49,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [7, 12, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pikatutkimus' means 'rapid study/test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 50,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pikatutkimus' means 'rapid study/test'",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 51,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5.17, 7.91, ...] ; in Serum, Plasma or Blood bcs 'plasmasta' means 'from plasma' ; by Rapid immunoassay bcs 'vieritesti' means 'point-of-care test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs TEST_NAME includes 'plasmasta' (from plasma) ; by Rapid immunoassay bcs TEST_NAME contains 'vieritesti' (point-of-care test)",
       "certainty": "high"
     },
     {
+      "row_id": 51,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
+    },
+    {
       "row_id": 52,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'plasmasta' means 'from plasma' ; by Rapid immunoassay bcs 'vieritesti' means 'point-of-care test'",
-      "certainty": "medium"
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when not specified",
+      "certainty": "high"
     },
     {
       "row_id": 53,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [2.23, 4.3, ...] are consistent with mg/L ; in Serum or Plasma bcs it is the default specimen when none is specified ; 'tk:n tekemä' is administrative info, not a method qualifier",
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'vieritesti' (point-of-care test)",
       "certainty": "high"
     },
     {
       "row_id": 54,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritesti' means 'point-of-care test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'vieritesti' (point-of-care test)",
       "certainty": "high"
     },
     {
       "row_id": 55,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [3.08, 5.45, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritesti' means 'point-of-care test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 56,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 6.72, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 57,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6.41, 9.32, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs TEST_NAME includes 'plasmasta' (from plasma) ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 58,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs 'plasmasta' means 'from plasma' ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 59,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [4.71, 7.37, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'plasmasta' means 'from plasma' ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 60,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 6, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test', and the deciles floor at 5",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 61,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care study/test'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
+      "certainty": "high"
     },
     {
       "row_id": 62,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 5.32, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs '-pika' means 'rapid' and the deciles floor at 5",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 63,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs '-pika' means 'rapid'",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 64,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5, 6.88, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs '-pika' means 'rapid' and the deciles floor at 5",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles with floor at 5 ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
       "certainty": "high"
     },
     {
+      "row_id": 64,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
+    },
+    {
       "row_id": 65,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs '-pika' means 'rapid'",
-      "certainty": "medium"
+      "omop_concept_id": "3051387",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Capillary blood bcs prefix 'cp-' and TEST_NAME 'ihopiston' (skin prick) indicate capillary sample",
+      "certainty": "high"
     },
     {
       "row_id": 66,
       "omop_concept_id": "3051387",
       "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [1.75, 3.02, ...] ; in Capillary blood bcs 'cp-' prefix and 'ihopiston' (skin prick) both indicate capillary blood",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Capillary blood bcs prefix 'cp-' and TEST_NAME 'ihopiston' (skin prick) indicate capillary sample",
       "certainty": "high"
     },
     {
       "row_id": 67,
-      "omop_concept_id": "3051387",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [1.2, 1.53, ...] are consistent with mg/L ; in Capillary blood bcs 'cp-' prefix and 'ihopiston' (skin prick) both indicate capillary blood",
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs prefix 'fs-' (fasting serum) indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 68,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs 'fS-' prefix indicates Serum (fasting is a patient state, not part of the specimen type for LOINC)",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 69,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'fS-' prefix indicates Serum (fasting is a patient state, not part of the specimen type for LOINC)",
-      "certainty": "medium"
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiininenproteiini' is a typo for C-reactive protein ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
+      "certainty": "high"
     },
     {
       "row_id": 70,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiininenproteiini' is a misspelling of 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5.85, 8.85, ...] ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 71,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiininenproteiini' is a misspelling of 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
-      "certainty": "medium"
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 72,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [4.18, 7.12, ...] ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 73,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles confirm quantitative test, overriding '(kval)' in name ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
+      "certainty": "high"
     },
     {
       "row_id": 74,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and quantitative deciles override the '(kval)' hint ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. The '(kval)' suffix introduces further ambiguity without values.",
+      "certainty": ""
     },
     {
       "row_id": 75,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 76,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' overrides the '(kval)' hint ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles confirm quantitative test, overriding '(kval)' in name ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
+      "row_id": 76,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. The '(kval)' suffix introduces further ambiguity without values.",
+      "certainty": ""
+    },
+    {
       "row_id": 77,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "medium"
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains '(pikanäyte)' (rapid sample)",
+      "certainty": "high"
     },
     {
       "row_id": 78,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs 'P-' prefix indicates Plasma. 'pikanäyte' (rapid sample) is treated as administrative (STAT) rather than a method qualifier like 'pikatesti' (rapid test).",
-      "certainty": "medium"
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains '(pikanäyte)' (rapid sample)",
+      "certainty": "high"
     },
     {
       "row_id": 79,
       "omop_concept_id": "3020460",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [1.52, 2.59, ...] are consistent with mg/L ; in Serum or Plasma bcs 'P-' prefix indicates Plasma. 'pikanäyte' (rapid sample) is treated as administrative (STAT) rather than a method qualifier.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 80,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
+      "row_id": 80,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
+    },
+    {
       "row_id": 81,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'P-' prefix indicates Plasma",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No value deciles and an uninformative unit ('1'), so the property cannot be determined. 'hoitoyksikkö' (care unit) suggests a POC test but without property this is not mappable.",
+      "certainty": ""
     },
     {
       "row_id": 82,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs no units but deciles of related rows suggest mg/L ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'hoitoyksikkö' (care unit) implies a point-of-care test",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'hoitoyksikkö' (care unit) suggesting a point-of-care test",
+      "certainty": "high"
     },
     {
       "row_id": 83,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs no values, but other 'hoitoyksikkö' rows are quantitative ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'hoitoyksikkö' (care unit) implies a point-of-care test",
-      "certainty": "low"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 84,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [8, 11, ...] ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'hoitoyksikkö' (care unit) implies a point-of-care test, and the decile floor at 8 supports this",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
       "certainty": "high"
     },
     {
       "row_id": 85,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6, 8, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'hoitoyksikkö' (care unit) implies a point-of-care test, and the decile floor at 6 supports this",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
       "certainty": "high"
     },
     {
       "row_id": 86,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 87,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [6.43, 8.8, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 88,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 'p-' and 'plasmasta' indicate Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'vieritutkimus' (point-of-care study/test)",
       "certainty": "high"
     },
     {
       "row_id": 89,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 90,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [4.03, 6.98, ...] ; in Serum, Plasma or Blood bcs 'P-' prefix and 'plasmasta' both indicate Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
       "certainty": "high"
     },
     {
       "row_id": 91,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'P-' prefix and 'plasmasta' both indicate Plasma ; by Rapid immunoassay bcs 'vieritutkimus' means 'point-of-care test'",
-      "certainty": "medium"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pika' and 'hoitoyksiköt' (rapid, care units)",
+      "certainty": "high"
     },
     {
       "row_id": 92,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [3.75, 6.98, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs '.pika' means 'rapid'",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pika' and 'hoitoyksiköt' (rapid, care units)",
       "certainty": "high"
     },
     {
       "row_id": 93,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [5.2, 7.99, ...] ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'pika' and 'hoitoyksiköt' (care units) indicate a point-of-care test, and the decile floor near 5 supports this",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs value_deciles are consistent with mg/L ; in Serum, Plasma or Blood bcs prefix 'p-' indicates Plasma ; by Rapid immunoassay bcs TEST_NAME contains 'pikamittari' (rapid meter)",
       "certainty": "high"
     },
     {
       "row_id": 94,
       "omop_concept_id": "1469985",
       "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [1.18, 1.4, ...] are consistent with mg/L, though lower than expected for a rapid test ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'pika' and 'hoitoyksiköt' (care units) indicate a point-of-care test, which is stronger evidence than the conflicting deciles in this low-N, high-missingness row",
-      "certainty": "low"
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs default S/P fits this broader category ; by Rapid immunoassay bcs TEST_NAME contains 'pikatesti' (rapid test)",
+      "certainty": "high"
     },
     {
       "row_id": 95,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs deciles [7, 9.06, ...] are consistent with mg/L ; in Serum, Plasma or Blood bcs 'P-' prefix indicates Plasma ; by Rapid immunoassay bcs 'pikamittari' means 'rapid meter'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 96,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [6, 7.85, ...] ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No value deciles and an uninformative unit ('1'), so the property cannot be determined. 'Osoitus' (detection) could imply qualitative, but sibling rows with same name are quantitative.",
+      "certainty": ""
     },
     {
       "row_id": 97,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs no specimen is specified and this concept covers S/P for rapid tests ; by Rapid immunoassay bcs 'pikatesti' means 'rapid test'",
-      "certainty": "medium"
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles confirm quantitative test, overriding 'osoitus' (detection) ; in Serum or Plasma bcs TEST_NAME includes 'plasman' (plasma's)",
+      "certainty": "high"
     },
     {
       "row_id": 98,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs unit '1' is likely an error for mg/l, as seen in sibling row 99 ; in Serum or Plasma bcs 'plasman' means 'plasma's' ; 'osoitus' (detection) is contradicted by quantitative data in sibling rows, so mapping to standard quantitative test",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 99,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and quantitative deciles override the hint from 'osoitus' (detection) ; in Serum or Plasma bcs 'plasman' means 'plasma's'",
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum ; by High sensitivity method bcs value_deciles (0.4-16.59) are unambiguously in the high-sensitivity range, even though 'herkkä' is not in the name",
       "certainty": "high"
     },
     {
       "row_id": 100,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and sibling rows are quantitative ; in Serum or Plasma bcs 'plasman' means 'plasma's' ; 'osoitus' (detection) is contradicted by quantitative data in sibling rows, so mapping to standard quantitative test",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 101,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [0.4, 0.73, ...] ; in Serum or Plasma bcs 'S-' prefix indicates Serum",
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles (0.39-8.99) ; in Serum or Plasma bcs prefix 's-' indicates Serum ; by High sensitivity method bcs TEST_NAME contains 'herkkä' (sensitive) and low value deciles",
       "certainty": "high"
     },
     {
       "row_id": 102,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'S-' prefix indicates Serum",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for hs-CRP.",
+      "certainty": ""
     },
     {
       "row_id": 103,
-      "omop_concept_id": "3010156",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [0.39, 0.59, ...] ; in Serum or Plasma bcs 'S-' prefix indicates Serum ; by High sensitivity method bcs 'herkkä' means 'sensitive' and deciles confirm",
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and value_deciles ; in Serum, Plasma or Blood bcs prefix 's-' indicates Serum ; by Rapid immunoassay bcs TEST_NAME contains 'pika' (rapid)",
       "certainty": "high"
     },
     {
       "row_id": 104,
-      "omop_concept_id": "3010156",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'S-' prefix indicates Serum ; by High sensitivity method bcs 'herkkä' means 'sensitive'",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP.",
+      "certainty": ""
     },
     {
       "row_id": 105,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [8, 10, ...] ; in Serum, Plasma or Blood bcs 'S-' prefix indicates Serum ; by Rapid immunoassay bcs 'pika' means 'rapid' and the decile floor at 8 is typical for POC tests",
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs TEST_NAME 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum ; by High sensitivity method bcs value_deciles (0.31-10.07) are unambiguously in the high-sensitivity range, even though 'herkkä' is not in the name",
       "certainty": "high"
-    },
-    {
-      "row_id": 106,
-      "omop_concept_id": "1469985",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum, Plasma or Blood bcs 'S-' prefix indicates Serum ; by Rapid immunoassay bcs 'pika' means 'rapid'",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 107,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs UNIT 'mg/l' and deciles [0.31, 0.5, ...] ; in Serum or Plasma bcs 'S-' prefix indicates Serum",
-      "certainty": "high"
-    },
-    {
-      "row_id": 108,
-      "omop_concept_id": "3020460",
-      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
-      "reasoning": "C-reactive protein bcs 'c-reaktiivinenproteiini' ; [Mass/volume] bcs it is a concentration measurement, and no units suggest otherwise ; in Serum or Plasma bcs 'S-' prefix indicates Serum",
-      "certainty": "medium"
     }
   ],
-  "reflection": "This group was entirely about C-reactive protein (CRP) and its variations. The mapping was mostly straightforward, distinguishing between standard lab tests, high-sensitivity tests, and rapid/point-of-care tests. The key Finnish terms were `herkkä` (sensitive), and a cluster of terms for rapid/POC tests: `pika`, `pikatesti`, `vieritesti`, `vieritutkimus`, `hoitoyksikkö`, `pikamittari`. The candidate list was excellent, providing distinct concepts for these different test types.\n\nI developed a consistent strategy:\n1.  **Standard CRP**: Mapped to `3020460` (CRP [Mass/vol] in S/P). This was the default and is a Top 2000 concept.\n2.  **High-sensitivity CRP**: Mapped to `3010156` (CRP [Mass/vol] in S/P by High sensitivity). The term `herkkä` and low decile values were clear indicators.\n3.  **Rapid/POC CRP**: Mapped to `1469985` (CRP [Mass/vol] in S/P/B by Rapid immunoassay). The various Finnish terms for rapid/POC tests were the main evidence. The deciles often showed a characteristic floor around 5 mg/L, supporting this choice. The broader specimen `Serum, Plasma or Blood` was appropriate as POC tests can use different sample types.\n4.  **Capillary CRP**: Mapped to `3051387` (CRP [Mass/vol] in Capillary blood). The `cp-` prefix and the term `ihopiston` (skin prick) were definitive.\n\nSome minor challenges:\n- The `B-` (Blood) prefix for a standard lab test was slightly ambiguous. I chose to map it to the standard `Serum or Plasma` concept (`3020460`), assuming `B-` refers to the collected sample and not the analyzed matrix, which is standard practice for CRP. This seemed more plausible than choosing a less common, non-Top2000 concept for 'Serum, Plasma or Blood'.\n- Some names included hints of qualitative testing (`kval`, `osoitus`) but were paired with quantitative units and values. I consistently prioritized the quantitative data, as it is stronger evidence.\n- One row (94) had deciles that conflicted with its name ('pika'), but given the low sample count and high missingness, I trusted the name."
+  "reflection": "This group consisted entirely of C-reactive protein (CRP) tests. The candidate list was comprehensive, allowing for clear differentiation based on specimen (Blood, Serum/Plasma, Capillary), method (standard, high-sensitivity, rapid), and property (Mass/volume).\n\n**Key success factors:**\n*   The Finnish qualifiers were very informative: `pika`, `pikatesti`, and `vieritesti` all clearly indicated a rapid/point-of-care test, mapping well to the 'Rapid immunoassay' concept. `herkkä` was a direct translation for 'High sensitivity'. Prefixes (`B-`, `P-`, `S-`, `cP-`) and specimen words (`veri`, `plasma`) were crucial for system assignment.\n*   The `value_deciles` were essential. They allowed mapping of rows 99 and 105 to the high-sensitivity concept based on the low values, even when the term `herkkä` was missing from the name. They also confirmed the property as `[Mass/volume]` for many rows lacking a unit.\n\n**Challenges and unmapped rows:**\n*   A large number of rows were left unmapped. This was consistently due to a lack of quantitative information (`evidence_level` was `name` or had an uninformative unit). As per instructions, without a unit or values, it was impossible to distinguish between `[Mass/volume]` and `[Moles/volume]` candidates. This reflects a limitation in the source data for those specific records, not a failure of the mapping process or vocabulary.\n\nOverall, the mapping for this group was successful where the data allowed, with clear evidence driving the choice of specific LOINC concepts."
 }

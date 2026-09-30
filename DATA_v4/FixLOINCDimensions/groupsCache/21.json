@@ -1,201 +1,194 @@
 {
   "rows": [
     {
+      "row_id": 152,
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Plasma bcs TEST_NAME prefix 'fp-' means Fasting plasma, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 153,
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs this is the standard property for saturation and no other property is suggested ; in Plasma bcs TEST_NAME prefix 'fp-' means Fasting plasma, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 154,
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautasaturaatio' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Plasma bcs TEST_NAME prefix 'fp-' means Fasting plasma, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "high"
+    },
+    {
       "row_id": 155,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fp-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferiininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs value deciles [0.08, 0.12, ...] represent a fraction, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME prefix 'fs-' means Fasting serum, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 156,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fp-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "medium"
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferiininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs value deciles [0.09, 0.14, ...] represent a fraction, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME prefix 'fs-' means Fasting serum, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "high"
     },
     {
       "row_id": 157,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fp-transferriininrautasaturaatio' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME prefix 'fs-' means Fasting serum, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 158,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fs-transferiininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs deciles are fractions [0.08..0.41] and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs value deciles [7.1, 10.45, ...] represent percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME prefix 'fs-' means Fasting serum, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 159,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fs-transferiininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs deciles are fractions [0.07..0.39] and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 160,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fs-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 161,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'fs-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs deciles are percentages [6.96..47.21] and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum and LOINC uses 'Serum or Plasma' for both",
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori' means transferrin receptor and 'soluble' is the standard form measured ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 162,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'p-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "high"
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori' means transferrin receptor and 'soluble' is the standard form measured ; [Mass/volume] bcs this property is inferred from sibling rows with unit 'mg/l' and is the most common way to report this analyte ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "medium"
     },
     {
       "row_id": 163,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'p-transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori, liukoinen' means soluble transferrin receptor ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 164,
       "omop_concept_id": "3015399",
       "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'p-transferriinireseptori', which measures the soluble form ; [Mass/volume] bcs UNIT is 'mg/l' and deciles match this magnitude ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "high"
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori, liukoinen' means soluble transferrin receptor ; [Mass/volume] bcs this property is inferred from sibling rows with unit 'mg/l' and is the most common way to report this analyte ; in Plasma bcs TEST_NAME prefix 'p-' means Plasma, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "medium"
     },
     {
       "row_id": 165,
       "omop_concept_id": "3015399",
       "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'p-transferriinireseptori', which measures the soluble form ; [Mass/volume] bcs this is the standard property for this analyte ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "medium"
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori' means transferrin receptor and 'soluble' is the standard form measured ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' means Serum, which is covered by LOINC's 'Serum or Plasma'",
+      "certainty": "high"
     },
     {
       "row_id": 166,
       "omop_concept_id": "3015399",
       "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'p-transferriinireseptori,liukoinen' (soluble) ; [Mass/volume] bcs UNIT is 'mg/l' and deciles match this magnitude ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori, liukoinen' means soluble transferrin receptor ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' means Serum, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 167,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'p-transferriinireseptori,liukoinen' (soluble) ; [Mass/volume] bcs this is the standard property for this analyte ; in Serum or Plasma bcs prefix 'p-' means Plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 168,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 's-transferriinireseptori', which measures the soluble form ; [Mass/volume] bcs UNIT is 'mg/l' and deciles match this magnitude ; in Serum or Plasma bcs prefix 's-' means Serum and LOINC uses 'Serum or Plasma' for both",
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferiininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is 'osuus' (share/fraction) and values are fractions, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME contains 'seerumista' (from serum), which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
+      "row_id": 168,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map due to conflicting information: TEST_NAME 'transferiininrautakyllästeisyys' indicates a single result (transferrin iron saturation), but the UNIT is 'paketti' (package/panel), suggesting an order for a panel. No single concept can represent both.",
+      "certainty": ""
+    },
+    {
       "row_id": 169,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 's-transferriinireseptori,liukoinen' (soluble) ; [Mass/volume] bcs UNIT is 'mg/l' and deciles match this magnitude ; in Serum or Plasma bcs prefix 's-' means Serum and LOINC uses 'Serum or Plasma' for both",
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferiininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs value deciles [0.1, 0.14, ...] represent a fraction, and molar fraction is the standard (top2000) for this ratio ; in Serum bcs TEST_NAME contains 'seerumista' (from serum), which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 170,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferiininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is 'osuus' (fraction) and deciles are fractions [0.09..0.44] ; in Serum or Plasma bcs TEST_NAME specifies 'seerumista' (from serum)",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
       "certainty": "high"
     },
     {
       "row_id": 171,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No concept chosen because the UNIT is 'paketti' (package), which is an administrative code for a test panel order, not an observable result.",
-      "certainty": ""
+      "omop_concept_id": "3009814",
+      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs this is the standard property for saturation and no other property is suggested ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
+      "certainty": "high"
     },
     {
       "row_id": 172,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferiininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs deciles are fractions [0.1..0.41] and this is the standard property ; in Serum or Plasma bcs TEST_NAME specifies 'seerumista' (from serum)",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Plasma bcs TEST_NAME contains '(fp-)', indicating Fasting Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 173,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs this is the standard property for saturation and no other property is suggested ; in Plasma bcs TEST_NAME contains '(fp-)', indicating Fasting Plasma, which is covered by LOINC's 'Serum or Plasma'",
       "certainty": "high"
     },
     {
       "row_id": 174,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "medium"
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriininrautakyllästeisyys' means transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
+      "certainty": "high"
     },
     {
       "row_id": 175,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs TEST_NAME includes '(fp-)' for Fasting plasma and LOINC uses 'Serum or Plasma' for both",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriinirautakyllästeisyys' is a slight misspelling of transferrin iron saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
       "certainty": "high"
     },
     {
       "row_id": 176,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs this is the standard property for saturation ; in Serum or Plasma bcs TEST_NAME includes '(fp-)' for Fasting plasma and LOINC uses 'Serum or Plasma' for both",
-      "certainty": "medium"
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori, liukoinen' means soluble transferrin receptor ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
+      "certainty": "high"
     },
     {
       "row_id": 177,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "high"
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble Transferrin receptor bcs TEST_NAME 'transferriinireseptori, liukoinen' means soluble transferrin receptor ; [Mass/volume] bcs this property is inferred from the sibling row with unit 'mg/l' and is the most common way to report this analyte ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
+      "certainty": "medium"
     },
     {
       "row_id": 178,
       "omop_concept_id": "3009814",
       "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 179,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is a slight misspelling of 'transferriininrautakyllästeisyys' (transferrin iron saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "high"
-    },
-    {
-      "row_id": 180,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'transferriinireseptori,liukoinen' (soluble) ; [Mass/volume] bcs UNIT is 'mg/l' and deciles match this magnitude ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "high"
-    },
-    {
-      "row_id": 181,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME is 'transferriinireseptori,liukoinen' (soluble) ; [Mass/volume] bcs this is the standard property for this analyte ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 182,
-      "omop_concept_id": "3009814",
-      "omop_concept_name": "Iron saturation [Molar fraction] in Serum or Plasma",
-      "reasoning": "Iron saturation bcs TEST_NAME is 'transferriinisaturaatio' (transferrin saturation) ; [Molar fraction] bcs UNIT is '%' and this is the standard property for saturation ; in Serum or Plasma bcs no specimen is specified so the general 'Serum or Plasma' is appropriate",
+      "reasoning": "Transferrin iron saturation bcs TEST_NAME 'transferriinisaturaatio' means transferrin saturation ; [Molar fraction] bcs UNIT is '%' and values are percentages, and molar fraction is the standard (top2000) for this ratio ; in Serum or Plasma bcs no specimen is specified in the name, so the general 'Serum or Plasma' is appropriate",
       "certainty": "high"
     }
   ],
-  "reflection": "This group contained two distinct analytes: Transferrin iron saturation and Soluble transferrin receptor. The Finnish names (`transferriininrautakyllästeisyys`, `transferriinireseptori`) were clear, and the candidate list provided excellent matches. For saturation, `3009814` (Iron saturation [Molar fraction] in Serum or Plasma) was the correct choice, supported by `%` units or fractional deciles, and its status as a top-2000 code. For the receptor, `3015399` (Transferrin receptor.soluble [Mass/volume] in Serum or Plasma) was correct, confirmed by `mg/l` units and the presence of `liukoinen` (soluble) in many names. Most rows could be mapped with high certainty. Rows without values or units were mapped with lower certainty. One row (171) had a UNIT of `paketti` (package) and was correctly left unmapped as it represents a test order, not a result."
+  "reflection": "This group was straightforward to map. The Finnish names were clear and consistently distinguished between 'Transferrin iron saturation' (`rautakyllästeisyys` or `saturaatio`) and 'soluble Transferrin receptor' (`transferriinireseptori, liukoinen`).\n\nThe candidate list was excellent, providing the exact concepts needed. For iron saturation, I chose the top-2000 concept `3009814` with `[Molar fraction]` as it's the standard for this measurement reported in `%`. For the soluble transferrin receptor, `3015399` with `[Mass/volume]` was a perfect match for the rows with `mg/l` units.\n\nMost rows had sufficient evidence (unit and/or values) to confirm the property. Some rows reported saturation as a decimal fraction (values 0-1) rather than a percentage, but this still maps to the same fraction concept.\n\nOnly one row, `168`, was unmappable due to a direct conflict between its name (a single result) and its unit (`paketti`, meaning panel/package)."
 }

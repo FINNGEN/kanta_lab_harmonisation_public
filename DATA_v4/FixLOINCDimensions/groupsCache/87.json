@@ -1,0 +1,467 @@
+{
+  "rows": [
+    {
+      "row_id": 1385,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs PAD (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and '-gast' specifying stomach tissue, a subtype of Tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1386,
+      "omop_concept_id": "3025378",
+      "omop_concept_name": "Microscopic observation [Identifier] in Cervix by Cyto stain",
+      "reasoning": "Component is Microscopic observation bcs 'papa' refers to a Papanicolaou smear, which is a microscopic cytology test ; in Cervix bcs this is the standard specimen for a Pap smear ; by Cyto stain bcs Papanicolaou stain is a type of cytological stain. This concept is a Top 2000 concept for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1387,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1388,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1389,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies immunohistochemistry ('-ih' suffix and 'Immunohistochemical' in LongName). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Immune stain' (e.g., 8122-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1390,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1391,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-colo' indicating colon, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for colon tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1392,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-kolp' indicating a colposcopy biopsy from the cervix, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. Candidates for Cervix specified 'Cyto stain' which is incorrect for a biopsy.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1393,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-endo' indicating endometrium, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. The candidate for Endometrium specified 'Cyto stain', which is incorrect for a biopsy.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1394,
+      "omop_concept_id": "3011035",
+      "omop_concept_name": "Amyloid A component Ag [Presence] in Tissue by Immune stain",
+      "reasoning": "Component is Amyloid A component Ag bcs of 'ts-aa' and LongName 'Ts-Amyloidi' ; [property] is Presence bcs of the '-o' suffix for qualitative test ; in Tissue bcs of the 'ts-' prefix ; by Immune stain bcs this is a standard method for detecting amyloid deposits.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1395,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1396,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1397,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1398,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Kudosnäytteen histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). The unit 'form' is noise.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1399,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Kudosnäytteen histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1400,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-co' likely meaning colon, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for colon tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1401,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-tk' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1402,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-tu' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1403,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-1x2' is administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1404,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-1x3' is administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1405,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Kudosnäytteen histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1406,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-2tu' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1407,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Kudosnäytteen histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1408,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-co' likely meaning colon, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for colon tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1409,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-3tu' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1410,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Kudosnäytteen histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1411,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-4tu' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1412,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Erittäin laaja histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1413,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-5tu' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1414,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-bio' (biopsy) ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1415,
+      "omop_concept_id": "3017281",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Electron microscopy thin sectiion",
+      "reasoning": "Component is Microscopic observation bcs of 'pad' (histopathology) ; in Tissue bcs of the 'ts-' prefix ; by Electron microscopy bcs of the '-em' suffix and 'elektronimikroskooppinen tutkimus' in LongName.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1416,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-ev' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1417,
+      "omop_concept_id": "3037320",
+      "omop_concept_name": "Microscopic observation [Identifier] in Specimen by Immunofluorescence",
+      "reasoning": "Component is Microscopic observation bcs of 'pad' (histopathology) ; in Specimen bcs the code specifies 'ts-' (Tissue), which is a type of specimen ; by Immunofluorescence bcs of the '-if' suffix and 'immunofluoresenssitutkimus' in LongName.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1418,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies immunohistochemistry ('-ih' suffix and 'immunohistokemiallinen tutkimus' in LongName). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Immune stain' (e.g., 8122-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1419,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies immunohistochemistry ('-ih' suffix). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Immune stain' (e.g., 8122-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1420,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies immunohistochemistry ('-ih' suffix). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Immune stain' (e.g., 8122-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1421,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies in situ hybridization ('-ish' suffix and 'in situ-hybridisaatiotutkimus' in LongName). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by In situ hybridization' (e.g., 8124-9), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1422,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-lau' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1423,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) and LongName 'Paksuneulabiopsian histologinen tutkimus' imply histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for a biopsy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1424,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-pol' is likely administrative or refers to a polyp.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1425,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-tk' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1426,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-y' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1427,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1428,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1429,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Pään ja kaulan alueen' (Head and neck area) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for Head and neck tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1430,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Rinnan' (Breast) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for Breast tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1431,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Keskushermoston' (Central nervous system) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for CNS tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1432,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Kolonoskopianäytteiden' (Colonoscopy samples) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for colon tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1433,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies FISH ('-fish' suffix). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by FISH' (e.g., 8123-1), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1434,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-gas' indicating stomach, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for stomach tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1435,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-gas' indicating stomach, a type of tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for stomach tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1436,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Gastroskopianäytteiden' (Gastroscopy samples) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for stomach tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1437,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-gyn' indicating gynecological tissue ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for female genital tract tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1438,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Kolposkopianäytteiden' (Colposcopy samples from cervix) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. Candidates for Cervix specified 'Cyto stain' which is incorrect for a biopsy.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1439,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Kolposkopianäytteiden' (Colposcopy samples from cervix) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. Candidates for Cervix specified 'Cyto stain' which is incorrect for a biopsy.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1440,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-lis1' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1441,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code suffix '-makr' likely refers to macroscopic/gross examination. The correct LOINC would be for gross description (e.g., 33729-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1442,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-pak2' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1443,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-pak3' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1444,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code suffix '-pika' and LongName 'Kudoksen pikaleiketutkimus' specify a rapid/frozen section. The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Frozen section' (e.g., 8121-5), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1445,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and LongName specifying 'Prostatabiopsian' (Prostate biopsy) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. The candidate for Prostate specified 'Cyto stain' which is incorrect for a biopsy.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1446,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-suu' indicating mouth/oral cavity ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). No more specific candidate for oral tissue was available.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1447,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for unspecified histopathology (PAD). Suffix '-tuor' is likely administrative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1448,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs '-pat' likely refers to pathology ; in Tissue bcs of the prefix 'ts-' ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. '-lask' might be administrative (laskutus=billing). Assuming it represents a standard PAD.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1449,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No suitable candidate. The code specifies immunohistochemistry ('-ih' suffix). The correct LOINC concept would be 'Microscopic observation [Identifier] in Tissue by Immune stain' (e.g., 8122-3), but no such candidate was present in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1450,
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Component is Microscopic observation bcs 'pad' (Patologian anatomian diagnoosi) implies histopathology ; in Tissue bcs of the prefix 'ts-' and suffix '-brea' (breast) ; by Hematoxylin and eosin stain bcs this is the default standard stain for histopathology. No more specific candidate for Breast tissue was available.",
+      "certainty": "high"
+    }
+  ],
+  "reflection": "This group was dominated by histopathology codes (`Ts-PAD...`) and one Papanicolaou smear code (`Pt-PAPA...`).\n*   The numerous variations of `Ts-PAD` (histopathology on tissue) were mapped to a single generic concept for microscopic observation of tissue with H&E stain (`3011173`). This assumes H&E is the default unspecified stain, which is standard pathology practice. Suffixes indicating specific tissue types (e.g., `-colo` for colon, `-gast` for stomach) could not be mapped to more specific LOINC concepts as none were present in the candidate list. The mapping is still correct at the general tissue level.\n*   Specific methods were mappable when candidates were available: `ts-pad-em` (electron microscopy) and `ts-pad-if` (immunofluorescence) were mapped successfully.\n*   Several key pathology methods were unmappable due to a deficient candidate list. Codes for immunohistochemistry (`-ih`), in situ hybridization (`-ish`), FISH (`-fish`), frozen section (`-pika`), and gross/macroscopic observation (`-makr`) all had clear local names but no corresponding LOINC concept was retrieved. The relevant LOINC codes would be `8122-3` (...by Immune stain for IHC), `8124-9` (...by In situ hybridization for ISH), `8123-1` (...by FISH), `8121-5` (...by Frozen section), and `33729-3` (Gross description... for macroscopic). The search query generation or the search itself seems to have failed for these common pathology terms.\n*   The Pap smear (`Pt-PAPA-1`) was successfully mapped to `Microscopic observation [Identifier] in Cervix by Cyto stain` (`3025378`).\n*   A qualitative amyloid test (`ts-aa-o`) was also successfully mapped (`3011035`).\n\nThe main issue was the incomplete candidate list for common pathology procedures. Otherwise, the mapping was straightforward."
+}

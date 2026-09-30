@@ -1,201 +1,677 @@
 {
   "rows": [
     {
-      "row_id": 1277,
-      "omop_concept_id": "1091602",
-      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen",
-      "reasoning": "Human papilloma virus from `hpv` and `Papilloomavirus` ; DNA [Presence] is the standard modality for HPV screening ; in Specimen as no specimen is explicitly mentioned, but is typically a genital specimen.",
+      "row_id": 1451,
+      "omop_concept_id": "3041706",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-ca++' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; adjusted to pH 7.4 bcs '7.4' ; in Arterial blood bcs prefix 'ab-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1452,
+      "omop_concept_id": "3041706",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-ca-i' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; adjusted to pH 7.4 bcs '7.4' ; in Arterial blood bcs prefix 'ab-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1453,
+      "omop_concept_id": "3041706",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-ca-i' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Arterial blood bcs prefix 'ab-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1454,
+      "omop_concept_id": "3044331",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Arterial blood bcs prefix 'ab-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1455,
+      "omop_concept_id": "3044331",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Arterial blood bcs prefix 'ab-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1456,
+      "omop_concept_id": "3044331",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-caion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; in Arterial blood bcs prefix 'ab-'. Suffix 'vt' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1457,
+      "omop_concept_id": "3044331",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Arterial blood",
+      "reasoning": "Calcium.ionized bcs 'ab-caion' ; [Moles/volume] bcs values ~1.1-1.2 are consistent with mmol/l ; in Arterial blood bcs prefix 'ab-'. Suffix 'vt' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1458,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; in Serum or Plasma bcs prefix 'ap-' for Arterial Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Arterial Plasma' concept is available.",
       "certainty": "medium"
     },
     {
-      "row_id": 1278,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name `hoikemseul` is too abbreviated and ambiguous to be reliably identified. `seul` means screen, but `hoikem` is unclear.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1279,
-      "omop_concept_id": "1091602",
-      "omop_concept_name": "Human papilloma virus DNA [Presence] in Specimen",
-      "reasoning": "Human papilloma virus from `hpv` ; DNA [Presence] is the standard modality for HPV screening (`seul`) ; in Specimen as no specimen is explicitly mentioned.",
+      "row_id": 1459,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'ap-' for Arterial Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Arterial Plasma' concept is available.",
       "certainty": "medium"
     },
     {
-      "row_id": 1280,
-      "omop_concept_id": "3050943",
-      "omop_concept_name": "Newborn hearing screening panel",
-      "reasoning": "Hearing screening from `hörsel` (Swedish for hearing) ; Panel is appropriate for an orderable screening test ; Newborn is assumed as this is the most common context for a population-wide hearing screen.",
+      "row_id": 1460,
+      "omop_concept_id": "3021119",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Blood",
+      "reasoning": "Calcium.ionized bcs 'caion' ; [Moles/volume] bcs unit mmol/l ; in Blood bcs prefix 'b-'. Suffix 'pf' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1461,
+      "omop_concept_id": "3021119",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Blood",
+      "reasoning": "Calcium.ionized bcs 'caion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Blood bcs prefix 'b-'. Suffix 'pf' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1462,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '/7.40' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1463,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '/7.40' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1464,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '/ph7.4' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1465,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; adjusted to pH 7.4 bcs '/ph7.4' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1466,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs 'ph7.4' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1467,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca++' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs 'ph7.4' ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1468,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1469,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs no prefix implies serum/plasma for this chemistry test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1470,
+      "omop_concept_id": "3039602",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Capillary blood",
+      "reasoning": "Calcium.ionized bcs 'cb-ca-i' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '7.4' ; in Capillary blood bcs prefix 'cb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1471,
+      "omop_concept_id": "3039602",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Capillary blood",
+      "reasoning": "Calcium.ionized bcs 'cb-ca-i' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Capillary blood bcs prefix 'cb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1472,
+      "omop_concept_id": "3035279",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Capillary blood",
+      "reasoning": "Calcium.ionized bcs 'cb-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Capillary blood bcs prefix 'cb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1473,
+      "omop_concept_id": "3035279",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Capillary blood",
+      "reasoning": "Calcium.ionized bcs 'cb-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Capillary blood bcs prefix 'cb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1474,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Serum or Plasma bcs prefix 'cp-' for Capillary Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Capillary Plasma' concept is available.",
       "certainty": "medium"
     },
     {
-      "row_id": 1281,
-      "omop_concept_id": "646145",
-      "omop_concept_name": "Sexually transmitted blood borne infections panel - Serum by Immunoassay",
-      "reasoning": "Panel for sexually transmitted/blood borne infections is inferred from `luov.seul.` which means 'donor screen', a procedure that tests for these infections ; in Serum is the typical specimen, although not explicitly stated ; by Immunoassay is a common method, though not specified in the code. This is the closest panel concept available.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1282,
-      "omop_concept_id": "1989068",
-      "omop_concept_name": "Visual acuity panel",
-      "reasoning": "Visual acuity from `näköseula` (vision screen), which most commonly refers to a test of visual acuity ; Panel concept is appropriate for a screening procedure.",
+      "row_id": 1475,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'cp-' for Capillary Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Capillary Plasma' concept is available.",
       "certainty": "medium"
     },
     {
-      "row_id": 1283,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseu` (chemical screen) ; in Urine is implied by the context of a chemical screen at point-of-care (`oma`).",
+      "row_id": 1476,
+      "omop_concept_id": "3046516",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Dialysis fluid",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l ; in Dialysis fluid bcs prefix 'di-'",
       "certainty": "high"
     },
     {
-      "row_id": 1284,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseula` (chemical screen) ; in Urine is implied by the context of a chemical screen at point-of-care (`oma`).",
+      "row_id": 1477,
+      "omop_concept_id": "3046516",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Dialysis fluid",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Dialysis fluid bcs prefix 'di-'",
       "certainty": "high"
     },
     {
-      "row_id": 1285,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kems` (chemical screen) ; in Urine from `u-` prefix and point-of-care context (`oma`).",
+      "row_id": 1478,
+      "omop_concept_id": "3046516",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Dialysis fluid",
+      "reasoning": "Calcium.ionized bcs 'ca-iona' ; [Moles/volume] bcs unit mmol/l ; in Dialysis fluid bcs prefix 'di-'",
       "certainty": "high"
     },
     {
-      "row_id": 1286,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` (chemical screen) ; in Urine from `u-` prefix and point-of-care context (`oma`).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1287,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `rhdnegseul` indicates a screening for Rh(D) antibodies in an RhD-negative individual. No suitable candidate concept for this test was available in the provided list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1288,
-      "omop_concept_id": "3029075",
-      "omop_concept_name": "Extractable nuclear Ab panel - Serum",
-      "reasoning": "Extractable nuclear Ab panel from `enaseul` (ENA screen) ; in Serum from `S-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1289,
-      "omop_concept_id": "646145",
-      "omop_concept_name": "Sexually transmitted blood borne infections panel - Serum by Immunoassay",
-      "reasoning": "Panel for sexually transmitted/blood borne infections is inferred from `ivfseul` (IVF screen), a procedure that typically tests for these infections ; in Serum from `S-` prefix ; by Immunoassay is a common method, though not specified in the code. This is the best available panel concept.",
+      "row_id": 1479,
+      "omop_concept_id": "3005347",
+      "omop_concept_name": "Ammonia [Moles/volume] in Blood",
+      "reasoning": "Ammonia bcs 'nh4-ion' from code and 'Ammonium-ioni' from LongName are best matched by LOINC's pragmatic 'Ammonia' term when the specimen is Blood ; [Moles/volume] bcs unit umol/l and values ~11-101 ; in Blood bcs prefix 'b-'",
       "certainty": "medium"
     },
     {
-      "row_id": 1290,
-      "omop_concept_id": "3050129",
-      "omop_concept_name": "First trimester maternal screen panel - Serum or Plasma",
-      "reasoning": "First trimester maternal screen panel from `tr1seul` and `LongName` ('screening... first trimester') ; in Serum or Plasma from `S-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1291,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `s-tr2seul` and its `LongName` specify a second trimester maternal screen. The candidate list only provides specific panels (triple, quad, penta), and it is not possible to determine from the code which one is correct. A generic 'Second trimester maternal screen panel' concept was not available.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1292,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "reasoning": "Maternal screen panel from `trseul` (trimester screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "row_id": 1480,
+      "omop_concept_id": "3005347",
+      "omop_concept_name": "Ammonia [Moles/volume] in Blood",
+      "reasoning": "Ammonia bcs 'nh4-ion' from code and 'Ammonium-ioni' from LongName are best matched by LOINC's pragmatic 'Ammonia' term when the specimen is Blood ; [Moles/volume] bcs this is the standard property ; in Blood bcs prefix 'b-'",
       "certainty": "medium"
     },
     {
-      "row_id": 1293,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "reasoning": "Maternal screen panel from `äit-seul` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "row_id": 1481,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1482,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1483,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1484,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1485,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-iona' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1486,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-iona' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'fp-' for Fasting Plasma maps to Plasma, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1487,
+      "omop_concept_id": "3023183",
+      "omop_concept_name": "Ammonium ion [Moles/volume] in Plasma",
+      "reasoning": "Ammonium ion bcs 'nh4-ion' from code and 'Ammonium-ioni' from LongName ; [Moles/volume] bcs unit umol/l and values ~17-93 ; in Plasma bcs prefix 'fp-' for Fasting Plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1488,
+      "omop_concept_id": "3023183",
+      "omop_concept_name": "Ammonium ion [Moles/volume] in Plasma",
+      "reasoning": "Ammonium ion bcs 'nh4-ion' from code and 'Ammonium-ioni' from LongName ; [Moles/volume] bcs values ~18-104 are consistent with umol/l ; in Plasma bcs prefix 'fp-' for Fasting Plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1489,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca++' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; adjusted to pH 7.4 bcs '/7.40' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1490,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca++' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1491,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca++' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1492,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca' ; [Moles/volume] bcs unit mmol/l and values ~1.2-1.4 ; adjusted to pH 7.4 bcs '-7.40' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1493,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1494,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1495,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '/ph7.40' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1496,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'fs-ca-ion' ; [Moles/volume] bcs values ~1.1-1.4 are consistent with mmol/l ; adjusted to pH 7.4 bcs '/ph7.40' ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1497,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-iona' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1498,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-iona' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; in Serum or Plasma bcs prefix 'fs-' for Fasting Serum maps to Serum, and 'Serum or Plasma' is the appropriate general concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1499,
+      "omop_concept_id": "3018418",
+      "omop_concept_name": "pH of Serum or Plasma",
+      "reasoning": "pH bcs 'fs-ph' and values ~7.3-7.4 ; of Serum or Plasma bcs prefix 'fs-' indicates Serum, which maps to 'Serum or Plasma'. The '(ca-ion)' part likely indicates this was measured alongside ionized calcium.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1500,
+      "omop_concept_id": "3048816",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood",
+      "reasoning": "Calcium.ionized bcs 'mb-ca' ; [Moles/volume] bcs unit mmol/l ; adjusted to pH 7.4 bcs '(7.4)' ; in Blood bcs prefix 'mb-' is an unknown type of blood, so generic 'Blood' is the safest mapping.",
       "certainty": "medium"
     },
     {
-      "row_id": 1294,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "reasoning": "Maternal screen panel from `äit-seula` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "row_id": 1501,
+      "omop_concept_id": "3048816",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood",
+      "reasoning": "Calcium.ionized bcs 'mb-ca' ; [Moles/volume] bcs this is the standard property for ionized calcium ; adjusted to pH 7.4 bcs '(7.4)' ; in Blood bcs prefix 'mb-' is an unknown type of blood, so generic 'Blood' is the safest mapping.",
       "certainty": "medium"
     },
     {
-      "row_id": 1295,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "reasoning": "Maternal screen panel from `äitseul` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma from `S-` prefix.",
+      "row_id": 1502,
+      "omop_concept_id": "3021119",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Blood",
+      "reasoning": "Calcium.ionized bcs 'mb-ca-ion' ; [Moles/volume] bcs unit mmol/l ; in Blood bcs prefix 'mb-' is an unknown type of blood, so generic 'Blood' is the safest mapping.",
       "certainty": "medium"
     },
     {
-      "row_id": 1296,
-      "omop_concept_id": "42870589",
-      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
-      "reasoning": "Drugs of abuse panel from `huseula` (huume = drug, seula = screen) ; in Urine from `U-` prefix ; by Screen method from `seula`.",
+      "row_id": 1503,
+      "omop_concept_id": "3021119",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Blood",
+      "reasoning": "Calcium.ionized bcs 'mb-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Blood bcs prefix 'mb-' is an unknown type of blood, so generic 'Blood' is the safest mapping.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1504,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; adjusted to pH 7.4 bcs '(7.4)' ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1297,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseu` (chemical screen) ; in Urine from `U-` prefix.",
+      "row_id": 1505,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '(7.4)' ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1298,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. Unit `form` is ignored as `unit_share` is 0%.",
+      "row_id": 1506,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1299,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. Unit `h` is ignored as `unit_share` is 0%.",
+      "row_id": 1507,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-ion' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1300,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul` and `LongName` (chemical screening) ; in Urine from `U-` prefix. The decile values around 1.01-1.02 are consistent with specific gravity, a component of this panel.",
+      "row_id": 1508,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1301,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseul,` (chemical screen) ; in Urine from `u-` prefix in similar codes.",
+      "row_id": 1509,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1302,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseula` (chemical screen) ; in Urine from `u-` prefix.",
+      "row_id": 1510,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1303,
-      "omop_concept_id": "3037467",
-      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
-      "reasoning": "Urinalysis macro (dipstick) panel from `kemseup` (chemical screen) ; in Urine from `u-` prefix.",
+      "row_id": 1511,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-iona' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
       "certainty": "high"
     },
     {
-      "row_id": 1304,
-      "omop_concept_id": "3029318",
-      "omop_concept_name": "Maternal screen for fetal abnormalities such as Open Neural Tube Defects, Trisomy 21 or Trisomy 18 panel - Serum or Plasma",
-      "reasoning": "Maternal screen panel from `äit-seula` (mother screen) ; for fetal abnormalities is the purpose of this screen ; in Serum or Plasma is the implied specimen for this test.",
+      "row_id": 1512,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-ca-iona' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1513,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-caio' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1514,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-caion' ; [Moles/volume] bcs unit mmol/l ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1515,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'p-caion' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 'p-' for Plasma maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1516,
+      "omop_concept_id": "3023183",
+      "omop_concept_name": "Ammonium ion [Moles/volume] in Plasma",
+      "reasoning": "Ammonium ion bcs 'nh4-ion' ; [Moles/volume] bcs unit umol/l and values ~24-111 ; in Plasma bcs prefix 'p-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1517,
+      "omop_concept_id": "3023183",
+      "omop_concept_name": "Ammonium ion [Moles/volume] in Plasma",
+      "reasoning": "Ammonium ion bcs 'nh4-ion' ; [Moles/volume] bcs values ~23-126 are consistent with umol/l ; in Plasma bcs prefix 'p-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1518,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '(7.4)' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1519,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs values ~1.1-1.4 are consistent with mmol/l, the unit nmol/l is an error ; adjusted to pH 7.4 bcs '(7.4)' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1520,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '(7.4)' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1521,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca++' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; adjusted to pH 7.4 bcs '/7.40' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1522,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '-17.4' (typo for -i7.4) ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1523,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-i' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1524,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-i' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1525,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1526,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1527,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-iona' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1528,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca-iona' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1529,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-caio' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1530,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-caion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1531,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-caion' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1532,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-caion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Serum or Plasma bcs prefix 's-'. Suffix 'ac' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1533,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-caion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 's-'. Suffix 'ac' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1534,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; adjusted to pH 7.4 bcs 'ph7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1535,
+      "omop_concept_id": "3016431",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 's-ca' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs 'ph7.4' ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1536,
+      "omop_concept_id": "3021197",
+      "omop_concept_name": "Magnesium Ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Magnesium Ionized bcs 's-mg-ion' ; [Moles/volume] bcs unit mmol/l and values ~0.5-0.7 ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1537,
+      "omop_concept_id": "3021197",
+      "omop_concept_name": "Magnesium Ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Magnesium Ionized bcs 's-mg-ion' ; [Moles/volume] bcs values ~0.5-0.7 are consistent with mmol/l ; in Serum or Plasma bcs prefix 's-' for Serum maps to 'Serum or Plasma'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1538,
+      "omop_concept_id": "3041671",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-ca-i' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; adjusted to pH 7.4 bcs '7.4' ; in Venous blood bcs prefix 'vb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1539,
+      "omop_concept_id": "3041671",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-ca-i' ; [Moles/volume] bcs all candidates for this analyte with pH adjustment are Moles/volume ; adjusted to pH 7.4 bcs '7.4' ; in Venous blood bcs prefix 'vb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1540,
+      "omop_concept_id": "3033705",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Venous blood bcs prefix 'vb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1541,
+      "omop_concept_id": "3033705",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Venous blood bcs prefix 'vb-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1542,
+      "omop_concept_id": "3033705",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-caion' ; [Moles/volume] bcs this is the standard property, unit '1' is an error ; in Venous blood bcs prefix 'vb-'. Suffix 'vt' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1543,
+      "omop_concept_id": "3033705",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-caion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.3 ; in Venous blood bcs prefix 'vb-'. Suffix 'vt' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1544,
+      "omop_concept_id": "3033705",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Venous blood",
+      "reasoning": "Calcium.ionized bcs 'vb-caion' ; [Moles/volume] bcs values ~1.1-1.3 are consistent with mmol/l ; in Venous blood bcs prefix 'vb-'. Suffix 'vt' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1545,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.1-1.2 ; in Serum or Plasma bcs prefix 'vp-' for Venous Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Venous Plasma' concept is available.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1546,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs 'ca-ion' ; [Moles/volume] bcs this is the standard property for ionized calcium ; in Serum or Plasma bcs prefix 'vp-' for Venous Plasma is best matched by the general 'Serum or Plasma' concept as no specific 'Venous Plasma' concept is available.",
       "certainty": "medium"
     }
   ],
-  "reflection": "This group consisted almost entirely of screening panels (`seul`, `seula`). The mappings were generally straightforward when a clear match was present in the candidates, such as for urinalysis (`u-kemseul`), first-trimester maternal screens (`s-tr1seul`), and ENA screens (`s-enaseul`).\n\nThe main challenges were:\n1.  **Missing candidates**: The correct concepts for an Rh(D) antibody screen (`rhdnegseul`) and a generic second-trimester maternal screen (`s-tr2seul`) were not in the candidate list. The list for the latter only contained specific triple/quad/penta panels, which were too specific for the generic Finnish code.\n2.  **Ambiguous local codes**: One code (`hoikemseul`) was too truncated to interpret.\n3.  **Generic-to-specific mapping**: For generic screening codes like `luov.seul.` (donor screen) and `s-ivfseul` (IVF screen), I had to map to a plausible panel (`Sexually transmitted blood borne infections panel`), which is an interpretation but likely correct in practice. The certainty for these is lower. Similarly, the generic 'mother screen' codes (`äit-seul`) were mapped to a general maternal screen panel."
+  "reflection": "This was a large but straightforward group focused on ionized calcium. The Finnish codes were very systematic, clearly indicating the specimen (Arterial, Venous, Capillary blood; Serum; Plasma; Dialysis fluid) and whether the result was adjusted to pH 7.4. The candidate list was excellent and covered almost all variations perfectly.\n\nThe main points of ambiguity were:\n1.  Codes specifying a specific plasma type (Arterial, Venous, Capillary plasma, e.g., `ap-ca-ion`, `vp-ca-ion`). Since the candidate list lacked these specific LOINC concepts, I consistently mapped them to the more general but appropriate `... in Serum or Plasma` concept. This is a reasonable abstraction.\n2.  The `fb-nh4-ion` code (Ammonium ion in Blood). The candidate list forced a choice between the correct analyte (`Ammonium ion` in Plasma) and the correct specimen (`Ammonia` in Blood). Given the specimen prefix `B-` is a strong indicator, I chose the concept for Blood, accepting the slight analyte name mismatch, but with medium certainty.\n3.  Some prefixes like `mB-` were not in the provided `prefix_meaning` column. I mapped them to the most generic specimen type that fit (`Blood` instead of `Mixed venous blood`) to be safe.\n\nOverall, the mapping was very successful, with most rows mapped with high certainty."
 }

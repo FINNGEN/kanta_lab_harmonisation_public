@@ -1,649 +1,621 @@
 {
   "rows": [
     {
-      "row_id": 1305,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte distribution width bcs code `b-pvk` is a blood count panel which includes RDW and unit `%` with deciles [12.98...14.9] are characteristic for RDW-CV ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1306,
-      "omop_concept_id": "3020416",
-      "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Erythrocytes bcs code `b-pvk` is a blood count panel which includes erythrocytes ; [#/volume] bcs unit `e12/l` is specific for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1307,
-      "omop_concept_id": "3000905",
-      "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Leukocytes bcs code `b-pvk` is a blood count panel which includes leukocytes ; [#/volume] bcs unit `e9/l` is used for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1308,
-      "omop_concept_id": "3023599",
-      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCV bcs code `b-pvk` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1309,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1310,
-      "omop_concept_id": "3000963",
-      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "reasoning": "Hemoglobin bcs code `b-pvk` is a blood count panel which includes hemoglobin ; [Mass/volume] bcs unit `g/l` and deciles [130.49...169.87] are characteristic for hemoglobin concentration ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1311,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1312,
-      "omop_concept_id": "3012030",
-      "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "reasoning": "MCH bcs code `b-pvk` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` is specific for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1313,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk` (`Perusverenkuva`) is a basic blood count panel and this row with no unit/values represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1314,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk` is a basic blood count panel and this row represents the panel order ; the `(pi)` suffix is local and does not change the panel identity ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1315,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+eo` is a basic blood count (`PVK`) with an added Eosinophil count (`eo`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1316,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+kd` specifies a basic blood count (`PVK`) with an automated differential (`kd` for `koneellinen differentiaali`) ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1317,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+ne` is a basic blood count (`PVK`) with an added Neutrophil count (`ne`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1318,
+      "row_id": 1547,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the suffix `+ner` in `b-pvk+ner` is ambiguous and not a standard Finnish lab abbreviation. It could mean neutrophils and reticulocytes, but this is a guess.",
+      "reasoning": "No candidate concept for ADAMTS13 activity was available in the provided list. The component is ADAMTS13 bcs `adam13` in TEST_NAME and `ADAMTS13` in LongName ; the property is activity bcs `aktiivisuus` in LongName and unit `%` ; the specimen is Plasma bcs `p-` prefix and `plasmasta` in LongName.",
       "certainty": ""
     },
     {
-      "row_id": 1319,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Neutrophils/Leukocytes bcs this is a differential percentage, and sibling rows specify `%l` (lymphocytes) and `%m` (monocytes), leaving neutrophils as the most likely component for the generic `%` unit ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method. The deciles [8.54...48.89] are low for a general population but plausible.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1320,
-      "omop_concept_id": "3011185",
-      "omop_concept_name": "Granulocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Granulocytes/Leukocytes bcs the unit `%g` suggests Granulocyte percentage ; [Ratio] bcs unit is `%g` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1321,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs the unit `%l` suggests Lymphocyte percentage ; [Ratio] bcs unit `%l` and deciles [15.3...37.88] are characteristic for lymphocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1322,
-      "omop_concept_id": "3011948",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Monocytes/Leukocytes bcs the unit `%m` suggests Monocyte percentage ; [Ratio] bcs unit `%m` and deciles [9...13.3] are characteristic for monocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1323,
-      "omop_concept_id": "3020416",
-      "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Erythrocytes bcs `b-pvk+t` is a blood count panel which includes erythrocytes ; [#/volume] bcs unit `e12/l` is specific for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1324,
-      "omop_concept_id": "3000905",
-      "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Leukocytes bcs `b-pvk+t` is a blood count panel which includes leukocytes ; [#/volume] bcs unit `e9/l` and deciles [0...8.91] are characteristic for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1325,
-      "omop_concept_id": "3023599",
-      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCV bcs `b-pvk+t` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1326,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1327,
-      "omop_concept_id": "3009744",
-      "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCHC bcs `b-pvk+t` is a blood count panel which includes MCHC ; [Entitic Mass/volume] bcs unit `g/l` and deciles [312.86...355.56] are characteristic for MCHC ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1328,
-      "omop_concept_id": "3023314",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
-      "reasoning": "Hematocrit bcs `b-pvk+t` is a blood count panel which includes hematocrit ; [Volume Fraction] bcs unit `l/l` is specific for hematocrit ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1329,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1330,
-      "omop_concept_id": "3012030",
-      "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "reasoning": "MCH bcs `b-pvk+t` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` and deciles [29...34.11] are characteristic for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1331,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk+t` (`Perusverenkuva ja trombosyytit`) is a basic blood count with platelets, and this row with no unit/values represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1332,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+e` is a basic blood count with platelets (`pvk+t`) and an added Eosinophil count (`e`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1333,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+n` is a basic blood count with platelets (`pvk+t`) and an added Neutrophil count (`n`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1334,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+t+ne` is a basic blood count with platelets (`pvk+t`) and an added Neutrophil count (`ne`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1335,
+      "row_id": 1548,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the test `b-pvk+t+r` (CBC with platelets and reticulocytes) corresponds to a LOINC panel concept (e.g., 57021-8) that is not present in the candidate list.",
+      "reasoning": "No candidate concept for ADAMTS13 activity was available in the provided list. The component is ADAMTS13 bcs `adam13` in TEST_NAME and `ADAMTS13` in LongName ; the property is activity bcs `aktiivisuus` in LongName ; the specimen is Plasma bcs `p-` prefix and `plasmasta` in LongName.",
       "certainty": ""
     },
     {
-      "row_id": 1336,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk+tk` is interpreted as a typo for `b-pvk+t`, a basic blood count with platelets, and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "row_id": 1549,
+      "omop_concept_id": "44786869",
+      "omop_concept_name": "Apixaban [Mass/volume] in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Apixaban bcs `api` in TEST_NAME and `Apiksabaani` in LongName ; [Mass/volume] bcs unit `ug/l` ; in Platelet poor plasma bcs `p-` prefix ; by Chromogenic method bcs `afxa` (anti-Factor Xa) in TEST_NAME and `estovaikutus hyytymistekijä Xa:han` (inhibitory effect on factor Xa) in LongName, which describes a functional/chromogenic assay.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1550,
+      "omop_concept_id": "44786869",
+      "omop_concept_name": "Apixaban [Mass/volume] in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Apixaban bcs `api` in TEST_NAME and `Apiksabaani` in LongName ; [Mass/volume] bcs this is a standard property for this drug level ; in Platelet poor plasma bcs `p-` prefix ; by Chromogenic method bcs `afxa` (anti-Factor Xa) in TEST_NAME and `estovaikutus hyytymistekijä Xa:han` (inhibitory effect on factor Xa) in LongName, which describes a functional/chromogenic assay.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1551,
+      "omop_concept_id": "44816763",
+      "omop_concept_name": "Rivaroxaban [Mass/volume] in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Rivaroxaban bcs `riv` in TEST_NAME and `Rivaroksabaani` in LongName ; [Mass/volume] bcs unit `ug/l` ; in Platelet poor plasma bcs `p-` prefix ; by Chromogenic method bcs `afxa` (anti-Factor Xa) in TEST_NAME and `estovaikutus hyytymistekijä Xa:han` (inhibitory effect on factor Xa) in LongName, which describes a functional/chromogenic assay.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1552,
+      "omop_concept_id": "44816763",
+      "omop_concept_name": "Rivaroxaban [Mass/volume] in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Rivaroxaban bcs `riv` in TEST_NAME and `Rivaroksabaani` in LongName ; [Mass/volume] bcs this is a standard property for this drug level ; in Platelet poor plasma bcs `p-` prefix ; by Chromogenic method bcs `afxa` (anti-Factor Xa) in TEST_NAME and `estovaikutus hyytymistekijä Xa:han` (inhibitory effect on factor Xa) in LongName, which describes a functional/chromogenic assay.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1553,
+      "omop_concept_id": "3008561",
+      "omop_concept_name": "Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Activated protein C resistance bcs `apcres` in TEST_NAME and `APC-resistenssi` in LongName ; [Time Ratio] bcs this is the standard property for this test and consistent with values in sibling rows ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1554,
+      "omop_concept_id": "3008561",
+      "omop_concept_name": "Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Activated protein C resistance bcs `apcres` in TEST_NAME and `APC-resistenssi` in LongName ; [Time Ratio] bcs value_deciles are ratios around 2-3 ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1555,
+      "omop_concept_id": "3008561",
+      "omop_concept_name": "Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Activated protein C resistance bcs `apcres` in TEST_NAME ; [Time Ratio] bcs value_deciles are ratios around 2.8-3.0 ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1556,
+      "omop_concept_id": "3008561",
+      "omop_concept_name": "Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Activated protein C resistance bcs `apcres` in TEST_NAME ; [Time Ratio] bcs this is the standard property for this test and consistent with values in sibling rows ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1557,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test code `p-apot` is uninterpretable without a LongName or any other information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1558,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. The local code is clearly for aPTT bcs `aptt` in TEST_NAME and `Tromboplastiiniaika, aktivoitu, partiaalinen` in LongName, in Plasma bcs `P-` prefix, with property Time bcs unit `s` and plausible values.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1559,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. The local code is clearly for aPTT bcs `aptt` in TEST_NAME and `Tromboplastiiniaika, aktivoitu, partiaalinen` in LongName, in Plasma bcs `P-` prefix.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1560,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. `p-aptt-l` is likely a variant of aPTT but no suitable candidate exists.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1561,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. The local code `p-aptt.` is clearly for aPTT, in Plasma bcs `P-` prefix, with property Time bcs unit `s` and plausible values.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1562,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. The local code `p-aptt.` is clearly for aPTT, in Plasma bcs `P-` prefix.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1563,
+      "omop_concept_id": "40760873",
+      "omop_concept_name": "Activated partial thromboplastin time (aPTT).factor substitution in Platelet poor plasma by Coagulation assay --immediately after addition of normal plasma/pre addition of normal plasma",
+      "reasoning": "Activated partial thromboplastin time bcs `aptt` in TEST_NAME ; factor substitution ratio bcs `m/m` (mix/mix) in TEST_NAME and value_deciles are a ratio around 1.0 ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "medium"
     },
     {
-      "row_id": 1337,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs the code `b-pvk+tkd` is a CBC with differential and the deciles [10.52...43.1] (median 30.21) for the unit `%` are a good fit for lymphocyte percentage ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "row_id": 1564,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. `p-apttspr` is an aPTT variant (unit `s` and values confirm), but the `spr` suffix is unclear and no suitable candidate exists.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1565,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. `p-apttspr` is an aPTT variant, but the `spr` suffix is unclear and no suitable candidate exists.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1566,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs `ca++` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` and values in sibling row are appropriate ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1567,
+      "omop_concept_id": "3021347",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium.ionized bcs `ca++` in TEST_NAME ; [Moles/volume] bcs value_deciles around 1.1-1.2 are typical for ionized calcium in mmol/l ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1568,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The component is Citrate bcs `citrat` in TEST_NAME, in Plasma bcs `p-` prefix. However, without a unit or values, it is not possible to distinguish between candidates with [Moles/volume] (3007452) and [Mass/volume] (3037553) properties.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1569,
+      "omop_concept_id": "3014576",
+      "omop_concept_name": "Chloride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chloride bcs `cl` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` and value_deciles are in the 96-108 range ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1570,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `f8` in TEST_NAME ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1571,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `f8` in TEST_NAME ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1572,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for Factor II (Prothrombin) activity. The local code is for Factor II bcs `fii` and `Protrombiini`, in Plasma bcs `p-` prefix, with activity property bcs unit `%`.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1573,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The candidate list is missing a concept for Factor II (Prothrombin) activity. The local code is for Factor II bcs `fii` and `Protrombiini`, in Plasma bcs `p-` prefix, with activity property bcs values are typical for activity %.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1574,
+      "omop_concept_id": "3006109",
+      "omop_concept_name": "Coagulation factor IX activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor IX activity bcs `fix` in TEST_NAME and `Hyytymistekijä IX` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1575,
+      "omop_concept_id": "3006109",
+      "omop_concept_name": "Coagulation factor IX activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor IX activity bcs `fix` in TEST_NAME and `Hyytymistekijä IX` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1576,
+      "omop_concept_id": "1175700",
+      "omop_concept_name": "aPTT.factor substitution with 1:1 Pooled Normal Plasma in Platelet poor plasma by Coagulation assay",
+      "reasoning": "aPTT bcs `fs` can mean 'factor screen' which is a synonym for aPTT, and values are in aPTT time range ; factor substitution with 1:1 PNP bcs `mix` in TEST_NAME indicates a mixing study ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "medium"
     },
     {
-      "row_id": 1338,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the code `b-pvk+tkd` is a panel and the unit `e9/l` without values is ambiguous; it could refer to multiple different absolute counts from the panel (leukocytes, platelets, neutrophils, etc.).",
-      "certainty": ""
-    },
-    {
-      "row_id": 1339,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk+tkd` and its `LongName` specify a basic blood count with automated differential and platelets ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1340,
-      "omop_concept_id": "3013869",
-      "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Basophils/Leukocytes bcs the test name `b-pvk+tkd,baso` specifies basophils from a differential count ; [Ratio] bcs unit is `%` and deciles [0.13...0.91] are characteristic for basophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1341,
-      "omop_concept_id": "3013429",
-      "omop_concept_name": "Basophils [#/volume] in Blood by Automated count",
-      "reasoning": "Basophils bcs the test name `b-pvk+tkd,baso` specifies basophils ; [#/volume] bcs unit `e9/l` and deciles [0.01...0.06] are characteristic for basophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1342,
-      "omop_concept_id": "3013869",
-      "omop_concept_name": "Basophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Basophils/Leukocytes bcs the test name `b-pvk+tkd,baso` specifies basophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1343,
-      "omop_concept_id": "3010457",
-      "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Eosinophils/Leukocytes bcs the test name `b-pvk+tkd,eo` specifies eosinophils from a differential count ; [Ratio] bcs unit is `%` and deciles [0.28...5.77] are characteristic for eosinophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1344,
-      "omop_concept_id": "3028615",
-      "omop_concept_name": "Eosinophils [#/volume] in Blood by Automated count",
-      "reasoning": "Eosinophils bcs the test name `b-pvk+tkd,eo` specifies eosinophils ; [#/volume] bcs unit `e9/l` and deciles [0.02...0.39] are characteristic for eosinophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1345,
-      "omop_concept_id": "3010457",
-      "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Eosinophils/Leukocytes bcs the test name `b-pvk+tkd,eo` specifies eosinophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1346,
-      "omop_concept_id": "3020416",
-      "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Erythrocytes bcs the test name `b-pvk+tkd,eryt` specifies erythrocytes ; [#/volume] bcs unit `e12/l` and deciles [3.69...5.08] are characteristic for erythrocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1347,
-      "omop_concept_id": "3020416",
-      "omop_concept_name": "Erythrocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Erythrocytes bcs the test name `b-pvk+tkd,eryt` specifies erythrocytes ; [#/volume] bcs sibling row with unit `e12/l` confirms this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1348,
-      "omop_concept_id": "3000963",
-      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "reasoning": "Hemoglobin bcs the test name `b-pvk+tkd,hb` specifies hemoglobin ; [Mass/volume] bcs unit `g/l` and deciles [109.63...151.58] are characteristic for hemoglobin concentration ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1349,
-      "omop_concept_id": "3000963",
-      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "reasoning": "Hemoglobin bcs the test name `b-pvk+tkd,hb` specifies hemoglobin ; [Mass/volume] bcs sibling row with unit `g/l` confirms this is a mass concentration ; in Blood bcs prefix `B-` means blood.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1350,
-      "omop_concept_id": "3023314",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
-      "reasoning": "Hematocrit bcs the test name `b-pvk+tkd,hkr` specifies hematocrit ; [Volume Fraction] bcs unit `osuus` (fraction) and deciles [0.34...0.45] are characteristic for hematocrit ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1351,
-      "omop_concept_id": "3023314",
-      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood by Automated count",
-      "reasoning": "Hematocrit bcs the test name `b-pvk+tkd,hkr` specifies hematocrit ; [Volume Fraction] bcs sibling row with unit `osuus` (fraction) confirms this is a volume fraction ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1352,
-      "omop_concept_id": "42869452",
-      "omop_concept_name": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Immature granulocytes/Leukocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [0...0.66] are characteristic for IG percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1353,
-      "omop_concept_id": "3041084",
-      "omop_concept_name": "Immature granulocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Immature granulocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes ; [#/volume] bcs unit `e9/l` and deciles [0...0.06] are characteristic for IG absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1354,
-      "omop_concept_id": "42869452",
-      "omop_concept_name": "Immature granulocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Immature granulocytes/Leukocytes bcs the test name `b-pvk+tkd,ig` specifies immature granulocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1355,
-      "omop_concept_id": "3000905",
-      "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Leukocytes bcs the test name `b-pvk+tkd,leuk` specifies leukocytes ; [#/volume] bcs unit `e9/l` and deciles [4.64...10.91] are characteristic for leukocyte count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1356,
-      "omop_concept_id": "3000905",
-      "omop_concept_name": "Leukocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Leukocytes bcs the test name `b-pvk+tkd,leuk` specifies leukocytes ; [#/volume] bcs sibling row with unit `e9/l` and similar deciles confirm this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1357,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [14.51...42.79] are characteristic for lymphocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1358,
-      "omop_concept_id": "3004327",
-      "omop_concept_name": "Lymphocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Lymphocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes ; [#/volume] bcs unit `e9/l` and deciles [1.07...3.03] are characteristic for lymphocyte absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1359,
-      "omop_concept_id": "3037511",
-      "omop_concept_name": "Lymphocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Lymphocytes/Leukocytes bcs the test name `b-pvk+tkd,lymph` specifies lymphocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1360,
-      "omop_concept_id": "3012030",
-      "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "reasoning": "MCH bcs the test name `b-pvk+tkd,mch` specifies MCH ; [Entitic mass] bcs unit `pg` and deciles [27.35...32.41] are characteristic for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1361,
-      "omop_concept_id": "3012030",
-      "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "reasoning": "MCH bcs the test name `b-pvk+tkd,mch` specifies MCH ; [Entitic mass] bcs sibling row with unit `pg` confirms this is an entitic mass ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1362,
-      "omop_concept_id": "3009744",
-      "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCHC bcs the test name `b-pvk+tkd,mchc` specifies MCHC ; [Entitic Mass/volume] bcs unit `g/l` and deciles [316.84...348.74] are characteristic for MCHC ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1363,
-      "omop_concept_id": "3009744",
-      "omop_concept_name": "MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCHC bcs the test name `b-pvk+tkd,mchc` specifies MCHC ; [Entitic Mass/volume] bcs sibling row with unit `g/l` confirms this is a mass concentration ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1364,
-      "omop_concept_id": "3023599",
-      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCV bcs the test name `b-pvk+tkd,mcv` specifies MCV ; [Entitic mean volume] bcs unit `fl` and deciles [83.81...96.04] are characteristic for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1365,
-      "omop_concept_id": "3023599",
-      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCV bcs the test name `b-pvk+tkd,mcv` specifies MCV ; [Entitic mean volume] bcs sibling row with unit `fl` confirms this is an entitic volume ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1366,
-      "omop_concept_id": "3011948",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Monocytes/Leukocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes from a differential count ; [Ratio] bcs unit is `%` and deciles [6.39...13.06] are characteristic for monocyte percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1367,
-      "omop_concept_id": "3033575",
-      "omop_concept_name": "Monocytes [#/volume] in Blood by Automated count",
-      "reasoning": "Monocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes ; [#/volume] bcs unit `e9/l` and deciles [0.41...1.03] are characteristic for monocyte absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1368,
-      "omop_concept_id": "3011948",
-      "omop_concept_name": "Monocytes/Leukocytes in Blood by Automated count",
-      "reasoning": "Monocytes/Leukocytes bcs the test name `b-pvk+tkd,mono` specifies monocytes from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1369,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Neutrophils/Leukocytes bcs the test name `b-pvk+tkd,neut` specifies neutrophils from a differential count ; [Ratio] bcs unit is `%` and deciles [43.3...74.25] are characteristic for neutrophil percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1370,
-      "omop_concept_id": "3013650",
-      "omop_concept_name": "Neutrophils [#/volume] in Blood by Automated count",
-      "reasoning": "Neutrophils bcs the test name `b-pvk+tkd,neut` specifies neutrophils ; [#/volume] bcs unit `e9/l` and deciles [2.18...7.37] are characteristic for neutrophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1371,
-      "omop_concept_id": "3008342",
-      "omop_concept_name": "Neutrophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Neutrophils/Leukocytes bcs the test name `b-pvk+tkd,neut` specifies neutrophils from a differential count ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1372,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte distribution width bcs the test name `b-pvk+tkd,rdw` specifies RDW ; [Ratio] bcs unit is `%` and deciles [12.5...16.52] are characteristic for RDW-CV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1373,
-      "omop_concept_id": "3019897",
-      "omop_concept_name": "Erythrocyte [DistWidth] in Blood by Automated count",
-      "reasoning": "Erythrocyte distribution width bcs the test name `b-pvk+tkd,rdw` specifies RDW ; [Ratio] bcs sibling row with unit `%` confirms this is a percentage ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1374,
-      "omop_concept_id": "3024929",
-      "omop_concept_name": "Platelets [#/volume] in Blood by Automated count",
-      "reasoning": "Platelets bcs the test name `b-pvk+tkd,trom` specifies thrombocytes (platelets) ; [#/volume] bcs unit `eg/l` (e9/l) and deciles [163.91...371.27] are characteristic for platelet count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1375,
-      "omop_concept_id": "3024929",
-      "omop_concept_name": "Platelets [#/volume] in Blood by Automated count",
-      "reasoning": "Platelets bcs the test name `b-pvk+tkd,trom` specifies thrombocytes (platelets) ; [#/volume] bcs sibling row with unit `eg/l` (e9/l) confirms this is an absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs `tkd` implies automated method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1376,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the code `b-pvk+tmd` is a 3-part differential panel and the unit `%` without values is ambiguous; it could refer to lymphocytes, granulocytes or mixed cells.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1377,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the test `b-pvk+tmd` (CBC with platelets and 3-part mini-differential) corresponds to a LOINC panel concept (e.g., 59055-3) that is not present in the candidate list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1378,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk` is a basic blood count and `-päi` (likely `päivystys`/emergency) doesn't change the panel content ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "row_id": 1577,
+      "omop_concept_id": "46235126",
+      "omop_concept_name": "dRVVT with 1:1 PNP (LA mix)",
+      "reasoning": "dRVVT bcs `fsl` likely means 'factor screen lupus', a common name for a dRVVT test, and values are appropriate times in seconds ; with 1:1 PNP (LA mix) bcs `mix` in TEST_NAME indicates a mixing study ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "medium"
     },
     {
-      "row_id": 1379,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvk-t` is a basic blood count with platelets (`pvk-t` is a variant of `pvk+t`), and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "row_id": 1578,
+      "omop_concept_id": "3032493",
+      "omop_concept_name": "dRVVT/dRVVT W excess phospholipid (screen to confirm ratio)",
+      "reasoning": "dRVVT screen to confirm ratio bcs `fsl/fs` in TEST_NAME clearly indicates a ratio of a 'lupus screen' to a 'factor screen', and the value deciles are a ratio around 1 ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1380,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvk-tkd` is a variant of `b-pvk+tkd`, a basic blood count with automated differential and platelets ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1579,
+      "omop_concept_id": "3011547",
+      "omop_concept_name": "Coagulation factor VII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VII activity bcs `fvii` in TEST_NAME and `Hyytymistekijä VII` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1381,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvkt` is a common abbreviation for `b-pvk+t`, a basic blood count with platelets, and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "row_id": 1580,
+      "omop_concept_id": "3011547",
+      "omop_concept_name": "Coagulation factor VII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VII activity bcs `fvii` in TEST_NAME and `Hyytymistekijä VII` in LongName ; actual/normal bcs value_deciles are consistent with activity reported as % ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1382,
+      "row_id": 1581,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME and `Hyytymistekijä VIII` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1582,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME and `Hyytymistekijä VIII` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1583,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME and `Hyytymistekijä VIII` in LongName ; actual/normal bcs value_deciles are consistent with activity reported as % ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1584,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1585,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; actual/normal bcs value_deciles are consistent with activity reported as % ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1586,
+      "omop_concept_id": "3032768",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; by Chromogenic method bcs `kr` suffix means 'kromogeeninen' (chromogenic) ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1587,
+      "omop_concept_id": "3032768",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; by Chromogenic method bcs `kr` suffix means 'kromogeeninen' (chromogenic) ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1588,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the test `b-pvkt+re` (CBC with platelets and reticulocytes) corresponds to a LOINC panel concept (e.g., 57021-8) that is not present in the candidate list.",
+      "reasoning": "The candidate list does not contain a concept for recombinant Factor VIII activity. The local code specifies recombinant FVIII bcs `re` suffix and `rekombinantti` in LongName.",
       "certainty": ""
     },
     {
-      "row_id": 1383,
+      "row_id": 1589,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the test `b-pvktkdr` (CBC with auto differential and reticulocytes) corresponds to a LOINC panel concept (e.g., 57782-5) that is not present in the candidate list.",
+      "reasoning": "The candidate list does not contain a concept for recombinant Factor VIII activity. The local code specifies recombinant FVIII bcs `re` suffix and `rekombinantti` in LongName.",
       "certainty": ""
     },
     {
-      "row_id": 1384,
+      "row_id": 1590,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the suffix `mdl` in `b-pvktmdl` is ambiguous and not a standard Finnish lab abbreviation.",
+      "reasoning": "The candidate list does not contain a concept for recombinant Factor VIII activity. The local code specifies recombinant FVIII bcs `re` suffix and `rekombinantti` in LongName.",
       "certainty": ""
     },
     {
-      "row_id": 1385,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the suffix `mdp` in `b-pvktmdp` is ambiguous and not a standard Finnish lab abbreviation.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1386,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-pvktnee` is a CBC (`pvkt`) with added neutrophils (`ne`) and eosinophils (`e`), implying a differential count ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1591,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix. The `-t` suffix is unknown, so the general concept is chosen.",
       "certainty": "medium"
     },
     {
-      "row_id": 1387,
-      "omop_concept_id": "40761511",
-      "omop_concept_name": "CBC panel - Blood by Automated count",
-      "reasoning": "CBC panel bcs `b-pvktp` is interpreted as a typo for `b-pvkt` (basic blood count with platelets), and this row represents the panel order ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method.",
+      "row_id": 1592,
+      "omop_concept_id": "3019250",
+      "omop_concept_name": "Coagulation factor VIII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor VIII activity bcs `fviii` in TEST_NAME ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix. The `-t` suffix is unknown, so the general concept is chosen.",
       "certainty": "medium"
     },
     {
-      "row_id": 1388,
-      "omop_concept_id": "3010457",
-      "omop_concept_name": "Eosinophils/Leukocytes in Blood by Automated count",
-      "reasoning": "Eosinophils/Leukocytes bcs the code `b-tvk` is a CBC with differential and the deciles [0...62.13] (median 2.55) for the unit `%` are a good fit for eosinophil percentage ; [Ratio] bcs unit is `%` ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "row_id": 1593,
+      "omop_concept_id": "3001850",
+      "omop_concept_name": "Coagulation factor XI activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor XI activity bcs `fxi` in TEST_NAME and `Hyytymistekijä XI` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1594,
+      "omop_concept_id": "3001850",
+      "omop_concept_name": "Coagulation factor XI activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor XI activity bcs `fxi` in TEST_NAME and `Hyytymistekijä XI` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1595,
+      "omop_concept_id": "3002348",
+      "omop_concept_name": "Coagulation factor XII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor XII activity bcs `fxii` in TEST_NAME and `Hyytymistekijä XII` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1596,
+      "omop_concept_id": "3002348",
+      "omop_concept_name": "Coagulation factor XII activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor XII activity bcs `fxii` in TEST_NAME and `Hyytymistekijä XII` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1597,
+      "omop_concept_id": "3020066",
+      "omop_concept_name": "Coagulation factor XIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor XIII activity bcs `fxiii` in TEST_NAME and `Hyytymistekijä XIII` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix. This candidate is chosen as it has the correct `actual/normal` property, despite specifying a chromogenic method not mentioned in the local code.",
       "certainty": "medium"
     },
     {
-      "row_id": 1389,
-      "omop_concept_id": "3013429",
-      "omop_concept_name": "Basophils [#/volume] in Blood by Automated count",
-      "reasoning": "Basophils bcs the code `b-tvk` is a CBC with differential ; [#/volume] bcs unit `e9/l` and deciles [0.03...0.09] are characteristic for basophil absolute count ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is a standard method.",
+      "row_id": 1598,
+      "omop_concept_id": "3020066",
+      "omop_concept_name": "Coagulation factor XIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor XIII activity bcs `fxiii` in TEST_NAME and `Hyytymistekijä XIII` in LongName ; actual/normal bcs value_deciles are consistent with an activity reported as a percentage ; in Platelet poor plasma bcs `p-` prefix. This candidate is chosen as it has the correct `actual/normal` property, despite specifying a chromogenic method not mentioned in the local code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1599,
+      "omop_concept_id": "3020066",
+      "omop_concept_name": "Coagulation factor XIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor XIII activity bcs `fxiii` in TEST_NAME ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix. This candidate is chosen as it has the correct `actual/normal` property, despite specifying a chromogenic method not mentioned in the local code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1600,
+      "omop_concept_id": "3020066",
+      "omop_concept_name": "Coagulation factor XIII activity actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Coagulation factor XIII activity bcs `fxiii` in TEST_NAME ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling rows) ; in Platelet poor plasma bcs `p-` prefix. This candidate is chosen as it has the correct `actual/normal` property, despite specifying a chromogenic method not mentioned in the local code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1601,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs `k` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` and value_deciles are in the 3.4-5.3 range ; in Serum or Plasma bcs `p-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1390,
-      "omop_concept_id": "3023599",
-      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells by Automated count",
-      "reasoning": "MCV bcs `b-tvk` is a blood count panel which includes MCV ; [Entitic mean volume] bcs unit `fl` is specific for MCV ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "row_id": 1602,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs `k` in TEST_NAME ; [Moles/volume] bcs this is the standard property for this test ; in Serum or Plasma bcs `p-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1391,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and unit `form` indicates a panel order ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1603,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs `k` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` ; in Serum or Plasma bcs `p-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1392,
-      "omop_concept_id": "3000963",
-      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
-      "reasoning": "Hemoglobin bcs `b-tvk` is a blood count panel which includes hemoglobin ; [Mass/volume] bcs unit `g/l` is appropriate for hemoglobin ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1604,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs `k` in TEST_NAME ; [Moles/volume] bcs value_deciles are in the 3.3-4.7 range, which is appropriate for mmol/l ; in Serum or Plasma bcs `p-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1393,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and unit `paketti` (package) indicates a panel order ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1605,
+      "omop_concept_id": "46235126",
+      "omop_concept_name": "dRVVT with 1:1 PNP (LA mix)",
+      "reasoning": "dRVVT bcs `la1` (lupus anticoagulant screen) is commonly a dRVVT test and values are appropriate times in seconds ; with 1:1 PNP (LA mix) bcs `mix` in TEST_NAME indicates a mixing study ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1606,
+      "omop_concept_id": "3032493",
+      "omop_concept_name": "dRVVT/dRVVT W excess phospholipid (screen to confirm ratio)",
+      "reasoning": "dRVVT screen to confirm ratio bcs `la1/la2` in TEST_NAME clearly indicates a ratio of a screen to a confirm test, and the value deciles are a ratio > 1.0 ; in Platelet poor plasma bcs `p-` prefix.",
       "certainty": "high"
     },
     {
-      "row_id": 1394,
-      "omop_concept_id": "3012030",
-      "omop_concept_name": "MCH [Entitic mass] by Automated count",
-      "reasoning": "MCH bcs `b-tvk` is a blood count panel which includes MCH ; [Entitic mass] bcs unit `pg` is specific for MCH ; in Blood bcs prefix `B-` means blood ; by Automated count bcs this is the standard method for a panel component.",
+      "row_id": 1607,
+      "omop_concept_id": "3039189",
+      "omop_concept_name": "Lupus anticoagulant neutralization dilute phospholipid [Time] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant neutralization... bcs `la2` (lupus anticoagulant confirm) is the dRVVT confirm test, which involves neutralizing with phospholipid, and values are appropriate times in seconds ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1608,
+      "omop_concept_id": "3005491",
+      "omop_concept_name": "Lactate [Moles/volume] in Plasma venous",
+      "reasoning": "Lactate bcs `lakt` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` ; in Plasma venous bcs `p-` prefix generally implies venous plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1395,
-      "omop_concept_id": "40760140",
-      "omop_concept_name": "CBC W Auto Differential panel - Blood",
-      "reasoning": "CBC W Auto Differential panel bcs `b-tvk` (`Täydellinen verenkuva`) is a complete blood count which includes a differential, and this row represents the panel order ; in Blood bcs prefix `B-` means blood.",
+      "row_id": 1609,
+      "omop_concept_id": "3005491",
+      "omop_concept_name": "Lactate [Moles/volume] in Plasma venous",
+      "reasoning": "Lactate bcs `lakt` in TEST_NAME ; [Moles/volume] bcs value_deciles are in a plausible range for mmol/l ; in Plasma venous bcs `p-` prefix generally implies venous plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1396,
+      "row_id": 1610,
+      "omop_concept_id": "3045209",
+      "omop_concept_name": "Lutropin/Follitropin [Ratio] in Serum or Plasma",
+      "reasoning": "Lutropin/Follitropin bcs `lh/fsh` in TEST_NAME ; [Ratio] bcs the name is a ratio and values are plausible for a ratio ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1611,
+      "omop_concept_id": "3005578",
+      "omop_concept_name": "Mitotane [Mass/volume] in Serum or Plasma",
+      "reasoning": "Mitotane bcs `mitotan` in TEST_NAME and `Mitotaani` in LongName ; [Mass/volume] bcs unit is `mg/l` ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1612,
+      "omop_concept_id": "3005578",
+      "omop_concept_name": "Mitotane [Mass/volume] in Serum or Plasma",
+      "reasoning": "Mitotane bcs `mitotan` in TEST_NAME and `Mitotaani` in LongName ; [Mass/volume] bcs this is the standard property for this drug level ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1613,
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs `na` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` and value_deciles are in the 133-144 range ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1614,
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs `na` in TEST_NAME ; [Moles/volume] bcs this is the standard property for this test ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1615,
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs `na` in TEST_NAME ; [Moles/volume] bcs unit `mmol/l` and value_deciles are in the 131-143 range ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1616,
+      "omop_concept_id": "1259807",
+      "omop_concept_name": "Pepsinogen I/Pepsinogen II [Mass Ratio] in Serum",
+      "reasoning": "Pepsinogen I/Pepsinogen II bcs `pg1/pg2` in TEST_NAME ; [Mass Ratio] bcs values are plausible for this ratio ; in Serum bcs it is the only available candidate, despite the local code `p-` indicating Plasma. This is a specimen mismatch.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1617,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No mapping chosen because the test `b-tvk+r` (CBC with auto differential and reticulocytes) corresponds to a LOINC panel concept (e.g., 57782-5) that is not present in the candidate list.",
+      "reasoning": "The test code `p-sit3.1` is uninterpretable. While `sit` could be citrate, the suffix `3.1` is unclear. There is not enough information to map.",
       "certainty": ""
+    },
+    {
+      "row_id": 1618,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test code `p-sitr3.8` is uninterpretable. While `sitr` could be citrate, the suffix `3.8` is unclear. There is not enough information to map.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1619,
+      "omop_concept_id": "1092155",
+      "omop_concept_name": "Tau protein.phosphorylated 217 [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Tau protein.phosphorylated 217 bcs `tau-217` in TEST_NAME and `Tau-proteiini, 217-fosforyloitu` in LongName ; [Mass/volume] bcs unit `ng/l` ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1620,
+      "omop_concept_id": "1092155",
+      "omop_concept_name": "Tau protein.phosphorylated 217 [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Tau protein.phosphorylated 217 bcs `tau-217` in TEST_NAME and `Tau-proteiini, 217-fosforyloitu` in LongName ; [Mass/volume] bcs value_deciles are plausible for ng/L concentration ; in Serum or Plasma bcs `p-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1621,
+      "omop_concept_id": "3036035",
+      "omop_concept_name": "von Willebrand factor (vWf) Ag actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor Ag bcs `vwf-ag` in TEST_NAME and `von Willebrand-tekijä, antigeeni` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1622,
+      "omop_concept_id": "3036035",
+      "omop_concept_name": "von Willebrand factor (vWf) Ag actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor Ag bcs `vwf-ag` in TEST_NAME and `von Willebrand-tekijä, antigeeni` in LongName ; actual/normal bcs value_deciles are consistent with activity reported as % ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1623,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf-akt` in TEST_NAME and `aktiivisuus` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix. The LongName specifies `GPIb sitoutuminen` (GPIb binding) which is compatible with a modern activity assay by immunoassay.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1624,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf-akt` in TEST_NAME and `aktiivisuus` in LongName ; actual/normal bcs value_deciles are consistent with activity reported as % ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1625,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf-akt` in TEST_NAME ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1626,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf-akt` in TEST_NAME ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling rows) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1627,
+      "omop_concept_id": "3029847",
+      "omop_concept_name": "von Willebrand factor (vWf).collagen binding activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor collagen binding activity bcs `vwfcb` in TEST_NAME and `kollageenin sitomiskyky` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1628,
+      "omop_concept_id": "3029847",
+      "omop_concept_name": "von Willebrand factor (vWf).collagen binding activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor collagen binding activity bcs `vwfcb` in TEST_NAME and `kollageenin sitomiskyky` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1629,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf` in TEST_NAME ; actual/normal bcs unit is likely % as for other vWF activity tests ; in Platelet poor plasma bcs `p-` prefix. The suffix `paiv` (emergency) does not specify the type of activity, so a general activity concept is chosen.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1630,
+      "omop_concept_id": "40770918",
+      "omop_concept_name": "von Willebrand factor (vWf).activity actual/normal in Platelet poor plasma by Immunoassay",
+      "reasoning": "von Willebrand factor activity bcs `vwf` in TEST_NAME ; actual/normal bcs this is the standard property for vWF activity tests reported in % ; in Platelet poor plasma bcs `p-` prefix. The suffix `paiv` (emergency) does not specify the type of activity, so a general activity concept is chosen.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1631,
+      "omop_concept_id": "3037533",
+      "omop_concept_name": "von Willebrand factor (vWf) actual/normal in Platelet poor plasma by Aggregometry.ristocetin cofactor activity",
+      "reasoning": "von Willebrand factor ristocetin cofactor bcs `vwfrco` in TEST_NAME and `ristosetiinikofaktori` in LongName ; actual/normal bcs unit is `%` ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1632,
+      "omop_concept_id": "3037533",
+      "omop_concept_name": "von Willebrand factor (vWf) actual/normal in Platelet poor plasma by Aggregometry.ristocetin cofactor activity",
+      "reasoning": "von Willebrand factor ristocetin cofactor bcs `vwfrco` in TEST_NAME and `ristosetiinikofaktori` in LongName ; actual/normal bcs this is the standard property for this test reported in % (as seen in sibling row) ; in Platelet poor plasma bcs `p-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1633,
+      "omop_concept_id": "44816655",
+      "omop_concept_name": "Soluble fms-like tyrosine kinase-1/placental growth factor [Ratio] in Serum",
+      "reasoning": "sFlt-1/PlGF bcs `fit/pgf` in TEST_NAME and `sFlt-1...PlGF...suhde` in LongName ; [Ratio] bcs name says `suhde` (ratio) and values are appropriate ; in Serum bcs `s-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1634,
+      "omop_concept_id": "44816655",
+      "omop_concept_name": "Soluble fms-like tyrosine kinase-1/placental growth factor [Ratio] in Serum",
+      "reasoning": "sFlt-1/PlGF bcs `flt/pgf` in TEST_NAME ; [Ratio] bcs the name is a ratio and values are appropriate ; in Serum bcs `s-` prefix.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This large group centered on Finnish blood count panels (`PVK` and `TVK`) was mostly straightforward to map. The key was to distinguish between panel orders and results for individual components of those panels. The `LongName`, `TEST_NAME` structure, units, and decile values were crucial for this.\n\n`B-PVK` and its variants (`B-PVK+T`, `B-PVKT`) were mapped to the general `CBC panel - Blood by Automated count` (40761511), as this corresponds to a basic blood count without differential, which is the definition of `Perusverenkuva`.\n`B-TVK` and `B-PVK+TKD` were mapped to `CBC W Auto Differential panel - Blood` (40760140), as these codes (`Täydellinen verenkuva` and `...koneellinen erittelylaskenta`) explicitly call for a differential count.\n\nRows with specific units and values were mapped to the corresponding component concepts (e.g., Hemoglobin, Leukocytes, MCV, etc.). The highly structured nature of the `b-pvk+tkd,*` codes made this part very clear.\n\nSeveral rows could not be mapped because they requested panel combinations for which the correct LOINC panel concept was not available in the candidate list. These were primarily panels including reticulocytes (`+r`) or a 3-part differential (`+tmd`). Specifically, panels for CBC+retics, CBC+diff+retics, and CBC+3-part-diff were missing. Forcing these to a more generic panel would lose important information, so leaving them unmapped was the correct choice.\n\nA few rows were left unmapped due to ambiguity in the local code (e.g., `b-pvk+ner`, `b-pvk+tmdl`) or because the evidence was insufficient to distinguish between multiple possible components (e.g., `b-pvk+tkd` with unit `e9/l` but no values)."
+  "reflection": "This group was dominated by coagulation tests. I could map most of them successfully, especially the coagulation factors (VII, VIII, IX, XI, XII, XIII) where candidates with the `actual/normal` property were available to match the `%` unit. The von Willebrand factor tests were also well-covered.\n\nThere were several significant gaps in the candidate list. The most striking was the complete absence of a basic aPTT concept with a `Time` property, making it impossible to map `p-aptt` and its variants (rows 1558-1562, 1564-1565). Similarly, concepts for ADAMTS13 activity (1547-1548), Factor II activity (1572-1573), and recombinant Factor VIII activity (1588-1590) were missing, preventing mapping of these clearly defined local codes. These are common tests, and their absence suggests a limitation in the initial search query generation or the search process itself.\n\nI made a more specific mapping for the DOACs Apixaban (1549-1550) and Rivaroxaban (1551-1552) based on the local code `afxa` (anti-Factor Xa), choosing candidates with the `Chromogenic method`. This is more precise than a generic mass concentration concept.\n\nThe lupus anticoagulant (LA) and dRVVT codes (`p-fs-mix`, `p-fsl-mix`, `p-fsl/fs`, `p-la1-mix`, etc.) were challenging due to the cryptic local names, but by looking at them as a group, I could infer their meaning (screen, confirm, mix, ratio) and map them to appropriate dRVVT-related concepts.\n\nOne minor issue was mapping `p-pg1/pg2` (plasma) to a serum-only concept, which I did with medium certainty, noting the specimen mismatch."
 }

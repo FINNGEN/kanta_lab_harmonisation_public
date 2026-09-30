@@ -1,131 +1,131 @@
 {
   "rows": [
     {
-      "row_id": 204,
+      "row_id": 200,
       "omop_concept_id": "3048882",
       "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Streptococcus agalactiae bcs 'streptococcus agalactie(str.ryhmä b, gbs)' ; [Presence] bcs this is a qualitative detection test ; in Specimen bcs no specimen is stated in the code ; by NAA with probe detection bcs 'nukleiinihaponosoitus'",
+      "reasoning": "Streptococcus agalactiae bcs 'streptococcusagalactie(str.ryhmä b, gbs)' ; [Presence] bcs qualitative test ; in Specimen bcs no specimen is specified in the code ; by NAA with probe detection bcs 'nukleiinihaponosoitus' and this is a common method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 201,
+      "omop_concept_id": "1175573",
+      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
+      "reasoning": "Streptococcus agalactiae bcs 'streptococcusagalactie(b)' ; [Presence] bcs qualitative test ; in Vaginal fluid bcs 'fl-' prefix means 'Fluori' (vaginal discharge) ; by NAA with probe detection bcs 'nukleiinihaponosoitus' and this is a common method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 202,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs '-hemolyyttisetstrepto' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 203,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'beeta-hemolyyttisetstr' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 204,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt.streptokokit' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 205,
-      "omop_concept_id": "1175573",
-      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
-      "reasoning": "Streptococcus agalactiae bcs 'streptococcus agalactie(b)' ; [Presence] bcs this is a qualitative detection test ; in Vaginal fluid bcs of the 'fl-' prefix meaning 'Vaginal discharge' ; by NAA with probe detection bcs 'nukleiinihaponosoitus'",
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt.streptokokit' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix and 'nielusta' (from throat) ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 206,
       "omop_concept_id": "3024135",
       "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyttiset strepto' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyttisetstreptok' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 207,
       "omop_concept_id": "3024135",
       "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'beeta-hemolyyttiset str' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyttisetstreptokokit' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 208,
       "omop_concept_id": "3024135",
       "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt. streptokokit' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix and 'nielusta' (from throat) ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 209,
-      "omop_concept_id": "3024135",
-      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt. streptokokit' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' and the word 'nielusta' ; by Organism specific culture bcs 'viljely'",
+      "omop_concept_id": "21491660",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay",
+      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcuspyogenes(a),antigeeni' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Rapid immunoassay bcs 'antigeeni' test for Strep A from throat is a rapid test.",
       "certainty": "high"
     },
     {
       "row_id": 210,
-      "omop_concept_id": "3024135",
-      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyttiset streptok' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'",
-      "certainty": "high"
+      "omop_concept_id": "40763543",
+      "omop_concept_name": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection",
+      "reasoning": "Streptococcus pyogenes DNA bcs 'streptococcuspyogenes(a),nukleiinihappo' ; [Presence] bcs '(kval)' ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by NAA with probe detection bcs 'nukleiinihappo' and probe detection is a common method.",
+      "certainty": "medium"
     },
     {
       "row_id": 211,
-      "omop_concept_id": "3024135",
-      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyttiset streptokokit' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Organism specific culture bcs 'viljely'",
+      "omop_concept_id": "21491660",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay",
+      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcuspyogenis(a)antig' ; [Presence] bcs qualitative test ; in Throat bcs 'ps-' prefix means 'Pharyngeal secretion' ; by Rapid immunoassay bcs 'vierithoitoy' means point-of-care test.",
       "certainty": "high"
     },
     {
       "row_id": 212,
       "omop_concept_id": "3024135",
       "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' and the word 'nielusta' ; by Organism specific culture bcs 'viljely'",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyt.streptokokit' ; [Presence] bcs qualitative test ; in Throat bcs 'nielusta' (from throat) ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 213,
-      "omop_concept_id": "3033319",
-      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
-      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcus pyogenes(a), antigeeni' ; [Presence] bcs antigen tests are typically qualitative ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion'",
+      "omop_concept_id": "3024740",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt.streptokokit' ; [Presence] bcs qualitative test ; in Specimen bcs no specimen is specified in the code ; by Organism specific culture bcs 'viljely'.",
       "certainty": "high"
     },
     {
       "row_id": 214,
-      "omop_concept_id": "40763543",
-      "omop_concept_name": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection",
-      "reasoning": "Streptococcus pyogenes DNA bcs 'streptococcus pyogenes(a), nukleiinihappo' ; [Presence] bcs '(kval)' indicates a qualitative test ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by NAA with probe detection bcs 'nukleiinihappo'",
+      "omop_concept_id": "1175573",
+      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
+      "reasoning": "Streptococcus agalactiae bcs 'streptococcusagalactiae(b)' ; [Presence] bcs qualitative test ; in Vaginal fluid bcs 'fluori' (vaginal discharge) ; by NAA with probe detection bcs 'nukleiinihaponosoitus' and 'vieritesti' (rapid test).",
       "certainty": "high"
     },
     {
       "row_id": 215,
-      "omop_concept_id": "21491660",
-      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay",
-      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcus pyogenis(a)antig' ; [Presence] bcs antigen tests are typically qualitative ; in Throat bcs of the 'Ps-' prefix meaning 'Pharyngeal secretion' ; by Rapid immunoassay bcs 'vierithoitoy' means point-of-care testing",
+      "omop_concept_id": "3048882",
+      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Streptococcus agalactiae bcs 'streptococcusagalactie(b)' ; [Presence] bcs qualitative test ; in Specimen bcs no specimen is specified in the code ; by NAA with probe detection bcs 'nukleiinihaponosoitus' and this is a common method.",
       "certainty": "high"
     },
     {
       "row_id": 216,
-      "omop_concept_id": "3024135",
-      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyyt. streptokokit' ; [Presence] bcs a culture result is for presence/absence ; in Throat bcs 'nielusta' means 'from the throat' ; by Organism specific culture bcs 'viljely'",
-      "certainty": "high"
+      "omop_concept_id": "1260031",
+      "omop_concept_name": "Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Streptococcus pyogenes DNA bcs 'streptococcuspyogenes(a),nukleiinihappo-osoitus' ; [Presence] bcs qualitative test ; in Specimen bcs no specimen is specified in the code ; by NAA with probe detection bcs 'nukleiinihappo-osoitus' and probe detection is a common method.",
+      "certainty": "medium"
     },
     {
       "row_id": 217,
-      "omop_concept_id": "3024740",
-      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture",
-      "reasoning": "Streptococcus.beta-hemolytic bcs 'hemolyytt. streptokokit' ; [Presence] bcs a culture result is for presence/absence ; in Specimen bcs no specimen is stated in the code ; by Organism specific culture bcs 'viljely'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 218,
-      "omop_concept_id": "1175573",
-      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection",
-      "reasoning": "Streptococcus agalactiae bcs 'streptococcus agalactiae(b)' ; [Presence] bcs this is a qualitative detection test ; in Vaginal fluid bcs 'fluori' is a common abbreviation for vaginal discharge ('fluor vaginalis') ; by NAA with probe detection bcs 'nukleiinihaponosoitus'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 219,
-      "omop_concept_id": "3048882",
-      "omop_concept_name": "Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Streptococcus agalactiae bcs 'streptococcus agalactie(b)' ; [Presence] bcs this is a qualitative detection test ; in Specimen bcs no specimen is stated in the code ; by NAA with probe detection bcs 'nukleiinihaponosoitus'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 220,
-      "omop_concept_id": "1260031",
-      "omop_concept_name": "Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Streptococcus pyogenes DNA bcs 'streptococcus pyogenes(a), nukleiinihappo' ; [Presence] bcs this is a qualitative detection test ; in Specimen bcs no specimen is stated in the code ; by NAA with probe detection bcs 'nukleiinihappo-osoitus'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 221,
       "omop_concept_id": "3017906",
       "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay",
-      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcus pyogenes(a)' and 'osoituskoe' (detection test) implies antigen ; [Presence] bcs 'osoituskoe' is a qualitative test ; in Specimen bcs no specimen is stated in the code ; by Immunoassay bcs 'osoituskoe' is commonly an immunoassay",
-      "certainty": "high"
+      "reasoning": "Streptococcus pyogenes Ag bcs 'streptococcuspyogenes(a)' and 'osoituskoe' (detection test) implies an antigen test in this context ; [Presence] bcs qualitative test ; in Specimen bcs no specimen is specified in the code ; by Immunoassay bcs it is the general method for an antigen test.",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group was straightforward to map. The Finnish laboratory codes were highly descriptive, clearly distinguishing between *S. pyogenes* (group A), *S. agalactiae* (group B), and general beta-hemolytic streptococci. The methods were also explicitly stated: `viljely` (culture), `antigeeni` (antigen), and `nukleiinihaponosoitus` (nucleic acid detection). Specimen information was available either via prefixes (`Ps-` for throat, `fl-` for vaginal) or spelled out (`nielusta` for throat). When a specimen was not specified, I correctly used the generic 'Specimen' concepts. Qualifiers like `vieritesti` (point-of-care) were also present and mappable to 'Rapid immunoassay'. The candidate list was excellent and contained all the necessary specific and generic concepts to make accurate mappings."
+  "reflection": "This group covered various Streptococcus tests, primarily qualitative detection. The local codes were generally specific and allowed for high-confidence mapping. Key terms like `viljely` (culture), `nukleiinihaponosoitus` (NAA), `antigeeni` (antigen), and `vieritesti` (rapid test) were crucial for selecting the right method. Specimen information was also usually clear, either from a prefix (`Ps-`, `Fl-`) or an explicit word (`nielusta`, `fluori`). When specimen was not specified, I correctly defaulted to a LOINC concept with `System = Specimen`. Some ambiguity arose when the local code did not specify details like 'probe vs non-probe' for NAA tests, leading to 'medium' certainty. For 'antigeeni' tests without an explicit 'rapid' qualifier, I mapped to the rapid test concept as this reflects common practice for Strep A throat swabs, which felt justified by a related row (211) that did specify `vierithoitoy` (point-of-care). The candidate list was comprehensive for this group."
 }

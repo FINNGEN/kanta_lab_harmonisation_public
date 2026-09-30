@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -119,484 +119,663 @@ Here is group 42.
 | 3002079 | Sodium [Moles/time] in 24 hour Urine | 1.000 | 1217 |
 | 3002190 | Sodium [Moles/volume] in Dialysis fluid | 1.000 |  |
 | 3003181 | Sodium [Moles/volume] in Urine | 1.000 | 412 |
-| 3019550 | Sodium [Moles/volume] in Serum or Plasma | 1.000 | 5 |
+| 3008607 | Semen analysis panel | 1.000 |  |
 | 3020410 | Lactate [Moles/volume] in Arterial plasma | 1.000 |  |
-| 3022948 | Iron [Moles/volume] in Serum or Plasma | 1.000 | 140 |
-| 3023103 | Potassium [Moles/volume] in Serum or Plasma | 1.000 | 3 |
-| 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 190 |
 | 3036428 | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid | 1.000 |  |
 | 3040491 | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid | 1.000 |  |
 | 3043706 | Sodium [Moles/volume] in Arterial blood | 1.000 |  |
-| 3965350 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma | 1.000 |  |
-| 36306105 | Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method | 0.983 |  |
-| 3021337 | Troponin I.cardiac [Mass/volume] in Serum or Plasma | 0.983 | 113 |
-| 3019800 | Troponin T.cardiac [Mass/volume] in Serum or Plasma | 0.980 | 291 |
-| 1469828 | Troponin I.cardiac [Mass/volume] in Serum, Plasma or Blood by High sensitivity method | 0.972 |  |
-| 3008486 | Thyroxine (T4) free [Moles/volume] in Serum or Plasma | 0.970 | 133 |
-| 3035509 | Tobramycin [Mass/volume] in Serum or Plasma | 0.967 | 1858 |
-| 46235078 | Potassium [Moles/volume] in Serum, Plasma or Blood | 0.966 |  |
-| 46235784 | Sodium [Moles/volume] in Serum, Plasma or Blood | 0.965 |  |
-| 3966146 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Serum or Plasma | 0.962 |  |
-| 3033745 | Troponin I.cardiac [Mass/volume] in Blood | 0.962 |  |
-| 3048529 | Troponin T.cardiac [Mass/volume] in Blood | 0.962 |  |
-| 3026989 | Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma | 0.960 | 274 |
-| 3002568 | Complement factor B [Mass/volume] in Serum or Plasma | 0.954 |  |
+| 3015399 | Transferrin receptor.soluble [Mass/volume] in Serum or Plasma | 0.981 |  |
+| 3000788 | Lamellar bodies [#/volume] in Amniotic fluid | 0.977 |  |
+| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.968 | 19 |
+| 3015066 | Potassium [Moles/volume] in Serum or Plasma --post dialysis | 0.967 |  |
+| 3039651 | Potassium [Moles/volume] in Serum or Plasma --pre dialysis | 0.965 |  |
+| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.965 | 16 |
+| 46235106 | Alanine aminotransferase [Enzymatic activity/volume] in Blood | 0.964 |  |
+| 3046279 | Procalcitonin [Mass/volume] in Serum or Plasma | 0.963 |  |
+| 44816586 | Sodium [Moles/volume] in Serum or Plasma --post dialysis | 0.961 |  |
+| 3019550 | Sodium [Moles/volume] in Serum or Plasma | 0.960 | 5 |
+| 46236949 | Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.960 |  |
+| 3021387 | Prolactin [Units/volume] in Serum or Plasma | 0.960 |  |
+| 3013603 | Prostate specific Ag [Mass/volume] in Serum or Plasma | 0.959 | 124 |
 | 3018405 | Lactate [Moles/volume] in Arterial blood | 0.954 | 1277 |
-| 40769783 | Troponin T.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method | 0.952 |  |
-| 3014620 | Thyroxine (T4) [Moles/volume] in Serum or Plasma | 0.948 | 145 |
-| 3009107 | Complement factor B [Mass/volume] in Body fluid | 0.943 |  |
+| 46235784 | Sodium [Moles/volume] in Serum, Plasma or Blood | 0.947 |  |
 | 3038702 | Sodium [Moles/volume] in Capillary blood | 0.943 |  |
 | 3014485 | Sodium [Moles/volume] in 24 hour Urine | 0.942 | 1451 |
-| 3015399 | Transferrin receptor.soluble [Mass/volume] in Serum or Plasma | 0.941 |  |
-| 3004282 | Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma | 0.940 |  |
-| 3008304 | Triiodothyronine (T3) [Moles/volume] in Serum or Plasma | 0.935 | 223 |
-| 3002400 | Iron [Mass/volume] in Serum or Plasma | 0.934 |  |
-| 3008607 | Semen analysis panel | 0.933 |  |
-| 3019572 | Troponin T.cardiac [Mass/volume] in Venous blood | 0.930 |  |
+| 3026910 | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | 0.942 | 190 |
+| 3023103 | Potassium [Moles/volume] in Serum or Plasma | 0.938 | 3 |
+| 3011363 | Streptococcus pneumoniae Ag [Presence] in Urine | 0.936 |  |
+| 3003458 | Phosphate [Moles/volume] in Serum or Plasma | 0.935 | 69 |
+| 3046569 | Transferrin receptor.soluble [Moles/volume] in Serum or Plasma | 0.930 |  |
 | 3040086 | Sodium [Moles/volume] in Peritoneal dialysis fluid | 0.930 |  |
 | 3023636 | Sodium [Moles/time] in 12 hour Urine | 0.930 |  |
+| 3022948 | Iron [Moles/volume] in Serum or Plasma | 0.929 | 140 |
+| 3018913 | Phosphate [Moles/volume] in Blood | 0.928 |  |
+| 3005456 | Potassium [Moles/volume] in Blood | 0.927 | 106 |
 | 3041697 | Sodium [Moles/time] in 1 hour Urine | 0.923 |  |
-| 3008598 | Thyroxine (T4) free [Mass/volume] in Serum or Plasma | 0.921 |  |
 | 3008007 | Sodium [Mass/time] in 24 hour Urine | 0.920 |  |
-| 3000288 | Sodium/Potassium [Molar ratio] in Serum or Plasma | 0.920 |  |
-| 3026925 | Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma | 0.915 |  |
-| 3006638 | Tobramycin [Mass/volume] in Serum or Plasma --trough | 0.914 | 1537 |
+| 40758733 | Microscopic observation [Identifier] in Endometrium by Cyto stain | 0.918 |  |
+| 3965350 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma | 0.914 |  |
+| 3032915 | Prostate specific Ag [Mass/volume] in Urine | 0.914 |  |
+| 46235078 | Potassium [Moles/volume] in Serum, Plasma or Blood | 0.912 |  |
 | 3041473 | Sodium [Moles/volume] in Venous blood | 0.911 |  |
-| 1469858 | Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.909 |  |
+| 3038011 | Prostate specific Ag [Mass/volume] in Semen | 0.908 |  |
+| 3000784 | Alanine aminotransferase [Enzymatic activity/volume] in Body fluid | 0.908 |  |
 | 3015574 | Sodium [Moles/time] in 6 hour Urine | 0.908 |  |
 | 3029213 | Adenosine deaminase [Enzymatic activity/volume] in Pericardial fluid | 0.908 |  |
 | 1617495 | Sodium [Moles/volume] in Dialysis fluid --1 hour specimen | 0.907 |  |
-| 1469723 | Troponin I.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.907 |  |
-| 3965306 | Troponin T.cardiac [Mass/volume] in 6 hour Serum or Plasma | 0.907 |  |
+| 21491979 | Prolactin monomeric [Units/volume] in Serum or Plasma | 0.906 |  |
+| 3003792 | Aspartate aminotransferase [Enzymatic activity/volume] in Body fluid | 0.904 |  |
+| 42870299 | PDGFRA gene exon 18 targeted mutation analysis in Blood or Tissue by Sequencing | 0.904 |  |
 | 40760495 | Sodium [Moles/volume] in 2 hour Urine | 0.904 |  |
-| 42529232 | Thyroxine (T4) free [Moles/volume] in Serum or Plasma by Immunoassay | 0.904 |  |
-| 3022392 | Complement factor Bb [Mass/volume] in Serum or Plasma | 0.904 |  |
-| 3046569 | Transferrin receptor.soluble [Moles/volume] in Serum or Plasma | 0.901 |  |
+| 3052038 | Prostate specific Ag [Mass/volume] in Body fluid | 0.902 |  |
 | 3035963 | Corticotropin [Moles/volume] in Plasma | 0.901 | 816 |
 | 40762087 | Sodium [Moles/time] in 18 hour Urine | 0.900 |  |
 | 1617300 | Sodium [Moles/volume] in Dialysis fluid --2 hour specimen | 0.900 |  |
 | 3033252 | Adenosine deaminase [Enzymatic activity/volume] in Peritoneal fluid | 0.899 |  |
-| 42529255 | Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma by Immunoassay | 0.897 |  |
-| 3027828 | Triiodothyronine (T3).reverse [Moles/volume] in Serum or Plasma | 0.897 | 1057 |
+| 3004722 | Prolactin [Mass/volume] in Serum or Plasma | 0.898 | 290 |
+| 1259553 | PDGFRA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal | 0.898 |  |
+| 40757362 | Semen analysis fertility panel | 0.896 |  |
 | 1616723 | Sodium [Moles/volume] in Dialysis fluid --4 hour specimen | 0.895 |  |
+| 3052577 | Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.895 |  |
 | 3035637 | Corticotropin [Mass/volume] in Plasma | 0.895 |  |
 | 3039179 | Angiotensin converting enzyme [Enzymatic activity/volume] in Peritoneal fluid | 0.895 |  |
 | 40760484 | Sodium [Moles/volume] in 12 hour Urine | 0.895 |  |
-| 3029979 | Tobramycin [Moles/volume] in Serum or Plasma | 0.894 | 1858 |
 | 3022810 | Sodium [Moles/volume] in Body fluid | 0.893 |  |
-| 3004090 | Tobramycin [Mass/volume] in Serum or Plasma --peak | 0.893 | 1574 |
 | 44816583 | Sodium [Moles/volume] in 4 hour Urine | 0.893 |  |
 | 3005622 | Sodium [Moles/time] in 24 hour Stool | 0.892 |  |
-| 3016991 | Thyroxine (T4) [Mass/volume] in Serum or Plasma | 0.889 |  |
+| 42529229 | Prostate specific Ag [Mass/volume] in Serum or Plasma by Immunoassay | 0.890 |  |
+| 42529228 | Prolactin [Units/volume] in Serum or Plasma by Immunoassay | 0.890 |  |
+| 3966146 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Serum or Plasma | 0.889 |  |
 | 3005491 | Lactate [Moles/volume] in Plasma venous | 0.888 | 1070 |
 | 3034249 | Sodium [Moles/volume] in Urine collected for unspecified duration | 0.888 | 689 |
+| 1988947 | Procalcitonin [Moles/volume] in Serum or Plasma | 0.888 |  |
 | 3041244 | Adenosine deaminase [Enzymatic activity/volume] in Synovial fluid | 0.888 |  |
-| 3028465 | Gamma glutamyl transferase [Enzymatic activity/volume] in Body fluid | 0.888 |  |
-| 3005456 | Potassium [Moles/volume] in Blood | 0.885 | 106 |
-| 3041449 | Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma | 0.885 |  |
-| 3010340 | Triiodothyronine (T3) [Mass/volume] in Serum or Plasma | 0.884 |  |
-| 645187 | Iron [Measurement] in Serum or Plasma | 0.884 |  |
+| 3028515 | Gamma glutamyl transferase [Enzymatic activity/volume] in Urine | 0.887 |  |
+| 44817130 | Procalcitonin [Mass/volume] in Serum or Plasma by Immunoassay | 0.887 |  |
+| 648404 | Procalcitonin [Mass/volume] in Serum, Plasma or Blood by Immunoassay | 0.886 |  |
+| 3028465 | Gamma glutamyl transferase [Enzymatic activity/volume] in Body fluid | 0.885 |  |
+| 3002131 | Prostate specific Ag [Units/volume] in Serum or Plasma | 0.885 |  |
+| 3052018 | Alanine aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.884 |  |
+| 3026681 | Sodium [Moles/volume] in Specimen | 0.883 |  |
+| 3041354 | Potassium [Moles/volume] in Venous blood | 0.882 |  |
+| 3037249 | Prostate specific Ag [Moles/volume] in Serum or Plasma | 0.882 |  |
 | 3014111 | Lactate [Moles/volume] in Serum or Plasma | 0.881 | 346 |
-| 21494221 | Tobramycin free [Mass/volume] in Serum or Plasma | 0.880 |  |
-| 3004526 | Tobramycin [Mass/volume] in Urine | 0.879 |  |
+| 40758222 | PDGFRA gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method | 0.880 |  |
+| 1469583 | PDGFRA gene full mutation analysis [Presence] in Blood or Tissue by Sequencing | 0.879 |  |
+| 21491864 | Prolactin.dimeric [Units/volume] in Serum or Plasma | 0.879 |  |
+| 3043409 | Potassium [Moles/volume] in Arterial blood | 0.879 |  |
+| 3050931 | Microscopic observation [Identifier] in Endometrium by Rhodamine-auramine fluorochrome stain | 0.879 |  |
 | 3037437 | Adenosine deaminase [Enzymatic activity/volume] in Body fluid | 0.879 |  |
-| 3028515 | Gamma glutamyl transferase [Enzymatic activity/volume] in Urine | 0.879 |  |
-| 3008985 | Tobramycin [Mass/volume] in Body fluid | 0.878 |  |
+| 3012169 | Aspartate aminotransferase [Enzymatic activity/volume] in Urine | 0.878 |  |
 | 3047181 | Lactate [Moles/volume] in Blood | 0.877 | 475 |
-| 3024920 | Potassium [Moles/volume] in Serum or Plasma --3rd specimen | 0.877 |  |
-| 3032987 | Sodium [Moles/volume] corrected for glucose in Serum or Plasma | 0.875 |  |
-| 42529254 | Triiodothyronine (T3) [Moles/volume] in Serum or Plasma by Immunoassay | 0.875 |  |
-| 42529231 | Thyroxine (T4) [Moles/volume] in Serum or Plasma by Immunoassay | 0.874 |  |
+| 3037666 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay | 0.877 |  |
+| 3005435 | Aspartate aminotransferase [Enzymatic activity/volume] in Red Blood Cells | 0.875 |  |
+| 44816844 | Macroprolactin [Units/volume] in Serum or Plasma | 0.875 |  |
+| 3004056 | Alanine aminotransferase [Enzymatic activity/volume] in Amniotic fluid | 0.872 |  |
 | 3035561 | Lactate [Mass/volume] in Arterial blood | 0.872 |  |
+| 46236341 | Streptococcus pneumoniae Ag [Presence] in Urine by Rapid immunoassay | 0.872 |  |
 | 37021379 | Sodium [Molar amount] in 24 hour Dialysis fluid | 0.871 |  |
-| 36305238 | Potassium goal [Moles/volume] Serum or Plasma | 0.870 |  |
-| 40762471 | Tobramycin [Mass/volume] in Serum or Plasma --post dialysis | 0.869 |  |
-| 3013098 | Potassium [Moles/volume] in Specimen | 0.869 |  |
-| 40761932 | Thyroxine (T4) free [Mass/volume] in Serum or Plasma --baseline | 0.868 |  |
-| 3007603 | Complement factor P [Mass/volume] in Plasma | 0.867 |  |
-| 3041354 | Potassium [Moles/volume] in Venous blood | 0.867 |  |
-| 3026681 | Sodium [Moles/volume] in Specimen | 0.867 |  |
-| 3010661 | Tobramycin [Mass/volume] in Serum or Plasma --trough post extended interval dosing | 0.867 |  |
-| 3037883 | Thyroxine (T4).albumin bound [Mass/volume] in Serum or Plasma | 0.866 |  |
-| 42868691 | Thyroxine (T4) free [Moles/volume] in Serum or Plasma by Dialysis | 0.866 | 1494 |
+| 3005755 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.871 |  |
+| 3042781 | Aspartate aminotransferase [Enzymatic activity/volume] (Maximum value during study) in Serum or Plasma | 0.869 |  |
+| 3026160 | Phosphate [Moles/volume] in Body fluid | 0.868 |  |
+| 3022976 | Prolactin [Units/volume] in Serum or Plasma by 3rd IS | 0.867 |  |
+| 42869608 | Oxygen saturation [Pure mass fraction] in Blood | 0.867 |  |
+| 3015912 | Alanine aminotransferase [Enzymatic activity/volume] in Red Blood Cells | 0.865 |  |
 | 3027653 | Mycophenolate [Mass/volume] in Serum or Plasma | 0.865 |  |
+| 3040893 | Potassium [Moles/volume] in Capillary blood | 0.864 |  |
 | 3009299 | Lupus anticoagulant neutralization platelet [Time] in Platelet poor plasma by Coagulation assay | 0.864 | 811 |
-| 3030860 | Tumor necrosis factor.alpha [Moles/volume] in Serum or Plasma | 0.864 |  |
-| 3010307 | Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.864 |  |
-| 3049714 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma | 0.863 |  |
+| 3024746 | Aspartate aminotransferase [Enzymatic activity/volume] in Synovial fluid | 0.864 |  |
+| 3002400 | Iron [Mass/volume] in Serum or Plasma | 0.863 |  |
 | 3031579 | Sodium [Moles/volume] in Mixed venous blood | 0.863 |  |
-| 3039651 | Potassium [Moles/volume] in Serum or Plasma --pre dialysis | 0.863 |  |
-| 3046728 | Iron [Presence] in Serum or Plasma | 0.861 |  |
-| 3024380 | Potassium [Moles/volume] in Serum or Plasma --2nd specimen | 0.860 |  |
+| 3042793 | Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma | 0.863 |  |
+| 3023488 | Aspartate aminotransferase [Enzymatic activity/volume] in Amniotic fluid | 0.863 |  |
+| 46237012 | PDGFRA gene p.Asp842Val [Presence] in Blood or Tissue by Molecular genetics method | 0.863 |  |
+| 3037081 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P | 0.861 |  |
+| 3002568 | Complement factor B [Mass/volume] in Serum or Plasma | 0.861 |  |
+| 3019056 | Alanine aminotransferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.860 |  |
 | 3039189 | Lupus anticoagulant neutralization dilute phospholipid [Time] in Platelet poor plasma | 0.860 |  |
 | 36659714 | Sodium [Moles/volume] in Urine from Fetus | 0.860 |  |
-| 3010424 | Ferritin [Moles/volume] in Serum or Plasma | 0.859 |  |
+| 3036243 | Potassium [Moles/volume] in Body fluid | 0.859 |  |
 | 3028271 | Lactate [Moles/volume] in Capillary blood | 0.859 |  |
-| 40761934 | Triiodothyronine (T3) Free [Mass/volume] in Serum or Plasma --baseline | 0.858 |  |
 | 3009960 | Adenosine deaminase [Enzymatic activity/volume] in Blood | 0.858 |  |
-| 3028582 | Triiodothyronine (T3).true [Mass/volume] in Serum or Plasma | 0.858 |  |
-| 1988875 | Tumor necrosis factor.alpha [Units/volume] in Serum or Plasma | 0.856 |  |
+| 3009305 | Lamellar bodies [Presence] in Amniotic fluid | 0.856 |  |
+| 40757490 | Bicarbonate [Moles/volume] in Plasma --post dialysis | 0.856 |  |
+| 44816699 | Transferrin receptor.soluble/log Ferritin index [Mass Ratio] in Serum or Plasma | 0.855 |  |
 | 3035717 | Potassium [Moles/volume] in Dialysis fluid | 0.855 |  |
-| 3043409 | Potassium [Moles/volume] in Arterial blood | 0.854 |  |
+| 649327 | Procalcitonin [Measurement] in Serum or Plasma | 0.854 |  |
 | 3008037 | Lactate [Moles/volume] in Venous blood | 0.854 |  |
 | 3001838 | Sodium [Moles/volume] in Red Blood Cells | 0.853 |  |
-| 3004789 | Transferrin [Mass/volume] in Serum or Plasma | 0.853 | 809 |
-| 3006550 | Complement factor Ba [Mass/volume] in Serum or Plasma | 0.853 |  |
 | 3034552 | Adenosine deaminase [Enzymatic activity/volume] in Cerebral spinal fluid | 0.852 |  |
-| 44816586 | Sodium [Moles/volume] in Serum or Plasma --post dialysis | 0.852 |  |
-| 3003701 | Tobramycin [Moles/volume] in Serum or Plasma --trough | 0.852 | 1537 |
-| 3032971 | Troponin I.cardiac [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL | 0.852 | 449 |
+| 3005013 | Prostate Specific Ag Free [Mass/volume] in Serum or Plasma | 0.851 | 554 |
 | 3052649 | Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma | 0.851 |  |
-| 46235360 | Tumor necrosis factor receptor superfamily member 1A [Mass/volume] in Serum or Plasma | 0.848 |  |
-| 3044738 | Sodium [Moles/volume] (Maximum value during study) in Serum or Plasma | 0.848 |  |
+| 3034933 | Prolactin monomeric [Mass/volume] in Serum or Plasma | 0.851 |  |
+| 3013294 | Phosphate [Moles/volume] in Specimen | 0.850 |  |
+| 3007625 | Streptococcus pneumoniae Ag [Presence] in Specimen | 0.849 |  |
+| 3049714 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma | 0.849 |  |
 | 3011732 | Aspartate aminotransferase [Enzymatic activity/volume] in Pleural fluid | 0.848 |  |
 | 40762116 | Adenosine deaminase [Enzymatic activity/volume] in Peritoneal dialysis fluid | 0.848 |  |
-| 40757362 | Semen analysis fertility panel | 0.847 |  |
-| 3040526 | Collagen crosslinked C-telopeptide [Moles/volume] in Serum or Plasma | 0.847 |  |
-| 3021862 | Iron [Interpretation] in Serum or Plasma | 0.845 |  |
-| 46236075 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma by Immunoassay | 0.843 |  |
-| 3032491 | Iron [Mass/volume] in Serum or Plasma --1st specimen | 0.842 |  |
-| 44816699 | Transferrin receptor.soluble/log Ferritin index [Mass Ratio] in Serum or Plasma | 0.841 |  |
-| 3002903 | Transferrin [Moles/volume] in Serum or Plasma | 0.840 | 809 |
-| 3052662 | Ceruloplasmin [Moles/volume] in Serum or Plasma | 0.839 |  |
-| 3026621 | Complement factor H [Mass/volume] in Serum or Plasma | 0.838 |  |
+| 3041449 | Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma | 0.847 |  |
+| 3045783 | Sodium and Potassium panel [Moles/volume] - Serum or Plasma | 0.847 |  |
+| 3004484 | Streptococcus pneumoniae Ag [Presence] in Sputum | 0.847 |  |
+| 3051050 | Macroprolactin/Prolactin [Moles] in Serum or Plasma | 0.847 |  |
+| 3000477 | Aspartate aminotransferase [Enzymatic activity/volume] in Cerebral spinal fluid | 0.845 |  |
+| 3000162 | Prolactin [Mass/volume] in Serum or Plasma --baseline | 0.845 |  |
+| 3022893 | Aspartate aminotransferase/Alanine aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.843 |  |
+| 40757500 | Chloride [Moles/volume] in Serum or Plasma --post dialysis | 0.843 |  |
+| 3013098 | Potassium [Moles/volume] in Specimen | 0.842 |  |
+| 40762321 | Prostate specific Ag [Mass/volume] in Cerebral spinal fluid | 0.841 |  |
+| 3033891 | Prothrombin time (PT) in Platelet poor plasma from Control by Coagulation assay | 0.840 |  |
+| 3015481 | Prolactin [Mass/volume] in Serum or Plasma by Immunoassay | 0.840 |  |
+| 3032987 | Sodium [Moles/volume] corrected for glucose in Serum or Plasma | 0.839 |  |
+| 3004789 | Transferrin [Mass/volume] in Serum or Plasma | 0.839 | 809 |
+| 3041133 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --baseline | 0.838 |  |
+| 3010307 | Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma | 0.838 |  |
+| 40759093 | Phosphate [Moles/volume] in Serum or Plasma --post dialysis | 0.838 |  |
 | 3033042 | Sodium [Moles/volume] in Peritoneal fluid | 0.837 |  |
-| 3031053 | Iron [Mass/volume] in Serum or Plasma --5th specimen | 0.833 |  |
+| 3022229 | Phosphate [Moles/volume] in Urine | 0.837 | 1197 |
+| 1091858 | Prothrombin time (PT) factor substitution [Time Ratio] in Control Platelet poor plasma by Coagulation assay --2H post incubation with 1:1 normal plasma | 0.836 |  |
+| 3025033 | Iron [Moles/volume] in Body fluid | 0.836 |  |
 | 3030573 | Phosphate [Moles/volume] in Dialysis fluid | 0.833 |  |
-| 3022979 | Gamma glutamyl cysteine synthetase [Enzymatic activity/volume] in Serum | 0.833 |  |
 | 3047091 | Lupus anticoagulant neutralization buffer [Time] in Platelet poor plasma by Coagulation assay | 0.833 |  |
+| 3011904 | Phosphate [Mass/volume] in Serum or Plasma | 0.833 |  |
+| 3013823 | Potassium [Moles/volume] in Red Blood Cells | 0.832 |  |
+| 3016038 | Potassium [Moles/volume] in Urine | 0.832 | 493 |
+| 1259708 | PDGFRA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.832 |  |
 | 3009991 | Angiotensin converting enzyme [Enzymatic activity/volume] in Cerebral spinal fluid | 0.831 |  |
+| 3007023 | Streptococcus pneumoniae Ag [Presence] in Serum | 0.831 |  |
 | 3005949 | Lactate [Moles/volume] in Mixed venous blood | 0.830 |  |
 | 3036335 | Angiotensin converting enzyme [Enzymatic activity/volume] in Blood | 0.830 | 1299 |
 | 3004825 | Lactate [Moles/volume] in Body fluid | 0.829 |  |
-| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.829 | 19 |
+| 3047891 | FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.829 |  |
 | 3027184 | Lupus anticoagulant [Interpretation] in Platelet poor plasma | 0.829 |  |
 | 3042943 | Fatty acid essential (C12-C22) panel - Serum or Plasma | 0.829 |  |
 | 3034780 | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma | 0.829 | 730 |
-| 3045783 | Sodium and Potassium panel [Moles/volume] - Serum or Plasma | 0.826 |  |
-| 1988486 | Tumor necrosis factor.alpha [Mass/volume] in Cerebral spinal fluid | 0.826 |  |
+| 3022392 | Complement factor Bb [Mass/volume] in Serum or Plasma | 0.826 |  |
+| 3035960 | Phosphate [Moles/volume] in Red Blood Cells | 0.826 |  |
+| 3009107 | Complement factor B [Mass/volume] in Body fluid | 0.826 |  |
+| 36032012 | Gamma glutamyl transferase [Enzymatic activity/volume] in DBS | 0.825 |  |
+| 3022979 | Gamma glutamyl cysteine synthetase [Enzymatic activity/volume] in Serum | 0.825 |  |
 | 40758927 | Mycophenolate [Mass/volume] in Serum or Plasma by LC/MS/MS | 0.825 |  |
-| 647897 | Tumor necrosis factor.alpha [Measurement] in Serum or Plasma | 0.825 |  |
-| 3965684 | Tumor necrosis factor ligand superfamily member 10 [Mass/volume] in Serum, Plasma or Blood | 0.825 |  |
 | 3027627 | Lupus anticoagulant neutralization high phospholipid [Time] in Platelet poor plasma by Coagulation assay | 0.824 |  |
-| 42870299 | PDGFRA gene exon 18 targeted mutation analysis in Blood or Tissue by Sequencing | 0.824 |  |
 | 36304001 | Fatty acid omega-3 and omega-6 panel - Serum or Plasma | 0.824 |  |
 | 21493666 | Mycophenolate acyl-glucuronide [Mass/volume] in Serum or Plasma | 0.824 |  |
+| 3021398 | Gamma glutamyl transferase [Enzymatic activity/volume] in Amniotic fluid | 0.824 |  |
+| 42869600 | Oxygen saturation [Pure mass fraction] in Venous blood | 0.823 |  |
 | 40763074 | Corticotropin [Moles/volume] in Plasma --baseline | 0.822 |  |
 | 3031076 | Corticotropin [Mass/volume] in Plasma --baseline | 0.822 |  |
 | 3008152 | Bicarbonate [Moles/volume] in Arterial blood | 0.821 | 310 |
-| 3026365 | Gamma glutamyl transferase [Enzymatic activity/volume] in Semen | 0.821 |  |
-| 36032012 | Gamma glutamyl transferase [Enzymatic activity/volume] in DBS | 0.821 |  |
+| 46235718 | Delta aPTT [Time] in Platelet poor plasma by Coagulation assay | 0.820 |  |
 | 1259791 | Lupus anticoagulant aPTT screening panel - Platelet poor plasma by Coagulation assay | 0.819 |  |
-| 3021398 | Gamma glutamyl transferase [Enzymatic activity/volume] in Amniotic fluid | 0.819 |  |
+| 40762241 | Calcium [Moles/volume] in Serum or Plasma --post dialysis | 0.819 |  |
+| 3026365 | Gamma glutamyl transferase [Enzymatic activity/volume] in Semen | 0.818 |  |
 | 3031643 | Corticotropin [Mass/volume] in Plasma --3 AM specimen | 0.818 |  |
+| 3013502 | Oxygen saturation in Blood | 0.818 | 426 |
+| 3049135 | FLT3 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.818 |  |
+| 46236075 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma by Immunoassay | 0.817 |  |
 | 40761633 | Corticotropin [Moles/volume] in Plasma --10 AM specimen | 0.817 |  |
-| 3021423 | Complement factor D [Mass/volume] in Serum or Plasma | 0.816 |  |
 | 43055501 | Mycophenolate [Mass/volume] in Serum or Plasma --trough | 0.816 |  |
 | 3013870 | Mycophenolate glucuronide [Mass/volume] in Serum or Plasma | 0.815 |  |
 | 40761662 | Corticotropin [Moles/volume] in Plasma --2 PM specimen | 0.815 |  |
 | 40761632 | Corticotropin [Mass/volume] in Plasma --10 AM specimen | 0.815 |  |
-| 3022126 | Complement C3b [Mass/volume] in Serum or Plasma | 0.815 |  |
+| 40759058 | Magnesium [Moles/volume] in Serum or Plasma --post dialysis | 0.815 |  |
 | 3049123 | Corticotropin [Mass/volume] in Plasma --12 AM specimen | 0.815 |  |
-| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.815 | 16 |
 | 40757623 | Alanine aminotransferase [Enzymatic activity/volume] in Pleural fluid | 0.815 |  |
-| 3008721 | Complement factor I [Mass/volume] in Serum or Plasma | 0.814 |  |
 | 3027206 | Corticotropin [Mass/volume] in Plasma by Radioimmunoassay (RIA) | 0.814 |  |
 | 40761642 | Corticotropin [Moles/volume] in Plasma --12 AM specimen | 0.814 |  |
-| 3037478 | Sodium/Potassium [Molar ratio] in Urine | 0.813 |  |
+| 3050146 | Prolactin [Mass/volume] in Serum or Plasma by 3rd IS | 0.813 |  |
 | 3031315 | Corticotropin [Mass/volume] in Plasma --3 PM specimen | 0.812 |  |
-| 3007042 | Complement iC3 [Mass/volume] in Plasma | 0.812 |  |
+| 3010989 | Calcitonin [Mass/volume] in Serum or Plasma | 0.812 | 1605 |
 | 3032992 | Corticotropin [Mass/volume] in Plasma --6 PM specimen | 0.812 |  |
 | 3052673 | Corticotropin [Mass/volume] in Plasma --4 AM specimen | 0.811 |  |
-| 3008440 | Collagen crosslinked N-telopeptide [Moles/volume] in Serum | 0.811 |  |
+| 42869607 | Oxygen saturation [Pure mass fraction] in Arterial blood | 0.811 |  |
+| 3024232 | Phosphate [Mass/volume] in Blood | 0.810 |  |
+| 40762366 | Oxygen capacity [Volume Fraction] in Arterial blood | 0.810 |  |
 | 40761643 | Corticotropin [Moles/volume] in Plasma --12 PM specimen | 0.810 |  |
 | 40761635 | Corticotropin [Moles/volume] in Plasma --10 PM specimen | 0.810 |  |
+| 3009873 | Streptococcus pneumoniae Ag [Presence] in Specimen by Latex agglutination | 0.809 |  |
 | 43533705 | Mycophenolate [Mass/volume] in Serum or Plasma --peak | 0.809 |  |
+| 40762388 | Lacosamide [Mass/volume] in Serum or Plasma | 0.809 |  |
 | 40761703 | Corticotropin [Moles/volume] in Plasma --4 AM specimen | 0.808 |  |
+| 3037998 | Microscopic observation [Identifier] in Specimen by Hematoxylin and eosin stain | 0.808 |  |
 | 40761710 | Corticotropin [Moles/volume] in Plasma --6 PM specimen | 0.808 |  |
-| 40757296 | Tumor necrosis factor binding protein [Units/volume] in Serum | 0.807 |  |
-| 648872 | Transferrin [Measurement] in Serum or Plasma | 0.807 |  |
-| 3049183 | Collagen crosslinked C-telopeptide [Mass/volume] in Urine | 0.806 |  |
+| 3031904 | Prolactin [Mass/volume] in Serum or Plasma --6th specimen | 0.807 |  |
+| 40761862 | Gamma glutamyl transferase [Enzymatic activity/time] in 24 hour Urine | 0.807 |  |
+| 42869606 | Oxygen saturation [Pure mass fraction] in Capillary blood | 0.807 |  |
+| 3040526 | Collagen crosslinked C-telopeptide [Moles/volume] in Serum or Plasma | 0.807 |  |
+| 3005082 | Progesterone [Moles/volume] in Serum or Plasma | 0.806 | 318 |
+| 40760300 | Lupus anticoagulant neutralization dilute phospholipid/Lupus anticoagulant neutralization.high phospholipid [Ratio] in Platelet poor plasma by Coagulation assay | 0.806 |  |
+| 3030428 | Prolactin [Mass/volume] in Serum or Plasma --7th specimen | 0.805 |  |
+| 40757626 | Glucose [Moles/volume] in Serum or Plasma --post dialysis | 0.804 |  |
+| 3031730 | PTPN11 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.804 |  |
 | 3046505 | Aldolase [Enzymatic activity/volume] in Pleural fluid | 0.803 |  |
-| 3036489 | Thrombin time | 0.802 | 705 |
+| 3011173 | Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain | 0.803 |  |
 | 42868685 | Mycophenolate [Moles/volume] in Serum or Plasma | 0.802 | 1787 |
-| 3005757 | Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay | 0.801 | 1703 |
-| 3005445 | Coagulation factor X activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.799 |  |
-| 3052628 | Collagen type 1 Ab [Units/volume] in Serum | 0.798 |  |
-| 44816885 | Collagen crosslinked C-telopeptide [Z-score] in Serum or Plasma | 0.797 |  |
-| 42869547 | Procollagen type III.N-terminal propeptide [Mass/volume] in Serum | 0.797 |  |
+| 3048498 | TGFBR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.801 |  |
+| 3044230 | Potassium [Moles/volume] in Peritoneal dialysis fluid | 0.801 |  |
+| 646651 | Prolactin [Measurement] in Serum or Plasma | 0.800 |  |
+| 3017427 | Lupus anticoagulant neutralization dilute phospholipid [Presence] in Platelet poor plasma | 0.800 | 1189 |
+| 3004923 | Protein C [Mass/volume] in Plasma | 0.799 |  |
+| 3029242 | Protein C/Coagulation factor X [Mass Ratio] in Platelet poor plasma | 0.799 |  |
+| 3002903 | Transferrin [Moles/volume] in Serum or Plasma | 0.799 | 809 |
+| 40763951 | Prothrombin time (PT) in Platelet poor plasma from Fetus by Coagulation assay | 0.799 |  |
+| 3023542 | Coagulation normal/actual in Platelet poor plasma by Prothrombin time (PT) | 0.798 |  |
+| 44786996 | Sodium and Potassium panel [Moles/volume] - Blood | 0.797 |  |
+| 3039732 | Gamma glutamyl transferase [Enzymatic activity/volume] in Dialysis fluid | 0.797 |  |
 | 1175721 | Fatty acid omega-3 and omega-6 panel - Blood | 0.796 |  |
-| 3043430 | Interleukin 1 alpha [Mass/volume] in Serum or Plasma | 0.795 |  |
-| 3006924 | Coagulation factor V activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.795 |  |
+| 3033688 | Peak flow meter device panel | 0.796 |  |
+| 40762387 | Lacosamide [Mass/volume] in Blood | 0.796 |  |
+| 3025481 | Topiramate [Mass/volume] in Serum or Plasma | 0.795 | 1804 |
 | 3015401 | Amylase [Enzymatic activity/volume] in Pleural fluid | 0.794 |  |
-| 3021530 | Procollagen type I [Mass/volume] in Serum | 0.791 |  |
-| 3004409 | Coagulation factor X activity actual/normal in Platelet poor plasma by Coagulation assay | 0.789 | 1896 |
-| 3023017 | Iron/Transferrin [Mass Ratio] in Serum or Plasma | 0.788 |  |
+| 3021530 | Procollagen type I [Mass/volume] in Serum | 0.794 |  |
+| 3049183 | Collagen crosslinked C-telopeptide [Mass/volume] in Urine | 0.793 |  |
+| 3039247 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --2 hours pre XXX challenge | 0.792 |  |
+| 3023261 | lamoTRIgine [Mass/volume] in Serum or Plasma | 0.791 |  |
+| 3022667 | Microscopic observation [Identifier] in Cervix by Wet preparation | 0.791 |  |
+| 3043920 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --2 hours post XXX challenge | 0.791 |  |
+| 3033295 | Lupus anticoagulant neutralization dilute phospholipid actual/normal in Platelet poor plasma by Coagulation assay | 0.791 |  |
+| 3040058 | Iron [Moles/volume] in Water | 0.790 |  |
+| 3010424 | Ferritin [Moles/volume] in Serum or Plasma | 0.789 |  |
+| 36659885 | Transthyretin [Mass] in Blood | 0.788 |  |
+| 42869547 | Procollagen type III.N-terminal propeptide [Mass/volume] in Serum | 0.788 |  |
+| 3006550 | Complement factor Ba [Mass/volume] in Serum or Plasma | 0.788 |  |
 | 40758907 | Lupus anticoagulant neutralization high phospholipid.factor substitution [Time] in Platelet poor plasma by Coagulation assay --immediately after 1:2 addition of platelet lysate | 0.786 |  |
-| 3014391 | Thrombin time [Interpretation] in Blood by Coagulation assay | 0.785 | 1113 |
-| 1091858 | Prothrombin time (PT) factor substitution [Time Ratio] in Control Platelet poor plasma by Coagulation assay --2H post incubation with 1:1 normal plasma | 0.785 |  |
-| 3003308 | Coagulation factor X activity [Units/volume] in Platelet poor plasma by Chromogenic method | 0.785 |  |
+| 3040416 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --1 hour post XXX challenge | 0.786 |  |
+| 3002142 | Oxygen [Partial pressure] in Gas | 0.786 |  |
 | 40758928 | Mycophenolate glucuronide [Mass/volume] in Serum or Plasma by LC/MS/MS | 0.784 |  |
-| 3036953 | Sodium/Potassium [Molar ratio] in Sweat | 0.784 |  |
+| 645187 | Iron [Measurement] in Serum or Plasma | 0.784 |  |
 | 3038697 | Lupus anticoagulant neutralization platelet [Presence] in Platelet poor plasma by Coagulation assay | 0.783 |  |
-| 3964861 | Semen and urine analysis fertility panel - Specimen | 0.781 |  |
-| 44786996 | Sodium and Potassium panel [Moles/volume] - Blood | 0.780 |  |
+| 3006358 | Streptococcus pneumoniae Ab [Presence] in Serum | 0.783 |  |
+| 3008561 | Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay | 0.782 | 797 |
+| 3012734 | Streptococcus pneumoniae Ag [Presence] in Sputum by Immunofluorescence | 0.782 |  |
+| 3015683 | Streptococcus pneumoniae Ag [Presence] in Specimen by Immunofluorescence | 0.782 |  |
+| 3052662 | Ceruloplasmin [Moles/volume] in Serum or Plasma | 0.782 |  |
+| 42869601 | Oxygen saturation [Pure mass fraction] in Mixed venous blood | 0.782 |  |
+| 3049361 | Cytology report of Specimen Cyto stain | 0.781 |  |
+| 3001977 | Microscopic observation [Identifier] in Tissue by Hematoxylin-eosin-Mayers progressive stain | 0.781 |  |
+| 3014286 | Streptococcus pneumoniae Ag [Presence] in Cerebral spinal fluid | 0.780 |  |
 | 40758906 | Lupus anticoagulant neutralization high phospholipid.factor substitution [Time] in Platelet poor plasma by Coagulation assay --immediately after 1:2 addition of saline | 0.779 |  |
+| 3030682 | Semen analysis post vasectomy panel | 0.777 |  |
 | 3044051 | Lupus anticoagulant neutralization high phospholipid.factor substitution [Time] in Platelet poor plasma by Coagulation assay --immediately after 1:2 addition of normal plasma | 0.777 |  |
-| 40763571 | Iron/Transferrin [Ratio] in Serum or Plasma | 0.777 |  |
-| 3047891 | FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.777 |  |
-| 3030959 | Coagulation factor X activity actual/normal in Platelet poor plasma by Chromogenic method | 0.776 | 1526 |
-| 3001122 | Ferritin [Mass/volume] in Serum or Plasma | 0.775 | 153 |
-| 1469583 | PDGFRA gene full mutation analysis [Presence] in Blood or Tissue by Sequencing | 0.775 |  |
-| 3005080 | Thrombin time in Platelet poor plasma from Control by Coagulation assay | 0.773 |  |
-| 3046935 | Sodium/Potassium [Molar ratio] in 24 hour Urine | 0.771 |  |
-| 3026785 | Coagulation factor VII activity actual/normal [Molar ratio] in Platelet poor plasma by Coagulation assay | 0.770 |  |
+| 3009814 | Iron saturation [Molar fraction] in Serum or Plasma | 0.777 | 192 |
+| 40763251 | Topiramate [Mass/volume] in Blood | 0.776 |  |
+| 3043701 | Iron [Moles/volume] in Urine | 0.775 |  |
+| 3008440 | Collagen crosslinked N-telopeptide [Moles/volume] in Serum | 0.775 |  |
+| 44786791 | Ezogabine [Mass/volume] in Plasma | 0.775 |  |
+| 21493512 | Coagulation factor X activated inhibitor [Mass/volume] in Platelet poor plasma | 0.775 |  |
+| 3021977 | Prothrombin Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.774 |  |
+| 3049840 | Microscopic observation [Identifier] in Endocervical brush by Cyto stain | 0.774 | 750 |
+| 3007886 | Transferrin [Mass/volume] in Urine | 0.774 |  |
+| 3020287 | Protein C actual/normal in Platelet poor plasma by Coagulation assay | 0.773 | 886 |
+| 3002681 | Prothrombin Ag actual/normal in Platelet poor plasma by Immunoassay | 0.772 |  |
+| 3037430 | Protein C/Coagulation factor IX [Mass Ratio] in Platelet poor plasma | 0.772 |  |
+| 3011482 | Spermatozoa motility and count panel | 0.772 |  |
+| 3007603 | Complement factor P [Mass/volume] in Plasma | 0.772 |  |
+| 40761054 | Collagen crosslinked C-telopeptide [Mass/volume] in 24 hour Urine | 0.771 |  |
+| 42869602 | Oxygen saturation [Pure mass fraction] in Venous cord blood | 0.771 |  |
+| 3022519 | Antithrombin [Interpretation] in Platelet poor plasma | 0.770 | 1117 |
+| 1469604 | Lacosamide [Mass/volume] in Serum --trough | 0.770 |  |
+| 3025378 | Microscopic observation [Identifier] in Cervix by Cyto stain | 0.769 | 484 |
+| 42869590 | Oxygen/Gas total [Pure volume fraction] Inhaled gas | 0.769 |  |
+| 3052628 | Collagen type 1 Ab [Units/volume] in Serum | 0.768 |  |
 | 648623 | Mycophenolate [Measurement] in Serum or Plasma | 0.768 |  |
-| 3005075 | Coagulation factor X+Acarboxy Ag actual/normal in Platelet poor plasma by Immunoassay | 0.768 |  |
-| 3021749 | Alpha thymosin [Mass/volume] in Serum | 0.766 |  |
-| 3019794 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --post therapy | 0.762 |  |
+| 3015029 | Plasminogen activator urokinase type [Units/volume] in Urine | 0.768 |  |
+| 646647 | Antithrombin Ag [Measurement] in Platelet poor plasma | 0.768 |  |
+| 3023017 | Iron/Transferrin [Mass Ratio] in Serum or Plasma | 0.767 |  |
+| 3009101 | Plasminogen activator urokinase type [Units/volume] in Platelet poor plasma | 0.767 |  |
+| 3005757 | Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay | 0.767 | 1703 |
+| 1091136 | Microscopic observation [Identifier] in Specimen | 0.766 |  |
+| 648872 | Transferrin [Measurement] in Serum or Plasma | 0.766 |  |
+| 1001657 | Lurasidone [Mass/volume] in Serum or Plasma | 0.765 |  |
+| 3006924 | Coagulation factor V activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.764 |  |
+| 3017155 | Microscopic observation [Identifier] in Specimen by Iron hematoxylin stain | 0.764 |  |
+| 3016005 | Antithrombin Ag [Mass/volume] in Platelet poor plasma by Immunoassay | 0.763 |  |
+| 44816835 | lamoTRIgine [Mass/volume] in Serum or Plasma --trough | 0.763 |  |
+| 3005445 | Coagulation factor X activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.762 |  |
+| 3965093 | Coagulation factor X inhibitor [Units/volume] in Platelet poor plasma by Chromogenic method | 0.762 |  |
+| 3050351 | Pregabalin [Mass/volume] in Serum or Plasma | 0.762 |  |
+| 3023945 | Coagulation factor V Ag actual/normal in Platelet poor plasma by Immunoassay | 0.761 |  |
 | 1988420 | Gas and electrolytes panel - Arterial blood | 0.760 |  |
-| 3023945 | Coagulation factor V Ag actual/normal in Platelet poor plasma by Immunoassay | 0.760 |  |
-| 46235736 | Interleukin 2 Receptor Soluble [Mass/volume] in Serum or Plasma | 0.760 |  |
-| 3044378 | FEV1 --10 minutes post exercise | 0.758 |  |
-| 3046526 | FEV1 --5 minutes post exercise | 0.758 |  |
-| 3029242 | Protein C/Coagulation factor X [Mass Ratio] in Platelet poor plasma | 0.757 |  |
-| 3016005 | Antithrombin Ag [Mass/volume] in Platelet poor plasma by Immunoassay | 0.755 |  |
-| 3002907 | Coagulation factor XII activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.755 |  |
+| 3032706 | Protein S Ag/Coagulation factor X Ag [Mass Ratio] in Platelet poor plasma by Coagulation assay | 0.760 |  |
+| 42869604 | Oxygen saturation [Pure mass fraction] in Cord blood | 0.759 |  |
+| 3026621 | Complement factor H [Mass/volume] in Serum or Plasma | 0.759 |  |
+| 3005075 | Coagulation factor X+Acarboxy Ag actual/normal in Platelet poor plasma by Immunoassay | 0.759 |  |
+| 3965143 | Calprotectin [Mass/volume] in Serum or Plasma | 0.758 |  |
+| 3027396 | Coagulation factor V Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.758 |  |
+| 42869599 | Oxygen saturation [Pure mass fraction] Calculated from oxygen partial pressure in Blood | 0.758 |  |
+| 3003308 | Coagulation factor X activity [Units/volume] in Platelet poor plasma by Chromogenic method | 0.757 |  |
+| 3009492 | Protein S/Coagulation factor IX [Mass Ratio] in Platelet poor plasma by Coagulation assay | 0.757 |  |
+| 40761986 | Calcitonin [Mass/volume] in Serum or Plasma --baseline | 0.757 |  |
+| 3018840 | Calcitonin [Moles/volume] in Serum or Plasma | 0.756 |  |
+| 40768507 | Time to expiratory gas flow.max | 0.756 |  |
+| 3019794 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --post therapy | 0.755 |  |
+| 3049875 | Spermatozoa morphology panel | 0.755 |  |
 | 3045669 | Fatty acid comprehensive (C8-C26) panel - Serum or Plasma | 0.754 |  |
-| 3011482 | Spermatozoa motility and count panel | 0.754 |  |
-| 3027396 | Coagulation factor V Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.753 |  |
+| 3036669 | Protein S actual/normal in Platelet poor plasma by Coagulation assay | 0.753 | 1104 |
 | 40758360 | Electrolytes panel - Blood | 0.753 |  |
-| 21493512 | Coagulation factor X activated inhibitor [Mass/volume] in Platelet poor plasma | 0.753 |  |
-| 3020783 | Coagulation factor X Ag actual/normal in Platelet poor plasma by Immunoassay | 0.752 |  |
-| 42870499 | Thrombin time actual/Normal | 0.752 | 3000 |
-| 3046362 | FEV1 --15 minutes post exercise | 0.752 |  |
-| 3021008 | Coagulation factor X+Acarboxy Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.751 |  |
-| 646647 | Antithrombin Ag [Measurement] in Platelet poor plasma | 0.750 |  |
-| 3025317 | Coagulation factor VII activity [Units/volume] in Platelet poor plasma by Coagulation assay | 0.749 |  |
-| 3000515 | Antithrombin actual/normal in Platelet poor plasma by Chromogenic method | 0.749 | 760 |
-| 1259553 | PDGFRA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal | 0.748 |  |
-| 3008009 | Antithrombin Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.747 | 1553 |
-| 3024402 | Coagulation factor VII+Acarboxy Ag activity actual/normal in Platelet poor plasma by Immunoassay | 0.746 |  |
-| 3030682 | Semen analysis post vasectomy panel | 0.746 |  |
-| 3003771 | Antithrombin Ag actual/normal in Platelet poor plasma by Immunoassay | 0.745 |  |
-| 3011547 | Coagulation factor VII activity actual/normal in Platelet poor plasma by Coagulation assay | 0.744 | 1752 |
-| 3026798 | Calcium/Sodium [Mass Ratio] in Serum or Plasma | 0.742 |  |
-| 44816654 | Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum | 0.742 |  |
-| 3040469 | Prothrombin Ab [Units/volume] in Serum or Plasma | 0.742 |  |
-| 3001036 | Coagulation factor VII+Coagulation factor X actual/normal in Platelet poor plasma by Coagulation assay | 0.741 |  |
-| 3022519 | Antithrombin [Interpretation] in Platelet poor plasma | 0.741 | 1117 |
-| 3005470 | Maximum expiratory gas flow Respiratory system airway --post therapy | 0.741 |  |
-| 3004057 | Coagulation factor V inhibitor [Units/volume] in Platelet poor plasma by Coagulation assay | 0.741 |  |
-| 3018676 | Antithrombin [Units/volume] in Platelet poor plasma by Chromogenic method | 0.741 | 1235 |
-| 3038563 | Respiratory rate --post exercise | 0.737 |  |
-| 42868409 | Thrombin time.high dose in Platelet poor plasma by Coagulation assay | 0.737 |  |
+| 3964861 | Semen and urine analysis fertility panel - Specimen | 0.752 |  |
+| 3008009 | Antithrombin Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.752 | 1553 |
+| 3021008 | Coagulation factor X+Acarboxy Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.752 |  |
+| 21494686 | Coagulation factor V inhibitor [Presence] in Platelet poor plasma by Coagulation assay | 0.751 |  |
+| 1988962 | Transferrin [Mass/volume] in Serum or Plasma by Electrophoresis | 0.750 |  |
+| 3004057 | Coagulation factor V inhibitor [Units/volume] in Platelet poor plasma by Coagulation assay | 0.750 |  |
+| 3000515 | Antithrombin actual/normal in Platelet poor plasma by Chromogenic method | 0.750 | 760 |
+| 3020783 | Coagulation factor X Ag actual/normal in Platelet poor plasma by Immunoassay | 0.749 |  |
+| 3020427 | Coagulation factor X inhibitor [Units/volume] in Platelet poor plasma by Coagulation assay | 0.748 |  |
+| 3037384 | Protein C actual/normal in Platelet poor plasma by Chromogenic method | 0.748 | 1210 |
+| 42869550 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --pre therapy | 0.748 |  |
+| 3014353 | Coagulation factor X Ag [Units/volume] in Platelet poor plasma by Immunoassay | 0.748 |  |
+| 3003296 | Protein C cofactor [Units/volume] in Platelet poor plasma | 0.748 |  |
+| 1761456 | Vitamin A/Retinol binding protein [Ratio] in Serum or Plasma | 0.747 |  |
+| 3051695 | PROS1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.747 |  |
+| 3018676 | Antithrombin [Units/volume] in Platelet poor plasma by Chromogenic method | 0.746 | 1235 |
+| 3016412 | Protein S Ag/Coagulation factor VII Ag [Mass Ratio] in Platelet poor plasma by Coagulation assay | 0.746 |  |
+| 3008721 | Complement factor I [Mass/volume] in Serum or Plasma | 0.745 |  |
+| 3007399 | Protein C Ag [Mass/volume] in Platelet poor plasma | 0.745 |  |
+| 3003771 | Antithrombin Ag actual/normal in Platelet poor plasma by Immunoassay | 0.743 |  |
+| 3036351 | Fibrinopeptide B [Mass/volume] in Serum | 0.742 |  |
+| 3035670 | Protein C Ag/Coagulation factor VII Ag [Mass Ratio] in Platelet poor plasma by Immunoassay | 0.740 |  |
+| 3031916 | CPT2 gene p.Arg631Cys [Presence] in Blood by Molecular genetics method | 0.740 |  |
+| 46236485 | PCDH15 gene c.733C>T [Presence] in Blood or Tissue by Molecular genetics method | 0.740 |  |
+| 46235736 | Interleukin 2 Receptor Soluble [Mass/volume] in Serum or Plasma | 0.740 |  |
+| 3001036 | Coagulation factor VII+Coagulation factor X actual/normal in Platelet poor plasma by Coagulation assay | 0.740 |  |
+| 3029418 | Calcitonin [Mass/volume] in Serum or Plasma --7th specimen | 0.738 |  |
+| 3002346 | Protein S [Units/volume] in Platelet poor plasma by Coagulation assay | 0.738 | 722 |
+| 46235717 | Delta dRVVT [Time] in Platelet poor plasma by Coagulation assay | 0.738 |  |
+| 40759285 | CYP2C9 gene allele 2 [Identifier] in Blood by Molecular genetics method Nominal | 0.738 |  |
+| 3032955 | CPT2 gene p.Arg503Cys [Presence] in Blood by Molecular genetics method | 0.737 |  |
+| 36660448 | Transthyretin peak 2 [Mass] in Blood | 0.737 |  |
+| 3020665 | Protein C [Units/volume] in Platelet poor plasma by Coagulation assay | 0.736 | 1278 |
+| 3046082 | Antithrombin Ag [Presence] in Platelet poor plasma by Immunoassay | 0.736 |  |
+| 3014914 | Antithrombin [Moles/volume] in Platelet poor plasma by Chromogenic method | 0.736 |  |
 | 21492381 | Fatty acid comprehensive (C8-C26) panel - Red Blood Cells | 0.735 |  |
-| 3050511 | FGFR3 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.735 |  |
+| 36659679 | Transthyretin width at half peak height [Mass] in Blood | 0.735 |  |
+| 3037053 | TTR gene allele 1 [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.735 |  |
+| 3015449 | Antithrombin Ag [Moles/volume] in Platelet poor plasma by Immunoassay | 0.735 |  |
 | 3008336 | Mefenamate [Mass/volume] in Serum or Plasma | 0.734 |  |
-| 3015449 | Antithrombin Ag [Moles/volume] in Platelet poor plasma by Immunoassay | 0.731 |  |
-| 3008561 | Activated protein C resistance [Time Ratio] in Platelet poor plasma by Coagulation assay | 0.731 | 797 |
-| 3049875 | Spermatozoa morphology panel | 0.730 |  |
-| 3044232 | FGD1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.729 |  |
-| 3046082 | Antithrombin Ag [Presence] in Platelet poor plasma by Immunoassay | 0.727 |  |
-| 3009101 | Plasminogen activator urokinase type [Units/volume] in Platelet poor plasma | 0.726 |  |
-| 40758222 | PDGFRA gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method | 0.725 |  |
-| 3014914 | Antithrombin [Moles/volume] in Platelet poor plasma by Chromogenic method | 0.725 |  |
-| 3041133 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --baseline | 0.725 |  |
-| 3048498 | TGFBR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.724 |  |
-| 3037666 | Prothrombin time (PT) in Platelet poor plasma by Coagulation assay | 0.724 |  |
-| 42868465 | Maximum expiratory gas flow Respiratory system airway --post bronchodilation | 0.724 |  |
-| 3033891 | Prothrombin time (PT) in Platelet poor plasma from Control by Coagulation assay | 0.723 |  |
-| 46237012 | PDGFRA gene p.Asp842Val [Presence] in Blood or Tissue by Molecular genetics method | 0.721 |  |
-| 3015029 | Plasminogen activator urokinase type [Units/volume] in Urine | 0.721 |  |
-| 3031730 | PTPN11 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.720 |  |
-| 3040175 | Thrombin time.factor substitution immediately after addition of XXX in Platelet poor plasma by Coagulation assay | 0.719 |  |
-| 3049710 | Thrombin time.factor substitution immediately after addition of bovine thrombin in Platelet poor plasma by Coagulation assay | 0.717 |  |
-| 3965213 | Electrolytes panel - Venous blood | 0.716 |  |
-| 42869550 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter --pre therapy | 0.716 |  |
-| 40757350 | Thrombin time.factor substitution immediately after 1:4 addition of normal plasma in Platelet poor plasma by Coagulation assay | 0.716 |  |
+| 36660174 | Transthyretin - transthyretin peak 2 [Mass difference] in Blood | 0.734 |  |
+| 3040747 | CPT2 gene p.Pro50His+Ser113Leu [Presence] in Blood or Tissue by Molecular genetics method | 0.734 |  |
+| 3001122 | Ferritin [Mass/volume] in Serum or Plasma | 0.733 | 153 |
+| 40762081 | FGB gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.733 |  |
+| 3000288 | Sodium/Potassium [Molar ratio] in Serum or Plasma | 0.732 |  |
+| 43055134 | VKORC1 gene c.1173C>T [Presence] in Blood or Tissue by Molecular genetics method | 0.732 |  |
+| 3026785 | Coagulation factor VII activity actual/normal [Molar ratio] in Platelet poor plasma by Coagulation assay | 0.732 |  |
+| 40759286 | CYP2C9 gene allele 3 [Identifier] in Blood by Molecular genetics method Nominal | 0.731 |  |
+| 3025431 | Microscopic exam [Interpretation] of Sputum by Cytology | 0.731 |  |
+| 3004313 | Fibronectin [Mass/volume] in Plasma | 0.730 |  |
+| 40761582 | Protein S Ag/Coagulation factor IX Ag [Mass Ratio] in Platelet poor plasma by Immunoassay | 0.730 |  |
+| 3038521 | CBS gene c.833T>C [Presence] in Blood or Tissue by Molecular genetics method | 0.729 |  |
+| 3019599 | Protein S actual/normal in Platelet poor plasma by Chromogenic method | 0.729 | 1356 |
+| 3007731 | Thyroxine (T4).prealbumin bound/Prealbumin [Mass Ratio] in Serum or Plasma | 0.729 |  |
+| 3038971 | TH gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.729 |  |
+| 3017523 | Thyroxine (T4)/Thyroxine binding globulin [Mass Ratio] in Serum or Plasma | 0.729 |  |
+| 3011836 | F2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.729 | 1056 |
+| 40758373 | HPFH-6 gene [Presence] in Blood by Molecular genetics method | 0.728 |  |
+| 40758376 | HBA1 gene c.223G>C [Presence] in Blood by Molecular genetics method | 0.727 |  |
+| 42869549 | Maximum expiratory gas flow Respiratory system airway --pre therapy | 0.726 |  |
+| 40757584 | Semen analysis test method | 0.726 |  |
+| 40758366 | HBA2 gene c.427T>C [Presence] in Blood by Molecular genetics method | 0.726 |  |
+| 1092115 | Hereditary thrombosis disorders multigene analysis in Blood by Molecular genetics method | 0.726 |  |
+| 3021002 | Oxygen [Partial pressure] in Inhaled gas | 0.724 |  |
+| 21490780 | Oxygen gas delivered during case [Volume] from Gas delivery system | 0.723 |  |
+| 3041078 | Clot formation [Time] in Blood by Thromboelastography | 0.723 |  |
+| 3041761 | VWF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.723 |  |
+| 3002022 | Protein C Ag actual/normal in Platelet poor plasma by Immunoassay | 0.722 | 1488 |
+| 3032354 | APOE gene allele 2 [Identifier] in Blood or Tissue by Molecular genetics method | 0.722 |  |
+| 3005470 | Maximum expiratory gas flow Respiratory system airway --post therapy | 0.721 |  |
+| 1175473 | ITPA gene g.9330C>A [Type] in Serum or Plasma by Molecular genetics method | 0.720 |  |
+| 3965213 | Electrolytes panel - Venous blood | 0.720 |  |
+| 3044378 | FEV1 --10 minutes post exercise | 0.720 |  |
+| 1989594 | Thrombotic microangiopathy multigene analysis in Blood or Tissue by Molecular genetics method | 0.720 |  |
+| 3051719 | ITGA2B gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.719 |  |
+| 3021114 | Thyroxine (T4).albumin bound/Albumin [Mass Ratio] in Serum or Plasma | 0.718 |  |
+| 3037321 | TTR gene allele 2 [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.718 |  |
+| 3040149 | CFH gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.717 |  |
 | 3045930 | Fatty acid mitochondrial (C8-C18) panel - Serum or Plasma | 0.716 |  |
-| 42868467 | Maximum expiratory gas flow/Predicted maximum expiratory gas flow Respiratory system airway --post bronchodilation | 0.715 |  |
-| 3043980 | Thrombin time.factor substitution immediately after addition of normal plasma in Platelet poor plasma by Coagulation assay | 0.715 |  |
+| 3023055 | Clot Lysis [Time] in Platelet poor plasma by Coagulation assay | 0.715 |  |
 | 3050160 | 3-Hydroxy fatty acid panel - Serum or Plasma | 0.715 |  |
-| 3046589 | Prothrombin time (PT) factor substitution 2H post incubation with 1:4 normal plasma in Platelet poor plasma by Coagulation assay | 0.713 |  |
-| 3046008 | Thrombin time.factor substitution immediately after addition of protamine sulfate in Platelet poor plasma by Coagulation assay | 0.713 | 1069 |
-| 3043450 | Prothrombin time (PT) factor substitution 1H post incubation with 1:4 normal plasma in Platelet poor plasma by Coagulation assay | 0.713 |  |
-| 3033658 | Prothrombin time (PT) actual/Normal | 0.711 | 3000 |
-| 3023329 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter | 0.711 |  |
-| 36032060 | Prothrombin time (PT) factor substitution 1H post incubation with 1:1 normal plasma in Platelet poor plasma by Coagulation assay | 0.710 |  |
+| 3046526 | FEV1 --5 minutes post exercise | 0.715 |  |
+| 3001444 | Plasminogen activator tissue type Ag [Mass/volume] in Platelet poor plasma by Immunoassay | 0.715 |  |
+| 3037122 | Plasminogen activator tissue type-Plasminogen activator inhibitor 1 complex [Mass/volume] in Platelet poor plasma by Immunoassay | 0.715 |  |
+| 1175193 | ITPA gene g.9381A>C [Type] in Serum or Plasma by Molecular genetics method | 0.714 |  |
+| 40763571 | Iron/Transferrin [Ratio] in Serum or Plasma | 0.712 |  |
+| 3007405 | General categories [Interpretation] of Cervical or vaginal smear or scraping by Cyto stain | 0.711 |  |
+| 3046362 | FEV1 --15 minutes post exercise | 0.711 |  |
+| 44816654 | Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum | 0.710 |  |
+| 3031415 | COL3A1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.710 |  |
+| 3043725 | Clot Lysis [Time] in Control Platelet poor plasma by Coagulation assay | 0.709 |  |
+| 42868465 | Maximum expiratory gas flow Respiratory system airway --post bronchodilation | 0.709 |  |
+| 3021182 | F7 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.709 |  |
+| 3043574 | FEV1 --Pre excercise | 0.708 |  |
+| 3024976 | Plasminogen Ag [Mass/volume] in Platelet poor plasma | 0.708 |  |
+| 1001906 | CYP4F2 gene c.1297G>A [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.708 |  |
+| 42528941 | Spontaneous clot formation [Time] in Platelet poor plasma | 0.708 |  |
 | 3046729 | Fatty acid very long chain (C22-C26) panel - Serum or Plasma | 0.708 |  |
+| 3017678 | Lecithin [Units/volume] in Amniotic fluid | 0.707 |  |
+| 36659643 | Aldosterone and sodium panel - 24 hour Urine | 0.706 |  |
 | 36303453 | Omega-3 (EPA+DHA) index in Serum or Plasma | 0.706 |  |
-| 21493444 | Maximum expiratory pressure Respiratory system --post bronchodilation | 0.705 |  |
-| 1616827 | Angiopoietin receptor 2 [Mass/volume] in Serum or Plasma | 0.704 |  |
+| 40761008 | Triiodothyronine (T3)/Triiodothyronine (T3).reverse [Ratio] in Serum or Plasma | 0.706 |  |
+| 3027995 | Electrolytes 1998 panel - Serum or Plasma | 0.705 |  |
+| 21492232 | Plethysmogram Arterial blood Pulse oximetry | 0.705 |  |
+| 3011893 | Reptilase time in Platelet poor plasma from Control by Coagulation assay | 0.703 |  |
+| 3010417 | Phosphatidylglycerol [Mass/volume] in Amniotic fluid | 0.703 |  |
+| 21493451 | Spirometry panel | 0.702 |  |
+| 3045149 | Reason for lab test in Semen | 0.702 |  |
+| 3025763 | Microscopic exam [Interpretation] of Tissue fine needle aspirate by Cytology | 0.701 |  |
+| 21490894 | Expiratory airway gas flow | 0.700 |  |
 | 21490868 | Fatty acid oxidation panel - Fibroblast | 0.700 |  |
-| 3047332 | Spermatozoa IgA and IgG and IgM panel - Serum | 0.699 |  |
-| 36659643 | Aldosterone and sodium panel - 24 hour Urine | 0.697 |  |
-| 40757584 | Semen analysis test method | 0.693 |  |
-| 3027995 | Electrolytes 1998 panel - Serum or Plasma | 0.691 |  |
-| 3024976 | Plasminogen Ag [Mass/volume] in Platelet poor plasma | 0.690 |  |
-| 21491705 | Aldosterone and renin concentration panel - Plasma | 0.689 |  |
-| 21492677 | Synovial fluid analysis panel - Synovial fluid | 0.688 |  |
-| 3045149 | Reason for lab test in Semen | 0.687 |  |
-| 3037122 | Plasminogen activator tissue type-Plasminogen activator inhibitor 1 complex [Mass/volume] in Platelet poor plasma by Immunoassay | 0.685 |  |
-| 40758281 | Aldosterone and renin activity panel - Plasma | 0.682 |  |
-| 3009608 | Thromboglobulin [Mass/volume] in Plasma | 0.682 |  |
-| 40759048 | Interleukin 1 receptor alpha chain soluble [Mass/volume] in Serum or Plasma | 0.681 |  |
+| 3024882 | Oxygen/Total gas setting [Volume Fraction] Ventilator | 0.698 | 457 |
+| 3013833 | Plasminogen activator inhibitor 2 Ag [Mass/volume] in Platelet poor plasma by Immunoassay | 0.697 |  |
+| 42868467 | Maximum expiratory gas flow/Predicted maximum expiratory gas flow Respiratory system airway --post bronchodilation | 0.697 |  |
+| 3016706 | Plasminogen activator tissue type [Mass/volume] in Platelet poor plasma by Chromogenic method | 0.696 |  |
+| 3033157 | Peak flow meter Vendor name | 0.696 |  |
+| 3013585 | Phosphatidylglycerol [Units/volume] in Amniotic fluid | 0.695 |  |
+| 3020692 | Microscopic exam [Interpretation] of Urine by Cytology | 0.695 | 163 |
+| 3049717 | Cytology report of Urine Cyto stain | 0.695 |  |
+| 46235080 | Noninvasive arteriosclerosis studies panel | 0.694 |  |
+| 3041952 | Clot initiation [Time] in Blood by Thromboelastography | 0.693 |  |
+| 3013528 | Clot Retraction [Time] in Blood by Coagulation assay | 0.692 |  |
+| 3011305 | Lecithin/Sphingomyelin [Mass Ratio] in Amniotic fluid | 0.692 |  |
+| 21491705 | Aldosterone and renin concentration panel - Plasma | 0.691 |  |
+| 3002417 | Prothrombin time (PT) in Blood by Coagulation assay | 0.691 |  |
+| 40762347 | Cytologist who read Cyto stain of Specimen | 0.688 |  |
+| 3035904 | Lecithin/Sphingomyelin [Ratio] in Amniotic fluid | 0.687 | 1853 |
+| 3051661 | Cytology report of Sputum Cyto stain | 0.687 |  |
+| 3041070 | Clot formation [Time] in Blood by Thromboelastography.rotational.extrinsic coagulation system activated.fibrinolysis suppressed | 0.687 |  |
+| 40762868 | Phosphatidylglycerol [Moles/volume] in Amniotic fluid | 0.686 |  |
+| 3023329 | Maximum expiratory gas flow Respiratory system airway by Peak flow meter | 0.686 |  |
+| 40758281 | Aldosterone and renin activity panel - Plasma | 0.683 |  |
+| 3031203 | Blood pressure panel | 0.682 |  |
+| 3034016 | Peak flow meter Vendor model code | 0.682 |  |
 | 646557 | Potassium [Measurement] in Serum or Plasma | 0.680 |  |
-| 42528497 | Personal best peak expiratory gas flow Respiratory system airway | 0.671 |  |
-| 3031723 | Peak flow measure duration Respiratory system airway by Peak flow meter | 0.671 |  |
-| 42868463 | Maximum expiratory gas flow Respiratory system airway Predicted | 0.669 |  |
-| 40765359 | PhenX - respiratory - peak expiratory flow rate - PEFR protocol 090801 | 0.662 |  |
-| 42868466 | Maximum expiratory gas flow/Predicted maximum expiratory gas flow Respiratory system airway --pre bronchodilation | 0.659 |  |
-| 42868464 | Maximum expiratory gas flow Respiratory system airway --pre bronchodilation | 0.644 |  |
-| 21490559 | Maximum expiratory gas flow Respiratory system airway --on ventilator | 0.637 |  |
-| 3043729 | Maximum expiratory gas flow Respiratory system airway | 0.636 |  |
+| 21490781 | Oxygen gas delivered.total [Volume] in Reporting period from Gas delivery system | 0.680 |  |
+| 3044016 | Orthostatic blood pressure panel | 0.679 |  |
+| 3036380 | Tidal volume expired/Peak inspiratory pressure --on ventilator | 0.677 |  |
+| 3003246 | Oxygen [Partial pressure] in Exhaled gas | 0.676 |  |
+| 21490696 | Oxygen [VFr/PPres] Gas delivery system | 0.676 |  |
+| 3049411 | Cytology report of Body fluid Cyto stain | 0.674 |  |
+| 3019858 | Maximum voluntary ventilation [Flow] --post bronchodilator/Voluntary ventilation.maximum predicted | 0.672 |  |
+| 3043109 | Cytology report of Tissue fine needle aspirate Cyto stain | 0.671 | 943 |
+| 42868464 | Maximum expiratory gas flow Respiratory system airway --pre bronchodilation | 0.671 |  |
+| 3029849 | Lecithin/Surfactant.total in Amniotic fluid | 0.670 |  |
+| 1761891 | Other cells [#/volume] in Amniotic fluid by Manual count | 0.670 |  |
+| 3034996 | Type of Peak flow meter | 0.669 |  |
+| 42528945 | Clot formation lag time in Platelet poor plasma | 0.667 |  |
+| 3005308 | Reptilase time | 0.665 | 3000 |
+| 3047332 | Spermatozoa IgA and IgG and IgM panel - Serum | 0.664 |  |
+| 3027315 | Oxygen [Partial pressure] in Blood | 0.664 | 87 |
+| 3034930 | Peak flow meter Vendor software version | 0.660 |  |
+| 36031308 | Delta Coagulation [Time] in Platelet poor plasma by aPTT W excess hexagonal phase phospholipid | 0.652 |  |
+| 40769396 | Normalized silica clotting time of Platelet poor plasma | 0.651 |  |
+| 40765359 | PhenX - respiratory - peak expiratory flow rate - PEFR protocol 090801 | 0.649 |  |
+| 3035969 | Recalcification time in Platelet poor plasma by Coagulation assay | 0.649 |  |
+| 42870500 | Reptilase time actual/Normal | 0.649 | 3000 |
+| 1617311 | Time to thrombin peak in Platelet poor plasma by Chromogenic method | 0.649 |  |
+| 37020879 | Carbon monoxide [Mass/volume] in Air | 0.648 |  |
+| 3005629 | Inhaled oxygen flow rate | 0.648 | 174 |
+| 36305632 | Microbiology CNAMTS panel - Semen | 0.646 |  |
+| 3028846 | Blood pressure device panel | 0.645 |  |
+| 40758546 | Short blood pressure panel | 0.642 |  |
+| 36306151 | Blood pressure with exercise and post exercise panel | 0.637 |  |
+| 1259761 | Pulse pressure by Noninvasive | 0.633 |  |
+| 21493953 | Tissue perfusion assessment panel | 0.632 |  |
+| 21492238 | Blood pressure by Noninvasive | 0.627 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 339 | ab-na | mmol/l | 100% | name+unit+values | 1125 | 0 | [130.94, 134.84, 136.62, 138.04, 139.34, 140.42, 141.09, 142.57, 144.87] |  | Arterial blood | Native preparation | Sodium [Moles/volume] in Arterial blood |
-| 340 | ap-lakt | mmol/l | 99% | name+unit+values | 1456 | 0 | [0.68, 0.81, 0.96, 1.1, 1.28, 1.5, 1.81, 2.29, 3.25] |  |  |  | Lactate [Moles/volume] in Arterial plasma |
-| 341 | ap-lakt |  | 1% | name | 18 | 50 |  |  |  |  | Lactate [Moles/volume] in Arterial plasma |
-| 342 | ap-na | % | 0% | name+unit | 24 | 0 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 343 | ap-na | g/l | 0% | name+unit | 6 | 0 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 344 | ap-na | kpa | 0% | name+unit | 12 | 0 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 345 | ap-na | mmol/l | 99% | name+unit+values | 50270 | 0 | [130.71, 133.37, 134.96, 136, 136.98, 137.95, 138.88, 139.98, 141.72] |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 346 | ap-na | °c | 0% | name+unit | 6 | 0 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 347 | ap-na |  | 0% | name | 233 | 92.27 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
-| 348 | ap-nak |  | 100% | name | 155 | 100 |  |  |  |  | Sodium and Potassium panel - Arterial plasma |
-| 349 | b-na | mmol/l | 86% | name+unit+values | 59360 | 0 | [132.76, 134.99, 136.51, 137.61, 138.41, 139.21, 140.23, 141.69, 144.08] |  | Blood | Native preparation | Sodium [Moles/volume] in Blood |
-| 350 | b-na |  | 14% | name+values | 9740 | 95.39 | [132.18, 135.78, 137.16, 138.83, 139, 140, 140.41, 141, 142] |  | Blood | Native preparation | Sodium [Moles/volume] in Blood |
-| 351 | cp-na | mmol/l | 94% | name+unit+values | 305 | 0 | [132, 134.22, 135.76, 137, 138, 139.28, 140, 141.93, 143] |  |  | Native preparation | Sodium [Moles/volume] in Capillary plasma |
-| 352 | cp-na |  | 6% | name | 18 | 100 |  |  |  | Native preparation | Sodium [Moles/volume] in Capillary plasma |
-| 353 | di-na | mmol/l | 98% | name+unit | 307 | 0 |  | Di-Natrium | Dialysis fluid | Native preparation | Sodium [Moles/volume] in Dialysis fluid |
-| 354 | di-na |  | 2% | name | 5 | 100 |  | Di-Natrium | Dialysis fluid | Native preparation | Sodium [Moles/volume] in Dialysis fluid |
-| 355 | du-na | mmol | 72% | name+unit+values | 2785 | 0.25 | [76.79, 98.05, 115.16, 132.8, 151.88, 170.12, 193.55, 223.43, 273.21] | dU-Natrium | 24-hour urine | Native preparation | Sodium [Moles/time] in 24 hour Urine |
-| 356 | du-na | mmol/24h | 2% | name+unit | 60 | 0 |  | dU-Natrium | 24-hour urine | Native preparation | Sodium [Moles/time] in 24 hour Urine |
-| 357 | du-na |  | 26% | name+values | 1021 | 70.23 | [65.53, 84.3, 103.25, 116.92, 139.24, 156.61, 172.58, 210.59, 273.58] | dU-Natrium | 24-hour urine | Native preparation | Sodium [Moles/time] in 24 hour Urine |
-| 358 | fp-ctx | ng/l | 2% | name+unit | 34 | 0 |  |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma |
-| 359 | fp-ctx | ug/l | 71% | name+unit+values | 1281 | 0 | [0.09, 0.14, 0.2, 0.25, 0.3, 0.38, 0.48, 0.6, 0.81] |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma |
-| 360 | fp-ctx |  | 27% | name+values | 491 | 16.7 | [0.12, 0.19, 0.24, 0.31, 0.39, 0.48, 0.58, 0.71, 1] |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Serum or Plasma |
-| 361 | fp-gt | u/l | 99% | name+unit+values | 772 | 0 | [15.6, 19.58, 23.9, 27.61, 33.27, 39.92, 49.93, 68.82, 104.64] |  | Fasting plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma |
-| 362 | fp-gt |  | 1% | name | 11 | 0 |  |  | Fasting plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma |
-| 363 | fp-na | mmol/l | 100% | name+unit+values | 6047 | 0 | [135.6, 137.84, 139, 139.97, 140.01, 141, 141.04, 142, 143] |  | Fasting plasma | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 364 | fp-na |  | 0% | name | 18 | 11.11 |  |  | Fasting plasma | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 365 | p-acth | ng/l | 87% | name+unit+values | 10045 | 0.42 | [8.08, 11.12, 14.1, 17.14, 20.58, 24.79, 30.92, 40.41, 66.95] | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Mass/volume] in Plasma |
-| 366 | p-acth | pmol/l | 0% | name+unit | 7 | 0 |  | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Moles/volume] in Plasma |
-| 367 | p-acth |  | 13% | name+values | 1461 | 80.01 | [9.26, 12.21, 15.18, 18.04, 23.17, 27.09, 32.96, 40.36, 61.68] | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Mass/volume] in Plasma |
-| 368 | p-at3 | % | 98% | name+unit+values | 33387 | 0.01 | [54.15, 67.47, 77.12, 84.9, 91.44, 97.34, 103.31, 110.17, 119.77] | P -Antitrombiini III | Plasma |  | Antithrombin III activity [Ratio] in Plasma |
-| 369 | p-at3 | form | 0% | name+unit | 18 | 0 |  | P -Antitrombiini III | Plasma |  | Antithrombin III activity [Ratio] in Plasma |
-| 370 | p-at3 |  | 2% | name+values | 750 | 50.4 | [77.41, 88.27, 92.93, 97.96, 101.75, 106.37, 110.41, 114.53, 119.94] | P -Antitrombiini III | Plasma |  | Antithrombin III activity [Ratio] in Plasma |
-| 371 | p-at3. | % | 95% | name+unit+values | 4852 | 0 | [82.58, 90.63, 95.72, 100.18, 103.97, 107.65, 111.95, 117.06, 124.39] |  | Plasma |  | Antithrombin III activity [Ratio] in Plasma |
-| 372 | p-at3. |  | 5% | name+values | 269 | 20.45 | [87.63, 92.63, 97.23, 100.8, 104.86, 109.03, 113.28, 117.74, 123.49] |  | Plasma |  | Antithrombin III activity [Ratio] in Plasma |
-| 373 | p-efa | form | 4% | name+unit | 5 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  | Essential fatty acids panel - Plasma |
-| 374 | p-efa |  | 96% | name | 125 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  | Essential fatty acids panel - Plasma |
-| 375 | p-fakb | g/l | 77% | name+unit+values | 120 | 0 | [0.14, 0.17, 0.18, 0.2, 0.21, 0.21, 0.23, 0.26, 0.3] | P -Faktori B | Plasma |  | Complement factor B [Mass/volume] in Plasma |
-| 376 | p-fakb |  | 23% | name | 35 | 25.71 |  | P -Faktori B | Plasma |  | Complement factor B [Mass/volume] in Plasma |
-| 377 | p-fe | umol/l | 79% | name+unit+values | 2840 | 0 | [5.52, 7.66, 9.48, 11.25, 13.18, 14.87, 16.94, 19.46, 23.35] |  | Plasma |  | Iron [Moles/volume] in Serum or Plasma |
-| 378 | p-fe |  | 21% | name+values | 740 | 33.92 | [5.15, 6.78, 8.55, 10.06, 12.18, 14.07, 16.43, 19.54, 23.49] |  | Plasma |  | Iron [Moles/volume] in Serum or Plasma |
-| 379 | p-fs | s | 17% | name+unit+values | 319 | 0 | [28, 29.31, 30.81, 32, 33.17, 35, 36.48, 39.22, 45.08] |  | Plasma |  | Thrombin time [Time] in Plasma |
-| 380 | p-fs |  | 83% | name | 1586 | 99.87 |  |  | Plasma |  | Thrombin time [Time] in Plasma |
-| 381 | p-fv | % | 96% | name+unit+values | 6911 | 0.01 | [43.78, 58.4, 69.62, 80.37, 90.29, 99.93, 110.48, 122.94, 139.52] | P -Hyytymistekijä V | Plasma |  | Coagulation factor V activity [Ratio] in Plasma |
-| 382 | p-fv |  | 4% | name+values | 261 | 40.23 | [68.7, 79.64, 87.53, 94.6, 99.14, 104.6, 110.72, 119.21, 132.72] | P -Hyytymistekijä V | Plasma |  | Coagulation factor V activity [Ratio] in Plasma |
-| 383 | p-fx | % | 49% | name+unit+values | 916 | 0.11 | [46.06, 65.75, 76.36, 83.72, 90.83, 97.78, 104.84, 112.37, 122.61] | P -Hyytymistekijä X | Plasma |  | Coagulation factor X activity [Ratio] in Plasma |
-| 384 | p-fx |  | 51% | name+values | 949 | 87.46 | [66, 76.45, 83.38, 90.43, 96, 100.47, 108.88, 114, 128] | P -Hyytymistekijä X | Plasma |  | Coagulation factor X activity [Ratio] in Plasma |
-| 385 | p-gt | mg/ml | 0% | name+unit | 8 | 0 |  | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma |
-| 386 | p-gt | u/l | 98% | name+unit+values | 820178 | 0.02 | [14.56, 18.66, 23.05, 28.6, 36.08, 47.26, 65.76, 101.29, 195.48] | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma |
-| 387 | p-gt |  | 2% | name+values | 15977 | 100 | [15.82, 20.13, 24.14, 29.03, 35.14, 45.13, 63.31, 89.78, 161.64] | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma |
-| 388 | p-hstni | ng/l | 100% | name+unit+values | 3261 | 0 | [1, 2, 3, 4.12, 6.04, 9.1, 14.48, 27.09, 65.46] |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method |
-| 389 | p-k+na |  | 100% | name | 69230 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
-| 390 | p-k,na |  | 100% | name | 2518 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
-| 391 | p-k-na | mmol/l | 76% | name+unit | 594 | 100 |  |  | Plasma | Native preparation | Potassium and Sodium panel - Plasma |
-| 392 | p-k-na |  | 24% | name | 186 | 100 |  |  | Plasma | Native preparation | Potassium and Sodium panel - Plasma |
-| 393 | p-k-pa | mmol/l | 100% | name+unit+values | 197 | 0 | [3.53, 3.78, 3.9, 4, 4.04, 4.13, 4.3, 4.38, 4.56] |  | Plasma | Long-term / prolonged | Potassium [Moles/volume] in Serum or Plasma |
-| 394 | p-k/na |  | 100% | name | 321 | 100 |  |  | Plasma |  | Potassium/Sodium [Molar ratio] in Plasma |
-| 395 | p-ked. | mmol/l | 100% | name+unit | 344 | 0 |  |  | Plasma |  |  |
-| 396 | p-kjd. | mmol/l | 100% | name+unit | 160 | 0 |  |  | Plasma |  |  |
-| 397 | p-la1 | s | 95% | name+unit+values | 1064 | 0 | [30, 31.95, 33.1, 34.81, 35.99, 37.75, 39.96, 44.96, 54.77] |  | Plasma |  | Lupus anticoagulant screen [Time] in Platelet poor plasma |
-| 398 | p-la1 |  | 5% | name | 52 | 50 |  |  | Plasma |  | Lupus anticoagulant screen [Time] in Platelet poor plasma |
-| 399 | p-la2 | s | 26% | name+unit+values | 498 | 0 | [32, 33.41, 35.41, 36.98, 38.82, 40.9, 43.06, 47.24, 53.65] |  | Plasma |  | Lupus anticoagulant confirm [Time] in Platelet poor plasma |
-| 400 | p-la2 |  | 74% | name | 1411 | 99.43 |  |  | Plasma |  | Lupus anticoagulant confirm [Time] in Platelet poor plasma |
-| 401 | p-mypa | mg/l | 87% | name+unit+values | 1692 | 0.06 | [0.64, 0.99, 1.33, 1.7, 2.12, 2.67, 3.43, 4.39, 6.28] | P -Mykofenolihappo | Plasma |  | Mycophenolic acid [Mass/volume] in Plasma |
-| 402 | p-mypa |  | 13% | name | 245 | 76.33 |  | P -Mykofenolihappo | Plasma |  | Mycophenolic acid [Mass/volume] in Plasma |
-| 403 | p-na | mmol/ | 0% | name+unit | 14 | 0 |  | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 404 | p-na | mmol/l | 99% | name+unit+values | 7320578 | 0.03 | [133.91, 136.27, 137.98, 138.99, 139.95, 140, 141, 142, 143] | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 405 | p-na |  | 1% | name+values | 81059 | 100 | [134.02, 137.07, 138.67, 139, 140, 141, 142, 142.8, 143] | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 406 | p-na. | mmol/l | 100% | name+unit+values | 1467 | 0 | [134.64, 136.99, 138.3, 139.9, 140.54, 141, 142, 142.75, 144] |  | Plasma |  | Sodium [Moles/volume] in Serum or Plasma |
-| 407 | p-na: | mmol/l | 100% | name+unit+values | 621 | 0 | [131.65, 133.8, 135, 136.23, 137.85, 138.61, 139.67, 140.88, 142] |  | Plasma |  | Sodium [Moles/volume] in Serum or Plasma |
-| 408 | p-naed. | mmol/l | 100% | name+unit | 306 | 0 |  |  | Plasma |  | Sodium [Moles/volume] in Serum or Plasma |
-| 409 | p-najd. | mmol/l | 100% | name+unit | 154 | 0 |  |  | Plasma |  | Sodium [Moles/volume] in Serum or Plasma |
-| 410 | p-nak |  | 100% | name | 259040 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
-| 411 | p-nap | mmol/l | 100% | name+unit+values | 342 | 0 | [132.69, 135.3, 137.47, 139, 140, 140.64, 142, 143, 145] |  | Plasma |  | Sodium [Moles/volume] in Serum or Plasma |
-| 412 | p-supar | ug/l | 96% | name+unit+values | 351 | 0 | [2.87, 3.25, 3.63, 3.92, 4.33, 4.73, 5.27, 6.37, 8.21] |  | Plasma |  | Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma |
-| 413 | p-supar |  | 4% | name | 16 | 100 |  |  | Plasma |  | Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma |
-| 414 | p-t3-v | pmol/l | 99% | name+unit+values | 82081 | 0.04 | [3.46, 3.84, 4.11, 4.35, 4.57, 4.81, 5.08, 5.46, 6.26] | P -Trijodityroniini, vapaa | Plasma | Free or unconjugated | Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma |
-| 415 | p-t3-v |  | 1% | name+values | 921 | 100 | [3.47, 3.87, 4.08, 4.31, 4.53, 4.77, 5.02, 5.39, 6.24] | P -Trijodityroniini, vapaa | Plasma | Free or unconjugated | Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma |
-| 416 | p-t4-v | pmol/l | 98% | name+unit+values | 1108128 | 0.01 | [11.98, 13.02, 13.95, 14.63, 15.23, 16.03, 16.92, 17.94, 19.56] | P -Tyroksiini, vapaa | Plasma | Free or unconjugated | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 417 | p-t4-v |  | 2% | name+values | 19446 | 100 | [12, 13.8, 14.44, 15.06, 16, 16.21, 16.99, 17.6, 19] | P -Tyroksiini, vapaa | Plasma | Free or unconjugated | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 418 | p-t4v | pmol/l | 96% | name+unit+values | 110881 | 0 | [12.73, 13.79, 14.57, 15.27, 15.96, 16.68, 17.48, 18.48, 19.99] |  | Plasma |  | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 419 | p-t4v |  | 4% | name+values | 4743 | 100 | [12.19, 13.39, 14.21, 14.93, 15.61, 16.33, 17.17, 18.29, 20.03] |  | Plasma |  | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 420 | p-tfr | mg/l | 92% | name+unit+values | 188406 | 0.02 | [0.81, 1.28, 2.05, 2.5, 2.87, 3.3, 3.83, 4.64, 6.21] | P -Transferriinireseptori, liukoinen | Plasma |  | Soluble transferrin receptor [Mass/volume] in Serum or Plasma |
-| 421 | p-tfr |  | 8% | name+values | 15951 | 100 | [2.12, 2.53, 2.87, 3.21, 3.63, 4.15, 4.81, 5.75, 7.59] | P -Transferriinireseptori, liukoinen | Plasma |  | Soluble transferrin receptor [Mass/volume] in Serum or Plasma |
-| 422 | p-tni | ng/l | 70% | name+unit+values | 220095 | 0 | [4, 5.13, 7.13, 10.22, 15.11, 24.46, 46.82, 122.37, 829.48] | P -Troponiini I | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 423 | p-tni | ug/l | 8% | name+unit+values | 25579 | 0 | [0.01, 0.01, 0.02, 0.02, 0.03, 0.05, 0.08, 0.16, 0.78] | P -Troponiini I | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 424 | p-tni |  | 22% | name+values | 70910 | 100 | [0.05, 0.22, 2.89, 4.65, 7.45, 12.28, 24.91, 48.92, 145.81] | P -Troponiini I | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 425 | p-tni. | ng/l | 3% | name+unit | 6 | 0 |  |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 426 | p-tni. | ug/l | 82% | name+unit+values | 155 | 0 | [0, 0, 0, 0, 0, 0, 0.01, 0.02, 0.06] |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 427 | p-tni. |  | 15% | name | 28 | 100 |  |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 428 | p-tnih | ng/l | 82% | name+unit+values | 1974 | 0 | [4, 5.78, 7.89, 10.8, 16.52, 27.69, 54.92, 168.16, 1593.63] |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method |
-| 429 | p-tnih |  | 18% | name | 440 | 100 |  |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma by High sensitivity method |
-| 430 | p-tnl | ng/l | 37% | name+unit+values | 124 | 0 | [3, 4, 5.16, 7, 10, 12.72, 29.97, 89.8, 240.6] |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 431 | p-tnl | ug/l | 53% | name+unit+values | 179 | 0 | [0, 0, 0, 0, 0, 0.01, 0.01, 0.02, 0.05] |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 432 | p-tnl |  | 11% | name | 36 | 100 |  |  | Plasma |  | Troponin I.cardiac [Mass/volume] in Plasma |
-| 433 | p-tnt | ng/l | 84% | name+unit+values | 437584 | 0.96 | [6.97, 9.13, 11.78, 15.03, 19.12, 24.8, 33.92, 51.22, 106.22] | P -Troponiini T | Plasma |  | Troponin T.cardiac [Mass/volume] in Plasma |
-| 434 | p-tnt | ug/l | 0% | name+unit | 76 | 0 |  | P -Troponiini T | Plasma |  | Troponin T.cardiac [Mass/volume] in Plasma |
-| 435 | p-tnt |  | 15% | name+values | 80220 | 100 | [6.97, 8.93, 11.46, 14.61, 18.09, 22.79, 29.94, 42.37, 74.82] | P -Troponiini T | Plasma |  | Troponin T.cardiac [Mass/volume] in Plasma |
-| 436 | p-tt | % | 99% | name+unit+values | 472003 | 0.01 | [50.44, 65.04, 74.28, 81.62, 88.26, 94.73, 101.62, 109.77, 121.26] | P -Tromboplastiiniaika | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 437 | p-tt | form | 0% | name+unit | 20 | 0 |  | P -Tromboplastiiniaika | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 438 | p-tt |  | 1% | name+values | 4462 | 100 | [41.42, 56.72, 66.85, 77.09, 85.82, 93.79, 102.07, 112.01, 126.16] | P -Tromboplastiiniaika | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 439 | p-tt- | % | 98% | name+unit+values | 1432 | 0 | [60.12, 72.07, 78.16, 83.25, 88.78, 95.39, 102.35, 111.94, 122.43] |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 440 | p-tt- |  | 2% | name | 29 | 96.55 |  |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 441 | p-tt. | % | 94% | name+unit+values | 5628 | 0 | [63.13, 78.7, 87.12, 93.57, 99.77, 105.67, 112.42, 119.67, 130.89] |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 442 | p-tt. |  | 6% | name+values | 328 | 31.4 | [48, 79.63, 90.12, 98.65, 107.18, 114.33, 121.82, 130.4, 140] |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 443 | p-ttr | % | 93% | name+unit+values | 1114 | 0 | [50.89, 61.27, 67.88, 73.89, 78.52, 83.07, 89.29, 95.08, 100] |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 444 | p-ttr |  | 7% | name | 89 | 89.89 |  |  | Plasma |  | Prothrombin time [Ratio] in Plasma |
-| 445 | pdgfr |  | 100% | name | 461 | 100 |  |  |  |  | PDGFR gene targeted mutation analysis |
-| 446 | peak | l/min | 10% | name+unit | 12 | 0 |  |  |  |  | Peak expiratory flow rate [Volume Rate] |
-| 447 | peak |  | 90% | name | 104 | 100 |  |  |  |  | Peak expiratory flow rate [Volume Rate] |
-| 448 | pef-pa |  | 100% | name | 7844 | 99.92 |  | Uloshengityksen huippuvirtaus, sarjamittaus, pitkäaikaisseuranta |  | Long-term / prolonged | Peak expiratory flow rate during monitoring period |
-| 449 | pef-ras |  | 100% | name | 242 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, rasituskoe |  |  | Peak expiratory flow rate [Volume Rate] --post exercise |
-| 450 | pf-ace | u/l | 66% | name+unit+values | 313 | 3.19 | [6.4, 10.22, 12.78, 15.45, 17.82, 19.96, 24.1, 28.83, 37.4] | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid |
-| 451 | pf-ace |  | 34% | name | 161 | 98.14 |  | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid |
-| 452 | pf-ada | u/l | 91% | name+unit+values | 3550 | 0.14 | [3.68, 5.14, 6.78, 8.01, 9.46, 11.17, 13.55, 17.33, 25.48] | Pf-Adenosiinideaminaasi | Pleural fluid |  | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid |
-| 453 | pf-ada |  | 9% | name | 365 | 90.96 |  | Pf-Adenosiinideaminaasi | Pleural fluid |  | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid |
-| 454 | pneag |  | 100% | name | 244 | 100 |  |  |  |  |  |
-| 455 | s-na | mmol/l | 99% | name+unit+values | 124118 | 0 | [137.36, 138.84, 139.01, 140, 140.14, 141, 141.38, 142, 143] | S -Natrium | Serum | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 456 | s-na | mol/l | 0% | name+unit | 5 | 0 |  | S -Natrium | Serum | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 457 | s-na |  | 1% | name+values | 931 | 67.35 | [137.2, 138, 139, 139, 140, 140, 141, 141, 142.37] | S -Natrium | Serum | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 458 | s-t3-v | pmol/l | 92% | name+unit+values | 18657 | 0 | [3.72, 4.06, 4.3, 4.5, 4.69, 4.9, 5.13, 5.43, 6.06] | S -Trijodityroniini, vapaa | Serum | Free or unconjugated | Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma |
-| 459 | s-t3-v |  | 8% | name+values | 1623 | 51.2 | [3.55, 3.8, 4.02, 4.22, 4.41, 4.6, 4.85, 5.16, 5.82] | S -Trijodityroniini, vapaa | Serum | Free or unconjugated | Triiodothyronine (T3).free [Moles/volume] in Serum or Plasma |
-| 460 | s-t4-v | pmol/l | 96% | name+unit+values | 252259 | 0 | [11.09, 12, 12.88, 13.14, 13.97, 14.48, 15.15, 16.1, 17.48] | S -Tyroksiini, vapaa | Serum | Free or unconjugated | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 461 | s-t4-v |  | 4% | name+values | 9900 | 100 | [12.03, 12.98, 13.72, 14.35, 14.94, 15.68, 16.39, 17.25, 18.59] | S -Tyroksiini, vapaa | Serum | Free or unconjugated | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 462 | s-t4v | pmol/l | 100% | name+unit+values | 1086 | 0 | [12.85, 13, 14, 14.52, 15, 15.93, 16, 17, 18] |  | Serum |  | Thyroxine (T4).free [Moles/volume] in Serum or Plasma |
-| 463 | s-tfr | mg | 0% | name+unit | 7 | 0 |  | S -Transferriinireseptori, liukoinen | Serum |  | Soluble transferrin receptor [Mass/volume] in Serum or Plasma |
-| 464 | s-tfr | mg/l | 98% | name+unit+values | 77760 | 0 | [1, 1.22, 1.5, 1.89, 2.35, 2.8, 3.34, 4.1, 5.59] | S -Transferriinireseptori, liukoinen | Serum |  | Soluble transferrin receptor [Mass/volume] in Serum or Plasma |
-| 465 | s-tfr |  | 2% | name+values | 1379 | 100 | [1.84, 2.22, 2.62, 3.08, 3.57, 4.23, 5.1, 6.26, 8.15] | S -Transferriinireseptori, liukoinen | Serum |  | Soluble transferrin receptor [Mass/volume] in Serum or Plasma |
-| 466 | s-tnf | ng/l | 67% | name+unit+values | 100 | 0 | [4.65, 5.4, 6.33, 7.11, 7.81, 8.85, 10.5, 13.2, 23.25] | S -Tuumorinekroositekijä, alfa | Serum |  | Tumor necrosis factor alpha [Mass/volume] in Serum |
-| 467 | s-tnf |  | 33% | name | 50 | 74 |  | S -Tuumorinekroositekijä, alfa | Serum |  | Tumor necrosis factor alpha [Mass/volume] in Serum |
-| 468 | s-tni | ng/l | 26% | name+unit+values | 63 | 0 | [2.98, 3.29, 4.36, 4.96, 6.38, 8.72, 14.54, 33, 54.53] | S -Troponiini I | Serum |  | Troponin I.cardiac [Mass/volume] in Serum |
-| 469 | s-tni | ug/l | 4% | name+unit | 11 | 0 |  | S -Troponiini I | Serum |  | Troponin I.cardiac [Mass/volume] in Serum |
-| 470 | s-tni |  | 70% | name | 171 | 100 |  | S -Troponiini I | Serum |  | Troponin I.cardiac [Mass/volume] in Serum |
-| 471 | s-tnt | ng/l | 2% | name+unit+values | 149 | 0 | [40, 42, 45.21, 51.23, 64.69, 87.1, 139.39, 201.81, 358.2] | S -Troponiini T | Serum |  | Troponin T.cardiac [Mass/volume] in Serum |
-| 472 | s-tnt |  | 98% | name | 7446 | 99.38 |  | S -Troponiini T | Serum |  | Troponin T.cardiac [Mass/volume] in Serum |
-| 473 | s-tob | mg/l | 59% | name+unit+values | 805 | 0.99 | [0.29, 0.5, 0.61, 0.8, 1.01, 1.26, 1.54, 1.91, 3.02] | S -Tobramysiini | Serum |  | Tobramycin [Mass/volume] in Serum |
-| 474 | s-tob |  | 41% | name | 560 | 81.96 |  | S -Tobramysiini | Serum |  | Tobramycin [Mass/volume] in Serum |
-| 475 | sp-pak |  | 100% | name | 196 | 100 |  |  | Sperm / semen |  | Semen analysis panel - Semen |
-| 476 | sp-pakd |  | 100% | name | 138 | 100 |  |  | Sperm / semen |  | Semen analysis panel - Semen |
-| 477 | u-na | mmol/l | 77% | name+unit+values | 8969 | 1.33 | [24.74, 32.42, 40.4, 48.4, 57.53, 68.16, 81.75, 99.14, 129.68] | U -Natrium | Urine | Native preparation | Sodium [Moles/volume] in Urine |
-| 478 | u-na |  | 23% | name+values | 2662 | 76.37 | [27.27, 35.54, 43.11, 51.43, 60.05, 68.34, 78.15, 92.47, 111.65] | U -Natrium | Urine | Native preparation | Sodium [Moles/volume] in Urine |
-| 479 | v-na |  | 100% | name+values | 265 | 0.75 | [130.22, 134.26, 135.98, 137.59, 138.5, 139.03, 140, 141, 142] |  |  | Native preparation | Sodium [Moles/volume] in Blood |
-| 480 | vp-na | mmol/l | 98% | name+unit+values | 10896 | 0 | [132.84, 135.34, 136.96, 137.97, 138.99, 139.84, 140.33, 141.08, 142.49] |  |  | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
-| 481 | vp-na |  | 2% | name | 174 | 98.28 |  |  |  | Native preparation | Sodium [Moles/volume] in Serum or Plasma |
+| 333 | ab-na | mmol/l | 100% | name+unit+values | 1125 | 0 | [131.07, 134.74, 136.65, 138.04, 139.27, 140.42, 141.11, 142.54, 144.85] |  | Arterial blood | Native preparation | Sodium [Moles/volume] in Arterial blood |
+| 334 | am-lamel | e9/l | 97% | name+unit+values | 327 | 0 | [8.22, 12.77, 17.47, 21.27, 27.86, 33.66, 40.76, 49.86, 62.49] | Am-Lamellaarikappaleet | Amniotic fluid |  | Lamellar Body [#/volume] in Amniotic fluid |
+| 335 | am-lamel |  | 3% | name | 10 | 100 |  | Am-Lamellaarikappaleet | Amniotic fluid |  | Lamellar Body [#/volume] in Amniotic fluid |
+| 336 | ap-lakt | mmol/l | 99% | name+unit+values | 1456 | 0 | [0.69, 0.81, 0.96, 1.1, 1.28, 1.51, 1.82, 2.3, 3.23] |  |  |  | Lactate [Moles/volume] in Arterial plasma |
+| 337 | ap-lakt |  | 1% | name | 18 | 100 |  |  |  |  | Lactate [Moles/volume] in Arterial plasma |
+| 338 | ap-na | mmol/l | 100% | name+unit+values | 50270 | 0.07 | [130.69, 133.39, 134.98, 136, 136.99, 137.94, 138.91, 139.95, 141.72] |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
+| 339 | ap-na |  | 0% | name | 233 | 100 |  |  |  | Native preparation | Sodium [Moles/volume] in Arterial plasma |
+| 340 | ap-nak |  | 100% | name | 155 | 100 |  |  |  |  | Sodium and Potassium panel - Arterial plasma |
+| 341 | b-na | mmol/l | 86% | name+unit+values | 59360 | 0 | [132.83, 135.08, 136.5, 137.68, 138.42, 139.02, 140.21, 141.76, 144.07] |  | Blood | Native preparation | Sodium [Moles/volume] in Blood |
+| 342 | b-na |  | 14% | name+values | 9740 | 100 | [132, 135.65, 137.06, 138.86, 139, 140, 140.25, 141, 142] |  | Blood | Native preparation | Sodium [Moles/volume] in Blood |
+| 343 | cp-na | mmol/l | 94% | name+unit+values | 305 | 0 | [132, 134.13, 135.88, 137, 138, 139.24, 140, 141.93, 143] |  |  | Native preparation | Sodium [Moles/volume] in Capillary plasma |
+| 344 | cp-na |  | 6% | name | 18 | 100 |  |  |  | Native preparation | Sodium [Moles/volume] in Capillary plasma |
+| 345 | di-na | mmol/l | 100% | name+unit | 307 | 0 |  | Di-Natrium | Dialysis fluid | Native preparation | Sodium [Moles/volume] in Dialysis fluid |
+| 346 | du-na | mmol/24h | 74% | name+unit+values | 2845 | 0 | [76.9, 98.34, 115.34, 133.54, 151.44, 169.81, 193.27, 222.7, 272.41] | dU-Natrium | 24-hour urine | Native preparation | Sodium [Moles/time] in 24 hour Urine |
+| 347 | du-na |  | 26% | name+values | 1021 | 100 | [65.99, 83.48, 103.21, 117.93, 138.14, 155.68, 172.4, 209.91, 273.5] | dU-Natrium | 24-hour urine | Native preparation | Sodium [Moles/time] in 24 hour Urine |
+| 348 | fp-alat | u/l | 100% | name+unit+values | 1830 | 0 | [14.7, 17.39, 20.07, 22.45, 25.26, 29.41, 34.57, 41.87, 57.54] |  | Fasting plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 349 | fp-ctx | ng/l | 2% | name+unit | 34 | 0 |  |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Plasma |
+| 350 | fp-ctx | ug/l | 71% | name+unit+values | 1281 | 0.23 | [0.09, 0.14, 0.2, 0.25, 0.3, 0.38, 0.48, 0.61, 0.81] |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Plasma |
+| 351 | fp-ctx |  | 27% | name+values | 491 | 100 | [0.12, 0.19, 0.26, 0.33, 0.42, 0.53, 0.63, 0.85, 1.5] |  | Fasting plasma |  | Collagen type I C-terminal telopeptide [Mass/volume] in Plasma |
+| 352 | fp-gt | u/l | 99% | name+unit+values | 772 | 0 | [15.59, 19.58, 23.9, 27.78, 33.1, 39.95, 49.61, 68.78, 105.4] |  | Fasting plasma |  | Gamma glutamyltransferase [Enzymatic activity/volume] in Plasma |
+| 353 | fp-gt |  | 1% | name | 11 | 100 |  |  | Fasting plasma |  | Gamma glutamyltransferase [Enzymatic activity/volume] in Plasma |
+| 354 | fp-na | mmol/l | 100% | name+unit+values | 6047 | 0 | [135.62, 137.92, 138.99, 139.97, 140.04, 141, 141.08, 142, 143] |  | Fasting plasma | Native preparation | Sodium [Moles/volume] in Plasma |
+| 355 | fp-na |  | 0% | name | 18 | 100 |  |  | Fasting plasma | Native preparation | Sodium [Moles/volume] in Plasma |
+| 356 | happi | % | 48% | name+unit+values | 838 | 0.24 | [25.89, 29.25, 34.66, 40, 44.71, 48.76, 54.72, 63.33, 83.17] |  |  |  | Oxygen saturation [Volume Fraction] in Blood |
+| 357 | happi | l | 8% | name+unit+values | 132 | 0 | [1, 1.5, 2, 2, 2, 2.93, 3, 3.9, 6.43] |  |  |  | Oxygen [Volume] in Gas |
+| 358 | happi | l/min | 0% | name+unit | 6 | 0 |  |  |  |  | Oxygen [Volume/time] in Gas |
+| 359 | happi |  | 44% | name | 774 | 100 |  |  |  |  | Oxygen saturation [Volume Fraction] in Blood |
+| 360 | j-papa |  | 100% | name | 183 | 100 |  |  |  |  | Cytology [Interpretation] of Specimen by Papanicolaou stain |
+| 361 | p-acth | ng/l | 87% | name+unit+values | 10045 | 0 | [8.1, 11.17, 14.07, 17.18, 20.62, 24.78, 30.97, 40.56, 66.81] | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Mass/volume] in Plasma |
+| 362 | p-acth | pmol/l | 0% | name+unit | 7 | 0 |  | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Moles/volume] in Plasma |
+| 363 | p-acth |  | 13% | name+values | 1461 | 100 | [9.3, 12.05, 15.2, 18.33, 23.32, 27.18, 33.07, 40.35, 63.93] | P -Adrenokortikotropiini | Plasma |  | Adrenocorticotropic hormone [Mass/volume] in Plasma |
+| 364 | p-alat | u/l | 97% | name+unit+values | 4827160 | 0 | [12.96, 15.82, 18.44, 20.97, 24.18, 27.92, 33.04, 41.55, 60.15] | P -Alaniiniaminotransferaasi | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 365 | p-alat | umol/l | 0% | name+unit | 23 | 0 |  | P -Alaniiniaminotransferaasi | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 366 | p-alat |  | 3% | name | 133418 | 100 |  | P -Alaniiniaminotransferaasi | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 367 | p-alat. | u/l | 99% | name+unit+values | 896 | 0 | [12.41, 15.26, 17.78, 20.06, 22.46, 25.38, 29.04, 35.69, 47.17] |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 368 | p-alat. |  | 1% | name | 10 | 100 |  |  | Plasma |  | Alanine aminotransferase [Enzymatic activity/volume] in Plasma |
+| 369 | p-asat | u/l | 97% | name+unit+values | 466423 | 0 | [16.61, 19.52, 21.89, 24.36, 26.99, 30.42, 35.39, 44.79, 70.46] | P -Aspartaattiaminotransferaasi | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Plasma |
+| 370 | p-asat | umol/l | 0% | name+unit+values | 215 | 0 | [17.67, 20, 22.09, 24.95, 26.7, 28.89, 32.58, 37.69, 51.22] | P -Aspartaattiaminotransferaasi | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Plasma |
+| 371 | p-asat |  | 3% | name | 14767 | 100 |  | P -Aspartaattiaminotransferaasi | Plasma |  | Aspartate aminotransferase [Enzymatic activity/volume] in Plasma |
+| 372 | p-at3 | % | 98% | name+unit+values | 33387 | 0 | [53.99, 67.43, 77.05, 84.9, 91.49, 97.39, 103.39, 110.16, 119.61] | P -Antitrombiini III | Plasma |  | Antithrombin III [Ratio] in Plasma |
+| 373 | p-at3 | form | 0% | name+unit | 18 | 0 |  | P -Antitrombiini III | Plasma |  | Antithrombin III gene [Identifier] in Blood by Molecular genetics method |
+| 374 | p-at3 |  | 2% | name+values | 750 | 100 | [77.31, 88.51, 92.97, 98.3, 102.33, 106.75, 110.2, 114.52, 120] | P -Antitrombiini III | Plasma |  | Antithrombin III [Ratio] in Plasma |
+| 375 | p-at3. | % | 95% | name+unit+values | 4852 | 0 | [82.69, 90.71, 95.75, 100.16, 103.96, 107.71, 111.91, 117.1, 124.45] |  | Plasma |  | Antithrombin III [Ratio] in Plasma |
+| 376 | p-at3. |  | 5% | name+values | 269 | 100 | [87.62, 92.42, 97.42, 100.6, 104.78, 109, 113.23, 117.65, 123.61] |  | Plasma |  | Antithrombin III [Ratio] in Plasma |
+| 377 | p-efa |  | 100% | name | 125 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  | Essential fatty acids panel - Plasma |
+| 378 | p-fakb | g/l | 77% | name+unit+values | 120 | 0 | [0.14, 0.16, 0.18, 0.2, 0.21, 0.21, 0.23, 0.26, 0.3] | P -Faktori B | Plasma |  | Coagulation factor B [Mass/volume] in Plasma |
+| 379 | p-fakb |  | 23% | name | 35 | 100 |  | P -Faktori B | Plasma |  | Coagulation factor B [Mass/volume] in Plasma |
+| 380 | p-fe | umol/l | 79% | name+unit+values | 2840 | 0 | [5.54, 7.67, 9.48, 11.27, 13.17, 14.88, 16.93, 19.43, 23.36] |  | Plasma |  | Iron [Moles/volume] in Plasma |
+| 381 | p-fe |  | 21% | name+values | 740 | 100 | [5.17, 6.79, 8.59, 10.13, 12.1, 14.06, 16.49, 19.49, 23.47] |  | Plasma |  | Iron [Moles/volume] in Plasma |
+| 382 | p-fs | s | 17% | name+unit+values | 319 | 0 | [28, 29.37, 30.81, 32, 33.25, 34.95, 36.52, 39.34, 45.23] |  | Plasma |  | Coagulation screen [Time] in Plasma |
+| 383 | p-fs |  | 83% | name | 1586 | 100 |  |  | Plasma |  | Coagulation screen [Time] in Plasma |
+| 384 | p-fv | % | 96% | name+unit+values | 6911 | 0.03 | [43.57, 58.38, 70.05, 80.34, 90.27, 99.83, 110.54, 122.66, 139.92] | P -Hyytymistekijä V | Plasma |  | Coagulation factor V [Ratio] in Plasma |
+| 385 | p-fv |  | 4% | name+values | 261 | 100 | [69.88, 80.83, 88.32, 96.16, 100.54, 105.37, 112.35, 122.09, 134.3] | P -Hyytymistekijä V | Plasma |  | Coagulation factor V [Ratio] in Plasma |
+| 386 | p-fx | % | 49% | name+unit+values | 916 | 0.22 | [45.39, 65.84, 76.4, 83.62, 90.78, 97.89, 105.11, 112.7, 123.23] | P -Hyytymistekijä X | Plasma |  | Coagulation factor X [Ratio] in Plasma |
+| 387 | p-fx |  | 51% | name+values | 949 | 100 | [66, 78.85, 83.42, 90.36, 95.2, 99.28, 105.22, 113.1, 120.2] | P -Hyytymistekijä X | Plasma |  | Coagulation factor X [Ratio] in Plasma |
+| 388 | p-gt | mg/ml | 0% | name+unit | 8 | 0 |  | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyltransferase [Mass/volume] in Plasma |
+| 389 | p-gt | u/l | 98% | name+unit+values | 820178 | 0 | [14.61, 18.77, 23.38, 29.11, 36.97, 48.58, 67.09, 102.78, 197.74] | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyltransferase [Enzymatic activity/volume] in Plasma |
+| 390 | p-gt |  | 2% | name | 15977 | 100 |  | P -Glutamyylitransferaasi | Plasma |  | Gamma glutamyltransferase [Enzymatic activity/volume] in Plasma |
+| 391 | p-k+na |  | 100% | name | 69230 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
+| 392 | p-k,na |  | 100% | name | 2518 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
+| 393 | p-k-na | mmol/l | 76% | name+unit | 594 | 0 |  |  | Plasma | Native preparation | Potassium and Sodium panel - Plasma |
+| 394 | p-k-na |  | 24% | name | 186 | 100 |  |  | Plasma | Native preparation | Potassium and Sodium panel - Plasma |
+| 395 | p-k-pa | mmol/l | 100% | name+unit+values | 197 | 0 | [3.52, 3.78, 3.9, 3.99, 4.05, 4.12, 4.3, 4.38, 4.56] |  | Plasma | Long-term / prolonged | Potassium [Moles/volume] in Plasma |
+| 396 | p-k/na |  | 100% | name | 321 | 100 |  |  | Plasma |  | Potassium and Sodium panel - Plasma |
+| 397 | p-ked. | mmol/l | 100% | name+unit | 344 | 0 |  |  | Plasma |  | Potassium [Moles/volume] in Plasma --pre dialysis |
+| 398 | p-kjd. | mmol/l | 100% | name+unit | 160 | 0 |  |  | Plasma |  | Potassium [Moles/volume] in Plasma --post dialysis |
+| 399 | p-la1 | s | 95% | name+unit+values | 1064 | 0 | [30.03, 32, 33.13, 34.76, 36.01, 37.8, 39.95, 44.95, 54.82] |  | Plasma |  | Lupus anticoagulant screen [Time] in Platelet poor plasma |
+| 400 | p-la1 |  | 5% | name | 52 | 100 |  |  | Plasma |  | Lupus anticoagulant screen [Time] in Platelet poor plasma |
+| 401 | p-la2 | s | 26% | name+unit+values | 498 | 0 | [32, 33.5, 35.52, 37, 38.95, 40.99, 43.05, 47.4, 53.69] |  | Plasma |  | Lupus anticoagulant confirm [Time] in Platelet poor plasma |
+| 402 | p-la2 |  | 74% | name | 1411 | 100 |  |  | Plasma |  | Lupus anticoagulant confirm [Time] in Platelet poor plasma |
+| 403 | p-laite | ug/l | 100% | name+unit+values | 106 | 0 | [2.9, 3.2, 3.49, 3.68, 4.03, 4.44, 5.31, 6.24, 7.96] |  | Plasma |  | Lamotrigine [Mass/volume] in Plasma |
+| 404 | p-lam/m |  | 100% | name+values | 1896 | 100 | [1.02, 1.07, 1.11, 1.14, 1.16, 1.19, 1.21, 1.24, 1.28] |  | Plasma |  | Lupus anticoagulant mix [Ratio] in Platelet poor plasma |
+| 405 | p-mypa | mg/l | 87% | name+unit+values | 1692 | 0 | [0.63, 0.99, 1.33, 1.71, 2.12, 2.67, 3.43, 4.41, 6.29] | P -Mykofenolihappo | Plasma |  | Mycophenolic acid [Mass/volume] in Plasma |
+| 406 | p-mypa |  | 13% | name | 245 | 100 |  | P -Mykofenolihappo | Plasma |  | Mycophenolic acid [Mass/volume] in Plasma |
+| 407 | p-na | mmol/ | 0% | name+unit | 14 | 0 |  | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Plasma |
+| 408 | p-na | mmol/l | 99% | name+unit+values | 7320578 | 0 | [134.08, 136.46, 137.96, 139, 139.93, 140.11, 141, 142, 143] | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Plasma |
+| 409 | p-na |  | 1% | name | 81059 | 100 |  | P -Natrium | Plasma | Native preparation | Sodium [Moles/volume] in Plasma |
+| 410 | p-na. | mmol/l | 100% | name+unit+values | 1467 | 0 | [134.62, 137, 138.31, 139.89, 140.56, 141, 142, 142.86, 144] |  | Plasma |  | Sodium [Moles/volume] in Plasma |
+| 411 | p-na: | mmol/l | 100% | name+unit+values | 621 | 0 | [131.69, 133.81, 135, 136.19, 137.81, 138.69, 139.63, 140.92, 142] |  | Plasma |  | Sodium [Moles/volume] in Plasma |
+| 412 | p-naed. | mmol/l | 100% | name+unit | 306 | 0 |  |  | Plasma |  | Sodium [Moles/volume] in Plasma --pre dialysis |
+| 413 | p-najd. | mmol/l | 100% | name+unit | 154 | 0 |  |  | Plasma |  | Sodium [Moles/volume] in Plasma --post dialysis |
+| 414 | p-nak |  | 100% | name | 259040 | 100 |  |  | Plasma |  | Sodium and Potassium panel - Plasma |
+| 415 | p-nap | mmol/l | 100% | name+unit+values | 342 | 0.29 | [132.72, 135.18, 137.36, 139, 140, 140.67, 141.97, 143, 145] |  | Plasma |  | Sodium [Moles/volume] in Plasma |
+| 416 | p-pc | % | 90% | name+unit+values | 7171 | 0 | [82.04, 95.56, 103.31, 110.09, 116.75, 123.11, 129.91, 139.06, 152.29] | P -Proteiini C | Plasma |  | Protein C functional [Ratio] in Plasma |
+| 417 | p-pc | form | 0% | name+unit | 12 | 0 |  | P -Proteiini C | Plasma |  | Protein C gene [Identifier] in Blood by Molecular genetics method |
+| 418 | p-pc |  | 10% | name+values | 763 | 100 | [85.52, 97.63, 105.02, 110.24, 116.71, 123.09, 130.39, 139.57, 155.46] | P -Proteiini C | Plasma |  | Protein C functional [Ratio] in Plasma |
+| 419 | p-pct | ng/ml | 5% | name+unit+values | 1499 | 0 | [0.1, 0.1, 0.2, 0.28, 0.4, 0.64, 1.17, 2.72, 8.99] | P -Prokalsitoniini | Plasma |  | Procalcitonin [Mass/volume] in Plasma |
+| 420 | p-pct | ug/l | 91% | name+unit+values | 25253 | 0 | [0.07, 0.1, 0.13, 0.18, 0.26, 0.4, 0.68, 1.41, 5.19] | P -Prokalsitoniini | Plasma |  | Procalcitonin [Mass/volume] in Plasma |
+| 421 | p-pct |  | 4% | name | 1082 | 100 |  | P -Prokalsitoniini | Plasma |  | Procalcitonin [Mass/volume] in Plasma |
+| 422 | p-pi | mmol/l | 99% | name+unit+values | 186393 | 0 | [0.74, 0.87, 0.96, 1.05, 1.13, 1.23, 1.34, 1.5, 1.79] | P -Fosfaatti, epäorgaaninen | Plasma |  | Phosphate [Moles/volume] in Plasma |
+| 423 | p-pi |  | 1% | name | 2732 | 100 |  | P -Fosfaatti, epäorgaaninen | Plasma |  | Phosphate [Moles/volume] in Plasma |
+| 424 | p-prl | mu/l | 98% | name+unit+values | 10459 | 0 | [139.86, 185.19, 223.46, 260.99, 305.79, 361.97, 438.81, 570.22, 911.44] | P -Prolaktiini | Plasma |  | Prolactin [Units/volume] in Plasma |
+| 425 | p-prl | nmol/l | 0% | name+unit | 16 | 0 |  | P -Prolaktiini | Plasma |  | Prolactin [Moles/volume] in Plasma |
+| 426 | p-prl |  | 2% | name | 162 | 100 |  | P -Prolaktiini | Plasma |  | Prolactin [Units/volume] in Plasma |
+| 427 | p-ps | % | 79% | name+unit+values | 1651 | 0 | [65.21, 76.7, 83.61, 90.03, 95.98, 101.09, 108.67, 116.41, 129.83] | P -Proteiini S | Plasma | Basic screening | Protein S functional [Ratio] in Plasma |
+| 428 | p-ps |  | 21% | name+values | 443 | 100 | [67.73, 78.79, 88.29, 94.24, 100.12, 106.66, 112.61, 120.5, 131.45] | P -Proteiini S | Plasma | Basic screening | Protein S functional [Ratio] in Plasma |
+| 429 | p-psa | ug/l | 88% | name+unit+values | 440363 | 0 | [0.27, 0.54, 0.84, 1.21, 1.72, 2.49, 3.62, 5.6, 9.72] | P -Prostataspesifinen antigeeni | Plasma |  | Prostate specific Ag [Mass/volume] in Plasma |
+| 430 | p-psa |  | 12% | name | 61308 | 100 |  | P -Prostataspesifinen antigeeni | Plasma |  | Prostate specific Ag [Mass/volume] in Plasma |
+| 431 | p-pt | s | 100% | name+unit | 184 | 0 |  |  | Plasma |  | Prothrombin time (PT) [Time] in Platelet poor plasma |
+| 432 | p-rvvt-l |  | 100% | name | 1894 | 100 |  |  | Plasma |  | Russell viper venom time [Time] in Platelet poor plasma |
+| 433 | p-supar | ug/l | 96% | name+unit+values | 351 | 0 | [2.88, 3.25, 3.62, 3.93, 4.32, 4.72, 5.27, 6.34, 8.2] |  | Plasma |  | Urokinase plasminogen activator R.soluble [Mass/volume] in Plasma |
+| 434 | p-supar |  | 4% | name | 16 | 100 |  |  | Plasma |  | Urokinase plasminogen activator R.soluble [Mass/volume] in Plasma |
+| 435 | p-tfr | mg/l | 92% | name+unit+values | 188406 | 0 | [0.9, 1.59, 2.26, 2.65, 3.02, 3.46, 4.03, 4.87, 6.51] | P -Transferriinireseptori, liukoinen | Plasma |  | Transferrin receptor.soluble [Mass/volume] in Plasma |
+| 436 | p-tfr |  | 8% | name | 15951 | 100 |  | P -Transferriinireseptori, liukoinen | Plasma |  | Transferrin receptor.soluble [Mass/volume] in Plasma |
+| 437 | p-tt | % | 99% | name+unit+values | 472003 | 0 | [50.27, 64.91, 74.21, 81.59, 88.34, 94.66, 101.65, 109.8, 121.37] | P -Tromboplastiiniaika | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 438 | p-tt | form | 0% | name+unit | 20 | 0 |  | P -Tromboplastiiniaika | Plasma |  | Coagulation factor II gene [Identifier] in Blood by Molecular genetics method |
+| 439 | p-tt |  | 1% | name | 4462 | 100 |  | P -Tromboplastiiniaika | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 440 | p-tt- | % | 98% | name+unit+values | 1432 | 0 | [60.41, 72.11, 78.26, 83.23, 88.7, 95.38, 102.26, 111.84, 122.4] |  | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 441 | p-tt- |  | 2% | name | 29 | 100 |  |  | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 442 | p-tt. | % | 94% | name+unit+values | 5628 | 0 | [63.23, 78.72, 87.03, 93.55, 99.79, 105.77, 112.44, 119.67, 130.79] |  | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 443 | p-tt. |  | 6% | name+values | 328 | 100 | [49.07, 79.43, 90.33, 98.82, 106.71, 114.28, 121.35, 130.68, 140.29] |  | Plasma |  | Prothrombin time (PT) [Ratio] in Platelet poor plasma |
+| 444 | p-ttr | % | 93% | name+unit+values | 1114 | 0 | [50.96, 61.18, 67.8, 73.84, 78.53, 83.21, 89.2, 95.05, 100] |  | Plasma |  | Transthyretin [Ratio] in Plasma |
+| 445 | p-ttr |  | 7% | name | 89 | 100 |  |  | Plasma |  | Transthyretin [Ratio] in Plasma |
+| 446 | papa |  | 100% | name | 1138 | 100 |  |  |  |  | Cytology [Interpretation] of Specimen by Papanicolaou stain |
+| 447 | pdgfr |  | 100% | name | 461 | 100 |  |  |  |  | PDGFRA gene mutation analysis in Blood or Tissue by Molecular genetics method |
+| 448 | peak | l/min | 10% | name+unit | 12 | 0 |  |  |  |  | Expiratory flow.peak [Volume/time] |
+| 449 | peak |  | 90% | name | 104 | 100 |  |  |  |  | Expiratory flow.peak [Volume/time] |
+| 450 | pef-pa |  | 100% | name | 7844 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, pitkäaikaisseuranta |  | Long-term / prolonged | Peak expiratory flow rate home monitoring panel |
+| 451 | pef-ras |  | 100% | name | 242 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, rasituskoe |  |  | Expiratory flow.peak [Volume/time] --pre exercise and post exercise |
+| 452 | pf-ace | u/l | 66% | name+unit+values | 313 | 0.32 | [6.33, 10.32, 12.86, 15.39, 17.8, 19.84, 24.02, 28.69, 37.34] | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid |
+| 453 | pf-ace |  | 34% | name | 161 | 100 |  | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid |
+| 454 | pf-ada | u/l | 91% | name+unit+values | 3550 | 0 | [3.68, 5.17, 6.79, 8.03, 9.48, 11.18, 13.51, 17.41, 25.63] | Pf-Adenosiinideaminaasi | Pleural fluid |  | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid |
+| 455 | pf-ada |  | 9% | name | 365 | 100 |  | Pf-Adenosiinideaminaasi | Pleural fluid |  | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid |
+| 456 | pipelle |  | 100% | name | 428 | 100 |  |  |  |  | Microscopic observation [Identifier] in Endometrium by Histology |
+| 457 | pneag |  | 100% | name | 244 | 100 |  |  |  |  | Streptococcus pneumoniae antigen [Presence] in Urine |
+| 458 | pt-ivfal |  | 100% | name | 165 | 100 |  |  | Patient |  |  |
+| 459 | pt-vp-ple |  | 100% | name | 102 | 100 |  |  | Patient |  | Arterial pressure and Blood flow study panel by Plethysmography |
+| 460 | s-alat | iu/l | 0% | name+unit+values | 251 | 0 | [13.21, 15.82, 17.12, 19.56, 22, 24.18, 28.14, 35.6, 55.67] | S -Alaniiniaminotransferaasi | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum |
+| 461 | s-alat | u/l | 99% | name+unit+values | 323441 | 0 | [13.96, 17.08, 19.84, 22.78, 26.1, 30.03, 35.11, 42.65, 57.13] | S -Alaniiniaminotransferaasi | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum |
+| 462 | s-alat |  | 1% | name+values | 4631 | 100 | [14.16, 17.24, 20.69, 23.7, 27.55, 33.68, 39.69, 48.95, 68.13] | S -Alaniiniaminotransferaasi | Serum |  | Alanine aminotransferase [Enzymatic activity/volume] in Serum |
+| 463 | s-asat | iu/l | 1% | name+unit+values | 247 | 0 | [18, 20.05, 21.99, 23.65, 25, 27.54, 29.68, 34.42, 41.57] | S -Aspartaattiaminotransferaasi | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum |
+| 464 | s-asat | u/l | 98% | name+unit+values | 22999 | 0 | [17.95, 20.33, 22.41, 24.42, 26.51, 29.05, 32.45, 37.78, 49.76] | S -Aspartaattiaminotransferaasi | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum |
+| 465 | s-asat |  | 1% | name+values | 171 | 100 | [18, 19, 22, 24, 24.5, 25.75, 29, 35, 49] | S -Aspartaattiaminotransferaasi | Serum |  | Aspartate aminotransferase [Enzymatic activity/volume] in Serum |
+| 466 | s-na | mmol/l | 99% | name+unit+values | 124118 | 0 | [137.11, 138.74, 139.05, 140, 140.15, 141, 141.38, 142, 143] | S -Natrium | Serum | Native preparation | Sodium [Moles/volume] in Serum |
+| 467 | s-na |  | 1% | name+values | 931 | 100 | [133.78, 137, 138.07, 139, 140, 140, 140.93, 141, 142.02] | S -Natrium | Serum | Native preparation | Sodium [Moles/volume] in Serum |
+| 468 | s-prl | miu/l | 5% | name+unit+values | 1647 | 0 | [99, 122.35, 142.41, 160.53, 182.22, 206.49, 242.23, 297.21, 453.2] | S -Prolaktiini | Serum |  | Prolactin [Units/volume] in Serum |
+| 469 | s-prl | mu/l | 93% | name+unit+values | 31229 | 0 | [116.54, 154.56, 187.96, 224.2, 266.24, 319.79, 396.49, 532.56, 848.45] | S -Prolaktiini | Serum |  | Prolactin [Units/volume] in Serum |
+| 470 | s-prl | mul/l | 0% | name+unit | 6 | 0 |  | S -Prolaktiini | Serum |  | Prolactin [Units/volume] in Serum |
+| 471 | s-prl | nmol/l | 0% | name+unit | 58 | 0 |  | S -Prolaktiini | Serum |  | Prolactin [Moles/volume] in Serum |
+| 472 | s-prl |  | 2% | name | 718 | 100 |  | S -Prolaktiini | Serum |  | Prolactin [Units/volume] in Serum |
+| 473 | s-psa | mg/l | 0% | name+unit | 7 | 0 |  | S -Prostataspesifinen antigeeni | Serum |  | Prostate specific Ag [Mass/volume] in Serum |
+| 474 | s-psa | ug/l | 95% | name+unit+values | 91718 | 0 | [0.38, 0.57, 0.75, 0.96, 1.25, 1.64, 2.26, 3.32, 5.46] | S -Prostataspesifinen antigeeni | Serum |  | Prostate specific Ag [Mass/volume] in Serum |
+| 475 | s-psa |  | 5% | name | 4826 | 100 |  | S -Prostataspesifinen antigeeni | Serum |  | Prostate specific Ag [Mass/volume] in Serum |
+| 476 | s-tfr | mg | 0% | name+unit | 7 | 0 |  | S -Transferriinireseptori, liukoinen | Serum |  | Transferrin receptor.soluble [Mass/volume] in Serum |
+| 477 | s-tfr | mg/l | 98% | name+unit+values | 77760 | 0 | [1.01, 1.24, 1.52, 1.93, 2.39, 2.84, 3.37, 4.15, 5.68] | S -Transferriinireseptori, liukoinen | Serum |  | Transferrin receptor.soluble [Mass/volume] in Serum |
+| 478 | s-tfr |  | 2% | name | 1379 | 100 |  | S -Transferriinireseptori, liukoinen | Serum |  | Transferrin receptor.soluble [Mass/volume] in Serum |
+| 479 | sp-pak |  | 100% | name | 196 | 100 |  |  | Sperm / semen |  | Semen analysis panel |
+| 480 | sp-pakd |  | 100% | name | 138 | 100 |  |  | Sperm / semen |  | Semen analysis panel |
+| 481 | u-na | mmol/l | 77% | name+unit+values | 8969 | 0 | [24.77, 32.46, 40.33, 48.4, 57.48, 68.26, 81.68, 99.24, 129.77] | U -Natrium | Urine | Native preparation | Sodium [Moles/volume] in Urine |
+| 482 | u-na |  | 23% | name+values | 2662 | 100 | [27.31, 35.62, 42.78, 51.38, 60.48, 68.93, 78.14, 92.21, 110.65] | U -Natrium | Urine | Native preparation | Sodium [Moles/volume] in Urine |
+| 483 | v-na |  | 100% | name+values | 265 | 100 | [130.07, 134.25, 136, 137.63, 138.47, 139, 140, 141, 142] |  |  | Native preparation | Sodium [Moles/volume] in Blood |
+| 484 | vp-na | mmol/l | 98% | name+unit+values | 10896 | 0 | [132.88, 135.36, 136.91, 137.97, 139, 139.83, 140.33, 141.06, 142.5] |  |  | Native preparation | Sodium [Moles/volume] in Plasma |
+| 485 | vp-na |  | 2% | name | 174 | 100 |  |  |  | Native preparation | Sodium [Moles/volume] in Plasma |
+| 486 | vp-ple |  | 100% | name | 725 | 100 |  | Valtimopaine ja verenvirtaus, pletysmografi |  |  | Arterial pressure and Blood flow study panel by Plethysmography |
 

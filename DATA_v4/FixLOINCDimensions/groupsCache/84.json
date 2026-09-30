@@ -1,187 +1,551 @@
 {
   "rows": [
     {
-      "row_id": 1215,
+      "row_id": 1276,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 'alvhuumott' likely refers to 'huume-otto', drug specimen collection. This is a procedural code for the act of collection, but the candidate list lacks a concept for the procedure itself. Candidates are for test results or other attributes.",
+      "reasoning": "The code `gt-cdt-ind` refers to a ratio of Gamma-glutamyltransferase to Carbohydrate deficient transferrin. No such ratio concept exists in the candidate list.",
       "certainty": ""
     },
     {
-      "row_id": 1216,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'bm-notto' is for Bone Marrow specimen collection, a procedure. The candidate list does not contain a suitable procedural concept. The closest candidate, 'Bone marrow aspiration report' (3048879), describes the resulting report, not the collection procedure.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1217,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'gyn.notto' refers to a gynecological specimen collection procedure. The candidate list lacks a concept for this procedure. Candidates are for descriptive attributes (e.g., specimen source) rather than the act of collection.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1218,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'huumn.otto' refers to drug specimen collection ('huume-näytteenotto'), which is a procedure. The candidate list does not contain a concept for the procedure itself; available candidates are for test panels or results.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1219,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'n-otto' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection (e.g., method) but not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1220,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'n.otto' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection (e.g., method) but not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1221,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'notto' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection (e.g., method) but not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1222,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'notto,neuv' refers to 'specimen collection and counseling', a service/procedure. No suitable candidate concept for this combined service is available in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1223,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'notto,tyks' refers to the procedure of specimen collection (at Turku University Hospital, 'tyks'). The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1224,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'notto/eris' ('näytteenotto/eristys', collection/isolation) refers to a specimen collection procedure. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1225,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'nottocovid' refers to the procedure of collecting a specimen for COVID-19 testing. The candidates provided are for RNA test panels and results, not the collection procedure itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1226,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'nottopkl' refers to the procedure of specimen collection (likely at a polyclinic, 'pkl'). The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1227,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'nottoverikoe' refers to 'blood test collection', a procedure (venipuncture). The candidate list does not contain a concept for this procedure.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1228,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näyt.käsit' refers to 'näytteen käsittely', specimen processing. This is a procedure. The candidate 'Specimen Processing comment' (36660247) is for a comment, and 'Specimen preparation [Type]' (3003891) is for the type; neither represents the act of processing.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1229,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näyt.ot-1' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1230,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näyt.ot.' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1231,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näyt.otto' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1232,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näytekulje' refers to 'näytteen kuljetus', specimen transport. This is a procedural/service code. The candidate 'Environment temperature during transport' (21492846) is a specific observation, not the transport service itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1233,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näytt.otto' (a misspelling of 'näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1234,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näytteenot' ('näytteenotto') refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1235,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'näytteenotto' refers to the procedure of specimen collection. The candidate list lacks a general concept for this procedure. Available candidates describe attributes of the collection, not the act itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1236,
-      "omop_concept_id": "3042242",
-      "omop_concept_name": "Collection method - Specimen",
-      "reasoning": "Collection method bcs TEST_NAME is 'ottotapa' (collection method) ; in Specimen bcs the name is generic ; The values and unit are anomalous (1% share) and disregarded.",
+      "row_id": 1277,
+      "omop_concept_id": "3000515",
+      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Antithrombin from AT3 ; actual/normal property from unit '%' and values centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1237,
-      "omop_concept_id": "3042242",
-      "omop_concept_name": "Collection method - Specimen",
-      "reasoning": "Collection method bcs TEST_NAME is 'ottotapa' (collection method) ; in Specimen bcs the name is generic ; The lack of value (p_missing 100%) is expected for a descriptive code.",
+      "row_id": 1278,
+      "omop_concept_id": "3000515",
+      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Antithrombin from AT3 ; actual/normal property from value deciles centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1238,
-      "omop_concept_id": "3025954",
-      "omop_concept_name": "Urinalysis specimen collection method",
-      "reasoning": "Urinalysis specimen collection method bcs TEST_NAME 'u-ottotap' combines 'u-' (Urine) and 'ottotapa' (collection method).",
+      "row_id": 1279,
+      "omop_concept_id": "3036489",
+      "omop_concept_name": "Thrombin time",
+      "reasoning": "Thrombin time from `trai` (trombiiniaika) ; [Time] property confirmed by unit `s` ; specimen is Plasma from `P-` prefix, though not specified in this generic LOINC concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1280,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property of the Thrombin time measurement cannot be determined from the name alone, as it could be time or a ratio, and there are no units or values to clarify.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1281,
+      "omop_concept_id": "3005353",
+      "omop_concept_name": "Prothrombin activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Prothrombin activity from `P-tt` (tromboplastiiniaika, activity) ; actual/normal property from unit '%' and values centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1239,
-      "omop_concept_id": "3025954",
-      "omop_concept_name": "Urinalysis specimen collection method",
-      "reasoning": "Urinalysis specimen collection method bcs TEST_NAME 'u-tutk/ottotapa' combines 'u-' (Urine) and 'ottotapa' (collection method).",
+      "row_id": 1282,
+      "omop_concept_id": "3005353",
+      "omop_concept_name": "Prothrombin activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Prothrombin activity from `P-tt` (tromboplastiiniaika, activity) ; actual/normal property from value deciles centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1240,
-      "omop_concept_id": "1989324",
-      "omop_concept_name": "Specimen collection supervision level",
-      "reasoning": "Specimen collection supervision level bcs TEST_NAME 'valv.notto' means 'valvottu näytteenotto' (supervised specimen collection), and this concept describes that specific attribute of the collection procedure.",
+      "row_id": 1283,
+      "omop_concept_id": "3005353",
+      "omop_concept_name": "Prothrombin activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Prothrombin activity from `P-tt` (tromboplastiiniaika, activity) ; actual/normal property from unit '%' and values centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
       "certainty": "high"
+    },
+    {
+      "row_id": 1284,
+      "omop_concept_id": "3005353",
+      "omop_concept_name": "Prothrombin activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Prothrombin activity from `P-tt` (tromboplastiiniaika, activity) ; actual/normal property from value deciles centered around 100 ; in Platelet poor plasma from `P-` prefix (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1285,
+      "omop_concept_id": "40763091",
+      "omop_concept_name": "Bacteria identified in Peritoneal dialysis fluid by Culture",
+      "reasoning": "Bacteria identified by Culture from `bavi` (bakteeriviljely) ; in Peritoneal dialysis fluid from `Pd-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1286,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pf-ada/s-ada` explicitly specifies a ratio of Adenosine deaminase in Pleural fluid to Serum. No candidate concept for this ratio is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1287,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-abiras` is uninterpretable and does not correspond to a standard laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1288,
+      "omop_concept_id": "3045515",
+      "omop_concept_name": "ACTH stimulation test using IV corticosteroids in Serum or Plasma",
+      "reasoning": "Panel for an ACTH stimulation test from `Pt-acth-r1` and LongName 'Adrenokortikotropiini-koe, lyhyt' (short ACTH test) ; The candidate is a panel concept for this test (LOINC 2143-6 'Corticotropin stimulation panel') despite the confusing OMOP name.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1289,
+      "omop_concept_id": "3045515",
+      "omop_concept_name": "ACTH stimulation test using IV corticosteroids in Serum or Plasma",
+      "reasoning": "Panel for an ACTH stimulation test from `Pt-acth-ro` ; assumed to be a local variant of the standard ACTH test panel ; The candidate is a panel concept for this test (LOINC 2143-6 'Corticotropin stimulation panel') despite the confusing OMOP name.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1290,
+      "omop_concept_id": "3045515",
+      "omop_concept_name": "ACTH stimulation test using IV corticosteroids in Serum or Plasma",
+      "reasoning": "Panel for an ACTH stimulation test from `Pt-acthrma` ; assumed to be a local variant of the standard ACTH test panel ; The candidate is a panel concept for this test (LOINC 2143-6 'Corticotropin stimulation panel') despite the confusing OMOP name.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1291,
+      "omop_concept_id": "3045515",
+      "omop_concept_name": "ACTH stimulation test using IV corticosteroids in Serum or Plasma",
+      "reasoning": "Panel for an ACTH stimulation test from `Pt-acthrmk` ; assumed to be a local variant of the standard ACTH test panel ; The candidate is a panel concept for this test (LOINC 2143-6 'Corticotropin stimulation panel') despite the confusing OMOP name.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1292,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-ada-ind` implies a calculated index or ratio of Adenosine deaminase. No candidate concept for such a ratio is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1293,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-aiv-pet` specifies a brain ('aivot') PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1294,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-aktig` and its LongName refer to actigraphy, a specific type of physiological monitoring. No specific 'Actigraphy panel' is available in the candidates, and generic physical activity panels are not a good match.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1295,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-aktig-2` and its LongName refer to actigraphy, a specific type of physiological monitoring. No specific 'Actigraphy panel' is available in the candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1296,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-angirtg` refers to angiography, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1297,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-cert` is uninterpretable and does not correspond to a standard laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1298,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-diabet` appears to represent a condition or diagnosis of diabetes, not a laboratory test or panel that can be mapped to LOINC.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1299,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-diascr` represents a diabetes screening panel. The available candidates are for gestational diabetes screening, risk scores, or tracking panels, none of which is a general screening panel.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1300,
+      "omop_concept_id": "3048821",
+      "omop_concept_name": "Cortisol [Moles/volume] in Serum or Plasma --post 1 mg dexamethasone PO overnight",
+      "reasoning": "Cortisol, the analyte measured in a dexamethasone suppression test ; [Moles/volume] from unit `nmol/l` ; in Serum or Plasma is the standard specimen ; `--post 1 mg dexamethasone PO overnight` from `Pt-dxm-r1` and LongName 'Deksametasoni-koe, lyhyt' (short dexamethasone test).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1301,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-dxm-r1` represents the order for a dexamethasone suppression test panel. No such panel concept is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1302,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-erist` refers to patient isolation ('eristys'), which is an administrative status, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1303,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-fdg-pet` refers to an FDG-PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1304,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-fdgvpet` refers to an FDG-PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1305,
+      "omop_concept_id": "1616554",
+      "omop_concept_name": "Liver fibrosis score in Serum Calculated by FIB4",
+      "reasoning": "Liver fibrosis score from `fib-4` ; the values are consistent with the calculated score ; calculation method `FIB4` is specified in the code.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1306,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-gal-r3` and its LongName specify Galactose elimination half-life ('puoliintumisaika'), measured in minutes. No candidate for this concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1307,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-gal-r3` and its LongName specify Galactose elimination half-life ('puoliintumisaika'). No candidate for this concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1308,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-galt1/2` specifies Galactose half-life, measured in minutes. No candidate for this concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1309,
+      "omop_concept_id": "40771922",
+      "omop_concept_name": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood",
+      "reasoning": "Glomerular filtration rate from `glomfr` ; the code is generic and does not specify a calculation method, so the general 'predicted' concept is the best fit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1310,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-hertta` refers to the Hertta® risk score, a specific proprietary test based on ceramides. This test is not represented by any of the available candidates (e.g., SCORE, ACC/AHA).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1311,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This row represents the measured diameter of a skin test wheal. However, the specific allergen is not identified, and there is no generic 'allergen wheal diameter' concept among the candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1312,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-iho-r1` and its LongName specify a skin allergy test panel. No suitable candidate for a skin test panel is available in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1313,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-iho-r3` and its LongName specify a skin allergy test panel. No suitable candidate for a skin test panel is available in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1314,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-kauvduä` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1315,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-kt/v` refers to Kt/V, a measure of dialysis adequacy. No candidate for this concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1316,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-kt/v1` refers to Kt/V, a measure of dialysis adequacy. No candidate for this concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1317,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-laihdu` refers to a clinical finding of weight loss ('laihtuminen'), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1318,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code represents a glucose measurement during a lactose tolerance test, but the specific time point is not specified, making it impossible to choose between the available time-specific candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1319,
+      "omop_concept_id": "42870553",
+      "omop_concept_name": "Lactose tolerance panel [Moles/volume] in Serum or Plasma",
+      "reasoning": "Panel for a lactose tolerance test from `Pt-lakt-r1` and LongName 'Laktoosi-koe' ; [Moles/volume] version chosen as this is standard in Finland and matches the unit of the corresponding result row (1318).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1320,
+      "omop_concept_id": "40762528",
+      "omop_concept_name": "Pathologist review of results",
+      "reasoning": "The code `pt-meet2` is interpreted as a local variant of `pt-meeting`, which signifies a clinical-pathological case review or consultation.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1321,
+      "omop_concept_id": "40762528",
+      "omop_concept_name": "Pathologist review of results",
+      "reasoning": "The code `pt-meetin` is interpreted as a local variant of `pt-meeting`, which signifies a clinical-pathological case review or consultation.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1322,
+      "omop_concept_id": "40762528",
+      "omop_concept_name": "Pathologist review of results",
+      "reasoning": "Based on the LongName 'Potilastapauksen kliinispatologinen käsittely' (Clinical-pathological handling of a patient case), this code represents a pathologist's review or consultation.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1323,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('mies' = man), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1324,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('mies' = man), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1325,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('mies' = man), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1326,
+      "omop_concept_id": "3037839",
+      "omop_concept_name": "Renal function 2000 panel - Serum or Plasma",
+      "reasoning": "The code `pt-munfung` means 'patient - kidney function' ('munuaisten funktio'). The Renal function panel is a suitable match.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1327,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('nainen' = woman), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1328,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('nainen' = woman), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1329,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This appears to be an administrative code related to patient gender ('nainen' = woman), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1330,
+      "omop_concept_id": "3013762",
+      "omop_concept_name": "Body weight Measured",
+      "reasoning": "Body weight from `paino` ; Measured is the appropriate type for a recorded value ; unit `kg` confirms Mass property.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1331,
+      "omop_concept_id": "3013762",
+      "omop_concept_name": "Body weight Measured",
+      "reasoning": "Body weight from `paino` ; Measured is the appropriate type for a recorded value ; value deciles are consistent with weight in kg.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1332,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-pentaca` refers to an examination with a Pentacam device, which performs corneal tomography. The available 'Keratometry panel' is not a sufficient match for this more comprehensive procedure.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1333,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-psmapet` refers to a PSMA-PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1334,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-punktio` refers to a puncture or aspiration procedure, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1335,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-selvit` ('selvitys' = report/study) is too ambiguous to map to a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1336,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-som-pet` refers to a somatostatin receptor PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1337,
+      "omop_concept_id": "3017575",
+      "omop_concept_name": "Referral lab test results",
+      "reasoning": "The code `pt-spr/thl` most likely refers to samples sent to national reference laboratories (SPR = Finnish Red Cross Blood Service, THL = Finnish Institute for Health and Welfare), making 'Referral lab test results' an appropriate mapping.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1338,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-syd-pet` refers to a cardiac ('sydän') PET scan, an imaging procedure for which there are no candidates in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1339,
+      "omop_concept_id": "1988411",
+      "omop_concept_name": "Permanent pacemaker panel",
+      "reasoning": "The code `pt-tahdist` refers to a pacemaker ('tahdistin') evaluation. A pacemaker panel is the best fit for this procedural code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1340,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-taksim1` likely refers to patient transportation ('taksimatka' = taxi ride), which is an administrative item, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1341,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-taksim3` likely refers to patient transportation ('taksimatka' = taxi ride), which is an administrative item, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1342,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-terta` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1343,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-tthscr1` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1344,
+      "omop_concept_id": "3051593",
+      "omop_concept_name": "INR in Capillary blood by Coagulation assay",
+      "reasoning": "INR from `tt` (tromboplastiiniaika, used to calculate INR) ; `laite` (device) strongly implies a point-of-care test, which typically uses Capillary blood.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1345,
+      "omop_concept_id": "43055246",
+      "omop_concept_name": "Days in therapeutic INR range/Days INR result determined [Ratio]",
+      "reasoning": "The code `pt-ttr+inr` explicitly names Time in Therapeutic Range for INR ; The unit `%` and value deciles confirm the [Ratio] property.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1346,
+      "omop_concept_id": "43055246",
+      "omop_concept_name": "Days in therapeutic INR range/Days INR result determined [Ratio]",
+      "reasoning": "The code `pt-ttr+inr` explicitly names Time in Therapeutic Range for INR.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1347,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-vai-tk` is uninterpretable, possibly administrative.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1348,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-valtim` ('valtimo' = artery) is too generic to map to a specific test or procedure.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1349,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-valvot` ('valvonta' = monitoring) is a procedural or administrative code, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1350,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-vartig` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1351,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-vartspq` likely refers to a whole body ('vartalo') SPECT scan, an imaging procedure for which there are no candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1352,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-vitascr` indicates a vitamin screening panel. No general vitamin measurement panel is present in the candidate list; available panels are for specific vitamins or dietary intake assessment.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1353,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-vitrif` refers to vitrification, a cryopreservation procedure used in reproductive medicine, not a laboratory test.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group primarily consists of Finnish codes for procedures and services related to specimen handling, such as `näytteenotto` (specimen collection), `näytteen käsittely` (processing), and `näytteen kuljetus` (transport). These are procedural codes, likely for ordering or billing.\n\nThe major challenge was that the candidate list was almost entirely populated with observational or descriptive concepts (e.g., 'Collection method', 'procedure comment', 'supervision level'), while a core concept for 'Specimen collection procedure' was missing. This resulted in a large number of unmappable rows, as mapping a procedural code to a descriptive attribute would be incorrect.\n\nI could successfully map the codes that were inherently descriptive: `ottotapa` (collection method), `u-ottotapa` (urine collection method), and `valv.notto` (supervised collection, which maps well to 'supervision level'). For the rest, the gap between the procedural nature of the source codes and the descriptive nature of the candidates was too large to bridge."
+  "reflection": "This group was dominated by `Pt-` (patient) codes, which represent a wide variety of concepts: individual results (FIB-4, weight), test panels (ACTH stim, lactose tolerance), imaging procedures (PET, SPECT), other procedures (pacemaker evaluation, actigraphy), and administrative items (consultations, patient transport, isolation). \n\nThe candidate list was sufficient for standard lab tests like coagulation assays and some common scores/calculations (FIB-4, TTR). However, it lacked concepts for many of the procedures and panels, especially for imaging (PET scans), specific physiological tests (actigraphy, galactose half-life), and skin allergy testing. Several specific ratios (GT/CDT, ADA fluid/serum) were also missing. A large number of codes were unmappable because they were either uninterpretable, too generic, or clearly administrative rather than clinical."
 }

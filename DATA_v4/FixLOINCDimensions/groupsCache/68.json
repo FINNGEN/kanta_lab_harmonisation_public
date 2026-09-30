@@ -1,1020 +1,481 @@
 {
   "rows": [
     {
-      "row_id": 803,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from '-amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum or Plasma bcs it is the default specimen for an unprefixed chemistry test.",
+      "row_id": 698,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs loinc_name_guess and common practice for strep throat culture ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs -vi suffix means culture",
       "certainty": "high"
     },
     {
-      "row_id": 804,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 805,
-      "omop_concept_id": "3015322",
-      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin from 'alfa-1' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum or Plasma bcs it is the default specimen ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 806,
-      "omop_concept_id": "3005229",
-      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin from 'alfa-2' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum or Plasma bcs it is the default specimen ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 807,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amylaasi' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum or Plasma bcs it is the default specimen for an unprefixed chemistry test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 808,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 809,
-      "omop_concept_id": "3008691",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Peritoneal fluid",
-      "reasoning": "Amylase from 'amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Peritoneal fluid bcs prefix 'as-' means Ascitic fluid.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 810,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 811,
-      "omop_concept_id": "3000690",
-      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/time] bcs unit 'nmol' for a 24h collection implies a rate ; in 24 hour Urine bcs prefix 'dU-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 812,
-      "omop_concept_id": "3000690",
-      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/time] bcs unit 'nmol/24h' ; in 24 hour Urine bcs prefix 'dU-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 813,
-      "omop_concept_id": "3019985",
-      "omop_concept_name": "Aldosterone [Moles/volume] in 24 hour Urine",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs unit 'nmol/l' ; in 24 hour Urine bcs prefix 'dU-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 814,
-      "omop_concept_id": "3019677",
-      "omop_concept_name": "Aldosterone [Mass/time] in 24 hour Urine",
-      "reasoning": "Aldosterone from 'aldos' ; [Mass/time] bcs unit 'ug/24h' ; in 24 hour Urine bcs prefix 'dU-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 815,
-      "omop_concept_id": "3000690",
-      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/time] bcs decile values are consistent with unit 'nmol' for a 24h collection (see row 811) ; in 24 hour Urine bcs prefix 'dU-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 816,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'fP-' (fasting plasma).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 817,
-      "omop_concept_id": "3001788",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Plasma bcs prefix 'fP-' (fasting plasma).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 818,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property ([Moles/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 819,
-      "omop_concept_id": "40771878",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma --fasting",
-      "reasoning": "Amylase from 'amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'fP-' ; fasting bcs prefix 'fP-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 820,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 821,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 822,
-      "omop_concept_id": "3001788",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Aldosterone from 'aldos' and LongName ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 823,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property ([Moles/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 824,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 825,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 826,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amylaasi' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'p-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 827,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 828,
-      "omop_concept_id": "3016417",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName 'haimaperäinen' (pancreatic) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 829,
-      "omop_concept_id": "3016417",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName 'haimaperäinen' (pancreatic) ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Plasma bcs prefix 'P-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 830,
-      "omop_concept_id": "1617569",
-      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
-      "reasoning": "Cholesterol in small dense LDL from 'sLDL' ; [Moles/volume] bcs unit 'mmol/l' and deciles ; in Plasma bcs prefix 'p-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 831,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property ([Moles/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 832,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No candidate concept for Amylase in Pancreatic juice. The closest candidate 'Duodenal fluid' is not a correct match.",
-      "certainty": ""
-    },
-    {
-      "row_id": 833,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No candidate concept for Amylase in Pancreatic juice.",
-      "certainty": ""
-    },
-    {
-      "row_id": 834,
-      "omop_concept_id": "3015401",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Pleural fluid",
-      "reasoning": "Amylase from 'amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Pleural fluid bcs prefix 'Pf-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 835,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 836,
-      "omop_concept_id": "3033031",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --post XXX challenge",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Serum bcs prefix 'S-' ; post-challenge state ('--post XXX challenge') is inferred from the 'a' prefix and very high decile values compared to baseline aldosterone measurements.",
+      "row_id": 699,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs common target for throat culture ('str') ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs '1vrk' likely refers to turnaround time of a culture, not a different test type",
       "certainty": "medium"
     },
     {
-      "row_id": 837,
-      "omop_concept_id": "44786774",
-      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "reasoning": "Adalimumab from 'adali' and LongName ; [Mass/volume] bcs unit 'mg/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 700,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs 'stra' in TEST_NAME means Streptococcus A ; Ag bcs '-ag' suffix means Antigen ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion",
       "certainty": "high"
     },
     {
-      "row_id": 838,
-      "omop_concept_id": "44786774",
-      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "reasoning": "Adalimumab from 'adali' and LongName ; [Mass/volume] bcs deciles are consistent with 'mg/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
+      "row_id": 701,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs 'stra' in TEST_NAME means Streptococcus A ; Ag bcs the '-o' suffix for qualitative test points to an antigen test for this analyte ; [Presence] bcs '-o' suffix means qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion",
       "certainty": "high"
     },
     {
-      "row_id": 839,
-      "omop_concept_id": "36304052",
-      "omop_concept_name": "Adalimumab Ab [Units/volume] in Serum or Plasma",
-      "reasoning": "Adalimumab antibodies from 'adaliab' and LongName 'vasta-aineet' (antibodies) ; [Units/volume] bcs unit 'au/ml' (arbitrary units/ml) ; in Serum bcs prefix 'S-'.",
+      "row_id": 702,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs LongName contains 'Streptococcus pyogenes (A)' ; Ag bcs LongName contains 'antigeeni' ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion",
       "certainty": "high"
     },
     {
-      "row_id": 840,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property ([Units/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 841,
-      "omop_concept_id": "44786774",
-      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "reasoning": "Adalimumab from 'adalimu' ; [Mass/volume] bcs unit 'mg/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 703,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs LongName contains 'Streptococcus pyogenes (A)' ; Ag bcs LongName contains 'antigeeni' ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion",
       "certainty": "high"
     },
     {
-      "row_id": 842,
-      "omop_concept_id": "44786774",
-      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
-      "reasoning": "Adalimumab from 'adalimu' ; [Mass/volume] bcs deciles are consistent with 'mg/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
+      "row_id": 704,
+      "omop_concept_id": "21491660",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay",
+      "reasoning": "Streptococcus pyogenes Ag bcs 'straag' in TEST_NAME ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Rapid immunoassay bcs 'p' suffix likely stands for 'pikatesti' (rapid test)",
       "certainty": "high"
     },
     {
-      "row_id": 843,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Code 's-adalip' is truncated and ambiguous; the '-p' suffix could mean panel or something else, but it's not specified.",
-      "certainty": ""
-    },
-    {
-      "row_id": 844,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Code 's-adalipa' is truncated and ambiguous; the '-pa' suffix could mean panel or something else, but it's not specified.",
-      "certainty": ""
-    },
-    {
-      "row_id": 845,
-      "omop_concept_id": "3002069",
-      "omop_concept_name": "Alkaline phosphatase.bone/Alkaline phosphatase.total in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone/Alkaline phosphatase.total ratio from 'af' (alkaline phosphatase), 'luu' (bone), and unit '%' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 846,
-      "omop_concept_id": "3001467",
-      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone from 'af' (alkaline phosphatase) and 'luu' (bone) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 847,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 's-afluu' is used for both a ratio (%) and an absolute concentration (U/l), and without a unit or values it's ambiguous.",
-      "certainty": ""
-    },
-    {
-      "row_id": 848,
-      "omop_concept_id": "3001467",
-      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone from 'af' (alkaline phosphatase) and 'luust' (bone) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 849,
-      "omop_concept_id": "3001467",
-      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone from 'af' (alkaline phosphatase) and 'luust' (bone) ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 850,
-      "omop_concept_id": "3045684",
-      "omop_concept_name": "Alkaline phosphatase.other fractions [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.other fractions from 'af' (alkaline phosphatase) and 'muut' (other) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 851,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
-      "certainty": ""
-    },
-    {
-      "row_id": 852,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' and LongName ; [Enzymatic activity/volume] bcs unit 'iu/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 853,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 854,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 855,
-      "omop_concept_id": "3028564",
-      "omop_concept_name": "Alkaline phosphatase isoenz panel - Serum or Plasma",
-      "reasoning": "Alkaline phosphatase isoenzyme panel from 'afos-is' and LongName 'isoentsyymit' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 856,
-      "omop_concept_id": "3028564",
-      "omop_concept_name": "Alkaline phosphatase isoenz panel - Serum or Plasma",
-      "reasoning": "Alkaline phosphatase isoenzyme panel from 'afos-is' and LongName 'isoentsyymit' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 857,
-      "omop_concept_id": "3001467",
-      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone from 'afosluu' (luu = bone) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 858,
-      "omop_concept_id": "3018910",
-      "omop_concept_name": "Alkaline phosphatase.bone [Mass/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.bone from 'afosluu' (luu = bone) ; [Mass/volume] bcs unit 'ug/l' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 859,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 's-afosluu' is used for both [Enzymatic activity/volume] (row 857) and [Mass/volume] (row 858) properties, and without a unit or values this row is ambiguous.",
-      "certainty": ""
-    },
-    {
-      "row_id": 860,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-' ; the qualifier 'pit' is ambiguous and not mapped.",
+      "row_id": 705,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes Ag bcs 'straag' in TEST_NAME ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion ; '␤' is noise and there's no evidence for a specific method",
       "certainty": "medium"
     },
     {
-      "row_id": 861,
-      "omop_concept_id": "3035995",
-      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase from 'afos' ; [Enzymatic activity/volume] is inferred from sibling rows ; in Serum bcs prefix 'S-' ; the qualifier 'pit' is ambiguous and not mapped.",
+      "row_id": 706,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes Ag bcs 'strag' in TEST_NAME ; [Presence] bcs antigen tests are qualitative ; in Throat bcs Ps- prefix means Pharyngeal secretion ; 'ho' suffix is unrecognized noise",
       "certainty": "low"
     },
     {
-      "row_id": 862,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'afsuol' (suoli=intestine) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-' ; no specific LOINC for 'intestinal 1' so using the general intestinal concept.",
+      "row_id": 707,
+      "omop_concept_id": "40763543",
+      "omop_concept_name": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection",
+      "reasoning": "Streptococcus pyogenes DNA bcs 'stra' and '-nho' suffix (nucleic acid) and LongName 'Streptococcus pyogenes (A), nukleiinihappo' ; [Presence] bcs LongName specifies '(kval)' ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by NAA with probe detection bcs '-nho' indicates nucleic acid test and this is the most common specific type",
       "certainty": "high"
     },
     {
-      "row_id": 863,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'afsuol' (suoli=intestine) ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-' ; no specific LOINC for 'intestinal 1' so using the general intestinal concept.",
+      "row_id": 708,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs 'stra' in TEST_NAME ; Ag bcs it's the most likely qualitative test for this analyte ; [Presence] bcs qualitative test implied by 'strao' root ; in Throat bcs Ps- prefix means Pharyngeal secretion ; 'hy' suffix is unrecognized noise",
+      "certainty": "low"
+    },
+    {
+      "row_id": 709,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs 'stra' in TEST_NAME ; Ag bcs it's the most likely qualitative test for this analyte ; [Presence] bcs qualitative test implied by 'strao' root ; in Throat bcs Ps- prefix means Pharyngeal secretion ; 'lb' suffix is unrecognized noise",
+      "certainty": "low"
+    },
+    {
+      "row_id": 710,
+      "omop_concept_id": "3033319",
+      "omop_concept_name": "Streptococcus pyogenes Ag [Presence] in Throat",
+      "reasoning": "Streptococcus pyogenes bcs 'stra' in TEST_NAME ; Ag bcs it's the most likely test ; [Presence] bcs implied by context of other qualitative tests ; in Throat bcs Ps- prefix means Pharyngeal secretion ; 'vt' suffix is unrecognized noise",
+      "certainty": "low"
+    },
+    {
+      "row_id": 711,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs loinc_name_guess and common practice for strep throat culture ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs 'cult' in TEST_NAME means culture",
       "certainty": "high"
     },
     {
-      "row_id": 864,
-      "omop_concept_id": "42870305",
-      "omop_concept_name": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal 2 from 'afsuol2' (suoli=intestine) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 865,
-      "omop_concept_id": "42870305",
-      "omop_concept_name": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal 2 from 'afsuol2' (suoli=intestine) ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 866,
-      "omop_concept_id": "42870306",
-      "omop_concept_name": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal 3 from 'afsuol3' (suoli=intestine) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 867,
-      "omop_concept_id": "42870306",
-      "omop_concept_name": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal 3 from 'afsuol3' (suoli=intestine) ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 868,
-      "omop_concept_id": "3020990",
-      "omop_concept_name": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal/total ratio from 'afsuoli' (intestinal alkaline phosphatase) and unit '%' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 869,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'afsuoli' (intestinal alkaline phosphatase) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 870,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 's-afsuoli' is used for both a ratio (%) and an absolute concentration (U/l), and without a unit or values it's ambiguous.",
-      "certainty": ""
-    },
-    {
-      "row_id": 871,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'albind' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 872,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'albind' ; [Mass/volume] bcs deciles are consistent with 'g/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 873,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'albu' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 874,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'albu' ; [Mass/volume] is inferred from sibling rows ; in Serum bcs prefix 'S-'.",
+      "row_id": 712,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs loinc_name_guess and common practice for strep throat culture ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs 'jvi' likely means 'jälkiviljely' (follow-up culture)",
       "certainty": "medium"
     },
     {
-      "row_id": 875,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'album' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 713,
+      "omop_concept_id": "1092209",
+      "omop_concept_name": "Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Streptococcus sp DNA bcs 'str' (not specific to A) and '-nho' suffix (nucleic acid) and LongName 'Streptococcus, nukleiinihappo' ; [Presence] bcs LongName specifies '(kval)' ; in Specimen bcs a good match for Ps- (pharyngeal secretion/throat) ; by NAA with probe detection bcs '-nho' indicates nucleic acid test",
       "certainty": "high"
     },
     {
-      "row_id": 876,
-      "omop_concept_id": "3024561",
-      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Albumin from 'album' ; [Mass/volume] bcs deciles are consistent with 'g/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 877,
-      "omop_concept_id": "3027953",
-      "omop_concept_name": "Aldolase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Aldolase from 'aldol' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 878,
-      "omop_concept_id": "3027953",
-      "omop_concept_name": "Aldolase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Aldolase from 'aldol' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 879,
-      "omop_concept_id": "3001788",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Aldosterone from 'aldos' and LongName ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 880,
-      "omop_concept_id": "3001788",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
-      "reasoning": "Aldosterone from 'aldos' and LongName ; [Moles/volume] bcs deciles are consistent with 'pmol/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 881,
-      "omop_concept_id": "3004280",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Serum bcs prefix 'S-' ; supine position from '-m' and LongName 'makuu'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 882,
-      "omop_concept_id": "3004280",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
-      "reasoning": "Aldosterone from 'aldos' ; Moles/volume is inferred from sibling rows ; in Serum bcs prefix 'S-' ; supine position from '-m' and LongName 'makuu'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 883,
-      "omop_concept_id": "3003171",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs unit 'pmol/l' and deciles ; in Serum bcs prefix 'S-' ; upright position from '-p' and LongName 'pysty'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 884,
-      "omop_concept_id": "3003171",
-      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
-      "reasoning": "Aldosterone from 'aldos' ; [Moles/volume] bcs deciles are consistent with 'pmol/l' unit of sibling rows ; in Serum bcs prefix 'S-' ; upright position from '-p' and LongName 'pysty'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 885,
-      "omop_concept_id": "43055428",
-      "omop_concept_name": "Alpha 1 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin/Protein.total ratio from 'alfa-1' and unit '%' ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 886,
-      "omop_concept_id": "3015322",
-      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin from 'alfa-1' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 887,
-      "omop_concept_id": "3015322",
-      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin from 'alfa-1' ; [Mass/volume] bcs deciles are consistent with 'g/l' unit of sibling rows ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 888,
-      "omop_concept_id": "43055424",
-      "omop_concept_name": "Alpha 2 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin/Protein.total ratio from 'alfa-2' and unit '%' ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 889,
-      "omop_concept_id": "3005229",
-      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin from 'alfa-2' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 890,
-      "omop_concept_id": "3005229",
-      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin from 'alfa-2' ; [Mass/volume] bcs deciles are consistent with 'g/l' unit of sibling rows ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 891,
-      "omop_concept_id": "3015322",
-      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin from 'alfa1' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 892,
-      "omop_concept_id": "3015322",
-      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 1 globulin from 'alfa1' ; [Mass/volume] is inferred from sibling rows ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
+      "row_id": 714,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs common target for throat culture ('str') and identification ('tunn') ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs 'tunn' (identification) implies a culture was performed",
       "certainty": "medium"
     },
     {
-      "row_id": 893,
-      "omop_concept_id": "3005229",
-      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin from 'alfa2' ; [Mass/volume] bcs unit 'g/l' and deciles ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
+      "row_id": 715,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs LongName contains '(hemolyyttiset streptokokit)' ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs '-vi' suffix means culture and is confirmed in LongName 'viljely'",
       "certainty": "high"
     },
     {
-      "row_id": 894,
-      "omop_concept_id": "3005229",
-      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
-      "reasoning": "Alpha 2 globulin from 'alfa2' ; [Mass/volume] is inferred from sibling rows ; in Serum bcs prefix 'S-' ; by Electrophoresis bcs it is the standard method for globulin fractions and a top2000 concept.",
-      "certainty": "medium"
+      "row_id": 716,
+      "omop_concept_id": "3024135",
+      "omop_concept_name": "Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture",
+      "reasoning": "Streptococcus.beta-hemolytic bcs LongName contains '(hemolyyttiset streptokokit)' ; [Presence] bcs it is a qualitative culture ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Organism specific culture bcs '-vi' suffix means culture and is confirmed in LongName 'viljely'",
+      "certainty": "high"
     },
     {
-      "row_id": 895,
+      "row_id": 717,
+      "omop_concept_id": "36203821",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 1 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 1 IgG Ab bcs TEST_NAME is s-stpn1 ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 718,
+      "omop_concept_id": "36203821",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 1 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 1 IgG Ab bcs TEST_NAME is s-stpn1 ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 719,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept for generic allergen-specific IgE antibodies with a [Mass/volume] property.",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 10A was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 896,
-      "omop_concept_id": "21492784",
-      "omop_concept_name": "Miscellaneous allergen IgE Ab [Units/volume] in Serum",
-      "reasoning": "Miscellaneous allergen IgE Ab from 'allige' and LongName ; [Units/volume] bcs unit 'u/ml' ; in Serum bcs prefix 'S-'. This is a generic code for a specific allergen test where the allergen is not specified in the code.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 897,
-      "omop_concept_id": "21492784",
-      "omop_concept_name": "Miscellaneous allergen IgE Ab [Units/volume] in Serum",
-      "reasoning": "Miscellaneous allergen IgE Ab from 'allige' and LongName ; [Units/volume] is inferred from sibling row 896 ; in Serum bcs prefix 'S-'. This is a generic code for a specific allergen test where the allergen is not specified in the code.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 898,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 720,
+      "omop_concept_id": "36204178",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 10A IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 10A IgG Ab bcs TEST_NAME is s-stpn10a ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 899,
-      "omop_concept_id": "3016771",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 900,
+      "row_id": 721,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code for amylase isoenzymes does not specify which panel is intended (e.g., 3 or 7 isoenzymes), and no generic panel candidate is available.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 901,
+      "row_id": 722,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code for amylase isoenzymes does not specify which panel is intended (e.g., 3 or 7 isoenzymes), and no generic panel candidate is available.",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 11A was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 902,
-      "omop_concept_id": "3016417",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName 'haimaperäinen' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 723,
+      "omop_concept_id": "36204278",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 11A IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 11A IgG Ab bcs TEST_NAME is s-stpn11a ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 903,
-      "omop_concept_id": "3016417",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName 'haimaperäinen' ; [Enzymatic activity/volume] is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 904,
-      "omop_concept_id": "3005685",
-      "omop_concept_name": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Salivary amylase from 'amyls' and LongName 'sylkiperäinen' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 905,
-      "omop_concept_id": "3005685",
-      "omop_concept_name": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Salivary amylase from 'amyls' and LongName 'sylkiperäinen' ; [Enzymatic activity/volume] is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 906,
-      "omop_concept_id": "3008832",
-      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Norclozapine (desmethylclozapine) from 'dmklots' and LongName ; [Moles/volume] bcs unit 'nmol/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 907,
-      "omop_concept_id": "3008832",
-      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Norclozapine (desmethylclozapine) from 'dmklots' and LongName ; [Moles/volume] bcs unit 'umol/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 8,
-      "omop_concept_id": "3008832",
-      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Norclozapine (desmethylclozapine) from 'dmklots' and LongName ; [Moles/volume] bcs unit 'âumol/l' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 909,
-      "omop_concept_id": "3008832",
-      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Norclozapine (desmethylclozapine) from 'dmklots' and LongName ; [Moles/volume] bcs deciles are consistent with nmol/l or umol/l units of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 910,
+      "row_id": 724,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code for deamidated gliadin antibodies ('gliade') does not specify the immunoglobulin class (IgA or IgG), and no 'total' or unspecified candidate is available.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 911,
+      "row_id": 725,
+      "omop_concept_id": "36203229",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 12F IgG Ab [Units/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 12F IgG Ab bcs TEST_NAME is s-stpn12f ; [Units/volume] bcs UNIT 'fmiau/ml' indicates arbitrary units per volume ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 726,
+      "omop_concept_id": "36203231",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 12F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 12F IgG Ab bcs TEST_NAME is s-stpn12f ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 727,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code for deamidated gliadin antibodies ('gliade') does not specify the immunoglobulin class (IgA or IgG), and no 'total' or unspecified candidate is available.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 912,
+      "row_id": 728,
+      "omop_concept_id": "36203922",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 14 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 14 IgG Ab bcs TEST_NAME is s-stpn14 ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 729,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept for deamidated gliadin IgE antibodies ('gliadie').",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 913,
+      "row_id": 730,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No candidate concept for deamidated gliadin IgE antibodies ('gliadie').",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 15B was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 914,
-      "omop_concept_id": "647081",
-      "omop_concept_name": "HLA-A and B and C (class I) and HLA-DP and DQ and DR (class II) Ab.IgG donor specific [Presence] in Serum or Plasma",
-      "reasoning": "HLA donor specific antibodies from 'hladsa' ; in Serum bcs prefix 'S-' ; Presence property is assumed as is typical for this test which is reported without values.",
-      "certainty": "medium"
+      "row_id": 731,
+      "omop_concept_id": "3042065",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 15B IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 15B IgG Ab bcs TEST_NAME is s-stpn15b ; [Mass/volume] bcs UNIT is mg/l ; in Serum bcs S- prefix",
+      "certainty": "high"
     },
     {
-      "row_id": 915,
+      "row_id": 732,
+      "omop_concept_id": "3042065",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 15B IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 15B IgG Ab bcs TEST_NAME is s-stpn15b ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 733,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 's-kalatue' is uninterpretable.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 916,
-      "omop_concept_id": "3014133",
-      "omop_concept_name": "Dog dander IgE Ab [Units/volume] in Serum",
-      "reasoning": "Dog dander IgE Ab from 'koira'-ige ('dog IgE') ; [Units/volume] bcs unit 'u/ml' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 917,
-      "omop_concept_id": "3014133",
-      "omop_concept_name": "Dog dander IgE Ab [Units/volume] in Serum",
-      "reasoning": "Dog dander IgE Ab from 'koira'-ige ('dog IgE') ; Units/volume property is inferred from sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 918,
+      "row_id": 734,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 's-kudosab' for 'tissue antibodies' is too generic to map to a specific LOINC concept.",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 17F was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 919,
+      "row_id": 735,
+      "omop_concept_id": "36203990",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 17F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 17F IgG Ab bcs TEST_NAME is s-stpn17f ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 736,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 's-ngmuut' is uninterpretable.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 920,
+      "row_id": 737,
+      "omop_concept_id": "3006665",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 18C IgG Ab bcs TEST_NAME is s-stpn18c ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 738,
+      "omop_concept_id": "3006665",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 18C IgG Ab bcs TEST_NAME is s-stpn18c ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 739,
+      "omop_concept_id": "36204005",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 19F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 19F IgG Ab bcs TEST_NAME is s-stpn19f ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 740,
+      "omop_concept_id": "36204005",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 19F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 19F IgG Ab bcs TEST_NAME is s-stpn19f ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 741,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The 'o' qualifier in 's-oaldos' is unknown and the decile values are multiple orders of magnitude higher than physiologically expected for serum aldosterone, making a mapping impossible without more context.",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 2 was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 921,
-      "omop_concept_id": "3040370",
-      "omop_concept_name": "OLANZapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Olanzapine from 'olants' and LongName ; [Moles/volume] bcs unit 'nmol/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 742,
+      "omop_concept_id": "36204016",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 2 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 2 IgG Ab bcs TEST_NAME is s-stpn2 ; [Mass/volume] bcs UNIT is mg/l ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 922,
-      "omop_concept_id": "3040370",
-      "omop_concept_name": "OLANZapine [Moles/volume] in Serum or Plasma",
-      "reasoning": "Olanzapine from 'olants' and LongName ; [Moles/volume] bcs deciles are consistent with 'nmol/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
+      "row_id": 743,
+      "omop_concept_id": "36204016",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 2 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 2 IgG Ab bcs TEST_NAME is s-stpn2 ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 923,
-      "omop_concept_id": "3000998",
-      "omop_concept_name": "Ovalbumin IgE Ab [Units/volume] in Serum",
-      "reasoning": "Ovalbumin IgE Ab from 'ovalbue' ; [Units/volume] bcs unit 'u/ml' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 924,
-      "omop_concept_id": "3000998",
-      "omop_concept_name": "Ovalbumin IgE Ab [Units/volume] in Serum",
-      "reasoning": "Ovalbumin IgE Ab from 'ovalbue' ; Units/volume property is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 925,
-      "omop_concept_id": "3017950",
-      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
-      "reasoning": "Salicylates from 'salis' and LongName ; [Moles/volume] bcs unit 'mmol/l' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 926,
-      "omop_concept_id": "3017950",
-      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
-      "reasoning": "Salicylates from 'salis' and LongName ; [Moles/volume] bcs unit 'umol/l' ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 927,
-      "omop_concept_id": "3017950",
-      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
-      "reasoning": "Salicylates from 'salis' and LongName ; [Moles/volume] is inferred from sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 928,
-      "omop_concept_id": "3000049",
-      "omop_concept_name": "SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoassay",
-      "reasoning": "SCL-70 Ab from 'scl' ; in Serum bcs prefix 'S-' ; Presence property is assumed for this qualitative test ; by Immunoassay as the common method and a top2000 concept.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 929,
-      "omop_concept_id": "44816654",
-      "omop_concept_name": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum",
-      "reasoning": "Soluble fms-like tyrosine kinase-1 from 'sfit1' and LongName 'Endoteelikasvutekijän liukoinen reseptori' ; [Mass/volume] bcs unit 'ng/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 930,
-      "omop_concept_id": "44816654",
-      "omop_concept_name": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum",
-      "reasoning": "Soluble fms-like tyrosine kinase-1 from 'sflt-1' ; [Mass/volume] bcs unit 'ng/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 931,
-      "omop_concept_id": "1617569",
-      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
-      "reasoning": "Cholesterol in small dense LDL from 'sLDL' ; [Moles/volume] bcs unit 'mmol/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 932,
-      "omop_concept_id": "1617569",
-      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
-      "reasoning": "Cholesterol in small dense LDL from 'sLDL' ; [Moles/volume] is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 933,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'suoli' (intestine) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 934,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'suoli' (intestine) ; [Enzymatic activity/volume] is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 935,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'suolist' (intestine) ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 936,
-      "omop_concept_id": "3020013",
-      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Alkaline phosphatase.intestinal from 'suolist' (intestine) ; [Enzymatic activity/volume] is inferred from sibling row ; in Serum bcs prefix 'S-'.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 937,
+      "row_id": 744,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The 'v' qualifier in 's-valdos' is unknown and the decile values are multiple orders of magnitude higher than physiologically expected for serum aldosterone, making a mapping impossible without more context.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 938,
-      "omop_concept_id": "36305075",
-      "omop_concept_name": "Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "Vedolizumab from 'vedol' and LongName ; [Mass/volume] bcs unit 'mg/l' and deciles ; in Serum bcs prefix 'S-'.",
+      "row_id": 745,
+      "omop_concept_id": "36204022",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 20A IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 20A IgG Ab bcs TEST_NAME is s-stpn20a ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 939,
-      "omop_concept_id": "36305075",
-      "omop_concept_name": "Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "Vedolizumab from 'vedol' and LongName ; [Mass/volume] bcs deciles are consistent with 'mg/l' unit of sibling rows ; in Serum bcs prefix 'S-'.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 940,
+      "row_id": 746,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The name 'saline' with all zero values indicates this is not a patient laboratory measurement.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 941,
-      "omop_concept_id": "3012133",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Body fluid",
-      "reasoning": "Amylase from 'amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Body fluid bcs this is a reasonable general mapping for prefix 'Se-' (Secretion).",
-      "certainty": "medium"
+      "row_id": 747,
+      "omop_concept_id": "36204094",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 23F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 23F IgG Ab bcs TEST_NAME is s-stpn23f ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
     },
     {
-      "row_id": 942,
+      "row_id": 748,
+      "omop_concept_id": "36204094",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 23F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 23F IgG Ab bcs TEST_NAME is s-stpn23f ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 749,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "Cannot determine the property (e.g. [Enzymatic activity/volume] vs [Mass/volume]) without a unit or values.",
+      "reasoning": "No suitable candidate found. The UNIT 'fmiau/ml' suggests an arbitrary unit concentration ([Units/volume]), but no such candidate for Streptococcus pneumoniae serotype 33F was retrieved.",
       "certainty": ""
     },
     {
-      "row_id": 943,
+      "row_id": 750,
+      "omop_concept_id": "3038232",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 33F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 33F IgG Ab bcs TEST_NAME is s-stpn33f ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 751,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The component abbreviation 'suld' is uninterpretable.",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
       "certainty": ""
     },
     {
-      "row_id": 944,
-      "omop_concept_id": "3017315",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Urine",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Urine bcs prefix 'U-'.",
+      "row_id": 752,
+      "omop_concept_id": "36204187",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 4 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 4 IgG Ab bcs TEST_NAME is s-stpn4 ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 945,
-      "omop_concept_id": "3017315",
-      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Urine",
-      "reasoning": "Amylase from 'amyl' and LongName ; [Enzymatic activity/volume] bcs deciles are consistent with 'u/l' unit of sibling rows ; in Urine bcs prefix 'U-'.",
+      "row_id": 753,
+      "omop_concept_id": "36204187",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 4 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 4 IgG Ab bcs TEST_NAME is s-stpn4 ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 946,
-      "omop_concept_id": "3019396",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Urine bcs prefix 'U-'.",
+      "row_id": 754,
+      "omop_concept_id": "36204286",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 5 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 5 IgG Ab bcs TEST_NAME is s-stpn5 ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
       "certainty": "high"
     },
     {
-      "row_id": 947,
-      "omop_concept_id": "3019396",
-      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
-      "reasoning": "Pancreatic amylase from 'amylp' and LongName ; [Enzymatic activity/volume] is inferred from sibling row ; in Urine bcs prefix 'U-'.",
-      "certainty": "medium"
+      "row_id": 755,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
+      "certainty": ""
+    },
+    {
+      "row_id": 756,
+      "omop_concept_id": "3005665",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 6B IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 6B IgG Ab bcs TEST_NAME is s-stpn6b ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 757,
+      "omop_concept_id": "3005665",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 6B IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 6B IgG Ab bcs TEST_NAME is s-stpn6b ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 758,
+      "omop_concept_id": "3000899",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 7F IgG Ab bcs TEST_NAME is s-stpn7f ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 759,
+      "omop_concept_id": "3000899",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 7F IgG Ab bcs TEST_NAME is s-stpn7f ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 760,
+      "omop_concept_id": "36204353",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 8 IgG Ab [Units/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 8 IgG Ab bcs TEST_NAME is s-stpn8 ; [Units/volume] bcs UNIT 'fmiau/ml' indicates arbitrary units per volume ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 761,
+      "omop_concept_id": "36204351",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 8 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 8 IgG Ab bcs TEST_NAME is s-stpn8 ; [Mass/volume] bcs UNIT is mg/l ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 762,
+      "omop_concept_id": "36204351",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 8 IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 8 IgG Ab bcs TEST_NAME is s-stpn8 ; [Mass/volume] bcs UNIT 'ug/mlgmc' indicates a mass concentration (ug/ml) ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 763,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values provided. It is not possible to distinguish between mass concentration and arbitrary unit concentration candidates based on the name alone.",
+      "certainty": ""
+    },
+    {
+      "row_id": 764,
+      "omop_concept_id": "3005260",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 9V IgG Ab bcs TEST_NAME is s-stpn9v ; [Mass/volume] bcs UNIT is mg/l and values are consistent ; in Serum bcs S- prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 765,
+      "omop_concept_id": "3005260",
+      "omop_concept_name": "Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum",
+      "reasoning": "Streptococcus pneumoniae Danish serotype 9V IgG Ab bcs TEST_NAME is s-stpn9v ; [Mass/volume] bcs value_deciles are consistent with mg/l (mass concentration) ; in Serum bcs S- prefix",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group contained a variety of common analytes like amylase, alkaline phosphatase, albumin, and aldosterone, with different specimens (serum, plasma, urine, pleural fluid, etc.) and properties. Most were straightforward to map. \n\nThe main challenges were:\n1.  **Ambiguous qualifiers**: Codes like `s-aaldos`, `s-oaldos`, and `s-valdos` had prefixes ('a', 'o', 'v') whose meanings were unclear, but the associated values were dramatically different from baseline, suggesting post-challenge states. I mapped `s-aaldos` to a generic post-challenge concept with medium certainty but left the others unmapped due to the extreme and implausible values.\n2.  **Underspecified components**: `s-gliade` (deamidated gliadin) didn't specify IgA or IgG, and no generic concept was available. `s-allige` (allergen IgE) was generic, and I chose a 'Miscellaneous allergen' concept as a placeholder.\n3.  **Uninterpretable codes**: `s-kalatue`, `s-ngmuut`, and `sp-suld` were unmappable due to unrecognizable component names.\n4.  **Missing quantity information**: As usual, rows without units or values could not be mapped if multiple properties (e.g., mass vs. moles, or absolute value vs. ratio) existed for the same test code.\n5.  **Missing candidates**: There was no candidate for Amylase in Pancreatic juice (`pa-amyl`)."
+  "reflection": "This group contained two distinct sets of tests: microbiology tests for Streptococcus from throat swabs (`Ps-` prefix) and serology tests for Streptococcus pneumoniae antibodies in serum (`S-` prefix). The mapping was generally successful where evidence was available.\n\nFor the throat swabs, it was important to distinguish between culture (`-vi`, `-cult`), antigen detection (`-ag`, `-o`), and nucleic acid tests (`-nho`). Most could be mapped confidently. I distinguished between generic Strep A antigen (`3033319`) and rapid antigen (`21491660`), assigning the latter only when the code explicitly suggested it (e.g., `ps-straagp`).\n\nFor the S. pneumoniae serology, mapping depended entirely on being able to determine the property (quantity type). Rows with units like `mg/l` or `ug/mlgmc` were mapped to `[Mass/volume]` concepts. Rows with the unit `fmiau/ml` were mapped to `[Units/volume]` concepts when a suitable candidate was available. Several rows with this unit could not be mapped because the candidate list lacked a corresponding `[Units/volume]` concept for that specific serotype. Rows that had value deciles but no unit were successfully mapped by inferring the property from the magnitude of the values. Finally, a significant number of serology rows had no unit or value data, making it impossible to choose between mass and arbitrary unit concentrations; these were correctly left unmapped."
 }

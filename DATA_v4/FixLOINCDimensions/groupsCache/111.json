@@ -1,334 +1,1006 @@
 {
   "rows": [
     {
-      "row_id": 1564,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The component is SARS-CoV-2 Antigen from '-c19ag' but the suffix 'vt' is uninterpretable, making the test code too ambiguous to map reliably. It could refer to a specimen or a test variation not covered by candidates.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1565,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The component is SARS-CoV-2 from '-covid' but the suffix 'jt' is uninterpretable, making the test code too ambiguous to map reliably.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1566,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit '%' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1567,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'e12/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1568,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'e9/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1569,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'fl' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1570,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'g/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1571,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'mmol/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1572,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'pg' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1573,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'u/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1574,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'ug/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1575,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs Ag tests are typically qualitative ; in Upper respiratory specimen bcs this is the standard for Ag tests ; by Rapid immunoassay bcs this is the most common method for point-of-care/general Ag testing, though not explicitly stated. The unit 'umol/l' with 0% share is considered data error.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1576,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' and LongName 'antigeeni' ; [Presence] bcs high p_missing (99%) for this high-volume test ; in Upper respiratory specimen bcs this is the standard specimen for Ag tests ; by Rapid immunoassay bcs this is a reasonable default for a general COVID Ag test code, many of which are rapid.",
+      "row_id": 1823,
+      "omop_concept_id": "3000965",
+      "omop_concept_name": "C reactive protein [Presence] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name '-crp-o' ; [Presence] bcs suffix '-o' (qualitative) ; in Serum or Plasma bcs it is the most common specimen and a suitable candidate exists",
       "certainty": "medium"
     },
     {
-      "row_id": 1577,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'Panbio COVID-19 Ag Rapid Test' explicitly states it's a rapid test.",
+      "row_id": 1824,
+      "omop_concept_id": "43055138",
+      "omop_concept_name": "CYP2B6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "CYP2B6 gene targeted mutation analysis bcs test name '-cyp2b6' indicates this gene test ; in Blood or Tissue bcs it's the standard specimen for this type of test",
       "certainty": "high"
     },
     {
-      "row_id": 1578,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'Flowflex SARS-CoV-2 Antigen rapid test' explicitly states it's a rapid test.",
+      "row_id": 1825,
+      "omop_concept_id": "40769150",
+      "omop_concept_name": "CYP2C19 gene targeted mutation analysis in Blood by Molecular genetics method",
+      "reasoning": "CYP2C19 gene targeted mutation analysis bcs test name '-cyp2c19' indicates this gene test ; in Blood bcs this is a standard specimen for this test",
       "certainty": "high"
     },
     {
-      "row_id": 1579,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'mariPOC SARS-CoV-2' is a known rapid test platform.",
+      "row_id": 1826,
+      "omop_concept_id": "21493567",
+      "omop_concept_name": "CYP2C9 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "CYP2C9 gene targeted mutation analysis bcs test name '-cyp2c9' indicates this gene test ; in Blood or Tissue bcs it's the standard specimen for this type of test",
       "certainty": "high"
     },
     {
-      "row_id": 1580,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'mariPOC Quick Flu+' is a rapid test platform that includes SARS-CoV-2.",
+      "row_id": 1827,
+      "omop_concept_id": "3049410",
+      "omop_concept_name": "CYP2D6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "CYP2D6 gene targeted mutation analysis bcs test name '-cyp2d6' indicates this gene test ; in Blood or Tissue bcs it's the standard specimen for this type of test",
       "certainty": "high"
     },
     {
-      "row_id": 1581,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'STANDARD Q COVID-19 Ag' is a known rapid test kit.",
+      "row_id": 1828,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept for CYP3A5 gene analysis alone was found. The available candidates are for a panel including CYP3A4.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1829,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept for CYP4F2 was found in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1830,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name '-hcgbsuh' and unit '%' suggest a ratio of beta-HCG subunit to total HCG, but no such candidate concept was found in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1831,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name '-hcgbsuh' is ambiguous; 'suh' likely means 'suhde' (ratio), but without a unit, it could also be interpreted as a quantitative measurement of the beta subunit. No single concept can be chosen with confidence.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1832,
+      "omop_concept_id": "3033236",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Blood",
+      "reasoning": "Creatine kinase.MB bcs test name 'ckmb' ; [Mass/volume] bcs suffix 'mv' likely means mass/volume and deciles are consistent with ug/L range ; in Blood bcs prefix 'b-'",
       "certainty": "high"
     },
     {
-      "row_id": 1582,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs this is the standard specimen for swab tests ; by Rapid immunoassay bcs LongName 'SARS-CoV-2 Antigen Rapid Test, Roche' explicitly states it's a rapid test.",
+      "row_id": 1833,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood.",
       "certainty": "high"
     },
     {
-      "row_id": 1583,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs standard for Ag tests ; by Rapid immunoassay bcs assumed default for a COVID Ag test. Suffix 'j' is uninterpretable but assumed to not change the core test.",
+      "row_id": 1834,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood.",
       "certainty": "medium"
     },
     {
-      "row_id": 1584,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs standard for Ag tests ; by Rapid immunoassay bcs assumed default for a COVID Ag test. Suffix 'l' is uninterpretable but assumed to not change the core test.",
+      "row_id": 1835,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles, which override the qualitative suffix '-o' ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1836,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name 'b-crp-o' indicates a qualitative CRP test in blood. No candidate concept for C reactive protein [Presence] in Blood was available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1837,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are quantitative ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood. Suffix 'os' is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1838,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' ; by Rapid immunoassay bcs suffix 'poc' indicates Point-of-Care, for which Rapid immunoassay is a suitable proxy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1839,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Blood bcs prefix 'b-' ; by Rapid immunoassay bcs suffix 'poc' indicates Point-of-Care, for which Rapid immunoassay is a suitable proxy.",
       "certainty": "medium"
     },
     {
-      "row_id": 1585,
-      "omop_concept_id": "706163",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "SARS-CoV-2 RNA bcs '-cv19' and 'Nh' from 'nho' and LongName 'nukleiinihappo' ; [Presence] bcs '-O' from 'nho' and LongName '(kval)' ; in Respiratory system specimen bcs this is the standard specimen for this test ; by NAA with probe detection bcs this is the standard method for qualitative NAATs.",
+      "row_id": 1840,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood. Suffix 'pt' may mean 'pikatesti' (rapid test), but mapping to the non-specific method is safer.",
       "certainty": "high"
     },
     {
-      "row_id": 1586,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs '-cv19' and context of 'pika' test ; [Presence] bcs p_missing is 99.95% ; in Upper respiratory specimen bcs standard for rapid Ag tests ; by Rapid immunoassay bcs 'pika' means rapid.",
+      "row_id": 1841,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs quantitative value deciles ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood.",
       "certainty": "high"
     },
     {
-      "row_id": 1587,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The component is SARS-CoV-2 from '-cv19' but the suffix 'vt' is uninterpretable, and it's not specified whether it's an antigen or nucleic acid test. The code is too ambiguous to map reliably.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1588,
-      "omop_concept_id": "586515",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ab [Presence] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 Ab bcs 'cv19ab' ; [Presence] bcs suffix '-o' means qualitative ; in Serum or Plasma bcs this is the standard LOINC system for blood-derived antibody tests, consistent with prefix 'b-' (Blood) ; by Immunoassay bcs this is the general method.",
+      "row_id": 1842,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood. Suffix 'tth' is administrative.",
       "certainty": "high"
     },
     {
-      "row_id": 1589,
-      "omop_concept_id": "706177",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) IgG Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 IgG Ab bcs 'cv19abg' and LongName 'IgG-vasta-aineet' ; [Units/volume] bcs this is the default property for quantitative antibody tests ; in Serum or Plasma bcs this is the standard LOINC system for blood-derived antibody tests, consistent with prefix 'b-' (Blood).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1590,
-      "omop_concept_id": "706178",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) IgM Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 IgM Ab bcs 'cv19abm' and LongName 'IgM-vasta-aineet' ; [Units/volume] bcs this is the default property for quantitative antibody tests ; in Serum or Plasma bcs this is the standard LOINC system for blood-derived antibody tests, consistent with prefix 'b-' (Blood).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1591,
-      "omop_concept_id": "3006093",
-      "omop_concept_name": "Chlamydia trachomatis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Chlamydia trachomatis DNA bcs 'cldi' suggests Chlamydia and C. trachomatis is the overwhelming target, 'nh' suggests DNA ; [Presence] bcs '-o' in 'nho' means qualitative ; in Specimen bcs the code does not specify a source ; by NAA with probe detection bcs this is the standard method for NAATs.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1592,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs 'covid-19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs standard for rapid Ag tests ; by Rapid immunoassay bcs 'hoi' likely implies 'hoitoyksikkö' (care unit), suggesting a point-of-care rapid test.",
+      "row_id": 1843,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' as the best available match for whole blood. Suffix 'tth' is administrative.",
       "certainty": "medium"
     },
     {
-      "row_id": 1593,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs 'cv19ag' ; [Presence] bcs high p_missing (100%) ; in Upper respiratory specimen bcs this is the standard specimen for Ag tests ; by Rapid immunoassay bcs this is a reasonable default for a general COVID Ag test code, many of which are rapid.",
+      "row_id": 1844,
+      "omop_concept_id": "1091617",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Blood bcs prefix 'b-'. The suffix '-v' is listed as 'free' but this is nonsensical for CRP; it may mean 'vieri' (POC), but without confirmation, the base concept is chosen. Mapped to 'Serum, Plasma or Blood' as best available match.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1845,
+      "omop_concept_id": "42870365",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Blood by High sensitivity method",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are in a low range, suggesting Mass concentration ; in Blood bcs prefix 'b-' ; by High sensitivity method bcs the low value deciles (e.g. median 3.34) are characteristic of an hs-CRP assay.",
       "certainty": "medium"
     },
     {
-      "row_id": 1594,
-      "omop_concept_id": "36031861",
-      "omop_concept_name": "Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel bcs 'cv19infrs' is a clear abbreviation for this combination, and multiplex panels are typically RNA-based ; in Respiratory system specimen bcs this is the specimen for this panel ; by NAA with probe detection bcs this is the standard method.",
+      "row_id": 1846,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' ; by Rapid immunoassay bcs suffix 'vt' and LongName indicate 'vieritutkimus' (point-of-care test), for which Rapid immunoassay is a suitable proxy.",
       "certainty": "high"
     },
     {
-      "row_id": 1595,
-      "omop_concept_id": "706163",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "SARS-CoV-2 RNA bcs 'cv19' and 'Nh' from 'nho' ; [Presence] bcs '-O' from 'nho' for qualitative ; in Respiratory system specimen bcs this is the standard specimen for this test ; by NAA with probe detection bcs this is the standard method for qualitative NAATs.",
+      "row_id": 1847,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Blood bcs prefix 'b-'; mapped to 'Serum, Plasma or Blood' ; by Rapid immunoassay bcs suffix 'vt' and LongName indicate 'vieritutkimus' (point-of-care test), for which Rapid immunoassay is a suitable proxy.",
       "certainty": "high"
     },
     {
-      "row_id": 1596,
-      "omop_concept_id": "706163",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "SARS-CoV-2 RNA bcs 'cv19' and 'Nh' from 'nho' ; [Presence] bcs '-O' from 'nho' for qualitative ; in Respiratory system specimen bcs this is the standard specimen ; by NAA with probe detection bcs this is the standard method. The suffix 'pth' is likely administrative and doesn't change the test itself.",
+      "row_id": 1848,
+      "omop_concept_id": "40769150",
+      "omop_concept_name": "CYP2C19 gene targeted mutation analysis in Blood by Molecular genetics method",
+      "reasoning": "CYP2C19 gene targeted mutation analysis bcs test name 'cyp2c19' and LongName specify a DNA test for this gene ; in Blood bcs prefix 'b-' and LongName 'verestä'",
       "certainty": "high"
     },
     {
-      "row_id": 1597,
-      "omop_concept_id": "36033652",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) lineage [Identifier] in Specimen by Molecular genetics method",
-      "reasoning": "SARS-CoV-2 lineage bcs this is the primary clinical output of sequencing ; [Identifier] bcs the result is the name of the lineage (e.g., Omicron BA.5) ; in Specimen bcs not specified ; by Molecular genetics method bcs 'sekv' means sequencing, which is a molecular genetics method.",
+      "row_id": 1849,
+      "omop_concept_id": "3049410",
+      "omop_concept_name": "CYP2D6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+      "reasoning": "CYP2D6 gene targeted mutation analysis bcs test name 'cyp2d6' and LongName specify a DNA test for this gene ; in Blood or Tissue bcs prefix 'b-' and LongName 'verestä' (from blood) fit this specimen type.",
       "certainty": "high"
     },
     {
-      "row_id": 1598,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs 'covid' and context of self-test ('oma') and qualitative nature ('-o') ; [Presence] bcs suffix '-o' and p_missing is 100% ; in Upper respiratory specimen bcs self-tests use nasal swabs ; by Rapid immunoassay bcs 'oma' (self-test) implies a rapid test.",
+      "row_id": 1850,
+      "omop_concept_id": "3051387",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Capillary blood bcs prefix 'cb-'",
       "certainty": "high"
     },
     {
-      "row_id": 1599,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `p-c1qabg` and LongName clearly specify antibodies to Complement C1q of the IgG class. The candidate list contains a concept for total C1q antibodies (`3042951`) but not one specific to IgG antibodies. No appropriate candidate is available.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1600,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `p-c1qabg` and LongName clearly specify antibodies to Complement C1q of the IgG class. The candidate list contains a concept for total C1q antibodies (`3042951`) but not one specific to IgG antibodies. No appropriate candidate is available.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1601,
-      "omop_concept_id": "36033641",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay",
-      "reasoning": "SARS-CoV-2 Ag bcs 'covid-19ag' ; [Presence] bcs p_missing is 100% ; in Upper respiratory specimen bcs standard for rapid Ag tests ; by Rapid immunoassay bcs 'pika' means rapid.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1602,
-      "omop_concept_id": "586522",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 Ab bcs 'cv19ab' and LongName 'vasta-aineet' ; [Units/volume] bcs unit is 'au/ml' ; in Serum or Plasma bcs prefix 's-' means Serum ; by Immunoassay bcs this is the general method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1603,
-      "omop_concept_id": "586522",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 Ab bcs 'cv19ab' and LongName 'vasta-aineet' ; [Units/volume] bcs this is the default property for this code (no '-O' suffix) ; in Serum or Plasma bcs prefix 's-' means Serum ; by Immunoassay bcs this is the general method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1604,
-      "omop_concept_id": "723459",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) IgA Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 IgA Ab bcs 'cv19aba' and LongName 'IgA-vasta-aineet' ; [Units/volume] bcs this is the default property for quantitative antibody tests ; in Serum or Plasma bcs prefix 's-' means Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1605,
-      "omop_concept_id": "706177",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) IgG Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 IgG Ab bcs 'cv19abg' and LongName 'IgG-vasta-aineet' ; [Units/volume] bcs this is the default property for quantitative antibody tests ; in Serum or Plasma bcs prefix 's-' means Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1606,
-      "omop_concept_id": "706178",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) IgM Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 IgM Ab bcs 'cv19abm' and LongName 'IgM- vasta-aineet' ; [Units/volume] bcs this is the default property for quantitative antibody tests ; in Serum or Plasma bcs prefix 's-' means Serum.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1607,
-      "omop_concept_id": "586522",
-      "omop_concept_name": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum or Plasma by Immunoassay",
-      "reasoning": "SARS-CoV-2 Ab bcs 'cv19ab' ; [Units/volume] bcs default quantitative property ; in Serum or Plasma bcs prefix 's-' means Serum. Suffix 'p' is unknown, so mapping to total antibodies is the safest choice.",
+      "row_id": 1851,
+      "omop_concept_id": "3051387",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Capillary blood",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Capillary blood bcs prefix 'cb-'",
       "certainty": "medium"
     },
     {
-      "row_id": 1608,
+      "row_id": 1852,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'cp-' likely means capillary plasma, which fits this specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1853,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'cp-' likely means capillary plasma, which fits this specimen.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1854,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'cp-' likely means capillary plasma, which fits this specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1855,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'cp-' likely means capillary plasma, which fits this specimen.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1856,
+      "omop_concept_id": "3032836",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --fasting",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'fP-' indicates Plasma ; --fasting bcs prefix 'fP-' indicates Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1857,
+      "omop_concept_id": "3032836",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --fasting",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs value deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'fP-' indicates Plasma ; --fasting bcs prefix 'fP-' indicates Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1858,
+      "omop_concept_id": "3032836",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --fasting",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'fS-' indicates Serum ; --fasting bcs prefix 'fS-' indicates Fasting serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1859,
+      "omop_concept_id": "3032836",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --fasting",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'fS-' indicates Serum ; --fasting bcs prefix 'fS-' indicates Fasting serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1860,
+      "omop_concept_id": "3032836",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --fasting",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'fS-' indicates Serum ; --fasting bcs prefix 'fS-' indicates Fasting serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1861,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1862,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs value deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1863,
+      "omop_concept_id": "40759040",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma ; --post meal bcs suffix 'a' and LongName 'aterianjälkeinen' mean post-meal.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1864,
+      "omop_concept_id": "40759040",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs value deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'P-' indicates Plasma ; --post meal bcs suffix 'a' and LongName 'aterianjälkeinen' mean post-meal.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1865,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-peptidi' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1866,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-peptidi' ; [Moles/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1867,
+      "omop_concept_id": "3003245",
+      "omop_concept_name": "Complement C1 esterase inhibitor [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' and LongName ; [Mass/volume] bcs unit 'g/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1868,
+      "omop_concept_id": "3003245",
+      "omop_concept_name": "Complement C1 esterase inhibitor [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' and LongName ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1869,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs LongName indicates 'aktiivisuus' (activity) and unit is '%' ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1870,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs LongName indicates 'aktiivisuus' (activity) and this property is measured as a ratio ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1871,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs LongName indicates 'aktiivisuus' (activity) and value deciles are consistent with a percentage ratio ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1872,
+      "omop_concept_id": "3037551",
+      "omop_concept_name": "Cancer Ag 125 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 125 bcs test name 'ca12-5' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1873,
+      "omop_concept_id": "3037551",
+      "omop_concept_name": "Cancer Ag 125 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 125 bcs test name 'ca12-5' ; [Units/volume] bcs value deciles are consistent with U/mL ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1874,
+      "omop_concept_id": "3006588",
+      "omop_concept_name": "Cancer Ag 15-3 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 15-3 bcs test name 'ca15-3' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1875,
+      "omop_concept_id": "3006588",
+      "omop_concept_name": "Cancer Ag 15-3 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 15-3 bcs test name 'ca15-3' ; [Units/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1876,
+      "omop_concept_id": "3022914",
+      "omop_concept_name": "Cancer Ag 19-9 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 19-9 bcs test name 'ca19-9' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1877,
+      "omop_concept_id": "3022914",
+      "omop_concept_name": "Cancer Ag 19-9 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 19-9 bcs test name 'ca19-9' ; [Units/volume] bcs value deciles are consistent with U/mL ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1878,
+      "omop_concept_id": "3029790",
+      "omop_concept_name": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ck-mb' ; [Enzymatic activity/volume] bcs unit 'u/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1879,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ck-mb' ; [Mass/volume] bcs unit 'ug/l' ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1880,
+      "omop_concept_id": "3029790",
+      "omop_concept_name": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ck-mb' ; [Enzymatic activity/volume] bcs value deciles are consistent with U/L, and this is a common property for CK-MB ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1881,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ck-mbm' ; [Mass/volume] bcs suffix 'm' (massa) and unit 'ug/l' ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1882,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ck-mbm' ; [Mass/volume] bcs suffix 'm' (massa) ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1883,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ckmbm' ; [Mass/volume] bcs suffix 'm' (massa) and unit 'ug/l' ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1884,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 'ckmbm' ; [Mass/volume] bcs suffix 'm' (massa) ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1885,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1886,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1887,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1888,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1889,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and quantitative values, which override the '-o' (qualitative) suffix ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1890,
+      "omop_concept_id": "3000965",
+      "omop_concept_name": "C reactive protein [Presence] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Presence] bcs suffix '-o' (qualitative) and no quantitative data ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1891,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1892,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1893,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma. Suffix '-p' (upright) is not clinically significant for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1894,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are quantitative ; in Serum or Plasma bcs prefix 'P-' indicates Plasma. Suffix '-p' (upright) is not clinically significant for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1895,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum, Plasma or Blood bcs prefix 'P-' indicates Plasma ; by Rapid immunoassay bcs suffix 'poc' indicates Point-of-Care, for which this is a suitable proxy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1896,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are quantitative ; in Serum, Plasma or Blood bcs prefix 'P-' indicates Plasma ; by Rapid immunoassay bcs suffix 'poc' indicates Point-of-Care, for which this is a suitable proxy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1897,
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' ; in Serum or Plasma bcs prefix 'P-' indicates Plasma ; by High sensitivity method bcs value deciles are in a very low range (e.g. median 2.83) characteristic of hs-CRP assays.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1898,
+      "omop_concept_id": "3010156",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage of this specific code ('päi') ; in Serum or Plasma bcs prefix 'P-' indicates Plasma ; by High sensitivity method bcs 'päi' variants typically denote hs-CRP and its use for cardiac risk assessment.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1899,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum, Plasma or Blood bcs prefix 'P-' indicates Plasma ; by Rapid immunoassay bcs suffix 'vt' indicates 'vieritutkimus' (point-of-care test), for which this is a suitable proxy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1900,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum, Plasma or Blood bcs prefix 'P-' indicates Plasma ; by Rapid immunoassay bcs suffix 'vt' indicates 'vieritutkimus' (point-of-care test), for which this is a suitable proxy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1901,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1902,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are quantitative ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1903,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1904,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1905,
+      "omop_concept_id": "3018171",
+      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Units/volume] bcs unit 'iu/l' and value deciles ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1906,
+      "omop_concept_id": "3018171",
+      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Units/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'P-' indicates Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1907,
+      "omop_concept_id": "40759040",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
+      "reasoning": "C peptide bcs test name 'c-pep' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum ; --post meal bcs suffix 'a' indicates 'aterianjälkeinen' (post-meal).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1908,
+      "omop_concept_id": "40759040",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma --post meal",
+      "reasoning": "C peptide bcs test name 'c-pep' ; [Moles/volume] bcs value deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'S-' indicates Serum ; --post meal bcs suffix 'a' indicates 'aterianjälkeinen' (post-meal).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1909,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs unit 'nmol/l' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1910,
+      "omop_concept_id": "3027923",
+      "omop_concept_name": "C peptide [Moles/volume] in Serum or Plasma",
+      "reasoning": "C peptide bcs test name 'c-pept' ; [Moles/volume] bcs value deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1911,
+      "omop_concept_id": "3003245",
+      "omop_concept_name": "Complement C1 esterase inhibitor [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; [Mass/volume] bcs unit 'g/l' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1912,
+      "omop_concept_id": "3003245",
+      "omop_concept_name": "Complement C1 esterase inhibitor [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; [Mass/volume] bcs value deciles are consistent with g/L ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1913,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs suffix 'bk' and LongName indicate 'aktiivisuus' (activity) and unit is '%' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1914,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs suffix 'bk' and LongName indicate 'aktiivisuus' (activity). The unit '%' is a ratio. The recorded unit 'g/l' is inconsistent and ignored. ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1915,
+      "omop_concept_id": "3049801",
+      "omop_concept_name": "Complement C1 esterase inhibitor actual/normal in Serum or Plasma",
+      "reasoning": "Complement C1 esterase inhibitor bcs test name 'c1inh' ; actual/normal bcs suffix 'bk' and LongName indicate 'aktiivisuus' (activity), measured as a ratio ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1916,
+      "omop_concept_id": "3037551",
+      "omop_concept_name": "Cancer Ag 125 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 125 bcs test name 'ca12-5' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1917,
+      "omop_concept_id": "3037551",
+      "omop_concept_name": "Cancer Ag 125 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 125 bcs test name 'ca12-5' ; [Units/volume] bcs value deciles are consistent with U/mL ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1918,
+      "omop_concept_id": "3006588",
+      "omop_concept_name": "Cancer Ag 15-3 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 15-3 bcs test name 'ca15-3' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1919,
+      "omop_concept_id": "3006588",
+      "omop_concept_name": "Cancer Ag 15-3 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 15-3 bcs test name 'ca15-3' ; [Units/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1920,
+      "omop_concept_id": "3022914",
+      "omop_concept_name": "Cancer Ag 19-9 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 19-9 bcs test name 'ca19-9' ; [Units/volume] bcs unit 'u/ml' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1921,
+      "omop_concept_id": "3022914",
+      "omop_concept_name": "Cancer Ag 19-9 [Units/volume] in Serum or Plasma",
+      "reasoning": "Cancer Ag 19-9 bcs test name 'ca19-9' ; [Units/volume] bcs value deciles are consistent with U/mL ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1922,
+      "omop_concept_id": "3028461",
+      "omop_concept_name": "Complement total hemolytic CH50 [Units/volume] in Serum or Plasma",
+      "reasoning": "Complement total hemolytic CH50 bcs test name 'ch100' and LongName indicate total complement activity, for which CH50 is the standard LOINC term ; [Units/volume] bcs this is the standard property for this assay ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1923,
+      "omop_concept_id": "44817194",
+      "omop_concept_name": "Complement alternate pathway AH50 actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement alternate pathway AH50 bcs test name 'ch100al' and LongName indicate alternative pathway activity ; actual/normal bcs unit is '%' ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1924,
+      "omop_concept_id": "44817194",
+      "omop_concept_name": "Complement alternate pathway AH50 actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement alternate pathway AH50 bcs test name 'ch100al' and LongName indicate alternative pathway activity ; actual/normal bcs the property is a ratio, typically reported in % ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1925,
+      "omop_concept_id": "3051691",
+      "omop_concept_name": "Complement total hemolytic CH50 actual/normal in Serum or Plasma",
+      "reasoning": "Complement total hemolytic CH50 bcs test name 'ch100cl' and LongName indicate classical pathway activity (CH50) ; actual/normal bcs unit is '%' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1926,
+      "omop_concept_id": "3051691",
+      "omop_concept_name": "Complement total hemolytic CH50 actual/normal in Serum or Plasma",
+      "reasoning": "Complement total hemolytic CH50 bcs test name 'ch100cl' and LongName indicate classical pathway activity (CH50) ; actual/normal bcs property is a ratio, typically reported in % ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1927,
+      "omop_concept_id": "44817196",
+      "omop_concept_name": "Complement lectin pathway actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement lectin pathway bcs test name 'ch100l' and LongName indicate lectin pathway activity ; actual/normal bcs unit is '%' ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1928,
+      "omop_concept_id": "44817196",
+      "omop_concept_name": "Complement lectin pathway actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement lectin pathway bcs test name 'ch100l' and LongName indicate lectin pathway activity ; actual/normal bcs property is a ratio, typically reported in % ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1929,
+      "omop_concept_id": "44817196",
+      "omop_concept_name": "Complement lectin pathway actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement lectin pathway bcs test name 'ch100mbl' indicates Mannose-Binding Lectin pathway activity ; actual/normal bcs unit is '%' ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1930,
+      "omop_concept_id": "44817196",
+      "omop_concept_name": "Complement lectin pathway actual/normal in Serum by Immunoassay",
+      "reasoning": "Complement lectin pathway bcs test name 'ch100mbl' indicates Mannose-Binding Lectin pathway activity ; actual/normal bcs property is a ratio, typically reported in % ; in Serum bcs prefix 'S-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1931,
+      "omop_concept_id": "3015040",
+      "omop_concept_name": "Creatine kinase.BB/Creatine kinase.total in Serum or Plasma",
+      "reasoning": "Creatine kinase.BB/Creatine kinase.total bcs test name 's-ck-bb' and unit '%' indicate a ratio ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1932,
+      "omop_concept_id": "3008994",
+      "omop_concept_name": "Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Creatine kinase.BB bcs test name 's-ck-bb' ; [Enzymatic activity/volume] bcs unit 'u/l' ; in Serum or Plasma bcs prefix 'S-'. The method 'Electrophoresis' is a reasonable default for isoenzyme measurement.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1933,
+      "omop_concept_id": "3008994",
+      "omop_concept_name": "Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Creatine kinase.BB bcs test name 's-ck-bb' ; [Enzymatic activity/volume] bcs inferred from common usage for this test ; in Serum or Plasma bcs prefix 'S-'. The method 'Electrophoresis' is a reasonable default for isoenzyme measurement.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1934,
+      "omop_concept_id": "3016311",
+      "omop_concept_name": "Creatine kinase.MB/Creatine kinase.total in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB/Creatine kinase.total bcs test name 's-ck-mb' and unit '%' indicate a ratio ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1935,
+      "omop_concept_id": "3029790",
+      "omop_concept_name": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 's-ck-mb' ; [Enzymatic activity/volume] bcs unit 'u/l' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1936,
+      "omop_concept_id": "3029790",
+      "omop_concept_name": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs test name 's-ck-mb' ; [Enzymatic activity/volume] bcs inferred from common usage for this test ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1937,
+      "omop_concept_id": "3008558",
+      "omop_concept_name": "Creatine kinase.MM/Creatine kinase.total in Serum or Plasma",
+      "reasoning": "Creatine kinase.MM/Creatine kinase.total bcs test name 's-ck-mm' and unit '%' indicate a ratio ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1938,
+      "omop_concept_id": "3016913",
+      "omop_concept_name": "Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Creatine kinase.MM bcs test name 's-ck-mm' ; [Enzymatic activity/volume] bcs unit 'u/l' ; in Serum or Plasma bcs prefix 'S-'. The method 'Electrophoresis' is a reasonable default for isoenzyme measurement.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1939,
+      "omop_concept_id": "3016913",
+      "omop_concept_name": "Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Creatine kinase.MM bcs test name 's-ck-mm' ; [Enzymatic activity/volume] bcs inferred from common usage for this test ; in Serum or Plasma bcs prefix 'S-'. The method 'Electrophoresis' is a reasonable default for isoenzyme measurement.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1940,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs value deciles are quantitative, overriding the '-o' suffix and 'form' unit ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1941,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs unit 'mg/l' and value deciles, overriding the '-o' suffix ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1942,
+      "omop_concept_id": "3020460",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Mass/volume] bcs this is the standard property for CRP, and the unit 'u/ml' is likely a data error ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1943,
+      "omop_concept_id": "3000965",
+      "omop_concept_name": "C reactive protein [Presence] in Serum or Plasma",
+      "reasoning": "C reactive protein bcs test name 'crp' ; [Presence] bcs suffix '-o' (qualitative) and no quantitative data ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1944,
+      "omop_concept_id": "3038136",
+      "omop_concept_name": "Choriogonadotropin.beta subunit [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit bcs test name 'hcg-b' ; [Units/volume] bcs unit 'u/l' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1945,
+      "omop_concept_id": "3038136",
+      "omop_concept_name": "Choriogonadotropin.beta subunit [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit bcs test name 'hcg-b' ; [Units/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1946,
+      "omop_concept_id": "3019497",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcg-b-v' (v=vapaa=free) ; [Moles/volume] bcs unit 'pmol/l' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1947,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcg-b-v' (v=vapaa=free) ; [Mass/volume] bcs unit 'ug/l' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1948,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcg-b-v' (v=vapaa=free) ; [Mass/volume] bcs inferred from common usage for this code (matching row 1947) ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1949,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcg-b' and unit 'ug/l' strongly suggest free beta HCG mass, as total beta HCG is usually in U/L ; in Serum or Plasma bcs prefix 'S-'. Suffix '/d' is uninformative.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1950,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcg-b' and common usage suggest free beta HCG mass ; [Mass/volume] bcs inferred from sibling row 1949 ; in Serum or Plasma bcs prefix 'S-'. Suffix '/d' is uninformative.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1951,
+      "omop_concept_id": "3003191",
+      "omop_concept_name": "Choriogonadotropin [Presence] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Presence] bcs suffix '-o' (qualitative) ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1952,
+      "omop_concept_id": "3018171",
+      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg-tot' (total) ; [Units/volume] bcs unit 'iu/l' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1953,
+      "omop_concept_id": "3018171",
+      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg-tot' (total) ; [Units/volume] bcs unit 'u/l' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1954,
+      "omop_concept_id": "3018171",
+      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg-tot' (total) ; [Units/volume] bcs inferred from common usage for this code ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1955,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-cv19sab` and LongName clearly specify a quantitative antibody test against the SARS-CoV-2 Spike protein. The candidate list lacks a general concept for total quantitative antibodies to S protein (e.g. `[Units/volume]`). Available concepts are for IgG only, or neutralizing antibodies, or are qualitative.",
+      "reasoning": "The test name 's-hcgbsuh' ('suh' = ratio) and unit '%' indicate a ratio of beta-HCG to total HCG. No candidate for this ratio was available.",
       "certainty": ""
     },
     {
-      "row_id": 1609,
+      "row_id": 1956,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-cv19sab` and LongName clearly specify a quantitative antibody test against the SARS-CoV-2 Spike protein. The candidate list lacks a general concept for total quantitative antibodies to S protein (e.g. `[Units/volume]`). Available concepts are for IgG only, or neutralizing antibodies, or are qualitative.",
+      "reasoning": "The test name 's-hcgbsuh' is ambiguous. 'suh' means ratio, but without a confirming unit, the intended measurement (ratio vs concentration) is unclear.",
       "certainty": ""
     },
     {
-      "row_id": 1610,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `s-cv19sab` and LongName clearly specify a quantitative antibody test against the SARS-CoV-2 Spike protein. The candidate list lacks a general concept for total quantitative antibodies to S protein (e.g. `[Units/volume]`). Available concepts are for IgG only, or neutralizing antibodies, or are qualitative.",
-      "certainty": ""
+      "row_id": 1957,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs unit 'ug/l' and value deciles ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1958,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs value deciles are consistent with ug/L ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1959,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs unit 'ug/l' and value deciles ; in Serum or Plasma bcs prefix 'S-'. The '/d' suffix is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1960,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs inferred from common usage of this code ; in Serum or Plasma bcs prefix 'S-'. The '/d' suffix is uninformative.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1961,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs unit 'ug/l' and value deciles ; in Serum or Plasma bcs prefix 'S-'. The 'tr' suffix is likely a lab-specific code and does not change the core test identity.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1962,
+      "omop_concept_id": "3019145",
+      "omop_concept_name": "Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin.beta subunit free bcs test name 'hcgbv' (v=vapaa=free) ; [Mass/volume] bcs inferred from common usage of this code ; in Serum or Plasma bcs prefix 'S-'. The 'tr' suffix is likely a lab-specific code.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1963,
+      "omop_concept_id": "3004376",
+      "omop_concept_name": "Choriogonadotropin [Multiple of the median] in Serum or Plasma",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Multiple of the median] bcs suffix 'xmom' and unit 'mom' ; in Serum or Plasma bcs prefix 'S-' indicates Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1964,
+      "omop_concept_id": "3018954",
+      "omop_concept_name": "Choriogonadotropin [Presence] in Urine",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Presence] bcs suffix '-o' (qualitative) ; in Urine bcs prefix 'U-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1965,
+      "omop_concept_id": "3018954",
+      "omop_concept_name": "Choriogonadotropin [Presence] in Urine",
+      "reasoning": "Choriogonadotropin bcs test name 'hcg' ; [Presence] bcs suffix '-o' (qualitative) ; in Urine bcs prefix 'U-'.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group was dominated by COVID-19 related tests. Most were clearly identifiable from the test code abbreviations (`ag`, `nho`, `abg`, `pika`, `sekv`). A significant number of rows represented rapid antigen tests, including both generic codes and codes specific to test kits. A single LOINC concept (`36033641`) for rapid antigen tests in upper respiratory specimens was a good fit for all of them. The antibody tests were also straightforward to map, with clear distinctions for IgA, IgG, IgM, and total antibodies based on the Finnish codes.\n\nTwo main challenges arose from gaps in the candidate list:\n1.  **C1q IgG Antibodies (`p-c1qabg`)**: The candidate list only had a concept for total C1q antibodies, not the IgG-specific one required by the code. The mapping was left empty.\n2.  **Spike Protein Antibodies (`s-cv19sab`)**: The code specifies antibodies to the Spike protein, and the data clearly shows it's a quantitative test. The candidate list did not contain a suitable concept for *total* quantitative S-protein antibodies; the available options were for a specific subclass (IgG) or property (`[Presence]`). These rows also had to be left unmapped.\n\nA few codes with uninterpretable suffixes (e.g., `-c19agvt`, `-covidjt`) were too ambiguous to map confidently.\n\nThe rows for `-cv19ag` with various quantitative units (1566-1575) were clear cases of data error (0% unit share, very low `n`), and were mapped based on the primary, qualitative use of the code seen in the main row (1576)."
+  "reflection": "This group contained a wide variety of tests, including tumor markers (CA 12-5, 15-3, 19-9), C-peptide, C-reactive protein (CRP), hCG, complement, CK isoenzymes, and several pharmacogenetic tests (CYP genes). Mapping was generally successful and straightforward, especially for the common chemistry tests where specimen, analyte, and property were clear from the Finnish code and unit.\n\nSeveral challenges were noted:\n1.  **Missing Concepts**: The candidate list lacked concepts for `CYP3A5` (solo), `CYP4F2`, and a ratio of beta-HCG to total HCG (`-hcgbsuh`). These rows could not be mapped.\n2.  **Ambiguous Suffixes**: The suffix `-o` is meant to be qualitative, but for CRP tests (e.g., `b-crp-o`, `s-crp-o`), it often appeared on rows with quantitative units and values. In these cases, the quantitative evidence was prioritized over the suffix, but for rows with only the name, the suffix was followed, leading to different mappings for the same code. This reflects real-world variability where a test might be used both qualitatively and quantitatively.\n3.  **Vague Suffixes**: Many codes had suffixes like `-hy`, `-lb`, `-os`, `/d`, `-tth` which appear to be local lab or administrative codes. These were ignored in favor of the core test name.\n4.  **Specimen Mapping**: `B-` (Blood) codes for CRP were mapped to the `Serum, Plasma or Blood` LOINC concept, as a specific `Blood` concept for mass concentration wasn't available and this is the recommended broader term."
 }

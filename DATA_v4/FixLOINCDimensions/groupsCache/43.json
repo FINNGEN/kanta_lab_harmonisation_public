@@ -1,740 +1,677 @@
 {
   "rows": [
     {
-      "row_id": 482,
-      "omop_concept_id": "3037522",
-      "omop_concept_name": "Nuclear Ab [Titer] in Serum",
-      "reasoning": "Nuclear Ab bcs LongName '-Tuma, vasta-aineet' (Nuclear, antibodies) and code '-ana' ; [Titer] bcs UNIT is 'titre' ; in Serum bcs this is the default specimen for immunology and no other is stated",
-      "certainty": "high"
-    },
-    {
-      "row_id": 483,
-      "omop_concept_id": "3037522",
-      "omop_concept_name": "Nuclear Ab [Titer] in Serum",
-      "reasoning": "Nuclear Ab bcs LongName '-Tuma, vasta-aineet' (Nuclear, antibodies) and code '-ana' ; [Titer] bcs this is the standard property for this test, though not explicitly stated in this row ; in Serum bcs this is the default specimen for immunology and no other is stated",
+      "row_id": 487,
+      "omop_concept_id": "3045762",
+      "omop_concept_name": "Complement C3d [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C3d bcs TEST_NAME '-c3d' ; in Serum or Plasma bcs it is the typical specimen and guess confirms ; [Mass/volume] bcs this is the most common property for C3d, although not confirmed by units or values",
       "certainty": "medium"
     },
     {
-      "row_id": 484,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code specifies Amniotic fluid as the specimen (prefix 'am-', LongName 'Am-Erytropoietiini'), but the candidate list contains no concepts for Erythropoietin in Amniotic fluid.",
-      "certainty": ""
-    },
-    {
-      "row_id": 485,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code specifies Amniotic fluid as the specimen (prefix 'am-', LongName 'Am-Erytropoietiini'), but the candidate list contains no concepts for Erythropoietin in Amniotic fluid.",
-      "certainty": ""
-    },
-    {
-      "row_id": 486,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code specifies Amniotic fluid as the specimen (prefix 'am-', LongName 'Am-Erytropoietiini'), but the candidate list contains no concepts for Erythropoietin in Amniotic fluid.",
-      "certainty": ""
-    },
-    {
-      "row_id": 487,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-adp` is for a platelet aggregation test induced by ADP, and the unit `auc` (Area Under Curve) specifies the property. No candidate concept has a property corresponding to 'Area Under Curve'.",
-      "certainty": ""
-    },
-    {
       "row_id": 488,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-adp` is for a platelet aggregation test induced by ADP. A sibling row has the unit 'auc' (Area Under Curve), for which no candidate property exists. Without a unit or values in this row, it is impossible to select a property, and it's likely none of the available candidates are correct.",
-      "certainty": ""
+      "omop_concept_id": "3025059",
+      "omop_concept_name": "Transferrin.carbohydrate deficient [Mass/volume] in Serum or Plasma",
+      "reasoning": "Transferrin.carbohydrate deficient bcs TEST_NAME '-cdt' ; [Mass/volume] bcs UNIT is 'mg/l' ; in Serum or Plasma bcs it is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 489,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-aspi` is for a platelet aggregation test induced by arachidonic acid (related to aspirin), and the unit `auc` (Area Under Curve) specifies the property. No candidate concept has a property corresponding to 'Area Under Curve'.",
-      "certainty": ""
+      "omop_concept_id": "3003785",
+      "omop_concept_name": "Carcinoembryonic Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Carcinoembryonic Ag bcs TEST_NAME '-cea' and LongName '-Karsinoembryonaalinen antigeeni' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs it is the default specimen",
+      "certainty": "high"
     },
     {
       "row_id": 490,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-aspi` is for a platelet aggregation test induced by arachidonic acid. A sibling row has the unit 'auc' (Area Under Curve), for which no candidate property exists. Without a unit or values in this row, it is impossible to select a property, and it's likely none of the available candidates are correct.",
+      "reasoning": "No unit or values are provided, so the property (e.g., Mass/volume, Units/volume) cannot be determined for Carcinoembryonic Ag.",
       "certainty": ""
     },
     {
       "row_id": 491,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-vasp` refers to the Vasodilator-stimulated phosphoprotein (VASP) test, but no candidate concepts for this analyte were provided in the search results.",
-      "certainty": ""
-    },
-    {
-      "row_id": 492,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-vasp` refers to the Vasodilator-stimulated phosphoprotein (VASP) test, but no candidate concepts for this analyte were provided in the search results.",
-      "certainty": ""
-    },
-    {
-      "row_id": 493,
-      "omop_concept_id": "3009461",
-      "omop_concept_name": "5-Hydroxyindoleacetate [Moles/time] in 24 hour Urine",
-      "reasoning": "5-Hydroxyindoleacetate bcs TEST_NAME 'du-5hiaa' and LongName 'dU-Hydroksi-indolyyliasetaatti (5-)' ; [Moles/time] bcs the UNIT 'umol' for a 24-hour collection implies total amount per time period ; in 24 hour Urine bcs TEST_NAME starts with 'du-'",
+      "omop_concept_id": "3031248",
+      "omop_concept_name": "Chloride [Moles/volume] in Arterial blood",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in range ; in Arterial blood bcs prefix 'ab-'",
       "certainty": "high"
     },
     {
+      "row_id": 492,
+      "omop_concept_id": "3031248",
+      "omop_concept_name": "Chloride [Moles/volume] in Arterial blood",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in range ; in Arterial blood bcs prefix 'ap-' indicates Arterial plasma, for which Arterial blood is the appropriate LOINC system",
+      "certainty": "high"
+    },
+    {
+      "row_id": 493,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Chloride cannot be determined.",
+      "certainty": ""
+    },
+    {
       "row_id": 494,
-      "omop_concept_id": "3009461",
-      "omop_concept_name": "5-Hydroxyindoleacetate [Moles/time] in 24 hour Urine",
-      "reasoning": "5-Hydroxyindoleacetate bcs TEST_NAME 'du-5hiaa' and LongName 'dU-Hydroksi-indolyyliasetaatti (5-)' ; [Moles/time] bcs UNIT is 'umol/24h' ; in 24 hour Urine bcs TEST_NAME starts with 'du-'",
+      "omop_concept_id": "3018572",
+      "omop_concept_name": "Chloride [Moles/volume] in Blood",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in range ; in Blood bcs prefix 'b-'",
       "certainty": "high"
     },
     {
       "row_id": 495,
-      "omop_concept_id": "3010801",
-      "omop_concept_name": "5-Hydroxyindoleacetate [Moles/volume] in 24 hour Urine",
-      "reasoning": "5-Hydroxyindoleacetate bcs TEST_NAME 'du-5hiaa' and LongName 'dU-Hydroksi-indolyyliasetaatti (5-)' ; [Moles/volume] bcs UNIT is 'umol/l' ; in 24 hour Urine bcs TEST_NAME starts with 'du-'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 496,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 'du-5hiaa' specifies 5-HIAA in a 24-hour urine collection. However, without a unit or values, it is impossible to determine if the property is substance rate ([Moles/time], e.g. umol/d) or substance concentration ([Moles/volume], e.g. umol/L).",
+      "reasoning": "No unit or values are provided, so the property for Chloride cannot be determined.",
       "certainty": ""
     },
     {
+      "row_id": 496,
+      "omop_concept_id": "3026470",
+      "omop_concept_name": "Cobalt [Mass/volume] in Blood",
+      "reasoning": "Cobalt bcs TEST_NAME '-co' and LongName 'B -Koboltti' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Blood bcs prefix 'b-'",
+      "certainty": "high"
+    },
+    {
       "row_id": 497,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 'fs-ace' and LongName 'fS-Angiotensiini-1-konvertaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 'fs-' means Fasting serum",
+      "omop_concept_id": "3026470",
+      "omop_concept_name": "Cobalt [Mass/volume] in Blood",
+      "reasoning": "Cobalt bcs TEST_NAME '-co' and LongName 'B -Koboltti' ; [Mass/volume] bcs value_deciles are consistent with ug/l ; in Blood bcs prefix 'b-'",
       "certainty": "high"
     },
     {
       "row_id": 498,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 'fs-ace' and LongName 'fS-Angiotensiini-1-konvertaasi' ; [Enzymatic activity/volume] bcs deciles are consistent with U/L ; in Serum or Plasma bcs TEST_NAME prefix 'fs-' means Fasting serum",
+      "omop_concept_id": "3025577",
+      "omop_concept_name": "Chromium [Mass/volume] in Blood",
+      "reasoning": "Chromium bcs TEST_NAME '-cr' and LongName 'B -Kromi' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Blood bcs prefix 'b-'",
       "certainty": "high"
     },
     {
       "row_id": 499,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `fs-apot` is too generic to map. 'Apo-t' could refer to Apolipoprotein A, B, E, or others, and there is no information to distinguish between them.",
-      "certainty": ""
+      "omop_concept_id": "3025577",
+      "omop_concept_name": "Chromium [Mass/volume] in Blood",
+      "reasoning": "Chromium bcs TEST_NAME '-cr' and LongName 'B -Kromi' ; [Mass/volume] bcs value_deciles are consistent with ug/l ; in Blood bcs prefix 'b-'",
+      "certainty": "high"
     },
     {
       "row_id": 500,
-      "omop_concept_id": "3009471",
-      "omop_concept_name": "Fatty acids.nonesterified [Moles/volume] in Serum or Plasma",
-      "reasoning": "Fatty acids.nonesterified bcs TEST_NAME 'fs-ffa' and LongName 'fS-Rasvahapot, vapaat' (free fatty acids) ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum",
+      "omop_concept_id": "3010375",
+      "omop_concept_name": "cycloSPORINE [Mass/volume] in Blood",
+      "reasoning": "cycloSPORINE bcs TEST_NAME '-cya' and LongName 'B -Syklosporiini A' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Blood bcs prefix 'b-'",
       "certainty": "high"
     },
     {
       "row_id": 501,
-      "omop_concept_id": "3009471",
-      "omop_concept_name": "Fatty acids.nonesterified [Moles/volume] in Serum or Plasma",
-      "reasoning": "Fatty acids.nonesterified bcs TEST_NAME 'fs-ffa' and LongName 'fS-Rasvahapot, vapaat' (free fatty acids) ; [Moles/volume] bcs this is the standard SI unit property, chosen over Mass/volume in absence of explicit unit ; in Serum or Plasma bcs prefix 'fs-' means Fasting serum",
-      "certainty": "medium"
+      "omop_concept_id": "3010375",
+      "omop_concept_name": "cycloSPORINE [Mass/volume] in Blood",
+      "reasoning": "cycloSPORINE bcs TEST_NAME '-cya' and LongName 'B -Syklosporiini A' ; [Mass/volume] bcs value_deciles are consistent with ug/l ; in Blood bcs prefix 'b-'",
+      "certainty": "high"
     },
     {
       "row_id": 502,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `fs-tp-1` is ambiguous. 'tp' could stand for multiple analytes (e.g., Treponema pallidum, Total Protein) and the numbered suffix '-1' is non-standard and uninterpretable.",
+      "reasoning": "The unit '*sai' is not interpretable, so the property for Calcium (e.g. Moles/time, Moles/volume) cannot be determined for this 24-hour urine collection.",
       "certainty": ""
     },
     {
       "row_id": 503,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `fs-tp-3` is ambiguous. 'tp' could stand for multiple analytes (e.g., Treponema pallidum, Total Protein) and the numbered suffix '-3' is non-standard and uninterpretable.",
-      "certainty": ""
+      "omop_concept_id": "3010838",
+      "omop_concept_name": "Calcium [Moles/time] in 24 hour Urine",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' ; [Moles/time] bcs UNIT is 'mmol/24h' ; in 24 hour Urine bcs prefix 'du-'",
+      "certainty": "high"
     },
     {
       "row_id": 504,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `fs-tp-4` is ambiguous. 'tp' could stand for multiple analytes (e.g., Treponema pallidum, Total Protein) and the numbered suffix '-4' is non-standard and uninterpretable.",
+      "reasoning": "No unit or values are provided, so the property for Calcium (e.g., Moles/time, Moles/volume) in this 24-hour urine collection cannot be determined.",
       "certainty": ""
     },
     {
       "row_id": 505,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `fs-tp-7` is ambiguous. 'tp' could stand for multiple analytes (e.g., Treponema pallidum, Total Protein) and the numbered suffix '-7' is non-standard and uninterpretable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 506,
-      "omop_concept_id": "3031591",
-      "omop_concept_name": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination",
-      "reasoning": "Treponema pallidum Ab bcs LongName 'Li-Treponema pallidum, hemagglutinaatio' ; [Titer] bcs UNIT is 'titre' ; in Cerebral spinal fluid bcs prefix 'li-' ; by Hemagglutination bcs TEST_NAME 'li-tpha' and LongName contains 'hemagglutinaatio'",
+      "omop_concept_id": "3006567",
+      "omop_concept_name": "Chloride [Moles/time] in 24 hour Urine",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/time] bcs UNIT is 'mmol', which for a 24-hour collection implies total amount, consistent with Moles/time ; in 24 hour Urine bcs prefix 'du-'",
       "certainty": "high"
     },
     {
+      "row_id": 506,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Chloride in this 24-hour urine collection cannot be determined.",
+      "certainty": ""
+    },
+    {
       "row_id": 507,
-      "omop_concept_id": "3031591",
-      "omop_concept_name": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination",
-      "reasoning": "Treponema pallidum Ab bcs LongName 'Li-Treponema pallidum, hemagglutinaatio' ; [Titer] bcs TPHA is a titer test, though no unit is given ; in Cerebral spinal fluid bcs prefix 'li-' ; by Hemagglutination bcs TEST_NAME 'li-tpha' and LongName contains 'hemagglutinaatio'",
+      "omop_concept_id": "3033942",
+      "omop_concept_name": "Copper [Moles/time] in 24 hour Urine",
+      "reasoning": "Copper bcs TEST_NAME '-cu' ; [Moles/time] bcs UNIT is 'umol', which for a 24-hour collection implies total amount, consistent with Moles/time ; in 24 hour Urine bcs prefix 'du-'",
       "certainty": "high"
     },
     {
       "row_id": 508,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The abbreviation `hae` in the code `p-hae` is not a standard laboratory test identifier and cannot be reliably interpreted.",
-      "certainty": ""
-    },
-    {
-      "row_id": 509,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'p-hcg' and LongName 'P -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'iu/l' ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3033942",
+      "omop_concept_name": "Copper [Moles/time] in 24 hour Urine",
+      "reasoning": "Copper bcs TEST_NAME '-cu' ; [Moles/time] bcs UNIT is 'umol/24h' ; in 24 hour Urine bcs prefix 'du-'",
       "certainty": "high"
     },
     {
+      "row_id": 509,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Copper in this 24-hour urine collection cannot be determined.",
+      "certainty": ""
+    },
+    {
       "row_id": 510,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'p-hcg' and LongName 'P -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3015377",
+      "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'fp-' indicates Fasting plasma",
       "certainty": "high"
     },
     {
       "row_id": 511,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'p-hcg' and LongName 'P -Koriongonadotropiini' ; [Units/volume] bcs deciles are consistent with U/L or IU/L ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Calcium (e.g., Moles/volume vs Mass/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 512,
-      "omop_concept_id": "40758310",
-      "omop_concept_name": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "reasoning": "Human epididymis protein 4 bcs TEST_NAME 'p-he4' and LongName 'P -Epididymaalinen antigeeni 4 (HE4)' ; [Moles/volume] bcs UNIT is 'pmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3014702",
+      "omop_concept_name": "Chromogranin A [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chromogranin A bcs TEST_NAME '-cga' and LongName 'fP-Kromograniini A' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs prefix 'fp-' indicates Fasting plasma",
       "certainty": "high"
     },
     {
       "row_id": 513,
-      "omop_concept_id": "40758310",
-      "omop_concept_name": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "reasoning": "Human epididymis protein 4 bcs TEST_NAME 'p-he4' and LongName 'P -Epididymaalinen antigeeni 4 (HE4)' ; [Moles/volume] bcs this property matches the unit in the sibling row (pmol/l) ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3014702",
+      "omop_concept_name": "Chromogranin A [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chromogranin A bcs TEST_NAME '-cga' and LongName 'fP-Kromograniini A' ; [Moles/volume] bcs value_deciles are consistent with nmol/l ; in Serum or Plasma bcs prefix 'fp-' indicates Fasting plasma",
       "certainty": "high"
     },
     {
       "row_id": 514,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The abbreviation `hepg` in the code `p-hepg` is not a standard laboratory test identifier. While it could be a local code for hepcidin, this is too speculative to map.",
-      "certainty": ""
+      "omop_concept_id": "3015377",
+      "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'fs-' indicates Fasting serum",
+      "certainty": "high"
     },
     {
       "row_id": 515,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The abbreviation `hok` in the code `p-hok` is not a standard laboratory test identifier and cannot be reliably interpreted.",
+      "reasoning": "No unit or values are provided, so the property for Calcium (e.g., Moles/volume vs Mass/volume) cannot be determined.",
       "certainty": ""
     },
     {
       "row_id": 516,
-      "omop_concept_id": "3004248",
-      "omop_concept_name": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sex hormone binding globulin bcs TEST_NAME 'p-shbg' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3014702",
+      "omop_concept_name": "Chromogranin A [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chromogranin A bcs TEST_NAME '-cga' and LongName 'fS-Kromograniini A' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs prefix 'fs-' indicates Fasting serum",
       "certainty": "high"
     },
     {
       "row_id": 517,
-      "omop_concept_id": "3004248",
-      "omop_concept_name": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sex hormone binding globulin bcs TEST_NAME 'p-shbg' ; [Moles/volume] bcs deciles are consistent with nmol/L ; in Serum or Plasma bcs TEST_NAME prefix 'p-' means Plasma",
+      "omop_concept_id": "3006407",
+      "omop_concept_name": "Chromogranin A [Mass/volume] in Serum or Plasma",
+      "reasoning": "Chromogranin A bcs TEST_NAME '-cga' and LongName 'fS-Kromograniini A' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs prefix 'fs-' indicates Fasting serum",
       "certainty": "high"
     },
     {
       "row_id": 518,
-      "omop_concept_id": "3030136",
-      "omop_concept_name": "5-Hydroxyindoleacetate [Moles/volume] in Serum or Plasma",
-      "reasoning": "5-Hydroxyindoleacetate bcs TEST_NAME 's-5hiaa' and LongName 'S-Hydroksi-indolyyliasetaatti (5-)' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3014702",
+      "omop_concept_name": "Chromogranin A [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chromogranin A bcs TEST_NAME '-cga' and LongName 'fS-Kromograniini A' ; [Moles/volume] bcs value_deciles are consistent with nmol/l (compare to row 516) ; in Serum or Plasma bcs prefix 'fs-' indicates Fasting serum",
       "certainty": "high"
     },
     {
       "row_id": 519,
-      "omop_concept_id": "3030136",
-      "omop_concept_name": "5-Hydroxyindoleacetate [Moles/volume] in Serum or Plasma",
-      "reasoning": "5-Hydroxyindoleacetate bcs TEST_NAME 's-5hiaa' and LongName 'S-Hydroksi-indolyyliasetaatti (5-)' ; [Moles/volume] bcs this property matches the unit in the sibling row (nmol/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "3018572",
+      "omop_concept_name": "Chloride [Moles/volume] in Blood",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Blood bcs prefix 'mb-' is interpreted as some type of blood, making the general 'Blood' system appropriate",
+      "certainty": "medium"
     },
     {
       "row_id": 520,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 's-ace' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Chloride cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 521,
-      "omop_concept_id": "3034780",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 's-ace' ; [Enzymatic activity/volume] bcs deciles are consistent with U/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3000620",
+      "omop_concept_name": "Complement C3 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C3 bcs TEST_NAME '-c3' and LongName 'P -Komplementti C3' ; [Mass/volume] bcs UNIT is 'g/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 522,
-      "omop_concept_id": "3052649",
-      "omop_concept_name": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Adenosine deaminase bcs TEST_NAME 's-ada' and LongName 'S -Adenosiinideaminaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3000620",
+      "omop_concept_name": "Complement C3 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C3 bcs TEST_NAME '-c3' and LongName 'P -Komplementti C3' ; [Mass/volume] bcs value_deciles are consistent with g/l ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 523,
-      "omop_concept_id": "3052649",
-      "omop_concept_name": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Adenosine deaminase bcs TEST_NAME 's-ada' and LongName 'S -Adenosiinideaminaasi' ; [Enzymatic activity/volume] bcs this property matches the unit in the sibling row (u/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3017766",
+      "omop_concept_name": "Complement C4 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C4 bcs TEST_NAME '-c4' and LongName 'P -Komplementti C4' ; [Mass/volume] bcs UNIT is 'g/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 524,
-      "omop_concept_id": "3015916",
-      "omop_concept_name": "Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma",
-      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME 's-afp' and LongName 'S -Alfa-1-fetoproteiini' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3017766",
+      "omop_concept_name": "Complement C4 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C4 bcs TEST_NAME '-c4' and LongName 'P -Komplementti C4' ; [Mass/volume] bcs value_deciles are consistent with g/l ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 525,
-      "omop_concept_id": "3009306",
-      "omop_concept_name": "Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma",
-      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME 's-afp' and LongName 'S -Alfa-1-fetoproteiini' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3015377",
+      "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 526,
-      "omop_concept_id": "3015916",
-      "omop_concept_name": "Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma",
-      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME 's-afp' and LongName 'S -Alfa-1-fetoproteiini' ; [Units/volume] bcs the unit 'u/ml' has the highest share for this code and the values are consistent with it ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Calcium (e.g., Moles/volume vs Mass/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 527,
-      "omop_concept_id": "3015916",
-      "omop_concept_name": "Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma",
-      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME contains 's-afp' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum. The '/d' suffix is administrative and does not change the mapping.",
+      "omop_concept_id": "3003785",
+      "omop_concept_name": "Carcinoembryonic Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Carcinoembryonic Ag bcs TEST_NAME '-cea' and LongName 'P -Karsinoembryonaalinen antigeeni' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 528,
-      "omop_concept_id": "3015916",
-      "omop_concept_name": "Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma",
-      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME contains 's-afp' ; [Units/volume] bcs this matches the unit from the sibling row ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum. The '/d' suffix is administrative and does not change the mapping.",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Carcinoembryonic Ag (e.g., Mass/volume, Units/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 529,
-      "omop_concept_id": "3047826",
-      "omop_concept_name": "Mullerian inhibiting substance [Mass/volume] in Serum or Plasma",
-      "reasoning": "Mullerian inhibiting substance bcs TEST_NAME 's-amh' and LongName 'S -Anti-Muller hormoni' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3007220",
+      "omop_concept_name": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase bcs TEST_NAME '-ck' and LongName 'P -Kreatiinikinaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 530,
-      "omop_concept_id": "3047826",
-      "omop_concept_name": "Mullerian inhibiting substance [Mass/volume] in Serum or Plasma",
-      "reasoning": "Mullerian inhibiting substance bcs TEST_NAME 's-amh' and LongName 'S -Anti-Muller hormoni' ; [Mass/volume] bcs deciles are consistent with ug/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Creatine kinase (e.g., Enzymatic activity vs Mass) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 531,
-      "omop_concept_id": "3036152",
-      "omop_concept_name": "Amikacin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Amikacin bcs TEST_NAME 's-ami' and LongName 'S -Amikasiini' ; [Mass/volume] bcs UNIT is 'mg/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3014576",
+      "omop_concept_name": "Chloride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 532,
-      "omop_concept_id": "3036152",
-      "omop_concept_name": "Amikacin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Amikacin bcs TEST_NAME 's-ami' and LongName 'S -Amikasiini' ; [Mass/volume] bcs this property matches the unit in the sibling row (mg/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3014576",
+      "omop_concept_name": "Chloride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs value_deciles are consistent with mmol/l ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 533,
-      "omop_concept_id": "3037522",
-      "omop_concept_name": "Nuclear Ab [Titer] in Serum",
-      "reasoning": "Nuclear Ab bcs TEST_NAME 's-ana' and LongName 'S -Tuma, vasta-aineet' ; [Titer] bcs UNIT is 'titre' ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3001186",
+      "omop_concept_name": "Copper [Moles/volume] in Serum or Plasma",
+      "reasoning": "Copper bcs TEST_NAME '-cu' and LongName 'P -Kupari' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum or Plasma bcs prefix 'p-' indicates Plasma",
       "certainty": "high"
     },
     {
       "row_id": 534,
-      "omop_concept_id": "3037522",
-      "omop_concept_name": "Nuclear Ab [Titer] in Serum",
-      "reasoning": "Nuclear Ab bcs TEST_NAME 's-ana' and LongName 'S -Tuma, vasta-aineet' ; [Titer] bcs deciles (80, 160, 320...) are characteristic of titers ; in Serum bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
-    },
-    {
-      "row_id": 535,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-apot` is too generic to map. 'Apo-t' could refer to Apolipoprotein A, B, E, or others, and there is no information to distinguish between them.",
+      "reasoning": "No unit or values are provided, so the property for Copper (e.g., Moles/volume vs Mass/volume) cannot be determined.",
       "certainty": ""
     },
     {
-      "row_id": 536,
-      "omop_concept_id": "40759904",
-      "omop_concept_name": "Baker's yeast Ab [Units/volume] in Serum",
-      "reasoning": "Baker's yeast Ab bcs LongName 'S -Saccharomyces cerevisiae, vasta-aineet' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "row_id": 535,
+      "omop_concept_id": "3043323",
+      "omop_concept_name": "Complement C3 [Mass/volume] in Pleural fluid",
+      "reasoning": "Complement C3 bcs TEST_NAME '-c3' ; [Mass/volume] bcs UNIT is 'g/l' ; in Pleural fluid bcs prefix 'pf-'",
       "certainty": "high"
     },
     {
+      "row_id": 536,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Complement C3 cannot be determined.",
+      "certainty": ""
+    },
+    {
       "row_id": 537,
-      "omop_concept_id": "40759904",
-      "omop_concept_name": "Baker's yeast Ab [Units/volume] in Serum",
-      "reasoning": "Baker's yeast Ab bcs LongName 'S -Saccharomyces cerevisiae, vasta-aineet' ; [Units/volume] bcs this is the standard property for this quantitative test ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3044416",
+      "omop_concept_name": "Complement C4 [Mass/volume] in Pleural fluid",
+      "reasoning": "Complement C4 bcs TEST_NAME '-c4' ; [Mass/volume] bcs UNIT is 'g/l' ; in Pleural fluid bcs prefix 'pf-'",
       "certainty": "high"
     },
     {
       "row_id": 538,
-      "omop_concept_id": "3021236",
-      "omop_concept_name": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "reasoning": "Streptolysin O Ab bcs TEST_NAME 's-ast' and LongName 'S -Antistreptolysiini' ; [Units/volume] bcs UNIT is 'iu/ml' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Complement C4 cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 539,
-      "omop_concept_id": "3028050",
-      "omop_concept_name": "Streptolysin O Ab [Titer] in Serum",
-      "reasoning": "Streptolysin O Ab bcs TEST_NAME 's-ast' and LongName 'S -Antistreptolysiini' ; [Titer] bcs UNIT is 'titre' ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3009804",
+      "omop_concept_name": "Carcinoembryonic Ag [Mass/volume] in Pleural fluid",
+      "reasoning": "Carcinoembryonic Ag bcs TEST_NAME '-cea' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Pleural fluid bcs prefix 'pf-'",
       "certainty": "high"
     },
     {
       "row_id": 540,
-      "omop_concept_id": "3021236",
-      "omop_concept_name": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "reasoning": "Streptolysin O Ab bcs TEST_NAME 's-ast' and LongName 'S -Antistreptolysiini' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Carcinoembryonic Ag cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 541,
-      "omop_concept_id": "3021236",
-      "omop_concept_name": "Streptolysin O Ab [Units/volume] in Serum or Plasma",
-      "reasoning": "Streptolysin O Ab bcs TEST_NAME 's-ast' and LongName 'S -Antistreptolysiini' ; [Units/volume] bcs deciles are consistent with IU/mL or U/mL ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3000620",
+      "omop_concept_name": "Complement C3 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C3 bcs TEST_NAME '-c3' and LongName 'S -Komplementti C3' ; [Mass/volume] bcs UNIT is 'g/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 542,
-      "omop_concept_id": "3035947",
-      "omop_concept_name": "Staphylolysin Ab [Units/volume] in Serum",
-      "reasoning": "Staphylolysin Ab bcs TEST_NAME 's-asta' and LongName 'S -Antistafylolysiini' ; [Units/volume] bcs UNIT is 'iu/ml' ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3000620",
+      "omop_concept_name": "Complement C3 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C3 bcs TEST_NAME '-c3' and LongName 'S -Komplementti C3' ; [Mass/volume] bcs value_deciles are consistent with g/l ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 543,
-      "omop_concept_id": "3035947",
-      "omop_concept_name": "Staphylolysin Ab [Units/volume] in Serum",
-      "reasoning": "Staphylolysin Ab bcs TEST_NAME 's-asta' and LongName 'S -Antistafylolysiini' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3017766",
+      "omop_concept_name": "Complement C4 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C4 bcs TEST_NAME '-c4' and LongName 'S -Komplementti C4' ; [Mass/volume] bcs UNIT is 'g/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 544,
-      "omop_concept_id": "3035947",
-      "omop_concept_name": "Staphylolysin Ab [Units/volume] in Serum",
-      "reasoning": "Staphylolysin Ab bcs TEST_NAME 's-asta' and LongName 'S -Antistafylolysiini' ; [Units/volume] bcs this property matches the units from sibling rows ; in Serum bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3017766",
+      "omop_concept_name": "Complement C4 [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement C4 bcs TEST_NAME '-c4' and LongName 'S -Komplementti C4' ; [Mass/volume] bcs value_deciles are consistent with g/l ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 545,
-      "omop_concept_id": "3018308",
-      "omop_concept_name": "Bromide [Moles/volume] in Serum or Plasma",
-      "reasoning": "Bromide bcs TEST_NAME 's-br' and LongName 'S -Bromidi' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3006906",
+      "omop_concept_name": "Calcium [Mass/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' and LongName 'S -Kalsium' ; [Mass/volume] bcs UNIT is 'g/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 546,
-      "omop_concept_id": "3027880",
-      "omop_concept_name": "Dehydroepiandrosterone (DHEA) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Dehydroepiandrosterone (DHEA) bcs TEST_NAME 's-dhea' and LongName 'S -Dehydroepiandrosteroni' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3015377",
+      "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' and LongName 'S -Kalsium' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 547,
-      "omop_concept_id": "3027880",
-      "omop_concept_name": "Dehydroepiandrosterone (DHEA) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Dehydroepiandrosterone (DHEA) bcs TEST_NAME 's-dhea' and LongName 'S -Dehydroepiandrosteroni' ; [Moles/volume] bcs this property matches the unit in the sibling row (nmol/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3015377",
+      "omop_concept_name": "Calcium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' and LongName 'S -Kalsium' ; [Moles/volume] bcs value_deciles are consistent with mmol/l ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 548,
-      "omop_concept_id": "3016616",
-      "omop_concept_name": "Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Dehydroepiandrosterone sulfate (DHEA-S) bcs TEST_NAME 's-dheas' and LongName 'S -Dehydroepiandrosteroni, sulfaatti' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3052708",
+      "omop_concept_name": "Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma",
+      "reasoning": "Transferrin.carbohydrate deficient/Transferrin.total bcs TEST_NAME 's-cdt' (S -Desialotransferriini) and UNIT '%' indicates a ratio ; [SCncRatio] bcs unit is '%' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 549,
-      "omop_concept_id": "3016616",
-      "omop_concept_name": "Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Dehydroepiandrosterone sulfate (DHEA-S) bcs TEST_NAME 's-dheas' and LongName 'S -Dehydroepiandrosteroni, sulfaatti' ; [Moles/volume] bcs deciles are consistent with umol/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3005268",
+      "omop_concept_name": "Transferrin.carbohydrate deficient [Units/volume] in Serum or Plasma",
+      "reasoning": "Transferrin.carbohydrate deficient bcs TEST_NAME 's-cdt' and LongName 'S -Desialotransferriini' ; [Units/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 550,
-      "omop_concept_id": "3014339",
-      "omop_concept_name": "Estrone (E1) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Estrone (E1) bcs TEST_NAME 's-e1' and LongName 'S -Estroni' ; [Moles/volume] bcs UNIT is 'pmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for CDT (e.g., ratio, mass/volume, units/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 551,
-      "omop_concept_id": "3014339",
-      "omop_concept_name": "Estrone (E1) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Estrone (E1) bcs TEST_NAME 's-e1' and LongName 'S -Estroni' ; [Moles/volume] bcs this property matches the unit in the sibling row (pmol/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3003785",
+      "omop_concept_name": "Carcinoembryonic Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Carcinoembryonic Ag bcs TEST_NAME '-cea' and LongName 'S -Karsinoembryonaalinen antigeeni' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 552,
-      "omop_concept_id": "3026725",
-      "omop_concept_name": "Estradiol (E2) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Estradiol (E2) bcs TEST_NAME 's-e2' and LongName 'S -Estradioli' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Carcinoembryonic Ag (e.g., Mass/volume, Units/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 553,
-      "omop_concept_id": "3026725",
-      "omop_concept_name": "Estradiol (E2) [Moles/volume] in Serum or Plasma",
-      "reasoning": "Estradiol (E2) bcs TEST_NAME 's-e2' and LongName 'S -Estradioli' ; [Moles/volume] bcs deciles are consistent with nmol/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3031619",
+      "omop_concept_name": "Immune complex [Mass/volume] in Serum or Plasma",
+      "reasoning": "Immune complex bcs TEST_NAME '-cic' and LongName 'S -Immunokompleksit, kiertävät' ; [Mass/volume] bcs UNIT is 'ugeq/ml' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 554,
-      "omop_concept_id": "3011229",
-      "omop_concept_name": "Endomysium Ab [Titer] in Serum",
-      "reasoning": "Endomysium Ab bcs TEST_NAME 's-ema' and LongName 'S -Endomysium, vasta-aineet' ; [Titer] bcs this is the standard property for EMA tests ; in Serum bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
-    },
-    {
-      "row_id": 555,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-ena` is for Extractable Nuclear Antibodies. The row has quantitative values which appear to be a ratio or index, but no candidate concepts with a corresponding property (e.g. Ratio, Index, Arbitrary Units) were available.",
+      "reasoning": "No unit or values are provided, so the property for Immune complex (e.g., Mass/volume, Units/volume) cannot be determined.",
       "certainty": ""
     },
     {
-      "row_id": 556,
-      "omop_concept_id": "3029075",
-      "omop_concept_name": "Extractable nuclear Ab panel - Serum",
-      "reasoning": "Extractable nuclear Ab panel bcs code is 's-enal', where 'ena' is Extractable Nuclear Ab and '-l' likely means 'laaja' (extensive/panel) ; in Serum bcs prefix 's-'",
+      "row_id": 555,
+      "omop_concept_id": "3007220",
+      "omop_concept_name": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase bcs TEST_NAME '-ck' and LongName 'S -Kreatiinikinaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
+      "row_id": 556,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Creatine kinase (e.g., Enzymatic activity vs Mass) cannot be determined.",
+      "certainty": ""
+    },
+    {
       "row_id": 557,
-      "omop_concept_id": "3024172",
-      "omop_concept_name": "Erythropoietin (EPO) [Units/volume] in Serum or Plasma",
-      "reasoning": "Erythropoietin (EPO) bcs TEST_NAME 's-epo' and LongName 'S -Erytropoietiini' ; [Units/volume] bcs UNIT is 'iu/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3014576",
+      "omop_concept_name": "Chloride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 558,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `s-epo` is for Erythropoietin, but the unit `pmol/l` indicates a `[Moles/volume]` property. No candidate concept for EPO with this property was provided.",
-      "certainty": ""
+      "omop_concept_id": "3001186",
+      "omop_concept_name": "Copper [Moles/volume] in Serum or Plasma",
+      "reasoning": "Copper bcs TEST_NAME '-cu' and LongName 'S -Kupari' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
+      "certainty": "high"
     },
     {
       "row_id": 559,
-      "omop_concept_id": "3024172",
-      "omop_concept_name": "Erythropoietin (EPO) [Units/volume] in Serum or Plasma",
-      "reasoning": "Erythropoietin (EPO) bcs TEST_NAME 's-epo' and LongName 'S -Erytropoietiini' ; [Units/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3001186",
+      "omop_concept_name": "Copper [Moles/volume] in Serum or Plasma",
+      "reasoning": "Copper bcs TEST_NAME '-cu' and LongName 'S -Kupari' ; [Moles/volume] bcs value_deciles are consistent with umol/l ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 560,
-      "omop_concept_id": "3024172",
-      "omop_concept_name": "Erythropoietin (EPO) [Units/volume] in Serum or Plasma",
-      "reasoning": "Erythropoietin (EPO) bcs TEST_NAME 's-epo' and LongName 'S -Erytropoietiini' ; [Units/volume] bcs deciles are consistent with U/L or IU/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3041449",
+      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
+      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 's-ictp' and LongName 'S -Kollageeni I:n karboksiterminaalinen telopeptidi' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 561,
-      "omop_concept_id": "3009471",
-      "omop_concept_name": "Fatty acids.nonesterified [Moles/volume] in Serum or Plasma",
-      "reasoning": "Fatty acids.nonesterified bcs TEST_NAME 's-ffa' implies 'free fatty acids' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3041449",
+      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
+      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 's-ictp' and LongName 'S -Kollageeni I:n karboksiterminaalinen telopeptidi' ; [Mass/volume] bcs UNIT 'âug/l' is a mis-encoded 'ug/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 562,
-      "omop_concept_id": "3035510",
-      "omop_concept_name": "Gentamicin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Gentamicin bcs TEST_NAME 's-gen' and LongName 'S -Gentamysiini' ; [Mass/volume] bcs UNIT is 'mg/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Collagen crosslinked C-telopeptide (e.g., Mass/volume vs Moles/volume) cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 563,
-      "omop_concept_id": "3035510",
-      "omop_concept_name": "Gentamicin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Gentamicin bcs TEST_NAME 's-gen' and LongName 'S -Gentamysiini' ; [Mass/volume] bcs this property matches the unit in the sibling row (mg/l) ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3046279",
+      "omop_concept_name": "Procalcitonin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Procalcitonin bcs TEST_NAME '-pct' and LongName 'S -Prokalsitoniini' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum or Plasma bcs prefix 's-' indicates Serum",
       "certainty": "high"
     },
     {
       "row_id": 564,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The abbreviation `hae` in the code `s-hae` is not a standard laboratory test identifier and cannot be reliably interpreted.",
-      "certainty": ""
+      "omop_concept_id": "3046279",
+      "omop_concept_name": "Procalcitonin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Procalcitonin bcs TEST_NAME '-pct' and LongName 'S -Prokalsitoniini' ; [Mass/volume] bcs value_deciles are consistent with ug/l ; in Serum or Plasma bcs prefix 's-' indicates Serum",
+      "certainty": "high"
     },
     {
       "row_id": 565,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-hbe` is ambiguous. It could refer to Hepatitis B e-antigen (HBeAg) or Hepatitis B e-antibody (HBeAb), and there is not enough information to distinguish between them.",
+      "reasoning": "The component 'cc' in TEST_NAME 'ts-cc' is ambiguous. Combined with the Tissue specimen ('ts-'), this is likely a histology or cytology code, not a standard laboratory test with a LOINC equivalent.",
       "certainty": ""
     },
     {
       "row_id": 566,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 's-hcg' and LongName 'S -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'iu/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3018133",
+      "omop_concept_name": "Calcium [Moles/volume] in Urine",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' and LongName 'U -Kalsium' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Urine bcs prefix 'u-' indicates a spot urine collection",
       "certainty": "high"
     },
     {
       "row_id": 567,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 's-hcg' and LongName 'S -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'u/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3018133",
+      "omop_concept_name": "Calcium [Moles/volume] in Urine",
+      "reasoning": "Calcium bcs TEST_NAME '-ca' and LongName 'U -Kalsium' ; [Moles/volume] bcs value_deciles are consistent with mmol/l ; in Urine bcs prefix 'u-' indicates a spot urine collection",
       "certainty": "high"
     },
     {
       "row_id": 568,
-      "omop_concept_id": "3018171",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Serum or Plasma",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 's-hcg' and LongName 'S -Koriongonadotropiini' ; [Units/volume] bcs deciles are consistent with U/L or IU/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The unit 'form' suggests a qualitative or presence test for Cobalt in Urine. No suitable 'Presence' candidate was found in the provided list.",
+      "certainty": ""
     },
     {
       "row_id": 569,
-      "omop_concept_id": "40758310",
-      "omop_concept_name": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "reasoning": "Human epididymis protein 4 bcs TEST_NAME 's-he4' and LongName 'S -Epididymaalinen antigeeni 4 (HE4)' ; [Moles/volume] bcs UNIT is 'pmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3044336",
+      "omop_concept_name": "Cobalt [Moles/volume] in Urine",
+      "reasoning": "Cobalt bcs TEST_NAME '-co' and LongName 'U -Koboltti' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Urine bcs prefix 'u-'",
       "certainty": "high"
     },
     {
       "row_id": 570,
-      "omop_concept_id": "40758310",
-      "omop_concept_name": "Human epididymis protein 4 [Moles/volume] in Serum or Plasma",
-      "reasoning": "Human epididymis protein 4 bcs TEST_NAME 's-he4' and LongName 'S -Epididymaalinen antigeeni 4 (HE4)' ; [Moles/volume] bcs deciles are consistent with pmol/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3024085",
+      "omop_concept_name": "Cobalt [Mass/volume] in Urine",
+      "reasoning": "Cobalt bcs TEST_NAME '-co' and LongName 'U -Koboltti' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Urine bcs prefix 'u-'",
       "certainty": "high"
     },
     {
       "row_id": 571,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The abbreviation `kem` in the code `s-kem` is not a standard laboratory test identifier and cannot be reliably interpreted. It may be a local abbreviation for 'kemia' (chemistry).",
+      "reasoning": "No unit or values are provided, so the property for Cobalt (e.g., Moles/volume vs Mass/volume) cannot be determined.",
       "certainty": ""
     },
     {
       "row_id": 572,
-      "omop_concept_id": "3001686",
-      "omop_concept_name": "Cold agglutinin [Titer] in Serum or Plasma",
-      "reasoning": "Cold agglutinin bcs LongName 'S -Kylmähemagglutiniinit' ; [Titer] bcs UNIT is 'titre' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3025911",
+      "omop_concept_name": "Cotinine [Mass/volume] in Urine",
+      "reasoning": "Cotinine bcs TEST_NAME '-cot' and LongName 'U -Kotiniini' ; [Mass/volume] bcs UNIT is 'ng/ml' ; in Urine bcs prefix 'u-'",
       "certainty": "high"
     },
     {
       "row_id": 573,
-      "omop_concept_id": "3001686",
-      "omop_concept_name": "Cold agglutinin [Titer] in Serum or Plasma",
-      "reasoning": "Cold agglutinin bcs LongName 'S -Kylmähemagglutiniinit' ; [Titer] bcs this is the standard property for this test ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3025911",
+      "omop_concept_name": "Cotinine [Mass/volume] in Urine",
+      "reasoning": "Cotinine bcs TEST_NAME '-cot' and LongName 'U -Kotiniini' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Urine bcs prefix 'u-'",
       "certainty": "high"
     },
     {
       "row_id": 574,
-      "omop_concept_id": "3004248",
-      "omop_concept_name": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sex hormone binding globulin bcs TEST_NAME 's-shbg' and LongName 'S -Sukupuolihormoneja sitova globuliini' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
-      "certainty": "high"
+      "omop_concept_id": "3015883",
+      "omop_concept_name": "Cotinine [Presence] in Urine",
+      "reasoning": "Cotinine bcs TEST_NAME '-cot' and LongName 'U -Kotiniini' ; [Presence] bcs no quantitative information is provided, so a qualitative test is the most reasonable choice ; in Urine bcs prefix 'u-'",
+      "certainty": "medium"
     },
     {
       "row_id": 575,
-      "omop_concept_id": "3004248",
-      "omop_concept_name": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sex hormone binding globulin bcs TEST_NAME 's-shbg' and LongName 'S -Sukupuolihormoneja sitova globuliini' ; [Moles/volume] bcs deciles are consistent with nmol/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum",
+      "omop_concept_id": "3040160",
+      "omop_concept_name": "Chromium [Presence] in Urine",
+      "reasoning": "Chromium bcs TEST_NAME '-cr' and LongName 'U -Kromi' ; [Presence] bcs UNIT is 'form', indicating a qualitative result ; in Urine bcs prefix 'u-'",
       "certainty": "high"
     },
     {
       "row_id": 576,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `s-tati` and LongName 'S -Tuumoriin liittyvä trypsiini-inhibiittori' identify the analyte as Tumor-associated trypsin inhibitor (TATI). No candidate concepts for this analyte were provided.",
-      "certainty": ""
+      "omop_concept_id": "3007171",
+      "omop_concept_name": "Chromium [Mass/volume] in Urine",
+      "reasoning": "Chromium bcs TEST_NAME '-cr' and LongName 'U -Kromi' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Urine bcs prefix 'u-'",
+      "certainty": "high"
     },
     {
       "row_id": 577,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `s-tati` and LongName 'S -Tuumoriin liittyvä trypsiini-inhibiittori' identify the analyte as Tumor-associated trypsin inhibitor (TATI). No candidate concepts for this analyte were provided.",
-      "certainty": ""
+      "omop_concept_id": "3035256",
+      "omop_concept_name": "Chromium [Moles/volume] in Urine",
+      "reasoning": "Chromium bcs TEST_NAME '-cr' and LongName 'U -Kromi' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Urine bcs prefix 'u-'",
+      "certainty": "high"
     },
     {
       "row_id": 578,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `s-tati` and LongName 'S -Tuumoriin liittyvä trypsiini-inhibiittori' identify the analyte as Tumor-associated trypsin inhibitor (TATI). No candidate concepts for this analyte were provided.",
+      "reasoning": "No unit or values are provided, so the property for Chromium (e.g., Moles/volume vs Mass/volume vs Presence) cannot be determined.",
       "certainty": ""
     },
     {
       "row_id": 579,
-      "omop_concept_id": "3019539",
-      "omop_concept_name": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination",
-      "reasoning": "Treponema pallidum Ab bcs TEST_NAME 's-tpha' and LongName 'S -Treponema pallidum, hemagglutinaatio' ; [Titer] bcs UNIT is 'titre' ; in Serum bcs TEST_NAME prefix 's-' ; by Hemagglutination bcs TEST_NAME 's-tpha' and LongName 'hemagglutinaatio'",
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs TEST_NAME '-hct' ; [Volume Fraction] bcs value_deciles between 0.33 and 0.49 are characteristic of hematocrit reported as a fraction ; of Blood bcs 'v-' prefix likely stands for 'veri' (blood)",
       "certainty": "high"
     },
     {
       "row_id": 580,
-      "omop_concept_id": "3019539",
-      "omop_concept_name": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination",
-      "reasoning": "Treponema pallidum Ab bcs TEST_NAME 's-tpha' and LongName 'S -Treponema pallidum, hemagglutinaatio' ; [Titer] bcs TPHA is a titer test, though no unit is given ; in Serum bcs TEST_NAME prefix 's-' ; by Hemagglutination bcs TEST_NAME 's-tpha' and LongName 'hemagglutinaatio'",
+      "omop_concept_id": "3021119",
+      "omop_concept_name": "Calcium.ionized [Moles/volume] in Blood",
+      "reasoning": "Calcium.ionized bcs TEST_NAME '-ica' ; [Moles/volume] bcs value_deciles around 1.2 are characteristic of ionized calcium in mmol/l ; in Blood bcs 'v-' prefix likely stands for 'veri' (blood)",
       "certainty": "high"
     },
     {
       "row_id": 581,
-      "omop_concept_id": "3005715",
-      "omop_concept_name": "Vancomycin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Vancomycin bcs TEST_NAME 's-van' and LongName 'S -Vankomysiini' ; [Mass/volume] bcs UNIT is 'mg/l' ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum. The general concept is chosen as the code does not specify trough/peak.",
+      "omop_concept_id": "3014576",
+      "omop_concept_name": "Chloride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Chloride bcs TEST_NAME '-cl' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs prefix 'vp-' indicates Venous plasma, for which Serum or Plasma is the correct general LOINC system",
       "certainty": "high"
     },
     {
       "row_id": 582,
-      "omop_concept_id": "3005715",
-      "omop_concept_name": "Vancomycin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Vancomycin bcs TEST_NAME 's-van' and LongName 'S -Vankomysiini' ; [Mass/volume] bcs deciles are consistent with mg/L ; in Serum or Plasma bcs TEST_NAME prefix 's-' means Serum. The general concept is chosen as the code does not specify trough/peak.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 583,
-      "omop_concept_id": "3000481",
-      "omop_concept_name": "Estrogen+Progesterone receptor Ag [Presence] in Tissue by Immune stain",
-      "reasoning": "Estrogen+Progesterone receptor Ag bcs LongName 'Ts-Reseptoritutkimus' (Receptor study) on a tissue sample commonly refers to ER/PR status ; [Presence] bcs this is a standard qualitative property ; in Tissue bcs prefix 'Ts-'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 584,
-      "omop_concept_id": "3023511",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Urine",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'u-hcg' and LongName 'U -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'iu/l' ; in Urine bcs TEST_NAME prefix 'u-'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 585,
-      "omop_concept_id": "3023511",
-      "omop_concept_name": "Choriogonadotropin [Units/volume] in Urine",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'u-hcg' and LongName 'U -Koriongonadotropiini' ; [Units/volume] bcs UNIT is 'u/l' ; in Urine bcs TEST_NAME prefix 'u-'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 586,
-      "omop_concept_id": "3018954",
-      "omop_concept_name": "Choriogonadotropin [Presence] in Urine",
-      "reasoning": "Choriogonadotropin bcs TEST_NAME 'u-hcg' and LongName 'U -Koriongonadotropiini' ; [Presence] bcs this is the common property for a screening pregnancy test in urine, and no unit is specified ; in Urine bcs TEST_NAME prefix 'u-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No unit or values are provided, so the property for Chloride cannot be determined.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group contained a wide variety of tests, many of which were clearly identifiable by their abbreviations (e.g., `s-hcg`, `s-dheas`, `li-tpha`) and could be mapped with high certainty, especially when units and values were present to confirm the property. \n\nSeveral rows could not be mapped. The primary reasons were:\n1.  **Missing candidates:** Some tests, like Erythropoietin in Amniotic fluid (`am-epo`), VASP (`b-vasp`), and Tumor-associated trypsin inhibitor (`s-tati`), had no corresponding concepts in the candidate list. This is a search issue.\n2.  **Ambiguous local codes:** Codes like `fs-apot`, `p-hae`, `s-hbe`, and the `fs-tp-[n]` series were too generic or non-standard to be identified with any certainty.\n3.  **Property mismatch:** Platelet aggregation tests (`b-adp`, `b-aspi`) had a unit of `auc` (Area Under Curve), but no candidate LOINC concepts with this property were available. Similarly, `s-ena` had quantitative values suggesting a ratio, but only panel/presence/units candidates were present.\n\nMost of the core chemistry and endocrinology tests were straightforward. The distinction between Mass, Moles, and Units properties was critical and generally well-supported by the provided units. For hCG in urine without a unit, mapping to the qualitative `[Presence]` concept was the most logical choice given its common use as a pregnancy screen."
+  "reflection": "This group was generally straightforward. Most codes were common chemistry tests where the Finnish abbreviation (e.g., `Ca`, `Cl`, `C3`, `CK`, `CEA`) was transparent. The specimen prefixes (`S-`, `P-`, `B-`, `dU-`, `Pf-`, etc.) were also standard and easy to interpret. The main difficulty, and the reason for the large number of unmapped rows, was the lack of quantitative information (units or values) for many entries. This made it impossible to distinguish between properties like Mass/volume and Moles/volume. This is an issue with the source data rather than the mapping process. The candidate list was excellent and contained the correct concept for nearly all mappable rows. One minor gap was the absence of a `Presence` concept for Cobalt in Urine (for row 568, `u-co`, unit 'form'). The code `ts-cc` was unmappable due to being ambiguous and likely representing a histology/cytology finding."
 }

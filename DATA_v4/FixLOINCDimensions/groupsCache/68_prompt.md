@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,448 +115,228 @@ Here is group 68.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3000690 | Aldosterone [Moles/time] in 24 hour Urine | 1.000 |  |
-| 3000998 | Ovalbumin IgE Ab [Units/volume] in Serum | 1.000 |  |
-| 3015401 | Amylase [Enzymatic activity/volume] in Pleural fluid | 1.000 |  |
-| 3016771 | Amylase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 152 |
-| 3017315 | Amylase [Enzymatic activity/volume] in Urine | 1.000 |  |
-| 3019396 | Amylase.pancreatic [Enzymatic activity/volume] in Urine | 1.000 |  |
-| 3019677 | Aldosterone [Mass/time] in 24 hour Urine | 1.000 |  |
-| 3019985 | Aldosterone [Moles/volume] in 24 hour Urine | 1.000 |  |
-| 3027953 | Aldolase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 695 |
-| 3035995 | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 23 |
-| 3040370 | OLANZapine [Moles/volume] in Serum or Plasma | 1.000 |  |
-| 36304052 | Adalimumab Ab [Units/volume] in Serum or Plasma | 1.000 |  |
-| 44786774 | Adalimumab [Mass/volume] in Serum or Plasma | 1.000 |  |
-| 3004280 | Aldosterone [Moles/volume] in Serum or Plasma --supine | 0.980 |  |
-| 3017950 | Salicylates [Moles/volume] in Serum or Plasma | 0.979 | 464 |
-| 44816654 | Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum | 0.974 |  |
-| 3003171 | Aldosterone [Moles/volume] in Serum or Plasma --upright | 0.971 |  |
-| 1091762 | Alpha 1 globulin [Mass/volume] in Serum or Plasma | 0.970 |  |
-| 1092292 | Alpha 2 globulin [Mass/volume] in Serum or Plasma | 0.967 |  |
-| 3001788 | Aldosterone [Moles/volume] in Serum or Plasma | 0.967 | 774 |
-| 46236951 | Amylase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.965 |  |
-| 3018910 | Alkaline phosphatase.bone [Mass/volume] in Serum or Plasma | 0.964 |  |
-| 3024457 | Aldosterone [Mass/volume] in 24 hour Urine | 0.964 |  |
-| 36031415 | Gliadin IgE Ab [Units/volume] in Serum | 0.963 |  |
-| 44786773 | Adalimumab Ab [Mass/volume] in Serum or Plasma | 0.962 |  |
-| 3016417 | Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma | 0.961 |  |
-| 3005685 | Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma | 0.960 |  |
-| 46235077 | Alkaline phosphatase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.960 |  |
-| 3001467 | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma | 0.959 | 1850 |
-| 3020013 | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma | 0.959 |  |
-| 3024561 | Albumin [Mass/volume] in Serum or Plasma | 0.959 | 20 |
-| 3007225 | Aldosterone free [Mass/time] in 24 hour Urine | 0.956 |  |
-| 42868742 | Amylase.pancreatic [Enzymatic activity/volume] in Pleural fluid | 0.954 |  |
-| 3014133 | Dog dander IgE Ab [Units/volume] in Serum | 0.954 | 1077 |
-| 36305075 | Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay | 0.951 |  |
-| 36303365 | Adalimumab [Mass/volume] in Serum or Plasma by Immunoassay | 0.944 |  |
-| 3001110 | Alkaline phosphatase [Enzymatic activity/volume] in Blood | 0.944 |  |
-| 1175645 | Adalimumab Ab [Units/volume] in Serum by Immunoassay | 0.939 |  |
-| 1617569 | Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma | 0.936 |  |
-| 3021494 | OLANZapine [Mass/volume] in Serum or Plasma | 0.935 |  |
-| 3014729 | Amylase.P1 [Enzymatic activity/volume] in Serum or Plasma | 0.935 |  |
-| 36305882 | Vedolizumab Ab [Mass/volume] in Serum or Plasma by Immunoassay | 0.934 |  |
-| 3017726 | Gliadin Ab [Units/volume] in Serum | 0.933 | 1663 |
-| 3016625 | Amylase S1 [Enzymatic activity/volume] in Serum or Plasma | 0.933 |  |
-| 3003966 | Gliadin IgG Ab [Units/volume] in Serum | 0.933 | 1637 |
-| 46235169 | Amylase [Enzymatic activity/volume] in Blood | 0.932 |  |
-| 3016848 | Dog dander IgG Ab [Units/volume] in Serum | 0.932 |  |
-| 3005294 | Aldosterone [Mass/volume] in Serum or Plasma --supine | 0.931 |  |
-| 3035400 | Alkaline phosphatase.liver [Enzymatic activity/volume] in Serum or Plasma | 0.930 | 1919 |
-| 42870306 | Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma | 0.929 |  |
-| 3000831 | Aldosterone [Mass/volume] in Serum or Plasma --upright | 0.928 |  |
-| 3004541 | Aldosterone [Moles/volume] in Urine | 0.928 |  |
-| 40759832 | Dog dander+Dog epithelium IgE Ab [Units/volume] in Serum | 0.928 |  |
-| 42870305 | Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum or Plasma | 0.928 |  |
-| 3037820 | Gliadin IgA Ab [Units/volume] in Serum | 0.926 | 878 |
-| 40761804 | Gliadin peptide IgG Ab [Units/volume] in Serum | 0.925 |  |
-| 40761803 | Gliadin peptide IgA Ab [Units/volume] in Serum | 0.925 |  |
-| 36304805 | Adalimumab Ab [Mass/volume] in Serum or Plasma by Immunoassay | 0.924 |  |
-| 3010114 | Amylase isoenzyme 7 panel - Serum | 0.924 |  |
-| 3020990 | Alkaline phosphatase.intestinal/Alkaline phosphatase.total in Serum or Plasma | 0.924 | 1783 |
-| 3004155 | Amylase S2 [Enzymatic activity/volume] in Serum or Plasma | 0.924 |  |
-| 3009876 | Amylase isoenzyme 3 panel - Serum or Plasma | 0.923 |  |
-| 3001415 | Amylase [Enzymatic activity/volume] in 24 hour Urine | 0.921 |  |
-| 3017651 | SCL-70 extractable nuclear IgG Ab [Presence] in Serum | 0.919 |  |
-| 3009039 | Amylase.P2 [Enzymatic activity/volume] in Serum or Plasma | 0.916 |  |
-| 3001660 | Gliadin IgM Ab [Units/volume] in Serum | 0.916 |  |
-| 3015468 | Gliadin IgG Ab [Units/volume] in Serum by Immunoassay | 0.916 | 653 |
-| 40771878 | Amylase [Enzymatic activity/volume] in Serum or Plasma --fasting | 0.915 |  |
-| 3000787 | Salicylates [Mass/volume] in Serum or Plasma | 0.915 |  |
-| 40766189 | Gliadin peptide IgG Ab [Units/volume] in Serum by Immunoassay | 0.914 |  |
-| 3015174 | Gliadin IgA Ab [Units/volume] in Serum by Immunoassay | 0.914 | 694 |
-| 3014568 | SCL-70 extractable nuclear Ab [Presence] in Serum | 0.914 |  |
-| 40758706 | Salicylamide [Moles/volume] in Serum or Plasma | 0.913 |  |
-| 3007970 | Alkaline phosphatase.bile [Enzymatic activity/volume] in Serum or Plasma | 0.913 |  |
-| 3014599 | Egg white IgE Ab [Units/volume] in Serum | 0.913 | 799 |
-| 3020233 | Acid phosphatase [Enzymatic activity/volume] in Serum or Plasma | 0.913 |  |
-| 21492517 | Salicylurate [Moles/volume] in Serum or Plasma | 0.912 |  |
-| 3003633 | Ovomucoid IgE Ab [Units/volume] in Serum | 0.911 |  |
-| 1175553 | Vedolizumab and Vedolizumab Ab panel [Mass/volume] - Serum or Plasma | 0.911 |  |
-| 3037597 | Macroamylase [Enzymatic activity/volume] in Serum or Plasma | 0.910 |  |
-| 3021162 | Amylase [Enzymatic activity/volume] in Specimen | 0.909 |  |
-| 3002069 | Alkaline phosphatase.bone/Alkaline phosphatase.total in Serum or Plasma | 0.909 | 1666 |
-| 3018352 | Whole Egg IgE Ab [Units/volume] in Serum | 0.907 | 891 |
-| 43055428 | Alpha 1 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis | 0.906 |  |
-| 3002000 | Albumin [Mass/volume] in Specimen | 0.905 |  |
-| 3002214 | Alkaline phosphatase.renal [Enzymatic activity/volume] in Serum or Plasma | 0.905 |  |
-| 3001151 | Sole IgE Ab [Units/volume] in Serum | 0.905 |  |
-| 3045684 | Alkaline phosphatase.other fractions [Enzymatic activity/volume] in Serum or Plasma | 0.905 |  |
-| 3040995 | Amylase [Enzymatic activity/volume] in 12 hour Urine | 0.904 |  |
-| 3036705 | Amylase [Enzymatic activity/volume] in 2 hour Urine | 0.904 |  |
-| 3003860 | Alkaline phosphatase.regan [Enzymatic activity/volume] in Serum or Plasma | 0.903 |  |
-| 649422 | Adalimumab Ab [Measurement] in Serum or Plasma | 0.903 |  |
-| 1617227 | Adalimumab [Mass/volume] in Serum or Plasma --trough | 0.903 |  |
-| 3015123 | Egg yolk IgE Ab [Units/volume] in Serum | 0.903 | 1080 |
-| 3028564 | Alkaline phosphatase isoenz panel - Serum or Plasma | 0.902 |  |
-| 3048601 | Amylase.pancreatic [Enzymatic activity/volume] in Body fluid | 0.902 |  |
-| 1175847 | Vedolizumab [Mass/volume] in Serum or Plasma by LC/MS/MS --trough | 0.902 |  |
-| 3015322 | Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis | 0.902 | 315 |
-| 3039730 | Alkaline phosphatase.intestinal 3/Alkaline phosphatase.total in Serum or Plasma | 0.901 |  |
-| 43055424 | Alpha 2 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis | 0.900 |  |
-| 3035654 | Conalbumin IgE Ab [Units/volume] in Serum | 0.900 |  |
-| 3008691 | Amylase [Enzymatic activity/volume] in Peritoneal fluid | 0.899 |  |
-| 40765809 | Dog dander IgG Ab [Mass/volume] in Serum | 0.898 |  |
-| 1260115 | Albumin [Mass/volume] in Serum by Immunoassay | 0.898 |  |
-| 40763380 | OLANZapine [Moles/volume] in Specimen | 0.897 |  |
-| 43533877 | Aldosterone-18-glucuronide [Moles/time] in 24 hour Urine | 0.897 |  |
-| 43533876 | Aldosterone-18-glucuronide [Moles/volume] in 24 hour Urine | 0.896 |  |
-| 3005166 | Alpha 1 globulin [Mass/volume] in Urine | 0.896 |  |
-| 3005229 | Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis | 0.895 | 316 |
-| 3039488 | Alkaline phosphatase.intestinal 2/Alkaline phosphatase.total in Serum or Plasma | 0.895 |  |
-| 3002670 | Multiple inhalant allergen IgE Ab [Units/volume] in Serum | 0.894 |  |
-| 3002538 | Oyster IgE Ab [Units/volume] in Serum | 0.893 | 1690 |
-| 21492784 | Miscellaneous allergen IgE Ab [Units/volume] in Serum | 0.893 |  |
-| 3023949 | Allscale IgE Ab [Units/volume] in Serum | 0.893 |  |
-| 3032449 | Aldolase [Enzymatic activity/volume] in Body fluid | 0.891 |  |
-| 3024218 | Fig IgE Ab [Units/volume] in Serum | 0.891 |  |
-| 40759369 | Dog dander IgG4 Ab [Mass/volume] in Serum | 0.890 |  |
-| 42868690 | Salicylates [Moles/volume] in Serum or Plasma by Screen method | 0.889 | 870 |
-| 3010541 | Alpha 2 globulin [Mass/volume] in Urine | 0.888 |  |
-| 3013765 | Hay IgE Ab [Units/volume] in Serum | 0.888 |  |
-| 3019406 | Latex IgE Ab [Units/volume] in Serum | 0.887 | 1426 |
-| 1175324 | Salicylcarnitine [Moles/volume] in Serum or Plasma | 0.887 |  |
-| 3011337 | Aldosterone [Mass/volume] in Serum or Plasma | 0.887 |  |
-| 3021476 | Amylase [Enzymatic activity/volume] in Duodenal fluid | 0.887 |  |
-| 3025726 | SCL-70 extractable nuclear IgG Ab [Presence] in Serum by Immunoassay | 0.887 |  |
-| 3025313 | Albumin [Mass/volume] in Body fluid | 0.887 | 1032 |
-| 3014955 | Aldosterone [Mass/volume] in Urine | 0.886 |  |
-| 3005090 | Alkaline phosphatase [Enzymatic activity/volume] in Body fluid | 0.886 |  |
-| 44816899 | Dog native (nCan f) 1 IgE Ab [Units/volume] in Serum | 0.885 |  |
-| 3030968 | Amylase [Enzymatic activity/volume] in Urine collected for unspecified duration | 0.884 |  |
-| 1988210 | Ovalbumin IgG Ab [Mass/volume] in Serum | 0.884 |  |
-| 40764094 | Dog dander IgE Ab/IgE total in Serum | 0.883 |  |
-| 3016604 | IgE [Mass/volume] in Serum | 0.882 |  |
-| 3042733 | HLA Ab [Presence] in Serum | 0.881 |  |
-| 3043739 | Amylase [Enzymatic activity/volume] in Pericardial fluid | 0.881 |  |
-| 3027320 | Salicylates [Moles/volume] in Specimen | 0.881 |  |
-| 3013708 | Smelt IgE Ab [Units/volume] in Serum | 0.879 |  |
-| 3001077 | Alkaline phosphatase [Enzymatic activity/volume] in Urine | 0.879 |  |
-| 3008832 | Norclozapine [Moles/volume] in Serum or Plasma | 0.877 |  |
-| 3000049 | SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoassay | 0.877 | 1171 |
-| 3020874 | Milk IgE Ab [Units/volume] in Serum | 0.876 | 1442 |
-| 1176311 | Cholesterol.in LDL.small dense [Mass/volume] in Serum or Plasma | 0.876 |  |
-| 3018001 | Oat IgE Ab [Units/volume] in Serum | 0.876 | 1486 |
-| 40767673 | Dog recombinant 5 IgE Ab [Units/volume] in Serum | 0.876 |  |
-| 3005322 | IgE [Units/volume] in Serum or Plasma | 0.876 | 466 |
-| 44816883 | Amylase [Enzymatic activity/volume] in Saliva (oral fluid) | 0.876 |  |
-| 3012133 | Amylase [Enzymatic activity/volume] in Body fluid | 0.875 | 771 |
-| 40758600 | Aldosterone [Moles/volume] in Serum or Plasma --1 hour post dose corticotropin | 0.875 |  |
-| 645478 | OLANZapine [Measurement] in Serum or Plasma | 0.874 |  |
-| 3029321 | OLANZapine [Moles/volume] in Urine | 0.873 |  |
-| 3033031 | Aldosterone [Moles/volume] in Serum or Plasma --post XXX challenge | 0.869 |  |
-| 3004142 | Amylase [Enzymatic activity/volume] in Synovial fluid | 0.869 |  |
-| 3040652 | Amylase [Units/volume] in 24 hour Urine | 0.869 |  |
-| 3017341 | Amylase [Enzymatic activity/volume] in Amniotic fluid | 0.869 |  |
-| 3016585 | Aldosterone [Mass/volume] in Serum or Plasma --baseline | 0.868 |  |
-| 3023430 | Cat dander IgE Ab [Units/volume] in Serum | 0.868 | 715 |
-| 3012516 | Albumin [Mass/volume] in Urine | 0.868 |  |
-| 44786740 | Norolanzapine [Moles/volume] in Serum or Plasma | 0.866 |  |
-| 3031598 | Aldosterone [Moles/volume] in Serum or Plasma --pre XXX challenge | 0.865 |  |
-| 36660596 | Dog recombinant 6 IgE Ab [Units/volume] in Serum | 0.865 |  |
-| 648474 | Amylase [Measurement] in Urine | 0.865 |  |
-| 3013915 | Aldosterone [Mass/volume] in Blood | 0.865 |  |
-| 3045829 | Aldosterone/Creatinine [Mass Ratio] in 24 hour Urine | 0.864 |  |
-| 3028622 | Alkaline phosphatase.lung [Enzymatic activity/volume] in Serum or Plasma | 0.864 |  |
-| 3015877 | Amylase.P3 [Enzymatic activity/volume] in Serum or Plasma | 0.863 |  |
-| 3030162 | Aldosterone [Moles/volume] in Serum or Plasma --pre or post XXX challenge | 0.863 |  |
-| 3018519 | Aldolase [Enzymatic activity/volume] in Red Blood Cells | 0.862 |  |
-| 647232 | Aldosterone [Measurement] in Urine | 0.861 |  |
-| 3010350 | SCL-70 extractable nuclear Ab [Presence] in Serum by Immunofluorescence | 0.861 |  |
-| 40760707 | Aldosterone [Moles/volume] in Serum or Plasma --1 hour post XXX challenge | 0.861 |  |
-| 649070 | Salicylates [Measurement] in Serum or Plasma | 0.860 |  |
-| 43055511 | Salicylates [Mass/volume] in Serum or Plasma --trough | 0.860 |  |
-| 3021643 | Salicylamide [Mass/volume] in Serum or Plasma | 0.859 |  |
-| 3048752 | Lipase [Enzymatic activity/volume] in Pleural fluid | 0.859 |  |
-| 647081 | HLA-A and B and C (class I) and HLA-DP and DQ and DR (class II) Ab.IgG donor specific [Presence] in Serum or Plasma | 0.858 |  |
-| 3046505 | Aldolase [Enzymatic activity/volume] in Pleural fluid | 0.858 |  |
-| 3016801 | Amylase [Enzymatic activity/volume] in Gastric fluid | 0.857 |  |
-| 3965752 | Albumin [Mass/volume] in Serum or Plasma by Nephelometry | 0.856 |  |
-| 42868730 | Amylase.pancreatic [Enzymatic activity/volume] in Peritoneal fluid | 0.855 |  |
-| 3016436 | Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma | 0.854 | 156 |
-| 40757478 | Albumin [Moles/volume] in Serum or Plasma | 0.854 |  |
-| 3012633 | Alpha 1 globulin [Mass/volume] in Body fluid by Electrophoresis | 0.852 |  |
-| 3024800 | Alpha 1 globulin/Protein.total in Serum or Plasma by Electrophoresis | 0.851 |  |
-| 40759812 | SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoblot | 0.851 |  |
-| 43055427 | Alpha 1 globulin/Protein.total [Pure mass fraction] in Urine by Electrophoresis | 0.851 |  |
-| 3033598 | Amylase isoenzymes [Interpretation] in Serum or Plasma | 0.850 |  |
-| 3040682 | Aldosterone [Molar amount] in Urine collected for unspecified duration | 0.850 |  |
-| 3006330 | Alpha 2 globulin/Protein.total in Serum or Plasma by Electrophoresis | 0.849 |  |
-| 645900 | Alkaline phosphatase.bone [Measurement] in Serum or Plasma | 0.846 |  |
-| 3010043 | Alpha 2 globulin [Mass/volume] in Body fluid by Electrophoresis | 0.845 |  |
-| 40766268 | SCL-70 extractable nuclear Ab [Presence] in Body fluid | 0.844 |  |
-| 3009827 | Alpha-2-Macroglobulin [Mass/volume] in Serum or Plasma | 0.844 |  |
-| 3022361 | Alpha 1 globulin [Mass/volume] in Urine by Electrophoresis | 0.843 |  |
-| 43055426 | Alpha 1 globulin/Protein.total [Pure mass fraction] in 24 hour Urine by Electrophoresis | 0.843 |  |
-| 43055423 | Alpha 2 globulin/Protein.total [Pure mass fraction] in Urine by Electrophoresis | 0.843 |  |
-| 36305571 | Albumin goal [Mass/volume] Serum or Plasma | 0.843 |  |
-| 40762132 | Amylase [Enzymatic activity/volume] in Peritoneal dialysis fluid | 0.842 |  |
-| 3002842 | SCL-70 extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID) | 0.842 |  |
-| 3046951 | IgE [Mass/volume] in Specimen | 0.841 |  |
-| 3000081 | cloZAPine [Moles/volume] in Serum or Plasma | 0.841 |  |
-| 3028286 | Albumin [Mass/volume] in Serum or Plasma by Electrophoresis | 0.841 | 313 |
-| 40763164 | OLANZapine [Mass/volume] in Blood | 0.840 |  |
-| 3021886 | Globulin [Mass/volume] in Serum | 0.839 | 83 |
-| 646542 | Albumin [Measurement] in Serum or Plasma | 0.839 |  |
-| 40757623 | Alanine aminotransferase [Enzymatic activity/volume] in Pleural fluid | 0.838 |  |
-| 3011887 | Alkaline phosphatase.other fractions/Alkaline phosphatase.total in Serum or Plasma | 0.838 |  |
-| 3043889 | HLA Ab in Serum | 0.838 |  |
-| 3036255 | Didesmethylcitalopram [Moles/volume] in Serum or Plasma | 0.836 |  |
-| 3049125 | Alpha-1-Microglobulin [Mass/volume] in Serum or Plasma | 0.836 |  |
-| 40763006 | OLANZapine [Moles/volume] in Gastric fluid | 0.836 |  |
-| 3004185 | IgE.monoclonal [Mass/volume] in Serum | 0.835 |  |
-| 3005783 | Lactate dehydrogenase 1 [Enzymatic activity/volume] in Serum or Plasma | 0.835 |  |
-| 3037039 | Alpha 2 globulin [Mass/volume] in Urine by Electrophoresis | 0.834 |  |
-| 43055422 | Alpha 2 globulin/Protein.total [Pure mass fraction] in 24 hour Urine by Electrophoresis | 0.834 |  |
-| 646600 | SCL-70 extractable nuclear IgG Ab [Measurement] in Serum | 0.834 |  |
-| 3017861 | Lactate dehydrogenase 2 [Enzymatic activity/volume] in Serum or Plasma | 0.832 |  |
-| 3042299 | inFLIXimab [Mass/volume] in Serum or Plasma | 0.832 |  |
-| 3042545 | Alkaline phosphatase.bile/Alkaline phosphatase.total in Serum or Plasma | 0.832 |  |
-| 3020579 | Amylase [Enzymatic activity/time] in 24 hour Urine | 0.830 |  |
-| 3037908 | Alkaline phosphatase isoenzymes [Interpretation] in Serum or Plasma | 0.830 |  |
-| 3052599 | HLA Ab [Presence] in Serum by Immunoassay | 0.830 |  |
-| 43055429 | Alpha 1 globulin/Protein.total [Pure mass fraction] in Cerebral spinal fluid by Electrophoresis | 0.830 |  |
-| 3009059 | Enolase [Enzymatic activity/volume] in Serum | 0.829 |  |
-| 3035516 | HLA Ab [Presence] | 0.829 |  |
-| 46234773 | IgE [Mass/volume] in Serum or Plasma by Immunoassay | 0.829 |  |
-| 36304617 | Golimumab [Mass/volume] in Serum or Plasma by Immunoassay | 0.826 |  |
-| 3036955 | Alkaline phosphatase.liver/Alkaline phosphatase.total in Serum or Plasma | 0.826 | 1664 |
-| 43055425 | Alpha 2 globulin/Protein.total [Pure mass fraction] in Cerebral spinal fluid by Electrophoresis | 0.826 |  |
-| 3042479 | Alkaline phosphatase.bone [Presence] in Serum or Plasma | 0.825 |  |
-| 3002960 | cloZAPine+Norclozapine [Moles/volume] in Serum or Plasma | 0.824 |  |
-| 44816655 | Soluble fms-like tyrosine kinase-1/placental growth factor [Ratio] in Serum | 0.824 |  |
-| 3006769 | Lactate dehydrogenase 3 [Enzymatic activity/volume] in Serum or Plasma | 0.823 |  |
-| 1091897 | Risankizumab [Mass/volume] in Serum or Plasma | 0.821 |  |
-| 3030437 | Cholesterol in LDL.narrow density [Mass/volume] in Serum or Plasma | 0.820 |  |
-| 3026076 | Alpha hydroxybutyrate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma | 0.819 |  |
-| 645131 | SCL-70 extractable nuclear Ab [Measurement] in Serum | 0.818 |  |
-| 3027159 | OXcarbazepine [Moles/volume] in Serum or Plasma | 0.818 | 1659 |
-| 3048480 | O-desmethylvenlafaxine [Moles/volume] in Serum or Plasma | 0.817 |  |
-| 3021222 | Alkaline phosphatase.renal/Alkaline phosphatase.total in Serum or Plasma | 0.817 |  |
-| 3019891 | Alpha 1 globulin/Protein.total in Body fluid by Electrophoresis | 0.816 |  |
-| 3041414 | Tissue transglutaminase Ab [Presence] in Serum | 0.816 |  |
-| 646132 | HLA-A and B and C (class I) and HLA-DP and DQ and DR (class II) Ab.IgG donor specific [Identifier] in Serum or Plasma | 0.815 |  |
-| 40758658 | Clopenthixol [Moles/volume] in Serum or Plasma | 0.815 |  |
-| 1616853 | HLA-A and B and C (class I) IgG donor specific [Identifier] in Serum or Plasma | 0.814 |  |
-| 3015383 | N-desalkylflurazepam [Moles/volume] in Serum or Plasma | 0.813 |  |
-| 3003650 | Alkaline phosphatase [Mass/volume] in Body fluid | 0.812 |  |
-| 3012984 | Norclozapine [Mass/volume] in Serum or Plasma | 0.810 |  |
-| 36304315 | Certolizumab Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.810 |  |
-| 40762648 | HLA IgG Ab [Presence] in Serum by Immunofluorescence | 0.808 |  |
-| 1175178 | Eculizumab [Mass/volume] in Serum | 0.808 |  |
-| 36305036 | Ustekinumab Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.806 |  |
-| 3048259 | Amylase isoenzymes [Interpretation] in Serum or Plasma Narrative | 0.806 |  |
-| 44816887 | Alkaline phosphatase.bone [Z-score] in Serum or Plasma | 0.806 |  |
-| 3005504 | Alpha 2 globulin/Protein.total in Body fluid by Electrophoresis | 0.806 |  |
-| 3001308 | Cholesterol in LDL [Moles/volume] in Serum or Plasma | 0.805 | 92 |
-| 3005932 | Smooth muscle Ab [Presence] in Serum | 0.805 | 1219 |
-| 36303722 | Certolizumab [Mass/volume] in Serum or Plasma by Immunoassay | 0.803 |  |
-| 3029285 | HLA Ab [Type] in Serum | 0.802 |  |
-| 3037225 | Intercellular substance Ab [Presence] in Serum | 0.802 |  |
-| 3002555 | Alkaline phosphatase [Mass/volume] in Urine | 0.798 |  |
-| 3015483 | Nefazodone [Moles/volume] in Serum or Plasma | 0.793 |  |
-| 3013751 | cloZAPine [Mass/volume] in Serum or Plasma | 0.792 |  |
-| 43055237 | Amylase and triacylglycerol lipase panel - Serum or Plasma | 0.792 |  |
-| 3046961 | Epidermis Ab [Presence] in Serum | 0.792 |  |
-| 3013055 | A Ab [Presence] in Serum or Plasma | 0.792 |  |
-| 3017800 | H Ab [Presence] in Serum | 0.791 |  |
-| 3030555 | Tissue transglutaminase IgA Ab [Presence] in Serum | 0.791 |  |
-| 3049181 | Alkaline phosphatase isoenzymes [Interpretation] in Serum or Plasma Narrative | 0.790 |  |
-| 648009 | HLA Ab [Measurement] in Serum | 0.789 |  |
-| 3041421 | Tissue transglutaminase IgG Ab [Presence] in Serum | 0.788 |  |
-| 3050937 | sp100 Ab [Presence] in Serum | 0.787 |  |
-| 3022487 | Cholesterol in VLDL [Moles/volume] in Serum or Plasma | 0.786 | 219 |
-| 44816662 | Soluble fms-like tyrosine kinase-1 and placental growth factor panel - Serum or Plasma | 0.782 |  |
-| 3028089 | Alkaline phosphatase isoenzyme [Units/volume] in Serum or Plasma | 0.774 |  |
-| 37020823 | Lipoprotein.broad beta.subparticle.small [Moles/volume] in Serum | 0.773 |  |
-| 1175998 | Cholesterol in LDL 2 [Moles/volume] in Serum or Plasma | 0.771 |  |
-| 1175617 | Cholesterol in LDL 5 [Moles/volume] in Serum or Plasma | 0.770 |  |
-| 1175571 | Cholesterol in LDL 3 [Moles/volume] in Serum or Plasma | 0.767 |  |
-| 3039358 | Amylase isoenzymes [Interpretation] in Body fluid Narrative | 0.763 |  |
-| 3047120 | Alkaline phosphatase.liver+bone [Presence] in Serum or Plasma | 0.762 |  |
-| 37020736 | Lipoprotein.pre-beta.subparticle.small [Moles/volume] in Serum | 0.760 |  |
-| 46235359 | Vascular endothelial growth factor A [Mass/volume] in Serum or Plasma | 0.759 |  |
-| 3043435 | Alkaline phosphatase isoenzymes [Enzymatic activity/volume] in Serum or Plasma by Levamisole inhibition | 0.755 |  |
-| 3966146 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Serum or Plasma | 0.753 |  |
-| 3031767 | Vascular endothelial growth factor [Mass/volume] in Serum or Plasma | 0.750 |  |
-| 3037841 | Amylase.P2/Amylase.total in Serum or Plasma | 0.746 |  |
-| 3023712 | Amylase.P1/Amylase.total in Serum or Plasma | 0.742 |  |
-| 3038143 | Amylase.P3/Amylase.total in Serum or Plasma | 0.742 |  |
-| 3965350 | Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma | 0.741 |  |
-| 3039873 | Cholesterol in LDL [Moles/volume] in Body fluid | 0.741 |  |
-| 3965684 | Tumor necrosis factor ligand superfamily member 10 [Mass/volume] in Serum, Plasma or Blood | 0.738 |  |
-| 42529047 | Vascular endothelial growth factor D [Mass/volume] in Serum or Plasma | 0.736 |  |
-| 44816653 | Placental growth factor [Mass/volume] in Serum | 0.733 |  |
-| 3021952 | Alkaline phosphatase isoenzymes [Enzymatic activity/volume] in Serum or Plasma by Heat stability | 0.732 |  |
+| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 1.000 | 1051 |
+| 40763543 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | 1.000 |  |
+| 3964796 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with non-probe detection | 0.975 |  |
+| 3029920 | Streptococcus pneumoniae capsular polysaccharide IgG2 Ab [Mass/volume] in Serum | 0.943 |  |
+| 3045274 | Streptococcus pneumoniae IgG Ab [Mass/volume] in Serum | 0.942 |  |
+| 36204005 | Streptococcus pneumoniae Danish serotype 19F IgG Ab [Mass/volume] in Serum | 0.941 | 1324 |
+| 36204094 | Streptococcus pneumoniae Danish serotype 23F IgG Ab [Mass/volume] in Serum | 0.940 | 1326 |
+| 3038232 | Streptococcus pneumoniae Danish serotype 33F IgG Ab [Mass/volume] in Serum | 0.939 |  |
+| 3000899 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum | 0.936 | 1384 |
+| 3005260 | Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum | 0.935 | 1331 |
+| 36203922 | Streptococcus pneumoniae Danish serotype 14 IgG Ab [Mass/volume] in Serum | 0.934 | 1259 |
+| 3042065 | Streptococcus pneumoniae Danish serotype 15B IgG Ab [Mass/volume] in Serum | 0.932 |  |
+| 1260031 | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | 0.932 |  |
+| 3006665 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum | 0.932 | 1320 |
+| 3022344 | Streptococcus pneumoniae IgG Ab [Units/volume] in Serum | 0.931 |  |
+| 36204178 | Streptococcus pneumoniae Danish serotype 10A IgG Ab [Mass/volume] in Serum | 0.930 |  |
+| 36203229 | Streptococcus pneumoniae Danish serotype 12F IgG Ab [Units/volume] in Serum | 0.930 |  |
+| 36203990 | Streptococcus pneumoniae Danish serotype 17F IgG Ab [Mass/volume] in Serum | 0.929 |  |
+| 36204022 | Streptococcus pneumoniae Danish serotype 20A IgG Ab [Mass/volume] in Serum | 0.928 |  |
+| 3005665 | Streptococcus pneumoniae Danish serotype 6B IgG Ab [Mass/volume] in Serum | 0.927 | 1378 |
+| 36203231 | Streptococcus pneumoniae Danish serotype 12F IgG Ab [Mass/volume] in Serum | 0.927 | 1402 |
+| 36204278 | Streptococcus pneumoniae Danish serotype 11A IgG Ab [Mass/volume] in Serum | 0.926 |  |
+| 36204351 | Streptococcus pneumoniae Danish serotype 8 IgG Ab [Mass/volume] in Serum | 0.925 | 1386 |
+| 36204353 | Streptococcus pneumoniae Danish serotype 8 IgG Ab [Units/volume] in Serum | 0.923 |  |
+| 36204187 | Streptococcus pneumoniae Danish serotype 4 IgG Ab [Mass/volume] in Serum | 0.922 | 1328 |
+| 36204016 | Streptococcus pneumoniae Danish serotype 2 IgG Ab [Mass/volume] in Serum | 0.922 |  |
+| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.921 | 337 |
+| 3024135 | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | 0.918 | 521 |
+| 36204286 | Streptococcus pneumoniae Danish serotype 5 IgG Ab [Mass/volume] in Serum | 0.917 |  |
+| 36203821 | Streptococcus pneumoniae Danish serotype 1 IgG Ab [Mass/volume] in Serum | 0.916 | 1394 |
+| 36204002 | Streptococcus pneumoniae Danish serotype 19F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.914 | 1325 |
+| 3030716 | Streptococcus pneumoniae capsular polysaccharide IgG2 Ab [Mass/volume] in Serum by Immunoassay | 0.913 |  |
+| 36204091 | Streptococcus pneumoniae Danish serotype 23F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.912 | 1327 |
+| 3050060 | Streptococcus pneumoniae Danish serotype 33F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.911 |  |
+| 3030009 | Streptococcus pneumoniae capsular polysaccharide IgG Ab [Mass/volume] in Serum | 0.910 |  |
+| 3017906 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay | 0.910 |  |
+| 3041754 | Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum by Immunoassay | 0.909 | 1332 |
+| 3041896 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.907 | 1385 |
+| 36203909 | Streptococcus pneumoniae Danish serotype 12F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.907 | 1403 |
+| 36204373 | Streptococcus pneumoniae Danish serotype 9N IgG Ab [Mass/volume] in Serum | 0.906 | 1388 |
+| 36203230 | Streptococcus pneumoniae Danish serotype 12F IgG Ab [Units/volume] in Serum by Immunoassay | 0.905 |  |
+| 36204292 | Streptococcus pneumoniae Danish serotype 6A IgG Ab [Mass/volume] in Serum | 0.905 |  |
+| 36203923 | Streptococcus pneumoniae Danish serotype 14 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.905 | 1260 |
+| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.905 |  |
+| 3043253 | Streptococcus pneumoniae IgG Ab [Mass/volume] in Serum by Immunoassay | 0.905 |  |
+| 36204023 | Streptococcus pneumoniae Danish serotype 20A IgG Ab [Mass/volume] in Serum by Immunoassay | 0.905 |  |
+| 3039571 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum by Immunoassay | 0.903 | 1321 |
+| 36204179 | Streptococcus pneumoniae Danish serotype 10A IgG Ab [Mass/volume] in Serum by Immunoassay | 0.902 |  |
+| 36204354 | Streptococcus pneumoniae Danish serotype 8 IgG Ab [Units/volume] in Serum by Immunoassay | 0.902 |  |
+| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.901 |  |
+| 36204279 | Streptococcus pneumoniae Danish serotype 11A IgG Ab [Mass/volume] in Serum by Immunoassay | 0.901 |  |
+| 3012475 | Bacteria identified in Throat by Culture | 0.901 | 638 |
+| 36204001 | Streptococcus pneumoniae Danish serotype 19F Ab [Mass/volume] in Serum | 0.901 |  |
+| 36660467 | Streptococcus pyogenes DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.900 |  |
+| 36204188 | Streptococcus pneumoniae Danish serotype 4 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.900 | 1329 |
+| 3966418 | Streptococcus pyogenes DNA [Presence] in Wound by NAA with probe detection | 0.900 |  |
+| 36204352 | Streptococcus pneumoniae Danish serotype 8 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.900 | 1387 |
+| 3049388 | Streptococcus pneumoniae Danish serotype 15B IgG Ab [Mass/volume] in Serum by Immunoassay | 0.900 |  |
+| 36203991 | Streptococcus pneumoniae Danish serotype 17F IgG Ab [Mass/volume] in Serum by Immunoassay | 0.900 |  |
+| 3038550 | Streptococcus pneumoniae Danish serotype 6B IgG Ab [Mass/volume] in Serum by Immunoassay | 0.899 | 1379 |
+| 36204003 | Streptococcus pneumoniae Danish serotype 19F IgG Ab [Units/volume] in Serum | 0.899 |  |
+| 3018048 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Units/volume] in Serum | 0.897 |  |
+| 3025151 | Streptococcus pneumoniae IgM Ab [Units/volume] in Serum | 0.896 |  |
+| 3000712 | Streptococcus pneumoniae Danish serotype 9V IgG Ab [Units/volume] in Serum | 0.896 |  |
+| 36204285 | Streptococcus pneumoniae Danish serotype 5 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.896 |  |
+| 3000124 | Streptococcus pneumoniae Ab [Mass/volume] in Serum | 0.895 |  |
+| 3964996 | Streptococcus dysgalactiae subspecies equisimilis DNA [Presence] in Throat by NAA with non-probe detection | 0.895 |  |
+| 36203997 | Streptococcus pneumoniae Danish serotype 18F IgG Ab [Mass/volume] in Serum | 0.895 |  |
+| 36204092 | Streptococcus pneumoniae Danish serotype 23F IgG Ab [Units/volume] in Serum | 0.894 |  |
+| 3024832 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Units/volume] in Serum | 0.893 |  |
+| 36204015 | Streptococcus pneumoniae Danish serotype 2 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.893 |  |
+| 3036452 | Chlamydia sp DNA [Presence] in Throat by NAA with probe detection | 0.893 |  |
+| 1469570 | Streptococcus pyogenes DNA [Presence] in Body fluid by NAA with non-probe detection | 0.892 |  |
+| 36203822 | Streptococcus pneumoniae Danish serotype 1 IgG Ab [Mass/volume] in Serum by Immunoassay | 0.892 | 1395 |
+| 646031 | Streptococcus pneumoniae Danish serotype 19F IgG Ab [Measurement] in Serum | 0.891 |  |
+| 3026908 | Streptococcus pneumoniae Danish serotype 18C Ab [Mass/volume] in Serum | 0.891 |  |
+| 36204029 | Streptococcus pneumoniae Danish serotype 22F IgG Ab [Mass/volume] in Serum | 0.891 |  |
+| 1092273 | Streptococcus salivarius DNA [Presence] in Specimen by NAA with probe detection | 0.890 |  |
+| 36204090 | Streptococcus pneumoniae Danish serotype 23F Ab [Mass/volume] in Serum | 0.890 |  |
+| 36203907 | Streptococcus pneumoniae Danish serotype 12F Ab [Units/volume] in Serum | 0.890 |  |
+| 36303893 | Neisseria gonorrhoeae DNA [Presence] in Throat by NAA with probe detection | 0.889 |  |
+| 3011310 | Streptococcus pneumoniae Ab [Units/volume] in Serum | 0.889 |  |
+| 3032017 | Streptococcus pneumoniae Danish serotype 19B IgG Ab [Mass/volume] in Serum | 0.889 |  |
+| 3026606 | Streptococcus pneumoniae Danish serotype 7F Ab [Mass/volume] in Serum | 0.889 |  |
+| 3031967 | Streptococcus pneumoniae 4 serotypes IgG panel [Mass/volume] - Serum | 0.888 |  |
+| 37020473 | Streptococcus pyogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.888 |  |
+| 36203924 | Streptococcus pneumoniae Danish serotype 14 IgG Ab [Units/volume] in Serum | 0.888 |  |
+| 646760 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Measurement] in Serum | 0.886 |  |
+| 648075 | Streptococcus pneumoniae Danish serotype 9V IgG Ab [Measurement] in Serum | 0.886 |  |
+| 1091086 | Streptococcus pneumoniae DNA [Presence] in Nasopharynx by NAA with probe detection | 0.886 |  |
+| 3009696 | Streptococcus pneumoniae IgG Ab [Units/volume] in Serum by Immunoassay | 0.885 |  |
+| 36204349 | Streptococcus pneumoniae Danish serotype 8 Ab [Units/volume] in Serum | 0.885 |  |
+| 647089 | Streptococcus pneumoniae Danish serotype 23F IgG Ab [Measurement] in Serum | 0.885 |  |
+| 3044549 | Streptococcus pneumoniae Danish serotype 19A IgG Ab [Mass/volume] in Serum | 0.884 | 1471 |
+| 36204185 | Streptococcus pneumoniae Danish serotype 4 Ab [Mass/volume] in Serum | 0.884 |  |
+| 649541 | Streptococcus pneumoniae Danish serotype 12F IgG Ab [Measurement] in Serum | 0.883 |  |
+| 36204189 | Streptococcus pneumoniae Danish serotype 4 IgG Ab [Units/volume] in Serum | 0.883 |  |
+| 3029357 | Streptococcus pneumoniae capsular polysaccharide IgG Ab [Mass/volume] in Serum by Immunoassay | 0.882 |  |
+| 3005264 | Streptococcus pneumoniae Danish serotype 6B IgG Ab [Units/volume] in Serum | 0.882 |  |
+| 3045758 | Streptococcus pneumoniae Danish serotype 6B Ab [Mass/volume] in Serum | 0.882 |  |
+| 36203920 | Streptococcus pneumoniae Danish serotype 14 Ab [Mass/volume] in Serum | 0.882 |  |
+| 36204370 | Streptococcus pneumoniae Danish serotype 9N IgG Ab [Mass/volume] in Serum by Immunoassay | 0.881 | 1389 |
+| 649217 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Measurement] in Serum | 0.881 |  |
+| 36204294 | Streptococcus pneumoniae Danish serotype 6A IgG Ab [Mass/volume] in Serum by Immunoassay | 0.881 |  |
+| 36203906 | Streptococcus pneumoniae Danish serotype 12F Ab [Mass/volume] in Serum | 0.880 |  |
+| 645976 | Streptococcus pneumoniae Danish serotype 14 IgG Ab [Measurement] in Serum | 0.880 |  |
+| 36204350 | Streptococcus pneumoniae Danish serotype 8 Ab [Mass/volume] in Serum | 0.879 |  |
+| 646420 | Streptococcus pneumoniae Danish serotype 6B IgG Ab [Measurement] in Serum | 0.878 |  |
+| 42868504 | Streptococcus sp DNA [Presence] in Blood by NAA with probe detection | 0.878 |  |
+| 3052873 | Streptococcus pneumoniae Danish serotype 33F IgG Ab [Mass/volume] in Serum --1st specimen | 0.877 |  |
+| 648147 | Streptococcus pneumoniae Danish serotype 8 IgG Ab [Measurement] in Serum | 0.876 |  |
+| 3023273 | Streptococcus pneumoniae IgG Ab [Units/volume] in Serum --2nd specimen | 0.874 |  |
+| 3048760 | Streptococcus pneumoniae Danish serotype 9V IgG Ab [Mass/volume] in Serum --1st specimen | 0.874 |  |
+| 3025980 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Units/volume] in Serum by Immunoassay | 0.874 |  |
+| 3007861 | Streptococcus pneumoniae Danish serotype 7F IgG Ab [Mass/volume] in Serum --1st specimen | 0.873 |  |
+| 36203992 | Streptococcus pneumoniae Danish serotype 17F IgG Ab [Mass/volume] in Serum --1st specimen | 0.873 |  |
+| 649584 | Streptococcus pneumoniae Danish serotype 4 IgG Ab [Measurement] in Serum | 0.873 |  |
+| 36203572 | Streptococcus pyogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.872 |  |
+| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.869 |  |
+| 3017141 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Mass/volume] in Serum --1st specimen | 0.869 |  |
+| 3021098 | Streptococcus pneumoniae Danish serotype 18C IgG Ab [Units/volume] in Serum by Immunoassay | 0.867 |  |
+| 3023238 | Streptococcus pneumoniae Danish serotype 7F Ab [Units/volume] in Serum | 0.867 |  |
+| 36204024 | Streptococcus pneumoniae Danish serotype 20A IgG Ab [Mass/volume] in Serum --1st specimen | 0.864 |  |
+| 36204180 | Streptococcus pneumoniae Danish serotype 10A IgG Ab [Mass/volume] in Serum --1st specimen | 0.863 |  |
+| 36204297 | Streptococcus pneumoniae Danish serotype 7A IgG Ab [Units/volume] in Serum | 0.862 |  |
+| 36204093 | Streptococcus pneumoniae Danish serotype 23F IgG Ab [Units/volume] in Serum by Immunoassay | 0.859 |  |
+| 3014999 | Streptococcus pneumoniae Ab [Units/volume] in Serum by Immunoassay | 0.858 |  |
+| 648685 | Streptococcus pneumoniae IgG Ab [Measurement] in Serum | 0.858 |  |
+| 36203891 | Streptococcus pneumoniae Danish serotype 1 IgG Ab [Units/volume] in Serum | 0.855 |  |
+| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.854 |  |
+| 36204026 | Streptococcus pneumoniae Danish serotype 20A IgG Ab [Mass/volume] in Serum --2nd specimen | 0.854 |  |
+| 1092202 | Streptococcus pyogenes [Presence] in Specimen | 0.852 |  |
+| 36204004 | Streptococcus pneumoniae Danish serotype 19F IgG Ab [Units/volume] in Serum by Immunoassay | 0.850 |  |
+| 3008051 | Streptococcus pyogenes Ag [Presence] in Specimen | 0.847 |  |
+| 3000686 | Virus identified in Throat by Culture | 0.842 |  |
+| 3002949 | Streptococcus pyogenes Ag [Presence] in Serum by Agglutination | 0.838 |  |
+| 3018201 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunofluorescence | 0.836 |  |
+| 3038101 | Streptococcus agalactiae Ag [Presence] in Throat by Immunofluorescence | 0.835 |  |
+| 3018121 | Streptococcus pyogenes Ag [Presence] in Serum | 0.831 |  |
+| 3014536 | Streptococcus agalactiae Ag [Presence] in Throat | 0.828 |  |
+| 3024740 | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | 0.827 | 334 |
+| 40771489 | Streptococcus pyogenes rRNA [Presence] in Throat by Probe | 0.811 |  |
+| 3035740 | Bacteria identified in Throat by Aerobe culture | 0.810 | 526 |
+| 3047233 | Neisseria sp identified in Throat by Organism specific culture | 0.810 |  |
+| 1091932 | Fungus identified in Throat by Culture | 0.797 |  |
+| 3010629 | Chlamydia sp identified in Throat by Organism specific culture | 0.796 |  |
+| 37020272 | Bordetella sp identified in Throat by Organism specific culture | 0.795 |  |
+| 3053028 | Streptococcus sp identified in Specimen by Organism specific culture | 0.791 |  |
+| 3013103 | Diphtheria identified in Throat by Organism specific culture | 0.787 |  |
+| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.786 |  |
+| 3005214 | Streptococcus.beta-hemolytic [Presence] in Genital specimen by Organism specific culture | 0.762 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 803 | -amyl | u/l | 92% | name+unit+values | 4274 | 0 | [40.79, 91.13, 163.85, 262.6, 433.78, 741.28, 1310.78, 2709.64, 7550.04] |  |  |  | Amylase [Enzymatic activity/volume] in Serum or Plasma |
-| 804 | -amyl |  | 8% | name | 352 | 99.15 |  |  |  |  | Amylase [Enzymatic activity/volume] in Serum or Plasma |
-| 805 | alfa-1 | g/l | 100% | name+unit+values | 903 | 0 | [1.23, 1.5, 1.79, 2.22, 2.48, 2.68, 2.88, 3.11, 3.51] |  |  |  | Alpha 1 globulin [Mass/volume] in Serum |
-| 806 | alfa-2 | g/l | 100% | name+unit+values | 907 | 0 | [5.21, 5.83, 6.26, 6.53, 6.88, 7.18, 7.58, 8.1, 8.87] |  |  |  | Alpha 2 globulin [Mass/volume] in Serum |
-| 807 | amylaasi | u/l | 98% | name+unit+values | 1380 | 0 | [29.91, 37.05, 43.3, 48.81, 54.92, 61.3, 69.75, 79.02, 95.18] |  |  |  | Amylase [Enzymatic activity/volume] in Serum or Plasma |
-| 808 | amylaasi |  | 2% | name | 28 | 100 |  |  |  |  | Amylase [Enzymatic activity/volume] in Serum or Plasma |
-| 809 | as-amyl | u/l | 85% | name+unit+values | 277 | 0 | [7.29, 10.51, 15.56, 18.22, 24.01, 33.76, 50.6, 245.04, 2494.39] | As-Amylaasi | Ascitic fluid |  | Amylase [Enzymatic activity/volume] in Ascitic fluid |
-| 810 | as-amyl |  | 15% | name | 47 | 87.23 |  | As-Amylaasi | Ascitic fluid |  | Amylase [Enzymatic activity/volume] in Ascitic fluid |
-| 811 | du-aldos | nmol | 81% | name+unit+values | 1126 | 1.15 | [10.3, 15.49, 20, 24.81, 30.39, 36.32, 42.97, 53.97, 73.23] | dU-Aldosteroni | 24-hour urine |  | Aldosterone [Moles/time] in 24 hour Urine |
-| 812 | du-aldos | nmol/24h | 2% | name+unit | 31 | 0 |  | dU-Aldosteroni | 24-hour urine |  | Aldosterone [Moles/time] in 24 hour Urine |
-| 813 | du-aldos | nmol/l | 2% | name+unit | 25 | 0 |  | dU-Aldosteroni | 24-hour urine |  | Aldosterone [Moles/volume] in 24 hour Urine |
-| 814 | du-aldos | ug/24h | 1% | name+unit | 12 | 0 |  | dU-Aldosteroni | 24-hour urine |  | Aldosterone [Mass/time] in 24 hour Urine |
-| 815 | du-aldos |  | 14% | name+values | 191 | 49.21 | [8, 15.27, 20, 24.32, 29.5, 36, 48.62, 70.25, 89] | dU-Aldosteroni | 24-hour urine |  | Aldosterone [Moles/time] in 24 hour Urine |
-| 816 | fp-afos | u/l | 100% | name+unit+values | 595 | 0 | [48.33, 55.25, 59.57, 63.86, 67.6, 73.77, 82.28, 90.12, 106.03] |  | Fasting plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 817 | fp-aldos | pmol/l | 92% | name+unit+values | 759 | 0 | [99.71, 178.79, 234.24, 287.4, 344.18, 414.36, 481.84, 606.93, 836.03] | fP-Aldosteroni | Fasting plasma |  | Aldosterone [Moles/volume] in Plasma |
-| 818 | fp-aldos |  | 8% | name | 70 | 70 |  | fP-Aldosteroni | Fasting plasma |  | Aldosterone [Moles/volume] in Plasma |
-| 819 | fp-amyl | u/l | 100% | name+unit+values | 166 | 0 | [38.7, 46.83, 53.52, 59.77, 65.17, 71.18, 77.02, 86.88, 100.9] |  | Fasting plasma |  | Amylase [Enzymatic activity/volume] in Plasma |
-| 820 | p-afos | u/l | 99% | name+unit+values | 2633385 | 0.01 | [49.38, 57.42, 63.93, 70.22, 76.89, 84.76, 95, 111.35, 151.36] | P -Alkalinen fosfataasi | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 821 | p-afos |  | 1% | name+values | 28410 | 100 | [47.41, 55.11, 61.31, 67.35, 73.68, 80.95, 90.67, 106.27, 134.65] | P -Alkalinen fosfataasi | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 822 | p-aldos | pmol/l | 93% | name+unit+values | 978 | 0 | [88.37, 146.16, 190.71, 235.98, 287.48, 347.26, 419.69, 540.86, 783.53] | P -Aldosteroni | Plasma |  | Aldosterone [Moles/volume] in Plasma |
-| 823 | p-aldos |  | 7% | name | 71 | 88.73 |  | P -Aldosteroni | Plasma |  | Aldosterone [Moles/volume] in Plasma |
-| 824 | p-amyl | u/l | 98% | name+unit+values | 368852 | 0.02 | [26.2, 33.98, 40.36, 46.26, 52.37, 59.2, 67.68, 79.78, 104.76] | P -Amylaasi | Plasma |  | Amylase [Enzymatic activity/volume] in Plasma |
-| 825 | p-amyl |  | 2% | name+values | 5758 | 100 | [29, 36.73, 43, 48.41, 54.21, 60.53, 68.18, 78.9, 100.7] | P -Amylaasi | Plasma |  | Amylase [Enzymatic activity/volume] in Plasma |
-| 826 | p-amylaasi | u/l | 98% | name+unit+values | 1560 | 0 | [28.07, 35.77, 41.54, 47.32, 52.57, 59.03, 66.78, 77.77, 99.14] |  | Plasma |  | Amylase [Enzymatic activity/volume] in Plasma |
-| 827 | p-amylaasi |  | 2% | name | 28 | 89.29 |  |  | Plasma |  | Amylase [Enzymatic activity/volume] in Plasma |
-| 828 | p-amylp | u/l | 86% | name+unit+values | 96538 | 0 | [14.27, 20, 23.24, 26.43, 29.95, 34.28, 40.26, 51.17, 86.4] | P -Amylaasi, haimaperäinen | Plasma |  | Amylase.pancreatic [Enzymatic activity/volume] in Plasma |
-| 829 | p-amylp |  | 14% | name+values | 16102 | 100 | [12.88, 17.77, 21.4, 24.41, 27.47, 31.02, 35.38, 42.83, 60.62] | P -Amylaasi, haimaperäinen | Plasma |  | Amylase.pancreatic [Enzymatic activity/volume] in Plasma |
-| 830 | p-sldl | mmol/l | 91% | name+unit+values | 2968 | 0 | [1.54, 1.82, 2.07, 2.32, 2.6, 2.9, 3.19, 3.53, 4.07] |  | Plasma |  | LDL cholesterol.small dense [Moles/volume] in Plasma |
-| 831 | p-sldl |  | 9% | name | 282 | 86.52 |  |  | Plasma |  | LDL cholesterol.small dense [Moles/volume] in Plasma |
-| 832 | pa-amyl | u/l | 93% | name+unit+values | 181 | 0 | [6, 8.3, 13.62, 23.54, 38.11, 86.55, 532.84, 2066.13, 14410] | Pa-Amylaasi | Pancreatic juice |  | Amylase [Enzymatic activity/volume] in Pancreatic fluid |
-| 833 | pa-amyl |  | 7% | name | 13 | 100 |  | Pa-Amylaasi | Pancreatic juice |  | Amylase [Enzymatic activity/volume] in Pancreatic fluid |
-| 834 | pf-amyl | u/l | 70% | name+unit+values | 512 | 0 | [11.47, 15.64, 19.01, 23.1, 27.84, 32.18, 37.92, 46.58, 62.15] | Pf-Amylaasi | Pleural fluid |  | Amylase [Enzymatic activity/volume] in Pleural fluid |
-| 835 | pf-amyl |  | 30% | name | 216 | 100 |  | Pf-Amylaasi | Pleural fluid |  | Amylase [Enzymatic activity/volume] in Pleural fluid |
-| 836 | s-aaldos | pmol/l | 100% | name+unit+values | 125 | 0.8 | [506.75, 663.13, 772.54, 837.76, 918.5, 1062, 1146, 1442.2, 2247] |  | Serum |  | Aldosterone [Moles/volume] in Serum |
-| 837 | s-adali | mg/l | 65% | name+unit+values | 1092 | 0.37 | [4.24, 6.27, 7.87, 9.1, 10.33, 11.83, 13.14, 14.95, 17.6] | S -Adalimumabi | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 838 | s-adali |  | 35% | name+values | 600 | 16.67 | [3.21, 5.15, 6.89, 8.21, 9.3, 11.07, 13.15, 15.09, 18] | S -Adalimumabi | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 839 | s-adaliab | au/ml | 11% | name+unit+values | 257 | 1.17 | [4.47, 14.51, 21.55, 36.22, 43.39, 60.38, 104.64, 181.31, 370.6] | S -Adalimumabi, vasta-aineet | Serum |  | Adalimumab Ab [Units/volume] in Serum or Plasma |
-| 840 | s-adaliab |  | 89% | name | 2149 | 99.3 |  | S -Adalimumabi, vasta-aineet | Serum |  | Adalimumab Ab [Units/volume] in Serum or Plasma |
-| 841 | s-adalimu | mg/l | 88% | name+unit+values | 2004 | 0 | [3.43, 5.38, 6.89, 8.1, 9.37, 10.76, 12.24, 13.87, 16.85] |  | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 842 | s-adalimu |  | 12% | name+values | 271 | 52.03 | [2.22, 3.86, 5.11, 6.02, 6.96, 7.78, 8.44, 9.23, 10.15] |  | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 843 | s-adalip |  | 100% | name | 274 | 100 |  |  | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 844 | s-adalipa |  | 100% | name | 1304 | 100 |  |  | Serum |  | Adalimumab [Mass/volume] in Serum or Plasma |
-| 845 | s-afluu | % | 51% | name+unit+values | 92 | 0 | [10.3, 14.1, 19.33, 22.23, 25.37, 32.17, 35.52, 40.85, 45.6] |  | Serum |  | Alkaline phosphatase.bone/Alkaline phosphatase.total [Enzyme fraction] in Serum |
-| 846 | s-afluu | u/l | 44% | name+unit+values | 80 | 0 | [17.5, 21, 25.5, 29.5, 33.5, 38.75, 50, 58.5, 97.5] |  | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 847 | s-afluu |  | 5% | name | 9 | 77.78 |  |  | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 848 | s-afluust | u/l | 86% | name+unit+values | 3036 | 0 | [23.45, 30.5, 36.88, 43.03, 49.77, 57.33, 66.23, 80.75, 107.75] |  | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 849 | s-afluust |  | 14% | name+values | 488 | 63.73 | [22.65, 29.23, 35.8, 41.92, 49.43, 57.83, 64.94, 75.26, 91.6] |  | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 850 | s-afmuut | u/l | 83% | name+unit+values | 1555 | 0 | [0, 0, 0, 0.56, 2.03, 4.33, 8.12, 14.99, 30.62] |  | Serum |  | Alkaline phosphatase.other [Enzymatic activity/volume] in Serum |
-| 851 | s-afmuut |  | 17% | name | 316 | 96.2 |  |  | Serum |  | Alkaline phosphatase.other [Enzymatic activity/volume] in Serum |
-| 852 | s-afos | iu/l | 0% | name+unit+values | 240 | 0 | [47.27, 53.32, 59.23, 65.05, 70.65, 75.95, 84.63, 98.48, 130] | S -Alkalinen fosfataasi | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 853 | s-afos | u/l | 98% | name+unit+values | 62976 | 0 | [49.01, 56.54, 62.55, 68.34, 74.46, 81.49, 90.44, 104.36, 129.97] | S -Alkalinen fosfataasi | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 854 | s-afos |  | 2% | name+values | 986 | 36 | [88.65, 108.98, 118.14, 127.37, 135.4, 144.04, 157.28, 186.3, 252.69] | S -Alkalinen fosfataasi | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 855 | s-afos-is | u/l | 1% | name+unit | 70 | 0 |  | S -Alkalinen fosfataasi, isoentsyymit | Serum | Isoenzymes | Alkaline phosphatase isoenzymes panel - Serum |
-| 856 | s-afos-is |  | 99% | name | 9083 | 99.98 |  | S -Alkalinen fosfataasi, isoentsyymit | Serum | Isoenzymes | Alkaline phosphatase isoenzymes panel - Serum |
-| 857 | s-afosluu | u/l | 62% | name+unit+values | 106 | 0 | [25.67, 31, 35.33, 39.5, 42, 50.37, 59.67, 72.5, 100] | S -Alkalinen fosfataasi, luuspesifinen | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 858 | s-afosluu | ug/l | 18% | name+unit | 30 | 0 |  | S -Alkalinen fosfataasi, luuspesifinen | Serum |  | Alkaline phosphatase.bone [Mass/volume] in Serum |
-| 859 | s-afosluu |  | 20% | name | 35 | 11.43 |  | S -Alkalinen fosfataasi, luuspesifinen | Serum |  | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum |
-| 860 | s-afospit | u/l | 96% | name+unit+values | 177 | 0 | [96.72, 105.51, 113.04, 119.21, 129.13, 139.98, 153.3, 187.04, 317.98] |  | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 861 | s-afospit |  | 4% | name | 8 | 37.5 |  |  | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 862 | s-afsuol1 | u/l | 87% | name+unit+values | 1064 | 0 | [0, 0, 0, 0, 0, 0.97, 2.27, 4.95, 11.83] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 863 | s-afsuol1 |  | 13% | name+values | 158 | 1.27 | [0, 0, 0, 0, 0.17, 1.4, 3, 6.28, 16.75] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 864 | s-afsuol2 | u/l | 87% | name+unit+values | 1070 | 0 | [0, 0, 0, 0, 0, 0.76, 2.02, 4.43, 8.94] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 865 | s-afsuol2 |  | 13% | name+values | 156 | 0.64 | [0, 0, 0, 0, 0, 1.25, 3, 4.75, 8] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 866 | s-afsuol3 | u/l | 87% | name+unit+values | 1075 | 0 | [0, 0, 0, 0, 0, 0, 0, 1, 1.91] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 867 | s-afsuol3 |  | 13% | name+values | 157 | 0.64 | [0, 0, 0, 0, 0, 0, 0, 1, 1] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 868 | s-afsuoli | % | 12% | name+unit | 53 | 0 |  |  | Serum |  | Alkaline phosphatase.intestinal/Alkaline phosphatase.total [Enzyme fraction] in Serum |
-| 869 | s-afsuoli | u/l | 45% | name+unit+values | 189 | 0 | [1, 2.2, 4.12, 5.94, 7, 9.07, 12.69, 23.37, 34.67] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 870 | s-afsuoli |  | 43% | name | 182 | 96.15 |  |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 871 | s-albind | g/l | 84% | name+unit+values | 815 | 0 | [34.39, 37.6, 39.38, 40.81, 42.07, 43.01, 44.01, 45.22, 47.08] |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 872 | s-albind |  | 16% | name+values | 155 | 25.81 | [33.15, 36.46, 38.93, 39.99, 41.28, 41.98, 42.86, 43.61, 45.95] |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 873 | s-albu | g/l | 98% | name+unit+values | 554 | 0 | [34.76, 36.69, 38.29, 39.83, 40.76, 41.89, 43.25, 44.88, 46.93] |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 874 | s-albu |  | 2% | name | 12 | 33.33 |  |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 875 | s-album | g/l | 100% | name+unit+values | 27997 | 0 | [31.02, 34.31, 36.21, 37.6, 38.74, 39.81, 40.91, 42.12, 43.69] |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 876 | s-album |  | 0% | name+values | 49 | 100 | [31.46, 35.04, 37.29, 38.99, 40.3, 41.52, 42.95, 44.52, 46.29] |  | Serum |  | Albumin [Mass/volume] in Serum |
-| 877 | s-aldol | u/l | 85% | name+unit+values | 3331 | 0.03 | [3.03, 3.84, 4, 4.87, 5, 5.94, 6.21, 7.11, 9.71] | S -Aldolaasi | Serum |  | Aldolase [Enzymatic activity/volume] in Serum or Plasma |
-| 878 | s-aldol |  | 15% | name+values | 603 | 75.79 | [2.92, 3.62, 4.18, 4.48, 5.37, 5.7, 6.13, 7.21, 9.7] | S -Aldolaasi | Serum |  | Aldolase [Enzymatic activity/volume] in Serum or Plasma |
-| 879 | s-aldos | pmol/l | 81% | name+unit+values | 5247 | 0.88 | [80.92, 114.8, 152.73, 192.44, 237.39, 292.55, 361.76, 461.2, 667.49] | S -Aldosteroni | Serum |  | Aldosterone [Moles/volume] in Serum |
-| 880 | s-aldos |  | 19% | name+values | 1207 | 72.49 | [89.4, 124.94, 166.83, 212.25, 274.25, 349.09, 455.92, 585.04, 869.75] | S -Aldosteroni | Serum |  | Aldosterone [Moles/volume] in Serum |
-| 881 | s-aldos-m | pmol/l | 57% | name+unit+values | 88 | 0 | [47, 57.1, 78.9, 115.83, 136, 213.63, 263.1, 334.4, 926] | S -Aldosteroni, makuu | Serum | Supine (lying down) | Aldosterone [Moles/volume] in Serum --supine |
-| 882 | s-aldos-m |  | 43% | name | 66 | 68.18 |  | S -Aldosteroni, makuu | Serum | Supine (lying down) | Aldosterone [Moles/volume] in Serum --supine |
-| 883 | s-aldos-p | pmol/l | 71% | name+unit+values | 824 | 0 | [77.23, 114.1, 153.16, 191.49, 236.83, 292.92, 363.97, 474.9, 659.05] | S -Aldosteroni, pysty | Serum | Upright (standing) | Aldosterone [Moles/volume] in Serum --upright |
-| 884 | s-aldos-p |  | 29% | name+values | 329 | 21.88 | [79.42, 123.32, 172.77, 232.62, 283.29, 334.05, 403.83, 552.65, 812.7] | S -Aldosteroni, pysty | Serum | Upright (standing) | Aldosterone [Moles/volume] in Serum --upright |
-| 885 | s-alfa-1 | % | 0% | name+unit | 11 | 0 |  |  | Serum |  | Alpha 1 globulin/Protein.total [Mass Fraction] in Serum |
-| 886 | s-alfa-1 | g/l | 100% | name+unit+values | 30281 | 0 | [2.19, 2.42, 2.6, 2.72, 2.88, 3.03, 3.24, 3.54, 4.08] |  | Serum |  | Alpha 1 globulin [Mass/volume] in Serum |
-| 887 | s-alfa-1 |  | 0% | name+values | 50 | 100 | [1.5, 1.7, 1.88, 2.13, 2.38, 2.62, 2.88, 3.19, 3.81] |  | Serum |  | Alpha 1 globulin [Mass/volume] in Serum |
-| 888 | s-alfa-2 | % | 0% | name+unit | 11 | 0 |  |  | Serum |  | Alpha 2 globulin/Protein.total [Mass Fraction] in Serum |
-| 889 | s-alfa-2 | g/l | 100% | name+unit+values | 30219 | 0 | [5.45, 5.93, 6.31, 6.66, 7.01, 7.39, 7.84, 8.42, 9.36] |  | Serum |  | Alpha 2 globulin [Mass/volume] in Serum |
-| 890 | s-alfa-2 |  | 0% | name+values | 50 | 100 | [5.71, 6.15, 6.53, 6.83, 7.14, 7.51, 7.91, 8.44, 9.39] |  | Serum |  | Alpha 2 globulin [Mass/volume] in Serum |
-| 891 | s-alfa1 | g/l | 95% | name+unit+values | 1708 | 0 | [1.45, 1.6, 1.7, 1.8, 1.95, 2.11, 2.38, 2.65, 3.03] |  | Serum |  | Alpha 1 globulin [Mass/volume] in Serum |
-| 892 | s-alfa1 |  | 5% | name | 92 | 25 |  |  | Serum |  | Alpha 1 globulin [Mass/volume] in Serum |
-| 893 | s-alfa2 | g/l | 95% | name+unit+values | 1768 | 0 | [5.73, 6.28, 6.69, 6.98, 7.28, 7.59, 8.04, 8.57, 9.36] |  | Serum |  | Alpha 2 globulin [Mass/volume] in Serum |
-| 894 | s-alfa2 |  | 5% | name | 92 | 25 |  |  | Serum |  | Alpha 2 globulin [Mass/volume] in Serum |
-| 895 | s-allige | mg/l | 0% | name+unit | 14 | 0 |  | S -Allergeeni, IgE-vasta-aineet | Serum |  | Allergen specific IgE Ab [Mass/volume] in Serum |
-| 896 | s-allige | u/ml | 39% | name+unit+values | 1753 | 0 | [0.12, 0.19, 0.31, 0.51, 0.83, 1.39, 2.4, 4.64, 12.35] | S -Allergeeni, IgE-vasta-aineet | Serum |  | Allergen specific IgE Ab [Units/volume] in Serum |
-| 897 | s-allige |  | 61% | name | 2748 | 99.71 |  | S -Allergeeni, IgE-vasta-aineet | Serum |  | Allergen specific IgE Ab [Units/volume] in Serum |
-| 898 | s-amyl | u/l | 99% | name+unit+values | 10387 | 0 | [33.31, 39.8, 44.99, 49.81, 54.67, 59.75, 66.53, 75.22, 91.12] | S -Amylaasi | Serum |  | Amylase [Enzymatic activity/volume] in Serum |
-| 899 | s-amyl |  | 1% | name+values | 129 | 20.16 | [35, 42.3, 49.52, 56.4, 62.75, 71, 94.2, 128.3, 161] | S -Amylaasi | Serum |  | Amylase [Enzymatic activity/volume] in Serum |
-| 900 | s-amyl-is | form | 3% | name+unit | 15 | 100 |  | S -Amylaasi, isoentsyymit | Serum | Isoenzymes | Amylase isoenzymes panel - Serum |
-| 901 | s-amyl-is |  | 97% | name | 434 | 100 |  | S -Amylaasi, isoentsyymit | Serum | Isoenzymes | Amylase isoenzymes panel - Serum |
-| 902 | s-amylp | u/l | 81% | name+unit+values | 280 | 0 | [14.92, 20.3, 25.89, 30.35, 36.7, 44.3, 55.25, 69.52, 135.91] | S -Amylaasi, haimaperäinen | Serum |  | Amylase.pancreatic [Enzymatic activity/volume] in Serum |
-| 903 | s-amylp |  | 19% | name | 66 | 16.67 |  | S -Amylaasi, haimaperäinen | Serum |  | Amylase.pancreatic [Enzymatic activity/volume] in Serum |
-| 904 | s-amyls | u/l | 81% | name+unit+values | 256 | 0 | [12.25, 18.54, 23.94, 28.43, 34.44, 44.93, 63.37, 81.22, 120.05] | S -Amylaasi, sylkiperäinen | Serum |  | Amylase.salivary [Enzymatic activity/volume] in Serum |
-| 905 | s-amyls |  | 19% | name | 61 | 18.03 |  | S -Amylaasi, sylkiperäinen | Serum |  | Amylase.salivary [Enzymatic activity/volume] in Serum |
-| 906 | s-dmklots | nmol/l | 60% | name+unit+values | 15078 | 0.19 | [349.72, 488.38, 603.51, 717.55, 840.77, 973.75, 1127.96, 1320.3, 1616.71] | S -Desmetyyliklotsapiini | Serum |  | Desmethylclozapine [Moles/volume] in Serum or Plasma |
-| 907 | s-dmklots | umol/l | 36% | name+unit+values | 9051 | 0 | [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.95, 1.16, 1.45] | S -Desmetyyliklotsapiini | Serum |  | Desmethylclozapine [Moles/volume] in Serum or Plasma |
-| 908 | s-dmklots | âumol/l | 0% | name+unit | 32 | 0 |  | S -Desmetyyliklotsapiini | Serum |  | Desmethylclozapine [Moles/volume] in Serum or Plasma |
-| 909 | s-dmklots |  | 4% | name+values | 1117 | 100 | [0.79, 1.17, 292.49, 521.2, 721.89, 874.92, 1051.9, 1273.86, 1599.85] | S -Desmetyyliklotsapiini | Serum |  | Desmethylclozapine [Moles/volume] in Serum or Plasma |
-| 910 | s-gliade | u/ml | 21% | name+unit | 23 | 60.87 |  |  | Serum |  | Gliadin deamidated Ab [Units/volume] in Serum |
-| 911 | s-gliade |  | 79% | name | 84 | 98.81 |  |  | Serum |  | Gliadin deamidated Ab [Units/volume] in Serum |
-| 912 | s-gliadie | u/ml | 82% | name+unit+values | 531 | 0 | [0, 0, 0, 0, 0.01, 0.01, 0.02, 0.07, 0.24] |  | Serum |  | Gliadin deamidated IgE Ab [Units/volume] in Serum |
-| 913 | s-gliadie |  | 18% | name+values | 118 | 5.93 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Serum |  | Gliadin deamidated IgE Ab [Units/volume] in Serum |
-| 914 | s-hladsa |  | 100% | name | 847 | 100 |  |  | Serum |  | HLA donor specific Ab [Presence] in Serum |
-| 915 | s-kalatue |  | 100% | name | 132 | 100 |  |  | Serum |  |  |
-| 916 | s-kolaige | u/ml | 7% | name+unit | 14 | 100 |  |  | Serum |  | Dog (Canis familiaris) dander IgE Ab [Units/volume] in Serum |
-| 917 | s-kolaige |  | 93% | name | 181 | 100 |  |  | Serum |  | Dog (Canis familiaris) dander IgE Ab [Units/volume] in Serum |
-| 918 | s-kudosab |  | 100% | name | 1042 | 100 |  |  | Serum |  | Tissue Ab [Presence] in Serum |
-| 919 | s-ngmuut |  | 100% | name | 16771 | 100 |  |  | Serum |  |  |
-| 920 | s-oaldos | pmol/l | 100% | name+unit+values | 200 | 1.5 | [636.2, 2117.22, 7632.17, 17219.7, 36953.33, 62851.67, 87233.33, 130744.44, 214222.22] |  | Serum |  | Aldosterone [Moles/volume] in Serum |
-| 921 | s-olants | nmol/l | 87% | name+unit+values | 4003 | 0.07 | [53.03, 76.26, 97.99, 119.12, 141.44, 165.86, 195.39, 234.91, 291.91] | S -Olantsapiini | Serum |  | Olanzapine [Moles/volume] in Serum or Plasma |
-| 922 | s-olants |  | 13% | name+values | 595 | 31.43 | [58.73, 86.04, 110.31, 132.4, 158.88, 189.03, 219.38, 262.18, 324.46] | S -Olantsapiini | Serum |  | Olanzapine [Moles/volume] in Serum or Plasma |
-| 923 | s-ovalbue | u/ml | 84% | name+unit+values | 86 | 1.16 | [0, 0.02, 0.03, 0.1, 0.23, 0.56, 2, 8.02, 21.8] |  | Serum |  | Ovalbumin IgE Ab [Units/volume] in Serum |
-| 924 | s-ovalbue |  | 16% | name | 16 | 81.25 |  |  | Serum |  | Ovalbumin IgE Ab [Units/volume] in Serum |
-| 925 | s-salis | mmol/l | 21% | name+unit | 56 | 0 |  | S -Salisylaatit | Serum |  | Salicylate [Moles/volume] in Serum or Plasma |
-| 926 | s-salis | umol/l | 33% | name+unit | 87 | 5.75 |  | S -Salisylaatit | Serum |  | Salicylate [Moles/volume] in Serum or Plasma |
-| 927 | s-salis |  | 46% | name | 121 | 97.52 |  | S -Salisylaatit | Serum |  | Salicylate [Moles/volume] in Serum or Plasma |
-| 928 | s-scl-t |  | 100% | name | 833 | 100 |  |  | Serum |  | Scl 70 Ab [Presence] in Serum |
-| 929 | s-sfit1 | ng/l | 100% | name+unit+values | 135 | 0 | [1994, 2524.58, 3215, 3792.29, 4608.29, 5445.5, 7105.78, 9372.28, 11496.33] | S -Endoteelikasvutekijän liukoinen reseptori | Serum |  | Soluble fms-like tyrosine kinase 1 [Mass/volume] in Serum or Plasma |
-| 930 | s-sflt-1 | ng/l | 100% | name+unit+values | 318 | 0 | [1291.87, 1667.24, 2344.04, 3006.81, 3762.57, 4805.39, 6029.95, 7158.88, 9214.96] |  | Serum |  | Soluble fms-like tyrosine kinase 1 [Mass/volume] in Serum or Plasma |
-| 931 | s-sldl | mmol/l | 93% | name+unit+values | 2207 | 0 | [1.75, 2.1, 2.37, 2.68, 2.95, 3.22, 3.51, 3.8, 4.25] |  | Serum |  | LDL cholesterol.small dense [Moles/volume] in Serum |
-| 932 | s-sldl |  | 7% | name | 177 | 98.87 |  |  | Serum |  | LDL cholesterol.small dense [Moles/volume] in Serum |
-| 933 | s-suoli | u/l | 92% | name+unit+values | 115 | 0 | [0, 0, 0, 0.27, 2.83, 5.44, 7.47, 12.05, 21.01] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 934 | s-suoli |  | 8% | name | 10 | 30 |  |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 935 | s-suolist | u/l | 56% | name+unit+values | 81 | 0 | [2, 3.1, 5.23, 9, 10.88, 13, 15, 20.35, 28] |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 936 | s-suolist |  | 44% | name | 63 | 96.83 |  |  | Serum |  | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum |
-| 937 | s-valdos | pmol/l | 100% | name+unit+values | 157 | 0.64 | [3435.33, 10631.9, 19753.33, 29394.05, 44768.33, 65139.29, 87875, 118200, 193300] |  | Serum |  | Aldosterone [Moles/volume] in Serum |
-| 938 | s-vedol | mg/l | 88% | name+unit+values | 1566 | 0 | [10.87, 14.08, 17.75, 20.76, 23.95, 27.59, 31.95, 37.11, 43.61] | S -Vedolitsumabi | Serum |  | Vedolizumab [Mass/volume] in Serum or Plasma |
-| 939 | s-vedol |  | 12% | name+values | 221 | 12.22 | [5.88, 9.27, 13.22, 17.42, 21.48, 25.78, 28.81, 33.33, 39.06] | S -Vedolitsumabi | Serum |  | Vedolizumab [Mass/volume] in Serum or Plasma |
-| 940 | saline |  | 100% | name+values | 946 | 3.38 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  |  |
-| 941 | se-amyl | u/l | 87% | name+unit+values | 1679 | 0.83 | [7.84, 14.57, 24.16, 42.2, 81.52, 202.31, 555.29, 1833.05, 9919.76] | Se-Amylaasi | Secretion |  | Amylase [Enzymatic activity/volume] in Secretion |
-| 942 | se-amyl |  | 13% | name | 248 | 97.98 |  | Se-Amylaasi | Secretion |  | Amylase [Enzymatic activity/volume] in Secretion |
-| 943 | sp-suld |  | 100% | name | 262 | 100 |  |  | Sperm / semen |  |  |
-| 944 | u-amyl | u/l | 94% | name+unit+values | 2762 | 0.04 | [40.07, 60.75, 84.23, 110.48, 142.21, 184.16, 244.01, 332.59, 547.07] | U -Amylaasi | Urine |  | Amylase [Enzymatic activity/volume] in Urine |
-| 945 | u-amyl |  | 6% | name+values | 192 | 49.48 | [46, 98.65, 135.92, 161.9, 205.44, 269.5, 358.67, 597.35, 1056] | U -Amylaasi | Urine |  | Amylase [Enzymatic activity/volume] in Urine |
-| 946 | u-amylp | u/l | 88% | name+unit+values | 106 | 0 | [29, 44.7, 68.1, 90.36, 112.17, 155.8, 214.47, 337.6, 546] | U -Amylaasi, haimaperäinen | Urine |  | Amylase.pancreatic [Enzymatic activity/volume] in Urine |
-| 947 | u-amylp |  | 12% | name | 15 | 20 |  | U -Amylaasi, haimaperäinen | Urine |  | Amylase.pancreatic [Enzymatic activity/volume] in Urine |
+| 698 | ps-str-vi |  | 100% | name | 2795 | 100 |  |  | Pharyngeal secretion | Culture | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 699 | ps-str1vrk |  | 100% | name | 166 | 100 |  |  | Pharyngeal secretion |  | Streptococcus identified in Throat by Culture |
+| 700 | ps-stra-ag |  | 100% | name | 621 | 100 |  |  | Pharyngeal secretion | Antigen | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 701 | ps-stra-o |  | 100% | name | 204 | 100 |  |  | Pharyngeal secretion | Qualitative test (also semi-quantitative) | Streptococcus pyogenes [Presence] in Throat |
+| 702 | ps-straag | form | 0% | name+unit | 12 | 0 |  | Ps-Streptococcus pyogenes (A), antigeeni | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 703 | ps-straag |  | 100% | name | 85240 | 100 |  | Ps-Streptococcus pyogenes (A), antigeeni | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 704 | ps-straagp |  | 100% | name | 150 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay |
+| 705 | ps-straag␤ |  | 100% | name | 354 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 706 | ps-stragho |  | 100% | name | 583 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 707 | ps-stranho |  | 100% | name | 656 | 100 |  | Ps-Streptococcus pyogenes (A), nukleiinihappo (kval) | Pharyngeal secretion |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection |
+| 708 | ps-straohy |  | 100% | name | 1140 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat |
+| 709 | ps-straolb |  | 100% | name | 774 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat |
+| 710 | ps-stravt |  | 100% | name | 124 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat |
+| 711 | ps-strcult |  | 100% | name | 3207 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 712 | ps-strjvi |  | 100% | name | 8058 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 713 | ps-strnho |  | 100% | name | 1019 | 100 |  | Ps-Streptococcus, nukleiinihappo (kval) | Pharyngeal secretion |  | Streptococcus DNA [Presence] in Throat by NAA with probe detection |
+| 714 | ps-strtunn |  | 100% | name | 170 | 100 |  |  | Pharyngeal secretion |  | Streptococcus identified in Throat by Culture |
+| 715 | ps-strvi | form | 0% | name+unit | 34 | 0 |  | Ps-Streptococcus, viljely (hemolyyttiset streptokokit) | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 716 | ps-strvi |  | 100% | name | 159634 | 100 |  | Ps-Streptococcus, viljely (hemolyyttiset streptokokit) | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
+| 717 | s-stpn1 | mg/l | 59% | name+unit+values | 441 | 0 | [0.06, 0.11, 0.2, 0.34, 0.51, 0.79, 1.25, 2.43, 6.29] |  | Serum |  | Streptococcus pneumoniae serotype 1 IgG Ab [Mass/volume] in Serum |
+| 718 | s-stpn1 |  | 41% | name+values | 305 | 100 | [0.04, 0.08, 0.17, 0.25, 0.42, 0.78, 1.17, 2.27, 6.2] |  | Serum |  | Streptococcus pneumoniae serotype 1 IgG Ab [Mass/volume] in Serum |
+| 719 | s-stpn10a | fmiau/ml | 13% | name+unit | 29 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 10A IgG Ab [Units/volume] in Serum |
+| 720 | s-stpn10a | ug/mlgmc | 19% | name+unit | 43 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 10A IgG Ab [Mass/volume] in Serum |
+| 721 | s-stpn10a |  | 67% | name | 149 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 10A IgG Ab [Mass/volume] in Serum |
+| 722 | s-stpn11a | fmiau/ml | 14% | name+unit | 30 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 11A IgG Ab [Units/volume] in Serum |
+| 723 | s-stpn11a | ug/mlgmc | 21% | name+unit | 46 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 11A IgG Ab [Mass/volume] in Serum |
+| 724 | s-stpn11a |  | 65% | name | 143 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 11A IgG Ab [Mass/volume] in Serum |
+| 725 | s-stpn12f | fmiau/ml | 5% | name+unit | 11 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 12F IgG Ab [Units/volume] in Serum |
+| 726 | s-stpn12f | ug/mlgmc | 13% | name+unit | 29 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 12F IgG Ab [Mass/volume] in Serum |
+| 727 | s-stpn12f |  | 82% | name | 184 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 12F IgG Ab [Mass/volume] in Serum |
+| 728 | s-stpn14 | mg/l | 58% | name+unit+values | 419 | 0 | [0.18, 0.31, 0.65, 1.11, 1.71, 2.72, 3.98, 6.24, 12.97] |  | Serum |  | Streptococcus pneumoniae serotype 14 IgG Ab [Mass/volume] in Serum |
+| 729 | s-stpn14 |  | 42% | name | 309 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 14 IgG Ab [Mass/volume] in Serum |
+| 730 | s-stpn15b | fmiau/ml | 11% | name+unit | 24 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 15B IgG Ab [Units/volume] in Serum |
+| 731 | s-stpn15b | mg/l | 4% | name+unit | 9 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 15B IgG Ab [Mass/volume] in Serum |
+| 732 | s-stpn15b | ug/mlgmc | 17% | name+unit | 38 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 15B IgG Ab [Mass/volume] in Serum |
+| 733 | s-stpn15b |  | 68% | name | 153 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 15B IgG Ab [Mass/volume] in Serum |
+| 734 | s-stpn17f | fmiau/ml | 12% | name+unit | 27 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 17F IgG Ab [Units/volume] in Serum |
+| 735 | s-stpn17f | ug/mlgmc | 19% | name+unit | 42 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 17F IgG Ab [Mass/volume] in Serum |
+| 736 | s-stpn17f |  | 68% | name | 150 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 17F IgG Ab [Mass/volume] in Serum |
+| 737 | s-stpn18c | mg/l | 71% | name+unit+values | 515 | 0 | [0.06, 0.12, 0.21, 0.37, 0.6, 0.89, 1.56, 2.97, 7.38] |  | Serum |  | Streptococcus pneumoniae serotype 18C IgG Ab [Mass/volume] in Serum |
+| 738 | s-stpn18c |  | 29% | name+values | 213 | 100 | [0.04, 0.07, 0.14, 0.22, 0.5, 0.69, 1.23, 2.41, 4.67] |  | Serum |  | Streptococcus pneumoniae serotype 18C IgG Ab [Mass/volume] in Serum |
+| 739 | s-stpn19f | mg/l | 65% | name+unit+values | 475 | 0 | [0.1, 0.17, 0.28, 0.52, 0.88, 1.37, 2.72, 4.87, 10.06] |  | Serum |  | Streptococcus pneumoniae serotype 19F IgG Ab [Mass/volume] in Serum |
+| 740 | s-stpn19f |  | 35% | name+values | 253 | 100 | [0.08, 0.13, 0.19, 0.33, 0.73, 1.29, 2.69, 4, 5.8] |  | Serum |  | Streptococcus pneumoniae serotype 19F IgG Ab [Mass/volume] in Serum |
+| 741 | s-stpn2 | fmiau/ml | 11% | name+unit | 25 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 2 IgG Ab [Units/volume] in Serum |
+| 742 | s-stpn2 | mg/l | 4% | name+unit | 8 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 2 IgG Ab [Mass/volume] in Serum |
+| 743 | s-stpn2 | ug/mlgmc | 16% | name+unit | 37 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 2 IgG Ab [Mass/volume] in Serum |
+| 744 | s-stpn2 |  | 69% | name | 155 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 2 IgG Ab [Mass/volume] in Serum |
+| 745 | s-stpn20a | ug/mlgmc | 33% | name+unit | 40 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 20A IgG Ab [Mass/volume] in Serum |
+| 746 | s-stpn20a |  | 67% | name | 83 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 20A IgG Ab [Mass/volume] in Serum |
+| 747 | s-stpn23f | mg/l | 68% | name+unit+values | 497 | 0 | [0.05, 0.1, 0.19, 0.36, 0.54, 0.94, 1.71, 2.96, 8.89] |  | Serum |  | Streptococcus pneumoniae serotype 23F IgG Ab [Mass/volume] in Serum |
+| 748 | s-stpn23f |  | 32% | name+values | 231 | 100 | [0.04, 0.09, 0.17, 0.32, 0.57, 0.88, 1.28, 2.06, 4.4] |  | Serum |  | Streptococcus pneumoniae serotype 23F IgG Ab [Mass/volume] in Serum |
+| 749 | s-stpn33f | fmiau/ml | 10% | name+unit | 22 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 33F IgG Ab [Units/volume] in Serum |
+| 750 | s-stpn33f | ug/mlgmc | 18% | name+unit | 39 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 33F IgG Ab [Mass/volume] in Serum |
+| 751 | s-stpn33f |  | 72% | name | 155 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 33F IgG Ab [Mass/volume] in Serum |
+| 752 | s-stpn4 | mg/l | 57% | name+unit+values | 415 | 0 | [0.06, 0.09, 0.14, 0.21, 0.31, 0.54, 0.86, 1.69, 3.39] |  | Serum |  | Streptococcus pneumoniae serotype 4 IgG Ab [Mass/volume] in Serum |
+| 753 | s-stpn4 |  | 43% | name+values | 313 | 100 | [0.05, 0.09, 0.13, 0.2, 0.26, 0.4, 0.53, 1.4, 2.5] |  | Serum |  | Streptococcus pneumoniae serotype 4 IgG Ab [Mass/volume] in Serum |
+| 754 | s-stpn5 | mg/l | 52% | name+unit+values | 381 | 0 | [0.08, 0.13, 0.24, 0.36, 0.53, 0.86, 1.47, 2.6, 5.55] |  | Serum |  | Streptococcus pneumoniae serotype 5 IgG Ab [Mass/volume] in Serum |
+| 755 | s-stpn5 |  | 48% | name | 348 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 5 IgG Ab [Mass/volume] in Serum |
+| 756 | s-stpn6b | mg/l | 61% | name+unit+values | 445 | 0 | [0.04, 0.07, 0.13, 0.24, 0.44, 0.85, 1.54, 2.66, 6.37] |  | Serum |  | Streptococcus pneumoniae serotype 6B IgG Ab [Mass/volume] in Serum |
+| 757 | s-stpn6b |  | 39% | name+values | 283 | 100 | [0.04, 0.05, 0.08, 0.21, 0.34, 0.53, 0.91, 1.7, 3.5] |  | Serum |  | Streptococcus pneumoniae serotype 6B IgG Ab [Mass/volume] in Serum |
+| 758 | s-stpn7f | mg/l | 70% | name+unit+values | 509 | 0 | [0.07, 0.15, 0.28, 0.51, 0.75, 1.27, 1.97, 2.94, 5.45] |  | Serum |  | Streptococcus pneumoniae serotype 7F IgG Ab [Mass/volume] in Serum |
+| 759 | s-stpn7f |  | 30% | name+values | 220 | 100 | [0.07, 0.15, 0.21, 0.33, 0.62, 1.01, 1.83, 3.62, 5.52] |  | Serum |  | Streptococcus pneumoniae serotype 7F IgG Ab [Mass/volume] in Serum |
+| 760 | s-stpn8 | fmiau/ml | 10% | name+unit | 22 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 8 IgG Ab [Units/volume] in Serum |
+| 761 | s-stpn8 | mg/l | 3% | name+unit | 7 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 8 IgG Ab [Mass/volume] in Serum |
+| 762 | s-stpn8 | ug/mlgmc | 18% | name+unit | 40 | 0 |  |  | Serum |  | Streptococcus pneumoniae serotype 8 IgG Ab [Mass/volume] in Serum |
+| 763 | s-stpn8 |  | 69% | name | 155 | 100 |  |  | Serum |  | Streptococcus pneumoniae serotype 8 IgG Ab [Mass/volume] in Serum |
+| 764 | s-stpn9v | mg/l | 63% | name+unit+values | 461 | 0 | [0.04, 0.07, 0.11, 0.18, 0.27, 0.44, 0.7, 1.43, 3.37] |  | Serum |  | Streptococcus pneumoniae serotype 9V IgG Ab [Mass/volume] in Serum |
+| 765 | s-stpn9v |  | 37% | name+values | 267 | 100 | [0.04, 0.06, 0.12, 0.21, 0.38, 0.64, 1.09, 2.33, 4.2] |  | Serum |  | Streptococcus pneumoniae serotype 9V IgG Ab [Mass/volume] in Serum |
 

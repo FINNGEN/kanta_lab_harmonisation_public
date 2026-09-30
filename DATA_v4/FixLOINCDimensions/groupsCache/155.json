@@ -1,0 +1,838 @@
+{
+  "rows": [
+    {
+      "row_id": 2403,
+      "omop_concept_id": "40757349",
+      "omop_concept_name": "CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood",
+      "reasoning": "Component CD4/CD8 ratio from `cd4-solujensuhdecd8-soluihin` (ratio of cd4 cells to cd8 cells) ; property [# Ratio] from `suhde` (ratio) and the value range [0.26...3] ; in Blood is the standard specimen for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2404,
+      "omop_concept_id": "37021212",
+      "omop_concept_name": "Respiratory pathogens DNA and RNA panel - Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Component Respiratory pathogens panel from `respiratoristenmikrobientutkimus` (respiratory microbe investigation) ; in Respiratory system specimen is implied by the component.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2405,
+      "omop_concept_id": "40758528",
+      "omop_concept_name": "Diabetes tracking panel",
+      "reasoning": "Component Diabetes tracking panel matches `aikuistyypindiabetes,vuosikontrolli` (adult type diabetes, annual control).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2406,
+      "omop_concept_id": "42870588",
+      "omop_concept_name": "Differential panel, method unspecified - Blood",
+      "reasoning": "Component Differential panel from `diffi,erittelylaskenta` (differential count) ; in Blood from `b-` prefix ; method unspecified is appropriate as none is given.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2407,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for storing a sample (`b-talteen` = blood, save), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2408,
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "Component CBC W Auto Differential panel from `b-täydellinenverenkuva` (Blood - complete blood count), where 'täydellinen' implies a differential ; in Blood from `b-` prefix ; by Auto is the modern standard for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2409,
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "Component CBC W Auto Differential panel from `b-täydellinenverenkuva` (Blood - complete blood count), where 'täydellinen' implies a differential ; in Blood from `b-` prefix ; by Auto is the modern standard for this test. The `(pi)` suffix is local and does not alter the core test meaning.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2410,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-punasolujenkokojakaum` (Erythrocyte - red blood cell size distribution) ; property [Ratio] from unit `%` and value range [12.19...15.7].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2411,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-punasolujenkokojakaum` (Erythrocyte - red blood cell size distribution) ; property [Ratio] is inferred from the standard reporting for this test as a percentage.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2412,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-punasolujenkokojakauma` (Erythrocyte - red blood cell size distribution) ; property [Ratio] from unit `%` and value range [12.01...16.36].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2413,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-punasolujenkokojakauma` (Erythrocyte - red blood cell size distribution) ; property [Ratio] is inferred from the standard reporting for this test as a percentage and the plausible value range [15...19.67].",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2414,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-rdw,punasolujenkokojakauma` (Erythrocyte - RDW, red blood cell size distribution) ; property [Ratio] from unit `%` and value range [12.09...17.05].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2415,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `e-rdw,punasolujenkokojakauma` (Erythrocyte - RDW, red blood cell size distribution) ; property [Ratio] is inferred from the standard reporting for this test as a percentage.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2416,
+      "omop_concept_id": "40762499",
+      "omop_concept_name": "Oxygen saturation in Arterial blood by Pulse oximetry",
+      "reasoning": "Component Oxygen saturation from `happisaturaatio` ; by Pulse oximetry is the implied method for a measurement taken `vastaanotolla` (at the clinic/office) ; in Arterial blood is what pulse oximetry estimates.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2417,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code specifies a point-of-care test (`vieritesti`) for HbA1c with IFCC units (`mmol/mol`). No candidate concept for a point-of-care HbA1c test was available in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2418,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `kemiallinenseulonta` (chemical screening) ; in Urine is implied, as this is the standard specimen for this panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2419,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `kemiallinenseulonta` (chemical screening) ; in Urine from `virtsasta` (from urine).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2420,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `kemiallinenseulonta` (chemical screening) ; in Urine from `virtsasta` (from urine).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2421,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `keuhkoahtaumatautiriski` (COPD risk) refers to a risk assessment panel or questionnaire for which no matching candidate was found.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2422,
+      "omop_concept_id": "3965814",
+      "omop_concept_name": "Lung cancer panel",
+      "reasoning": "Component Lung cancer panel from `keuhkosyöpäriski` (lung cancer risk).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2423,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for a consultation request (`konsultaatiopyyntö`), not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2424,
+      "omop_concept_id": "3018010",
+      "omop_concept_name": "Neutrophils/Leukocytes in Blood",
+      "reasoning": "Component Neutrophils/Leukocytes from `l-liuskatumaisetneutrofiilit` (Leukocyte - segmented neutrophils) ; property is a ratio, consistent with unit `%` ; in Blood is from `l-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2425,
+      "omop_concept_id": "3018010",
+      "omop_concept_name": "Neutrophils/Leukocytes in Blood",
+      "reasoning": "Component Neutrophils/Leukocytes from `liuskatumaisetneutrofiilit` (segmented neutrophils) ; property is a ratio, consistent with unit `%` ; in Blood is the implied specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2426,
+      "omop_concept_id": "44787051",
+      "omop_concept_name": "Middle East respiratory syndrome coronavirus (MERS-CoV) RNA panel - Specimen",
+      "reasoning": "Component MERS-CoV RNA panel from the truncated name `middleeastrespiratorysyndro` ; in Specimen is appropriate for this generic test name.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2427,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name `mittaustulos` (measurement result) is completely non-specific and cannot be mapped to an analyte.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2428,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name `mittaustulos` (measurement result) is completely non-specific and cannot be mapped to an analyte.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2429,
+      "omop_concept_id": "21491103",
+      "omop_concept_name": "Multiple drug resistant gram negative organism [Identifier] in Specimen by Culture",
+      "reasoning": "Component Multiple drug resistant gram negative organism from `moniresistentitgramnegatiivis` (multidrug-resistant gram-negatives) ; property Identifier by Culture is the standard way to report this finding.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2430,
+      "omop_concept_id": "3029187",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
+      "reasoning": "Component Natriuretic peptide.B prohormone N-Terminal from `n-terminaalinenpro-bnp(nt-probnp)` ; property [Mass/volume] from unit `ng/l` and values ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2431,
+      "omop_concept_id": "3029187",
+      "omop_concept_name": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma",
+      "reasoning": "Component Natriuretic peptide.B prohormone N-Terminal from `n-terminaalinenpro-bnp(nt-probnp)` ; property [Mass/volume] and specimen Serum or Plasma are standard for this test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2432,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an instrument quality flag (`näyteenlaatu` = sample quality for lipemia, hemolysis, icterus), not a clinical observation.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2433,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample collection (`näytteenotto`), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2434,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample collection (`näytteenottoislab`), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2435,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is a billing code for sample collection (`näytteenottomaksu` = sampling fee), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2436,
+      "omop_concept_id": "3034739",
+      "omop_concept_name": "Osmolality of Serum or Plasma by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteetinestimaatti` (osmolality estimate) ; property [Moles/mass] from unit `mosm/kgh2o` ; in Serum or Plasma is the implied specimen for this calculation unless urine is specified.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2437,
+      "omop_concept_id": "3034739",
+      "omop_concept_name": "Osmolality of Serum or Plasma by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteetinestimaatti` (osmolality estimate) ; in Serum or Plasma is the implied specimen for this calculation unless urine is specified.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2438,
+      "omop_concept_id": "3026782",
+      "omop_concept_name": "Osmolality of Urine",
+      "reasoning": "Component Osmolality from `osmolaliteetti` ; in Urine from `virtsa` ; property [Moles/mass] from unit `mosm/kgh2o` and value range [180.62...615.38].",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2439,
+      "omop_concept_id": "3026782",
+      "omop_concept_name": "Osmolality of Urine",
+      "reasoning": "Component Osmolality from `osmolaliteetti` ; in Urine from `virtsa`.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2440,
+      "omop_concept_id": "3026782",
+      "omop_concept_name": "Osmolality of Urine",
+      "reasoning": "Component Osmolality from `osmolaliteetti` ; in Urine from `virtsasta` ; property [Moles/mass] from unit `mosm/kgh2o` and value range [160...588.25].",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2441,
+      "omop_concept_id": "3051698",
+      "omop_concept_name": "Osmolality of Urine by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteettiestimoitu` (osmolality estimated) ; in Urine is strongly indicated by the value range [410.43...1000] ; property [Moles/mass] from unit `mosm/kgh2o`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2442,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The unit `mosm/l` indicates osmolarity ([Moles/volume]), but no candidate for calculated osmolarity was available. The available candidate `3051698` is for osmolality ([Moles/mass]).",
+      "certainty": ""
+    },
+    {
+      "row_id": 2443,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for the number of collected tubes/jars (`otettujen purkkien/putkien lkm`), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2444,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for storing a sample (`p-talteen` = plasma, save), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2445,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Urate from `uraatti` ; property [Moles/volume] from unit `umol/l` and value range [240.76...490.77] ; in Serum or Plasma from `p-` prefix and `plasma` word.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2446,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is a billing code for pathology services, not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2447,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for pathology sample handling, not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2448,
+      "omop_concept_id": "3023329",
+      "omop_concept_name": "Maximum expiratory gas flow Respiratory system airway by Peak flow meter",
+      "reasoning": "Component Maximum expiratory gas flow from `PEF-seuranta` (PEF monitoring) ; measurement performed by Peak flow meter is implied by 'PEF'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2449,
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Component Alanine aminotransferase from `alat` ; property [Enzymatic activity/volume] from unit `u/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2450,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Glucose from `gluk` ; property [Moles/volume] from unit `mmol/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2451,
+      "omop_concept_id": "3026910",
+      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Component Gamma glutamyl transferase from `gt` ; property [Enzymatic activity/volume] from unit `u/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2452,
+      "omop_concept_id": "3023602",
+      "omop_concept_name": "Cholesterol in HDL [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Cholesterol in HDL from `hdl-kol` ; property [Moles/volume] from unit `mmol/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2453,
+      "omop_concept_id": "3019900",
+      "omop_concept_name": "Cholesterol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Cholesterol from `kol` (total cholesterol) ; property [Moles/volume] from unit `mmol/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2454,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Creatinine from `krea` ; property [Moles/volume] from unit `umol/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2455,
+      "omop_concept_id": "3038988",
+      "omop_concept_name": "Cholesterol in LDL [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Component Cholesterol in LDL from `lowdensitylipoprot` ; property [Moles/volume] from unit `mmol/l` and value range ; in Serum or Plasma is the standard specimen ; by calculation is the standard method and a good default for this test which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2456,
+      "omop_concept_id": "3025839",
+      "omop_concept_name": "Triglyceride [Moles/volume] in Serum or Plasma",
+      "reasoning": "Component Triglyceride from `trigly` ; property [Moles/volume] from unit `mmol/l` and value range ; in Serum or Plasma is the standard specimen for this chemistry test, which is part of a `perusterveyspaketti` (basic health panel).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2457,
+      "omop_concept_id": "1469985",
+      "omop_concept_name": "C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "Component C reactive protein from `crp` ; property [Mass/volume] from the value range [8...56.7] which corresponds to mg/L ; method Rapid immunoassay from `pika-` (rapid).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2458,
+      "omop_concept_id": "3044889",
+      "omop_concept_name": "12 lead EKG panel",
+      "reasoning": "Component 12 lead EKG panel from `pt-ekg,tavallinen12kytkentää` (Patient - EKG, standard 12 lead).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2459,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample collection (`pt-näytteenotto,normaali` = patient sampling, normal), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2460,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample collection (`pt-näytteenotto,päivystys` = patient sampling, emergency), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2461,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is a billing code for sample collection (`pt-näytteenottomaksu` = patient sampling fee), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2462,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample arrival and handling, not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2463,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkokojakauma` (red blood cell size distribution) ; property [Ratio] from unit `%` and value range [12...14.52].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2464,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkokojakauma` (red blood cell size distribution) ; property [Ratio] is inferred from the standard reporting for this test as a percentage.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2465,
+      "omop_concept_id": "40761509",
+      "omop_concept_name": "Erythrocyte morphology panel - Blood",
+      "reasoning": "Component Erythrocyte morphology panel from `punasolujenerittelylaskenta` (red blood cell differential count) ; in Blood is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2466,
+      "omop_concept_id": "40761509",
+      "omop_concept_name": "Erythrocyte morphology panel - Blood",
+      "reasoning": "Component Erythrocyte morphology panel from `punasolujenerittelylaskenta` (red blood cell differential count) ; in Blood is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2467,
+      "omop_concept_id": "3007238",
+      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood by Automated count",
+      "reasoning": "Component Nucleated erythrocytes from `punasolujenesiasteet(erytroblastit)` (red blood cell precursors (erythroblasts)) ; property [#/volume] from unit `e9/l` ; in Blood is the standard specimen ; by Automated count is the standard method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2468,
+      "omop_concept_id": "3007238",
+      "omop_concept_name": "Nucleated erythrocytes [#/volume] in Blood by Automated count",
+      "reasoning": "Component Nucleated erythrocytes from `punasolujenesiasteet(erytroblastit)` (red blood cell precursors (erythroblasts)) ; in Blood is the standard specimen ; by Automated count is the standard method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2469,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkokojakauma` (red blood cell size distribution) ; property [Ratio] from unit `%` and value range [12.35...17].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2470,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkokojakauma` (red blood cell size distribution) ; property [Ratio] is inferred from the standard reporting for this test as a percentage.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2471,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkokojakautuma` (red blood cell size distribution) ; property [Ratio] from unit `%` and value range [13...14.94].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2472,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolujenkoonvaihtelu` (red blood cell size variation) ; property [Ratio] from unit `%` and value range [12.51...15.92].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2473,
+      "omop_concept_id": "3002385",
+      "omop_concept_name": "Erythrocyte distribution width [Ratio]",
+      "reasoning": "Component Erythrocyte distribution width from `punasolut,kokojakauma` (red blood cells, size distribution) ; property [Ratio] from unit `%` and value range [13...15].",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2474,
+      "omop_concept_id": "1761868",
+      "omop_concept_name": "Lipid panel - Serum or Plasma",
+      "reasoning": "Component Lipid panel from `rasvapaketti` (fat package) ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2475,
+      "omop_concept_id": "1761868",
+      "omop_concept_name": "Lipid panel - Serum or Plasma",
+      "reasoning": "Component Lipid panel from `rasvapaketti` (fat package) ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2476,
+      "omop_concept_id": "1761868",
+      "omop_concept_name": "Lipid panel - Serum or Plasma",
+      "reasoning": "Component Lipid panel from `rasvapaketti` (fat package) ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2477,
+      "omop_concept_id": "1761868",
+      "omop_concept_name": "Lipid panel - Serum or Plasma",
+      "reasoning": "Component Lipid panel from `rasvapaketti` (fat package) ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2478,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "No candidate concept for a panel of exclusively respiratory bacteria by NAA (`respiratorisetbakteerit,nukl`) was available. The available panels also include viruses.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2479,
+      "omop_concept_id": "37021212",
+      "omop_concept_name": "Respiratory pathogens DNA and RNA panel - Respiratory system specimen by NAA with probe detection",
+      "reasoning": "Component Respiratory pathogens DNA and RNA panel from `respiratorisetmikrobit,nukle` (respiratory microbes, nucleic acid test) ; in Respiratory system specimen is implied ; by NAA from `nukle`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2480,
+      "omop_concept_id": "706162",
+      "omop_concept_name": "Respiratory viral pathogens DNA and RNA panel - Respiratory system specimen Qualitative by NAA with probe detection",
+      "reasoning": "Component Respiratory viral pathogens DNA and RNA panel from `respiratorisetvirukset,nukle` (respiratory viruses, nucleic acid test) ; in Respiratory system specimen is a good general fit ; by NAA from `nukle`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2481,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for sample collection (`s-näytteenotto,veriviljely` = serum sampling, blood culture), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2482,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for storing a sample (`s-talteen` = serum, save), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2483,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is a procedural code for the preparation of autologous serum eye drops, not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2484,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine is implied for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2485,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine is implied for this test ; values around 1.02 confirm the analyte.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2486,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine is implied for this test ; by Test strip from `kval` (qualitative) which points to a dipstick method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2487,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `virtsasta` (from urine) ; values around 1.02 confirm the analyte.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2488,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `virtsasta` (from urine) ; values around 1.02 confirm the analyte.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2489,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `virtsasta` (from urine) ; by Test strip from `vieritesti` (point-of-care test).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2490,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for storing a plasma sample (`talteen(plasma)`), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2491,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This is an administrative code for storing a serum sample (`talteen(seerumi)`), not a laboratory test result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2492,
+      "omop_concept_id": "43055246",
+      "omop_concept_name": "Days in therapeutic INR range/Days INR result determined [Ratio]",
+      "reasoning": "Component 'Days in therapeutic INR range' from `timeintherapeuticrange(sis.inr:n)` ; property [Ratio] from unit `%` and value range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2493,
+      "omop_concept_id": "43055246",
+      "omop_concept_name": "Days in therapeutic INR range/Days INR result determined [Ratio]",
+      "reasoning": "Component 'Days in therapeutic INR range' from `timeintherapeuticrange(sis.inr:n)`.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2494,
+      "omop_concept_id": "1469858",
+      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "Component Troponin T.cardiac from `tnt` ; property [Mass/volume] from unit `ug/l` ; by Rapid immunoassay from `vieritesti` (point-of-care test).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2495,
+      "omop_concept_id": "1469858",
+      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",
+      "reasoning": "Component Troponin T.cardiac from `tnt` ; by Rapid immunoassay from `vieritesti` (point-of-care test).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2496,
+      "omop_concept_id": "40760140",
+      "omop_concept_name": "CBC W Auto Differential panel - Blood",
+      "reasoning": "Component CBC W Auto Differential panel from `täydellinenverenkuva` (complete blood count), where 'täydellinen' implies a differential ; in Blood is the implied specimen ; by Auto is the modern standard for this test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2497,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `u-kemiallinenseulonta` (Urine - chemical screening) ; in Urine from `u-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2498,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `u-kemiallinenseulonta` (Urine - chemical screening) ; in Urine from `u-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2499,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `u-kemiallinenseulonta` (Urine - chemical screening) ; in Urine from `u-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2500,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `u-kemseul,kemiallisetosoituskokeet` (Urine chemical screen, chemical demonstration tests) ; in Urine from `u-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2501,
+      "omop_concept_id": "3051698",
+      "omop_concept_name": "Osmolality of Urine by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteetti,estimoitu` (osmolality, estimated) ; in Urine from `u-` prefix ; property [Moles/mass] from unit `mosm/kgh2o` and value range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2502,
+      "omop_concept_id": "3051698",
+      "omop_concept_name": "Osmolality of Urine by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteetti,estimoitu` (osmolality, estimated) ; in Urine from `u-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2503,
+      "omop_concept_id": "3051698",
+      "omop_concept_name": "Osmolality of Urine by calculation",
+      "reasoning": "Component Osmolality by calculation from `osmolaliteettilaskennallinen` (osmolality, calculated) ; in Urine from `u-` prefix ; property [Moles/mass] from unit `mosm/kgh2o` and value range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2504,
+      "omop_concept_id": "3022113",
+      "omop_concept_name": "Urinalysis microscopic panel - Urine sediment",
+      "reasoning": "Component Urinalysis microscopic panel from `u-solut,peruslaskenta` (Urine - cells, basic count) ; in Urine from `u-` prefix.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2505,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix ; property confirmed by dimensionless unit `1` and value range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2506,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix. Unit `kg/l` is equivalent to specific gravity.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2507,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2508,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix ; by Test strip from `kval` (qualitative) which points to a dipstick method.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2509,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix ; by Test strip from `kval,vierit.` (qualitative, point-of-care).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2510,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix ; value range confirms the analyte. Unit `kg/l` is stated in name.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2511,
+      "omop_concept_id": "3000330",
+      "omop_concept_name": "Specific gravity of Urine by Test strip",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `u-` prefix ; by Test strip from `stix`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2512,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name `ultramaxtutkimus` is an unidentifiable local code or brand name.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2513,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `verenpainetauti,erotusdiagnostiikka` (hypertension, differential diagnosis) describes a clinical ordering panel for which no corresponding LOINC concept was found in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2514,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `verenpainetauti,laajakontrolli` (hypertension, broad follow-up) describes a clinical ordering panel for which no corresponding LOINC concept was found in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2515,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `verikaasut,elektrolyytit` (blood gases, electrolytes) does not specify whether the specimen is arterial or venous blood, and candidates exist for both. It is impossible to choose one over the other.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2516,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `verikaasut,metaboliitit` (blood gases, metabolites) is too generic to map to a specific panel in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2517,
+      "omop_concept_id": "3037467",
+      "omop_concept_name": "Urinalysis macro (dipstick) panel - Urine",
+      "reasoning": "Component Urinalysis macro (dipstick) panel from `virtsankemiallinenseulonta` (urine chemical screening) ; in Urine from `virtsan`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2518,
+      "omop_concept_id": "43054874",
+      "omop_concept_name": "Cells [#/volume] in Body fluid",
+      "reasoning": "Component Cells from `solujen` ; property [#/volume] from unit `e6/l` ; in Body fluid is the best available generic concept for `virtsan` (of urine), as a specific 'Cells in Urine' concept was not in the candidate list.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2519,
+      "omop_concept_id": "43054874",
+      "omop_concept_name": "Cells [#/volume] in Body fluid",
+      "reasoning": "Component Cells from `solujen` ; in Body fluid is the best available generic concept for `virtsan` (of urine), as a specific 'Cells in Urine' concept was not in the candidate list.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 2520,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `virtsan` ; property confirmed by unit `kg/l` and value range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2521,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Component Specific gravity from `suhteellinentiheys` (relative density) ; in Urine from `virtsan`.",
+      "certainty": "medium"
+    }
+  ],
+  "reflection": "This group was a mix of individual analytes, panels, procedural codes, and ambiguous names. Most of the standard chemistry and hematology tests were easily mapped to their top-2000 LOINC equivalents, especially when units and values were present (e.g., the `perusterveyspaketti` components, NT-proBNP, Urate). The many variations for Red Cell Distribution Width (RDW) and Specific Gravity were consistently mapped to the appropriate LOINC concepts based on units (`%` for RDW ratio) and method qualifiers (`stix`, `vieritesti` for specific gravity). \n\nSeveral codes were unmappable because they were administrative or procedural (e.g., `näytteenotto` for sampling, `talteen` for storing, `konsultaatiopyyntö` for consultation). Some were clinical ordering panels without a direct LOINC equivalent in the candidate list (e.g., `verenpainetauti,erotusdiagnostiikka`). A few were too generic to be safely mapped (e.g., `mittaustulos`). \n\nThe candidate list had a few gaps. There was no concept for point-of-care HbA1c (row 2417), preventing a map for a very specific local code. Similarly, a panel for only respiratory bacteria by NAA was missing (row 2478). For RDW, the concepts were a bit confusing; I chose the one with the `[Ratio]` property for all the `%`-unit rows, but it's a known area of mapping difficulty in LOINC. For `virtsan solut` (urine cells), no specific LOINC for total cells in urine was present, forcing a fallback to a generic `Body fluid` concept with low certainty."
+}

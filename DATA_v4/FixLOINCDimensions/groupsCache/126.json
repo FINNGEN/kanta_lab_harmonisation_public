@@ -1,208 +1,1230 @@
 {
   "rows": [
     {
-      "row_id": 1710,
-      "omop_concept_id": "1469878",
-      "omop_concept_name": "Time below range, low in Reporting Period Interstitial fluid by calculation",
-      "reasoning": "Time below range bcs `tbr` in TEST_NAME probably means 'Time Below Range' ; [Time Fraction] bcs unit is '%' and values are low percentages ; in Interstitial fluid bcs this is a continuous glucose monitoring metric ; method by calculation is appropriate for a derived metric.",
+      "row_id": 2100,
+      "omop_concept_id": "3028653",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Arterial blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; [Mass Fraction] implied by unit `%` and values ; in Arterial blood bcs prefix `ab-`",
       "certainty": "high"
     },
     {
-      "row_id": 1711,
+      "row_id": 2101,
+      "omop_concept_id": "3028653",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Arterial blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2102,
+      "omop_concept_id": "3006217",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Arterial blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; [Mass Fraction] implied by unit `%` and values ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2103,
+      "omop_concept_id": "3006217",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Arterial blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2104,
+      "omop_concept_id": "3002173",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Arterial blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2105,
+      "omop_concept_id": "3023230",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Arterial blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `osuus` and values ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2106,
+      "omop_concept_id": "3023230",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Arterial blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs values ; in Arterial blood bcs prefix `ab-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2107,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghb-a1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2108,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code '-gluk-tir' with unit '%' refers to 'Glucose Time In Range', a common continuous glucose monitoring (CGM) metric. The candidate list lacks a specific LOINC concept for this single measurement, offering only a panel concept ('Continuous glucose monitoring time in ranges panel') or concepts for time *above/below* range, which are not correct.",
+      "reasoning": "Cannot map. The unit 'mmol' is ambiguous for an HbA1c ratio. If it is a typo for 'mmol/mol' (IFCC units), the corresponding concept with a [Substance Ratio] property is not in the candidate list.",
       "certainty": ""
     },
     {
-      "row_id": 1712,
-      "omop_concept_id": "3001501",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range for glucose ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1713,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0`, indicating a 0-minute sample in a challenge test context.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1714,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0`, indicating a 0-minute sample in a challenge test context.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1715,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test with no specimen stated ; --baseline bcs suffix is `0min`, explicitly indicating a 0-minute sample.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1716,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1717,
-      "omop_concept_id": "3015024",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1718,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1719,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1720,
-      "omop_concept_id": "3008799",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --30 minutes post dose glucose bcs `30min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1721,
-      "omop_concept_id": "3015024",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `60min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1722,
-      "omop_concept_id": "3013826",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test. The `bel-vp` suffix is ambiguous ('belastus' = challenge), and the wide decile range supports a generic, non-timed glucose measurement concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1723,
-      "omop_concept_id": "3013826",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test. The `bel-vp` suffix is ambiguous, supporting a generic, non-timed glucose measurement concept.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1724,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `glukoosi` ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120min` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1725,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1726,
-      "omop_concept_id": "3015024",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `-1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1727,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `-2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1728,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `r0`, indicating a 0-minute sample.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1729,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `r0`, indicating a 0-minute sample. The `-n` suffix is uninterpreted.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1730,
-      "omop_concept_id": "3015024",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --1 hour post dose glucose bcs `r1h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1731,
+      "row_id": 2109,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `glukr1valm` likely indicates an administrative status ('valmis' = ready) for a 1-hour glucose challenge test, not a measurement result. The 100% missing values support this interpretation.",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list. The available concepts are for [Mass Fraction] (unit '%').",
       "certainty": ""
     },
     {
-      "row_id": 1732,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; `r` likely means 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `r2h` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1733,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1734,
-      "omop_concept_id": "3007821",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --baseline",
-      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs this is the standard property for glucose in Finland ; in Serum or Plasma bcs it is the default for a lab test ; --baseline bcs suffix is `-0`, indicating a 0-minute sample.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1735,
-      "omop_concept_id": "3016701",
-      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
-      "reasoning": "Glucose bcs `gluk` ; `ras` explicitly indicates 'rasitus' (challenge) ; [Moles/volume] bcs unit is `mmol/l` ; in Serum or Plasma bcs it is the default for a lab test ; --2 hours post dose glucose bcs `120` suffix. The generic 'post dose' concept is chosen as the dose is not specified.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1736,
+      "row_id": 2110,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `glukrvalm` likely indicates an administrative status ('valmis' = ready) for a glucose challenge test, not a measurement result. The 100% missing values support this interpretation.",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
       "certainty": ""
     },
     {
-      "row_id": 1737,
-      "omop_concept_id": "3001501",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs unit is `mmol/l` ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
+      "row_id": 2111,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghb-a1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
       "certainty": "high"
     },
     {
-      "row_id": 1738,
-      "omop_concept_id": "3001501",
-      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood by Glucometer",
-      "reasoning": "Glucose bcs `gluk` ; [Moles/volume] bcs decile values are in the typical mmol/L range for glucose ; in Capillary blood by Glucometer bcs `vieri` implies a point-of-care fingerprick test with a glucometer.",
+      "row_id": 2112,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2113,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2114,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2115,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2116,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2117,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`. Suffix `-oma` (self-measured) does not change the core concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2118,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2119,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2120,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2121,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2122,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs values that are characteristic of % units ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2123,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `ghba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2124,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2125,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2126,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2127,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `hb-a1c` and `LongName` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2128,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit '%/mmol' is nonsensical for an HbA1c measurement.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2129,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol/l` requires a concept with property [Moles/volume], which is not available in the candidate list for HbA1c.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2130,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2131,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2132,
+      "omop_concept_id": "3023081",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` and `LongName` ; [Mass Fraction] implied by unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2133,
+      "omop_concept_id": "3023081",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` and `LongName` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2134,
+      "omop_concept_id": "3023081",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; [Mass Fraction] implied by unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2135,
+      "omop_concept_id": "3023081",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2136,
+      "omop_concept_id": "3032868",
+      "omop_concept_name": "Hemoglobin electrophoresis panel in Blood",
+      "reasoning": "Hemoglobin electrophoresis panel bcs `hb-ef` and `LongName` (elektroforeesi) indicate an order for electrophoresis ; in Blood bcs prefix `B-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2137,
+      "omop_concept_id": "3018738",
+      "omop_concept_name": "Hemoglobin F/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin F/Hemoglobin.total bcs `hb-f` and `LongName` ; [Mass Fraction] implied by unit `%` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2138,
+      "omop_concept_id": "3018738",
+      "omop_concept_name": "Hemoglobin F/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin F/Hemoglobin.total bcs `hb-f` and `LongName` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2139,
+      "omop_concept_id": "3003515",
+      "omop_concept_name": "Hemoglobin F/Hemoglobin.total in Blood by Kleihauer-Betke method",
+      "reasoning": "Hemoglobin F/Hemoglobin.total bcs `hb-f` ; by Kleihauer-Betke method bcs suffix `-vr` (värjäys/staining) ; in Blood bcs prefix `B-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2140,
+      "omop_concept_id": "3003515",
+      "omop_concept_name": "Hemoglobin F/Hemoglobin.total in Blood by Kleihauer-Betke method",
+      "reasoning": "Hemoglobin F/Hemoglobin.total bcs `hb-f` ; by Kleihauer-Betke method bcs suffix `-vr` (värjäys/staining) ; in Blood bcs prefix `B-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2141,
+      "omop_concept_id": "1989112",
+      "omop_concept_name": "Hemoglobinopathy panel",
+      "reasoning": "Hemoglobinopathy panel bcs `b-hb-fr` (`fraktiot`/fractions) indicates a general order for hemoglobin fractionation, which is a hemoglobinopathy workup ; in Blood bcs prefix `B-`",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2142,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs value deciles are characteristic of g/L units ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2143,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code `b-hb-ief` and LongName specify Isoelectric focusing, but no candidate concept includes this method.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2144,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code `b-hb-ief` specifies Isoelectric focusing, but no candidate concept includes this method.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2145,
+      "omop_concept_id": "3007930",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` and `LongName` ; [Mass Fraction] implied by unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2146,
+      "omop_concept_id": "3007930",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` and `LongName` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2147,
+      "omop_concept_id": "3007930",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; [Mass Fraction] implied by unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2148,
+      "omop_concept_id": "3007930",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2149,
+      "omop_concept_id": "3005872",
+      "omop_concept_name": "Hemoglobin [Presence] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Blood bcs prefix `b-`. The unit `g/l` on a small number of records is considered an error.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2150,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs value deciles are characteristic of g/L units, overriding the conflicting `-o` (qualitative) suffix ; in Blood bcs prefix `b-`",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2151,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` ; in Blood bcs prefix `b-`. `poc` (point-of-care) does not have a specific candidate concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2152,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs values are characteristic of g/L units ; in Blood bcs prefix `b-`. `poc` (point-of-care) does not have a specific candidate concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2153,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2154,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs values are characteristic of g/L units ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2155,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Blood bcs prefix `b-`. `vt` (vieritutkimus/point-of-care) does not have a specific candidate concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2156,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; in Blood bcs prefix `b-`. Assumed to be the common mass concentration measurement.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2157,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `hba1c` ; [Mass Fraction] (NGSP) bcs values are characteristic of % units ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2158,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Unit `form` (identifier) is not appropriate for a quantitative HbA1c test and no identifier-based concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2159,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol` is ambiguous. If it's a typo for `mmol/mol`, the required [Substance Ratio] concept is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2160,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol/l` requires a concept with property [Moles/volume], which is not available in the candidate list for HbA1c.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2161,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol/m` is likely a typo for `mmol/mol`. The concept for HbA1c in IFCC units ([Substance Ratio]) is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2162,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol/ml` is not a standard unit for HbA1c. If it's a typo for `mmol/mol`, the required [Substance Ratio] concept is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2163,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2164,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2165,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Value deciles suggest IFCC units (mmol/mol), but the required concept with a [Substance Ratio] property is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2166,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2167,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. A qualitative test for HbA1c (`-o` suffix) is unusual, and no candidate concept for 'Hemoglobin A1c [Presence]' exists.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2168,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2169,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Value deciles suggest IFCC units (mmol/mol), but the required concept with a [Substance Ratio] property is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2170,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `hba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2171,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2172,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2173,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2174,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2175,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Value deciles suggest IFCC units (mmol/mol), but the required concept with a [Substance Ratio] property is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2176,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2177,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `hba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2178,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2179,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2180,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2181,
+      "omop_concept_id": "3004410",
+      "omop_concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "reasoning": "Hemoglobin A1c/Hemoglobin.total bcs `hba1c` ; [Mass Fraction] (NGSP) bcs unit `%` and values ; in Blood bcs prefix `b-`. `vt` (point-of-care) does not have a distinct candidate concept.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2182,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The unit `mmol` is ambiguous. If it's a typo for `mmol/mol`, the required [Substance Ratio] concept is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2183,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2184,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2185,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code specifies Fetal Hemoglobin by Flow Cytometry (`b-hbf-fc`), but no matching candidate was found. Candidate 40758858 is for fetal *cells*, not fetal *hemoglobin*.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2186,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code specifies Fetal Hemoglobin by Flow Cytometry (`b-hbf-fc`), but no matching candidate was found.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2187,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code specifies Fetal Hemoglobin by Flow Cytometry (`b-hbf-fc`), but no matching candidate was found.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2188,
+      "omop_concept_id": "40758859",
+      "omop_concept_name": "Fetal blood [Volume] in Blood",
+      "reasoning": "Fetal blood [Volume] bcs `hbfvol` (fetal hemoglobin volume) ; in Blood bcs prefix `b-` ; [Volume] bcs unit `ml`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2189,
+      "omop_concept_id": "40758859",
+      "omop_concept_name": "Fetal blood [Volume] in Blood",
+      "reasoning": "Fetal blood [Volume] bcs `hbfvol` (fetal hemoglobin volume) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2190,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2191,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; in Blood bcs prefix `b-`. Assumed to be the common mass concentration measurement.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2192,
+      "omop_concept_id": "36659666",
+      "omop_concept_name": "Hemoglobin panel - Blood by HPLC",
+      "reasoning": "Hemoglobin panel bcs `hbhplc` indicates a hemoglobin fractionation analysis ; by HPLC bcs `hplc` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2193,
+      "omop_concept_id": "3000963",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2194,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2195,
+      "omop_concept_id": "3024731",
+      "omop_concept_name": "MCV [Entitic mean volume] in Red Blood Cells",
+      "reasoning": "MCV bcs unit `fl` and value deciles are characteristic of Mean Corpuscular Volume, not Hematocrit ; The `TEST_NAME` 'b-hkr' appears to be used incorrectly for this measurement.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2196,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Unit `form` (identifier) is not a valid unit for a hematocrit measurement, and the intent is unclear.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2197,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `l/l` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2198,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `ratio` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2199,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code `b-hkr` is used for both Hematocrit and (incorrectly) MCV in this dataset. Without a unit or values, the analyte is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2200,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `%` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2201,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs values are characteristic of hematocrit ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2202,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `osuus` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2203,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs values are characteristic of hematocrit ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2204,
+      "omop_concept_id": "3009542",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] bcs unit `%` and values ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2205,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The code `b-hkr` is used for both Hematocrit and (incorrectly) MCV in this dataset. Without a unit or values, the analyte is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2206,
+      "omop_concept_id": "36032264",
+      "omop_concept_name": "HLA-Bw [Type]",
+      "reasoning": "HLA-Bw [Type] bcs `hla-bw` ; in Blood bcs prefix `b-` ; unit `form` is consistent with a typing result.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2207,
+      "omop_concept_id": "36032264",
+      "omop_concept_name": "HLA-Bw [Type]",
+      "reasoning": "HLA-Bw [Type] bcs `hla-bw` ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2208,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hla1mun` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2209,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hla1pk` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2210,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hla2frk` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2211,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hla2prk` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2212,
+      "omop_concept_id": "3031806",
+      "omop_concept_name": "HLA-B*57:01 [Presence] in Specimen",
+      "reasoning": "HLA-B*57:01 bcs `LongName` `Abacavir-yliherkkyys, HLA-assosiaatio` refers to this specific allele ; [Presence] is the expected result type ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2213,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hlaad` refers to low-resolution HLA-A typing, but no suitable low-resolution or generic HLA-A typing concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2214,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hlaad` refers to low-resolution HLA-A typing, but no suitable low-resolution or generic HLA-A typing concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2215,
+      "omop_concept_id": "40760409",
+      "omop_concept_name": "HLA-A [Type] by High resolution",
+      "reasoning": "HLA-A bcs `hlaa` ; by High resolution bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2216,
+      "omop_concept_id": "40760409",
+      "omop_concept_name": "HLA-A [Type] by High resolution",
+      "reasoning": "HLA-A bcs `hlaa` ; by High resolution bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2217,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Code `b-hlaag` is too generic, could refer to any HLA antigen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2218,
+      "omop_concept_id": "3025311",
+      "omop_concept_name": "HLA-B [Type]",
+      "reasoning": "HLA-B [Type] bcs `hlabd` (`LongName`: HLA-B, DNA-tutkimus) is a generic (low-res) typing ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2219,
+      "omop_concept_id": "3025311",
+      "omop_concept_name": "HLA-B [Type]",
+      "reasoning": "HLA-B [Type] bcs `hlabd` (`LongName`: HLA-B, DNA-tutkimus) is a generic (low-res) typing ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2220,
+      "omop_concept_id": "3043232",
+      "omop_concept_name": "HLA-B SBT [Type] by High resolution",
+      "reasoning": "HLA-B bcs `hlab` ; by High resolution bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2221,
+      "omop_concept_id": "3043232",
+      "omop_concept_name": "HLA-B SBT [Type] by High resolution",
+      "reasoning": "HLA-B bcs `hlab` ; by High resolution bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2222,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Code `b-hlabg` is too generic, could refer to any HLA-B group antigen.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2223,
+      "omop_concept_id": "46236302",
+      "omop_concept_name": "HLA-C [Type] by High resolution typing",
+      "reasoning": "HLA-C bcs `hlac` ; by High resolution typing bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2224,
+      "omop_concept_id": "46236302",
+      "omop_concept_name": "HLA-C [Type] by High resolution typing",
+      "reasoning": "HLA-C bcs `hlac` ; by High resolution typing bcs suffix `-dt` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2225,
+      "omop_concept_id": "3026777",
+      "omop_concept_name": "HLA-C [Type]",
+      "reasoning": "HLA-C [Type] bcs `hlacg` is a generic typing request ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2226,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hladpb1g` refers to low-resolution HLA-DPB1 typing, but no suitable low-resolution or generic concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2227,
+      "omop_concept_id": "40762110",
+      "omop_concept_name": "HLA-DPB1 [Type] by High resolution",
+      "reasoning": "HLA-DPB1 bcs `hladpb` ; by High resolution bcs suffix `-d` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2228,
+      "omop_concept_id": "40762110",
+      "omop_concept_name": "HLA-DPB1 [Type] by High resolution",
+      "reasoning": "HLA-DPB1 bcs `hladpb` ; by High resolution bcs suffix `-d` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2229,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hladqb1g` refers to low-resolution HLA-DQB1 typing, but no suitable low-resolution or generic concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2230,
+      "omop_concept_id": "40760418",
+      "omop_concept_name": "HLA-DQB1 [Type] by High resolution",
+      "reasoning": "HLA-DQB1 bcs `hladqb` ; by High resolution bcs suffix `-d` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2231,
+      "omop_concept_id": "40760418",
+      "omop_concept_name": "HLA-DQB1 [Type] by High resolution",
+      "reasoning": "HLA-DQB1 bcs `hladqb` ; by High resolution bcs suffix `-d` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2232,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hladrb1g` refers to low-resolution HLA-DRB1 typing, but no suitable low-resolution or generic concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2233,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hladrbd` refers to low-resolution HLA-DRB typing, but no suitable low-resolution or generic concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2234,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. `b-hladrbd` refers to low-resolution HLA-DRB typing, but no suitable low-resolution or generic concept is in the list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2235,
+      "omop_concept_id": "3040316",
+      "omop_concept_name": "HLA-DRB1 SBT [Type] in Specimen by High resolution",
+      "reasoning": "HLA-DRB1 bcs `hladrb` ; by High resolution bcs suffix `-ld` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2236,
+      "omop_concept_id": "3040316",
+      "omop_concept_name": "HLA-DRB1 SBT [Type] in Specimen by High resolution",
+      "reasoning": "HLA-DRB1 bcs `hladrb` ; by High resolution bcs suffix `-ld` (`tarkennettu`) ; in Blood bcs prefix `b-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2237,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hlamaks` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2238,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hlasyke` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2239,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The local code `b-hlatrb` is too ambiguous to map to a specific HLA typing panel or antigen without more information.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2240,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2241,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2242,
+      "omop_concept_id": "3006184",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Capillary blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Capillary blood bcs prefix `cb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2243,
+      "omop_concept_id": "3006184",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Capillary blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs values are characteristic of total hemoglobin in g/L, not free hemoglobin ; in Capillary blood bcs prefix `cb-`. The `-v` suffix is ignored as it contradicts the values.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2244,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The concept for HbA1c in IFCC units (`mmol/mol`), which has a [Substance Ratio] property, is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2245,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2246,
+      "omop_concept_id": "3012471",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] is implied by a screening test ; in Stool bcs prefix `f-`. The qualifier `hum` (human) strongly implies an immunoassay (FIT test).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2247,
+      "omop_concept_id": "3016251",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2248,
+      "omop_concept_id": "3016251",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2249,
+      "omop_concept_id": "3016251",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2250,
+      "omop_concept_id": "3024098",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal --1st specimen",
+      "reasoning": "Hemoglobin [Presence] in Stool bcs `f-hhb` (feces human hemoglobin) ; --1st specimen bcs `-1` suffix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2251,
+      "omop_concept_id": "3024622",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal --2nd specimen",
+      "reasoning": "Hemoglobin [Presence] in Stool bcs `f-hhb` (feces human hemoglobin) ; --2nd specimen bcs `-2` suffix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2252,
+      "omop_concept_id": "3012471",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay",
+      "reasoning": "Hemoglobin bcs `hhb` (human hemoglobin) ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`. The qualifier 'human' strongly implies an immunoassay (FIT test).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2253,
+      "omop_concept_id": "3012471",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay",
+      "reasoning": "Hemoglobin bcs `hhb` (human hemoglobin) ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`. The qualifier 'human' strongly implies an immunoassay (FIT test).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2254,
+      "omop_concept_id": "3012471",
+      "omop_concept_name": "Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay",
+      "reasoning": "Hemoglobin bcs `hhb` (human hemoglobin) ; [Presence] bcs suffix `-o` (qualitative) ; in Stool bcs prefix `f-`. The qualifier 'human' strongly implies an immunoassay (FIT test).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2255,
+      "omop_concept_id": "3030153",
+      "omop_concept_name": "Occult blood panel - Stool",
+      "reasoning": "Occult blood panel bcs `f-hhb-ox3` implies a panel of 3 occult blood tests ; in Stool bcs prefix `f-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2256,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Insufficient evidence to determine specimen or property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol').",
+      "certainty": ""
+    },
+    {
+      "row_id": 2257,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Value deciles suggest IFCC units (mmol/mol), but the required concept with a [Substance Ratio] property is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2258,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. Value deciles suggest IFCC units (mmol/mol), but the required concept with a [Substance Ratio] property is not in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2259,
+      "omop_concept_id": "3034030",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Mixed venous blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; [Mass Fraction] implied by unit `%` and values ; in Mixed venous blood bcs prefix `mb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2260,
+      "omop_concept_id": "3031282",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Mixed venous blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; [Mass Fraction] implied by unit `%` and values ; in Mixed venous blood bcs prefix `mb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2261,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "Cannot map. The magnitude of the value deciles `[1034.47, ..., 1915.55]` is uninterpretable for a hemoglobin measurement in urine without a unit.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2262,
+      "omop_concept_id": "3011397",
+      "omop_concept_name": "Hemoglobin [Presence] in Urine by Test strip",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Urine bcs prefix `u-`. Assumed to be by test strip, the most common method for this test (Top 2000 concept).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2263,
+      "omop_concept_id": "3011397",
+      "omop_concept_name": "Hemoglobin [Presence] in Urine by Test strip",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Urine bcs prefix `u-`. Assumed to be by test strip, the most common method for this test (Top 2000 concept).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2264,
+      "omop_concept_id": "3011397",
+      "omop_concept_name": "Hemoglobin [Presence] in Urine by Test strip",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] bcs suffix `-o` (qualitative) ; in Urine bcs prefix `u-`. This is the standard code for a urine dipstick test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2265,
+      "omop_concept_id": "3003344",
+      "omop_concept_name": "Hemoglobin [Presence] in Urine",
+      "reasoning": "Hemoglobin bcs `hb` ; [Presence] implied by `-o.` suffix ; in Urine bcs prefix `u-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2266,
+      "omop_concept_id": "3010517",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Venous blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; [Mass Fraction] implied by unit `%` and values ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2267,
+      "omop_concept_id": "3010517",
+      "omop_concept_name": "Carboxyhemoglobin/Hemoglobin.total in Venous blood",
+      "reasoning": "Carboxyhemoglobin/Hemoglobin.total bcs `hb-co` ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2268,
+      "omop_concept_id": "3024889",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Venous blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; [Mass Fraction] implied by unit `%` and values ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2269,
+      "omop_concept_id": "3024889",
+      "omop_concept_name": "Methemoglobin/Hemoglobin.total in Venous blood",
+      "reasoning": "Methemoglobin/Hemoglobin.total bcs `hb-met` ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2270,
+      "omop_concept_id": "3004119",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Venous blood",
+      "reasoning": "Hemoglobin bcs `hb` ; in Venous blood bcs prefix `vb-` ; assumed to be common mass concentration measurement.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2271,
+      "omop_concept_id": "3004119",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Venous blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs unit `g/l` and values ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2272,
+      "omop_concept_id": "3004119",
+      "omop_concept_name": "Hemoglobin [Mass/volume] in Venous blood",
+      "reasoning": "Hemoglobin bcs `hb` ; [Mass/volume] bcs values are characteristic of g/L units ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2273,
+      "omop_concept_id": "3034976",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Venous blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] is the property for hematocrit ; in Venous blood bcs prefix `vb-`",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2274,
+      "omop_concept_id": "3034976",
+      "omop_concept_name": "Hematocrit [Volume Fraction] of Venous blood",
+      "reasoning": "Hematocrit bcs `hkr` ; [Volume Fraction] is the property for hematocrit ; in Venous blood bcs prefix `vb-`",
       "certainty": "high"
     }
   ],
-  "reflection": "This group was dominated by glucose tests, primarily from glucose tolerance tests (GTTs). The local codes consistently used suffixes like `0`, `1h`, `120min`, `r0`, `ras-0` to denote time points, which were straightforward to map to the corresponding LOINC 'post dose' or 'baseline' concepts. A key decision was to use the generic 'post dose' concepts because the local codes did not specify the glucose load (e.g., 75g or 100g). The `gluk-vieri` code was interpreted as a point-of-care test and mapped to a more specific 'Capillary blood by Glucometer' concept. Two continuous glucose monitoring (CGM) codes were present; 'Time Below Range' (`-gluk-tbr`) was mapped successfully, but 'Time In Range' (`-gluk-tir`) could not be mapped as the candidate list lacked a concept for this single measure, offering only a panel. Lastly, two codes (`glukr1valm`, `glukrvalm`) were identified as administrative and left unmapped."
+  "reflection": "This was a large and complex group. The primary difficulty was the candidate list's omission of the standard LOINC concept for HbA1c reported in IFCC units (`mmol/mol`), which has a `[Substance Ratio]` property. The `b-ghba1c` and `b-hba1c` codes are used for both NGSP (`%`) and IFCC (`mmol/mol`) units. While I could confidently map the rows with `%` units to the `[Mass Fraction]` concept (3004410), all rows with `mmol/mol` units or values indicative of `mmol/mol` had to be left unmapped. This affected a very large number of rows (e.g., 2109, 2130, 2163). A secondary issue was with some specific methods, like Hemoglobin by IEF (`b-hb-ief`) or HbF by Flow Cytometry (`b-hbf-fc`), for which no corresponding candidates were available. The HLA typing section was also challenging due to the mix of highly specific and very generic local codes, but the candidate list was sufficient for the most clearly defined ones (e.g., those specifying high resolution or a specific allele like for Abacavir sensitivity). Finally, one code (`b-hkr`) was used for two different analytes (Hematocrit and MCV), which I had to disambiguate using the units and value ranges."
 }

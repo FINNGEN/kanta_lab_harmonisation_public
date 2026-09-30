@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,110 +115,108 @@ Here is group 14.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3020460 | C reactive protein [Mass/volume] in Serum or Plasma | 0.973 | 154 |
-| 3051387 | C reactive protein [Mass/volume] in Capillary blood | 0.972 |  |
-| 1091617 | C reactive protein [Mass/volume] in Serum, Plasma or Blood | 0.939 |  |
-| 3010156 | C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method | 0.910 | 348 |
-| 46234770 | C reactive protein [Moles/volume] in Serum or Plasma | 0.894 |  |
-| 42870365 | C reactive protein [Mass/volume] in Blood by High sensitivity method | 0.874 |  |
-| 648940 | C reactive protein [Measurement] in Serum or Plasma | 0.872 |  |
-| 3035320 | C reactive protein [Mass/volume] in Body fluid | 0.866 |  |
-| 1469985 | C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.864 |  |
-| 3028766 | C reactive protein [Titer] in Serum or Plasma | 0.852 |  |
-| 46234771 | C reactive protein [Moles/volume] in Serum or Plasma by High sensitivity method | 0.847 |  |
-| 3000965 | C reactive protein [Presence] in Serum or Plasma | 0.843 | 1281 |
-| 40762274 | C reactive protein [Mass/volume] in Cerebral spinal fluid by High sensitivity method | 0.802 |  |
-| 1988606 | C reactive protein [Units/volume] in Body fluid | 0.800 |  |
-| 3044417 | C reactive protein [Mass/volume] in Cerebral spinal fluid | 0.790 |  |
+| 3020460 | C reactive protein [Mass/volume] in Serum or Plasma | 1.000 | 154 |
+| 1091617 | C reactive protein [Mass/volume] in Serum, Plasma or Blood | 0.966 |  |
+| 3010156 | C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method | 0.924 | 348 |
+| 46234770 | C reactive protein [Moles/volume] in Serum or Plasma | 0.918 |  |
+| 3051387 | C reactive protein [Mass/volume] in Capillary blood | 0.904 |  |
+| 648940 | C reactive protein [Measurement] in Serum or Plasma | 0.900 |  |
+| 3035320 | C reactive protein [Mass/volume] in Body fluid | 0.898 |  |
+| 42870365 | C reactive protein [Mass/volume] in Blood by High sensitivity method | 0.890 |  |
+| 1469985 | C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay | 0.888 |  |
+| 3028766 | C reactive protein [Titer] in Serum or Plasma | 0.881 |  |
+| 3000965 | C reactive protein [Presence] in Serum or Plasma | 0.870 | 1281 |
+| 46234771 | C reactive protein [Moles/volume] in Serum or Plasma by High sensitivity method | 0.853 |  |
+| 3044417 | C reactive protein [Mass/volume] in Cerebral spinal fluid | 0.825 |  |
+| 1988606 | C reactive protein [Units/volume] in Body fluid | 0.820 |  |
+| 40762274 | C reactive protein [Mass/volume] in Cerebral spinal fluid by High sensitivity method | 0.815 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 23 | b-c-reaktiivinenproteiini | mg/l | 10% | name+unit | 29 | 0 |  |  | Blood |  | C-reactive protein [Mass/volume] in Blood |
-| 24 | b-c-reaktiivinenproteiini |  | 90% | name+values | 262 | 44.27 | [6, 7.5, 10.67, 13.8, 18.67, 27.69, 37.44, 56, 84] |  | Blood |  | C-reactive protein [Mass/volume] in Blood |
-| 25 | b-c-reaktiivinenproteiinipika |  | 100% | name+values | 300 | 37 | [7, 10.22, 14.84, 20.3, 29.2, 37.52, 52.47, 75.48, 99.1] |  | Blood |  | C-reactive protein [Mass/volume] in Blood |
-| 26 | b-c-resktiivinenproteiini | mg/l | 60% | name+unit+values | 1201 | 0 | [6, 8.11, 11.16, 14.7, 19.67, 26.61, 38.65, 58.3, 91.79] |  | Blood |  | C-reactive protein [Mass/volume] in Blood |
-| 27 | b-c-resktiivinenproteiini |  | 40% | name | 802 | 92.39 |  |  | Blood |  | C-reactive protein [Mass/volume] in Blood |
-| 28 | c-reaktiivinenproteiini | 1 | 6% | name+unit+values | 925 | 0 | [6.19, 8.89, 11.99, 16.88, 23.76, 35.33, 49.12, 74.41, 108.21] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 29 | c-reaktiivinenproteiini | mg/l | 50% | name+unit+values | 7963 | 0 | [4.01, 6.22, 9.5, 14.46, 23.15, 35.25, 51.85, 77.94, 126.36] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 30 | c-reaktiivinenproteiini |  | 44% | name+values | 7083 | 90.23 | [6.55, 8.84, 11.73, 17.15, 24.37, 37.67, 52.72, 72.92, 107.1] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 31 | c-reaktiivinenproteiini(4594p-crp) | mg/l | 66% | name+unit+values | 143 | 0 | [1, 1.79, 2, 2, 3, 4, 5, 6, 12.8] |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 32 | c-reaktiivinenproteiini(4594p-crp) |  | 34% | name | 74 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 33 | c-reaktiivinenproteiini(crp) | mg/l | 60% | name+unit+values | 381 | 0 | [1.23, 1.51, 1.92, 2.62, 3.36, 4.75, 6.13, 9.98, 21.06] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 34 | c-reaktiivinenproteiini(crp) |  | 40% | name | 250 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 35 | c-reaktiivinenproteiini(p-crp) | mg/l | 66% | name+unit+values | 500 | 0 | [1, 2, 2, 2.85, 3.14, 4.26, 5.94, 8.93, 19.54] |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 36 | c-reaktiivinenproteiini(p-crp) |  | 34% | name | 261 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 37 | c-reaktiivinenproteiini,herkkä | mg/l | 93% | name+unit+values | 254 | 0 | [0.22, 0.41, 0.57, 0.84, 1.15, 1.65, 2.42, 3.86, 6.33] |  |  |  | C-reactive protein.high sensitivity [Mass/volume] in Serum or Plasma |
-| 38 | c-reaktiivinenproteiini,herkkä |  | 7% | name | 18 | 94.44 |  |  |  |  | C-reactive protein.high sensitivity [Mass/volume] in Serum or Plasma |
-| 39 | c-reaktiivinenproteiini,herkkä,seerumista | mg/l | 100% | name+unit+values | 7396 | 0 | [0.28, 0.41, 0.6, 0.78, 1.03, 1.34, 1.83, 2.72, 4.64] |  |  |  | C-reactive protein.high sensitivity [Mass/volume] in Serum |
-| 40 | c-reaktiivinenproteiini,herkkä,seerumista |  | 0% | name | 36 | 83.33 |  |  |  |  | C-reactive protein.high sensitivity [Mass/volume] in Serum |
-| 41 | c-reaktiivinenproteiini,pika | mg/l | 69% | name+unit+values | 111 | 0 | [5, 5.05, 6.2, 8.27, 11.67, 14.3, 22.37, 36.1, 57] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 42 | c-reaktiivinenproteiini,pika |  | 31% | name | 49 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 43 | c-reaktiivinenproteiini,pika,tehdäänitse | mg/l | 55% | name+unit+values | 997 | 0 | [5, 5, 6.35, 8.12, 10.93, 14.99, 21.14, 34.44, 53.73] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 44 | c-reaktiivinenproteiini,pika,tehdäänitse |  | 45% | name | 820 | 99.27 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 45 | c-reaktiivinenproteiini,pikatesti,veri | mg/l | 10% | name+unit+values | 174 | 0 | [6, 7, 8.95, 10.5, 16.42, 22.45, 35.5, 53.5, 98.67] |  |  |  | C-reactive protein [Mass/volume] in Blood |
-| 46 | c-reaktiivinenproteiini,pikatesti,veri |  | 90% | name+values | 1656 | 42.69 | [6.55, 9.61, 13.21, 19.27, 27.67, 39.17, 52.81, 73.29, 109.39] |  |  |  | C-reactive protein [Mass/volume] in Blood |
-| 47 | c-reaktiivinenproteiini,pikatesti,veri(23318b-crp-pt) | mg/l | 77% | name+unit+values | 803 | 0 | [4.99, 5.34, 7.17, 9.24, 13.4, 18.77, 28.88, 45.54, 76.31] |  |  |  | C-reactive protein [Mass/volume] in Blood |
-| 48 | c-reaktiivinenproteiini,pikatesti,veri(23318b-crp-pt) |  | 23% | name | 240 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Blood |
-| 49 | c-reaktiivinenproteiini,pikatutkimus | mg/l | 62% | name+unit+values | 106 | 0 | [7, 12, 15.43, 21.6, 30.72, 39.4, 56.9, 87, 115.33] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 50 | c-reaktiivinenproteiini,pikatutkimus |  | 38% | name | 66 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 51 | c-reaktiivinenproteiini,plasmasta,vieritesti | mg/l | 72% | name+unit+values | 699 | 0 | [5.17, 7.91, 10.75, 16.58, 23.68, 33.24, 48.01, 64.98, 99.29] |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 52 | c-reaktiivinenproteiini,plasmasta,vieritesti |  | 28% | name | 274 | 94.89 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 53 | c-reaktiivinenproteiini,tk:ntekemä |  | 100% | name+values | 1605 | 13.4 | [2.23, 4.3, 7.78, 12.46, 19.91, 29.72, 46.58, 66.7, 98.89] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 54 | c-reaktiivinenproteiini,vieritesti | mg/l | 5% | name+unit | 47 | 0 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 55 | c-reaktiivinenproteiini,vieritesti |  | 95% | name+values | 944 | 23.62 | [3.08, 5.45, 7.93, 11.11, 14.9, 20.87, 29.7, 49.04, 81.9] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 56 | c-reaktiivinenproteiini,vieritutkimus | mg/l | 45% | name+unit+values | 525 | 0 | [5, 6.72, 8.66, 12.22, 15.93, 22.09, 35.26, 59.08, 89.7] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 57 | c-reaktiivinenproteiini,vieritutkimus |  | 55% | name+values | 631 | 58.8 | [6.41, 9.32, 15.53, 22.99, 35.64, 49.47, 62.97, 81.83, 113.06] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 58 | c-reaktiivinenproteiini,vieritutkimus,plasmasta | mg/l | 79% | name+unit | 1205 | 0 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 59 | c-reaktiivinenproteiini,vieritutkimus,plasmasta |  | 21% | name+values | 318 | 100 | [4.71, 7.37, 11.52, 16.21, 23.22, 31.65, 45.13, 65.98, 97.07] |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 60 | c-reaktiivinenproteiini,vieritutkimusnordlab | mg/l | 48% | name+unit+values | 92 | 0 | [5, 6, 8, 10.7, 12.75, 16.2, 21, 31.5, 47] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 61 | c-reaktiivinenproteiini,vieritutkimusnordlab |  | 52% | name | 99 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 62 | c-reaktiivinenproteiini-pika(4594crp-pika) | mg/l | 74% | name+unit+values | 136 | 0 | [5, 5.32, 7, 9, 11.15, 14.57, 19, 33.2, 47.3] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 63 | c-reaktiivinenproteiini-pika(4594crp-pika) |  | 26% | name | 47 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 64 | c-reaktiivinenproteiini-pika(crp-pika) | mg/l | 75% | name+unit+values | 1488 | 0 | [5, 6.88, 7, 7.34, 10.21, 14.71, 21.39, 32, 54.73] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 65 | c-reaktiivinenproteiini-pika(crp-pika) |  | 25% | name | 505 | 99.8 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 66 | cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä | mg/l | 79% | name+unit+values | 1826 | 0 | [1.75, 3.02, 5.68, 9.52, 14.27, 22.77, 34.19, 57.29, 89.46] |  |  |  | C-reactive protein [Mass/volume] in Capillary blood |
-| 67 | cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä |  | 21% | name+values | 497 | 46.88 | [1.2, 1.53, 2.21, 2.84, 3.97, 4.8, 6.15, 7.51, 9.1] |  |  |  | C-reactive protein [Mass/volume] in Capillary blood |
-| 68 | fs-c-reaktiivinenproteiini | mg/l | 57% | name+unit | 241 | 0 |  |  | Fasting serum |  | C-reactive protein [Mass/volume] in Serum |
-| 69 | fs-c-reaktiivinenproteiini |  | 43% | name | 184 | 100 |  |  | Fasting serum |  | C-reactive protein [Mass/volume] in Serum |
-| 70 | p-c-reaktiininenproteiini,vieritutkimus | mg/l | 54% | name+unit+values | 258 | 0 | [5.85, 8.85, 11.14, 17.24, 24.49, 35.17, 49.34, 67.54, 96.38] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 71 | p-c-reaktiininenproteiini,vieritutkimus |  | 46% | name | 224 | 100 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 72 | p-c-reaktiivinenproteiini | mg/l | 62% | name+unit+values | 41046 | 0 | [4.18, 7.12, 11.73, 18.09, 27.46, 40.11, 58.4, 87.78, 141.39] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 73 | p-c-reaktiivinenproteiini |  | 38% | name | 24714 | 99.73 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 74 | p-c-reaktiivinenproteiini(kval) | mg/l | 57% | name+unit+values | 187 | 0 | [6.14, 9.01, 13.88, 18.86, 24.62, 33.54, 47.21, 67.37, 102.4] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 75 | p-c-reaktiivinenproteiini(kval) |  | 43% | name | 142 | 100 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 76 | p-c-reaktiivinenproteiini(kval)␤ | mg/l | 46% | name+unit | 111 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 77 | p-c-reaktiivinenproteiini(kval)␤ |  | 54% | name | 130 | 100 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 78 | p-c-reaktiivinenproteiini(pikanäyte) | mg/l | 2% | name+unit | 6 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 79 | p-c-reaktiivinenproteiini(pikanäyte) |  | 98% | name+values | 352 | 17.33 | [1.52, 2.59, 4.86, 7.54, 12.38, 20.91, 32.04, 56.93, 83.62] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 80 | p-c-reaktiivinenproteiini,crp | mg/l | 93% | name+unit | 110 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 81 | p-c-reaktiivinenproteiini,crp |  | 7% | name | 8 | 62.5 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 82 | p-c-reaktiivinenproteiini,hoitoyksikkö | 1 | 14% | name+unit | 40 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 83 | p-c-reaktiivinenproteiini,hoitoyksikkö | alle | 2% | name+unit | 5 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 84 | p-c-reaktiivinenproteiini,hoitoyksikkö | mg/l | 29% | name+unit+values | 81 | 0 | [8, 11, 13, 16.2, 22.25, 33.7, 48, 64, 131] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 85 | p-c-reaktiivinenproteiini,hoitoyksikkö |  | 55% | name+values | 156 | 63.46 | [6, 8, 12, 14, 26, 32, 40, 60, 120] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 86 | p-c-reaktiivinenproteiini,pikatesti | mg/l | 6% | name+unit | 190 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 87 | p-c-reaktiivinenproteiini,pikatesti |  | 94% | name+values | 3095 | 41.23 | [6.43, 8.8, 12.04, 15.76, 21.17, 29.16, 41.93, 63.64, 96.9] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 88 | p-c-reaktiivinenproteiini,vieritutkimus | mg/l | 30% | name+unit | 53 | 0 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 89 | p-c-reaktiivinenproteiini,vieritutkimus |  | 70% | name | 122 | 50.82 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 90 | p-c-reaktiivinenproteiini,vieritutkimus,plasmasta | mg/l | 63% | name+unit+values | 202 | 0 | [4.03, 6.98, 10.47, 16.6, 21.86, 29.42, 49.79, 68.66, 100] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 91 | p-c-reaktiivinenproteiini,vieritutkimus,plasmasta |  | 37% | name | 120 | 71.67 |  |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 92 | p-c-reaktiivinenproteiini.pika |  | 100% | name+values | 316 | 20.25 | [3.75, 6.98, 11.68, 15.55, 24.24, 38.44, 58.74, 89.38, 117.91] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 93 | p-c-reaktiivinenproteiinipikahoitoyksiköt | mg/l | 71% | name+unit+values | 4601 | 0 | [5.2, 7.99, 12.13, 17.43, 25.81, 37.54, 54.45, 78.12, 113.86] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 94 | p-c-reaktiivinenproteiinipikahoitoyksiköt |  | 29% | name+values | 1925 | 80.52 | [1.18, 1.4, 1.83, 2.44, 3.17, 4.31, 5.83, 6.68, 8.76] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 95 | p-c-reaktiivinenproteiinipikamittari |  | 100% | name+values | 399 | 36.09 | [7, 9.06, 12.92, 21.23, 28.43, 42.17, 58.76, 81.22, 122.07] |  | Plasma |  | C-reactive protein [Mass/volume] in Plasma |
-| 96 | pikatesti,c-reaktiivinenproteiini | mg/l | 45% | name+unit+values | 315 | 0 | [6, 7.85, 10.56, 14.36, 20.22, 31.25, 44.62, 61.43, 91.59] |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 97 | pikatesti,c-reaktiivinenproteiini |  | 55% | name | 386 | 100 |  |  |  |  | C-reactive protein [Mass/volume] in Serum or Plasma |
-| 98 | plasmanc-reaktiivinenproteiiniosoitus | 1 | 1% | name+unit | 36 | 0 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 99 | plasmanc-reaktiivinenproteiiniosoitus | mg/l | 55% | name+unit+values | 3255 | 0 | [6.24, 8.99, 12.45, 17.72, 25.65, 35.96, 50.8, 70.36, 106.56] |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 100 | plasmanc-reaktiivinenproteiiniosoitus |  | 44% | name | 2589 | 98.42 |  |  |  |  | C-reactive protein [Mass/volume] in Plasma |
-| 101 | s-c-reaktiivinenproteiini | mg/l | 86% | name+unit+values | 773 | 0 | [0.4, 0.73, 1.08, 1.43, 1.93, 2.88, 4.71, 7.16, 16.64] |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
-| 102 | s-c-reaktiivinenproteiini |  | 14% | name | 121 | 100 |  |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
-| 103 | s-c-reaktiivinenproteiini,herkkä | mg/l | 96% | name+unit+values | 813 | 0 | [0.39, 0.59, 0.83, 1.22, 1.67, 2.46, 3.62, 5.63, 9.01] |  | Serum |  | C-reactive protein.high sensitivity [Mass/volume] in Serum |
-| 104 | s-c-reaktiivinenproteiini,herkkä |  | 4% | name | 34 | 100 |  |  | Serum |  | C-reactive protein.high sensitivity [Mass/volume] in Serum |
-| 105 | s-c-reaktiivinenproteiini,pika | mg/l | 28% | name+unit+values | 77 | 0 | [8, 10, 12.4, 14.7, 17, 20.05, 27.4, 35, 48] |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
-| 106 | s-c-reaktiivinenproteiini,pika |  | 72% | name | 199 | 75.88 |  |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
-| 107 | s-c-reaktiivinenproteiini/ | mg/l | 97% | name+unit+values | 191 | 0 | [0.31, 0.5, 0.7, 0.96, 1.46, 2.27, 3.04, 4.65, 10.16] |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
-| 108 | s-c-reaktiivinenproteiini/ |  | 3% | name | 5 | 100 |  |  | Serum |  | C-reactive protein [Mass/volume] in Serum |
+| 22 | b-c-reaktiivinenproteiini | mg/l | 10% | name+unit | 29 | 0 |  |  | Blood |  | C reactive protein [Mass/volume] in Blood |
+| 23 | b-c-reaktiivinenproteiini |  | 90% | name+values | 262 | 100 | [6, 7.54, 10.61, 13.7, 19, 27.87, 38.55, 55.7, 83.8] |  | Blood |  | C reactive protein [Mass/volume] in Blood |
+| 24 | b-c-reaktiivinenproteiinipika |  | 100% | name+values | 300 | 100 | [7, 9.98, 14.87, 19.86, 29.44, 37.29, 52.65, 75.47, 99.97] |  | Blood |  | C reactive protein [Mass/volume] in Blood |
+| 25 | b-c-resktiivinenproteiini | mg/l | 60% | name+unit+values | 1201 | 0 | [6.01, 8.05, 11.19, 14.61, 19.57, 26.51, 38.87, 58.3, 92.06] |  | Blood |  | C reactive protein [Mass/volume] in Blood |
+| 26 | b-c-resktiivinenproteiini |  | 40% | name | 802 | 100 |  |  | Blood |  | C reactive protein [Mass/volume] in Blood |
+| 27 | c-reaktiivinenproteiini | 1 | 6% | name+unit+values | 925 | 0 | [6.19, 8.92, 12.22, 16.99, 23.6, 35.02, 49.28, 74.96, 108.63] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 28 | c-reaktiivinenproteiini | mg/l | 50% | name+unit+values | 7963 | 0 | [4.01, 6.23, 9.46, 14.44, 23.17, 35.24, 51.91, 78.65, 126.37] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 29 | c-reaktiivinenproteiini |  | 44% | name+values | 7083 | 100 | [6.33, 8.51, 11.39, 16.56, 23.29, 36.71, 52.04, 72.28, 105.61] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 30 | c-reaktiivinenproteiini(4594p-crp) | mg/l | 66% | name+unit+values | 143 | 0 | [1, 1.79, 2, 2, 3, 4, 5, 6.63, 12.8] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 31 | c-reaktiivinenproteiini(4594p-crp) |  | 34% | name | 74 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 32 | c-reaktiivinenproteiini(crp) | mg/l | 60% | name+unit+values | 381 | 0 | [1.23, 1.51, 1.92, 2.62, 3.39, 4.73, 6.27, 9.96, 21.14] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 33 | c-reaktiivinenproteiini(crp) |  | 40% | name | 250 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 34 | c-reaktiivinenproteiini(p-crp) | mg/l | 66% | name+unit+values | 500 | 0 | [1, 1.99, 2, 2.87, 3.17, 4.22, 5.93, 9.01, 19.57] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 35 | c-reaktiivinenproteiini(p-crp) |  | 34% | name | 261 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 36 | c-reaktiivinenproteiini,herkkä | mg/l | 93% | name+unit+values | 254 | 0 | [0.22, 0.41, 0.59, 0.85, 1.15, 1.65, 2.41, 3.84, 6.24] |  |  |  | C reactive protein.high sensitivity [Mass/volume] in Serum or Plasma |
+| 37 | c-reaktiivinenproteiini,herkkä |  | 7% | name | 18 | 100 |  |  |  |  | C reactive protein.high sensitivity [Mass/volume] in Serum or Plasma |
+| 38 | c-reaktiivinenproteiini,herkkä,seerumista | mg/l | 100% | name+unit+values | 7396 | 0 | [0.29, 0.41, 0.59, 0.78, 1.03, 1.33, 1.82, 2.72, 4.64] |  |  |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 39 | c-reaktiivinenproteiini,herkkä,seerumista |  | 0% | name | 36 | 100 |  |  |  |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 40 | c-reaktiivinenproteiini,pika | mg/l | 69% | name+unit+values | 111 | 0 | [5, 5, 5.98, 7, 10.56, 13.36, 20.87, 34.17, 56] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 41 | c-reaktiivinenproteiini,pika |  | 31% | name | 49 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 42 | c-reaktiivinenproteiini,pika,tehdäänitse | mg/l | 55% | name+unit+values | 997 | 0 | [5, 5, 6.03, 8.02, 10.68, 14.69, 20.77, 34.42, 52.97] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 43 | c-reaktiivinenproteiini,pika,tehdäänitse |  | 45% | name | 820 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 44 | c-reaktiivinenproteiini,pikatesti,veri | mg/l | 10% | name+unit+values | 174 | 0.57 | [6, 7, 8.95, 10.84, 16.77, 22.29, 34.85, 53.05, 98.17] |  |  |  | C reactive protein [Mass/volume] in Blood |
+| 45 | c-reaktiivinenproteiini,pikatesti,veri |  | 90% | name+values | 1656 | 100 | [6.44, 9.56, 13.03, 19.18, 27.25, 38.9, 52.68, 73.38, 109.24] |  |  |  | C reactive protein [Mass/volume] in Blood |
+| 46 | c-reaktiivinenproteiini,pikatesti,veri(23318b-crp-pt) | mg/l | 77% | name+unit+values | 803 | 0.12 | [5, 5.19, 7.23, 9.16, 13.46, 18.82, 28.89, 45.49, 75.91] |  |  |  | C reactive protein [Mass/volume] in Blood |
+| 47 | c-reaktiivinenproteiini,pikatesti,veri(23318b-crp-pt) |  | 23% | name | 240 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Blood |
+| 48 | c-reaktiivinenproteiini,pikatutkimus | mg/l | 62% | name+unit+values | 106 | 0 | [6.73, 11.2, 15.4, 21.77, 30.17, 39.25, 56.9, 88.7, 114] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 49 | c-reaktiivinenproteiini,pikatutkimus |  | 38% | name | 66 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 50 | c-reaktiivinenproteiini,plasmasta,vieritesti | mg/l | 72% | name+unit+values | 699 | 0.14 | [5.15, 7.88, 10.79, 16.55, 23.64, 33.15, 47.97, 64.96, 99.24] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 51 | c-reaktiivinenproteiini,plasmasta,vieritesti |  | 28% | name | 274 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 52 | c-reaktiivinenproteiini,tk:ntekemä |  | 100% | name+values | 1605 | 100 | [1.8, 3.13, 5.04, 8.21, 13.7, 22.58, 37.06, 58.66, 92.43] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 53 | c-reaktiivinenproteiini,vieritesti | mg/l | 5% | name+unit | 47 | 0 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 54 | c-reaktiivinenproteiini,vieritesti |  | 95% | name+values | 944 | 100 | [2.05, 4.95, 6.52, 8.89, 12.48, 17.85, 26.38, 44.03, 78.27] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 55 | c-reaktiivinenproteiini,vieritutkimus | mg/l | 45% | name+unit+values | 525 | 0 | [5, 5.95, 7.87, 11.68, 14.87, 20.65, 33.27, 55.7, 86.43] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 56 | c-reaktiivinenproteiini,vieritutkimus |  | 55% | name+values | 631 | 100 | [6, 8.93, 14.57, 21.5, 32.56, 47.6, 62.23, 77.19, 111.75] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 57 | c-reaktiivinenproteiini,vieritutkimus,plasmasta | mg/l | 79% | name+unit+values | 1205 | 0 | [3.19, 6, 9.37, 13.37, 19.15, 28.37, 40.64, 61.88, 94.42] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 58 | c-reaktiivinenproteiini,vieritutkimus,plasmasta |  | 21% | name | 318 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 59 | c-reaktiivinenproteiini,vieritutkimusnordlab | mg/l | 48% | name+unit+values | 92 | 1.09 | [5, 6, 7.65, 9.6, 12.5, 16.2, 20.27, 33, 47] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 60 | c-reaktiivinenproteiini,vieritutkimusnordlab |  | 52% | name | 99 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 61 | c-reaktiivinenproteiini-pika(4594crp-pika) | mg/l | 74% | name+unit+values | 136 | 0 | [5, 5.3, 7, 8.84, 11.17, 14.59, 18.57, 33.71, 47.7] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 62 | c-reaktiivinenproteiini-pika(4594crp-pika) |  | 26% | name | 47 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 63 | c-reaktiivinenproteiini-pika(crp-pika) | mg/l | 75% | name+unit+values | 1488 | 0 | [5, 6.95, 7, 7.23, 10.11, 14.48, 21.2, 31.68, 54.63] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 64 | c-reaktiivinenproteiini-pika(crp-pika) |  | 25% | name | 505 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 65 | cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä | mg/l | 79% | name+unit+values | 1826 | 0 | [1.75, 3.04, 5.71, 9.59, 14.3, 22.86, 34.7, 57.86, 90.35] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 66 | cp-c-reaktiivinenproteiini,ihopiston,hoitoyksikössä |  | 21% | name+values | 497 | 100 | [1.2, 1.55, 2.24, 2.89, 3.98, 4.84, 6.22, 7.61, 9.1] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 67 | fs-c-reaktiivinenproteiini | mg/l | 57% | name+unit | 241 | 0 |  |  | Fasting serum |  | C reactive protein [Mass/volume] in Serum |
+| 68 | fs-c-reaktiivinenproteiini |  | 43% | name | 184 | 100 |  |  | Fasting serum |  | C reactive protein [Mass/volume] in Serum |
+| 69 | p-c-reaktiininenproteiini,vieritutkimus | mg/l | 54% | name+unit+values | 258 | 0 | [5.88, 8.84, 11.18, 17.01, 24.5, 35.24, 49.69, 68.51, 95.63] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 70 | p-c-reaktiininenproteiini,vieritutkimus |  | 46% | name | 224 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 71 | p-c-reaktiivinenproteiini | mg/l | 62% | name+unit+values | 41046 | 0 | [4.28, 7.21, 11.69, 18.14, 27.46, 40.14, 58.51, 87.59, 141.7] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 72 | p-c-reaktiivinenproteiini |  | 38% | name | 24714 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 73 | p-c-reaktiivinenproteiini(kval) | mg/l | 57% | name+unit+values | 187 | 0 | [6, 8.84, 13.56, 19.94, 26.88, 35.76, 52.92, 75.64, 104.4] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 74 | p-c-reaktiivinenproteiini(kval) |  | 43% | name | 142 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 75 | p-c-reaktiivinenproteiini(kval)␤ | mg/l | 46% | name+unit+values | 111 | 0 | [7, 10.23, 13.96, 17.18, 22.2, 27.49, 39.84, 58.9, 98.58] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 76 | p-c-reaktiivinenproteiini(kval)␤ |  | 54% | name | 130 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 77 | p-c-reaktiivinenproteiini(pikanäyte) | mg/l | 2% | name+unit | 6 | 0 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 78 | p-c-reaktiivinenproteiini(pikanäyte) |  | 98% | name+values | 352 | 100 | [1.49, 2.47, 4.27, 6.66, 10.25, 18.19, 28.15, 53.49, 81.26] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 79 | p-c-reaktiivinenproteiini,crp | mg/l | 93% | name+unit | 110 | 0 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 80 | p-c-reaktiivinenproteiini,crp |  | 7% | name | 8 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 81 | p-c-reaktiivinenproteiini,hoitoyksikkö | 1 | 14% | name+unit | 40 | 0 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 82 | p-c-reaktiivinenproteiini,hoitoyksikkö | mg/l | 29% | name+unit+values | 81 | 0 | [8, 10.55, 12, 15, 19.38, 26, 38.8, 61.6, 84] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 83 | p-c-reaktiivinenproteiini,hoitoyksikkö |  | 56% | name | 156 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 84 | p-c-reaktiivinenproteiini,pikatesti | mg/l | 6% | name+unit+values | 190 | 0 | [6, 7.07, 9, 13.46, 17.54, 24.16, 32.08, 50.25, 89.17] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 85 | p-c-reaktiivinenproteiini,pikatesti |  | 94% | name+values | 3095 | 100 | [6.4, 8.81, 12.02, 15.75, 21.21, 29.04, 42.26, 63.42, 97.39] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 86 | p-c-reaktiivinenproteiini,vieritutkimus | mg/l | 30% | name+unit | 53 | 0 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 87 | p-c-reaktiivinenproteiini,vieritutkimus |  | 70% | name | 122 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 88 | p-c-reaktiivinenproteiini,vieritutkimus,plasmasta | mg/l | 63% | name+unit+values | 202 | 0 | [4.07, 6.94, 10.45, 16.41, 21.83, 29.61, 49.9, 68.72, 99.83] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 89 | p-c-reaktiivinenproteiini,vieritutkimus,plasmasta |  | 37% | name | 120 | 100 |  |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 90 | p-c-reaktiivinenproteiini.pika |  | 100% | name+values | 316 | 100 | [2, 5.1, 8.74, 12.93, 19.35, 31.57, 53.66, 84.04, 111.82] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 91 | p-c-reaktiivinenproteiinipikahoitoyksiköt | mg/l | 71% | name+unit+values | 4601 | 0 | [5.18, 8.04, 12.05, 17.39, 25.78, 37.53, 54.69, 78.04, 114.03] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 92 | p-c-reaktiivinenproteiinipikahoitoyksiköt |  | 29% | name+values | 1925 | 100 | [1.19, 1.37, 1.77, 2.35, 2.97, 4.11, 5.47, 6.48, 8.22] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 93 | p-c-reaktiivinenproteiinipikamittari |  | 100% | name+values | 399 | 100 | [7, 9, 13, 21.24, 29.31, 41.92, 59.31, 82.22, 121.8] |  | Plasma |  | C reactive protein [Mass/volume] in Plasma |
+| 94 | pikatesti,c-reaktiivinenproteiini | mg/l | 45% | name+unit+values | 315 | 0 | [6, 7.89, 10.58, 14.45, 20.43, 30.94, 44.31, 61.05, 91] |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 95 | pikatesti,c-reaktiivinenproteiini |  | 55% | name | 386 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Serum or Plasma |
+| 96 | plasmanc-reaktiivinenproteiiniosoitus | 1 | 1% | name+unit | 36 | 0 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 97 | plasmanc-reaktiivinenproteiiniosoitus | mg/l | 55% | name+unit+values | 3255 | 0 | [6.38, 8.92, 12.54, 17.7, 25.56, 35.77, 50.77, 70.37, 106.61] |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 98 | plasmanc-reaktiivinenproteiiniosoitus |  | 44% | name | 2589 | 100 |  |  |  |  | C reactive protein [Mass/volume] in Plasma |
+| 99 | s-c-reaktiivinenproteiini | mg/l | 86% | name+unit+values | 773 | 0 | [0.4, 0.73, 1.09, 1.42, 1.93, 2.88, 4.68, 7.14, 16.59] |  | Serum |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 100 | s-c-reaktiivinenproteiini |  | 14% | name | 121 | 100 |  |  | Serum |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 101 | s-c-reaktiivinenproteiini,herkkä | mg/l | 96% | name+unit+values | 813 | 0 | [0.39, 0.59, 0.81, 1.22, 1.68, 2.46, 3.64, 5.7, 8.99] |  | Serum |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 102 | s-c-reaktiivinenproteiini,herkkä |  | 4% | name | 34 | 100 |  |  | Serum |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
+| 103 | s-c-reaktiivinenproteiini,pika | mg/l | 28% | name+unit+values | 77 | 0 | [8, 10, 12.53, 14.7, 17, 20, 27.67, 35, 48] |  | Serum |  | C reactive protein [Mass/volume] in Serum |
+| 104 | s-c-reaktiivinenproteiini,pika |  | 72% | name | 199 | 100 |  |  | Serum |  | C reactive protein [Mass/volume] in Serum |
+| 105 | s-c-reaktiivinenproteiini/ | mg/l | 100% | name+unit+values | 191 | 0 | [0.31, 0.5, 0.71, 0.96, 1.48, 2.27, 3.05, 4.68, 10.07] |  | Serum |  | C reactive protein.high sensitivity [Mass/volume] in Serum |
 

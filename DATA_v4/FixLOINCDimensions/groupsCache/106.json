@@ -1,509 +1,677 @@
 {
   "rows": [
     {
-      "row_id": 1397,
-      "omop_concept_id": "3020896",
-      "omop_concept_name": "Bacterial susceptibility panel",
-      "reasoning": "Bacteria bcs bakt ; susceptibility panel bcs -he suffix means antibiotic sensitivity ; in Isolate bcs susceptibility testing is performed on an isolate",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1398,
-      "omop_concept_id": "3031246",
-      "omop_concept_name": "Bacteria identified in Isolate",
-      "reasoning": "Bacteria identified bcs -bakt-lm suffix means species identification ; in Isolate bcs identification is performed on a cultured isolate",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1399,
-      "omop_concept_id": "3002619",
-      "omop_concept_name": "Bacteria identified in Specimen by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Specimen bcs no specimen is specified in the code ; by Culture bcs -vi suffix and LongName 'viljely'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1400,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The code -baktvr means 'Bacteria, staining' for an unspecified specimen. The candidate list does not contain a generic concept for 'Bacteria identified in Specimen by Stain' or '...by Microscopy'.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1401,
-      "omop_concept_id": "3043614",
-      "omop_concept_name": "Bacteria identified in Aspirate by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Aspirate bcs af- prefix means Aspiration fluid ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1402,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The code as-baktvr means 'Bacteria, staining' in Ascitic fluid (Peritoneal fluid). The candidate list lacks a concept for bacterial stain/microscopy in this specimen.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1403,
-      "omop_concept_id": "3023368",
-      "omop_concept_name": "Bacteria identified in Blood by Culture",
-      "reasoning": "Bacteria identified bcs -bakt- ; in Blood bcs B- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1404,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Code not mapped. The code `b-baktjvi` and LongName `jatkoviljely` refer to a 'subculture', which is an intermediary laboratory process, not a final reportable result. No LOINC concept for subculture exists.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1405,
-      "omop_concept_id": "3023368",
-      "omop_concept_name": "Bacteria identified in Blood by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Blood bcs B- prefix ; by Culture bcs -svi is interpreted as a typo for -vi (culture)",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1406,
-      "omop_concept_id": "3023368",
-      "omop_concept_name": "Bacteria identified in Blood by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Blood bcs B- prefix ; by Culture bcs -vi suffix and LongName 'viljely'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1407,
-      "omop_concept_id": "3023368",
-      "omop_concept_name": "Bacteria identified in Blood by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Blood bcs B- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1408,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Code not mapped. The suffix `-vij` is interpreted as `-vi` (culture) + `j` for `jatko` (subculture). This refers to an intermediary laboratory process, not a final reportable result.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1409,
-      "omop_concept_id": "3027247",
-      "omop_concept_name": "Bacteria identified in Specimen",
-      "reasoning": "Bacteria identified bcs TEST_NAME is 'bakteerit' (bacteria) ; in Specimen bcs no specimen or method is specified in the code",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1410,
-      "omop_concept_id": "3031246",
-      "omop_concept_name": "Bacteria identified in Isolate",
-      "reasoning": "Bacteria identified bcs baktlm where 'lm' stands for 'lajimääritys' (species identification) ; in Isolate bcs identification is performed on a cultured isolate",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1411,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The code `baktvr` means 'Bacteria, staining' for an unspecified specimen. The candidate list does not contain a generic concept for 'Bacteria identified in Specimen by Stain' or '...by Microscopy'.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1412,
-      "omop_concept_id": "1092251",
-      "omop_concept_name": "Bacteria identified in Bronchoalveolar lavage by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Bronchoalveolar lavage bcs bl- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1413,
-      "omop_concept_id": "46234834",
-      "omop_concept_name": "Bacteria identified in Bone by Anaerobe+Aerobe culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Bone bcs bo- prefix ; by Anaerobe+Aerobe culture bcs -vi suffix, and this combined culture is the most appropriate general culture for a bone specimen among the candidates",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1414,
-      "omop_concept_id": "3009986",
-      "omop_concept_name": "Bacteria identified in Catheter tip by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Catheter tip bcs Ca- prefix and LongName 'suonikanyylista' ; by Culture bcs -vi suffix and LongName 'viljely'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1415,
-      "omop_concept_id": "3016727",
-      "omop_concept_name": "Bacteria identified in Body fluid by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Body fluid bcs d- prefix implies 'Drainage fluid', for which 'Body fluid' is a good generalization ; by Culture bcs -vi suffix",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1416,
-      "omop_concept_id": "3023419",
-      "omop_concept_name": "Bacteria identified in Sputum by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Sputum bcs Ex- prefix (Expectorate) ; by Culture bcs -vi suffix and LongName 'viljely'",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1417,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The code ex-baktvr means 'Bacteria, staining' in Sputum. The candidate list lacks a concept for bacterial stain/microscopy in sputum.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1418,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "Code not mapped. The suffix `-jvi` refers to a 'subculture' (`jatkoviljely`), which is an intermediary laboratory process, not a final reportable result.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1419,
-      "omop_concept_id": "42529411",
-      "omop_concept_name": "Gastrointestinal pathogens panel - Stool by Culture",
-      "reasoning": "Gastrointestinal pathogens panel bcs LongName specifies a panel culture for Salmonella, Shigella, Yersinia, Campylobacter ; in Stool bcs F- prefix (Feces) ; by Culture bcs -vi suffix",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1420,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The LongName specifies a panel for 'Clostridium difficile, Staphylococcus aureus, candida'. This specific combination is not represented in the candidate list, and mapping to a generic stool culture or a broader pathogen panel would be inaccurate.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1421,
-      "omop_concept_id": "42529411",
-      "omop_concept_name": "Gastrointestinal pathogens panel - Stool by Culture",
-      "reasoning": "Gastrointestinal pathogens panel bcs LongName specifies an extended enteric panel culture ; in Stool bcs F- prefix (Feces) ; by Culture bcs -vi suffix. This is the best available panel concept.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1422,
-      "omop_concept_id": "3025941",
-      "omop_concept_name": "Bacteria identified in Stool by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Stool bcs F- prefix (Feces) ; by Culture bcs -vi suffix. The `-p` is uninterpreted but does not contradict the mapping.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1423,
-      "omop_concept_id": "1092116",
-      "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bacteria DNA [Presence] bcs -baktna suffix indicates bacteria nucleic acid test ; in Specimen bcs no specific vaginal fluid candidate exists, so a generic specimen is the only option ; by NAA with probe detection bcs -na suffix",
+      "row_id": 1635,
+      "omop_concept_id": "3036736",
+      "omop_concept_name": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Specimen by NAA with probe detection",
+      "reasoning": "Chlamydia trachomatis+Neisseria gonorrhoeae bcs 'ctgc' in TEST_NAME ; [Presence] bcs this is a detection test ; in Specimen bcs no specimen is specified in the code ; by NAA with probe detection bcs this is the standard method for this test, although not explicitly stated.",
       "certainty": "low"
     },
     {
-      "row_id": 1424,
-      "omop_concept_id": "3000855",
-      "omop_concept_name": "Microscopic observation [Identifier] in Vaginal fluid by Gram stain",
-      "reasoning": "Microscopic observation [Identifier] bcs this is the appropriate component for a Gram stain result ; in Vaginal fluid bcs Fl- prefix means Vaginal discharge ; by Gram stain bcs -baktvr (bacteria, stain) in this context refers to a Gram stain",
+      "row_id": 1636,
+      "omop_concept_id": "3010190",
+      "omop_concept_name": "Viscosity of Body fluid",
+      "reasoning": "Viscosity bcs TEST_NAME is 'viskos' (viscosity) ; in Body fluid bcs no specific specimen is mentioned in the test code.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1637,
+      "omop_concept_id": "3026470",
+      "omop_concept_name": "Cobalt [Mass/volume] in Blood",
+      "reasoning": "Cobalt bcs TEST_NAME contains 'koboltti' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1425,
-      "omop_concept_id": "3016914",
-      "omop_concept_name": "Bacteria identified in Cerebral spinal fluid by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Cerebral spinal fluid bcs Li- prefix ; by Culture bcs -vi suffix and LongName 'viljely'",
+      "row_id": 1638,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains 'lakteh' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1426,
-      "omop_concept_id": "3001886",
-      "omop_concept_name": "Microscopic observation [Identifier] in Cerebral spinal fluid by Gram stain",
-      "reasoning": "Microscopic observation [Identifier] bcs this is the component for a Gram stain result ; in Cerebral spinal fluid bcs Li- prefix ; by Gram stain bcs -baktvr (bacteria, stain) in this context is a Gram stain",
+      "row_id": 1639,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains 'lakte' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1427,
-      "omop_concept_id": "40763091",
-      "omop_concept_name": "Bacteria identified in Peritoneal dialysis fluid by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Peritoneal dialysis fluid bcs Pd- prefix and LongName ; by Culture bcs -vi suffix and LongName 'viljely'",
+      "row_id": 1640,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains 'lakte' ; [Moles/volume] bcs value_deciles are consistent with mmol/l units ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1428,
-      "omop_concept_id": "3005384",
-      "omop_concept_name": "Microscopic observation [Identifier] in Pleural fluid by Gram stain",
-      "reasoning": "Microscopic observation [Identifier] bcs this is the component for a Gram stain result ; in Pleural fluid bcs pf- prefix ; by Gram stain bcs -baktvr (bacteria, stain) in this context is a Gram stain",
+      "row_id": 1641,
+      "omop_concept_id": "3047181",
+      "omop_concept_name": "Lactate [Moles/volume] in Blood",
+      "reasoning": "Lactate bcs TEST_NAME contains 'laktteh' (a typo for lactate) ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1429,
+      "row_id": 1642,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The code `pp-baktnh` with LongName specifies a quantitative bacterial DNA test from a periodontal pocket (gingival crevicular fluid). No such concept exists in the candidate list.",
+      "reasoning": "The test is for Lactate in Blood, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined from the available candidates.",
       "certainty": ""
     },
     {
-      "row_id": 1430,
-      "omop_concept_id": "3012475",
-      "omop_concept_name": "Bacteria identified in Throat by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Throat bcs Ps- prefix means Pharyngeal secretion ; by Culture bcs -vi suffix and LongName 'viljely'",
+      "row_id": 1643,
+      "omop_concept_id": "1092084",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Blood",
+      "reasoning": "Beta hydroxybutyrate bcs TEST_NAME is 'b-ohbutm' which is standard for OH-butyrate, and beta is the common isomer ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1431,
-      "omop_concept_id": "1469525",
-      "omop_concept_name": "Bacteria identified in Pus by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Pus bcs Pu- prefix ; by Culture bcs -vi1 suffix and LongName 'viljely'. The LongName specifies anaerobe+aerobe culture, for which the generic 'Culture' is the best available fit.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1432,
-      "omop_concept_id": "3013867",
-      "omop_concept_name": "Bacteria identified in Specimen by Aerobe culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Specimen bcs Pu- (Pus) is a type of specimen ; by Aerobe culture bcs LongName explicitly states 'aerobiviljely'. There is no candidate for 'Pus by Aerobe culture', so the more general 'Specimen' is used.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1433,
-      "omop_concept_id": "3002389",
-      "omop_concept_name": "Microscopic observation [Identifier] in Synovial fluid by Gram stain",
-      "reasoning": "Microscopic observation [Identifier] bcs this is the component for a Gram stain result ; in Synovial fluid bcs sy- prefix ; by Gram stain bcs -baktvr (bacteria, stain) in this context is a Gram stain",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1434,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bact ; [#/volume] bcs the deciles show a quantitative distribution typical for automated counts ; in Urine bcs U- prefix ; by Automated count bcs this is the method for such values",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1435,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs unit is e6/l and deciles are quantitative ; in Urine bcs U- prefix ; by Automated count bcs this is the method for such values",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1436,
-      "omop_concept_id": "3004562",
-      "omop_concept_name": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "reasoning": "Bacteria [Presence] bcs unit 'estimate' implies a qualitative/semi-quantitative finding ; in Urine sediment bcs this is the specimen for urine microscopy ; by Light microscopy bcs this is the method for visual estimation",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1437,
-      "omop_concept_id": "1092248",
-      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy",
-      "reasoning": "Bacteria bcs u-bakt ; [#/area] bcs unit is 'u/field' (units per field) ; in Urine sediment bcs this is the specimen for urine microscopy ; by Microscopy bcs this is the method",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1438,
-      "omop_concept_id": "3004562",
-      "omop_concept_name": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "reasoning": "Bacteria [Presence] bcs deciles are all 0, indicating a presence/absence test or many negative results ; in Urine sediment bcs this is the specimen for microscopy ; by Light microscopy bcs this is the common method for such a screening test",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1439,
-      "omop_concept_id": "1761482",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs the deciles show colony counts (e.g., 10000, 1e5) ; in Urine bcs U- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1440,
-      "omop_concept_id": "3025255",
-      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Bacteria bcs u-bakt. ; [#/area] bcs unit '/sunf' means per high-power field ('suurnäkökenttä') ; in Urine sediment bcs this is the specimen for microscopy ; by Microscopy high power field bcs of unit",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1441,
-      "omop_concept_id": "3025255",
-      "omop_concept_name": "Bacteria [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Bacteria bcs u-bakt. ; [#/area] bcs unit '/sunfält' is a typo for '/sunf' (per high-power field) ; in Urine sediment bcs this is the specimen for microscopy ; by Microscopy high power field bcs of unit",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1442,
-      "omop_concept_id": "3004562",
-      "omop_concept_name": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "reasoning": "Bacteria [Presence] bcs this is a simple 'u-bakt' code without values, implying a qualitative assessment ; in Urine sediment bcs this is the specimen for microscopy ; by Light microscopy bcs this is the presumed method for a basic urine bacteria check",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1443,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs -Bakteeri ; in Urine bcs U- prefix ; by Culture bcs LongName 'aluslasiviljely' (slide culture) is a type of culture. The generic culture concept is the best available match.",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1444,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs the deciles show a quantitative distribution typical for automated counts ; in Urine bcs U- prefix ; by Automated count bcs this is the method for such values. The suffix '-b' is uninterpreted.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1445,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs unit is e6/l and deciles are quantitative ; in Urine bcs U- prefix ; by Automated count bcs this is the method for such values. The suffix '-bv' is uninterpreted.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1446,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs this code is consistently used for quantitative automated counts (see row 1445) ; in Urine bcs U- prefix ; by Automated count bcs this is the inferred method for this code",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1447,
-      "omop_concept_id": "36304419",
-      "omop_concept_name": "Bacteria [Presence] in Urine",
-      "reasoning": "Bacteria [Presence] bcs the name 'u-bakteeri' is a simple statement of bacteria presence ; in Urine bcs U- prefix ; method is not specified",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1448,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakteerit ; [#/volume] bcs unit is e6/l and deciles are quantitative ; in Urine bcs U- prefix ; by Automated count bcs this is the method for such values",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1449,
-      "omop_concept_id": "3031040",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Automated count",
-      "reasoning": "Bacteria bcs u-bakteerit ; [#/volume] bcs this code is consistently used for quantitative automated counts (see row 1448) ; in Urine bcs U- prefix ; by Automated count bcs this is the inferred method for this code",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1450,
+      "row_id": 1644,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The LongName `erikoisviljely` means 'special culture', which corresponds to an Organism specific culture. There is no candidate for 'Bacteria identified in Urine by Organism specific culture'.",
+      "reasoning": "The test is for Beta hydroxybutyrate in Blood, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined, and a mass-based concept exists for Serum/Plasma.",
       "certainty": ""
     },
     {
-      "row_id": 1451,
+      "row_id": 1645,
+      "omop_concept_id": "1092084",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Blood",
+      "reasoning": "Beta hydroxybutyrate bcs TEST_NAME is 'b-ohbutvt' which is standard for OH-butyrate, and beta is the common isomer ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1646,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "Code not mapped. The suffix `-jvi` and LongName `jatkoviljely` refer to a 'subculture', which is an intermediary laboratory process, not a final reportable result.",
+      "reasoning": "The test is for Beta hydroxybutyrate in Blood, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined, and a mass-based concept exists for Serum/Plasma.",
       "certainty": ""
     },
     {
-      "row_id": 1452,
+      "row_id": 1647,
+      "omop_concept_id": "1092084",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Blood",
+      "reasoning": "Beta hydroxybutyrate bcs LongName is 'B -Beeta-hydroksibutyraatti' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Blood bcs TEST_NAME has prefix 'b-' and LongName starts with 'B -'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1648,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "Code not mapped. The suffix `-jvi` refers to a 'subculture' (`jatkoviljely`), which is an intermediary laboratory process, not a final reportable result.",
+      "reasoning": "The test is for Beta hydroxybutyrate in Blood, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined, and a mass-based concept exists for Serum/Plasma.",
       "certainty": ""
     },
     {
-      "row_id": 1453,
-      "omop_concept_id": "36304419",
-      "omop_concept_name": "Bacteria [Presence] in Urine",
-      "reasoning": "Bacteria [Presence] bcs this is a simple 'u-bakt' code without values, implying a qualitative assessment ; in Urine bcs U- prefix ; method is not specified (-la is unknown)",
+      "row_id": 1649,
+      "omop_concept_id": "3004592",
+      "omop_concept_name": "Major crossmatch [Interpretation]",
+      "reasoning": "Major crossmatch bcs TEST_NAME 'b-sop.koe' means blood crossmatch test ('sopivuuskoe') ; [Interpretation] bcs the result of a crossmatch is compatibility.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1650,
+      "omop_concept_id": "3004592",
+      "omop_concept_name": "Major crossmatch [Interpretation]",
+      "reasoning": "Major crossmatch bcs TEST_NAME 'b-sopkoe' means blood crossmatch test ('sopivuuskoe') ; [Interpretation] bcs the result of a crossmatch is compatibility.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1651,
+      "omop_concept_id": "3003985",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Beta hydroxybutyrate bcs TEST_NAME contains 'ohbut', standard for OH-butyrate ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs the prefix 'cp-' likely means capillary plasma, which maps to Serum or Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1652,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'f-projekti' indicates a 'project' in feces ('f-'). This is an administrative or grouping code, not a specific laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1653,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `hpvpapctgc` is too ambiguous. 'hpv' is Human Papillomavirus and 'pap' suggests a cervical specimen, but 'ctgc' is uninterpretable, so the specific panel or test cannot be identified.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1654,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `hpvrefctgc` is too ambiguous. 'hpv' is Human Papillomavirus, but 'refctgc' is uninterpretable, so the specific test or panel cannot be identified.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1655,
+      "omop_concept_id": "3035999",
+      "omop_concept_name": "Lactate [Moles/volume] in Cerebral spinal fluid",
+      "reasoning": "Lactate bcs TEST_NAME contains 'laktteh' (a typo for lactate) ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Cerebral spinal fluid bcs TEST_NAME has prefix 'li-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1656,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Lactate in Cerebral spinal fluid, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined from the available candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1657,
+      "omop_concept_id": "3031219",
+      "omop_concept_name": "Potassium [Moles/volume] in Mixed venous blood",
+      "reasoning": "Potassium bcs TEST_NAME contains '-k-' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Mixed venous blood bcs TEST_NAME has prefix 'mb-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1658,
+      "omop_concept_id": "3031219",
+      "omop_concept_name": "Potassium [Moles/volume] in Mixed venous blood",
+      "reasoning": "Potassium bcs TEST_NAME contains '-k-' ; [Moles/volume] bcs potassium is almost exclusively measured in molar units ; in Mixed venous blood bcs TEST_NAME has prefix 'mb-'.",
       "certainty": "medium"
     },
     {
-      "row_id": 1454,
-      "omop_concept_id": "3031246",
-      "omop_concept_name": "Bacteria identified in Isolate",
-      "reasoning": "Bacteria identified bcs -baktlm where 'lm' stands for 'lajimääritys' (species identification) ; in Isolate bcs identification is performed on a cultured isolate. The original specimen (Urine) is context, not part of this specific test.",
+      "row_id": 1659,
+      "omop_concept_id": "3031579",
+      "omop_concept_name": "Sodium [Moles/volume] in Mixed venous blood",
+      "reasoning": "Sodium bcs TEST_NAME contains '-na-' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Mixed venous blood bcs TEST_NAME has prefix 'mb-'.",
       "certainty": "high"
     },
     {
-      "row_id": 1455,
-      "omop_concept_id": "3031246",
-      "omop_concept_name": "Bacteria identified in Isolate",
-      "reasoning": "Bacteria identified bcs -baktnim where 'nim' stands for 'nimeäminen' (naming/identification) ; in Isolate bcs identification is performed on a cultured isolate. The original specimen (Urine) is context.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1456,
-      "omop_concept_id": "3021601",
-      "omop_concept_name": "Nitrite [Presence] in Urine by Test strip",
-      "reasoning": "Nitrite [Presence] bcs `u-bakts` refers to a urine bacteria screening test, which is commonly a nitrite test ; in Urine bcs U- prefix ; by Test strip bcs `-s` can mean `liuska` (strip) and this is the common method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1457,
-      "omop_concept_id": "3021601",
-      "omop_concept_name": "Nitrite [Presence] in Urine by Test strip",
-      "reasoning": "Nitrite [Presence] bcs `u-baktseu` where `-seu` means screening (`seulonta`) refers to a urine bacteria screening test, which is commonly a nitrite test ; in Urine bcs U- prefix ; by Test strip bcs this is the common method for screening.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1458,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Urine bcs U- prefix ; by Culture bcs -vi is present in the otherwise confusing suffix -sjvi. This is interpreted as a qualitative culture.",
-      "certainty": "low"
-    },
-    {
-      "row_id": 1459,
-      "omop_concept_id": "3031246",
-      "omop_concept_name": "Bacteria identified in Isolate",
-      "reasoning": "Bacteria identified bcs -bakttun where 'tun' stands for 'tunnistus' (identification) ; in Isolate bcs identification is performed on a cultured isolate. The original specimen (Urine) is context.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1460,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Urine bcs U- prefix ; by Culture bcs suffix -v is interpreted as a typo for -vi (culture). Since no property is given, qualitative 'Identified' is chosen.",
+      "row_id": 1660,
+      "omop_concept_id": "3031579",
+      "omop_concept_name": "Sodium [Moles/volume] in Mixed venous blood",
+      "reasoning": "Sodium bcs TEST_NAME contains '-na-' ; [Moles/volume] bcs sodium is almost exclusively measured in molar units ; in Mixed venous blood bcs TEST_NAME has prefix 'mb-'.",
       "certainty": "medium"
     },
     {
-      "row_id": 1461,
-      "omop_concept_id": "1761482",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs unit is e6, assumed to mean e6/L or similar volume unit for colony counts ; in Urine bcs U- prefix ; by Culture bcs -vi suffix",
+      "row_id": 1661,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME contains 'glu' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
       "certainty": "high"
     },
     {
-      "row_id": 1462,
-      "omop_concept_id": "1761482",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs unit is e6/l ; in Urine bcs U- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
+      "row_id": 1662,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME contains 'glu' ; [Moles/volume] bcs this is the standard unit for glucose in Finland, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "medium"
     },
     {
-      "row_id": 1463,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs u-bakt ; in Urine bcs U- prefix ; by Culture bcs -vi suffix. The unit 'form' is not quantitative, so the qualitative 'Identified' concept is chosen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1464,
-      "omop_concept_id": "1761482",
-      "omop_concept_name": "Bacteria [#/volume] in Urine by Culture",
-      "reasoning": "Bacteria bcs u-bakt ; [#/volume] bcs the deciles show a wide range of large numbers, typical for colony counts ; in Urine bcs U- prefix ; by Culture bcs -vi suffix",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1465,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Urine bcs U- prefix ; by Culture bcs -vi suffix. No property is given, so qualitative 'Identified' is chosen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1466,
-      "omop_concept_id": "3026008",
-      "omop_concept_name": "Bacteria identified in Urine by Culture",
-      "reasoning": "Bacteria identified bcs -bakt ; in Urine bcs U- prefix ; by Culture bcs -vi suffix. The '/oma' suffix is local annotation. No property is given, so qualitative 'Identified' is chosen.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1467,
+      "row_id": 1663,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "No suitable candidate. The `-vi2` suffix implies a second or special type of culture, similar to `u-baktevi`. The candidate list lacks a concept for 'Organism specific culture' in urine.",
+      "reasoning": "The code 'p-haglund' contains a proper name and does not correspond to a standard laboratory analyte. It is likely a project-specific or locally defined code.",
       "certainty": ""
     },
     {
-      "row_id": 1468,
-      "omop_concept_id": "36304419",
-      "omop_concept_name": "Bacteria [Presence] in Urine",
-      "reasoning": "Bacteria [Presence] bcs the name 'u-bakt' implies a basic bacteria test and no method or property is specified ; in Urine bcs U- prefix ; method is unknown due to unclear 'vtk' suffix",
-      "certainty": "low"
+      "row_id": 1664,
+      "omop_concept_id": "3012336",
+      "omop_concept_name": "Haptoglobin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Haptoglobin bcs TEST_NAME contains 'haptog' ; [Mass/volume] bcs UNIT is 'g/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1665,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Haptoglobin in Plasma, but without a unit or value distribution, the property ([Mass/volume] vs [Moles/volume]) cannot be determined from the available candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1666,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-hbcfdn` likely refers to cell-free DNA in plasma. However, the available candidates are for the highly specific fetal cell-free DNA fraction (NIPT), which is not explicitly stated in the code. No generic cell-free DNA concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1667,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-hbcfdna` likely refers to cell-free DNA in plasma. However, the available candidates are for the highly specific fetal cell-free DNA fraction (NIPT), which is not explicitly stated in the code. No generic cell-free DNA concept is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1668,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'p-hyyerik' refers to a coagulation ('hyytymis') investigation in plasma ('p-'). This is a generic panel order. The candidate concepts are all for specific coagulation panels, and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1669,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'p-hyyerik' refers to a coagulation ('hyytymis') investigation in plasma ('p-'). This is a generic panel order. The candidate concepts are all for specific coagulation panels, and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1670,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'p-hyyttek' refers to coagulation factors ('hyytymistekijät') in plasma ('p-'). This is a generic panel order. The candidate concepts are all for specific coagulation panels, and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1671,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs TEST_NAME contains '-k-' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1672,
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs TEST_NAME contains '-k-' ; [Moles/volume] bcs value_deciles are consistent with mmol/l units ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1673,
+      "omop_concept_id": "3017427",
+      "omop_concept_name": "Lupus anticoagulant neutralization dilute phospholipid [Presence] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant bcs LongName contains 'Lupusantikoagulantti' ; neutralization dilute phospholipid bcs 'varmistus' (confirmation) with aPTT often involves this method ; [Presence] bcs this is a qualitative confirmation test ; in Platelet poor plasma bcs of 'P -' prefix and coagulation test type.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1674,
+      "omop_concept_id": "3017427",
+      "omop_concept_name": "Lupus anticoagulant neutralization dilute phospholipid [Presence] in Platelet poor plasma",
+      "reasoning": "Lupus anticoagulant bcs LongName contains 'Lupusantikoagulantti' ; neutralization dilute phospholipid bcs 'varmistus' (confirmation) with aPTT often involves this method ; [Presence] bcs this is a qualitative confirmation test ; in Platelet poor plasma bcs of 'P -' prefix and coagulation test type.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1675,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The suffix 'va' in `p-laaptva` is ambiguous and does not clearly specify whether this is a screening or confirmation test, or its property (e.g. time, ratio).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1676,
+      "omop_concept_id": "3005491",
+      "omop_concept_name": "Lactate [Moles/volume] in Plasma venous",
+      "reasoning": "Lactate bcs TEST_NAME contains 'lak' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Plasma venous bcs TEST_NAME has prefix 'p-' (Plasma) and 'veka' may imply venous.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1677,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Lactate in Plasma, but without a unit or value distribution, the property ([Moles/volume] vs [Mass/volume]) cannot be determined from the available candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1678,
+      "omop_concept_id": "1616395",
+      "omop_concept_name": "dRVVT/dRVVT.excess phospholipid [Ratio] normalized in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Lupus anticoagulant bcs LongName is 'P -Lupusantikoagulantti, dRVVT, varmistus' ; dRVVT/dRVVT.excess phospholipid [Ratio] normalized bcs this is the result of a dRVVT confirmation test ('varmistus') ; in Platelet poor plasma bcs prefix is 'P-' and this is a coagulation test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1679,
+      "omop_concept_id": "1616395",
+      "omop_concept_name": "dRVVT/dRVVT.excess phospholipid [Ratio] normalized in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Lupus anticoagulant bcs LongName is 'P -Lupusantikoagulantti, dRVVT, varmistus' ; dRVVT/dRVVT.excess phospholipid [Ratio] normalized bcs this is the result of a dRVVT confirmation test ('varmistus') ; in Platelet poor plasma bcs prefix is 'P-' and this is a coagulation test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1680,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The suffix 'va' in `p-larvvva` is ambiguous and does not clearly specify whether this is a screening or confirmation test, or its property (e.g. time, ratio).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1681,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakptt` is for an aPTT-based lupus anticoagulant screen. The candidate list does not contain a suitable concept for the result of this test (e.g., a ratio); it contains panels or confirmation tests, but not the screening result itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1682,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakptt` is for an aPTT-based lupus anticoagulant screen, reported as a ratio. The candidate list does not contain a suitable concept for this reported value; it contains panels or confirmation tests, but not the screening ratio itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1683,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakptt` is for an aPTT-based lupus anticoagulant screen. The candidate list does not contain a suitable concept for the result of this test (e.g., a ratio); it contains panels or confirmation tests, but not the screening result itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1684,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakrvv` is for a dRVVT-based lupus anticoagulant screen. The candidate list does not contain a suitable concept for the result of this test (e.g., a ratio); it contains time-based results, panels or confirmation tests, but not the screening ratio itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1685,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakrvv` is for a dRVVT-based lupus anticoagulant screen, reported as a ratio. The candidate list does not contain a suitable concept for this reported value; it contains time-based results, panels or confirmation tests, but not the screening ratio itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1686,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `p-luakrvv` is for a dRVVT-based lupus anticoagulant screen. The candidate list does not contain a suitable concept for the result of this test (e.g., a ratio); it contains time-based results, panels or confirmation tests, but not the screening ratio itself.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1687,
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs TEST_NAME contains '-na-' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1688,
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs TEST_NAME contains '-na-' ; [Moles/volume] bcs value_deciles are consistent with mmol/l units ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1689,
+      "omop_concept_id": "3003985",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Beta hydroxybutyrate bcs LongName is 'Hydroksivoihappo' (Hydroxybutyric acid), and beta is the common isomer ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1690,
+      "omop_concept_id": "3003985",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Beta hydroxybutyrate bcs LongName is 'Hydroksivoihappo' (Hydroxybutyric acid), and beta is the common isomer ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1691,
+      "omop_concept_id": "3003985",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Beta hydroxybutyrate bcs LongName is 'Beeta-hydroksibutyraatti' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1692,
+      "omop_concept_id": "3003985",
+      "omop_concept_name": "Beta hydroxybutyrate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Beta hydroxybutyrate bcs LongName is 'Beeta-hydroksibutyraatti' ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1693,
+      "omop_concept_id": "3019800",
+      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
+      "reasoning": "Troponin T.cardiac bcs TEST_NAME contains 'tropt' ; [Mass/volume] bcs UNIT is 'ng/l' ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1694,
+      "omop_concept_id": "3019800",
+      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
+      "reasoning": "Troponin T.cardiac bcs TEST_NAME contains 'tropt' ; [Mass/volume] bcs this is the standard property for Troponin T ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1695,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 'p-uraatti' ; [Moles/volume] bcs UNIT is 'umol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1696,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 'p-uraatti' ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 'p-' (Plasma).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1697,
+      "omop_concept_id": "3024316",
+      "omop_concept_name": "Viscosity of Plasma",
+      "reasoning": "Viscosity bcs LongName is 'P -Viskositeetti' ; of Plasma bcs TEST_NAME prefix is 'p-'. The unit 'mpas' is a measure of viscosity.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1698,
+      "omop_concept_id": "3024316",
+      "omop_concept_name": "Viscosity of Plasma",
+      "reasoning": "Viscosity bcs LongName is 'P -Viskositeetti' ; of Plasma bcs TEST_NAME prefix is 'p-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1699,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'p-vuotope' refers to a bleeding ('vuoto') investigation panel. The available candidate concepts are all for specific panels (e.g., Menorrhagia), and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1700,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'p-vuotot' and LongName 'Vuototaipumuksen selvittely' refer to a bleeding tendency investigation panel. The available candidate concepts are all for specific panels (e.g., Menorrhagia), and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1701,
+      "omop_concept_id": "3029143",
+      "omop_concept_name": "Chylomicrons [Presence] in Pleural fluid",
+      "reasoning": "Chylomicrons bcs 'chylus' refers to chyle, which is defined by chylomicrons ; [Presence] bcs this is a qualitative observation ; in Pleural fluid bcs TEST_NAME has prefix 'pf-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1702,
+      "omop_concept_id": "3023383",
+      "omop_concept_name": "Lactate [Moles/volume] in Pleural fluid",
+      "reasoning": "Lactate bcs TEST_NAME contains 'laktteh' (a typo for lactate) ; [Moles/volume] bcs UNIT is 'mmol/l' and values are in the expected range ; in Pleural fluid bcs TEST_NAME has prefix 'pf-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1703,
+      "omop_concept_id": "3023383",
+      "omop_concept_name": "Lactate [Moles/volume] in Pleural fluid",
+      "reasoning": "Lactate bcs TEST_NAME contains 'laktteh' (a typo for lactate) ; [Moles/volume] bcs this is the standard unit for lactate, though not directly evidenced here ; in Pleural fluid bcs TEST_NAME has prefix 'pf-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1704,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code `pf-phglula` represents a panel of pH, Glucose, and Lactate in Pleural Fluid. No such panel concept is present in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1705,
+      "omop_concept_id": "3010421",
+      "omop_concept_name": "pH of Blood",
+      "reasoning": "pH bcs TEST_NAME is 'ph(akt)' ; of Blood bcs no specimen is specified and 'pH of Blood' is the most common physiological pH measurement, supported by the value deciles.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1706,
+      "omop_concept_id": "3010421",
+      "omop_concept_name": "pH of Blood",
+      "reasoning": "pH bcs TEST_NAME is 'ph(akt)' ; of Blood bcs no specimen is specified and 'pH of Blood' is the most common physiological pH measurement.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1707,
+      "omop_concept_id": "3010421",
+      "omop_concept_name": "pH of Blood",
+      "reasoning": "pH bcs TEST_NAME is 'phakt.' ; of Blood bcs no specimen is specified and 'pH of Blood' is the most common physiological pH measurement, supported by the value deciles.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1708,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'projekti1' means 'project 1'. This is an administrative or grouping code, not a specific laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1709,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `pt-dehglur` is ambiguous. 'deh' is likely DHEA but 'glur' is unclear (could be typo for sulfate). Without a clear component and no unit/values to determine property ([Moles/volume] vs [Mass/volume]), it cannot be mapped.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1710,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'pt-hyytek' refers to a whole-patient ('pt-') coagulation factor ('hyytek') investigation. This is a generic panel order. The candidate concepts are all for specific coagulation panels, and it is not possible to determine which one is correct.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1711,
+      "omop_concept_id": "3023530",
+      "omop_concept_name": "17-Hydroxyprogesterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "17-Hydroxyprogesterone bcs LongName is 'S -Hydroksiprogesteroni (17-)' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1712,
+      "omop_concept_id": "3023530",
+      "omop_concept_name": "17-Hydroxyprogesterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "17-Hydroxyprogesterone bcs LongName is 'S -Hydroksiprogesteroni (17-)' ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1713,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 's-haglund' contains a proper name and does not correspond to a standard laboratory analyte. It is likely a project-specific or locally defined code.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1714,
+      "omop_concept_id": "3012336",
+      "omop_concept_name": "Haptoglobin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Haptoglobin bcs LongName is 'S -Haptoglobiini' ; [Mass/volume] bcs UNIT is 'g/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1715,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for Haptoglobin in Serum, but without a unit or value distribution, the property ([Mass/volume] vs [Moles/volume]) cannot be determined from the available candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1716,
+      "omop_concept_id": "3035456",
+      "omop_concept_name": "Hepatitis A virus Ab [Presence] in Serum by Immunoassay",
+      "reasoning": "Hepatitis A virus Ab bcs TEST_NAME is 's-havtot' (total antibodies) ; [Presence] bcs this is a qualitative screening test ; in Serum bcs TEST_NAME prefix is 's-' ; by Immunoassay bcs this is the standard method and the top-2000 concept includes it.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1717,
+      "omop_concept_id": "46237023",
+      "omop_concept_name": "Hepatitis B virus core and surface Ab and surface Ag panel - Serum",
+      "reasoning": "Hepatitis B virus ... panel bcs TEST_NAME is 's-hbvtut', a standard abbreviation for an HBV investigation panel ; core and surface Ab and surface Ag panel bcs this is a common composition for a general HBV screening panel ; in Serum bcs TEST_NAME prefix is 's-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1718,
+      "omop_concept_id": "42529218",
+      "omop_concept_name": "HIV 1+2 Ab and HIV1 p24 Ag panel - Serum or Plasma by Immunoassay",
+      "reasoning": "HIV 1+2 Ab and HIV1 p24 Ag panel bcs 's-hivab+tod' is a common local abbreviation for the 4th generation HIV combo (Ag/Ab) test ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1719,
+      "omop_concept_id": "3018418",
+      "omop_concept_name": "pH of Serum or Plasma",
+      "reasoning": "pH bcs TEST_NAME is 's-ph(akt)' ; of Serum or Plasma bcs TEST_NAME has prefix 's-'. Although pH is a whole blood measurement, it is often reported under a serum/plasma header.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1720,
+      "omop_concept_id": "3018418",
+      "omop_concept_name": "pH of Serum or Plasma",
+      "reasoning": "pH bcs TEST_NAME is 's-ph(akt)' ; of Serum or Plasma bcs TEST_NAME has prefix 's-'. Although pH is a whole blood measurement, it is often reported under a serum/plasma header.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1721,
+      "omop_concept_id": "3017588",
+      "omop_concept_name": "European tick borne encephalitis virus Ab [Titer] in Serum",
+      "reasoning": "European tick borne encephalitis virus Ab bcs TEST_NAME is 's-tbetot' (total antibodies) ; [Titer] bcs UNIT is 'titre' ; in Serum bcs TEST_NAME prefix is 's-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1722,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test is for TBE total antibodies in serum. Without a unit or values, the property cannot be distinguished between [Titer] and [Units/volume], both of which exist as candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1723,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 's-uraatti' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1724,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 's-uraatti' ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1725,
+      "omop_concept_id": "3009466",
+      "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Valproate bcs TEST_NAME is 's-valproaatti' ; [Moles/volume] bcs UNIT is 'umol/l' and values are in the expected range ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1726,
+      "omop_concept_id": "3009466",
+      "omop_concept_name": "Valproate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Valproate bcs TEST_NAME is 's-valproaatti' ; [Moles/volume] bcs this is the standard unit, though not directly evidenced here ; in Serum or Plasma bcs TEST_NAME has prefix 's-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1727,
+      "omop_concept_id": "3002256",
+      "omop_concept_name": "Pathology report gross observation",
+      "reasoning": "Gross observation bcs LongName is 'Aborttikudoksen dissektiotutkimus' (dissection study of abortion tissue) ; in Products of conception bcs of 'abortti' in name ; a specific concept for POC gross exam is not in the list, so the generic `Pathology report gross observation` is the best available fit.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1728,
+      "omop_concept_id": "3045281",
+      "omop_concept_name": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection",
+      "reasoning": "Chlamydia trachomatis+Neisseria gonorrhoeae bcs of 'ctgc' in TEST_NAME ; [Presence] bcs this is a detection test ; in Urine bcs TEST_NAME has prefix 'u-' ; by NAA with probe detection bcs this is the standard method.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1729,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 'uraatti' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum or Plasma bcs the value_deciles are characteristic of serum/plasma levels, not urine.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1730,
+      "omop_concept_id": "3026493",
+      "omop_concept_name": "Urate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Urate bcs TEST_NAME is 'uraatti' ; [Moles/volume] bcs this is the standard unit for urate in blood ; in Serum or Plasma bcs this is the default specimen for a bare 'Urate' test.",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group covered bacterial tests, primarily cultures (`-vi`), stains (`-vr`), and identifications (`-lm`). Mapping was successful for standard tests where the Finnish code's prefix (specimen) and suffix (method) aligned with a specific LOINC concept. For example, `Li-baktvi` (CSF culture) and `fl-baktvr` (vaginal fluid gram stain) were clear matches.\n\nThe main challenges were:\n1.  **Lab process codes**: 'Subculture' (`-jvi`) codes (e.g., 1404, 1451) were unmappable as they represent an internal workflow step, not a reportable result.\n2.  **Missing candidates**: The candidate list lacked generic concepts for `Bacteria identified in Specimen by Stain`, preventing mapping of codes like `-baktvr` (1400) and `ex-baktvr` (1417). Similarly, codes for 'special culture' (`u-baktevi`, 1450) or specific panels (`f-baktvi2`, 1420) did not have corresponding candidates.\n3.  **Ambiguity in `U-Bakt`**: The many variants of urine bacteria tests required careful use of `UNIT` and `deciles` to distinguish quantitative automated counts (`#/volume`), microscopy (`#/area`), and qualitative screening (`Presence`). Mapping screening tests (`u-bakts`) to 'Nitrite [Presence]' was a necessary interpretation.\n4.  **Panel mapping**: Stool culture panels (`f-baktvi1`, `f-baktvi3`) were mapped to a general 'Gastrointestinal pathogens panel' as a best-fit compromise, losing some specificity from the `LongName`."
+  "reflection": "This group contained a wide variety of tests, many of which were clearly identifiable by their standard Finnish abbreviations and prefixes (e.g., `B-`, `P-`, `S-`, `Li-`, `Pf-`). The presence of units and value distributions was crucial for confirming the property (Moles/volume vs Mass/volume) and, in some cases, the specimen (e.g., `uraatti`).\n\nSeveral rows were left unmapped due to ambiguity. \n- Cryptic or mangled codes like `-omactgc`, `hpvpapctgc`, and `hpvrefctgc` were difficult to interpret with certainty. \n- Generic panel codes like `p-hyyttek` (coagulation factors) and `p-vuotot` (bleeding tendency) could not be matched to the specific panel concepts in the candidate list. \n- Several rows for lupus anticoagulant testing (`p-laaptva`, `p-luakptt`, `p-luakrvv`) were unmappable because the candidates did not include concepts for the specific reported results (e.g., screening ratios), focusing instead on panels or confirmation tests.\n- Administrative codes (`f-projekti`, `p-haglund`) were correctly identified as unmappable.\n\nFor many tests, rows without units or values could not be mapped because both Molar and Mass concepts existed (e.g., Haptoglobin, Lactate). However, for analytes like Potassium and Sodium, where molar units are overwhelmingly standard, a mapping was made with medium confidence even without explicit evidence of property."
 }

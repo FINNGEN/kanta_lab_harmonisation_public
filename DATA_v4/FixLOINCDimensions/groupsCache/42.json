@@ -1,1006 +1,1083 @@
 {
   "rows": [
     {
-      "row_id": 339,
+      "row_id": 333,
       "omop_concept_id": "3043706",
       "omop_concept_name": "Sodium [Moles/volume] in Arterial blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Arterial blood bcs TEST_NAME prefix 'ab-'",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [131.07..144.85] ; in Arterial blood bcs prefix 'ab-'",
       "certainty": "high"
+    },
+    {
+      "row_id": 334,
+      "omop_concept_id": "3000788",
+      "omop_concept_name": "Lamellar bodies [#/volume] in Amniotic fluid",
+      "reasoning": "Lamellar bodies bcs LongName 'Lamellaarikappaleet' ; [#/volume] bcs UNIT 'e9/l' (a number concentration) ; in Amniotic fluid bcs prefix 'am-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 335,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Quantitative ([#/volume]) and qualitative ([Presence]) concepts exist, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 336,
+      "omop_concept_id": "3020410",
+      "omop_concept_name": "Lactate [Moles/volume] in Arterial plasma",
+      "reasoning": "Lactate bcs TEST_NAME 'lakt' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [0.69..3.23] ; in Arterial plasma bcs prefix 'ap-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 337,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for lactate exist with both [Moles/volume] and [Mass/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 338,
+      "omop_concept_id": "3043706",
+      "omop_concept_name": "Sodium [Moles/volume] in Arterial blood",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [130.69..141.72] ; in Arterial blood bcs prefix 'ap-' (Arterial plasma), for which 'Arterial blood' is the conventional LOINC system.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 339,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for sodium exist with multiple properties (e.g., moles/volume, mass/volume), and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 340,
-      "omop_concept_id": "3020410",
-      "omop_concept_name": "Lactate [Moles/volume] in Arterial plasma",
-      "reasoning": "Lactate bcs TEST_NAME 'lakt' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Arterial plasma bcs TEST_NAME prefix 'ap-'",
-      "certainty": "high"
+      "omop_concept_id": "3045783",
+      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'nak' ; in Arterial plasma bcs prefix 'ap-'. No specific arterial plasma panel exists, so the general S/P panel is the best fit.",
+      "certainty": "medium"
     },
     {
       "row_id": 341,
-      "omop_concept_id": "3020410",
-      "omop_concept_name": "Lactate [Moles/volume] in Arterial plasma",
-      "reasoning": "Lactate bcs TEST_NAME 'lakt' ; [Moles/volume] is inferred from sibling rows ; in Arterial plasma bcs TEST_NAME prefix 'ap-'",
-      "certainty": "medium"
+      "omop_concept_id": "3000285",
+      "omop_concept_name": "Sodium [Moles/volume] in Blood",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [132.83..144.07] ; in Blood bcs prefix 'b-'",
+      "certainty": "high"
     },
     {
       "row_id": 342,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows with unit 'mmol/l' as UNIT '%' is incorrect ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
-      "certainty": "medium"
+      "omop_concept_id": "3000285",
+      "omop_concept_name": "Sodium [Moles/volume] in Blood",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs value deciles [132..142] are characteristic of mmol/l ; in Blood bcs prefix 'b-'",
+      "certainty": "high"
     },
     {
       "row_id": 343,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows with unit 'mmol/l' as UNIT 'g/l' is incorrect ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
-      "certainty": "medium"
+      "omop_concept_id": "3038702",
+      "omop_concept_name": "Sodium [Moles/volume] in Capillary blood",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [132..143] ; in Capillary blood bcs prefix 'cp-' (Capillary plasma), for which 'Capillary blood' is the conventional LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 344,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows with unit 'mmol/l' as UNIT 'kpa' is incorrect ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties (e.g., Moles/volume) is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 345,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
+      "omop_concept_id": "3002190",
+      "omop_concept_name": "Sodium [Moles/volume] in Dialysis fluid",
+      "reasoning": "Sodium bcs LongName 'Di-Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Dialysis fluid bcs prefix 'di-'",
       "certainty": "high"
     },
     {
       "row_id": 346,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows with unit 'mmol/l' as UNIT '°c' is incorrect ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
-      "certainty": "medium"
+      "omop_concept_id": "3002079",
+      "omop_concept_name": "Sodium [Moles/time] in 24 hour Urine",
+      "reasoning": "Sodium bcs LongName 'dU-Natrium' ; [Moles/time] bcs UNIT 'mmol/24h' ; in 24 hour Urine bcs prefix 'dU-'",
+      "certainty": "high"
     },
     {
       "row_id": 347,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma concept is available",
-      "certainty": "medium"
+      "omop_concept_id": "3002079",
+      "omop_concept_name": "Sodium [Moles/time] in 24 hour Urine",
+      "reasoning": "Sodium bcs LongName 'dU-Natrium' ; [Moles/time] bcs value deciles [65.99..273.5] are characteristic of mmol/24h ; in 24 hour Urine bcs prefix 'dU-'",
+      "certainty": "high"
     },
     {
       "row_id": 348,
-      "omop_concept_id": "3045783",
-      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'nak' ; in Arterial plasma bcs TEST_NAME prefix 'ap-', mapped to generic Serum or Plasma as no specific arterial plasma panel is available",
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME 'alat' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [14.7..57.54] ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 349,
-      "omop_concept_id": "3000285",
-      "omop_concept_name": "Sodium [Moles/volume] in Blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Blood bcs TEST_NAME prefix 'b-'",
+      "omop_concept_id": "3041449",
+      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
+      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs UNIT 'ng/l' ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 350,
-      "omop_concept_id": "3000285",
-      "omop_concept_name": "Sodium [Moles/volume] in Blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs typical deciles ; in Blood bcs TEST_NAME prefix 'b-'",
+      "omop_concept_id": "3041449",
+      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
+      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs UNIT 'ug/l' and value deciles [0.09..0.81] ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 351,
-      "omop_concept_id": "3038702",
-      "omop_concept_name": "Sodium [Moles/volume] in Capillary blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Capillary blood bcs TEST_NAME prefix 'cp-' (Capillary plasma) is mapped to capillary blood as it is the most common sample type for capillary electrolytes",
+      "omop_concept_id": "3041449",
+      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
+      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs value deciles [0.12..1.5] are consistent with ug/l ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 352,
-      "omop_concept_id": "3038702",
-      "omop_concept_name": "Sodium [Moles/volume] in Capillary blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows ; in Capillary blood bcs TEST_NAME prefix 'cp-' (Capillary plasma) is mapped to capillary blood as it is the most common sample type for capillary electrolytes",
-      "certainty": "medium"
+      "omop_concept_id": "3026910",
+      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [15.59..105.4] ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 353,
-      "omop_concept_id": "3002190",
-      "omop_concept_name": "Sodium [Moles/volume] in Dialysis fluid",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'Di-Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Dialysis fluid bcs prefix_meaning",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for GGT exist with different properties (e.g., activity, mass), and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 354,
-      "omop_concept_id": "3002190",
-      "omop_concept_name": "Sodium [Moles/volume] in Dialysis fluid",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'Di-Natrium' ; [Moles/volume] is inferred from sibling rows ; in Dialysis fluid bcs prefix_meaning",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 355,
-      "omop_concept_id": "3002079",
-      "omop_concept_name": "Sodium [Moles/time] in 24 hour Urine",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'dU-Natrium' ; [Moles/time] bcs UNIT 'mmol' representing total amount over a timed collection ; in 24 hour Urine bcs TEST_NAME prefix 'du-'",
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [135.62..143] ; in Serum or Plasma bcs prefix 'fp-' (Fasting plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
+      "row_id": 355,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties is ambiguous.",
+      "certainty": ""
+    },
+    {
       "row_id": 356,
-      "omop_concept_id": "3002079",
-      "omop_concept_name": "Sodium [Moles/time] in 24 hour Urine",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'dU-Natrium' ; [Moles/time] bcs UNIT 'mmol/24h' ; in 24 hour Urine bcs TEST_NAME prefix 'du-'",
+      "omop_concept_id": "3013502",
+      "omop_concept_name": "Oxygen saturation in Blood",
+      "reasoning": "Oxygen saturation bcs TEST_NAME 'happi' (oxygen) and UNIT '%' with value deciles [25.89..83.17] ; in Blood bcs the code is generic and does not specify arterial or venous",
       "certainty": "high"
     },
     {
       "row_id": 357,
-      "omop_concept_id": "3002079",
-      "omop_concept_name": "Sodium [Moles/time] in 24 hour Urine",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'dU-Natrium' ; [Moles/time] bcs typical deciles for a total amount in mmol ; in 24 hour Urine bcs TEST_NAME prefix 'du-'",
-      "certainty": "high"
+      "omop_concept_id": "21490780",
+      "omop_concept_name": "Oxygen gas delivered during case [Volume] from Gas delivery system",
+      "reasoning": "Oxygen gas delivered [Volume] bcs TEST_NAME 'happi' (oxygen) and UNIT 'l' with value deciles [1..6.43] suggesting administered volume",
+      "certainty": "medium"
     },
     {
       "row_id": 358,
-      "omop_concept_id": "3041449",
-      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
-      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs UNIT 'ng/l' (though 'ug/l' is more common and seen in sibling rows, this is still Mass/Vol) ; in Plasma bcs TEST_NAME prefix 'fp-', mapped to S/P",
+      "omop_concept_id": "3005629",
+      "omop_concept_name": "Inhaled oxygen flow rate",
+      "reasoning": "Inhaled oxygen flow rate bcs TEST_NAME 'happi' (oxygen) and UNIT 'l/min'",
       "certainty": "high"
     },
     {
       "row_id": 359,
-      "omop_concept_id": "3041449",
-      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
-      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs UNIT 'ug/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'fp-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test name 'happi' (oxygen) is ambiguous and could refer to saturation, flow rate, or partial pressure. Without a unit or values, the correct concept cannot be determined.",
+      "certainty": ""
     },
     {
       "row_id": 360,
-      "omop_concept_id": "3041449",
-      "omop_concept_name": "Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma",
-      "reasoning": "Collagen crosslinked C-telopeptide bcs TEST_NAME 'ctx' ; [Mass/volume] bcs typical deciles ; in Plasma bcs TEST_NAME prefix 'fp-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "3007405",
+      "omop_concept_name": "General categories [Interpretation] of Cervical or vaginal smear or scraping by Cyto stain",
+      "reasoning": "Papanicolaou test interpretation bcs TEST_NAME 'papa' refers to Papanicolaou stain, a type of cytologic stain used for cervical screening. This concept represents the overall interpretation of such a test, which fits the nature of an order code with no quantitative result.",
+      "certainty": "medium"
     },
     {
       "row_id": 361,
-      "omop_concept_id": "3026910",
-      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'fp-', mapped to S/P",
+      "omop_concept_id": "3035637",
+      "omop_concept_name": "Corticotropin [Mass/volume] in Plasma",
+      "reasoning": "Corticotropin (ACTH) bcs LongName 'Adrenokortikotropiini' ; [Mass/volume] bcs UNIT 'ng/l' and value deciles [8.1..66.81] ; in Plasma bcs prefix 'p-'",
       "certainty": "high"
     },
     {
       "row_id": 362,
-      "omop_concept_id": "3026910",
-      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' ; [Enzymatic activity/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'fp-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "3035963",
+      "omop_concept_name": "Corticotropin [Moles/volume] in Plasma",
+      "reasoning": "Corticotropin (ACTH) bcs LongName 'Adrenokortikotropiini' ; [Moles/volume] bcs UNIT 'pmol/l' ; in Plasma bcs prefix 'p-'",
+      "certainty": "high"
     },
     {
       "row_id": 363,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'fp-'",
+      "omop_concept_id": "3035637",
+      "omop_concept_name": "Corticotropin [Mass/volume] in Plasma",
+      "reasoning": "Corticotropin (ACTH) bcs LongName 'Adrenokortikotropiini' ; [Mass/volume] bcs value deciles [9.3..63.93] are characteristic of ng/l ; in Plasma bcs prefix 'p-'",
       "certainty": "high"
     },
     {
       "row_id": 364,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'fp-'",
-      "certainty": "medium"
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs LongName 'Alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [12.96..60.15] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 365,
-      "omop_concept_id": "3035637",
-      "omop_concept_name": "Corticotropin [Mass/volume] in Plasma",
-      "reasoning": "Corticotropin (ACTH) bcs TEST_NAME 'acth' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs LongName 'Alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the standard property for ALAT, and the UNIT 'umol/l' is almost certainly a data error for 'u/l' ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "medium"
     },
     {
       "row_id": 366,
-      "omop_concept_id": "3035963",
-      "omop_concept_name": "Corticotropin [Moles/volume] in Plasma",
-      "reasoning": "Corticotropin (ACTH) bcs TEST_NAME 'acth' and LongName ; [Moles/volume] bcs UNIT 'pmol/l' ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties (e.g., activity, mass) is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 367,
-      "omop_concept_id": "3035637",
-      "omop_concept_name": "Corticotropin [Mass/volume] in Plasma",
-      "reasoning": "Corticotropin (ACTH) bcs TEST_NAME 'acth' and LongName ; [Mass/volume] bcs typical deciles which match ng/l unit ; in Plasma bcs TEST_NAME prefix 'p-'",
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs TEST_NAME 'p-alat.' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [12.41..47.17] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 368,
-      "omop_concept_id": "3000515",
-      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
-      "reasoning": "Antithrombin bcs TEST_NAME 'at3' and LongName 'Antitrombiini III' ; actual/normal (relative activity) bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Chromogenic method as this is a common method for functional AT3 assays",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties (e.g., activity, mass) is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 369,
-      "omop_concept_id": "3000515",
-      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
-      "reasoning": "Antithrombin bcs TEST_NAME 'at3' and LongName 'Antitrombiini III' ; actual/normal (relative activity) is inferred from sibling rows as UNIT 'form' is not a real unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Chromogenic method as this is a common method for functional AT3 assays",
-      "certainty": "medium"
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs LongName 'Aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [16.61..70.46] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 370,
-      "omop_concept_id": "3000515",
-      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
-      "reasoning": "Antithrombin bcs TEST_NAME 'at3' and LongName 'Antitrombiini III' ; actual/normal (relative activity) bcs typical deciles which match '%' units ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Chromogenic method as this is a common method for functional AT3 assays",
-      "certainty": "high"
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs LongName 'Aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs this is the standard property for ASAT, and the UNIT 'umol/l' is almost certainly a data error for 'u/l' given the value deciles [17.67..51.22] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "medium"
     },
     {
       "row_id": 371,
-      "omop_concept_id": "3000515",
-      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
-      "reasoning": "Antithrombin bcs TEST_NAME 'at3' ; actual/normal (relative activity) bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Chromogenic method as this is a common method for functional AT3 assays",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties (e.g., activity, mass) is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 372,
       "omop_concept_id": "3000515",
       "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
-      "reasoning": "Antithrombin bcs TEST_NAME 'at3' ; actual/normal (relative activity) bcs typical deciles which match '%' units ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Chromogenic method as this is a common method for functional AT3 assays",
+      "reasoning": "Antithrombin bcs LongName 'Antitrombiini III' ; actual/normal [Ratio] bcs UNIT '%' indicates an activity ratio ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 373,
-      "omop_concept_id": "3042943",
-      "omop_concept_name": "Fatty acid essential (C12-C22) panel - Serum or Plasma",
-      "reasoning": "Essential fatty acids panel bcs TEST_NAME 'efa' and LongName 'Rasvahapot, välttämättömät' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code indicates a genetic test for Antithrombin III ('p-at3' with unit 'form'), but no candidate concept for AT3/SERPINC1 gene analysis was provided.",
+      "certainty": ""
     },
     {
       "row_id": 374,
-      "omop_concept_id": "3042943",
-      "omop_concept_name": "Fatty acid essential (C12-C22) panel - Serum or Plasma",
-      "reasoning": "Essential fatty acids panel bcs TEST_NAME 'efa' and LongName 'Rasvahapot, välttämättömät' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3000515",
+      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Antithrombin bcs LongName 'Antitrombiini III' ; actual/normal [Ratio] bcs value deciles [77.31..120] are characteristic of activity reported as % ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 375,
-      "omop_concept_id": "3002568",
-      "omop_concept_name": "Complement factor B [Mass/volume] in Serum or Plasma",
-      "reasoning": "Complement factor B bcs TEST_NAME 'fakb' and LongName 'Faktori B' ; [Mass/volume] bcs UNIT 'g/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3000515",
+      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Antithrombin bcs TEST_NAME 'p-at3.' ; actual/normal [Ratio] bcs UNIT '%' indicates an activity ratio ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 376,
-      "omop_concept_id": "3002568",
-      "omop_concept_name": "Complement factor B [Mass/volume] in Serum or Plasma",
-      "reasoning": "Complement factor B bcs TEST_NAME 'fakb' and LongName 'Faktori B' ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "3000515",
+      "omop_concept_name": "Antithrombin actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Antithrombin bcs TEST_NAME 'p-at3.' ; actual/normal [Ratio] bcs value deciles [87.62..123.61] are characteristic of activity reported as % ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
+      "certainty": "high"
     },
     {
       "row_id": 377,
-      "omop_concept_id": "3022948",
-      "omop_concept_name": "Iron [Moles/volume] in Serum or Plasma",
-      "reasoning": "Iron bcs TEST_NAME 'fe' ; [Moles/volume] bcs UNIT 'umol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3042943",
+      "omop_concept_name": "Fatty acid essential (C12-C22) panel - Serum or Plasma",
+      "reasoning": "Essential fatty acids panel bcs LongName 'Rasvahapot, välttämättömät' ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 378,
-      "omop_concept_id": "3022948",
-      "omop_concept_name": "Iron [Moles/volume] in Serum or Plasma",
-      "reasoning": "Iron bcs TEST_NAME 'fe' ; [Moles/volume] bcs typical deciles which match 'umol/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3002568",
+      "omop_concept_name": "Complement factor B [Mass/volume] in Serum or Plasma",
+      "reasoning": "Complement factor B bcs LongName 'Faktori B' ; [Mass/volume] bcs UNIT 'g/l' and value deciles [0.14..0.3] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 379,
-      "omop_concept_id": "3036489",
-      "omop_concept_name": "Thrombin time",
-      "reasoning": "Thrombin time bcs UNIT 's' and deciles are consistent with a time-based coagulation assay, and this is a plausible interpretation of the ambiguous code 'p-fs' ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 380,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test code 'p-fs' is too ambiguous to map without a unit or values. 'fs' is not a standard abbreviation.",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties (e.g., mass, activity) is ambiguous.",
       "certainty": ""
     },
     {
+      "row_id": 380,
+      "omop_concept_id": "3022948",
+      "omop_concept_name": "Iron [Moles/volume] in Serum or Plasma",
+      "reasoning": "Iron bcs TEST_NAME 'fe' ; [Moles/volume] bcs UNIT 'umol/l' and value deciles [5.54..23.36] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
+    },
+    {
       "row_id": 381,
-      "omop_concept_id": "3005757",
-      "omop_concept_name": "Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay",
-      "reasoning": "Coagulation factor V activity bcs TEST_NAME 'fv' and LongName ; actual/normal bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Coagulation assay is the standard method",
+      "omop_concept_id": "3022948",
+      "omop_concept_name": "Iron [Moles/volume] in Serum or Plasma",
+      "reasoning": "Iron bcs TEST_NAME 'fe' ; [Moles/volume] bcs value deciles [5.17..23.47] are characteristic of umol/l ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 382,
-      "omop_concept_id": "3005757",
-      "omop_concept_name": "Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay",
-      "reasoning": "Coagulation factor V activity bcs TEST_NAME 'fv' and LongName ; actual/normal bcs typical deciles which match '%' unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Coagulation assay is the standard method",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test code 'p-fs' is ambiguous. While the UNIT 's' suggests a coagulation time, the specific test (e.g., aPTT, PT, fibrin degradation screen) cannot be identified from the code.",
+      "certainty": ""
     },
     {
       "row_id": 383,
-      "omop_concept_id": "3004409",
-      "omop_concept_name": "Coagulation factor X activity actual/normal in Platelet poor plasma by Coagulation assay",
-      "reasoning": "Coagulation factor X activity bcs TEST_NAME 'fx' and LongName ; actual/normal bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Coagulation assay is the standard method",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The test code 'p-fs' is ambiguous and has no associated unit or values to help identification.",
+      "certainty": ""
     },
     {
       "row_id": 384,
-      "omop_concept_id": "3004409",
-      "omop_concept_name": "Coagulation factor X activity actual/normal in Platelet poor plasma by Coagulation assay",
-      "reasoning": "Coagulation factor X activity bcs TEST_NAME 'fx' and LongName ; actual/normal bcs typical deciles which match '%' unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test ; by Coagulation assay is the standard method",
+      "omop_concept_id": "3005757",
+      "omop_concept_name": "Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor V bcs LongName 'Hyytymistekijä V' ; activity actual/normal [Ratio] bcs UNIT '%' indicates an activity ratio ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 385,
-      "omop_concept_id": "3026910",
-      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' and LongName ; [Enzymatic activity/volume] is inferred from sibling rows as UNIT 'mg/ml' is incorrect ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3005757",
+      "omop_concept_name": "Coagulation factor V activity actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor V bcs LongName 'Hyytymistekijä V' ; activity actual/normal [Ratio] bcs value deciles [69.88..134.3] are characteristic of activity reported as % ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 386,
-      "omop_concept_id": "3026910",
-      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' and LongName ; [Enzymatic activity/volume] bcs UNIT 'u/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3005445",
+      "omop_concept_name": "Coagulation factor X activity [Units/volume] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor X bcs LongName 'Hyytymistekijä X' ; activity [Units/volume] bcs this is the standard LOINC property for factor activity, often reported in '%' ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 387,
-      "omop_concept_id": "3026910",
-      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
-      "reasoning": "Gamma glutamyl transferase bcs TEST_NAME 'gt' and LongName ; [Enzymatic activity/volume] bcs typical deciles which match 'u/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3005445",
+      "omop_concept_name": "Coagulation factor X activity [Units/volume] in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Coagulation factor X bcs LongName 'Hyytymistekijä X' ; activity [Units/volume] bcs value deciles [66..120.2] are characteristic of activity reported as '%', for which [Units/volume] is the standard LOINC property ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 388,
-      "omop_concept_id": "36306105",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P ; by High sensitivity method bcs TEST_NAME 'hstni'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The unit 'mg/ml' is not a valid unit for Gamma glutamyl transferase activity. The number of records is too low (n=8) to confidently assume a data entry error.",
+      "certainty": ""
     },
     {
       "row_id": 389,
-      "omop_concept_id": "3045783",
-      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'k+na' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3026910",
+      "omop_concept_name": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Gamma glutamyl transferase bcs LongName 'Glutamyylitransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [14.61..197.74] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 390,
-      "omop_concept_id": "3045783",
-      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'k,na' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for GGT exist with different properties (e.g., activity, mass), and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 391,
       "omop_concept_id": "3045783",
       "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'k-na' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-k+na' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 392,
       "omop_concept_id": "3045783",
       "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'k-na' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-k,na' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 393,
-      "omop_concept_id": "3023103",
-      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Potassium bcs TEST_NAME 'k' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P. The suffix '-pa' (long-term) is a qualifier of the test order context, not the result itself.",
+      "omop_concept_id": "3045783",
+      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-k-na' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 394,
-      "omop_concept_id": "3000288",
-      "omop_concept_name": "Sodium/Potassium [Molar ratio] in Serum or Plasma",
-      "reasoning": "Sodium/Potassium ratio bcs TEST_NAME 'k/na' ; [Molar ratio] property is implied by a ratio of two molar concentrations ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3045783",
+      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-k-na' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 395,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test code 'p-ked.' is uninterpretable. 'ked' is not a standard abbreviation.",
-      "certainty": ""
+      "omop_concept_id": "3023103",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Potassium bcs TEST_NAME 'p-k' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [3.52..4.56] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system. Suffix '-pa' (prolonged) is a collection context not represented in the LOINC component.",
+      "certainty": "high"
     },
     {
       "row_id": 396,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test code 'p-kjd.' is uninterpretable. 'kjd' is not a standard abbreviation.",
-      "certainty": ""
+      "omop_concept_id": "3045783",
+      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-k/na' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 397,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test code 'p-la1' likely represents a lupus anticoagulant screen, but no suitable candidate for a single time-based screen result exists in the list. The available candidates are panels or specific confirmatory tests.",
-      "certainty": ""
+      "omop_concept_id": "3039651",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Potassium bcs TEST_NAME 'p-k' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Serum or Plasma bcs prefix 'p-' (Plasma) ; with timing 'pre dialysis' bcs suffix 'ed.' likely means 'ennen dialyysia' (before dialysis).",
+      "certainty": "high"
     },
     {
       "row_id": 398,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test code 'p-la1' likely represents a lupus anticoagulant screen, but no suitable candidate for a single time-based screen result exists in the list. The available candidates are panels or specific confirmatory tests.",
-      "certainty": ""
+      "omop_concept_id": "3015066",
+      "omop_concept_name": "Potassium [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Potassium bcs TEST_NAME 'p-k' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Serum or Plasma bcs prefix 'p-' (Plasma) ; with timing 'post dialysis' bcs suffix 'jd.' likely means 'jälkeen dialyysin' (after dialysis).",
+      "certainty": "high"
     },
     {
       "row_id": 399,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test code 'p-la2' likely represents a lupus anticoagulant confirmation test, but it is not possible to distinguish between the different types of confirmatory tests (e.g., dilute phospholipid vs high phospholipid neutralization) from the available information.",
+      "reasoning": "The code 'p-la1' likely refers to a Lupus Anticoagulant screening test, but it is ambiguous which specific test (e.g., aPTT-based, dRVVT-based) it is. No generic screening concept was available in the candidates.",
       "certainty": ""
     },
     {
       "row_id": 400,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test code 'p-la2' likely represents a lupus anticoagulant confirmation test, but it is not possible to distinguish between the different types of confirmatory tests from the available information.",
+      "reasoning": "The code 'p-la1' likely refers to a Lupus Anticoagulant screening test, but it is ambiguous which specific test it is. There are no units or values to help disambiguate.",
       "certainty": ""
     },
     {
       "row_id": 401,
-      "omop_concept_id": "3027653",
-      "omop_concept_name": "Mycophenolate [Mass/volume] in Serum or Plasma",
-      "reasoning": "Mycophenolate (Mycophenolic acid) bcs TEST_NAME 'mypa' and LongName ; [Mass/volume] bcs UNIT 'mg/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-la2' likely refers to a Lupus Anticoagulant confirmatory test, but it is ambiguous which specific test (e.g., platelet neutralization, high/low phospholipid) it is. The provided candidates contain multiple possibilities.",
+      "certainty": ""
     },
     {
       "row_id": 402,
-      "omop_concept_id": "3027653",
-      "omop_concept_name": "Mycophenolate [Mass/volume] in Serum or Plasma",
-      "reasoning": "Mycophenolate (Mycophenolic acid) bcs TEST_NAME 'mypa' and LongName ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-la2' likely refers to a Lupus Anticoagulant confirmatory test, but it is ambiguous which specific test it is. There are no units or values to help disambiguate.",
+      "certainty": ""
     },
     {
       "row_id": 403,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'P-Natrium' ; [Moles/volume] bcs UNIT 'mmol/' is a typo for 'mmol/l', confirmed by sibling rows ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "3023261",
+      "omop_concept_name": "lamoTRIgine [Mass/volume] in Serum or Plasma",
+      "reasoning": "lamoTRIgine bcs TEST_NAME 'p-laite' is a plausible local abbreviation ; [Mass/volume] bcs the values [2.9..7.96] fit the therapeutic range if the unit is assumed to be mg/l instead of the stated ug/l, which is a likely data error ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "low"
     },
     {
       "row_id": 404,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'P-Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-lam/m' likely refers to a Lupus Anticoagulant mixing study ratio, but there is no generic concept for this. The specific type of mixing study (e.g., aPTT-based, dRVVT-based) is not specified, making it impossible to choose a specific ratio concept.",
+      "certainty": ""
     },
     {
       "row_id": 405,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName 'P-Natrium' ; [Moles/volume] bcs typical deciles which match 'mmol/l' unit ; in Plasma bcs TEST_NAME prefix 'p-'",
+      "omop_concept_id": "3027653",
+      "omop_concept_name": "Mycophenolate [Mass/volume] in Serum or Plasma",
+      "reasoning": "Mycophenolate bcs LongName 'Mykofenolihappo' ; [Mass/volume] bcs UNIT 'mg/l' and value deciles [0.63..6.29] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 406,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na.' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for Mycophenolate exist with both [Mass/volume] and [Moles/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 407,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na:' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The provided unit 'mmol/' is incomplete, making the property of the measurement ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 408,
       "omop_concept_id": "3019550",
       "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'naed.' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Plasma bcs TEST_NAME prefix 'p-'",
+      "reasoning": "Sodium bcs LongName 'Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [134.08..143] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 409,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'najd.' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 410,
-      "omop_concept_id": "3045783",
-      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
-      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'nak' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs TEST_NAME 'p-na.' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [134.62..144] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 411,
       "omop_concept_id": "3019550",
       "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'nap' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
+      "reasoning": "Sodium bcs TEST_NAME 'p-na:' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [131.69..142] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 412,
-      "omop_concept_id": "3965350",
-      "omop_concept_name": "Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma",
-      "reasoning": "Soluble urokinase plasminogen activator receptor bcs TEST_NAME 'supar' ; [Mass/volume] bcs UNIT 'ug/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-naed.' indicates Sodium pre-dialysis. No candidate concept for pre-dialysis sodium was provided in the list.",
+      "certainty": ""
     },
     {
       "row_id": 413,
-      "omop_concept_id": "3965350",
-      "omop_concept_name": "Soluble urokinase plasminogen activator receptor [Mass/volume] in Plasma",
-      "reasoning": "Soluble urokinase plasminogen activator receptor bcs TEST_NAME 'supar' ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-'",
-      "certainty": "medium"
+      "omop_concept_id": "44816586",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Sodium bcs TEST_NAME 'p-na' ; [Moles/volume] bcs UNIT 'mmol/l' ; in Serum or Plasma bcs prefix 'p-' (Plasma) ; with timing 'post dialysis' bcs suffix 'jd.' likely means 'jälkeen dialyysin' (after dialysis).",
+      "certainty": "high"
     },
     {
       "row_id": 414,
-      "omop_concept_id": "3026989",
-      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME 't3-v' and LongName ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3045783",
+      "omop_concept_name": "Sodium and Potassium panel [Moles/volume] - Serum or Plasma",
+      "reasoning": "Sodium and Potassium panel bcs TEST_NAME 'p-nak' is an order for both ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 415,
-      "omop_concept_id": "3026989",
-      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME 't3-v' and LongName ; [Moles/volume] bcs typical deciles which match 'pmol/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs TEST_NAME 'p-nap' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [132.72..145] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 416,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4-v' and LongName ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3037384",
+      "omop_concept_name": "Protein C actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Protein C bcs LongName 'Proteiini C' ; actual/normal [Ratio] bcs UNIT '%' indicates an activity ratio ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 417,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4-v' and LongName ; [Moles/volume] bcs typical deciles which match 'pmol/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code indicates a genetic test for Protein C ('p-pc' with unit 'form'), but no candidate concept for PROC1 gene analysis was provided.",
+      "certainty": ""
     },
     {
       "row_id": 418,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4v' ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3037384",
+      "omop_concept_name": "Protein C actual/normal in Platelet poor plasma by Chromogenic method",
+      "reasoning": "Protein C bcs LongName 'Proteiini C' ; actual/normal [Ratio] bcs value deciles [85.52..155.46] are characteristic of activity reported as % ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 419,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4v' ; [Moles/volume] bcs typical deciles which match 'pmol/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3046279",
+      "omop_concept_name": "Procalcitonin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Procalcitonin bcs LongName 'Prokalsitoniini' ; [Mass/volume] bcs UNIT 'ng/ml' and value deciles [0.1..8.99] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 420,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME 'tfr' and LongName ; [Mass/volume] bcs UNIT 'mg/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3046279",
+      "omop_concept_name": "Procalcitonin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Procalcitonin bcs LongName 'Prokalsitoniini' ; [Mass/volume] bcs UNIT 'ug/l' and value deciles [0.07..5.19] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 421,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME 'tfr' and LongName ; [Mass/volume] bcs typical deciles which match 'mg/l' unit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for Procalcitonin exist with both [Mass/volume] and [Moles/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 422,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3003458",
+      "omop_concept_name": "Phosphate [Moles/volume] in Serum or Plasma",
+      "reasoning": "Phosphate bcs LongName 'Fosfaatti, epäorgaaninen' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [0.74..1.79] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 423,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] bcs UNIT 'ug/l' and deciles (1 ug/l = 1000 ng/l) ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for Phosphate exist with both [Mass/volume] and [Moles/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 424,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "3021387",
+      "omop_concept_name": "Prolactin [Units/volume] in Serum or Plasma",
+      "reasoning": "Prolactin bcs LongName 'Prolaktiini' ; [Units/volume] bcs UNIT 'mu/l' and value deciles [139.86..911.44] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 425,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni.' ; [Mass/volume] bcs UNIT 'ng/l' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-prl' with unit 'nmol/l' indicates Prolactin with a [Moles/volume] property. No such candidate concept was provided in the list.",
+      "certainty": ""
     },
     {
       "row_id": 426,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni.' ; [Mass/volume] bcs UNIT 'ug/l' and deciles which show a detection limit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for Prolactin exist with [Units/volume], [Mass/volume] and [Moles/volume] properties (as seen in sibling rows), making the choice ambiguous without a unit or values.",
+      "certainty": ""
     },
     {
       "row_id": 427,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni.' ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "3036669",
+      "omop_concept_name": "Protein S actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Protein S bcs LongName 'Proteiini S' ; actual/normal [Ratio] bcs UNIT '%' indicates an activity ratio ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
+      "certainty": "high"
     },
     {
       "row_id": 428,
-      "omop_concept_id": "36306105",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' ; [Mass/volume] bcs UNIT 'ng/l' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P ; by High sensitivity method bcs TEST_NAME suffix 'h'",
+      "omop_concept_id": "3036669",
+      "omop_concept_name": "Protein S actual/normal in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Protein S bcs LongName 'Proteiini S' ; actual/normal [Ratio] bcs value deciles [67.73..131.45] are characteristic of activity reported as % ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 429,
-      "omop_concept_id": "36306105",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P ; by High sensitivity method bcs TEST_NAME suffix 'h'",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 430,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tnl' where 'l' is likely a local suffix ; [Mass/volume] bcs UNIT 'ng/l' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3013603",
+      "omop_concept_name": "Prostate specific Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Prostate specific Ag bcs LongName 'Prostataspesifinen antigeeni' ; [Mass/volume] bcs UNIT 'ug/l' and value deciles [0.27..9.72] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
+      "row_id": 430,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for PSA exist with multiple properties (e.g., mass, moles), and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
+    },
+    {
       "row_id": 431,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tnl' where 'l' is likely a local suffix ; [Mass/volume] bcs UNIT 'ug/l' and deciles showing a detection limit ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3037666",
+      "omop_concept_name": "Prothrombin time (PT) in Platelet poor plasma by Coagulation assay",
+      "reasoning": "Prothrombin time bcs TEST_NAME 'p-pt' ; [Time] bcs UNIT 's', which is the property of this LOINC code ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "high"
     },
     {
       "row_id": 432,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tnl' where 'l' is likely a local suffix ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-rvvt-l' likely refers to a dilute Russell Viper Venom Time test, but it is ambiguous whether this is a screening, confirmatory, or ratio test. The candidate list lacks a clear, general dRVVT time concept.",
+      "certainty": ""
     },
     {
       "row_id": 433,
-      "omop_concept_id": "3019800",
-      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'tnt' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
+      "omop_concept_id": "3966146",
+      "omop_concept_name": "Soluble urokinase plasminogen activator receptor [Mass/volume] in Serum or Plasma",
+      "reasoning": "Soluble urokinase plasminogen activator receptor bcs TEST_NAME 'p-supar' ; [Mass/volume] bcs UNIT 'ug/l' and value deciles [2.88..8.2] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 434,
-      "omop_concept_id": "3019800",
-      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'tnt' and LongName ; [Mass/volume] bcs UNIT 'ug/l' ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 435,
-      "omop_concept_id": "3019800",
-      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'tnt' and LongName ; [Mass/volume] is inferred from sibling rows ; in Plasma bcs TEST_NAME prefix 'p-', mapped to S/P",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 436,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt' and LongName 'Tromboplastiiniaika' ; actual/Normal bcs UNIT '%' representing activity relative to normal ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Transferrin receptor.soluble bcs LongName 'Transferriinireseptori, liukoinen' ; [Mass/volume] bcs UNIT 'mg/l' and value deciles [0.9..6.51] ; in Serum or Plasma bcs prefix 'p-' (Plasma), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
+      "row_id": 436,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for sTfR exist with both [Mass/volume] and [Moles/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
+    },
+    {
       "row_id": 437,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt' and LongName 'Tromboplastiiniaika' ; actual/Normal is inferred from sibling rows as UNIT 'form' is not a real unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
+      "omop_concept_id": "3023542",
+      "omop_concept_name": "Coagulation normal/actual in Platelet poor plasma by Prothrombin time (PT)",
+      "reasoning": "Prothrombin time ratio bcs LongName 'Tromboplastiiniaika' and UNIT '%' ; [Ratio] bcs this concept has a ratio property ('normal/actual') which corresponds to reporting in percent ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "medium"
     },
     {
       "row_id": 438,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt' and LongName 'Tromboplastiiniaika' ; actual/Normal bcs typical deciles matching '%' unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
+      "omop_concept_id": "3011836",
+      "omop_concept_name": "F2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "F2 (Prothrombin) gene mutations bcs TEST_NAME 'p-tt' with UNIT 'form' indicates a genetic test for prothrombin time related genes ; in Blood or Tissue bcs this is the typical specimen.",
       "certainty": "high"
     },
     {
       "row_id": 439,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt-' ; actual/Normal bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property for Prothrombin Time (P-TT) is ambiguous. It can be reported as time (s), ratio (INR), or activity (%). Without a unit or values, the choice cannot be made.",
+      "certainty": ""
     },
     {
       "row_id": 440,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt-' ; actual/Normal is inferred from sibling rows ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
+      "omop_concept_id": "3023542",
+      "omop_concept_name": "Coagulation normal/actual in Platelet poor plasma by Prothrombin time (PT)",
+      "reasoning": "Prothrombin time ratio bcs TEST_NAME 'p-tt-' and UNIT '%' ; [Ratio] bcs this concept has a ratio property ('normal/actual') which corresponds to reporting in percent ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
       "certainty": "medium"
     },
     {
       "row_id": 441,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt.' ; actual/Normal bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property for Prothrombin Time (P-TT) is ambiguous. Without a unit or values, the choice between time, ratio, and activity cannot be made.",
+      "certainty": ""
     },
     {
       "row_id": 442,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'tt.' ; actual/Normal bcs typical deciles matching '%' unit ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "high"
+      "omop_concept_id": "3023542",
+      "omop_concept_name": "Coagulation normal/actual in Platelet poor plasma by Prothrombin time (PT)",
+      "reasoning": "Prothrombin time ratio bcs TEST_NAME 'p-tt.' and UNIT '%' ; [Ratio] bcs this concept has a ratio property ('normal/actual') which corresponds to reporting in percent ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
+      "certainty": "medium"
     },
     {
       "row_id": 443,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'ttr' where 'r' may mean ratio ; actual/Normal bcs UNIT '%' and typical deciles ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "high"
+      "omop_concept_id": "3023542",
+      "omop_concept_name": "Coagulation normal/actual in Platelet poor plasma by Prothrombin time (PT)",
+      "reasoning": "Prothrombin time ratio bcs TEST_NAME 'p-tt.' and value deciles [49.07..140.29] characteristic of % activity ; [Ratio] bcs this concept has a ratio property ('normal/actual') which corresponds to reporting in percent ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent.",
+      "certainty": "medium"
     },
     {
       "row_id": 444,
-      "omop_concept_id": "3033658",
-      "omop_concept_name": "Prothrombin time (PT) actual/Normal",
-      "reasoning": "Prothrombin time (PT) bcs TEST_NAME 'ttr' where 'r' may mean ratio ; actual/Normal is inferred from sibling rows ; in Platelet poor plasma bcs prefix 'P-' for a coagulation test",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'p-ttr' with unit '%' indicates a ratio measurement of Transthyretin. No candidate concept with a ratio property for Transthyretin was available.",
+      "certainty": ""
     },
     {
       "row_id": 445,
-      "omop_concept_id": "3047891",
-      "omop_concept_name": "FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "PDGFR gene targeted mutation analysis bcs TEST_NAME 'pdgfr', mapped to the most generic available candidate for targeted mutation analysis",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property for Transthyretin ('p-ttr') cannot be determined. It could be mass, moles, or a ratio. Without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 446,
-      "omop_concept_id": "3023329",
-      "omop_concept_name": "Maximum expiratory gas flow Respiratory system airway by Peak flow meter",
-      "reasoning": "Maximum expiratory gas flow (PEF) bcs TEST_NAME 'peak' ; property [Volume rate] bcs UNIT 'l/min' ; in Respiratory system airway is the system for PEF ; by Peak flow meter is the implied method",
+      "omop_concept_id": "3007405",
+      "omop_concept_name": "General categories [Interpretation] of Cervical or vaginal smear or scraping by Cyto stain",
+      "reasoning": "Papanicolaou test interpretation bcs TEST_NAME 'papa' refers to Papanicolaou stain, a type of cytologic stain used for cervical screening. This concept represents the overall interpretation of such a test, which fits the nature of an order code with no quantitative result.",
       "certainty": "high"
     },
     {
       "row_id": 447,
-      "omop_concept_id": "3023329",
-      "omop_concept_name": "Maximum expiratory gas flow Respiratory system airway by Peak flow meter",
-      "reasoning": "Maximum expiratory gas flow (PEF) bcs TEST_NAME 'peak' ; property is inferred from sibling rows ; in Respiratory system airway is the system for PEF ; by Peak flow meter is the implied method",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 448,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'pef-pa' with LongName 'Uloshengityksen huippuvirtaus, sarjamittaus, pitkäaikaisseuranta' describes a long-term serial measurement protocol, not a single observation. No suitable panel or protocol concept was found in the candidates.",
-      "certainty": ""
-    },
-    {
-      "row_id": 449,
-      "omop_concept_id": "3019794",
-      "omop_concept_name": "Maximum expiratory gas flow Respiratory system airway by Peak flow meter --post therapy",
-      "reasoning": "Maximum expiratory gas flow (PEF) bcs TEST_NAME 'pef' ; post-challenge bcs LongName 'rasituskoe' (exercise test), mapped to '--post therapy' as the closest available concept for a post-challenge measurement",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 450,
-      "omop_concept_id": "3040491",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 'ace' and LongName ; [Enzymatic activity/volume] bcs UNIT 'u/l' and typical deciles ; in Pleural fluid bcs TEST_NAME prefix 'pf-'",
+      "omop_concept_id": "1259553",
+      "omop_concept_name": "PDGFRA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "PDGFRA gene mutations bcs TEST_NAME 'pdgfr' ; this is a general panel for mutations in the gene, which fits the unspecified nature of the local code.",
       "certainty": "high"
     },
     {
+      "row_id": 448,
+      "omop_concept_id": "3023329",
+      "omop_concept_name": "Maximum expiratory gas flow Respiratory system airway by Peak flow meter",
+      "reasoning": "Maximum expiratory gas flow bcs TEST_NAME 'peak' is a common abbreviation for Peak Expiratory Flow ; [Flow] bcs the unit is l/min ; by Peak flow meter bcs this is the typical device.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 449,
+      "omop_concept_id": "3033688",
+      "omop_concept_name": "Peak flow meter device panel",
+      "reasoning": "Peak flow meter panel bcs TEST_NAME 'peak' likely refers to a peak flow measurement or a panel of them. Since it's a panel-level code with no unit/values, mapping to the device panel is a reasonable choice representing the order.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 450,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'pef-pa' refers to long-term home monitoring of peak expiratory flow, a series of measurements. No specific panel concept for this was available in the candidates.",
+      "certainty": ""
+    },
+    {
       "row_id": 451,
-      "omop_concept_id": "3040491",
-      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid",
-      "reasoning": "Angiotensin converting enzyme bcs TEST_NAME 'ace' and LongName ; [Enzymatic activity/volume] is inferred from sibling rows ; in Pleural fluid bcs TEST_NAME prefix 'pf-'",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The local code 'pef-ras' refers to a peak expiratory flow exercise test ('rasituskoe'). No single panel concept for this specific protocol (pre- and post-exercise) was available in the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 452,
-      "omop_concept_id": "3036428",
-      "omop_concept_name": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid",
-      "reasoning": "Adenosine deaminase bcs TEST_NAME 'ada' and LongName ; [Enzymatic activity/volume] bcs UNIT 'u/l' and typical deciles ; in Pleural fluid bcs TEST_NAME prefix 'pf-'",
+      "omop_concept_id": "3040491",
+      "omop_concept_name": "Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid",
+      "reasoning": "Angiotensin converting enzyme bcs LongName 'Angiotensiini-1-konvertaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [6.33..37.34] ; in Pleural fluid bcs prefix 'pf-'",
       "certainty": "high"
     },
     {
       "row_id": 453,
-      "omop_concept_id": "3036428",
-      "omop_concept_name": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid",
-      "reasoning": "Adenosine deaminase bcs TEST_NAME 'ada' and LongName ; [Enzymatic activity/volume] is inferred from sibling rows ; in Pleural fluid bcs TEST_NAME prefix 'pf-'",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 454,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test code 'pneag' is uninterpretable and has no supporting information.",
+      "reasoning": "The property for ACE in pleural fluid cannot be determined from the name alone. Without a unit or values, the choice is ambiguous.",
       "certainty": ""
     },
     {
-      "row_id": 455,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "row_id": 454,
+      "omop_concept_id": "3036428",
+      "omop_concept_name": "Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid",
+      "reasoning": "Adenosine deaminase bcs LongName 'Adenosiinideaminaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [3.68..25.63] ; in Pleural fluid bcs prefix 'pf-'",
       "certainty": "high"
+    },
+    {
+      "row_id": 455,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property for ADA in pleural fluid cannot be determined from the name alone. Without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 456,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName ; [Moles/volume] bcs UNIT 'mol/l' is a valid, though less common, representation for Moles/volume ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "high"
+      "omop_concept_id": "3011173",
+      "omop_concept_name": "Microscopic observation [Identifier] in Tissue by Hematoxylin and eosin stain",
+      "reasoning": "Microscopic observation of tissue bcs 'pipelle' is a device for endometrial biopsy, which is then examined histologically. This concept for a standard H&E stain on tissue is a good general fit for the resulting test.",
+      "certainty": "medium"
     },
     {
       "row_id": 457,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName ; [Moles/volume] bcs typical deciles matching 'mmol/l' unit ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3011363",
+      "omop_concept_name": "Streptococcus pneumoniae Ag [Presence] in Urine",
+      "reasoning": "Streptococcus pneumoniae Ag bcs TEST_NAME 'pneag' ; [Presence] bcs this is a qualitative screening test ; in Urine bcs this is the most common specimen for this antigen test.",
       "certainty": "high"
     },
     {
       "row_id": 458,
-      "omop_concept_id": "3026989",
-      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME 't3-v' and LongName ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-ivfal' is too ambiguous to identify a specific test or procedure. 'pt-' indicates a patient-level investigation, but 'ivfal' is uninterpretable.",
+      "certainty": ""
     },
     {
       "row_id": 459,
-      "omop_concept_id": "3026989",
-      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME 't3-v' and LongName ; [Moles/volume] bcs typical deciles matching 'pmol/l' unit ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'pt-vp-ple' is ambiguous. While 'ple' suggests plethysmography, the full scope of the 'Arterial pressure and Blood flow study' is not defined, and no specific matching panel was in the candidates.",
+      "certainty": ""
     },
     {
       "row_id": 460,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4-v' and LongName ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs LongName 'Alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'iu/l' (equivalent to u/l) and value deciles [13.21..55.67] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 461,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4-v' and LongName ; [Moles/volume] bcs typical deciles matching 'pmol/l' unit ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs LongName 'Alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [13.96..57.13] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 462,
-      "omop_concept_id": "3008486",
-      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
-      "reasoning": "Thyroxine (T4) free bcs TEST_NAME 't4v' ; [Moles/volume] bcs UNIT 'pmol/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3006923",
+      "omop_concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alanine aminotransferase bcs LongName 'Alaniiniaminotransferaasi' ; [Enzymatic activity/volume] bcs value deciles [14.16..68.13] are characteristic of u/l ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 463,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME 'tfr' and LongName ; [Mass/volume] is inferred from sibling rows as UNIT 'mg' is incomplete ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "medium"
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs LongName 'Aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'iu/l' (equivalent to u/l) and value deciles [18..41.57] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 464,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME 'tfr' and LongName ; [Mass/volume] bcs UNIT 'mg/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs LongName 'Aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs UNIT 'u/l' and value deciles [17.95..49.76] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 465,
-      "omop_concept_id": "3015399",
-      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
-      "reasoning": "Transferrin receptor.soluble bcs TEST_NAME 'tfr' and LongName ; [Mass/volume] bcs typical deciles matching 'mg/l' unit ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3013721",
+      "omop_concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aspartate aminotransferase bcs LongName 'Aspartaattiaminotransferaasi' ; [Enzymatic activity/volume] bcs value deciles [18..49] are characteristic of u/l ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 466,
-      "omop_concept_id": "3004282",
-      "omop_concept_name": "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma",
-      "reasoning": "Tumor necrosis factor.alpha bcs TEST_NAME 'tnf' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs LongName 'Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [137.11..143] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 467,
-      "omop_concept_id": "3004282",
-      "omop_concept_name": "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma",
-      "reasoning": "Tumor necrosis factor.alpha bcs TEST_NAME 'tnf' and LongName ; [Mass/volume] is inferred from sibling rows ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "medium"
+      "omop_concept_id": "3019550",
+      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
+      "reasoning": "Sodium bcs LongName 'Natrium' ; [Moles/volume] bcs value deciles [133.78..142.02] are characteristic of mmol/l ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 468,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3021387",
+      "omop_concept_name": "Prolactin [Units/volume] in Serum or Plasma",
+      "reasoning": "Prolactin bcs LongName 'Prolaktiini' ; [Units/volume] bcs UNIT 'miu/l' and value deciles [99..453.2] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 469,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] bcs UNIT 'ug/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3021387",
+      "omop_concept_name": "Prolactin [Units/volume] in Serum or Plasma",
+      "reasoning": "Prolactin bcs LongName 'Prolaktiini' ; [Units/volume] bcs UNIT 'mu/l' and value deciles [116.54..848.45] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 470,
-      "omop_concept_id": "3021337",
-      "omop_concept_name": "Troponin I.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin I.cardiac bcs TEST_NAME 'tni' and LongName ; [Mass/volume] is inferred from sibling rows ; in Serum bcs TEST_NAME prefix 's-'",
+      "omop_concept_id": "3021387",
+      "omop_concept_name": "Prolactin [Units/volume] in Serum or Plasma",
+      "reasoning": "Prolactin bcs LongName 'Prolaktiini' ; [Units/volume] bcs the unit 'mul/l' is likely a typo for 'mu/l' ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "medium"
     },
     {
       "row_id": 471,
-      "omop_concept_id": "3019800",
-      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'tnt' and LongName ; [Mass/volume] bcs UNIT 'ng/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 's-prl' with unit 'nmol/l' indicates Prolactin with a [Moles/volume] property. No such candidate concept was provided in the list.",
+      "certainty": ""
     },
     {
       "row_id": 472,
-      "omop_concept_id": "3019800",
-      "omop_concept_name": "Troponin T.cardiac [Mass/volume] in Serum or Plasma",
-      "reasoning": "Troponin T.cardiac bcs TEST_NAME 'tnt' and LongName ; [Mass/volume] is inferred from sibling rows ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "medium"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for Prolactin exist with [Units/volume], [Mass/volume] and [Moles/volume] properties (as seen in sibling rows), making the choice ambiguous without a unit or values.",
+      "certainty": ""
     },
     {
       "row_id": 473,
-      "omop_concept_id": "3035509",
-      "omop_concept_name": "Tobramycin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Tobramycin bcs TEST_NAME 'tob' and LongName ; [Mass/volume] bcs UNIT 'mg/l' and typical deciles ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "high"
+      "omop_concept_id": "3013603",
+      "omop_concept_name": "Prostate specific Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Prostate specific Ag bcs LongName 'Prostataspesifinen antigeeni' ; [Mass/volume] bcs UNIT 'mg/l' (which is 1000x ug/l, but likely a data error for ug/l given the context of other PSA tests) ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
+      "certainty": "low"
     },
     {
       "row_id": 474,
-      "omop_concept_id": "3035509",
-      "omop_concept_name": "Tobramycin [Mass/volume] in Serum or Plasma",
-      "reasoning": "Tobramycin bcs TEST_NAME 'tob' and LongName ; [Mass/volume] is inferred from sibling rows ; in Serum bcs TEST_NAME prefix 's-'",
-      "certainty": "medium"
+      "omop_concept_id": "3013603",
+      "omop_concept_name": "Prostate specific Ag [Mass/volume] in Serum or Plasma",
+      "reasoning": "Prostate specific Ag bcs LongName 'Prostataspesifinen antigeeni' ; [Mass/volume] bcs UNIT 'ug/l' and value deciles [0.38..5.46] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
+      "certainty": "high"
     },
     {
       "row_id": 475,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "Semen analysis panel bcs TEST_NAME 'sp-pak' where 'sp' is semen and 'pak' is panel ; in Semen bcs prefix_meaning 'Sperm / semen'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for PSA exist with multiple properties (e.g., mass, moles), and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 476,
-      "omop_concept_id": "3008607",
-      "omop_concept_name": "Semen analysis panel",
-      "reasoning": "Semen analysis panel bcs TEST_NAME 'sp-pakd' where 'sp' is semen and 'pak' is panel ; in Semen bcs prefix_meaning 'Sperm / semen'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The unit 'mg' is a mass, not a concentration. This is not sufficient to map to a standard [Mass/volume] concept.",
+      "certainty": ""
     },
     {
       "row_id": 477,
-      "omop_concept_id": "3003181",
-      "omop_concept_name": "Sodium [Moles/volume] in Urine",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Urine bcs TEST_NAME prefix 'u-'",
+      "omop_concept_id": "3015399",
+      "omop_concept_name": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma",
+      "reasoning": "Transferrin receptor.soluble bcs LongName 'Transferriinireseptori, liukoinen' ; [Mass/volume] bcs UNIT 'mg/l' and value deciles [1.01..5.68] ; in Serum or Plasma bcs prefix 's-' (Serum), for which S/P is the correct LOINC system.",
       "certainty": "high"
     },
     {
       "row_id": 478,
-      "omop_concept_id": "3003181",
-      "omop_concept_name": "Sodium [Moles/volume] in Urine",
-      "reasoning": "Sodium bcs TEST_NAME 'na' and LongName ; [Moles/volume] bcs typical deciles matching 'mmol/l' unit ; in Urine bcs TEST_NAME prefix 'u-'",
-      "certainty": "high"
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Concepts for sTfR exist with both [Mass/volume] and [Moles/volume] properties, and without a unit or values, the choice is ambiguous.",
+      "certainty": ""
     },
     {
       "row_id": 479,
-      "omop_concept_id": "3000285",
-      "omop_concept_name": "Sodium [Moles/volume] in Blood",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs typical deciles matching 'mmol/l' unit ; in Blood bcs TEST_NAME prefix 'v-' for venous/veri is best mapped to whole blood, consistent with values",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
+      "reasoning": "Semen analysis panel bcs TEST_NAME 'sp-pak' where 'sp' is semen and 'pak' is panel.",
       "certainty": "high"
     },
     {
       "row_id": 480,
-      "omop_concept_id": "3019550",
-      "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and typical deciles ; in Venous plasma bcs TEST_NAME prefix 'vp-', mapped to generic S/P",
+      "omop_concept_id": "3008607",
+      "omop_concept_name": "Semen analysis panel",
+      "reasoning": "Semen analysis panel bcs TEST_NAME 'sp-pakd' where 'sp' is semen and 'pak' is panel.",
       "certainty": "high"
     },
     {
       "row_id": 481,
+      "omop_concept_id": "3003181",
+      "omop_concept_name": "Sodium [Moles/volume] in Urine",
+      "reasoning": "Sodium bcs LongName 'U -Natrium' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [24.77..129.77] ; in Urine bcs prefix 'U-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 482,
+      "omop_concept_id": "3003181",
+      "omop_concept_name": "Sodium [Moles/volume] in Urine",
+      "reasoning": "Sodium bcs LongName 'U -Natrium' ; [Moles/volume] bcs value deciles [27.31..110.65] are characteristic of mmol/l ; in Urine bcs prefix 'U-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 483,
+      "omop_concept_id": "3041473",
+      "omop_concept_name": "Sodium [Moles/volume] in Venous blood",
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs value deciles [130.07..142] are characteristic of mmol/l ; in Venous blood bcs prefix 'v-' is likely 'venous'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 484,
       "omop_concept_id": "3019550",
       "omop_concept_name": "Sodium [Moles/volume] in Serum or Plasma",
-      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] is inferred from sibling rows ; in Venous plasma bcs TEST_NAME prefix 'vp-', mapped to generic S/P",
-      "certainty": "medium"
+      "reasoning": "Sodium bcs TEST_NAME 'na' ; [Moles/volume] bcs UNIT 'mmol/l' and value deciles [132.88..142.5] ; in Serum or Plasma bcs prefix 'vp-' is likely 'venous plasma', for which S/P is the correct LOINC system.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 485,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined from the name alone. Without a unit or values, the choice between different properties is ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 486,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code 'vp-ple' and LongName 'Valtimopaine ja verenvirtaus, pletysmografi' (Arterial pressure and blood flow, plethysmography) describes a procedure panel. The scope is not well-defined and no specific matching panel was in the candidates.",
+      "certainty": ""
     }
   ],
-  "reflection": "This was a very large group with a wide variety of tests, though sodium (`Na`) was the most frequent. The mapping was mostly straightforward due to the systematic Finnish naming convention (`<specimen>-<analyte>`) and the availability of units and value distributions.\n\nMost `S-` (serum) and `P-` (plasma) codes could be confidently mapped to LOINC's `Serum or Plasma` concepts. Similarly, `B-` (blood), `dU-` (24h urine), `U-` (urine), and `Pf-` (pleural fluid) had direct LOINC equivalents.\n\nSeveral codes could not be mapped:\n- `p-ked.` and `p-kjd.` (rows 395, 396) and `pneag` (454) were completely uninterpretable abbreviations.\n- Lupus anticoagulant tests `p-la1` (screen) and `p-la2` (confirm) were problematic. The candidate list lacked generic concepts for screening and confirmation results reported in seconds; it only offered specific neutralization tests, making an accurate mapping impossible.\n- `p-fs` (row 380) was too ambiguous without supporting data.\n- `pef-pa` (row 448) describes a monitoring protocol rather than a single measurable result, and no suitable panel/protocol concept was available.\n\nThe candidate list was generally very good and comprehensive for this diverse set of analytes."
+  "reflection": "This large group covered a wide range of common laboratory tests, primarily identified by their Finnish abbreviations. Mapping was generally straightforward for well-defined analytes where units and values were present (e.g., `p-na`, `s-alat`, `p-acth`). The provided `LongName` and prefix/suffix meanings were very helpful.\n\nSeveral challenges arose:\n1.  **Ambiguous codes:** Some codes like `p-fs`, `p-la1`, `p-la2`, `p-rvvt-l` were too generic to map to a specific coagulation test, and the candidate list lacked general 'screening' concepts for these.\n2.  **Missing candidates:** Some specific concepts were missing, such as Sodium pre-dialysis (`p-naed.`) and Prolactin in moles/volume. This prevented mapping otherwise clear rows.\n3.  **Panels vs. Components:** Many rows were clearly panel/order codes (e.g., `p-nak`, `sp-pak`, `papa`). Mapping these to panel concepts was successful. However, some procedural panels (`pef-pa`, `pt-vp-ple`) lacked a good match in the candidate list.\n4.  **Data quality:** A few rows had suspect units (`p-alat` in `umol/l`, `p-laite` in `ug/l`). I mapped them with medium/low certainty where the evidence strongly suggested a typo, but it highlights the risk of relying on incorrect source data.\n5.  **`name` only evidence:** A significant number of rows had only a name. For analytes with multiple LOINC properties (e.g., mass vs. moles vs. activity), these could not be mapped, leading to many unmapped rows. This is the correct approach, as guessing the property is unsafe."
 }

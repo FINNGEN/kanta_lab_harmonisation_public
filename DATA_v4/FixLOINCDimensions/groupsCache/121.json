@@ -1,698 +1,943 @@
 {
   "rows": [
     {
-      "row_id": 1611,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `-ctr-d` appears to be an administrative or control code ('ctr' for control, '-d' for DNA test) and does not specify a clinically relevant analyte.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1612,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `-fishhyb` indicates a FISH analysis but does not specify the specimen or the target of the analysis, making it too generic to map to a specific LOINC concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1613,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `-fishhyb` indicates a FISH analysis but does not specify the specimen or the target of the analysis, making it too generic to map to a specific LOINC concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1614,
-      "omop_concept_id": "3011498",
-      "omop_concept_name": "APOE gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "APOE gene mutations found bcs `apoe-d` in `TEST_NAME` and `Apolipoproteiini E, DNA-tutkimus` in `LongName` indicate a DNA test for ApoE genotyping ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for reporting these findings.",
+      "row_id": 1966,
+      "omop_concept_id": "3050449",
+      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
+      "reasoning": "Albumin bcs `alb-` and `Albumiini` ; [Mass/time] bcs `ug/min` unit ; in Urine collected for unspecified duration bcs `cU-` (Collected urine).",
       "certainty": "high"
     },
     {
-      "row_id": 1615,
+      "row_id": 1967,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The analyte abbreviation `aso2` in the `TEST_NAME` is not identifiable.",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles. Candidates exist for [Mass/time], [Mass/volume] and [Presence].",
       "certainty": ""
     },
     {
-      "row_id": 1616,
+      "row_id": 1968,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-atrytyd` with LongName `B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus` clearly indicates genotyping of the Alpha-1-antitrypsin (SERPINA1) gene. No suitable candidate for genotyping was present in the list; all available candidates were for phenotyping.",
+      "reasoning": "The code `E-coli` suggests a test for Escherichia coli in Erythrocytes, which is a biologically implausible test. No suitable candidate concepts are available.",
       "certainty": ""
     },
     {
-      "row_id": 1617,
+      "row_id": 1969,
+      "omop_concept_id": "3003327",
+      "omop_concept_name": "Ova and parasites identified in Stool by Light microscopy",
+      "reasoning": "Ova and parasites bcs `para-` and `Parasiitit` ; identified (qualitative) bcs `-o` and `(kval)` ; in Stool bcs `f-` (Feces) ; by Light microscopy is the standard method for a general screen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1970,
+      "omop_concept_id": "3043771",
+      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
+      "reasoning": "Microalbumin bcs `alb-mi` and `mikroalbuminuria` ; [Mass/time] bcs `mg/12h` unit ; in 12 hour Urine bcs the unit specifies a 12h collection and `nU-` indicates a timed collection (night urine).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1971,
+      "omop_concept_id": "3050449",
+      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
+      "reasoning": "Albumin bcs `alb` and `Albumiini` ; [Mass/time] bcs `ug/min` unit ; in Urine collected for unspecified duration bcs `nU-` (Night (morning) urine) is a timed collection.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1972,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-atrytyd` with LongName `B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus` clearly indicates genotyping of the Alpha-1-antitrypsin (SERPINA1) gene. No suitable candidate for genotyping was present in the list; all available candidates were for phenotyping.",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
       "certainty": ""
     },
     {
-      "row_id": 1618,
+      "row_id": 1973,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkre` in a timed `nU-` (night urine) collection context, which is typically for microalbuminuria screening ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `nU-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1974,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkre` in a timed `nU-` (night urine) collection context ; [Mass Ratio] bcs the value deciles are consistent with the `mg/mmol` unit ; in Urine bcs `nU-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1975,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkrea` in a timed `nU-` (night urine) collection context ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `nU-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1976,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The analyte/test name `auria10` is uninterpretable.",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
       "certainty": ""
     },
     {
-      "row_id": 1619,
-      "omop_concept_id": "3049056",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "BCR-ABL1 fusion transcript bcs `bcr` in `TEST_NAME` and `BCR-ABL1 -geenien fuusio-RNA` in `LongName` ; /control transcript [# Ratio] bcs `qr` (quantitative ratio) in `TEST_NAME` and `(kvant)` in `LongName` ; in Blood bcs `B-` prefix.",
+      "row_id": 1977,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs `kre` ; [Moles/volume] bcs this is the standard property in SI units used in Finland ; in Serum or Plasma bcs `P-` (Plasma). The `seul` (screen) part is procedural and not part of the result concept.",
       "certainty": "high"
     },
     {
-      "row_id": 1620,
-      "omop_concept_id": "3049056",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "BCR-ABL1 fusion transcript bcs `bcr` in `TEST_NAME` and `BCR-ABL1 -geenien fuusio-RNA` in `LongName` ; /control transcript [# Ratio] bcs `qr` (quantitative ratio) in `TEST_NAME` and `(kvant)` in `LongName` ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1621,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-blapcr` likely refers to B-lymphocyte clonality analysis by PCR. However, no suitable candidate for general B-cell (e.g., IGH) gene rearrangement by molecular genetics method was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1622,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The analyte `bo3` in the `TEST_NAME` is not identifiable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1623,
-      "omop_concept_id": "3029984",
-      "omop_concept_name": "BRCA1+BRCA2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "BRCA1+BRCA2 gene targeted mutation analysis bcs `brcay-d` in `TEST_NAME` indicates a DNA test panel for BRCA genes ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1624,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name component `brovcore` is uninterpretable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1625,
-      "omop_concept_id": "46237016",
-      "omop_concept_name": "CALR gene exon 9 mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "CALR gene mutations found bcs `calr-d` in `TEST_NAME` indicates a DNA test for the CALR gene ; in Blood bcs `B-` prefix. This concept correctly identifies the common target (exon 9) and a general method.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1626,
-      "omop_concept_id": "3013321",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "BCR-ABL1 fusion transcript bcs `cml` in `TEST_NAME` refers to Chronic Myeloid Leukemia, which is defined by this transcript ; [Presence] bcs the code `b-cmlpcr` does not specify quantitation (unlike `b-bcr-qr`) ; in Blood bcs `B-` prefix ; by Molecular genetics method bcs `pcr` in `TEST_NAME`. The chosen concept is `top2000` ranked.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1627,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test abbreviation `crco` is ambiguous and cannot be confidently identified, though it may relate to colorectal cancer.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1628,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test abbreviation `crcoti` is ambiguous and cannot be confidently identified.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1629,
-      "omop_concept_id": "21494571",
-      "omop_concept_name": "CNBP gene CCTG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "CNBP gene CCTG repeat analysis bcs `b-dm2alld` and `LongName` 'Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin...' refer to a DNA test for Myotonic Dystrophy type 2, which is caused by repeats in the CNBP gene (formerly ZNF9) ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1630,
-      "omop_concept_id": "21494571",
-      "omop_concept_name": "CNBP gene CCTG repeat analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "CNBP gene CCTG repeat analysis bcs `b-dm2alld` and `LongName` 'Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin...' refer to a DNA test for Myotonic Dystrophy type 2, which is caused by repeats in the CNBP gene (formerly ZNF9) ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1631,
-      "omop_concept_id": "3046976",
-      "omop_concept_name": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "DPYD gene mutations found bcs `dpyd-d` in `TEST_NAME` specifies a DNA test for the DPYD gene ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1632,
-      "omop_concept_id": "3046976",
-      "omop_concept_name": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "DPYD gene mutations found bcs `dpyd-d` in `TEST_NAME` specifies a DNA test for the DPYD gene ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1633,
-      "omop_concept_id": "1001873",
-      "omop_concept_name": "DPYD gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "DPYD gene targeted mutation analysis bcs `dpydl-d` in `TEST_NAME` suggests an extensive (`l` for `laaja`) panel DNA test for DPYD ; in Blood bcs `B-` prefix.",
+      "row_id": 1978,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `a1mikre` is interpreted as Albumin(micro)/Creatinine, supported by the `mi` part of the code ; [Mass Ratio] bcs the value deciles are consistent with `mg/mmol` units ; in Urine bcs `U-`.",
       "certainty": "medium"
     },
     {
-      "row_id": 1634,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name component `exkon` is uninterpretable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1635,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name component `extri` is uninterpretable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1636,
-      "omop_concept_id": "3039049",
-      "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "reasoning": "Pharmacogenetic DNA analysis panel bcs `farma-d` in `TEST_NAME` stands for a pharmacogenetic DNA test ; the code implies a panel and the specimen is Blood (`B-` prefix).",
+      "row_id": 1979,
+      "omop_concept_id": "3025987",
+      "omop_concept_name": "Albumin [Presence] in Urine",
+      "reasoning": "Albumin bcs `alb` ; [Presence] bcs the `-0` suffix is interpreted as a qualitative test ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1637,
-      "omop_concept_id": "3039049",
-      "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "reasoning": "Pharmacogenetic DNA analysis panel bcs `farml-d` in `TEST_NAME` stands for an extensive (`l` for `laaja`) pharmacogenetic DNA test ; this is the most suitable panel concept available. Specimen is Blood (`B-` prefix).",
+      "row_id": 1980,
+      "omop_concept_id": "3012516",
+      "omop_concept_name": "Albumin [Mass/volume] in Urine",
+      "reasoning": "Albumin bcs `alb` ; [Mass/volume] bcs `mg/l` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1981,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1982,
+      "omop_concept_id": "3012516",
+      "omop_concept_name": "Albumin [Mass/volume] in Urine",
+      "reasoning": "Albumin bcs `alb` ; [Mass/volume] bcs `mg/l` unit and value deciles ; in Urine bcs `U-`. The `-mi` suffix indicates the clinical context (microalbuminuria) but the analyte is Albumin.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1983,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1984,
+      "omop_concept_id": "3029937",
+      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
+      "reasoning": "Albumin bcs `alb` and `Albumiini` ; [Presence] bcs `-o` and `(kval)` suffix indicate a qualitative test, and values are all zero ; in Urine bcs `U-` ; by Test strip is the common method for a qualitative screen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1985,
+      "omop_concept_id": "3029937",
+      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
+      "reasoning": "Albumin bcs `alb` and `Albumiini` ; [Presence] bcs `-o` and `(kval)` suffix indicate a qualitative test, and values are all zero ; in Urine bcs `U-` ; by Test strip is the common method for a qualitative screen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1986,
+      "omop_concept_id": "3029937",
+      "omop_concept_name": "Albumin [Presence] in Urine by Test strip",
+      "reasoning": "Albumin bcs `alb` and `Albumiini` ; [Presence] bcs `-o` and `(kval)` suffix indicate a qualitative test ; in Urine bcs `U-` ; by Test strip is the assumed method for a qualitative screen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1987,
+      "omop_concept_id": "3034485",
+      "omop_concept_name": "Albumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Albumin/Creatinine bcs `alb/kre` ; [Mass Ratio] bcs `g/mol` unit indicates a ratio of mass to moles, which is commonly mapped to [Mass Ratio] in LOINC ; in Urine bcs `U-`.",
       "certainty": "medium"
     },
     {
-      "row_id": 1638,
+      "row_id": 1988,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `alb/kre` and values are typical for microalbuminuria screening ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1989,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-fii-d` and `LongName` `B -Protrombiinigeeni, DNA-tutkimus` clearly specify a DNA test for the Prothrombin (Factor II) gene mutation. No suitable LOINC candidate was found in the provided list.",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles. Sibling rows show this code can be reported with different value ranges, making it impossible to choose a specific concept.",
       "certainty": ""
     },
     {
-      "row_id": 1639,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-fii-d` and `LongName` `B -Protrombiinigeeni, DNA-tutkimus` clearly specify a DNA test for the Prothrombin (Factor II) gene mutation. No suitable LOINC candidate was found in the provided list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1640,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-finngen` refers to the FinnGen research project and is likely an administrative or sample tracking code, not a standard clinical laboratory test.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1641,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-fishhem` specifies a FISH panel for hematologic disorders in blood, but the available candidates are more specific (e.g., AML panel, or distinguishing metaphase/interphase) than the generic local code allows for a confident mapping.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1642,
-      "omop_concept_id": "3035795",
-      "omop_concept_name": "FMR1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "FMR1 gene targeted mutation analysis bcs `frax-d` and `LongName` indicate a DNA test for Fragile-X (FMR1 gene) ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for this test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1643,
-      "omop_concept_id": "3035795",
-      "omop_concept_name": "FMR1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "FMR1 gene targeted mutation analysis bcs `frax-d` and `LongName` indicate a DNA test for Fragile-X (FMR1 gene) ; in Blood bcs `B-` prefix. The chosen concept is a `top2000` ranked code for this test.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1644,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-fuus-mr` indicates a fusion gene analysis (`fuus`) from blood (`B-`), but does not specify which fusion gene is being tested, making it impossible to map.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1645,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-fuus-mr` indicates a fusion gene analysis (`fuus`) from blood (`B-`), but does not specify which fusion gene is being tested, making it impossible to map.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1646,
-      "omop_concept_id": "3015816",
-      "omop_concept_name": "F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "F5 gene p.Arg506Gln [Presence] bcs `b-fv-d` and `LongName` indicate a DNA test for the Factor V gene, which primarily targets the Factor V Leiden mutation (p.Arg506Gln) ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1647,
-      "omop_concept_id": "3015816",
-      "omop_concept_name": "F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "F5 gene p.Arg506Gln [Presence] bcs `b-fv-d` and `LongName` indicate a DNA test for the Factor V gene, which primarily targets the Factor V Leiden mutation (p.Arg506Gln) ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1648,
-      "omop_concept_id": "1092115",
-      "omop_concept_name": "Hereditary thrombosis disorders multigene analysis in Blood by Molecular genetics method",
-      "reasoning": "Hereditary thrombosis disorders multigene analysis bcs `fvfii-d` in `TEST_NAME` indicates a combined DNA test for Factor V and Factor II, a common thrombophilia panel ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1649,
-      "omop_concept_id": "1092115",
-      "omop_concept_name": "Hereditary thrombosis disorders multigene analysis in Blood by Molecular genetics method",
-      "reasoning": "Hereditary thrombosis disorders multigene analysis bcs `fvfii-d` in `TEST_NAME` indicates a combined DNA test for Factor V and Factor II, a common thrombophilia panel ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1650,
-      "omop_concept_id": "3026001",
-      "omop_concept_name": "HFE gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "HFE gene mutations found bcs `hfe-d` in `TEST_NAME` and `LongName` specify a DNA test for major mutations ('valtamutaatioiden') in the HFE gene ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1651,
-      "omop_concept_id": "46235504",
-      "omop_concept_name": "MSH2 gene+MLH1 gene+MSH6 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
-      "reasoning": "MSH2 gene+MLH1 gene+MSH6 gene mutation analysis limited to known familial mutations bcs `LongName` specifies a test for a single known mutation in one of these genes for HNPCC (`hnpcy` in `TEST_NAME`) ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1652,
-      "omop_concept_id": "3046498",
-      "omop_concept_name": "JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "JAK2 gene p.Val617Phe [Presence] bcs `jak2-d` in `TEST_NAME` and `LongName` indicate a DNA test for the JAK2 mutation, which is overwhelmingly the V617F mutation ; in Blood bcs `B-` prefix. The concept is a `top2000` code.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1653,
-      "omop_concept_id": "3046498",
-      "omop_concept_name": "JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "JAK2 gene p.Val617Phe [Presence] bcs `jak2-d` in `TEST_NAME` and `LongName` indicate a DNA test for the JAK2 mutation, which is overwhelmingly the V617F mutation ; in Blood bcs `B-` prefix. The concept is a `top2000` code.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1654,
-      "omop_concept_id": "1092212",
-      "omop_concept_name": "Cells.recipient derived/Cells in Blood or Tissue by Molecular genetics method --post stem cell transplant",
-      "reasoning": "Cells.recipient derived/Cells bcs `kim-d` in `TEST_NAME` stands for a chimerism (`kimerismi`) DNA test, which measures the proportion of recipient vs donor cells post-transplant ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1655,
-      "omop_concept_id": "3964788",
-      "omop_concept_name": "Bone marrow transplant chimerism panel - Plasma cell-free DNA by Sequencing",
-      "reasoning": "Bone marrow transplant chimerism panel bcs `kim-fd` in `TEST_NAME` suggests a panel for chimerism analysis, possibly follow-up (`f`) ; in Blood bcs `B-` prefix. This is the best available panel candidate, though it specifies Plasma cfDNA and Sequencing, which is more specific than the source code.",
+      "row_id": 1990,
+      "omop_concept_id": "3034485",
+      "omop_concept_name": "Albumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Albumin/Creatinine bcs `alb/krea` ; [Mass Ratio] bcs `g/mol` unit indicates a ratio of mass to moles, which is commonly mapped to [Mass Ratio] in LOINC ; in Urine bcs `U-`.",
       "certainty": "medium"
     },
     {
-      "row_id": 1656,
-      "omop_concept_id": "3049056",
-      "omop_concept_name": "t(9;22)(q34.1;q11)(ABL1,BCR) fusion transcript/control transcript [# Ratio] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "BCR-ABL1 fusion transcript bcs `kml` (KML, Kronisk Myeloisk Leukemi/CML) in `TEST_NAME` is defined by this transcript ; /control transcript [# Ratio] bcs `qr` suffix means quantitative ratio ; in Blood bcs `B-` prefix.",
+      "row_id": 1991,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `alb/krea` and values are typical for microalbuminuria screening ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1657,
-      "omop_concept_id": "40762031",
-      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "LCT gene mutations found bcs `lakt-d` in `TEST_NAME` and `LongName` specify a DNA test for lactose intolerance, which is a test of the LCT gene ; in Blood bcs `B-` prefix. The `[Type]` property is appropriate for a genotype result.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1658,
-      "omop_concept_id": "40762031",
-      "omop_concept_name": "LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method",
-      "reasoning": "LCT gene mutations found bcs `lakt-d` in `TEST_NAME` and `LongName` specify a DNA test for lactose intolerance, which is a test of the LCT gene ; in Blood bcs `B-` prefix. The `[Type]` property is appropriate for a genotype result.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1659,
+      "row_id": 1992,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The meaning of `ldlre-4` is unclear, although `ldlre` may refer to the LDLR gene. The `-4` suffix is ambiguous.",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
       "certainty": ""
     },
     {
-      "row_id": 1660,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The meaning of `ldlre-4` is unclear, although `ldlre` may refer to the LDLR gene. The `-4` suffix is ambiguous.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1661,
-      "omop_concept_id": "40759280",
-      "omop_concept_name": "LDLR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "LDLR gene mutations found bcs `ldlre-d` in `TEST_NAME` and `LongName` 'LDL-reseptorigeenin mutaatio' specify a DNA test for the LDL receptor gene ; in Blood bcs `B-` prefix.",
+      "row_id": 1993,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkre` and `Albumiinin ja kreatiniinin suhde` ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`. This concept is preferred as it's a common screening test and is in the top 2000.",
       "certainty": "high"
     },
     {
-      "row_id": 1662,
-      "omop_concept_id": "3049122",
-      "omop_concept_name": "Sequencing methodology panel - Blood or Tissue by Molecular genetics method",
-      "reasoning": "Sequencing methodology panel bcs `ngs-d` in `TEST_NAME` specifies a Next-Generation Sequencing DNA test, which is a method panel rather than a specific analyte panel ; in Blood bcs `B-` prefix.",
+      "row_id": 1994,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1995,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkrea` ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1996,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined. The provided unit `mg/mmol/l` is invalid for a ratio, and there are no values.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1997,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `albkrea` ; [Mass Ratio] bcs the value deciles are consistent with the `mg/mmol` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1998,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-alvhu4a` is uninterpretable and does not correspond to a known analyte.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1999,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-alvhu5b` is uninterpretable and does not correspond to a known analyte.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2000,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-alvhu6a` is uninterpretable and does not correspond to a known analyte.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2001,
+      "omop_concept_id": "3005058",
+      "omop_concept_name": "Barbiturates [Presence] in Urine by Screen method",
+      "reasoning": "Barbiturates bcs `barb` and `Barbituraatit` ; [Presence] by Screen method bcs `-o` (kval) suffix indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2002,
+      "omop_concept_id": "1001926",
+      "omop_concept_name": "Buprenorphine [Presence] in Urine by Screen method",
+      "reasoning": "Buprenorphine bcs `bupre` ; [Presence] by Screen method bcs `-0` suffix is interpreted as a qualitative screen ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2003,
+      "omop_concept_id": "1001926",
+      "omop_concept_name": "Buprenorphine [Presence] in Urine by Screen method",
+      "reasoning": "Buprenorphine bcs `bupre` and `Buprenorfiini` ; [Presence] by Screen method bcs `-o` (kval) suffix indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2004,
+      "omop_concept_id": "1001926",
+      "omop_concept_name": "Buprenorphine [Presence] in Urine by Screen method",
+      "reasoning": "Buprenorphine bcs `bupre` and `Buprenorfiini` ; [Presence] by Screen method bcs `-o` (kval) suffix indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2005,
+      "omop_concept_id": "3014603",
+      "omop_concept_name": "Buprenorphine [Presence] in Urine by Confirmatory method",
+      "reasoning": "Buprenorphine bcs `bupre` and `Buprenorfiini` ; [Presence] by Confirmatory method bcs `-ct` suffix and `varmistus` in LongName mean 'confirmation' ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2006,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-cakre` indicates a Calcium/Creatinine ratio, but without units or values, it is not possible to distinguish between a [Molar ratio] and a [Mass Ratio].",
+      "certainty": ""
+    },
+    {
+      "row_id": 2007,
+      "omop_concept_id": "3027162",
+      "omop_concept_name": "Color of Urine",
+      "reasoning": "Color bcs `color` ; of Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2008,
+      "omop_concept_id": "3009956",
+      "omop_concept_name": "Propoxyphene [Presence] in Urine by Screen method",
+      "reasoning": "Propoxyphene bcs `dxpro` and `Dekstropropoksifeeni` ; [Presence] by Screen method bcs `-o` suffix and `seulonta (kval)` in LongName indicate a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2009,
+      "omop_concept_id": "1002422",
+      "omop_concept_name": "2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) [Presence] in Urine by Screen method",
+      "reasoning": "EDDP bcs `eddp` ; [Presence] by Screen method bcs `-o` suffix indicates a qualitative screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2010,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huum-10` indicates a 10-drug panel, but no specific candidate concept for a 10-panel drug screen exists in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2011,
+      "omop_concept_id": "3042009",
+      "omop_concept_name": "Drugs identified in Urine by Confirmatory method",
+      "reasoning": "Drugs identified by Confirmatory method bcs `huum-ct` (drug confirmation test) ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2012,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huum-o` (drug screen, qualitative) and `Huumeseulonta` (drug screening) ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2013,
+      "omop_concept_id": "3015208",
+      "omop_concept_name": "Opiates [Presence] in Urine by Screen method",
+      "reasoning": "Opiates bcs `op` within a `huum` (drug screen) context ; [Presence] by Screen method bcs it's part of a screening code ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2014,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huum-ps` (drug basic screen) ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2015,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huum-su` appears to be another variant of a urine drug screen ; in Urine bcs `U-`.",
       "certainty": "medium"
     },
     {
-      "row_id": 1663,
-      "omop_concept_id": "3044589",
-      "omop_concept_name": "NPHS1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
-      "reasoning": "NPHS1 gene targeted mutation analysis bcs `nphs1-d` in `TEST_NAME` and `LongName` specifying a test for two major mutations indicate a targeted analysis of the NPHS1 gene ; in Blood bcs `B-` prefix.",
+      "row_id": 2016,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huum4a` appears to be a local 4-drug panel, but no corresponding concept is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2017,
+      "omop_concept_id": "40768439",
+      "omop_concept_name": "Drugs of abuse 5 panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse 5 panel by Screen method bcs `huum5b` indicates a 5-panel drug screen ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1664,
-      "omop_concept_id": "3039049",
-      "omop_concept_name": "Pharmacogenetic DNA analysis panel",
-      "reasoning": "Pharmacogenetic DNA analysis panel bcs `pgx-d` in `TEST_NAME` stands for a pharmacogenomics DNA test, which is a panel ; in Blood bcs `B-` prefix.",
+      "row_id": 2018,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huum6a` appears to be a local 6-drug panel, but no corresponding concept is available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2019,
+      "omop_concept_id": "40768439",
+      "omop_concept_name": "Drugs of abuse 5 panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse 5 panel by Screen method bcs `huume-5b` indicates a 5-panel drug screen ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1665,
+      "row_id": 2020,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `b-sekvy-d` indicates a sequencing (`sekvensointi`) DNA test but does not specify the gene or panel being sequenced, making it too generic to map.",
+      "reasoning": "The code `u-huume-6a` appears to be a local 6-drug panel, but no corresponding concept is available in the candidate list.",
       "certainty": ""
     },
     {
-      "row_id": 1666,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `b-sekvy-d` indicates a sequencing (`sekvensointi`) DNA test but does not specify the gene or panel being sequenced, making it too generic to map.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1667,
-      "omop_concept_id": "3009106",
-      "omop_concept_name": "TP53 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "TP53 gene mutations found bcs `tp53-d` in `TEST_NAME` specifies a DNA test for the TP53 gene ; in Blood bcs `B-` prefix.",
+      "row_id": 2021,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huume-o` indicates a qualitative drug screen ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1668,
-      "omop_concept_id": "3042168",
-      "omop_concept_name": "TPMT gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "TPMT gene mutations found bcs `tpmt-d` in `TEST_NAME` specifies a DNA test for the TPMT gene ; in Blood bcs `B-` prefix.",
+      "row_id": 2022,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huuml-o` indicates a screen for drugs (`huum`) and medicines (`l` for `lääkeaine`), but no candidate concept for a combined 'Drugs of abuse and Medications screen panel' is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2023,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huuml-o` indicates a screen for drugs (`huum`) and medicines (`l` for `lääkeaine`), but no candidate concept for a combined 'Drugs of abuse and Medications screen panel' is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2024,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-huumlct` indicates a confirmation test for drugs (`huum`) and medicines (`l` for `lääkeaine`), but no candidate concept for a combined confirmation panel is available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2025,
+      "omop_concept_id": "3042009",
+      "omop_concept_name": "Drugs identified in Urine by Confirmatory method",
+      "reasoning": "Drugs identified by Confirmatory method bcs `huumlct` (drug and medication confirmation) and `varmistus` (confirmation) ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1669,
-      "omop_concept_id": "3042168",
-      "omop_concept_name": "TPMT gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
-      "reasoning": "TPMT gene mutations found bcs `tpmt-d` in `TEST_NAME` specifies a DNA test for the TPMT gene ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1670,
-      "omop_concept_id": "40757581",
-      "omop_concept_name": "CYP2C9 and VKORC1 panel - Blood or Tissue by Molecular genetics method",
-      "reasoning": "CYP2C9 and VKORC1 panel bcs the `LongName` explicitly names these two genes for warfarin (`varfa`) response testing ; in Blood bcs `B-` prefix and `verestä` in `LongName`.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1671,
-      "omop_concept_id": "3034599",
-      "omop_concept_name": "Y chromosome deletion [Identifier] in Blood or Tissue Nominal",
-      "reasoning": "Y chromosome deletion bcs `ykrom-d` in `TEST_NAME` and `LongName` ('Y-kromosomin poikkeavuuksia') indicate a test for Y chromosome abnormalities, typically microdeletions ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1672,
-      "omop_concept_id": "3034599",
-      "omop_concept_name": "Y chromosome deletion [Identifier] in Blood or Tissue Nominal",
-      "reasoning": "Y chromosome deletion bcs `ykrom-d` in `TEST_NAME` and `LongName` ('Y-kromosomin poikkeavuuksia') indicate a test for Y chromosome abnormalities, typically microdeletions ; in Blood bcs `B-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1673,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code is an administrative placeholder for a hospital-specific panel ('sairaalkohtainen ryhmätutkimus') with variable content, as stated in the `LongName`. It does not correspond to a single standard LOINC concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1674,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bl-bal-1` and `LongName` 'solututkimus' (cell study) refer to a cell count and differential panel on BAL fluid. No candidate for this specific panel was available in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1675,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bl-balfc` indicates a flow cytometry panel on BAL fluid. The candidate list only contains component concepts (e.g., CD3, CD4 counts), not the panel itself.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1676,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The analyte abbreviation `aso` in `TEST_NAME` is not identifiable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1677,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The analyte abbreviation `aso2` in `TEST_NAME` is not identifiable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1678,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The analyte abbreviation `aso2` in `TEST_NAME` is not identifiable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1679,
-      "omop_concept_id": "3048879",
-      "omop_concept_name": "Bone marrow aspiration report",
-      "reasoning": "Bone marrow aspiration report bcs `bm-aspir` in `TEST_NAME` refers to a bone marrow aspirate examination, and this concept represents the overall report/procedure.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1680,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-bcr-qr` specifies a quantitative ratio of the BCR-ABL1 fusion transcript in bone marrow. No suitable candidate for a general (non-log, non-transcript-specific) ratio in bone marrow was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1681,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-blapcr` likely refers to B-lymphocyte clonality analysis by PCR in bone marrow. No suitable candidate for general B-cell (e.g., IGH) gene rearrangement by molecular genetics method was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1682,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name component `bpvalm` is uninterpretable.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1683,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fish` indicates a FISH analysis on bone marrow but does not specify the target panel (e.g., for myeloma, AML), making it too generic to map to a specific LOINC concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1684,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fish` indicates a FISH analysis on bone marrow but does not specify the target panel (e.g., for myeloma, AML), making it too generic to map to a specific LOINC concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1685,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fish-mm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1686,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fish2` is ambiguous; the meaning of the '2' suffix is unknown.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1687,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fish2` is ambiguous; the meaning of the '2' suffix is unknown.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1688,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fishhem` specifies a FISH panel for hematologic disorders in bone marrow, but does not specify the disease context (e.g., AML, MDS, MM), making it too generic to map to a specific panel concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1689,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fishhem` specifies a FISH panel for hematologic disorders in bone marrow, but does not specify the disease context (e.g., AML, MDS, MM), making it too generic to map to a specific panel concept.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1690,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fishmm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1691,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fishmm` clearly specifies a FISH panel for multiple myeloma in bone marrow. No suitable candidate for this specific panel was found in the list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1692,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The test name component `fishvar` is ambiguous.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1693,
-      "omop_concept_id": "40757578",
-      "omop_concept_name": "FLT3 gene targeted mutation analysis in Bone marrow by Molecular genetics method",
-      "reasoning": "FLT3 gene targeted mutation analysis bcs `flt3-d` in `TEST_NAME` specifies a DNA test for the FLT3 gene, which typically involves a targeted analysis for key mutations (ITD and TKD) ; in Bone marrow bcs `Bm-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1694,
-      "omop_concept_id": "40757578",
-      "omop_concept_name": "FLT3 gene targeted mutation analysis in Bone marrow by Molecular genetics method",
-      "reasoning": "FLT3 gene targeted mutation analysis bcs `flt3-d` in `TEST_NAME` specifies a DNA test for the FLT3 gene, which typically involves a targeted analysis for key mutations (ITD and TKD) ; in Bone marrow bcs `Bm-` prefix.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1695,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fuus-mr` indicates a fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1696,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fuus-mr` indicates a fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1697,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fuus-qr` indicates a quantitative fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1698,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-fuus-qr` indicates a quantitative fusion gene analysis from bone marrow but does not specify which fusion gene is being tested.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1699,
-      "omop_concept_id": "3014837",
-      "omop_concept_name": "Microscopic observation [Identifier] in Bone marrow by Wright Giemsa stain",
-      "reasoning": "Microscopic observation bcs this is an examination of a smear ; in Bone marrow bcs `Bm-` prefix ; by Wright Giemsa stain bcs `mgg` (May-Grünwald-Giemsa) is a Romanowsky-type stain functionally equivalent to Wright-Giemsa, and this is a `top2000` concept.",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1700,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-mggfe` and `LongName` 'Bm-Luuydintutkimus, MGG- ja rautavärjäys' specify a panel including MGG and Iron (Fe) staining of bone marrow. No single LOINC concept for this panel was found in the candidate list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1701,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code `bm-mggfe` and `LongName` 'Bm-Luuydintutkimus, MGG- ja rautavärjäys' specify a panel including MGG and Iron (Fe) staining of bone marrow. No single LOINC concept for this panel was found in the candidate list.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1702,
-      "omop_concept_id": "37020002",
-      "omop_concept_name": "Multiple myeloma minimal residual disease panel - Bone marrow by Flow cytometry (FC)",
-      "reasoning": "Multiple myeloma minimal residual disease panel bcs `mm-ift` in `TEST_NAME` indicates an immunophenotyping panel for Multiple Myeloma, and MRD detection is a primary use for this ; in Bone marrow bcs `Bm-` prefix ; by Flow cytometry (FC) bcs immunophenotyping (`ift`) is performed by FC.",
+      "row_id": 2026,
+      "omop_concept_id": "3042009",
+      "omop_concept_name": "Drugs identified in Urine by Confirmatory method",
+      "reasoning": "Drugs identified by Confirmatory method bcs `huumoct` is interpreted as a drug confirmation test ; in Urine bcs `U-`.",
       "certainty": "medium"
     },
     {
-      "row_id": 1703,
-      "omop_concept_id": "40763629",
-      "omop_concept_name": "HC gene rearrangements [Presence] in Bone marrow by Molecular genetics method",
-      "reasoning": "HC gene rearrangements [Presence] bcs `mmpcr` in `TEST_NAME` indicates a PCR test for Multiple Myeloma clonality, which targets Immunoglobulin Heavy Chain (HC/IGH) gene rearrangements ; in Bone marrow bcs `Bm-` prefix.",
+      "row_id": 2027,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huumpika` indicates a rapid (`pika`) drug screen ; in Urine bcs `U-`. 'Rapid' is a method detail not present in the chosen concept but the concept is otherwise correct.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2028,
+      "omop_concept_id": "3042009",
+      "omop_concept_name": "Drugs identified in Urine by Confirmatory method",
+      "reasoning": "Drugs identified by Confirmatory method bcs `huumtof` indicates a drug test by TOF mass spectrometry, which is a confirmatory method ; in Urine bcs `U-`.",
       "certainty": "high"
     },
     {
-      "row_id": 1704,
+      "row_id": 2029,
+      "omop_concept_id": "42870589",
+      "omop_concept_name": "Drugs of abuse panel - Urine by Screen method",
+      "reasoning": "Drugs of abuse panel by Screen method bcs `huupika` indicates a rapid (`pika`) drug screen ; in Urine bcs `U-`. 'Rapid' is a method detail not present in the chosen concept but the concept is otherwise correct.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2030,
+      "omop_concept_id": "1469831",
+      "omop_concept_name": "Hyaline casts [#/volume] in Urine sediment by Automated count",
+      "reasoning": "Hyaline casts bcs `hyalie` ; [#/volume] bcs `e6/l` unit ; in Urine sediment by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2031,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The test name component `morflkl` is ambiguous, though `morf` likely means morphology.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area and Presence, and the row lacks a unit or values to decide.",
       "certainty": ""
     },
     {
-      "row_id": 1705,
+      "row_id": 2032,
+      "omop_concept_id": "1469831",
+      "omop_concept_name": "Hyaline casts [#/volume] in Urine sediment by Automated count",
+      "reasoning": "Hyaline casts bcs `hyalie` ; [#/volume] bcs `e6/l` unit ; in Urine sediment by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2033,
+      "omop_concept_id": "3022509",
+      "omop_concept_name": "Hyaline casts [#/area] in Urine sediment by Microscopy low power field",
+      "reasoning": "Hyaline casts bcs `hyalie` ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2034,
+      "omop_concept_id": "1469831",
+      "omop_concept_name": "Hyaline casts [#/volume] in Urine sediment by Automated count",
+      "reasoning": "Hyaline casts bcs `hyalie` ; [#/volume] bcs value deciles are consistent with `e6/l` units ; in Urine sediment by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2035,
+      "omop_concept_id": "1469831",
+      "omop_concept_name": "Hyaline casts [#/volume] in Urine sediment by Automated count",
+      "reasoning": "Hyaline casts bcs `hyallie` ; [#/volume] bcs `e6/l` unit ; in Urine sediment by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2036,
+      "omop_concept_id": "3041184",
+      "omop_concept_name": "Isoniazid [Presence] in Urine",
+      "reasoning": "Isoniazid bcs `inh` and `Isoniatsidi` ; [Presence] bcs `-o` (kval) indicates a qualitative test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2037,
+      "omop_concept_id": "3018060",
+      "omop_concept_name": "Cocaine [Presence] in Urine by Screen method",
+      "reasoning": "Cocaine bcs `koka` and `Kokaiini` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2038,
+      "omop_concept_id": "3018060",
+      "omop_concept_name": "Cocaine [Presence] in Urine by Screen method",
+      "reasoning": "Cocaine bcs `koka` and `Kokaiini` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2039,
+      "omop_concept_id": "3029879",
+      "omop_concept_name": "Epithelial cells.squamous [#/volume] in Urine by Automated count",
+      "reasoning": "Squamous epithelial cells bcs `levyep` (levyepiteeli) ; [#/volume] bcs `e6/l` unit ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2040,
+      "omop_concept_id": "3001008",
+      "omop_concept_name": "Epithelial cells.squamous [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Squamous epithelial cells bcs `levyep` (levyepiteeli) ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2041,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `bm-mrd-all` specifies a minimal residual disease panel for ALL in bone marrow, but does not distinguish between B-cell ALL and T-cell ALL, and no generic ALL MRD panel is available in the candidates.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
       "certainty": ""
     },
     {
-      "row_id": 1706,
+      "row_id": 2042,
+      "omop_concept_id": "3029879",
+      "omop_concept_name": "Epithelial cells.squamous [#/volume] in Urine by Automated count",
+      "reasoning": "Squamous epithelial cells bcs `levyepi` (levyepiteeli) ; [#/volume] bcs `e6/l` unit ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2043,
+      "omop_concept_id": "3001008",
+      "omop_concept_name": "Epithelial cells.squamous [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Squamous epithelial cells bcs `levyepi` (levyepiteeli) ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2044,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `bm-mrd-vs` indicates an MRD panel by flow cytometry (`vs` for `virtaussytometria`) but does not specify the disease (e.g., ALL, AML, MM), making it too generic to map.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
       "certainty": ""
     },
     {
-      "row_id": 1707,
+      "row_id": 2045,
+      "omop_concept_id": "3030467",
+      "omop_concept_name": "Casts [#/volume] in Urine by Automated count",
+      "reasoning": "Casts bcs `lier` (lieriö) ; [#/volume] bcs `e6/l` unit ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2046,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `bm-mrdmut` indicates a mutation-based MRD test but does not specify the gene or mutation, making it too generic to map.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area, and Presence, and the row lacks a unit or values to decide.",
       "certainty": ""
     },
     {
-      "row_id": 1708,
+      "row_id": 2047,
+      "omop_concept_id": "3030467",
+      "omop_concept_name": "Casts [#/volume] in Urine by Automated count",
+      "reasoning": "Casts bcs `lier` (lieriö) ; [#/volume] bcs `e6/l` unit ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2048,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `bm-npm1-qd` specifies a quantitative (`q`) test for NPM1 mutations in bone marrow. The available candidate `44816925` is nominal/qualitative, and the other quantitative candidates are for specific transcript variants, so no suitable general quantitative concept is available.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area, and Presence, and the row lacks a unit or values to decide.",
       "certainty": ""
     },
     {
-      "row_id": 1709,
+      "row_id": 2049,
+      "omop_concept_id": "3002148",
+      "omop_concept_name": "Methylenedioxymethamphetamine [Presence] in Urine by Screen method",
+      "reasoning": "Methylenedioxymethamphetamine bcs `mdma-` and `Metyleenidioksimetamfetamiini` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2050,
+      "omop_concept_id": "21491346",
+      "omop_concept_name": "Pathologic casts [#/volume] in Urine by Automated count",
+      "reasoning": "Pathologic casts bcs `muulier` (muu lieriö, other cast) ; [#/volume] bcs `e6/l` unit ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2051,
+      "omop_concept_id": "21491346",
+      "omop_concept_name": "Pathologic casts [#/volume] in Urine by Automated count",
+      "reasoning": "Pathologic casts bcs `muulier` (muu lieriö, other cast) ; [#/volume] bcs value deciles are consistent with `e6/l` units ; in Urine by Automated count bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2052,
+      "omop_concept_id": "3026008",
+      "omop_concept_name": "Bacteria identified in Urine by Culture",
+      "reasoning": "Bacteria identified by Culture bcs `odling` (Swedish for culture) ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2053,
+      "omop_concept_id": "3021016",
+      "omop_concept_name": "oxyCODONE [Presence] in Urine by Screen method",
+      "reasoning": "oxyCODONE bcs `oksik-` and `Oksikodoni` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2054,
+      "omop_concept_id": "3021016",
+      "omop_concept_name": "oxyCODONE [Presence] in Urine by Screen method",
+      "reasoning": "oxyCODONE bcs `oxy-` ; [Presence] by Screen method bcs `-o` suffix indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2055,
+      "omop_concept_id": "40762475",
+      "omop_concept_name": "Acetaminophen [Presence] in Urine by Screen method",
+      "reasoning": "Acetaminophen bcs `paras-` and `Parasetamoli` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2056,
+      "omop_concept_id": "3034719",
+      "omop_concept_name": "Porphobilinogen [Presence] in Urine",
+      "reasoning": "Porphobilinogen bcs `pbg-` and `Porfobilinogeeni` ; [Presence] bcs `-o` (kval) indicates a qualitative test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2057,
+      "omop_concept_id": "3015736",
+      "omop_concept_name": "pH of Urine",
+      "reasoning": "pH of Urine bcs `U-ph-` and value deciles are in the expected range for urine pH.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2058,
+      "omop_concept_id": "3015736",
+      "omop_concept_name": "pH of Urine",
+      "reasoning": "pH of Urine bcs `U-ph-` and value deciles are in the expected range for urine pH.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2059,
+      "omop_concept_id": "3015736",
+      "omop_concept_name": "pH of Urine",
+      "reasoning": "pH of Urine bcs `U-ph-` and value deciles are in the expected range for urine pH.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2060,
+      "omop_concept_id": "3022621",
+      "omop_concept_name": "pH of Urine by Test strip",
+      "reasoning": "pH of Urine bcs `U-ph-` and `Happamuusaste` ; by Test strip bcs `-o` (kval) indicates a screening test, which for pH is a dipstick.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2061,
+      "omop_concept_id": "3022621",
+      "omop_concept_name": "pH of Urine by Test strip",
+      "reasoning": "pH of Urine bcs `U-ph-` and `Happamuusaste` ; by Test strip bcs `-o` (kval) indicates a screening test, which for pH is a dipstick.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2062,
+      "omop_concept_id": "3015736",
+      "omop_concept_name": "pH of Urine",
+      "reasoning": "pH of Urine bcs `U-ph-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2063,
+      "omop_concept_id": "3039904",
+      "omop_concept_name": "Epithelial cells.renal [#/volume] in Urine by Computer assisted method",
+      "reasoning": "Renal epithelial cells bcs `pien.ep` (small epithelial cells) ; [#/volume] bcs `e6/l` unit ; in Urine by Computer assisted method bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2064,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `bm-npm1-qd` specifies a quantitative (`q`) test for NPM1 mutations in bone marrow. The available candidate `44816925` is nominal/qualitative, and the other quantitative candidates are for specific transcript variants, so no suitable general quantitative concept is available.",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2065,
+      "omop_concept_id": "3039904",
+      "omop_concept_name": "Epithelial cells.renal [#/volume] in Urine by Computer assisted method",
+      "reasoning": "Renal epithelial cells bcs `pienep` (small epithelial cells) ; [#/volume] bcs `e6/l` unit ; in Urine by Computer assisted method bcs this property is characteristic of automated microscopy.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2066,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2067,
+      "omop_concept_id": "3001582",
+      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Protein/Creatinine bcs `prokre` and `Proteiinin ja kreatiniinin suhde` ; [Mass Ratio] bcs `g/mol` unit (mass/moles) is commonly mapped to Mass Ratio ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2068,
+      "omop_concept_id": "3001582",
+      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Protein/Creatinine bcs `prokre` and `Proteiinin ja kreatiniinin suhde` ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2069,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined as the row lacks a unit and value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2070,
+      "omop_concept_id": "3001582",
+      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Protein/Creatinine bcs `protkre` ; [Mass Ratio] bcs `mg/mmol` unit ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2071,
+      "omop_concept_id": "3030688",
+      "omop_concept_name": "Urinalysis panel - Urine by Automated",
+      "reasoning": "Urinalysis panel bcs `u-seul` indicates a urine screen ; by Automated is a common modality for screening panels.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2072,
+      "omop_concept_id": "3030688",
+      "omop_concept_name": "Urinalysis panel - Urine by Automated",
+      "reasoning": "Urinalysis panel bcs `u-seul` indicates a urine screen ; by Automated is a common modality for screening panels.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2073,
+      "omop_concept_id": "3001802",
+      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
+      "reasoning": "Microalbumin/Creatinine bcs `seulakr` (screening albumin creatinine ratio) ; [Mass Ratio] is the standard property for this test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2074,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suht` (`suhteellinen tiheys`) and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2075,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti` and `Suhteellinen tiheys`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2076,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti`, `Suhteellinen tiheys` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2077,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti`, `Suhteellinen tiheys` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2078,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti` and `Suhteellinen tiheys`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2079,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2080,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhti` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2081,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhtih` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2082,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhtih`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2083,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhtih` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2084,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhtihu`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2085,
+      "omop_concept_id": "3033543",
+      "omop_concept_name": "Specific gravity of Urine",
+      "reasoning": "Specific gravity of Urine bcs `U-suhtiv` and value deciles are in the correct range.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2086,
+      "omop_concept_id": "3013542",
+      "omop_concept_name": "traMADol [Presence] in Urine by Screen method",
+      "reasoning": "traMADol bcs `trama-` and `Tramadoli` ; [Presence] by Screen method bcs `-o` (kval) indicates a screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2087,
+      "omop_concept_id": "3006006",
+      "omop_concept_name": "Tricyclic antidepressants [Presence] in Urine by Screen method",
+      "reasoning": "Tricyclic antidepressants bcs `trisy-` ; [Presence] by Screen method bcs `-o` suffix indicates a qualitative screening test ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2088,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-tryp2-o` indicates Trypsin-2 in urine, but no candidate concept for this specific analyte was available.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2089,
+      "omop_concept_id": "3015023",
+      "omop_concept_name": "Epithelial cells.renal [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Renal epithelial cells bcs `tub.ep` (tubular epithelial) ; [#/area] bcs `/sunf` (per field) unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2090,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2091,
+      "omop_concept_id": "3015023",
+      "omop_concept_name": "Epithelial cells.renal [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Renal epithelial cells bcs `tubulep` (tubular epithelial) ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2092,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume and #/area, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2093,
+      "omop_concept_id": "3037426",
+      "omop_concept_name": "Urobilinogen [Presence] in Urine by Test strip",
+      "reasoning": "Urobilinogen bcs `ubg` and `Urobilinogeeni` ; [Presence] by Test strip bcs `-o` (kval) indicates a screening test, which for urobilinogen is a dipstick ; in Urine bcs `U-`.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2094,
+      "omop_concept_id": "3035851",
+      "omop_concept_name": "Transitional cells [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Transitional cells bcs `väliepi` (transitional epithelial) ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2095,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area, and Presence, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2096,
+      "omop_concept_id": "3035851",
+      "omop_concept_name": "Transitional cells [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Transitional cells bcs `välimep` (transitional epithelial) ; [#/area] bcs `u/field` unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2097,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area, and Presence, and the row lacks a unit or values to decide.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2098,
+      "omop_concept_id": "3035851",
+      "omop_concept_name": "Transitional cells [#/area] in Urine sediment by Microscopy high power field",
+      "reasoning": "Transitional cells bcs `överg.ep` (from Swedish `övergångs-`, transitional) ; [#/area] bcs `/sunf` (per field) unit ; in Urine sediment by Microscopy is implied by the unit.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2099,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (quantity type) cannot be determined, as candidates exist for #/volume, #/area, and Presence, and the row lacks a unit or values to decide.",
       "certainty": ""
     }
   ],
-  "reflection": "This group was dominated by molecular genetics and cytogenetics tests. Mapping was successful for codes where the gene name was clear (e.g., `b-jak2-d`, `b-apoe-d`, `b-fv-d`) and a corresponding LOINC concept was available. \n\nSeveral challenges arose:\n1.  **Ambiguous/Generic Codes**: Many codes were unmappable because they were too generic (e.g., `-fishhyb`, `b-fuus-mr`, `bm-mrd-vs`). These codes specify a method or a broad category without naming the specific analyte or panel, making a precise mapping impossible.\n2.  **Missing Candidates**: Some clearly identifiable tests could not be mapped because the correct LOINC concept was absent from the candidate list. This happened for `b-atrytyd` (Alpha-1-antitrypsin genotyping), `b-fii-d` (Prothrombin gene mutation), and several panels like `bm-mggfe` (MGG + Iron stain) and `bl-bal-1` (BAL cell differential). This suggests the initial search query, while good, could not retrieve all necessary concepts.\n3.  **Panel Ambiguity**: Codes for panels were difficult. For example, `bm-fishhem` (hematologic FISH) could refer to multiple different panels (AML, MDS, etc.), and no general \"hematologic FISH panel\" concept was available to match the code's level of abstraction.\n4.  **Local/Administrative Codes**: Some codes like `-ctr-d` (control) and `b-finngen` (FinnGen project) are clearly not standard clinical tests and are correctly left unmapped."
+  "reflection": "This group was dominated by urinalysis tests, including routine chemistry, drug screens, and microscopic sediment analysis. The mappings were generally straightforward. Many rows lacked units and values, making it impossible to determine the property (e.g., mass concentration vs. mass ratio, or count/volume vs. count/area); these were left unmapped.\n\nThe `-o` suffix for qualitative tests was consistently mapped to screening concepts (`...by Screen method` or `...by Test strip`) where available, as this is more specific than a simple `[Presence]` concept. For drug screens (`huum-`), I mapped the generic screens and the 5-panel screen, but could not map local panels (`-10`, `-4a`, `-6a`) or combined drug/medication panels (`-huuml-`) as no corresponding concepts were in the candidate list.\n\nThe distinction between manual microscopy (`#/area`) and automated microscopy (`#/volume`) was handled based on the units (`u/field` vs `e6/l`). Codes for Albumin/Creatinine ratio were mapped to the `Microalbumin/Creatinine [Mass Ratio]` concept (3001802), which is in the LOINC Top 2000 and represents the most common clinical use case for this test."
 }

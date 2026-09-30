@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,73 +115,63 @@ Here is group 34.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 1.000 | 1051 |
-| 40763543 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | 1.000 |  |
-| 1175573 | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | 0.977 |  |
-| 3964796 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with non-probe detection | 0.975 |  |
-| 3048882 | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.966 | 1156 |
-| 37021509 | Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture | 0.944 |  |
-| 37019817 | Streptococcus agalactiae DNA [Presence] in Vag+Rectum by NAA with probe detection | 0.941 |  |
-| 37020939 | Streptococcus agalactiae DNA [Presence] in Genital specimen by NAA with probe detection | 0.940 |  |
-| 1260031 | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | 0.932 |  |
-| 1988536 | Streptococcus agalactiae DNA [Presence] in Urine by NAA with probe detection | 0.932 |  |
-| 36203570 | Streptococcus agalactiae DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.927 |  |
-| 3024135 | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | 0.918 | 521 |
-| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.917 |  |
-| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.911 | 337 |
-| 3017906 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay | 0.910 |  |
-| 3024740 | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | 0.909 | 334 |
-| 1469780 | Streptococcus agalactiae DNA [Presence] in Body fluid by NAA with non-probe detection | 0.905 |  |
-| 36659688 | Streptococcus agalactiae DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.904 |  |
-| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.901 |  |
-| 36660467 | Streptococcus pyogenes DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.900 |  |
-| 3966418 | Streptococcus pyogenes DNA [Presence] in Wound by NAA with probe detection | 0.900 |  |
-| 1469570 | Streptococcus pyogenes DNA [Presence] in Body fluid by NAA with non-probe detection | 0.892 |  |
-| 37020473 | Streptococcus pyogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.888 |  |
-| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.879 |  |
-| 3964996 | Streptococcus dysgalactiae subspecies equisimilis DNA [Presence] in Throat by NAA with non-probe detection | 0.878 |  |
-| 36203572 | Streptococcus pyogenes DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.872 |  |
-| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.854 |  |
-| 3008051 | Streptococcus pyogenes Ag [Presence] in Specimen | 0.847 |  |
-| 3053028 | Streptococcus sp identified in Specimen by Organism specific culture | 0.843 |  |
-| 3002949 | Streptococcus pyogenes Ag [Presence] in Serum by Agglutination | 0.838 |  |
-| 3018201 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunofluorescence | 0.836 |  |
-| 3038101 | Streptococcus agalactiae Ag [Presence] in Throat by Immunofluorescence | 0.835 |  |
-| 3005214 | Streptococcus.beta-hemolytic [Presence] in Genital specimen by Organism specific culture | 0.835 |  |
-| 3018121 | Streptococcus pyogenes Ag [Presence] in Serum | 0.831 |  |
-| 37020272 | Bordetella sp identified in Throat by Organism specific culture | 0.795 |  |
-| 1091594 | Streptococcus.beta-hemolytic [Presence] in Specimen | 0.793 |  |
-| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.792 |  |
-| 3025722 | Staphylococcus sp identified in Specimen by Organism specific culture | 0.789 |  |
-| 3013103 | Diphtheria identified in Throat by Organism specific culture | 0.786 |  |
-| 3047233 | Neisseria sp identified in Throat by Organism specific culture | 0.783 |  |
-| 3010629 | Chlamydia sp identified in Throat by Organism specific culture | 0.782 |  |
-| 3011116 | Haemophilus sp identified in Specimen by Organism specific culture | 0.776 |  |
-| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.770 |  |
-| 3042975 | Streptococcus sp identified in Isolate by Organism specific culture | 0.763 |  |
-| 3048292 | Bartonella sp identified in Specimen by Organism specific culture | 0.736 |  |
-| 3005169 | Diphtheria identified in Specimen by Organism specific culture | 0.735 |  |
+| 3024135 | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture | 1.000 | 521 |
+| 40763543 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection | 0.965 |  |
+| 1175573 | Streptococcus agalactiae DNA [Presence] in Vaginal fluid by NAA with probe detection | 0.954 |  |
+| 3964796 | Streptococcus pyogenes DNA [Presence] in Throat by NAA with non-probe detection | 0.947 |  |
+| 21491660 | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay | 0.923 | 1051 |
+| 37019817 | Streptococcus agalactiae DNA [Presence] in Vag+Rectum by NAA with probe detection | 0.914 |  |
+| 3024740 | Streptococcus.beta-hemolytic [Presence] in Specimen by Organism specific culture | 0.903 | 334 |
+| 37020939 | Streptococcus agalactiae DNA [Presence] in Genital specimen by NAA with probe detection | 0.902 |  |
+| 3048882 | Streptococcus agalactiae DNA [Presence] in Specimen by NAA with probe detection | 0.901 | 1156 |
+| 1260031 | Streptococcus pyogenes DNA [Presence] in Specimen by NAA with probe detection | 0.898 |  |
+| 1988536 | Streptococcus agalactiae DNA [Presence] in Urine by NAA with probe detection | 0.893 |  |
+| 40771489 | Streptococcus pyogenes rRNA [Presence] in Throat by Probe | 0.880 |  |
+| 3033319 | Streptococcus pyogenes Ag [Presence] in Throat | 0.877 | 337 |
+| 36660467 | Streptococcus pyogenes DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.873 |  |
+| 3966418 | Streptococcus pyogenes DNA [Presence] in Wound by NAA with probe detection | 0.869 |  |
+| 1469570 | Streptococcus pyogenes DNA [Presence] in Body fluid by NAA with non-probe detection | 0.869 |  |
+| 37021509 | Streptococcus agalactiae DNA [Presence] by NAA with probe detection in Positive blood culture | 0.868 |  |
+| 3017364 | Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence | 0.867 |  |
+| 37020473 | Streptococcus pyogenes DNA [Presence] by NAA with probe detection in Positive blood culture | 0.862 |  |
+| 3000924 | Streptococcus pyogenes [Presence] in Throat by Organism specific culture | 0.861 |  |
+| 3964996 | Streptococcus dysgalactiae subspecies equisimilis DNA [Presence] in Throat by NAA with non-probe detection | 0.859 |  |
+| 1988894 | Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA with probe detection | 0.857 |  |
+| 3017906 | Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay | 0.856 |  |
+| 1092209 | Streptococcus sp DNA [Presence] in Specimen by NAA with probe detection | 0.853 |  |
+| 1469780 | Streptococcus agalactiae DNA [Presence] in Body fluid by NAA with non-probe detection | 0.853 |  |
+| 36203570 | Streptococcus agalactiae DNA [Presence] by NAA with non-probe detection in Positive blood culture | 0.842 |  |
+| 36659688 | Streptococcus agalactiae DNA [Presence] in Lower respiratory specimen by NAA with probe detection | 0.838 |  |
+| 3036007 | Streptococcus agalactiae [Presence] in Throat by Organism specific culture | 0.834 |  |
+| 3005214 | Streptococcus.beta-hemolytic [Presence] in Genital specimen by Organism specific culture | 0.827 |  |
+| 647010 | Streptococcus pyogenes Ag [Measurement] in Throat | 0.818 |  |
+| 1092202 | Streptococcus pyogenes [Presence] in Specimen | 0.808 |  |
+| 1091594 | Streptococcus.beta-hemolytic [Presence] in Specimen | 0.799 |  |
+| 3022562 | Streptococcus pyogenes [Presence] in Specimen by Organism specific culture | 0.780 |  |
+| 3011263 | Bordetella pertussis [Presence] in Throat by Organism specific culture | 0.776 |  |
+| 36305005 | Neisseria meningitidis [Presence] in Throat by Organism specific culture | 0.766 |  |
+| 3026966 | Neisseria gonorrhoeae [Presence] in Throat by Organism specific culture | 0.764 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 204 | -streptococcusagalactie(str.ryhmäb,gbs),nukleiinihaponosoitus |  | 100% | name | 140 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] by NAA with probe detection |
-| 205 | fl-streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 354 | 100 |  |  | Vaginal discharge |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
-| 206 | ps-streptococcus,viljely(-hemolyyttisetstrepto |  | 100% | name | 151 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 207 | ps-streptococcus,viljely(beeta-hemolyyttisetstr |  | 100% | name | 110 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 208 | ps-streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 327 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 209 | ps-streptococcus,viljely(hemolyytt.streptokokitnielusta) |  | 100% | name | 414 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 210 | ps-streptococcus,viljely(hemolyyttisetstreptok) |  | 100% | name | 162 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 211 | ps-streptococcus,viljely(hemolyyttisetstreptokokit) |  | 100% | name | 339 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 212 | ps-streptococcus,viljelynielusta(hemolyytt) |  | 100% | name | 238 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 213 | ps-streptococcuspyogenes(a),antigeeni |  | 100% | name | 735 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
-| 214 | ps-streptococcuspyogenes(a),nukleiinihappo(kval) |  | 100% | name | 150 | 99.33 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection |
-| 215 | ps-streptococcuspyogenis(a)antig,vierithoitoy |  | 100% | name | 124 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay |
-| 216 | streptococcus,viljely(hemolyyt.streptokokitnielusta) |  | 100% | name | 333 | 100 |  |  |  |  | Streptococcus.beta-hemolytic identified in Throat by Organism specific culture |
-| 217 | streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 454 | 100 |  |  |  |  | Streptococcus.beta-hemolytic identified in Specimen by Organism specific culture |
-| 218 | streptococcusagalactiae(b),nukleiinihaponosoitus,fluori,vieritesti |  | 100% | name | 304 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
-| 219 | streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 242 | 100 |  |  |  |  | Streptococcus agalactiae DNA [Presence] in Vagina by NAA with probe detection |
-| 220 | streptococcuspyogenes(a),nukleiinihappo-osoitus |  | 100% | name | 228 | 100 |  |  |  |  | Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection |
-| 221 | streptococcuspyogenes(a),osoituskoe |  | 100% | name | 396 | 100 |  |  |  |  | Streptococcus pyogenes Ag [Presence] in Throat by Immunoassay |
+| 200 | -streptococcusagalactie(str.ryhmäb,gbs),nukleiinihaponosoitus |  | 100% | name | 140 | 100 |  |  |  |  | Streptococcus agalactiae [Presence] in Vagina by NAA with probe detection |
+| 201 | fl-streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 354 | 100 |  |  | Vaginal discharge |  | Streptococcus agalactiae [Presence] in Vagina by NAA with probe detection |
+| 202 | ps-streptococcus,viljely(-hemolyyttisetstrepto |  | 100% | name | 151 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 203 | ps-streptococcus,viljely(beeta-hemolyyttisetstr |  | 100% | name | 110 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 204 | ps-streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 327 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 205 | ps-streptococcus,viljely(hemolyytt.streptokokitnielusta) |  | 100% | name | 414 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 206 | ps-streptococcus,viljely(hemolyyttisetstreptok) |  | 100% | name | 162 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 207 | ps-streptococcus,viljely(hemolyyttisetstreptokokit) |  | 100% | name | 339 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 208 | ps-streptococcus,viljelynielusta(hemolyytt) |  | 100% | name | 238 | 100 |  |  | Pharyngeal secretion |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 209 | ps-streptococcuspyogenes(a),antigeeni |  | 100% | name | 735 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat by Immunoassay |
+| 210 | ps-streptococcuspyogenes(a),nukleiinihappo(kval) |  | 100% | name | 150 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat by NAA with probe detection |
+| 211 | ps-streptococcuspyogenis(a)antig,vierithoitoy |  | 100% | name | 124 | 100 |  |  | Pharyngeal secretion |  | Streptococcus pyogenes [Presence] in Throat by Immunoassay |
+| 212 | streptococcus,viljely(hemolyyt.streptokokitnielusta) |  | 100% | name | 333 | 100 |  |  |  |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 213 | streptococcus,viljely(hemolyytt.streptokokit) |  | 100% | name | 454 | 100 |  |  |  |  | Streptococcus.beta-hemolytic [Presence] in Throat by Organism specific culture |
+| 214 | streptococcusagalactiae(b),nukleiinihaponosoitus,fluori,vieritesti |  | 100% | name | 304 | 100 |  |  |  |  | Streptococcus agalactiae [Presence] in Vagina by NAA with probe detection |
+| 215 | streptococcusagalactie(b),nukleiinihaponosoitus |  | 100% | name | 242 | 100 |  |  |  |  | Streptococcus agalactiae [Presence] in Vagina by NAA with probe detection |
+| 216 | streptococcuspyogenes(a),nukleiinihappo-osoitus |  | 100% | name | 228 | 100 |  |  |  |  | Streptococcus pyogenes [Presence] in Throat by NAA with probe detection |
+| 217 | streptococcuspyogenes(a),osoituskoe |  | 100% | name | 396 | 100 |  |  |  |  | Streptococcus pyogenes [Presence] in Throat by Immunoassay |
 

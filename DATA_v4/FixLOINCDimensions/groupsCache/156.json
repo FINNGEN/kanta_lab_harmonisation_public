@@ -1,0 +1,712 @@
+{
+  "rows": [
+    {
+      "row_id": 2522,
+      "omop_concept_id": "3042602",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix ; --post dialysis bcs TEST_NAME has 'dialyysin jälkeen'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2523,
+      "omop_concept_id": "3039815",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix ; --pre dialysis bcs TEST_NAME has 'ennen dialyysiä'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2524,
+      "omop_concept_id": "3015916",
+      "omop_concept_name": "Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma",
+      "reasoning": "Alpha-1-Fetoprotein bcs TEST_NAME is 'alfa-1-fetoproteiini' ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2525,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or units) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2526,
+      "omop_concept_id": "3039815",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'p-urea' ; --pre dialysis bcs TEST_NAME has 'dialyysiä edeltävä'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2527,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2528,
+      "omop_concept_id": "3042602",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'p-urea' ; --post dialysis bcs TEST_NAME has 'dialyysin jälkeinen'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2529,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2530,
+      "omop_concept_id": "40757587",
+      "omop_concept_name": "Urea reduction ratio in Serum or Plasma",
+      "reasoning": "Urea reduction ratio bcs TEST_NAME 'dialyysin riittävyyden suhdeluku' means 'dialysis adequacy ratio'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2531,
+      "omop_concept_id": "3001355",
+      "omop_concept_name": "Fungus identified in Sputum by Culture",
+      "reasoning": "Fungus identified bcs TEST_NAME has 'sieni' (fungus) ; in Sputum bcs TEST_NAME has prefix 'ex-' (expectorate) and 'yskös' (sputum) ; by Culture bcs TEST_NAME has 'viljely' (culture)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2532,
+      "omop_concept_id": "3023465",
+      "omop_concept_name": "Gamma globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Gamma globulin bcs TEST_NAME is 'gamma-fraktio' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumista' ; by Electrophoresis bcs 'fraktio' implies separation by electrophoresis",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2533,
+      "omop_concept_id": "3000494",
+      "omop_concept_name": "Fungus identified in Specimen by Culture",
+      "reasoning": "Fungus identified bcs TEST_NAME has 'hiiva' (yeast, a type of fungus) ; in Specimen bcs TEST_NAME has 'limakalvo' (mucous membrane) which is a generic specimen type ; by Culture bcs TEST_NAME has 'viljely' (culture). No more specific candidate for mucous membrane or yeast was available.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2534,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME 'immunofiksaatio' refers to the immunofixation procedure, which is typically ordered as a panel to identify monoclonal proteins. The candidate list does not contain an 'Immunofixation panel' concept, and mapping to a specific M-component result (e.g., IgM monoclonal) would be incorrect for a test order.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2535,
+      "omop_concept_id": "3000081",
+      "omop_concept_name": "cloZAPine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Clozapine bcs TEST_NAME is 'klotsapiini' ; [Moles/volume] bcs UNIT is 'nmol/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumi'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2536,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2537,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2538,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs TEST_NAME is 'kreatiinikinaasi, mb-alayksikkö' ; [Mass/volume] bcs UNIT is 'ug/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen when not specified",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2539,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME has 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-krea', which maps to Serum or Plasma for this common test",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2540,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen when not specified",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2541,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2542,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-krea', which maps to Serum or Plasma for this common test",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2543,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2544,
+      "omop_concept_id": "3009508",
+      "omop_concept_name": "Creatinine [Moles/volume] in Urine",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Urine bcs TEST_NAME has 'u-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2545,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2546,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen when not specified. No specific 'rapid test' candidate was available, so mapping to the base concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2547,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen when not specified. No specific 'rapid test' candidate was available, so mapping to the base concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2548,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2549,
+      "omop_concept_id": "40771922",
+      "omop_concept_name": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood",
+      "reasoning": "Glomerular filtration rate/1.73 sq M.predicted bcs the UNIT is 'ml/min/173m2' and values are consistent with eGFR, even though the TEST_NAME is 'kreatiniini' ; [Volume Rate/Area] bcs UNIT is 'ml/min/173m2' ; in Serum, Plasma or Blood bcs TEST_NAME has 'plasmasta' and this is the most general correct candidate",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2550,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'plasmasta', which maps to Serum or Plasma for this common test",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2551,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2552,
+      "omop_concept_id": "3046299",
+      "omop_concept_name": "Protein.monoclonal [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Protein.monoclonal bcs TEST_NAME is 'm-komponentti-1' (M-component 1) ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumista' ; by Electrophoresis bcs this is the standard method for quantifying M-components",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2553,
+      "omop_concept_id": "1469856",
+      "omop_concept_name": "Bacteria identified in Mother's milk by Culture",
+      "reasoning": "Bacteria identified bcs 'hygienianäyte' (hygiene sample) culture typically targets bacteria ; in Mother's milk bcs TEST_NAME explicitly states 'äidinmaito' ; by Culture bcs TEST_NAME includes 'viljely'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2554,
+      "omop_concept_id": "3005785",
+      "omop_concept_name": "Creatine kinase.MB [Mass/volume] in Serum or Plasma",
+      "reasoning": "Creatine kinase.MB bcs TEST_NAME is 'kreatiinikinaasi, mb-alayksikkö' ; [Mass/volume] bcs TEST_NAME has 'massa' (mass) and UNIT is 'ug/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2555,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or activity) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2556,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix, which maps to Serum or Plasma for this common test",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2557,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix, which maps to Serum or Plasma for this common test",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2558,
+      "omop_concept_id": "3020564",
+      "omop_concept_name": "Creatinine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix, which maps to Serum or Plasma for this common test. The name indicates an eGFR is also reported, but this row is for the creatinine measurement itself.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2559,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'iu/ml' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2560,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2561,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'iu/ml' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix and 'plasmasta'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2562,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2563,
+      "omop_concept_id": "3026989",
+      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME is 'trijodityroniini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2564,
+      "omop_concept_id": "3026989",
+      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME is 'trijodityroniini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix and 'plasmasta'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2565,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2566,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2567,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2568,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'p-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2569,
+      "omop_concept_id": "3042602",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'p-' prefix ; --post dialysis bcs TEST_NAME has 'dialyysin jälkeen'. The '10min' qualifier is not represented in the chosen concept but the core meaning is correct.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 2570,
+      "omop_concept_id": "3039815",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'p-' prefix ; --pre dialysis bcs TEST_NAME has 'ennen dialyysiä'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2571,
+      "omop_concept_id": "3013742",
+      "omop_concept_name": "Prealbumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Prealbumin bcs TEST_NAME is 'prealbumiini' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Plasma bcs TEST_NAME has 'plasma'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2572,
+      "omop_concept_id": "3013742",
+      "omop_concept_name": "Prealbumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Prealbumin bcs TEST_NAME is 'prealbumiini' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2573,
+      "omop_concept_id": "3004588",
+      "omop_concept_name": "Protein electrophoresis panel - Serum or Plasma",
+      "reasoning": "Protein electrophoresis panel bcs TEST_NAME 'proteiini, fraktiot' means protein fractions, which are determined by electrophoresis and reported as a panel ; in Serum bcs TEST_NAME has 'seerumi'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2574,
+      "omop_concept_id": "3004588",
+      "omop_concept_name": "Protein electrophoresis panel - Serum or Plasma",
+      "reasoning": "Protein electrophoresis panel bcs TEST_NAME 'proteiini, fraktiot' means protein fractions, which are determined by electrophoresis and reported as a panel ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2575,
+      "omop_concept_id": "3004588",
+      "omop_concept_name": "Protein electrophoresis panel - Serum or Plasma",
+      "reasoning": "Protein electrophoresis panel bcs TEST_NAME 'proteiini, fraktiot' means protein fractions, which are determined by electrophoresis and reported as a panel ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2576,
+      "omop_concept_id": "3020630",
+      "omop_concept_name": "Protein [Mass/volume] in Serum or Plasma",
+      "reasoning": "Protein bcs TEST_NAME is 'proteiini' and the abbreviation 'ty' likely stands for total ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent with total protein ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2577,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'kiu/l' (kilo-international units/L) and values are consistent ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2578,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2579,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'iu/ml' ; in Plasma bcs TEST_NAME has 'plasmasta'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2580,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2581,
+      "omop_concept_id": "3004588",
+      "omop_concept_name": "Protein electrophoresis panel - Serum or Plasma",
+      "reasoning": "Protein electrophoresis panel bcs TEST_NAME 'proteiini, fraktiot' means protein fractions, which are determined by electrophoresis and reported as a panel ; in Serum bcs TEST_NAME has 's-' prefix and 'seerumi'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2582,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'iu/ml' ; in Serum bcs TEST_NAME has 's-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2583,
+      "omop_concept_id": "3021614",
+      "omop_concept_name": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+      "reasoning": "Rheumatoid factor bcs TEST_NAME is 'reumafaktori' ; [Units/volume] bcs UNIT is 'kiu/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2584,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2585,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testo, vap' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by calculation bcs TEST_NAME has 'lask' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2586,
+      "omop_concept_id": "42868713",
+      "omop_concept_name": "Testosterone [Moles/volume] in Serum or Plasma by Detection limit <= 3.47 pmol/L",
+      "reasoning": "Testosterone bcs TEST_NAME is 'testosteroni' ; [Moles/volume] bcs UNIT is 'nmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by Detection limit <= 3.47 pmol/L bcs TEST_NAME has 'herkkä' (sensitive) and this is the corresponding LOINC concept for high-sensitivity assays",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2587,
+      "omop_concept_id": "3017446",
+      "omop_concept_name": "Testosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Testosterone bcs TEST_NAME is 'testosteroni' ; [Moles/volume] bcs UNIT is 'nmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix and 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2588,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2589,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME is 'testosteroni, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by calculation bcs TEST_NAME has 'laskettu' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2590,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2591,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testosteroni vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by calculation bcs TEST_NAME has 'laskettu' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2592,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testosterooni, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by calculation bcs TEST_NAME has 'lask.' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2593,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testoster vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix ; by calculation bcs TEST_NAME has 'laske' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2594,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 's-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2595,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2596,
+      "omop_concept_id": "645405",
+      "omop_concept_name": "Fungus identified in Wound deep by Culture",
+      "reasoning": "Fungus identified bcs TEST_NAME has 'sieni' (fungus) ; in Wound deep bcs TEST_NAME has 'syvänäyte' (deep sample) ; by Culture bcs TEST_NAME has 'viljely' (culture)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2597,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME 'sieni, viljely ja natiivi' specifies a panel including both fungus culture ('viljely') and direct microscopy ('natiivi'). No such panel concept was available in the candidate list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2598,
+      "omop_concept_id": "3002951",
+      "omop_concept_name": "Fungus identified in Skin by Culture",
+      "reasoning": "Fungus identified bcs TEST_NAME has 'sieni' (fungus) ; in Skin bcs TEST_NAME has 'sk-' prefix (skin) and 'pintanäyte' (surface sample) ; by Culture bcs TEST_NAME has 'viljely' (culture)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2599,
+      "omop_concept_id": "3002951",
+      "omop_concept_name": "Fungus identified in Skin by Culture",
+      "reasoning": "Fungus identified bcs TEST_NAME has 'sieni' (fungus) and 'pintasieni' (surface fungus) ; in Skin bcs TEST_NAME has 'sk-' prefix (skin) ; by Culture bcs TEST_NAME has 'viljely' (culture)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2600,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testosteroni, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen ; by calculation bcs TEST_NAME has 'lask' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2601,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2602,
+      "omop_concept_id": "36032269",
+      "omop_concept_name": "Testosterone Free [Moles/volume] in Serum or Plasma by calculation",
+      "reasoning": "Testosterone Free bcs TEST_NAME has 'testosteroni, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen ; by calculation bcs TEST_NAME has 'laskettu' (calculated)",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2603,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2604,
+      "omop_concept_id": "3026989",
+      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME is 'trijodityroniini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2605,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2606,
+      "omop_concept_id": "3026989",
+      "omop_concept_name": "Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Triiodothyronine (T3) Free bcs TEST_NAME is 'trijodityroniini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2607,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2608,
+      "omop_concept_id": "3036535",
+      "omop_concept_name": "Thyroglobulin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Thyroglobulin bcs TEST_NAME is 'tyreoglobuliini' ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2609,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2610,
+      "omop_concept_id": "3009201",
+      "omop_concept_name": "Thyrotropin [Units/volume] in Serum or Plasma",
+      "reasoning": "Thyrotropin bcs TEST_NAME is 'tyreotropiini' ; [Units/volume] bcs UNIT is 'mu/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2611,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2612,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2613,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2614,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2615,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini, vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME has 'plasmasta'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2616,
+      "omop_concept_id": "3008486",
+      "omop_concept_name": "Thyroxine (T4) free [Moles/volume] in Serum or Plasma",
+      "reasoning": "Thyroxine (T4) free bcs TEST_NAME is 'tyroksiini vapaa' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME has 'seerumista'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2617,
+      "omop_concept_id": "3009508",
+      "omop_concept_name": "Creatinine [Moles/volume] in Urine",
+      "reasoning": "Creatinine bcs TEST_NAME is 'kreatiniini' ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Urine bcs TEST_NAME has 'u-' prefix",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2618,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The property (mass or moles) cannot be determined because the UNIT is missing and there are no value deciles.",
+      "certainty": ""
+    },
+    {
+      "row_id": 2619,
+      "omop_concept_id": "3042602",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs this is the default specimen ; --post dialysis bcs TEST_NAME has 'dialyysin jälkee'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2620,
+      "omop_concept_id": "3042602",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --post dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'plasmasta' ; --post dialysis bcs TEST_NAME has 'dialyysin jälkeen'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2621,
+      "omop_concept_id": "3039815",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Plasma bcs TEST_NAME has 'plasmasta' ; --pre dialysis bcs TEST_NAME has 'ennen dialyysia'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 2622,
+      "omop_concept_id": "3039815",
+      "omop_concept_name": "Urea [Moles/volume] in Serum or Plasma --pre dialysis",
+      "reasoning": "Urea bcs TEST_NAME has 'urea' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs this is the default specimen ; --pre dialysis bcs TEST_NAME has 'ennen dialyysiä'",
+      "certainty": "high"
+    }
+  ],
+  "reflection": "This group was mostly straightforward, with many common chemistry tests (creatinine, thyroid hormones, urea) and some microbiology cultures. The Finnish names were generally clear and mapped well to standard LOINC concepts. The presence of units and value deciles for most rows was extremely helpful in confirming the property (e.g., Moles/volume vs Mass/volume).\n\nMapping challenges:\n*   Rows without units or values could not be mapped, as the property (e.g., Moles vs Mass vs Units) was ambiguous. This affected a significant minority of rows.\n*   Panel requests were sometimes tricky. `proteiini, fraktiot` (protein fractions) mapped well to the protein electrophoresis panel. However, `immunofiksaatio` (immunofixation, row 2534) and `sieni, viljely ja natiivi` (fungus culture and microscopy, row 2597) did not have corresponding panel concepts in the candidate list, so they were left unmapped.\n*   The generic `hiiva, viljely, limakalvo` (yeast, culture, mucous membrane, row 2533) had to be mapped to a less specific 'Fungus in Specimen' concept due to a lack of more precise candidates for yeast or mucous membrane.\n\nThe candidate list was comprehensive for single analytes. The primary reason for not mapping a row was the lack of quantitative information (`UNIT` or `value_deciles`) in the source data for that row."
+}

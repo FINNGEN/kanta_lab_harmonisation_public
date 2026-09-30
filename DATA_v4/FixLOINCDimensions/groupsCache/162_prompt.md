@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,554 +115,404 @@ Here is group 162.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 1616794 | Bicarbonate [Moles/volume] in Central venous blood | 1.000 |  |
-| 3003458 | Phosphate [Moles/volume] in Serum or Plasma | 1.000 | 69 |
-| 3007220 | Creatine kinase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 90 |
-| 3008152 | Bicarbonate [Moles/volume] in Arterial blood | 1.000 | 310 |
-| 3008342 | Neutrophils/Leukocytes in Blood by Automated count | 1.000 | 25 |
-| 3010457 | Eosinophils/Leukocytes in Blood by Automated count | 1.000 | 43 |
-| 3011948 | Monocytes/Leukocytes in Blood by Automated count | 1.000 | 44 |
-| 3011985 | Renin [Units/volume] in Plasma | 1.000 |  |
-| 3013869 | Basophils/Leukocytes in Blood by Automated count | 1.000 | 42 |
-| 3016436 | Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 156 |
-| 3019309 | Folate [Moles/volume] in Red Blood Cells | 1.000 | 743 |
-| 3027273 | Bicarbonate [Moles/volume] in Venous blood | 1.000 | 781 |
-| 3034780 | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 730 |
-| 3035995 | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 23 |
-| 3037511 | Lymphocytes/Leukocytes in Blood by Automated count | 1.000 | 41 |
-| 3044889 | 12 lead EKG panel | 1.000 |  |
-| 3045066 | Thymidine kinase [Enzymatic activity/volume] in Serum | 1.000 |  |
-| 3000067 | Parathyrin.intact [Mass/volume] in Serum or Plasma | 0.979 | 240 |
-| 3010566 | Parathyrin.intact [Moles/volume] in Serum or Plasma | 0.976 | 240 |
-| 3007628 | Bicarbonate [Moles/volume] standard in Venous blood | 0.973 |  |
-| 3014218 | Bicarbonate [Moles/volume] standard in Arterial blood | 0.968 |  |
-| 3005772 | Bilirubin.conjugated [Moles/volume] in Serum or Plasma | 0.967 |  |
-| 3004490 | Bicarbonate [Moles/volume] standard in Capillary blood | 0.966 |  |
-| 3005783 | Lactate dehydrogenase 1 [Enzymatic activity/volume] in Serum or Plasma | 0.964 |  |
-| 46235077 | Alkaline phosphatase [Enzymatic activity/volume] in Serum, Plasma or Blood | 0.960 |  |
-| 3017861 | Lactate dehydrogenase 2 [Enzymatic activity/volume] in Serum or Plasma | 0.959 |  |
-| 3001110 | Alkaline phosphatase [Enzymatic activity/volume] in Blood | 0.952 |  |
-| 723477 | SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen by Rapid immunoassay | 0.952 |  |
-| 3006769 | Lactate dehydrogenase 3 [Enzymatic activity/volume] in Serum or Plasma | 0.949 |  |
-| 3020779 | Urea [Moles/volume] in Serum or Plasma | 0.947 |  |
-| 3015956 | Eosinophils/Leukocytes in Blood by Manual count | 0.946 | 229 |
-| 3025124 | Lactate dehydrogenase 4 [Enzymatic activity/volume] in Serum or Plasma | 0.945 |  |
-| 3022250 | Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction | 0.944 |  |
-| 3036335 | Angiotensin converting enzyme [Enzymatic activity/volume] in Blood | 0.943 | 1299 |
-| 3027010 | Lactate dehydrogenase 5 [Enzymatic activity/volume] in Serum or Plasma | 0.942 |  |
-| 1617100 | Bicarbonate [Moles/volume] standard in Central venous blood | 0.942 |  |
-| 3009797 | Basophils/Leukocytes in Blood by Manual count | 0.941 | 235 |
-| 40762896 | Parathyrin.intact [Mass/volume] in Body fluid | 0.940 |  |
-| 42868453 | Bicarbonate [Moles/volume] standard in Plasma | 0.937 |  |
-| 36033641 | SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Rapid immunoassay | 0.936 |  |
-| 3022407 | Monocytes/Leukocytes in Blood by Manual count | 0.934 | 225 |
-| 3043821 | Protein and Glucose panel - Urine by Test strip | 0.934 |  |
-| 1175563 | Parathyrin.intact [Mass/volume] in Serum or Plasma by Immunoassay | 0.933 |  |
-| 3037310 | Renin [Mass/volume] in Plasma | 0.932 |  |
-| 3033973 | Parathyrin.intact [Mass/volume] in Serum or Plasma --baseline | 0.931 |  |
-| 3029790 | Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma | 0.931 | 374 |
-| 3035400 | Alkaline phosphatase.liver [Enzymatic activity/volume] in Serum or Plasma | 0.930 | 1919 |
-| 3016293 | Bicarbonate [Moles/volume] in Serum or Plasma | 0.930 |  |
-| 3005225 | Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Pyruvate to lactate reaction | 0.929 |  |
-| 40771025 | 25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma | 0.929 |  |
-| 3018913 | Phosphate [Moles/volume] in Blood | 0.928 |  |
-| 3035569 | Folate [Mass/volume] in Red Blood Cells | 0.928 |  |
-| 3052240 | Parathyrin.intact [Moles/volume] in Serum or Plasma --baseline | 0.928 |  |
-| 3015235 | Bicarbonate [Moles/volume] in Capillary blood | 0.928 | 1086 |
-| 37021550 | Renin [Units/volume] in Plasma --upright | 0.926 |  |
-| 1616938 | Parathyrin.intact [Moles/volume] in Body fluid | 0.926 |  |
-| 3029315 | Leukocytes [#/volume] in Urine by Automated count | 0.925 |  |
-| 3027368 | Neutrophils/Leukocytes in Blood by Manual count | 0.925 | 1191 |
-| 43534077 | Urea [Moles/volume] in Blood | 0.925 |  |
-| 37019676 | Renin [Units/volume] in Plasma --supine | 0.923 |  |
-| 36031886 | Parathyrin.intact [Moles/volume] in Serum or Plasma by Immunoassay | 0.923 |  |
-| 757685 | SARS-CoV+SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory system specimen by Rapid immunoassay | 0.923 |  |
+| 3001490 | Nucleated erythrocytes [#/volume] in Blood | 1.000 |  |
+| 3011325 | HIV 1+2 Ab [Presence] in Serum | 1.000 | 442 |
+| 3013115 | Eosinophils [#/volume] in Blood | 1.000 | 67 |
+| 3014051 | Protein [Presence] in Urine by Test strip | 1.000 | 99 |
+| 3017732 | Neutrophils [#/volume] in Blood | 1.000 | 57 |
+| 3023383 | Lactate [Moles/volume] in Pleural fluid | 1.000 |  |
+| 3035350 | Ketones [Presence] in Urine by Test strip | 1.000 | 102 |
+| 3047181 | Lactate [Moles/volume] in Blood | 1.000 | 475 |
+| 3034979 | HIV 1+2 IgG Ab [Presence] in Serum | 0.975 |  |
+| 3046555 | Borrelia burgdorferi Ab [Units/volume] in Serum by Immunoblot | 0.971 |  |
+| 3046976 | DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.962 |  |
+| 3009055 | F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.958 | 428 |
+| 3013906 | HIV 1 Ab [Presence] in Serum | 0.958 | 1611 |
+| 36303442 | Epithelial cells [#/volume] in Urine by Automated | 0.955 |  |
+| 40760844 | Ketones [Presence] in Urine by Automated test strip | 0.945 |  |
+| 3019077 | Protein [Presence] in 24 hour Urine by Test strip | 0.943 |  |
+| 3047166 | Epithelial cells [#/area] in Urine sediment by Automated count | 0.943 |  |
+| 3003974 | HIV 1 IgG Ab [Presence] in Serum | 0.942 |  |
+| 3035695 | Borrelia burgdorferi IgM Ab [Units/volume] in Serum by Immunoassay | 0.941 | 528 |
+| 3001463 | Borrelia burgdorferi IgG Ab [Units/volume] in Serum by Immunoassay | 0.940 | 1968 |
+| 3016888 | Borrelia burgdorferi IgG Ab [Units/volume] in Serum | 0.938 | 1967 |
+| 3008230 | Borrelia burgdorferi IgM Ab [Units/volume] in Serum | 0.938 |  |
+| 3046498 | JAK2 gene p.Val617Phe [Presence] in Blood or Tissue by Molecular genetics method | 0.938 | 1692 |
+| 40760845 | Protein [Presence] in Urine by Automated test strip | 0.935 |  |
+| 3004391 | Epithelial cells [#/volume] in Urine by Manual count | 0.933 |  |
+| 3035962 | HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay | 0.931 | 324 |
+| 3032287 | HIV 1+2 Ab [Presence] in Specimen | 0.929 |  |
+| 3029879 | Epithelial cells.squamous [#/volume] in Urine by Automated count | 0.928 |  |
+| 1091714 | HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma | 0.928 |  |
+| 3028129 | Nucleated erythrocytes [#/volume] in Body fluid | 0.923 |  |
 | 3002385 | Erythrocyte distribution width [Ratio] | 0.922 |  |
-| 3015531 | Creatine kinase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.919 |  |
-| 3020013 | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma | 0.918 |  |
-| 46235781 | Urea [Moles/volume] in Serum, Plasma or Blood | 0.918 |  |
-| 3007869 | Lactate dehydrogenase [Enzymatic activity/volume] in Specimen | 0.917 |  |
-| 3024390 | 25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma | 0.916 | 127 |
-| 3007808 | Renin [Enzymatic activity/volume] in Plasma | 0.915 | 822 |
-| 3033622 | Lymphocytes/Leukocytes in Specimen by Automated count | 0.914 |  |
-| 3050084 | Parathyrin.intact [Mass/volume] in Serum or Plasma --pre dose calcium | 0.914 |  |
-| 3028531 | Enolase.neuron specific [Mass/volume] in Serum or Plasma | 0.914 |  |
-| 3007970 | Alkaline phosphatase.bile [Enzymatic activity/volume] in Serum or Plasma | 0.913 |  |
-| 43055372 | Eosinophils/Leukocytes [Pure number fraction] in Blood by Automated count | 0.913 |  |
-| 3020233 | Acid phosphatase [Enzymatic activity/volume] in Serum or Plasma | 0.913 |  |
-| 3006576 | Bicarbonate [Moles/volume] in Blood | 0.912 | 120 |
-| 645314 | Parathyrin.intact [Measurement] in Serum or Plasma | 0.911 |  |
-| 3001467 | Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma | 0.911 | 1850 |
-| 3038058 | Lymphocytes/Leukocytes in Blood by Manual count | 0.911 | 186 |
-| 3011185 | Granulocytes/Leukocytes in Blood by Automated count | 0.910 |  |
-| 3051659 | 25-hydroxyvitamin D2 [Moles/volume] in Serum or Plasma | 0.910 | 661 |
-| 3011904 | Phosphate [Mass/volume] in Serum or Plasma | 0.909 |  |
-| 36032419 | SARS-CoV-2 (COVID-19) Ag [Presence] in Upper respiratory specimen by Immunoassay | 0.908 |  |
-| 3001077 | Alkaline phosphatase [Enzymatic activity/volume] in Urine | 0.907 |  |
-| 36303407 | Parathyrin.intact goal [Mass/volume] Serum or Plasma | 0.906 |  |
-| 43055373 | Basophils/Leukocytes [Pure number fraction] in Blood by Automated count | 0.906 |  |
-| 3002214 | Alkaline phosphatase.renal [Enzymatic activity/volume] in Serum or Plasma | 0.905 |  |
-| 3027184 | Lupus anticoagulant [Interpretation] in Platelet poor plasma | 0.905 |  |
-| 3028961 | Parathyrin.intact [Mass/volume] in Serum or Plasma --5th specimen | 0.904 |  |
-| 3003860 | Alkaline phosphatase.regan [Enzymatic activity/volume] in Serum or Plasma | 0.903 |  |
-| 3017427 | Lupus anticoagulant neutralization dilute phospholipid [Presence] in Platelet poor plasma | 0.903 | 1189 |
+| 3044883 | Borrelia burgdorferi IgG+IgM Ab [Units/volume] in Serum | 0.921 | 410 |
+| 3053246 | HIV 1+O+2 Ab [Presence] in Serum or Plasma | 0.921 | 202 |
+| 3030306 | Epithelial cells.non-squamous [#/volume] in Urine by Automated count | 0.919 |  |
+| 1616424 | Nucleated erythrocytes [#/volume] in Cord blood | 0.918 |  |
+| 3028615 | Eosinophils [#/volume] in Blood by Automated count | 0.917 | 50 |
+| 3039234 | HIV 1+2 IgG Ab [Presence] in Serum or Plasma by Immunoassay | 0.917 |  |
+| 3009932 | Eosinophils [#/volume] in Blood by Manual count | 0.914 |  |
+| 3007238 | Nucleated erythrocytes [#/volume] in Blood by Automated count | 0.913 | 1247 |
+| 42870589 | Drugs of abuse panel - Urine by Screen method | 0.911 |  |
+| 3033106 | HIV 1 p24 Ab [Presence] in Serum | 0.911 |  |
+| 3000850 | Epithelial cells [#/volume] in Urine | 0.911 |  |
+| 3028893 | Ketones [Presence] in Urine | 0.910 | 217 |
+| 40761539 | Cells [Type] in Urine sediment by Light microscopy | 0.910 |  |
+| 3045857 | Borrelia burgdorferi IgM Ab [Units/volume] in Cerebral spinal fluid by Immunoblot | 0.909 |  |
+| 3006135 | Nucleated erythrocytes [#/volume] in Blood by Manual count | 0.908 | 501 |
+| 3028271 | Lactate [Moles/volume] in Capillary blood | 0.907 |  |
+| 3003645 | Borrelia burgdorferi Ab [Units/volume] in Serum by Immunoassay | 0.907 |  |
+| 3013650 | Neutrophils [#/volume] in Blood by Automated count | 0.906 | 46 |
+| 3038774 | Borrelia burgdorferi 49736 IgG Ab [Units/volume] in Serum by Immunoassay | 0.905 |  |
+| 3039950 | Borrelia burgdorferi 49736 IgM Ab [Units/volume] in Serum by Immunoassay | 0.903 |  |
+| 3008037 | Lactate [Moles/volume] in Venous blood | 0.903 |  |
+| 3018405 | Lactate [Moles/volume] in Arterial blood | 0.902 | 1277 |
 | 40765008 | Erythrocyte distribution width [Ratio] in Blood from Fetus by Automated count | 0.902 |  |
-| 3016213 | Lactate dehydrogenase 2 [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.902 |  |
-| 3024641 | Urea nitrogen [Moles/volume] in Serum or Plasma | 0.900 |  |
-| 3030413 | Parathyrin.intact [Mass/volume] in Serum or Plasma --4th specimen | 0.900 |  |
-| 1761840 | Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Specimen by NAA with probe detection | 0.900 |  |
-| 3005090 | Alkaline phosphatase [Enzymatic activity/volume] in Body fluid | 0.899 |  |
-| 1091634 | Fungus [Presence] in Specimen | 0.898 |  |
-| 3006538 | Bicarbonate [Moles/volume] standard in Mixed venous blood | 0.898 |  |
-| 3046609 | Cholecalciferol (Vit D3) [Moles/volume] in Serum or Plasma | 0.897 |  |
-| 36031861 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection | 0.895 |  |
-| 3018650 | Bicarbonate [Moles/volume] in Venous cord blood | 0.895 | 1213 |
-| 36661376 | Influenza virus A and B and SARS-CoV-2 (COVID-19) RNA panel - Respiratory system specimen by NAA with probe detection | 0.894 |  |
-| 36661384 | Influenza virus A and B and SARS-CoV-2 (COVID-19) and SARS-related CoV RNA panel - Respiratory system specimen by NAA with probe detection | 0.894 |  |
-| 43055370 | Monocytes/Leukocytes [Pure number fraction] in Blood by Automated count | 0.894 |  |
-| 3038697 | Lupus anticoagulant neutralization platelet [Presence] in Platelet poor plasma by Coagulation assay | 0.893 |  |
-| 43055369 | Neutrophils/Leukocytes [Pure number fraction] in Blood by Automated count | 0.893 |  |
-| 3038245 | Bilirubin.conjugated [Moles/volume] in Body fluid | 0.893 |  |
-| 3025817 | Bicarbonate [Moles/volume] in Mixed venous blood | 0.892 |  |
-| 3017809 | Bicarbonate [Moles/volume] in Arterial cord blood | 0.892 | 1229 |
-| 3023980 | Creatine kinase [Enzymatic activity/volume] in Body fluid | 0.892 |  |
-| 3040005 | Erythroid cells [#/volume] in Blood or Marrow | 0.891 |  |
-| 1469740 | 24,25-dihydroxyvitamin D3+24,25-dihydroxyvitamin D2 [Moles/volume] in Serum or Plasma | 0.890 |  |
-| 3006270 | Folate [Moles/volume] in Blood | 0.890 | 1465 |
-| 43055371 | Lymphocytes/Leukocytes [Pure number fraction] in Blood by Automated count | 0.889 |  |
-| 43534101 | Urea [Moles/volume] in Arterial blood | 0.888 |  |
-| 3003139 | Lactate dehydrogenase [Enzymatic activity/volume] in Red Blood Cells | 0.887 |  |
-| 3004327 | Lymphocytes [#/volume] in Blood by Automated count | 0.886 | 35 |
-| 36203320 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Upper respiratory specimen by NAA with probe detection | 0.885 |  |
-| 3051595 | Calciferol (Vit D2) [Moles/volume] in Serum or Plasma | 0.885 | 391 |
-| 3012898 | Urea [Moles/volume] in Urine | 0.884 |  |
-| 648704 | Influenza virus A and B and Respiratory syncytial virus RNA panel - Specimen by NAA with probe detection | 0.883 |  |
-| 43055367 | Eosinophils/Leukocytes [Pure number fraction] in Blood by Manual count | 0.883 |  |
-| 3040637 | Bicarbonate [Moles/volume] standard in Venous cord blood | 0.883 |  |
-| 3001784 | Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma | 0.883 | 532 |
-| 43534100 | Urea [Moles/volume] in Venous blood | 0.882 |  |
-| 3041008 | Bicarbonate [Moles/volume] standard in Arterial cord blood | 0.881 |  |
-| 3024574 | Basophils/Leukocytes in Specimen by Manual count | 0.881 |  |
-| 42529188 | 25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma by Immunoassay | 0.880 |  |
-| 3052201 | Parathyrin.intact [Moles/volume] in Serum or Plasma --5 minutes post excision | 0.880 |  |
-| 36303442 | Epithelial cells [#/volume] in Urine by Automated | 0.880 |  |
-| 3028615 | Eosinophils [#/volume] in Blood by Automated count | 0.880 | 50 |
-| 3031368 | Variant lymphocytes/Leukocytes in Blood by Automated count | 0.879 |  |
-| 3014594 | Urea [Moles/volume] in Body fluid | 0.876 |  |
-| 3043995 | Bilirubin.conjugated+indirect [Moles/volume] in Serum or Plasma | 0.876 |  |
-| 3012608 | Segmented neutrophils/Leukocytes in Blood by Automated count | 0.876 |  |
+| 3044453 | Borrelia burgdorferi IgA Ab [Units/volume] in Serum by Immunofluorescence | 0.900 |  |
+| 3021257 | Drugs of abuse 5 panel - Urine | 0.899 |  |
+| 3021182 | F7 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.899 |  |
+| 3011836 | F2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.899 | 1056 |
+| 3025090 | Borrelia burgdorferi Ab [Units/volume] in Serum | 0.899 |  |
+| 3038346 | JAK2 gene.p.Val617Phe mutant/Normal in Blood or Tissue by Molecular genetics method | 0.898 |  |
+| 3000535 | Borrelia burgdorferi IgG Ab [Presence] in Serum by Immunoblot | 0.895 |  |
+| 3004825 | Lactate [Moles/volume] in Body fluid | 0.894 |  |
+| 40762125 | Lactate [Mass/volume] in Blood | 0.893 |  |
+| 3031042 | Nucleated cells [#/volume] in Blood | 0.893 |  |
+| 3029162 | Epithelial cells.squamous [#/area] in Urine sediment by Automated count | 0.893 |  |
+| 3032084 | Eosinophils [#/volume] in Body fluid | 0.892 |  |
+| 3041491 | F9 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.892 |  |
+| 3014111 | Lactate [Moles/volume] in Serum or Plasma | 0.890 | 346 |
+| 43054967 | JAK2 gene p.Val617Phe [Presence] in Bone marrow by Molecular genetics method | 0.889 |  |
+| 3000330 | Specific gravity of Urine by Test strip | 0.889 | 71 |
+| 3032917 | Immature eosinophils [#/volume] in Blood | 0.887 |  |
+| 3020059 | Calcium [Moles/volume] corrected for albumin in Serum or Plasma | 0.887 | 237 |
+| 3005897 | Protein [Mass/volume] in Urine by Test strip | 0.886 | 74 |
+| 3017501 | Neutrophils [#/volume] in Blood by Manual count | 0.886 |  |
+| 3015338 | F8 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.886 |  |
+| 3015586 | Segmented neutrophils [#/volume] in Blood | 0.884 |  |
+| 3023539 | Ketones [Mass/volume] in Urine by Test strip | 0.884 |  |
+| 40761064 | DPYD2A gene targeted mutation analysis [Presence] in Blood or Tissue by Molecular genetics method | 0.884 |  |
+| 3004064 | Calcium [Moles/volume] corrected for total protein in Serum or Plasma | 0.883 |  |
+| 3037185 | Protein [Presence] in Urine | 0.883 |  |
+| 3008116 | Ketones [Moles/volume] in Urine by Test strip | 0.882 | 80 |
+| 3046321 | Neutrophils [#/volume] in Body fluid | 0.878 |  |
+| 3041412 | Epithelial cells.non-squamous [#/area] in Urine sediment by Automated count | 0.878 |  |
+| 3020410 | Lactate [Moles/volume] in Arterial plasma | 0.877 |  |
+| 3035715 | Granulocytes [#/volume] in Blood | 0.876 | 2002 |
 | 3049383 | Erythrocyte distribution width [Ratio] in Cord blood | 0.875 |  |
-| 3049149 | Renin [Mass/volume] in Plasma --upright | 0.874 |  |
-| 40758434 | Fungus [Presence] in Specimen by KOH preparation | 0.874 |  |
-| 3002733 | Renin [Enzymatic activity/volume] in Plasma --baseline | 0.874 |  |
-| 3026361 | Erythrocytes [#/volume] in Blood | 0.874 |  |
-| 40765040 | 25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma | 0.874 | 632 |
-| 648850 | Renin [Measurement] in Plasma | 0.874 |  |
-| 3013429 | Basophils [#/volume] in Blood by Automated count | 0.873 | 27 |
-| 3001620 | Renin [Enzymatic activity/volume] in Plasma --supine | 0.872 |  |
-| 40757349 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Blood | 0.872 | 362 |
-| 3025262 | Renin [Mass/volume] in Plasma --supine | 0.872 |  |
-| 3013149 | Basophils+Eosinophils+Monocytes/Leukocytes in Blood by Automated count | 0.872 |  |
-| 3013294 | Phosphate [Moles/volume] in Specimen | 0.871 |  |
-| 40763547 | Calcidiol+Calciferol [Moles/volume] in Serum or Plasma | 0.871 |  |
-| 40760485 | Enolase.neuron specific [Mass/volume] in Serum or Plasma by Immunoassay | 0.870 |  |
-| 3008994 | Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.869 |  |
-| 43055368 | Basophils/Leukocytes [Pure number fraction] in Blood by Manual count | 0.869 |  |
-| 3013942 | Lymphocytes/Leukocytes in Synovial fluid by Automated count | 0.869 |  |
-| 3002864 | Erythrocytes [#/volume] in Urine by Automated count | 0.868 | 246 |
-| 3026160 | Phosphate [Moles/volume] in Body fluid | 0.868 |  |
-| 3016070 | Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.867 |  |
-| 3019676 | Bilirubin.conjugated [Mass/volume] in Serum or Plasma | 0.867 |  |
-| 3016913 | Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.866 |  |
-| 3022231 | Eosinophils/Leukocytes in Body fluid by Manual count | 0.866 | 1824 |
-| 3008839 | Basophils/Leukocytes in Body fluid by Manual count | 0.866 | 447 |
-| 3034204 | Urea [Mass/volume] in Serum or Plasma | 0.864 |  |
-| 3028622 | Alkaline phosphatase.lung [Enzymatic activity/volume] in Serum or Plasma | 0.864 |  |
-| 3005785 | Creatine kinase.MB [Mass/volume] in Serum or Plasma | 0.863 | 111 |
-| 43055365 | Monocytes/Leukocytes [Pure number fraction] in Blood by Manual count | 0.863 |  |
-| 3051014 | Leukocytes [#/area] in Urine sediment by Automated count | 0.862 |  |
-| 3004411 | Monocytes/Leukocytes in Body fluid by Manual count | 0.862 |  |
-| 3004338 | Enolase.neuron specific [Units/volume] in Serum or Plasma | 0.861 |  |
+| 40768439 | Drugs of abuse 5 panel - Urine by Screen method | 0.875 |  |
+| 40759053 | Lactate [Moles/volume] in Cord blood | 0.874 |  |
+| 40765176 | Nucleated erythrocytes [#/volume] in Body fluid by Automated count | 0.872 |  |
+| 3009179 | Lactate [Moles/volume] in Peritoneal fluid | 0.872 |  |
+| 44787047 | Eosinophils [#/volume] in Cord blood | 0.871 |  |
+| 3030905 | Polymorphonuclear cells [#/volume] in Blood | 0.871 |  |
+| 40766103 | Ketones [Presence] in Urine by Test strip --1 hour post dose glucose | 0.868 |  |
+| 3005491 | Lactate [Moles/volume] in Plasma venous | 0.868 | 1070 |
+| 1091265 | DPYD gene.c.1236G>A [Presence] in Blood or Tissue by Molecular genetics method | 0.866 |  |
+| 40765009 | Nucleated erythrocytes [#/volume] in Blood from Fetus by Automated count | 0.865 |  |
+| 3026361 | Erythrocytes [#/volume] in Blood | 0.865 |  |
+| 3006032 | Nucleated erythrocytes [#/volume] in Body fluid by Manual count | 0.864 | 991 |
+| 1091601 | Epithelial cells [#/area] in Urine sediment | 0.863 |  |
+| 1259496 | DPYD gene.c.2846A>T [Presence] in Blood or Tissue by Molecular genetics method | 0.862 |  |
+| 1259714 | DPYD gene.c.1679T>G [Presence] in Blood or Tissue by Molecular genetics method | 0.862 |  |
+| 3010813 | Leukocytes [#/volume] in Blood | 0.861 | 33 |
 | 3015182 | Erythrocyte distribution width [Entitic volume] by Automated count | 0.861 |  |
-| 3028895 | Lymphoblasts/Leukocytes in Blood by Manual count | 0.860 |  |
-| 40762632 | Urea nitrogen [Moles/volume] in Blood | 0.859 |  |
-| 3019402 | Monocytes Abnormal/Leukocytes in Blood by Manual count | 0.859 |  |
-| 3001490 | Nucleated erythrocytes [#/volume] in Blood | 0.858 |  |
-| 40761510 | Other cells/Leukocytes in Blood by Automated count | 0.858 |  |
-| 40761899 | Leukocytes [#/volume] in Urine by Automated test strip | 0.857 |  |
-| 43055364 | Neutrophils/Leukocytes [Pure number fraction] in Blood by Manual count | 0.857 |  |
-| 36033643 | Influenza virus A and B and SARS-CoV-2 (COVID-19) Ag panel - Upper respiratory specimen by Rapid immunoassay | 0.857 |  |
-| 3011391 | Calcitriol [Moles/volume] in Serum or Plasma | 0.857 | 503 |
-| 36031949 | Influenza virus A and B and SARS-CoV+SARS-CoV-2 (COVID-19) Ag panel - Upper respiratory specimen by Rapid immunoassay | 0.856 |  |
-| 40759093 | Phosphate [Moles/volume] in Serum or Plasma --post dialysis | 0.856 |  |
-| 649431 | Phosphate [Measurement] in Serum or Plasma | 0.855 |  |
-| 3021589 | Normoblasts [#/volume] in Blood | 0.855 |  |
-| 3005489 | Leukocytes [#/volume] in Urine by Manual count | 0.854 |  |
-| 3014152 | Creatine kinase [Enzymatic activity/volume] in Cerebral spinal fluid | 0.854 |  |
-| 43055410 | Prostate Specific Ag Free/Prostate specific Ag.total [Pure mass fraction] in Serum or Plasma | 0.852 |  |
-| 3006504 | Eosinophils/Leukocytes in Blood | 0.851 | 49 |
-| 3004391 | Epithelial cells [#/volume] in Urine by Manual count | 0.851 |  |
-| 3049111 | Enolase.neuron specific [Mass/volume] in Body fluid | 0.851 |  |
-| 3966513 | Influenza virus A and Influenza virus B and SARS coronavirus 2 RNA panel - Nose by NAA with non-probe detection | 0.850 |  |
-| 3013650 | Neutrophils [#/volume] in Blood by Automated count | 0.850 | 46 |
-| 3024655 | Bicarbonate [Moles/volume] in Body fluid | 0.849 |  |
-| 3034458 | CD4+CD45RA+ cells/CD8 Cells [# Ratio] in Blood | 0.849 |  |
-| 3020688 | Eosinophils/Leukocytes in Sputum by Manual count | 0.849 |  |
-| 3029707 | Crystals [#/volume] in Urine by Automated count | 0.848 |  |
-| 646531 | Influenza virus A and Influenza virus B and SARS coronavirus 2 and Respiratory syncytial virus Ag panel - Nose by Rapid immunoassay | 0.847 |  |
-| 3031040 | Bacteria [#/volume] in Urine by Automated count | 0.847 |  |
-| 3015834 | Enolase.neuron specific [Enzymatic activity/volume] in Serum or Plasma | 0.846 |  |
-| 3030170 | Creatine kinase [Mass/volume] in Blood | 0.846 |  |
-| 3040491 | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid | 0.845 |  |
-| 3033575 | Monocytes [#/volume] in Blood by Automated count | 0.845 | 52 |
-| 3006044 | Creatine kinase.total/Creatine kinase.MB [Enzymatic activity ratio] in Serum or Plasma | 0.844 |  |
-| 3028564 | Alkaline phosphatase isoenz panel - Serum or Plasma | 0.844 |  |
-| 3006140 | Bilirubin.total [Moles/volume] in Serum or Plasma | 0.843 | 21 |
-| 3014886 | Neutrophils [#/volume] in Urine by Automated count | 0.842 |  |
+| 3001019 | Free T4 and TSH panel - Serum or Plasma | 0.860 |  |
+| 46236300 | FUS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.859 |  |
+| 3005176 | Neutrophils [#/volume] in Urine | 0.857 |  |
+| 3028886 | FANCC gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.857 |  |
+| 3016347 | F5 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal | 0.856 |  |
+| 1259589 | DPYD gene.c.1905+1G>A [Presence] in Blood or Tissue by Molecular genetics method | 0.856 |  |
+| 3047107 | Calcium [Mass/volume] corrected for albumin in Serum or Plasma | 0.855 |  |
+| 1001873 | DPYD gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.855 |  |
+| 3046841 | FBN2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.854 |  |
+| 40766104 | Ketones [Presence] in Urine by Test strip --3 hours post dose glucose | 0.853 |  |
+| 43534057 | CYP2E1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.852 |  |
+| 3015816 | F5 gene p.Arg506Gln [Presence] in Blood or Tissue by Molecular genetics method | 0.852 |  |
+| 40762031 | LCT gene mutations found [Type] in Blood or Tissue by Molecular genetics method | 0.852 |  |
+| 3039904 | Epithelial cells.renal [#/volume] in Urine by Computer assisted method | 0.850 |  |
+| 3015774 | Calcium.ionized [Moles/volume] in Serum or Plasma by calculation | 0.850 |  |
+| 40766105 | Ketones [Presence] in Urine by Test strip --4 hours post dose glucose | 0.849 |  |
+| 3018199 | Band form neutrophils [#/volume] in Blood | 0.848 | 199 |
+| 3029937 | Albumin [Presence] in Urine by Test strip | 0.848 |  |
+| 3043088 | Ketones [Presence] in 24 hour Urine | 0.847 |  |
+| 3038720 | Eosinophils [#/volume] in Body fluid by Manual count | 0.847 |  |
+| 3006315 | Basophils [#/volume] in Blood | 0.846 | 121 |
+| 36303968 | JAK2 gene.p.Val617Phe mutant/Normal in Bone marrow by Molecular genetics method | 0.846 |  |
+| 648345 | JAK2 gene.p.Val617Phe mutant/Normal in Specimen by Molecular genetics method | 0.844 |  |
+| 43534055 | UGT2B15 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.844 |  |
+| 3009261 | Glucose [Presence] in Urine by Test strip | 0.843 | 309 |
+| 3048870 | JAK2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.843 |  |
+| 3030597 | Calcium [Mass/volume] corrected for total protein in Serum or Plasma | 0.843 |  |
+| 40758430 | JAK2 gene exon 13 targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.843 |  |
 | 46235808 | Reticulocyte distribution width [Ratio] in Blood by calculation | 0.842 |  |
-| 3019069 | Monocytes/Leukocytes in Blood | 0.839 | 40 |
-| 3049473 | Enolase.neuron specific [Mass/volume] in Serum or Plasma by Radioimmunoassay (RIA) | 0.838 |  |
-| 3042779 | Enolase.neuron specific [Mass/volume] in Cerebral spinal fluid | 0.838 |  |
-| 3009991 | Angiotensin converting enzyme [Enzymatic activity/volume] in Cerebral spinal fluid | 0.838 |  |
-| 3040014 | Creatine kinase [Enzymatic activity/volume] in Dialysis fluid | 0.837 |  |
-| 3022229 | Phosphate [Moles/volume] in Urine | 0.837 | 1197 |
-| 3000905 | Leukocytes [#/volume] in Blood by Automated count | 0.837 | 15 |
-| 3026844 | Monocytes+Macrophages/Leukocytes in Specimen by Manual count | 0.836 |  |
-| 3030306 | Epithelial cells.non-squamous [#/volume] in Urine by Automated count | 0.834 |  |
-| 3006696 | Leukocytes [#/volume] in Specimen by Automated count | 0.833 |  |
-| 3001740 | Acetylcholinesterase [Enzymatic activity/volume] in Serum or Plasma | 0.833 |  |
-| 3035173 | Hydrogen ion [Moles/volume] in Arterial blood | 0.833 |  |
-| 40762014 | CD4+CD45RO+ cells/CD3+CD4+ (T4 helper) cells [# Ratio] in Blood | 0.832 |  |
-| 3027389 | Bicarbonate [Moles/volume] in Red Blood Cells | 0.832 |  |
-| 3029287 | Urinalysis microscopic panel [#/volume] - Urine by Automated count | 0.832 |  |
-| 3037520 | Pronormoblasts [#/volume] in Blood | 0.831 |  |
-| 3039179 | Angiotensin converting enzyme [Enzymatic activity/volume] in Peritoneal fluid | 0.831 |  |
-| 36032352 | SARS-CoV-2 (COVID-19) and SARS-related CoV RNA panel - Respiratory system specimen by NAA with probe detection | 0.830 |  |
-| 1616626 | Enolase.neuron specific [Mass/volume] in Aspirate | 0.829 |  |
-| 3031248 | Chloride [Moles/volume] in Arterial blood | 0.829 |  |
-| 3004706 | Phosphoserine [Moles/volume] in Serum or Plasma | 0.828 |  |
-| 3029879 | Epithelial cells.squamous [#/volume] in Urine by Automated count | 0.827 |  |
-| 3048400 | Enolase.neuron specific [Mass/volume] in Cerebral spinal fluid by Immunoassay | 0.827 |  |
-| 3035960 | Phosphate [Moles/volume] in Red Blood Cells | 0.826 |  |
-| 1091110 | SARS-CoV+SARS-CoV-2 (COVID-19) Ag [Presence] in Specimen | 0.826 |  |
-| 3021960 | Folate [Moles/volume] in Serum or Plasma | 0.825 | 181 |
-| 3002112 | Folate [Mass/volume] in Blood | 0.825 |  |
-| 3052191 | Erythrocytes [#/volume] in Cord blood | 0.824 |  |
-| 3014637 | Bicarbonate [Moles/volume] in Specimen | 0.824 |  |
-| 3032724 | Siderocytes [#/volume] in Blood | 0.822 |  |
-| 3051257 | Erythrocyte morphology [Interpretation] in Urine sediment by Light microscopy Narrative | 0.821 |  |
-| 3046121 | Yeast.hyphae [Presence] in Specimen by Wet preparation | 0.820 |  |
-| 40765038 | 1,25-Dihydroxyvitamin D [Mass/volume] in Serum or Plasma | 0.820 |  |
-| 3018095 | Leukocytes [#/volume] in Urine | 0.819 | 201 |
-| 3011510 | Bicarbonate [Moles/volume] in Water | 0.819 |  |
-| 3030908 | Bilirubin.conjugated [Mass/volume] in Body fluid | 0.819 |  |
-| 3040517 | Leukocytes [Presence] in Urine by Automated | 0.819 |  |
-| 3010866 | Cholinesterase [Enzymatic activity/volume] in Serum or Plasma | 0.817 |  |
-| 46235782 | Bilirubin.total [Moles/volume] in Serum, Plasma or Blood | 0.817 |  |
-| 3029794 | Leukocyte clumps [#/volume] in Urine by Automated count | 0.816 | 608 |
-| 1091400 | Fungus [Presence] in Tissue by KOH preparation | 0.815 |  |
-| 40760678 | 25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --pre dose calcium | 0.815 |  |
-| 36661369 | SARS-CoV-2 (COVID-19) Ab [Presence] in Serum, Plasma or Blood by Rapid immunoassay | 0.814 |  |
-| 3028638 | Bilirubin.direct [Moles/volume] in Serum or Plasma | 0.814 | 82 |
-| 40760681 | 25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --1 hour post dose calcium | 0.814 |  |
-| 3015377 | Calcium [Moles/volume] in Serum or Plasma | 0.814 | 12 |
-| 3005013 | Prostate Specific Ag Free [Mass/volume] in Serum or Plasma | 0.814 | 554 |
-| 3039189 | Lupus anticoagulant neutralization dilute phospholipid [Time] in Platelet poor plasma | 0.813 |  |
-| 36031238 | SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with non-probe detection | 0.813 |  |
-| 3020149 | 25-hydroxyvitamin D3 [Mass/volume] in Serum or Plasma | 0.812 |  |
-| 706163 | SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection | 0.812 |  |
-| 3009299 | Lupus anticoagulant neutralization platelet [Time] in Platelet poor plasma by Coagulation assay | 0.811 | 811 |
-| 40762329 | Prostate Specific Ag Free/Prostate specific Ag.total in Body fluid | 0.811 |  |
+| 21494670 | JAK2 gene exon 14 targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.840 |  |
+| 40758429 | JAK2 gene exon 12 targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.839 |  |
+| 43533384 | Drugs of abuse panel - Blood by Screen method | 0.838 |  |
+| 3002431 | Phytonadione [Mass/volume] in Serum or Plasma | 0.838 |  |
+| 44786662 | ABCB1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.838 |  |
+| 3040873 | UGT1A1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.838 |  |
+| 3009015 | Lactate [Moles/volume] in Synovial fluid | 0.837 |  |
+| 3049410 | CYP2D6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method | 0.837 |  |
+| 3032072 | Eosinophils [#/volume] in Pleural fluid | 0.836 |  |
+| 3005089 | MTHFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.836 | 1341 |
+| 3015377 | Calcium [Moles/volume] in Serum or Plasma | 0.836 | 12 |
+| 3043107 | Immature eosinophils [#/volume] in Blood by Manual count | 0.836 |  |
+| 36305828 | Drugs of abuse screen W Reflex confirm panel - Urine | 0.835 |  |
+| 3030676 | VKORC1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.835 |  |
+| 3010908 | Cytology study comment Cervical or vaginal smear or scraping Cyto stain | 0.835 | 945 |
+| 3001099 | RB1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.835 |  |
+| 3039264 | MT-TK gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.834 |  |
+| 3966445 | Human papilloma virus cytology and high-risk genotypes panel - Cervix | 0.834 |  |
+| 1175703 | Drugs of abuse panel - Body fluid | 0.833 |  |
+| 3016220 | Menadione [Mass/volume] in Serum or Plasma | 0.833 |  |
+| 40762018 | LCT gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal | 0.833 |  |
+| 3039919 | Specific gravity of Urine by Automated test strip | 0.832 |  |
+| 36660277 | F2 gene.c.20210G>A and c.1691G>A panel - Blood or Tissue by Molecular genetics method | 0.829 |  |
+| 3029872 | Protein [Mass/volume] in Urine by Automated test strip | 0.828 |  |
+| 1175900 | Thyroxine and Thyroxine.free panel - Serum or Plasma | 0.825 |  |
+| 40758548 | Home drug screening panel - Urine | 0.825 |  |
+| 3033521 | Obstetric 1996 panel - Serum and Blood | 0.824 |  |
+| 1616736 | Protein/Creatinine Qualitative in Urine by Test strip | 0.824 |  |
+| 3049461 | Calcium [Moles/volume] corrected for total protein in Blood | 0.824 |  |
+| 3025008 | F2 gene c.20210G>A [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.823 | 470 |
+| 1259630 | DPYD gene.c.1679T>G [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.821 |  |
+| 1259665 | DPYD gene.c.2846A>T [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.820 |  |
+| 1091308 | DNMT3A gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal | 0.819 |  |
+| 36660607 | Microalbumin [Presence] in Urine by Test strip | 0.817 |  |
+| 3030784 | F13A1 gene p.Val34Leu [Presence] in Blood or Tissue by Molecular genetics method | 0.816 |  |
+| 1175629 | Drugs of abuse panel - Hair | 0.816 |  |
+| 40766152 | JAK2 gene exon 12 mutations tested for in Blood or Tissue by Molecular genetics method Nominal | 0.815 |  |
+| 40757581 | CYP2C9 and VKORC1 panel - Blood or Tissue by Molecular genetics method | 0.815 |  |
+| 40762140 | F5 gene p.His1299Arg [Presence] in Blood or Tissue by Molecular genetics method | 0.815 |  |
+| 3039049 | Pharmacogenetic DNA analysis panel | 0.813 |  |
+| 3050380 | Cytology report of Cervical or vaginal smear or scraping Cyto stain | 0.813 | 798 |
 | 3039417 | Platelet distribution width [Ratio] in Blood | 0.811 |  |
-| 3024232 | Phosphate [Mass/volume] in Blood | 0.810 |  |
-| 3001138 | Prostate Specific Ag Free [Units/volume] in Serum or Plasma | 0.809 | 1854 |
-| 40757494 | Bilirubin.total [Moles/volume] in Blood | 0.809 |  |
-| 3040249 | Reticulocytes.mature [#/volume] in Blood | 0.809 |  |
-| 3047178 | Yeast [Presence] in Specimen by Wet preparation | 0.808 | 874 |
-| 3030573 | Phosphate [Moles/volume] in Dialysis fluid | 0.808 |  |
-| 3023520 | Reticulocytes [#/volume] in Blood | 0.808 | 555 |
-| 3038738 | Fungus [Presence] in Specimen by Organism specific culture | 0.807 |  |
-| 40771480 | Enolase.neuron specific [Mass/volume] in Pleural fluid | 0.806 |  |
-| 3007242 | Bilirubin.indirect [Moles/volume] in Serum or Plasma | 0.806 | 125 |
-| 1259611 | SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen | 0.806 |  |
-| 3010910 | Erythrocytes [#/volume] in Body fluid | 0.805 | 435 |
-| 649172 | Prostate Specific Ag Free [Measurement] in Serum or Plasma | 0.805 |  |
-| 3006729 | Transketolase [Enzymatic activity/volume] in Serum | 0.805 |  |
-| 3008966 | Adenylate kinase [Enzymatic activity/volume] in Serum | 0.804 |  |
-| 3037816 | CD4+CD8+ cells/100 cells in Blood | 0.804 |  |
-| 3002131 | Prostate specific Ag [Units/volume] in Serum or Plasma | 0.802 |  |
-| 706180 | SARS-CoV-2 (COVID-19) IgM Ab [Presence] in Serum, Plasma or Blood by Rapid immunoassay | 0.801 |  |
-| 3013603 | Prostate specific Ag [Mass/volume] in Serum or Plasma | 0.801 | 124 |
-| 3023451 | Erythrocytes [Morphology] in Blood by Automated count | 0.799 |  |
-| 3041326 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Tissue | 0.798 |  |
-| 3014859 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Body fluid | 0.795 |  |
-| 40758447 | Fungus [Presence] in Bronchial specimen by KOH preparation | 0.794 |  |
-| 646862 | Prostate specific Ag [Measurement] in Serum or Plasma | 0.792 |  |
-| 1001548 | Glycocholate [Moles/volume] in Serum or Plasma | 0.791 |  |
-| 40758436 | Fungus [Presence] in Vaginal fluid by KOH preparation | 0.791 |  |
-| 42528887 | GlycA [Moles/volume] in Serum or Plasma | 0.789 |  |
-| 40758433 | Fungus [Presence] in Sputum by KOH preparation | 0.789 |  |
-| 40758432 | Fungus [Presence] in Skin by KOH preparation | 0.788 |  |
-| 42529562 | Prostate Specific Ag Free [Mass/volume] in Serum or Plasma by Immunoassay | 0.787 |  |
-| 3029361 | Urinalysis dipstick panel - Urine by Automated test strip | 0.786 |  |
-| 3027627 | Lupus anticoagulant neutralization high phospholipid [Time] in Platelet poor plasma by Coagulation assay | 0.786 |  |
-| 40762328 | Prostate Specific Ag Free/Prostate specific Ag.total in Pleural fluid | 0.785 |  |
-| 1259791 | Lupus anticoagulant aPTT screening panel - Platelet poor plasma by Coagulation assay | 0.785 |  |
-| 3046082 | Antithrombin Ag [Presence] in Platelet poor plasma by Immunoassay | 0.784 |  |
-| 3033295 | Lupus anticoagulant neutralization dilute phospholipid actual/normal in Platelet poor plasma by Coagulation assay | 0.783 |  |
-| 3031441 | Tripeptide aminopeptidase [Enzymatic activity/volume] in Serum or Plasma | 0.781 |  |
-| 3020073 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Specimen | 0.780 |  |
+| 3033110 | Human papilloma virus high and Low risk DNA panel - Cervix | 0.809 |  |
+| 3043090 | Cervical AndOr vaginal cytology study | 0.804 |  |
+| 3039059 | Drugs of abuse 7 and Alcohol and Tricyclics panel - Urine by Screen method | 0.804 |  |
+| 3035999 | Lactate [Moles/volume] in Cerebral spinal fluid | 0.800 |  |
+| 43534060 | CYP2D6 gene and CYP2C19 gene targeted mutation analysis panel - Blood or Tissue by Molecular genetics method | 0.800 |  |
+| 3050129 | First trimester maternal screen panel - Serum or Plasma | 0.799 |  |
+| 3006906 | Calcium [Mass/volume] in Serum or Plasma | 0.798 |  |
+| 3052990 | Drugs of abuse panel - Meconium | 0.798 |  |
+| 3040757 | Calcium [Moles/volume] in Serum or Plasma --baseline | 0.795 |  |
+| 37020870 | LPA gene.c.3947+467T>C [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.794 |  |
+| 40761887 | Phytonadione [Moles/volume] in Serum or Plasma | 0.793 |  |
+| 46236486 | CLRN1 gene c.144T>G [Presence] in Blood or Tissue by Molecular genetics method | 0.792 |  |
+| 3966606 | Prenatal hepatitis B and C panel - Serum or Plasma | 0.792 |  |
+| 3009762 | IgM [Presence] in Serum by Immunofixation | 0.788 |  |
+| 3038231 | PYGM gene p.Arg50Ter+Gly205Ser [Presence] in Blood or Tissue by Molecular genetics method | 0.788 |  |
+| 21493868 | CYP3A4 and CYP3A5 gene targeted mutation analysis panel - Blood or Tissue by Molecular genetics method | 0.788 |  |
+| 3043948 | Calcium [Moles/volume] in Serum or Plasma --pre XXX challenge | 0.786 |  |
+| 36031337 | Human papilloma virus high-risk genotypes panel - Cervix by NAA with probe detection | 0.785 |  |
+| 42868527 | FSHB gene c.-211G>T [Presence] in Blood or Tissue by Molecular genetics method | 0.785 |  |
+| 3053322 | Second trimester quad maternal screen panel - Serum or Plasma | 0.782 |  |
+| 3024865 | Alpha tocopherol [Mass/volume] in Serum or Plasma | 0.781 |  |
+| 3048538 | Cryoglobulin type [Identifier] in Serum by Immunofixation | 0.781 |  |
 | 3002736 | Platelet distribution width [Entitic volume] in Blood by Automated count | 0.780 | 1233 |
-| 3015209 | CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Bone marrow | 0.780 |  |
-| 3014942 | Protein kinase [Enzymatic activity/volume] in Serum | 0.778 |  |
-| 3009059 | Enolase [Enzymatic activity/volume] in Serum | 0.778 |  |
-| 3037908 | Alkaline phosphatase isoenzymes [Interpretation] in Serum or Plasma | 0.778 |  |
+| 3049518 | Second trimester penta maternal screen panel - Serum or Plasma | 0.779 |  |
+| 3007561 | Coenzyme Q10 [Mass/volume] in Serum or Plasma | 0.779 | 1181 |
+| 40760890 | Thyroglobulin and Thyroglobulin Ab panel - Serum or Plasma | 0.778 |  |
 | 3002888 | Erythrocyte distribution width [Entitic volume] | 0.778 |  |
-| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.778 | 16 |
-| 3015823 | Fibrin D-dimer [Presence] in Platelet poor plasma | 0.776 |  |
-| 3036987 | Folate [Mass/volume] in Serum or Plasma | 0.775 |  |
+| 43055134 | VKORC1 gene c.1173C>T [Presence] in Blood or Tissue by Molecular genetics method | 0.777 |  |
+| 1002327 | Warfarin response genotype panel - Blood or Tissue by Molecular genetics method | 0.776 |  |
+| 36305197 | Thyroglobulin and thyroperoxidase Ab panel - Serum or Plasma | 0.775 |  |
+| 1091523 | IgM.kappa [Presence] in Serum by Immunofixation | 0.774 |  |
+| 3026898 | HFE gene.p.Cys282Tyr [Presence] in Blood or Tissue by Molecular genetics method | 0.774 | 1479 |
 | 3019897 | Erythrocyte [DistWidth] in Blood by Automated count | 0.773 | 24 |
-| 3021543 | Triosephosphate isomerase [Enzymatic activity/volume] in Serum | 0.773 |  |
-| 3030296 | Molybdenum [Moles/volume] in Red Blood Cells | 0.771 |  |
-| 21493858 | Methotrexate monoglutamate [Moles/volume] in Red Blood Cells | 0.769 |  |
-| 40762327 | Prostate Specific Ag Free/Prostate specific Ag.total in Peritoneal fluid | 0.768 |  |
-| 3042793 | Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma | 0.766 |  |
-| 44816949 | Thymidine phosphorylase [Enzymatic activity/volume] in DBS | 0.766 |  |
-| 3008455 | Magnesium [Moles/volume] in Red Blood Cells | 0.763 | 1697 |
-| 3965527 | Cardiovascular risk panel - Serum or Plasma | 0.762 |  |
-| 37019495 | Oxysterols panel - Serum or Plasma | 0.760 |  |
-| 3013088 | Calcium [Moles/volume] in Red Blood Cells | 0.759 |  |
-| 3030030 | Alpha-1-acid glycoprotein [Moles/volume] in Serum or Plasma | 0.759 |  |
-| 3032166 | Volatiles panel - Serum or Plasma | 0.759 |  |
-| 3006791 | Alpha naphthylesterase [Enzymatic activity/volume] in Serum | 0.759 |  |
-| 3045740 | CD56 cells/CD38 Cells [# Ratio] in Blood | 0.757 |  |
-| 3012764 | Erythrocyte morphology finding [Identifier] in Blood | 0.756 | 132 |
-| 3014029 | Erythrocyte shape [Morphology] in Blood | 0.755 |  |
-| 3039047 | Heavy metals panel - Serum or Plasma | 0.754 |  |
-| 1002116 | Glycohyodeoxycholate [Moles/volume] in Serum or Plasma | 0.752 |  |
-| 40761509 | Erythrocyte morphology panel - Blood | 0.752 |  |
-| 21490950 | Glycylproline [Moles/volume] in Serum or Plasma | 0.751 |  |
-| 3966389 | Mitochondrial metabolites panel - Serum or Plasma | 0.750 |  |
-| 3008575 | Glycine [Moles/volume] in Serum or Plasma | 0.749 | 1885 |
-| 3014780 | Pyrimidine-5'-Nucleotidase [Enzymatic activity/volume] in Blood | 0.748 |  |
-| 1091592 | Copper panel - Serum or Plasma | 0.747 |  |
-| 44816954 | Glycerate [Moles/volume] in Serum or Plasma | 0.747 |  |
-| 40760845 | Protein [Presence] in Urine by Automated test strip | 0.745 |  |
-| 3013721 | Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.744 | 19 |
-| 3010316 | Galactose [Moles/volume] in Serum or Plasma | 0.743 |  |
-| 3003511 | Phosphoglycerate kinase [Enzymatic activity/volume] in Serum | 0.743 |  |
-| 3049181 | Alkaline phosphatase isoenzymes [Interpretation] in Serum or Plasma Narrative | 0.741 |  |
-| 3009261 | Glucose [Presence] in Urine by Test strip | 0.739 | 309 |
-| 3014051 | Protein [Presence] in Urine by Test strip | 0.738 | 99 |
+| 3049793 | Tocopherols [Mass/volume] in Serum or Plasma | 0.773 |  |
+| 3051704 | Genechip kit panel - Blood or Tissue by Molecular genetics method | 0.772 |  |
+| 3033543 | Specific gravity of Urine | 0.772 | 122 |
+| 46235518 | HTR2C gene c.-759C>T [Presence] in Blood or Tissue by Molecular genetics method | 0.770 |  |
+| 3043043 | IgM.monoclonal [Presence] in Serum by Immunofixation | 0.769 |  |
+| 3039275 | MT-TL1 gene m.3291T>C [Presence] in Blood or Tissue by Molecular genetics method | 0.768 |  |
+| 3038534 | MT-ND6 gene m.14484T>C [Presence] in Blood or Tissue by Molecular genetics method | 0.768 |  |
+| 42528602 | Human papilloma virus 16 and 18+45 E6+E7 mRNA panel - Cervix by NAA with probe detection | 0.767 |  |
+| 3041626 | MT-TL1 gene m.3271T>C [Presence] in Blood or Tissue by Molecular genetics method | 0.767 |  |
+| 3042593 | MT-TL1 gene m.3252T>C [Presence] in Blood or Tissue by Molecular genetics method | 0.766 |  |
+| 1002160 | HTR2C gene c.-759C>T [Genotype] in Blood or Tissue by Molecular genetics method Nominal | 0.766 |  |
+| 44816563 | Monoclonal band observed [Identifier] in Serum or Plasma by Immunofixation | 0.766 |  |
+| 21492686 | Pharmacogenomic analysis basic associated observations panel - Blood or Tissue | 0.766 |  |
+| 3032628 | Second trimester triple maternal screen panel - Serum or Plasma | 0.766 |  |
+| 1175464 | Levothyroxine absorption panel - Serum or Plasma | 0.765 |  |
+| 3049172 | Sequence variation panel - Blood or Tissue by Molecular genetics method | 0.765 |  |
+| 3011422 | Epithelial cells [Presence] in Urine sediment by Light microscopy | 0.763 | 151 |
+| 36659869 | Psychotropic medication pharmacogenomic analysis in Blood or Tissue by Molecular genetics method | 0.762 |  |
+| 46234830 | Other cells [#/volume] in Pleural fluid by Manual count | 0.762 |  |
+| 3049122 | Sequencing methodology panel - Blood or Tissue by Molecular genetics method | 0.760 |  |
+| 46234832 | Other cells/Leukocytes in Pleural fluid by Manual count | 0.760 |  |
+| 3018425 | Cells [#/volume] in Pleural fluid by Manual count | 0.760 |  |
+| 1091565 | IgM.lambda [Presence] in Serum by Immunofixation | 0.760 |  |
+| 3019150 | Specific gravity of Urine by Refractometry | 0.758 |  |
+| 36032166 | Retinol and Alpha tocopherol panel - Serum or Plasma | 0.758 |  |
+| 3051971 | Cytology report of Cervical or vaginal smear or scraping Cyto stain.thin prep | 0.757 | 85 |
+| 3046946 | IgG.monoclonal [Presence] in Serum by Immunofixation | 0.757 |  |
+| 3024120 | Thiamine [Mass/volume] in Serum or Plasma | 0.753 | 1439 |
+| 1092033 | Epithelial cells [Presence] in Urine sediment | 0.753 |  |
+| 3026687 | IgG [Presence] in Serum by Immunofixation | 0.752 |  |
+| 36305936 | Inhibin A and B panel - Serum or Plasma | 0.752 |  |
+| 3042800 | 7-Dehydrocholesterol [Mass/volume] in Serum or Plasma | 0.750 |  |
+| 3004030 | Dicoumarol [Mass/volume] in Serum or Plasma | 0.749 |  |
+| 3032939 | Phenprocoumon [Mass/volume] in Serum or Plasma | 0.749 |  |
+| 44816564 | Monoclonal band observed [Identifier] in Urine by Immunofixation | 0.749 |  |
+| 40766218 | Epithelial cells.ciliated [Presence] in Bronchoalveolar lavage | 0.748 |  |
+| 648148 | Epithelial cells [Presence] in Bronchial specimen by Light microscopy | 0.747 |  |
+| 3006615 | Calciferol (Vit D2) [Mass/volume] in Serum or Plasma | 0.746 |  |
+| 3028475 | Transitional cells [Presence] in Urine sediment by Light microscopy | 0.745 | 1317 |
+| 3020508 | IgA [Presence] in Serum by Immunofixation | 0.745 |  |
+| 3004588 | Protein electrophoresis panel - Serum or Plasma | 0.745 |  |
+| 1988986 | Epithelial cells [Presence] in Bronchoalveolar lavage by Light microscopy | 0.745 |  |
+| 3035191 | Cells Counted Total [#] in Pleural fluid | 0.744 |  |
+| 40758283 | Biotinidase panel - Serum or Plasma | 0.743 |  |
+| 646357 | Human papilloma virus 16 panel - Plasma cell-free DNA | 0.742 |  |
+| 37019579 | Human papilloma virus DNA [Presence] in Genital specimen by NAA with probe detection | 0.742 |  |
+| 3000593 | Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma | 0.741 |  |
+| 3026593 | Cytologist who read Cyto stain of Cervical or vaginal smear or scraping | 0.741 | 109 |
+| 3044806 | Columnar cells/cells in Bronchial specimen | 0.740 |  |
+| 3029511 | Human papilloma virus DNA [Presence] in Specimen by NAA with probe detection | 0.740 |  |
+| 40761557 | Bladder cells [Presence] in Urine sediment by Light microscopy | 0.740 |  |
 | 44787095 | Platelet distribution width [Entitic volume] in Cord blood by Automated count | 0.738 |  |
-| 3044175 | Glycerol [Moles/volume] in Serum or Plasma | 0.738 |  |
-| 1001795 | Glycodeoxycholate [Moles/volume] in Serum or Plasma | 0.736 |  |
-| 3043435 | Alkaline phosphatase isoenzymes [Enzymatic activity/volume] in Serum or Plasma by Levamisole inhibition | 0.736 |  |
-| 44816912 | OLANZapine panel - Serum or Plasma | 0.736 |  |
-| 3966606 | Prenatal hepatitis B and C panel - Serum or Plasma | 0.734 |  |
-| 3004588 | Protein electrophoresis panel - Serum or Plasma | 0.733 |  |
-| 3016782 | Immunoelectrophoresis panel - Serum | 0.733 |  |
-| 3964942 | Vitamin B3 and metabolites panel - Serum or Plasma by LC/MS/MS | 0.733 |  |
-| 3030260 | Glucose [Presence] in Urine by Automated test strip | 0.733 |  |
-| 40758348 | Antioxidants [Moles/volume] in Serum or Plasma | 0.731 |  |
-| 36031364 | Hyperoxaluria panel - Serum or Plasma | 0.731 |  |
-| 40761066 | Erythrocytes [Morphology] in Body fluid by Light microscopy | 0.731 |  |
-| 40770913 | Hypoglycemics panel - Serum or Plasma | 0.731 |  |
-| 3022525 | Erythrocyte size [Morphology] in Blood | 0.730 |  |
-| 3030688 | Urinalysis panel - Urine by Automated | 0.730 |  |
-| 3037467 | Urinalysis macro (dipstick) panel - Urine | 0.729 |  |
-| 3021952 | Alkaline phosphatase isoenzymes [Enzymatic activity/volume] in Serum or Plasma by Heat stability | 0.719 |  |
-| 3024629 | Glucose [Mass/volume] in Urine by Test strip | 0.715 |  |
-| 3028089 | Alkaline phosphatase isoenzyme [Units/volume] in Serum or Plasma | 0.711 |  |
-| 3011368 | Poikilocytosis [Presence] in Blood by Light microscopy | 0.706 | 302 |
-| 3023802 | Normoblasts Orthochromic/cells in Bone marrow by Manual count | 0.705 |  |
-| 21492520 | Carnitine biosynthesis intermediates panel - Serum or Plasma | 0.703 |  |
-| 3026023 | Comprehensive metabolic 2000 panel - Serum or Plasma | 0.701 |  |
-| 40758424 | Protein electrophoresis and Immunoglobulins panel - Serum | 0.700 |  |
-| 3010114 | Amylase isoenzyme 7 panel - Serum | 0.698 |  |
-| 3043216 | Cardiovascular physiologic and EKG assessment panel | 0.695 |  |
-| 21493004 | Occupational exposure information panel | 0.691 |  |
-| 3009876 | Amylase isoenzyme 3 panel - Serum or Plasma | 0.690 |  |
-| 3016261 | Variant lymphocytes/cells in Bone marrow by Manual count | 0.684 |  |
-| 3023075 | Type of EKG leads | 0.684 |  |
-| 3003879 | Plasma cells/cells in Bone marrow by Manual count | 0.677 |  |
-| 21492522 | Carnitine biosynthesis intermediates panel - Urine | 0.676 |  |
-| 3035163 | Hypersensitivity pneumonitis panel - Serum | 0.673 |  |
-| 3050153 | Food allergen panel - Serum | 0.673 |  |
-| 3050943 | Newborn hearing screening panel | 0.670 |  |
-| 21492521 | Carnitine biosynthesis intermediates panel - Cerebral spinal fluid | 0.668 |  |
-| 3033521 | Obstetric 1996 panel - Serum and Blood | 0.668 |  |
-| 21492790 | Plasma cells/Leukocytes in Blood by Manual count | 0.667 |  |
-| 21492519 | Carnitine biosynthesis intermediates panel - DBS | 0.664 |  |
-| 36660707 | Vitamin B6 and metabolites panel - Serum or Plasma | 0.664 |  |
-| 3037023 | Hydrocarbon and Oxygenated Volatiles panel - Serum or Plasma | 0.664 |  |
-| 3010241 | Lymphoma cells/Leukocytes in Blood by Manual count | 0.663 |  |
-| 1260006 | Clonal cells rearrangements/Cells counted in Specimen by Molecular genetics method | 0.661 |  |
-| 3031004 | Mononuclear cells/Leukocytes in Blood by Manual count | 0.661 |  |
-| 3007867 | Hepatitis 1996 panel - Serum | 0.661 |  |
-| 3022035 | Basic metabolic 2000 panel - Serum or Plasma | 0.660 |  |
-| 3016263 | Hairy cells/Leukocytes in Blood by Manual count | 0.659 |  |
-| 36659635 | Variant lymphocytes/Leukocytes in Stem cell product by Manual count | 0.659 |  |
-| 3037234 | Variant lymphocytes/Leukocytes in Blood by Manual count | 0.658 | 167 |
-| 3038141 | Acute hepatitis 2000 panel - Serum | 0.656 |  |
-| 44816766 | Metabolic disorder therapy monitoring panel - DBS | 0.655 |  |
-| 1988764 | Electromyography panel | 0.654 |  |
-| 3006773 | TORCH 1996 panel - Serum | 0.654 |  |
-| 40757516 | Dehydroascorbate/Ascorbate in Serum or Plasma | 0.652 |  |
-| 1259654 | Diagnostic multisection transesophageal and cardioversion panel Heart | 0.652 |  |
-| 1617160 | Diagnostic audiology results panel | 0.643 |  |
-| 40757517 | Dehydroascorbate [Moles/volume] in Serum or Plasma | 0.642 |  |
-| 40757482 | Ascorbate+Dehydroascorbate [Mass/volume] in Serum or Plasma | 0.642 |  |
-| 1988411 | Permanent pacemaker panel | 0.642 |  |
-| 3044933 | Cardiac 2D echo panel | 0.641 |  |
-| 3046728 | Iron [Presence] in Serum or Plasma | 0.639 |  |
-| 3013512 | EKG study | 0.638 |  |
-| 3027476 | Ascorbate [Mass/volume] in Serum or Plasma | 0.635 |  |
-| 3013702 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Blood | 0.635 | 619 |
-| 3022504 | Arsenic [Presence] in Serum or Plasma | 0.634 |  |
-| 3013558 | Glutathione [Mass/volume] in Serum or Plasma | 0.633 |  |
-| 3019240 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Capillary blood | 0.631 |  |
-| 3032025 | Acetaldehyde [Presence] in Serum or Plasma | 0.631 |  |
-| 44816972 | Aconitate [Moles/volume] in Serum or Plasma | 0.630 |  |
-| 3022803 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Arterial blood | 0.630 |  |
-| 1988318 | Temporary pacemaker panel | 0.628 |  |
-| 36305393 | Pure tone air conduction threshold audiometry panel | 0.627 |  |
-| 3044671 | QRS duration {Electrocardiograph lead} | 0.625 |  |
-| 3020891 | Body temperature | 0.622 | 138 |
-| 3042212 | Oral assessment panel | 0.620 |  |
-| 3016055 | Body temperature from Pediatric incubator | 0.614 |  |
-| 3022673 | Creatinine [Mass/volume] in Dialysis fluid | 0.613 |  |
-| 3966684 | Body temperature 1 hour --at admission | 0.611 |  |
-| 3019464 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Mixed venous blood | 0.610 |  |
-| 43533765 | Newborn hearing screen panel of Ear - left | 0.607 |  |
-| 3052598 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Cord blood | 0.606 |  |
-| 43533768 | Newborn hearing screen panel of Ear - right | 0.606 |  |
-| 3030091 | pH of Blood adjusted to patient's actual temperature | 0.604 | 1223 |
-| 1617238 | Oxygen [Partial pressure] adjusted to patient's actual temperature in Central venous blood | 0.604 |  |
-| 3032462 | Creatinine dialysis fluid clearance/1.73 sq M | 0.602 |  |
-| 3023665 | Volume of Dialysis fluid | 0.595 |  |
-| 3052678 | Hematocrit [Volume Fraction] of Dialysis fluid by calculation | 0.594 |  |
-| 3007196 | Creatinine [Moles/volume] in Dialysis fluid | 0.593 |  |
-| 1616467 | Auditory brainstem response panel | 0.593 |  |
-| 1761861 | Pure tone bone conduction threshold audiometry panel | 0.593 |  |
-| 3041197 | Creatinine [Moles/volume] in 24 hour Dialysis fluid | 0.592 |  |
-| 21494472 | Pupil assessment panel | 0.592 |  |
-| 3006563 | Creatinine dialysis fluid clearance | 0.591 | 398 |
-| 3042571 | Creatinine [Moles/time] in 24 hour Dialysis fluid | 0.591 |  |
-| 648312 | Creatinine [Measurement] in Dialysis fluid | 0.590 |  |
-| 1989068 | Visual acuity panel | 0.581 |  |
+| 40766217 | Epithelial cells.squamous [Presence] in Bronchoalveolar lavage | 0.736 |  |
+| 40761537 | Casts [Type] in Urine sediment by Light microscopy | 0.736 |  |
+| 3043606 | Malignant cells/cells in Pleural fluid by Manual count | 0.735 |  |
+| 3047355 | Malignant cells [#/volume] in Pleural fluid | 0.734 |  |
+| 3040311 | Epithelial cells.non-squamous [Presence] in Urine sediment by Light microscopy | 0.733 |  |
+| 40761535 | Cells panel - Urine sediment | 0.733 |  |
+| 3032928 | Mesothelial cells [#/volume] in Pleural fluid | 0.732 |  |
+| 37020529 | Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Genital specimen by NAA with probe detection | 0.731 |  |
+| 3008325 | Epithelial cells.squamous [Presence] in Urine sediment by Light microscopy | 0.730 | 261 |
+| 44816941 | Coenzyme Q10 [Moles/volume] in Serum or Plasma | 0.730 |  |
+| 3032978 | Calcidiol and Calciferol panel - Serum or Plasma | 0.730 |  |
+| 1259531 | Human papilloma virus 31+33+52+58 DNA [Presence] in Cervix by NAA with probe detection | 0.729 |  |
+| 46236080 | Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Specimen by NAA with probe detection | 0.729 |  |
+| 3032934 | Unidentified cells [#/volume] in Pleural fluid | 0.729 |  |
+| 40758359 | Immunophenotyping study | 0.727 |  |
+| 3037334 | Vitamin D+Metabolites [Mass/volume] in Serum or Plasma | 0.726 | 500 |
+| 3009799 | Methylmalonate [Mass/volume] in Serum or Plasma | 0.726 |  |
+| 21494138 | Phytanate and pristanate panel - Serum or Plasma | 0.725 |  |
+| 3008486 | Thyroxine (T4) free [Moles/volume] in Serum or Plasma | 0.725 | 133 |
+| 3008598 | Thyroxine (T4) free [Mass/volume] in Serum or Plasma | 0.724 |  |
+| 3027361 | Cholecalciferol (Vit D3) [Mass/volume] in Serum or Plasma | 0.723 | 390 |
+| 3028949 | Nucleated cells [#/volume] in Bronchial specimen by Manual count | 0.723 |  |
+| 3024629 | Glucose [Mass/volume] in Urine by Test strip | 0.721 |  |
+| 1259598 | Other cells/Leukocytes in Bronchoalveolar lavage by Manual count | 0.721 |  |
+| 3029991 | Specific gravity of Urine by Refractometry automated | 0.719 |  |
+| 646156 | Thyroxine (T4) free [Measurement] in Serum or Plasma | 0.718 |  |
+| 36203795 | Cancer pathology panel - Breast cancer specimen by CAP cancer protocols | 0.718 |  |
+| 3030649 | Epithelial cells.squamous/cells in Bronchial specimen by Light microscopy | 0.717 |  |
+| 36032396 | Epithelial cells.squamous [#/volume] in Bronchial specimen by Manual count | 0.717 |  |
+| 3015620 | Creatine kinase panel - Serum or Plasma | 0.715 |  |
+| 42529232 | Thyroxine (T4) free [Moles/volume] in Serum or Plasma by Immunoassay | 0.713 |  |
+| 40761932 | Thyroxine (T4) free [Mass/volume] in Serum or Plasma --baseline | 0.712 |  |
+| 36660707 | Vitamin B6 and metabolites panel - Serum or Plasma | 0.712 |  |
+| 3043812 | Specific gravity of 24 hour Urine by Refractometry | 0.712 |  |
+| 3032166 | Volatiles panel - Serum or Plasma | 0.710 |  |
+| 3048545 | Microorganism identified in Cervical or vaginal smear or scraping by Cyto stain | 0.709 |  |
+| 42529420 | Cytokines panel - Serum or Plasma | 0.709 |  |
+| 21494652 | Pterins panel - Serum or Plasma | 0.709 |  |
+| 3013125 | Reviewing cytologist who read Cyto stain of Cervical or vaginal smear or scraping | 0.707 | 1656 |
+| 3027343 | Pathologist who read Cyto stain of Cervical or vaginal smear or scraping | 0.701 | 115 |
+| 3003447 | Creatinine [Mass/volume] in Urine by Test strip | 0.700 |  |
+| 3035113 | Reducing substances [Units/volume] in Urine by Test strip | 0.699 |  |
+| 1469700 | Breast cancer molecular subtype in Tissue by Prosigna Nominal | 0.699 |  |
+| 3021450 | Screening techniques [Identifier] in Cervical or vaginal smear or scraping by Cyto stain | 0.698 |  |
+| 46236490 | Tumor morphology panel Cancer | 0.696 |  |
+| 3032411 | Platelet function (closure time) [Interpretation] in Blood Narrative | 0.688 |  |
+| 40758358 | Immune stain study | 0.684 |  |
+| 3052985 | von Willebrand evaluation [Interpretation] in Platelet poor plasma | 0.684 |  |
+| 42527794 | Cancer pathology panel - Prostate cancer | 0.680 |  |
+| 3007405 | General categories [Interpretation] of Cervical or vaginal smear or scraping by Cyto stain | 0.680 |  |
+| 3022519 | Antithrombin [Interpretation] in Platelet poor plasma | 0.676 | 1117 |
+| 1001826 | Large B-cell lymphoma classification panel - Tissue | 0.675 |  |
+| 3038323 | Breast Cancer Ag 225 [Presence] in Tissue by Immune stain | 0.675 |  |
+| 3020174 | Platelet aggregation [Interpretation] in Platelet poor plasma | 0.667 | 1864 |
+| 1259975 | Breast Cancer recurrence risk multigene analysis [Presence] in Tissue by Molecular genetics method | 0.666 |  |
+| 36660133 | Platelet aggregation [Interpretation] in Platelet rich plasma | 0.665 |  |
+| 21493988 | Microsatellite instability marker panel - Cancer specimen | 0.662 |  |
+| 3965876 | Thrombin generation test [Interpretation] in Platelet poor plasma Narrative | 0.662 |  |
+| 1617408 | Cancer pathology panel - Endometrial cancer specimen | 0.657 |  |
+| 3047126 | Platelet crossmatch [Interpretation] | 0.653 |  |
+| 40771570 | Coagulation specialist review of results | 0.644 |  |
+| 3031335 | Mixing studies [Interpretation] in Platelet poor plasma Narrative | 0.643 |  |
+| 3010023 | Pathologist interpretation of Blood tests | 0.643 | 631 |
+| 3046857 | Flow cytometry study | 0.641 | 1054 |
+| 44786878 | Immunohistochemical stains in Bone marrow Narrative | 0.619 |  |
+| 1001943 | Phosphohistone H3 [Presence] in Tissue by Immune stain | 0.599 |  |
+| 3029042 | MSH-6 Ag [Presence] in Tissue by Immune stain | 0.594 |  |
+| 3028769 | P53 protein Ag/cells in Tissue by Immune stain | 0.593 |  |
+| 42527894 | PD-L1 by clone SP142 in Tissue by Immune stain Report | 0.588 |  |
+| 3049069 | Cancer Ag 72-4 [Presence] in Tissue by Immune stain | 0.587 |  |
+| 3049355 | Cytoketatin HMW Ag [Presence] in Tissue by Immune stain | 0.585 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1841 | -cd4-solujensuhdecd8-soluihin |  | 100% | name+values | 667 | 0.3 | [0.26, 0.37, 0.55, 0.73, 1, 1.35, 1.81, 2.32, 3.03] |  |  |  | CD4/CD8 [# Ratio] in Blood |
-| 1842 | -kt/v,daugirdaksenkaava |  | 100% | name+values | 176 | 0 | [1.13, 1.23, 1.29, 1.33, 1.39, 1.43, 1.46, 1.5, 1.57] |  |  |  | Kt/V dialysis adequacy [Ratio] by Daugirdas formula |
-| 1843 | -sieni,natiivivalmiste |  | 100% | name | 244 | 100 |  |  |  |  | Fungus [Presence] in Specimen by Wet mount |
-| 1844 | ab-aktuaalibikarbonaatti | mmol/l | 100% | name+unit+values | 14354 | 0 | [18.76, 21.02, 22.57, 23.76, 24.73, 25.7, 26.99, 28.55, 31.59] |  | Arterial blood |  | Bicarbonate [Moles/volume] in Arterial blood |
-| 1845 | ab-aktuaalibikarbonaatti |  | 0% | name | 47 | 100 |  |  | Arterial blood |  | Bicarbonate [Moles/volume] in Arterial blood |
-| 1846 | ab-lämpötila(he-tase) | aste | 100% | name+unit+values | 418 | 0 | [36.38, 36.95, 37, 37, 37, 37, 37.01, 37.48, 38.01] |  | Arterial blood |  | Temperature [Temperature] of Patient |
-| 1847 | ab-standardibikarbonaatti | mmol/l | 100% | name+unit+values | 4434 | 0 | [19.73, 21.71, 22.89, 23.76, 24.46, 25.22, 26.01, 27.04, 28.87] |  | Arterial blood |  | Bicarbonate.standard [Moles/volume] in Arterial blood |
-| 1848 | ab-standardibikarbonaatti |  | 0% | name | 20 | 100 |  |  | Arterial blood |  | Bicarbonate.standard [Moles/volume] in Arterial blood |
-| 1849 | alkalinenfosfataasi | u/l | 91% | name+unit+values | 4090 | 0 | [51.93, 59.73, 66.52, 72.54, 78.85, 86.09, 95.45, 111.37, 142.22] |  |  |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 1850 | alkalinenfosfataasi |  | 9% | name | 409 | 100 |  |  |  |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma |
-| 1851 | angiotensiini-1-konvertaasi | u/l | 93% | name+unit+values | 286 | 0 | [21.5, 28.51, 36.37, 41.21, 48.76, 54.44, 63.62, 70.94, 80.3] |  |  |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 1852 | angiotensiini-1-konvertaasi |  | 7% | name | 20 | 100 |  |  |  |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 1853 | b-diffi,erittelylaskenta,klooni |  | 100% | name | 142 | 100 |  |  | Blood |  | Clonality study [Interpretation] in Blood by Manual count |
-| 1854 | cb-standardibikarbonaatti | mmol/l | 99% | name+unit+values | 10798 | 0 | [20.28, 22.23, 23.36, 24.16, 24.9, 25.66, 26.58, 27.89, 30.19] |  | Capillary blood |  | Bicarbonate.standard [Moles/volume] in Capillary blood |
-| 1855 | cb-standardibikarbonaatti |  | 1% | name | 90 | 50 |  |  | Capillary blood |  | Bicarbonate.standard [Moles/volume] in Capillary blood |
-| 1856 | d-vitamiini-25-oh,d3-jad2-muodot | nmol/l | 100% | name+unit+values | 219 | 0 | [48.54, 55.58, 61.96, 68.73, 74.1, 79.27, 84.22, 89.91, 106.45] |  |  |  | Hydroxyvitamin D3+D2 [Moles/volume] in Serum or Plasma |
-| 1857 | d-vitamiini-25-oh,plasmasta | nmol/l | 100% | name+unit+values | 694 | 0 | [44.59, 53.15, 59, 64.66, 69.89, 76.01, 82.54, 92.02, 105.7] |  |  |  | Hydroxyvitamin D (25) [Moles/volume] in Plasma |
-| 1858 | e-punasolujenkokojakaum | % | 100% | name+unit+values | 55570 | 0 | [12.19, 12.59, 12.95, 13.26, 13.67, 14.09, 14.51, 14.98, 15.71] |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1859 | e-punasolujenkokojakaum |  | 0% | name | 7 | 71.43 |  |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1860 | e-punasolujenkokojakauma | % | 99% | name+unit+values | 196935 | 0 | [12, 13, 13, 13, 13.69, 14, 14.05, 15, 16.37] |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1861 | e-punasolujenkokojakauma |  | 1% | name+values | 1688 | 46.92 | [15, 15, 15.98, 16, 16, 16.41, 17, 18, 19.59] |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1862 | e-rdw,punasolujenkokojakauma | % | 100% | name+unit+values | 25929 | 0 | [12.08, 13, 13, 13.03, 14, 14, 15, 15.7, 17.03] |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1863 | e-rdw,punasolujenkokojakauma |  | 0% | name | 76 | 100 |  |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1864 | ekg,hoitoyksikönottama |  | 100% | name | 213 | 100 |  |  |  |  | 12 lead EKG panel |
-| 1865 | ekgasiakkaanottama |  | 100% | name | 257 | 100 |  |  |  |  | 12 lead EKG panel |
-| 1866 | erikoislääkärinkonsultaatio |  | 100% | name | 118 | 100 |  |  |  |  |  |
-| 1867 | folaatti(fe-folaat) | nmol/l | 96% | name+unit+values | 320 | 0 | [1456.69, 1642.98, 1740.68, 1864.47, 2021, 2152.9, 2311.39, 2519.36, 2775.52] |  |  |  | Folate [Moles/volume] in Red Blood Cells |
-| 1868 | folaatti(fe-folaat) |  | 4% | name | 12 | 100 |  |  |  |  | Folate [Moles/volume] in Red Blood Cells |
-| 1869 | fosfaatti,epäorgaaninen | mmol/l | 95% | name+unit+values | 275 | 0 | [0.83, 0.93, 0.99, 1.05, 1.1, 1.15, 1.23, 1.36, 1.64] |  |  |  | Phosphate [Moles/volume] in Serum or Plasma |
-| 1870 | fosfaatti,epäorgaaninen |  | 5% | name | 13 | 100 |  |  |  |  | Phosphate [Moles/volume] in Serum or Plasma |
-| 1871 | fp-fosfaatti,epäorgaaninen | mmol/l | 100% | name+unit+values | 1537 | 0 | [0.81, 0.94, 1.04, 1.12, 1.21, 1.31, 1.45, 1.64, 2] |  | Fasting plasma |  | Phosphate [Moles/volume] in Plasma |
-| 1872 | fp-fosfaatti,epäorgaaninen |  | 0% | name | 7 | 100 |  |  | Fasting plasma |  | Phosphate [Moles/volume] in Plasma |
-| 1873 | fp-parathormoni(intakti) | ng/l | 100% | name+unit+values | 167 | 0 | [34.58, 43.28, 53.6, 64.34, 75.77, 88.59, 106.04, 128.88, 166.07] |  | Fasting plasma |  | Parathyrin.intact [Mass/volume] in Plasma |
-| 1874 | fp-parathormoni,intakti | ng/l | 67% | name+unit+values | 443 | 0 | [42.85, 55.73, 66.85, 78.78, 88.68, 102.07, 115.78, 136.81, 193.49] |  | Fasting plasma |  | Parathyrin.intact [Mass/volume] in Plasma |
-| 1875 | fp-parathormoni,intakti | pmol/l | 32% | name+unit+values | 213 | 0 | [5.11, 7.29, 9.06, 12.26, 16.48, 21.96, 29.55, 41.46, 57.9] |  | Fasting plasma |  | Parathyrin.intact [Moles/volume] in Plasma |
-| 1876 | fp-parathormoni,intakti |  | 1% | name | 5 | 60 |  |  | Fasting plasma |  | Parathyrin.intact [Mass/volume] in Plasma |
-| 1877 | fp-reniini,konsentraatio | mu/l | 97% | name+unit+values | 275 | 0 | [1.9, 3.7, 5.72, 9.15, 13.8, 21.38, 36.23, 69.29, 149] |  | Fasting plasma |  | Renin [Units/volume] in Plasma |
-| 1878 | fp-reniini,konsentraatio |  | 3% | name | 9 | 100 |  |  | Fasting plasma |  | Renin [Units/volume] in Plasma |
-| 1879 | fras,oksidatiivinenstressi |  | 100% | name | 508 | 100 |  |  |  |  | Free radicals [Arbitrary Concentration] in Serum or Plasma |
-| 1880 | fs-alkalinenfosfataasi | u/l | 100% | name+unit | 114 | 0 |  |  | Fasting serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum |
-| 1881 | fs-angiotensiini-1-konvertaasi | u/l | 91% | name+unit+values | 168 | 0 | [21.95, 28.78, 36.13, 43.17, 50.38, 57.02, 63.03, 69.31, 88.3] |  | Fasting serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum |
-| 1882 | fs-angiotensiini-1-konvertaasi |  | 9% | name | 17 | 100 |  |  | Fasting serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum |
-| 1883 | fs-monikanava4-7tthperuspaketti |  | 100% | name | 125 | 100 |  |  | Fasting serum |  | Occupational health panel - Serum |
-| 1884 | fs-työterveyshuollonperuspaketti |  | 100% | name | 141 | 100 |  |  | Fasting serum |  | Occupational health panel - Serum |
-| 1885 | ilmajohtotarv.luujohto |  | 100% | name | 785 | 100 |  |  |  |  | Hearing evaluation panel |
-| 1886 | korona-rs-influenssa,pcrpikatesti |  | 100% | name | 6428 | 100 |  |  |  |  | SARS-CoV-2 & Influenza virus & Respiratory syncytial virus RNA panel - Respiratory specimen by NAA |
-| 1887 | kreatiinikinaasi | u/l | 100% | name+unit+values | 821 | 0 | [51.45, 67.28, 78.98, 91.33, 108.19, 125.74, 161.13, 224.43, 350.78] |  |  |  | Creatine kinase [Enzymatic activity/volume] in Serum or Plasma |
-| 1888 | l-basofiilit,automaatio | % | 100% | name+unit+values | 10670 | 0 | [0, 0, 0.5, 1, 1, 1, 1, 1, 1] |  | Leukocyte |  | Basophils/Leukocytes in Blood by Automated count |
-| 1889 | l-eosinofiilit,automaatio | % | 100% | name+unit+values | 10670 | 0 | [0.35, 1, 1.93, 2, 2.74, 3, 3.97, 4.81, 6.33] |  | Leukocyte |  | Eosinophils/Leukocytes in Blood by Automated count |
-| 1890 | l-lymfosyytit,automaatio | % | 100% | name+unit+values | 19279 | 0 | [15.56, 20.42, 24.04, 26.95, 29.66, 32.37, 35.21, 38.75, 43.79] |  | Leukocyte |  | Lymphocytes/Leukocytes in Blood by Automated count |
-| 1891 | l-lymfosyytit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  | Lymphocytes/Leukocytes in Blood by Automated count |
-| 1892 | l-monosyytit,automaatio | % | 100% | name+unit+values | 19276 | 0 | [5.94, 6.98, 7.19, 8, 8.78, 9.04, 10, 11, 12.64] |  | Leukocyte |  | Monocytes/Leukocytes in Blood by Automated count |
-| 1893 | l-monosyytit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  | Monocytes/Leukocytes in Blood by Automated count |
-| 1894 | l-neutrofiilit,automaatio | % | 100% | name+unit+values | 19277 | 0 | [41.43, 47.16, 50.99, 54.23, 57.08, 59.98, 63.15, 67.08, 72.76] |  | Leukocyte |  | Neutrophils/Leukocytes in Blood by Automated count |
-| 1895 | l-neutrofiilit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  | Neutrophils/Leukocytes in Blood by Automated count |
-| 1896 | laktaattidehydrogenaasi | u/l | 100% | name+unit+values | 112 | 0 | [166.9, 176.25, 189.57, 200, 217.89, 228.73, 246.21, 285.8, 336.3] |  |  |  | Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma |
-| 1897 | p-aktuaalinenbikarbonaatti | mmol/l | 100% | name+unit+values | 1258 | 0 | [20.16, 23.03, 24.56, 25.84, 26.91, 27.87, 28.97, 30.03, 32.38] |  | Plasma |  | Bicarbonate [Moles/volume] in Plasma |
-| 1898 | p-alkaalinenfosfataasi | u/l | 97% | name+unit+values | 218 | 0 | [54.87, 64.51, 69.29, 74.44, 80.78, 89.02, 97.67, 107.93, 128.13] |  | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 1899 | p-alkaalinenfosfataasi |  | 3% | name | 6 | 16.67 |  |  | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 1900 | p-alkalinenfosfataasi | u/l | 100% | name+unit+values | 26335 | 0 | [51.5, 59.65, 66.46, 73.03, 79.94, 87.78, 97.91, 113.11, 149.16] |  | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 1901 | p-alkalinenfosfataasi |  | 0% | name | 74 | 91.89 |  |  | Plasma |  | Alkaline phosphatase [Enzymatic activity/volume] in Plasma |
-| 1902 | p-bilirubiinikonjugaatit | umol/l | 92% | name+unit+values | 1839 | 0 | [2.92, 3, 3.32, 4, 4.89, 5.93, 7.57, 10.11, 21.15] |  | Plasma |  | Bilirubin.conjugated [Moles/volume] in Plasma |
-| 1903 | p-bilirubiinikonjugaatit |  | 8% | name | 168 | 100 |  |  | Plasma |  | Bilirubin.conjugated [Moles/volume] in Plasma |
-| 1904 | p-fosfaatti,epäorgaaninen | mmol/l | 100% | name+unit+values | 436 | 0 | [0.89, 0.99, 1.06, 1.13, 1.2, 1.27, 1.36, 1.47, 1.66] |  | Plasma |  | Phosphate [Moles/volume] in Plasma |
-| 1905 | p-kreatiinikinaasi | u/l | 99% | name+unit+values | 2765 | 0 | [43.61, 57.48, 70.52, 85.33, 100.93, 124.44, 165.61, 239.04, 491.32] |  | Plasma |  | Creatine kinase [Enzymatic activity/volume] in Plasma |
-| 1906 | p-kreatiinikinaasi |  | 1% | name | 21 | 95.24 |  |  | Plasma |  | Creatine kinase [Enzymatic activity/volume] in Plasma |
-| 1907 | p-laktaattidehydrogenaasi | u/l | 99% | name+unit+values | 3272 | 0 | [163.71, 178.57, 190.98, 203.43, 216.38, 231.67, 254.03, 288.21, 372.84] |  | Plasma |  | Lactate dehydrogenase [Enzymatic activity/volume] in Plasma |
-| 1908 | p-laktaattidehydrogenaasi |  | 1% | name | 29 | 96.55 |  |  | Plasma |  | Lactate dehydrogenase [Enzymatic activity/volume] in Plasma |
-| 1909 | p-lupusantikoagulantti |  | 100% | name | 220 | 100 |  |  | Plasma |  | Lupus anticoagulant [Presence] in Platelet poor plasma |
-| 1910 | p-psavapaanosuustotaalista | % | 100% | name+unit+values | 719 | 0 | [10.55, 13.9, 16.1, 18.77, 21.1, 23.88, 26.7, 30.17, 36.09] |  | Plasma |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma |
-| 1911 | p-urea,resirkulaatio | mmol/l | 100% | name+unit+values | 200 | 0 | [4.65, 12.03, 14.2, 15.66, 16.84, 18.43, 19.52, 21.22, 23.14] |  | Plasma |  | Urea [Moles/volume] in Plasma |
-| 1912 | psa-vapaa/totaali-suhde,plasmasta | % | 26% | name+unit+values | 1183 | 0 | [8.11, 11.04, 13.43, 15.83, 18.18, 20.89, 24.81, 29.88, 39.78] |  |  |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma |
-| 1913 | psa-vapaa/totaali-suhde,plasmasta |  | 74% | name | 3428 | 100 |  |  |  |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma |
-| 1914 | psavapaanjatotaalinsuhde | % | 26% | name+unit | 62 | 0 |  |  |  |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum or Plasma |
-| 1915 | psavapaanjatotaalinsuhde |  | 74% | name | 180 | 97.78 |  |  |  |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum or Plasma |
-| 1916 | pt-vaativainhalaatiohoito |  | 100% | name | 114 | 100 |  |  | Patient |  |  |
-| 1917 | punasolojenkokojakauma | % | 99% | name+unit+values | 1068 | 0 | [12, 12.05, 13, 13, 13, 13, 13.97, 14, 14.47] |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1918 | punasolojenkokojakauma |  | 1% | name | 7 | 100 |  |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1919 | punasolujenerittelylaskenta | % | 9% | name+unit | 41 | 0 |  |  |  |  | Erythrocyte morphology [Interpretation] in Blood by Manual count |
-| 1920 | punasolujenerittelylaskenta |  | 91% | name+values | 433 | 6 | [12, 12, 12.18, 13, 13, 13, 13, 13.97, 14] |  |  |  | Erythrocyte morphology [Interpretation] in Blood by Manual count |
-| 1921 | punasolujenesiasteet(erytroblastit) | e9/l | 98% | name+unit+values | 1040 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  | Erythroblasts [#/volume] in Blood |
-| 1922 | punasolujenesiasteet(erytroblastit) |  | 2% | name | 24 | 100 |  |  |  |  | Erythroblasts [#/volume] in Blood |
-| 1923 | punasolujenkokojakauma | % | 98% | name+unit+values | 155883 | 0 | [12.28, 13, 13, 13.02, 14, 14, 15, 15.9, 17] |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1924 | punasolujenkokojakauma |  | 2% | name | 2478 | 99.48 |  |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1925 | punasolujenkokojakautuma | % | 100% | name+unit+values | 683 | 0 | [13, 13, 13, 13, 13, 14, 14, 14, 14.95] |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1926 | punasolujenkoonvaihtelu | % | 100% | name+unit+values | 2031 | 0 | [12.51, 12.91, 13.17, 13.34, 13.62, 13.91, 14.31, 14.86, 15.92] |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1927 | punasolut,kokojakauma | % | 100% | name+unit+values | 121 | 0 | [13, 13, 13, 13, 14, 14, 14, 14, 15] |  |  |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
-| 1928 | s-alkalinenfosfataasi | u/l | 100% | name+unit+values | 368 | 0 | [52.79, 63.98, 76.35, 87.37, 103.68, 118.86, 131.06, 146.22, 181.47] |  | Serum |  | Alkaline phosphatase [Enzymatic activity/volume] in Serum |
-| 1929 | s-alkalinenfosfataasi,isoentsyymit |  | 100% | name | 318 | 100 |  |  | Serum |  | Alkaline phosphatase isoenzymes panel - Serum by Electrophoresis |
-| 1930 | s-glykoproteiininasetylaatio | mmol/l | 100% | name+unit+values | 265 | 0 | [0.75, 0.79, 0.81, 0.83, 0.85, 0.88, 0.9, 0.94, 1] |  | Serum |  | Glycoprotein.acetyls [Moles/volume] in Serum |
-| 1931 | s-neuronispesifinenenolaasi | ug/l | 100% | name+unit | 105 | 0 |  |  | Serum |  | Neuron specific enolase [Mass/volume] in Serum |
-| 1932 | s-nightingale-mittaus |  | 100% | name | 265 | 100 |  |  | Serum |  | Metabolites panel - Serum by NMR |
-| 1933 | s-psavapaanjatotaalinsuhde | % | 29% | name+unit+values | 106 | 0 | [11, 13, 14.4, 16.35, 19, 21, 23.87, 27, 31.9] |  | Serum |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum |
-| 1934 | s-psavapaanjatotaalinsuhde |  | 71% | name | 264 | 100 |  |  | Serum |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum |
-| 1935 | s-tymidiinikinaasi | u/l | 100% | name+unit+values | 237 | 0 | [3.92, 4.79, 5.63, 6.48, 7.24, 8.95, 10.78, 13.93, 39.38] |  | Serum |  | Thymidine kinase [Enzymatic activity/volume] in Serum |
-| 1936 | s-vapaanjakokonais-psa:nsuhde | % | 29% | name+unit+values | 643 | 0 | [11.89, 14.35, 17.11, 19.53, 21.76, 24, 27.79, 31.6, 36.6] |  | Serum |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum |
-| 1937 | s-vapaanjakokonais-psa:nsuhde |  | 71% | name | 1561 | 100 |  |  | Serum |  | Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum |
-| 1938 | sars-cov-2,influenssaa,bja |  | 100% | name | 161 | 100 |  |  |  |  | SARS-CoV-2 & Influenza virus A & Influenza virus B RNA panel - Respiratory specimen by NAA |
-| 1939 | sars-cov-2-antigeenitesti,pikatesti |  | 100% | name | 101 | 100 |  |  |  |  | SARS-CoV-2 Ag [Presence] in Respiratory specimen by Rapid immunoassay |
-| 1940 | tth-pakettia(ilmanpaastoa) |  | 100% | name | 1079 | 100 |  |  |  |  | Occupational health panel - Serum or Plasma |
-| 1941 | tth:ssavirtsanprotjagluk |  | 100% | name | 294 | 100 |  |  |  |  | Urinalysis protein and glucose panel - Urine by Test strip |
-| 1942 | u-solut,peruslaskenta |  | 100% | name | 1772 | 100 |  |  | Urine |  | Leukocytes+Erythrocytes [#/volume] in Urine by Automated count |
-| 1943 | vb-aktuaalibikarbonaatti | mmol/l | 90% | name+unit+values | 1612 | 0 | [16.94, 19.74, 21.93, 23.14, 24.18, 25.06, 26.96, 28.44, 30.92] |  | Venous blood |  | Bicarbonate [Moles/volume] in Venous blood |
-| 1944 | vb-aktuaalibikarbonaatti |  | 10% | name+values | 185 | 17.3 | [20.1, 23.3, 24.38, 25.39, 26.05, 26.8, 27.78, 28.4, 29.7] |  | Venous blood |  | Bicarbonate [Moles/volume] in Venous blood |
-| 1945 | vb-standardibikarbonaatti | mmol/l | 100% | name+unit+values | 13754 | 0 | [20.04, 21.93, 23.08, 23.95, 24.68, 25.36, 26.13, 27.07, 28.82] |  | Venous blood |  | Bicarbonate.standard [Moles/volume] in Venous blood |
-| 1946 | vb-standardibikarbonaatti |  | 0% | name | 44 | 100 |  |  | Venous blood |  | Bicarbonate.standard [Moles/volume] in Venous blood |
-| 1947 | virtsansolujenhl7-siirtoon | e6/l | 94% | name+unit+values | 5551 | 0 | [0.1, 0.37, 0.65, 1.07, 1.65, 2.44, 3.88, 6.78, 14.04] |  |  |  | Cells [#/volume] in Urine by Automated count |
-| 1948 | virtsansolujenhl7-siirtoon |  | 6% | name+values | 353 | 11.05 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  | Cells [#/volume] in Urine by Automated count |
-| 1949 | zb-aktuaalibikarbonaatti | mmol/l | 100% | name+unit+values | 394 | 0 | [22, 23, 23.94, 24, 25, 26, 27, 27.8, 29.78] |  | Central blood |  | Bicarbonate [Moles/volume] in Central venous blood |
+| 2623 | b-eosinofiilit,b-diffiosatutkimus | e9/l | 95% | name+unit+values | 776 | 0 | [0.05, 0.09, 0.12, 0.15, 0.18, 0.21, 0.25, 0.31, 0.41] |  | Blood |  | Eosinophils [#/volume] in Blood |
+| 2624 | b-eosinofiilit,b-diffiosatutkimus |  | 5% | name | 38 | 100 |  |  | Blood |  | Eosinophils [#/volume] in Blood |
+| 2625 | b-erybla(19978b-erybla),osatutkimus | e9/l | 100% | name+unit+values | 162 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Blood |  | Nucleated erythrocytes [#/volume] in Blood |
+| 2626 | b-hyytymistekijävgeeni,dna-tutkimus |  | 100% | name | 145 | 100 |  |  | Blood |  | F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method |
+| 2627 | b-jak2-geeninmutaatio,dna-tutkimus |  | 100% | name | 141 | 100 |  |  | Blood |  | JAK2 gene p.V617F mutation [Presence] in Blood or Tissue by Molecular genetics method |
+| 2628 | b-laktaatti,päivystystutkimus | mmol/l | 100% | name+unit+values | 11297 | 0 | [0.6, 0.73, 0.85, 0.99, 1.13, 1.3, 1.56, 1.95, 2.72] |  | Blood |  | Lactate [Moles/volume] in Blood |
+| 2629 | b-laktaatti,päivystystutkimus |  | 0% | name | 53 | 100 |  |  | Blood |  | Lactate [Moles/volume] in Blood |
+| 2630 | b-laktoosi-intoleranssi,dna-tutkimus |  | 100% | name | 396 | 100 |  |  | Blood |  | LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method |
+| 2631 | b-laktoosimalabsorptioonliityvägeenimuutos,dna |  | 100% | name | 146 | 100 |  |  | Blood |  | LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method |
+| 2632 | b-neutrofiili,erillistutkimuksena | e9/l | 100% | name+unit+values | 26946 | 0 | [1.15, 1.77, 2.31, 2.83, 3.4, 4.06, 4.87, 6.13, 8.46] |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2633 | b-neutrofiili,erillistutkimuksena |  | 0% | name | 90 | 100 |  |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2634 | b-neutrofiilit,b-diffiosatutkimus | e9/l | 100% | name+unit+values | 813 | 0 | [1.98, 2.53, 3.01, 3.43, 3.8, 4.31, 4.86, 5.59, 6.82] |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2635 | b-neutrofiilit,erillistutkimuksena | e9/l | 95% | name+unit+values | 1653 | 0 | [2.1, 2.62, 3.09, 3.44, 3.76, 4.24, 4.87, 5.59, 7.23] |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2636 | b-neutrofiilit,erillistutkimuksena |  | 5% | name | 80 | 100 |  |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2637 | b-neutrofiiliterillistutkimuksena | e9/l | 100% | name+unit+values | 555 | 0 | [1.8, 2.41, 2.88, 3.29, 3.66, 4.13, 4.71, 5.54, 7.13] |  | Blood |  | Neutrophils [#/volume] in Blood |
+| 2638 | b-protrombiinigeeni,dna-tutkimus |  | 100% | name | 135 | 100 |  |  | Blood |  | F2 gene p.G20210A mutation [Presence] in Blood or Tissue by Molecular genetics method |
+| 2639 | bf-bronkuseritteenirtosolututkimus |  | 100% | name | 121 | 100 |  |  | Bronchial fluid |  | Cells [Type] in Bronchial fluid by Cytology |
+| 2640 | bronkuseritteenirtosolututkimus |  | 100% | name | 145 | 100 |  |  |  |  | Cells [Type] in Bronchial fluid by Cytology |
+| 2641 | cyp2d6-geeninvariaatiot,dna-tutkimus |  | 100% | name | 560 | 100 |  |  |  |  | CYP2D6 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method |
+| 2642 | dpyd-geeninvarianttientutkimusverestä |  | 100% | name | 381 | 100 |  |  |  |  | DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method |
+| 2643 | e-rdw(19976e-rdw),osatutkimus | % | 100% | name+unit+values | 161 | 0 | [12, 12.3, 13, 13, 13, 13, 13, 14, 15] |  | Erythrocyte |  | Erythrocyte distribution width [Ratio] in Blood by Automated count |
+| 2644 | farmakogeneettinenpaneeli,dna-tutkimusverestä |  | 100% | name | 307 | 100 |  |  |  |  | Pharmacogenetics panel - Blood by Molecular genetics method |
+| 2645 | farmakogeneettinenpaneelitutkimus |  | 100% | name | 238 | 100 |  |  |  |  | Pharmacogenetics panel - Blood by Molecular genetics method |
+| 2646 | gynegologinenirtosolututkimus |  | 100% | name | 143 | 100 |  |  |  |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2647 | gynekologinenirtosolunäyte,hpvnho+tarvnestepapa |  | 100% | name | 156 | 100 |  |  |  |  | Human papillomavirus DNA and Cytology panel - Cervical or vaginal specimen |
+| 2648 | gynekologinenirtosolututkimus |  | 100% | name | 1964 | 100 |  |  |  |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2649 | gynekologinenirtosolututkimus,seulonta |  | 100% | name | 2320 | 100 |  |  |  |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2650 | hyytymistekijävgeeni,dna-tutkimus |  | 100% | name | 105 | 100 |  |  |  |  | F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method |
+| 2651 | immunohistokemiallinentutkimus |  | 100% | name | 124 | 100 |  |  |  |  | Immunohistochemistry study |
+| 2652 | k-vitamiinitk1jak2,pakettitutkimus |  | 100% | name | 211 | 100 |  |  |  |  | Vitamin K1 and K2 panel - Serum or Plasma |
+| 2653 | k1-vitamiini(fyllokinoni)osatutkimus | ug/l | 95% | name+unit+values | 195 | 0 | [0.15, 0.22, 0.28, 0.36, 0.43, 0.52, 0.7, 0.9, 1.6] |  |  |  | Phylloquinone [Mass/volume] in Serum or Plasma |
+| 2654 | k1-vitamiini(fyllokinoni)osatutkimus |  | 5% | name | 11 | 100 |  |  |  |  | Phylloquinone [Mass/volume] in Serum or Plasma |
+| 2655 | k2-vitamiini,menakinoni-4(mk4)osatutkimus | ug/l | 94% | name+unit+values | 203 | 0 | [0.14, 0.16, 0.2, 0.23, 0.26, 0.3, 0.34, 0.44, 0.58] |  |  |  | Menaquinone-4 [Mass/volume] in Serum or Plasma |
+| 2656 | k2-vitamiini,menakinoni-4(mk4)osatutkimus |  | 6% | name | 14 | 100 |  |  |  |  | Menaquinone-4 [Mass/volume] in Serum or Plasma |
+| 2657 | k2-vitamiini,menakinoni-7(mk7)osatutkimus | ug/l | 85% | name+unit+values | 185 | 0 | [0.13, 0.16, 0.2, 0.24, 0.32, 0.43, 0.71, 1.38, 2.6] |  |  |  | Menaquinone-7 [Mass/volume] in Serum or Plasma |
+| 2658 | k2-vitamiini,menakinoni-7(mk7)osatutkimus |  | 15% | name | 32 | 100 |  |  |  |  | Menaquinone-7 [Mass/volume] in Serum or Plasma |
+| 2659 | laktaatti,päivystystutkimus,verestä | mmol/l | 100% | name+unit+values | 353 | 0 | [0.77, 0.9, 1.04, 1.2, 1.46, 1.74, 2.08, 2.47, 3.11] |  |  |  | Lactate [Moles/volume] in Blood |
+| 2660 | laktoosi-intoleranssi,dna-tutkimus |  | 100% | name | 168 | 100 |  |  |  |  | LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method |
+| 2661 | laktoosi-intoleranssi,dna-tutkimus,verestä␤ |  | 100% | name | 151 | 100 |  |  |  |  | LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method |
+| 2662 | lausunto,hemostaasi-jatrombosyyttitutkimukset |  | 100% | name | 337 | 100 |  |  |  |  | Hemostasis and Thrombocyte studies interpretation |
+| 2663 | mikrobiologianerikoistutkimuk |  | 100% | name | 105 | 100 |  |  |  |  |  |
+| 2664 | neuvola1,äitiysneuvolatutkimukset |  | 100% | name | 337 | 100 |  |  |  |  | Obstetric panel - Serum or Plasma and Blood |
+| 2665 | p-ca-albk(laskennallinentutkimus) | mmol/l | 100% | name+unit+values | 161 | 0 | [2.31, 2.35, 2.39, 2.41, 2.43, 2.45, 2.47, 2.5, 2.53] |  | Plasma |  | Calcium.corrected [Moles/volume] in Serum or Plasma by calculation |
+| 2666 | pf-laktaatti,päivystystutkimus | mmol/l | 100% | name+unit+values | 117 | 0 | [1.1, 1.2, 1.33, 1.5, 1.9, 2.39, 3.19, 4.1, 7.87] |  | Pleural fluid |  | Lactate [Moles/volume] in Pleural fluid |
+| 2667 | pleuranesteenirtosolututkimus |  | 100% | name | 157 | 100 |  |  |  |  | Cells [Type] in Pleural fluid by Cytology |
+| 2668 | pt-gynegologinenirtosolututkimus␤ |  | 100% | name | 463 | 100 |  |  | Patient |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2669 | pt-gynekologinenirtosolututkimus |  | 100% | name | 1912 | 100 |  |  | Patient |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2670 | pt-gynekologinenirtosolututkimus,seulonta |  | 100% | name | 483 | 100 |  |  | Patient |  | Cytology study of Cervical or vaginal smear or scraping |
+| 2671 | s-borrelia,vasta-aineetiggvarmistustutkimus | au/ml | 38% | name+unit+values | 202 | 0 | [8.73, 12.59, 17.76, 25.48, 39, 57.84, 89.45, 117.05, 176.45] |  | Serum |  | Borrelia burgdorferi IgG Ab [Units/volume] in Serum by Immunoblot |
+| 2672 | s-borrelia,vasta-aineetiggvarmistustutkimus |  | 62% | name | 325 | 100 |  |  | Serum |  | Borrelia burgdorferi IgG Ab [Units/volume] in Serum by Immunoblot |
+| 2673 | s-borrelia,vasta-aineetigmvarmistustutkimus | au/ml | 78% | name+unit+values | 411 | 0 | [3.99, 6, 7.64, 9.37, 11.83, 15.83, 21.24, 27.61, 48.27] |  | Serum |  | Borrelia burgdorferi IgM Ab [Units/volume] in Serum by Immunoblot |
+| 2674 | s-borrelia,vasta-aineetigmvarmistustutkimus |  | 22% | name | 117 | 100 |  |  | Serum |  | Borrelia burgdorferi IgM Ab [Units/volume] in Serum by Immunoblot |
+| 2675 | s-hi-virus,vasta-aineet,päivystystutkimus |  | 100% | name | 151 | 100 |  |  | Serum |  | HIV 1+2 Ab [Presence] in Serum |
+| 2676 | s-immunofiksaatiotutkimus |  | 100% | name | 406 | 100 |  |  | Serum |  | M-protein [Identifier] in Serum by Immunofixation |
+| 2677 | sytologinenirtosolututkimus,virtsasta |  | 100% | name | 534 | 100 |  |  |  |  | Cells [Type] in Urine sediment by Cytology |
+| 2678 | ts-rintasyövänennustekijätutkimus |  | 100% | name | 164 | 100 |  |  | Tissue |  | Breast cancer prognostic markers panel - Tissue |
+| 2679 | tyreotropiinirefleksointitutkimus |  | 100% | name | 1372 | 100 |  |  |  |  | Thyrotropin.reflex to Free T4 panel - Serum or Plasma |
+| 2680 | u-asetoniaineet(kval),osatutkimus |  | 100% | name | 151 | 100 |  |  | Urine |  | Ketones [Presence] in Urine by Test strip |
+| 2681 | u-epiteelisolut,osatutkimus | e6/l | 91% | name+unit+values | 116 | 0 | [0.19, 0.3, 0.51, 1, 1.4, 2.09, 3.19, 5.3, 10.87] |  | Urine |  | Epithelial cells [#/volume] in Urine sediment by Automated count |
+| 2682 | u-epiteelisolut,osatutkimus |  | 9% | name | 11 | 100 |  |  | Urine |  | Epithelial cells [#/volume] in Urine sediment by Automated count |
+| 2683 | u-laajahuume-jalääkeainetutkimus |  | 100% | name | 374 | 100 |  |  | Urine |  | Drugs of abuse screen panel - Urine |
+| 2684 | u-proteiini(kval),osatutkimus |  | 100% | name | 151 | 100 |  |  | Urine |  | Protein [Presence] in Urine by Test strip |
+| 2685 | u-suhteellinentiheys,osatutkimus |  | 100% | name+values | 154 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine |  | Specific gravity [RelDensity] in Urine by Test strip |
+| 2686 | u-virtsanirtosolututkimus |  | 100% | name | 802 | 100 |  |  | Urine |  | Cells [Type] in Urine sediment by Cytology |
+| 2687 | virtsanirtosolututkimus |  | 100% | name | 1078 | 100 |  |  |  |  | Cells [Type] in Urine sediment by Cytology |
 

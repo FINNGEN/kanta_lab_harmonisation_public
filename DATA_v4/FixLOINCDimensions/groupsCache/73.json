@@ -1,215 +1,579 @@
 {
   "rows": [
     {
-      "row_id": 1104,
-      "omop_concept_id": "37020338",
-      "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Haemophilus influenzae DNA bcs code 'hinf' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1105,
-      "omop_concept_id": "37020338",
-      "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Haemophilus influenzae DNA bcs code 'hin' is a common abbreviation ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1106,
-      "omop_concept_id": "3965803",
-      "omop_concept_name": "Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A+B RNA bcs code 'inab' and LongName 'Influenssa A ja B-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1107,
-      "omop_concept_id": "3965803",
-      "omop_concept_name": "Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A+B RNA bcs code 'inab' (with a typo 'hoho' at the end) ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1108,
-      "omop_concept_id": "648704",
-      "omop_concept_name": "Influenza virus A and B and Respiratory syncytial virus RNA panel - Specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A and B and Respiratory syncytial virus RNA panel bcs code '-inabrsnho' ('inab' for Influenza A+B, 'rs' for RSV) ; specimen is generic 'Specimen' as no 'Respiratory system specimen' panel candidate was available ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1109,
-      "omop_concept_id": "37020635",
-      "omop_concept_name": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A RNA bcs code 'ina' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1110,
-      "omop_concept_id": "37020635",
-      "omop_concept_name": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A RNA bcs code 'ina' (with a typo 'hoho' at the end) ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1111,
-      "omop_concept_id": "37021252",
-      "omop_concept_name": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus B RNA bcs code 'inb' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1112,
-      "omop_concept_id": "37021252",
-      "omop_concept_name": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus B RNA bcs code 'inb' (with a typo 'hoho' at the end) ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1113,
-      "omop_concept_id": "37020635",
-      "omop_concept_name": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A RNA bcs code 'infa' and LongName 'Influenssa A -virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1114,
-      "omop_concept_id": "37021252",
-      "omop_concept_name": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus B RNA bcs code 'infb' and LongName 'Influenssa B-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1115,
-      "omop_concept_id": "3020346",
-      "omop_concept_name": "Influenza virus A subtype [Identifier] in Specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A subtype bcs LongName 'Influenssa A-virus, variantti' ; [Identifier] bcs 'variantti' implies identifying a specific variant, not just presence ; in Specimen bcs it is the most general available choice for this test ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1116,
-      "omop_concept_id": "37019589",
-      "omop_concept_name": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 1 RNA bcs code 'pin1' and LongName 'Parainfluenssa 1-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1117,
-      "omop_concept_id": "37019613",
-      "omop_concept_name": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 2 RNA bcs code 'pin2' and LongName 'Parainfluenssa 2-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1118,
-      "omop_concept_id": "37021465",
-      "omop_concept_name": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 3 RNA bcs code 'pin3' and LongName 'Parainfluenssa 3-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1119,
-      "omop_concept_id": "37020335",
-      "omop_concept_name": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 4 RNA bcs code 'pin4' and LongName 'Parainfluenssa 4-virus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1120,
-      "omop_concept_id": "40764126",
-      "omop_concept_name": "Parainfluenza virus RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus RNA bcs code 'pinf' where 'f' likely means 'flu' but without a number, it's generic ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Specimen bcs this is the most general candidate available, as no 'Respiratory system specimen' was found ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1121,
-      "omop_concept_id": "37020003",
-      "omop_concept_name": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Rhinovirus RNA bcs code 'rino' and LongName 'Rinovirus' ; [Presence] bcs suffix '-nho' and LongName '(kval)' ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1122,
+      "row_id": 885,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code '-tintnho' is unidentifiable. 'tint' does not correspond to any of the analytes in the candidate list or common respiratory pathogens.",
+      "reasoning": "The code `-kskäynt` is uninterpretable and appears to be an administrative or internal code, possibly related to a 'visit' (`käynti`), not a laboratory test.",
       "certainty": ""
     },
     {
-      "row_id": 1123,
-      "omop_concept_id": "37020338",
-      "omop_concept_name": "Haemophilus influenzae DNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Haemophilus influenzae DNA bcs code 'hinfl' is a likely variant/typo of 'hinf' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 886,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-ku72/86` is not a standard Finnish laboratory code and is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 887,
+      "omop_concept_id": "1002050",
+      "omop_concept_name": "NUDT15 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+      "reasoning": "NUDT15 gene mutations found bcs TEST_NAME is `-nudt15` ; [Identifier] bcs this is a genetic test result, and the constant value of 16 suggests a categorical output ; in Blood or Tissue bcs this is the typical specimen for this type of test.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 888,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-s.yht.` is too truncated to be identifiable. It could mean 'Serum total' (`yhteensä`), but the analyte is missing. The unit `e6` is also ambiguous.",
+      "certainty": ""
+    },
+    {
+      "row_id": 889,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `-s.yht.` is too truncated to be identifiable. It could mean 'Serum total' (`yhteensä`), but the analyte is missing.",
+      "certainty": ""
+    },
+    {
+      "row_id": 890,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `-selvtyö` translates to 'investigation work' and appears to be an administrative code, not a specific laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 891,
+      "omop_concept_id": "3000606",
+      "omop_concept_name": "Spermatozoa [#/volume] in Semen",
+      "reasoning": "Spermatozoa bcs TEST_NAME `-siitt.` is an abbreviation for `siittiöt` (spermatozoa) ; [#/volume] bcs UNIT `e6/ml` (millions per mL) is a concentration ; in Semen bcs this is the required specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 892,
+      "omop_concept_id": "3000606",
+      "omop_concept_name": "Spermatozoa [#/volume] in Semen",
+      "reasoning": "Spermatozoa bcs TEST_NAME `-siitt.` is an abbreviation for `siittiöt` (spermatozoa) ; in Semen bcs this is the required specimen ; [#/volume] is the standard property for this measurement.",
       "certainty": "medium"
     },
     {
-      "row_id": 1124,
-      "omop_concept_id": "37020635",
-      "omop_concept_name": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A RNA bcs code 'ina' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
+      "row_id": 893,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `audit` refers to the AUDIT questionnaire score, but the specific LOINC concept (72108-0) is not available in the candidate list.",
+      "certainty": ""
     },
     {
-      "row_id": 1125,
-      "omop_concept_id": "37021252",
-      "omop_concept_name": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus B RNA bcs code 'inb' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
+      "row_id": 894,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `audit` refers to the AUDIT questionnaire score, but the specific LOINC concept (72108-0) is not available in the candidate list.",
+      "certainty": ""
     },
     {
-      "row_id": 1126,
-      "omop_concept_id": "37020635",
-      "omop_concept_name": "Influenza virus A RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A RNA bcs code 'infa' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
+      "row_id": 895,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `audit-c` refers to the AUDIT-C questionnaire score, but the specific LOINC concept (72109-8) is not available in the candidate list.",
+      "certainty": ""
     },
     {
-      "row_id": 1127,
-      "omop_concept_id": "37021252",
-      "omop_concept_name": "Influenza virus B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus B RNA bcs code 'infb' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
-      "certainty": "high"
+      "row_id": 896,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `dnauut1` refers to DNA extraction (`DNA uutto`), which is a laboratory procedure, not a reported measurement.",
+      "certainty": ""
     },
     {
-      "row_id": 1128,
-      "omop_concept_id": "3965803",
-      "omop_concept_name": "Influenza virus A+B RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Influenza virus A+B RNA bcs code 'inf' is interpreted as a test for both A and B, similar to 'inab' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 897,
+      "omop_concept_id": "3003327",
+      "omop_concept_name": "Ova and parasites identified in Stool by Light microscopy",
+      "reasoning": "Ova and parasites identified bcs `f-kystat` (`kystat` = cysts) is a common request for a general ova and parasite examination ; in Stool bcs `F-` prefix means Feces ; by Light microscopy bcs this is the standard method for this investigation.",
       "certainty": "medium"
     },
     {
-      "row_id": 1129,
-      "omop_concept_id": "37019589",
-      "omop_concept_name": "Parainfluenza virus 1 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 1 RNA bcs code 'pin1' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 898,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `ku72/86` is not a standard Finnish laboratory code and is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 899,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `p-d-25` and `LongName` `P -D-vitamiini-25-OH` refer to total 25-OH vitamin D, which is the sum of the D2 and D3 forms ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `P-` prefix means Plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1130,
-      "omop_concept_id": "37019613",
-      "omop_concept_name": "Parainfluenza virus 2 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 2 RNA bcs code 'pin2' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 900,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `p-d-25` and `LongName` `P -D-vitamiini-25-OH` refer to total 25-OH vitamin D ; in Serum or Plasma bcs `P-` prefix means Plasma ; [Moles/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 901,
+      "omop_concept_id": "3030366",
+      "omop_concept_name": "Cystatin C [Mass/volume] in Serum or Plasma",
+      "reasoning": "Cystatin C bcs TEST_NAME `p-kysc` and `LongName` `P -Kystatiini C` ; [Mass/volume] bcs UNIT is `mg/l` ; in Serum or Plasma bcs `P-` prefix means Plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1131,
-      "omop_concept_id": "37021465",
-      "omop_concept_name": "Parainfluenza virus 3 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 3 RNA bcs code 'pin3' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 902,
+      "omop_concept_id": "3030366",
+      "omop_concept_name": "Cystatin C [Mass/volume] in Serum or Plasma",
+      "reasoning": "Cystatin C bcs TEST_NAME `p-kysc` and `LongName` `P -Kystatiini C` ; in Serum or Plasma bcs `P-` prefix means Plasma ; [Mass/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 903,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `p-nkäs10` appears to be an administrative or internal code, possibly for sample handling (`näytteenkäsittely`), not a reported laboratory result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 904,
+      "omop_concept_id": "3022725",
+      "omop_concept_name": "Serotonin [Moles/volume] in Serum",
+      "reasoning": "Serotonin bcs TEST_NAME `s-5-ht` and `LongName` `S -Hydroksitryptamiini (5-)` refer to 5-hydroxytryptamine (serotonin) ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum bcs `S-` prefix means Serum.",
       "certainty": "high"
     },
     {
-      "row_id": 1132,
-      "omop_concept_id": "37020335",
-      "omop_concept_name": "Parainfluenza virus 4 RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Parainfluenza virus 4 RNA bcs code 'pin4' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 905,
+      "omop_concept_id": "3022725",
+      "omop_concept_name": "Serotonin [Moles/volume] in Serum",
+      "reasoning": "Serotonin bcs TEST_NAME `s-5-ht` and `LongName` `S -Hydroksitryptamiini (5-)` refer to 5-hydroxytryptamine (serotonin) ; in Serum bcs `S-` prefix means Serum ; [Moles/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 906,
+      "omop_concept_id": "3015620",
+      "omop_concept_name": "Creatine kinase panel - Serum or Plasma",
+      "reasoning": "Creatine kinase panel bcs `s-ck-is` and `LongName` `S -Kreatiinikinaasi, isoentsyymit` indicate a request for creatine kinase isoenzymes, which are typically reported as a panel ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 907,
+      "omop_concept_id": "36303714",
+      "omop_concept_name": "Connective tissue autoimmune Ab panel - Serum",
+      "reasoning": "Connective tissue autoimmune Ab panel bcs `s-ctdscr` is an abbreviation for Serum-Connective Tissue Disease-Screen ; in Serum bcs `S-` prefix means Serum.",
       "certainty": "high"
     },
     {
-      "row_id": 1133,
-      "omop_concept_id": "37020003",
-      "omop_concept_name": "Rhinovirus RNA [Presence] in Respiratory system specimen by NAA with probe detection",
-      "reasoning": "Rhinovirus RNA bcs code 'rino' ; [Presence] bcs suffix '-nho' indicates a qualitative nucleic acid test ; in Respiratory system specimen bcs it is a respiratory pathogen and this is the best general system ; by NAA with probe detection bcs suffix '-nho' (nukleiinihappo).",
+      "row_id": 908,
+      "omop_concept_id": "3011391",
+      "omop_concept_name": "Calcitriol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcitriol bcs `s-d-1,25` and `LongName` `S -D-vitamiini-1,25-OH` refer to 1,25-dihydroxyvitamin D, also known as Calcitriol ; [Moles/volume] bcs UNIT is `pmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
       "certainty": "high"
+    },
+    {
+      "row_id": 909,
+      "omop_concept_id": "3011391",
+      "omop_concept_name": "Calcitriol [Moles/volume] in Serum or Plasma",
+      "reasoning": "Calcitriol bcs `s-d-1,25` and `LongName` `S -D-vitamiini-1,25-OH` refer to 1,25-dihydroxyvitamin D, also known as Calcitriol ; [Moles/volume] bcs the `value_deciles` are consistent with the pmol/l unit ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 910,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `s-d-25` and `LongName` `S -D-vitamiini-25-OH` refer to total 25-OH vitamin D, which is the sum of the D2 and D3 forms ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 911,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `s-d-25` and `LongName` `S -D-vitamiini-25-OH` refer to total 25-OH vitamin D ; in Serum or Plasma bcs `S-` prefix means Serum ; [Moles/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 912,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `s-d-25-32` appears to be a local variant of the total 25-OH vitamin D test, based on the name, unit and values being consistent with `s-d-25` ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 913,
+      "omop_concept_id": "40771025",
+      "omop_concept_name": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 bcs `s-d-25-32` appears to be a local variant of the total 25-OH vitamin D test, based on the name and values being consistent with `s-d-25` ; [Moles/volume] bcs the `value_deciles` are consistent with the nmol/l unit ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 914,
+      "omop_concept_id": "3051659",
+      "omop_concept_name": "25-hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-hydroxyvitamin D2 bcs TEST_NAME `s-d2-25` and `LongName` `S -D2-vitamiini-25-OH` ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 915,
+      "omop_concept_id": "3051659",
+      "omop_concept_name": "25-hydroxyvitamin D2 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-hydroxyvitamin D2 bcs TEST_NAME `s-d2-25` and `LongName` `S -D2-vitamiini-25-OH` ; in Serum or Plasma bcs `S-` prefix means Serum ; [Moles/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 916,
+      "omop_concept_id": "3024390",
+      "omop_concept_name": "25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-hydroxyvitamin D3 bcs TEST_NAME `s-d3-25` and `LongName` `S -D3-vitamiini-25-OH` ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 917,
+      "omop_concept_id": "3024390",
+      "omop_concept_name": "25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma",
+      "reasoning": "25-hydroxyvitamin D3 bcs TEST_NAME `s-d3-25` and `LongName` `S -D3-vitamiini-25-OH` ; [Moles/volume] bcs the `value_deciles` are consistent with the nmol/l unit ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 918,
+      "omop_concept_id": "40758705",
+      "omop_concept_name": "QUEtiapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "QUEtiapine bcs TEST_NAME `s-ketiap` and `LongName` `S -Ketiapiini` ; [Moles/volume] bcs UNIT is `nmol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 919,
+      "omop_concept_id": "40758705",
+      "omop_concept_name": "QUEtiapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "QUEtiapine bcs TEST_NAME `s-ketiap` and `LongName` `S -Ketiapiini` ; [Moles/volume] bcs the `value_deciles` are consistent with the nmol/l unit ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 920,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-kid10` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 921,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-kipa` is uninterpretable, likely an administrative code.",
+      "certainty": ""
+    },
+    {
+      "row_id": 922,
+      "omop_concept_id": "3006442",
+      "omop_concept_name": "Creatine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Creatine bcs TEST_NAME `s-krtiin` and `LongName` `S -Kreatiini` specify Creatine (not Creatinine) ; [Moles/volume] bcs UNIT is `umol/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 923,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-kubico` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 924,
+      "omop_concept_id": "3030366",
+      "omop_concept_name": "Cystatin C [Mass/volume] in Serum or Plasma",
+      "reasoning": "Cystatin C bcs TEST_NAME `s-kysc` and `LongName` `S -Kystatiini C` ; [Mass/volume] bcs UNIT is `mg/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 925,
+      "omop_concept_id": "3030366",
+      "omop_concept_name": "Cystatin C [Mass/volume] in Serum or Plasma",
+      "reasoning": "Cystatin C bcs TEST_NAME `s-kysc` and `LongName` `S -Kystatiini C` ; [Mass/volume] bcs `value_deciles` are consistent with mg/l unit ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 926,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-käsmak` appears to be an administrative code, possibly for a handling fee (`käsittelymaksu`), not a laboratory result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 927,
+      "omop_concept_id": "3006898",
+      "omop_concept_name": "Lactate dehydrogenase 1/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 1/Lactate dehydrogenase.total bcs `s-ld-1` and UNIT `%` indicate the fraction of isoenzyme 1 relative to total LD ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 928,
+      "omop_concept_id": "3006898",
+      "omop_concept_name": "Lactate dehydrogenase 1/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 1/Lactate dehydrogenase.total bcs `s-ld-1` (`Laktaattidehydrogenaasi, isoentsyymi 1`) typically implies a fractional report ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 929,
+      "omop_concept_id": "3023919",
+      "omop_concept_name": "Lactate dehydrogenase 2/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 2/Lactate dehydrogenase.total bcs `s-ld-2` and UNIT `%` indicate the fraction of isoenzyme 2 relative to total LD ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 930,
+      "omop_concept_id": "3023919",
+      "omop_concept_name": "Lactate dehydrogenase 2/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 2/Lactate dehydrogenase.total bcs `s-ld-2` typically implies a fractional report ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 931,
+      "omop_concept_id": "3007858",
+      "omop_concept_name": "Lactate dehydrogenase 3/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 3/Lactate dehydrogenase.total bcs `s-ld-3` and UNIT `%` indicate the fraction of isoenzyme 3 relative to total LD ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 932,
+      "omop_concept_id": "3007858",
+      "omop_concept_name": "Lactate dehydrogenase 3/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 3/Lactate dehydrogenase.total bcs `s-ld-3` typically implies a fractional report ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 933,
+      "omop_concept_id": "3024830",
+      "omop_concept_name": "Lactate dehydrogenase 4/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 4/Lactate dehydrogenase.total bcs `s-ld-4` and UNIT `%` indicate the fraction of isoenzyme 4 relative to total LD ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 934,
+      "omop_concept_id": "3024830",
+      "omop_concept_name": "Lactate dehydrogenase 4/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 4/Lactate dehydrogenase.total bcs `s-ld-4` typically implies a fractional report ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 935,
+      "omop_concept_id": "3012481",
+      "omop_concept_name": "Lactate dehydrogenase 5/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 5/Lactate dehydrogenase.total bcs `s-ld-5` and UNIT `%` indicate the fraction of isoenzyme 5 relative to total LD ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 936,
+      "omop_concept_id": "3012481",
+      "omop_concept_name": "Lactate dehydrogenase 5/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis",
+      "reasoning": "Lactate dehydrogenase 5/Lactate dehydrogenase.total bcs `s-ld-5` typically implies a fractional report ; in Serum or Plasma bcs `S-` prefix means Serum ; by Electrophoresis bcs this is the standard method for separating isoenzymes.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 937,
+      "omop_concept_id": "3034022",
+      "omop_concept_name": "Lactate dehydrogenase panel - Serum or Plasma",
+      "reasoning": "Lactate dehydrogenase panel bcs `s-ld-is` and `LongName` `S -Laktaattidehydrogenaasi, isoentsyymit` indicate a request for LD isoenzymes, which are reported as a panel ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 938,
+      "omop_concept_id": "3016436",
+      "omop_concept_name": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Lactate dehydrogenase bcs TEST_NAME starts with `s-ld` ; [Enzymatic activity/volume] bcs UNIT is `u/l` ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 939,
+      "omop_concept_id": "3016436",
+      "omop_concept_name": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Lactate dehydrogenase bcs TEST_NAME starts with `s-ld` ; in Serum or Plasma bcs `S-` prefix means Serum ; [Enzymatic activity/volume] is the standard property for this test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 940,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-liv2x10` is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 941,
+      "omop_concept_id": "3037978",
+      "omop_concept_name": "Salmonella typhimurium Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhimurium Ab bcs `s-o4.5.12` refers to antibodies against Salmonella Typhimurium O-antigens 4, 5, and 12 ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum. This is the best available candidate, lacking O-antigen specificity.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 942,
+      "omop_concept_id": "3037978",
+      "omop_concept_name": "Salmonella typhimurium Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhimurium Ab bcs `s-o4.5.12` refers to antibodies against Salmonella Typhimurium O-antigens 4, 5, and 12 ; in Serum bcs `S-` prefix means Serum ; [Titer] is the expected property. This is the best available candidate, lacking O-antigen specificity.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 943,
+      "omop_concept_id": "3000307",
+      "omop_concept_name": "PM-SCL extractable nuclear Ab [Units/volume] in Serum",
+      "reasoning": "PM-SCL extractable nuclear Ab bcs TEST_NAME is `s-pm-scl` ; [Units/volume] bcs UNIT is `u/ml` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 944,
+      "omop_concept_id": "3000307",
+      "omop_concept_name": "PM-SCL extractable nuclear Ab [Units/volume] in Serum",
+      "reasoning": "PM-SCL extractable nuclear Ab bcs TEST_NAME is `s-pm-scl` ; in Serum bcs `S-` prefix means Serum ; [Units/volume] is the standard reported property.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 945,
+      "omop_concept_id": "647280",
+      "omop_concept_name": "Myositis specific Ab panel - Serum or Plasma",
+      "reasoning": "Myositis specific Ab panel bcs `s-pmdm-t` is an abbreviation for a Polymyositis (PM) and Dermatomyositis (DM) antibody panel ; in Serum or Plasma bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 946,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-prkäsit` appears to be an administrative or internal code, possibly for sample processing, not a reported laboratory result.",
+      "certainty": ""
+    },
+    {
+      "row_id": 947,
+      "omop_concept_id": "3002522",
+      "omop_concept_name": "Salmonella paratyphi A H Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi A H Ab bcs `s-w-h:a` specifies antibodies to H antigen of S. paratyphi A ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 948,
+      "omop_concept_id": "3002522",
+      "omop_concept_name": "Salmonella paratyphi A H Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi A H Ab bcs `s-w-h:a` specifies antibodies to H antigen of S. paratyphi A ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 949,
+      "omop_concept_id": "3000250",
+      "omop_concept_name": "Salmonella paratyphi B H Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi B H Ab bcs `s-w-h:b` specifies antibodies to H antigen of S. paratyphi B ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 950,
+      "omop_concept_id": "3000250",
+      "omop_concept_name": "Salmonella paratyphi B H Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi B H Ab bcs `s-w-h:b` specifies antibodies to H antigen of S. paratyphi B ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 951,
+      "omop_concept_id": "3037615",
+      "omop_concept_name": "Salmonella typhi H Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhi H Ab bcs `s-w-h:d` specifies antibodies to H antigen of S. typhi ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 952,
+      "omop_concept_id": "3037615",
+      "omop_concept_name": "Salmonella typhi H Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhi H Ab bcs `s-w-h:d` specifies antibodies to H antigen of S. typhi ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 953,
+      "omop_concept_id": "3044323",
+      "omop_concept_name": "Salmonella enteritidis H Ab [Titer] in Serum",
+      "reasoning": "Salmonella enteritidis H Ab bcs `s-w-h:g.m` specifies antibodies to H antigens of S. enteritidis ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 954,
+      "omop_concept_id": "3044323",
+      "omop_concept_name": "Salmonella enteritidis H Ab [Titer] in Serum",
+      "reasoning": "Salmonella enteritidis H Ab bcs `s-w-h:g.m` specifies antibodies to H antigens of S. enteritidis ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 955,
+      "omop_concept_id": "3044332",
+      "omop_concept_name": "Salmonella typhimurium H Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhimurium H Ab bcs `s-w-h:i` specifies antibodies to H antigen of S. typhimurium ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 956,
+      "omop_concept_id": "3044332",
+      "omop_concept_name": "Salmonella typhimurium H Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhimurium H Ab bcs `s-w-h:i` specifies antibodies to H antigen of S. typhimurium ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 957,
+      "omop_concept_id": "3028857",
+      "omop_concept_name": "Salmonella paratyphi C O Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi C O Ab bcs `s-w-o6.7` specifies antibodies to O antigens of S. paratyphi C ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 958,
+      "omop_concept_id": "3028857",
+      "omop_concept_name": "Salmonella paratyphi C O Ab [Titer] in Serum",
+      "reasoning": "Salmonella paratyphi C O Ab bcs `s-w-o6.7` specifies antibodies to O antigens of S. paratyphi C ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 959,
+      "omop_concept_id": "3037960",
+      "omop_concept_name": "Salmonella typhi O Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhi O Ab bcs `s-w-o9.12` specifies antibodies to O antigens of S. typhi ; [Titer] bcs UNIT is `titre` ; in Serum bcs `S-` prefix means Serum.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 960,
+      "omop_concept_id": "3037960",
+      "omop_concept_name": "Salmonella typhi O Ab [Titer] in Serum",
+      "reasoning": "Salmonella typhi O Ab bcs `s-w-o9.12` specifies antibodies to O antigens of S. typhi ; in Serum bcs `S-` prefix means Serum ; [Titer] is the standard property for Widal tests.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 961,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `s-yskät` is uninterpretable; it may relate to 'cough' (`yskä`) but is too generic to map to a specific test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 962,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The name `sjukhus` is Swedish for 'hospital' and is an administrative term, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 963,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `sukup.tau1` relates to gender (`sukupuoli`) and is an administrative code, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 964,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `sukup1` relates to gender (`sukupuoli`) and is an administrative code, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 965,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `sukup2` relates to gender (`sukupuoli`) and is an administrative code, not a laboratory test.",
+      "certainty": ""
+    },
+    {
+      "row_id": 966,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `u-käsma` appears to be an administrative code, possibly for a handling fee (`käsittelymaksu`), not a laboratory result.",
+      "certainty": ""
     }
   ],
-  "reflection": "This group consisted of nucleic acid amplification tests (NAA/PCR) for various respiratory pathogens. The Finnish codes were highly systematic, with the `-nho` suffix consistently indicating a qualitative nucleic acid test. Many codes had `LongName`s that confirmed the interpretation.\n\nThe main challenge was selecting the appropriate specimen type. Since the codes did not specify the specimen, I chose the general `Respiratory system specimen` where available, as this is the most appropriate default for these pathogens. In a few cases (e.g., `-inabrsnho` panel, `-pinfnho`), a concept with this specimen was not in the candidate list, so I opted for the more generic `Specimen` to avoid making an unsubstantiated choice like `Upper` or `Lower` respiratory. \n\nOne code, `-tintnho`, was unmappable as the abbreviation 'tint' is unknown. Most mappings were high confidence because the qualitative nature of the test (`[Presence]`) meant the lack of numeric values was not a barrier, and the Finnish codes were very clear."
+  "reflection": "This was a large and diverse group. Many codes were clearly identifiable laboratory tests (Vitamin D variants, Cystatin C, LD isoenzymes, Quetiapine, Salmonella Widal panel) and were mapped with high confidence. The candidate list was excellent for these. A significant number of codes were unmappable as they appeared to be administrative, internal, or procedural codes (e.g., `-kskäynt`, `-selvtyö`, `dnauut1`, `sjukhus`, `s-käsmak`). The search failed for `audit` and `audit-c` (rows 893-895); the correct LOINC concepts for these common questionnaires were not retrieved. The code `s-o4.5.12` for Salmonella Typhimurium O-antigen could only be mapped to a less specific 'Salmonella typhimurium Ab' concept, as a specific O-antigen concept was not available in the candidate list."
 }

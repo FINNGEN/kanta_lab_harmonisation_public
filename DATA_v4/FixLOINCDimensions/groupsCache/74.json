@@ -1,194 +1,1013 @@
 {
   "rows": [
     {
-      "row_id": 1134,
-      "omop_concept_id": "3033060",
-      "omop_concept_name": "Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Aspergillus sp from `-aspe-` and LongName `Aspergillus` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 967,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME '-amyl' is a common abbreviation for amylase ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen for a non-prefixed amylase test and the values are in the typical range for it",
       "certainty": "high"
     },
     {
-      "row_id": 1135,
-      "omop_concept_id": "1092116",
-      "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bacteria from `-bakt-` and LongName `Bakteeri` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1136,
-      "omop_concept_id": "40765161",
-      "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human bocavirus from `-boca-` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1137,
-      "omop_concept_id": "40765161",
-      "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human bocavirus from `-boka-` and LongName `Bokavirus` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1138,
-      "omop_concept_id": "3012477",
-      "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella pertussis from `-bopa-`, interpreted as a common typo/variant for `bopen` (pertussis), consistent with loinc_name_guess ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 968,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME '-amyl' is a common abbreviation for amylase ; in Serum or Plasma bcs this is the default specimen for a non-prefixed amylase test ; no quantity stated bcs no unit or values",
       "certainty": "medium"
     },
     {
-      "row_id": 1139,
-      "omop_concept_id": "3012477",
-      "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella pertussis from `-bopen-` and LongName ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 969,
+      "omop_concept_id": "3015322",
+      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin bcs TEST_NAME 'alfa-1' ; [Mass/volume] bcs UNIT is 'g/l' and values are in the expected range ; in Serum or Plasma bcs this is the standard specimen ; by Electrophoresis bcs this is the standard method for globulin fractions and the concept is a Top 2000 code",
       "certainty": "high"
     },
     {
-      "row_id": 1140,
-      "omop_concept_id": "3012477",
-      "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella pertussis from `-bopenho.` which is a clear code despite the trailing dot ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 970,
+      "omop_concept_id": "3005229",
+      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin bcs TEST_NAME 'alfa-2' ; [Mass/volume] bcs UNIT is 'g/l' and values are in the expected range ; in Serum or Plasma bcs this is the standard specimen ; by Electrophoresis bcs this is the standard method for globulin fractions and the concept is a Top 2000 code",
       "certainty": "high"
     },
     {
-      "row_id": 1141,
-      "omop_concept_id": "40766162",
-      "omop_concept_name": "Bordetella sp DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella sp from `-bopp-` which indicates a test for both pertussis and parapertussis ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo). The more specific combined concept was not available, so the genus-level concept is the best fit.",
+      "row_id": 971,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'amylaasi' is Finnish for amylase ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum or Plasma bcs this is the default specimen for an unprefixed amylase test and values are typical",
+      "certainty": "high"
+    },
+    {
+      "row_id": 972,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'amylaasi' is Finnish for amylase ; in Serum or Plasma bcs this is the default specimen for an unprefixed amylase test ; no quantity stated bcs no unit or values",
       "certainty": "medium"
     },
     {
-      "row_id": 1142,
-      "omop_concept_id": "648686",
-      "omop_concept_name": "Borrelia sp DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Borrelia sp from `-borr-` and LongName `Borrelia` ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 973,
+      "omop_concept_id": "3008691",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Peritoneal fluid",
+      "reasoning": "Amylase bcs TEST_NAME contains 'amyl' and LongName is 'As-Amylaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Peritoneal fluid bcs TEST_NAME prefix 'as-' and prefix_meaning 'Ascitic fluid' indicate ascitic fluid, which is a type of peritoneal fluid",
       "certainty": "high"
     },
     {
-      "row_id": 1143,
-      "omop_concept_id": "3037875",
-      "omop_concept_name": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella parapertussis from `-bpar-` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 974,
+      "omop_concept_id": "3008691",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Peritoneal fluid",
+      "reasoning": "Amylase bcs TEST_NAME contains 'amyl' and LongName is 'As-Amylaasi' ; in Peritoneal fluid bcs TEST_NAME prefix 'as-' and prefix_meaning 'Ascitic fluid' indicate ascitic fluid, which is a type of peritoneal fluid ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 975,
+      "omop_concept_id": "3000690",
+      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Moles/time] bcs UNIT is 'nmol' which for a 24h collection implies total amount per 24h ; in 24 hour Urine bcs TEST_NAME prefix 'du-' means 24h urine",
       "certainty": "high"
     },
     {
-      "row_id": 1144,
+      "row_id": 976,
+      "omop_concept_id": "3000690",
+      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Moles/time] bcs UNIT is 'nmol/24h' ; in 24 hour Urine bcs TEST_NAME prefix 'du-' means 24h urine",
+      "certainty": "high"
+    },
+    {
+      "row_id": 977,
+      "omop_concept_id": "3019985",
+      "omop_concept_name": "Aldosterone [Moles/volume] in 24 hour Urine",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Moles/volume] bcs UNIT is 'nmol/l' ; in 24 hour Urine bcs TEST_NAME prefix 'du-' means 24h urine",
+      "certainty": "high"
+    },
+    {
+      "row_id": 978,
+      "omop_concept_id": "3019677",
+      "omop_concept_name": "Aldosterone [Mass/time] in 24 hour Urine",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Mass/time] bcs UNIT is 'ug/24h' ; in 24 hour Urine bcs TEST_NAME prefix 'du-' means 24h urine",
+      "certainty": "high"
+    },
+    {
+      "row_id": 979,
+      "omop_concept_id": "3000690",
+      "omop_concept_name": "Aldosterone [Moles/time] in 24 hour Urine",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Moles/time] bcs value deciles are consistent with nmol/24h (compare to row 975) ; in 24 hour Urine bcs TEST_NAME prefix 'du-' means 24h urine",
+      "certainty": "high"
+    },
+    {
+      "row_id": 980,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 'fp-afos' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'fp-' means fasting plasma ; LOINC does not typically distinguish fasting state for this test, so the general S/P concept is correct",
+      "certainty": "high"
+    },
+    {
+      "row_id": 981,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 'fp-aldos' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'fp-' means fasting plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 982,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 'fp-aldos' ; in Plasma bcs TEST_NAME prefix 'fp-' means fasting plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 983,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'fp-amyl' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'fp-' means fasting plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 984,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 'p-afos' and LongName 'P -Alkalinen fosfataasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 985,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 'p-afos' and LongName 'P -Alkalinen fosfataasi' ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 986,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 'p-aldos' and LongName 'P -Aldosteroni' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 987,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 'p-aldos' and LongName 'P -Aldosteroni' ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 988,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'p-amyl' and LongName 'P -Amylaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 989,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'p-amyl' and LongName 'P -Amylaasi' ; in Plasma bcs TEST_NAME prefix 'p-' and LongName 'P -...' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 990,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'p-amylaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 991,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 'p-amylaasi' ; in Plasma bcs TEST_NAME prefix 'p-' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 992,
+      "omop_concept_id": "3016417",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 'p-amylp' and LongName 'P -Amylaasi, haimaperäinen' (pancreas-derived) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 993,
+      "omop_concept_id": "3016417",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 'p-amylp' and LongName 'P -Amylaasi, haimaperäinen' (pancreas-derived) ; in Plasma bcs TEST_NAME prefix 'p-' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 994,
+      "omop_concept_id": "1617569",
+      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol.in LDL.small dense bcs TEST_NAME 'p-sldl' (small dense LDL) ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Plasma bcs TEST_NAME prefix 'p-' means plasma",
+      "certainty": "high"
+    },
+    {
+      "row_id": 995,
+      "omop_concept_id": "1617569",
+      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol.in LDL.small dense bcs TEST_NAME 'p-sldl' (small dense LDL) ; in Plasma bcs TEST_NAME prefix 'p-' means plasma ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 996,
+      "omop_concept_id": "3021476",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Duodenal fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'pa-amyl' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Duodenal fluid bcs prefix 'Pa-' means Pancreatic juice, which is collected from or equivalent to duodenal fluid for this test, and this is the closest available concept",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 997,
+      "omop_concept_id": "3021476",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Duodenal fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'pa-amyl' ; in Duodenal fluid bcs prefix 'Pa-' means Pancreatic juice, which is collected from or equivalent to duodenal fluid for this test, and this is the closest available concept ; no quantity stated bcs no unit or values",
+      "certainty": "low"
+    },
+    {
+      "row_id": 998,
+      "omop_concept_id": "3015401",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Pleural fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'pf-amyl' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Pleural fluid bcs TEST_NAME prefix 'pf-' means pleural fluid",
+      "certainty": "high"
+    },
+    {
+      "row_id": 999,
+      "omop_concept_id": "3015401",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Pleural fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'pf-amyl' ; in Pleural fluid bcs TEST_NAME prefix 'pf-' means pleural fluid ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1000,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME contains 'aldos' ; [Moles/volume] bcs UNIT is 'pmol/l' ; in Serum bcs TEST_NAME prefix 's-' ; The 'a' in 'aaldos' is unexplained and values are higher than baseline, suggesting a specific condition (e.g., post-challenge), but no other information is available. Mapping to the base concept.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1001,
+      "omop_concept_id": "44786774",
+      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab bcs TEST_NAME 's-adali' ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1002,
+      "omop_concept_id": "44786774",
+      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab bcs TEST_NAME 's-adali' ; [Mass/volume] bcs value deciles are consistent with 'mg/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1003,
+      "omop_concept_id": "36304052",
+      "omop_concept_name": "Adalimumab Ab [Units/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab Ab bcs TEST_NAME 's-adaliab' and LongName '...vasta-aineet' (antibodies) ; [Units/volume] bcs UNIT is 'au/ml' and values are present ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1004,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `-rbaktnho` indicates a test for bacterial nucleic acid in a respiratory specimen (`r-`). No candidate concept for this specific combination is available in the provided list. Mapping to a generic specimen concept would be inaccurate.",
+      "reasoning": "Test is for Adalimumab Ab ('s-adaliab'), but it is 100% missing values, suggesting it may be qualitative (Presence). No candidate concept for 'Adalimumab Ab [Presence]' is available in the list, so cannot determine if this should be a quantitative or qualitative concept.",
       "certainty": ""
     },
     {
-      "row_id": 1145,
-      "omop_concept_id": "1092116",
-      "omop_concept_name": "Bacteria DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bacteria from `bakt` ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "row_id": 1005,
+      "omop_concept_id": "44786774",
+      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab bcs TEST_NAME 's-adalimu' is a variant of Adalimumab ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1146,
-      "omop_concept_id": "40765161",
-      "omop_concept_name": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human bocavirus from `boka` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "row_id": 1006,
+      "omop_concept_id": "44786774",
+      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab bcs TEST_NAME 's-adalimu' is a variant of Adalimumab ; [Mass/volume] bcs value deciles are consistent with 'mg/l' ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1147,
-      "omop_concept_id": "3012477",
-      "omop_concept_name": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella pertussis from `bopen` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "row_id": 1007,
+      "omop_concept_id": "44786774",
+      "omop_concept_name": "Adalimumab [Mass/volume] in Serum or Plasma",
+      "reasoning": "Adalimumab bcs TEST_NAME 's-adalip' is likely a truncated name for Adalimumab, where 'p' could stand for 'pitoisuus' (concentration) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1008,
+      "omop_concept_id": "1989156",
+      "omop_concept_name": "Adalimumab and Adalimumab Ab panel - Serum or Plasma by Immunoassay",
+      "reasoning": "Adalimumab and Adalimumab Ab panel bcs TEST_NAME 's-adalipa' likely stands for Adalimumab Pitoisuus ja Vasta-aineet (concentration and antibodies) ; in Serum bcs TEST_NAME prefix 's-' ; no units/values are expected for a panel order code",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1009,
+      "omop_concept_id": "3002069",
+      "omop_concept_name": "Alkaline phosphatase.bone/Alkaline phosphatase.total in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone/Alkaline phosphatase.total bcs TEST_NAME 's-afluu' ('af'=alk phos, 'luu'=bone) and UNIT is '%' which indicates a ratio ; [Ratio] bcs UNIT is '%' ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1148,
-      "omop_concept_id": "3037875",
-      "omop_concept_name": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Bordetella parapertussis from `bpara` abbreviation, a variant of `bpar` ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "row_id": 1010,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afluu' ('af'=alk phos, 'luu'=bone) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1149,
+      "row_id": 1011,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afluu' ('af'=alk phos, 'luu'=bone) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values, mapping to the more common activity measurement over ratio",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1012,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afluust' contains 'af' (alk phos) and 'luu' (bone); 'st' is unkown but likely a local suffix ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1013,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afluust' contains 'af' (alk phos) and 'luu' (bone); 'st' is unkown but likely a local suffix ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1014,
+      "omop_concept_id": "3045684",
+      "omop_concept_name": "Alkaline phosphatase.other fractions [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.other fractions bcs TEST_NAME 's-afmuut' where 'af' is alk phos and 'muut' is Finnish for 'other' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1015,
+      "omop_concept_id": "3045684",
+      "omop_concept_name": "Alkaline phosphatase.other fractions [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.other fractions bcs TEST_NAME 's-afmuut' where 'af' is alk phos and 'muut' is Finnish for 'other' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1016,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 's-afos' and LongName 'S -Alkalinen fosfataasi' ; [Enzymatic activity/volume] bcs UNIT is 'iu/l' (equivalent to u/l) and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1017,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 's-afos' and LongName 'S -Alkalinen fosfataasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1018,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 's-afos' and LongName 'S -Alkalinen fosfataasi' ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1019,
+      "omop_concept_id": "3028564",
+      "omop_concept_name": "Alkaline phosphatase isoenz panel - Serum or Plasma",
+      "reasoning": "Alkaline phosphatase isoenz panel bcs TEST_NAME 's-afos-is' and LongName '...isoentsyymit' ; in Serum bcs TEST_NAME prefix 's-' ; this is an order for a panel, not a result",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1020,
+      "omop_concept_id": "3028564",
+      "omop_concept_name": "Alkaline phosphatase isoenz panel - Serum or Plasma",
+      "reasoning": "Alkaline phosphatase isoenz panel bcs TEST_NAME 's-afos-is' and LongName '...isoentsyymit' ; in Serum bcs TEST_NAME prefix 's-' ; this is an order for a panel, not a result",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1021,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afosluu' ('luu'=bone) and LongName '...luuspesifinen' (bone-specific) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1022,
+      "omop_concept_id": "3018910",
+      "omop_concept_name": "Alkaline phosphatase.bone [Mass/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afosluu' ('luu'=bone) and LongName '...luuspesifinen' (bone-specific) ; [Mass/volume] bcs UNIT is 'ug/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1023,
+      "omop_concept_id": "3001467",
+      "omop_concept_name": "Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.bone bcs TEST_NAME 's-afosluu' ('luu'=bone) and LongName '...luuspesifinen' (bone-specific) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values, mapping to the more common activity measurement",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1024,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 's-afospit' where 'pit' stands for 'pikatesti' (rapid test) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' ; mapping to general AFOS as no 'rapid' concept exists",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1025,
+      "omop_concept_id": "3035995",
+      "omop_concept_name": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase bcs TEST_NAME 's-afospit' where 'pit' stands for 'pikatesti' (rapid test) ; in Serum bcs TEST_NAME prefix 's-' ; mapping to general AFOS as no 'rapid' concept exists ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1026,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-afsuol1' where 'af'=alk phos, 'suol'=intestinal ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'. No candidate for fraction '1', so mapping to the general intestinal concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1027,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-afsuol1' where 'af'=alk phos, 'suol'=intestinal ; in Serum bcs TEST_NAME prefix 's-'. No candidate for fraction '1', so mapping to the general intestinal concept. No unit stated, but values are consistent with u/l.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1028,
+      "omop_concept_id": "42870305",
+      "omop_concept_name": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal 2 bcs TEST_NAME 's-afsuol2' where 'af'=alk phos, 'suol'=intestinal, '2'=fraction 2 ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1029,
+      "omop_concept_id": "42870305",
+      "omop_concept_name": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal 2 bcs TEST_NAME 's-afsuol2' where 'af'=alk phos, 'suol'=intestinal, '2'=fraction 2 ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1030,
+      "omop_concept_id": "42870306",
+      "omop_concept_name": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal 3 bcs TEST_NAME 's-afsuol3' where 'af'=alk phos, 'suol'=intestinal, '3'=fraction 3 ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1031,
+      "omop_concept_id": "42870306",
+      "omop_concept_name": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal 3 bcs TEST_NAME 's-afsuol3' where 'af'=alk phos, 'suol'=intestinal, '3'=fraction 3 ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1032,
+      "omop_concept_id": "3020990",
+      "omop_concept_name": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total bcs TEST_NAME 's-afsuoli' ('suoli'=intestinal) and UNIT is '%' which indicates a ratio ; [Ratio] bcs UNIT is '%' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1033,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-afsuoli' ('suoli'=intestinal) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1034,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-afsuoli' ('suoli'=intestinal) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values, mapping to activity as it's more common than ratio",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1035,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-albind' contains 'alb' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'. The 'd' is unexplained.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1036,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-albind' contains 'alb' ; [Mass/volume] bcs values are consistent with g/l ; in Serum bcs TEST_NAME prefix 's-'. The 'd' is unexplained.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1037,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-albu' is a short name for albumin ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1038,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-albu' is a short name for albumin ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1039,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-album' is a short name for albumin ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1040,
+      "omop_concept_id": "3024561",
+      "omop_concept_name": "Albumin [Mass/volume] in Serum or Plasma",
+      "reasoning": "Albumin bcs TEST_NAME 's-album' is a short name for albumin ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1041,
+      "omop_concept_id": "3027953",
+      "omop_concept_name": "Aldolase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aldolase bcs TEST_NAME 's-aldol' and LongName 'S -Aldolaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1042,
+      "omop_concept_id": "3027953",
+      "omop_concept_name": "Aldolase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Aldolase bcs TEST_NAME 's-aldol' and LongName 'S -Aldolaasi' ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1043,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos' and LongName 'S -Aldosteroni' ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1044,
+      "omop_concept_id": "3001788",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos' and LongName 'S -Aldosteroni' ; [Moles/volume] bcs values are consistent with pmol/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1045,
+      "omop_concept_id": "3004280",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos-m' ; supine bcs suffix '-m' and LongName '...makuu' (supine) ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1046,
+      "omop_concept_id": "3004280",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --supine",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos-m' ; supine bcs suffix '-m' and LongName '...makuu' (supine) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated bcs no unit or values",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1047,
+      "omop_concept_id": "3003171",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos-p' ; upright bcs suffix '-p' and LongName '...pysty' (upright) ; [Moles/volume] bcs UNIT is 'pmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1048,
+      "omop_concept_id": "3003171",
+      "omop_concept_name": "Aldosterone [Moles/volume] in Serum or Plasma --upright",
+      "reasoning": "Aldosterone bcs TEST_NAME 's-aldos-p' ; upright bcs suffix '-p' and LongName '...pysty' (upright) ; [Moles/volume] bcs values are consistent with pmol/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1049,
+      "omop_concept_id": "43055428",
+      "omop_concept_name": "Alpha 1 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin/Protein.total bcs TEST_NAME 's-alfa-1' ; [Pure mass fraction] bcs UNIT is '%' ; in Serum bcs TEST_NAME prefix 's-'; by Electrophoresis is the standard method",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1050,
+      "omop_concept_id": "3015322",
+      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin bcs TEST_NAME 's-alfa-1' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' ; by Electrophoresis is the standard method and this concept is a Top 2000 code",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1051,
+      "omop_concept_id": "3015322",
+      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin bcs TEST_NAME 's-alfa-1' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, mapping to the most common property (mass concentration)",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1052,
+      "omop_concept_id": "43055424",
+      "omop_concept_name": "Alpha 2 globulin/Protein.total [Pure mass fraction] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin/Protein.total bcs TEST_NAME 's-alfa-2' ; [Pure mass fraction] bcs UNIT is '%' ; in Serum bcs TEST_NAME prefix 's-'; by Electrophoresis is the standard method",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1053,
+      "omop_concept_id": "3005229",
+      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin bcs TEST_NAME 's-alfa-2' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' ; by Electrophoresis is the standard method and this concept is a Top 2000 code",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1054,
+      "omop_concept_id": "3005229",
+      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin bcs TEST_NAME 's-alfa-2' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, mapping to the most common property (mass concentration)",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1055,
+      "omop_concept_id": "3015322",
+      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin bcs TEST_NAME 's-alfa1' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' ; by Electrophoresis is the standard method and this concept is a Top 2000 code",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1056,
+      "omop_concept_id": "3015322",
+      "omop_concept_name": "Alpha 1 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 1 globulin bcs TEST_NAME 's-alfa1' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, mapping to the most common property (mass concentration)",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1057,
+      "omop_concept_id": "3005229",
+      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin bcs TEST_NAME 's-alfa2' ; [Mass/volume] bcs UNIT is 'g/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-' ; by Electrophoresis is the standard method and this concept is a Top 2000 code",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1058,
+      "omop_concept_id": "3005229",
+      "omop_concept_name": "Alpha 2 globulin [Mass/volume] in Serum or Plasma by Electrophoresis",
+      "reasoning": "Alpha 2 globulin bcs TEST_NAME 's-alfa2' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, mapping to the most common property (mass concentration)",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1059,
+      "omop_concept_id": "21492784",
+      "omop_concept_name": "Miscellaneous allergen IgE Ab [Units/volume] in Serum",
+      "reasoning": "Miscellaneous allergen IgE Ab bcs TEST_NAME 's-allige' and LongName 'S -Allergeeni, IgE-vasta-aineet' are for generic allergen IgE antibodies ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1060,
+      "omop_concept_id": "21492784",
+      "omop_concept_name": "Miscellaneous allergen IgE Ab [Units/volume] in Serum",
+      "reasoning": "Miscellaneous allergen IgE Ab bcs TEST_NAME 's-allige' and LongName 'S -Allergeeni, IgE-vasta-aineet' are for generic allergen IgE antibodies ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, mapping to quantitative concept as no qualitative one is available",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1061,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 's-amyl' and LongName 'S -Amylaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1062,
+      "omop_concept_id": "3016771",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase bcs TEST_NAME 's-amyl' and LongName 'S -Amylaasi' ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1063,
+      "omop_concept_id": "3009876",
+      "omop_concept_name": "Amylase isoenzyme 3 panel - Serum or Plasma",
+      "reasoning": "Amylase isoenzyme panel bcs TEST_NAME 's-amyl-is' and LongName '...isoentsyymit' ; in Serum bcs TEST_NAME prefix 's-' ; This is a panel order, not a result. Choosing the 3-panel concept as a representative option.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1064,
+      "omop_concept_id": "3009876",
+      "omop_concept_name": "Amylase isoenzyme 3 panel - Serum or Plasma",
+      "reasoning": "Amylase isoenzyme panel bcs TEST_NAME 's-amyl-is' and LongName '...isoentsyymit' ; in Serum bcs TEST_NAME prefix 's-' ; This is a panel order, not a result. Choosing the 3-panel concept as a representative option.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1065,
+      "omop_concept_id": "3016417",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 's-amylp' and LongName '...haimaperäinen' (pancreas-derived) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1066,
+      "omop_concept_id": "3016417",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 's-amylp' and LongName '...haimaperäinen' (pancreas-derived) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1067,
+      "omop_concept_id": "3005685",
+      "omop_concept_name": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.salivary bcs TEST_NAME 's-amyls' and LongName '...sylkiperäinen' (saliva-derived) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1068,
+      "omop_concept_id": "3005685",
+      "omop_concept_name": "Amylase.salivary [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Amylase.salivary bcs TEST_NAME 's-amyls' and LongName '...sylkiperäinen' (saliva-derived) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1069,
+      "omop_concept_id": "3008832",
+      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Norclozapine bcs TEST_NAME 's-dmklots' is Desmethylclozapine, a synonym for Norclozapine ; [Moles/volume] bcs UNIT is 'nmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1070,
+      "omop_concept_id": "3008832",
+      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Norclozapine bcs TEST_NAME 's-dmklots' is Desmethylclozapine, a synonym for Norclozapine ; [Moles/volume] bcs UNIT is 'umol/l' and values are consistent (factor of 1000 from nmol/l) ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1071,
+      "omop_concept_id": "3008832",
+      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Norclozapine bcs TEST_NAME 's-dmklots' is Desmethylclozapine, a synonym for Norclozapine ; [Moles/volume] bcs UNIT 'âumol/l' is a typo for umol/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1072,
+      "omop_concept_id": "3008832",
+      "omop_concept_name": "Norclozapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Norclozapine bcs TEST_NAME 's-dmklots' is Desmethylclozapine, a synonym for Norclozapine ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1073,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `f-baktnho` specifies a test for bacterial nucleic acid in a stool (`f-`) specimen. No candidate concept for this specific combination exists. The available options are for specific pathogen panels, not general bacterial DNA.",
+      "reasoning": "The component is likely deamidated gliadin antibody ('s-gliade'), but the TEST_NAME does not specify the immunoglobulin class (e.g., IgA, IgG). Candidates are class-specific, so no appropriate concept can be chosen.",
       "certainty": ""
     },
     {
-      "row_id": 1150,
-      "omop_concept_id": "1092353",
-      "omop_concept_name": "Enteric parasite panel - Stool by NAA with probe detection",
-      "reasoning": "Enteric parasite panel from `f-para-` and LongName `Parasiitit` (parasites, plural) ; in Stool from `f-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1151,
-      "omop_concept_id": "1616933",
-      "omop_concept_name": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection",
-      "reasoning": "Salmonella sp from `salm` and LongName ; [Presence] from `-nho` (kval) ; in Stool from `f-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1152,
+      "row_id": 1074,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `f-saponho` specifies Sapovirus RNA detection in a stool (`f-`) specimen. The ideal concept `Sapovirus RNA [Presence] in Stool by NAA with probe detection` is not in the candidate list. Available options are for generic `Specimen` or specific genogroup panels, which are not correct.",
+      "reasoning": "The component is likely deamidated gliadin antibody ('s-gliade'), but the TEST_NAME does not specify the immunoglobulin class (e.g., IgA, IgG). Candidates are class-specific, so no appropriate concept can be chosen.",
       "certainty": ""
     },
     {
-      "row_id": 1153,
-      "omop_concept_id": "3041642",
-      "omop_concept_name": "Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus 229E from `kv229e` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 1075,
+      "omop_concept_id": "36031415",
+      "omop_concept_name": "Gliadin IgE Ab [Units/volume] in Serum",
+      "reasoning": "Gliadin IgE Ab bcs TEST_NAME 's-gliadie' ('gliad'=gliadin, 'ie'=IgE) ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1154,
-      "omop_concept_id": "40765160",
-      "omop_concept_name": "Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus HKU1 from `kvhku1` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 1076,
+      "omop_concept_id": "36031415",
+      "omop_concept_name": "Gliadin IgE Ab [Units/volume] in Serum",
+      "reasoning": "Gliadin IgE Ab bcs TEST_NAME 's-gliadie' ('gliad'=gliadin, 'ie'=IgE) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated, and 100% missing values suggest a qualitative test, but no qualitative candidate is available. Mapping to quantitative concept with low certainty.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1077,
+      "omop_concept_id": "647081",
+      "omop_concept_name": "HLA-A and B and C (class I) and HLA-DP and DQ and DR (class II) Ab.IgG donor specific [Presence] in Serum or Plasma",
+      "reasoning": "HLA donor specific Ab bcs TEST_NAME 's-hladsa' ; [Presence] bcs this is typically a qualitative identification test and no values are provided ; in Serum bcs TEST_NAME prefix 's-'. This concept is the most complete match for Donor-Specific Antibodies (DSA).",
       "certainty": "high"
     },
     {
-      "row_id": 1155,
-      "omop_concept_id": "3040359",
-      "omop_concept_name": "Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus NL63 from `kvnl63` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
+      "row_id": 1078,
+      "omop_concept_id": "3026610",
+      "omop_concept_name": "Fish IgE Ab [Units/volume] in Serum",
+      "reasoning": "Fish IgE Ab bcs TEST_NAME 's-kalatue' where 'kala' is fish and 'e' is IgE ; in Serum bcs TEST_NAME prefix 's-'. No values provided, so test may be qualitative, but no qualitative candidate is available. Mapping to quantitative concept.",
+      "certainty": "low"
     },
     {
-      "row_id": 1156,
-      "omop_concept_id": "3038546",
-      "omop_concept_name": "Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Human coronavirus OC43 from `kvoc43` abbreviation ; [Presence] from `-nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `-nho` (nukleiinihappo)",
-      "certainty": "high"
+      "row_id": 1079,
+      "omop_concept_id": "3014133",
+      "omop_concept_name": "Dog dander IgE Ab [Units/volume] in Serum",
+      "reasoning": "Dog dander IgE Ab bcs TEST_NAME 's-kolaige' is likely a typo for 's-koiraige' (koira=dog, e=IgE) ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "medium"
     },
     {
-      "row_id": 1157,
+      "row_id": 1080,
+      "omop_concept_id": "3965996",
+      "omop_concept_name": "Dog dander IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
+      "reasoning": "Dog dander IgE Ab bcs TEST_NAME 's-kolaige' is likely a typo for 's-koiraige' (koira=dog, e=IgE) ; [Presence] bcs no unit or values given and 100% missing suggests a qualitative test ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1081,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `li-baktnho` specifies a test for bacterial nucleic acid in a cerebrospinal fluid (`li-`) specimen. No candidate concept for this specific combination exists. The available candidates are for specific bacteria in CSF (e.g., E. coli, Listeria), not a general bacterial screen.",
+      "reasoning": "The TEST_NAME 's-kudosab' translates to 'tissue antibodies', which is too generic to map to a specific LOINC concept without more information.",
       "certainty": ""
     },
     {
-      "row_id": 1158,
+      "row_id": 1082,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code `resbaktnho` indicates a test for bacterial nucleic acid in a respiratory specimen (`res`). No candidate concept for this specific combination is available in the provided list. Mapping to a generic specimen concept would be inaccurate.",
+      "reasoning": "The TEST_NAME 's-ngmuut' is uninterpretable. 'muut' means 'other', but 'ng' is not a clear abbreviation for an analyte.",
       "certainty": ""
     },
     {
-      "row_id": 1159,
-      "omop_concept_id": "3015822",
-      "omop_concept_name": "Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection",
-      "reasoning": "Parvovirus B19 from `parv` and LongName ; [Presence] from `-nho` (kval) ; in Serum from `S-` prefix and LongName ; by NAA with probe detection from `-nho` (nukleiinihappo)",
+      "row_id": 1083,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The component is Aldosterone ('aldos') in Serum ('s-'), but the values in pmol/l are several orders of magnitude higher than any physiological or post-challenge level. The prefix 'o' is also unexplained. The data is likely erroneous or refers to a test not represented by the candidates.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1084,
+      "omop_concept_id": "3040370",
+      "omop_concept_name": "OLANZapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Olanzapine bcs TEST_NAME 's-olants' and LongName 'S -Olantsapiini' ; [Moles/volume] bcs UNIT is 'nmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
     },
     {
-      "row_id": 1160,
-      "omop_concept_id": "3032674",
-      "omop_concept_name": "Salmonella sp DNA [Presence] in Specimen by NAA with probe detection",
-      "reasoning": "Salmonella sp from `salm` abbreviation ; [Presence] from `nho` (kval) ; in Specimen bcs no specimen is specified ; by NAA with probe detection from `nho` (nukleiinihappo)",
+      "row_id": 1085,
+      "omop_concept_id": "3040370",
+      "omop_concept_name": "OLANZapine [Moles/volume] in Serum or Plasma",
+      "reasoning": "Olanzapine bcs TEST_NAME 's-olants' and LongName 'S -Olantsapiini' ; [Moles/volume] bcs values are consistent with nmol/l ; in Serum bcs TEST_NAME prefix 's-'",
       "certainty": "high"
+    },
+    {
+      "row_id": 1086,
+      "omop_concept_id": "3000998",
+      "omop_concept_name": "Ovalbumin IgE Ab [Units/volume] in Serum",
+      "reasoning": "Ovalbumin IgE Ab bcs TEST_NAME 's-ovalbue' ('ovalbu'=ovalbumin, 'e'=IgE) ; [Units/volume] bcs UNIT is 'u/ml' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1087,
+      "omop_concept_id": "3965168",
+      "omop_concept_name": "Ovalbumin IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",
+      "reasoning": "Ovalbumin IgE Ab bcs TEST_NAME 's-ovalbue' ('ovalbu'=ovalbumin, 'e'=IgE) ; [Presence] bcs no unit or values given and 100% missing suggests a qualitative test ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1088,
+      "omop_concept_id": "3017950",
+      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
+      "reasoning": "Salicylates bcs TEST_NAME 's-salis' and LongName 'S -Salisylaatit' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1089,
+      "omop_concept_id": "3017950",
+      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
+      "reasoning": "Salicylates bcs TEST_NAME 's-salis' and LongName 'S -Salisylaatit' ; [Moles/volume] bcs UNIT is 'umol/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1090,
+      "omop_concept_id": "3017950",
+      "omop_concept_name": "Salicylates [Moles/volume] in Serum or Plasma",
+      "reasoning": "Salicylates bcs TEST_NAME 's-salis' and LongName 'S -Salisylaatit' ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1091,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME 's-scl-t' most likely refers to Scl-70 antibody (anti-topoisomerase I), a marker for scleroderma. However, no candidate for Scl-70 Ab or Topoisomerase I Ab was present in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1092,
+      "omop_concept_id": "44816654",
+      "omop_concept_name": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum",
+      "reasoning": "Soluble fms-like tyrosine kinase-1 bcs TEST_NAME 's-sfit1' and LongName confirms ('Endoteelikasvutekijän liukoinen reseptori') ; [Mass/volume] bcs UNIT is 'ng/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1093,
+      "omop_concept_id": "44816654",
+      "omop_concept_name": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum",
+      "reasoning": "Soluble fms-like tyrosine kinase-1 bcs TEST_NAME 's-sflt-1' is a standard abbreviation for the analyte ; [Mass/volume] bcs UNIT is 'ng/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1094,
+      "omop_concept_id": "1617569",
+      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol.in LDL.small dense bcs TEST_NAME 's-sldl' (small dense LDL) ; [Moles/volume] bcs UNIT is 'mmol/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1095,
+      "omop_concept_id": "1617569",
+      "omop_concept_name": "Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma",
+      "reasoning": "Cholesterol.in LDL.small dense bcs TEST_NAME 's-sldl' (small dense LDL) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1096,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-suoli' ('suoli'=intestinal) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1097,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-suoli' ('suoli'=intestinal) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1098,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-suolist' ('suolist'=intestine) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1099,
+      "omop_concept_id": "3020013",
+      "omop_concept_name": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma",
+      "reasoning": "Alkaline phosphatase.intestinal bcs TEST_NAME 's-suolist' ('suolist'=intestine) ; in Serum bcs TEST_NAME prefix 's-' ; no quantity stated",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1100,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The component is Aldosterone ('aldos') in Serum ('s-'), but the values in pmol/l are several orders of magnitude higher than any physiological range. The prefix 'v' is also unexplained and contradicts the serum specimen. The data is uninterpretable.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1101,
+      "omop_concept_id": "36305075",
+      "omop_concept_name": "Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Vedolizumab bcs TEST_NAME 's-vedol' and LongName 'S -Vedolitsumabi' ; [Mass/volume] bcs UNIT is 'mg/l' and values are consistent ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1102,
+      "omop_concept_id": "36305075",
+      "omop_concept_name": "Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay",
+      "reasoning": "Vedolizumab bcs TEST_NAME 's-vedol' and LongName 'S -Vedolitsumabi' ; [Mass/volume] bcs values are consistent with mg/l ; in Serum bcs TEST_NAME prefix 's-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1103,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME 'saline' does not refer to a laboratory test on a patient specimen but likely to the administration of saline solution. It is not a mappable lab concept.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1104,
+      "omop_concept_id": "3012133",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Body fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'se-amyl' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Body fluid bcs TEST_NAME prefix 'se-' means Secretion, for which 'Body fluid' is the best available general concept.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1105,
+      "omop_concept_id": "3012133",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Body fluid",
+      "reasoning": "Amylase bcs TEST_NAME 'se-amyl' ; in Body fluid bcs TEST_NAME prefix 'se-' means Secretion, for which 'Body fluid' is the best available general concept ; no quantity stated",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1106,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The TEST_NAME 'sp-suld' has a prefix 'sp-' for Sperm/semen, but the analyte 'suld' is uninterpretable. Cannot map without knowing the component.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1107,
+      "omop_concept_id": "3017315",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Urine",
+      "reasoning": "Amylase bcs TEST_NAME 'u-amyl' and LongName 'U -Amylaasi' ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Urine bcs TEST_NAME prefix 'u-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1108,
+      "omop_concept_id": "3017315",
+      "omop_concept_name": "Amylase [Enzymatic activity/volume] in Urine",
+      "reasoning": "Amylase bcs TEST_NAME 'u-amyl' and LongName 'U -Amylaasi' ; [Enzymatic activity/volume] bcs values are consistent with u/l ; in Urine bcs TEST_NAME prefix 'u-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1109,
+      "omop_concept_id": "3019396",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 'u-amylp' and LongName '...haimaperäinen' (pancreas-derived) ; [Enzymatic activity/volume] bcs UNIT is 'u/l' and values are consistent ; in Urine bcs TEST_NAME prefix 'u-'",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1110,
+      "omop_concept_id": "3019396",
+      "omop_concept_name": "Amylase.pancreatic [Enzymatic activity/volume] in Urine",
+      "reasoning": "Amylase.pancreatic bcs TEST_NAME 'u-amylp' and LongName '...haimaperäinen' (pancreas-derived) ; in Urine bcs TEST_NAME prefix 'u-' ; no quantity stated",
+      "certainty": "medium"
     }
   ],
-  "reflection": "This group consisted entirely of qualitative nucleic acid amplification tests, identifiable by the `-nho` suffix. Most local codes were clear and had direct mappings in the candidate list, especially for specific pathogens with an unspecified specimen, or with a common specimen like Serum or Stool. The coronavirus tests (229E, HKU1, NL63, OC43) were particularly straightforward.\n\nThe main difficulty was the absence of certain concepts in the candidate list. Specifically, several general tests for 'Bacteria' combined with specific specimens (Respiratory, Stool, CSF) could not be mapped (rows 1144, 1149, 1157, 1158). Similarly, a concept for Sapovirus in Stool was missing (row 1152), and a combined Bordetella pertussis+parapertussis concept was absent (row 1141), forcing a fallback to a less specific `Bordetella sp` concept. This suggests the search for candidates might be improved by including more combinations of common analytes and common specimens, even if they don't exactly match the initial `loinc_name_guess`."
+  "reflection": "This group was mostly straightforward, covering common chemistry tests like amylase, alkaline phosphatase, albumin, and aldosterone. The Finnish naming system with prefixes for specimen (S-, P-, dU-, as-, pf-) and suffixes for qualifiers (-p, -m, -luu, -p, -s) was very consistent and helpful for mapping.\n\nMost rows could be mapped with high confidence, especially those with units and values that confirmed the property. Where units/values were missing, mappings were made with lower certainty based on the name alone.\n\nA few rows were unmappable:\n- Rows with uninterpretable names (`s-kudosab`, `s-ngmuut`, `sp-suld`).\n- Rows with nonsensical values that contradicted the component and specimen, suggesting data errors (`s-oaldos`, `s-valdos`).\n- Rows where the component was clear but the required specific concept was missing from the candidate list (e.g., `s-scl-t` for Scl-70 Ab, `s-gliade` where Ig class was needed).\n- One row (`s-adaliab`) was likely qualitative, but a `[Presence]` candidate was not available, preventing a confident mapping.\n- `saline` was correctly identified as not a lab test.\n\nThe candidate list was generally very good and comprehensive for this group. The main limitation was the lack of a few specific antibody tests (Scl-70, qualitative Adalimumab Ab)."
 }

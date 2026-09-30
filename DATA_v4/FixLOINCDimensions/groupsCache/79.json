@@ -1,383 +1,1160 @@
 {
   "rows": [
     {
+      "row_id": 1111,
+      "omop_concept_id": "3014305",
+      "omop_concept_name": "Glucose [Presence] in Blood by Test strip",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs suffix is '-O' (qualitative) ; in Blood bcs prefix is 'B-' ; by Test strip is a reasonable assumption for a qualitative test, though not explicit.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1112,
+      "omop_concept_id": "3014305",
+      "omop_concept_name": "Glucose [Presence] in Blood by Test strip",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs suffix is '-O' (qualitative); the quantitative values are considered erroneous due to value_missing_p=100 ; in Blood bcs prefix is 'B-' ; by Test strip is a reasonable assumption for a qualitative test.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1113,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Blood bcs prefix is 'B-'. Suffix '-pi' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1114,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Blood bcs prefix is 'B-'. Suffix '-pi' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1115,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Blood bcs prefix is 'B-'. Suffix '-pt' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1116,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Blood bcs prefix is 'B-'. Suffix '-pt' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1117,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Blood bcs prefix is 'B-'. Suffix '-vt' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1118,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Blood bcs prefix is 'B-'. Suffix '-vt' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1119,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Blood bcs prefix is 'B-'. Suffix '/pi' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1120,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling rows with same TEST_NAME ; in Blood bcs prefix is 'B-'. Suffix '/pi' is local.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1121,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Blood bcs prefix is 'B-'. Suffix '/pik' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1122,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling rows with similar TEST_NAMEs ; in Blood bcs prefix is 'B-'. Suffix '/tt' is local.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1123,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Blood bcs prefix is 'B-'. Suffix 'hoi' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1124,
+      "omop_concept_id": "3020491",
+      "omop_concept_name": "Glucose [Moles/volume] in Blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Blood bcs prefix is 'B-'. Suffix 'hoi' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1125,
+      "omop_concept_id": "3040151",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Capillary blood bcs prefix is 'cb-'. Suffix '-0' is likely local and not a timing.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1126,
+      "omop_concept_id": "3040151",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling rows ; in Capillary blood bcs prefix is 'cb-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1127,
+      "omop_concept_id": "3040151",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Capillary blood bcs prefix is 'cb-'. Suffix '-v' (free) is redundant for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1128,
+      "omop_concept_id": "3040151",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Capillary blood bcs prefix is 'cb-'. Suffix '-vt' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1129,
+      "omop_concept_id": "3040151",
+      "omop_concept_name": "Glucose [Moles/volume] in Capillary blood",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling rows ; in Capillary blood bcs prefix is 'cb-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1130,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'glucos' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default specimen for routine chemistry and the guess suggests it; the 'cfp' prefix is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1131,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'glucos' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs it is the default specimen for routine chemistry and the guess suggests it; the 'cfp' prefix is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1132,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'glucos' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default specimen for routine chemistry and the guess suggests it; the 'cp' prefix is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1133,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'glucos' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs it is the default specimen for routine chemistry and the guess suggests it; the 'cp' prefix is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1134,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-hy' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1135,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-hy' is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1136,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-lb' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1137,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-lb' is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1138,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `cp-gluk-o` indicates a qualitative glucose test in plasma (`cp-` prefix, `-o` suffix), but there is no candidate concept for `Glucose [Presence] in Serum or Plasma` in the provided list.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1139,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-po' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1140,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix '-po' is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1141,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix 'paa' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1142,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix 'paa' is local.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1143,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs 'cp' is likely a local code for plasma. Suffix 'pot' is local.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1144,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1145,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1146,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and '-0h' indicates a baseline sample which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1147,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and '-0h' indicates a baseline sample which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1148,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma ; timing is 1 hour post dose bcs suffix is '-1'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1149,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma ; timing is 2 hours post dose bcs suffix is '-2'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1150,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma ; timing is 2 hours post dose bcs suffix is '-2'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1151,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1152,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from code, ignoring erroneous 'mmol/mol' unit ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1153,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `fp-gluk-o` indicates a qualitative fasting glucose test in plasma (`fp-` prefix, `-o` suffix). The candidate list does not contain a concept for `Fasting glucose [Presence] in Serum or Plasma`.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1154,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `fp-gluk-o` indicates a qualitative fasting glucose test in plasma (`fp-` prefix, `-o` suffix). The candidate list does not contain a concept for `Fasting glucose [Presence] in Serum or Plasma`.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1155,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1156,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1157,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1158,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1159,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and '/0' indicates a baseline sample which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1160,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and '/0' indicates a baseline sample which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "medium"
+    },
+    {
       "row_id": 1161,
-      "omop_concept_id": "3050449",
-      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME and LongName ; [Mass/time] bcs UNIT is 'ug/min' ; in Urine collected for unspecified duration bcs 'cU-' prefix means 'Collected urine' ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1162,
-      "omop_concept_id": "3050449",
-      "omop_concept_name": "Albumin [Mass/time] in Urine collected for unspecified duration",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME and LongName ; [Mass/time] bcs deciles are consistent with ug/min, as seen in sibling row ; in Urine collected for unspecified duration bcs 'cU-' prefix means 'Collected urine' ; method not specified",
-      "certainty": "medium"
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'gluk0' indicates a baseline sample which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
     },
     {
       "row_id": 1163,
-      "omop_concept_id": "3043771",
-      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
-      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] in 12 hour Urine bcs UNIT is 'mg/12h' and 'nU-' prefix means night urine, typically an overnight collection ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'gluk0' indicates a baseline sample which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1164,
-      "omop_concept_id": "3043771",
-      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
-      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] bcs UNIT is 'ug/min' ; in 12 hour Urine bcs 'nU-' prefix means night urine, which corresponds to a timed, typically 12-hour, collection ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1165,
-      "omop_concept_id": "3043771",
-      "omop_concept_name": "Microalbumin [Mass/time] in 12 hour Urine",
-      "reasoning": "Microalbumin bcs 'alb-mi' in TEST_NAME and 'mikroalbuminuria' in LongName ; [Mass/time] in 12 hour Urine bcs 'nU-' prefix implies a timed collection for which Mass/time is the appropriate property ; method not specified",
-      "certainty": "low"
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'glukr0' indicates a baseline sample for a challenge test ('r') which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "high"
     },
     {
       "row_id": 1166,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for it ; in Urine bcs 'nU-' prefix means Urine ; method not specified. Using Microalbumin concept as it's the Top 2000 target for this test.",
-      "certainty": "high"
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'glukr0' indicates a baseline sample for a challenge test ('r') which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
+      "certainty": "medium"
     },
     {
       "row_id": 1167,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' unit and this is the Top 2000 concept ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
-      "certainty": "medium"
-    },
-    {
-      "row_id": 1168,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for it ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'glukr0h' indicates a baseline sample for a challenge test ('r') which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
       "certainty": "high"
     },
     {
-      "row_id": 1169,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' unit and this is the Top 2000 concept ; in Urine bcs 'nU-' prefix means Urine ; method not specified",
+      "row_id": 1168,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs prefix 'fp-' means Fasting plasma, and 'glukr0h' indicates a baseline sample for a challenge test ('r') which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'fp-' means Fasting plasma.",
       "certainty": "medium"
     },
     {
+      "row_id": 1169,
+      "omop_concept_id": "3023436",
+      "omop_concept_name": "Glucagon [Mass/volume] in Serum or Plasma",
+      "reasoning": "Glucagon bcs TEST_NAME is 'p-glkg' and LongName is 'P -Glukagoni' ; [Mass/volume] bcs UNIT is 'ng/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-' (Plasma).",
+      "certainty": "high"
+    },
+    {
       "row_id": 1170,
-      "omop_concept_id": "3051409",
-      "omop_concept_name": "Alpha-1-Microglobulin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Alpha-1-Microglobulin/Creatinine bcs 'a1mikre' in TEST_NAME ; [Mass Ratio] bcs this is the standard property for this ratio ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3023436",
+      "omop_concept_name": "Glucagon [Mass/volume] in Serum or Plasma",
+      "reasoning": "Glucagon bcs TEST_NAME is 'p-glkg' and LongName is 'P -Glukagoni' ; [Mass/volume] inferred from sibling row ; in Serum or Plasma bcs prefix is 'P-' (Plasma).",
       "certainty": "high"
     },
     {
       "row_id": 1171,
-      "omop_concept_id": "3025987",
-      "omop_concept_name": "Albumin [Presence] in Urine",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Presence] bcs '-0' suffix suggests a qualitative or screening test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "medium"
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '/0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
+      "certainty": "high"
     },
     {
       "row_id": 1172,
-      "omop_concept_id": "3012516",
-      "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Mass/volume] bcs UNIT is 'mg/l' ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1173,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alb-lb' indicates albumin in urine, but with no unit or values, the property (e.g., mass concentration, presence) cannot be determined.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1174,
-      "omop_concept_id": "3012516",
-      "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME (the '-mi' for micro indicates clinical context, not a different analyte) ; [Mass/volume] bcs UNIT is 'mg/l' ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1175,
-      "omop_concept_id": "3012516",
-      "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "reasoning": "Albumin bcs 'alb' in TEST_NAME ; [Mass/volume] bcs deciles are consistent with 'mg/l' as seen in sibling row ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '/0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
       "certainty": "medium"
     },
     {
-      "row_id": 1176,
-      "omop_concept_id": "3025987",
-      "omop_concept_name": "Albumin [Presence] in Urine",
-      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "row_id": 1173,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'glu' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '/1h'.",
       "certainty": "high"
     },
     {
+      "row_id": 1174,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'glu' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '/1h'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1175,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'glu' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1176,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'glu' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/2h'.",
+      "certainty": "medium"
+    },
+    {
       "row_id": 1177,
-      "omop_concept_id": "3025987",
-      "omop_concept_name": "Albumin [Presence] in Urine",
-      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test, and values are all 0 ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3008799",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'glu' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 30 minutes post dose bcs suffix is '/30m'.",
       "certainty": "high"
     },
     {
       "row_id": 1178,
-      "omop_concept_id": "3025987",
-      "omop_concept_name": "Albumin [Presence] in Urine",
-      "reasoning": "Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test, and values are all 0 ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
       "certainty": "high"
     },
     {
       "row_id": 1179,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'alb/kre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1180,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'alb/kre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "high"
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
+      "certainty": "medium"
     },
     {
       "row_id": 1181,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alb/kre' indicates albumin/creatinine ratio in urine, but with no unit or values, the property (Mass Ratio vs Molar Ratio) cannot be confirmed.",
-      "certainty": ""
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
+      "certainty": "high"
     },
     {
       "row_id": 1182,
-      "omop_concept_id": "3012516",
-      "omop_concept_name": "Albumin [Mass/volume] in Urine",
-      "reasoning": "Albumin bcs 'u-alb' in TEST_NAME specifies the albumin component ; [Mass/volume] bcs decile values are consistent with albumin in mg/L ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
       "certainty": "medium"
     },
     {
       "row_id": 1183,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'u-alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '-1h'.",
       "certainty": "high"
     },
     {
       "row_id": 1184,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alb/kre,u-alb/krea' indicates albumin/creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
-      "certainty": ""
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '-1h'.",
+      "certainty": "high"
     },
     {
       "row_id": 1185,
-      "omop_concept_id": "3009508",
-      "omop_concept_name": "Creatinine [Moles/volume] in Urine",
-      "reasoning": "Creatinine bcs 'u-krea' in TEST_NAME ; [Moles/volume] bcs decile values [3.67-12.92] are typical for urine creatinine in mmol/L ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '-1t' ('t' for tunti/hour).",
       "certainty": "high"
     },
     {
       "row_id": 1186,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "high"
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '-1t' ('t' for tunti/hour).",
+      "certainty": "medium"
     },
     {
       "row_id": 1187,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'alb/krea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
       "certainty": "high"
     },
     {
       "row_id": 1188,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alb/krea' indicates albumin/creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
-      "certainty": ""
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
     },
     {
       "row_id": 1189,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'g/mol' is equivalent to 'mg/mmol', a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '-2t' ('t' for tunti/hour).",
       "certainty": "high"
     },
     {
       "row_id": 1190,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
-      "certainty": "high"
-    },
-    {
-      "row_id": 1191,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkre' in TEST_NAME and 'Albumiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '-2t' ('t' for tunti/hour).",
       "certainty": "medium"
     },
     {
+      "row_id": 1191,
+      "omop_concept_id": "3012413",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post meal bcs suffix '-a2' likely means 'aterian jälkeen 2h' (after meal 2h).",
+      "certainty": "high"
+    },
+    {
       "row_id": 1192,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3012413",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post meal bcs suffix '-a2' likely means 'aterian jälkeen 2h' (after meal 2h).",
       "certainty": "high"
     },
     {
       "row_id": 1193,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The UNIT 'mg/mmol/l' is invalid and there are no values, so the property cannot be determined.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1194,
-      "omop_concept_id": "3001802",
-      "omop_concept_name": "Microalbumin/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Albumin/Creatinine bcs 'albkrea' in TEST_NAME ; [Mass Ratio] bcs deciles are consistent with 'mg/mmol' and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent, indicating the '-O' (qualitative) suffix is used incorrectly ; in Serum or Plasma bcs prefix is 'P-'.",
       "certainty": "medium"
     },
     {
+      "row_id": 1194,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code `p-gluk-o` indicates a qualitative glucose test in plasma (`p-` prefix, `-o` suffix). The candidate list does not contain a concept for `Glucose [Presence] in Serum or Plasma`.",
+      "certainty": ""
+    },
+    {
       "row_id": 1195,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alvhu4a' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1196,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alvhu5b' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1197,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-alvhu6a' is uninterpretable and appears to be a local or nonsensical code. There is no LongName, unit, or values to provide further clues.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1198,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-cakre' identifies Calcium/Creatinine ratio in urine, but without a unit or values, the property (Mass Ratio vs Molar Ratio) cannot be determined.",
-      "certainty": ""
-    },
-    {
-      "row_id": 1199,
-      "omop_concept_id": "3015736",
-      "omop_concept_name": "pH of Urine",
-      "reasoning": "pH bcs 'happamuus' in TEST_NAME means 'acidity' ; of Urine bcs 'U-' prefix means Urine. Deciles [6.5-8] confirm pH values.",
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
       "certainty": "high"
     },
     {
+      "row_id": 1196,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1197,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1198,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1199,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row 1200, ignoring incorrect UNIT '1' ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "medium"
+    },
+    {
       "row_id": 1200,
-      "omop_concept_id": "3001582",
-      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Protein/Creatinine bcs 'prokre' in TEST_NAME and 'Proteiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'g/mol' is a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
       "certainty": "high"
     },
     {
       "row_id": 1201,
-      "omop_concept_id": "3001582",
-      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Protein/Creatinine bcs 'prokre' in TEST_NAME and 'Proteiinin ja kreatiniinin suhde' in LongName ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property, and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
       "certainty": "high"
     },
     {
       "row_id": 1202,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-prokre' indicates Protein/Creatinine ratio in urine, but with no unit or values, the property (Mass Ratio vs Molar Ratio) cannot be confirmed.",
-      "certainty": ""
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "medium"
     },
     {
       "row_id": 1203,
-      "omop_concept_id": "3001582",
-      "omop_concept_name": "Protein/Creatinine [Mass Ratio] in Urine",
-      "reasoning": "Protein/Creatinine bcs 'protkre' in TEST_NAME ; [Mass Ratio] bcs UNIT 'mg/mmol' is a standard unit for this property and this is the Top 2000 concept for the test ; in Urine bcs 'U-' prefix means Urine ; method not specified",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/120' (minutes).",
       "certainty": "high"
     },
     {
       "row_id": 1204,
-      "omop_concept_id": "",
-      "omop_concept_name": "",
-      "reasoning": "The code 'u-protkre' indicates Protein/Creatinine ratio in urine, but with no unit or values, the property cannot be confirmed.",
-      "certainty": ""
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/120' (minutes).",
+      "certainty": "medium"
     },
     {
       "row_id": 1205,
-      "omop_concept_id": "3004562",
-      "omop_concept_name": "Bacteria [Presence] in Urine sediment by Light microscopy",
-      "reasoning": "Bacteria bcs 'bakt' in TEST_NAME ; [Presence] bcs this is a qualitative microscopy finding ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Light microscopy bcs 'sakka' implies microscopy and this is the Top 2000 concept",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/2h'.",
       "certainty": "high"
     },
     {
       "row_id": 1206,
-      "omop_concept_id": "3010189",
-      "omop_concept_name": "Epithelial cells [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Epithelial cells bcs 'epit' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
-      "certainty": "high"
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '/2h'.",
+      "certainty": "medium"
     },
     {
       "row_id": 1207,
-      "omop_concept_id": "3035124",
-      "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Erythrocytes bcs 'eryt' in TEST_NAME ; [#/area] bcs UNIT is 'u/field' ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1208,
-      "omop_concept_id": "3035124",
-      "omop_concept_name": "Erythrocytes [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Erythrocytes bcs 'eryt' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '0' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
       "certainty": "high"
     },
     {
       "row_id": 1209,
-      "omop_concept_id": "3035583",
-      "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Leukocytes bcs 'leuk' in TEST_NAME ; [#/area] bcs UNIT is 'u/field' ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '120' (minutes).",
       "certainty": "high"
     },
     {
       "row_id": 1210,
-      "omop_concept_id": "3035583",
-      "omop_concept_name": "Leukocytes [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Leukocytes bcs 'leuk' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
-      "certainty": "high"
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '120' (minutes).",
+      "certainty": "medium"
     },
     {
       "row_id": 1211,
-      "omop_concept_id": "3009292",
-      "omop_concept_name": "Casts [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Casts bcs 'lier' in TEST_NAME is lieriö (cast) ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy and this is the standard Top 2000 concept",
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '1h'.",
       "certainty": "high"
     },
     {
       "row_id": 1212,
-      "omop_concept_id": "43055190",
-      "omop_concept_name": "Macrophages [#/area] in Urine sediment by Microscopy high power field",
-      "reasoning": "Macrophages bcs 'makrof' in TEST_NAME ; [#/area] bcs this is a count per field ; in Urine sediment bcs 'U-sakka' in TEST_NAME means urine sediment ; by Microscopy high power field bcs 'sakka' implies microscopy",
-      "certainty": "high"
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '1h'.",
+      "certainty": "medium"
     },
     {
       "row_id": 1213,
-      "omop_concept_id": "3038224",
-      "omop_concept_name": "Microscopic observation [Identifier] in Urine sediment by Light microscopy",
-      "reasoning": "Microscopic observation bcs 'muuta' means 'other', a catch-all for various findings ; [Identifier] bcs this is a nominal result ; in Urine sediment bcs 'U-sakka' means urine sediment ; by Light microscopy bcs 'sakka' implies microscopy and this is the Top 2000 concept for general microscopic findings",
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '2h'.",
       "certainty": "high"
     },
     {
       "row_id": 1214,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is a typo 'mmoll/l' for mmol/l and values are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1215,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is '2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1216,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '60' (minutes).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1217,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is '60' (minutes).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1218,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1219,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1220,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1221,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1222,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'. Suffix 'pik' could mean rapid but there is no specific candidate for that.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1223,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1224,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix is 'P-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1225,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix 'r0h' indicates a baseline sample for a challenge test ('r'), which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1226,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is 'r1h' (challenge 'r' + 1 hour).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1227,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 1 hour post dose bcs suffix is 'r1h' (challenge 'r' + 1 hour).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1228,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is 'r2h' (challenge 'r' + 2 hours).",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1229,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs prefix 'P-' means Plasma ; timing is 2 hours post dose bcs suffix is 'r2h' (challenge 'r' + 2 hours).",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1230,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix ',0' indicates a baseline sample for a test protocol ('Pt-'), which is taken fasting ; [Moles/volume] is inferred as no unit/values are present ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1231,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0' indicates a baseline sample for a test protocol ('Pt-'), which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1232,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0' indicates a baseline sample for a test protocol ('Pt-'), which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1233,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a test protocol ('Pt-'), which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1234,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a test protocol ('Pt-'), which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1235,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default for a GTT result ; timing is 1 hour post dose bcs suffix is '-1h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1236,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] inferred from sibling row ; in Serum or Plasma bcs it is the default for a GTT result ; timing is 1 hour post dose bcs suffix is '-1h'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1237,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default for a GTT result ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1238,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs it is the default for a GTT result ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1239,
+      "omop_concept_id": "3008799",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs it is the default for a GTT result ; timing is 30 minutes post dose bcs suffix is '-30'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1240,
       "omop_concept_id": "",
       "omop_concept_name": "",
-      "reasoning": "The code 'u-solut,muut' means 'other cells in urine'. It is ambiguous whether this is from sediment or uncentrifuged urine, and 'other' is not a specific cell type. No candidate fits this well.",
+      "reasoning": "This code, Pt-gluk-r, represents a generic glucose challenge test panel ('r' for rasitus/challenge). Without knowing the duration (e.g., 2 hours, 3 hours), it cannot be mapped to a specific LOINC panel concept.",
       "certainty": ""
+    },
+    {
+      "row_id": 1241,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME is 'pt-gluk-r1' and LongName specifies 'Glukoosi-koe, oraalinen, lyhyt' (short oral glucose test) ; 2 hours is the standard duration for a 'short' GTT ; in Serum or Plasma is the standard specimen for GTT panels.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1242,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME is 'pt-gluk-r1' and LongName specifies 'Glukoosi-koe, oraalinen, lyhyt' (short oral glucose test) ; 2 hours is the standard duration for a 'short' GTT ; in Serum or Plasma is the standard specimen for GTT panels. The mmol/l result is one component of the panel.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1243,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME is 'pt-gluk-r1' and LongName specifies 'Glukoosi-koe, oraalinen, lyhyt' (short oral glucose test) ; 2 hours is the standard duration for a 'short' GTT ; in Serum or Plasma is the standard specimen for GTT panels.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1244,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This code, Pt-gluk-r2, is for a 'long' oral glucose test panel ('pitkä'). The duration is not specified, so it's ambiguous whether this corresponds to a 3, 4, or 5-hour panel.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1245,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This code, Pt-gluk-r2, is for a 'long' oral glucose test panel ('pitkä'). The duration is not specified, so it's ambiguous whether this corresponds to a 3, 4, or 5-hour panel.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1246,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This code, pt-gluk-r2,tk, is for a 'long' oral glucose test panel. The duration is not specified, so it's ambiguous whether this corresponds to a 3, 4, or 5-hour panel.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1247,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "This code, Pt-gluk-r4, is for a glucose test for hypoglycemia. This often involves a long (e.g., 5-hour) GTT, but the exact panel is not specified and 'Glucose tolerance test for hypoglycemia panel' is not a candidate.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1248,
+      "omop_concept_id": "3965035",
+      "omop_concept_name": "Somatotropin and glucose post glucose stimulation panel - Serum or Plasma",
+      "reasoning": "Panel for Somatotropin and Glucose bcs LongName is 'Pt-Glukoosi-koe, kasvuhormoni' (glucose test, growth hormone), which describes a GH suppression test using glucose load ; in Serum or Plasma is the standard specimen.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1249,
+      "omop_concept_id": "21492888",
+      "omop_concept_name": "Glucose tolerance 2 hours gestational panel - Serum or Plasma",
+      "reasoning": "Gestational GTT panel bcs LongName is 'Glukoosi-koe, oraalinen, raskaudenaikainen' (oral glucose test, during pregnancy) ; 2 hours is the standard duration for gestational GTT in Finland ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1250,
+      "omop_concept_id": "21492888",
+      "omop_concept_name": "Glucose tolerance 2 hours gestational panel - Serum or Plasma",
+      "reasoning": "Gestational GTT panel bcs LongName is 'Glukoosi-koe, oraalinen, raskaudenaikainen' (oral glucose test, during pregnancy) ; 2 hours is the standard duration for gestational GTT in Finland ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1251,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code Pt-gluk-r8 is for a glucose challenge test panel, but the specific type or duration is unknown.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1252,
+      "omop_concept_id": "21492888",
+      "omop_concept_name": "Glucose tolerance 2 hours gestational panel - Serum or Plasma",
+      "reasoning": "Gestational GTT panel bcs TEST_NAME 'pt-gluk-rg' where 'rg' likely stands for 'raskaus, glukoosi' (pregnancy, glucose) ; 2 hours is the standard duration for gestational GTT in Finland ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1253,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code Pt-gluk-sd is for a glucose challenge test panel, but the specific type or duration indicated by 'sd' is unknown.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1254,
+      "omop_concept_id": "3013826",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Glucose bcs TEST_NAME has 'glukoos' ; [Moles/volume] is inferred as no unit/values present ; in Serum or Plasma bcs it is the default for a random glucose measurement, even with a 'Pt-' prefix.",
+      "certainty": "low"
+    },
+    {
+      "row_id": 1255,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix 'r-0' indicates a baseline sample for a test protocol ('Pt-', 'r'), which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs it is the default for glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1256,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME 'pt-glukr1p' indicates a short GTT ('r1' is 'rasitus 1', short test) ; 2 hours is the standard duration ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1257,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME 'pt-glukr1v' indicates a short GTT ('r1' is 'rasitus 1', short test) ; 2 hours is the standard duration ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1258,
+      "omop_concept_id": "43054914",
+      "omop_concept_name": "Glucose tolerance 2 hours panel - Serum or Plasma",
+      "reasoning": "Glucose tolerance panel bcs TEST_NAME 'pt-glukr2h' indicates a 2-hour GTT ; in Serum or Plasma is the standard specimen.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1259,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code pt-glur3-g likely refers to a component of a 3-hour glucose tolerance test, but it is ambiguous whether it's the panel or a single result, and what 'g' refers to.",
+      "certainty": ""
+    },
+    {
+      "row_id": 1260,
+      "omop_concept_id": "",
+      "omop_concept_name": "",
+      "reasoning": "The code pt-glur3-i likely refers to a component of a 3-hour glucose tolerance test, but it is ambiguous whether it's the panel or a single result, and what 'i' refers to (perhaps insulin).",
+      "certainty": ""
+    },
+    {
+      "row_id": 1261,
+      "omop_concept_id": "3020650",
+      "omop_concept_name": "Glucose [Presence] in Urine",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs value_deciles are all 0, indicating a qualitative result ; in Urine bcs prefix is 'U-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1262,
+      "omop_concept_id": "3005478",
+      "omop_concept_name": "Glucose [Mass/time] in 24 hour Urine",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Mass/time] bcs the values are too high for mmol/time and the guess suggests mass ; in 24 hour Urine bcs this is a common timed collection and the suffix 'de' might relate to 'day' or 'døgn'.",
+      "certainty": "medium"
+    },
+    {
+      "row_id": 1263,
+      "omop_concept_id": "3020650",
+      "omop_concept_name": "Glucose [Presence] in Urine",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs this is a qualitative test by convention ; in Urine bcs prefix is 'U-'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1264,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs LongName is 'U -Glukoosi' ; [Presence] bcs LongName ends in '(kval)' and suffix is '-O', and values are all 0 ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1265,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs LongName is 'U -Glukoosi' ; [Presence] bcs LongName ends in '(kval)' and suffix is '-O', and values are all 0 ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1266,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs LongName is 'U -Glukoosi' ; [Presence] bcs LongName ends in '(kval)' and suffix is '-O' ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1267,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs suffix is '-o' ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1268,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs this is implied by context of other U-Gluk-O tests ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1269,
+      "omop_concept_id": "3009261",
+      "omop_concept_name": "Glucose [Presence] in Urine by Test strip",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs this is implied by context of other U-Gluk-O tests ; in Urine bcs prefix is 'U-' ; by Test strip bcs this is the standard method for qualitative urine glucose.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1270,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'vp-' likely means venous plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1271,
+      "omop_concept_id": "3018251",
+      "omop_concept_name": "Fasting glucose [Moles/volume] in Serum or Plasma",
+      "reasoning": "Fasting glucose bcs suffix '-0h' indicates a baseline sample for a GTT, which is taken fasting ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs 'vp-' likely means venous plasma.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1272,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'vp-' likely means venous plasma ; timing is 1 hour post dose bcs suffix is '-1h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1273,
+      "omop_concept_id": "3015024",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs 'vp-' likely means venous plasma ; timing is 1 hour post dose bcs suffix is '-1h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1274,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs UNIT is 'mmol/l' and value_deciles are consistent ; in Serum or Plasma bcs 'vp-' likely means venous plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
+    },
+    {
+      "row_id": 1275,
+      "omop_concept_id": "3016701",
+      "omop_concept_name": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose",
+      "reasoning": "Glucose bcs TEST_NAME has 'gluk' ; [Moles/volume] bcs value_deciles are typical for mmol/l ; in Serum or Plasma bcs 'vp-' likely means venous plasma ; timing is 2 hours post dose bcs suffix is '-2h'.",
+      "certainty": "high"
     }
   ],
-  "reflection": "This group was mostly about urine chemistry, particularly albumin, creatinine, and their ratios, along with urine sediment microscopy. The mappings were generally straightforward.\n\nThe main challenge was deciding between `Albumin/Creatinine` and `Microalbumin/Creatinine` concepts for the various `u-albkre` codes. The Finnish codes themselves don't distinguish, but the test is clinically for microalbuminuria. I decided to standardize on the LOINC Top 2000 concept `3001802 (Microalbumin/Creatinine [Mass Ratio] in Urine)` for all quantitative ratios, as this seems to be the recommended practice for this common test, promoting consistency over a literal interpretation of the absence of 'micro' in the source code.\n\nTimed collections (`cU-`, `nU-`) were handled by selecting specific LOINC concepts where available (e.g., `12 hour Urine` for `nU-`).\n\nThe urine sediment (`U-sakka`) codes were very clear and mapped well to the standard Top 2000 LOINC concepts for microscopy findings (bacteria, erythrocytes, leukocytes, casts). The code `u-sakka,muuta` (other findings) was mapped to the generic `Microscopic observation` concept.\n\nA few codes (`u-alvhu...`) were uninterpretable gibberish and were left unmapped. Rows without sufficient evidence for the property (e.g., a ratio test with no unit or values) were also correctly left unmapped."
+  "reflection": "This was a large but relatively straightforward group focused on glucose measurements. The national codes were well-structured, allowing for clear identification of specimen (B-, P-, cB-, U-, fP-), timing in glucose tolerance tests (e.g., -1h, -2h, -120), and test type (e.g., Pt-gluk-r for panels). Most quantitative tests used mmol/l, aligning well with LOINC's `[Moles/volume]` property.\n\nThe main challenges were:\n1.  **Contradictory evidence for qualitative tests**: Several codes with the qualitative suffix `-O` (e.g., `b-gluk-o`, `p-gluk-o`) had quantitative units or values. For `b-gluk-o`, `value_missing_p` was 100%, suggesting the values/units were data errors, so I mapped based on the `-O` suffix. For `p-gluk-o` (1193), the values seemed real, so I mapped it as quantitative, treating the `-O` as a local coding error.\n2.  **Missing candidates**: The list lacked concepts for `Glucose [Presence] in Serum or Plasma` and `Fasting glucose [Presence] in Serum or Plasma`. This left rows like 1138, 1194, 1153, and 1154 unmapped.\n3.  **Ambiguous panels**: Several `Pt-gluk-r...` codes for glucose tolerance test panels were too generic (e.g., 'long test') or used unclear suffixes (e.g., `-r8`, `-sd`) to be confidently mapped to a specific duration (2h, 3h, etc.), so they were left unmapped.\n4.  **Baseline vs. Fasting**: I standardized on using the `Fasting glucose` concept (3018251) for all baseline (0h) samples in a GTT context, as this is the required patient state and it's a Top2000 concept, preferred over the more generic `--baseline` concept.\n\nOverall, the component (glucose, glucagon), specimen, property, and timing were usually clear from the combination of the Finnish code, units, and values."
 }

@@ -3,7 +3,7 @@ You are a LOINC mapping expert with deep knowledge of the Finnish national labor
 
 An earlier pass looked at each of these local Finnish lab codes and **guessed** the LOINC Long Common Name it thought the code should have. Those guesses are not real LOINC concepts — they are what a reader of the Finnish code would expect LOINC to call the test.
 
-**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `deciles`.** When the row's evidence and the guess disagree, the row wins.
+**Those guesses exist only to fetch the candidate list. They have already done their job, and they carry no authority over your decision.** The earlier pass was told to write a name whenever the code gave it anything at all to work with, because a near-miss still retrieves the right neighbourhood of concepts while silence retrieves nothing. So a guess may be a careful reading or a shot in the dark, and nothing marks which. Use it as a pointer to where in the vocabulary to look, never as an answer to confirm. **Decide from the row's own `TEST_NAME`, `LongName`, `UNIT` and `value_deciles`.** When the row's evidence and the guess disagree, the row wins.
 
 Your task: for each row, decide **which real OMOP concept the code actually maps to**, choosing from a list of genuine LOINC concepts retrieved for this group, and return that concept's `omop_concept_id`.
 
@@ -37,8 +37,8 @@ Finnish compounds run together: "transferriininrautakyllästeisyys" = transferri
 - `UNIT` — the recorded unit; may be empty, and may be wrong.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`.
 - `n` — number of records.
-- `p_missing` — percentage (0-100) of records with no numeric value.
-- `deciles` — the 9 deciles of observed values, when available.
+- `value_missing_p` — percentage (0-100) of records with no numeric value.
+- `value_deciles` — the 9 deciles of observed values, when available.
 - `LongName`, `prefix_meaning`, `suffix_meaning` — decoded from the national code table, when available.
 - `loinc_name_guess` — the earlier pass's guess, which is what the search was run on. A search query, not a hypothesis you owe any deference to: it was written under instructions to guess rather than stay silent, so its confidence is not calibrated and a fluent name may rest on very little. When it is a panel name, the earlier pass judged the code to order a bundle rather than report one result — check that against the code yourself.
 
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -69,7 +69,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 For each row:
 
-1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
+1. **Re-read the row's own evidence first** — `TEST_NAME`, `LongName`, `UNIT`, `value_deciles`, the prefix and suffix meanings. Decide what the test measures, in what specimen, reported as what kind of quantity. Do this before you look at the guess, so a wrong guess cannot anchor you.
 2. **Pick the candidate that matches that reading**, and return its `omop_concept_id`. The unit and the values decide between candidates that differ only in property: `mmol/l` takes `[Moles/volume]`, `g/l` takes `[Mass/volume]`, `U/l` takes `[Enzymatic activity/volume]`. The specimen comes from the name — a decoded prefix where there is one, a Finnish specimen word otherwise; LOINC's `Serum or Plasma` is the right term for most routine chemistry, and fasting is not part of the specimen (`fS` is still serum).
 3. **Precision must be earned by the name.** LOINC holds both a plain and a qualified concept for most tests. Take the **more precise** candidate whenever the row's name positively states the qualifier — `-Vi` really does say culture, `pikatesti` really does say a rapid test, `dU` really does say a 24-hour collection, `herkka` really does say high sensitivity. Take the plainer candidate when the name does not state it.
 
@@ -115,461 +115,413 @@ Here is group 43.
 
 | omop_concept_id | omop_concept_name | score | top2000 |
 |---|---|---|---|
-| 3004248 | Sex hormone binding globulin [Moles/volume] in Serum or Plasma | 1.000 | 681 |
-| 3005715 | Vancomycin [Mass/volume] in Serum or Plasma | 1.000 | 2009 |
-| 3009306 | Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma | 1.000 | 386 |
-| 3015916 | Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma | 1.000 |  |
-| 3018171 | Choriogonadotropin [Units/volume] in Serum or Plasma | 1.000 | 252 |
-| 3018308 | Bromide [Moles/volume] in Serum or Plasma | 1.000 |  |
-| 3018954 | Choriogonadotropin [Presence] in Urine | 1.000 | 184 |
-| 3019539 | Treponema pallidum Ab [Titer] in Serum by Hemagglutination | 1.000 |  |
-| 3023511 | Choriogonadotropin [Units/volume] in Urine | 1.000 |  |
-| 3028050 | Streptolysin O Ab [Titer] in Serum | 1.000 | 1851 |
-| 3029075 | Extractable nuclear Ab panel - Serum | 1.000 |  |
-| 3031591 | Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination | 1.000 |  |
-| 3034780 | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 730 |
-| 3035510 | Gentamicin [Mass/volume] in Serum or Plasma | 1.000 | 1092 |
-| 3035947 | Staphylolysin Ab [Units/volume] in Serum | 1.000 |  |
-| 3036152 | Amikacin [Mass/volume] in Serum or Plasma | 1.000 |  |
-| 3052649 | Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma | 1.000 |  |
-| 3024172 | Erythropoietin (EPO) [Units/volume] in Serum or Plasma | 0.980 | 838 |
-| 3021236 | Streptolysin O Ab [Units/volume] in Serum or Plasma | 0.978 | 744 |
-| 3018876 | Apolipoprotein A [Mass/volume] in Serum or Plasma | 0.974 |  |
-| 3014339 | Estrone (E1) [Moles/volume] in Serum or Plasma | 0.971 | 1123 |
-| 3001686 | Cold agglutinin [Titer] in Serum or Plasma | 0.968 |  |
-| 3027880 | Dehydroepiandrosterone (DHEA) [Moles/volume] in Serum or Plasma | 0.960 | 833 |
-| 3009461 | 5-Hydroxyindoleacetate [Moles/time] in 24 hour Urine | 0.959 | 1449 |
-| 3026725 | Estradiol (E2) [Moles/volume] in Serum or Plasma | 0.959 | 231 |
-| 3016616 | Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma | 0.956 | 468 |
-| 42529189 | Alpha-1-Fetoprotein [Units/volume] in Serum or Plasma by Immunoassay | 0.953 |  |
-| 3016103 | Fatty acids [Moles/volume] in Serum or Plasma | 0.950 |  |
-| 3026383 | Bromide [Mass/volume] in Serum or Plasma | 0.950 |  |
-| 3010801 | 5-Hydroxyindoleacetate [Moles/volume] in 24 hour Urine | 0.949 |  |
-| 3030136 | 5-Hydroxyindoleacetate [Moles/volume] in Serum or Plasma | 0.949 |  |
-| 42529203 | Choriogonadotropin [Units/volume] in Serum or Plasma by Immunoassay | 0.949 |  |
-| 3029998 | Treponema pallidum Ab [Presence] in Cerebral spinal fluid by Hemagglutination | 0.947 |  |
-| 42868681 | Estrogen [Moles/volume] in Serum or Plasma | 0.947 | 920 |
-| 3029371 | Treponema pallidum Ab [Titer] in Cerebral spinal fluid | 0.944 |  |
-| 3032397 | Treponema pallidum Ab [Units/volume] in Cerebral spinal fluid by Hemagglutination | 0.941 |  |
-| 3038911 | Alpha-1-fetoprotein.tumor marker [Units/volume] in Serum or Plasma | 0.939 |  |
-| 3028061 | Treponema pallidum Ab [Presence] in Serum by Hemagglutination | 0.938 |  |
-| 42869548 | Treponema pallidum Ab [Titer] in Serum or Plasma by Agglutination | 0.938 |  |
-| 3007061 | Streptolysin O Ab [Units/volume] in Serum by Latex agglutination | 0.938 |  |
-| 3007932 | Treponema pallidum Ab [Titer] in Serum by Latex agglutination | 0.937 |  |
-| 3031166 | Choriogonadotropin [Mass/volume] in Serum or Plasma | 0.937 |  |
-| 3036988 | Choriogonadotropin.intact [Units/volume] in Serum or Plasma | 0.936 | 834 |
-| 3010935 | Vancomycin [Moles/volume] in Serum or Plasma | 0.936 | 2009 |
-| 42529190 | Alpha-1-Fetoprotein [Mass/volume] in Serum or Plasma by Immunoassay | 0.936 |  |
-| 3026531 | Cold agglutinin [Titer] in Serum or Plasma by Agglutination | 0.936 |  |
-| 3011229 | Endomysium Ab [Titer] in Serum | 0.934 | 1279 |
-| 3027505 | Alpha-1-Fetoprotein [Units/volume] in Amniotic fluid | 0.932 | 1501 |
-| 1989578 | Choriogonadotropin [Mass/volume] in Urine | 0.931 |  |
-| 3015128 | Streptolysin O Ab [Units/volume] in Body fluid | 0.931 |  |
-| 3003969 | Apolipoprotein C [Mass/volume] in Serum or Plasma | 0.930 |  |
-| 3021607 | Alpha-1-Fetoprotein [Moles/volume] in Serum or Plasma | 0.929 |  |
-| 3036065 | Streptolysin O Ab [Titer] in Serum by Latex agglutination | 0.929 |  |
-| 3009960 | Adenosine deaminase [Enzymatic activity/volume] in Blood | 0.928 |  |
-| 1175777 | Alpha-1-Fetoprotein Ab [Units/volume] in Serum or Plasma by Immunoassay | 0.927 |  |
-| 3009471 | Fatty acids.nonesterified [Moles/volume] in Serum or Plasma | 0.926 |  |
-| 3039783 | Alpha-1-fetoprotein.tumor marker [Mass/volume] in Serum or Plasma | 0.925 | 746 |
-| 3008364 | Apolipoprotein A-I [Mass/volume] in Serum or Plasma | 0.924 | 1261 |
-| 3014791 | Apolipoprotein B [Mass/volume] in Serum or Plasma | 0.924 | 889 |
-| 3046268 | Streptolysin O Ab [Mass/volume] in Serum | 0.924 |  |
-| 3022237 | Choriogonadotropin [Moles/volume] in Urine | 0.923 |  |
-| 3007675 | Apolipoprotein E [Mass/volume] in Serum or Plasma | 0.923 |  |
-| 3037123 | Amikacin [Mass/volume] in Serum or Plasma --trough | 0.923 |  |
-| 3018920 | Vancomycin [Mass/volume] in Serum or Plasma --trough | 0.923 | 382 |
-| 3053140 | Gentamicin [Moles/volume] in Serum or Plasma | 0.923 | 1092 |
-| 3010055 | Treponema pallidum Ab [Titer] in Serum | 0.923 |  |
-| 3020961 | Endomysium IgA Ab [Titer] in Serum | 0.922 | 1349 |
-| 3045958 | Alpha-1-Fetoprotein [Units/volume] in Body fluid | 0.921 |  |
-| 3002091 | Choriogonadotropin [Moles/volume] in Serum or Plasma | 0.921 |  |
-| 3048833 | Staphylolysin Ab [Units/volume] in Body fluid | 0.921 |  |
-| 3016254 | Gentamicin [Mass/volume] in Serum or Plasma --trough | 0.920 | 871 |
-| 3032773 | Endomysium IgG Ab [Titer] in Serum | 0.920 |  |
-| 40759747 | Amikacin [Moles/volume] in Serum or Plasma | 0.920 |  |
-| 3011099 | Sex hormone binding globulin [Mass/volume] in Serum or Plasma | 0.918 |  |
-| 3005148 | 5-Hydroxyindoleacetate [Mass/time] in 24 hour Urine | 0.917 |  |
-| 3034165 | Alpha-1-Fetoprotein [Mass/volume] in Body fluid | 0.917 |  |
-| 3023640 | Estrone (E1) [Mass/volume] in Serum or Plasma | 0.917 |  |
-| 648067 | Alpha-1-Fetoprotein [Measurement] in Serum or Plasma | 0.916 |  |
-| 3036335 | Angiotensin converting enzyme [Enzymatic activity/volume] in Blood | 0.916 | 1299 |
-| 3005886 | Vancomycin Free [Mass/volume] in Serum or Plasma | 0.913 |  |
-| 3010296 | Alpha-1-Fetoprotein [Mass/volume] in Amniotic fluid | 0.912 |  |
-| 1616967 | Treponema pallidum IgG Ab [Titer] in Cerebral spinal fluid by Immunofluorescence | 0.910 |  |
-| 40759904 | Baker's yeast Ab [Units/volume] in Serum | 0.908 |  |
-| 646451 | Extractable nuclear Ab [Measurement] in Serum | 0.907 |  |
-| 21492990 | Choriogonadotropin [Presence] in Urine by Rapid immunoassay | 0.907 |  |
-| 647790 | Streptolysin O Ab [Measurement] in Serum | 0.906 |  |
-| 3045488 | Treponema pallidum Ab [Titer] in Serum by Immunofluorescence | 0.906 |  |
-| 3021106 | 5-Hydroxyindoleacetate [Mass/volume] in Serum or Plasma | 0.904 |  |
-| 3011461 | Vancomycin [Mass/volume] in Serum or Plasma --peak | 0.904 | 937 |
-| 1617524 | Alpha-1-Fetoprotein [Units/volume] in Aspirate | 0.904 |  |
-| 3011089 | Cold agglutinin [Titer] in Serum or Plasma by Cord RBC agglutination | 0.903 |  |
-| 3036184 | Bromide [Moles/volume] in Blood | 0.903 |  |
-| 3009917 | Gentamicin [Mass/volume] in Serum or Plasma --peak | 0.903 | 965 |
-| 42529191 | Alpha-1-Fetoprotein [Units/volume] in Amniotic fluid by Immunoassay | 0.903 |  |
-| 3015171 | Extractable nuclear Ab [Units/volume] in Serum | 0.901 |  |
-| 3023028 | 5-Hydroxyindoleacetate [Mass/volume] in 24 hour Urine | 0.901 |  |
-| 1616334 | Vancomycin [Mass/volume] in Serum or Plasma --2 hours post dose | 0.901 |  |
-| 21494226 | Gentamicin free [Mass/volume] in Serum or Plasma | 0.901 |  |
-| 3005831 | Streptolysin O Ab [Units/volume] in Synovial fluid | 0.900 |  |
-| 648716 | Choriogonadotropin [Measurement] in Serum or Plasma | 0.900 |  |
-| 3010554 | Cold agglutinin [Titer] in Serum or Plasma by Adult RBC Agglutination | 0.900 |  |
-| 3002225 | Fatty acids [Mass/volume] in Serum or Plasma | 0.900 |  |
-| 3008977 | Amikacin [Mass/volume] in Serum or Plasma --peak | 0.899 |  |
-| 3009417 | Choriogonadotropin.beta subunit [Presence] in Urine | 0.898 | 1227 |
-| 21494227 | Amikacin free [Mass/volume] in Serum or Plasma | 0.898 |  |
-| 1617505 | Treponema pallidum IgM Ab [Titer] in Cerebral spinal fluid by Immunofluorescence | 0.898 |  |
-| 3018337 | Streptolysin O Ab [Presence] in Serum | 0.897 |  |
-| 3034387 | Apolipoprotein B-100 [Mass/volume] in Serum or Plasma | 0.897 | 772 |
-| 3038136 | Choriogonadotropin.beta subunit [Units/volume] in Serum or Plasma | 0.897 | 364 |
-| 3037522 | Nuclear Ab [Titer] in Serum | 0.896 | 890 |
-| 3013293 | Extractable nuclear Ab [Presence] in Serum | 0.896 |  |
-| 3019583 | Endomysium IgA Ab [Titer] in Serum by Immunofluorescence | 0.895 | 976 |
-| 648034 | Choriogonadotropin [Measurement] in Urine | 0.895 |  |
-| 21492226 | Cold agglutinin [Titer] in Serum by 4 deg C incubation --1 hour post incubation | 0.895 |  |
-| 3036309 | 5-Hydroxyindoleacetate [Moles/volume] in Urine | 0.892 |  |
-| 3004786 | Treponema pallidum Ab [Presence] in Serum by Agglutination | 0.891 | 1818 |
-| 3033561 | Apolipoprotein A-II [Mass/volume] in Serum or Plasma | 0.891 |  |
-| 40757479 | Alpha-1-Fetoprotein [Mass/volume] in Cord blood | 0.890 |  |
-| 646220 | Cold agglutinin [Measurement] in Serum | 0.890 |  |
-| 3038624 | Choriogonadotropin.tumor marker [Units/volume] in Serum or Plasma | 0.889 |  |
-| 3018796 | Apolipoprotein A-III [Mass/volume] in Serum or Plasma | 0.889 |  |
-| 3039041 | Endomysium IgG Ab [Titer] in Serum by Immunofluorescence | 0.888 |  |
-| 3017915 | Endomysium Ab [Titer] in Serum by Immunofluorescence | 0.888 |  |
-| 3051055 | Staphylolysin Ab [Titer] in Serum | 0.887 |  |
-| 3027536 | Estrone sulfate [Mass/volume] in Serum or Plasma | 0.887 |  |
-| 3046071 | Choriogonadotropin.intact+Beta subunit [Units/volume] in Serum or Plasma | 0.887 |  |
-| 3017785 | Apolipoprotein LPA [Mass/volume] in Serum or Plasma | 0.887 |  |
-| 42529214 | Estradiol (E2) [Moles/volume] in Serum or Plasma by Immunoassay | 0.887 |  |
-| 21492225 | Cold agglutinin [Titer] in Serum by 22 degree C incubation --1 hour post incubation | 0.887 |  |
-| 645783 | Treponema pallidum Ab [Measurement] in Cerebral spinal fluid | 0.886 |  |
-| 3023122 | Fatty acids.very long chain [Moles/volume] in Serum or Plasma | 0.886 | 1826 |
-| 3037641 | Choriogonadotropin [Units/volume] in Body fluid | 0.885 |  |
-| 40766122 | Extractable nuclear Ab [Presence] in Serum by Immunoassay | 0.885 |  |
-| 40759269 | Smith extractable nuclear Ab and Ribonucleoprotein extractable nuclear Ab panel - Serum | 0.885 |  |
-| 3003099 | Streptolysin O Ab [Units/volume] in Serum --1st specimen | 0.884 |  |
-| 3037437 | Adenosine deaminase [Enzymatic activity/volume] in Body fluid | 0.883 |  |
-| 3016568 | Apolipoprotein C-I [Mass/volume] in Serum or Plasma | 0.883 |  |
-| 1176189 | Extractable nuclear antigen Ab.IgG panel - Serum | 0.883 |  |
-| 1617619 | Treponema pallidum Ab [Presence] in Cerebral spinal fluid by Immunoassay | 0.882 |  |
-| 3010487 | Treponema pallidum Ab [Units/volume] in Serum by Latex agglutination | 0.882 |  |
-| 3025285 | Estradiol (E2) [Mass/volume] in Serum or Plasma | 0.881 |  |
-| 3022000 | Dehydroepiandrosterone (DHEA) [Mass/volume] in Serum or Plasma | 0.881 |  |
-| 40758605 | Estradiol (E2) [Moles/volume] in Serum or Plasma --baseline | 0.880 |  |
-| 21492227 | Cold agglutinin [Titer] in Serum by 4 deg C incubation --24 hour post incubation | 0.880 |  |
-| 3015884 | Dehydroepiandrosterone sulfate (DHEA-S) [Mass/volume] in Serum or Plasma | 0.880 |  |
-| 3002924 | Fatty acids.nonesterified [Mass/volume] in Serum or Plasma | 0.879 |  |
-| 21492224 | Cold agglutinin [Titer] in Serum by 37 degree C incubation --1 hour post incubation | 0.879 |  |
-| 3043496 | Extractable nuclear Ab [Interpretation] in Serum | 0.879 |  |
-| 3005574 | Amikacin [Mass/volume] in Serum or Plasma --trough post extended interval dosing | 0.879 |  |
-| 40758603 | Dehydroepiandrosterone (DHEA) [Moles/volume] in Serum or Plasma --baseline | 0.879 |  |
-| 3012631 | Estriol (E3) [Moles/volume] in Serum or Plasma | 0.878 | 1565 |
-| 3008080 | Adenosine monophosphate deaminase [Enzymatic activity/volume] in Serum | 0.877 |  |
-| 3019258 | Amikacin [Mass/volume] in Body fluid | 0.877 |  |
-| 43534046 | Estradiol (E2) [Moles/volume] in Serum or Plasma by High sensitivity method | 0.876 |  |
-| 3052820 | Kanamycin [Mass/volume] in Serum or Plasma | 0.874 |  |
-| 3052507 | Netilmicin [Mass/volume] in Serum or Plasma | 0.874 |  |
-| 3033818 | Extractable nuclear Ab [Units/volume] in Serum by Immunoassay | 0.873 |  |
-| 3015881 | Streptolysin O Ab [Units/volume] in Serum --2nd specimen | 0.873 |  |
-| 40762469 | Amikacin [Mass/volume] in Serum or Plasma --post dialysis | 0.873 |  |
-| 3019603 | Treponema pallidum Ab [Presence] in Cerebral spinal fluid | 0.872 |  |
-| 3039257 | Vancomycin [Moles/volume] in Serum or Plasma --trough | 0.871 | 382 |
-| 3035509 | Tobramycin [Mass/volume] in Serum or Plasma | 0.870 | 1858 |
-| 3005135 | Extractable nuclear Ab [Identifier] in Serum | 0.869 |  |
-| 3026429 | Gentamicin [Mass/volume] in Serum or Plasma --trough post extended interval dosing | 0.869 |  |
-| 3008692 | Estrone (E1) [Moles/volume] in Urine | 0.868 |  |
-| 3032897 | Saturated fatty acids [Moles/volume] in Serum or Plasma | 0.868 |  |
-| 40771477 | Baker's yeast Ab [Units/volume] in Serum by Immunoassay | 0.867 |  |
-| 40762472 | Vancomycin [Mass/volume] in Serum or Plasma --post dialysis | 0.867 |  |
-| 3002412 | Gentamicin [Moles/volume] in Serum or Plasma --trough | 0.866 | 871 |
-| 3039445 | 5-Hydroxytryptophan [Moles/volume] in 24 hour Urine | 0.866 |  |
-| 648828 | Cold agglutinin [Measurement] in Serum or Plasma | 0.866 |  |
-| 3051403 | 5-Hydroxyindoleacetate [Moles/volume] in Cerebral spinal fluid | 0.865 |  |
-| 3009623 | Estrone (E1).unconjugated [Mass/volume] in Serum or Plasma | 0.864 |  |
-| 3015760 | Choriogonadotropin [Presence] in Body fluid | 0.864 |  |
-| 3003191 | Choriogonadotropin [Presence] in Serum or Plasma | 0.863 | 615 |
-| 647414 | Erythropoietin (EPO) [Measurement] in Serum or Plasma | 0.863 |  |
-| 3029054 | Fatty acids.nonesterified [Moles/volume] in Serum or Plasma --5th specimen fasting | 0.862 |  |
-| 3019257 | Choriogonadotropin.beta subunit [Moles/volume] in Urine | 0.862 |  |
-| 645324 | Treponema pallidum Ab [Measurement] in Serum | 0.862 |  |
-| 3016906 | Vancomycin [Mass/volume] in Body fluid | 0.862 |  |
-| 40760543 | Extractable nuclear Ab [Presence] in Serum by Immunoblot | 0.861 |  |
-| 3041244 | Adenosine deaminase [Enzymatic activity/volume] in Synovial fluid | 0.861 |  |
-| 3027646 | Estrogen [Mass/volume] in Serum or Plasma | 0.860 |  |
-| 3032218 | Fatty acids.nonesterified [Moles/volume] in Serum or Plasma --3rd specimen fasting | 0.859 |  |
-| 40759782 | 5-Hydroxytryptophan [Moles/time] in 24 hour Urine | 0.858 |  |
-| 3038531 | Vancomycin [Moles/volume] in Serum or Plasma --peak | 0.858 | 937 |
-| 40768055 | Sex hormone binding globulin [Moles/volume] in Serum or Plasma --pre or post XXX challenge | 0.857 |  |
-| 40761580 | Fatty acids.nonesterified [Moles/volume] in Serum or Plasma --6th specimen fasting | 0.857 |  |
-| 40765159 | Fatty acids.nonesterified [Moles/volume] in Serum or Plasma --10th specimen fasting | 0.856 |  |
-| 3036168 | 5-Hydroxyindoleacetate [Presence] in 24 hour Urine | 0.856 |  |
-| 3045640 | Choriogonadotropin [Units/volume] in Amniotic fluid | 0.856 |  |
-| 3002971 | Nuclear Ab [Titer] in Serum by Immunofluorescence | 0.856 | 345 |
-| 3037371 | Bromide [Moles/volume] in Urine | 0.855 |  |
-| 3040662 | Nuclear Ab [Titer] in Serum by Immunoassay | 0.853 |  |
-| 3008092 | Baker's yeast IgG Ab [Units/volume] in Serum | 0.852 |  |
-| 3003581 | Estrone (E1).bioavailable [Mass/volume] in Serum or Plasma | 0.852 |  |
-| 3031814 | Bromide [Mass/volume] in Blood | 0.851 |  |
-| 3036428 | Adenosine deaminase [Enzymatic activity/volume] in Pleural fluid | 0.851 |  |
-| 3028955 | 5-Hydroxytryptophan [Moles/volume] in Serum or Plasma | 0.849 |  |
-| 3021385 | 5-Hydroxyindoleacetate [Mass/volume] in Urine | 0.848 |  |
-| 645582 | Endomysium IgM Ab [Units/volume] in Serum | 0.847 |  |
-| 3038038 | Choriogonadotropin [Units/volume] in Semen | 0.846 |  |
-| 3045218 | Dehydroepiandrosterone (DHEA) [Moles/volume] in Urine | 0.844 |  |
-| 3008834 | Endomysium IgA Ab [Units/volume] in Serum | 0.844 |  |
-| 3044334 | Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Urine | 0.843 |  |
-| 3034552 | Adenosine deaminase [Enzymatic activity/volume] in Cerebral spinal fluid | 0.843 |  |
-| 3017071 | Smith extractable nuclear Ab [Titer] in Serum | 0.843 |  |
-| 649388 | Endomysium Ab [Measurement] in Serum | 0.842 |  |
-| 44816667 | 5-Hydroxyindoleacetate [Moles/volume] in Platelet rich plasma | 0.841 |  |
-| 646173 | Estrone (E1) [Measurement] in Serum or Plasma | 0.840 |  |
-| 645401 | Endomysium IgG Ab [Measurement] in Serum | 0.839 |  |
-| 647620 | Estrogen [Measurement] in Serum or Plasma | 0.838 |  |
-| 3021133 | Inter alpha trypsin inhibitor [Mass/volume] in Serum | 0.838 |  |
-| 646971 | Smith extractable nuclear Ab [Measurement] in Serum | 0.837 |  |
-| 40758972 | Androstenediol [Moles/volume] in Serum or Plasma | 0.836 |  |
-| 3014670 | 5-Hydroxyindoleacetate [Mass/volume] in Cerebral spinal fluid | 0.836 |  |
-| 3023428 | Smith extractable nuclear Ab [Presence] in Serum | 0.836 |  |
-| 44816943 | Adenosine deaminase [Enzymatic activity/volume] in DBS | 0.835 |  |
-| 3047826 | Mullerian inhibiting substance [Mass/volume] in Serum or Plasma | 0.835 | 1599 |
-| 3037275 | Staphylococcus aureus Ab [Units/volume] in Serum | 0.834 |  |
-| 648952 | Baker's yeast Ab [Measurement] in Serum | 0.833 |  |
-| 3051057 | 5-Hydroxyindoleacetate/Creatinine [Molar ratio] in 24 hour Urine | 0.833 |  |
-| 3022795 | Bromazepam [Moles/volume] in Serum or Plasma | 0.833 |  |
-| 3001740 | Acetylcholinesterase [Enzymatic activity/volume] in Serum or Plasma | 0.833 |  |
-| 3029213 | Adenosine deaminase [Enzymatic activity/volume] in Pericardial fluid | 0.833 |  |
-| 3033252 | Adenosine deaminase [Enzymatic activity/volume] in Peritoneal fluid | 0.832 |  |
-| 40759753 | Nuclear IgG Ab [Titer] in Serum by Immunofluorescence | 0.832 |  |
-| 3010312 | Streptococcus sp Ab [Titer] in Serum | 0.832 |  |
-| 3052277 | 11-Hydroxyandrostenedione [Moles/volume] in Serum or Plasma | 0.829 |  |
-| 3040491 | Angiotensin converting enzyme [Enzymatic activity/volume] in Pleural fluid | 0.829 |  |
-| 3036566 | Thyroxine binding globulin [Moles/volume] in Serum or Plasma | 0.828 |  |
-| 3009695 | 17-Hydroxypregnenolone [Moles/volume] in Serum or Plasma | 0.828 |  |
-| 3010774 | Pregnenolone [Moles/volume] in Serum or Plasma | 0.828 | 1374 |
-| 646438 | 5-Hydroxyindoleacetate [Measurement] in Urine | 0.827 |  |
-| 3044096 | 5-Hydroxyindoleacetate panel - 24 hour Urine | 0.826 |  |
-| 3049738 | Baker's yeast IgG Ab [Units/volume] in Serum by Immunoassay | 0.825 |  |
-| 3018358 | Nuclear Ab [Titer] in Body fluid | 0.824 |  |
-| 3004593 | Baker's yeast IgA Ab [Units/volume] in Serum | 0.823 | 1368 |
-| 3009400 | Neuronal nuclear Ab [Titer] in Serum | 0.822 |  |
-| 40759126 | Platelet aggregation in Blood by ADP induced 5 umol/L | 0.820 |  |
-| 3024445 | Bromide [Mass/volume] in Specimen | 0.820 |  |
-| 3003927 | Nuclear Ab [Titer] in Synovial fluid | 0.819 |  |
-| 40758655 | Brompheniramine [Moles/volume] in Serum or Plasma | 0.818 |  |
-| 3010866 | Cholinesterase [Enzymatic activity/volume] in Serum or Plasma | 0.817 |  |
-| 40758310 | Human epididymis protein 4 [Moles/volume] in Serum or Plasma | 0.817 |  |
-| 3039998 | Platelet aggregation [Units/volume] in Blood by arachidonate induced | 0.816 |  |
-| 3042234 | Platelet aggregation [Units/volume] in Blood by ADP induced | 0.816 |  |
-| 3049189 | Streptococcus sp exoenzyme Ab [Units/volume] in Serum | 0.815 |  |
-| 40759128 | Platelet aggregation in Blood by arachidonate induced 500 ug/mL | 0.815 |  |
-| 3030077 | Nuclear Ab [Titer] in Serum by Hep2 substrate | 0.815 |  |
-| 3037035 | Baker's yeast IgG Ab [Mass/volume] in Serum | 0.814 | 1311 |
-| 40759672 | Dehydroepiandrosterone sulfate (DHEA-S) [Mass/volume] in Serum or Plasma --baseline | 0.814 |  |
-| 3011407 | Baker's yeast IgE Ab [Units/volume] in Serum | 0.812 | 1945 |
-| 3025563 | Saccharopolyspora rectivirgula Ab [Units/volume] in Serum | 0.812 |  |
-| 3021195 | Candida albicans Ab [Units/volume] in Serum | 0.811 |  |
-| 648351 | Dehydroepiandrosterone sulfate (DHEA-S) [Mass/volume] in Serum or Plasma by LC/MS/MS | 0.811 |  |
-| 3044342 | Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in 24 hour Urine | 0.810 |  |
-| 3009991 | Angiotensin converting enzyme [Enzymatic activity/volume] in Cerebral spinal fluid | 0.810 |  |
-| 3051263 | Dihydroxycholestanoate [Moles/volume] in Serum or Plasma | 0.810 |  |
-| 3039179 | Angiotensin converting enzyme [Enzymatic activity/volume] in Peritoneal fluid | 0.809 |  |
-| 3012673 | Bromide [Mass/volume] in Urine | 0.808 |  |
-| 3019041 | Neuronal nuclear type 1 Ab [Titer] in Serum | 0.807 |  |
-| 3026712 | Neutrophil cytoplasmic Ab [Titer] in Serum | 0.807 | 1456 |
-| 3018595 | Inhibin A [Mass/volume] in Serum or Plasma | 0.806 | 702 |
-| 40759127 | Platelet aggregation in Blood by ADP induced 10 umol/L | 0.806 |  |
-| 3039356 | Boron [Moles/volume] in Serum or Plasma | 0.805 |  |
-| 42529221 | Mullerian inhibiting substance [Mass/volume] in Serum or Plasma by Immunoassay | 0.801 |  |
-| 3008019 | Hyaluronidase Ab [Units/volume] in Serum | 0.799 |  |
-| 3007808 | Renin [Enzymatic activity/volume] in Plasma | 0.798 | 822 |
-| 40759134 | Platelet aggregation in Blood by arachidonate induced ATP secretion 500 umol/L | 0.798 |  |
-| 3017446 | Testosterone [Moles/volume] in Serum or Plasma | 0.797 | 203 |
-| 3035485 | Oxytocin [Units/volume] in Serum or Plasma | 0.797 |  |
-| 3049799 | Mullerian inhibiting substance [Moles/volume] in Serum or Plasma | 0.796 |  |
-| 3030073 | Trypsin [Mass/volume] in Serum or Plasma | 0.791 |  |
-| 3013495 | Streptokinase Ab [Units/volume] in Serum | 0.788 |  |
-| 3000481 | Estrogen+Progesterone receptor Ag [Presence] in Tissue by Immune stain | 0.787 |  |
-| 3012620 | Inhibin [Mass/volume] in Serum or Plasma | 0.786 |  |
-| 1092039 | Platelet aggregation in Plasma by arachidonate induced 1 umol/L | 0.784 |  |
-| 3045781 | Inhibin B [Mass/volume] in Serum or Plasma | 0.782 |  |
-| 3031441 | Tripeptide aminopeptidase [Enzymatic activity/volume] in Serum or Plasma | 0.781 |  |
-| 21491244 | Platelet aggregation [Units/volume] in Blood by adenosine diphosphate+prostaglandin E1 induced | 0.781 |  |
-| 3036969 | Erythropoietin (EPO) given [Units/volume] of Dose | 0.779 |  |
-| 3010356 | Uroporphyrin [Moles/volume] in Serum or Plasma | 0.779 |  |
-| 3006923 | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 0.778 | 16 |
-| 3025283 | Somatotropin binding protein [Moles/volume] in Serum or Plasma | 0.778 |  |
-| 645118 | Mullerian inhibiting substance [Measurement] in Serum or Plasma | 0.776 |  |
-| 40759123 | Platelet aggregation in Blood by ADP induced ATP secretion 5 umol/L | 0.775 |  |
-| 3021387 | Prolactin [Units/volume] in Serum or Plasma | 0.773 |  |
-| 40759132 | Platelet aggregation in Blood by ADP induced ATP secretion 10 umol/L | 0.772 |  |
-| 3020924 | Thyroxine binding globulin [Mass/volume] in Serum or Plasma | 0.771 |  |
-| 42529222 | Mullerian inhibiting substance [Moles/volume] in Serum or Plasma by Immunoassay | 0.771 |  |
-| 3035828 | Inhibin A [Multiple of the median] in Serum or Plasma | 0.770 |  |
-| 1259621 | Platelet aggregation in Blood by ADP induced ATP secretion 2 umol/L | 0.770 |  |
-| 3021925 | Trypsin+Trypsinogen [Mass/volume] in Serum or Plasma | 0.769 |  |
-| 44786755 | Endothelin [Moles/volume] in Serum or Plasma | 0.769 |  |
-| 36031680 | Human epididymis protein 4 [Mass/volume] in Serum or Plasma | 0.768 |  |
-| 3003084 | Osteocalcin [Moles/volume] in Serum or Plasma | 0.767 |  |
-| 3025484 | Inhibin [Units/volume] in Serum or Plasma | 0.766 |  |
-| 3052662 | Ceruloplasmin [Moles/volume] in Serum or Plasma | 0.766 |  |
-| 3016244 | Insulin [Units/volume] in Serum or Plasma | 0.765 |  |
-| 3023763 | Trypsinogen [Mass/volume] in Serum or Plasma | 0.764 |  |
-| 3009947 | Choriogonadotropin.beta subunit [Units/volume] in Amniotic fluid | 0.764 |  |
-| 3022948 | Iron [Moles/volume] in Serum or Plasma | 0.764 | 140 |
-| 3005346 | Estradiol (E2) [Mass/volume] in Amniotic fluid | 0.763 |  |
-| 44786758 | Tissue inhibitor of metalloproteinases 1 [Mass/volume] in Serum or Plasma by Immunoassay | 0.760 |  |
-| 36660109 | Platelet aggregation in Platelet rich plasma by ADP induced 1.2 umol/L | 0.758 |  |
-| 40759133 | Platelet aggregation interpretation in Blood Qualitative by Arachidonate induced ATP secretion.500 umol/L | 0.756 |  |
-| 3009201 | Thyrotropin [Units/volume] in Serum or Plasma | 0.755 | 105 |
-| 21491008 | Platelet aggregation in Platelet rich plasma by arachidonate induced 1.6 mmol/L | 0.755 |  |
-| 3010173 | Endothelin [Units/volume] in Serum or Plasma | 0.755 |  |
-| 3038629 | Platelet aggregation in Platelet rich plasma by arachidonate induced 500 ug/mL | 0.752 |  |
-| 3003289 | Progesterone receptor [Interpretation] in Tissue | 0.750 |  |
-| 3044689 | Choriogonadotropin.intact [Units/volume] in Amniotic fluid | 0.750 |  |
-| 3009150 | Pregnanediol [Mass/volume] in Amniotic fluid | 0.747 |  |
-| 3018301 | Testosterone Free [Moles/volume] in Serum or Plasma | 0.747 | 325 |
-| 3013770 | Testosterone [Mass/volume] adjusted for sex hormone binding globulin in Serum or Plasma | 0.745 |  |
-| 3000275 | Trypsinogen I Free [Mass/volume] in Serum or Plasma | 0.742 |  |
-| 3004390 | Estrogen receptor [Interpretation] in Tissue | 0.738 |  |
-| 3024028 | Trypsin [Enzymatic activity/volume] in Serum or Plasma | 0.738 |  |
-| 3043105 | HER2 Ag [Mass/volume] in Serum | 0.737 |  |
-| 3042084 | Tryptase [Moles/volume] in Serum or Plasma | 0.736 |  |
-| 3019420 | Tryptase [Mass/volume] in Serum or Plasma | 0.734 | 1562 |
-| 3042818 | Melanoma inhibitory activity protein [Mass/volume] in Serum or Plasma | 0.733 |  |
-| 3027056 | Estriol (E3) [Mass/volume] in Amniotic fluid | 0.731 |  |
-| 3033670 | Parathyrin related protein [Moles/volume] in Serum or Plasma | 0.729 |  |
-| 3041343 | Estrogen receptor Ag [Presence] in Tissue by Immune stain | 0.729 |  |
-| 3023986 | Choriomammotropin [Mass/volume] in Amniotic fluid | 0.728 |  |
-| 3045759 | Histamine [Moles/volume] in Serum or Plasma | 0.727 |  |
-| 21491058 | 4-Hydroxyvalerate [Moles/volume] in Serum or Plasma | 0.726 |  |
-| 3027652 | Tissue polypeptide Ag [Mass/volume] in Serum or Plasma | 0.718 |  |
-| 3030860 | Tumor necrosis factor.alpha [Moles/volume] in Serum or Plasma | 0.714 |  |
-| 42870325 | Hepcidin 25 amino acid peptide [Moles/volume] in Serum or Plasma | 0.712 |  |
-| 46234766 | Alpha 1 antitrypsin [Moles/volume] in Serum or Plasma | 0.711 |  |
-| 3016724 | Homocysteine [Moles/volume] in Serum or Plasma | 0.708 | 358 |
-| 3002815 | Trypsinogen [Enzymatic activity/volume] in Serum or Plasma | 0.707 |  |
-| 3041608 | Progesterone receptor Ag [Presence] in Tissue by Immune stain | 0.699 |  |
-| 3016794 | Cells.estrogen receptor/100 cells in Tissue by Immune stain | 0.693 |  |
-| 3022156 | Cells.progesterone receptor/100 cells in Tissue by Immune stain | 0.691 |  |
-| 3966100 | ESR1 gene mutation panel - Tissue by Molecular genetics method | 0.691 |  |
-| 43533700 | Adenosine triphosphate/Adenosine diphosphate [Entitic molar ratio] in Platelets | 0.621 |  |
-| 3050758 | Platelet aggregation [Units/volume] in Platelet rich plasma by arachidonate induced | 0.593 |  |
-| 3048603 | Platelet aggregation [Units/volume] in Platelet rich plasma by ADP induced | 0.591 |  |
-| 3036193 | Monoamine oxidase [Enzymatic activity/volume] in Platelet rich plasma | 0.589 |  |
-| 3043913 | Platelet aggregation [Units/volume] in Platelet rich plasma by EPINEPHrine induced 100 umol/L | 0.588 |  |
-| 3040933 | Platelet aggregation [Units/volume] in Platelet rich plasma by EPINEPHrine induced 50 umol/L | 0.583 |  |
-| 3032078 | Adenosine triphosphate/Adenosine diphosphate [Mass Ratio] in Blood | 0.579 |  |
-| 3010564 | Serotonin [Mass/volume] in Platelets | 0.578 |  |
+| 3000620 | Complement C3 [Mass/volume] in Serum or Plasma | 1.000 | 436 |
+| 3001186 | Copper [Moles/volume] in Serum or Plasma | 1.000 | 1184 |
+| 3006407 | Chromogranin A [Mass/volume] in Serum or Plasma | 1.000 | 1578 |
+| 3006567 | Chloride [Moles/time] in 24 hour Urine | 1.000 |  |
+| 3006906 | Calcium [Mass/volume] in Serum or Plasma | 1.000 |  |
+| 3007171 | Chromium [Mass/volume] in Urine | 1.000 |  |
+| 3007220 | Creatine kinase [Enzymatic activity/volume] in Serum or Plasma | 1.000 | 90 |
+| 3010375 | cycloSPORINE [Mass/volume] in Blood | 1.000 | 474 |
+| 3010838 | Calcium [Moles/time] in 24 hour Urine | 1.000 | 902 |
+| 3014576 | Chloride [Moles/volume] in Serum or Plasma | 1.000 | 8 |
+| 3014702 | Chromogranin A [Moles/volume] in Serum or Plasma | 1.000 |  |
+| 3015377 | Calcium [Moles/volume] in Serum or Plasma | 1.000 | 12 |
+| 3015883 | Cotinine [Presence] in Urine | 1.000 |  |
+| 3017766 | Complement C4 [Mass/volume] in Serum or Plasma | 1.000 | 437 |
+| 3018133 | Calcium [Moles/volume] in Urine | 1.000 | 859 |
+| 3018572 | Chloride [Moles/volume] in Blood | 1.000 | 295 |
+| 3021119 | Calcium.ionized [Moles/volume] in Blood | 1.000 | 130 |
+| 3024085 | Cobalt [Mass/volume] in Urine | 1.000 |  |
+| 3025577 | Chromium [Mass/volume] in Blood | 1.000 |  |
+| 3025911 | Cotinine [Mass/volume] in Urine | 1.000 | 674 |
+| 3026470 | Cobalt [Mass/volume] in Blood | 1.000 |  |
+| 3031248 | Chloride [Moles/volume] in Arterial blood | 1.000 |  |
+| 3033942 | Copper [Moles/time] in 24 hour Urine | 1.000 |  |
+| 3035256 | Chromium [Moles/volume] in Urine | 1.000 |  |
+| 3040160 | Chromium [Presence] in Urine | 1.000 |  |
+| 3043323 | Complement C3 [Mass/volume] in Pleural fluid | 1.000 |  |
+| 3044336 | Cobalt [Moles/volume] in Urine | 1.000 |  |
+| 3044416 | Complement C4 [Mass/volume] in Pleural fluid | 1.000 |  |
+| 3046279 | Procalcitonin [Mass/volume] in Serum or Plasma | 1.000 |  |
+| 3009542 | Hematocrit [Volume Fraction] of Blood | 0.979 | 28 |
+| 3031619 | Immune complex [Mass/volume] in Serum or Plasma | 0.969 |  |
+| 3022126 | Complement C3b [Mass/volume] in Serum or Plasma | 0.966 |  |
+| 3002752 | Chloride [Moles/volume] in 24 hour Urine | 0.966 |  |
+| 40761055 | Complement C4c [Mass/volume] in Serum or Plasma | 0.965 |  |
+| 3000581 | Complement C3c [Mass/volume] in Serum or Plasma | 0.964 |  |
+| 3026738 | Copper [Moles/volume] in 24 hour Urine | 0.963 |  |
+| 3035285 | Chloride [Moles/volume] in Venous blood | 0.960 |  |
+| 3009630 | Calcium [Moles/volume] in 24 hour Urine | 0.958 | 1090 |
+| 3009804 | Carcinoembryonic Ag [Mass/volume] in Pleural fluid | 0.957 |  |
+| 46235783 | Chloride [Moles/volume] in Serum, Plasma or Blood | 0.955 |  |
+| 3018950 | cycloSPORINE [Mass/volume] in Plasma | 0.954 |  |
+| 3003785 | Carcinoembryonic Ag [Mass/volume] in Serum or Plasma | 0.952 | 312 |
+| 3015367 | Cobalt [Mass/volume] in 24 hour Urine | 0.949 |  |
+| 3021348 | Complement C4 [Units/volume] in Serum or Plasma | 0.948 |  |
+| 3002050 | Chromium [Mass/volume] in 24 hour Urine | 0.947 |  |
+| 40760460 | Chloride [Moles/time] in 12 hour Urine | 0.946 |  |
+| 3042505 | cycloSPORINE [Mass/volume] in Blood --trough | 0.946 |  |
+| 3010612 | cycloSPORINE [Mass/volume] in Serum | 0.944 |  |
+| 3044343 | Cobalt [Moles/volume] in 24 hour Urine | 0.943 |  |
+| 3048733 | Chromium [Moles/volume] in 24 hour Urine | 0.943 |  |
+| 3020219 | cycloSPORINE+Metabolites [Mass/volume] in Blood | 0.942 |  |
+| 46234781 | Complement C4 [Moles/volume] in Serum or Plasma | 0.940 |  |
+| 3041568 | Calcium [Moles/time] in 12 hour Urine | 0.937 |  |
+| 3044331 | Calcium.ionized [Moles/volume] in Arterial blood | 0.937 |  |
+| 3048816 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood | 0.937 |  |
+| 3045762 | Complement C3d [Mass/volume] in Serum or Plasma | 0.933 |  |
+| 3041519 | Chloride [Mass/time] in 24 hour Urine | 0.932 |  |
+| 3025848 | Cobalt [Moles/volume] in Blood | 0.932 |  |
+| 3027126 | Copper [Mass/volume] in Serum or Plasma | 0.932 |  |
+| 3040003 | cycloSPORINE [Mass/volume] in Blood --post dose | 0.932 |  |
+| 3019462 | cycloSPORINE [Mass/volume] in Body fluid | 0.932 |  |
+| 3029790 | Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma | 0.931 | 374 |
+| 44817130 | Procalcitonin [Mass/volume] in Serum or Plasma by Immunoassay | 0.929 |  |
+| 3036426 | Calcium.ionized [Mass/volume] in Blood | 0.927 |  |
+| 1988947 | Procalcitonin [Moles/volume] in Serum or Plasma | 0.927 |  |
+| 3023851 | Copper [Mass/time] in 24 hour Urine | 0.924 |  |
+| 3013480 | cycloSPORINE [Mass/volume] in Blood by Immunoassay | 0.924 |  |
+| 40758926 | cycloSPORINE [Mass/volume] in Blood by LC/MS/MS | 0.923 |  |
+| 3034141 | Complement C3a [Mass/volume] in Serum or Plasma | 0.923 |  |
+| 3035279 | Calcium.ionized [Moles/volume] in Capillary blood | 0.922 |  |
+| 648404 | Procalcitonin [Mass/volume] in Serum, Plasma or Blood by Immunoassay | 0.922 |  |
+| 3028297 | Cotinine [Mass/volume] in Specimen | 0.922 |  |
+| 40762092 | Chloride [Moles/time] in 18 hour Urine | 0.922 |  |
+| 3033705 | Calcium.ionized [Moles/volume] in Venous blood | 0.921 |  |
+| 3046135 | Complement C4 [Mass/volume] in Pericardial fluid | 0.921 |  |
+| 3015531 | Creatine kinase.macromolecular [Enzymatic activity/volume] in Serum or Plasma | 0.919 |  |
+| 46237011 | cycloSPORINE [Mass/volume] in Blood --1 hour post dose | 0.917 |  |
+| 3007687 | Calcium [Mass/time] in 24 hour Urine | 0.917 |  |
+| 3039576 | Calcium [Mass/volume] in Serum or Plasma --baseline | 0.916 |  |
+| 3017730 | Calcium [Mass/volume] in 24 hour Urine | 0.916 |  |
+| 3001793 | Complement C2 [Mass/volume] in Serum or Plasma | 0.916 |  |
+| 3045920 | Complement C3 [Mass/volume] in Pericardial fluid | 0.916 |  |
+| 645942 | Chromium [Measurement] in Urine | 0.915 |  |
+| 3039921 | Calcium [Moles/time] in 1 hour Urine | 0.914 |  |
+| 3005962 | Chromium [Moles/volume] in Blood | 0.914 |  |
+| 3040757 | Calcium [Moles/volume] in Serum or Plasma --baseline | 0.912 |  |
+| 3045730 | Cotinine [Moles/volume] in Urine | 0.912 |  |
+| 40760458 | Chloride [Moles/volume] in 12 hour Urine | 0.912 |  |
+| 3021347 | Calcium.ionized [Moles/volume] in Serum or Plasma | 0.911 | 182 |
+| 3029431 | Calcium.ionized [Moles/volume] in Body fluid | 0.911 |  |
+| 40763125 | Cobalt [Mass/volume] in Red Blood Cells | 0.910 |  |
+| 42529202 | Carcinoembryonic Ag [Mass/volume] in Serum or Plasma by Immunoassay | 0.909 |  |
+| 645657 | Cobalt [Measurement] in Urine | 0.909 |  |
+| 649040 | Complement C4 [Measurement] in Serum or Plasma | 0.909 |  |
+| 3041386 | Immune complex [Mass/volume] in Serum or Plasma by Immunoassay | 0.908 |  |
+| 3015620 | Creatine kinase panel - Serum or Plasma | 0.908 |  |
+| 3037601 | Chromium [Mass/volume] in Urine collected for unspecified duration | 0.908 |  |
+| 3002818 | Complement C1s [Mass/volume] in Serum or Plasma | 0.907 |  |
+| 3006028 | Cotinine [Mass/volume] in Serum or Plasma | 0.907 |  |
+| 3041066 | Chromogranin A [Mass/volume] in Body fluid | 0.907 |  |
+| 3027356 | Cobalt [Mass/time] in 24 hour Urine | 0.906 |  |
+| 3004849 | Copper [Mass/volume] in 24 hour Urine | 0.906 |  |
+| 649327 | Procalcitonin [Measurement] in Serum or Plasma | 0.905 |  |
+| 3026941 | Chloride [Moles/time] in 24 hour Stool | 0.905 |  |
+| 3017692 | Complement C5 [Mass/volume] in Serum or Plasma | 0.904 |  |
+| 3044690 | Nicotine+Cotinine [Presence] in Urine | 0.903 |  |
+| 40762708 | Cotinine [Presence] in Urine by Screen method | 0.901 |  |
+| 3045531 | Complement C3 and C4 panel [Mass/volume] - Serum or Plasma | 0.900 |  |
+| 40760459 | Chloride [Moles/volume] in 2 hour Urine | 0.899 |  |
+| 3009274 | Carcinoembryonic Ag [Units/volume] in Pleural fluid | 0.899 |  |
+| 3046437 | Complement C4 [Mass/volume] in Peritoneal fluid | 0.898 |  |
+| 3045431 | Immune complex.IgG [Mass/volume] in Serum or Plasma | 0.897 |  |
+| 3034898 | Cotinine [Presence] in Urine by Confirmatory method | 0.897 |  |
+| 645212 | Chromogranin A [Measurement] in Serum or Plasma | 0.897 |  |
+| 3026025 | Cotinine cutoff [Mass/volume] in Urine | 0.897 |  |
+| 3031021 | Cobalt [Mass/volume] in Body fluid | 0.897 |  |
+| 3028447 | Cobalt [Mass/volume] in Serum or Plasma | 0.896 |  |
+| 3008108 | Hematocrit [Volume Fraction] of Body fluid | 0.896 | 733 |
+| 647455 | Calcium [Measurement] in Serum or Plasma | 0.896 |  |
+| 40763889 | Cotinine [Presence] in Serum or Plasma | 0.896 |  |
+| 3036347 | Cobalt [Moles/time] in 24 hour Urine | 0.896 |  |
+| 3002695 | Complement C4 [Mass/volume] in Body fluid | 0.896 |  |
+| 3040481 | Chromium [Moles/time] in 24 hour Urine | 0.895 |  |
+| 36031874 | Copper free [Moles/volume] in Serum or Plasma | 0.894 |  |
+| 3038258 | Carcinoembryonic Ag [Mass/volume] in Pericardial fluid | 0.893 |  |
+| 3006661 | Calcium [Mass/volume] in Urine | 0.893 |  |
+| 3008269 | Chromium [Mass/volume] in Serum or Plasma | 0.893 |  |
+| 3033517 | Chromium [Mass/volume] in Body fluid | 0.892 |  |
+| 3041671 | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Venous blood | 0.892 |  |
+| 3005268 | Transferrin.carbohydrate deficient [Units/volume] in Serum or Plasma | 0.892 |  |
+| 3026979 | Carcinoembryonic Ag [Moles/volume] in Pleural fluid | 0.892 |  |
+| 3019696 | Complement C4 [Mass/volume] in Synovial fluid | 0.892 |  |
+| 3046784 | Complement C3 [Mass/volume] in Peritoneal fluid | 0.891 |  |
+| 40757498 | Calcium.ionized [Moles/volume] in Cord blood | 0.891 |  |
+| 3039964 | Chloride [Moles/volume] in Capillary blood | 0.891 |  |
+| 3017905 | Immune complex [Units/volume] in Serum or Plasma | 0.891 |  |
+| 3004689 | Complement C3 [Mass/volume] in Body fluid | 0.890 |  |
+| 3027694 | Calcium.ionized [Mass/volume] in Serum or Plasma | 0.889 |  |
+| 649561 | Cotinine [Measurement] in Urine | 0.889 |  |
+| 3013194 | Chloride [Moles/volume] in Body fluid | 0.889 |  |
+| 3007733 | Chloride [Moles/volume] in Urine | 0.888 | 697 |
+| 3006071 | Chromium [Mass/time] in 24 hour Urine | 0.887 |  |
+| 3051339 | Copper [Moles/volume] in Blood | 0.887 |  |
+| 43055646 | Cotinine [Mass/volume] in Urine by Screen method | 0.887 |  |
+| 3023980 | Creatine kinase [Enzymatic activity/volume] in Body fluid | 0.886 |  |
+| 3001452 | Complement C3 [Mass/volume] in Synovial fluid | 0.885 |  |
+| 3045820 | Cotinine/Creatinine [Mass Ratio] in Urine | 0.885 |  |
+| 3005162 | Calcium [Moles/volume] in Blood | 0.885 |  |
+| 3042038 | Carcinoembryonic Ag [Mass/volume] in Peritoneal fluid | 0.884 |  |
+| 3009237 | Chromogranin A [Units/volume] in Serum or Plasma by Immunoassay | 0.883 |  |
+| 645157 | Carcinoembryonic Ag [Measurement] in Pleural fluid | 0.883 |  |
+| 3013444 | Carcinoembryonic Ag [Units/volume] in Serum or Plasma | 0.883 |  |
+| 3033742 | Chloride panel - 24 hour Urine | 0.883 |  |
+| 42869545 | Calcium [Moles/volume] in Urine collected for unspecified duration | 0.882 | 1359 |
+| 3013735 | Carcinoembryonic Ag [Mass/volume] in Body fluid | 0.882 |  |
+| 46236482 | Norcotinine [Mass/volume] in Urine | 0.882 |  |
+| 3045177 | Copper [Moles/volume] in Urine | 0.882 |  |
+| 3025059 | Transferrin.carbohydrate deficient [Mass/volume] in Serum or Plasma | 0.881 |  |
+| 3004741 | Calcium [Moles/time] in 2 hour Urine --12 hours fasting | 0.879 |  |
+| 3045714 | Immune complex.IgM [Mass/volume] in Serum or Plasma | 0.879 |  |
+| 37020287 | Cotinine [Mass/volume] in Urine by Confirmatory method | 0.879 |  |
+| 3016306 | Chromium [Mass/volume] in Red Blood Cells | 0.878 |  |
+| 3023230 | Hematocrit [Volume Fraction] of Arterial blood | 0.874 |  |
+| 40758958 | Chloride [Moles/volume] in 24 hour Stool | 0.874 |  |
+| 3019273 | Chromium [Mass/volume] in Specimen | 0.874 |  |
+| 3009024 | Chloride [Moles/volume] in Specimen | 0.873 |  |
+| 3050025 | Chromium [Moles/volume] in Body fluid | 0.872 |  |
+| 3027665 | Carcinoembryonic Ag [Moles/volume] in Serum or Plasma | 0.872 |  |
+| 3032503 | Calcium [Mass/volume] in Blood | 0.872 |  |
+| 3052010 | Complement C3c [Mass/volume] in Body fluid | 0.871 |  |
+| 3040485 | Calcium [Mass/volume] in Serum or Plasma --pre XXX challenge | 0.871 |  |
+| 1761323 | Chloride [Moles/volume] in Mixed venous blood | 0.871 |  |
+| 3013806 | Calcium [Moles/volume] in Specimen | 0.870 |  |
+| 3045741 | Immune complex IgA [Mass/volume] in Serum or Plasma | 0.870 |  |
+| 3008994 | Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.869 |  |
+| 647668 | Carcinoembryonic Ag [Measurement] in Serum or Plasma | 0.869 |  |
+| 3016070 | Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.867 |  |
+| 3016913 | Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis | 0.866 |  |
+| 3043948 | Calcium [Moles/volume] in Serum or Plasma --pre XXX challenge | 0.866 |  |
+| 3045536 | Immune complex [Presence] in Serum or Plasma | 0.865 |  |
+| 3018086 | Chloride [Moles/volume] in Red Blood Cells | 0.865 |  |
+| 3041289 | Cotinine [Presence] in Meconium | 0.865 |  |
+| 3005785 | Creatine kinase.MB [Mass/volume] in Serum or Plasma | 0.863 | 111 |
+| 3005674 | Calcium/Protein [Mass Ratio] in Serum or Plasma | 0.863 |  |
+| 647128 | Immune complex [Measurement] in Serum or Plasma | 0.863 |  |
+| 36303542 | Calcium goal [Mass/volume] Serum or Plasma | 0.861 |  |
+| 3019909 | Hematocrit [Volume Fraction] of Blood by Centrifugation | 0.861 | 545 |
+| 3017170 | Calcium [Mass/time] in 12 hour Urine | 0.860 |  |
+| 1091592 | Copper panel - Serum or Plasma | 0.859 |  |
+| 3007614 | Calcium [Mass/time] in 2 hour Urine | 0.858 |  |
+| 3028813 | Hematocrit [Volume Fraction] of Capillary blood | 0.857 |  |
+| 3032543 | Calcium [Moles/volume] in Venous blood | 0.857 |  |
+| 3004064 | Calcium [Moles/volume] corrected for total protein in Serum or Plasma | 0.857 |  |
+| 3008178 | Immune complex [Units/volume] in Body fluid | 0.857 |  |
+| 3019205 | Cobalt [Mass/volume] in Specimen | 0.856 |  |
+| 3037781 | Chromium [Mass/volume] in Water | 0.856 |  |
+| 40760453 | Calcium [Mass/volume] in 12 hour Urine | 0.856 |  |
+| 3026798 | Calcium/Sodium [Mass Ratio] in Serum or Plasma | 0.856 |  |
+| 3020059 | Calcium [Moles/volume] corrected for albumin in Serum or Plasma | 0.855 | 237 |
+| 3048718 | Copper [Moles/volume] in Body fluid | 0.854 |  |
+| 42869583 | Hematocrit [Pure volume fraction] of Body fluid | 0.853 |  |
+| 3034976 | Hematocrit [Volume Fraction] of Venous blood | 0.852 |  |
+| 40762332 | Chromogranin A [Units/volume] in Body fluid | 0.852 |  |
+| 3015040 | Creatine kinase.BB/Creatine kinase.total in Serum or Plasma | 0.850 |  |
+| 3021311 | Cobalt [Moles/volume] in Serum or Plasma | 0.850 |  |
+| 3049668 | Complement C3 [Presence] in Serum or Plasma | 0.849 |  |
+| 3000321 | Chromium [Moles/volume] in Serum or Plasma | 0.848 |  |
+| 40762093 | Calcium [Mass/time] in 18 hour Urine | 0.848 |  |
+| 3052708 | Transferrin.carbohydrate deficient/Transferrin.total in Serum or Plasma | 0.847 |  |
+| 3039094 | Chromium [Mass/volume] in Air | 0.847 |  |
+| 3050998 | Immune Complex C3d [Mass/volume] in Serum or Plasma | 0.846 |  |
+| 3050746 | Hematocrit [Volume Fraction] of Blood by Estimated | 0.846 |  |
+| 3017858 | Calcium [Mass/time] in 4 hour Urine | 0.846 |  |
+| 3030170 | Creatine kinase [Mass/volume] in Blood | 0.846 |  |
+| 3016311 | Creatine kinase.MB/Creatine kinase.total in Serum or Plasma | 0.845 | 297 |
+| 3024431 | Calcium [Mass/volume] in 4 hour Urine | 0.845 |  |
+| 3023729 | Carcinoembryonic Ag [Mass/volume] in Cerebral spinal fluid | 0.845 |  |
+| 3006044 | Creatine kinase.total/Creatine kinase.MB [Enzymatic activity ratio] in Serum or Plasma | 0.844 |  |
+| 3029886 | Cobalt [Moles/volume] in Red Blood Cells | 0.844 |  |
+| 3005389 | Copper [Moles/volume] in Specimen | 0.844 |  |
+| 3021530 | Procollagen type I [Mass/volume] in Serum | 0.843 |  |
+| 3019027 | Nicotine [Presence] in Urine | 0.843 |  |
+| 3008558 | Creatine kinase.MM/Creatine kinase.total in Serum or Plasma | 0.842 |  |
+| 3040291 | Chromium panel - Urine | 0.841 |  |
+| 3017058 | Calcium [Moles/volume] in Stool | 0.841 |  |
+| 3006619 | Chromium [Mass/volume] in Saliva (oral fluid) | 0.839 |  |
+| 3048252 | Creatine kinase.MiMi/Creatine kinase.total in Serum or Plasma | 0.839 |  |
+| 36031387 | Copper free [Mass/volume] in Serum or Plasma | 0.839 |  |
+| 40761050 | Cobalt [Mass/volume] in Cerebral spinal fluid | 0.838 |  |
+| 648684 | Copper [Measurement] in Urine | 0.838 |  |
+| 42869584 | Hematocrit [Pure volume fraction] of Venous blood | 0.836 |  |
+| 1616377 | Carcinoembryonic Ag [Mass/volume] in Aspirate | 0.835 |  |
+| 3048150 | Creatine kinase.MB [Presence] in Serum or Plasma | 0.833 |  |
+| 3017761 | Creatine kinase isoenzymes [Interpretation] in Serum or Plasma | 0.831 |  |
+| 3009090 | Calcium [Moles/volume] in Urine --2nd specimen post XXX challenge | 0.831 |  |
+| 3034238 | Transferrin.carbohydrate deficient.disialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.831 |  |
+| 3052662 | Ceruloplasmin [Moles/volume] in Serum or Plasma | 0.830 |  |
+| 3010989 | Calcitonin [Mass/volume] in Serum or Plasma | 0.830 | 1605 |
+| 3003031 | Transferrin.carbohydrate deficient.disialo/Transferrin.total in Serum or Plasma | 0.829 |  |
+| 3049714 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma | 0.829 |  |
+| 3008152 | Bicarbonate [Moles/volume] in Arterial blood | 0.829 | 310 |
+| 649302 | Immune complex [Measurement] in Body fluid | 0.829 |  |
+| 3005396 | Chloride [Moles/volume] in Vitreous fluid | 0.828 |  |
+| 3040026 | Transferrin.carbohydrate deficient panel - Serum or Plasma | 0.827 |  |
+| 1175635 | Transferrin.carbohydrate deficient.trisialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.827 |  |
+| 3000531 | Carcinoembryonic Ag [Mass/volume] in Semen | 0.826 |  |
+| 3034154 | Transferrin.carbohydrate deficient.trisialo/Transferrin.total in Serum or Plasma | 0.822 |  |
+| 40757500 | Chloride [Moles/volume] in Serum or Plasma --post dialysis | 0.821 |  |
+| 3039936 | Copper/Creatinine [Molar ratio] in 24 hour Urine | 0.820 |  |
+| 3036413 | Transferrin.carbohydrate deficient.asialo/Transferrin.carbohydrate deficient.tetrasialo [Mass Ratio] in Serum or Plasma | 0.819 |  |
+| 647174 | Calcium.ionized [Measurement] in Serum or Plasma | 0.819 |  |
+| 40762318 | Chromogranin A [Units/volume] in Cerebral spinal fluid | 0.818 |  |
+| 3040335 | Chloride/Creatinine [Ratio] in 24 hour Urine | 0.817 |  |
+| 3030993 | Tin [Moles/time] in 24 hour Urine | 0.816 |  |
+| 37020917 | Transferrin.carbohydrate deficient.disialo/Transferrin.total standardized per IFCC-RMP for CDT in Serum or Plasma | 0.816 |  |
+| 3044443 | Immune Complex C3d [Units/volume] in Serum or Plasma | 0.815 |  |
+| 3038215 | Transferrin.carbohydrate deficient.tetrasialo/Transferrin.total in Serum or Plasma | 0.813 |  |
+| 3043266 | Transferrin.carbohydrate deficient.asialo/Transferrin.carbohydrate deficient.disialo [Mass Ratio] in Serum or Plasma | 0.813 |  |
+| 3052628 | Collagen type 1 Ab [Units/volume] in Serum | 0.812 |  |
+| 1988213 | Chloride/Creatinine [Molar ratio] in 24 hour Urine | 0.812 |  |
+| 3002754 | Copper [Mass/volume] in Urine collected for unspecified duration | 0.808 |  |
+| 40762311 | Chromogranin A [Units/volume] in Pleural fluid | 0.808 |  |
+| 42869547 | Procollagen type III.N-terminal propeptide [Mass/volume] in Serum | 0.806 |  |
+| 3028506 | Copper [Mass/volume] in Urine | 0.805 |  |
+| 3041449 | Collagen crosslinked C-telopeptide [Mass/volume] in Serum or Plasma | 0.802 |  |
+| 46236075 | Procollagen type I.N-terminal propeptide [Mass/volume] in Serum or Plasma by Immunoassay | 0.800 |  |
+| 21494382 | Copper intake 24 hour Measured | 0.798 |  |
+| 3965143 | Calprotectin [Mass/volume] in Serum or Plasma | 0.795 |  |
+| 648592 | Complement C3+C4+ C1q Ab.IgG panel - Serum or Plasma | 0.792 |  |
+| 3038588 | Complement C2 [Presence] in Serum or Plasma | 0.790 |  |
+| 3046399 | Transferrin.carbohydrate deficient.monosialo/Transferrin.carbohydrate deficient.disialo [Mass Ratio] in Serum or Plasma | 0.789 |  |
+| 3052973 | Complement C4 [Presence] in Serum or Plasma | 0.786 |  |
+| 3003415 | Copper/Creatinine [Mass Ratio] in 24 hour Urine | 0.786 |  |
+| 3000301 | Heavy metals [Presence] in 24 hour Urine | 0.786 |  |
+| 3046458 | Immune complex [Presence] in Serum or Plasma by C1q binding assay | 0.786 |  |
+| 40759746 | Procollagen type III [Mass/volume] in Serum | 0.783 |  |
+| 648687 | Cobalt/Creatinine [Measurement] in Urine | 0.782 |  |
+| 3037209 | Collagen Ab [Units/volume] in Serum | 0.782 |  |
+| 3009927 | Gastrin [Mass/volume] in Serum or Plasma | 0.781 | 1411 |
+| 3023920 | Nickel [Presence] in Urine | 0.779 |  |
+| 3052033 | Collagen.bovine type 1 Ab [Units/volume] in Serum | 0.779 |  |
+| 40762317 | Chromogranin A [Units/volume] in Peritoneal fluid | 0.779 |  |
+| 3000163 | Transferrin.carbohydrate deficient.asialo/Transferrin.total in Serum or Plasma | 0.777 |  |
+| 646391 | Immune complex.IgG [Measurement] in Serum or Plasma | 0.776 |  |
+| 3018840 | Calcitonin [Moles/volume] in Serum or Plasma | 0.774 |  |
+| 3001919 | Transferrin.carbohydrate deficient.monosialo/Transferrin.total in Serum or Plasma | 0.772 |  |
+| 3008440 | Collagen crosslinked N-telopeptide [Moles/volume] in Serum | 0.772 |  |
+| 40761986 | Calcitonin [Mass/volume] in Serum or Plasma --baseline | 0.772 |  |
+| 3043240 | Immune complex [Presence] in Serum or Plasma by Raji cell assay | 0.769 |  |
+| 3022947 | Cobalt/Creatinine [Mass Ratio] in Urine | 0.765 |  |
+| 3004722 | Prolactin [Mass/volume] in Serum or Plasma | 0.763 | 290 |
+| 3010370 | Gastrin [Moles/volume] in Serum or Plasma | 0.763 |  |
+| 3046728 | Iron [Presence] in Serum or Plasma | 0.762 |  |
+| 3002091 | Choriogonadotropin [Moles/volume] in Serum or Plasma | 0.761 |  |
+| 36031941 | Copper free/Total copper in Serum or Plasma by calculation | 0.757 |  |
+| 3023433 | Cobalt/Creatinine [Mass Ratio] in 24 hour Urine | 0.749 |  |
+| 3022756 | Ceruloplasmin [Mass/volume] in Serum or Plasma | 0.740 | 777 |
+| 3040880 | Ceruloplasmin actual/normal in Serum or Plasma | 0.740 |  |
+| 3040526 | Collagen crosslinked C-telopeptide [Moles/volume] in Serum or Plasma | 0.737 |  |
+| 645187 | Iron [Measurement] in Serum or Plasma | 0.735 |  |
+| 40757501 | Chloride [Mass/volume] in Body fluid | 0.732 |  |
+| 40760866 | Procollagen type III.N-terminal propeptide [Units/volume] in Serum | 0.732 |  |
+| 1002263 | Chloride [Moles/volume] in Serum or Plasma --1 hour post dose vasopressin | 0.728 |  |
+| 3003143 | Carcinoembryonic Ag [Units/volume] in Semen | 0.728 |  |
+| 44816885 | Collagen crosslinked C-telopeptide [Z-score] in Serum or Plasma | 0.726 |  |
+| 1001843 | Chloride [Moles/volume] in Serum or Plasma --2 hours post dose vasopressin | 0.726 |  |
+| 646316 | Squamous cell carcinoma Ag [Measurement] in Pleural fluid | 0.723 |  |
+| 36303415 | Chloride [Mass/volume] in Specimen | 0.714 |  |
 
 ## The rows
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning | loinc_name_guess |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 482 | -ana | titre | 11% | name+unit | 21 | 14.29 |  | -Tuma, vasta-aineet |  |  | Nuclear antibody [Titer] in Serum |
-| 483 | -ana |  | 89% | name | 169 | 100 |  | -Tuma, vasta-aineet |  |  | Nuclear antibody [Titer] in Serum |
-| 484 | am-epo | iu/l | 20% | name+unit | 76 | 0 |  | Am-Erytropoietiini | Amniotic fluid |  | Erythropoietin [Units/volume] in Amniotic fluid |
-| 485 | am-epo | u/l | 71% | name+unit+values | 267 | 0.75 | [2.67, 3.48, 4.24, 4.97, 5.92, 7.13, 8.38, 10.84, 21.7] | Am-Erytropoietiini | Amniotic fluid |  | Erythropoietin [Units/volume] in Amniotic fluid |
-| 486 | am-epo |  | 8% | name | 31 | 45.16 |  | Am-Erytropoietiini | Amniotic fluid |  | Erythropoietin [Units/volume] in Amniotic fluid |
-| 487 | b-adp | auc | 8% | name+unit | 28 | 0 |  |  | Blood |  | Platelet aggregation ADP induced [Area under curve] in Blood |
-| 488 | b-adp |  | 92% | name | 340 | 100 |  |  | Blood |  | Platelet aggregation ADP induced [Area under curve] in Blood |
-| 489 | b-aspi | auc | 8% | name+unit | 28 | 0 |  |  | Blood |  | Platelet aggregation arachidonic acid induced [Area under curve] in Blood |
-| 490 | b-aspi |  | 92% | name | 340 | 100 |  |  | Blood |  | Platelet aggregation arachidonic acid induced [Area under curve] in Blood |
-| 491 | b-vasp | % | 71% | name+unit+values | 165 | 0 | [15.56, 23.85, 29.41, 35.04, 41.24, 50.14, 56.77, 61.91, 75.84] |  | Blood |  | Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets |
-| 492 | b-vasp |  | 29% | name | 67 | 61.19 |  |  | Blood |  | Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets |
-| 493 | du-5hiaa | umol | 49% | name+unit+values | 332 | 1.51 | [14.87, 17.89, 19.97, 21.96, 24, 26.85, 29.92, 35.9, 54.08] | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  | 5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine |
-| 494 | du-5hiaa | umol/24h | 26% | name+unit+values | 175 | 0 | [13.31, 17.22, 20.27, 23.53, 25.81, 31.1, 37.11, 45.94, 66.13] | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  | 5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine |
-| 495 | du-5hiaa | umol/l | 4% | name+unit | 25 | 0 |  | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  | 5-Hydroxyindoleacetic acid [Moles/volume] in 24 hour Urine |
-| 496 | du-5hiaa |  | 22% | name | 147 | 66.67 |  | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  | 5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine |
-| 497 | fs-ace | u/l | 91% | name+unit+values | 33401 | 0.05 | [20.1, 26.68, 31.86, 36.8, 41.71, 47.15, 53.87, 62.77, 76.91] | fS-Angiotensiini-1-konvertaasi | Fasting serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 498 | fs-ace |  | 9% | name+values | 3291 | 89.58 | [11.62, 22.24, 28.9, 33.73, 39.48, 44.52, 50.34, 61.92, 75.37] | fS-Angiotensiini-1-konvertaasi | Fasting serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 499 | fs-apot |  | 100% | name | 258 | 100 |  |  | Fasting serum |  | Apolipoprotein [Mass/volume] in Serum or Plasma |
-| 500 | fs-ffa | mmol/l | 90% | name+unit+values | 170 | 0.59 | [0.17, 0.25, 0.3, 0.38, 0.42, 0.5, 0.56, 0.69, 0.91] | fS-Rasvahapot, vapaat | Fasting serum |  | Fatty acids.free [Moles/volume] in Serum or Plasma |
-| 501 | fs-ffa |  | 10% | name | 19 | 36.84 |  | fS-Rasvahapot, vapaat | Fasting serum |  | Fatty acids.free [Moles/volume] in Serum or Plasma |
-| 502 | fs-tp-1 |  | 100% | name | 1698 | 100 |  |  | Fasting serum |  |  |
-| 503 | fs-tp-3 |  | 100% | name | 867 | 100 |  |  | Fasting serum |  |  |
-| 504 | fs-tp-4 |  | 100% | name | 926 | 100 |  |  | Fasting serum |  |  |
-| 505 | fs-tp-7 |  | 100% | name | 400 | 100 |  |  | Fasting serum |  |  |
-| 506 | li-tpha | titre | 2% | name+unit | 12 | 0 |  | Li-Treponema pallidum, hemagglutinaatio | Cerebrospinal fluid |  | Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination |
-| 507 | li-tpha |  | 98% | name | 526 | 100 |  | Li-Treponema pallidum, hemagglutinaatio | Cerebrospinal fluid |  | Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination |
-| 508 | p-hae |  | 100% | name | 461 | 100 |  |  | Plasma |  |  |
-| 509 | p-hcg | iu/l | 3% | name+unit+values | 858 | 0 | [3.54, 10.48, 27.87, 72.06, 203.74, 526.1, 1525.11, 5507.31, 17831.23] | P -Koriongonadotropiini | Plasma |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 510 | p-hcg | u/l | 45% | name+unit+values | 13156 | 11.71 | [0, 1.5, 5.06, 22.75, 97.57, 335.38, 1102.09, 3696.05, 18876.19] | P -Koriongonadotropiini | Plasma |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 511 | p-hcg |  | 52% | name+values | 15471 | 94.78 | [2.42, 12.44, 35.69, 103.11, 288.41, 866.82, 2866.35, 7636.68, 32545.17] | P -Koriongonadotropiini | Plasma |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 512 | p-he4 | pmol/l | 100% | name+unit+values | 2505 | 0.12 | [38.55, 42.76, 46.82, 51.17, 55.95, 62.75, 72.7, 92.45, 146.15] | P -Epididymaalinen antigeeni 4 (HE4) | Plasma |  | HE4 protein [Moles/volume] in Serum or Plasma |
-| 513 | p-he4 |  | 0% | name | 6 | 100 |  | P -Epididymaalinen antigeeni 4 (HE4) | Plasma |  | HE4 protein [Moles/volume] in Serum or Plasma |
-| 514 | p-hepg |  | 100% | name | 107 | 100 |  |  | Plasma |  |  |
-| 515 | p-hok |  | 100% | name | 397 | 100 |  |  | Plasma |  |  |
-| 516 | p-shbg | nmol/l | 51% | name+unit+values | 791 | 0 | [18.37, 23.23, 26.61, 30.13, 34.18, 38.05, 43.25, 50.43, 63.9] |  | Plasma |  | Sex hormone binding globulin [Moles/volume] in Serum or Plasma |
-| 517 | p-shbg |  | 49% | name+values | 758 | 4.09 | [17.37, 21.68, 26.35, 30.87, 35.48, 41.39, 46.88, 56, 72.07] |  | Plasma |  | Sex hormone binding globulin [Moles/volume] in Serum or Plasma |
-| 518 | s-5hiaa | nmol/l | 99% | name+unit+values | 10313 | 0.07 | [44.23, 52.73, 60.93, 69.76, 80.1, 94.8, 122.35, 200.37, 540.74] | S-Hydroksi-indolyyliasetaatti (5-) | Serum |  | 5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma |
-| 519 | s-5hiaa |  | 1% | name | 153 | 79.74 |  | S-Hydroksi-indolyyliasetaatti (5-) | Serum |  | 5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma |
-| 520 | s-ace | u/l | 74% | name+unit+values | 2203 | 0.18 | [19.48, 28.37, 33.74, 38.42, 43.02, 48.21, 54.09, 61.63, 75.23] |  | Serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 521 | s-ace |  | 26% | name+values | 769 | 20.68 | [21.02, 30.36, 34.97, 38.52, 42.83, 46.55, 51.62, 57.68, 65.53] |  | Serum |  | Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma |
-| 522 | s-ada | u/l | 94% | name+unit+values | 4147 | 1.33 | [7, 8.05, 9.23, 10.37, 11.69, 12.94, 14.77, 17.12, 21.32] | S -Adenosiinideaminaasi | Serum |  | Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma |
-| 523 | s-ada |  | 6% | name | 259 | 84.56 |  | S -Adenosiinideaminaasi | Serum |  | Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma |
-| 524 | s-afp | u/ml | 74% | name+unit+values | 18186 | 1.26 | [1.8, 2.08, 2.61, 3.01, 3.6, 4.33, 5.57, 7.77, 24.79] | S -Alfa-1-fetoproteiini | Serum |  | Alpha-1-fetoprotein [Units/volume] in Serum or Plasma |
-| 525 | s-afp | ug/l | 10% | name+unit+values | 2515 | 0 | [2, 2.23, 3, 3.96, 4.22, 5.38, 6.93, 9.7, 20.37] | S -Alfa-1-fetoproteiini | Serum |  | Alpha-1-fetoprotein [Mass/volume] in Serum or Plasma |
-| 526 | s-afp |  | 16% | name+values | 4026 | 80.55 | [2, 2.01, 3, 3, 3.99, 4, 5, 6.41, 9.69] | S -Alfa-1-fetoproteiini | Serum |  | Alpha-1-fetoprotein [Units/volume] in Serum or Plasma |
-| 527 | s-afp/d | u/ml | 83% | name+unit+values | 234 | 0 | [15.11, 17.44, 19.7, 22.07, 23.9, 26.33, 29.33, 33.17, 39.24] |  | Serum |  | Alpha-1-fetoprotein [Units/volume] in Serum or Plasma |
-| 528 | s-afp/d |  | 17% | name | 49 | 12.24 |  |  | Serum |  | Alpha-1-fetoprotein [Units/volume] in Serum or Plasma |
-| 529 | s-amh | ug/l | 88% | name+unit+values | 9545 | 0.43 | [0.42, 0.85, 1.31, 1.75, 2.24, 2.87, 3.63, 4.76, 7.13] | S -Anti-Muller hormoni | Serum |  | Anti-Mullerian hormone [Mass/volume] in Serum or Plasma |
-| 530 | s-amh |  | 12% | name+values | 1328 | 93.45 | [0.62, 1.11, 1.66, 2.28, 2.8, 3.57, 4.21, 5.32, 7.88] | S -Anti-Muller hormoni | Serum |  | Anti-Mullerian hormone [Mass/volume] in Serum or Plasma |
-| 531 | s-ami | mg/l | 49% | name+unit+values | 294 | 0 | [1.3, 1.49, 1.7, 2.28, 2.76, 3.41, 4.52, 6.36, 11.32] | S -Amikasiini | Serum |  | Amikacin [Mass/volume] in Serum or Plasma |
-| 532 | s-ami |  | 51% | name | 308 | 95.13 |  | S -Amikasiini | Serum |  | Amikacin [Mass/volume] in Serum or Plasma |
-| 533 | s-ana | titre | 26% | name+unit+values | 21493 | 1.69 | [80, 121.94, 160, 299.08, 320, 320, 399.84, 831.19, 1349.55] | S -Tuma, vasta-aineet | Serum |  | Nuclear antibody [Titer] in Serum |
-| 534 | s-ana |  | 74% | name+values | 62781 | 100 | [80, 160, 320, 320, 320, 320, 640, 762.94, 1891.15] | S -Tuma, vasta-aineet | Serum |  | Nuclear antibody [Titer] in Serum |
-| 535 | s-apot |  | 100% | name | 754 | 100 |  |  | Serum |  | Apolipoprotein [Mass/volume] in Serum or Plasma |
-| 536 | s-asca | u/ml | 22% | name+unit | 89 | 100 |  | S -Saccharomyces cerevisiae, vasta-aineet | Serum |  | Saccharomyces cerevisiae Ab [Units/volume] in Serum |
-| 537 | s-asca |  | 78% | name | 316 | 100 |  | S -Saccharomyces cerevisiae, vasta-aineet | Serum |  | Saccharomyces cerevisiae Ab [Units/volume] in Serum |
-| 538 | s-ast | iu/ml | 44% | name+unit+values | 2404 | 0 | [49.92, 65.92, 77.55, 92.42, 111.12, 137.94, 173.28, 237.31, 396.71] | S -Antistreptolysiini | Serum |  | Streptolysin O Ab [Units/volume] in Serum |
-| 539 | s-ast | titre | 0% | name+unit | 7 | 0 |  | S -Antistreptolysiini | Serum |  | Streptolysin O Ab [Titer] in Serum |
-| 540 | s-ast | u/ml | 8% | name+unit+values | 408 | 4.17 | [30.71, 40.63, 53.38, 70.53, 94.49, 133.41, 202.61, 384.67, 783.66] | S -Antistreptolysiini | Serum |  | Streptolysin O Ab [Units/volume] in Serum |
-| 541 | s-ast |  | 48% | name+values | 2603 | 94.05 | [60.92, 74.22, 90.53, 107.5, 145.19, 198.62, 261.7, 407.28, 740.72] | S -Antistreptolysiini | Serum |  | Streptolysin O Ab [Units/volume] in Serum |
-| 542 | s-asta | iu/ml | 10% | name+unit+values | 256 | 16.41 | [2, 2, 2, 2, 3.02, 4, 4.64, 6, 8] | S -Antistafylolysiini | Serum |  | Staphylolysin Ab [Units/volume] in Serum |
-| 543 | s-asta | u/ml | 0% | name+unit | 10 | 0 |  | S -Antistafylolysiini | Serum |  | Staphylolysin Ab [Units/volume] in Serum |
-| 544 | s-asta |  | 89% | name | 2266 | 99.29 |  | S -Antistafylolysiini | Serum |  | Staphylolysin Ab [Units/volume] in Serum |
-| 545 | s-br | mmol/l | 100% | name+unit | 130 | 0 |  | S -Bromidi | Serum |  | Bromide [Moles/volume] in Serum or Plasma |
-| 546 | s-dhea | nmol/l | 84% | name+unit+values | 398 | 0 | [2.68, 4.23, 5.8, 8.33, 11.06, 14.2, 18.42, 22.5, 33.54] | S -Dehydroepiandrosteroni | Serum |  | Dehydroepiandrosterone [Moles/volume] in Serum or Plasma |
-| 547 | s-dhea |  | 16% | name | 74 | 68.92 |  | S -Dehydroepiandrosteroni | Serum |  | Dehydroepiandrosterone [Moles/volume] in Serum or Plasma |
-| 548 | s-dheas | umol/l | 92% | name+unit+values | 3797 | 0.03 | [1.05, 1.87, 2.83, 3.75, 4.58, 5.54, 6.67, 8.05, 10.29] | S -Dehydroepiandrosteroni, sulfaatti | Serum |  | Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma |
-| 549 | s-dheas |  | 8% | name+values | 331 | 53.47 | [1.45, 2.24, 2.88, 3.59, 4.26, 5.13, 5.94, 7.34, 8.82] | S -Dehydroepiandrosteroni, sulfaatti | Serum |  | Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma |
-| 550 | s-e1 | pmol/l | 80% | name+unit+values | 123 | 0 | [70, 112.9, 136.88, 181.46, 224.33, 282.87, 347.03, 435.1, 621.18] | S -Estroni | Serum |  | Estrone [Moles/volume] in Serum or Plasma |
-| 551 | s-e1 |  | 20% | name | 30 | 76.67 |  | S -Estroni | Serum |  | Estrone [Moles/volume] in Serum or Plasma |
-| 552 | s-e2 | nmol/l | 81% | name+unit+values | 10351 | 2.69 | [0.07, 0.1, 0.13, 0.16, 0.2, 0.27, 0.38, 0.55, 0.99] | S -Estradioli | Serum |  | Estradiol [Moles/volume] in Serum or Plasma |
-| 553 | s-e2 |  | 19% | name+values | 2381 | 83.75 | [0.06, 0.08, 0.1, 0.12, 0.15, 0.19, 0.25, 0.35, 0.58] | S -Estradioli | Serum |  | Estradiol [Moles/volume] in Serum or Plasma |
-| 554 | s-ema |  | 100% | name | 2245 | 99.96 |  | S -Endomysium, vasta-aineet | Serum |  | Endomysial Ab [Titer] in Serum |
-| 555 | s-ena |  | 100% | name+values | 1469 | 62.22 | [0.1, 0.1, 0.1, 0.19, 0.2, 0.22, 0.3, 0.47, 1.12] |  | Serum |  | Extractable nuclear Ab [Ratio] in Serum |
-| 556 | s-enal |  | 100% | name | 832 | 100 |  |  | Serum |  | Extractable nuclear Ab panel - Serum |
-| 557 | s-epo | iu/l | 26% | name+unit+values | 2353 | 0.38 | [4.95, 7.08, 8.93, 10.78, 12.99, 15.54, 19.77, 28.75, 48.4] | S -Erytropoietiini | Serum |  | Erythropoietin [Units/volume] in Serum or Plasma |
-| 558 | s-epo | pmol/l | 0% | name+unit | 44 | 0 |  | S -Erytropoietiini | Serum |  | Erythropoietin [Moles/volume] in Serum or Plasma |
-| 559 | s-epo | u/l | 60% | name+unit+values | 5380 | 0 | [4.44, 6.44, 8.09, 9.88, 11.93, 14.55, 19.01, 29.55, 62.33] | S -Erytropoietiini | Serum |  | Erythropoietin [Units/volume] in Serum or Plasma |
-| 560 | s-epo |  | 13% | name+values | 1209 | 20.35 | [4.6, 6.64, 8.47, 10.2, 11.81, 13.76, 17.07, 22.59, 40.53] | S -Erytropoietiini | Serum |  | Erythropoietin [Units/volume] in Serum or Plasma |
-| 561 | s-ffa | mmol/l | 100% | name+unit+values | 518 | 0 | [0.03, 0.04, 0.07, 0.13, 0.19, 0.28, 0.44, 0.57, 0.75] |  | Serum |  | Fatty acids.free [Moles/volume] in Serum or Plasma |
-| 562 | s-gen | mg/l | 52% | name+unit+values | 373 | 0.54 | [0.5, 0.65, 0.75, 0.89, 0.99, 1.17, 1.48, 2.04, 3.94] | S -Gentamysiini | Serum |  | Gentamicin [Mass/volume] in Serum or Plasma |
-| 563 | s-gen |  | 48% | name | 339 | 85.55 |  | S -Gentamysiini | Serum |  | Gentamicin [Mass/volume] in Serum or Plasma |
-| 564 | s-hae |  | 100% | name | 751 | 100 |  |  | Serum |  |  |
-| 565 | s-hbe |  | 100% | name | 347 | 100 |  |  | Serum |  |  |
-| 566 | s-hcg | iu/l | 9% | name+unit+values | 2181 | 0 | [2.11, 4.62, 15.8, 53.63, 166.71, 442, 1018.25, 2912.42, 12003.73] | S -Koriongonadotropiini | Serum |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 567 | s-hcg | u/l | 24% | name+unit+values | 5914 | 0 | [5.67, 20.66, 67.43, 172.44, 366.74, 677.25, 1513.49, 4378.78, 17452.46] | S -Koriongonadotropiini | Serum |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 568 | s-hcg |  | 67% | name+values | 16592 | 96.23 | [8.29, 17.67, 40.08, 108.43, 306.84, 912.85, 3181.52, 10206.39, 38671.9] | S -Koriongonadotropiini | Serum |  | Choriogonadotropin [Units/volume] in Serum or Plasma |
-| 569 | s-he4 | pmol/l | 96% | name+unit+values | 11193 | 0 | [31.87, 37.18, 41.94, 46.96, 53.02, 60.99, 73.42, 98.24, 181.66] | S -Epididymaalinen antigeeni 4 (HE4) | Serum |  | HE4 protein [Moles/volume] in Serum or Plasma |
-| 570 | s-he4 |  | 4% | name+values | 420 | 43.57 | [28.77, 32.37, 35.15, 39.84, 42.92, 45.83, 51.37, 61.13, 81.8] | S -Epididymaalinen antigeeni 4 (HE4) | Serum |  | HE4 protein [Moles/volume] in Serum or Plasma |
-| 571 | s-kem |  | 100% | name | 1473 | 100 |  |  | Serum |  |  |
-| 572 | s-kyhemag | titre | 18% | name+unit+values | 180 | 1.67 | [8, 11.41, 16, 18.4, 42.5, 146.59, 256, 870.4, 2048] | S -Kylmähemagglutiniinit | Serum |  | Cold agglutinin [Titer] in Serum |
-| 573 | s-kyhemag |  | 82% | name | 826 | 99.39 |  | S -Kylmähemagglutiniinit | Serum |  | Cold agglutinin [Titer] in Serum |
-| 574 | s-shbg | nmol/l | 98% | name+unit+values | 29338 | 0 | [16.96, 21.37, 25.29, 29.19, 33.26, 37.98, 43.62, 51.6, 65.13] | S -Sukupuolihormoneja sitova globuliini | Serum |  | Sex hormone binding globulin [Moles/volume] in Serum or Plasma |
-| 575 | s-shbg |  | 2% | name+values | 614 | 100 | [15.22, 19.74, 24.23, 28.3, 32.4, 37.12, 43.41, 51.5, 64.44] | S -Sukupuolihormoneja sitova globuliini | Serum |  | Sex hormone binding globulin [Moles/volume] in Serum or Plasma |
-| 576 | s-tati | nmol/l | 51% | name+unit+values | 551 | 0 | [1.3, 1.49, 1.61, 1.81, 2.08, 2.38, 2.74, 3.44, 6.09] | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  | Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma |
-| 577 | s-tati | ug/l | 41% | name+unit+values | 446 | 0 | [6.71, 8.1, 9.03, 9.98, 11, 12.24, 13.98, 16.99, 30.9] | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  | Tumor associated trypsin inhibitor [Mass/volume] in Serum or Plasma |
-| 578 | s-tati |  | 8% | name | 86 | 24.42 |  | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  | Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma |
-| 579 | s-tpha | titre | 15% | name+unit+values | 1665 | 0 | [158.37, 304.61, 391.53, 640, 1034.44, 1338.85, 3168.84, 4985.37, 6432.72] | S -Treponema pallidum, hemagglutinaatio | Serum |  | Treponema pallidum Ab [Titer] in Serum by Hemagglutination |
-| 580 | s-tpha |  | 85% | name | 9799 | 99.67 |  | S -Treponema pallidum, hemagglutinaatio | Serum |  | Treponema pallidum Ab [Titer] in Serum by Hemagglutination |
-| 581 | s-van | mg/l | 96% | name+unit+values | 36935 | 0.09 | [6.84, 8.59, 9.97, 11.16, 12.39, 13.69, 15.03, 16.85, 19.72] | S -Vankomysiini | Serum |  | Vancomycin [Mass/volume] in Serum or Plasma |
-| 582 | s-van |  | 4% | name+values | 1695 | 100 | [7.35, 9.11, 10.49, 11.71, 12.89, 14.15, 15.61, 17.74, 21.29] | S -Vankomysiini | Serum |  | Vancomycin [Mass/volume] in Serum or Plasma |
-| 583 | ts-res |  | 100% | name | 1353 | 100 |  | Ts-Reseptoritutkimus | Tissue |  | Estrogen and Progesterone receptor panel - Tissue |
-| 584 | u-hcg | iu/l | 28% | name+unit | 93 | 0 |  | U -Koriongonadotropiini | Urine |  | Choriogonadotropin [Units/volume] in Urine |
-| 585 | u-hcg | u/l | 4% | name+unit | 15 | 0 |  | U -Koriongonadotropiini | Urine |  | Choriogonadotropin [Units/volume] in Urine |
-| 586 | u-hcg |  | 68% | name | 227 | 97.8 |  | U -Koriongonadotropiini | Urine |  | Choriogonadotropin [Presence] in Urine |
+| 487 | -c3d |  | 100% | name | 313 | 100 |  |  |  |  | Complement C3d in Serum or Plasma |
+| 488 | -cdt | mg/l | 100% | name+unit+values | 465 | 0 | [30.93, 34.48, 37.2, 39.51, 41.65, 44.52, 47.1, 52.61, 66.32] |  |  |  | Carbohydrate deficient transferrin [Mass/volume] in Serum |
+| 489 | -cea | ug/l | 62% | name+unit+values | 86 | 0 | [3.1, 10.24, 23.5, 45.82, 86.95, 226.27, 430.37, 1163.15, 2504] | -Karsinoembryonaalinen antigeeni |  |  | Carcinoembryonic antigen [Mass/volume] in Serum or Plasma |
+| 490 | -cea |  | 38% | name | 53 | 100 |  | -Karsinoembryonaalinen antigeeni |  |  | Carcinoembryonic antigen in Serum or Plasma |
+| 491 | ab-cl | mmol/l | 100% | name+unit+values | 1123 | 0 | [96.62, 99.74, 102.05, 103.97, 105.1, 106.54, 107.91, 109, 111.34] |  | Arterial blood | Clearance | Chloride [Moles/volume] in Arterial blood |
+| 492 | ap-cl | mmol/l | 76% | name+unit+values | 271 | 0 | [96.53, 101.68, 104.11, 105.92, 106.9, 108.61, 110, 111, 114.15] |  |  | Clearance | Chloride [Moles/volume] in Arterial plasma |
+| 493 | ap-cl |  | 24% | name | 84 | 100 |  |  |  | Clearance | Chloride in Arterial plasma |
+| 494 | b-cl | mmol/l | 86% | name+unit+values | 51262 | 0 | [99.4, 101.98, 103.81, 104.99, 106, 107.02, 108.25, 109.8, 112.07] |  | Blood | Clearance | Chloride [Moles/volume] in Blood |
+| 495 | b-cl |  | 14% | name | 8059 | 100 |  |  | Blood | Clearance | Chloride in Blood |
+| 496 | b-co | ug/l | 89% | name+unit+values | 4244 | 0 | [0.61, 0.84, 1.09, 1.4, 1.88, 2.76, 4.17, 6.44, 10.87] | B -Koboltti | Blood |  | Cobalt [Mass/volume] in Blood |
+| 497 | b-co |  | 11% | name+values | 508 | 100 | [0.9, 1, 1, 1.08, 1.7, 2.07, 3.1, 4.15, 6] | B -Koboltti | Blood |  | Cobalt [Mass/volume] in Blood |
+| 498 | b-cr | ug/l | 79% | name+unit+values | 3775 | 0 | [0.74, 1.01, 1.2, 1.43, 1.74, 2.14, 2.74, 3.65, 5.6] | B -Kromi | Blood |  | Chromium [Mass/volume] in Blood |
+| 499 | b-cr |  | 21% | name+values | 980 | 100 | [1, 1, 1, 1.2, 1.6, 2, 2.16, 2.94, 3.6] | B -Kromi | Blood |  | Chromium [Mass/volume] in Blood |
+| 500 | b-cya | ug/l | 95% | name+unit+values | 25550 | 0 | [60.87, 72.59, 81.84, 90.47, 100.07, 111.93, 131.29, 164.82, 225.76] | B -Syklosporiini A | Blood |  | Cyclosporine [Mass/volume] in Blood |
+| 501 | b-cya |  | 5% | name+values | 1477 | 100 | [61.13, 73.24, 78.64, 86.8, 95.21, 104.77, 117.98, 151.78, 199.49] | B -Syklosporiini A | Blood |  | Cyclosporine [Mass/volume] in Blood |
+| 502 | du-ca | *sai | 0% | name+unit | 6 | 0 |  | dU-Kalsium | 24-hour urine |  | Calcium in 24 hour Urine |
+| 503 | du-ca | mmol/24h | 89% | name+unit+values | 13838 | 0.02 | [1.76, 2.76, 3.64, 4.51, 5.38, 6.33, 7.4, 8.73, 10.72] | dU-Kalsium | 24-hour urine |  | Calcium [Moles/time] in 24 hour Urine |
+| 504 | du-ca |  | 11% | name | 1693 | 100 |  | dU-Kalsium | 24-hour urine |  | Calcium in 24 hour Urine |
+| 505 | du-cl | mmol | 81% | name+unit+values | 411 | 0 | [81.75, 104.44, 123.91, 140.06, 160.24, 175.41, 203.5, 249.04, 310.48] | dU-Kloridi | 24-hour urine | Clearance | Chloride [Moles/time] in 24 hour Urine |
+| 506 | du-cl |  | 19% | name | 94 | 100 |  | dU-Kloridi | 24-hour urine | Clearance | Chloride in 24 hour Urine |
+| 507 | du-cu | umol | 25% | name+unit+values | 94 | 1.06 | [0.16, 0.21, 0.28, 0.39, 0.78, 1.92, 4.29, 6.52, 10.65] | dU-Kupari | 24-hour urine |  | Copper [Moles/time] in 24 hour Urine |
+| 508 | du-cu | umol/24h | 34% | name+unit+values | 127 | 0 | [0.13, 0.17, 0.18, 0.22, 0.28, 0.36, 0.73, 3.44, 9.31] | dU-Kupari | 24-hour urine |  | Copper [Moles/time] in 24 hour Urine |
+| 509 | du-cu |  | 41% | name | 154 | 100 |  | dU-Kupari | 24-hour urine |  | Copper in 24 hour Urine |
+| 510 | fp-ca | mmol/l | 99% | name+unit+values | 61661 | 0 | [2.2, 2.26, 2.3, 2.33, 2.36, 2.39, 2.42, 2.46, 2.51] | fP-Kalsium | Fasting plasma |  | Calcium [Moles/volume] in Serum or Plasma |
+| 511 | fp-ca |  | 1% | name | 407 | 100 |  | fP-Kalsium | Fasting plasma |  | Calcium in Serum or Plasma |
+| 512 | fp-cga | nmol/l | 95% | name+unit+values | 10003 | 0.03 | [0.72, 1.15, 1.84, 2.33, 2.83, 3.49, 4.63, 7.79, 19.95] | fP-Kromograniini A | Fasting plasma |  | Chromogranin A [Moles/volume] in Serum or Plasma |
+| 513 | fp-cga |  | 5% | name+values | 571 | 100 | [1.96, 2.33, 2.55, 2.88, 3.13, 3.69, 4.46, 5.71, 8.06] | fP-Kromograniini A | Fasting plasma |  | Chromogranin A [Moles/volume] in Serum or Plasma |
+| 514 | fs-ca | mmol/l | 99% | name+unit+values | 1580 | 0 | [2.25, 2.3, 2.33, 2.36, 2.39, 2.41, 2.44, 2.47, 2.52] |  | Fasting serum |  | Calcium [Moles/volume] in Serum or Plasma |
+| 515 | fs-ca |  | 1% | name | 9 | 100 |  |  | Fasting serum |  | Calcium in Serum or Plasma |
+| 516 | fs-cga | nmol/l | 95% | name+unit+values | 6208 | 0 | [0.71, 0.95, 1.19, 1.46, 1.91, 2.49, 3.38, 5.29, 12.84] | fS-Kromograniini A | Fasting serum |  | Chromogranin A [Moles/volume] in Serum or Plasma |
+| 517 | fs-cga | ug/l | 0% | name+unit | 11 | 0 |  | fS-Kromograniini A | Fasting serum |  | Chromogranin A [Mass/volume] in Serum or Plasma |
+| 518 | fs-cga |  | 5% | name+values | 331 | 100 | [1, 1, 1, 1.17, 1.99, 2.13, 3.28, 4.74, 10.29] | fS-Kromograniini A | Fasting serum |  | Chromogranin A [Moles/volume] in Serum or Plasma |
+| 519 | mb-cl | mmol/l | 96% | name+unit | 2504 | 0 |  |  |  | Clearance | Chloride [Moles/volume] in Blood |
+| 520 | mb-cl |  | 4% | name | 105 | 100 |  |  |  | Clearance | Chloride in Blood |
+| 521 | p-c3 | g/l | 95% | name+unit+values | 14303 | 0 | [0.75, 0.87, 0.95, 1.02, 1.1, 1.18, 1.26, 1.35, 1.49] | P -Komplementti C3 | Plasma |  | Complement C3 [Mass/volume] in Serum or Plasma |
+| 522 | p-c3 |  | 5% | name+values | 748 | 100 | [0.79, 0.89, 0.96, 1.02, 1.1, 1.15, 1.23, 1.33, 1.48] | P -Komplementti C3 | Plasma |  | Complement C3 [Mass/volume] in Serum or Plasma |
+| 523 | p-c4 | g/l | 94% | name+unit+values | 13926 | 0 | [0.1, 0.13, 0.16, 0.18, 0.2, 0.22, 0.24, 0.27, 0.31] | P -Komplementti C4 | Plasma |  | Complement C4 [Mass/volume] in Serum or Plasma |
+| 524 | p-c4 |  | 6% | name+values | 953 | 100 | [0.1, 0.14, 0.17, 0.19, 0.2, 0.23, 0.25, 0.28, 0.32] | P -Komplementti C4 | Plasma |  | Complement C4 [Mass/volume] in Serum or Plasma |
+| 525 | p-ca | mmol/l | 99% | name+unit+values | 424377 | 0 | [2.21, 2.27, 2.31, 2.34, 2.37, 2.4, 2.43, 2.47, 2.53] | P -Kalsium | Plasma |  | Calcium [Moles/volume] in Serum or Plasma |
+| 526 | p-ca |  | 1% | name | 5509 | 100 |  | P -Kalsium | Plasma |  | Calcium in Serum or Plasma |
+| 527 | p-cea | ug/l | 84% | name+unit+values | 53825 | 0 | [1.59, 2.01, 2.37, 2.8, 3.39, 4.25, 5.72, 9.36, 30.62] | P -Karsinoembryonaalinen antigeeni | Plasma |  | Carcinoembryonic antigen [Mass/volume] in Serum or Plasma |
+| 528 | p-cea |  | 16% | name | 10275 | 100 |  | P -Karsinoembryonaalinen antigeeni | Plasma |  | Carcinoembryonic antigen in Serum or Plasma |
+| 529 | p-ck | u/l | 98% | name+unit+values | 278981 | 0 | [42.95, 58.04, 71.6, 86.71, 104.44, 129.55, 169.7, 253.54, 545.62] | P -Kreatiinikinaasi | Plasma |  | Creatine kinase [Enzymatic activity/volume] in Serum or Plasma |
+| 530 | p-ck |  | 2% | name | 4344 | 100 |  | P -Kreatiinikinaasi | Plasma |  | Creatine kinase in Serum or Plasma |
+| 531 | p-cl | mmol/l | 100% | name+unit+values | 441381 | 0.01 | [97.91, 100.97, 102.85, 104, 105.19, 106.56, 107.81, 109.04, 111.15] | P -Kloridi | Plasma | Clearance | Chloride [Moles/volume] in Serum or Plasma |
+| 532 | p-cl |  | 0% | name+values | 2019 | 100 | [96.43, 100.31, 102, 103.61, 104.81, 106, 106.99, 108, 109.87] | P -Kloridi | Plasma | Clearance | Chloride [Moles/volume] in Serum or Plasma |
+| 533 | p-cu | umol/l | 82% | name+unit+values | 362 | 0 | [11.87, 13.34, 14.27, 15.36, 16.22, 16.79, 17.66, 19.1, 21.13] | P -Kupari | Plasma |  | Copper [Moles/volume] in Serum or Plasma |
+| 534 | p-cu |  | 18% | name | 81 | 100 |  | P -Kupari | Plasma |  | Copper in Serum or Plasma |
+| 535 | pf-c3 | g/l | 81% | name+unit+values | 143 | 0 | [0.16, 0.25, 0.28, 0.33, 0.37, 0.43, 0.52, 0.59, 0.67] | Pf-Komplementti C3 | Pleural fluid |  | Complement C3 [Mass/volume] in Pleural fluid |
+| 536 | pf-c3 |  | 19% | name | 33 | 100 |  | Pf-Komplementti C3 | Pleural fluid |  | Complement C3 in Pleural fluid |
+| 537 | pf-c4 | g/l | 70% | name+unit+values | 129 | 0 | [0.02, 0.03, 0.04, 0.05, 0.07, 0.08, 0.09, 0.1, 0.12] | Pf-Komplementti C4 | Pleural fluid |  | Complement C4 [Mass/volume] in Pleural fluid |
+| 538 | pf-c4 |  | 30% | name | 55 | 100 |  | Pf-Komplementti C4 | Pleural fluid |  | Complement C4 in Pleural fluid |
+| 539 | pf-cea | ug/l | 53% | name+unit+values | 765 | 0 | [0.7, 1.09, 1.25, 1.54, 2, 2.48, 4.54, 27.69, 279.67] | Pf-Karsinoembryonaalinen antigeeni | Pleural fluid |  | Carcinoembryonic antigen [Mass/volume] in Pleural fluid |
+| 540 | pf-cea |  | 47% | name | 670 | 100 |  | Pf-Karsinoembryonaalinen antigeeni | Pleural fluid |  | Carcinoembryonic antigen in Pleural fluid |
+| 541 | s-c3 | g/l | 96% | name+unit+values | 10697 | 0 | [0.77, 0.9, 0.98, 1.06, 1.13, 1.21, 1.3, 1.41, 1.56] | S -Komplementti C3 | Serum |  | Complement C3 [Mass/volume] in Serum or Plasma |
+| 542 | s-c3 |  | 4% | name+values | 394 | 100 | [0.84, 0.96, 1.01, 1.06, 1.15, 1.24, 1.31, 1.42, 1.59] | S -Komplementti C3 | Serum |  | Complement C3 [Mass/volume] in Serum or Plasma |
+| 543 | s-c4 | g/l | 95% | name+unit+values | 10528 | 0 | [0.11, 0.14, 0.17, 0.2, 0.22, 0.24, 0.27, 0.3, 0.34] | S -Komplementti C4 | Serum |  | Complement C4 [Mass/volume] in Serum or Plasma |
+| 544 | s-c4 |  | 5% | name+values | 506 | 100 | [0.11, 0.15, 0.18, 0.2, 0.22, 0.24, 0.26, 0.27, 0.31] | S -Komplementti C4 | Serum |  | Complement C4 [Mass/volume] in Serum or Plasma |
+| 545 | s-ca | g/l | 0% | name+unit | 8 | 0 |  | S -Kalsium | Serum |  | Calcium [Mass/volume] in Serum or Plasma |
+| 546 | s-ca | mmol/l | 99% | name+unit+values | 20957 | 0 | [2.23, 2.27, 2.3, 2.33, 2.35, 2.38, 2.4, 2.43, 2.48] | S -Kalsium | Serum |  | Calcium [Moles/volume] in Serum or Plasma |
+| 547 | s-ca |  | 1% | name+values | 114 | 100 | [2.11, 2.22, 2.24, 2.29, 2.33, 2.36, 2.4, 2.42, 2.5] | S -Kalsium | Serum |  | Calcium [Moles/volume] in Serum or Plasma |
+| 548 | s-cdt | % | 97% | name+unit+values | 102065 | 0 | [0.79, 1.14, 1.3, 1.41, 1.5, 1.6, 1.7, 1.9, 2.36] | S -Desialotransferriini | Serum |  | Carbohydrate deficient transferrin/Transferrin.total [Molar ratio] in Serum |
+| 549 | s-cdt | u/l | 0% | name+unit | 35 | 0 |  | S -Desialotransferriini | Serum |  | Carbohydrate deficient transferrin [Units/volume] in Serum |
+| 550 | s-cdt |  | 3% | name | 2936 | 100 |  | S -Desialotransferriini | Serum |  | Carbohydrate deficient transferrin in Serum |
+| 551 | s-cea | ug/l | 79% | name+unit+values | 90194 | 0 | [1.12, 1.4, 1.69, 2.03, 2.45, 3.05, 4.05, 6.32, 17.53] | S -Karsinoembryonaalinen antigeeni | Serum |  | Carcinoembryonic antigen [Mass/volume] in Serum or Plasma |
+| 552 | s-cea |  | 21% | name | 23960 | 100 |  | S -Karsinoembryonaalinen antigeeni | Serum |  | Carcinoembryonic antigen in Serum or Plasma |
+| 553 | s-cic | ugeq/ml | 95% | name+unit+values | 728 | 0 | [2, 2.11, 3, 4, 5.61, 6.93, 9.29, 12.82, 20.44] | S -Immunokompleksit, kiertävät | Serum |  | Immune complex [Mass/volume] in Serum |
+| 554 | s-cic |  | 5% | name | 36 | 100 |  | S -Immunokompleksit, kiertävät | Serum |  | Immune complex in Serum |
+| 555 | s-ck | u/l | 99% | name+unit+values | 11560 | 0 | [55.21, 68.52, 80.72, 93.9, 109.16, 127.95, 153.42, 197.38, 289.68] | S -Kreatiinikinaasi | Serum |  | Creatine kinase [Enzymatic activity/volume] in Serum or Plasma |
+| 556 | s-ck |  | 1% | name | 102 | 100 |  | S -Kreatiinikinaasi | Serum |  | Creatine kinase in Serum or Plasma |
+| 557 | s-cl | mmol/l | 100% | name+unit+values | 194 | 0 | [97.57, 100, 101, 102, 103, 104, 104.97, 106, 107] | S -Kloridi | Serum | Clearance | Chloride [Moles/volume] in Serum or Plasma |
+| 558 | s-cu | umol/l | 93% | name+unit+values | 1531 | 0 | [11.56, 13.12, 14.07, 15.01, 15.92, 16.9, 18.04, 19.54, 22.14] | S -Kupari | Serum |  | Copper [Moles/volume] in Serum or Plasma |
+| 559 | s-cu |  | 7% | name+values | 119 | 100 | [12, 13.59, 14.88, 16, 17.1, 18.8, 20.92, 22.95, 25.9] | S -Kupari | Serum |  | Copper [Moles/volume] in Serum or Plasma |
+| 560 | s-ictp | ug/l | 90% | name+unit+values | 801 | 0 | [2.67, 3.25, 3.82, 4.4, 4.92, 5.81, 6.67, 8.24, 11.6] | S -Kollageeni I:n karboksiterminaalinen telopeptidi | Serum |  | Collagen type I telopeptide.carboxyterminal [Mass/volume] in Serum |
+| 561 | s-ictp | âug/l | 1% | name+unit | 11 | 0 |  | S -Kollageeni I:n karboksiterminaalinen telopeptidi | Serum |  | Collagen type I telopeptide.carboxyterminal [Mass/volume] in Serum |
+| 562 | s-ictp |  | 8% | name | 75 | 100 |  | S -Kollageeni I:n karboksiterminaalinen telopeptidi | Serum |  | Collagen type I telopeptide.carboxyterminal in Serum |
+| 563 | s-pct | ug/l | 76% | name+unit+values | 4418 | 0 | [0.06, 0.09, 0.12, 0.17, 0.23, 0.34, 0.54, 1, 3.09] | S -Prokalsitoniini | Serum |  | Procalcitonin [Mass/volume] in Serum or Plasma |
+| 564 | s-pct |  | 24% | name+values | 1380 | 100 | [1.39, 2.13, 8.8, 12.06, 16.31, 22.57, 28.84, 42.06, 68.76] | S -Prokalsitoniini | Serum |  | Procalcitonin [Mass/volume] in Serum or Plasma |
+| 565 | ts-cc |  | 100% | name | 582 | 100 |  |  | Tissue |  |  |
+| 566 | u-ca | mmol/l | 92% | name+unit+values | 2045 | 0 | [0.72, 1.18, 1.57, 2, 2.5, 3.06, 3.75, 4.62, 6.4] | U -Kalsium | Urine |  | Calcium [Moles/volume] in Urine |
+| 567 | u-ca |  | 8% | name+values | 184 | 100 | [1.03, 1.34, 1.77, 1.9, 2.01, 2.25, 2.9, 4.1, 4.72] | U -Kalsium | Urine |  | Calcium [Moles/volume] in Urine |
+| 568 | u-co | form | 5% | name+unit | 15 | 0 |  | U -Koboltti | Urine |  | Cobalt [Presence] in Urine |
+| 569 | u-co | nmol/l | 69% | name+unit+values | 197 | 2.54 | [3.97, 5.82, 9.12, 16.26, 25.4, 41.63, 60.62, 94.57, 169.48] | U -Koboltti | Urine |  | Cobalt [Moles/volume] in Urine |
+| 570 | u-co | ug/l | 5% | name+unit | 13 | 7.69 |  | U -Koboltti | Urine |  | Cobalt [Mass/volume] in Urine |
+| 571 | u-co |  | 22% | name | 62 | 100 |  | U -Koboltti | Urine |  | Cobalt in Urine |
+| 572 | u-cot | ng/ml | 4% | name+unit | 23 | 0 |  | U -Kotiniini | Urine |  | Cotinine [Mass/volume] in Urine |
+| 573 | u-cot | ug/l | 18% | name+unit+values | 95 | 0 | [50, 228.5, 353.33, 580, 746.38, 949.5, 1247.5, 1604.25, 2426] | U -Kotiniini | Urine |  | Cotinine [Mass/volume] in Urine |
+| 574 | u-cot |  | 78% | name | 422 | 100 |  | U -Kotiniini | Urine |  | Cotinine [Presence] in Urine |
+| 575 | u-cr | form | 2% | name+unit | 8 | 0 |  | U -Kromi | Urine |  | Chromium [Presence] in Urine |
+| 576 | u-cr | ug/l | 5% | name+unit | 25 | 0 |  | U -Kromi | Urine |  | Chromium [Mass/volume] in Urine |
+| 577 | u-cr | umol/l | 42% | name+unit+values | 211 | 1.42 | [0.01, 0.01, 0.01, 0.02, 0.02, 0.03, 0.05, 0.06, 0.09] | U -Kromi | Urine |  | Chromium [Moles/volume] in Urine |
+| 578 | u-cr |  | 51% | name | 259 | 100 |  | U -Kromi | Urine |  | Chromium in Urine |
+| 579 | v-hct |  | 100% | name+values | 258 | 100 | [0.33, 0.36, 0.38, 0.4, 0.41, 0.42, 0.45, 0.46, 0.49] |  |  |  | Hematocrit [Volume Fraction] in Blood |
+| 580 | v-ica |  | 100% | name+values | 294 | 100 | [1.08, 1.12, 1.15, 1.17, 1.19, 1.2, 1.22, 1.24, 1.27] |  |  |  | Calcium.ionized [Moles/volume] in Blood |
+| 581 | vp-cl | mmol/l | 98% | name+unit+values | 10892 | 0 | [99.57, 102.23, 103.93, 105.1, 106.07, 107.13, 108.26, 109.58, 111.2] |  |  | Clearance | Chloride [Moles/volume] in Venous plasma |
+| 582 | vp-cl |  | 2% | name | 175 | 100 |  |  |  | Clearance | Chloride in Venous plasma |
 
