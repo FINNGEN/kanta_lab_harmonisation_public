@@ -48,19 +48,39 @@ if (is.na(scriptDir) || !nzchar(scriptDir)) scriptDir <- "."
 rDir <- file.path(scriptDir, "R")
 systemPromptFile <- file.path(scriptDir, "systemPrompt.md")
 ellmerFixFile <- file.path(rDir, "ellmerFix.R")
+claudeClientFile <- file.path(rDir, "claudeClient.R")
 
 source(file.path(rDir, "clientFactory.R"))
 
+# Which backend answers the prompts. "claude_code" shells out to the `claude`
+# CLI (scripts/R/claudeClient.R); anything else is an ellmer HTTP provider.
+# The default model differs per backend, so it is resolved after the provider
+# is known rather than hard-coded in one Sys.getenv() default.
+llmProvider <- Sys.getenv("LLM_PROVIDER", "google_vertex")
+defaultModel <- if (identical(llmProvider, "claude_code")) "sonnet" else "gemini-2.5-pro"
+
 llmConfig <- list(
-  provider = Sys.getenv("LLM_PROVIDER", "google_vertex"),
-  model = Sys.getenv("LLM_MODEL", "gemini-2.5-pro"),
+  provider = llmProvider,
+  model = Sys.getenv("LLM_MODEL", defaultModel),
   project = Sys.getenv("GOOGLE_CLOUD_PROJECT"),
   location = Sys.getenv("GOOGLE_CLOUD_LOCATION"),
-  credentials = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+  credentials = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS"),
+  # Passed by path, not by value: parallel workers are separate processes and
+  # inherit no sourced functions, so the factory sources this file itself.
+  claudeClientFile = claudeClientFile
 )
 
 workersEnv <- Sys.getenv("LLM_PARALLEL_WORKERS", "")
-workers <- if (nzchar(workersEnv)) as.integer(workersEnv) else max(parallel::detectCores() - 2L, 1L)
+# One `claude` worker is a whole CLI process, not an HTTP call, so the default
+# is kept lower than the ellmer one -- the cost is memory and rate limits, not
+# CPU, and detectCores() is the wrong yardstick for it.
+workers <- if (nzchar(workersEnv)) {
+  as.integer(workersEnv)
+} else if (identical(llmProvider, "claude_code")) {
+  4L
+} else {
+  max(parallel::detectCores() - 2L, 1L)
+}
 
 cacheDir <- file.path(outDir, "groupsCache")
 dir.create(cacheDir, showWarnings = FALSE, recursive = TRUE)
@@ -268,12 +288,14 @@ resolveGroup <- function(item, cacheDir, systemPrompt, namesType, llmConfig,
   maxAttempts <- 4L
   res <- NULL
   client <- NULL
+  lastError <- NA_character_
   for (attempt in seq_len(maxAttempts)) {
     res <- tryCatch({
       client <- makeClientFactory(llmConfig)()
       client$set_system_prompt(systemPrompt)
       client$chat_structured(userMessage, echo = "none", type = namesType)
     }, error = function(e) {
+      lastError <<- conditionMessage(e)
       ParallelLogger::logWarn("Group ", gid, " attempt ", attempt, "/", maxAttempts,
                               " failed: ", conditionMessage(e))
       NULL
@@ -282,8 +304,12 @@ resolveGroup <- function(item, cacheDir, systemPrompt, namesType, llmConfig,
     if (attempt < maxAttempts) Sys.sleep(stats::runif(1, 0.5, 2.5) * attempt)
   }
   if (is.null(res)) {
+    # The message is RETURNED, not just logged: ParallelLogger's worker output
+    # does not reach the console, so a run in which every call failed printed
+    # only "Resolved 0 groups" and no reason at all. The parent summarises the
+    # messages it gets back, which is the only place they become visible.
     ParallelLogger::logError("Group ", gid, " gave up after ", maxAttempts, " attempts")
-    return(list(ok = FALSE, cost = 0))
+    return(list(ok = FALSE, cost = 0, error = lastError))
   }
 
   jsonlite::write_json(res, outJson, auto_unbox = TRUE, pretty = TRUE)
@@ -314,6 +340,19 @@ if (length(todoItems) > 0) {
   }
   nOk <- sum(vapply(results, function(x) isTRUE(x$ok), logical(1)))
   costUsd <- sum(vapply(results, function(x) as.numeric(x$cost), numeric(1)), na.rm = TRUE)
+  # Why the failures failed. Without this a run that lost every call -- an
+  # expired credential, an exhausted usage limit -- reports only that it
+  # resolved nothing, and the reason stays inside the workers where nobody
+  # sees it. Messages are deduplicated: 30 groups failing one way is one line.
+  errors <- unlist(lapply(results, function(x) if (!isTRUE(x$ok)) x$error else NULL))
+  errors <- errors[!is.na(errors)]
+  if (length(errors) > 0) {
+    tally <- sort(table(substr(errors, 1, 300)), decreasing = TRUE)
+    ParallelLogger::logError(length(errors), " group(s) failed; distinct reasons:")
+    for (i in seq_along(tally)) {
+      ParallelLogger::logError("  [", tally[i], "x] ", names(tally)[i])
+    }
+  }
 } else {
   nOk <- 0
   costUsd <- 0
