@@ -28,3 +28,13 @@ Index of the steps, in the order they run.
    `omop_concept_id` up in OMOP's `measurement_concept_attributes.tsv`, into
    `codesWithOMOP.tsv`, then report on the mapping's goodness — including
    agreement with the separately curated reference mapping.
+7. [`CompareModelRuns`](CompareModelRuns/README.md) — read two or more finished
+   runs of steps 4–6 (`DATA`, `DATA_sonnet`, `DATA_opus` — same input, same
+   prompts, different model) side by side and report how each agrees with the
+   curated reference and with the others. Reads only; calls no LLM.
+
+Steps 4 and 5 are the only ones that call an LLM. Both take `--llm` and
+`--model`, so the same pipeline can be run through Gemini on Vertex (via
+ellmer) or through the `claude` CLI — see either step's README. Run a different
+model into a different data folder: each step's answer cache lives in the data
+folder and is keyed on `group_id` alone.

@@ -155,12 +155,59 @@ anything, and what kind of concept was taken. Whether the chosen concept is the
 **right** one is not knowable from this table — that is what
 `MapLOINCToOmop`'s cross-check against the curated reference mapping is for.
 
+## Choosing the model
+
+The step runs the same prompts through either of two backends, selected with
+`--llm`:
+
+- **`--llm ellmer`** (default) — [ellmer](https://ellmer.tidyverse.org) talking
+  to an HTTP provider, `LLM_PROVIDER` deciding which (default `google_vertex`,
+  i.e. Gemini on Vertex AI). This is what `DATA/` was produced with.
+- **`--llm claude`** — the `claude` command-line tool (Claude Code), wrapped by
+  `scripts/R/claudeClient.R` to look like an ellmer client. This is what
+  `DATA_sonnet/` and `DATA_opus/` were produced with.
+
+`--model <MODEL>` sets the model on whichever backend is selected, so its
+spelling is the backend's own: `gemini-2.5-pro` or `gemini-2.5-flash` for
+ellmer/Vertex; `sonnet`, `opus`, or a full name like `claude-opus-5` for
+claude. Left out, each backend uses its own default — `gemini-2.5-pro` for
+ellmer, `sonnet` for claude.
+
+Nothing else changes between the two: the same `systemPrompt.md`, the same
+group tables, the same output schema, the same per-group cache. That is the
+point — it makes a model comparison a matter of running the step twice into two
+data folders.
+
+The `claude` CLI is an agent, not a bare model endpoint, so the wrapper strips
+it back to a single model turn: `--tools ""` (no tool use — this is a data task,
+and a run that could read files would not be reproducible), `--system-prompt`
+(**replaces** Claude Code's own agent system prompt with this step's, so the
+model is given the same instructions ellmer gives it and nothing else),
+`--safe-mode` (ignores `CLAUDE.md`, skills, plugins, hooks and MCP servers, so
+the answer does not depend on the checkout's agent configuration), and
+`--no-session-persistence`. Structured output comes from `--json-schema`, fed
+the very same `ellmer::type_object()` declaration the ellmer path uses —
+`ellmerTypeToJsonSchema()` translates it, so there is no second copy of the
+schema to drift.
+
+Because each step's answer cache is keyed on `group_id` alone and lives inside
+the data folder, **run a different model into a different data folder**
+(`DATA_sonnet`, `DATA_opus`) rather than into `DATA` with `--clean`. That keeps
+every run on disk and comparable.
+
 ## Env vars
 
 - `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`, `GOOGLE_APPLICATION_CREDENTIALS` —
   Vertex AI project, region and service-account key, from the `--env` file.
-- `LLM_PROVIDER` (default `google_vertex`), `LLM_MODEL` (default
-  `gemini-2.5-pro`), `LLM_PARALLEL_WORKERS` (default `detectCores() - 2`).
+  Required by the ellmer/Vertex backend only; a `--llm claude` run needs none
+  of them, and `run.sh` checks for the `claude` CLI instead.
+- `LLM_PROVIDER` — backend, default `google_vertex`; `--llm claude` sets it to
+  `claude_code`. `LLM_MODEL` — model, set by `--model`, default
+  `gemini-2.5-pro` on ellmer and `sonnet` on claude.
+  `LLM_PARALLEL_WORKERS` — parallel workers, default `detectCores() - 2` on
+  ellmer and `4` on claude, where one worker is a whole CLI process.
+- `CLAUDE_TIMEOUT_SECONDS` — how long to wait for one `claude` call, default
+  `900`. Claude backend only.
 - `HECATE_SCORE_THRESHOLD` — minimum similarity to keep a candidate, default
   `0.5` (see Action for why it is this low).
 - `HECATE_CANDIDATE_LIMIT` — candidates requested per guessed name, default
@@ -172,8 +219,12 @@ anything, and what kind of concept was taken. Whether the chosen concept is the
 
 ```
 ./STEPS/FixLOINCDimensions/run.sh <PATH_TO_DATA_FOLDER> --env <ENV_NAME> \
-    [--ngroups <N>] [--seed <N>] [--clean]
+    [--llm <ellmer|claude>] [--model <MODEL>] [--ngroups <N>] [--seed <N>] [--clean]
 ```
+
+`--llm` and `--model` pick the backend and the model — see
+[Choosing the model](#choosing-the-model). Both are applied after the `--env`
+file is sourced, so a flag always beats the environment file.
 
 `--ngroups <N>` processes a random sample of `N` groups (`--seed`, default `1`,
 makes the sample reproducible). Since the input already holds only the groups
@@ -187,6 +238,8 @@ names.
 
 ```
 ./STEPS/FixLOINCDimensions/run.sh DATA --env build --clean
+./STEPS/FixLOINCDimensions/run.sh DATA_sonnet --env build --llm claude --model sonnet
+./STEPS/FixLOINCDimensions/run.sh DATA_opus   --env build --llm claude --model opus
 ```
 
 ### Rebuilding the reference tables
