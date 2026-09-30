@@ -47,44 +47,52 @@ overview <- tibble::tibble(
 ) |>
   dplyr::mutate(pct = sprintf("%.1f%%", 100 * n / nPairs))
 
-# --- Name / Unit / Value coverage -------------------------------------------
+# --- Name / Unit / Value(-or-deciles) coverage ------------------------------
 #
-# `TEST_NAME "NA"` is the upstream extract's stringified missing value (see
-# BuildKnownInformationTable/README.md), an empty `UNIT` is a pair with no
-# recorded unit, and "no value" means value_missing_p is 100 -- not "no
-# value_deciles" (`value_deciles` is empty far more often, for any pair below
-# the upstream decile-computation's volume floor, whether or not it has real
-# recorded values).
+# An empty `UNIT` is a pair with no recorded unit. "Name" is always X --
+# getSummaryData.R already drops every TEST_NAME "NA" row (the upstream
+# extract's stringified missing value) before writing labSummary.tsv -- kept
+# as a static column only so this table's shape matches the deciles one below.
+# "Value" and "deciles" are deliberately different facts: value_missing_p under
+# 100 means at least one record has a real value, `value_deciles` is empty far
+# more often, for any pair below the upstream decile-computation's volume
+# floor, whether or not it has real recorded values (see Action).
 coverage <- labSummary |>
   dplyr::transmute(
-    hasName = !(TEST_NAME == "NA" & !is.na(TEST_NAME)),
     hasUnit = !is.na(UNIT) & nzchar(UNIT),
     hasValue = is.na(value_missing_p) | value_missing_p < 100,
+    hasDeciles = !is.na(value_deciles),
     n
   )
 
-# hasName = FALSE combos are omitted: getSummaryData.R already drops every
-# TEST_NAME "NA" row before writing labSummary.tsv, so they never occur --
-# listing them here would just be four all-zero rows.
-combos <- tidyr::expand_grid(hasName = TRUE, hasUnit = c(TRUE, FALSE), hasValue = c(TRUE, FALSE)) |>
-  dplyr::arrange(dplyr::desc(hasName), dplyr::desc(hasUnit), dplyr::desc(hasValue))
+# One pair of yes/no facts (e.g. hasUnit x hasValue) against every
+# TEST_NAME/UNIT pair: all four combinations, even ones with zero rows, plus
+# a totals row's worth of context (nPairs/totalRecords, passed in rather than
+# recomputed so every coverage table is read against the same denominator).
+buildCoverageTable <- function(df, col1, label1, col2, label2, nPairs, totalRecords) {
+  combos <- tidyr::expand_grid(a = c(TRUE, FALSE), b = c(TRUE, FALSE)) |>
+    dplyr::arrange(dplyr::desc(a), dplyr::desc(b))
+  df |>
+    dplyr::rename(a = dplyr::all_of(col1), b = dplyr::all_of(col2)) |>
+    dplyr::group_by(a, b) |>
+    dplyr::summarise(n_rows = dplyr::n(), n_records = sum(n), .groups = "drop") |>
+    dplyr::right_join(combos, by = c("a", "b")) |>
+    dplyr::mutate(
+      n_rows = tidyr::replace_na(n_rows, 0L),
+      n_records = tidyr::replace_na(n_records, 0)
+    ) |>
+    dplyr::arrange(dplyr::desc(a), dplyr::desc(b)) |>
+    dplyr::mutate(
+      name = "X",
+      !!label1 := ifelse(a, "X", ""),
+      !!label2 := ifelse(b, "X", ""),
+      pct_rows = sprintf("%.1f%%", 100 * n_rows / nPairs),
+      pct_records = sprintf("%.1f%%", 100 * n_records / totalRecords)
+    )
+}
 
-coverageTable <- coverage |>
-  dplyr::group_by(hasName, hasUnit, hasValue) |>
-  dplyr::summarise(n_rows = dplyr::n(), n_records = sum(n), .groups = "drop") |>
-  dplyr::right_join(combos, by = c("hasName", "hasUnit", "hasValue")) |>
-  dplyr::mutate(
-    n_rows = tidyr::replace_na(n_rows, 0L),
-    n_records = tidyr::replace_na(n_records, 0)
-  ) |>
-  dplyr::arrange(dplyr::desc(hasName), dplyr::desc(hasUnit), dplyr::desc(hasValue)) |>
-  dplyr::mutate(
-    name = ifelse(hasName, "X", ""),
-    unit = ifelse(hasUnit, "X", ""),
-    value = ifelse(hasValue, "X", ""),
-    pct_rows = sprintf("%.1f%%", 100 * n_rows / nPairs),
-    pct_records = sprintf("%.1f%%", 100 * n_records / totalRecords)
-  )
+valueCoverageTable <- buildCoverageTable(coverage, "hasUnit", "unit", "hasValue", "value", nPairs, totalRecords)
+decilesCoverageTable <- buildCoverageTable(coverage, "hasUnit", "unit", "hasDeciles", "deciles", nPairs, totalRecords)
 
 # --- Unit / value source composition ----------------------------------------
 #
@@ -150,9 +158,30 @@ md <- c(
   "|---|---|---|---|---|---|---|",
   sprintf(
     "| %s | %s | %s | %d | %s | %d | %s |",
-    coverageTable$name, coverageTable$unit, coverageTable$value,
-    coverageTable$n_rows, coverageTable$pct_rows,
-    coverageTable$n_records, coverageTable$pct_records
+    valueCoverageTable$name, valueCoverageTable$unit, valueCoverageTable$value,
+    valueCoverageTable$n_rows, valueCoverageTable$pct_rows,
+    valueCoverageTable$n_records, valueCoverageTable$pct_records
+  ),
+  sprintf(
+    "| **total** | | | %d | %s | %d | %s |",
+    nPairs, "100.0%", totalRecords, "100.0%"
+  ),
+  "",
+  "### Name / unit / deciles coverage",
+  "",
+  "Same as above, with `value_deciles` computed in place of `value`. These",
+  "are different facts, not two views of the same thing: `value_deciles` is",
+  "empty for any pair below the upstream decile-computation's volume floor,",
+  "whether or not it actually has recorded values (see Action) -- so this",
+  "table's `X`s are a strict subset of the value-coverage table's.",
+  "",
+  "| name | unit | deciles | n rows | % rows | n records | % records |",
+  "|---|---|---|---|---|---|---|",
+  sprintf(
+    "| %s | %s | %s | %d | %s | %d | %s |",
+    decilesCoverageTable$name, decilesCoverageTable$unit, decilesCoverageTable$deciles,
+    decilesCoverageTable$n_rows, decilesCoverageTable$pct_rows,
+    decilesCoverageTable$n_records, decilesCoverageTable$pct_records
   ),
   sprintf(
     "| **total** | | | %d | %s | %d | %s |",
