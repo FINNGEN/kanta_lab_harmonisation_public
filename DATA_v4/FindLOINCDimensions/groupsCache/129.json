@@ -1,125 +1,517 @@
 {
   "rows": [
     {
+      "row_id": 10733,
+      "loinc_name_guess": "Bacteria [Susceptibility]"
+    },
+    {
+      "row_id": 10734,
+      "loinc_name_guess": "Bacteria identified"
+    },
+    {
+      "row_id": 10735,
+      "loinc_name_guess": "Bacteria identified in Specimen by Culture"
+    },
+    {
+      "row_id": 10736,
+      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
+    },
+    {
+      "row_id": 10737,
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial blood"
+    },
+    {
+      "row_id": 10738,
+      "loinc_name_guess": "Lactate in Arterial blood"
+    },
+    {
+      "row_id": 10739,
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial blood"
+    },
+    {
+      "row_id": 10740,
+      "loinc_name_guess": "Lactate in Arterial blood"
+    },
+    {
+      "row_id": 10741,
+      "loinc_name_guess": "Bacteria identified in Aspirate by Culture"
+    },
+    {
+      "row_id": 10742,
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma"
+    },
+    {
+      "row_id": 10743,
+      "loinc_name_guess": "Lactate in Arterial plasma"
+    },
+    {
+      "row_id": 10744,
+      "loinc_name_guess": "Lactate [Moles/volume] in Arterial plasma"
+    },
+    {
+      "row_id": 10745,
+      "loinc_name_guess": "Lactate in Arterial plasma"
+    },
+    {
+      "row_id": 10746,
+      "loinc_name_guess": "Bacteria identified in Ascitic fluid by Stain"
+    },
+    {
+      "row_id": 10747,
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+    },
+    {
+      "row_id": 10748,
+      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
+    },
+    {
+      "row_id": 10749,
+      "loinc_name_guess": "Bacteria [Presence] in Blood by Culture"
+    },
+    {
+      "row_id": 10750,
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+    },
+    {
+      "row_id": 10751,
+      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+    },
+    {
+      "row_id": 10752,
+      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
+    },
+    {
+      "row_id": 10753,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 10754,
+      "loinc_name_guess": "Lactate in Blood"
+    },
+    {
+      "row_id": 10755,
+      "loinc_name_guess": "Bacteria [Presence] in Specimen"
+    },
+    {
+      "row_id": 10756,
+      "loinc_name_guess": "Bacteria identified"
+    },
+    {
+      "row_id": 10757,
+      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
+    },
+    {
+      "row_id": 10758,
+      "loinc_name_guess": "Bacteria identified in Bronchoalveolar lavage fluid by Culture"
+    },
+    {
+      "row_id": 10759,
+      "loinc_name_guess": "Bacteria identified in Bone by Culture"
+    },
+    {
+      "row_id": 10760,
+      "loinc_name_guess": "Bacteria identified in Catheter tip by Culture"
+    },
+    {
+      "row_id": 10761,
+      "loinc_name_guess": "Lactate [Moles/volume] in Capillary blood"
+    },
+    {
+      "row_id": 10762,
+      "loinc_name_guess": "Lactate in Capillary blood"
+    },
+    {
+      "row_id": 10763,
+      "loinc_name_guess": "Lactate [Moles/volume] in Capillary plasma"
+    },
+    {
+      "row_id": 10764,
+      "loinc_name_guess": "Lactate in Capillary plasma"
+    },
+    {
+      "row_id": 10765,
+      "loinc_name_guess": "Bacteria identified in Drain fluid by Culture"
+    },
+    {
+      "row_id": 10766,
+      "loinc_name_guess": "Bacteria identified in Sputum by Culture"
+    },
+    {
+      "row_id": 10767,
+      "loinc_name_guess": "Bacteria identified in Sputum by Stain"
+    },
+    {
+      "row_id": 10768,
+      "loinc_name_guess": "Bacteria identified in Stool by Subculture"
+    },
+    {
+      "row_id": 10769,
+      "loinc_name_guess": "Salmonella and Shigella and Yersinia and Campylobacter species panel - Stool by Culture"
+    },
+    {
+      "row_id": 10770,
+      "loinc_name_guess": "Clostridioides difficile and Staphylococcus aureus and Candida panel - Stool by Culture"
+    },
+    {
+      "row_id": 10771,
+      "loinc_name_guess": "Enteric pathogens panel - Stool by Culture"
+    },
+    {
+      "row_id": 10772,
+      "loinc_name_guess": "Bacteria identified in Stool by Culture"
+    },
+    {
+      "row_id": 10773,
+      "loinc_name_guess": "Elastase.pancreatic 1 [Mass/mass] in Stool"
+    },
+    {
+      "row_id": 10774,
+      "loinc_name_guess": "Elastase.pancreatic 1 in Stool"
+    },
+    {
+      "row_id": 10775,
+      "loinc_name_guess": "Elastase.pancreatic 1 [Mass/mass] in Stool"
+    },
+    {
+      "row_id": 10776,
+      "loinc_name_guess": "Elastase.pancreatic 1 in Stool"
+    },
+    {
+      "row_id": 10777,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Vaginal fluid by NAA"
+    },
+    {
+      "row_id": 10778,
+      "loinc_name_guess": "Bacteria identified in Vaginal fluid by Stain"
+    },
+    {
+      "row_id": 10779,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10780,
+      "loinc_name_guess": "Lactate in Plasma"
+    },
+    {
+      "row_id": 10781,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10782,
+      "loinc_name_guess": "Lactate in Plasma"
+    },
+    {
+      "row_id": 10783,
+      "loinc_name_guess": "Parathyrin [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 10784,
+      "loinc_name_guess": "Parathyrin [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10785,
+      "loinc_name_guess": "Parathyrin in Plasma"
+    },
+    {
+      "row_id": 10786,
+      "loinc_name_guess": "Iron [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10787,
+      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Culture"
+    },
+    {
+      "row_id": 10788,
+      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Stain"
+    },
+    {
+      "row_id": 10789,
+      "loinc_name_guess": "Lactate [Moles/volume] in Cerebral spinal fluid"
+    },
+    {
+      "row_id": 10790,
+      "loinc_name_guess": "Lactate [Moles/volume] in Cerebral spinal fluid"
+    },
+    {
+      "row_id": 10791,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 10792,
+      "loinc_name_guess": "Lactate in Blood"
+    },
+    {
+      "row_id": 10793,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 10794,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10795,
+      "loinc_name_guess": "Lactate in Plasma"
+    },
+    {
+      "row_id": 10796,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 10797,
+      "loinc_name_guess": "Lactate in Plasma"
+    },
+    {
+      "row_id": 10798,
+      "loinc_name_guess": "Bacteria identified in Peritoneal dialysis fluid by Culture"
+    },
+    {
+      "row_id": 10799,
+      "loinc_name_guess": "Bacteria identified in Pleural fluid by Stain"
+    },
+    {
+      "row_id": 10800,
+      "loinc_name_guess": "Lactate [Moles/volume] in Pleural fluid"
+    },
+    {
+      "row_id": 10801,
+      "loinc_name_guess": "Lactate in Pleural fluid"
+    },
+    {
+      "row_id": 10802,
+      "loinc_name_guess": "Lactate [Moles/volume] in Pleural fluid"
+    },
+    {
+      "row_id": 10803,
+      "loinc_name_guess": "Bacteria DNA [#/volume] in Periodontal pocket by NAA with probe detection"
+    },
+    {
+      "row_id": 10804,
+      "loinc_name_guess": "Bacteria identified in Pharynx by Culture"
+    },
+    {
+      "row_id": 10805,
+      "loinc_name_guess": "Bacteria identified in Pus by Anaerobic and Aerobic culture"
+    },
+    {
+      "row_id": 10806,
+      "loinc_name_guess": "Bacteria identified in Pus by Aerobic culture"
+    },
+    {
+      "row_id": 10807,
+      "loinc_name_guess": "Lactate [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 10808,
+      "loinc_name_guess": "Bacteria identified in Synovial fluid by Stain"
+    },
+    {
+      "row_id": 10809,
+      "loinc_name_guess": "Lactate [Moles/volume] in Synovial fluid"
+    },
+    {
+      "row_id": 10810,
+      "loinc_name_guess": "Lactate in Synovial fluid"
+    },
+    {
+      "row_id": 10811,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10812,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10813,
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
+    },
+    {
+      "row_id": 10814,
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy"
+    },
+    {
+      "row_id": 10815,
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
+    },
+    {
+      "row_id": 10816,
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
+    },
+    {
+      "row_id": 10817,
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy"
+    },
+    {
+      "row_id": 10818,
+      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy"
+    },
+    {
+      "row_id": 10819,
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
+    },
+    {
+      "row_id": 10820,
+      "loinc_name_guess": "Bacteria colony count [#/volume] in Urine by Slide culture"
+    },
+    {
+      "row_id": 10821,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10822,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10823,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10824,
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
+    },
+    {
+      "row_id": 10825,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10826,
+      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 10827,
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
+    },
+    {
+      "row_id": 10828,
+      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
+    },
+    {
+      "row_id": 10829,
+      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
+    },
+    {
+      "row_id": 10830,
+      "loinc_name_guess": "Bacteria [Presence] in Urine"
+    },
+    {
+      "row_id": 10831,
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
+    },
+    {
+      "row_id": 10832,
+      "loinc_name_guess": "Bacteria identified in Urine"
+    },
+    {
+      "row_id": 10833,
+      "loinc_name_guess": "Bacteria [Presence] in Urine by Screen"
+    },
+    {
+      "row_id": 10834,
+      "loinc_name_guess": "Bacteria [Presence] in Urine by Screen"
+    },
+    {
+      "row_id": 10835,
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
+    },
+    {
       "row_id": 10836,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine"
     },
     {
       "row_id": 10837,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10838,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria colony count [#/volume] in Urine by Culture"
     },
     {
       "row_id": 10839,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria colony count [#/volume] in Urine by Culture"
     },
     {
       "row_id": 10840,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10841,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10842,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10843,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10844,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10845,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
     },
     {
       "row_id": 10846,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "pH of Urine"
     },
     {
       "row_id": 10847,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10848,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "Epithelial cells [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10849,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10850,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10851,
-      "loinc_name_guess": "Semen analysis panel - Semen"
+      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10852,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10853,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Casts [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10854,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Macrophages [#/area] in Urine sediment by Microscopy"
     },
     {
       "row_id": 10855,
-      "loinc_name_guess": "Spirometry with bronchodilator panel"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10856,
-      "loinc_name_guess": "Spirometry with bronchodilator panel"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 10857,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Lactate [Moles/volume] in Venous blood"
     },
     {
       "row_id": 10858,
-      "loinc_name_guess": "Spirometry panel"
+      "loinc_name_guess": "Lactate [Moles/volume] in Venous blood"
     },
     {
       "row_id": 10859,
-      "loinc_name_guess": "Semen analysis panel - Washed semen"
+      "loinc_name_guess": "Lactate [Moles/volume] in Venous plasma"
     },
     {
       "row_id": 10860,
-      "loinc_name_guess": "Thermal sensory test panel"
-    },
-    {
-      "row_id": 10861,
-      "loinc_name_guess": "Myocardium perfusion study"
-    },
-    {
-      "row_id": 10862,
-      "loinc_name_guess": "Myocardium perfusion study"
-    },
-    {
-      "row_id": 10863,
-      "loinc_name_guess": "Exercise stress test panel"
-    },
-    {
-      "row_id": 10864,
-      "loinc_name_guess": "Stress echocardiography study"
-    },
-    {
-      "row_id": 10865,
-      "loinc_name_guess": "Echocardiography study"
+      "loinc_name_guess": "Lactate in Venous plasma"
     }
   ],
-  "reflection": "This group consists entirely of `Pt-` (Patient) prefixed tests, which are procedures, panels, and functional tests rather than specimen-based measurements. This makes naming them as LOINC panels or studies the correct approach.\n\nA significant challenge was the large number of `pt-fvs...` codes (`pt-fvsirod`, `pt-fvspido`, etc.). The `FVS` prefix points to spirometry (`toiminnallinen vitaalikapasiteetti, spirometria`), but the suffixes are non-standard and likely represent local administrative codes for different report types or sub-results. As the goal is to identify the ordered procedure, I've mapped all of these to the general `Spirometry panel`.\n\nSome codes allowed for more specific interpretation. `pt-spirob` was interpreted as `Spirometry with bronchodilator panel` based on `b` for `bronkodilataatio`. The code `pt-sppesu` was interpreted as `Semen analysis panel - Washed semen`, with `pesu` meaning `wash`. The cardiac tests (`pt-syd...`) were decipherable from their components: `perg` (perfusion), `ras` (rasitus/stress), and `uä` (ultraääni/ultrasound).\n\nThe code `pt-spiromd` was ambiguous. The `d` could potentially stand for `diffuusio` (diffusion capacity, DLCO), but this is not a standard abbreviation. Given the uncertainty, I opted for the more conservative guess `Spirometry panel`."
+  "reflection": "This group was a mix of microbiology and chemistry. The microbiology codes (`-bakt-xx`) were challenging due to the variety of suffixes (`-he`, `-lm`, `-vi`, `-vr`, `-jvi`, etc.) which map to different LOINC properties and methods (Susceptibility, Identification, Culture, Stain, Subculture). Distinguishing between a screening culture (`[Presence]`), a quantitative culture (`[#/volume]`), and an identification culture (`identified`) required careful interpretation of the code, long name, and any available units.\n\nThe lactate (`laktaat`) codes were numerous but straightforward, differentiated primarily by the specimen prefix (aB-, vB-, P-, S-, Li-, etc.). Ambiguous prefixes like `ap-` and `mb-` required making an educated guess (Arterial plasma, Blood).\n\nThe fecal bacteria culture panels (`F-BaktVi1`, `F-BaktVi2`, `F-BaktVi3`) were interesting. The `LongName` was crucial for identifying the specific organisms included in each panel. For `F-BaktVi3`, which combines others, a generic `Enteric pathogens panel` name felt like a safer and more searchable query than listing all seven organisms.\n\nFinally, the urine sediment analysis (`U-Sakka-xx`) codes were clear thanks to the combination of `sakka` (sediment) and the cell type (`epit`, `eryt`, `leuk`). The unit `u/field` was a strong clue for microscopy and the `[#/area]` property."
 }

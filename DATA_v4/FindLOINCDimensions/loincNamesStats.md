@@ -1,8 +1,8 @@
 # LOINC Name Guesses -- Stats
 
-Source: `DATA/FindLOINCDimensions/codesWithLoincNames.tsv`
+Source: `DATA_v4/FindLOINCDimensions/codesWithLoincNames.tsv`
 
-Rows (local `TEST_NAME`/`UNIT` combinations): 1984
+Rows (local `TEST_NAME`/`UNIT` combinations): 2687
 Similarity groups covered: 30
 
 ## Overview
@@ -13,16 +13,16 @@ are expected, not failures.
 
 | bucket | n | pct |
 |---|---|---|
-| total rows | 1984 | 100.0% |
-| named | 1890 | 95.3% |
-| left empty (not determinable) |   94 | 4.7% |
-| named as a panel |  206 | 10.4% |
-| distinct names guessed |  843 |  |
+| total rows | 2687 | 100.0% |
+| named | 2577 | 95.9% |
+| left empty (not determinable) |  110 | 4.1% |
+| named as a panel |  213 | 7.9% |
+| distinct names guessed | 1083 |  |
 
 ## Coverage by evidence level
 
 `evidence_level` is computed from the row itself: whether it carries a `UNIT`,
-a `deciles` distribution, both, or neither. The named rate should be high at
+a `value_deciles` distribution, both, or neither. The named rate should be high at
 every level: the name is a search query, so the prompt asks for one whenever
 the code carries any usable hint and reserves an empty name for text nothing
 can be read out of. A `name` row still cannot fix its quantity — it is named
@@ -31,10 +31,10 @@ against real candidates or declines there.
 
 | evidence_level | n_rows | n_named | pct_named |
 |---|---|---|---|
-| name | 1014 | 930 | 91.7% |
-| name+unit+values |  573 | 573 | 100.0% |
-| name+unit |  217 | 208 | 95.9% |
-| name+values |  180 | 179 | 99.4% |
+| name | 1360 | 1256 | 92.4% |
+| name+unit+values |  809 |  807 | 99.8% |
+| name+values |  278 |  274 | 98.6% |
+| name+unit |  240 |  240 | 100.0% |
 
 ## Name shape
 
@@ -53,11 +53,11 @@ describing tests instead of naming them, and retrieval will suffer.
 
 | part | n | pct_of_named |
 |---|---|---|
-| carries a [Property] | 1519 | 80.4% |
-| carries an `in <System>` | 1628 | 86.1% |
-| carries a `by <Method>` |  459 | 24.3% |
-| is a panel name (contains ' panel') |  206 | 10.9% |
-| full `C [P] in S` shape | 1510 | 79.9% |
+| carries a [Property] | 2076 | 80.6% |
+| carries an `in <System>` | 2279 | 88.4% |
+| carries a `by <Method>` |  547 | 21.2% |
+| is a panel name (contains ' panel') |  213 | 8.3% |
+| full `C [P] in S` shape | 2046 | 79.4% |
 
 ## Most frequently guessed names
 
@@ -65,26 +65,26 @@ A name guessed for many rows is usually right — the same test recurs under man
 
 | guessed LOINC name | n | pct |
 |---|---|---|
-| C-reactive protein [Mass/volume] in Plasma | 37 | 2.0% |
-| C-reactive protein [Mass/volume] in Serum or Plasma | 26 | 1.4% |
-| 12 lead EKG panel | 22 | 1.2% |
-| Transferrin saturation [Molar ratio] in Serum or Plasma | 20 | 1.1% |
-| CBC with platelet panel - Blood by Automated count | 19 | 1.0% |
-| Erythrocyte distribution width [Ratio] in Blood by Automated count | 16 | 0.8% |
-| SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen | 15 | 0.8% |
-| Sodium [Moles/volume] in Serum or Plasma | 15 | 0.8% |
-| Spirometry panel | 15 | 0.8% |
-| Albumin/Creatinine [Mass Ratio] in Urine | 14 | 0.7% |
-| Phosphatidylethanol [Moles/volume] in Blood | 14 | 0.7% |
-| Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 13 | 0.7% |
-| Soluble transferrin receptor [Mass/volume] in Serum or Plasma | 13 | 0.7% |
-| Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum | 12 | 0.6% |
-| Specimen collection procedure | 12 | 0.6% |
-| Transglutaminase IgA Ab [Units/volume] in Serum | 12 | 0.6% |
-| Urinalysis macro (dipstick) panel - Urine | 12 | 0.6% |
-| Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma | 10 | 0.5% |
-| Glucose [Moles/volume] in Serum or Plasma | 10 | 0.5% |
-| C-reactive protein [Mass/volume] in Blood |  9 | 0.5% |
+| Glucose [Moles/volume] in Serum or Plasma | 66 | 2.6% |
+| C reactive protein [Mass/volume] in Plasma | 38 | 1.5% |
+| Microscopic observation [Identifier] in Tissue by Light microscopy | 34 | 1.3% |
+| Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose | 25 | 1.0% |
+| C reactive protein [Mass/volume] in Serum or Plasma | 24 | 0.9% |
+| Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood | 21 | 0.8% |
+| Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4 | 18 | 0.7% |
+| Albumin/Creatinine [Mass Ratio] in Urine | 17 | 0.7% |
+| Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose | 17 | 0.7% |
+| 12 lead EKG panel | 16 | 0.6% |
+| Hemoglobin A1c/Hemoglobin.total in Blood | 16 | 0.6% |
+| Calcium.ionized [Moles/volume] in Plasma | 15 | 0.6% |
+| Glucose [Moles/volume] in Blood | 15 | 0.6% |
+| Sodium [Moles/volume] in Plasma | 15 | 0.6% |
+| C-reactive protein [Mass/volume] in Plasma | 13 | 0.5% |
+| Drugs of abuse screen panel - Urine | 13 | 0.5% |
+| Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count | 13 | 0.5% |
+| Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood | 13 | 0.5% |
+| Tissue transglutaminase Ab.IgA [Units/volume] in Serum | 13 | 0.5% |
+| Bacteria identified in Urine by Culture | 12 | 0.5% |
 
 ## `[Property]` used
 
@@ -92,21 +92,21 @@ Which LOINC property display forms the guesses carry. These should be LOINC's ow
 
 | [property] | n | pct |
 |---|---|---|
-| Presence | 278 | 18.3% |
-| Moles/volume | 275 | 18.1% |
-| Mass/volume | 236 | 15.5% |
-| Units/volume | 161 | 10.6% |
-| Enzymatic activity/volume | 130 | 8.6% |
-| #/volume |  94 | 6.2% |
-| # Ratio |  83 | 5.5% |
-| Ratio |  61 | 4.0% |
-| Identifier |  31 | 2.0% |
-| Mass Ratio |  26 | 1.7% |
-| Molar ratio |  25 | 1.6% |
-| Titer |  21 | 1.4% |
-| #/area |  11 | 0.7% |
-| Moles/time |  11 | 0.7% |
-| Time |  11 | 0.7% |
+| Moles/volume | 588 | 28.3% |
+| Mass/volume | 390 | 18.8% |
+| Presence | 252 | 12.1% |
+| Identifier | 125 | 6.0% |
+| Units/volume | 122 | 5.9% |
+| Enzymatic activity/volume | 103 | 5.0% |
+| Ratio |  76 | 3.7% |
+| #/volume |  56 | 2.7% |
+| Molar ratio |  47 | 2.3% |
+| Activity |  46 | 2.2% |
+| Mass Ratio |  43 | 2.1% |
+| Titer |  30 | 1.4% |
+| Time |  24 | 1.2% |
+| Volume Fraction |  21 | 1.0% |
+| #/area |  18 | 0.9% |
 
 ## `in <System>` used
 
@@ -114,21 +114,21 @@ Which specimens the guesses name.
 
 | in <system> | n | pct |
 |---|---|---|
-| Serum or Plasma | 353 | 21.7% |
-| Blood | 279 | 17.1% |
-| Serum | 240 | 14.7% |
-| Plasma | 162 | 10.0% |
-| Urine | 139 | 8.5% |
-| Respiratory specimen |  91 | 5.6% |
-| Specimen |  53 | 3.3% |
-| Stool |  34 | 2.1% |
-| Cerebral spinal fluid |  30 | 1.8% |
-| 24 hour Urine |  18 | 1.1% |
-| Throat |  17 | 1.0% |
-| Urine sediment |  16 | 1.0% |
-| Capillary blood |  13 | 0.8% |
-| Apheresis product |  10 | 0.6% |
-| Bone marrow |  10 | 0.6% |
+| Serum | 444 | 19.5% |
+| Plasma | 361 | 15.8% |
+| Serum or Plasma | 307 | 13.5% |
+| Blood | 270 | 11.8% |
+| Urine | 175 | 7.7% |
+| Tissue |  50 | 2.2% |
+| Stool |  48 | 2.1% |
+| Urine sediment |  48 | 2.1% |
+| Blood or Tissue |  40 | 1.8% |
+| Unspecified specimen |  40 | 1.8% |
+| Throat |  39 | 1.7% |
+| Specimen |  36 | 1.6% |
+| Platelet poor plasma |  31 | 1.4% |
+| Serum or Plasma --2 hours post dose glucose |  25 | 1.1% |
+| Pleural fluid |  21 | 0.9% |
 
 ## `by <Method>` used
 
@@ -136,54 +136,53 @@ Which methods the guesses name. LOINC omits Method for most chemistry, so a long
 
 | by <method> | n | pct |
 |---|---|---|
-| Automated count | 120 | 26.1% |
-| NAA with probe detection |  94 | 20.5% |
-| Culture |  37 | 8.1% |
-| Molgen |  32 | 7.0% |
-| NAA |  30 | 6.5% |
-| Organism specific culture |  30 | 6.5% |
-| Test strip |  18 | 3.9% |
-| Electrophoresis |  12 | 2.6% |
-| Rapid immunoassay |  12 | 2.6% |
-| Microscopy |  10 | 2.2% |
-| Stain |   6 | 1.3% |
-| Microscopy light |   5 | 1.1% |
-| Subculture |   5 | 1.1% |
-| FISH |   4 | 0.9% |
-| Hemagglutination |   4 | 0.9% |
+| Culture | 78 | 14.3% |
+| NAA with probe detection | 68 | 12.4% |
+| Light microscopy | 63 | 11.5% |
+| Organism specific culture | 55 | 10.1% |
+| Automated count | 49 | 9.0% |
+| NAA | 25 | 4.6% |
+| Test strip | 24 | 4.4% |
+| calculation | 21 | 3.8% |
+| Molecular genetics method | 17 | 3.1% |
+| Microscopy | 14 | 2.6% |
+| Point-of-care | 14 | 2.6% |
+| Immunoassay | 11 | 2.0% |
+| Stain | 11 | 2.0% |
+| Cytology |  6 | 1.1% |
+| Immunohistochemistry |  5 | 0.9% |
 
 ## Findings
 
-Distilled by `gemini-2.5-pro` from the per-group reflections in `DATA/FindLOINCDimensions/reflections.md`.
+Distilled by `gemini-2.5-pro` from the per-group reflections in `DATA_v4/FindLOINCDimensions/reflections.md`.
 
 ### Key findings
 
-- The `deciles` (value distribution) and `unit` columns are critical for disambiguating tests, such as distinguishing individual results from a panel, qualitative from quantitative tests, and resolving garbled or concatenated codes.
-- Inferring the specimen (System) based on clinical context is frequently necessary and essential for effective mapping, as it is often missing from the source test code.
-- Recognizing and correctly distinguishing panels from single-analyte tests is a core, recurring task that relies on interpreting local abbreviations, `LongName` fields, and the structure of the test name.
-- A consistent set of rules is needed to resolve conflicts in the data, such as prioritizing the descriptive test name over a contradictory specimen prefix, and prioritizing quantitative data (units, values) over ambiguous text qualifiers.
-- Interpreting a wide variety of local Finnish abbreviations, synonyms, and naming patterns (e.g., for methods, timings, isoenzymes, screening tests) is fundamental to the mapping process.
-- Identifying codes for non-laboratory procedures (e.g., sample collection, billing, therapies, clinical assessments) and mapping them to appropriate LOINC procedure concepts or leaving them empty is an important part of the workflow.
-- For creating effective search queries, it is often better to simplify the LOINC guess by omitting the method (e.g., 'Point-of-care') or using a broader system (e.g., 'Serum or Plasma').
-- Distinguishing between different LOINC properties for the same analyte (e.g., absolute vs. relative counts, qualitative vs. quantitative results) requires careful analysis of units, prefixes, and context.
-- Using external clinical knowledge is unavoidable for tasks like inferring the most likely specimen for a pathogen or specifying whether a nucleic acid is DNA or RNA.
-- Grouping codes by string similarity is a powerful tool for interpreting truncated or misspelled local codes by providing context from clearer examples.
+- Inferring missing information, especially the specimen/system based on the analyte, is an essential and frequent strategy for creating a useful mapping.
+- Quantitative data, particularly units and value distributions, are often more reliable than the literal test name for determining the true analyte (e.g., eGFR vs. creatinine) or test subtype (e.g., hs-CRP vs. CRP).
+- Identifying that a local code represents a panel, reflex test, or bundled procedure is crucial; mapping these to a LOINC panel concept is often more accurate than choosing a single component.
+- The 'LongName' field is invaluable for disambiguating abbreviated, garbled, or otherwise ambiguous codes, and is often essential for interpreting an entire family of related tests.
+- Many local codes require specific clinical or procedural domain knowledge (e.g., for serology, genetics, histopathology) and an understanding of Finnish medical terms to interpret correctly.
+- A consistent strategy for handling point-of-care (POCT) codes (e.g., `vieritesti`, `pika`) is to map to the base analyte, as LOINC often does not distinguish POCT in the component name.
+- Local suffixes or prefixes often represent pre-analytical conditions (e.g., fasting), challenge timing (pre/post-dialysis), or administrative context (e.g., ordering ward), which must be either mapped to specific LOINC challenge fields or ignored.
+- 'Pt-' (Patient) prefixed codes are a special category representing a wide variety of concepts beyond simple lab tests, including procedures, calculations, physical measurements, and administrative actions.
+- Distinguishing different forms of a substance (e.g., total vs. free testosterone, ionized vs. total calcium) or different reporting standards (e.g., HbA1c in % vs. mmol/mol) requires careful parsing of local conventions, units, and values.
 
 ### Suggested improvements
 
-- Provide a comprehensive dictionary or codebook that maps local abbreviations, prefixes, and panel names to official long names and their meanings.
-- Ensure the `LongName` field is populated for as many codes as possible, as it is indispensable for interpreting ambiguous codes, especially panels and pathology procedures.
-- Include the original specimen type as a separate data field, as this would significantly improve mapping accuracy for microbiology and nucleic acid tests where this information is often missing from the code.
-- For ratio tests, the source data should explicitly name the denominator component in the `LongName` to avoid requiring inference from the unit.
-- Implement a pre-processing step to identify and flag codes that represent administrative, procedural, or logistical tasks (e.g., sample collection, billing) rather than laboratory observations.
+- Provide a dictionary of local, non-standard, or proprietary abbreviations and prefixes (e.g., `s-kipa`, `Hertta`, `ap-`, `cp-`) to reduce guesswork and improve accuracy.
+- Enrich ambiguous codes with additional context, such as the most frequent ordering department or documentation on what tests are included in local panels.
+- Improve upstream data processing by fixing systematic parsing errors (e.g., 'Cl' misinterpreted as 'Clearance') and cleaning artifacts like leading hyphens or trailing punctuation.
+- When possible, link fragmented codes (e.g., those starting with a hyphen) back to their original, more complete source strings to increase interpretability.
 
 ### Systematic data problems
 
-- The source data contains a high frequency of ambiguous, non-standard, or garbled abbreviations that are uninterpretable without external context or a `LongName`.
-- Crucial information is frequently missing from the source codes, most notably the specimen type (System), but also units for quantitative tests and the clinical context for stimulation/suppression tests.
-- The data is cluttered with non-mappable codes representing administrative tasks (billing), logistics (storage), and pre-analytical procedures (sample collection) mixed in with laboratory tests.
-- Individual test codes often contain contradictory information, such as a qualitative text hint with a quantitative unit, or a specimen prefix that conflicts with the test's descriptive name.
-- The same clinical test is often represented by many different local synonyms, abbreviations, and naming variations, requiring normalization.
-- Data entry errors are common, including typos in units, misspelled test names, and formatting artifacts like leading hyphens or stuttered suffixes.
-- Some test codes are created by concatenating multiple abbreviations, making them difficult to parse without understanding the local conventions.
+- A high frequency of missing or ambiguous specimen information in test codes, requiring inference or the use of a generic 'Specimen' system.
+- A significant number of unmappable codes that refer to administrative actions, billing, sample logistics, or overly generic 'bucket' concepts rather than specific clinical tests.
+- Frequent inconsistencies and contradictions between different data fields, such as qualitative test names with quantitative values/units, or test names that are contradicted by the units and value ranges.
+- Extreme variability and lack of standardization in local naming, including numerous synonyms, spelling variations, garbled/truncated codes, and uninterpretable local suffixes.
+- The presence of non-standard and ambiguous system prefixes (e.g., `ap-`, `cp-`, `vp-`, `mb-`) that require educated guesses to interpret.
+- Data quality issues such as clearly erroneous units for a given test, physiologically impossible values, or biologically implausible test-specimen combinations (e.g., pH in Serum).
+- Many codes are simply too ambiguous or vague to interpret without a 'LongName' or other external context.
+- Some codes describe the collection container or its additive (e.g., citrate concentration) rather than the analyte being measured, making the actual test unknowable.
 

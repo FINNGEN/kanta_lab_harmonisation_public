@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,60 +139,171 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 79 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 6250 | cu-alb-mi | ug/min | 80% | name+unit+values | 7258 | 0 | [2, 3.03, 4.27, 6.2, 9.73, 17, 34.68, 78.84, 221.36] | cU-Albumiini, mikroalbuminuria | Collected urine | Micro |
-| 6251 | cu-alb-mi |  | 20% | name+values | 1830 | 100 | [2, 3.76, 5.36, 7.63, 12.69, 25, 48.21, 105.09, 287.3] | cU-Albumiini, mikroalbuminuria | Collected urine | Micro |
-| 6252 | nu-alb-mi | mg/12h | 4% | name+unit | 12 | 0 |  | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
-| 6253 | nu-alb-mi | ug/min | 48% | name+unit+values | 155 | 0 | [5, 8.88, 19.76, 34.34, 70.38, 107.14, 173.45, 320, 537.6] | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
-| 6254 | nu-alb-mi |  | 48% | name | 157 | 68.15 |  | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
-| 6255 | nu-albkre | mg/mmol | 17% | name+unit+values | 438 | 0 | [0.3, 0.49, 0.65, 0.9, 1.28, 2, 4.09, 8.45, 23.14] |  | Night (morning) urine |  |
-| 6256 | nu-albkre |  | 83% | name+values | 2191 | 62.12 | [0.39, 0.5, 0.69, 0.87, 1.2, 1.82, 2.88, 6.31, 19.04] |  | Night (morning) urine |  |
-| 6257 | nu-albkrea | mg/mmol | 44% | name+unit+values | 20929 | 0 | [0.33, 0.49, 0.66, 0.9, 1.32, 2.09, 3.79, 8.38, 27.64] |  | Night (morning) urine |  |
-| 6258 | nu-albkrea |  | 56% | name+values | 26197 | 100 | [0.21, 0.36, 0.51, 0.7, 1.05, 1.62, 2.84, 6.09, 18.42] |  | Night (morning) urine |  |
-| 6259 | u-a1mikre |  | 100% | name+values | 113 | 12.39 | [1, 2.43, 3.5, 6.91, 9.03, 11.18, 14.78, 18.06, 35.1] |  | Urine |  |
-| 6260 | u-alb-0 |  | 100% | name | 992 | 100 |  |  | Urine |  |
-| 6261 | u-alb-lb | mg/l | 58% | name+unit | 70 | 0 |  |  | Urine |  |
-| 6262 | u-alb-lb |  | 42% | name | 50 | 98 |  |  | Urine |  |
-| 6263 | u-alb-mi | mg/l | 71% | name+unit+values | 7488 | 0 | [3.01, 4.02, 5.51, 7.59, 11.17, 18.74, 35.95, 87.24, 325.25] |  | Urine | Micro |
-| 6264 | u-alb-mi |  | 29% | name+values | 3031 | 100 | [1.94, 3, 4.21, 6.03, 8.61, 11.71, 20.86, 50.08, 291.2] |  | Urine | Micro |
-| 6265 | u-alb-o | estimate | 34% | name+unit+values | 161670 | 2.95 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
-| 6266 | u-alb-o | form | 0% | name+unit+values | 287 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
-| 6267 | u-alb-o |  | 66% | name+values | 312867 | 100 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
-| 6268 | u-alb/kre | g/mol | 3% | name+unit+values | 142 | 0 | [1.78, 3.02, 3.92, 5.37, 8.28, 16.58, 32.75, 51.54, 140.31] |  | Urine |  |
-| 6269 | u-alb/kre | mg/mmol | 50% | name+unit+values | 2591 | 0 | [0.3, 0.42, 0.6, 0.84, 1.25, 2.07, 3.99, 8.87, 30.32] |  | Urine |  |
-| 6270 | u-alb/kre |  | 48% | name | 2491 | 96.87 |  |  | Urine |  |
-| 6271 | u-alb/kre,u-alb |  | 100% | name+values | 247 | 39.27 | [6.13, 7.52, 9.27, 12.32, 15.29, 19.26, 37.25, 66.2, 187.73] |  | Urine |  |
-| 6272 | u-alb/kre,u-alb/krea | mg/mmol | 60% | name+unit+values | 148 | 0 | [0.59, 0.74, 0.99, 1.41, 1.89, 3.03, 5.25, 10.21, 22.45] |  | Urine |  |
-| 6273 | u-alb/kre,u-alb/krea |  | 40% | name | 99 | 96.97 |  |  | Urine |  |
-| 6274 | u-alb/kre,u-krea |  | 100% | name+values | 247 | 0.81 | [3.67, 4.76, 5.83, 6.76, 7.67, 8.61, 9.82, 10.75, 12.92] |  | Urine |  |
-| 6275 | u-alb/krea | g/mol | 3% | name+unit | 49 | 0 |  |  | Urine |  |
-| 6276 | u-alb/krea | mg/mmol | 51% | name+unit+values | 879 | 0 | [0.29, 0.4, 0.52, 0.73, 1.06, 1.82, 2.87, 5.79, 14.42] |  | Urine |  |
-| 6277 | u-alb/krea |  | 47% | name | 812 | 100 |  |  | Urine |  |
-| 6278 | u-albkre | g/mol | 0% | name+unit | 10 | 0 |  | U -Albumiinin ja kreatiniinin suhde | Urine |  |
-| 6279 | u-albkre | mg/mmol | 60% | name+unit+values | 294883 | 0.26 | [0.31, 0.5, 0.7, 1.03, 1.68, 3, 6.29, 16.55, 61.66] | U -Albumiinin ja kreatiniinin suhde | Urine |  |
-| 6280 | u-albkre |  | 40% | name+values | 200553 | 100 | [0.3, 0.4, 0.59, 0.81, 1.18, 1.92, 3.44, 7.04, 20.74] | U -Albumiinin ja kreatiniinin suhde | Urine |  |
-| 6281 | u-albkrea | mg/mmol | 40% | name+unit+values | 10590 | 0 | [0.3, 0.44, 0.59, 0.73, 0.97, 1.31, 1.85, 3.03, 9.45] |  | Urine |  |
-| 6282 | u-albkrea | mg/mmol/l | 0% | name+unit | 81 | 0 |  |  | Urine |  |
-| 6283 | u-albkrea |  | 59% | name+values | 15486 | 73.32 | [0.4, 0.65, 1.06, 1.98, 3.39, 4.96, 7.85, 14.4, 37.26] |  | Urine |  |
-| 6284 | u-alvhu4a |  | 100% | name | 760 | 100 |  |  | Urine |  |
-| 6285 | u-alvhu5b |  | 100% | name | 912 | 100 |  |  | Urine |  |
-| 6286 | u-alvhu6a |  | 100% | name | 1273 | 100 |  |  | Urine |  |
-| 6287 | u-cakre |  | 100% | name | 106 | 48.11 |  |  | Urine |  |
-| 6288 | u-happamuus |  | 100% | name+values | 204 | 0.49 | [6.5, 6.5, 7, 7, 7, 7, 7.5, 7.5, 8] |  | Urine |  |
-| 6289 | u-prokre | g/mol | 28% | name+unit+values | 973 | 0.41 | [5.03, 6.97, 8.99, 11.1, 14.55, 19.47, 27.35, 52.28, 161.87] | U -Proteiinin ja kreatiniinin suhde | Urine |  |
-| 6290 | u-prokre | mg/mmol | 53% | name+unit+values | 1813 | 0 | [9.66, 12.56, 16.16, 21.33, 30.42, 49.33, 102.26, 292.89, 1027.72] | U -Proteiinin ja kreatiniinin suhde | Urine |  |
-| 6291 | u-prokre |  | 19% | name | 646 | 99.85 |  | U -Proteiinin ja kreatiniinin suhde | Urine |  |
-| 6292 | u-protkre | mg/mmol | 93% | name+unit | 121 | 0 |  |  | Urine |  |
-| 6293 | u-protkre |  | 7% | name | 9 | 100 |  |  | Urine |  |
-| 6294 | u-sakka,bakt |  | 100% | name | 330 | 99.39 |  |  | Urine |  |
-| 6295 | u-sakka,epit |  | 100% | name+values | 1251 | 71.3 | [0, 0, 0, 0, 0, 0, 0.33, 1, 2] |  | Urine |  |
-| 6296 | u-sakka,eryt | u/field | 91% | name+unit+values | 1247 | 0 | [0, 1, 1, 1, 1, 2, 2.67, 4, 7] |  | Urine |  |
-| 6297 | u-sakka,eryt |  | 9% | name+values | 121 | 100 | [0, 0, 0, 0, 0.62, 1, 2, 3.04, 7.71] |  | Urine |  |
-| 6298 | u-sakka,leuk | u/field | 81% | name+unit+values | 1087 | 0 | [0, 0, 0, 0, 0, 1, 1, 2.25, 5] |  | Urine |  |
-| 6299 | u-sakka,leuk |  | 19% | name+values | 261 | 100 | [0, 0, 0, 0, 0, 0.98, 2, 4.88, 11.66] |  | Urine |  |
-| 6300 | u-sakka,lier |  | 100% | name+values | 367 | 5.72 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
-| 6301 | u-sakka,makrof |  | 100% | name+values | 367 | 4.63 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
-| 6302 | u-sakka,muuta |  | 100% | name+values | 456 | 25.88 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
-| 6303 | u-solut,muut |  | 100% | name | 136 | 88.24 |  |  | Urine |  |
+| 6065 | b-gluk-o | mmol/l | 5% | name+unit | 7 | 100 |  |  | Blood | Qualitative test (also semi-quantitative) |
+| 6066 | b-gluk-o |  | 95% | name+values | 129 | 100 | [5.43, 5.81, 6.2, 6.6, 7.12, 7.54, 8.33, 9.91, 15.45] |  | Blood | Qualitative test (also semi-quantitative) |
+| 6067 | b-gluk-pi | mmol/l | 42% | name+unit | 60 | 0 |  |  | Blood |  |
+| 6068 | b-gluk-pi |  | 58% | name+values | 83 | 100 | [5.2, 5.45, 5.81, 6.35, 7.22, 7.7, 10.2, 13.07, 15.5] |  | Blood |  |
+| 6069 | b-gluk-pt | mmol/l | 36% | name+unit | 53 | 0 |  |  | Blood |  |
+| 6070 | b-gluk-pt |  | 64% | name+values | 93 | 100 | [5.4, 5.85, 6.43, 7, 7.38, 8, 8.92, 10.13, 11.9] |  | Blood |  |
+| 6071 | b-gluk-vt | mmol/l | 31% | name+unit | 72 | 0 |  |  | Blood |  |
+| 6072 | b-gluk-vt |  | 69% | name+values | 157 | 100 | [5.1, 5.51, 5.93, 6.37, 6.75, 7.3, 8.41, 9.51, 12.29] |  | Blood |  |
+| 6073 | b-gluk/pi | mmol/l | 99% | name+unit+values | 1414 | 0 | [5.2, 5.7, 6.14, 6.59, 7.19, 7.89, 8.94, 10.29, 12.88] |  | Blood |  |
+| 6074 | b-gluk/pi |  | 1% | name | 10 | 100 |  |  | Blood |  |
+| 6075 | b-gluk/pik | mmol/l | 100% | name+unit+values | 945 | 0 | [5.26, 5.68, 6.01, 6.38, 6.84, 7.35, 8.11, 9.42, 11.75] |  | Blood |  |
+| 6076 | b-gluk/tt |  | 100% | name | 114 | 100 |  |  | Blood |  |
+| 6077 | b-glukhoi | mmol/l | 35% | name+unit | 52 | 0 |  |  | Blood |  |
+| 6078 | b-glukhoi |  | 65% | name+values | 95 | 100 | [4.9, 5.3, 5.54, 5.78, 6.1, 6.4, 6.97, 8.77, 12.2] |  | Blood |  |
+| 6079 | cb-gluk-0 | mmol/l | 19% | name+unit | 21 | 0 |  |  | Capillary blood |  |
+| 6080 | cb-gluk-0 |  | 81% | name | 89 | 100 |  |  | Capillary blood |  |
+| 6081 | cb-gluk-v |  | 100% | name+values | 182 | 100 | [5.2, 5.7, 6.07, 6.36, 6.75, 7.46, 8.34, 9.87, 12.02] |  | Capillary blood | Free or unconjugated |
+| 6082 | cb-gluk-vt | mmol/l | 37% | name+unit+values | 147 | 0 | [5.62, 6.11, 6.75, 7.37, 8.19, 9.86, 12.56, 16.24, 20.1] |  | Capillary blood |  |
+| 6083 | cb-gluk-vt |  | 63% | name | 249 | 100 |  |  | Capillary blood |  |
+| 6084 | cfp-glucos | mmol/l | 98% | name+unit+values | 1307 | 0 | [5.81, 6.24, 6.62, 6.91, 7.24, 7.63, 8.02, 8.7, 9.78] |  |  |  |
+| 6085 | cfp-glucos |  | 2% | name | 30 | 100 |  |  |  |  |
+| 6086 | cp-glucos | mmol/l | 82% | name+unit+values | 3564 | 0 | [5.94, 6.53, 7.17, 7.83, 8.52, 9.32, 10.35, 11.61, 13.51] |  |  |  |
+| 6087 | cp-glucos |  | 18% | name | 794 | 100 |  |  |  |  |
+| 6088 | cp-gluk-hy | mmol/l | 100% | name+unit+values | 16015 | 0.04 | [5.33, 6.49, 7.52, 8.51, 9.53, 10.54, 11.78, 13.35, 15.67] |  |  |  |
+| 6089 | cp-gluk-hy |  | 0% | name | 40 | 100 |  |  |  |  |
+| 6090 | cp-gluk-lb | mmol/l | 97% | name+unit+values | 10492 | 0 | [4.98, 5.61, 6.18, 6.77, 7.46, 8.42, 9.63, 11.26, 13.98] |  |  |  |
+| 6091 | cp-gluk-lb |  | 3% | name | 283 | 100 |  |  |  |  |
+| 6092 | cp-gluk-o |  | 100% | name | 165 | 100 |  |  |  | Qualitative test (also semi-quantitative) |
+| 6093 | cp-gluk-po | mmol/l | 100% | name+unit+values | 2528 | 0 | [4.65, 5.93, 7.07, 8.16, 9.34, 10.66, 12.22, 14.51, 17.97] |  |  |  |
+| 6094 | cp-gluk-po |  | 0% | name | 7 | 100 |  |  |  |  |
+| 6095 | cp-glukpaa | mmol/l | 55% | name+unit | 116 | 0 |  |  |  |  |
+| 6096 | cp-glukpaa |  | 45% | name | 94 | 100 |  |  |  |  |
+| 6097 | cp-glukpot |  | 100% | name+values | 106 | 100 | [4.93, 5.55, 6.42, 7.07, 7.43, 8.57, 9.89, 11.44, 13.83] |  |  |  |
+| 6098 | fp-gluk,t |  | 100% | name+values | 773 | 100 | [5.56, 6.02, 6.34, 6.71, 7.09, 7.5, 7.92, 8.81, 10.39] |  | Fasting plasma |  |
+| 6099 | fp-gluk,tk |  | 100% | name+values | 1207 | 100 | [4.77, 5.03, 5.29, 5.49, 5.88, 6.46, 7.07, 7.93, 9.36] |  | Fasting plasma |  |
+| 6100 | fp-gluk-0h | mmol/l | 41% | name+unit+values | 156 | 0 | [5.62, 5.88, 6.03, 6.17, 6.3, 6.44, 6.68, 6.89, 7.2] |  | Fasting plasma |  |
+| 6101 | fp-gluk-0h |  | 59% | name+values | 229 | 100 | [4.5, 4.7, 4.81, 5, 5.1, 5.3, 5.51, 5.91, 6.41] |  | Fasting plasma |  |
+| 6102 | fp-gluk-1 | mmol/l | 100% | name+unit+values | 108 | 0 | [5.5, 6.24, 6.81, 7.36, 7.89, 8.4, 8.79, 9.47, 10.2] |  | Fasting plasma |  |
+| 6103 | fp-gluk-2 | mmol/l | 95% | name+unit+values | 168 | 0 | [4.74, 5.29, 5.7, 6.17, 6.78, 7.15, 7.64, 8.78, 10.15] |  | Fasting plasma |  |
+| 6104 | fp-gluk-2 |  | 5% | name | 9 | 100 |  |  | Fasting plasma |  |
+| 6105 | fp-gluk-2h | mmol/l | 71% | name+unit+values | 109 | 0 | [4.43, 5.4, 5.75, 6.21, 6.7, 7.52, 8.1, 8.93, 10.71] |  | Fasting plasma |  |
+| 6106 | fp-gluk-2h | mmol/mol | 29% | name+unit | 45 | 0 |  |  | Fasting plasma |  |
+| 6107 | fp-gluk-o | mmol/l | 95% | name+unit+values | 104 | 0 | [4.6, 4.9, 5.18, 5.4, 5.71, 6, 6.3, 6.7, 6.95] |  | Fasting plasma | Qualitative test (also semi-quantitative) |
+| 6108 | fp-gluk-o |  | 5% | name | 6 | 100 |  |  | Fasting plasma | Qualitative test (also semi-quantitative) |
+| 6109 | fp-gluk-p | mmol/l | 88% | name+unit+values | 391 | 0 | [4.76, 5.2, 5.64, 5.93, 6.1, 6.3, 6.49, 6.74, 7.18] |  | Fasting plasma | Upright (standing) |
+| 6110 | fp-gluk-p |  | 12% | name | 51 | 100 |  |  | Fasting plasma | Upright (standing) |
+| 6111 | fp-gluk-sn | mmol/l | 98% | name+unit+values | 1398 | 0 | [5.04, 5.72, 6.23, 6.71, 7.2, 7.71, 8.25, 9.13, 10.8] |  | Fasting plasma |  |
+| 6112 | fp-gluk-sn |  | 2% | name | 28 | 100 |  |  | Fasting plasma |  |
+| 6113 | fp-gluk/0 | mmol/l | 87% | name+unit+values | 296 | 0 | [4.49, 4.7, 4.93, 5.24, 5.55, 5.9, 6.19, 6.52, 6.89] |  | Fasting plasma |  |
+| 6114 | fp-gluk/0 |  | 13% | name | 46 | 100 |  |  | Fasting plasma |  |
+| 6115 | fp-gluk/pi |  | 100% | name+values | 110 | 100 | [5.2, 5.44, 5.64, 5.94, 6.22, 6.57, 7.06, 7.97, 9.9] |  | Fasting plasma |  |
+| 6116 | fp-gluk0 | mmol/l | 90% | name+unit+values | 1616 | 0 | [4.6, 4.73, 4.9, 5.02, 5.22, 5.42, 5.67, 5.95, 6.5] |  | Fasting plasma |  |
+| 6117 | fp-gluk0 |  | 10% | name+values | 175 | 100 | [4.96, 5.57, 6.04, 6.16, 6.3, 6.49, 6.7, 6.84, 7.15] |  | Fasting plasma |  |
+| 6118 | fp-glukos | mmol/l | 100% | name+unit+values | 977 | 0 | [4.79, 5.14, 5.39, 5.61, 5.86, 6.13, 6.45, 7.01, 8.07] |  | Fasting plasma |  |
+| 6119 | fp-glukr0 | mmol/l | 89% | name+unit+values | 173 | 0 | [4.63, 4.88, 5.24, 5.55, 5.9, 6.12, 6.4, 6.6, 7.09] |  | Fasting plasma |  |
+| 6120 | fp-glukr0 |  | 11% | name | 21 | 100 |  |  | Fasting plasma |  |
+| 6121 | fp-glukr0h | mmol/l | 97% | name+unit+values | 951 | 0.32 | [5.42, 5.7, 5.88, 6.01, 6.19, 6.34, 6.51, 6.77, 7.2] |  | Fasting plasma |  |
+| 6122 | fp-glukr0h |  | 3% | name | 28 | 100 |  |  | Fasting plasma |  |
+| 6123 | p-glkg | ng/l | 83% | name+unit+values | 365 | 0 | [139.5, 155.41, 170.26, 182.78, 193.92, 208.93, 237.14, 279.6, 336.26] | P -Glukagoni | Plasma |  |
+| 6124 | p-glkg |  | 17% | name | 77 | 100 |  | P -Glukagoni | Plasma |  |
+| 6125 | p-glu/0 | mmol/l | 99% | name+unit+values | 1831 | 0 | [4.4, 4.63, 4.86, 5.08, 5.3, 5.57, 5.89, 6.23, 6.67] |  | Plasma |  |
+| 6126 | p-glu/0 |  | 1% | name | 24 | 100 |  |  | Plasma |  |
+| 6127 | p-glu/1h | mmol/l | 98% | name+unit+values | 683 | 0 | [5.17, 5.85, 6.4, 6.95, 7.34, 7.81, 8.3, 8.85, 9.71] |  | Plasma |  |
+| 6128 | p-glu/1h |  | 2% | name | 11 | 100 |  |  | Plasma |  |
+| 6129 | p-glu/2h | mmol/l | 98% | name+unit+values | 1816 | 0 | [4.49, 5.06, 5.5, 5.9, 6.36, 6.92, 7.74, 8.85, 11.03] |  | Plasma |  |
+| 6130 | p-glu/2h |  | 2% | name | 35 | 100 |  |  | Plasma |  |
+| 6131 | p-glu/30m | mmol/l | 100% | name+unit+values | 228 | 0 | [6.47, 7.15, 7.55, 7.97, 8.37, 8.76, 9.2, 9.83, 10.94] |  | Plasma |  |
+| 6132 | p-gluk,tk | mmol/l | 100% | name+unit+values | 7423 | 0 | [5.62, 6.19, 6.72, 7.31, 8.07, 8.98, 10.16, 11.79, 14.45] |  | Plasma |  |
+| 6133 | p-gluk-0 | mmol/l | 91% | name+unit+values | 264 | 0 | [4.63, 4.8, 4.96, 5.1, 5.27, 5.57, 5.92, 6.32, 7.02] |  | Plasma |  |
+| 6134 | p-gluk-0 |  | 9% | name | 26 | 100 |  |  | Plasma |  |
+| 6135 | p-gluk-0h | mmol/l | 99% | name+unit+values | 750 | 0 | [4.5, 4.74, 4.99, 5.18, 5.41, 5.76, 6.07, 6.32, 6.7] |  | Plasma |  |
+| 6136 | p-gluk-0h |  | 1% | name | 8 | 100 |  |  | Plasma |  |
+| 6137 | p-gluk-1h | mmol/l | 71% | name+unit+values | 402 | 0 | [5.57, 6.22, 6.83, 7.23, 7.57, 8.06, 8.49, 9.01, 9.94] |  | Plasma |  |
+| 6138 | p-gluk-1h |  | 29% | name+values | 163 | 100 | [5.81, 6.57, 7.01, 7.47, 7.82, 8.15, 8.47, 9.03, 10.1] |  | Plasma |  |
+| 6139 | p-gluk-1t | mmol/l | 91% | name+unit+values | 167 | 0 | [5.29, 5.9, 6.35, 6.66, 7.27, 7.64, 8.35, 8.9, 10.16] |  | Plasma |  |
+| 6140 | p-gluk-1t |  | 9% | name | 17 | 100 |  |  | Plasma |  |
+| 6141 | p-gluk-2h | mmol/l | 77% | name+unit+values | 897 | 0 | [4.78, 5.31, 5.74, 6.17, 6.56, 7.1, 7.66, 8.51, 9.94] |  | Plasma |  |
+| 6142 | p-gluk-2h |  | 23% | name+values | 263 | 100 | [4.77, 5.45, 5.76, 6.17, 6.52, 6.84, 7.15, 7.77, 9.15] |  | Plasma |  |
+| 6143 | p-gluk-2t | mmol/l | 89% | name+unit+values | 462 | 0 | [4.62, 5.32, 5.8, 6.21, 6.64, 7.17, 7.9, 8.99, 11.01] |  | Plasma |  |
+| 6144 | p-gluk-2t |  | 11% | name | 59 | 100 |  |  | Plasma |  |
+| 6145 | p-gluk-a2 | mmol/l | 85% | name+unit+values | 1483 | 0.07 | [5.94, 7.28, 8.69, 10, 11.25, 12.56, 14.23, 16.59, 19.44] |  | Plasma |  |
+| 6146 | p-gluk-a2 |  | 15% | name+values | 259 | 100 | [6.42, 7.76, 9.11, 10.3, 11.29, 12.59, 13.78, 15.77, 18.35] |  | Plasma |  |
+| 6147 | p-gluk-o | mmol/l | 88% | name+unit+values | 1305 | 0.08 | [3.8, 4.26, 4.54, 4.72, 4.91, 5.15, 5.44, 5.9, 6.59] |  | Plasma | Qualitative test (also semi-quantitative) |
+| 6148 | p-gluk-o |  | 12% | name | 175 | 100 |  |  | Plasma | Qualitative test (also semi-quantitative) |
+| 6149 | p-gluk-po | mmol/l | 77% | name+unit+values | 820 | 0 | [5.73, 6.47, 7.19, 7.81, 8.6, 9.37, 10.27, 11.53, 13.61] |  | Plasma |  |
+| 6150 | p-gluk-po |  | 23% | name+values | 242 | 100 | [5.3, 6.08, 6.6, 7.05, 7.78, 8.4, 9.46, 11.37, 12.6] |  | Plasma |  |
+| 6151 | p-gluk-sn | mmol/l | 32% | name+unit+values | 1252 | 0 | [5.62, 6.24, 6.87, 7.62, 8.75, 10.05, 11.53, 13.51, 16.47] |  | Plasma |  |
+| 6152 | p-gluk-sn |  | 68% | name | 2688 | 100 |  |  | Plasma |  |
+| 6153 | p-gluk-vt | 1 | 1% | name+unit | 40 | 0 |  |  | Plasma |  |
+| 6154 | p-gluk-vt | mmol/l | 99% | name+unit+values | 7875 | 0 | [4.66, 4.98, 5.43, 6.02, 6.79, 7.88, 9.29, 11.32, 14.47] |  | Plasma |  |
+| 6155 | p-gluk. | mmol/l | 40% | name+unit+values | 752 | 0 | [4.6, 4.9, 5.19, 5.56, 5.95, 6.36, 6.79, 7.42, 8.57] |  | Plasma |  |
+| 6156 | p-gluk. |  | 60% | name | 1111 | 100 |  |  | Plasma |  |
+| 6157 | p-gluk/120 | mmol/l | 76% | name+unit+values | 95 | 0 | [4.8, 5.3, 5.71, 6.15, 6.7, 7.35, 7.8, 8.75, 10] |  | Plasma |  |
+| 6158 | p-gluk/120 |  | 24% | name | 30 | 100 |  |  | Plasma |  |
+| 6159 | p-gluk/2h | mmol/l | 92% | name+unit+values | 204 | 0 | [4.6, 5.17, 5.53, 6.07, 6.51, 7.16, 8.06, 9.69, 11.7] |  | Plasma |  |
+| 6160 | p-gluk/2h |  | 8% | name | 17 | 100 |  |  | Plasma |  |
+| 6161 | p-gluk0 | mmol/l | 60% | name+unit+values | 205 | 0 | [4.71, 4.97, 5.2, 5.33, 5.51, 5.7, 5.82, 6, 6.41] |  | Plasma |  |
+| 6162 | p-gluk0 |  | 40% | name+values | 134 | 100 | [4.9, 5.29, 5.97, 6.1, 6.21, 6.44, 6.67, 6.9, 7.26] |  | Plasma |  |
+| 6163 | p-gluk120 | mmol/l | 96% | name+unit+values | 1674 | 0 | [4.77, 5.31, 5.74, 6.14, 6.54, 7.03, 7.61, 8.44, 10] |  | Plasma |  |
+| 6164 | p-gluk120 |  | 4% | name | 77 | 100 |  |  | Plasma |  |
+| 6165 | p-gluk1h | mmol/l | 83% | name+unit+values | 181 | 0 | [5.46, 5.92, 6.58, 7.24, 7.73, 8.41, 9.44, 10.75, 12.63] |  | Plasma |  |
+| 6166 | p-gluk1h |  | 17% | name | 38 | 100 |  |  | Plasma |  |
+| 6167 | p-gluk2h | mmol/l | 24% | name+unit+values | 92 | 0 | [4.6, 5.11, 5.97, 6.3, 6.8, 7.26, 7.98, 9, 10.5] |  | Plasma |  |
+| 6168 | p-gluk2h | mmoll/l | 43% | name+unit+values | 169 | 0 | [4.54, 4.97, 5.56, 5.91, 6.35, 6.78, 7.43, 8.12, 9.76] |  | Plasma |  |
+| 6169 | p-gluk2h |  | 33% | name+values | 129 | 100 | [5.36, 6.02, 6.76, 7.08, 7.8, 8.46, 9.11, 10.06, 11.53] |  | Plasma |  |
+| 6170 | p-gluk60 | mmol/l | 96% | name+unit+values | 936 | 0.21 | [5.58, 6.24, 6.73, 7.23, 7.62, 8.17, 8.7, 9.36, 10.2] |  | Plasma |  |
+| 6171 | p-gluk60 |  | 4% | name | 43 | 100 |  |  | Plasma |  |
+| 6172 | p-gluk: | mmol/l | 100% | name+unit+values | 627 | 0 | [5.38, 5.94, 6.31, 6.7, 7.16, 7.74, 8.48, 9.63, 11.83] |  | Plasma |  |
+| 6173 | p-glukhoi | mmol/l | 42% | name+unit+values | 279 | 0 | [5.05, 5.62, 6.12, 6.89, 7.83, 9, 10.74, 12.64, 15.73] |  | Plasma |  |
+| 6174 | p-glukhoi |  | 58% | name+values | 384 | 100 | [5.07, 5.6, 5.97, 6.28, 6.77, 7.43, 8.38, 10.3, 13.45] |  | Plasma |  |
+| 6175 | p-glukp | mmol/l | 100% | name+unit+values | 175 | 0.57 | [4.6, 4.91, 5.23, 5.5, 5.89, 6.43, 6.92, 7.84, 12.46] |  | Plasma |  |
+| 6176 | p-glukpik | mmol/l | 90% | name+unit+values | 200 | 0 | [5, 5.2, 5.4, 5.63, 5.8, 6.05, 6.2, 6.5, 7.53] |  | Plasma |  |
+| 6177 | p-glukpik |  | 10% | name | 21 | 100 |  |  | Plasma |  |
+| 6178 | p-glukpoc | mmol/l | 100% | name+unit+values | 2519 | 0 | [5.93, 6.58, 7.13, 7.75, 8.31, 9.1, 9.95, 11.15, 13.04] |  | Plasma |  |
+| 6179 | p-glukr0h | mmol/l | 100% | name+unit+values | 535 | 0 | [4.5, 4.7, 4.86, 5, 5.1, 5.28, 5.45, 5.71, 6.24] |  | Plasma |  |
+| 6180 | p-glukr1h | mmol/l | 98% | name+unit+values | 466 | 0 | [5.51, 6.13, 6.67, 7.07, 7.5, 7.91, 8.49, 9.1, 9.84] |  | Plasma |  |
+| 6181 | p-glukr1h |  | 2% | name | 8 | 100 |  |  | Plasma |  |
+| 6182 | p-glukr2h | mmol/l | 97% | name+unit+values | 1604 | 0.19 | [4.57, 5.2, 5.69, 6.15, 6.62, 7.19, 7.87, 8.98, 10.55] |  | Plasma |  |
+| 6183 | p-glukr2h |  | 3% | name | 58 | 100 |  |  | Plasma |  |
+| 6184 | pt-gluk,0 |  | 100% | name | 130 | 100 |  |  | Patient |  |
+| 6185 | pt-gluk-0 | mmol/l | 64% | name+unit+values | 272 | 0 | [4.3, 4.59, 4.8, 4.98, 5.22, 5.5, 5.77, 6.17, 6.53] |  | Patient |  |
+| 6186 | pt-gluk-0 |  | 36% | name+values | 151 | 100 | [4.5, 4.7, 4.8, 4.88, 5, 5.11, 5.33, 5.5, 5.76] |  | Patient |  |
+| 6187 | pt-gluk-0h | mmol/l | 87% | name+unit+values | 951 | 0 | [4.4, 4.6, 4.76, 4.9, 5.02, 5.23, 5.49, 5.86, 6.46] |  | Patient |  |
+| 6188 | pt-gluk-0h |  | 13% | name+values | 138 | 100 | [5, 5.1, 5.21, 5.5, 5.63, 5.81, 5.99, 6.24, 6.64] |  | Patient |  |
+| 6189 | pt-gluk-1h | mmol/l | 99% | name+unit+values | 771 | 0 | [5.25, 5.86, 6.42, 6.94, 7.45, 8.02, 8.57, 9.25, 10.42] |  | Patient |  |
+| 6190 | pt-gluk-1h |  | 1% | name | 6 | 100 |  |  | Patient |  |
+| 6191 | pt-gluk-2h | mmol/l | 91% | name+unit+values | 1501 | 0 | [4.46, 4.99, 5.43, 5.84, 6.26, 6.73, 7.36, 8.21, 9.78] |  | Patient |  |
+| 6192 | pt-gluk-2h |  | 9% | name+values | 154 | 100 | [4, 4.66, 5.12, 5.48, 5.93, 6.4, 6.95, 7.57, 9.38] |  | Patient |  |
+| 6193 | pt-gluk-30 |  | 100% | name+values | 131 | 100 | [7.04, 7.5, 7.77, 8.19, 8.53, 9.21, 9.76, 10.71, 12.23] |  | Patient |  |
+| 6194 | pt-gluk-r |  | 100% | name | 14723 | 100 |  |  | Patient | Exercise / functional test |
+| 6195 | pt-gluk-r1 | form | 0% | name+unit | 75 | 0 |  | Pt-Glukoosi-koe, oraalinen, lyhyt | Patient |  |
+| 6196 | pt-gluk-r1 | mmol/l | 1% | name+unit+values | 369 | 0 | [5, 5.36, 5.74, 6.03, 6.42, 6.84, 7.39, 8.3, 9.71] | Pt-Glukoosi-koe, oraalinen, lyhyt | Patient |  |
+| 6197 | pt-gluk-r1 |  | 99% | name | 71876 | 100 |  | Pt-Glukoosi-koe, oraalinen, lyhyt | Patient |  |
+| 6198 | pt-gluk-r2 | mmol/l | 7% | name+unit | 21 | 0 |  | Pt-Glukoosi-koe, oraalinen, pitkä | Patient |  |
+| 6199 | pt-gluk-r2 |  | 93% | name | 287 | 100 |  | Pt-Glukoosi-koe, oraalinen, pitkä | Patient |  |
+| 6200 | pt-gluk-r2,tk |  | 100% | name | 289 | 100 |  |  | Patient |  |
+| 6201 | pt-gluk-r4 |  | 100% | name | 143 | 100 |  | Pt-Glukoosi-koe, hypoglykemia | Patient |  |
+| 6202 | pt-gluk-r5 |  | 100% | name | 108 | 100 |  | Pt-Glukoosi-koe, kasvuhormoni | Patient |  |
+| 6203 | pt-gluk-r6 | mmol/l | 2% | name+unit+values | 370 | 0 | [4.7, 4.94, 5.17, 5.39, 5.84, 6.39, 6.99, 7.91, 8.84] | Pt-Glukoosi-koe, oraalinen, raskaudenaikainen | Patient |  |
+| 6204 | pt-gluk-r6 |  | 98% | name | 23123 | 100 |  | Pt-Glukoosi-koe, oraalinen, raskaudenaikainen | Patient |  |
+| 6205 | pt-gluk-r8 |  | 100% | name | 231 | 100 |  |  | Patient |  |
+| 6206 | pt-gluk-rg |  | 100% | name | 118 | 100 |  |  | Patient |  |
+| 6207 | pt-gluk-sd |  | 100% | name | 824 | 100 |  |  | Patient |  |
+| 6208 | pt-glukoos |  | 100% | name | 257 | 100 |  |  | Patient |  |
+| 6209 | pt-glukr-0 | mmol/l | 100% | name+unit+values | 300 | 0 | [5.37, 5.6, 5.8, 5.96, 6.13, 6.3, 6.48, 6.67, 7.12] |  | Patient |  |
+| 6210 | pt-glukr1p |  | 100% | name | 902 | 100 |  |  | Patient |  |
+| 6211 | pt-glukr1v |  | 100% | name | 1247 | 100 |  |  | Patient |  |
+| 6212 | pt-glukr2h |  | 100% | name | 5360 | 100 |  |  | Patient |  |
+| 6213 | pt-glur3-g |  | 100% | name | 118 | 100 |  |  | Patient |  |
+| 6214 | pt-glur3-i |  | 100% | name | 118 | 100 |  |  | Patient |  |
+| 6215 | u-gluk-0 |  | 100% | name+values | 9320 | 100 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
+| 6216 | u-gluk-de |  | 100% | name+values | 152 | 100 | [1044.9, 1079.17, 1109.42, 1125, 1152.75, 1186.12, 1207.92, 1246.3, 1486.7] |  | Urine |  |
+| 6217 | u-gluk-hy |  | 100% | name | 2667 | 100 |  |  | Urine |  |
+| 6218 | u-gluk-o | estimate | 21% | name+unit+values | 176312 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Glukoosi (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 6219 | u-gluk-o | form | 0% | name+unit+values | 842 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Glukoosi (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 6220 | u-gluk-o |  | 79% | name | 658060 | 100 |  | U -Glukoosi (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 6221 | u-gluk-o. |  | 100% | name | 24482 | 100 |  |  | Urine |  |
+| 6222 | u-gluk-ov |  | 100% | name | 816 | 100 |  |  | Urine |  |
+| 6223 | u-gluk-pi |  | 100% | name | 422 | 100 |  |  | Urine |  |
+| 6224 | vp-gluk-0h | mmol/l | 62% | name+unit+values | 715 | 0 | [4.69, 4.93, 5.24, 5.58, 5.92, 6.16, 6.43, 6.77, 7.19] |  |  |  |
+| 6225 | vp-gluk-0h |  | 38% | name+values | 439 | 100 | [4.64, 4.89, 5.14, 5.56, 5.95, 6.27, 6.57, 6.88, 7.22] |  |  |  |
+| 6226 | vp-gluk-1h | mmol/l | 63% | name+unit+values | 247 | 0 | [5.11, 5.77, 6.25, 6.61, 7.03, 7.67, 8.06, 8.63, 9.93] |  |  |  |
+| 6227 | vp-gluk-1h |  | 37% | name+values | 144 | 100 | [5.81, 6.29, 6.71, 7.08, 7.37, 7.82, 8.17, 8.78, 9.49] |  |  |  |
+| 6228 | vp-gluk-2h | mmol/l | 62% | name+unit+values | 712 | 0 | [4.98, 5.56, 6.04, 6.64, 7.18, 7.97, 8.74, 10.17, 12.52] |  |  |  |
+| 6229 | vp-gluk-2h |  | 38% | name+values | 431 | 100 | [5.19, 5.72, 6.34, 6.98, 7.61, 8.2, 9.41, 11.25, 12.85] |  |  |  |
 

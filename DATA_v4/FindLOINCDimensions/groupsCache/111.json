@@ -1,193 +1,577 @@
 {
   "rows": [
     {
+      "row_id": 9055,
+      "loinc_name_guess": "C-reactive protein [Presence] in Serum or Plasma"
+    },
+    {
+      "row_id": 9056,
+      "loinc_name_guess": "CYP2B6 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9057,
+      "loinc_name_guess": "CYP2C19 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9058,
+      "loinc_name_guess": "CYP2C9 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9059,
+      "loinc_name_guess": "CYP2D6 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9060,
+      "loinc_name_guess": "CYP3A5 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9061,
+      "loinc_name_guess": "CYP4F2 gene mutations found [Identifier] in Blood or Tissue"
+    },
+    {
+      "row_id": 9062,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit/Chorionic gonadotropin.total [# Ratio] in Serum or Plasma"
+    },
+    {
+      "row_id": 9063,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit [Units/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 9064,
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9065,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9066,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9067,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9068,
+      "loinc_name_guess": "C-reactive protein [Presence] in Blood"
+    },
+    {
+      "row_id": 9069,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9070,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 9071,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 9072,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9073,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9074,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9075,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9076,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9077,
+      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 9078,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 9079,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 9080,
+      "loinc_name_guess": "CYP2C19 gene targeted variant analysis in Blood"
+    },
+    {
+      "row_id": 9081,
+      "loinc_name_guess": "CYP2D6 gene targeted variant analysis in Blood"
+    },
+    {
+      "row_id": 9082,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Capillary blood"
+    },
+    {
+      "row_id": 9083,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Capillary blood"
+    },
+    {
+      "row_id": 9084,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 9085,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 9086,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 9087,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 9088,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 9089,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 9090,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9091,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9092,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9093,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
+    },
+    {
       "row_id": 9094,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
     },
     {
       "row_id": 9095,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma --post meal"
     },
     {
       "row_id": 9096,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma --post meal"
     },
     {
       "row_id": 9097,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
     },
     {
       "row_id": 9098,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Plasma"
     },
     {
       "row_id": 9099,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Complement C1 inhibitor [Mass/volume] in Plasma"
     },
     {
       "row_id": 9100,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Complement C1 inhibitor [Mass/volume] in Plasma"
     },
     {
       "row_id": 9101,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Plasma"
     },
     {
       "row_id": 9102,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Plasma"
     },
     {
       "row_id": 9103,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Plasma"
     },
     {
       "row_id": 9104,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Cancer Ag 125 [Units/volume] in Plasma"
     },
     {
       "row_id": 9105,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Cancer Ag 125 [Units/volume] in Plasma"
     },
     {
       "row_id": 9106,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Cancer Ag 15-3 [Units/volume] in Plasma"
     },
     {
       "row_id": 9107,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Cancer Ag 15-3 [Units/volume] in Plasma"
     },
     {
       "row_id": 9108,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Cancer Ag 19-9 [Units/volume] in Plasma"
     },
     {
       "row_id": 9109,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Cancer Ag 19-9 [Units/volume] in Plasma"
     },
     {
       "row_id": 9110,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 9111,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Plasma"
     },
     {
       "row_id": 9112,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Enzymatic activity/volume] in Plasma"
     },
     {
       "row_id": 9113,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Plasma"
     },
     {
       "row_id": 9114,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Plasma"
     },
     {
       "row_id": 9115,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Plasma"
     },
     {
       "row_id": 9116,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Mass/volume] in Plasma"
     },
     {
       "row_id": 9117,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9118,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ab [Presence] in Serum or Plasma"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9119,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) IgG Ab [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9120,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) IgM Ab [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9121,
-      "loinc_name_guess": "Chlamydia trachomatis DNA [Presence] in Specimen by NAA with probe detection"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9122,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "C-reactive protein [Presence] in Plasma"
     },
     {
       "row_id": 9123,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9124,
-      "loinc_name_guess": "Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory specimen by NAA"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9125,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9126,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9127,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) whole genome [Identifier] in Respiratory specimen by Sequencing"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma by Point-of-care"
     },
     {
       "row_id": 9128,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Nasal specimen by Rapid immunoassay"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma by Point-of-care"
     },
     {
       "row_id": 9129,
-      "loinc_name_guess": "Complement C1q IgG Ab [Units/volume] in Plasma"
+      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Plasma"
     },
     {
       "row_id": 9130,
-      "loinc_name_guess": "Complement C1q IgG Ab [Units/volume] in Plasma"
+      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Plasma"
     },
     {
       "row_id": 9131,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma by Point-of-care"
     },
     {
       "row_id": 9132,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma by Point-of-care"
     },
     {
       "row_id": 9133,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9134,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) IgA Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9135,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) IgG Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9136,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) IgM Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 9137,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Ab [Units/volume] in Serum"
+      "loinc_name_guess": "Chorionic gonadotropin [Units/volume] in Plasma"
     },
     {
       "row_id": 9138,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Spike protein Ab [Units/volume] in Serum"
+      "loinc_name_guess": "Chorionic gonadotropin [Units/volume] in Plasma"
     },
     {
       "row_id": 9139,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Spike protein Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum --post meal"
     },
     {
       "row_id": 9140,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) Spike protein Ab [Units/volume] in Serum"
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum --post meal"
+    },
+    {
+      "row_id": 9141,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9142,
+      "loinc_name_guess": "C-peptide [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9143,
+      "loinc_name_guess": "Complement C1 inhibitor [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9144,
+      "loinc_name_guess": "Complement C1 inhibitor [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9145,
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9146,
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9147,
+      "loinc_name_guess": "Complement C1 inhibitor functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9148,
+      "loinc_name_guess": "Cancer Ag 125 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9149,
+      "loinc_name_guess": "Cancer Ag 125 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9150,
+      "loinc_name_guess": "Cancer Ag 15-3 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9151,
+      "loinc_name_guess": "Cancer Ag 15-3 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9152,
+      "loinc_name_guess": "Cancer Ag 19-9 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9153,
+      "loinc_name_guess": "Cancer Ag 19-9 [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9154,
+      "loinc_name_guess": "Complement total hemolytic (CH50) [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9155,
+      "loinc_name_guess": "Complement alternative pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9156,
+      "loinc_name_guess": "Complement alternative pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9157,
+      "loinc_name_guess": "Complement classical pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9158,
+      "loinc_name_guess": "Complement classical pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9159,
+      "loinc_name_guess": "Complement lectin pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9160,
+      "loinc_name_guess": "Complement lectin pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9161,
+      "loinc_name_guess": "Complement lectin pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9162,
+      "loinc_name_guess": "Complement lectin pathway functional [Ratio] in Serum"
+    },
+    {
+      "row_id": 9163,
+      "loinc_name_guess": "Creatine kinase.BB isoenzyme/Creatine kinase.total [Enzymatic activity Fraction] in Serum"
+    },
+    {
+      "row_id": 9164,
+      "loinc_name_guess": "Creatine kinase.BB isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9165,
+      "loinc_name_guess": "Creatine kinase.BB isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9166,
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme/Creatine kinase.total [Enzymatic activity Fraction] in Serum"
+    },
+    {
+      "row_id": 9167,
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9168,
+      "loinc_name_guess": "Creatine kinase.MB isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9169,
+      "loinc_name_guess": "Creatine kinase.MM isoenzyme/Creatine kinase.total [Enzymatic activity Fraction] in Serum"
+    },
+    {
+      "row_id": 9170,
+      "loinc_name_guess": "Creatine kinase.MM isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9171,
+      "loinc_name_guess": "Creatine kinase.MM isoenzyme [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 9172,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9173,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9174,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9175,
+      "loinc_name_guess": "C-reactive protein [Presence] in Serum"
+    },
+    {
+      "row_id": 9176,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9177,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9178,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 9179,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9180,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9181,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9182,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9183,
+      "loinc_name_guess": "Chorionic gonadotropin [Presence] in Serum"
+    },
+    {
+      "row_id": 9184,
+      "loinc_name_guess": "Chorionic gonadotropin [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9185,
+      "loinc_name_guess": "Chorionic gonadotropin [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9186,
+      "loinc_name_guess": "Chorionic gonadotropin [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9187,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit/Chorionic gonadotropin.total [# Ratio] in Serum"
+    },
+    {
+      "row_id": 9188,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit [Units/volume] in Serum"
+    },
+    {
+      "row_id": 9189,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9190,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9191,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9192,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9193,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9194,
+      "loinc_name_guess": "Chorionic gonadotropin.beta subunit.free [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 9195,
+      "loinc_name_guess": "Chorionic gonadotropin [MoM] in Serum"
+    },
+    {
+      "row_id": 9196,
+      "loinc_name_guess": "Chorionic gonadotropin [Presence] in Urine"
+    },
+    {
+      "row_id": 9197,
+      "loinc_name_guess": "Chorionic gonadotropin [Presence] in Urine"
     }
   ],
-  "reflection": "This group was overwhelmingly about SARS-CoV-2 (COVID-19) testing. The main challenge was differentiating between antigen tests, nucleic acid tests, and antibody tests based on the often-cryptic local codes.\n\n*   **Data Quality**: A significant issue was the presence of numerous nonsensical units for the `-cv19ag` code (rows 9096-9105). These had extremely low record counts and 0% unit share, correctly identifying them as data entry errors. The high `p_missing` on the main entry for this code was key to confirming its qualitative nature, overriding the noise from the bad units.\n*   **Interpreting Codes**: The Finnish national coding conventions were crucial. `ag` for antigen, `nh` for nucleic acid, `-o` for qualitative, and `ab` for antibody were reliable guides. Suffixes like `g` (IgG) and `m` (IgM) were also clear. The `LongName` fields, when present, were invaluable, confirming interpretations (e.g., `piikkiproteiini` for Spike protein) or specifying the exact test kit used.\n*   **Ambiguities**: For codes like `cv19infrs`, I had to infer a multiplex panel based on the likely components (COVID-19, Influenza, RSV). The name `cldinho` was highly garbled; my interpretation is a low-confidence guess but is better than leaving it blank.\n*   **Assumptions**: I consistently assumed `Respiratory specimen` for antigen and NAAT tests where no system was specified. For serology, I used `Serum` or `Serum or Plasma` even when the prefix was `B-` (Blood), as this reflects the typical laboratory matrix. For antibody tests without a specified quantity, I defaulted to `[Units/volume]`, which is a common property for semi-quantitative serology."
+  "reflection": "This was a very diverse group containing many different types of tests: routine chemistry (CRP), tumor markers (CA series), cardiac markers (CK-MB), endocrinology (C-peptide, HCG), genetic tests (CYP series), and immunology (complement). \n\nThe most frequent challenge was the conflict between the `-O` suffix (qualitative) and the presence of quantitative units (`mg/l`) and values. My strategy was to trust the unit and values over the suffix, as it's common for qualitative codes to be used for quantitative reporting. When quantitative evidence was absent, I respected the `-O` suffix and named a `[Presence]` test. This seems like a robust heuristic.\n\nA data quality issue was evident in several rows where `value_missing_p` was 100% despite the `value_deciles` being populated. I chose to trust the deciles as they provide concrete information about the test's scale.\n\nThere were many local suffixes appended to standard codes (e.g., `-hy`, `-lb`, `-hoi`). I generally ignored these, mapping them to the base test, assuming they represent administrative context (like the ordering ward) rather than a different analytical method. For codes like `poc`, `vt` (vieritutkimus), I correctly identified them as Point-of-Care tests and added `by Point-of-care` to the name.\n\nIdentifying high-sensitivity CRP (hs-CRP) from regular CRP required looking at the value deciles. Row 9077 (`b-crp-v`) and 9129 (`p-crp-päi`) had low-end values consistent with hs-CRP, which is a different clinical test from the standard CRP that most other codes represented."
 }

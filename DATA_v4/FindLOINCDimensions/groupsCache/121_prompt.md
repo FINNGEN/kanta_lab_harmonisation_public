@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,105 +139,140 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 121 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 10066 | -ctr-d |  | 100% | name | 115 | 100 |  |  |  | DNA test |
-| 10067 | -fishhyb | form | 22% | name+unit | 48 | 100 |  |  |  |  |
-| 10068 | -fishhyb |  | 78% | name | 174 | 100 |  |  |  |  |
-| 10069 | b-apoe-d |  | 100% | name | 146 | 100 |  | B -Apolipoproteiini E, DNA-tutkimus | Blood | DNA test |
-| 10070 | b-aso2-qd |  | 100% | name | 102 | 100 |  |  | Blood |  |
-| 10071 | b-atrytyd | form | 2% | name+unit | 7 | 100 |  | B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus | Blood |  |
-| 10072 | b-atrytyd |  | 98% | name | 283 | 100 |  | B -Alfa-1-antitrypsiinin genotyypitys, DNA-tutkimus | Blood |  |
-| 10073 | b-auria10 |  | 100% | name | 1807 | 100 |  |  | Blood |  |
-| 10074 | b-bcr-qr | form | 9% | name+unit | 159 | 100 |  | B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Blood |  |
-| 10075 | b-bcr-qr |  | 91% | name | 1562 | 100 |  | B -BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Blood |  |
-| 10076 | b-blapcr |  | 100% | name | 138 | 100 |  |  | Blood |  |
-| 10077 | b-bo3-d |  | 100% | name | 963 | 100 |  |  | Blood | DNA test |
-| 10078 | b-brcay-d |  | 100% | name | 519 | 100 |  |  | Blood | DNA test |
-| 10079 | b-brovcore |  | 100% | name | 356 | 100 |  |  | Blood |  |
-| 10080 | b-calr-d |  | 100% | name | 421 | 100 |  |  | Blood | DNA test |
-| 10081 | b-cmlpcr |  | 100% | name | 553 | 100 |  |  | Blood |  |
-| 10082 | b-crco |  | 100% | name | 3627 | 100 |  |  | Blood |  |
-| 10083 | b-crcoti |  | 100% | name | 1359 | 100 |  |  | Blood |  |
-| 10084 | b-dm2alld | form | 11% | name+unit | 19 | 100 |  | B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus | Blood |  |
-| 10085 | b-dm2alld |  | 89% | name | 149 | 100 |  | B -Dystrofia myotonica tyyppi 2 (DM2), ZNF9-geenin toistojakson alleelikokojen DNA-tutkimus | Blood |  |
-| 10086 | b-dpyd-d | form | 6% | name+unit | 211 | 100 |  |  | Blood | DNA test |
-| 10087 | b-dpyd-d |  | 94% | name | 3111 | 100 |  |  | Blood | DNA test |
-| 10088 | b-dpydl-d |  | 100% | name | 101 | 100 |  |  | Blood | DNA test |
-| 10089 | b-exkon-d |  | 100% | name | 147 | 100 |  |  | Blood | DNA test |
-| 10090 | b-extri-d |  | 100% | name | 136 | 100 |  |  | Blood | DNA test |
-| 10091 | b-farma-d |  | 100% | name | 594 | 100 |  |  | Blood | DNA test |
-| 10092 | b-farml-d |  | 100% | name | 190 | 100 |  |  | Blood | DNA test |
-| 10093 | b-fii-d | form | 2% | name+unit | 138 | 100 |  | B -Protrombiinigeeni, DNA-tutkimus | Blood | DNA test |
-| 10094 | b-fii-d |  | 98% | name | 7712 | 100 |  | B -Protrombiinigeeni, DNA-tutkimus | Blood | DNA test |
-| 10095 | b-finngen |  | 100% | name | 736 | 100 |  |  | Blood |  |
-| 10096 | b-fishhem |  | 100% | name | 130 | 100 |  | B -Hematologinen fluoresenssi in situ hybridisaatio, veri | Blood |  |
-| 10097 | b-frax-d | form | 1% | name+unit | 5 | 100 |  | B -Fragiili-X,-FMR1-geenin DNA-tutkimus | Blood | DNA test |
-| 10098 | b-frax-d |  | 99% | name | 347 | 100 |  | B -Fragiili-X,-FMR1-geenin DNA-tutkimus | Blood | DNA test |
-| 10099 | b-fuus-mr | form | 13% | name+unit | 26 | 100 |  |  | Blood |  |
-| 10100 | b-fuus-mr |  | 87% | name | 177 | 100 |  |  | Blood |  |
-| 10101 | b-fv-d | form | 2% | name+unit | 139 | 100 |  | B -Hyytymistekijä V geeni, DNA-tutkimus | Blood | DNA test |
-| 10102 | b-fv-d |  | 98% | name | 8156 | 100 |  | B -Hyytymistekijä V geeni, DNA-tutkimus | Blood | DNA test |
-| 10103 | b-fvfii-d | form | 6% | name+unit | 52 | 100 |  |  | Blood | DNA test |
-| 10104 | b-fvfii-d |  | 94% | name | 765 | 100 |  |  | Blood | DNA test |
-| 10105 | b-hfe-d |  | 100% | name | 730 | 100 |  | B -Periytyvään hemokromatoosiin liittyvien HFE-geenin valtamutaatioiden tutkimus | Blood | DNA test |
-| 10106 | b-hnpcy-d |  | 100% | name | 175 | 100 |  | B -Periytyvä ei-polypoottinen paksusuolisyöpä (HNPCC), MLH1-, MSH2- tai MSH6-geenin yksittäisen mutaation DNA-tutkimus | Blood | DNA test |
-| 10107 | b-jak2-d | form | 2% | name+unit | 139 | 100 |  | B -JAK2-geenin mutaatio, DNA-tutkimus | Blood | DNA test |
-| 10108 | b-jak2-d |  | 98% | name | 5494 | 100 |  | B -JAK2-geenin mutaatio, DNA-tutkimus | Blood | DNA test |
-| 10109 | b-kim-d |  | 100% | name | 197 | 100 |  |  | Blood | DNA test |
-| 10110 | b-kim-fd |  | 100% | name | 1367 | 100 |  |  | Blood |  |
-| 10111 | b-kml-qr |  | 100% | name | 1809 | 100 |  |  | Blood |  |
-| 10112 | b-lakt-d | form | 0% | name+unit | 18 | 77.78 |  | B -Laktoosi-intoleranssi, DNA-tutkimus | Blood | DNA test |
-| 10113 | b-lakt-d |  | 100% | name | 27791 | 100 |  | B -Laktoosi-intoleranssi, DNA-tutkimus | Blood | DNA test |
-| 10114 | b-ldlre-4 | form | 28% | name+unit | 53 | 100 |  |  | Blood |  |
-| 10115 | b-ldlre-4 |  | 72% | name | 135 | 100 |  |  | Blood |  |
-| 10116 | b-ldlre-d |  | 100% | name | 1121 | 100 |  | B -LDL-reseptorigeenin mutaatio, DNA-tutkimus | Blood | DNA test |
-| 10117 | b-ngs-d |  | 100% | name | 277 | 100 |  |  | Blood | DNA test |
-| 10118 | b-nphs1-d |  | 100% | name | 272 | 100 |  | B -Kongenitaali nefroosi (CNF), kahden NPHS1-geenin valtamutaation DNA-tutkimus | Blood | DNA test |
-| 10119 | b-pgx-d |  | 100% | name | 2778 | 100 |  |  | Blood | DNA test |
-| 10120 | b-sekvy-d | form | 4% | name+unit | 59 | 100 |  |  | Blood | DNA test |
-| 10121 | b-sekvy-d |  | 96% | name | 1268 | 100 |  |  | Blood | DNA test |
-| 10122 | b-tp53-d |  | 100% | name | 211 | 100 |  |  | Blood | DNA test |
-| 10123 | b-tpmt-d | form | 5% | name+unit | 30 | 100 |  |  | Blood | DNA test |
-| 10124 | b-tpmt-d |  | 95% | name | 615 | 100 |  |  | Blood | DNA test |
-| 10125 | b-varfa-d |  | 100% | name | 643 | 100 |  | B -Varfariinin yksilölliseen annostukseen liittyvät VKORC1- ja CYP2C9-geenivariaatiot, DNA-tutkimus verestä | Blood | DNA test |
-| 10126 | b-ykrom-d | form | 5% | name+unit | 7 | 100 |  | B -Y-kromosomin poikkeavuuksia | Blood | DNA test |
-| 10127 | b-ykrom-d |  | 95% | name | 142 | 100 |  | B -Y-kromosomin poikkeavuuksia | Blood | DNA test |
-| 10128 | bl-bal |  | 100% | name | 919 | 100 |  | Bl-Bronkoalveolaarinen lavaationäyte sairaalakohtainen ryhmätutkimus, jonka sisältö vaihtelee | Bronchoalveolar lavage |  |
-| 10129 | bl-bal-1 |  | 100% | name | 3636 | 100 |  | Bl-Bronkoalveolaarinen huuhtelunäyte, solututkimus | Bronchoalveolar lavage |  |
-| 10130 | bl-balfc |  | 100% | name | 397 | 100 |  |  | Bronchoalveolar lavage |  |
-| 10131 | bm-aso-qd |  | 100% | name | 224 | 100 |  |  | Bone marrow |  |
-| 10132 | bm-aso2-qd | form | 1% | name+unit | 6 | 100 |  |  | Bone marrow |  |
-| 10133 | bm-aso2-qd |  | 99% | name | 511 | 100 |  |  | Bone marrow |  |
-| 10134 | bm-aspir |  | 100% | name | 1994 | 98.65 |  |  | Bone marrow |  |
-| 10135 | bm-bcr-qr |  | 100% | name | 152 | 100 |  | Bm-BCR-ABL1 -geenien fuusio-RNA: t(9:22), (kvant) | Bone marrow |  |
-| 10136 | bm-blapcr |  | 100% | name | 753 | 100 |  |  | Bone marrow |  |
-| 10137 | bm-bpvalm |  | 100% | name | 145 | 100 |  |  | Bone marrow |  |
-| 10138 | bm-fish | form | 5% | name+unit | 48 | 100 |  |  | Bone marrow |  |
-| 10139 | bm-fish |  | 95% | name | 943 | 100 |  |  | Bone marrow |  |
-| 10140 | bm-fish-mm |  | 100% | name | 127 | 100 |  |  | Bone marrow |  |
-| 10141 | bm-fish2 | form | 26% | name+unit | 29 | 100 |  |  | Bone marrow |  |
-| 10142 | bm-fish2 |  | 74% | name | 81 | 100 |  |  | Bone marrow |  |
-| 10143 | bm-fishhem | form | 2% | name+unit | 7 | 100 |  | Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin | Bone marrow |  |
-| 10144 | bm-fishhem |  | 98% | name | 414 | 100 |  | Bm-Hematologinen fluoresenssi in situ hybridisaatio, luuydin | Bone marrow |  |
-| 10145 | bm-fishmm | form | 16% | name+unit | 28 | 100 |  |  | Bone marrow |  |
-| 10146 | bm-fishmm |  | 84% | name | 147 | 100 |  |  | Bone marrow |  |
-| 10147 | bm-fishvar |  | 100% | name | 141 | 100 |  |  | Bone marrow |  |
-| 10148 | bm-flt3-d | form | 6% | name+unit | 9 | 100 |  |  | Bone marrow | DNA test |
-| 10149 | bm-flt3-d |  | 94% | name | 138 | 100 |  |  | Bone marrow | DNA test |
-| 10150 | bm-fuus-mr | form | 5% | name+unit | 14 | 100 |  |  | Bone marrow |  |
-| 10151 | bm-fuus-mr |  | 95% | name | 268 | 100 |  |  | Bone marrow |  |
-| 10152 | bm-fuus-qr | form | 21% | name+unit | 21 | 100 |  |  | Bone marrow |  |
-| 10153 | bm-fuus-qr |  | 79% | name | 81 | 100 |  |  | Bone marrow |  |
-| 10154 | bm-mgg |  | 100% | name | 314 | 100 |  |  | Bone marrow |  |
-| 10155 | bm-mggfe | form | 5% | name+unit | 660 | 100 |  | Bm-Luuydintutkimus, MGG- ja rautavärjäys | Bone marrow |  |
-| 10156 | bm-mggfe |  | 95% | name | 11527 | 100 |  | Bm-Luuydintutkimus, MGG- ja rautavärjäys | Bone marrow |  |
-| 10157 | bm-mm-ift |  | 100% | name | 651 | 100 |  |  | Bone marrow |  |
-| 10158 | bm-mmpcr |  | 100% | name | 128 | 100 |  |  | Bone marrow |  |
-| 10159 | bm-morflkl |  | 100% | name | 278 | 100 |  |  | Bone marrow |  |
-| 10160 | bm-mrd-all |  | 100% | name | 416 | 100 |  |  | Bone marrow |  |
-| 10161 | bm-mrd-vs |  | 100% | name | 666 | 100 |  |  | Bone marrow |  |
-| 10162 | bm-mrdmut |  | 100% | name | 198 | 100 |  |  | Bone marrow |  |
-| 10163 | bm-npm1-qd | form | 11% | name+unit | 23 | 100 |  |  | Bone marrow |  |
-| 10164 | bm-npm1-qd |  | 89% | name | 182 | 100 |  |  | Bone marrow |  |
+| 9944 | cu-alb-mi | ug/min | 80% | name+unit+values | 7258 | 0.01 | [2.01, 3.06, 4.68, 7.09, 11.88, 22.58, 45.52, 98.32, 249.52] | cU-Albumiini, mikroalbuminuria | Collected urine | Micro |
+| 9945 | cu-alb-mi |  | 20% | name | 1830 | 100 |  | cU-Albumiini, mikroalbuminuria | Collected urine | Micro |
+| 9946 | e-coli. |  | 100% | name | 930 | 100 |  |  | Erythrocyte |  |
+| 9947 | f-para-o |  | 100% | name | 16222 | 100 |  | F -Parasiitit (kval) | Feces | Qualitative test (also semi-quantitative) |
+| 9948 | nu-alb-mi | mg/12h | 4% | name+unit | 12 | 0 |  | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
+| 9949 | nu-alb-mi | ug/min | 48% | name+unit+values | 155 | 0 | [4.6, 8.83, 19.33, 34.27, 68, 107.86, 175.14, 311.43, 536.5] | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
+| 9950 | nu-alb-mi |  | 48% | name | 157 | 100 |  | nU-Albumiini, mikroalbuminuria | Night (morning) urine | Micro |
+| 9951 | nu-albkre | mg/mmol | 17% | name+unit+values | 438 | 0 | [0.3, 0.49, 0.64, 0.9, 1.29, 2.02, 4.14, 8.64, 23.01] |  | Night (morning) urine |  |
+| 9952 | nu-albkre |  | 83% | name+values | 2191 | 100 | [0.39, 0.5, 0.69, 0.88, 1.21, 1.8, 2.91, 6.37, 18.94] |  | Night (morning) urine |  |
+| 9953 | nu-albkrea | mg/mmol | 44% | name+unit+values | 20929 | 0 | [0.3, 0.42, 0.59, 0.82, 1.19, 1.86, 3.33, 7.3, 23.5] |  | Night (morning) urine |  |
+| 9954 | nu-albkrea |  | 56% | name | 26197 | 100 |  |  | Night (morning) urine |  |
+| 9955 | p-seulkre |  | 100% | name | 277 | 100 |  |  | Plasma |  |
+| 9956 | u-a1mikre |  | 100% | name+values | 113 | 100 | [1, 2.45, 3.7, 6.95, 9, 11.14, 14.58, 17.92, 35.1] |  | Urine |  |
+| 9957 | u-alb-0 |  | 100% | name | 992 | 100 |  |  | Urine |  |
+| 9958 | u-alb-lb | mg/l | 58% | name+unit | 70 | 0 |  |  | Urine |  |
+| 9959 | u-alb-lb |  | 42% | name | 50 | 100 |  |  | Urine |  |
+| 9960 | u-alb-mi | mg/l | 71% | name+unit+values | 7488 | 0 | [3, 3.95, 5.25, 7.22, 10.53, 17.06, 32.59, 75.32, 297.66] |  | Urine | Micro |
+| 9961 | u-alb-mi |  | 29% | name | 3031 | 100 |  |  | Urine | Micro |
+| 9962 | u-alb-o | estimate | 34% | name+unit+values | 161670 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9963 | u-alb-o | form | 0% | name+unit+values | 287 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9964 | u-alb-o |  | 66% | name | 312867 | 100 |  | U -Albumiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9965 | u-alb/kre | g/mol | 3% | name+unit+values | 142 | 0 | [1.8, 3.05, 3.89, 5.37, 8.29, 16.27, 32.91, 51.96, 140.67] |  | Urine |  |
+| 9966 | u-alb/kre | mg/mmol | 50% | name+unit+values | 2591 | 0 | [0.3, 0.42, 0.6, 0.84, 1.25, 2.06, 4.01, 8.97, 30.06] |  | Urine |  |
+| 9967 | u-alb/kre |  | 48% | name | 2491 | 100 |  |  | Urine |  |
+| 9968 | u-alb/krea | g/mol | 3% | name+unit | 49 | 0 |  |  | Urine |  |
+| 9969 | u-alb/krea | mg/mmol | 51% | name+unit+values | 879 | 0 | [0.29, 0.4, 0.53, 0.74, 1.07, 1.82, 2.9, 5.82, 14.81] |  | Urine |  |
+| 9970 | u-alb/krea |  | 47% | name | 812 | 100 |  |  | Urine |  |
+| 9971 | u-albkre | mg/mmol | 60% | name+unit+values | 294883 | 0 | [0.3, 0.5, 0.68, 0.99, 1.55, 2.76, 5.6, 13.95, 52.37] | U -Albumiinin ja kreatiniinin suhde | Urine |  |
+| 9972 | u-albkre |  | 40% | name | 200553 | 100 |  | U -Albumiinin ja kreatiniinin suhde | Urine |  |
+| 9973 | u-albkrea | mg/mmol | 40% | name+unit+values | 10590 | 0 | [0.3, 0.44, 0.58, 0.73, 0.97, 1.32, 1.85, 3.04, 9.5] |  | Urine |  |
+| 9974 | u-albkrea | mg/mmol/l | 0% | name+unit | 81 | 0 |  |  | Urine |  |
+| 9975 | u-albkrea |  | 59% | name+values | 15486 | 100 | [0.4, 0.65, 1.07, 1.97, 3.4, 4.95, 7.8, 14.39, 37.94] |  | Urine |  |
+| 9976 | u-alvhu4a |  | 100% | name | 760 | 100 |  |  | Urine |  |
+| 9977 | u-alvhu5b |  | 100% | name | 912 | 100 |  |  | Urine |  |
+| 9978 | u-alvhu6a |  | 100% | name | 1273 | 100 |  |  | Urine |  |
+| 9979 | u-barb-o |  | 100% | name | 1791 | 100 |  | U -Barbituraatit (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9980 | u-bupre-0 |  | 100% | name | 642 | 100 |  |  | Urine |  |
+| 9981 | u-bupre-o | estimate | 0% | name+unit | 207 | 0 |  | U -Buprenorfiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9982 | u-bupre-o |  | 100% | name | 44187 | 100 |  | U -Buprenorfiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9983 | u-buprect |  | 100% | name | 1841 | 100 |  | U -Buprenorfiini, varmistus | Urine |  |
+| 9984 | u-cakre |  | 100% | name | 106 | 100 |  |  | Urine |  |
+| 9985 | u-color |  | 100% | name | 160 | 100 |  |  | Urine |  |
+| 9986 | u-dxpro-o |  | 100% | name | 125 | 100 |  | U -Dekstropropoksifeeni, seulonta (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9987 | u-eddp-o |  | 100% | name | 266 | 100 |  |  | Urine | Qualitative test (also semi-quantitative) |
+| 9988 | u-huum-10 |  | 100% | name | 109 | 100 |  |  | Urine |  |
+| 9989 | u-huum-ct |  | 100% | name | 1643 | 100 |  |  | Urine | Confirmation, confirmatory test |
+| 9990 | u-huum-o |  | 100% | name | 36546 | 100 |  | U -Huumeseulonta (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 9991 | u-huum-op |  | 100% | name | 163 | 100 |  |  | Urine |  |
+| 9992 | u-huum-ps |  | 100% | name | 160 | 100 |  |  | Urine | Basic screening |
+| 9993 | u-huum-su |  | 100% | name | 1133 | 100 |  |  | Urine |  |
+| 9994 | u-huum4a |  | 100% | name | 118 | 100 |  |  | Urine |  |
+| 9995 | u-huum5b |  | 100% | name | 128 | 100 |  |  | Urine |  |
+| 9996 | u-huum6a |  | 100% | name | 241 | 100 |  |  | Urine |  |
+| 9997 | u-huume-5b |  | 100% | name | 169 | 100 |  |  | Urine |  |
+| 9998 | u-huume-6a |  | 100% | name | 115 | 100 |  |  | Urine |  |
+| 9999 | u-huume-o |  | 100% | name | 425 | 100 |  |  | Urine | Qualitative test (also semi-quantitative) |
+| 10000 | u-huuml-o | form | 0% | name+unit | 6 | 0 |  | U -Huume- ja lääkeaineseulonta (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10001 | u-huuml-o |  | 100% | name | 1648 | 100 |  | U -Huume- ja lääkeaineseulonta (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10002 | u-huumlct | form | 0% | name+unit | 9 | 0 |  | U -Huume- ja lääkeainetutkimus, laaja, varmistus | Urine |  |
+| 10003 | u-huumlct |  | 100% | name | 16104 | 100 |  | U -Huume- ja lääkeainetutkimus, laaja, varmistus | Urine |  |
+| 10004 | u-huumoct |  | 100% | name | 1367 | 100 |  |  | Urine |  |
+| 10005 | u-huumpika |  | 100% | name | 805 | 100 |  |  | Urine |  |
+| 10006 | u-huumtof |  | 100% | name | 2536 | 100 |  |  | Urine |  |
+| 10007 | u-huupika |  | 100% | name | 137 | 100 |  |  | Urine |  |
+| 10008 | u-hyalie | e6/l | 97% | name+unit+values | 15276 | 0 | [0, 0, 0, 0, 0, 0, 0, 0.18, 1] |  | Urine |  |
+| 10009 | u-hyalie |  | 3% | name | 467 | 100 |  |  | Urine |  |
+| 10010 | u-hyalier | e6/l | 93% | name+unit+values | 11469 | 0 | [0, 0, 0, 0, 0, 0.07, 0.1, 0.3, 0.59] |  | Urine |  |
+| 10011 | u-hyalier | u/field | 1% | name+unit+values | 109 | 0 | [0, 1, 1, 1, 1, 1, 1, 1, 2] |  | Urine |  |
+| 10012 | u-hyalier |  | 7% | name+values | 816 | 100 | [0, 0, 0, 0, 0, 0, 0, 0, 0.39] |  | Urine |  |
+| 10013 | u-hyallie | e6/l | 100% | name+unit+values | 146 | 0 | [0, 0, 0, 0, 0.1, 0.16, 0.39, 0.61, 1.03] |  | Urine |  |
+| 10014 | u-inh-o |  | 100% | name | 124 | 100 |  | U -Isoniatsidi (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10015 | u-koka-o | estimate | 0% | name+unit | 206 | 0 |  | U -Kokaiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10016 | u-koka-o |  | 100% | name | 50285 | 100 |  | U -Kokaiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10017 | u-levyep | e6/l | 95% | name+unit+values | 217342 | 0 | [0, 0, 0, 0, 0.52, 1, 2.01, 4.09, 9.83] |  | Urine |  |
+| 10018 | u-levyep | u/field | 0% | name+unit+values | 396 | 0 | [0, 0.82, 1, 1, 1, 1, 1, 1.89, 2.75] |  | Urine |  |
+| 10019 | u-levyep |  | 5% | name | 10431 | 100 |  |  | Urine |  |
+| 10020 | u-levyepi | e6/l | 1% | name+unit | 14 | 0 |  |  | Urine |  |
+| 10021 | u-levyepi | u/field | 90% | name+unit+values | 1272 | 0 | [0, 0, 0, 0, 0, 0.89, 1, 1, 2] |  | Urine |  |
+| 10022 | u-levyepi |  | 9% | name | 131 | 100 |  |  | Urine |  |
+| 10023 | u-lier | e6/l | 99% | name+unit+values | 351179 | 0 | [0, 0, 0, 0, 0, 0, 0.11, 1, 2.09] |  | Urine |  |
+| 10024 | u-lier |  | 1% | name | 4775 | 100 |  |  | Urine |  |
+| 10025 | u-lierla | e6/l | 97% | name+unit+values | 2609 | 0.04 | [0, 0, 0, 0, 0, 0, 0, 0.76, 1] |  | Urine |  |
+| 10026 | u-lierla |  | 3% | name | 67 | 100 |  |  | Urine |  |
+| 10027 | u-mdma-o |  | 100% | name | 7294 | 100 |  | U -Metyleenidioksimetamfetamiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10028 | u-muulier | e6/l | 93% | name+unit+values | 11537 | 0 | [0, 0, 0, 0, 0, 0, 0.12, 0.16, 0.42] |  | Urine |  |
+| 10029 | u-muulier |  | 7% | name+values | 846 | 100 | [0, 0, 0, 0, 0, 0, 0, 0, 0.13] |  | Urine |  |
+| 10030 | u-odling |  | 100% | name | 238 | 100 |  |  | Urine |  |
+| 10031 | u-oksik-o |  | 100% | name | 3802 | 100 |  | U -Oksikodoni (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10032 | u-oxy-o |  | 100% | name | 284 | 100 |  |  | Urine | Qualitative test (also semi-quantitative) |
+| 10033 | u-paras-o |  | 100% | name | 629 | 100 |  | U -Parasetamoli (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10034 | u-pbg-o |  | 100% | name | 213 | 100 |  | U -Porfobilinogeeni (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10035 | u-ph-0 |  | 100% | name+values | 1803 | 100 | [5, 5.47, 5.5, 5.51, 6, 6, 6.45, 6.93, 7] |  | Urine |  |
+| 10036 | u-ph-huu |  | 100% | name+values | 13233 | 100 | [5.15, 5.5, 5.88, 6, 6.48, 6.5, 6.96, 7, 7.5] |  | Urine |  |
+| 10037 | u-ph-hy |  | 100% | name+values | 2442 | 100 | [5.42, 5.5, 5.5, 5.74, 6, 6.02, 6.5, 7, 7] |  | Urine |  |
+| 10038 | u-ph-o | ph | 99% | name+unit+values | 52493 | 0 | [5.19, 5.5, 5.91, 6, 6.12, 6.5, 6.94, 7, 7.46] | U -Happamuusaste (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10039 | u-ph-o |  | 1% | name | 583 | 100 |  | U -Happamuusaste (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10040 | u-phhu |  | 100% | name | 170 | 100 |  |  | Urine |  |
+| 10041 | u-pien.ep | e6/l | 95% | name+unit+values | 999 | 0 | [0.02, 0.1, 0.2, 0.4, 0.51, 0.8, 1.11, 1.7, 3.08] |  | Urine |  |
+| 10042 | u-pien.ep |  | 5% | name | 55 | 100 |  |  | Urine |  |
+| 10043 | u-pienep | e6/l | 96% | name+unit+values | 200789 | 0 | [0, 0, 0, 0, 0, 0.87, 1, 2, 3.84] |  | Urine |  |
+| 10044 | u-pienep |  | 4% | name | 9215 | 100 |  |  | Urine |  |
+| 10045 | u-prokre | g/mol | 28% | name+unit+values | 973 | 0 | [5.07, 7, 8.95, 11.09, 14.48, 19.43, 27.53, 52.62, 161.41] | U -Proteiinin ja kreatiniinin suhde | Urine |  |
+| 10046 | u-prokre | mg/mmol | 53% | name+unit+values | 1813 | 0 | [9.65, 12.63, 16.22, 21.15, 31.06, 49.02, 103.19, 281.58, 1013.51] | U -Proteiinin ja kreatiniinin suhde | Urine |  |
+| 10047 | u-prokre |  | 19% | name | 646 | 100 |  | U -Proteiinin ja kreatiniinin suhde | Urine |  |
+| 10048 | u-protkre | mg/mmol | 100% | name+unit | 121 | 0 |  |  | Urine |  |
+| 10049 | u-seul-os |  | 100% | name | 186 | 100 |  |  | Urine |  |
+| 10050 | u-seul.hy |  | 100% | name | 447 | 100 |  |  | Urine |  |
+| 10051 | u-seulakr |  | 100% | name | 270 | 100 |  |  | Urine |  |
+| 10052 | u-suht-hy |  | 100% | name+values | 2336 | 100 | [1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 10053 | u-suhti | form | 0% | name+unit | 38 | 0 |  | U -Suhteellinen tiheys | Urine |  |
+| 10054 | u-suhti | kg/l | 90% | name+unit+values | 307915 | 0 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] | U -Suhteellinen tiheys | Urine |  |
+| 10055 | u-suhti | ratio | 0% | name+unit+values | 570 | 0 | [1, 1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02] | U -Suhteellinen tiheys | Urine |  |
+| 10056 | u-suhti |  | 10% | name | 32697 | 100 |  | U -Suhteellinen tiheys | Urine |  |
+| 10057 | u-suhti-o | ratio | 100% | name+unit+values | 47144 | 0 | [1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine | Qualitative test (also semi-quantitative) |
+| 10058 | u-suhti. | ratio | 100% | name+unit+values | 24646 | 0 | [1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 10059 | u-suhtih | kg/l | 83% | name+unit+values | 46601 | 0 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 10060 | u-suhtih |  | 17% | name | 9841 | 100 |  |  | Urine |  |
+| 10061 | u-suhtih-o |  | 100% | name+values | 141 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine | Qualitative test (also semi-quantitative) |
+| 10062 | u-suhtihu |  | 100% | name | 161 | 100 |  |  | Urine |  |
+| 10063 | u-suhtiv |  | 100% | name+values | 766 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 10064 | u-trama-o |  | 100% | name | 4881 | 100 |  | U -Tramadoli (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10065 | u-trisy-o |  | 100% | name | 4379 | 100 |  |  | Urine | Qualitative test (also semi-quantitative) |
+| 10066 | u-tryp2-o |  | 100% | name | 148 | 100 |  |  | Urine | Qualitative test (also semi-quantitative) |
+| 10067 | u-tub.ep | /sunf | 6% | name+unit+values | 127 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
+| 10068 | u-tub.ep |  | 94% | name | 2024 | 100 |  |  | Urine |  |
+| 10069 | u-tubulep | u/field | 68% | name+unit+values | 123 | 0 | [0, 1, 1, 1, 1, 1, 1, 1, 2] |  | Urine |  |
+| 10070 | u-tubulep |  | 32% | name | 58 | 100 |  |  | Urine |  |
+| 10071 | u-ubg-o |  | 100% | name | 584 | 100 |  | U -Urobilinogeeni (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10072 | u-väliepi | u/field | 93% | name+unit+values | 194 | 0 | [0, 0, 0, 0, 1, 1, 1, 1, 2] |  | Urine |  |
+| 10073 | u-väliepi |  | 7% | name | 15 | 100 |  |  | Urine |  |
+| 10074 | u-välimep | u/field | 71% | name+unit+values | 200 | 0 | [1, 1, 1, 1, 1, 1, 1, 1, 2] |  | Urine |  |
+| 10075 | u-välimep |  | 29% | name | 81 | 100 |  |  | Urine |  |
+| 10076 | u-överg.ep | /sunf | 6% | name+unit+values | 124 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
+| 10077 | u-överg.ep |  | 94% | name | 2027 | 100 |  |  | Urine |  |
 

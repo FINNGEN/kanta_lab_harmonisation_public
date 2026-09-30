@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -137,29 +137,74 @@ Return an entry for EVERY row of the table, including rows you can say almost no
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 160 of the table. Write the LOINC Long Common Name for every row.
+Here is group 87 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 12996 | alaniiniaminotransferaasi | u/l | 90% | name+unit+values | 17127 | 0 | [12.62, 15.78, 18.15, 20.52, 23.07, 26.12, 30.2, 36.33, 48.64] |  |  |  |
-| 12997 | alaniiniaminotransferaasi |  | 10% | name | 1818 | 100 |  |  |  |  |
-| 12998 | alaniiniaminotransferaasi,plasmasta | u/l | 95% | name+unit | 97 | 0 |  |  |  |  |
-| 12999 | alaniiniaminotransferaasi,plasmasta |  | 5% | name | 5 | 100 |  |  |  |  |
-| 13000 | aspartaattiaminotransferaasi | u/l | 75% | name+unit+values | 333 | 0 | [19.85, 22, 24.14, 26.95, 28.65, 30.8, 35.68, 40.73, 58.73] |  |  |  |
-| 13001 | aspartaattiaminotransferaasi |  | 25% | name | 112 | 100 |  |  |  |  |
-| 13002 | fp-glutamyylitransferaasi | u/l | 100% | name+unit | 102 | 0 |  |  | Fasting plasma |  |
-| 13003 | fs-alaniiniaminotransferaasi | u/l | 100% | name+unit+values | 404 | 0 | [11.41, 13.71, 16.19, 18.73, 21, 23.96, 27.89, 34.83, 48.11] |  | Fasting serum |  |
-| 13004 | glutamyylitransferaasi | u/l | 90% | name+unit+values | 1299 | 0 | [14.5, 18.98, 23.64, 30.47, 38.92, 48.36, 63.75, 98.88, 196.17] |  |  |  |
-| 13005 | glutamyylitransferaasi |  | 10% | name | 147 | 100 |  |  |  |  |
-| 13006 | p-alaniiniaminotransferaasi | u/l | 96% | name+unit+values | 56170 | 0 | [12.86, 15.74, 18.08, 20.57, 23.4, 26.77, 31.35, 38.67, 54.12] |  | Plasma |  |
-| 13007 | p-alaniiniaminotransferaasi |  | 4% | name+values | 2147 | 74.66 | [38.23, 41.83, 47.86, 52.69, 56.94, 62.72, 70.64, 84.04, 118.17] |  | Plasma |  |
-| 13008 | p-aspartaattiaminotransferaasi | u/l | 98% | name+unit+values | 7811 | 0 | [14.52, 17.19, 19.38, 21.57, 23.85, 26.51, 30.27, 36.73, 53.86] |  | Plasma |  |
-| 13009 | p-aspartaattiaminotransferaasi |  | 2% | name | 129 | 90.7 |  |  | Plasma |  |
-| 13010 | p-glutamyylitransferaasi | u/l | 99% | name+unit+values | 5844 | 0 | [14.78, 18.46, 22.33, 27.68, 34.27, 44.18, 62.47, 93.97, 172.3] |  | Plasma |  |
-| 13011 | p-glutamyylitransferaasi |  | 1% | name | 33 | 84.85 |  |  | Plasma |  |
-| 13012 | s-alaniiniaminotransferaasi | u/l | 97% | name+unit+values | 1811 | 0 | [14.14, 17.04, 20.11, 22.99, 25.82, 29.58, 34.38, 41.48, 55.32] |  | Serum |  |
-| 13013 | s-alaniiniaminotransferaasi |  | 3% | name | 52 | 100 |  |  | Serum |  |
-| 13014 | s-aspartaattiaminotransferaasi | u/l | 99% | name+unit+values | 554 | 0 | [18, 19.97, 21.87, 23, 25, 27, 29.85, 33.06, 40.22] |  | Serum |  |
-| 13015 | s-aspartaattiaminotransferaasi |  | 1% | name | 8 | 87.5 |  |  | Serum |  |
-| 13016 | s-glutamyylitransferaasi | u/l | 100% | name+unit+values | 861 | 0 | [11.96, 14.7, 17.37, 19.9, 24.16, 28.75, 37.06, 51.26, 84.05] |  | Serum |  |
+| 6538 | 4043ts-padgast |  | 100% | name | 822 | 100 |  |  |  |  |
+| 6539 | 4044pt-papa-1 |  | 100% | name | 956 | 100 |  |  |  |  |
+| 6540 | 4054ts-pad-1 |  | 100% | name | 2636 | 100 |  |  |  |  |
+| 6541 | 4056ts-pad-3 |  | 100% | name | 1048 | 100 |  |  |  |  |
+| 6542 | 4191ts-pad-ih |  | 100% | name | 722 | 100 |  |  |  | Immunohistochemical |
+| 6543 | 4194ts-pad-4 |  | 100% | name | 211 | 100 |  |  |  |  |
+| 6544 | 4764ts-padcolo |  | 100% | name | 911 | 100 |  |  |  |  |
+| 6545 | 6388ts-padkolp |  | 100% | name | 110 | 100 |  |  |  |  |
+| 6546 | 6389ts-padendo |  | 100% | name | 184 | 100 |  |  |  |  |
+| 6547 | ts-aa-o |  | 100% | name | 243 | 100 |  | Ts-Amyloidi (kval) | Tissue | Qualitative test (also semi-quantitative) |
+| 6548 | ts-pad |  | 100% | name | 7322 | 100 |  |  | Tissue |  |
+| 6549 | ts-pad-0 |  | 100% | name | 1166 | 100 |  |  | Tissue |  |
+| 6550 | ts-pad-0-u |  | 100% | name | 192 | 100 |  |  | Tissue |  |
+| 6551 | ts-pad-1 | form | 0% | name+unit | 14 | 0 |  | Ts-Kudosnäytteen histologinen tutkimus, 1-3 eriteltyä pientä näytettä, samaan kokonaisuuteen kuuluvia | Tissue |  |
+| 6552 | ts-pad-1 |  | 100% | name | 260747 | 100 |  | Ts-Kudosnäytteen histologinen tutkimus, 1-3 eriteltyä pientä näytettä, samaan kokonaisuuteen kuuluvia | Tissue |  |
+| 6553 | ts-pad-1co |  | 100% | name | 3927 | 100 |  |  | Tissue |  |
+| 6554 | ts-pad-1tk |  | 100% | name | 525 | 100 |  |  | Tissue |  |
+| 6555 | ts-pad-1tu |  | 100% | name | 1837 | 100 |  |  | Tissue |  |
+| 6556 | ts-pad-1x2 |  | 100% | name | 118 | 100 |  |  | Tissue |  |
+| 6557 | ts-pad-1x3 |  | 100% | name | 271 | 100 |  |  | Tissue |  |
+| 6558 | ts-pad-2 |  | 100% | name | 10491 | 100 |  | Ts-Kudosnäytteen histologinen tutkimus, 4 tai useampia eriteltyjä pieniä näytteitä | Tissue |  |
+| 6559 | ts-pad-2tu |  | 100% | name | 299 | 100 |  |  | Tissue |  |
+| 6560 | ts-pad-3 |  | 100% | name | 77691 | 100 |  | Ts-Kudosnäytteen histologinen tutkimus, suppea leikkauspreparaatti | Tissue |  |
+| 6561 | ts-pad-3co |  | 100% | name | 176 | 100 |  |  | Tissue |  |
+| 6562 | ts-pad-3tu |  | 100% | name | 1602 | 100 |  |  | Tissue |  |
+| 6563 | ts-pad-4 |  | 100% | name | 33705 | 100 |  | Ts-Kudosnäytteen histologinen tutkimus, laaja leikkauspreparaatti | Tissue |  |
+| 6564 | ts-pad-4tu |  | 100% | name | 4673 | 100 |  |  | Tissue |  |
+| 6565 | ts-pad-5 |  | 100% | name | 5039 | 100 |  | Ts-Erittäin laaja histologinen tutkimus tai monielinkudospreparaatti | Tissue |  |
+| 6566 | ts-pad-5tu |  | 100% | name | 11310 | 100 |  |  | Tissue |  |
+| 6567 | ts-pad-bio |  | 100% | name | 6876 | 100 |  |  | Tissue |  |
+| 6568 | ts-pad-em |  | 100% | name | 106 | 100 |  | Ts-Kudosnäyte, elektronimikroskooppinen tutkimus | Tissue | Electron microscopic |
+| 6569 | ts-pad-ev |  | 100% | name | 9091 | 100 |  |  | Tissue |  |
+| 6570 | ts-pad-if |  | 100% | name | 296 | 100 |  | Ts-Kudosnäyte, immunofluoresenssitutkimus | Tissue | Immunofluorescence |
+| 6571 | ts-pad-ih |  | 100% | name | 53523 | 100 |  | Ts-Kudosnäyte, immunohistokemiallinen tutkimus | Tissue | Immunohistochemical |
+| 6572 | ts-pad-ih2 |  | 100% | name | 308 | 100 |  |  | Tissue |  |
+| 6573 | ts-pad-ihu |  | 100% | name | 137 | 100 |  |  | Tissue |  |
+| 6574 | ts-pad-ish |  | 100% | name | 3661 | 100 |  | Ts-Kudosnäyte, in situ-hybridisaatiotutkimus | Tissue | In situ hybridization |
+| 6575 | ts-pad-lau |  | 100% | name | 536 | 100 |  |  | Tissue |  |
+| 6576 | ts-pad-pnb |  | 100% | name | 6823 | 100 |  | Ts-Paksuneulabiopsian histologinen tutkimus | Tissue |  |
+| 6577 | ts-pad-pol |  | 100% | name | 275 | 100 |  |  | Tissue |  |
+| 6578 | ts-pad-tk |  | 100% | name | 20896 | 100 |  |  | Tissue |  |
+| 6579 | ts-pad-y |  | 100% | name | 15295 | 100 |  |  | Tissue |  |
+| 6580 | ts-pad1 |  | 100% | name | 831 | 100 |  |  | Tissue |  |
+| 6581 | ts-pad2 |  | 100% | name | 137 | 100 |  |  | Tissue |  |
+| 6582 | ts-pad4-hn |  | 100% | name | 839 | 100 |  | Ts-Pään ja kaulan alueen histologinen tutkimus, laaja leikkauspreparaatti | Tissue |  |
+| 6583 | ts-padbrea |  | 100% | name | 12091 | 100 |  | Ts-Rinnan paksuneulabiopsian histologinen tutkimus | Tissue |  |
+| 6584 | ts-padcns |  | 100% | name | 1168 | 100 |  | Ts-Keskushermoston histologinen tutkimus, kirurginen näyte | Tissue |  |
+| 6585 | ts-padcolo |  | 100% | name | 72092 | 100 |  | Ts-Kolonoskopianäytteiden histologinen tutkimus | Tissue |  |
+| 6586 | ts-padfish |  | 100% | name | 294 | 100 |  |  | Tissue |  |
+| 6587 | ts-padgas |  | 100% | name | 139 | 100 |  |  | Tissue |  |
+| 6588 | ts-padgas2 |  | 100% | name | 1497 | 100 |  |  | Tissue |  |
+| 6589 | ts-padgast |  | 100% | name | 76383 | 100 |  | Ts-Gastroskopianäytteiden histologinen tutkimus | Tissue |  |
+| 6590 | ts-padgyn |  | 100% | name | 290 | 100 |  |  | Tissue |  |
+| 6591 | ts-padkolp | form | 9% | name+unit | 769 | 0 |  | Ts-Kolposkopianäytteiden histologinen tutkimus | Tissue |  |
+| 6592 | ts-padkolp |  | 91% | name | 8220 | 100 |  | Ts-Kolposkopianäytteiden histologinen tutkimus | Tissue |  |
+| 6593 | ts-padlis1 |  | 100% | name | 594 | 100 |  |  | Tissue |  |
+| 6594 | ts-padmakr |  | 100% | name | 2840 | 100 |  |  | Tissue |  |
+| 6595 | ts-padpak2 |  | 100% | name | 1434 | 100 |  |  | Tissue |  |
+| 6596 | ts-padpak3 |  | 100% | name | 473 | 100 |  |  | Tissue |  |
+| 6597 | ts-padpika |  | 100% | name | 8000 | 100 |  | Ts-Kudoksen pikaleiketutkimus | Tissue |  |
+| 6598 | ts-padpros |  | 100% | name | 9361 | 100 |  | Ts-Prostatabiopsian histologinen tutkimus | Tissue |  |
+| 6599 | ts-padsuu |  | 100% | name | 345 | 100 |  |  | Tissue |  |
+| 6600 | ts-padtuor |  | 100% | name | 101 | 100 |  |  | Tissue |  |
+| 6601 | ts-patlask |  | 100% | name | 281 | 100 |  |  | Tissue |  |
+| 6602 | ts.pad-ih |  | 100% | name | 224 | 100 |  |  |  | Immunohistochemical |
+| 6603 | tspadbrea |  | 100% | name | 129 | 100 |  |  |  |  |
 

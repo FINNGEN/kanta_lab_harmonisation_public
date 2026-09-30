@@ -1,340 +1,84 @@
 {
   "rows": [
     {
-      "row_id": 13068,
-      "loinc_name_guess": "CD4/CD8 [# Ratio] in Blood"
-    },
-    {
-      "row_id": 13069,
-      "loinc_name_guess": "Kt/V dialysis adequacy [Ratio] by Daugirdas formula"
-    },
-    {
-      "row_id": 13070,
-      "loinc_name_guess": "Fungus [Presence] in Specimen by Wet mount"
-    },
-    {
-      "row_id": 13071,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Arterial blood"
-    },
-    {
-      "row_id": 13072,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Arterial blood"
-    },
-    {
-      "row_id": 13073,
-      "loinc_name_guess": "Temperature [Temperature] of Patient"
-    },
-    {
-      "row_id": 13074,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Arterial blood"
-    },
-    {
-      "row_id": 13075,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Arterial blood"
-    },
-    {
-      "row_id": 13076,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13077,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13078,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13079,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13080,
-      "loinc_name_guess": "Clonality study [Interpretation] in Blood by Manual count"
-    },
-    {
-      "row_id": 13081,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Capillary blood"
-    },
-    {
-      "row_id": 13082,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Capillary blood"
-    },
-    {
-      "row_id": 13083,
-      "loinc_name_guess": "Hydroxyvitamin D3+D2 [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13084,
-      "loinc_name_guess": "Hydroxyvitamin D (25) [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13085,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13086,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13087,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13088,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13089,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13090,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 13091,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 13092,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 13093,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 13094,
-      "loinc_name_guess": "Folate [Moles/volume] in Red Blood Cells"
-    },
-    {
-      "row_id": 13095,
-      "loinc_name_guess": "Folate [Moles/volume] in Red Blood Cells"
-    },
-    {
-      "row_id": 13096,
-      "loinc_name_guess": "Phosphate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13097,
-      "loinc_name_guess": "Phosphate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13098,
-      "loinc_name_guess": "Phosphate [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13099,
-      "loinc_name_guess": "Phosphate [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13100,
-      "loinc_name_guess": "Parathyrin.intact [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 13101,
-      "loinc_name_guess": "Parathyrin.intact [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 13102,
-      "loinc_name_guess": "Parathyrin.intact [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13103,
-      "loinc_name_guess": "Parathyrin.intact [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 13104,
-      "loinc_name_guess": "Renin [Units/volume] in Plasma"
-    },
-    {
-      "row_id": 13105,
-      "loinc_name_guess": "Renin [Units/volume] in Plasma"
-    },
-    {
-      "row_id": 13106,
-      "loinc_name_guess": "Free radicals [Arbitrary Concentration] in Serum or Plasma"
-    },
-    {
-      "row_id": 13107,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum"
-    },
-    {
-      "row_id": 13108,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum"
-    },
-    {
-      "row_id": 13109,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum"
-    },
-    {
-      "row_id": 13110,
-      "loinc_name_guess": "Occupational health panel - Serum"
-    },
-    {
-      "row_id": 13111,
-      "loinc_name_guess": "Occupational health panel - Serum"
-    },
-    {
-      "row_id": 13112,
-      "loinc_name_guess": "Hearing evaluation panel"
-    },
-    {
-      "row_id": 13113,
-      "loinc_name_guess": "SARS-CoV-2 & Influenza virus & Respiratory syncytial virus RNA panel - Respiratory specimen by NAA"
-    },
-    {
-      "row_id": 13114,
-      "loinc_name_guess": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13115,
-      "loinc_name_guess": "Basophils/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13116,
-      "loinc_name_guess": "Eosinophils/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13117,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13118,
-      "loinc_name_guess": "Lymphocytes/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13119,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13120,
-      "loinc_name_guess": "Monocytes/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13121,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13122,
-      "loinc_name_guess": "Neutrophils/Leukocytes in Blood by Automated count"
-    },
-    {
-      "row_id": 13123,
-      "loinc_name_guess": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 13124,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13125,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
-    },
-    {
-      "row_id": 13126,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
-    },
-    {
-      "row_id": 13127,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
-    },
-    {
-      "row_id": 13128,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
-    },
-    {
-      "row_id": 13129,
-      "loinc_name_guess": "Bilirubin.conjugated [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13130,
-      "loinc_name_guess": "Bilirubin.conjugated [Moles/volume] in Plasma"
-    },
-    {
-      "row_id": 13131,
-      "loinc_name_guess": "Phosphate [Moles/volume] in Plasma"
-    },
-    {
       "row_id": 13132,
-      "loinc_name_guess": "Creatine kinase [Enzymatic activity/volume] in Plasma"
+      "loinc_name_guess": "Eosinophils [#/volume] in Blood"
     },
     {
       "row_id": 13133,
-      "loinc_name_guess": "Creatine kinase [Enzymatic activity/volume] in Plasma"
+      "loinc_name_guess": "Eosinophils [#/volume] in Blood"
     },
     {
       "row_id": 13134,
-      "loinc_name_guess": "Lactate dehydrogenase [Enzymatic activity/volume] in Plasma"
+      "loinc_name_guess": "Nucleated erythrocytes [#/volume] in Blood"
     },
     {
       "row_id": 13135,
-      "loinc_name_guess": "Lactate dehydrogenase [Enzymatic activity/volume] in Plasma"
+      "loinc_name_guess": "F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13136,
-      "loinc_name_guess": "Lupus anticoagulant [Presence] in Platelet poor plasma"
+      "loinc_name_guess": "JAK2 gene p.V617F mutation [Presence] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13137,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma"
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
     },
     {
       "row_id": 13138,
-      "loinc_name_guess": "Urea [Moles/volume] in Plasma"
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
     },
     {
       "row_id": 13139,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma"
+      "loinc_name_guess": "LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13140,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Plasma"
+      "loinc_name_guess": "LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13141,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum or Plasma"
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13142,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum or Plasma"
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13143,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13144,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13145,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13146,
-      "loinc_name_guess": "Erythrocyte morphology [Interpretation] in Blood by Manual count"
+      "loinc_name_guess": "Neutrophils [#/volume] in Blood"
     },
     {
       "row_id": 13147,
-      "loinc_name_guess": "Erythrocyte morphology [Interpretation] in Blood by Manual count"
+      "loinc_name_guess": "F2 gene p.G20210A mutation [Presence] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13148,
-      "loinc_name_guess": "Erythroblasts [#/volume] in Blood"
+      "loinc_name_guess": "Cells [Type] in Bronchial fluid by Cytology"
     },
     {
       "row_id": 13149,
-      "loinc_name_guess": "Erythroblasts [#/volume] in Blood"
+      "loinc_name_guess": "Cells [Type] in Bronchial fluid by Cytology"
     },
     {
       "row_id": 13150,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "CYP2D6 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13151,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "DPYD gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13152,
@@ -342,100 +86,180 @@
     },
     {
       "row_id": 13153,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Pharmacogenetics panel - Blood by Molecular genetics method"
     },
     {
       "row_id": 13154,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Pharmacogenetics panel - Blood by Molecular genetics method"
     },
     {
       "row_id": 13155,
-      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum"
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
     },
     {
       "row_id": 13156,
-      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum by Electrophoresis"
+      "loinc_name_guess": "Human papillomavirus DNA and Cytology panel - Cervical or vaginal specimen"
     },
     {
       "row_id": 13157,
-      "loinc_name_guess": "Glycoprotein.acetyls [Moles/volume] in Serum"
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
     },
     {
       "row_id": 13158,
-      "loinc_name_guess": "Neuron specific enolase [Mass/volume] in Serum"
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
     },
     {
       "row_id": 13159,
-      "loinc_name_guess": "Metabolites panel - Serum by NMR"
+      "loinc_name_guess": "F5 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13160,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum"
+      "loinc_name_guess": "Immunohistochemistry study"
     },
     {
       "row_id": 13161,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum"
+      "loinc_name_guess": "Vitamin K1 and K2 panel - Serum or Plasma"
     },
     {
       "row_id": 13162,
-      "loinc_name_guess": "Thymidine kinase [Enzymatic activity/volume] in Serum"
+      "loinc_name_guess": "Phylloquinone [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13163,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum"
+      "loinc_name_guess": "Phylloquinone [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13164,
-      "loinc_name_guess": "Prostate specific Ag.free/Prostate specific Ag.total [Ratio] in Serum"
+      "loinc_name_guess": "Menaquinone-4 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13165,
-      "loinc_name_guess": "SARS-CoV-2 & Influenza virus A & Influenza virus B RNA panel - Respiratory specimen by NAA"
+      "loinc_name_guess": "Menaquinone-4 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13166,
-      "loinc_name_guess": "SARS-CoV-2 Ag [Presence] in Respiratory specimen by Rapid immunoassay"
+      "loinc_name_guess": "Menaquinone-7 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13167,
-      "loinc_name_guess": "Occupational health panel - Serum or Plasma"
+      "loinc_name_guess": "Menaquinone-7 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 13168,
-      "loinc_name_guess": "Urinalysis protein and glucose panel - Urine by Test strip"
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
     },
     {
       "row_id": 13169,
-      "loinc_name_guess": "Leukocytes+Erythrocytes [#/volume] in Urine by Automated count"
+      "loinc_name_guess": "LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13170,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Venous blood"
+      "loinc_name_guess": "LCT gene -13910 T>C [Genotype] in Blood or Tissue by Molecular genetics method"
     },
     {
       "row_id": 13171,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Venous blood"
+      "loinc_name_guess": "Hemostasis and Thrombocyte studies interpretation"
     },
     {
       "row_id": 13172,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Venous blood"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 13173,
-      "loinc_name_guess": "Bicarbonate.standard [Moles/volume] in Venous blood"
+      "loinc_name_guess": "Obstetric panel - Serum or Plasma and Blood"
     },
     {
       "row_id": 13174,
-      "loinc_name_guess": "Cells [#/volume] in Urine by Automated count"
+      "loinc_name_guess": "Calcium.corrected [Moles/volume] in Serum or Plasma by calculation"
     },
     {
       "row_id": 13175,
-      "loinc_name_guess": "Cells [#/volume] in Urine by Automated count"
+      "loinc_name_guess": "Lactate [Moles/volume] in Pleural fluid"
     },
     {
       "row_id": 13176,
-      "loinc_name_guess": "Bicarbonate [Moles/volume] in Central venous blood"
+      "loinc_name_guess": "Cells [Type] in Pleural fluid by Cytology"
+    },
+    {
+      "row_id": 13177,
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
+    },
+    {
+      "row_id": 13178,
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
+    },
+    {
+      "row_id": 13179,
+      "loinc_name_guess": "Cytology study of Cervical or vaginal smear or scraping"
+    },
+    {
+      "row_id": 13180,
+      "loinc_name_guess": "Borrelia burgdorferi IgG Ab [Units/volume] in Serum by Immunoblot"
+    },
+    {
+      "row_id": 13181,
+      "loinc_name_guess": "Borrelia burgdorferi IgG Ab [Units/volume] in Serum by Immunoblot"
+    },
+    {
+      "row_id": 13182,
+      "loinc_name_guess": "Borrelia burgdorferi IgM Ab [Units/volume] in Serum by Immunoblot"
+    },
+    {
+      "row_id": 13183,
+      "loinc_name_guess": "Borrelia burgdorferi IgM Ab [Units/volume] in Serum by Immunoblot"
+    },
+    {
+      "row_id": 13184,
+      "loinc_name_guess": "HIV 1+2 Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 13185,
+      "loinc_name_guess": "M-protein [Identifier] in Serum by Immunofixation"
+    },
+    {
+      "row_id": 13186,
+      "loinc_name_guess": "Cells [Type] in Urine sediment by Cytology"
+    },
+    {
+      "row_id": 13187,
+      "loinc_name_guess": "Breast cancer prognostic markers panel - Tissue"
+    },
+    {
+      "row_id": 13188,
+      "loinc_name_guess": "Thyrotropin.reflex to Free T4 panel - Serum or Plasma"
+    },
+    {
+      "row_id": 13189,
+      "loinc_name_guess": "Ketones [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 13190,
+      "loinc_name_guess": "Epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 13191,
+      "loinc_name_guess": "Epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 13192,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 13193,
+      "loinc_name_guess": "Protein [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 13194,
+      "loinc_name_guess": "Specific gravity [RelDensity] in Urine by Test strip"
+    },
+    {
+      "row_id": 13195,
+      "loinc_name_guess": "Cells [Type] in Urine sediment by Cytology"
+    },
+    {
+      "row_id": 13196,
+      "loinc_name_guess": "Cells [Type] in Urine sediment by Cytology"
     }
   ],
-  "reflection": "This group contained a wide variety of tests, from standard chemistry and hematology to specialized panels and non-lab procedures. The prefixes (`aB`, `vB`, `cB`, `fP`, `fS`) were very helpful in determining the specimen type. Several rows referred to RDW using different Finnish descriptive names (`punasolujen kokojakauma`, `koonvaihtelu`), which was straightforward to normalize.\n\nSeveral challenges arose:\n1.  **Administrative/Procedure Codes**: Rows like `erikoislääkärinkonsultaatio` (specialist consultation) and `pt-vaativainhalaatiohoito` (demanding inhalation therapy) are not laboratory tests and were assigned empty names. `ilmajohtotarv.luujohto` (air vs bone conduction) was interpreted as a hearing evaluation panel, a reasonable guess for a related clinical assessment.\n2.  **Ambiguous Test Names**: For `punasolujenerittelylaskenta` (RBC differential), the name suggests morphology (`[Interpretation]`), but the unit (`%`) and values were consistent with RDW (`[Ratio]`). I prioritized the test name (`erittelylaskenta` = differential/manual count) over the quantitative data, as instructed, but this is a significant ambiguity.\n3.  **Proprietary/Panel Names**: `s-nightingale-mittaus` and `fras,oksidatiivinenstressi` refer to specific platforms or test concepts. I created broad panel names (`Metabolites panel`, `Free radicals`) to target the right area in LOINC. Similarly, various `tth-paketti` (occupational health package) codes were mapped to a generic panel name.\n4.  **Non-standard Prefixes**: `zB-` (row 13176) is not a standard prefix. I inferred it as 'central blood' (`sentraaliveri`), which is a plausible guess but unconfirmed. Access to a more comprehensive list of local prefix conventions would be beneficial."
+  "reflection": "This group contained a good mix of routine chemistry, hematology, genetics, and cytology tests. The Finnish names were generally descriptive, making identification straightforward.\n\n- **Genetics:** The pattern `...-geeni, dna-tutkimus` clearly identifies genetic tests. I guessed the most common mutation/target for well-known tests (F5, F2, LCT, JAK2) to create a more specific search query. For broader pharmacogenetic tests like `CYP2D6` and `DPYD`, a more generic `...mutations found [Identifier]` name is more appropriate. The LOINC system `Blood or Tissue` is a good default for these.\n\n- **Cytology:** The term `irtosolututkimus` (loose cell study) consistently means cytology. For specific body sites (bronchial, pleural, urine), I used a pattern like `Cells [Type] in <System> by Cytology`. For gynecological cytology, which is a very common procedure, I opted for the more procedural LOINC name `Cytology study of Cervical or vaginal smear or scraping` as it better reflects the nature of a Pap smear.\n\n- **Panels & Reflexes:** Several codes were clearly panels (`pakettitutkimus`, `paneeli`) or reflex tests (`refleksointitutkimus`). Correctly identifying and naming these as panels (e.g., `Pharmacogenetics panel`, `Thyrotropin.reflex to Free T4 panel`) is crucial. The `neuvola...` code (13173) was interpreted as a standard obstetric panel.\n\n- **Vague codes:** One code, `mikrobiologianerikoistutkimuk` (13172), was too generic ('microbiology special study') to be mapped and was left empty. This is the correct approach for administrative or bucket codes that lack a specific analyte."
 }

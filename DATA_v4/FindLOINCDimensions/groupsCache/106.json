@@ -1,293 +1,389 @@
 {
   "rows": [
     {
+      "row_id": 8600,
+      "loinc_name_guess": "Chlamydia trachomatis & Neisseria gonorrhoeae DNA [Presence] in Specimen"
+    },
+    {
+      "row_id": 8601,
+      "loinc_name_guess": "Viscosity [Dynamic viscosity] in Fluid specimen"
+    },
+    {
+      "row_id": 8602,
+      "loinc_name_guess": "Cobalt [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 8603,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8604,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8605,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8606,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8607,
+      "loinc_name_guess": "Lactate [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8608,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8609,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8610,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8611,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8612,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8613,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 8614,
+      "loinc_name_guess": "Crossmatch final [Interpretation] in Blood"
+    },
+    {
+      "row_id": 8615,
+      "loinc_name_guess": "Crossmatch final [Interpretation] in Blood"
+    },
+    {
+      "row_id": 8616,
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8617,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 8618,
+      "loinc_name_guess": "Human papillomavirus DNA and RNA panel - Cervix by NAA"
+    },
+    {
+      "row_id": 8619,
+      "loinc_name_guess": "Human papillomavirus DNA [Identifier] in Cervix"
+    },
+    {
+      "row_id": 8620,
+      "loinc_name_guess": "Lactate [Moles/volume] in Cerebral spinal fluid"
+    },
+    {
+      "row_id": 8621,
+      "loinc_name_guess": "Lactate [Moles/volume] in Cerebral spinal fluid"
+    },
+    {
+      "row_id": 8622,
+      "loinc_name_guess": "Potassium [Moles/volume] in Mixed venous blood"
+    },
+    {
+      "row_id": 8623,
+      "loinc_name_guess": "Potassium [Moles/volume] in Mixed venous blood"
+    },
+    {
+      "row_id": 8624,
+      "loinc_name_guess": "Sodium [Moles/volume] in Mixed venous blood"
+    },
+    {
+      "row_id": 8625,
+      "loinc_name_guess": "Sodium [Moles/volume] in Mixed venous blood"
+    },
+    {
+      "row_id": 8626,
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8627,
+      "loinc_name_guess": "Glucose [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8628,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 8629,
+      "loinc_name_guess": "Haptoglobin [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8630,
+      "loinc_name_guess": "Haptoglobin [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8631,
+      "loinc_name_guess": "Cell free DNA [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8632,
+      "loinc_name_guess": "Cell free DNA [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8633,
+      "loinc_name_guess": "Coagulation factors panel - Plasma"
+    },
+    {
+      "row_id": 8634,
+      "loinc_name_guess": "Coagulation factors panel - Plasma"
+    },
+    {
+      "row_id": 8635,
+      "loinc_name_guess": "Coagulation factors panel - Plasma"
+    },
+    {
+      "row_id": 8636,
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8637,
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8638,
+      "loinc_name_guess": "Lupus anticoagulant PTT based confirmation [Presence] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8639,
+      "loinc_name_guess": "Lupus anticoagulant PTT based confirmation [Presence] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8640,
+      "loinc_name_guess": "Lupus anticoagulant PTT based screen [Ratio] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8641,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8642,
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8643,
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based confirmation [Presence] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8644,
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based confirmation [Presence] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8645,
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based screen [Ratio] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8646,
+      "loinc_name_guess": "Lupus anticoagulant PTT based screen [Presence] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8647,
+      "loinc_name_guess": "Lupus anticoagulant PTT based screen [Ratio] in Platelet poor plasma"
+    },
+    {
+      "row_id": 8648,
+      "loinc_name_guess": "Lupus anticoagulant PTT based screen in Platelet poor plasma"
+    },
+    {
       "row_id": 8649,
-      "loinc_name_guess": "Bacteria susceptibility panel - Isolate"
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based screen [Presence] in Platelet poor plasma"
     },
     {
       "row_id": 8650,
-      "loinc_name_guess": "Bacteria identified in Isolate"
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based screen [Ratio] in Platelet poor plasma"
     },
     {
       "row_id": 8651,
-      "loinc_name_guess": "Bacteria identified in Specimen by Culture"
+      "loinc_name_guess": "Lupus anticoagulant dRVVT based screen in Platelet poor plasma"
     },
     {
       "row_id": 8652,
-      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
+      "loinc_name_guess": "Sodium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8653,
-      "loinc_name_guess": "Bacteria identified in Aspirate by Culture"
+      "loinc_name_guess": "Sodium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8654,
-      "loinc_name_guess": "Bacteria identified in Ascites by Stain"
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Plasma"
     },
     {
       "row_id": 8655,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Plasma"
     },
     {
       "row_id": 8656,
-      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Plasma"
     },
     {
       "row_id": 8657,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+      "loinc_name_guess": "Hydroxybutyrate.beta [Moles/volume] in Plasma"
     },
     {
       "row_id": 8658,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+      "loinc_name_guess": "Troponin T [Mass/volume] in Plasma"
     },
     {
       "row_id": 8659,
-      "loinc_name_guess": "Bacteria identified in Blood by Culture"
+      "loinc_name_guess": "Troponin T [Mass/volume] in Plasma"
     },
     {
       "row_id": 8660,
-      "loinc_name_guess": "Bacteria identified in Blood by Subculture"
+      "loinc_name_guess": "Urate [Moles/volume] in Plasma"
     },
     {
       "row_id": 8661,
-      "loinc_name_guess": "Bacteria identified in Specimen"
+      "loinc_name_guess": "Urate [Moles/volume] in Plasma"
     },
     {
       "row_id": 8662,
-      "loinc_name_guess": "Bacteria identified in Isolate"
+      "loinc_name_guess": "Viscosity [Dynamic viscosity] in Plasma"
     },
     {
       "row_id": 8663,
-      "loinc_name_guess": "Bacteria identified in Specimen by Stain"
+      "loinc_name_guess": "Viscosity [Dynamic viscosity] in Plasma"
     },
     {
       "row_id": 8664,
-      "loinc_name_guess": "Bacteria identified in Bronchoalveolar lavage by Culture"
+      "loinc_name_guess": "Bleeding disorder screening panel - Plasma"
     },
     {
       "row_id": 8665,
-      "loinc_name_guess": "Bacteria identified in Bone by Culture"
+      "loinc_name_guess": "Bleeding disorder screening panel - Plasma"
     },
     {
       "row_id": 8666,
-      "loinc_name_guess": "Bacteria identified in Catheter tip by Culture"
+      "loinc_name_guess": "Chyle [Presence] in Pleural fluid"
     },
     {
       "row_id": 8667,
-      "loinc_name_guess": "Bacteria identified in Drainage fluid by Culture"
+      "loinc_name_guess": "Lactate [Moles/volume] in Pleural fluid"
     },
     {
       "row_id": 8668,
-      "loinc_name_guess": "Bacteria identified in Sputum by Culture"
+      "loinc_name_guess": "Lactate [Moles/volume] in Pleural fluid"
     },
     {
       "row_id": 8669,
-      "loinc_name_guess": "Bacteria identified in Sputum by Stain"
+      "loinc_name_guess": "pH and Glucose and Lactate panel - Pleural fluid"
     },
     {
       "row_id": 8670,
-      "loinc_name_guess": "Bacteria identified in Stool by Subculture"
+      "loinc_name_guess": "pH [pH] in Blood"
     },
     {
       "row_id": 8671,
-      "loinc_name_guess": "Enteric organisms panel - Stool by Culture"
+      "loinc_name_guess": "pH [pH] in Blood"
     },
     {
       "row_id": 8672,
-      "loinc_name_guess": "Stool pathogens panel - Stool by Culture"
+      "loinc_name_guess": "pH [pH] in Blood"
     },
     {
       "row_id": 8673,
-      "loinc_name_guess": "Enteric organisms panel - Stool by Culture"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 8674,
-      "loinc_name_guess": "Bacteria identified in Stool by Culture"
+      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8675,
-      "loinc_name_guess": "Bacteria DNA [Presence] in Vaginal fluid by NAA"
+      "loinc_name_guess": "Coagulation factors panel - Plasma"
     },
     {
       "row_id": 8676,
-      "loinc_name_guess": "Bacteria identified in Vaginal fluid by Gram stain"
+      "loinc_name_guess": "17-Hydroxyprogesterone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8677,
-      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Culture"
+      "loinc_name_guess": "17-Hydroxyprogesterone [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8678,
-      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by Gram stain"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 8679,
-      "loinc_name_guess": "Bacteria identified in Peritoneal dialysis fluid by Culture"
+      "loinc_name_guess": "Haptoglobin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 8680,
-      "loinc_name_guess": "Bacteria identified in Pleural fluid by Stain"
+      "loinc_name_guess": "Haptoglobin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 8681,
-      "loinc_name_guess": "Bacteria DNA [#/volume] in Gingival crevicular fluid by NAA"
+      "loinc_name_guess": "Hepatitis A virus Ab.total [Presence] in Serum"
     },
     {
       "row_id": 8682,
-      "loinc_name_guess": "Bacteria identified in Throat by Culture"
+      "loinc_name_guess": "Hepatitis B virus serology panel - Serum"
     },
     {
       "row_id": 8683,
-      "loinc_name_guess": "Bacteria identified in Pus by Culture"
+      "loinc_name_guess": "HIV 1 & 2 Ag+Ab panel - Serum or Plasma"
     },
     {
       "row_id": 8684,
-      "loinc_name_guess": "Bacteria identified in Pus by Aerobic culture"
+      "loinc_name_guess": "pH [pH] in Blood"
     },
     {
       "row_id": 8685,
-      "loinc_name_guess": "Bacteria identified in Synovial fluid by Stain"
+      "loinc_name_guess": "pH [pH] in Blood"
     },
     {
       "row_id": 8686,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+      "loinc_name_guess": "Tick-borne encephalitis virus Ab.total [Titer] in Serum"
     },
     {
       "row_id": 8687,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
+      "loinc_name_guess": "Tick-borne encephalitis virus Ab.total in Serum"
     },
     {
       "row_id": 8688,
-      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy light"
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8689,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8690,
-      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy light"
+      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8691,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
+      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8692,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
+      "loinc_name_guess": "Gross observation [Identifier] in Products of conception"
     },
     {
       "row_id": 8693,
-      "loinc_name_guess": "Bacteria [#/area] in Urine sediment by Microscopy light"
+      "loinc_name_guess": "Chlamydia trachomatis & Neisseria gonorrhoeae DNA [Presence] in Urine"
     },
     {
       "row_id": 8694,
-      "loinc_name_guess": "Bacteria [Presence] in Urine sediment"
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 8695,
-      "loinc_name_guess": "Bacteria identified in Urine by Slide culture"
-    },
-    {
-      "row_id": 8696,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 8697,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 8698,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 8699,
-      "loinc_name_guess": "Bacteria [Presence] in Urine"
-    },
-    {
-      "row_id": 8700,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 8701,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 8702,
-      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
-    },
-    {
-      "row_id": 8703,
-      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
-    },
-    {
-      "row_id": 8704,
-      "loinc_name_guess": "Bacteria identified in Urine by Subculture"
-    },
-    {
-      "row_id": 8705,
-      "loinc_name_guess": "Bacteria [Presence] in Urine"
-    },
-    {
-      "row_id": 8706,
-      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
-    },
-    {
-      "row_id": 8707,
-      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
-    },
-    {
-      "row_id": 8708,
-      "loinc_name_guess": "Bacteria [Presence] in Urine by Test strip"
-    },
-    {
-      "row_id": 8709,
-      "loinc_name_guess": "Bacteria [Presence] in Urine by Test strip"
-    },
-    {
-      "row_id": 8710,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture"
-    },
-    {
-      "row_id": 8711,
-      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
-    },
-    {
-      "row_id": 8712,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture"
-    },
-    {
-      "row_id": 8713,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
-    },
-    {
-      "row_id": 8714,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
-    },
-    {
-      "row_id": 8715,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture"
-    },
-    {
-      "row_id": 8716,
-      "loinc_name_guess": "Bacteria [#/volume] in Urine by Culture"
-    },
-    {
-      "row_id": 8717,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture"
-    },
-    {
-      "row_id": 8718,
-      "loinc_name_guess": "Bacteria identified in Urine by Culture"
-    },
-    {
-      "row_id": 8719,
-      "loinc_name_guess": "Bacteria identified in Urine by Organism specific culture"
-    },
-    {
-      "row_id": 8720,
-      "loinc_name_guess": "Bacteria identified in Urine"
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
     }
   ],
-  "reflection": "This group was focused entirely on bacteriology. The Finnish abbreviations (`-vi` for culture, `-vr` for stain, `-lm` for identification, `-he` for sensitivity) were very consistent and helpful. The specimen prefixes were also clear for the most part. The main challenge was differentiating the multiple concepts hiding behind the simple `u-bakt` (urine bacteria) code. Here, the combination of `UNIT` and `deciles` was crucial. It allowed for distinguishing between automated quantitative counts (`e6/l`, `[#/volume]`), microscopic counts (`/sunf`, `[#/area]`), and qualitative/screening tests (`[Presence]`). Similarly, for urine culture (`u-baktvi`), the values showed it was a quantitative culture (`[#/volume]`) rather than just a nominal identification. The `LongName` for the fecal culture panels (`f-baktvi1`, `f-baktvi2`, `f-baktvi3`) was essential for recognizing them as panels targeting specific enteric pathogens. Without the LongName, they would have appeared as simple cultures. This highlights the value of having as much metadata as possible."
+  "reflection": "This group contained a large number of coagulation tests, particularly for Lupus Anticoagulant (`P-LA...`, `P-LuAk...`). Distinguishing between screening tests and confirmation tests, and between the ratio (`[Ratio]`) and qualitative (`[Presence]`) results, was key. The `LongName` and units like `ratio` and `form` were crucial clues. The presence of both aPTT-based and dRVVT-based tests was clear from the abbreviations.\n\nThere were several ambiguous or non-standard codes. `veka` appeared in multiple codes (`mb-k-veka`, `p-gluveka`, etc.) but its meaning was unclear; I proceeded by ignoring it and focusing on the core analyte and system. The `S-pH(akt)` code was a clear data quality issue; pH is measured in whole blood, not serum, so I mapped it to blood despite the 'S-' prefix. The `Haglund` and `projekti` codes were unmappable research or administrative labels and were correctly left blank.\n\nThe highly abbreviated codes like `hpvpapctgc` and `u-omactgc` required educated guesses based on common test combinations (HPV/Pap, Chlamydia/Gonorrhea). The context from other rows (`u-omactgc` clarifying `-omactgc`) was helpful."
 }

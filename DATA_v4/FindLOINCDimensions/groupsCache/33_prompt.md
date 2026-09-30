@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,27 +139,27 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 33 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1812 | -metisilliiniresistentinstaphylococcusaureus(mrsa),viljely |  | 100% | name | 161 | 100 |  |  |  |  |
-| 1813 | -metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 578 | 100 |  |  |  |  |
-| 1814 | -metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 578 | 100 |  |  |  |  |
-| 1815 | -metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 576 | 100 |  |  |  |  |
-| 1816 | ennaltamääritellyngeenineksonienemäsmuutostenjapientenkopiolukumuutostentutkimusngs-menetelmällä |  | 100% | name | 160 | 100 |  |  |  |  |
-| 1817 | huumeseula(amfet,bents,opiaat,kannab,koka) |  | 100% | name | 129 | 100 |  |  |  |  |
-| 1818 | huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 544 | 100 |  |  |  |  |
-| 1819 | metisilliiniresistentinstaphylococcusaureus(mrs |  | 100% | name | 166 | 100 |  |  |  |  |
-| 1820 | metisilliiniresistenttistaph.aureus,viljelyne |  | 100% | name | 294 | 100 |  |  |  |  |
-| 1821 | metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 436 | 100 |  |  |  |  |
-| 1822 | metisilliiniresistenttistaph.aureus,viljelyni |  | 100% | name | 295 | 100 |  |  |  |  |
-| 1823 | metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 442 | 100 |  |  |  |  |
-| 1824 | metisilliiniresistenttistaph.aureus,viljelype |  | 100% | name | 296 | 100 |  |  |  |  |
-| 1825 | metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 433 | 100 |  |  |  |  |
-| 1826 | metisilliiniresistenttistaphylococcusaureus(mrsa),seulontaviljely␤ |  | 100% | name | 111 | 100 |  |  |  |  |
-| 1827 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analys,lausunto |  | 100% | name | 322 | 100 |  |  | Patient |  |
-| 1828 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analysointi,lausunto |  | 100% | name | 138 | 100 |  |  | Patient |  |
-| 1829 | pt-ekg,pitkäaikaisrekisteröinti(48h),kytkentä,analysointi,lausunto |  | 100% | name | 136 | 100 |  |  | Patient |  |
-| 1830 | työpaikanhuumetutkimus6a(amfetamiini,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiini,opi |  | 100% | name | 108 | 100 |  |  |  |  |
-| 1831 | u-huum6a:amfetamiinit,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiinijaopiaatit.vainsop. |  | 100% | name | 113 | 100 |  |  | Urine |  |
-| 1832 | u-huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 731 | 100 |  |  | Urine |  |
+| 1782 | -metisilliiniresistentinstaphylococcusaureus(mrsa),viljely |  | 100% | name | 161 | 100 |  |  |  |  |
+| 1783 | -metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 578 | 100 |  |  |  |  |
+| 1784 | -metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 578 | 100 |  |  |  |  |
+| 1785 | -metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 576 | 100 |  |  |  |  |
+| 1786 | ennaltamääritellyngeenineksonienemäsmuutostenjapientenkopiolukumuutostentutkimusngs-menetelmällä |  | 100% | name | 160 | 100 |  |  |  |  |
+| 1787 | huumeseula(amfet,bents,opiaat,kannab,koka) |  | 100% | name | 129 | 100 |  |  |  |  |
+| 1788 | huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 544 | 100 |  |  |  |  |
+| 1789 | metisilliiniresistentinstaphylococcusaureus(mrs |  | 100% | name | 166 | 100 |  |  |  |  |
+| 1790 | metisilliiniresistenttistaph.aureus,viljelyne |  | 100% | name | 294 | 100 |  |  |  |  |
+| 1791 | metisilliiniresistenttistaph.aureus,viljelynenästä |  | 100% | name | 436 | 100 |  |  |  |  |
+| 1792 | metisilliiniresistenttistaph.aureus,viljelyni |  | 100% | name | 295 | 100 |  |  |  |  |
+| 1793 | metisilliiniresistenttistaph.aureus,viljelynielusta |  | 100% | name | 442 | 100 |  |  |  |  |
+| 1794 | metisilliiniresistenttistaph.aureus,viljelype |  | 100% | name | 296 | 100 |  |  |  |  |
+| 1795 | metisilliiniresistenttistaph.aureus,viljelyperineumista |  | 100% | name | 433 | 100 |  |  |  |  |
+| 1796 | metisilliiniresistenttistaphylococcusaureus(mrsa),seulontaviljely␤ |  | 100% | name | 111 | 100 |  |  |  |  |
+| 1797 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analys,lausunto |  | 100% | name | 322 | 100 |  |  | Patient |  |
+| 1798 | pt-ekg,pitkäaikaisrekisteröinti(24h),kytkentä,analysointi,lausunto |  | 100% | name | 138 | 100 |  |  | Patient |  |
+| 1799 | pt-ekg,pitkäaikaisrekisteröinti(48h),kytkentä,analysointi,lausunto |  | 100% | name | 136 | 100 |  |  | Patient |  |
+| 1800 | työpaikanhuumetutkimus6a(amfetamiini,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiini,opi |  | 100% | name | 108 | 100 |  |  |  |  |
+| 1801 | u-huum6a:amfetamiinit,bentsodiatsepiinit,buprenorfiini,kannabis,kokaiinijaopiaatit.vainsop. |  | 100% | name | 113 | 100 |  |  | Urine |  |
+| 1802 | u-huumeseulonta(amfet.,bents.,opiaatit,kannabis,kokaiini,buprenorfiini) |  | 100% | name | 731 | 100 |  |  | Urine |  |
 

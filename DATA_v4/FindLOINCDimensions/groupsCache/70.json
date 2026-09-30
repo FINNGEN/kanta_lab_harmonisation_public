@@ -1,629 +1,481 @@
 {
   "rows": [
     {
-      "row_id": 5451,
-      "loinc_name_guess": "Calprotectin [Mass/volume] in Body fluid"
-    },
-    {
-      "row_id": 5452,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5453,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5454,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Skin by Histology"
-    },
-    {
-      "row_id": 5455,
-      "loinc_name_guess": "Karyotype [Identifier] in Blood"
-    },
-    {
-      "row_id": 5456,
-      "loinc_name_guess": "Plasmodium sp identified in Blood by Light microscopy"
-    },
-    {
-      "row_id": 5457,
+      "row_id": 5152,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5458,
+      "row_id": 5153,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5459,
+      "row_id": 5154,
+      "loinc_name_guess": "Cefalexin [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5155,
+      "loinc_name_guess": "Gastrin panel - Plasma"
+    },
+    {
+      "row_id": 5156,
+      "loinc_name_guess": "Gastrin [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5157,
+      "loinc_name_guess": "Gastrin [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5158,
+      "loinc_name_guess": "Gastrin.17 [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5159,
+      "loinc_name_guess": "Gastrin.17 [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5160,
+      "loinc_name_guess": "Basic metabolic panel - Blood"
+    },
+    {
+      "row_id": 5161,
+      "loinc_name_guess": "Chloride [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5162,
+      "loinc_name_guess": "Chloride [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5163,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5164,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5165,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5166,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 5167,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 5168,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 5169,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 5170,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 5171,
+      "loinc_name_guess": "Potassium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5172,
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5173,
+      "loinc_name_guess": "Urea [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5174,
+      "loinc_name_guess": "Urea [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 5175,
+      "loinc_name_guess": "Latex IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5176,
+      "loinc_name_guess": "Latex IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5177,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5460,
+      "row_id": 5178,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5461,
-      "loinc_name_guess": "Bordetella parapertussis [Presence] in Blood"
-    },
-    {
-      "row_id": 5462,
-      "loinc_name_guess": "Paraprotein [Presence] in 24 hour Urine"
-    },
-    {
-      "row_id": 5463,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5464,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5465,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5466,
-      "loinc_name_guess": "Calprotectin [Mass/mass] in Stool"
-    },
-    {
-      "row_id": 5467,
-      "loinc_name_guess": "Beta carotene [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5468,
-      "loinc_name_guess": "Beta carotene [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5469,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5470,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5471,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5472,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5473,
-      "loinc_name_guess": "Cardiolipin Ab [Titer] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 5474,
-      "loinc_name_guess": "Cardiolipin Ab [Titer] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 5475,
+      "row_id": 5179,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5476,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5477,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5478,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5479,
-      "loinc_name_guess": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5480,
-      "loinc_name_guess": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5481,
-      "loinc_name_guess": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5482,
+      "row_id": 5180,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5483,
+      "row_id": 5181,
+      "loinc_name_guess": "Bartonella sp Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5182,
+      "loinc_name_guess": "Bartonella sp Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5183,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5184,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5185,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5186,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5187,
+      "loinc_name_guess": "Beta 1 globulin/Protein.total [Mass Fraction] in Serum"
+    },
+    {
+      "row_id": 5188,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5189,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5190,
+      "loinc_name_guess": "Beta 2 globulin/Protein.total [Mass Fraction] in Serum"
+    },
+    {
+      "row_id": 5191,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5192,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5193,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5194,
+      "loinc_name_guess": "Beta 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5195,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5196,
+      "loinc_name_guess": "Beta 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5197,
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5198,
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5199,
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5200,
+      "loinc_name_guess": "Estradiol [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5201,
+      "loinc_name_guess": "Flecainide [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5202,
+      "loinc_name_guess": "Flecainide [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5203,
+      "loinc_name_guess": "Gastrin.17 [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5204,
+      "loinc_name_guess": "Gastrin.17 [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5205,
+      "loinc_name_guess": "Histones Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5206,
+      "loinc_name_guess": "Histones Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5207,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum by High sensitivity"
+    },
+    {
+      "row_id": 5208,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum by High sensitivity"
+    },
+    {
+      "row_id": 5209,
+      "loinc_name_guess": "Latex IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5210,
+      "loinc_name_guess": "Latex IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5211,
+      "loinc_name_guess": "Latex IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5212,
+      "loinc_name_guess": "Leptospira sp Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5213,
+      "loinc_name_guess": "Listeria monocytogenes Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5214,
+      "loinc_name_guess": "Cow's milk Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5215,
+      "loinc_name_guess": "Pistachio IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5216,
+      "loinc_name_guess": "Pistachio IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5217,
+      "loinc_name_guess": "Insect venom IgE Ab panel - Serum"
+    },
+    {
+      "row_id": 5218,
+      "loinc_name_guess": "Insect venom IgE Ab panel - Serum"
+    },
+    {
+      "row_id": 5219,
+      "loinc_name_guess": "SAE1 Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5220,
+      "loinc_name_guess": "Centromere Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5221,
+      "loinc_name_guess": "Centromere Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5222,
+      "loinc_name_guess": "Centromere B Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5223,
+      "loinc_name_guess": "Centromere B Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5224,
+      "loinc_name_guess": "Centromere B Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5225,
+      "loinc_name_guess": "Certolizumab pegol [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5226,
+      "loinc_name_guess": "Certolizumab pegol [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5227,
+      "loinc_name_guess": "Sertraline [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5228,
+      "loinc_name_guess": "Sertraline [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5229,
+      "loinc_name_guess": "Citalopram [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5230,
+      "loinc_name_guess": "Citalopram [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5231,
+      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5232,
+      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5233,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5484,
-      "loinc_name_guess": "Coagulation time [Time] in Platelet poor plasma"
-    },
-    {
-      "row_id": 5485,
-      "loinc_name_guess": "Coagulation time [Time] in Platelet poor plasma"
-    },
-    {
-      "row_id": 5486,
-      "loinc_name_guess": "Thrombin time [Ratio] in Platelet poor plasma"
-    },
-    {
-      "row_id": 5487,
-      "loinc_name_guess": "Thrombin time [Ratio] in Platelet poor plasma"
-    },
-    {
-      "row_id": 5488,
-      "loinc_name_guess": "Macroalkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5489,
-      "loinc_name_guess": "Macroalkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5490,
-      "loinc_name_guess": "Alkaline phosphatase.liver isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5491,
-      "loinc_name_guess": "Alkaline phosphatase.liver isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5492,
-      "loinc_name_guess": "Alkaline phosphatase isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5493,
-      "loinc_name_guess": "Alkaline phosphatase isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5494,
-      "loinc_name_guess": "Alkaline phosphatase.liver/Alkaline phosphatase.total [Enzymatic activity Ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 5495,
-      "loinc_name_guess": "Alkaline phosphatase.liver isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5496,
-      "loinc_name_guess": "Alkaline phosphatase.liver isoenzyme [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5497,
-      "loinc_name_guess": "Cashew nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5498,
-      "loinc_name_guess": "Cashew nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5499,
-      "loinc_name_guess": "Hazelnut (f17) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5500,
-      "loinc_name_guess": "Hazelnut (f17) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5501,
-      "loinc_name_guess": "Hazelnut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5502,
-      "loinc_name_guess": "Hazelnut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5503,
-      "loinc_name_guess": "Carbamazepine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5504,
-      "loinc_name_guess": "Carbamazepine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5505,
-      "loinc_name_guess": "Carbamazepine 10,11-epoxide [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5506,
-      "loinc_name_guess": "Carbamazepine 10,11-epoxide [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5507,
-      "loinc_name_guess": "Cardiolipin Ab [Titer] in Serum or Plasma"
-    },
-    {
-      "row_id": 5508,
-      "loinc_name_guess": "Cardiolipin Ab [Titer] in Serum or Plasma"
-    },
-    {
-      "row_id": 5509,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5510,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5511,
-      "loinc_name_guess": "Cardiolipin IgG Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5512,
-      "loinc_name_guess": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5513,
-      "loinc_name_guess": "Cardiolipin IgM Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5514,
-      "loinc_name_guess": "Carnitine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5515,
-      "loinc_name_guess": "Carnitine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5516,
-      "loinc_name_guess": "Carnitine.free [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5517,
-      "loinc_name_guess": "Carnitine.free [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5518,
-      "loinc_name_guess": "Coconut (f36) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5519,
-      "loinc_name_guess": "Coconut (f36) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5520,
-      "loinc_name_guess": "Alder (t2) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5521,
-      "loinc_name_guess": "Alder (t2) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5522,
-      "loinc_name_guess": "Peanut (f13) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5523,
-      "loinc_name_guess": "Peanut (f13) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5524,
-      "loinc_name_guess": "Liver function panel - Serum or Plasma"
-    },
-    {
-      "row_id": 5525,
-      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5526,
-      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5527,
-      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5528,
-      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5529,
-      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5530,
-      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5531,
-      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5532,
-      "loinc_name_guess": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5533,
-      "loinc_name_guess": "Liver autoantibody panel - Serum"
-    },
-    {
-      "row_id": 5534,
-      "loinc_name_guess": "Liver function panel - Serum or Plasma"
-    },
-    {
-      "row_id": 5535,
-      "loinc_name_guess": "Liver function panel - Serum or Plasma"
-    },
-    {
-      "row_id": 5536,
-      "loinc_name_guess": "Oxcarbazepine 10-hydroxy metabolite [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5537,
-      "loinc_name_guess": "Oxcarbazepine 10-hydroxy metabolite [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5538,
-      "loinc_name_guess": "Oxcarbazepine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5539,
-      "loinc_name_guess": "Oxcarbazepine [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5540,
-      "loinc_name_guess": "Ovary Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 5541,
-      "loinc_name_guess": "Ovary Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 5542,
+      "row_id": 5234,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5543,
+      "row_id": 5235,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5544,
+      "row_id": 5236,
+      "loinc_name_guess": "Teichoic acid Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5237,
+      "loinc_name_guess": "Teichoic acid Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5238,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5239,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5240,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5241,
+      "loinc_name_guess": "Testis Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5242,
+      "loinc_name_guess": "Testis Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5243,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5244,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5245,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5246,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5247,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5248,
+      "loinc_name_guess": "Testosterone.free/Testosterone.total [Molar fraction] in Serum"
+    },
+    {
+      "row_id": 5249,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5250,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5251,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5252,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5253,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum by Mass spectrometry"
+    },
+    {
+      "row_id": 5254,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum by Mass spectrometry"
+    },
+    {
+      "row_id": 5255,
+      "loinc_name_guess": "Testosterone.free/Testosterone.total [Molar fraction] in Serum"
+    },
+    {
+      "row_id": 5256,
+      "loinc_name_guess": "Testosterone.free/Testosterone.total [Molar fraction] in Serum"
+    },
+    {
+      "row_id": 5257,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5258,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5259,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5260,
+      "loinc_name_guess": "Testosterone.free [Moles/volume] in Serum by calculation"
+    },
+    {
+      "row_id": 5261,
+      "loinc_name_guess": "Urticaria panel - Serum"
+    },
+    {
+      "row_id": 5262,
+      "loinc_name_guess": "Ustekinumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5263,
+      "loinc_name_guess": "Ustekinumab Ab [Presence] in Serum or Plasma"
+    },
+    {
+      "row_id": 5264,
+      "loinc_name_guess": "Ustekinumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5265,
+      "loinc_name_guess": "Ustekinumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5266,
+      "loinc_name_guess": "Yersinia pseudotuberculosis Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5267,
+      "loinc_name_guess": "Yersinia pseudotuberculosis serotype O:3 Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5268,
+      "loinc_name_guess": "Yersinia pseudotuberculosis serotype O:3 Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5269,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5545,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5546,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5547,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5548,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5549,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5550,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5551,
-      "loinc_name_guess": "Pregnancy associated plasma protein A [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5552,
-      "loinc_name_guess": "Pregnancy associated plasma protein A [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5553,
-      "loinc_name_guess": "Pregnancy associated plasma protein A [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5554,
-      "loinc_name_guess": "Pregnancy associated plasma protein A [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5555,
-      "loinc_name_guess": "Pregnancy associated plasma protein A [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5556,
-      "loinc_name_guess": "Pregnancy associated plasma protein A MoM [Ratio] in Serum"
-    },
-    {
-      "row_id": 5557,
-      "loinc_name_guess": "Brazil nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5558,
-      "loinc_name_guess": "Brazil nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5559,
-      "loinc_name_guess": "Acetaminophen [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5560,
-      "loinc_name_guess": "Acetaminophen [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5561,
-      "loinc_name_guess": "Mumps virus Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 5562,
-      "loinc_name_guess": "Mumps virus IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5563,
-      "loinc_name_guess": "Mumps virus IgG Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 5564,
-      "loinc_name_guess": "Mumps virus IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5565,
-      "loinc_name_guess": "Mumps virus IgM Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 5566,
-      "loinc_name_guess": "Paraprotein [Presence] in Serum"
-    },
-    {
-      "row_id": 5567,
-      "loinc_name_guess": "Brazil nut (f18) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5568,
-      "loinc_name_guess": "Brazil nut (f18) IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5569,
-      "loinc_name_guess": "Parvovirus B19 Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 5570,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5571,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5572,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Ratio] in Serum"
-    },
-    {
-      "row_id": 5573,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5574,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 5575,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 5576,
-      "loinc_name_guess": "Parvovirus B19 IgM Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 5577,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab Avidity [Ratio] in Serum"
-    },
-    {
-      "row_id": 5578,
-      "loinc_name_guess": "Parvovirus B19 IgG Ab Avidity [Ratio] in Serum"
-    },
-    {
-      "row_id": 5579,
-      "loinc_name_guess": "Pecan nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5580,
-      "loinc_name_guess": "Pecan nut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5581,
-      "loinc_name_guess": "Walnut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5582,
-      "loinc_name_guess": "Walnut IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 5583,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5584,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5585,
-      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5586,
-      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5587,
-      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5588,
-      "loinc_name_guess": "Valproate.free [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5589,
-      "loinc_name_guess": "Valproate.free [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5590,
-      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5591,
-      "loinc_name_guess": "Valproate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5592,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5593,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5594,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5595,
-      "loinc_name_guess": "Bile acids.total [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 5596,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Skin by Histology"
-    },
-    {
-      "row_id": 5597,
-      "loinc_name_guess": "Cotinine [Mass/time] in 24 hour Urine"
-    },
-    {
-      "row_id": 5598,
-      "loinc_name_guess": "Cotinine [Presence] in Urine"
-    },
-    {
-      "row_id": 5599,
-      "loinc_name_guess": "Glucose and Protein panel - Urine"
-    },
-    {
-      "row_id": 5600,
-      "loinc_name_guess": "Urinalysis sediment microscopy panel - Urine"
-    },
-    {
-      "row_id": 5601,
-      "loinc_name_guess": "Urinalysis sediment microscopy panel - Urine"
-    },
-    {
-      "row_id": 5602,
-      "loinc_name_guess": "Bladder dwell time [Time]"
-    },
-    {
-      "row_id": 5603,
-      "loinc_name_guess": "Bladder dwell time [Time]"
-    },
-    {
-      "row_id": 5604,
-      "loinc_name_guess": "Urinalysis sediment microscopy panel - Urine"
-    },
-    {
-      "row_id": 5605,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 5606,
+      "row_id": 5270,
       "loinc_name_guess": ""
     }
   ],
-  "reflection": "This group contained a large number of administrative or storage-related codes (`s-pakaste`, `b-vara`, etc.) which are unmappable and were left empty. These are common in source data but represent pre-analytical or logistical steps, not observations. The `s-maksa*` and `s-afmaks*` series of codes were ambiguous, likely referring to different liver enzymes (ALT, AST) or alkaline phosphatase isoenzymes without being specific. I made educated guesses (e.g., mapping `maksa-1` to ALT) but this is a low-confidence mapping. Similarly, `p-varmtr` was obscure, and I had to guess a generic coagulation test. Having a more complete national codebook with mappings from these local abbreviations to official long names would resolve most of these ambiguities. The IgE allergy tests (`-pähe`, `-päe` suffixes) were quite clear, as were the therapeutic drug monitoring tests (carbamazepine, valproate). The variety of units for `S-Parvabg` (parvovirus IgG) demonstrates the importance of mapping each unit combination separately, as `titre`, `index` (Ratio), and `iu/ml` (Units/volume) all correspond to different LOINC properties."
+  "reflection": "This group contained several interesting patterns. The `talt` or `talteen` codes (e.g., `b-talt.kn`, `s-talteen`) are clearly administrative codes for sample storage and not actual tests; it was correct to leave them blank. The `i-stat` codes were straightforward to interpret as results from the i-STAT point-of-care device, with the system consistently being `Blood`.\n\nThe testosterone tests (`s-testo...`) showed significant local variation in naming (`-v`, `-vl`, `-vlik`, `ov`, `ovi`, `ovl`) to distinguish total, free, and calculated free testosterone, as well as methods like mass spectrometry (`ms`) and high sensitivity (`hs`). Correctly parsing these local conventions was key. For example, `lik` and `vl` were consistently associated with calculated results.\n\nA key ambiguity was the `lateksi` code. While it can refer to the latex agglutination test for Rheumatoid Factor, the presence of `s-latekse` with a `LongName` for Latex IgE antibodies in the same group strongly suggests that all `lateksi` codes in this context are for allergy testing. I opted for this interpretation. Similarly, some abbreviations like `s-statrae` and `s-pisto1`/`s-pisto2` were not fully decipherable, requiring more generic guesses (e.g., 'Allergen specific IgE Ab' or 'Insect venom IgE Ab panel')."
 }

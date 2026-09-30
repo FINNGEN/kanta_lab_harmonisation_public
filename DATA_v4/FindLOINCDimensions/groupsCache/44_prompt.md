@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,130 +139,94 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 44 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 2735 | -bil | umol/l | 84% | name+unit+values | 433 | 0 | [8.08, 11.42, 17.8, 24.81, 35.56, 52.32, 88.15, 166.34, 422.22] | -Bilirubiini |  |  |
-| 2736 | -bil |  | 16% | name | 85 | 95.29 |  | -Bilirubiini |  |  |
-| 2737 | b-bio |  | 100% | name | 4183 | 100 |  |  | Blood |  |
-| 2738 | b-hg | nmol/l | 56% | name+unit | 64 | 0 |  | B -Elohopea | Blood |  |
-| 2739 | b-hg |  | 44% | name | 51 | 94.12 |  | B -Elohopea | Blood |  |
-| 2740 | cb-bil | umol/l | 7% | name+unit+values | 331 | 0 | [11.1, 19.39, 22.31, 26.36, 32.8, 45.69, 98.54, 156.29, 216.28] | cB-Bilirubiini | Capillary blood |  |
-| 2741 | cb-bil |  | 93% | name | 4244 | 99.98 |  | cB-Bilirubiini | Capillary blood |  |
-| 2742 | du-mg | mmol | 79% | name+unit+values | 580 | 0.17 | [2.07, 2.62, 3.11, 3.51, 3.97, 4.42, 4.91, 5.69, 6.98] | dU-Magnesium | 24-hour urine |  |
-| 2743 | du-mg |  | 21% | name | 154 | 70.78 |  | dU-Magnesium | 24-hour urine |  |
-| 2744 | du-pi | mmol | 83% | name+unit+values | 591 | 0.17 | [14.15, 19.7, 22.95, 26.88, 29.9, 33.43, 38, 43.23, 51.47] | dU-Fosfaatti, epäorgaaninen | 24-hour urine |  |
-| 2745 | du-pi |  | 17% | name | 118 | 75.42 |  | dU-Fosfaatti, epäorgaaninen | 24-hour urine |  |
-| 2746 | fl-koh |  | 100% | name | 285 | 100 |  |  | Vaginal discharge |  |
-| 2747 | fp-bil | umol/l | 100% | name+unit+values | 111 | 0 | [4.98, 6.34, 7.02, 8.69, 9.41, 10.29, 12.14, 15.18, 27.61] |  | Fasting plasma |  |
-| 2748 | fp-kol | mmol | 0% | name+unit | 7 | 0 |  | fP-Kolesteroli | Fasting plasma |  |
-| 2749 | fp-kol | mmol/ | 0% | name+unit | 7 | 0 |  | fP-Kolesteroli | Fasting plasma |  |
-| 2750 | fp-kol | mmol/l | 99% | name+unit+values | 1407523 | 0 | [3.2, 3.63, 3.97, 4.28, 4.58, 4.87, 5.21, 5.6, 6.16] | fP-Kolesteroli | Fasting plasma |  |
-| 2751 | fp-kol |  | 1% | name+values | 17406 | 100 | [4.01, 4.31, 4.6, 4.91, 5.19, 5.43, 5.75, 6.21, 6.8] | fP-Kolesteroli | Fasting plasma |  |
-| 2752 | fp-vip | pmol/l | 87% | name+unit+values | 391 | 1.53 | [6.42, 8.54, 9.99, 11.21, 13, 14.7, 16.8, 19.84, 27.89] | fP-Vasoaktiivinen intestinaalinen peptidi | Fasting plasma |  |
-| 2753 | fp-vip |  | 13% | name | 61 | 81.97 |  | fP-Vasoaktiivinen intestinaalinen peptidi | Fasting plasma |  |
-| 2754 | fs-kol | mmol/ | 0% | name+unit | 7 | 0 |  | fS-Kolesteroli | Fasting serum |  |
-| 2755 | fs-kol | mmol/l | 100% | name+unit+values | 259011 | 0 | [3.71, 4.15, 4.46, 4.76, 5.03, 5.31, 5.59, 5.95, 6.44] | fS-Kolesteroli | Fasting serum |  |
-| 2756 | fs-kol |  | 0% | name+values | 481 | 100 | [3.95, 4.3, 4.66, 4.92, 5.17, 5.39, 5.64, 6.03, 6.57] | fS-Kolesteroli | Fasting serum |  |
-| 2757 | li-bio |  | 100% | name | 161 | 100 |  |  | Cerebrospinal fluid |  |
-| 2758 | mmse |  | 100% | name | 524 | 94.66 |  |  |  |  |
-| 2759 | p-bil | umol/l | 97% | name+unit+values | 1420468 | 0.09 | [5, 6, 7, 8.01, 9.15, 10.92, 12.96, 16.55, 24.99] | P -Bilirubiini | Plasma |  |
-| 2760 | p-bil |  | 3% | name+values | 51285 | 100 | [4.75, 5.95, 6.93, 7.97, 9.15, 10.81, 13.1, 17.26, 26.41] | P -Bilirubiini | Plasma |  |
-| 2761 | p-bnp | ng/l | 94% | name+unit+values | 92283 | 0 | [19.9, 36.26, 58.02, 88.41, 132.21, 195.75, 292.04, 465.57, 902.19] | P -Natriureettinen peptidi, B-tyypin (32-) | Plasma |  |
-| 2762 | p-bnp | ng/ml | 0% | name+unit | 14 | 0 |  | P -Natriureettinen peptidi, B-tyypin (32-) | Plasma |  |
-| 2763 | p-bnp |  | 6% | name+values | 5638 | 100 | [41.88, 71.98, 108.12, 145.12, 193.35, 257.89, 351.05, 510.91, 912.06] | P -Natriureettinen peptidi, B-tyypin (32-) | Plasma |  |
-| 2764 | p-fsh | u/l | 99% | name+unit+values | 10309 | 0 | [3.43, 4.83, 5.94, 7.2, 9.39, 15.3, 30.23, 51.8, 73.17] | P -Follikkelia stimuloiva hormoni | Plasma |  |
-| 2765 | p-fsh |  | 1% | name+values | 155 | 100 | [3.32, 4.57, 5.74, 6.86, 8.5, 12.89, 23.84, 44.5, 70.18] | P -Follikkelia stimuloiva hormoni | Plasma |  |
-| 2766 | p-fsl | s | 95% | name+unit+values | 1808 | 0 | [23.6, 25, 25.97, 26.26, 27.2, 28.08, 29.24, 31.3, 34.37] |  | Plasma |  |
-| 2767 | p-fsl |  | 5% | name | 86 | 69.77 |  |  | Plasma |  |
-| 2768 | p-kol | mmol/l | 99% | name+unit+values | 298985 | 0 | [3.03, 3.42, 3.74, 4.03, 4.33, 4.64, 4.97, 5.37, 5.92] | P -Kolesteroli | Plasma |  |
-| 2769 | p-kol |  | 1% | name+values | 2034 | 100 | [3, 3.37, 3.67, 3.97, 4.25, 4.57, 4.92, 5.32, 5.88] | P -Kolesteroli | Plasma |  |
-| 2770 | p-mg | mmol/l | 99% | name+unit+values | 259826 | 0.04 | [0.64, 0.7, 0.74, 0.77, 0.8, 0.83, 0.86, 0.89, 0.95] | P -Magnesium | Plasma |  |
-| 2771 | p-mg |  | 1% | name+values | 2225 | 100 | [0.64, 0.7, 0.74, 0.78, 0.81, 0.84, 0.86, 0.9, 0.95] | P -Magnesium | Plasma |  |
-| 2772 | p-se | umol/l | 95% | name+unit+values | 1087 | 0.09 | [0.86, 1.03, 1.1, 1.19, 1.27, 1.34, 1.41, 1.5, 1.62] | P -Seleeni | Plasma |  |
-| 2773 | p-se |  | 5% | name+values | 55 | 43.64 | [1.17, 1.27, 1.34, 1.4, 1.46, 1.54, 1.63, 1.73, 1.94] | P -Seleeni | Plasma |  |
-| 2774 | p-tsh | miu/l | 2% | name+unit+values | 32584 | 0 | [0.71, 1.13, 1.46, 1.75, 2.07, 2.43, 2.87, 3.48, 4.57] | P -Tyreotropiini | Plasma |  |
-| 2775 | p-tsh | mlu/l | 0% | name+unit+values | 4705 | 0 | [0.58, 1.02, 1.38, 1.7, 2.07, 2.5, 3.01, 3.68, 4.95] | P -Tyreotropiini | Plasma |  |
-| 2776 | p-tsh | mu/l | 95% | name+unit+values | 1660849 | 0.06 | [0.53, 0.92, 1.22, 1.5, 1.78, 2.11, 2.53, 3.11, 4.2] | P -Tyreotropiini | Plasma |  |
-| 2777 | p-tsh |  | 3% | name+values | 53377 | 100 | [0.3, 0.81, 1.02, 1.41, 1.64, 1.91, 2.3, 2.66, 3.57] | P -Tyreotropiini | Plasma |  |
-| 2778 | pf-kol | mmol/l | 63% | name+unit+values | 614 | 0 | [0.64, 0.93, 1.1, 1.3, 1.51, 1.75, 2.03, 2.36, 2.85] | Pf-Kolesteroli | Pleural fluid |  |
-| 2779 | pf-kol |  | 37% | name | 361 | 98.06 |  | Pf-Kolesteroli | Pleural fluid |  |
-| 2780 | s-bil | umol/l | 99% | name+unit+values | 15554 | 0 | [5.56, 6.89, 7.91, 8.95, 10.06, 11.55, 13.42, 16.35, 22.65] | S -Bilirubiini | Serum |  |
-| 2781 | s-bil |  | 1% | name+values | 183 | 82.51 | [5.99, 7.33, 8.34, 9.33, 10.81, 12.14, 14.24, 16.54, 22.13] | S -Bilirubiini | Serum |  |
-| 2782 | s-bio |  | 100% | name | 11283 | 100 |  |  | Serum |  |
-| 2783 | s-biol |  | 100% | name | 508 | 100 |  |  | Serum |  |
-| 2784 | s-fsh | iu/l | 58% | name+unit+values | 21045 | 0 | [3.26, 4.67, 5.97, 7.58, 10.27, 17.4, 33.37, 51.85, 72.5] | S -Follikkelia stimuloiva hormoni | Serum |  |
-| 2785 | s-fsh | u/l | 39% | name+unit+values | 14312 | 0.62 | [3.48, 4.97, 6.16, 7.42, 9.34, 13.61, 26.1, 47.59, 73.43] | S -Follikkelia stimuloiva hormoni | Serum |  |
-| 2786 | s-fsh |  | 3% | name+values | 1106 | 100 | [3.11, 4.58, 5.88, 7.13, 8.92, 13.11, 23.72, 44.2, 70.34] | S -Follikkelia stimuloiva hormoni | Serum |  |
-| 2787 | s-kol | mg/ml | 0% | name+unit | 9 | 0 |  | S -Kolesteroli | Serum |  |
-| 2788 | s-kol | mmol/l | 99% | name+unit+values | 35285 | 0 | [3.59, 4.01, 4.33, 4.59, 4.85, 5.11, 5.39, 5.71, 6.19] | S -Kolesteroli | Serum |  |
-| 2789 | s-kol |  | 1% | name | 396 | 89.9 |  | S -Kolesteroli | Serum |  |
-| 2790 | s-mg | mmol/l | 100% | name+unit+values | 5982 | 0 | [0.77, 0.81, 0.83, 0.85, 0.87, 0.88, 0.9, 0.92, 0.95] | S -Magnesium | Serum |  |
-| 2791 | s-mg |  | 0% | name+values | 23 | 69.57 | [0.75, 0.78, 0.8, 0.82, 0.83, 0.85, 0.87, 0.89, 0.91] | S -Magnesium | Serum |  |
-| 2792 | s-nse | ug/l | 98% | name+unit+values | 10085 | 0.04 | [9.38, 10.96, 12, 13.1, 14.43, 16.18, 18.88, 24.33, 45.7] | S -Neuronispesifinen enolaasi | Serum |  |
-| 2793 | s-nse |  | 2% | name+values | 210 | 45.24 | [8.56, 10, 10.8, 12.01, 14.24, 17, 20.25, 24.5, 29.28] | S -Neuronispesifinen enolaasi | Serum |  |
-| 2794 | s-tsh | miu/l | 31% | name+unit+values | 117078 | 0 | [0.56, 0.91, 1.16, 1.39, 1.62, 1.89, 2.23, 2.72, 3.61] | S -Tyreotropiini | Serum |  |
-| 2795 | s-tsh | mlu/l | 0% | name+unit+values | 113 | 0 | [0.33, 0.69, 1.02, 1.22, 1.42, 1.62, 2, 2.33, 2.93] | S -Tyreotropiini | Serum |  |
-| 2796 | s-tsh | mu/l | 68% | name+unit+values | 253056 | 0 | [0.62, 0.91, 1.15, 1.36, 1.59, 1.85, 2.18, 2.64, 3.49] | S -Tyreotropiini | Serum |  |
-| 2797 | s-tsh | u/l | 0% | name+unit+values | 142 | 0 | [0.52, 0.94, 1.22, 1.48, 1.73, 1.98, 2.18, 2.57, 4.01] | S -Tyreotropiini | Serum |  |
-| 2798 | s-tsh |  | 1% | name+values | 4491 | 100 | [0.62, 0.91, 1.18, 1.45, 1.66, 1.95, 2.23, 2.72, 3.49] | S -Tyreotropiini | Serum |  |
-| 2799 | se-bil | umol/l | 84% | name+unit+values | 526 | 1.33 | [9.24, 12.96, 16.08, 20.31, 26.93, 38.21, 60.68, 119.92, 333.14] |  | Secretion |  |
-| 2800 | se-bil |  | 16% | name | 102 | 99.02 |  |  | Secretion |  |
-| 2801 | u-al | umol/l | 48% | name+unit+values | 81 | 0 | [0.1, 0.1, 0.2, 0.2, 0.22, 0.3, 0.4, 0.7, 1.7] | U -Alumiini | Urine |  |
-| 2802 | u-al |  | 52% | name | 87 | 97.7 |  | U -Alumiini | Urine |  |
-| 2803 | u-amp |  | 100% | name | 158 | 100 |  |  | Urine |  |
-| 2804 | u-as-i | nmol/l | 11% | name+unit | 16 | 0 |  | U -Arseeni, epäorgaaninen | Urine |  |
-| 2805 | u-as-i | ug/l | 14% | name+unit | 20 | 0 |  | U -Arseeni, epäorgaaninen | Urine |  |
-| 2806 | u-as-i |  | 75% | name | 107 | 100 |  | U -Arseeni, epäorgaaninen | Urine |  |
-| 2807 | u-bil |  | 100% | name | 441 | 100 |  |  | Urine |  |
-| 2808 | u-bio |  | 100% | name | 2387 | 100 |  |  | Urine |  |
-| 2809 | u-bup |  | 100% | name | 145 | 100 |  |  | Urine |  |
-| 2810 | u-bzd |  | 100% | name | 143 | 100 |  |  | Urine |  |
-| 2811 | u-cl | mmol/l | 86% | name+unit+values | 200 | 1.5 | [30.37, 49.43, 62.98, 72.55, 86.28, 96.56, 114.04, 135.66, 174.02] | U -Kloridi | Urine | Clearance |
-| 2812 | u-cl |  | 14% | name | 33 | 72.73 |  | U -Kloridi | Urine | Clearance |
-| 2813 | u-dala | umol/l | 100% | name+unit+values | 111 | 0.9 | [5, 8, 10.96, 13.72, 17, 20.55, 23.93, 29.9, 40.27] | U -Delta-aminolevulinaatti | Urine |  |
-| 2814 | u-ds4a |  | 100% | name | 461 | 100 |  |  | Urine |  |
-| 2815 | u-ds5 |  | 100% | name | 133 | 100 |  |  | Urine |  |
-| 2816 | u-ds5b |  | 100% | name | 1156 | 100 |  |  | Urine |  |
-| 2817 | u-ds6 |  | 100% | name | 386 | 100 |  |  | Urine |  |
-| 2818 | u-ds6a |  | 100% | name | 1325 | 100 |  |  | Urine |  |
-| 2819 | u-ery |  | 100% | name | 3788 | 99.71 |  |  | Urine |  |
-| 2820 | u-fyl |  | 100% | name | 145 | 100 |  |  | Urine |  |
-| 2821 | u-hg | nmol/l | 81% | name+unit | 108 | 0 |  | U -Elohopea | Urine |  |
-| 2822 | u-hg |  | 19% | name | 25 | 100 |  | U -Elohopea | Urine |  |
-| 2823 | u-i | ug/l | 94% | name+unit+values | 309 | 0 | [44.03, 61.73, 78.06, 96.82, 115.33, 136.79, 163.87, 204.07, 318.14] | U -Jodidi | Urine |  |
-| 2824 | u-i |  | 6% | name | 18 | 88.89 |  | U -Jodidi | Urine |  |
-| 2825 | u-inf |  | 100% | name | 51657 | 100 |  |  | Urine |  |
-| 2826 | u-intp | nmol/mmol | 66% | name+unit+values | 2098 | 0 | [16.36, 22.55, 28.43, 35.25, 42.57, 53.83, 68.67, 92.78, 154.47] | U -Kollageeni I:n aminoterminaalinen telopeptidi | Urine |  |
-| 2827 | u-intp | nmol/mmolkr | 0% | name+unit | 14 | 0 |  | U -Kollageeni I:n aminoterminaalinen telopeptidi | Urine |  |
-| 2828 | u-intp | ratio | 1% | name+unit | 47 | 0 |  | U -Kollageeni I:n aminoterminaalinen telopeptidi | Urine |  |
-| 2829 | u-intp |  | 32% | name | 1030 | 94.47 |  | U -Kollageeni I:n aminoterminaalinen telopeptidi | Urine |  |
-| 2830 | u-kivi | form | 3% | name+unit | 60 | 100 |  | U -Kivianalyysi | Urine |  |
-| 2831 | u-kivi |  | 97% | name | 1820 | 100 |  | U -Kivianalyysi | Urine |  |
-| 2832 | u-mg | mmol/l | 83% | name+unit+values | 123 | 0.81 | [0.84, 1.34, 1.62, 1.98, 2.27, 2.78, 3.64, 4.45, 6.45] | U -Magnesium | Urine |  |
-| 2833 | u-mg |  | 17% | name | 26 | 38.46 |  | U -Magnesium | Urine |  |
-| 2834 | u-mtd |  | 100% | name | 144 | 100 |  |  | Urine |  |
-| 2835 | u-ni | form | 5% | name+unit | 57 | 0 |  | U -Nikkeli | Urine |  |
-| 2836 | u-ni | ug/l | 5% | name+unit | 65 | 0 |  | U -Nikkeli | Urine |  |
-| 2837 | u-ni | umol/l | 63% | name+unit+values | 754 | 0 | [0.01, 0.01, 0.02, 0.02, 0.02, 0.03, 0.03, 0.04, 0.06] | U -Nikkeli | Urine |  |
-| 2838 | u-ni |  | 27% | name | 323 | 90.71 |  | U -Nikkeli | Urine |  |
-| 2839 | u-pbg | umol/l | 86% | name+unit+values | 248 | 1.61 | [1, 2, 2, 3, 3.9, 4.42, 5, 6.04, 8.79] | U -Porfobilinogeeni | Urine |  |
-| 2840 | u-pbg | umol/mmol | 2% | name+unit | 6 | 0 |  | U -Porfobilinogeeni | Urine |  |
-| 2841 | u-pbg |  | 11% | name | 33 | 51.52 |  | U -Porfobilinogeeni | Urine |  |
-| 2842 | u-pgb |  | 100% | name | 144 | 100 |  |  | Urine |  |
-| 2843 | u-ph. |  | 100% | name+values | 24516 | 1.33 | [5, 5.5, 5.5, 5.87, 6, 6.26, 6.5, 6.96, 7.02] |  | Urine |  |
-| 2844 | u-phv |  | 100% | name+values | 737 | 0.27 | [5, 5.5, 5.5, 5.66, 6, 6, 6.5, 7, 7] |  | Urine |  |
-| 2845 | u-pi | mmol/l | 90% | name+unit+values | 772 | 0.13 | [4.87, 7.61, 10.55, 13.2, 16.31, 20.1, 24.74, 31.17, 40.13] | U -Fosfaatti, epäorgaaninen | Urine |  |
-| 2846 | u-pi |  | 10% | name | 84 | 54.76 |  | U -Fosfaatti, epäorgaaninen | Urine |  |
-| 2847 | u-pyr | form | 7% | name+unit | 7 | 0 |  | U -Pyrenoli (1) | Urine |  |
-| 2848 | u-pyr | ug/l | 6% | name+unit | 6 | 0 |  | U -Pyrenoli (1) | Urine |  |
-| 2849 | u-pyr |  | 87% | name | 88 | 100 |  | U -Pyrenoli (1) | Urine |  |
-| 2850 | u-sed |  | 100% | name | 2162 | 99.95 |  |  | Urine |  |
-| 2851 | u-sg | kg/l | 98% | name+unit+values | 3827 | 0 | [1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
-| 2852 | u-sg |  | 2% | name+values | 75 | 100 | [1, 1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.03] |  | Urine |  |
-| 2853 | u-thc |  | 100% | name | 157 | 100 |  |  | Urine |  |
-| 2854 | u-tml |  | 100% | name | 145 | 100 |  |  | Urine |  |
-| 2855 | u-ubg |  | 100% | name | 441 | 100 |  |  | Urine |  |
-| 2856 | us-tsh | mu/l | 85% | name+unit+values | 415 | 0.72 | [3.59, 4.74, 5.45, 6.2, 7.04, 7.92, 9.44, 11.82, 16.59] | uS-Tyreotropiini | Umbilical (blood) serum |  |
-| 2857 | us-tsh |  | 15% | name | 75 | 33.33 |  | uS-Tyreotropiini | Umbilical (blood) serum |  |
-| 2858 | vp-dop |  | 100% | name | 154 | 100 |  | Valtimopaine, dopplermittaus |  |  |
+| 2677 | -ana | titre | 11% | name+unit | 21 | 0 |  | -Tuma, vasta-aineet |  |  |
+| 2678 | -ana |  | 89% | name | 169 | 100 |  | -Tuma, vasta-aineet |  |  |
+| 2679 | b-adp | auc | 8% | name+unit | 28 | 0 |  |  | Blood |  |
+| 2680 | b-adp |  | 92% | name | 340 | 100 |  |  | Blood |  |
+| 2681 | b-aspi | auc | 8% | name+unit | 28 | 0 |  |  | Blood |  |
+| 2682 | b-aspi |  | 92% | name | 340 | 100 |  |  | Blood |  |
+| 2683 | b-vasp | % | 71% | name+unit+values | 165 | 0.61 | [15.75, 23.9, 29.38, 35.29, 42.07, 50.51, 57, 61.68, 75.5] |  | Blood |  |
+| 2684 | b-vasp |  | 29% | name | 67 | 100 |  |  | Blood |  |
+| 2685 | du-5hiaa | umol | 49% | name+unit+values | 332 | 0 | [14.84, 17.93, 19.97, 21.95, 24.09, 26.9, 29.86, 35.62, 54.61] | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  |
+| 2686 | du-5hiaa | umol/24h | 26% | name+unit+values | 175 | 0 | [12.52, 16.28, 19.6, 22.92, 25.58, 30.54, 36.9, 47, 66.84] | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  |
+| 2687 | du-5hiaa | umol/l | 4% | name+unit | 25 | 0 |  | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  |
+| 2688 | du-5hiaa |  | 22% | name | 147 | 100 |  | dU-Hydroksi-indolyyliasetaatti (5-) | 24-hour urine |  |
+| 2689 | fs-ace | u/l | 91% | name+unit+values | 33401 | 0 | [20.01, 26.72, 31.85, 36.77, 41.74, 47.12, 53.86, 62.72, 77.07] | fS-Angiotensiini-1-konvertaasi | Fasting serum |  |
+| 2690 | fs-ace |  | 9% | name+values | 3291 | 100 | [11.74, 22.42, 28.98, 33.88, 39.56, 44.46, 50.35, 61.63, 75.64] | fS-Angiotensiini-1-konvertaasi | Fasting serum |  |
+| 2691 | fs-ffa | mmol/l | 90% | name+unit+values | 170 | 0.59 | [0.18, 0.25, 0.3, 0.38, 0.42, 0.5, 0.56, 0.69, 0.9] | fS-Rasvahapot, vapaat | Fasting serum |  |
+| 2692 | fs-ffa |  | 10% | name | 19 | 100 |  | fS-Rasvahapot, vapaat | Fasting serum |  |
+| 2693 | p-hae |  | 100% | name | 461 | 100 |  |  | Plasma |  |
+| 2694 | p-hcg | iu/l | 3% | name+unit+values | 858 | 0 | [3.48, 10.49, 27.21, 71.9, 194.98, 530.06, 1481.95, 5270.49, 17544.85] | P -Koriongonadotropiini | Plasma |  |
+| 2695 | p-hcg | u/l | 45% | name+unit+values | 13156 | 0 | [0, 1.47, 5, 22.74, 99.28, 332.77, 1072.06, 3554.69, 18400.55] | P -Koriongonadotropiini | Plasma |  |
+| 2696 | p-hcg |  | 52% | name+values | 15471 | 100 | [2.3, 12.1, 34.61, 97.94, 275.98, 842.13, 2833.73, 7394.19, 31975.3] | P -Koriongonadotropiini | Plasma |  |
+| 2697 | p-he4 | pmol/l | 100% | name+unit+values | 2505 | 0 | [38.56, 42.77, 46.8, 51.21, 56.04, 62.65, 72.66, 92.27, 148.13] | P -Epididymaalinen antigeeni 4 (HE4) | Plasma |  |
+| 2698 | p-he4 |  | 0% | name | 6 | 100 |  | P -Epididymaalinen antigeeni 4 (HE4) | Plasma |  |
+| 2699 | p-hepg |  | 100% | name | 107 | 100 |  |  | Plasma |  |
+| 2700 | p-hok |  | 100% | name | 397 | 100 |  |  | Plasma |  |
+| 2701 | p-shbg | nmol/l | 51% | name+unit+values | 791 | 0 | [18.05, 23.19, 26.53, 30.08, 34.17, 38.11, 43.33, 50.43, 63.58] |  | Plasma |  |
+| 2702 | p-shbg |  | 49% | name+values | 758 | 100 | [17.44, 21.87, 26.42, 30.98, 35.64, 41.79, 47.18, 56.49, 73.47] |  | Plasma |  |
+| 2703 | s-5hiaa | nmol/l | 99% | name+unit+values | 10313 | 0 | [44.24, 52.84, 60.81, 69.7, 80.24, 95.18, 123.37, 200.27, 541.18] | S-Hydroksi-indolyyliasetaatti (5-) | Serum |  |
+| 2704 | s-5hiaa |  | 1% | name | 153 | 100 |  | S-Hydroksi-indolyyliasetaatti (5-) | Serum |  |
+| 2705 | s-ace | u/l | 74% | name+unit+values | 2203 | 0 | [19.71, 28.37, 33.66, 38.43, 43.04, 48.17, 53.91, 61.65, 75.1] |  | Serum |  |
+| 2706 | s-ace |  | 26% | name+values | 769 | 100 | [21.46, 30.53, 35.19, 38.74, 43.02, 46.74, 52.18, 58.12, 66.5] |  | Serum |  |
+| 2707 | s-ada | u/l | 94% | name+unit+values | 4147 | 0 | [7, 8.11, 9.17, 10.37, 11.58, 13.01, 14.79, 17.22, 21.44] | S -Adenosiinideaminaasi | Serum |  |
+| 2708 | s-ada |  | 6% | name | 259 | 100 |  | S -Adenosiinideaminaasi | Serum |  |
+| 2709 | s-afp | u/ml | 74% | name+unit+values | 18186 | 0.02 | [1.8, 2.09, 2.61, 3.01, 3.61, 4.34, 5.57, 7.78, 25.89] | S -Alfa-1-fetoproteiini | Serum |  |
+| 2710 | s-afp | ug/l | 10% | name+unit+values | 2515 | 0.2 | [2, 2.19, 3, 3.92, 4.18, 5.4, 6.88, 9.63, 20.48] | S -Alfa-1-fetoproteiini | Serum |  |
+| 2711 | s-afp |  | 16% | name+values | 4026 | 100 | [2, 2.04, 3, 3.01, 3.97, 4, 5, 6.37, 9.78] | S -Alfa-1-fetoproteiini | Serum |  |
+| 2712 | s-afp/d | u/ml | 83% | name+unit+values | 234 | 0 | [15.07, 17.36, 19.66, 21.92, 23.81, 26.18, 29.19, 33.19, 39.28] |  | Serum |  |
+| 2713 | s-afp/d |  | 17% | name | 49 | 100 |  |  | Serum |  |
+| 2714 | s-amh | ug/l | 88% | name+unit+values | 9545 | 0 | [0.41, 0.85, 1.31, 1.76, 2.25, 2.87, 3.65, 4.79, 7.19] | S -Anti-Muller hormoni | Serum |  |
+| 2715 | s-amh |  | 12% | name+values | 1328 | 100 | [0.75, 1.12, 1.6, 2, 2.6, 3.25, 3.89, 5.15, 6.81] | S -Anti-Muller hormoni | Serum |  |
+| 2716 | s-ami | mg/l | 49% | name+unit+values | 294 | 0 | [1.26, 1.45, 1.68, 2.02, 2.66, 3.31, 4.38, 6.23, 11.11] | S -Amikasiini | Serum |  |
+| 2717 | s-ami |  | 51% | name | 308 | 100 |  | S -Amikasiini | Serum |  |
+| 2718 | s-ana | titre | 26% | name+unit+values | 21493 | 0 | [80, 159.91, 214.87, 320, 320, 320, 522.82, 1051.43, 1384.04] | S -Tuma, vasta-aineet | Serum |  |
+| 2719 | s-ana |  | 74% | name | 62781 | 100 |  | S -Tuma, vasta-aineet | Serum |  |
+| 2720 | s-asca | u/ml | 22% | name+unit | 89 | 0 |  | S -Saccharomyces cerevisiae, vasta-aineet | Serum |  |
+| 2721 | s-asca |  | 78% | name | 316 | 100 |  | S -Saccharomyces cerevisiae, vasta-aineet | Serum |  |
+| 2722 | s-ast | iu/ml | 44% | name+unit+values | 2404 | 0 | [53.94, 68.05, 79.53, 94.83, 113.69, 141.82, 180.88, 246.57, 415.18] | S -Antistreptolysiini | Serum |  |
+| 2723 | s-ast | titre | 0% | name+unit | 7 | 0 |  | S -Antistreptolysiini | Serum |  |
+| 2724 | s-ast | u/ml | 8% | name+unit+values | 408 | 0 | [30.69, 40.68, 53.25, 70.32, 94.82, 134.06, 198.84, 380.5, 767.49] | S -Antistreptolysiini | Serum |  |
+| 2725 | s-ast |  | 48% | name+values | 2603 | 100 | [61.25, 72.75, 89.71, 105.94, 136, 193.17, 248, 404.5, 714.67] | S -Antistreptolysiini | Serum |  |
+| 2726 | s-asta | iu/ml | 10% | name+unit+values | 256 | 0 | [2, 2, 2, 2, 3, 4, 4.2, 6, 8] | S -Antistafylolysiini | Serum |  |
+| 2727 | s-asta | u/ml | 0% | name+unit | 10 | 0 |  | S -Antistafylolysiini | Serum |  |
+| 2728 | s-asta |  | 89% | name | 2266 | 100 |  | S -Antistafylolysiini | Serum |  |
+| 2729 | s-br | mmol/l | 100% | name+unit | 130 | 2.31 |  | S -Bromidi | Serum |  |
+| 2730 | s-dhea | nmol/l | 84% | name+unit+values | 398 | 0 | [2.51, 3.94, 5.32, 7.57, 10.22, 13.71, 18.17, 23.83, 35.37] | S -Dehydroepiandrosteroni | Serum |  |
+| 2731 | s-dhea |  | 16% | name | 74 | 100 |  | S -Dehydroepiandrosteroni | Serum |  |
+| 2732 | s-dheas | umol/l | 92% | name+unit+values | 3797 | 0 | [1.08, 1.91, 2.83, 3.72, 4.53, 5.45, 6.59, 8, 10.09] | S -Dehydroepiandrosteroni, sulfaatti | Serum |  |
+| 2733 | s-dheas |  | 8% | name+values | 331 | 100 | [1.32, 2.02, 2.87, 3.83, 4.89, 5.72, 6.85, 7.86, 9.48] | S -Dehydroepiandrosteroni, sulfaatti | Serum |  |
+| 2734 | s-e1 | pmol/l | 80% | name+unit+values | 123 | 0 | [71.12, 113.75, 135.4, 184.19, 225.67, 280.98, 347.05, 435.31, 614] | S -Estroni | Serum |  |
+| 2735 | s-e1 |  | 20% | name | 30 | 100 |  | S -Estroni | Serum |  |
+| 2736 | s-e2 | nmol/l | 81% | name+unit+values | 10351 | 0 | [0.07, 0.1, 0.13, 0.16, 0.2, 0.27, 0.37, 0.54, 0.98] | S -Estradioli | Serum |  |
+| 2737 | s-e2 |  | 19% | name+values | 2381 | 100 | [0.07, 0.1, 0.11, 0.14, 0.17, 0.2, 0.26, 0.37, 0.59] | S -Estradioli | Serum |  |
+| 2738 | s-ema |  | 100% | name | 2245 | 100 |  | S -Endomysium, vasta-aineet | Serum |  |
+| 2739 | s-ena |  | 100% | name+values | 1469 | 100 | [0.1, 0.1, 0.1, 0.2, 0.2, 0.22, 0.3, 0.5, 1.15] |  | Serum |  |
+| 2740 | s-enal |  | 100% | name | 832 | 100 |  |  | Serum |  |
+| 2741 | s-ffa | mmol/l | 100% | name+unit+values | 518 | 0 | [0.03, 0.04, 0.08, 0.13, 0.18, 0.28, 0.44, 0.57, 0.75] |  | Serum |  |
+| 2742 | s-gen | mg/l | 52% | name+unit+values | 373 | 0.27 | [0.5, 0.66, 0.76, 0.89, 0.99, 1.17, 1.47, 2.03, 3.89] | S -Gentamysiini | Serum |  |
+| 2743 | s-gen |  | 48% | name | 339 | 100 |  | S -Gentamysiini | Serum |  |
+| 2744 | s-hae |  | 100% | name | 751 | 100 |  |  | Serum |  |
+| 2745 | s-hbe |  | 100% | name | 347 | 100 |  |  | Serum |  |
+| 2746 | s-hcg | iu/l | 9% | name+unit+values | 2181 | 0 | [2.03, 3.95, 10.46, 38.54, 127.28, 369.25, 940.92, 2982.24, 13488.73] | S -Koriongonadotropiini | Serum |  |
+| 2747 | s-hcg | u/l | 24% | name+unit+values | 5914 | 0.08 | [5.54, 20.85, 66.85, 168.4, 361.64, 670.15, 1496.54, 4307.97, 16838.39] | S -Koriongonadotropiini | Serum |  |
+| 2748 | s-hcg |  | 67% | name+values | 16592 | 100 | [8.52, 18.24, 40.62, 113.39, 319.93, 924.91, 3362.22, 10372.34, 38864.49] | S -Koriongonadotropiini | Serum |  |
+| 2749 | s-he4 | pmol/l | 96% | name+unit+values | 11193 | 0 | [31.8, 37.2, 41.86, 46.93, 53.05, 60.93, 73.32, 98.06, 184.4] | S -Epididymaalinen antigeeni 4 (HE4) | Serum |  |
+| 2750 | s-he4 |  | 4% | name+values | 420 | 100 | [28.89, 32.42, 35.14, 39.73, 42.86, 45.92, 51.27, 61.15, 81.37] | S -Epididymaalinen antigeeni 4 (HE4) | Serum |  |
+| 2751 | s-kem |  | 100% | name | 1473 | 100 |  |  | Serum |  |
+| 2752 | s-kyhemag | titre | 18% | name+unit+values | 180 | 0 | [8, 16, 16, 28.54, 32, 64, 163.55, 483.7, 1556.48] | S -Kylmähemagglutiniinit | Serum |  |
+| 2753 | s-kyhemag |  | 82% | name | 826 | 100 |  | S -Kylmähemagglutiniinit | Serum |  |
+| 2754 | s-shbg | nmol/l | 98% | name+unit+values | 29338 | 0 | [16.87, 21.37, 25.24, 29.25, 33.23, 37.98, 43.66, 51.48, 65.24] | S -Sukupuolihormoneja sitova globuliini | Serum |  |
+| 2755 | s-shbg |  | 2% | name | 614 | 100 |  | S -Sukupuolihormoneja sitova globuliini | Serum |  |
+| 2756 | s-tati | nmol/l | 51% | name+unit+values | 551 | 0 | [1.3, 1.48, 1.65, 1.82, 2.09, 2.38, 2.76, 3.46, 6.22] | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  |
+| 2757 | s-tati | ug/l | 41% | name+unit+values | 446 | 0 | [6.73, 8.09, 9.02, 9.95, 11.09, 12.18, 13.95, 17.1, 31.19] | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  |
+| 2758 | s-tati |  | 8% | name | 86 | 100 |  | S -Tuumoriin liittyvä trypsiini-inhibiittori | Serum |  |
+| 2759 | s-van | mg/l | 96% | name+unit+values | 36935 | 0 | [6.88, 8.63, 10, 11.22, 12.44, 13.72, 15.08, 16.91, 19.82] | S -Vankomysiini | Serum |  |
+| 2760 | s-van |  | 4% | name | 1695 | 100 |  | S -Vankomysiini | Serum |  |
+| 2761 | ts-res |  | 100% | name | 1353 | 100 |  | Ts-Reseptoritutkimus | Tissue |  |
+| 2762 | u-hcg | iu/l | 28% | name+unit+values | 93 | 0 | [1.4, 1.54, 1.7, 1.9, 2.16, 2.3, 2.81, 31.3, 4256] | U -Koriongonadotropiini | Urine |  |
+| 2763 | u-hcg | u/l | 4% | name+unit | 15 | 0 |  | U -Koriongonadotropiini | Urine |  |
+| 2764 | u-hcg |  | 68% | name | 227 | 100 |  | U -Koriongonadotropiini | Urine |  |
 

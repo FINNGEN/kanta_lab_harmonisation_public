@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,36 +139,88 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 73 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 5775 | -hinfnho |  | 100% | name | 311 | 100 |  |  |  |  |
-| 5776 | -hinnho |  | 100% | name | 3618 | 100 |  |  |  |  |
-| 5777 | -inabnho |  | 100% | name | 4313 | 100 |  | -Influenssa A ja B-virus, nukleiinihappo (kval) |  |  |
-| 5778 | -inabnhoho |  | 100% | name | 387 | 100 |  |  |  |  |
-| 5779 | -inabrsnho |  | 100% | name | 432 | 100 |  |  |  |  |
-| 5780 | -inanho |  | 100% | name | 356 | 100 |  |  |  |  |
-| 5781 | -inanhoho |  | 100% | name | 409 | 100 |  |  |  |  |
-| 5782 | -inbnho |  | 100% | name | 356 | 100 |  |  |  |  |
-| 5783 | -inbnhoho |  | 100% | name | 411 | 100 |  |  |  |  |
-| 5784 | -infanho |  | 100% | name | 122873 | 100 |  | -Influenssa A -virus, nukleiinihappo (kval) |  |  |
-| 5785 | -infbnho |  | 100% | name | 95902 | 100 |  | -Influenssa B-virus, nukleiinihappo (kval) |  |  |
-| 5786 | -infvnho |  | 100% | name | 1260 | 100 |  | -Influenssa A-virus, variantti, nukleiinihappo (kval) |  |  |
-| 5787 | -pin1nho |  | 100% | name | 9246 | 100 |  | -Parainfluenssa 1-virus, nukleiinihappo (kval) |  |  |
-| 5788 | -pin2nho |  | 100% | name | 9244 | 100 |  | -Parainfluenssa 2-virus, nukleiinihappo (kval) |  |  |
-| 5789 | -pin3nho |  | 100% | name | 9240 | 100 |  | -Parainfluenssa 3-virus, nukleiinihappo (kval) |  |  |
-| 5790 | -pin4nho |  | 100% | name | 9240 | 100 |  | -Parainfluenssa 4-virus, nukleiinihappo (kval) |  |  |
-| 5791 | -pinfnho |  | 100% | name | 5018 | 100 |  |  |  |  |
-| 5792 | -rinonho |  | 100% | name | 7403 | 100 |  | -Rinovirus, nukleiinihappo (kval) |  |  |
-| 5793 | -tintnho |  | 100% | name | 595 | 100 |  |  |  |  |
-| 5794 | hinflnho |  | 100% | name | 745 | 100 |  |  |  |  |
-| 5795 | inanho |  | 100% | name | 7494 | 100 |  |  |  |  |
-| 5796 | inbnho |  | 100% | name | 7494 | 100 |  |  |  |  |
-| 5797 | infanho |  | 100% | name | 12417 | 100 |  |  |  |  |
-| 5798 | infbnho |  | 100% | name | 34660 | 100 |  |  |  |  |
-| 5799 | infnho |  | 100% | name | 766 | 100 |  |  |  |  |
-| 5800 | pin1nho |  | 100% | name | 4037 | 100 |  |  |  |  |
-| 5801 | pin2nho |  | 100% | name | 4036 | 100 |  |  |  |  |
-| 5802 | pin3nho |  | 100% | name | 4036 | 100 |  |  |  |  |
-| 5803 | pin4nho |  | 100% | name | 4034 | 100 |  |  |  |  |
-| 5804 | rinonho |  | 100% | name | 245 | 100 |  |  |  |  |
+| 5506 | -kskäynt |  | 100% | name | 14336 | 100 |  |  |  |  |
+| 5507 | -ku72/86 |  | 100% | name | 958 | 100 |  |  |  |  |
+| 5508 | -nudt15 |  | 100% | name+values | 2593 | 100 | [16, 16, 16, 16, 16, 16, 16, 16, 16] |  |  |  |
+| 5509 | -s.yht. | e6 | 95% | name+unit+values | 1504 | 0 | [1.76, 9.88, 23.81, 46.09, 70.79, 95.11, 132.38, 178.2, 261.34] |  |  |  |
+| 5510 | -s.yht. |  | 5% | name | 83 | 100 |  |  |  |  |
+| 5511 | -selvtyö |  | 100% | name | 360 | 100 |  |  |  |  |
+| 5512 | -siitt. | e6/ml | 38% | name+unit+values | 1198 | 0 | [1.77, 7.42, 17.66, 25.89, 34.94, 43.13, 56.07, 73.53, 101.25] |  |  |  |
+| 5513 | -siitt. |  | 62% | name | 1937 | 100 |  |  |  |  |
+| 5514 | audit | form | 45% | name+unit+values | 399 | 0 | [0, 1, 2, 2.47, 3, 4, 4.99, 6.54, 8.56] |  |  |  |
+| 5515 | audit |  | 55% | name+values | 480 | 100 | [0, 0.98, 1, 2, 2.42, 3.62, 4, 5.74, 8.96] |  |  |  |
+| 5516 | audit-c |  | 100% | name+values | 187 | 100 | [1, 1, 2, 2, 3, 3, 3, 4, 5] |  |  |  |
+| 5517 | dnauut1 |  | 100% | name | 166 | 100 |  |  |  |  |
+| 5518 | f-kystat |  | 100% | name | 7014 | 100 |  |  | Feces |  |
+| 5519 | ku72/86 |  | 100% | name | 1497 | 100 |  |  |  |  |
+| 5520 | p-d-25 | nmol/l | 99% | name+unit+values | 93835 | 0 | [47.27, 57.52, 64.99, 71.99, 78.59, 85.79, 93.98, 104.82, 121.75] | P -D-vitamiini-25-OH | Plasma |  |
+| 5521 | p-d-25 |  | 1% | name | 1037 | 100 |  | P -D-vitamiini-25-OH | Plasma |  |
+| 5522 | p-kysc | mg/l | 100% | name+unit+values | 55470 | 0 | [0.84, 0.96, 1.08, 1.23, 1.41, 1.63, 1.91, 2.32, 3.12] | P -Kystatiini C | Plasma |  |
+| 5523 | p-kysc |  | 0% | name | 196 | 100 |  | P -Kystatiini C | Plasma |  |
+| 5524 | p-nkäs10 |  | 100% | name | 803 | 100 |  |  | Plasma |  |
+| 5525 | s-5-ht | nmol/l | 87% | name+unit+values | 224 | 0 | [100.62, 206.57, 388.63, 493.54, 647.03, 818.29, 936.71, 1116.9, 1624] | S -Hydroksitryptamiini (5-) | Serum |  |
+| 5526 | s-5-ht |  | 13% | name | 33 | 100 |  | S -Hydroksitryptamiini (5-) | Serum |  |
+| 5527 | s-ck-is |  | 100% | name | 326 | 100 |  | S -Kreatiinikinaasi, isoentsyymit | Serum | Isoenzymes |
+| 5528 | s-ctdscr |  | 100% | name+values | 123 | 100 | [0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.3, 0.41, 1.2] |  | Serum |  |
+| 5529 | s-d-1,25 | pmol/l | 87% | name+unit+values | 5369 | 0.02 | [55.49, 72.65, 85.92, 96.71, 107.01, 117.78, 130.2, 146.12, 170.51] | S -D-vitamiini-1,25-OH | Serum |  |
+| 5530 | s-d-1,25 |  | 13% | name+values | 793 | 100 | [53.62, 70.32, 82.73, 93.66, 102.64, 113.83, 125.96, 141.84, 170.33] | S -D-vitamiini-1,25-OH | Serum |  |
+| 5531 | s-d-25 | nmol/l | 99% | name+unit+values | 395823 | 0 | [46.37, 55.92, 63.01, 69.37, 75.68, 82.28, 90.01, 100.09, 116.33] | S -D-vitamiini-25-OH | Serum |  |
+| 5532 | s-d-25 |  | 1% | name | 3522 | 100 |  | S -D-vitamiini-25-OH | Serum |  |
+| 5533 | s-d-25-32 | nmol/l | 95% | name+unit+values | 1945 | 0 | [42.81, 52.88, 60.32, 66.43, 72.91, 78.86, 85.75, 94.48, 107.92] |  | Serum |  |
+| 5534 | s-d-25-32 |  | 5% | name+values | 109 | 100 | [39, 42, 47.62, 52.5, 62.5, 67, 77, 85, 101] |  | Serum |  |
+| 5535 | s-d2-25 | nmol/l | 24% | name+unit+values | 140 | 0 | [8.95, 11, 12.5, 14, 16, 18.32, 20.85, 26.09, 34.5] | S -D2-vitamiini-25-OH | Serum |  |
+| 5536 | s-d2-25 |  | 76% | name | 436 | 100 |  | S -D2-vitamiini-25-OH | Serum |  |
+| 5537 | s-d3-25 | nmol/l | 93% | name+unit+values | 2269 | 0 | [41.3, 52.08, 59.25, 66.03, 72.52, 78.44, 84.87, 93.25, 107.79] | S -D3-vitamiini-25-OH | Serum |  |
+| 5538 | s-d3-25 |  | 7% | name+values | 183 | 100 | [44, 51, 58.4, 64.35, 70, 77.2, 85, 91.25, 101] | S -D3-vitamiini-25-OH | Serum |  |
+| 5539 | s-ketiap | nmol/l | 73% | name+unit+values | 678 | 0 | [92.76, 170.13, 253.54, 334.41, 416.64, 519.04, 659.62, 894.01, 1335.87] | S -Ketiapiini | Serum |  |
+| 5540 | s-ketiap |  | 27% | name+values | 253 | 100 | [86.16, 138.77, 221.12, 302.45, 415.62, 487.41, 585.26, 794.71, 1304.5] | S -Ketiapiini | Serum |  |
+| 5541 | s-kid10 |  | 100% | name | 729 | 100 |  |  | Serum |  |
+| 5542 | s-kipa |  | 100% | name | 39484 | 100 |  |  | Serum |  |
+| 5543 | s-krtiin | umol/l | 100% | name+unit+values | 334 | 0 | [53.14, 57.95, 63.02, 66.17, 69.73, 74.27, 79.36, 85.56, 91.27] | S -Kreatiini | Serum |  |
+| 5544 | s-kubico |  | 100% | name | 571 | 100 |  |  | Serum |  |
+| 5545 | s-kysc | mg/l | 87% | name+unit+values | 5526 | 0 | [0.81, 0.89, 0.98, 1.06, 1.17, 1.31, 1.51, 1.81, 2.34] | S -Kystatiini C | Serum |  |
+| 5546 | s-kysc |  | 13% | name+values | 848 | 100 | [0.94, 1.14, 1.25, 1.38, 1.56, 1.78, 1.97, 2.33, 2.99] | S -Kystatiini C | Serum |  |
+| 5547 | s-käsmak |  | 100% | name | 312 | 100 |  |  | Serum |  |
+| 5548 | s-ld-1 | % | 92% | name+unit+values | 212 | 1.42 | [16.74, 19.25, 20.9, 22.13, 23.41, 24.74, 26.56, 27.97, 32] | S -Laktaattidehydrogenaasi, isoentsyymi 1 | Serum |  |
+| 5549 | s-ld-1 |  | 8% | name | 18 | 100 |  | S -Laktaattidehydrogenaasi, isoentsyymi 1 | Serum |  |
+| 5550 | s-ld-2 | % | 92% | name+unit+values | 200 | 0.5 | [31.26, 33.03, 34.03, 35.18, 36.53, 37.55, 38.57, 39.48, 41.3] |  | Serum |  |
+| 5551 | s-ld-2 |  | 8% | name | 17 | 100 |  |  | Serum |  |
+| 5552 | s-ld-3 | % | 91% | name+unit+values | 198 | 0.51 | [16.7, 18.6, 19.86, 20.8, 21.55, 22.38, 23.44, 24.42, 25.95] |  | Serum |  |
+| 5553 | s-ld-3 |  | 9% | name | 19 | 100 |  |  | Serum |  |
+| 5554 | s-ld-4 | % | 91% | name+unit+values | 195 | 0.51 | [5.62, 6.8, 7.36, 8.13, 8.54, 9.23, 10.04, 10.9, 12.07] |  | Serum |  |
+| 5555 | s-ld-4 |  | 9% | name | 19 | 100 |  |  | Serum |  |
+| 5556 | s-ld-5 | % | 91% | name+unit+values | 210 | 0.95 | [5.03, 6.14, 7.01, 7.64, 8.6, 9.45, 10.74, 12.13, 15.29] | S -Laktaattidehydrogenaasi, isoentsyymi 5 | Serum |  |
+| 5557 | s-ld-5 |  | 9% | name | 21 | 100 |  | S -Laktaattidehydrogenaasi, isoentsyymi 5 | Serum |  |
+| 5558 | s-ld-is |  | 100% | name | 243 | 100 |  | S -Laktaattidehydrogenaasi, isoentsyymit | Serum | Isoenzymes |
+| 5559 | s-ldpit | u/l | 82% | name+unit+values | 145 | 0 | [153.9, 174.43, 189.35, 197.65, 204.73, 215.72, 233.25, 253.4, 304.1] |  | Serum |  |
+| 5560 | s-ldpit |  | 18% | name | 32 | 100 |  |  | Serum |  |
+| 5561 | s-liv2x10 |  | 100% | name | 1270 | 100 |  |  | Serum |  |
+| 5562 | s-o4.5.12 | titre | 6% | name+unit | 66 | 0 |  |  | Serum |  |
+| 5563 | s-o4.5.12 |  | 94% | name | 1134 | 100 |  |  | Serum |  |
+| 5564 | s-pm-scl | u/ml | 57% | name+unit+values | 166 | 0 | [1, 1, 1, 1, 1, 1.21, 2, 2, 3] |  | Serum |  |
+| 5565 | s-pm-scl |  | 43% | name | 125 | 100 |  |  | Serum |  |
+| 5566 | s-pmdm-t |  | 100% | name | 313 | 100 |  |  | Serum |  |
+| 5567 | s-prkäsit |  | 100% | name | 767 | 100 |  |  | Serum |  |
+| 5568 | s-w-h:a | titre | 1% | name+unit | 7 | 0 |  |  | Serum |  |
+| 5569 | s-w-h:a |  | 99% | name | 1090 | 100 |  |  | Serum |  |
+| 5570 | s-w-h:b | titre | 31% | name+unit+values | 338 | 0 | [160, 160, 320, 320, 320, 320, 640, 873.14, 2242.44] |  | Serum |  |
+| 5571 | s-w-h:b |  | 69% | name | 760 | 100 |  |  | Serum |  |
+| 5572 | s-w-h:d | titre | 15% | name+unit+values | 161 | 0 | [160, 160, 284.8, 320, 320, 640, 640, 1096, 2500] |  | Serum |  |
+| 5573 | s-w-h:d |  | 85% | name | 937 | 100 |  |  | Serum |  |
+| 5574 | s-w-h:g.m | titre | 11% | name+unit+values | 121 | 0 | [160, 160, 166.4, 320, 320, 320, 640, 640, 1280] |  | Serum |  |
+| 5575 | s-w-h:g.m |  | 89% | name | 977 | 100 |  |  | Serum |  |
+| 5576 | s-w-h:i | titre | 22% | name+unit+values | 243 | 0 | [160, 160, 160, 189.92, 320, 320, 320, 611.56, 640] |  | Serum |  |
+| 5577 | s-w-h:i |  | 78% | name | 855 | 100 |  |  | Serum |  |
+| 5578 | s-w-o6.7 | titre | 7% | name+unit+values | 78 | 0 | [80, 80, 80, 80, 133.33, 160, 160, 320, 320] |  | Serum |  |
+| 5579 | s-w-o6.7 |  | 93% | name | 980 | 100 |  |  | Serum |  |
+| 5580 | s-w-o9.12 | titre | 16% | name+unit+values | 172 | 0 | [80, 80, 80, 160, 160, 160, 160, 160, 320] |  | Serum |  |
+| 5581 | s-w-o9.12 |  | 84% | name | 885 | 100 |  |  | Serum |  |
+| 5582 | s-yskät |  | 100% | name | 102 | 100 |  |  | Serum |  |
+| 5583 | sjukhus |  | 100% | name | 696 | 100 |  |  |  |  |
+| 5584 | sukup.tau1 |  | 100% | name | 211 | 100 |  |  |  |  |
+| 5585 | sukup1 |  | 100% | name | 184 | 100 |  |  |  |  |
+| 5586 | sukup2 |  | 100% | name | 101 | 100 |  |  |  |  |
+| 5587 | u-käsma |  | 100% | name | 934 | 100 |  |  | Urine |  |
 

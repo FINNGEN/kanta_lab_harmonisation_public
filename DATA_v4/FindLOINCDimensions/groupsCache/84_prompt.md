@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,32 +139,84 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 84 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 6654 | alvhuumott |  | 100% | name | 120 | 100 |  |  |  |  |
-| 6655 | bm-notto |  | 100% | name | 364 | 100 |  |  | Bone marrow |  |
-| 6656 | gyn.notto |  | 100% | name | 1682 | 100 |  |  |  |  |
-| 6657 | huumn.otto |  | 100% | name | 1041 | 100 |  |  |  |  |
-| 6658 | n-otto |  | 100% | name | 165 | 100 |  |  |  |  |
-| 6659 | n.otto |  | 100% | name | 258 | 100 |  |  |  |  |
-| 6660 | notto |  | 100% | name | 4008 | 99.88 |  |  |  |  |
-| 6661 | notto,neuv |  | 100% | name | 634 | 100 |  |  |  |  |
-| 6662 | notto,tyks |  | 100% | name | 416 | 100 |  |  |  |  |
-| 6663 | notto/eris |  | 100% | name | 444 | 100 |  |  |  |  |
-| 6664 | nottocovid |  | 100% | name | 1700 | 100 |  |  |  |  |
-| 6665 | nottopkl |  | 100% | name | 3516 | 100 |  |  |  |  |
-| 6666 | nottoverikoe |  | 100% | name | 1735 | 100 |  |  |  |  |
-| 6667 | näyt.käsit |  | 100% | name | 520 | 100 |  |  |  |  |
-| 6668 | näyt.ot-1 |  | 100% | name | 174 | 100 |  |  |  |  |
-| 6669 | näyt.ot. |  | 100% | name | 10018 | 100 |  |  |  |  |
-| 6670 | näyt.otto |  | 100% | name | 5060 | 100 |  |  |  |  |
-| 6671 | näytekulje |  | 100% | name | 408 | 100 |  |  |  |  |
-| 6672 | näytt.otto |  | 100% | name | 7199 | 100 |  |  |  |  |
-| 6673 | näytteenot |  | 100% | name | 600 | 100 |  |  |  |  |
-| 6674 | näytteenotto |  | 100% | name | 1441 | 100 |  |  |  |  |
-| 6675 | ottotapa | h | 1% | name+unit+values | 452 | 0 | [2, 2.94, 3.78, 4, 4, 5, 5.83, 6.78, 8] |  |  |  |
-| 6676 | ottotapa |  | 99% | name | 73358 | 100 |  |  |  |  |
-| 6677 | u-ottotap |  | 100% | name | 363 | 100 |  |  | Urine |  |
-| 6678 | u-tutk/ottotapa |  | 100% | name | 5714 | 100 |  |  | Urine |  |
-| 6679 | valv.notto |  | 100% | name | 502 | 100 |  |  |  |  |
+| 6367 | gt-cdt-ind |  | 100% | name+values | 8671 | 100 | [2.7, 3.02, 3.27, 3.52, 3.77, 4.04, 4.34, 4.72, 5.26] |  |  | Index |
+| 6368 | p-at3-spr | % | 73% | name+unit+values | 330 | 0 | [86.92, 91.6, 95.11, 97.89, 99.97, 102.97, 106.49, 109.7, 115.54] |  | Plasma |  |
+| 6369 | p-at3-spr |  | 27% | name+values | 124 | 100 | [91.42, 95.11, 98.49, 101, 103.88, 105.86, 108, 111.89, 116] |  | Plasma |  |
+| 6370 | p-traispr | s | 20% | name+unit | 110 | 0 |  |  | Plasma |  |
+| 6371 | p-traispr |  | 80% | name | 448 | 100 |  |  | Plasma |  |
+| 6372 | p-tt-spa | % | 79% | name+unit+values | 450 | 0 | [61.6, 74.33, 80.55, 86.92, 91.78, 97.31, 102.37, 109.68, 121.76] |  | Plasma |  |
+| 6373 | p-tt-spa |  | 21% | name+values | 123 | 100 | [76.4, 84, 88.55, 95.06, 100.62, 106.53, 112.4, 120.3, 128.2] |  | Plasma |  |
+| 6374 | p-tt-spr | % | 84% | name+unit+values | 511 | 0 | [71.66, 80.46, 86.05, 90.09, 94.9, 100.49, 106.6, 112.1, 123.79] |  | Plasma |  |
+| 6375 | p-tt-spr |  | 16% | name+values | 99 | 100 | [65, 81.47, 86.4, 93.7, 99, 103.7, 111.13, 117.4, 123] |  | Plasma |  |
+| 6376 | pd-bavikäs |  | 100% | name | 196 | 100 |  |  | Peritoneal dialysis fluid |  |
+| 6377 | pf-ada/s-ada |  | 100% | name+values | 123 | 100 | [0.3, 0.4, 0.5, 0.64, 0.77, 0.81, 1, 1.32, 1.74] |  | Pleural fluid |  |
+| 6378 | pt-abiras |  | 100% | name | 244 | 100 |  |  | Patient |  |
+| 6379 | pt-acth-r1 |  | 100% | name | 726 | 100 |  | Pt-Adrenokortikotropiini-koe, lyhyt | Patient |  |
+| 6380 | pt-acth-ro |  | 100% | name | 107 | 100 |  |  | Patient |  |
+| 6381 | pt-acthrma |  | 100% | name | 217 | 100 |  |  | Patient |  |
+| 6382 | pt-acthrmk |  | 100% | name | 332 | 100 |  |  | Patient |  |
+| 6383 | pt-ada-ind |  | 100% | name+values | 626 | 100 | [0.3, 0.48, 0.6, 0.76, 0.9, 1, 1.2, 1.5, 2.31] |  | Patient | Index |
+| 6384 | pt-aiv-pet |  | 100% | name | 106 | 100 |  |  | Patient |  |
+| 6385 | pt-aktig |  | 100% | name | 176 | 100 |  | Pt-Liikeativiteettirekisteröinti, aktigrafia | Patient |  |
+| 6386 | pt-aktig-2 |  | 100% | name | 154 | 100 |  | Pt-Liikeaktiviteettirekisteröinti, aktigrafia, vaativa | Patient |  |
+| 6387 | pt-angirtg |  | 100% | name | 364 | 100 |  |  | Patient |  |
+| 6388 | pt-cert |  | 100% | name | 315 | 100 |  |  | Patient |  |
+| 6389 | pt-diabet |  | 100% | name | 135 | 100 |  |  | Patient |  |
+| 6390 | pt-diascr |  | 100% | name | 527 | 100 |  |  | Patient |  |
+| 6391 | pt-dxm-r1 | nmol/l | 1% | name+unit+values | 76 | 0 | [14, 17, 19, 21.2, 25, 27.2, 32.47, 39, 68] | Pt-Deksametasoni-koe, lyhyt | Patient |  |
+| 6392 | pt-dxm-r1 |  | 99% | name | 6248 | 100 |  | Pt-Deksametasoni-koe, lyhyt | Patient |  |
+| 6393 | pt-erist |  | 100% | name | 848 | 100 |  |  | Patient |  |
+| 6394 | pt-fdg-pet |  | 100% | name | 2426 | 100 |  |  | Patient |  |
+| 6395 | pt-fdgvpet |  | 100% | name | 736 | 100 |  |  | Patient |  |
+| 6396 | pt-fib-4 |  | 100% | name+values | 10764 | 100 | [0.55, 0.74, 0.9, 1.05, 1.2, 1.38, 1.59, 1.9, 2.38] |  | Patient |  |
+| 6397 | pt-gal-r3 | min | 19% | name+unit | 36 | 0 |  | Pt-Galaktoosi-koe, puoliintumisaika | Patient |  |
+| 6398 | pt-gal-r3 |  | 81% | name | 150 | 100 |  | Pt-Galaktoosi-koe, puoliintumisaika | Patient |  |
+| 6399 | pt-galt1/2 | min | 100% | name+unit+values | 184 | 0 | [9, 10.34, 11.82, 13, 14.89, 17.65, 23.89, 32.76, 46.25] |  | Patient |  |
+| 6400 | pt-glomfr |  | 100% | name | 357 | 100 |  |  | Patient |  |
+| 6401 | pt-hertta |  | 100% | name | 152 | 100 |  |  | Patient |  |
+| 6402 | pt-iho-r1 | mm | 40% | name+unit | 115 | 0 |  | Pt-Ihokoe 1, suppea, 1-5 antigeenia | Patient |  |
+| 6403 | pt-iho-r1 |  | 60% | name | 173 | 100 |  | Pt-Ihokoe 1, suppea, 1-5 antigeenia | Patient |  |
+| 6404 | pt-iho-r3 |  | 100% | name | 1244 | 100 |  | Pt-Ihokoe 3, laaja, 6-20 antigeenia | Patient |  |
+| 6405 | pt-kauvduä |  | 100% | name | 312 | 100 |  |  | Patient |  |
+| 6406 | pt-kt/v |  | 100% | name+values | 2372 | 100 | [1.18, 1.28, 1.32, 1.36, 1.39, 1.41, 1.45, 1.49, 1.53] |  | Patient |  |
+| 6407 | pt-kt/v1 |  | 100% | name+values | 5747 | 100 | [1.09, 1.27, 1.39, 1.48, 1.56, 1.65, 1.74, 1.85, 2.02] |  | Patient |  |
+| 6408 | pt-laihdu |  | 100% | name | 149 | 100 |  |  | Patient |  |
+| 6409 | pt-lakt-r1 | mmol/l | 6% | name+unit | 14 | 0 |  | Pt-Laktoosi-koe | Patient |  |
+| 6410 | pt-lakt-r1 |  | 94% | name | 214 | 100 |  | Pt-Laktoosi-koe | Patient |  |
+| 6411 | pt-meet2 |  | 100% | name | 110 | 100 |  |  | Patient |  |
+| 6412 | pt-meetin |  | 100% | name | 189 | 100 |  |  | Patient |  |
+| 6413 | pt-meeting |  | 100% | name | 12544 | 100 |  | Pt-Potilastapauksen kliinispatologinen käsittely | Patient |  |
+| 6414 | pt-miesl |  | 100% | name | 889 | 100 |  |  | Patient |  |
+| 6415 | pt-miesp |  | 100% | name | 260 | 100 |  |  | Patient |  |
+| 6416 | pt-miestp |  | 100% | name | 152 | 100 |  |  | Patient |  |
+| 6417 | pt-munfung |  | 100% | name | 310 | 100 |  |  | Patient |  |
+| 6418 | pt-nainenl |  | 100% | name | 716 | 100 |  |  | Patient |  |
+| 6419 | pt-nainenp |  | 100% | name | 310 | 100 |  |  | Patient |  |
+| 6420 | pt-naistp |  | 100% | name | 117 | 100 |  |  | Patient |  |
+| 6421 | pt-paino | kg | 95% | name+unit+values | 2695 | 0.15 | [60.61, 67.01, 71.85, 75.49, 79.69, 83.26, 87.24, 92.77, 102.78] |  | Patient |  |
+| 6422 | pt-paino |  | 5% | name+values | 153 | 100 | [59.8, 65.06, 69.62, 73.7, 78, 81.97, 85.17, 91.96, 99.6] |  | Patient |  |
+| 6423 | pt-pentaca |  | 100% | name | 425 | 100 |  |  | Patient |  |
+| 6424 | pt-psmapet |  | 100% | name | 509 | 100 |  |  | Patient |  |
+| 6425 | pt-punktio |  | 100% | name | 213 | 100 |  |  | Patient |  |
+| 6426 | pt-selvit |  | 100% | name | 506 | 100 |  |  | Patient |  |
+| 6427 | pt-som-pet |  | 100% | name | 448 | 100 |  |  | Patient |  |
+| 6428 | pt-spr/thl |  | 100% | name | 164 | 100 |  |  | Patient |  |
+| 6429 | pt-syd-pet |  | 100% | name | 270 | 100 |  |  | Patient |  |
+| 6430 | pt-tahdist |  | 100% | name | 203 | 100 |  |  | Patient |  |
+| 6431 | pt-taksim1 |  | 100% | name | 255 | 100 |  |  | Patient |  |
+| 6432 | pt-taksim3 |  | 100% | name | 109 | 100 |  |  | Patient |  |
+| 6433 | pt-terta |  | 100% | name | 456 | 100 |  |  | Patient |  |
+| 6434 | pt-tthscr1 |  | 100% | name | 145 | 100 |  |  | Patient |  |
+| 6435 | pt-ttlaite |  | 100% | name | 526 | 100 |  |  | Patient |  |
+| 6436 | pt-ttr+inr | % | 76% | name+unit+values | 1974 | 0 | [36.34, 51.51, 59.83, 67.58, 73.4, 78.22, 83.44, 90.53, 99.05] |  | Patient |  |
+| 6437 | pt-ttr+inr |  | 24% | name | 609 | 100 |  |  | Patient |  |
+| 6438 | pt-vai-tk |  | 100% | name | 397 | 100 |  |  | Patient |  |
+| 6439 | pt-valtim |  | 100% | name | 106 | 100 |  |  | Patient |  |
+| 6440 | pt-valvot |  | 100% | name | 349 | 100 |  |  | Patient |  |
+| 6441 | pt-vartig |  | 100% | name | 2815 | 100 |  |  | Patient |  |
+| 6442 | pt-vartspq |  | 100% | name | 144 | 100 |  |  | Patient |  |
+| 6443 | pt-vitascr |  | 100% | name | 521 | 100 |  |  | Patient |  |
+| 6444 | pt-vitrif |  | 100% | name | 276 | 100 |  |  | Patient |  |
 

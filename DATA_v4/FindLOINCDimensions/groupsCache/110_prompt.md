@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,101 +139,98 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 110 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 8999 | b-b-cd19 | e6/l | 20% | name+unit+values | 913 | 0 | [10.41, 31.05, 55.36, 87.14, 120.42, 155.29, 201.58, 263.7, 407.08] |  | Blood |  |
-| 9000 | b-b-cd19 | e9/l | 68% | name+unit+values | 3083 | 0 | [0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.29, 0.48] |  | Blood |  |
-| 9001 | b-b-cd19 |  | 12% | name+values | 569 | 89.28 | [0, 0, 0, 0.02, 0.06, 0.13, 0.2, 0.31, 0.47] |  | Blood |  |
-| 9002 | b-cd16/56 | e6/l | 0% | name+unit | 12 | 0 |  |  | Blood |  |
-| 9003 | b-cd16/56 | e9/l | 96% | name+unit+values | 2606 | 0.65 | [0.06, 0.09, 0.12, 0.15, 0.18, 0.22, 0.26, 0.33, 0.44] |  | Blood |  |
-| 9004 | b-cd16/56 |  | 4% | name | 108 | 84.26 |  |  | Blood |  |
-| 9005 | b-cd16/cd56 | e9/l | 95% | name+unit+values | 263 | 0 | [0.09, 0.12, 0.15, 0.17, 0.21, 0.24, 0.3, 0.36, 0.44] |  | Blood |  |
-| 9006 | b-cd16/cd56 |  | 5% | name | 15 | 100 |  |  | Blood |  |
-| 9007 | b-cd19 | e6/l | 56% | name+unit+values | 3891 | 0 | [0, 1.97, 16.17, 41.05, 70.27, 108.04, 158.42, 221.57, 336.97] |  | Blood |  |
-| 9008 | b-cd19 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0, 0, 0.01, 0.03, 0.06, 0.09, 0.14, 0.19, 0.29] |  | Blood |  |
-| 9009 | b-cd19 |  | 3% | name | 175 | 66.29 |  |  | Blood |  |
-| 9010 | b-cd3 | e6/l | 56% | name+unit | 3892 | 0 |  |  | Blood |  |
-| 9011 | b-cd3 | e9/l | 41% | name+unit | 2868 | 0.59 |  |  | Blood |  |
-| 9012 | b-cd3 |  | 3% | name | 204 | 71.57 |  |  | Blood |  |
-| 9013 | b-cd34 | e6/l | 88% | name+unit+values | 193 | 0 | [5.27, 13.75, 20.31, 28.86, 37.69, 50.47, 63.07, 93.98, 156.93] |  | Blood |  |
-| 9014 | b-cd34 |  | 12% | name | 27 | 29.63 |  |  | Blood |  |
-| 9015 | b-cd4 | e6/l | 56% | name+unit+values | 3893 | 0 | [134.07, 213.38, 284.14, 381.8, 505.45, 647.7, 819.98, 1038.04, 1335.05] |  | Blood |  |
-| 9016 | b-cd4 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0.14, 0.2, 0.25, 0.32, 0.4, 0.51, 0.63, 0.8, 1.07] |  | Blood |  |
-| 9017 | b-cd4 |  | 2% | name | 172 | 66.28 |  |  | Blood |  |
-| 9018 | b-cd8 | e6/l | 56% | name+unit+values | 3892 | 0 | [117.75, 200.41, 277.17, 351.98, 433.16, 541.85, 672.5, 850.74, 1214.03] |  | Blood |  |
-| 9019 | b-cd8 | e9/l | 41% | name+unit+values | 2870 | 0.59 | [0.11, 0.16, 0.23, 0.29, 0.36, 0.46, 0.57, 0.73, 1] |  | Blood |  |
-| 9020 | b-cd8 |  | 2% | name | 172 | 66.28 |  |  | Blood |  |
-| 9021 | b-lcd34 | e6/l | 32% | name+unit+values | 251 | 0 | [3, 7.11, 11.11, 14.14, 17.55, 23.82, 31.86, 44, 64.2] | B -Leukosyytit, CD34 alaluokka | Blood |  |
-| 9022 | b-lcd34 | e9/l | 60% | name+unit+values | 475 | 0 | [0, 0.01, 0.02, 0.03, 0.03, 0.04, 0.06, 0.09, 0.13] | B -Leukosyytit, CD34 alaluokka | Blood |  |
-| 9023 | b-lcd34 |  | 8% | name | 66 | 100 |  | B -Leukosyytit, CD34 alaluokka | Blood |  |
-| 9024 | b-lycd4 |  | 100% | name | 496 | 100 |  | B -Lymfosyytti CD4-alaluokka | Blood |  |
-| 9025 | b-t-cd3 | e6/l | 28% | name+unit | 1174 | 0 |  |  | Blood |  |
-| 9026 | b-t-cd3 | e9/l | 65% | name+unit | 2692 | 0 |  |  | Blood |  |
-| 9027 | b-t-cd3 |  | 7% | name | 304 | 81.91 |  |  | Blood |  |
-| 9028 | b-t-cd4 | e6/l | 20% | name+unit+values | 1609 | 0 | [168.06, 247.56, 335.09, 433.05, 551.26, 672.04, 816.88, 957.34, 1254.62] |  | Blood |  |
-| 9029 | b-t-cd4 | e9/l | 75% | name+unit+values | 6105 | 0 | [0.16, 0.25, 0.34, 0.43, 0.52, 0.64, 0.79, 0.96, 1.28] |  | Blood |  |
-| 9030 | b-t-cd4 |  | 6% | name+values | 475 | 69.89 | [0.2, 0.26, 0.34, 0.42, 0.55, 0.68, 0.8, 0.95, 1.29] |  | Blood |  |
-| 9031 | b-t-cd8 | e6/l | 28% | name+unit+values | 1174 | 0 | [141.94, 210.82, 289.62, 366.11, 450.98, 530.13, 639.55, 796.16, 1179.47] |  | Blood |  |
-| 9032 | b-t-cd8 | e9/l | 65% | name+unit+values | 2753 | 0 | [0.14, 0.21, 0.27, 0.35, 0.43, 0.52, 0.65, 0.83, 1.1] |  | Blood |  |
-| 9033 | b-t-cd8 |  | 7% | name | 311 | 79.42 |  |  | Blood |  |
-| 9034 | bl-cd4/cd8 | form | 32% | name+unit | 42 | 100 |  |  | Bronchoalveolar lavage |  |
-| 9035 | bl-cd4/cd8 |  | 68% | name | 91 | 100 |  |  | Bronchoalveolar lavage |  |
-| 9036 | cd4/cd8 |  | 100% | name+values | 3940 | 0.23 | [0.29, 0.47, 0.68, 0.91, 1.2, 1.57, 1.94, 2.45, 3.26] |  |  |  |
-| 9037 | l-cd34 | % | 92% | name+unit+values | 481 | 0 | [0.05, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.32, 0.61] |  | Leukocyte |  |
-| 9038 | l-cd34 |  | 8% | name | 41 | 100 |  |  | Leukocyte |  |
-| 9039 | la-cd34 | e6/kg | 28% | name+unit+values | 156 | 0 | [0.6, 0.9, 1.18, 1.41, 1.69, 2.1, 2.53, 3.4, 4.94] |  |  |  |
-| 9040 | la-cd34 | e9/l | 72% | name+unit+values | 393 | 0 | [0.41, 0.56, 0.72, 0.84, 1.03, 1.27, 1.77, 2.36, 3.2] |  |  |  |
-| 9041 | la-cd34-ks |  | 100% | name | 395 | 100 |  |  |  |  |
-| 9042 | la-cd34-os | % | 100% | name+unit+values | 393 | 0 | [0.22, 0.3, 0.39, 0.49, 0.59, 0.69, 0.84, 1.12, 1.67] |  |  |  |
-| 9043 | la-t-cd3 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  |
-| 9044 | la-t-cd3 |  | 4% | name | 6 | 16.67 |  |  |  |  |
-| 9045 | la-t-cd4 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  |
-| 9046 | la-t-cd4 |  | 4% | name | 6 | 16.67 |  |  |  |  |
-| 9047 | la-t-cd8 | e9/l | 96% | name+unit | 149 | 0 |  |  |  |  |
-| 9048 | la-t-cd8 |  | 4% | name | 6 | 16.67 |  |  |  |  |
-| 9049 | ly-b-cd19 | % | 61% | name+unit+values | 1504 | 0 | [0, 0, 0.45, 2.91, 5.54, 7.86, 10.24, 13.34, 18.94] |  | Lymphocyte |  |
-| 9050 | ly-b-cd19 |  | 39% | name | 950 | 99.05 |  |  | Lymphocyte |  |
-| 9051 | ly-cd16/56 | % | 97% | name+unit+values | 3462 | 0.49 | [5.28, 8.01, 10.25, 12.46, 15.08, 18.07, 21.55, 26.37, 33.4] |  | Lymphocyte |  |
-| 9052 | ly-cd16/56 |  | 3% | name | 107 | 86.92 |  |  | Lymphocyte |  |
-| 9053 | ly-cd16/cd56 | % | 95% | name+unit+values | 262 | 0 | [5.52, 8.16, 10.06, 12.71, 14.93, 17.65, 20.63, 27.5, 36.58] |  | Lymphocyte |  |
-| 9054 | ly-cd16/cd56 |  | 5% | name | 15 | 100 |  |  | Lymphocyte |  |
-| 9055 | ly-cd19 | % | 97% | name+unit+values | 3462 | 0.49 | [0, 0, 1.17, 3.24, 5.55, 8.08, 10.86, 14.11, 20.27] |  | Lymphocyte |  |
-| 9056 | ly-cd19 |  | 3% | name | 107 | 85.98 |  |  | Lymphocyte |  |
-| 9057 | ly-cd19-b | % | 99% | name+unit+values | 2507 | 0 | [0, 0, 1, 3.95, 7.56, 10.5, 13.61, 17.58, 25.6] |  | Lymphocyte |  |
-| 9058 | ly-cd19-b |  | 1% | name | 19 | 100 |  |  | Lymphocyte |  |
-| 9059 | ly-cd3 | % | 97% | name+unit+values | 3726 | 0.46 | [52.12, 61.25, 67.07, 71.15, 74.98, 78.39, 81.66, 85.36, 89.48] |  | Lymphocyte |  |
-| 9060 | ly-cd3 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  |
-| 9061 | ly-cd4 | % | 97% | name+unit+values | 3726 | 0.46 | [16.32, 22.56, 27.91, 32.59, 37.02, 41.75, 46.47, 51.76, 58.99] |  | Lymphocyte |  |
-| 9062 | ly-cd4 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  |
-| 9063 | ly-cd4+8+ | % | 35% | name+unit | 41 | 41.46 |  |  | Lymphocyte |  |
-| 9064 | ly-cd4+8+ |  | 65% | name | 75 | 100 |  |  | Lymphocyte |  |
-| 9065 | ly-cd4-8- | % | 73% | name+unit+values | 207 | 8.21 | [7, 8, 8, 8.88, 9.82, 10.9, 12, 14, 16] |  | Lymphocyte |  |
-| 9066 | ly-cd4-8- |  | 27% | name | 77 | 100 |  |  | Lymphocyte |  |
-| 9067 | ly-cd4-t | % | 96% | name+unit+values | 4576 | 0 | [15.23, 21.8, 27.31, 31.42, 35.47, 39.26, 43.26, 48.23, 54.7] |  | Lymphocyte |  |
-| 9068 | ly-cd4-t |  | 4% | name+values | 170 | 22.94 | [17.53, 21.58, 24.78, 29.15, 33.2, 38.25, 41.67, 47.37, 52.57] |  | Lymphocyte |  |
-| 9069 | ly-cd4/cd8 |  | 100% | name+values | 2752 | 4.18 | [0.37, 0.55, 0.75, 0.96, 1.18, 1.48, 1.83, 2.29, 3.23] | Ly-Auttaja- ja tappajasolujen suhde, immunofenotyypitys | Lymphocyte |  |
-| 9070 | ly-cd4/cd8suhde |  | 100% | name+values | 278 | 5.4 | [0.5, 0.76, 1.02, 1.29, 1.66, 1.95, 2.26, 2.73, 3.97] |  | Lymphocyte |  |
-| 9071 | ly-cd8 | % | 97% | name+unit+values | 3725 | 0.46 | [14.46, 19.13, 22.75, 26.46, 30.35, 34.98, 40.06, 46.74, 56.02] |  | Lymphocyte |  |
-| 9072 | ly-cd8 |  | 3% | name | 122 | 87.7 |  |  | Lymphocyte |  |
-| 9073 | ly-t-cd3 | % | 94% | name+unit+values | 3926 | 0 | [56.23, 64.92, 70.33, 74.35, 77.57, 80.54, 84.02, 87.72, 92.04] |  | Lymphocyte |  |
-| 9074 | ly-t-cd3 |  | 6% | name | 264 | 98.48 |  |  | Lymphocyte |  |
-| 9075 | ly-t-cd4 | % | 34% | name+unit+values | 2006 | 0 | [18.72, 24.57, 29.84, 34.47, 38.67, 43.22, 47.75, 52.18, 58.04] | Ly-Lymfosyytit, T-auttajasolujen osuus | Lymphocyte |  |
-| 9076 | ly-t-cd4 |  | 66% | name | 3875 | 99.92 |  | Ly-Lymfosyytit, T-auttajasolujen osuus | Lymphocyte |  |
-| 9077 | ly-t-cd4. | % | 98% | name+unit+values | 1462 | 0 | [18.57, 26.32, 32.42, 36.77, 41.27, 46.47, 51.47, 56.35, 63.05] |  | Lymphocyte |  |
-| 9078 | ly-t-cd4. |  | 2% | name | 36 | 72.22 |  |  | Lymphocyte |  |
-| 9079 | ly-t-cd4/8 | ratio | 89% | name+unit+values | 1816 | 0 | [0.6, 0.8, 0.99, 1.23, 1.56, 1.85, 2.06, 2.47, 3.19] |  | Lymphocyte |  |
-| 9080 | ly-t-cd4/8 |  | 11% | name+values | 224 | 100 | [0.48, 0.79, 1.06, 1.31, 1.55, 1.83, 2.13, 2.62, 3.69] |  | Lymphocyte |  |
-| 9081 | ly-t-cd8 | % | 92% | name+unit+values | 2895 | 0 | [14.95, 19.45, 23.24, 27.01, 30.29, 33.79, 38.05, 43.59, 52.29] | Ly-Lymfosyytit, T-estäjäsolujen osuus | Lymphocyte |  |
-| 9082 | ly-t-cd8 |  | 8% | name | 245 | 99.59 |  | Ly-Lymfosyytit, T-estäjäsolujen osuus | Lymphocyte |  |
-| 9083 | ly-tcd4/8. |  | 100% | name+values | 2179 | 0.83 | [0.48, 0.75, 1, 1.21, 1.42, 1.69, 2, 2.51, 3.27] |  | Lymphocyte |  |
-| 9084 | ly-tt-cd8 | % | 100% | name+unit+values | 1219 | 0 | [13.33, 17.86, 21.01, 24.35, 28, 31.32, 36.22, 42.56, 52.88] |  | Lymphocyte |  |
-| 9085 | ly-tt-cd8 |  | 0% | name | 5 | 40 |  |  | Lymphocyte |  |
-| 9086 | s-gt-cdt | % | 0% | name+unit | 13 | 0 |  |  | Serum |  |
-| 9087 | s-gt-cdt |  | 100% | name+values | 2807 | 3.35 | [2.6, 2.87, 3.04, 3.25, 3.47, 3.7, 3.96, 4.27, 4.86] |  | Serum |  |
-| 9088 | so-t-cd3 | % | 96% | name+unit+values | 149 | 0 | [16.66, 19.73, 21.87, 23.49, 24.84, 27.82, 29.85, 33.41, 49.51] |  |  |  |
-| 9089 | so-t-cd3 |  | 4% | name | 6 | 16.67 |  |  |  |  |
-| 9090 | so-t-cd4 | % | 96% | name+unit+values | 149 | 0 | [9.42, 10.93, 12.3, 13.53, 14.67, 15.99, 17.4, 19.67, 23.42] |  |  |  |
-| 9091 | so-t-cd4 |  | 4% | name | 6 | 16.67 |  |  |  |  |
-| 9092 | so-t-cd8 | % | 96% | name+unit+values | 149 | 0 | [5.87, 7, 7.83, 8.57, 9.8, 10.57, 12.18, 14.02, 21.4] |  |  |  |
-| 9093 | so-t-cd8 |  | 4% | name | 6 | 16.67 |  |  |  |  |
+| 8963 | -activi |  | 100% | name | 523 | 100 |  | -Actinomyces, viljely |  |  |
+| 8964 | -amebvr |  | 100% | name | 732 | 100 |  | -Ameeba, värjäys (trofozoiitit) |  |  |
+| 8965 | -caauvi |  | 100% | name | 468 | 100 |  | -Candida auris, viljely |  |  |
+| 8966 | -cand-vi |  | 100% | name | 285 | 100 |  |  |  | Culture |
+| 8967 | -candvi |  | 100% | name | 9492 | 100 |  | -Hiiva, viljely |  |  |
+| 8968 | -em-bl |  | 100% | name | 104 | 100 |  |  |  |  |
+| 8969 | -ervr |  | 100% | name | 185 | 100 |  |  |  |  |
+| 8970 | -esblvi |  | 100% | name | 2644 | 100 |  | -Bakteeri, laajakirjoista beta-laktamaasia tuottava, viljely |  |  |
+| 8971 | -gcvi |  | 100% | name | 2115 | 100 |  | -Neisseria gonorrhoeae, viljely |  |  |
+| 8972 | -hsvpvi |  | 100% | name | 1154 | 100 |  | -Herpes simplex -virus, pikaviljely |  |  |
+| 8973 | -hsvvi |  | 100% | name | 1451 | 100 |  | -Herpes simplex -virus, viljely |  |  |
+| 8974 | -hygvi |  | 100% | name | 276 | 100 |  | -Hygienianäyte, viljely |  |  |
+| 8975 | -ifkuvio |  | 100% | name | 330 | 100 |  |  |  |  |
+| 8976 | -kat-vi |  | 100% | name | 205 | 100 |  |  |  | Culture |
+| 8977 | -mdrsjvi |  | 100% | name | 152 | 100 |  | -Moniresistentit gramnegatiiviset sauvat, jatkoviljely |  |  |
+| 8978 | -mdrsvi |  | 100% | name | 4893 | 100 |  | -Moniresistentit gramnegatiiviset sauvat, viljely |  |  |
+| 8979 | -mrsajvi |  | 100% | name | 143 | 100 |  | -Staphylococcus aureus, metisilliiniresistentti, jatkoviljely |  |  |
+| 8980 | -mrsavi |  | 100% | name | 147348 | 100 |  | -Staphylococcus aureus, metisilliiniresistenssi viljely |  |  |
+| 8981 | -mrsavine |  | 100% | name | 825 | 100 |  |  |  |  |
+| 8982 | -mrsavini |  | 100% | name | 835 | 100 |  |  |  |  |
+| 8983 | -mrsrivi |  | 100% | name | 260 | 100 |  |  |  |  |
+| 8984 | -nocavi |  | 100% | name | 2268 | 100 |  | -Nokardia, viljely |  |  |
+| 8985 | -palovvi |  | 100% | name | 704 | 100 |  |  |  |  |
+| 8986 | -psvs |  | 100% | name | 161 | 100 |  |  |  |  |
+| 8987 | -respvt |  | 100% | name | 1271 | 100 |  |  |  |  |
+| 8988 | -rsv |  | 100% | name | 220 | 100 |  |  |  |  |
+| 8989 | -rsvvt |  | 100% | name | 1271 | 100 |  |  |  |  |
+| 8990 | -staupvl |  | 100% | name | 146 | 100 |  |  |  |  |
+| 8991 | -stauvi |  | 100% | name | 681 | 100 |  |  |  |  |
+| 8992 | -strag |  | 100% | name | 276 | 100 |  | -Streptococcus, antigeeni |  |  |
+| 8993 | -strjvi |  | 100% | name | 4196 | 100 |  | -Streptococcus, jatkoviljely (seulottu näyte) |  |  |
+| 8994 | -strvi |  | 100% | name | 1015 | 100 |  |  |  |  |
+| 8995 | -tbevi |  | 100% | name | 4326 | 100 |  | -Mycobacterium, erikoisviljely |  |  |
+| 8996 | -tbpvr |  | 100% | name | 395 | 100 |  |  |  |  |
+| 8997 | -tbvi |  | 100% | name | 25319 | 100 |  | -Mycobacterium tuberculosis, viljely |  |  |
+| 8998 | -tbvivr |  | 100% | name | 131 | 100 |  |  |  |  |
+| 8999 | -tbvr |  | 100% | name | 14513 | 100 |  | -Mycobacterium tuberculosis, värjäys |  |  |
+| 9000 | -tbvrvi |  | 100% | name | 9619 | 100 |  |  |  |  |
+| 9001 | -trvaag |  | 100% | name | 740 | 100 |  | -Trichomonas vaginalis, antigeeni |  |  |
+| 9002 | -vi |  | 100% | name | 110 | 100 |  |  |  | Culture |
+| 9003 | -virvi |  | 100% | name | 1652 | 100 |  | -Virus, viljely |  |  |
+| 9004 | -vrevi |  | 100% | name | 10787 | 100 |  | -Enterokokki, vankomysiiniresistentti, viljely |  |  |
+| 9005 | -väri |  | 100% | name | 1665 | 100 |  |  |  |  |
+| 9006 | 1.savuk | u | 77% | name+unit+values | 83 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 10] |  |  |  |
+| 9007 | 1.savuk |  | 23% | name | 25 | 100 |  |  |  |  |
+| 9008 | b-tbevi |  | 100% | name | 1076 | 100 |  | B -Mycobacterium, erikoisviljely | Blood |  |
+| 9009 | candvi |  | 100% | name | 508 | 100 |  |  |  |  |
+| 9010 | ex-tbvi |  | 100% | name | 7823 | 100 |  | Ex-Mycobacterium tuberculosis, viljely | Expectorate (sputum) |  |
+| 9011 | ex-tbvivr |  | 100% | name | 807 | 100 |  |  | Expectorate (sputum) |  |
+| 9012 | ex-tbvr |  | 100% | name | 853 | 100 |  |  | Expectorate (sputum) |  |
+| 9013 | ex-tbvrvi |  | 100% | name | 15922 | 100 |  |  | Expectorate (sputum) |  |
+| 9014 | f-aurvi |  | 100% | name | 116 | 100 |  |  | Feces |  |
+| 9015 | f-bacevi |  | 100% | name | 114 | 100 |  |  | Feces |  |
+| 9016 | f-camp-vi |  | 100% | name | 167 | 100 |  |  | Feces | Culture |
+| 9017 | f-campvi |  | 100% | name | 14627 | 100 |  | F -Campylobacter, viljely | Feces |  |
+| 9018 | f-cereuvi |  | 100% | name | 198 | 100 |  |  | Feces |  |
+| 9019 | f-clpevi |  | 100% | name | 114 | 100 |  |  | Feces |  |
+| 9020 | f-salm-vi |  | 100% | name | 607 | 100 |  |  | Feces | Culture |
+| 9021 | f-salmvi | form | 0% | name+unit | 18 | 0 |  | F -Salmonella, viljely | Feces |  |
+| 9022 | f-salmvi |  | 100% | name | 33355 | 100 |  | F -Salmonella, viljely | Feces |  |
+| 9023 | f-shigvi |  | 100% | name | 14849 | 100 |  | F -Shigella, viljely | Feces |  |
+| 9024 | f-stafvi |  | 100% | name | 107 | 100 |  |  | Feces |  |
+| 9025 | fl-candvi |  | 100% | name | 786 | 100 |  |  | Vaginal discharge |  |
+| 9026 | hsvpvi |  | 100% | name | 246 | 100 |  |  |  |  |
+| 9027 | l-sauv | % | 99% | name+unit+values | 3700 | 0 | [0, 0, 0, 0, 0.48, 1, 1.78, 2.98, 5.83] |  | Leukocyte |  |
+| 9028 | l-sauv |  | 1% | name | 36 | 100 |  |  | Leukocyte |  |
+| 9029 | l-sauva | % | 95% | name+unit+values | 4826 | 0 | [0, 0, 0, 0.02, 0.78, 1.03, 2.02, 3.39, 6.06] |  | Leukocyte |  |
+| 9030 | l-sauva |  | 5% | name+values | 244 | 100 | [0, 0, 0, 0.06, 1, 1, 2, 2.4, 4] |  | Leukocyte |  |
+| 9031 | l-sauvat | % | 93% | name+unit+values | 3136 | 0 | [0, 0, 0, 0.1, 1, 1, 1.97, 2.83, 4.14] |  | Leukocyte |  |
+| 9032 | l-sauvat |  | 7% | name | 224 | 100 |  |  | Leukocyte |  |
+| 9033 | mm-hygvi |  | 100% | name | 702 | 100 |  | Mm-Hygienianäyte, viljely (äidinmaito) | Maternal milk |  |
+| 9034 | mrsavi |  | 100% | name | 879 | 100 |  |  |  |  |
+| 9035 | ns-mrsavi |  | 100% | name | 697 | 100 |  |  | Nasal secretion |  |
+| 9036 | ns-staurvi |  | 100% | name | 1639 | 100 |  |  | Nasal secretion |  |
+| 9037 | ps-mrsavi |  | 100% | name | 694 | 100 |  |  | Pharyngeal secretion |  |
+| 9038 | rasvat |  | 100% | name | 811 | 100 |  |  |  |  |
+| 9039 | resgnsvi |  | 100% | name | 2065 | 100 |  |  |  |  |
+| 9040 | rsv |  | 100% | name | 1507 | 100 |  |  |  |  |
+| 9041 | sc-hygvi |  | 100% | name | 251 | 100 |  |  |  |  |
+| 9042 | sk-mrsavi |  | 100% | name | 165 | 100 |  |  | Skin |  |
+| 9043 | straag |  | 100% | name | 525 | 100 |  |  |  |  |
+| 9044 | strvi |  | 100% | name | 175 | 100 |  |  |  |  |
+| 9045 | tbvi |  | 100% | name | 1001 | 100 |  |  |  |  |
+| 9046 | tbvr |  | 100% | name | 863 | 100 |  |  |  |  |
+| 9047 | tbvrvi |  | 100% | name | 174 | 100 |  |  |  |  |
+| 9048 | u-mrsavi |  | 100% | name | 3760 | 100 |  |  | Urine |  |
+| 9049 | u-tbvi |  | 100% | name | 564 | 100 |  |  | Urine |  |
+| 9050 | veri |  | 100% | name | 122 | 100 |  |  |  |  |
+| 9051 | vi | form | 30% | name+unit | 101 | 0 |  |  |  |  |
+| 9052 | vi |  | 70% | name | 233 | 100 |  |  |  |  |
+| 9053 | vre-vi |  | 100% | name | 1349 | 100 |  |  |  | Culture |
+| 9054 | vrevi |  | 100% | name | 5662 | 100 |  |  |  |  |
 

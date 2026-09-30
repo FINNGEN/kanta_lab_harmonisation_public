@@ -1,109 +1,317 @@
 {
   "rows": [
     {
-      "row_id": 6654,
-      "loinc_name_guess": "Drug screen specimen collection procedure"
+      "row_id": 6367,
+      "loinc_name_guess": "Gamma-glutamyltransferase/Carbohydrate deficient transferrin [Ratio] in Serum or Plasma"
     },
     {
-      "row_id": 6655,
-      "loinc_name_guess": "Bone marrow specimen collection procedure"
+      "row_id": 6368,
+      "loinc_name_guess": "Antithrombin III [Activity] in Plasma"
     },
     {
-      "row_id": 6656,
-      "loinc_name_guess": "Cervical specimen collection procedure"
+      "row_id": 6369,
+      "loinc_name_guess": "Antithrombin III [Activity] in Plasma"
     },
     {
-      "row_id": 6657,
-      "loinc_name_guess": "Drug screen specimen collection procedure"
+      "row_id": 6370,
+      "loinc_name_guess": "Thrombin time [Time] in Platelet poor plasma"
     },
     {
-      "row_id": 6658,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6371,
+      "loinc_name_guess": "Thrombin time [Time] in Platelet poor plasma"
     },
     {
-      "row_id": 6659,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6372,
+      "loinc_name_guess": "Prothrombin [Activity] in Platelet poor plasma"
     },
     {
-      "row_id": 6660,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6373,
+      "loinc_name_guess": "Prothrombin [Activity] in Platelet poor plasma"
     },
     {
-      "row_id": 6661,
-      "loinc_name_guess": "Specimen collection and counseling procedure"
+      "row_id": 6374,
+      "loinc_name_guess": "Prothrombin [Activity] in Platelet poor plasma"
     },
     {
-      "row_id": 6662,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6375,
+      "loinc_name_guess": "Prothrombin [Activity] in Platelet poor plasma"
     },
     {
-      "row_id": 6663,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6376,
+      "loinc_name_guess": "Bacteria identified in Peritoneal fluid by Culture"
     },
     {
-      "row_id": 6664,
-      "loinc_name_guess": "SARS-CoV-2 (COVID-19) specimen collection"
+      "row_id": 6377,
+      "loinc_name_guess": "Adenosine deaminase.pleural fluid/Adenosine deaminase.serum [Ratio]"
     },
     {
-      "row_id": 6665,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6378,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 6666,
-      "loinc_name_guess": "Blood specimen collection procedure"
+      "row_id": 6379,
+      "loinc_name_guess": "ACTH stimulation test panel"
     },
     {
-      "row_id": 6667,
-      "loinc_name_guess": "Specimen processing procedure"
+      "row_id": 6380,
+      "loinc_name_guess": "ACTH stimulation test panel"
     },
     {
-      "row_id": 6668,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6381,
+      "loinc_name_guess": "ACTH stimulation test panel"
     },
     {
-      "row_id": 6669,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6382,
+      "loinc_name_guess": "ACTH stimulation test panel"
     },
     {
-      "row_id": 6670,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6383,
+      "loinc_name_guess": "Adenosine deaminase.pleural fluid/Adenosine deaminase.serum [Ratio]"
     },
     {
-      "row_id": 6671,
-      "loinc_name_guess": "Specimen transport procedure"
+      "row_id": 6384,
+      "loinc_name_guess": "Brain [Presence] by PET"
     },
     {
-      "row_id": 6672,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6385,
+      "loinc_name_guess": "Actigraphy panel"
     },
     {
-      "row_id": 6673,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6386,
+      "loinc_name_guess": "Actigraphy panel"
     },
     {
-      "row_id": 6674,
-      "loinc_name_guess": "Specimen collection procedure"
+      "row_id": 6387,
+      "loinc_name_guess": "Angiography"
     },
     {
-      "row_id": 6675,
-      "loinc_name_guess": "Specimen collection method"
+      "row_id": 6388,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 6676,
-      "loinc_name_guess": "Specimen collection method"
+      "row_id": 6389,
+      "loinc_name_guess": "Diabetes [Presence]"
     },
     {
-      "row_id": 6677,
-      "loinc_name_guess": "Urine specimen collection method"
+      "row_id": 6390,
+      "loinc_name_guess": "Diabetes screen panel"
     },
     {
-      "row_id": 6678,
-      "loinc_name_guess": "Urine specimen collection method"
+      "row_id": 6391,
+      "loinc_name_guess": "Cortisol [Moles/volume] in Serum or Plasma --post 1 mg dexamethasone"
     },
     {
-      "row_id": 6679,
-      "loinc_name_guess": "Supervised specimen collection procedure"
+      "row_id": 6392,
+      "loinc_name_guess": "Dexamethasone suppression test panel"
+    },
+    {
+      "row_id": 6393,
+      "loinc_name_guess": "Patient isolation [Status]"
+    },
+    {
+      "row_id": 6394,
+      "loinc_name_guess": "Whole body [Presence] by FDG-PET"
+    },
+    {
+      "row_id": 6395,
+      "loinc_name_guess": "Whole body [Presence] by FDG-PET"
+    },
+    {
+      "row_id": 6396,
+      "loinc_name_guess": "FIB-4 score [Score] by Calculation"
+    },
+    {
+      "row_id": 6397,
+      "loinc_name_guess": "Galactose elimination capacity [Time] in Serum or Plasma"
+    },
+    {
+      "row_id": 6398,
+      "loinc_name_guess": "Galactose elimination capacity [Time] in Serum or Plasma"
+    },
+    {
+      "row_id": 6399,
+      "loinc_name_guess": "Galactose elimination capacity [Time] in Serum or Plasma"
+    },
+    {
+      "row_id": 6400,
+      "loinc_name_guess": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum or Plasma by calculation"
+    },
+    {
+      "row_id": 6401,
+      "loinc_name_guess": "Cardiovascular disease risk score [Score]"
+    },
+    {
+      "row_id": 6402,
+      "loinc_name_guess": "Allergen wheal [Length] in Skin"
+    },
+    {
+      "row_id": 6403,
+      "loinc_name_guess": "Allergy skin test panel"
+    },
+    {
+      "row_id": 6404,
+      "loinc_name_guess": "Allergy skin test panel"
+    },
+    {
+      "row_id": 6405,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6406,
+      "loinc_name_guess": "Kt/V [Ratio] by calculation"
+    },
+    {
+      "row_id": 6407,
+      "loinc_name_guess": "Kt/V [Ratio] by calculation"
+    },
+    {
+      "row_id": 6408,
+      "loinc_name_guess": "Weight loss [Finding]"
+    },
+    {
+      "row_id": 6409,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --post lactose challenge"
+    },
+    {
+      "row_id": 6410,
+      "loinc_name_guess": "Lactose tolerance test panel"
+    },
+    {
+      "row_id": 6411,
+      "loinc_name_guess": "Clinical pathology consultation"
+    },
+    {
+      "row_id": 6412,
+      "loinc_name_guess": "Clinical pathology consultation"
+    },
+    {
+      "row_id": 6413,
+      "loinc_name_guess": "Clinical pathology consultation"
+    },
+    {
+      "row_id": 6414,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6415,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6416,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6417,
+      "loinc_name_guess": "Renal function panel"
+    },
+    {
+      "row_id": 6418,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6419,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6420,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6421,
+      "loinc_name_guess": "Body weight [Mass]"
+    },
+    {
+      "row_id": 6422,
+      "loinc_name_guess": "Body weight [Mass]"
+    },
+    {
+      "row_id": 6423,
+      "loinc_name_guess": "Corneal topography by instrument"
+    },
+    {
+      "row_id": 6424,
+      "loinc_name_guess": "Whole body [Presence] by PSMA-PET"
+    },
+    {
+      "row_id": 6425,
+      "loinc_name_guess": "Puncture procedure"
+    },
+    {
+      "row_id": 6426,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6427,
+      "loinc_name_guess": "Whole body [Presence] by Somatostatin receptor-PET"
+    },
+    {
+      "row_id": 6428,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6429,
+      "loinc_name_guess": "Heart [Presence] by PET"
+    },
+    {
+      "row_id": 6430,
+      "loinc_name_guess": "Pacemaker evaluation"
+    },
+    {
+      "row_id": 6431,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6432,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6433,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6434,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6435,
+      "loinc_name_guess": "INR in Blood by Coagulation test strip"
+    },
+    {
+      "row_id": 6436,
+      "loinc_name_guess": "Time in therapeutic range [Ratio] by Calculation"
+    },
+    {
+      "row_id": 6437,
+      "loinc_name_guess": "Time in therapeutic range [Ratio] by Calculation"
+    },
+    {
+      "row_id": 6438,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6439,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6440,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6441,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 6442,
+      "loinc_name_guess": "Whole body SPECT"
+    },
+    {
+      "row_id": 6443,
+      "loinc_name_guess": "Vitamin screen panel"
+    },
+    {
+      "row_id": 6444,
+      "loinc_name_guess": "Vitrification procedure"
     }
   ],
-  "reflection": "This group consists entirely of administrative or procedural codes related to specimen collection, not laboratory tests that measure an analyte. The Finnish term 'näytteenotto' (sample collection) and its many abbreviations ('notto', 'n.otto') are the central theme. The lack of numeric values (`p_missing` is ~100%) confirms their nature.\n\nMy approach was to map these to LOINC's procedure or 'Ask at Order Entry' (AOE) concepts rather than to standard laboratory test concepts. This means the names do not follow the typical `Component [Property] in System` structure. Instead, they are descriptive phrases like `Specimen collection procedure` or `Specimen collection method`.\n\nGotchas and ambiguities:\n*   Many codes include administrative suffixes (e.g., `-tyks` for a hospital, `-pkl` for a clinic) which needed to be ignored to find the core clinical concept.\n*   One code, `ottotapa` (row 6675), had a nonsensical unit ('h') and value distribution. Given its low `unit_share` (1%) and the meaning of the code ('collection method'), I concluded this was data noise and disregarded it.\n*   Distinguishing between a procedure (`Specimen collection procedure`) and an observation about that procedure (`Specimen collection method`) was key. 'Notto' (collection) implies the action, while 'ottotapa' (collection method) implies describing the action."
+  "reflection": "This group was dominated by `Pt-` (Patient) codes, which are challenging because they rarely map to a simple analyte-in-specimen test. They represent a wide variety of concepts: functional/challenge tests (`pt-acth-r1`, `pt-lakt-r1`), imaging procedures (`pt-fdg-pet`), calculated scores (`pt-fib-4`), physical measurements (`pt-paino`), administrative actions (`pt-erist`, `pt-meeting`), and other procedures (`pt-aktig`).\n\nThe presence of a `LongName` was crucial for interpreting these `Pt-` codes (e.g., `Pt-Deksametasoni-koe, lyhyt` for `pt-dxm-r1`). Without it, many codes would have been unmappable. For some `Pt-` codes, it was important to distinguish between the panel code for ordering the entire test (e.g., `pt-dxm-r1` with no unit/values) and the code for a specific result within that test (e.g., `pt-dxm-r1` with `nmol/l` for the post-dexamethasone cortisol level).\n\nA significant portion of the `Pt-` codes were too generic or ambiguous to confidently map (e.g., `pt-abiras`, `pt-miesl`, `pt-selvit`). These appear to be local administrative codes where the abbreviation doesn't carry enough clinical meaning. For future work, having access to a dictionary of these local or proprietary codes (like 'Hertta' for the cardiovascular risk score) would be immensely helpful."
 }

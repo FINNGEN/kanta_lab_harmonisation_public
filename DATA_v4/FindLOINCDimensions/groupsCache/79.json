@@ -1,221 +1,665 @@
 {
   "rows": [
     {
-      "row_id": 6250,
-      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine"
+      "row_id": 6065,
+      "loinc_name_guess": "Glucose [Presence] in Blood"
     },
     {
-      "row_id": 6251,
-      "loinc_name_guess": "Albumin [Mass/time] in Collected Urine"
+      "row_id": 6066,
+      "loinc_name_guess": "Glucose [Presence] in Blood"
     },
     {
-      "row_id": 6252,
-      "loinc_name_guess": "Albumin [Mass/time] in 12 hour Urine"
+      "row_id": 6067,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6253,
-      "loinc_name_guess": "Albumin [Mass/time] in Timed Urine"
+      "row_id": 6068,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6254,
-      "loinc_name_guess": "Albumin [Mass/time] in Timed Urine"
+      "row_id": 6069,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6255,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
+      "row_id": 6070,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6256,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
+      "row_id": 6071,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6257,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
+      "row_id": 6072,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6258,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Timed Urine"
+      "row_id": 6073,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6259,
-      "loinc_name_guess": "Alpha-1-Microglobulin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6074,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6260,
-      "loinc_name_guess": "Albumin [Presence] in Urine"
+      "row_id": 6075,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6261,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+      "row_id": 6076,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6262,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+      "row_id": 6077,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6263,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+      "row_id": 6078,
+      "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 6264,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+      "row_id": 6079,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 6265,
-      "loinc_name_guess": "Albumin [Presence] in Urine"
+      "row_id": 6080,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 6266,
-      "loinc_name_guess": "Albumin [Presence] in Urine"
+      "row_id": 6081,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 6267,
-      "loinc_name_guess": "Albumin [Presence] in Urine"
+      "row_id": 6082,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 6268,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6083,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 6269,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6084,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6270,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6085,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6271,
-      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+      "row_id": 6086,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6272,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6087,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6273,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6088,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6274,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+      "row_id": 6089,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6275,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6090,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6276,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6091,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6277,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6092,
+      "loinc_name_guess": "Glucose [Presence] in Serum or Plasma"
     },
     {
-      "row_id": 6278,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6093,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6279,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6094,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6280,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6095,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6281,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6096,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6282,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6097,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6283,
-      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6098,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6284,
-      "loinc_name_guess": ""
+      "row_id": 6099,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6285,
-      "loinc_name_guess": ""
+      "row_id": 6100,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6286,
-      "loinc_name_guess": ""
+      "row_id": 6101,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6287,
-      "loinc_name_guess": "Calcium/Creatinine [Ratio] in Urine"
+      "row_id": 6102,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
     },
     {
-      "row_id": 6288,
-      "loinc_name_guess": "pH of Urine"
+      "row_id": 6103,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
-      "row_id": 6289,
-      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6104,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
-      "row_id": 6290,
-      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6105,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
-      "row_id": 6291,
-      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6106,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     },
     {
-      "row_id": 6292,
-      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6107,
+      "loinc_name_guess": "Glucose [Presence] in Serum or Plasma"
     },
     {
-      "row_id": 6293,
-      "loinc_name_guess": "Protein.total/Creatinine [Mass Ratio] in Urine"
+      "row_id": 6108,
+      "loinc_name_guess": "Glucose [Presence] in Serum or Plasma"
     },
     {
-      "row_id": 6294,
-      "loinc_name_guess": "Bacteria [Presence] in Urine sediment by Microscopy"
+      "row_id": 6109,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6295,
-      "loinc_name_guess": "Epithelial cells [#/area] in Urine sediment by Microscopy"
+      "row_id": 6110,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6296,
-      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
+      "row_id": 6111,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6297,
-      "loinc_name_guess": "Erythrocytes [#/area] in Urine sediment by Microscopy"
+      "row_id": 6112,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6298,
-      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
+      "row_id": 6113,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6299,
-      "loinc_name_guess": "Leukocytes [#/area] in Urine sediment by Microscopy"
+      "row_id": 6114,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6300,
-      "loinc_name_guess": "Casts [#/area] in Urine sediment by Microscopy"
+      "row_id": 6115,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6301,
-      "loinc_name_guess": "Macrophages [#/area] in Urine sediment by Microscopy"
+      "row_id": 6116,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6302,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Urine sediment"
+      "row_id": 6117,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 6303,
-      "loinc_name_guess": "Cells.other [#/area] in Urine sediment by Microscopy"
+      "row_id": 6118,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6119,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6120,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6121,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6122,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6123,
+      "loinc_name_guess": "Glucagon [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6124,
+      "loinc_name_guess": "Glucagon [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6125,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6126,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6127,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6128,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6129,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6130,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6131,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose"
+    },
+    {
+      "row_id": 6132,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6133,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6134,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6135,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6136,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6137,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6138,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6139,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6140,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6141,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6142,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6143,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6144,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6145,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal"
+    },
+    {
+      "row_id": 6146,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post meal"
+    },
+    {
+      "row_id": 6147,
+      "loinc_name_guess": "Glucose [Presence] in Serum or Plasma"
+    },
+    {
+      "row_id": 6148,
+      "loinc_name_guess": "Glucose [Presence] in Serum or Plasma"
+    },
+    {
+      "row_id": 6149,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6150,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6151,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6152,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6153,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6154,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6155,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6156,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6157,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6158,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6159,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6160,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6161,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6162,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6163,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6164,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6165,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6166,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6167,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6168,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6169,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6170,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6171,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6172,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6173,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6174,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6175,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6176,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6177,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6178,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6179,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6180,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6181,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6182,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6183,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6184,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6185,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6186,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6187,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6188,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6189,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6190,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6191,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6192,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6193,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose"
+    },
+    {
+      "row_id": 6194,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6195,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6196,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6197,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6198,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6199,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6200,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6201,
+      "loinc_name_guess": "Glucose tolerance test for hypoglycemia panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6202,
+      "loinc_name_guess": "Glucose tolerance test for growth hormone panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6203,
+      "loinc_name_guess": "Glucose tolerance test during pregnancy panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6204,
+      "loinc_name_guess": "Glucose tolerance test during pregnancy panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6205,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6206,
+      "loinc_name_guess": "Glucose tolerance test during pregnancy panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6207,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6208,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6209,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6210,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6211,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6212,
+      "loinc_name_guess": "Glucose 2 hour oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6213,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6214,
+      "loinc_name_guess": "Glucose oral tolerance test panel - Serum or Plasma"
+    },
+    {
+      "row_id": 6215,
+      "loinc_name_guess": "Glucose [Presence] in Urine"
+    },
+    {
+      "row_id": 6216,
+      "loinc_name_guess": "Glucose [Mass/time] in 24 hour Urine"
+    },
+    {
+      "row_id": 6217,
+      "loinc_name_guess": "Glucose [Presence] in Urine"
+    },
+    {
+      "row_id": 6218,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6219,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6220,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6221,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6222,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6223,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 6224,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6225,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 6226,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6227,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+    },
+    {
+      "row_id": 6228,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+    },
+    {
+      "row_id": 6229,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
     }
   ],
-  "reflection": "This group focused heavily on urine tests, including albumin, protein, their creatinine ratios, and sediment microscopy. \n\nKey takeaways:\n- Prefixes like `cU-` (Collected), `nU-` (Night/Timed), and `U-` (spot) were essential for determining the LOINC System, leading to `in Collected Urine`, `in Timed Urine`, or `in Urine`.\n- Many local variations for the same test existed (e.g., `u-alb/kre`, `u-alb/krea`, `u-albkre`). Recognizing these as synonyms for the Albumin/Creatinine ratio was crucial. The units `g/mol` and `mg/mmol` both correspond to the LOINC property `[Mass Ratio]`.\n- Garbled test names combining multiple codes (e.g., `u-alb/kre,u-alb`) were a significant challenge. The decile values were indispensable for disambiguation; by comparing the value range to typical ranges for each component, I could infer which test the result actually represented. Without deciles, these would have been ambiguous.\n- The `u-sakka` family of codes clearly pointed to urine sediment microscopy. I inferred the method `by Microscopy` and used `[#/area]` as the property for cell counts per field.\n- A few codes like `u-alvhu4a` were completely uninterpretable due to non-standard abbreviations and were left empty.\n- There were several instances where `p_missing` was 100% but deciles were present. I trusted the deciles over the `p_missing` field, assuming the latter was a data processing artifact."
+  "reflection": "This large group was almost entirely about glucose (`gluk`), with one glucagon (`glkg`) test. The main challenges were interpreting the numerous local suffixes and prefixes and handling inconsistencies between test codes, units, and values.\n\n**Prefixes and Suffixes**: The standard prefixes (`B-`, `P-`, `fP-`, `cB-`, `U-`, `Pt-`) were clear, but many local variants like `cp-`, `cfp-`, and `vp-` required interpretation. I assumed they all referred to plasma, which I mapped to the standard LOINC `Serum or Plasma` system. The `Pt-` (Patient) prefix was particularly interesting. When combined with `-r` (challenge) and a descriptive `LongName`, it clearly indicated a glucose tolerance test (GTT) panel. However, many `Pt-` codes were for individual timed results (e.g., `Pt-Gluk-2h`). I interpreted these as individual results belonging to a GTT, where the lab chose to use the `Pt-` prefix, rather than as separate panel orders.\n\n**Inconsistencies**: \n- Several `-O` (qualitative) tests had quantitative values (e.g., `b-gluk-o`, `p-gluk-o`). I prioritized the `-O` suffix, a strong signal from the national coding system, and named them as `[Presence]` tests. This assumes the values are either from semi-quantitative scales or are data errors.\n- Row 6106 (`fp-gluk-2h`) had the unit `mmol/mol`, which is standard for HbA1c, not a timed glucose test. I ignored this clearly erroneous unit and based the name on the test code.\n- Row 6216 (`u-gluk-de`) had high numeric values without a unit. The magnitude strongly suggested `mg/day`, which would imply a 24-hour urine collection. I made an educated guess of `Glucose [Mass/time] in 24 hour Urine`, despite the code not explicitly indicating a 24h collection. This is a risk, but it provides a much more specific search query.\n\n**Panel vs. Individual Test**: Differentiating between orderable panels and individual results within those panels was key. The `Pt-...-R...` codes, especially with confirmatory `LongName`s like `Pt-Glukoosi-koe, oraalinen...`, were mapped to panel names (e.g., `Glucose oral tolerance test panel`). The numerous timed results (`...-1h`, `...-2h`, etc.) were mapped as individual challenge results with the appropriate timing in the LOINC name."
 }

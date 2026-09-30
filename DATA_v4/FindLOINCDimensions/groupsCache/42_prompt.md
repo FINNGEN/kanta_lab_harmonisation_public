@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,149 +139,160 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 42 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 2487 | ab-na | mmol/l | 100% | name+unit+values | 1125 | 0 | [130.94, 134.84, 136.62, 138.04, 139.34, 140.42, 141.09, 142.57, 144.87] |  | Arterial blood | Native preparation |
-| 2488 | ap-lakt | mmol/l | 99% | name+unit+values | 1456 | 0 | [0.68, 0.81, 0.96, 1.1, 1.28, 1.5, 1.81, 2.29, 3.25] |  |  |  |
-| 2489 | ap-lakt |  | 1% | name | 18 | 50 |  |  |  |  |
-| 2490 | ap-na | % | 0% | name+unit | 24 | 0 |  |  |  | Native preparation |
-| 2491 | ap-na | g/l | 0% | name+unit | 6 | 0 |  |  |  | Native preparation |
-| 2492 | ap-na | kpa | 0% | name+unit | 12 | 0 |  |  |  | Native preparation |
-| 2493 | ap-na | mmol/l | 99% | name+unit+values | 50270 | 0 | [130.71, 133.37, 134.96, 136, 136.98, 137.95, 138.88, 139.98, 141.72] |  |  | Native preparation |
-| 2494 | ap-na | °c | 0% | name+unit | 6 | 0 |  |  |  | Native preparation |
-| 2495 | ap-na |  | 0% | name | 233 | 92.27 |  |  |  | Native preparation |
-| 2496 | ap-nak |  | 100% | name | 155 | 100 |  |  |  |  |
-| 2497 | b-na | mmol/l | 86% | name+unit+values | 59360 | 0 | [132.76, 134.99, 136.51, 137.61, 138.41, 139.21, 140.23, 141.69, 144.08] |  | Blood | Native preparation |
-| 2498 | b-na |  | 14% | name+values | 9740 | 95.39 | [132.18, 135.78, 137.16, 138.83, 139, 140, 140.41, 141, 142] |  | Blood | Native preparation |
-| 2499 | cp-na | mmol/l | 94% | name+unit+values | 305 | 0 | [132, 134.22, 135.76, 137, 138, 139.28, 140, 141.93, 143] |  |  | Native preparation |
-| 2500 | cp-na |  | 6% | name | 18 | 100 |  |  |  | Native preparation |
-| 2501 | di-na | mmol/l | 98% | name+unit | 307 | 0 |  | Di-Natrium | Dialysis fluid | Native preparation |
-| 2502 | di-na |  | 2% | name | 5 | 100 |  | Di-Natrium | Dialysis fluid | Native preparation |
-| 2503 | du-na | mmol | 72% | name+unit+values | 2785 | 0.25 | [76.79, 98.05, 115.16, 132.8, 151.88, 170.12, 193.55, 223.43, 273.21] | dU-Natrium | 24-hour urine | Native preparation |
-| 2504 | du-na | mmol/24h | 2% | name+unit | 60 | 0 |  | dU-Natrium | 24-hour urine | Native preparation |
-| 2505 | du-na |  | 26% | name+values | 1021 | 70.23 | [65.53, 84.3, 103.25, 116.92, 139.24, 156.61, 172.58, 210.59, 273.58] | dU-Natrium | 24-hour urine | Native preparation |
-| 2506 | fp-ctx | ng/l | 2% | name+unit | 34 | 0 |  |  | Fasting plasma |  |
-| 2507 | fp-ctx | ug/l | 71% | name+unit+values | 1281 | 0 | [0.09, 0.14, 0.2, 0.25, 0.3, 0.38, 0.48, 0.6, 0.81] |  | Fasting plasma |  |
-| 2508 | fp-ctx |  | 27% | name+values | 491 | 16.7 | [0.12, 0.19, 0.24, 0.31, 0.39, 0.48, 0.58, 0.71, 1] |  | Fasting plasma |  |
-| 2509 | fp-gt | u/l | 99% | name+unit+values | 772 | 0 | [15.6, 19.58, 23.9, 27.61, 33.27, 39.92, 49.93, 68.82, 104.64] |  | Fasting plasma |  |
-| 2510 | fp-gt |  | 1% | name | 11 | 0 |  |  | Fasting plasma |  |
-| 2511 | fp-na | mmol/l | 100% | name+unit+values | 6047 | 0 | [135.6, 137.84, 139, 139.97, 140.01, 141, 141.04, 142, 143] |  | Fasting plasma | Native preparation |
-| 2512 | fp-na |  | 0% | name | 18 | 11.11 |  |  | Fasting plasma | Native preparation |
-| 2513 | p-acth | ng/l | 87% | name+unit+values | 10045 | 0.42 | [8.08, 11.12, 14.1, 17.14, 20.58, 24.79, 30.92, 40.41, 66.95] | P -Adrenokortikotropiini | Plasma |  |
-| 2514 | p-acth | pmol/l | 0% | name+unit | 7 | 0 |  | P -Adrenokortikotropiini | Plasma |  |
-| 2515 | p-acth |  | 13% | name+values | 1461 | 80.01 | [9.26, 12.21, 15.18, 18.04, 23.17, 27.09, 32.96, 40.36, 61.68] | P -Adrenokortikotropiini | Plasma |  |
-| 2516 | p-at3 | % | 98% | name+unit+values | 33387 | 0.01 | [54.15, 67.47, 77.12, 84.9, 91.44, 97.34, 103.31, 110.17, 119.77] | P -Antitrombiini III | Plasma |  |
-| 2517 | p-at3 | form | 0% | name+unit | 18 | 0 |  | P -Antitrombiini III | Plasma |  |
-| 2518 | p-at3 |  | 2% | name+values | 750 | 50.4 | [77.41, 88.27, 92.93, 97.96, 101.75, 106.37, 110.41, 114.53, 119.94] | P -Antitrombiini III | Plasma |  |
-| 2519 | p-at3. | % | 95% | name+unit+values | 4852 | 0 | [82.58, 90.63, 95.72, 100.18, 103.97, 107.65, 111.95, 117.06, 124.39] |  | Plasma |  |
-| 2520 | p-at3. |  | 5% | name+values | 269 | 20.45 | [87.63, 92.63, 97.23, 100.8, 104.86, 109.03, 113.28, 117.74, 123.49] |  | Plasma |  |
-| 2521 | p-efa | form | 4% | name+unit | 5 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  |
-| 2522 | p-efa |  | 96% | name | 125 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  |
-| 2523 | p-fakb | g/l | 77% | name+unit+values | 120 | 0 | [0.14, 0.17, 0.18, 0.2, 0.21, 0.21, 0.23, 0.26, 0.3] | P -Faktori B | Plasma |  |
-| 2524 | p-fakb |  | 23% | name | 35 | 25.71 |  | P -Faktori B | Plasma |  |
-| 2525 | p-fe | umol/l | 79% | name+unit+values | 2840 | 0 | [5.52, 7.66, 9.48, 11.25, 13.18, 14.87, 16.94, 19.46, 23.35] |  | Plasma |  |
-| 2526 | p-fe |  | 21% | name+values | 740 | 33.92 | [5.15, 6.78, 8.55, 10.06, 12.18, 14.07, 16.43, 19.54, 23.49] |  | Plasma |  |
-| 2527 | p-fs | s | 17% | name+unit+values | 319 | 0 | [28, 29.31, 30.81, 32, 33.17, 35, 36.48, 39.22, 45.08] |  | Plasma |  |
-| 2528 | p-fs |  | 83% | name | 1586 | 99.87 |  |  | Plasma |  |
-| 2529 | p-fv | % | 96% | name+unit+values | 6911 | 0.01 | [43.78, 58.4, 69.62, 80.37, 90.29, 99.93, 110.48, 122.94, 139.52] | P -Hyytymistekijä V | Plasma |  |
-| 2530 | p-fv |  | 4% | name+values | 261 | 40.23 | [68.7, 79.64, 87.53, 94.6, 99.14, 104.6, 110.72, 119.21, 132.72] | P -Hyytymistekijä V | Plasma |  |
-| 2531 | p-fx | % | 49% | name+unit+values | 916 | 0.11 | [46.06, 65.75, 76.36, 83.72, 90.83, 97.78, 104.84, 112.37, 122.61] | P -Hyytymistekijä X | Plasma |  |
-| 2532 | p-fx |  | 51% | name+values | 949 | 87.46 | [66, 76.45, 83.38, 90.43, 96, 100.47, 108.88, 114, 128] | P -Hyytymistekijä X | Plasma |  |
-| 2533 | p-gt | mg/ml | 0% | name+unit | 8 | 0 |  | P -Glutamyylitransferaasi | Plasma |  |
-| 2534 | p-gt | u/l | 98% | name+unit+values | 820178 | 0.02 | [14.56, 18.66, 23.05, 28.6, 36.08, 47.26, 65.76, 101.29, 195.48] | P -Glutamyylitransferaasi | Plasma |  |
-| 2535 | p-gt |  | 2% | name+values | 15977 | 100 | [15.82, 20.13, 24.14, 29.03, 35.14, 45.13, 63.31, 89.78, 161.64] | P -Glutamyylitransferaasi | Plasma |  |
-| 2536 | p-hstni | ng/l | 100% | name+unit+values | 3261 | 0 | [1, 2, 3, 4.12, 6.04, 9.1, 14.48, 27.09, 65.46] |  | Plasma |  |
-| 2537 | p-k+na |  | 100% | name | 69230 | 100 |  |  | Plasma |  |
-| 2538 | p-k,na |  | 100% | name | 2518 | 100 |  |  | Plasma |  |
-| 2539 | p-k-na | mmol/l | 76% | name+unit | 594 | 100 |  |  | Plasma | Native preparation |
-| 2540 | p-k-na |  | 24% | name | 186 | 100 |  |  | Plasma | Native preparation |
-| 2541 | p-k-pa | mmol/l | 100% | name+unit+values | 197 | 0 | [3.53, 3.78, 3.9, 4, 4.04, 4.13, 4.3, 4.38, 4.56] |  | Plasma | Long-term / prolonged |
-| 2542 | p-k/na |  | 100% | name | 321 | 100 |  |  | Plasma |  |
-| 2543 | p-ked. | mmol/l | 100% | name+unit | 344 | 0 |  |  | Plasma |  |
-| 2544 | p-kjd. | mmol/l | 100% | name+unit | 160 | 0 |  |  | Plasma |  |
-| 2545 | p-la1 | s | 95% | name+unit+values | 1064 | 0 | [30, 31.95, 33.1, 34.81, 35.99, 37.75, 39.96, 44.96, 54.77] |  | Plasma |  |
-| 2546 | p-la1 |  | 5% | name | 52 | 50 |  |  | Plasma |  |
-| 2547 | p-la2 | s | 26% | name+unit+values | 498 | 0 | [32, 33.41, 35.41, 36.98, 38.82, 40.9, 43.06, 47.24, 53.65] |  | Plasma |  |
-| 2548 | p-la2 |  | 74% | name | 1411 | 99.43 |  |  | Plasma |  |
-| 2549 | p-mypa | mg/l | 87% | name+unit+values | 1692 | 0.06 | [0.64, 0.99, 1.33, 1.7, 2.12, 2.67, 3.43, 4.39, 6.28] | P -Mykofenolihappo | Plasma |  |
-| 2550 | p-mypa |  | 13% | name | 245 | 76.33 |  | P -Mykofenolihappo | Plasma |  |
-| 2551 | p-na | mmol/ | 0% | name+unit | 14 | 0 |  | P -Natrium | Plasma | Native preparation |
-| 2552 | p-na | mmol/l | 99% | name+unit+values | 7320578 | 0.03 | [133.91, 136.27, 137.98, 138.99, 139.95, 140, 141, 142, 143] | P -Natrium | Plasma | Native preparation |
-| 2553 | p-na |  | 1% | name+values | 81059 | 100 | [134.02, 137.07, 138.67, 139, 140, 141, 142, 142.8, 143] | P -Natrium | Plasma | Native preparation |
-| 2554 | p-na. | mmol/l | 100% | name+unit+values | 1467 | 0 | [134.64, 136.99, 138.3, 139.9, 140.54, 141, 142, 142.75, 144] |  | Plasma |  |
-| 2555 | p-na: | mmol/l | 100% | name+unit+values | 621 | 0 | [131.65, 133.8, 135, 136.23, 137.85, 138.61, 139.67, 140.88, 142] |  | Plasma |  |
-| 2556 | p-naed. | mmol/l | 100% | name+unit | 306 | 0 |  |  | Plasma |  |
-| 2557 | p-najd. | mmol/l | 100% | name+unit | 154 | 0 |  |  | Plasma |  |
-| 2558 | p-nak |  | 100% | name | 259040 | 100 |  |  | Plasma |  |
-| 2559 | p-nap | mmol/l | 100% | name+unit+values | 342 | 0 | [132.69, 135.3, 137.47, 139, 140, 140.64, 142, 143, 145] |  | Plasma |  |
-| 2560 | p-supar | ug/l | 96% | name+unit+values | 351 | 0 | [2.87, 3.25, 3.63, 3.92, 4.33, 4.73, 5.27, 6.37, 8.21] |  | Plasma |  |
-| 2561 | p-supar |  | 4% | name | 16 | 100 |  |  | Plasma |  |
-| 2562 | p-t3-v | pmol/l | 99% | name+unit+values | 82081 | 0.04 | [3.46, 3.84, 4.11, 4.35, 4.57, 4.81, 5.08, 5.46, 6.26] | P -Trijodityroniini, vapaa | Plasma | Free or unconjugated |
-| 2563 | p-t3-v |  | 1% | name+values | 921 | 100 | [3.47, 3.87, 4.08, 4.31, 4.53, 4.77, 5.02, 5.39, 6.24] | P -Trijodityroniini, vapaa | Plasma | Free or unconjugated |
-| 2564 | p-t4-v | pmol/l | 98% | name+unit+values | 1108128 | 0.01 | [11.98, 13.02, 13.95, 14.63, 15.23, 16.03, 16.92, 17.94, 19.56] | P -Tyroksiini, vapaa | Plasma | Free or unconjugated |
-| 2565 | p-t4-v |  | 2% | name+values | 19446 | 100 | [12, 13.8, 14.44, 15.06, 16, 16.21, 16.99, 17.6, 19] | P -Tyroksiini, vapaa | Plasma | Free or unconjugated |
-| 2566 | p-t4v | pmol/l | 96% | name+unit+values | 110881 | 0 | [12.73, 13.79, 14.57, 15.27, 15.96, 16.68, 17.48, 18.48, 19.99] |  | Plasma |  |
-| 2567 | p-t4v |  | 4% | name+values | 4743 | 100 | [12.19, 13.39, 14.21, 14.93, 15.61, 16.33, 17.17, 18.29, 20.03] |  | Plasma |  |
-| 2568 | p-tfr | mg/l | 92% | name+unit+values | 188406 | 0.02 | [0.81, 1.28, 2.05, 2.5, 2.87, 3.3, 3.83, 4.64, 6.21] | P -Transferriinireseptori, liukoinen | Plasma |  |
-| 2569 | p-tfr |  | 8% | name+values | 15951 | 100 | [2.12, 2.53, 2.87, 3.21, 3.63, 4.15, 4.81, 5.75, 7.59] | P -Transferriinireseptori, liukoinen | Plasma |  |
-| 2570 | p-tni | ng/l | 70% | name+unit+values | 220095 | 0 | [4, 5.13, 7.13, 10.22, 15.11, 24.46, 46.82, 122.37, 829.48] | P -Troponiini I | Plasma |  |
-| 2571 | p-tni | ug/l | 8% | name+unit+values | 25579 | 0 | [0.01, 0.01, 0.02, 0.02, 0.03, 0.05, 0.08, 0.16, 0.78] | P -Troponiini I | Plasma |  |
-| 2572 | p-tni |  | 22% | name+values | 70910 | 100 | [0.05, 0.22, 2.89, 4.65, 7.45, 12.28, 24.91, 48.92, 145.81] | P -Troponiini I | Plasma |  |
-| 2573 | p-tni. | ng/l | 3% | name+unit | 6 | 0 |  |  | Plasma |  |
-| 2574 | p-tni. | ug/l | 82% | name+unit+values | 155 | 0 | [0, 0, 0, 0, 0, 0, 0.01, 0.02, 0.06] |  | Plasma |  |
-| 2575 | p-tni. |  | 15% | name | 28 | 100 |  |  | Plasma |  |
-| 2576 | p-tnih | ng/l | 82% | name+unit+values | 1974 | 0 | [4, 5.78, 7.89, 10.8, 16.52, 27.69, 54.92, 168.16, 1593.63] |  | Plasma |  |
-| 2577 | p-tnih |  | 18% | name | 440 | 100 |  |  | Plasma |  |
-| 2578 | p-tnl | ng/l | 37% | name+unit+values | 124 | 0 | [3, 4, 5.16, 7, 10, 12.72, 29.97, 89.8, 240.6] |  | Plasma |  |
-| 2579 | p-tnl | ug/l | 53% | name+unit+values | 179 | 0 | [0, 0, 0, 0, 0, 0.01, 0.01, 0.02, 0.05] |  | Plasma |  |
-| 2580 | p-tnl |  | 11% | name | 36 | 100 |  |  | Plasma |  |
-| 2581 | p-tnt | ng/l | 84% | name+unit+values | 437584 | 0.96 | [6.97, 9.13, 11.78, 15.03, 19.12, 24.8, 33.92, 51.22, 106.22] | P -Troponiini T | Plasma |  |
-| 2582 | p-tnt | ug/l | 0% | name+unit | 76 | 0 |  | P -Troponiini T | Plasma |  |
-| 2583 | p-tnt |  | 15% | name+values | 80220 | 100 | [6.97, 8.93, 11.46, 14.61, 18.09, 22.79, 29.94, 42.37, 74.82] | P -Troponiini T | Plasma |  |
-| 2584 | p-tt | % | 99% | name+unit+values | 472003 | 0.01 | [50.44, 65.04, 74.28, 81.62, 88.26, 94.73, 101.62, 109.77, 121.26] | P -Tromboplastiiniaika | Plasma |  |
-| 2585 | p-tt | form | 0% | name+unit | 20 | 0 |  | P -Tromboplastiiniaika | Plasma |  |
-| 2586 | p-tt |  | 1% | name+values | 4462 | 100 | [41.42, 56.72, 66.85, 77.09, 85.82, 93.79, 102.07, 112.01, 126.16] | P -Tromboplastiiniaika | Plasma |  |
-| 2587 | p-tt- | % | 98% | name+unit+values | 1432 | 0 | [60.12, 72.07, 78.16, 83.25, 88.78, 95.39, 102.35, 111.94, 122.43] |  | Plasma |  |
-| 2588 | p-tt- |  | 2% | name | 29 | 96.55 |  |  | Plasma |  |
-| 2589 | p-tt. | % | 94% | name+unit+values | 5628 | 0 | [63.13, 78.7, 87.12, 93.57, 99.77, 105.67, 112.42, 119.67, 130.89] |  | Plasma |  |
-| 2590 | p-tt. |  | 6% | name+values | 328 | 31.4 | [48, 79.63, 90.12, 98.65, 107.18, 114.33, 121.82, 130.4, 140] |  | Plasma |  |
-| 2591 | p-ttr | % | 93% | name+unit+values | 1114 | 0 | [50.89, 61.27, 67.88, 73.89, 78.52, 83.07, 89.29, 95.08, 100] |  | Plasma |  |
-| 2592 | p-ttr |  | 7% | name | 89 | 89.89 |  |  | Plasma |  |
-| 2593 | pdgfr |  | 100% | name | 461 | 100 |  |  |  |  |
-| 2594 | peak | l/min | 10% | name+unit | 12 | 0 |  |  |  |  |
-| 2595 | peak |  | 90% | name | 104 | 100 |  |  |  |  |
-| 2596 | pef-pa |  | 100% | name | 7844 | 99.92 |  | Uloshengityksen huippuvirtaus, sarjamittaus, pitkäaikaisseuranta |  | Long-term / prolonged |
-| 2597 | pef-ras |  | 100% | name | 242 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, rasituskoe |  |  |
-| 2598 | pf-ace | u/l | 66% | name+unit+values | 313 | 3.19 | [6.4, 10.22, 12.78, 15.45, 17.82, 19.96, 24.1, 28.83, 37.4] | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  |
-| 2599 | pf-ace |  | 34% | name | 161 | 98.14 |  | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  |
-| 2600 | pf-ada | u/l | 91% | name+unit+values | 3550 | 0.14 | [3.68, 5.14, 6.78, 8.01, 9.46, 11.17, 13.55, 17.33, 25.48] | Pf-Adenosiinideaminaasi | Pleural fluid |  |
-| 2601 | pf-ada |  | 9% | name | 365 | 90.96 |  | Pf-Adenosiinideaminaasi | Pleural fluid |  |
-| 2602 | pneag |  | 100% | name | 244 | 100 |  |  |  |  |
-| 2603 | s-na | mmol/l | 99% | name+unit+values | 124118 | 0 | [137.36, 138.84, 139.01, 140, 140.14, 141, 141.38, 142, 143] | S -Natrium | Serum | Native preparation |
-| 2604 | s-na | mol/l | 0% | name+unit | 5 | 0 |  | S -Natrium | Serum | Native preparation |
-| 2605 | s-na |  | 1% | name+values | 931 | 67.35 | [137.2, 138, 139, 139, 140, 140, 141, 141, 142.37] | S -Natrium | Serum | Native preparation |
-| 2606 | s-t3-v | pmol/l | 92% | name+unit+values | 18657 | 0 | [3.72, 4.06, 4.3, 4.5, 4.69, 4.9, 5.13, 5.43, 6.06] | S -Trijodityroniini, vapaa | Serum | Free or unconjugated |
-| 2607 | s-t3-v |  | 8% | name+values | 1623 | 51.2 | [3.55, 3.8, 4.02, 4.22, 4.41, 4.6, 4.85, 5.16, 5.82] | S -Trijodityroniini, vapaa | Serum | Free or unconjugated |
-| 2608 | s-t4-v | pmol/l | 96% | name+unit+values | 252259 | 0 | [11.09, 12, 12.88, 13.14, 13.97, 14.48, 15.15, 16.1, 17.48] | S -Tyroksiini, vapaa | Serum | Free or unconjugated |
-| 2609 | s-t4-v |  | 4% | name+values | 9900 | 100 | [12.03, 12.98, 13.72, 14.35, 14.94, 15.68, 16.39, 17.25, 18.59] | S -Tyroksiini, vapaa | Serum | Free or unconjugated |
-| 2610 | s-t4v | pmol/l | 100% | name+unit+values | 1086 | 0 | [12.85, 13, 14, 14.52, 15, 15.93, 16, 17, 18] |  | Serum |  |
-| 2611 | s-tfr | mg | 0% | name+unit | 7 | 0 |  | S -Transferriinireseptori, liukoinen | Serum |  |
-| 2612 | s-tfr | mg/l | 98% | name+unit+values | 77760 | 0 | [1, 1.22, 1.5, 1.89, 2.35, 2.8, 3.34, 4.1, 5.59] | S -Transferriinireseptori, liukoinen | Serum |  |
-| 2613 | s-tfr |  | 2% | name+values | 1379 | 100 | [1.84, 2.22, 2.62, 3.08, 3.57, 4.23, 5.1, 6.26, 8.15] | S -Transferriinireseptori, liukoinen | Serum |  |
-| 2614 | s-tnf | ng/l | 67% | name+unit+values | 100 | 0 | [4.65, 5.4, 6.33, 7.11, 7.81, 8.85, 10.5, 13.2, 23.25] | S -Tuumorinekroositekijä, alfa | Serum |  |
-| 2615 | s-tnf |  | 33% | name | 50 | 74 |  | S -Tuumorinekroositekijä, alfa | Serum |  |
-| 2616 | s-tni | ng/l | 26% | name+unit+values | 63 | 0 | [2.98, 3.29, 4.36, 4.96, 6.38, 8.72, 14.54, 33, 54.53] | S -Troponiini I | Serum |  |
-| 2617 | s-tni | ug/l | 4% | name+unit | 11 | 0 |  | S -Troponiini I | Serum |  |
-| 2618 | s-tni |  | 70% | name | 171 | 100 |  | S -Troponiini I | Serum |  |
-| 2619 | s-tnt | ng/l | 2% | name+unit+values | 149 | 0 | [40, 42, 45.21, 51.23, 64.69, 87.1, 139.39, 201.81, 358.2] | S -Troponiini T | Serum |  |
-| 2620 | s-tnt |  | 98% | name | 7446 | 99.38 |  | S -Troponiini T | Serum |  |
-| 2621 | s-tob | mg/l | 59% | name+unit+values | 805 | 0.99 | [0.29, 0.5, 0.61, 0.8, 1.01, 1.26, 1.54, 1.91, 3.02] | S -Tobramysiini | Serum |  |
-| 2622 | s-tob |  | 41% | name | 560 | 81.96 |  | S -Tobramysiini | Serum |  |
-| 2623 | sp-pak |  | 100% | name | 196 | 100 |  |  | Sperm / semen |  |
-| 2624 | sp-pakd |  | 100% | name | 138 | 100 |  |  | Sperm / semen |  |
-| 2625 | u-na | mmol/l | 77% | name+unit+values | 8969 | 1.33 | [24.74, 32.42, 40.4, 48.4, 57.53, 68.16, 81.75, 99.14, 129.68] | U -Natrium | Urine | Native preparation |
-| 2626 | u-na |  | 23% | name+values | 2662 | 76.37 | [27.27, 35.54, 43.11, 51.43, 60.05, 68.34, 78.15, 92.47, 111.65] | U -Natrium | Urine | Native preparation |
-| 2627 | v-na |  | 100% | name+values | 265 | 0.75 | [130.22, 134.26, 135.98, 137.59, 138.5, 139.03, 140, 141, 142] |  |  | Native preparation |
-| 2628 | vp-na | mmol/l | 98% | name+unit+values | 10896 | 0 | [132.84, 135.34, 136.96, 137.97, 138.99, 139.84, 140.33, 141.08, 142.49] |  |  | Native preparation |
-| 2629 | vp-na |  | 2% | name | 174 | 98.28 |  |  |  | Native preparation |
+| 2427 | ab-na | mmol/l | 100% | name+unit+values | 1125 | 0 | [131.07, 134.74, 136.65, 138.04, 139.27, 140.42, 141.11, 142.54, 144.85] |  | Arterial blood | Native preparation |
+| 2428 | am-lamel | e9/l | 97% | name+unit+values | 327 | 0 | [8.22, 12.77, 17.47, 21.27, 27.86, 33.66, 40.76, 49.86, 62.49] | Am-Lamellaarikappaleet | Amniotic fluid |  |
+| 2429 | am-lamel |  | 3% | name | 10 | 100 |  | Am-Lamellaarikappaleet | Amniotic fluid |  |
+| 2430 | ap-lakt | mmol/l | 99% | name+unit+values | 1456 | 0 | [0.69, 0.81, 0.96, 1.1, 1.28, 1.51, 1.82, 2.3, 3.23] |  |  |  |
+| 2431 | ap-lakt |  | 1% | name | 18 | 100 |  |  |  |  |
+| 2432 | ap-na | mmol/l | 100% | name+unit+values | 50270 | 0.07 | [130.69, 133.39, 134.98, 136, 136.99, 137.94, 138.91, 139.95, 141.72] |  |  | Native preparation |
+| 2433 | ap-na |  | 0% | name | 233 | 100 |  |  |  | Native preparation |
+| 2434 | ap-nak |  | 100% | name | 155 | 100 |  |  |  |  |
+| 2435 | b-na | mmol/l | 86% | name+unit+values | 59360 | 0 | [132.83, 135.08, 136.5, 137.68, 138.42, 139.02, 140.21, 141.76, 144.07] |  | Blood | Native preparation |
+| 2436 | b-na |  | 14% | name+values | 9740 | 100 | [132, 135.65, 137.06, 138.86, 139, 140, 140.25, 141, 142] |  | Blood | Native preparation |
+| 2437 | cp-na | mmol/l | 94% | name+unit+values | 305 | 0 | [132, 134.13, 135.88, 137, 138, 139.24, 140, 141.93, 143] |  |  | Native preparation |
+| 2438 | cp-na |  | 6% | name | 18 | 100 |  |  |  | Native preparation |
+| 2439 | di-na | mmol/l | 100% | name+unit | 307 | 0 |  | Di-Natrium | Dialysis fluid | Native preparation |
+| 2440 | du-na | mmol/24h | 74% | name+unit+values | 2845 | 0 | [76.9, 98.34, 115.34, 133.54, 151.44, 169.81, 193.27, 222.7, 272.41] | dU-Natrium | 24-hour urine | Native preparation |
+| 2441 | du-na |  | 26% | name+values | 1021 | 100 | [65.99, 83.48, 103.21, 117.93, 138.14, 155.68, 172.4, 209.91, 273.5] | dU-Natrium | 24-hour urine | Native preparation |
+| 2442 | fp-alat | u/l | 100% | name+unit+values | 1830 | 0 | [14.7, 17.39, 20.07, 22.45, 25.26, 29.41, 34.57, 41.87, 57.54] |  | Fasting plasma |  |
+| 2443 | fp-ctx | ng/l | 2% | name+unit | 34 | 0 |  |  | Fasting plasma |  |
+| 2444 | fp-ctx | ug/l | 71% | name+unit+values | 1281 | 0.23 | [0.09, 0.14, 0.2, 0.25, 0.3, 0.38, 0.48, 0.61, 0.81] |  | Fasting plasma |  |
+| 2445 | fp-ctx |  | 27% | name+values | 491 | 100 | [0.12, 0.19, 0.26, 0.33, 0.42, 0.53, 0.63, 0.85, 1.5] |  | Fasting plasma |  |
+| 2446 | fp-gt | u/l | 99% | name+unit+values | 772 | 0 | [15.59, 19.58, 23.9, 27.78, 33.1, 39.95, 49.61, 68.78, 105.4] |  | Fasting plasma |  |
+| 2447 | fp-gt |  | 1% | name | 11 | 100 |  |  | Fasting plasma |  |
+| 2448 | fp-na | mmol/l | 100% | name+unit+values | 6047 | 0 | [135.62, 137.92, 138.99, 139.97, 140.04, 141, 141.08, 142, 143] |  | Fasting plasma | Native preparation |
+| 2449 | fp-na |  | 0% | name | 18 | 100 |  |  | Fasting plasma | Native preparation |
+| 2450 | happi | % | 48% | name+unit+values | 838 | 0.24 | [25.89, 29.25, 34.66, 40, 44.71, 48.76, 54.72, 63.33, 83.17] |  |  |  |
+| 2451 | happi | l | 8% | name+unit+values | 132 | 0 | [1, 1.5, 2, 2, 2, 2.93, 3, 3.9, 6.43] |  |  |  |
+| 2452 | happi | l/min | 0% | name+unit | 6 | 0 |  |  |  |  |
+| 2453 | happi |  | 44% | name | 774 | 100 |  |  |  |  |
+| 2454 | j-papa |  | 100% | name | 183 | 100 |  |  |  |  |
+| 2455 | p-acth | ng/l | 87% | name+unit+values | 10045 | 0 | [8.1, 11.17, 14.07, 17.18, 20.62, 24.78, 30.97, 40.56, 66.81] | P -Adrenokortikotropiini | Plasma |  |
+| 2456 | p-acth | pmol/l | 0% | name+unit | 7 | 0 |  | P -Adrenokortikotropiini | Plasma |  |
+| 2457 | p-acth |  | 13% | name+values | 1461 | 100 | [9.3, 12.05, 15.2, 18.33, 23.32, 27.18, 33.07, 40.35, 63.93] | P -Adrenokortikotropiini | Plasma |  |
+| 2458 | p-alat | u/l | 97% | name+unit+values | 4827160 | 0 | [12.96, 15.82, 18.44, 20.97, 24.18, 27.92, 33.04, 41.55, 60.15] | P -Alaniiniaminotransferaasi | Plasma |  |
+| 2459 | p-alat | umol/l | 0% | name+unit | 23 | 0 |  | P -Alaniiniaminotransferaasi | Plasma |  |
+| 2460 | p-alat |  | 3% | name | 133418 | 100 |  | P -Alaniiniaminotransferaasi | Plasma |  |
+| 2461 | p-alat. | u/l | 99% | name+unit+values | 896 | 0 | [12.41, 15.26, 17.78, 20.06, 22.46, 25.38, 29.04, 35.69, 47.17] |  | Plasma |  |
+| 2462 | p-alat. |  | 1% | name | 10 | 100 |  |  | Plasma |  |
+| 2463 | p-asat | u/l | 97% | name+unit+values | 466423 | 0 | [16.61, 19.52, 21.89, 24.36, 26.99, 30.42, 35.39, 44.79, 70.46] | P -Aspartaattiaminotransferaasi | Plasma |  |
+| 2464 | p-asat | umol/l | 0% | name+unit+values | 215 | 0 | [17.67, 20, 22.09, 24.95, 26.7, 28.89, 32.58, 37.69, 51.22] | P -Aspartaattiaminotransferaasi | Plasma |  |
+| 2465 | p-asat |  | 3% | name | 14767 | 100 |  | P -Aspartaattiaminotransferaasi | Plasma |  |
+| 2466 | p-at3 | % | 98% | name+unit+values | 33387 | 0 | [53.99, 67.43, 77.05, 84.9, 91.49, 97.39, 103.39, 110.16, 119.61] | P -Antitrombiini III | Plasma |  |
+| 2467 | p-at3 | form | 0% | name+unit | 18 | 0 |  | P -Antitrombiini III | Plasma |  |
+| 2468 | p-at3 |  | 2% | name+values | 750 | 100 | [77.31, 88.51, 92.97, 98.3, 102.33, 106.75, 110.2, 114.52, 120] | P -Antitrombiini III | Plasma |  |
+| 2469 | p-at3. | % | 95% | name+unit+values | 4852 | 0 | [82.69, 90.71, 95.75, 100.16, 103.96, 107.71, 111.91, 117.1, 124.45] |  | Plasma |  |
+| 2470 | p-at3. |  | 5% | name+values | 269 | 100 | [87.62, 92.42, 97.42, 100.6, 104.78, 109, 113.23, 117.65, 123.61] |  | Plasma |  |
+| 2471 | p-efa |  | 100% | name | 125 | 100 |  | P -Rasvahapot, välttämättömät | Plasma |  |
+| 2472 | p-fakb | g/l | 77% | name+unit+values | 120 | 0 | [0.14, 0.16, 0.18, 0.2, 0.21, 0.21, 0.23, 0.26, 0.3] | P -Faktori B | Plasma |  |
+| 2473 | p-fakb |  | 23% | name | 35 | 100 |  | P -Faktori B | Plasma |  |
+| 2474 | p-fe | umol/l | 79% | name+unit+values | 2840 | 0 | [5.54, 7.67, 9.48, 11.27, 13.17, 14.88, 16.93, 19.43, 23.36] |  | Plasma |  |
+| 2475 | p-fe |  | 21% | name+values | 740 | 100 | [5.17, 6.79, 8.59, 10.13, 12.1, 14.06, 16.49, 19.49, 23.47] |  | Plasma |  |
+| 2476 | p-fs | s | 17% | name+unit+values | 319 | 0 | [28, 29.37, 30.81, 32, 33.25, 34.95, 36.52, 39.34, 45.23] |  | Plasma |  |
+| 2477 | p-fs |  | 83% | name | 1586 | 100 |  |  | Plasma |  |
+| 2478 | p-fv | % | 96% | name+unit+values | 6911 | 0.03 | [43.57, 58.38, 70.05, 80.34, 90.27, 99.83, 110.54, 122.66, 139.92] | P -Hyytymistekijä V | Plasma |  |
+| 2479 | p-fv |  | 4% | name+values | 261 | 100 | [69.88, 80.83, 88.32, 96.16, 100.54, 105.37, 112.35, 122.09, 134.3] | P -Hyytymistekijä V | Plasma |  |
+| 2480 | p-fx | % | 49% | name+unit+values | 916 | 0.22 | [45.39, 65.84, 76.4, 83.62, 90.78, 97.89, 105.11, 112.7, 123.23] | P -Hyytymistekijä X | Plasma |  |
+| 2481 | p-fx |  | 51% | name+values | 949 | 100 | [66, 78.85, 83.42, 90.36, 95.2, 99.28, 105.22, 113.1, 120.2] | P -Hyytymistekijä X | Plasma |  |
+| 2482 | p-gt | mg/ml | 0% | name+unit | 8 | 0 |  | P -Glutamyylitransferaasi | Plasma |  |
+| 2483 | p-gt | u/l | 98% | name+unit+values | 820178 | 0 | [14.61, 18.77, 23.38, 29.11, 36.97, 48.58, 67.09, 102.78, 197.74] | P -Glutamyylitransferaasi | Plasma |  |
+| 2484 | p-gt |  | 2% | name | 15977 | 100 |  | P -Glutamyylitransferaasi | Plasma |  |
+| 2485 | p-k+na |  | 100% | name | 69230 | 100 |  |  | Plasma |  |
+| 2486 | p-k,na |  | 100% | name | 2518 | 100 |  |  | Plasma |  |
+| 2487 | p-k-na | mmol/l | 76% | name+unit | 594 | 0 |  |  | Plasma | Native preparation |
+| 2488 | p-k-na |  | 24% | name | 186 | 100 |  |  | Plasma | Native preparation |
+| 2489 | p-k-pa | mmol/l | 100% | name+unit+values | 197 | 0 | [3.52, 3.78, 3.9, 3.99, 4.05, 4.12, 4.3, 4.38, 4.56] |  | Plasma | Long-term / prolonged |
+| 2490 | p-k/na |  | 100% | name | 321 | 100 |  |  | Plasma |  |
+| 2491 | p-ked. | mmol/l | 100% | name+unit | 344 | 0 |  |  | Plasma |  |
+| 2492 | p-kjd. | mmol/l | 100% | name+unit | 160 | 0 |  |  | Plasma |  |
+| 2493 | p-la1 | s | 95% | name+unit+values | 1064 | 0 | [30.03, 32, 33.13, 34.76, 36.01, 37.8, 39.95, 44.95, 54.82] |  | Plasma |  |
+| 2494 | p-la1 |  | 5% | name | 52 | 100 |  |  | Plasma |  |
+| 2495 | p-la2 | s | 26% | name+unit+values | 498 | 0 | [32, 33.5, 35.52, 37, 38.95, 40.99, 43.05, 47.4, 53.69] |  | Plasma |  |
+| 2496 | p-la2 |  | 74% | name | 1411 | 100 |  |  | Plasma |  |
+| 2497 | p-laite | ug/l | 100% | name+unit+values | 106 | 0 | [2.9, 3.2, 3.49, 3.68, 4.03, 4.44, 5.31, 6.24, 7.96] |  | Plasma |  |
+| 2498 | p-lam/m |  | 100% | name+values | 1896 | 100 | [1.02, 1.07, 1.11, 1.14, 1.16, 1.19, 1.21, 1.24, 1.28] |  | Plasma |  |
+| 2499 | p-mypa | mg/l | 87% | name+unit+values | 1692 | 0 | [0.63, 0.99, 1.33, 1.71, 2.12, 2.67, 3.43, 4.41, 6.29] | P -Mykofenolihappo | Plasma |  |
+| 2500 | p-mypa |  | 13% | name | 245 | 100 |  | P -Mykofenolihappo | Plasma |  |
+| 2501 | p-na | mmol/ | 0% | name+unit | 14 | 0 |  | P -Natrium | Plasma | Native preparation |
+| 2502 | p-na | mmol/l | 99% | name+unit+values | 7320578 | 0 | [134.08, 136.46, 137.96, 139, 139.93, 140.11, 141, 142, 143] | P -Natrium | Plasma | Native preparation |
+| 2503 | p-na |  | 1% | name | 81059 | 100 |  | P -Natrium | Plasma | Native preparation |
+| 2504 | p-na. | mmol/l | 100% | name+unit+values | 1467 | 0 | [134.62, 137, 138.31, 139.89, 140.56, 141, 142, 142.86, 144] |  | Plasma |  |
+| 2505 | p-na: | mmol/l | 100% | name+unit+values | 621 | 0 | [131.69, 133.81, 135, 136.19, 137.81, 138.69, 139.63, 140.92, 142] |  | Plasma |  |
+| 2506 | p-naed. | mmol/l | 100% | name+unit | 306 | 0 |  |  | Plasma |  |
+| 2507 | p-najd. | mmol/l | 100% | name+unit | 154 | 0 |  |  | Plasma |  |
+| 2508 | p-nak |  | 100% | name | 259040 | 100 |  |  | Plasma |  |
+| 2509 | p-nap | mmol/l | 100% | name+unit+values | 342 | 0.29 | [132.72, 135.18, 137.36, 139, 140, 140.67, 141.97, 143, 145] |  | Plasma |  |
+| 2510 | p-pc | % | 90% | name+unit+values | 7171 | 0 | [82.04, 95.56, 103.31, 110.09, 116.75, 123.11, 129.91, 139.06, 152.29] | P -Proteiini C | Plasma |  |
+| 2511 | p-pc | form | 0% | name+unit | 12 | 0 |  | P -Proteiini C | Plasma |  |
+| 2512 | p-pc |  | 10% | name+values | 763 | 100 | [85.52, 97.63, 105.02, 110.24, 116.71, 123.09, 130.39, 139.57, 155.46] | P -Proteiini C | Plasma |  |
+| 2513 | p-pct | ng/ml | 5% | name+unit+values | 1499 | 0 | [0.1, 0.1, 0.2, 0.28, 0.4, 0.64, 1.17, 2.72, 8.99] | P -Prokalsitoniini | Plasma |  |
+| 2514 | p-pct | ug/l | 91% | name+unit+values | 25253 | 0 | [0.07, 0.1, 0.13, 0.18, 0.26, 0.4, 0.68, 1.41, 5.19] | P -Prokalsitoniini | Plasma |  |
+| 2515 | p-pct |  | 4% | name | 1082 | 100 |  | P -Prokalsitoniini | Plasma |  |
+| 2516 | p-pi | mmol/l | 99% | name+unit+values | 186393 | 0 | [0.74, 0.87, 0.96, 1.05, 1.13, 1.23, 1.34, 1.5, 1.79] | P -Fosfaatti, epäorgaaninen | Plasma |  |
+| 2517 | p-pi |  | 1% | name | 2732 | 100 |  | P -Fosfaatti, epäorgaaninen | Plasma |  |
+| 2518 | p-prl | mu/l | 98% | name+unit+values | 10459 | 0 | [139.86, 185.19, 223.46, 260.99, 305.79, 361.97, 438.81, 570.22, 911.44] | P -Prolaktiini | Plasma |  |
+| 2519 | p-prl | nmol/l | 0% | name+unit | 16 | 0 |  | P -Prolaktiini | Plasma |  |
+| 2520 | p-prl |  | 2% | name | 162 | 100 |  | P -Prolaktiini | Plasma |  |
+| 2521 | p-ps | % | 79% | name+unit+values | 1651 | 0 | [65.21, 76.7, 83.61, 90.03, 95.98, 101.09, 108.67, 116.41, 129.83] | P -Proteiini S | Plasma | Basic screening |
+| 2522 | p-ps |  | 21% | name+values | 443 | 100 | [67.73, 78.79, 88.29, 94.24, 100.12, 106.66, 112.61, 120.5, 131.45] | P -Proteiini S | Plasma | Basic screening |
+| 2523 | p-psa | ug/l | 88% | name+unit+values | 440363 | 0 | [0.27, 0.54, 0.84, 1.21, 1.72, 2.49, 3.62, 5.6, 9.72] | P -Prostataspesifinen antigeeni | Plasma |  |
+| 2524 | p-psa |  | 12% | name | 61308 | 100 |  | P -Prostataspesifinen antigeeni | Plasma |  |
+| 2525 | p-pt | s | 100% | name+unit | 184 | 0 |  |  | Plasma |  |
+| 2526 | p-rvvt-l |  | 100% | name | 1894 | 100 |  |  | Plasma |  |
+| 2527 | p-supar | ug/l | 96% | name+unit+values | 351 | 0 | [2.88, 3.25, 3.62, 3.93, 4.32, 4.72, 5.27, 6.34, 8.2] |  | Plasma |  |
+| 2528 | p-supar |  | 4% | name | 16 | 100 |  |  | Plasma |  |
+| 2529 | p-tfr | mg/l | 92% | name+unit+values | 188406 | 0 | [0.9, 1.59, 2.26, 2.65, 3.02, 3.46, 4.03, 4.87, 6.51] | P -Transferriinireseptori, liukoinen | Plasma |  |
+| 2530 | p-tfr |  | 8% | name | 15951 | 100 |  | P -Transferriinireseptori, liukoinen | Plasma |  |
+| 2531 | p-tt | % | 99% | name+unit+values | 472003 | 0 | [50.27, 64.91, 74.21, 81.59, 88.34, 94.66, 101.65, 109.8, 121.37] | P -Tromboplastiiniaika | Plasma |  |
+| 2532 | p-tt | form | 0% | name+unit | 20 | 0 |  | P -Tromboplastiiniaika | Plasma |  |
+| 2533 | p-tt |  | 1% | name | 4462 | 100 |  | P -Tromboplastiiniaika | Plasma |  |
+| 2534 | p-tt- | % | 98% | name+unit+values | 1432 | 0 | [60.41, 72.11, 78.26, 83.23, 88.7, 95.38, 102.26, 111.84, 122.4] |  | Plasma |  |
+| 2535 | p-tt- |  | 2% | name | 29 | 100 |  |  | Plasma |  |
+| 2536 | p-tt. | % | 94% | name+unit+values | 5628 | 0 | [63.23, 78.72, 87.03, 93.55, 99.79, 105.77, 112.44, 119.67, 130.79] |  | Plasma |  |
+| 2537 | p-tt. |  | 6% | name+values | 328 | 100 | [49.07, 79.43, 90.33, 98.82, 106.71, 114.28, 121.35, 130.68, 140.29] |  | Plasma |  |
+| 2538 | p-ttr | % | 93% | name+unit+values | 1114 | 0 | [50.96, 61.18, 67.8, 73.84, 78.53, 83.21, 89.2, 95.05, 100] |  | Plasma |  |
+| 2539 | p-ttr |  | 7% | name | 89 | 100 |  |  | Plasma |  |
+| 2540 | papa |  | 100% | name | 1138 | 100 |  |  |  |  |
+| 2541 | pdgfr |  | 100% | name | 461 | 100 |  |  |  |  |
+| 2542 | peak | l/min | 10% | name+unit | 12 | 0 |  |  |  |  |
+| 2543 | peak |  | 90% | name | 104 | 100 |  |  |  |  |
+| 2544 | pef-pa |  | 100% | name | 7844 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, pitkäaikaisseuranta |  | Long-term / prolonged |
+| 2545 | pef-ras |  | 100% | name | 242 | 100 |  | Uloshengityksen huippuvirtaus, sarjamittaus, rasituskoe |  |  |
+| 2546 | pf-ace | u/l | 66% | name+unit+values | 313 | 0.32 | [6.33, 10.32, 12.86, 15.39, 17.8, 19.84, 24.02, 28.69, 37.34] | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  |
+| 2547 | pf-ace |  | 34% | name | 161 | 100 |  | Pf-Angiotensiini-1-konvertaasi | Pleural fluid |  |
+| 2548 | pf-ada | u/l | 91% | name+unit+values | 3550 | 0 | [3.68, 5.17, 6.79, 8.03, 9.48, 11.18, 13.51, 17.41, 25.63] | Pf-Adenosiinideaminaasi | Pleural fluid |  |
+| 2549 | pf-ada |  | 9% | name | 365 | 100 |  | Pf-Adenosiinideaminaasi | Pleural fluid |  |
+| 2550 | pipelle |  | 100% | name | 428 | 100 |  |  |  |  |
+| 2551 | pneag |  | 100% | name | 244 | 100 |  |  |  |  |
+| 2552 | pt-ivfal |  | 100% | name | 165 | 100 |  |  | Patient |  |
+| 2553 | pt-vp-ple |  | 100% | name | 102 | 100 |  |  | Patient |  |
+| 2554 | s-alat | iu/l | 0% | name+unit+values | 251 | 0 | [13.21, 15.82, 17.12, 19.56, 22, 24.18, 28.14, 35.6, 55.67] | S -Alaniiniaminotransferaasi | Serum |  |
+| 2555 | s-alat | u/l | 99% | name+unit+values | 323441 | 0 | [13.96, 17.08, 19.84, 22.78, 26.1, 30.03, 35.11, 42.65, 57.13] | S -Alaniiniaminotransferaasi | Serum |  |
+| 2556 | s-alat |  | 1% | name+values | 4631 | 100 | [14.16, 17.24, 20.69, 23.7, 27.55, 33.68, 39.69, 48.95, 68.13] | S -Alaniiniaminotransferaasi | Serum |  |
+| 2557 | s-asat | iu/l | 1% | name+unit+values | 247 | 0 | [18, 20.05, 21.99, 23.65, 25, 27.54, 29.68, 34.42, 41.57] | S -Aspartaattiaminotransferaasi | Serum |  |
+| 2558 | s-asat | u/l | 98% | name+unit+values | 22999 | 0 | [17.95, 20.33, 22.41, 24.42, 26.51, 29.05, 32.45, 37.78, 49.76] | S -Aspartaattiaminotransferaasi | Serum |  |
+| 2559 | s-asat |  | 1% | name+values | 171 | 100 | [18, 19, 22, 24, 24.5, 25.75, 29, 35, 49] | S -Aspartaattiaminotransferaasi | Serum |  |
+| 2560 | s-na | mmol/l | 99% | name+unit+values | 124118 | 0 | [137.11, 138.74, 139.05, 140, 140.15, 141, 141.38, 142, 143] | S -Natrium | Serum | Native preparation |
+| 2561 | s-na |  | 1% | name+values | 931 | 100 | [133.78, 137, 138.07, 139, 140, 140, 140.93, 141, 142.02] | S -Natrium | Serum | Native preparation |
+| 2562 | s-prl | miu/l | 5% | name+unit+values | 1647 | 0 | [99, 122.35, 142.41, 160.53, 182.22, 206.49, 242.23, 297.21, 453.2] | S -Prolaktiini | Serum |  |
+| 2563 | s-prl | mu/l | 93% | name+unit+values | 31229 | 0 | [116.54, 154.56, 187.96, 224.2, 266.24, 319.79, 396.49, 532.56, 848.45] | S -Prolaktiini | Serum |  |
+| 2564 | s-prl | mul/l | 0% | name+unit | 6 | 0 |  | S -Prolaktiini | Serum |  |
+| 2565 | s-prl | nmol/l | 0% | name+unit | 58 | 0 |  | S -Prolaktiini | Serum |  |
+| 2566 | s-prl |  | 2% | name | 718 | 100 |  | S -Prolaktiini | Serum |  |
+| 2567 | s-psa | mg/l | 0% | name+unit | 7 | 0 |  | S -Prostataspesifinen antigeeni | Serum |  |
+| 2568 | s-psa | ug/l | 95% | name+unit+values | 91718 | 0 | [0.38, 0.57, 0.75, 0.96, 1.25, 1.64, 2.26, 3.32, 5.46] | S -Prostataspesifinen antigeeni | Serum |  |
+| 2569 | s-psa |  | 5% | name | 4826 | 100 |  | S -Prostataspesifinen antigeeni | Serum |  |
+| 2570 | s-tfr | mg | 0% | name+unit | 7 | 0 |  | S -Transferriinireseptori, liukoinen | Serum |  |
+| 2571 | s-tfr | mg/l | 98% | name+unit+values | 77760 | 0 | [1.01, 1.24, 1.52, 1.93, 2.39, 2.84, 3.37, 4.15, 5.68] | S -Transferriinireseptori, liukoinen | Serum |  |
+| 2572 | s-tfr |  | 2% | name | 1379 | 100 |  | S -Transferriinireseptori, liukoinen | Serum |  |
+| 2573 | sp-pak |  | 100% | name | 196 | 100 |  |  | Sperm / semen |  |
+| 2574 | sp-pakd |  | 100% | name | 138 | 100 |  |  | Sperm / semen |  |
+| 2575 | u-na | mmol/l | 77% | name+unit+values | 8969 | 0 | [24.77, 32.46, 40.33, 48.4, 57.48, 68.26, 81.68, 99.24, 129.77] | U -Natrium | Urine | Native preparation |
+| 2576 | u-na |  | 23% | name+values | 2662 | 100 | [27.31, 35.62, 42.78, 51.38, 60.48, 68.93, 78.14, 92.21, 110.65] | U -Natrium | Urine | Native preparation |
+| 2577 | v-na |  | 100% | name+values | 265 | 100 | [130.07, 134.25, 136, 137.63, 138.47, 139, 140, 141, 142] |  |  | Native preparation |
+| 2578 | vp-na | mmol/l | 98% | name+unit+values | 10896 | 0 | [132.88, 135.36, 136.91, 137.97, 139, 139.83, 140.33, 141.06, 142.5] |  |  | Native preparation |
+| 2579 | vp-na |  | 2% | name | 174 | 100 |  |  |  | Native preparation |
+| 2580 | vp-ple |  | 100% | name | 725 | 100 |  | Valtimopaine ja verenvirtaus, pletysmografi |  |  |
 

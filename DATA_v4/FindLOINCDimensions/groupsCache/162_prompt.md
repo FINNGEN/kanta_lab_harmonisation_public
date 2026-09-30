@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,115 +139,71 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 162 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 13068 | -cd4-solujensuhdecd8-soluihin |  | 100% | name+values | 667 | 0.3 | [0.26, 0.37, 0.55, 0.73, 1, 1.35, 1.81, 2.32, 3.03] |  |  |  |
-| 13069 | -kt/v,daugirdaksenkaava |  | 100% | name+values | 176 | 0 | [1.13, 1.23, 1.29, 1.33, 1.39, 1.43, 1.46, 1.5, 1.57] |  |  |  |
-| 13070 | -sieni,natiivivalmiste |  | 100% | name | 244 | 100 |  |  |  |  |
-| 13071 | ab-aktuaalibikarbonaatti | mmol/l | 100% | name+unit+values | 14354 | 0 | [18.76, 21.02, 22.57, 23.76, 24.73, 25.7, 26.99, 28.55, 31.59] |  | Arterial blood |  |
-| 13072 | ab-aktuaalibikarbonaatti |  | 0% | name | 47 | 100 |  |  | Arterial blood |  |
-| 13073 | ab-lämpötila(he-tase) | aste | 100% | name+unit+values | 418 | 0 | [36.38, 36.95, 37, 37, 37, 37, 37.01, 37.48, 38.01] |  | Arterial blood |  |
-| 13074 | ab-standardibikarbonaatti | mmol/l | 100% | name+unit+values | 4434 | 0 | [19.73, 21.71, 22.89, 23.76, 24.46, 25.22, 26.01, 27.04, 28.87] |  | Arterial blood |  |
-| 13075 | ab-standardibikarbonaatti |  | 0% | name | 20 | 100 |  |  | Arterial blood |  |
-| 13076 | alkalinenfosfataasi | u/l | 91% | name+unit+values | 4090 | 0 | [51.93, 59.73, 66.52, 72.54, 78.85, 86.09, 95.45, 111.37, 142.22] |  |  |  |
-| 13077 | alkalinenfosfataasi |  | 9% | name | 409 | 100 |  |  |  |  |
-| 13078 | angiotensiini-1-konvertaasi | u/l | 93% | name+unit+values | 286 | 0 | [21.5, 28.51, 36.37, 41.21, 48.76, 54.44, 63.62, 70.94, 80.3] |  |  |  |
-| 13079 | angiotensiini-1-konvertaasi |  | 7% | name | 20 | 100 |  |  |  |  |
-| 13080 | b-diffi,erittelylaskenta,klooni |  | 100% | name | 142 | 100 |  |  | Blood |  |
-| 13081 | cb-standardibikarbonaatti | mmol/l | 99% | name+unit+values | 10798 | 0 | [20.28, 22.23, 23.36, 24.16, 24.9, 25.66, 26.58, 27.89, 30.19] |  | Capillary blood |  |
-| 13082 | cb-standardibikarbonaatti |  | 1% | name | 90 | 50 |  |  | Capillary blood |  |
-| 13083 | d-vitamiini-25-oh,d3-jad2-muodot | nmol/l | 100% | name+unit+values | 219 | 0 | [48.54, 55.58, 61.96, 68.73, 74.1, 79.27, 84.22, 89.91, 106.45] |  |  |  |
-| 13084 | d-vitamiini-25-oh,plasmasta | nmol/l | 100% | name+unit+values | 694 | 0 | [44.59, 53.15, 59, 64.66, 69.89, 76.01, 82.54, 92.02, 105.7] |  |  |  |
-| 13085 | e-punasolujenkokojakaum | % | 100% | name+unit+values | 55570 | 0 | [12.19, 12.59, 12.95, 13.26, 13.67, 14.09, 14.51, 14.98, 15.71] |  | Erythrocyte |  |
-| 13086 | e-punasolujenkokojakaum |  | 0% | name | 7 | 71.43 |  |  | Erythrocyte |  |
-| 13087 | e-punasolujenkokojakauma | % | 99% | name+unit+values | 196935 | 0 | [12, 13, 13, 13, 13.69, 14, 14.05, 15, 16.37] |  | Erythrocyte |  |
-| 13088 | e-punasolujenkokojakauma |  | 1% | name+values | 1688 | 46.92 | [15, 15, 15.98, 16, 16, 16.41, 17, 18, 19.59] |  | Erythrocyte |  |
-| 13089 | e-rdw,punasolujenkokojakauma | % | 100% | name+unit+values | 25929 | 0 | [12.08, 13, 13, 13.03, 14, 14, 15, 15.7, 17.03] |  | Erythrocyte |  |
-| 13090 | e-rdw,punasolujenkokojakauma |  | 0% | name | 76 | 100 |  |  | Erythrocyte |  |
-| 13091 | ekg,hoitoyksikönottama |  | 100% | name | 213 | 100 |  |  |  |  |
-| 13092 | ekgasiakkaanottama |  | 100% | name | 257 | 100 |  |  |  |  |
-| 13093 | erikoislääkärinkonsultaatio |  | 100% | name | 118 | 100 |  |  |  |  |
-| 13094 | folaatti(fe-folaat) | nmol/l | 96% | name+unit+values | 320 | 0 | [1456.69, 1642.98, 1740.68, 1864.47, 2021, 2152.9, 2311.39, 2519.36, 2775.52] |  |  |  |
-| 13095 | folaatti(fe-folaat) |  | 4% | name | 12 | 100 |  |  |  |  |
-| 13096 | fosfaatti,epäorgaaninen | mmol/l | 95% | name+unit+values | 275 | 0 | [0.83, 0.93, 0.99, 1.05, 1.1, 1.15, 1.23, 1.36, 1.64] |  |  |  |
-| 13097 | fosfaatti,epäorgaaninen |  | 5% | name | 13 | 100 |  |  |  |  |
-| 13098 | fp-fosfaatti,epäorgaaninen | mmol/l | 100% | name+unit+values | 1537 | 0 | [0.81, 0.94, 1.04, 1.12, 1.21, 1.31, 1.45, 1.64, 2] |  | Fasting plasma |  |
-| 13099 | fp-fosfaatti,epäorgaaninen |  | 0% | name | 7 | 100 |  |  | Fasting plasma |  |
-| 13100 | fp-parathormoni(intakti) | ng/l | 100% | name+unit+values | 167 | 0 | [34.58, 43.28, 53.6, 64.34, 75.77, 88.59, 106.04, 128.88, 166.07] |  | Fasting plasma |  |
-| 13101 | fp-parathormoni,intakti | ng/l | 67% | name+unit+values | 443 | 0 | [42.85, 55.73, 66.85, 78.78, 88.68, 102.07, 115.78, 136.81, 193.49] |  | Fasting plasma |  |
-| 13102 | fp-parathormoni,intakti | pmol/l | 32% | name+unit+values | 213 | 0 | [5.11, 7.29, 9.06, 12.26, 16.48, 21.96, 29.55, 41.46, 57.9] |  | Fasting plasma |  |
-| 13103 | fp-parathormoni,intakti |  | 1% | name | 5 | 60 |  |  | Fasting plasma |  |
-| 13104 | fp-reniini,konsentraatio | mu/l | 97% | name+unit+values | 275 | 0 | [1.9, 3.7, 5.72, 9.15, 13.8, 21.38, 36.23, 69.29, 149] |  | Fasting plasma |  |
-| 13105 | fp-reniini,konsentraatio |  | 3% | name | 9 | 100 |  |  | Fasting plasma |  |
-| 13106 | fras,oksidatiivinenstressi |  | 100% | name | 508 | 100 |  |  |  |  |
-| 13107 | fs-alkalinenfosfataasi | u/l | 100% | name+unit | 114 | 0 |  |  | Fasting serum |  |
-| 13108 | fs-angiotensiini-1-konvertaasi | u/l | 91% | name+unit+values | 168 | 0 | [21.95, 28.78, 36.13, 43.17, 50.38, 57.02, 63.03, 69.31, 88.3] |  | Fasting serum |  |
-| 13109 | fs-angiotensiini-1-konvertaasi |  | 9% | name | 17 | 100 |  |  | Fasting serum |  |
-| 13110 | fs-monikanava4-7tthperuspaketti |  | 100% | name | 125 | 100 |  |  | Fasting serum |  |
-| 13111 | fs-työterveyshuollonperuspaketti |  | 100% | name | 141 | 100 |  |  | Fasting serum |  |
-| 13112 | ilmajohtotarv.luujohto |  | 100% | name | 785 | 100 |  |  |  |  |
-| 13113 | korona-rs-influenssa,pcrpikatesti |  | 100% | name | 6428 | 100 |  |  |  |  |
-| 13114 | kreatiinikinaasi | u/l | 100% | name+unit+values | 821 | 0 | [51.45, 67.28, 78.98, 91.33, 108.19, 125.74, 161.13, 224.43, 350.78] |  |  |  |
-| 13115 | l-basofiilit,automaatio | % | 100% | name+unit+values | 10670 | 0 | [0, 0, 0.5, 1, 1, 1, 1, 1, 1] |  | Leukocyte |  |
-| 13116 | l-eosinofiilit,automaatio | % | 100% | name+unit+values | 10670 | 0 | [0.35, 1, 1.93, 2, 2.74, 3, 3.97, 4.81, 6.33] |  | Leukocyte |  |
-| 13117 | l-lymfosyytit,automaatio | % | 100% | name+unit+values | 19279 | 0 | [15.56, 20.42, 24.04, 26.95, 29.66, 32.37, 35.21, 38.75, 43.79] |  | Leukocyte |  |
-| 13118 | l-lymfosyytit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  |
-| 13119 | l-monosyytit,automaatio | % | 100% | name+unit+values | 19276 | 0 | [5.94, 6.98, 7.19, 8, 8.78, 9.04, 10, 11, 12.64] |  | Leukocyte |  |
-| 13120 | l-monosyytit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  |
-| 13121 | l-neutrofiilit,automaatio | % | 100% | name+unit+values | 19277 | 0 | [41.43, 47.16, 50.99, 54.23, 57.08, 59.98, 63.15, 67.08, 72.76] |  | Leukocyte |  |
-| 13122 | l-neutrofiilit,automaatio |  | 0% | name | 23 | 100 |  |  | Leukocyte |  |
-| 13123 | laktaattidehydrogenaasi | u/l | 100% | name+unit+values | 112 | 0 | [166.9, 176.25, 189.57, 200, 217.89, 228.73, 246.21, 285.8, 336.3] |  |  |  |
-| 13124 | p-aktuaalinenbikarbonaatti | mmol/l | 100% | name+unit+values | 1258 | 0 | [20.16, 23.03, 24.56, 25.84, 26.91, 27.87, 28.97, 30.03, 32.38] |  | Plasma |  |
-| 13125 | p-alkaalinenfosfataasi | u/l | 97% | name+unit+values | 218 | 0 | [54.87, 64.51, 69.29, 74.44, 80.78, 89.02, 97.67, 107.93, 128.13] |  | Plasma |  |
-| 13126 | p-alkaalinenfosfataasi |  | 3% | name | 6 | 16.67 |  |  | Plasma |  |
-| 13127 | p-alkalinenfosfataasi | u/l | 100% | name+unit+values | 26335 | 0 | [51.5, 59.65, 66.46, 73.03, 79.94, 87.78, 97.91, 113.11, 149.16] |  | Plasma |  |
-| 13128 | p-alkalinenfosfataasi |  | 0% | name | 74 | 91.89 |  |  | Plasma |  |
-| 13129 | p-bilirubiinikonjugaatit | umol/l | 92% | name+unit+values | 1839 | 0 | [2.92, 3, 3.32, 4, 4.89, 5.93, 7.57, 10.11, 21.15] |  | Plasma |  |
-| 13130 | p-bilirubiinikonjugaatit |  | 8% | name | 168 | 100 |  |  | Plasma |  |
-| 13131 | p-fosfaatti,epäorgaaninen | mmol/l | 100% | name+unit+values | 436 | 0 | [0.89, 0.99, 1.06, 1.13, 1.2, 1.27, 1.36, 1.47, 1.66] |  | Plasma |  |
-| 13132 | p-kreatiinikinaasi | u/l | 99% | name+unit+values | 2765 | 0 | [43.61, 57.48, 70.52, 85.33, 100.93, 124.44, 165.61, 239.04, 491.32] |  | Plasma |  |
-| 13133 | p-kreatiinikinaasi |  | 1% | name | 21 | 95.24 |  |  | Plasma |  |
-| 13134 | p-laktaattidehydrogenaasi | u/l | 99% | name+unit+values | 3272 | 0 | [163.71, 178.57, 190.98, 203.43, 216.38, 231.67, 254.03, 288.21, 372.84] |  | Plasma |  |
-| 13135 | p-laktaattidehydrogenaasi |  | 1% | name | 29 | 96.55 |  |  | Plasma |  |
-| 13136 | p-lupusantikoagulantti |  | 100% | name | 220 | 100 |  |  | Plasma |  |
-| 13137 | p-psavapaanosuustotaalista | % | 100% | name+unit+values | 719 | 0 | [10.55, 13.9, 16.1, 18.77, 21.1, 23.88, 26.7, 30.17, 36.09] |  | Plasma |  |
-| 13138 | p-urea,resirkulaatio | mmol/l | 100% | name+unit+values | 200 | 0 | [4.65, 12.03, 14.2, 15.66, 16.84, 18.43, 19.52, 21.22, 23.14] |  | Plasma |  |
-| 13139 | psa-vapaa/totaali-suhde,plasmasta | % | 26% | name+unit+values | 1183 | 0 | [8.11, 11.04, 13.43, 15.83, 18.18, 20.89, 24.81, 29.88, 39.78] |  |  |  |
-| 13140 | psa-vapaa/totaali-suhde,plasmasta |  | 74% | name | 3428 | 100 |  |  |  |  |
-| 13141 | psavapaanjatotaalinsuhde | % | 26% | name+unit | 62 | 0 |  |  |  |  |
-| 13142 | psavapaanjatotaalinsuhde |  | 74% | name | 180 | 97.78 |  |  |  |  |
-| 13143 | pt-vaativainhalaatiohoito |  | 100% | name | 114 | 100 |  |  | Patient |  |
-| 13144 | punasolojenkokojakauma | % | 99% | name+unit+values | 1068 | 0 | [12, 12.05, 13, 13, 13, 13, 13.97, 14, 14.47] |  |  |  |
-| 13145 | punasolojenkokojakauma |  | 1% | name | 7 | 100 |  |  |  |  |
-| 13146 | punasolujenerittelylaskenta | % | 9% | name+unit | 41 | 0 |  |  |  |  |
-| 13147 | punasolujenerittelylaskenta |  | 91% | name+values | 433 | 6 | [12, 12, 12.18, 13, 13, 13, 13, 13.97, 14] |  |  |  |
-| 13148 | punasolujenesiasteet(erytroblastit) | e9/l | 98% | name+unit+values | 1040 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  |
-| 13149 | punasolujenesiasteet(erytroblastit) |  | 2% | name | 24 | 100 |  |  |  |  |
-| 13150 | punasolujenkokojakauma | % | 98% | name+unit+values | 155883 | 0 | [12.28, 13, 13, 13.02, 14, 14, 15, 15.9, 17] |  |  |  |
-| 13151 | punasolujenkokojakauma |  | 2% | name | 2478 | 99.48 |  |  |  |  |
-| 13152 | punasolujenkokojakautuma | % | 100% | name+unit+values | 683 | 0 | [13, 13, 13, 13, 13, 14, 14, 14, 14.95] |  |  |  |
-| 13153 | punasolujenkoonvaihtelu | % | 100% | name+unit+values | 2031 | 0 | [12.51, 12.91, 13.17, 13.34, 13.62, 13.91, 14.31, 14.86, 15.92] |  |  |  |
-| 13154 | punasolut,kokojakauma | % | 100% | name+unit+values | 121 | 0 | [13, 13, 13, 13, 14, 14, 14, 14, 15] |  |  |  |
-| 13155 | s-alkalinenfosfataasi | u/l | 100% | name+unit+values | 368 | 0 | [52.79, 63.98, 76.35, 87.37, 103.68, 118.86, 131.06, 146.22, 181.47] |  | Serum |  |
-| 13156 | s-alkalinenfosfataasi,isoentsyymit |  | 100% | name | 318 | 100 |  |  | Serum |  |
-| 13157 | s-glykoproteiininasetylaatio | mmol/l | 100% | name+unit+values | 265 | 0 | [0.75, 0.79, 0.81, 0.83, 0.85, 0.88, 0.9, 0.94, 1] |  | Serum |  |
-| 13158 | s-neuronispesifinenenolaasi | ug/l | 100% | name+unit | 105 | 0 |  |  | Serum |  |
-| 13159 | s-nightingale-mittaus |  | 100% | name | 265 | 100 |  |  | Serum |  |
-| 13160 | s-psavapaanjatotaalinsuhde | % | 29% | name+unit+values | 106 | 0 | [11, 13, 14.4, 16.35, 19, 21, 23.87, 27, 31.9] |  | Serum |  |
-| 13161 | s-psavapaanjatotaalinsuhde |  | 71% | name | 264 | 100 |  |  | Serum |  |
-| 13162 | s-tymidiinikinaasi | u/l | 100% | name+unit+values | 237 | 0 | [3.92, 4.79, 5.63, 6.48, 7.24, 8.95, 10.78, 13.93, 39.38] |  | Serum |  |
-| 13163 | s-vapaanjakokonais-psa:nsuhde | % | 29% | name+unit+values | 643 | 0 | [11.89, 14.35, 17.11, 19.53, 21.76, 24, 27.79, 31.6, 36.6] |  | Serum |  |
-| 13164 | s-vapaanjakokonais-psa:nsuhde |  | 71% | name | 1561 | 100 |  |  | Serum |  |
-| 13165 | sars-cov-2,influenssaa,bja |  | 100% | name | 161 | 100 |  |  |  |  |
-| 13166 | sars-cov-2-antigeenitesti,pikatesti |  | 100% | name | 101 | 100 |  |  |  |  |
-| 13167 | tth-pakettia(ilmanpaastoa) |  | 100% | name | 1079 | 100 |  |  |  |  |
-| 13168 | tth:ssavirtsanprotjagluk |  | 100% | name | 294 | 100 |  |  |  |  |
-| 13169 | u-solut,peruslaskenta |  | 100% | name | 1772 | 100 |  |  | Urine |  |
-| 13170 | vb-aktuaalibikarbonaatti | mmol/l | 90% | name+unit+values | 1612 | 0 | [16.94, 19.74, 21.93, 23.14, 24.18, 25.06, 26.96, 28.44, 30.92] |  | Venous blood |  |
-| 13171 | vb-aktuaalibikarbonaatti |  | 10% | name+values | 185 | 17.3 | [20.1, 23.3, 24.38, 25.39, 26.05, 26.8, 27.78, 28.4, 29.7] |  | Venous blood |  |
-| 13172 | vb-standardibikarbonaatti | mmol/l | 100% | name+unit+values | 13754 | 0 | [20.04, 21.93, 23.08, 23.95, 24.68, 25.36, 26.13, 27.07, 28.82] |  | Venous blood |  |
-| 13173 | vb-standardibikarbonaatti |  | 0% | name | 44 | 100 |  |  | Venous blood |  |
-| 13174 | virtsansolujenhl7-siirtoon | e6/l | 94% | name+unit+values | 5551 | 0 | [0.1, 0.37, 0.65, 1.07, 1.65, 2.44, 3.88, 6.78, 14.04] |  |  |  |
-| 13175 | virtsansolujenhl7-siirtoon |  | 6% | name+values | 353 | 11.05 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  |
-| 13176 | zb-aktuaalibikarbonaatti | mmol/l | 100% | name+unit+values | 394 | 0 | [22, 23, 23.94, 24, 25, 26, 27, 27.8, 29.78] |  | Central blood |  |
+| 13132 | b-eosinofiilit,b-diffiosatutkimus | e9/l | 95% | name+unit+values | 776 | 0 | [0.05, 0.09, 0.12, 0.15, 0.18, 0.21, 0.25, 0.31, 0.41] |  | Blood |  |
+| 13133 | b-eosinofiilit,b-diffiosatutkimus |  | 5% | name | 38 | 100 |  |  | Blood |  |
+| 13134 | b-erybla(19978b-erybla),osatutkimus | e9/l | 100% | name+unit+values | 162 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Blood |  |
+| 13135 | b-hyytymistekijävgeeni,dna-tutkimus |  | 100% | name | 145 | 100 |  |  | Blood |  |
+| 13136 | b-jak2-geeninmutaatio,dna-tutkimus |  | 100% | name | 141 | 100 |  |  | Blood |  |
+| 13137 | b-laktaatti,päivystystutkimus | mmol/l | 100% | name+unit+values | 11297 | 0 | [0.6, 0.73, 0.85, 0.99, 1.13, 1.3, 1.56, 1.95, 2.72] |  | Blood |  |
+| 13138 | b-laktaatti,päivystystutkimus |  | 0% | name | 53 | 100 |  |  | Blood |  |
+| 13139 | b-laktoosi-intoleranssi,dna-tutkimus |  | 100% | name | 396 | 100 |  |  | Blood |  |
+| 13140 | b-laktoosimalabsorptioonliityvägeenimuutos,dna |  | 100% | name | 146 | 100 |  |  | Blood |  |
+| 13141 | b-neutrofiili,erillistutkimuksena | e9/l | 100% | name+unit+values | 26946 | 0 | [1.15, 1.77, 2.31, 2.83, 3.4, 4.06, 4.87, 6.13, 8.46] |  | Blood |  |
+| 13142 | b-neutrofiili,erillistutkimuksena |  | 0% | name | 90 | 100 |  |  | Blood |  |
+| 13143 | b-neutrofiilit,b-diffiosatutkimus | e9/l | 100% | name+unit+values | 813 | 0 | [1.98, 2.53, 3.01, 3.43, 3.8, 4.31, 4.86, 5.59, 6.82] |  | Blood |  |
+| 13144 | b-neutrofiilit,erillistutkimuksena | e9/l | 95% | name+unit+values | 1653 | 0 | [2.1, 2.62, 3.09, 3.44, 3.76, 4.24, 4.87, 5.59, 7.23] |  | Blood |  |
+| 13145 | b-neutrofiilit,erillistutkimuksena |  | 5% | name | 80 | 100 |  |  | Blood |  |
+| 13146 | b-neutrofiiliterillistutkimuksena | e9/l | 100% | name+unit+values | 555 | 0 | [1.8, 2.41, 2.88, 3.29, 3.66, 4.13, 4.71, 5.54, 7.13] |  | Blood |  |
+| 13147 | b-protrombiinigeeni,dna-tutkimus |  | 100% | name | 135 | 100 |  |  | Blood |  |
+| 13148 | bf-bronkuseritteenirtosolututkimus |  | 100% | name | 121 | 100 |  |  | Bronchial fluid |  |
+| 13149 | bronkuseritteenirtosolututkimus |  | 100% | name | 145 | 100 |  |  |  |  |
+| 13150 | cyp2d6-geeninvariaatiot,dna-tutkimus |  | 100% | name | 560 | 100 |  |  |  |  |
+| 13151 | dpyd-geeninvarianttientutkimusverestä |  | 100% | name | 381 | 100 |  |  |  |  |
+| 13152 | e-rdw(19976e-rdw),osatutkimus | % | 100% | name+unit+values | 161 | 0 | [12, 12.3, 13, 13, 13, 13, 13, 14, 15] |  | Erythrocyte |  |
+| 13153 | farmakogeneettinenpaneeli,dna-tutkimusverestä |  | 100% | name | 307 | 100 |  |  |  |  |
+| 13154 | farmakogeneettinenpaneelitutkimus |  | 100% | name | 238 | 100 |  |  |  |  |
+| 13155 | gynegologinenirtosolututkimus |  | 100% | name | 143 | 100 |  |  |  |  |
+| 13156 | gynekologinenirtosolunäyte,hpvnho+tarvnestepapa |  | 100% | name | 156 | 100 |  |  |  |  |
+| 13157 | gynekologinenirtosolututkimus |  | 100% | name | 1964 | 100 |  |  |  |  |
+| 13158 | gynekologinenirtosolututkimus,seulonta |  | 100% | name | 2320 | 100 |  |  |  |  |
+| 13159 | hyytymistekijävgeeni,dna-tutkimus |  | 100% | name | 105 | 100 |  |  |  |  |
+| 13160 | immunohistokemiallinentutkimus |  | 100% | name | 124 | 100 |  |  |  |  |
+| 13161 | k-vitamiinitk1jak2,pakettitutkimus |  | 100% | name | 211 | 100 |  |  |  |  |
+| 13162 | k1-vitamiini(fyllokinoni)osatutkimus | ug/l | 95% | name+unit+values | 195 | 0 | [0.15, 0.22, 0.28, 0.36, 0.43, 0.52, 0.7, 0.9, 1.6] |  |  |  |
+| 13163 | k1-vitamiini(fyllokinoni)osatutkimus |  | 5% | name | 11 | 100 |  |  |  |  |
+| 13164 | k2-vitamiini,menakinoni-4(mk4)osatutkimus | ug/l | 94% | name+unit+values | 203 | 0 | [0.14, 0.16, 0.2, 0.23, 0.26, 0.3, 0.34, 0.44, 0.58] |  |  |  |
+| 13165 | k2-vitamiini,menakinoni-4(mk4)osatutkimus |  | 6% | name | 14 | 100 |  |  |  |  |
+| 13166 | k2-vitamiini,menakinoni-7(mk7)osatutkimus | ug/l | 85% | name+unit+values | 185 | 0 | [0.13, 0.16, 0.2, 0.24, 0.32, 0.43, 0.71, 1.38, 2.6] |  |  |  |
+| 13167 | k2-vitamiini,menakinoni-7(mk7)osatutkimus |  | 15% | name | 32 | 100 |  |  |  |  |
+| 13168 | laktaatti,päivystystutkimus,verestä | mmol/l | 100% | name+unit+values | 353 | 0 | [0.77, 0.9, 1.04, 1.2, 1.46, 1.74, 2.08, 2.47, 3.11] |  |  |  |
+| 13169 | laktoosi-intoleranssi,dna-tutkimus |  | 100% | name | 168 | 100 |  |  |  |  |
+| 13170 | laktoosi-intoleranssi,dna-tutkimus,verestä␤ |  | 100% | name | 151 | 100 |  |  |  |  |
+| 13171 | lausunto,hemostaasi-jatrombosyyttitutkimukset |  | 100% | name | 337 | 100 |  |  |  |  |
+| 13172 | mikrobiologianerikoistutkimuk |  | 100% | name | 105 | 100 |  |  |  |  |
+| 13173 | neuvola1,äitiysneuvolatutkimukset |  | 100% | name | 337 | 100 |  |  |  |  |
+| 13174 | p-ca-albk(laskennallinentutkimus) | mmol/l | 100% | name+unit+values | 161 | 0 | [2.31, 2.35, 2.39, 2.41, 2.43, 2.45, 2.47, 2.5, 2.53] |  | Plasma |  |
+| 13175 | pf-laktaatti,päivystystutkimus | mmol/l | 100% | name+unit+values | 117 | 0 | [1.1, 1.2, 1.33, 1.5, 1.9, 2.39, 3.19, 4.1, 7.87] |  | Pleural fluid |  |
+| 13176 | pleuranesteenirtosolututkimus |  | 100% | name | 157 | 100 |  |  |  |  |
+| 13177 | pt-gynegologinenirtosolututkimus␤ |  | 100% | name | 463 | 100 |  |  | Patient |  |
+| 13178 | pt-gynekologinenirtosolututkimus |  | 100% | name | 1912 | 100 |  |  | Patient |  |
+| 13179 | pt-gynekologinenirtosolututkimus,seulonta |  | 100% | name | 483 | 100 |  |  | Patient |  |
+| 13180 | s-borrelia,vasta-aineetiggvarmistustutkimus | au/ml | 38% | name+unit+values | 202 | 0 | [8.73, 12.59, 17.76, 25.48, 39, 57.84, 89.45, 117.05, 176.45] |  | Serum |  |
+| 13181 | s-borrelia,vasta-aineetiggvarmistustutkimus |  | 62% | name | 325 | 100 |  |  | Serum |  |
+| 13182 | s-borrelia,vasta-aineetigmvarmistustutkimus | au/ml | 78% | name+unit+values | 411 | 0 | [3.99, 6, 7.64, 9.37, 11.83, 15.83, 21.24, 27.61, 48.27] |  | Serum |  |
+| 13183 | s-borrelia,vasta-aineetigmvarmistustutkimus |  | 22% | name | 117 | 100 |  |  | Serum |  |
+| 13184 | s-hi-virus,vasta-aineet,päivystystutkimus |  | 100% | name | 151 | 100 |  |  | Serum |  |
+| 13185 | s-immunofiksaatiotutkimus |  | 100% | name | 406 | 100 |  |  | Serum |  |
+| 13186 | sytologinenirtosolututkimus,virtsasta |  | 100% | name | 534 | 100 |  |  |  |  |
+| 13187 | ts-rintasyövänennustekijätutkimus |  | 100% | name | 164 | 100 |  |  | Tissue |  |
+| 13188 | tyreotropiinirefleksointitutkimus |  | 100% | name | 1372 | 100 |  |  |  |  |
+| 13189 | u-asetoniaineet(kval),osatutkimus |  | 100% | name | 151 | 100 |  |  | Urine |  |
+| 13190 | u-epiteelisolut,osatutkimus | e6/l | 91% | name+unit+values | 116 | 0 | [0.19, 0.3, 0.51, 1, 1.4, 2.09, 3.19, 5.3, 10.87] |  | Urine |  |
+| 13191 | u-epiteelisolut,osatutkimus |  | 9% | name | 11 | 100 |  |  | Urine |  |
+| 13192 | u-laajahuume-jalääkeainetutkimus |  | 100% | name | 374 | 100 |  |  | Urine |  |
+| 13193 | u-proteiini(kval),osatutkimus |  | 100% | name | 151 | 100 |  |  | Urine |  |
+| 13194 | u-suhteellinentiheys,osatutkimus |  | 100% | name+values | 154 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine |  |
+| 13195 | u-virtsanirtosolututkimus |  | 100% | name | 802 | 100 |  |  | Urine |  |
+| 13196 | virtsanirtosolututkimus |  | 100% | name | 1078 | 100 |  |  |  |  |
 

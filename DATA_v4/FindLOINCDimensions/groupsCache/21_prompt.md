@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,34 +139,33 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 21 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1311 | fp-transferriininrautakyllästeisyys | % | 100% | name+unit+values | 3193 | 0 | [8.97, 13, 16.76, 20.1, 23.32, 26.3, 29.57, 33.75, 41.18] |  | Fasting plasma |  |
-| 1312 | fp-transferriininrautakyllästeisyys |  | 0% | name | 13 | 84.62 |  |  | Fasting plasma |  |
-| 1313 | fp-transferriininrautasaturaatio | % | 100% | name+unit+values | 401 | 0 | [8.17, 12.08, 15.12, 17.38, 20.04, 22.98, 27.38, 31.01, 39.99] |  | Fasting plasma |  |
-| 1314 | fs-transferiininrautakyllästeisyys |  | 100% | name+values | 2368 | 65.54 | [0.08, 0.13, 0.16, 0.19, 0.23, 0.26, 0.3, 0.34, 0.41] |  | Fasting serum |  |
-| 1315 | fs-transferiininrautakyllästeisyys,paastotilassa |  | 100% | name+values | 139 | 0 | [0.07, 0.12, 0.15, 0.19, 0.22, 0.24, 0.28, 0.33, 0.39] |  | Fasting serum |  |
-| 1316 | fs-transferriininrautakyllästeisyys | % | 39% | name+unit+values | 144 | 0 | [5.6, 8.49, 12.38, 16.94, 20.5, 24.07, 26.84, 31.55, 40] |  | Fasting serum |  |
-| 1317 | fs-transferriininrautakyllästeisyys |  | 61% | name+values | 230 | 1.74 | [6.96, 10.51, 13.75, 17.95, 20.84, 24.42, 28.14, 32.22, 47.21] |  | Fasting serum |  |
-| 1318 | p-transferriininrautakyllästeisyys | % | 100% | name+unit+values | 288 | 0 | [7.78, 11.72, 15.31, 18.47, 21.76, 25.36, 29.49, 34.05, 40.39] |  | Plasma |  |
-| 1319 | p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans | % | 100% | name+unit+values | 628 | 0 | [9.32, 12.95, 14.99, 17.87, 20.98, 23.9, 27.48, 31.74, 38.07] |  | Plasma |  |
-| 1320 | p-transferriinireseptori | mg/l | 89% | name+unit+values | 1449 | 0 | [0.64, 0.72, 0.81, 0.91, 1.01, 1.14, 1.3, 1.54, 1.97] |  | Plasma |  |
-| 1321 | p-transferriinireseptori |  | 11% | name | 176 | 100 |  |  | Plasma |  |
-| 1322 | p-transferriinireseptori,liukoinen | mg/l | 97% | name+unit+values | 1328 | 0 | [0.8, 1.04, 1.37, 1.95, 2.49, 2.95, 3.61, 4.4, 5.84] |  | Plasma |  |
-| 1323 | p-transferriinireseptori,liukoinen |  | 3% | name | 42 | 100 |  |  | Plasma |  |
-| 1324 | s-transferriinireseptori | mg/l | 100% | name+unit+values | 1934 | 0 | [2.3, 2.61, 2.91, 3.22, 3.51, 3.93, 4.43, 5.22, 6.84] |  | Serum |  |
-| 1325 | s-transferriinireseptori,liukoinen | mg/l | 100% | name+unit+values | 129 | 0 | [0.91, 1.1, 1.18, 1.23, 1.33, 1.45, 1.78, 2.23, 3.16] |  | Serum |  |
-| 1326 | transferiininrautakyllästeisyys,seerumista,paastotilassa | osuus | 52% | name+unit+values | 236 | 0 | [0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44] |  |  |  |
-| 1327 | transferiininrautakyllästeisyys,seerumista,paastotilassa | paketti | 4% | name+unit | 16 | 0 |  |  |  |  |
-| 1328 | transferiininrautakyllästeisyys,seerumista,paastotilassa |  | 45% | name+values | 205 | 3.41 | [0.1, 0.13, 0.16, 0.18, 0.22, 0.26, 0.29, 0.33, 0.41] |  |  |  |
-| 1329 | transferriininrautakyllästeisyys | % | 98% | name+unit+values | 1179 | 0 | [8.18, 11.78, 15.27, 18.31, 21.03, 24.15, 27.59, 31.86, 39.21] |  |  |  |
-| 1330 | transferriininrautakyllästeisyys |  | 2% | name | 26 | 100 |  |  |  |  |
-| 1331 | transferriininrautakyllästeisyys(fp-) | % | 97% | name+unit+values | 596 | 0 | [10.58, 15.04, 18.08, 21, 24.94, 28.56, 32.22, 37.06, 43.51] |  |  |  |
-| 1332 | transferriininrautakyllästeisyys(fp-) |  | 3% | name | 16 | 100 |  |  |  |  |
-| 1333 | transferriininrautakyllästeisyys␤ | % | 100% | name+unit | 1453 | 0 |  |  |  |  |
-| 1334 | transferriininrautakyllästeisyys␤ |  | 0% | name | 5 | 100 |  |  |  |  |
-| 1335 | transferriinirautakyllästeisyys | % | 100% | name+unit+values | 233 | 0 | [8.52, 13.59, 16.32, 21.55, 25.9, 28.62, 32.3, 36.31, 42.32] |  |  |  |
-| 1336 | transferriinireseptori,liukoinen | mg/l | 80% | name+unit+values | 196 | 0 | [1.64, 2.13, 2.4, 2.6, 2.79, 2.98, 3.16, 3.56, 4.22] |  |  |  |
-| 1337 | transferriinireseptori,liukoinen |  | 20% | name | 48 | 100 |  |  |  |  |
-| 1338 | transferriinisaturaatio | % | 100% | name+unit+values | 292 | 0 | [6.88, 9.89, 12.73, 16.14, 19.09, 22.3, 26.09, 32.09, 39.32] |  |  |  |
+| 1292 | fp-transferriininrautakyllästeisyys | % | 100% | name+unit+values | 3193 | 0 | [8.98, 13, 16.74, 20.09, 23.32, 26.32, 29.52, 33.75, 41.25] |  | Fasting plasma |  |
+| 1293 | fp-transferriininrautakyllästeisyys |  | 0% | name | 13 | 100 |  |  | Fasting plasma |  |
+| 1294 | fp-transferriininrautasaturaatio | % | 100% | name+unit+values | 401 | 0.25 | [8.3, 11.95, 14.96, 17.32, 20.01, 22.98, 27.43, 30.92, 40.1] |  | Fasting plasma |  |
+| 1295 | fs-transferiininrautakyllästeisyys |  | 100% | name+values | 2368 | 100 | [0.08, 0.12, 0.15, 0.19, 0.22, 0.26, 0.29, 0.34, 0.41] |  | Fasting serum |  |
+| 1296 | fs-transferiininrautakyllästeisyys,paastotilassa |  | 100% | name+values | 139 | 100 | [0.09, 0.14, 0.18, 0.21, 0.23, 0.27, 0.3, 0.34, 0.43] |  | Fasting serum |  |
+| 1297 | fs-transferriininrautakyllästeisyys | % | 39% | name+unit+values | 144 | 0 | [5.63, 8.41, 12.3, 17.15, 20.5, 24.01, 26.84, 31.23, 40] |  | Fasting serum |  |
+| 1298 | fs-transferriininrautakyllästeisyys |  | 61% | name+values | 230 | 100 | [7.1, 10.45, 13.97, 18.11, 20.78, 24.28, 28.03, 32.29, 45.79] |  | Fasting serum |  |
+| 1299 | p-transferriininrautakyllästeisyys | % | 100% | name+unit+values | 288 | 0 | [7.81, 11.56, 15.23, 18.55, 21.79, 25.25, 29.41, 33.83, 40.1] |  | Plasma |  |
+| 1300 | p-transferriininrautakyllästeisyys,fp-fe/tr,fp-fe/tran,fp-fe/trans | % | 100% | name+unit+values | 628 | 0 | [9.38, 12.86, 14.98, 17.87, 20.93, 24.01, 27.38, 31.79, 37.97] |  | Plasma |  |
+| 1301 | p-transferriinireseptori | mg/l | 89% | name+unit+values | 1449 | 0 | [0.65, 0.72, 0.81, 0.9, 1.02, 1.14, 1.3, 1.55, 1.97] |  | Plasma |  |
+| 1302 | p-transferriinireseptori |  | 11% | name | 176 | 100 |  |  | Plasma |  |
+| 1303 | p-transferriinireseptori,liukoinen | mg/l | 97% | name+unit+values | 1328 | 0 | [0.8, 1.04, 1.37, 1.96, 2.5, 2.96, 3.62, 4.39, 5.84] |  | Plasma |  |
+| 1304 | p-transferriinireseptori,liukoinen |  | 3% | name | 42 | 100 |  |  | Plasma |  |
+| 1305 | s-transferriinireseptori | mg/l | 100% | name+unit+values | 1934 | 0 | [2.3, 2.6, 2.9, 3.23, 3.5, 3.93, 4.43, 5.21, 6.86] |  | Serum |  |
+| 1306 | s-transferriinireseptori,liukoinen | mg/l | 100% | name+unit+values | 129 | 3.1 | [0.9, 1.1, 1.2, 1.26, 1.38, 1.5, 1.88, 2.31, 3.21] |  | Serum |  |
+| 1307 | transferiininrautakyllästeisyys,seerumista,paastotilassa | osuus | 52% | name+unit+values | 236 | 0 | [0.09, 0.15, 0.19, 0.22, 0.25, 0.29, 0.31, 0.35, 0.44] |  |  |  |
+| 1308 | transferiininrautakyllästeisyys,seerumista,paastotilassa | paketti | 4% | name+unit | 16 | 0 |  |  |  |  |
+| 1309 | transferiininrautakyllästeisyys,seerumista,paastotilassa |  | 45% | name+values | 205 | 100 | [0.1, 0.14, 0.16, 0.19, 0.22, 0.26, 0.3, 0.34, 0.42] |  |  |  |
+| 1310 | transferriininrautakyllästeisyys | % | 98% | name+unit+values | 1179 | 0 | [8.04, 11.57, 14.94, 17.59, 20.88, 24.03, 27.49, 31.78, 39.3] |  |  |  |
+| 1311 | transferriininrautakyllästeisyys |  | 2% | name | 26 | 100 |  |  |  |  |
+| 1312 | transferriininrautakyllästeisyys(fp-) | % | 97% | name+unit+values | 596 | 0 | [10.63, 15.09, 17.93, 21, 25, 28.57, 32.23, 36.97, 43.46] |  |  |  |
+| 1313 | transferriininrautakyllästeisyys(fp-) |  | 3% | name | 16 | 100 |  |  |  |  |
+| 1314 | transferriininrautakyllästeisyys␤ | % | 100% | name+unit+values | 1453 | 0 | [8.22, 11.94, 15.71, 18.78, 21.26, 24.4, 27.6, 31.93, 39.15] |  |  |  |
+| 1315 | transferriinirautakyllästeisyys | % | 100% | name+unit+values | 233 | 0 | [8.31, 13.52, 16.32, 21.66, 25.92, 28.64, 32.23, 36.31, 42.12] |  |  |  |
+| 1316 | transferriinireseptori,liukoinen | mg/l | 80% | name+unit+values | 196 | 0 | [1.64, 2.14, 2.4, 2.6, 2.79, 2.98, 3.17, 3.56, 4.22] |  |  |  |
+| 1317 | transferriinireseptori,liukoinen |  | 20% | name | 48 | 100 |  |  |  |  |
+| 1318 | transferriinisaturaatio | % | 100% | name+unit+values | 292 | 0 | [6.88, 9.96, 12.7, 16.15, 19.17, 22.42, 26.06, 31.96, 39.51] |  |  |  |
 

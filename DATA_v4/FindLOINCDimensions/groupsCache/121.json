@@ -1,401 +1,541 @@
 {
   "rows": [
     {
-      "row_id": 10066,
+      "row_id": 9944,
+      "loinc_name_guess": "Albumin [Mass/time] in Collected urine"
+    },
+    {
+      "row_id": 9945,
+      "loinc_name_guess": "Albumin in Collected urine"
+    },
+    {
+      "row_id": 9946,
+      "loinc_name_guess": "Escherichia coli [Presence] in Red Blood Cells"
+    },
+    {
+      "row_id": 9947,
+      "loinc_name_guess": "Ova and Parasites identified in Stool by Microscopy"
+    },
+    {
+      "row_id": 9948,
+      "loinc_name_guess": "Albumin [Mass/time] in 12 hour Urine"
+    },
+    {
+      "row_id": 9949,
+      "loinc_name_guess": "Albumin [Mass/time] in Timed Urine"
+    },
+    {
+      "row_id": 9950,
+      "loinc_name_guess": "Albumin in Timed Urine"
+    },
+    {
+      "row_id": 9951,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9952,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9953,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9954,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9955,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 9956,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9957,
+      "loinc_name_guess": "Albumin [Presence] in Urine"
+    },
+    {
+      "row_id": 9958,
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+    },
+    {
+      "row_id": 9959,
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+    },
+    {
+      "row_id": 9960,
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+    },
+    {
+      "row_id": 9961,
+      "loinc_name_guess": "Albumin [Mass/volume] in Urine"
+    },
+    {
+      "row_id": 9962,
+      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 9963,
+      "loinc_name_guess": "Albumin [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 9964,
+      "loinc_name_guess": "Albumin [Presence] in Urine"
+    },
+    {
+      "row_id": 9965,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9966,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9967,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9968,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9969,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9970,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9971,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9972,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9973,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9974,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9975,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 9976,
       "loinc_name_guess": ""
+    },
+    {
+      "row_id": 9977,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 9978,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 9979,
+      "loinc_name_guess": "Barbiturates [Presence] in Urine"
+    },
+    {
+      "row_id": 9980,
+      "loinc_name_guess": "Buprenorphine [Presence] in Urine"
+    },
+    {
+      "row_id": 9981,
+      "loinc_name_guess": "Buprenorphine [Presence] in Urine"
+    },
+    {
+      "row_id": 9982,
+      "loinc_name_guess": "Buprenorphine [Presence] in Urine"
+    },
+    {
+      "row_id": 9983,
+      "loinc_name_guess": "Buprenorphine [Presence] in Urine by Confirmation"
+    },
+    {
+      "row_id": 9984,
+      "loinc_name_guess": "Calcium/Creatinine [Molar ratio] in Urine"
+    },
+    {
+      "row_id": 9985,
+      "loinc_name_guess": "Color of Urine"
+    },
+    {
+      "row_id": 9986,
+      "loinc_name_guess": "Dextropropoxyphene [Presence] in Urine"
+    },
+    {
+      "row_id": 9987,
+      "loinc_name_guess": "EDDP [Presence] in Urine"
+    },
+    {
+      "row_id": 9988,
+      "loinc_name_guess": "Drugs of abuse 10 panel - Urine"
+    },
+    {
+      "row_id": 9989,
+      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
+    },
+    {
+      "row_id": 9990,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9991,
+      "loinc_name_guess": "Opiates [Presence] in Urine"
+    },
+    {
+      "row_id": 9992,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9993,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9994,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9995,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9996,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9997,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9998,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 9999,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 10000,
+      "loinc_name_guess": "Drugs of abuse and Medications screen panel - Urine"
+    },
+    {
+      "row_id": 10001,
+      "loinc_name_guess": "Drugs of abuse and Medications screen panel - Urine"
+    },
+    {
+      "row_id": 10002,
+      "loinc_name_guess": "Drugs of abuse and Medications confirmation panel - Urine"
+    },
+    {
+      "row_id": 10003,
+      "loinc_name_guess": "Drugs of abuse and Medications confirmation panel - Urine"
+    },
+    {
+      "row_id": 10004,
+      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
+    },
+    {
+      "row_id": 10005,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine by Rapid test"
+    },
+    {
+      "row_id": 10006,
+      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine by Mass spec (TOF)"
+    },
+    {
+      "row_id": 10007,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine by Rapid test"
+    },
+    {
+      "row_id": 10008,
+      "loinc_name_guess": "Hyaline casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10009,
+      "loinc_name_guess": "Hyaline casts [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10010,
+      "loinc_name_guess": "Hyaline casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10011,
+      "loinc_name_guess": "Hyaline casts [#/area] in Urine sediment by Light microscopy"
+    },
+    {
+      "row_id": 10012,
+      "loinc_name_guess": "Hyaline casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10013,
+      "loinc_name_guess": "Hyaline casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10014,
+      "loinc_name_guess": "Isoniazid [Presence] in Urine"
+    },
+    {
+      "row_id": 10015,
+      "loinc_name_guess": "Cocaine [Presence] in Urine"
+    },
+    {
+      "row_id": 10016,
+      "loinc_name_guess": "Cocaine [Presence] in Urine"
+    },
+    {
+      "row_id": 10017,
+      "loinc_name_guess": "Squamous epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10018,
+      "loinc_name_guess": "Squamous epithelial cells [#/area] in Urine sediment by Light microscopy"
+    },
+    {
+      "row_id": 10019,
+      "loinc_name_guess": "Squamous epithelial cells [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10020,
+      "loinc_name_guess": "Squamous epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10021,
+      "loinc_name_guess": "Squamous epithelial cells [#/area] in Urine sediment by Light microscopy"
+    },
+    {
+      "row_id": 10022,
+      "loinc_name_guess": "Squamous epithelial cells [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10023,
+      "loinc_name_guess": "Casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10024,
+      "loinc_name_guess": "Casts [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10025,
+      "loinc_name_guess": "Casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10026,
+      "loinc_name_guess": "Casts [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10027,
+      "loinc_name_guess": "MDMA [Presence] in Urine"
+    },
+    {
+      "row_id": 10028,
+      "loinc_name_guess": "Pathologic casts [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10029,
+      "loinc_name_guess": "Pathologic casts [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10030,
+      "loinc_name_guess": "Bacteria identified in Urine by Culture"
+    },
+    {
+      "row_id": 10031,
+      "loinc_name_guess": "Oxycodone [Presence] in Urine"
+    },
+    {
+      "row_id": 10032,
+      "loinc_name_guess": "Oxycodone [Presence] in Urine"
+    },
+    {
+      "row_id": 10033,
+      "loinc_name_guess": "Acetaminophen [Presence] in Urine"
+    },
+    {
+      "row_id": 10034,
+      "loinc_name_guess": "Porphobilinogen [Presence] in Urine"
+    },
+    {
+      "row_id": 10035,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10036,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10037,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10038,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10039,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10040,
+      "loinc_name_guess": "pH of Urine"
+    },
+    {
+      "row_id": 10041,
+      "loinc_name_guess": "Renal tubular epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10042,
+      "loinc_name_guess": "Renal tubular epithelial cells [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10043,
+      "loinc_name_guess": "Renal tubular epithelial cells [#/volume] in Urine sediment by Automated count"
+    },
+    {
+      "row_id": 10044,
+      "loinc_name_guess": "Renal tubular epithelial cells [#/volume] in Urine sediment"
+    },
+    {
+      "row_id": 10045,
+      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 10046,
+      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 10047,
+      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 10048,
+      "loinc_name_guess": "Protein/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 10049,
+      "loinc_name_guess": "Urinalysis panel - Urine"
+    },
+    {
+      "row_id": 10050,
+      "loinc_name_guess": "Urinalysis panel - Urine"
+    },
+    {
+      "row_id": 10051,
+      "loinc_name_guess": "Albumin/Creatinine [Mass Ratio] in Urine"
+    },
+    {
+      "row_id": 10052,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10053,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10054,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10055,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10056,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10057,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10058,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10059,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10060,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10061,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10062,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10063,
+      "loinc_name_guess": "Specific gravity of Urine"
+    },
+    {
+      "row_id": 10064,
+      "loinc_name_guess": "Tramadol [Presence] in Urine"
+    },
+    {
+      "row_id": 10065,
+      "loinc_name_guess": "Tricyclic antidepressants [Presence] in Urine"
+    },
+    {
+      "row_id": 10066,
+      "loinc_name_guess": "Trypsin-2 [Presence] in Urine"
     },
     {
       "row_id": 10067,
-      "loinc_name_guess": "FISH analysis [Identifier] in Tissue by FISH"
+      "loinc_name_guess": "Renal tubular epithelial cells [#/area] in Urine sediment by Light microscopy"
     },
     {
       "row_id": 10068,
-      "loinc_name_guess": "FISH analysis [Identifier] in Tissue by FISH"
+      "loinc_name_guess": "Renal tubular epithelial cells in Urine sediment"
     },
     {
       "row_id": 10069,
-      "loinc_name_guess": "Apolipoprotein E gene genotype [Identifier] in Blood by Molgen"
+      "loinc_name_guess": "Renal tubular epithelial cells [#/area] in Urine sediment by Light microscopy"
     },
     {
       "row_id": 10070,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Renal tubular epithelial cells in Urine sediment"
     },
     {
       "row_id": 10071,
-      "loinc_name_guess": "Alpha-1-antitrypsin genotype [Identifier] in Blood by Molgen"
+      "loinc_name_guess": "Urobilinogen [Presence] in Urine"
     },
     {
       "row_id": 10072,
-      "loinc_name_guess": "Alpha-1-antitrypsin genotype [Identifier] in Blood by Molgen"
+      "loinc_name_guess": "Transitional epithelial cells [#/area] in Urine sediment by Light microscopy"
     },
     {
       "row_id": 10073,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Transitional epithelial cells in Urine sediment"
     },
     {
       "row_id": 10074,
-      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
+      "loinc_name_guess": "Transitional epithelial cells [#/area] in Urine sediment by Light microscopy"
     },
     {
       "row_id": 10075,
-      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
+      "loinc_name_guess": "Transitional epithelial cells in Urine sediment"
     },
     {
       "row_id": 10076,
-      "loinc_name_guess": "B-lymphocyte Ig gene rearrangement analysis [Presence] in Blood by PCR"
+      "loinc_name_guess": "Transitional epithelial cells [#/area] in Urine sediment by Light microscopy"
     },
     {
       "row_id": 10077,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10078,
-      "loinc_name_guess": "BRCA gene analysis panel - Blood"
-    },
-    {
-      "row_id": 10079,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10080,
-      "loinc_name_guess": "CALR gene mutation [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10081,
-      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [Presence] in Blood by PCR"
-    },
-    {
-      "row_id": 10082,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10083,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10084,
-      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10085,
-      "loinc_name_guess": "ZNF9 gene repeat analysis [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10086,
-      "loinc_name_guess": "DPYD gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10087,
-      "loinc_name_guess": "DPYD gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10088,
-      "loinc_name_guess": "DPYD gene mutation analysis panel - Blood"
-    },
-    {
-      "row_id": 10089,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10090,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10091,
-      "loinc_name_guess": "Pharmacogenetics panel - Blood"
-    },
-    {
-      "row_id": 10092,
-      "loinc_name_guess": "Pharmacogenetics extensive panel - Blood"
-    },
-    {
-      "row_id": 10093,
-      "loinc_name_guess": "Prothrombin gene.G20210A mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10094,
-      "loinc_name_guess": "Prothrombin gene.G20210A mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10095,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10096,
-      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Blood"
-    },
-    {
-      "row_id": 10097,
-      "loinc_name_guess": "FMR1 gene repeat analysis [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10098,
-      "loinc_name_guess": "FMR1 gene repeat analysis [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10099,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10100,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10101,
-      "loinc_name_guess": "Coagulation factor V gene.R506Q mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10102,
-      "loinc_name_guess": "Coagulation factor V gene.R506Q mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10103,
-      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood"
-    },
-    {
-      "row_id": 10104,
-      "loinc_name_guess": "Thrombophilia DNA mutation analysis panel - Blood"
-    },
-    {
-      "row_id": 10105,
-      "loinc_name_guess": "HFE gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10106,
-      "loinc_name_guess": "MLH1+MSH2+MSH6 gene targeted mutation analysis [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10107,
-      "loinc_name_guess": "JAK2 gene.V617F mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10108,
-      "loinc_name_guess": "JAK2 gene.V617F mut [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10109,
-      "loinc_name_guess": "Chimerism analysis [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10110,
-      "loinc_name_guess": "Post-transplant chimerism analysis panel - Blood"
-    },
-    {
-      "row_id": 10111,
-      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Blood by NAA"
-    },
-    {
-      "row_id": 10112,
-      "loinc_name_guess": "Lactase gene genotype [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10113,
-      "loinc_name_guess": "Lactase gene genotype [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10114,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10115,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10116,
-      "loinc_name_guess": "LDLR gene mutation [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10117,
-      "loinc_name_guess": "Next generation sequencing panel - Blood"
-    },
-    {
-      "row_id": 10118,
-      "loinc_name_guess": "NPHS1 gene targeted mutations [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10119,
-      "loinc_name_guess": "Pharmacogenetics panel - Blood"
-    },
-    {
-      "row_id": 10120,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10121,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10122,
-      "loinc_name_guess": "TP53 gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10123,
-      "loinc_name_guess": "TPMT gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10124,
-      "loinc_name_guess": "TPMT gene mutations found [Identifier] in Blood by Molgen"
-    },
-    {
-      "row_id": 10125,
-      "loinc_name_guess": "VKORC1 gene and CYP2C9 gene panel - Blood"
-    },
-    {
-      "row_id": 10126,
-      "loinc_name_guess": "Y chromosome microdeletions analysis [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10127,
-      "loinc_name_guess": "Y chromosome microdeletions analysis [Presence] in Blood by Molgen"
-    },
-    {
-      "row_id": 10128,
-      "loinc_name_guess": "Bronchoalveolar lavage fluid analysis panel - Bronchoalveolar lavage fluid"
-    },
-    {
-      "row_id": 10129,
-      "loinc_name_guess": "Leukocyte differential count panel - Bronchoalveolar lavage fluid"
-    },
-    {
-      "row_id": 10130,
-      "loinc_name_guess": "Flow cytometry immunophenotyping panel - Bronchoalveolar lavage fluid"
-    },
-    {
-      "row_id": 10131,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10132,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10133,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10134,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by Light microscopy"
-    },
-    {
-      "row_id": 10135,
-      "loinc_name_guess": "BCR gene/ABL1 gene fusion transcript [# Ratio] in Bone marrow by NAA"
-    },
-    {
-      "row_id": 10136,
-      "loinc_name_guess": "B-lymphocyte Ig gene rearrangement analysis [Presence] in Bone marrow by PCR"
-    },
-    {
-      "row_id": 10137,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10138,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow by FISH"
-    },
-    {
-      "row_id": 10139,
-      "loinc_name_guess": "FISH analysis [Identifier] in Bone marrow by FISH"
-    },
-    {
-      "row_id": 10140,
-      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
-    },
-    {
-      "row_id": 10141,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10142,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10143,
-      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Bone marrow"
-    },
-    {
-      "row_id": 10144,
-      "loinc_name_guess": "FISH analysis panel for hematologic disorders - Bone marrow"
-    },
-    {
-      "row_id": 10145,
-      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
-    },
-    {
-      "row_id": 10146,
-      "loinc_name_guess": "Multiple myeloma FISH panel - Bone marrow"
-    },
-    {
-      "row_id": 10147,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10148,
-      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molgen"
-    },
-    {
-      "row_id": 10149,
-      "loinc_name_guess": "FLT3 gene mutation analysis [Identifier] in Bone marrow by Molgen"
-    },
-    {
-      "row_id": 10150,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10151,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10152,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10153,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10154,
-      "loinc_name_guess": "Microscopic observation [Identifier] in Bone marrow aspirate by MGG stain"
-    },
-    {
-      "row_id": 10155,
-      "loinc_name_guess": "Bone marrow aspirate morphology and iron stain panel - Bone marrow"
-    },
-    {
-      "row_id": 10156,
-      "loinc_name_guess": "Bone marrow aspirate morphology and iron stain panel - Bone marrow"
-    },
-    {
-      "row_id": 10157,
-      "loinc_name_guess": "Multiple myeloma immunophenotyping panel - Bone marrow"
-    },
-    {
-      "row_id": 10158,
-      "loinc_name_guess": "IgH gene rearrangement analysis [Presence] in Bone marrow by PCR"
-    },
-    {
-      "row_id": 10159,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 10160,
-      "loinc_name_guess": "Minimal residual disease for ALL panel - Bone marrow"
-    },
-    {
-      "row_id": 10161,
-      "loinc_name_guess": "Minimal residual disease panel - Bone marrow"
-    },
-    {
-      "row_id": 10162,
-      "loinc_name_guess": "Minimal residual disease [Presence] in Bone marrow by NAA"
-    },
-    {
-      "row_id": 10163,
-      "loinc_name_guess": "NPM1 gene mutation [Presence] in Bone marrow by Molgen"
-    },
-    {
-      "row_id": 10164,
-      "loinc_name_guess": "NPM1 gene mutation [Presence] in Bone marrow by Molgen"
+      "loinc_name_guess": "Transitional epithelial cells in Urine sediment"
     }
   ],
-  "reflection": "This group was dominated by molecular genetics tests, identifiable by the `-D` suffix (DNA test), `LongName` descriptions, and abbreviations for genes (e.g., `APOE`, `JAK2`, `TPMT`) or methods (e.g., `FISH`, `PCR`). The `p_missing=100%` on almost all rows was expected for these kinds of tests, which are typically reported as nominal or qualitative findings, not numbers.\n\nThe main challenge was interpreting the local, non-standard abbreviations. For many, like `B-AURIA10` or `B-BO3-D`, there was insufficient information to make a reasonable guess. For others, I had to infer the meaning from common practice, e.g., `B-BLAPCR` as a B-lymphocyte clonality assay, or `BM-MM-IFT` as immunophenotyping for Multiple Myeloma.\n\nThe distinction between qualitative (`[Presence]`), identifying (`[Identifier]`), and quantitative (`[# Ratio]`) properties was crucial. `-QR` (quantitative real-time) clearly indicated a quantitative test like `BCR-ABL1`. For genotyping tests (`-tyypitys` in `LongName`) or tests for multiple mutations (`valtamutaatioiden tutkimus`), `[Identifier]` was appropriate. For tests targeting a single, well-known mutation (e.g., Factor V Leiden, JAK2 V617F), `[Presence]` seemed the best fit. I often specified `by Molgen` as a general method for DNA tests, as it's more specific than nothing but not overly presumptive.\n\nPanel names were necessary for codes covering multiple genes (`B-FVFII-D`, `B-VARFA-D`), broad test categories (`B-FARMA-D`, `B-NGS-D`), or multiple stains (`BM-MGGFE`). This requires recognizing when a single code represents a bundle of results."
+  "reflection": "This group was dominated by urine tests. The main challenges were:\n\n1.  **Albumin/Creatinine Ratios**: There were numerous variations in spelling (`u-albkre`, `u-albkrea`, `u-alb/kre`, etc.) and system prefixes (`nU-`, `U-`). All were consistently mapped to the single LOINC concept `Albumin/Creatinine [Mass Ratio] in Urine`, as the core measurement is the same.\n2.  **Urine Drug Screens**: The `U-Huum-` codes were plentiful. I interpreted them as panels (`Drugs of abuse screen panel - Urine`). Suffixes like `-ct` (confirmation), `-ps` (basic screen), and Long Names helped distinguish screening from confirmation. Specific numbered panels like `u-huum-10` were interpreted as such. Some codes like `u-alvhu4a` were too garbled to interpret and were left empty.\n3.  **Urine Microscopy**: The distinction between automated counts (unit `E6/l`) and manual microscopy (unit `u/field` for #/HPF) was crucial. This allowed me to add `by Automated count` or `by Light microscopy` to the method, creating more specific search queries. Components like `hyalie` (hyaline casts), `levyep` (squamous epithelial cells), `pienep` (small/renal tubular epithelial cells), and `väliepi` (transitional epithelial cells) were identifiable.\n4.  **Ambiguous Suffixes/Prefixes**: `E-coli` was a strange case; interpreting `E-` as Erythrocytes is biologically unlikely for an *E. coli* test, but it's what the code says. The `-O` suffix for `u-ph-o` and `u-suhti-o` was also tricky; although it means qualitative/semi-quantitative, pH and specific gravity are inherently numeric, so I chose the quantitative property `[pH]` and the component `Specific gravity of Urine` which has no property.\n\nOverall, using sibling rows to decode abbreviations and relying on Long Names and units where available was effective. Distinguishing between screening/confirmation and automated/manual methods added useful precision to the guesses."
 }

@@ -1,0 +1,481 @@
+{
+  "rows": [
+    {
+      "row_id": 12603,
+      "loinc_name_guess": "CD4/CD8 [# Ratio] in Blood"
+    },
+    {
+      "row_id": 12604,
+      "loinc_name_guess": "Respiratory pathogens panel - Respiratory specimen"
+    },
+    {
+      "row_id": 12605,
+      "loinc_name_guess": "Diabetes mellitus follow-up panel"
+    },
+    {
+      "row_id": 12606,
+      "loinc_name_guess": "Leukocyte differential count panel - Blood"
+    },
+    {
+      "row_id": 12607,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12608,
+      "loinc_name_guess": "CBC with differential panel - Blood"
+    },
+    {
+      "row_id": 12609,
+      "loinc_name_guess": "CBC with differential panel - Blood"
+    },
+    {
+      "row_id": 12610,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12611,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12612,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12613,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12614,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12615,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12616,
+      "loinc_name_guess": "Oxygen saturation in Blood by Pulse oximetry"
+    },
+    {
+      "row_id": 12617,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood by Point-of-care test"
+    },
+    {
+      "row_id": 12618,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12619,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12620,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12621,
+      "loinc_name_guess": "COPD risk assessment panel"
+    },
+    {
+      "row_id": 12622,
+      "loinc_name_guess": "Lung cancer risk assessment panel"
+    },
+    {
+      "row_id": 12623,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12624,
+      "loinc_name_guess": "Neutrophils/Leukocytes in Blood"
+    },
+    {
+      "row_id": 12625,
+      "loinc_name_guess": "Neutrophils/Leukocytes in Blood"
+    },
+    {
+      "row_id": 12626,
+      "loinc_name_guess": "Middle East respiratory syndrome coronavirus NAA panel - Respiratory specimen"
+    },
+    {
+      "row_id": 12627,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12628,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12629,
+      "loinc_name_guess": "Gram negative bacteria.multidrug resistant [Presence] in Specimen by Organism specific culture"
+    },
+    {
+      "row_id": 12630,
+      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12631,
+      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12632,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12633,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12634,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12635,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12636,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Serum or Plasma by calculation"
+    },
+    {
+      "row_id": 12637,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Serum or Plasma by calculation"
+    },
+    {
+      "row_id": 12638,
+      "loinc_name_guess": "Osmolality [Moles/mass] in Urine"
+    },
+    {
+      "row_id": 12639,
+      "loinc_name_guess": "Osmolality [Moles/mass] in Urine"
+    },
+    {
+      "row_id": 12640,
+      "loinc_name_guess": "Osmolality [Moles/mass] in Urine"
+    },
+    {
+      "row_id": 12641,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Urine by calculation"
+    },
+    {
+      "row_id": 12642,
+      "loinc_name_guess": "Osmolarity.calculated [Moles/volume] in Urine by calculation"
+    },
+    {
+      "row_id": 12643,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12644,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12645,
+      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12646,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12647,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12648,
+      "loinc_name_guess": "Expiratory peak flow [Volume/time] in Exhaled gas"
+    },
+    {
+      "row_id": 12649,
+      "loinc_name_guess": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12650,
+      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12651,
+      "loinc_name_guess": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12652,
+      "loinc_name_guess": "Cholesterol in HDL [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12653,
+      "loinc_name_guess": "Cholesterol.total [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12654,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12655,
+      "loinc_name_guess": "Cholesterol in LDL [Moles/volume] in Serum or Plasma by calculation"
+    },
+    {
+      "row_id": 12656,
+      "loinc_name_guess": "Triglyceride [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12657,
+      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12658,
+      "loinc_name_guess": "12 lead EKG panel"
+    },
+    {
+      "row_id": 12659,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12660,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12661,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12662,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12663,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12664,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12665,
+      "loinc_name_guess": "Erythrocyte morphology panel - Blood"
+    },
+    {
+      "row_id": 12666,
+      "loinc_name_guess": "Erythrocyte morphology panel - Blood"
+    },
+    {
+      "row_id": 12667,
+      "loinc_name_guess": "Erythroblasts [#/volume] in Blood by Automated count"
+    },
+    {
+      "row_id": 12668,
+      "loinc_name_guess": "Erythroblasts [#/volume] in Blood by Automated count"
+    },
+    {
+      "row_id": 12669,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12670,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12671,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12672,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12673,
+      "loinc_name_guess": "Erythrocyte distribution width [Volume Ratio] in Red Blood Cells by Automated count"
+    },
+    {
+      "row_id": 12674,
+      "loinc_name_guess": "Lipid panel - Serum or Plasma"
+    },
+    {
+      "row_id": 12675,
+      "loinc_name_guess": "Lipid panel - Serum or Plasma"
+    },
+    {
+      "row_id": 12676,
+      "loinc_name_guess": "Lipid panel - Serum or Plasma"
+    },
+    {
+      "row_id": 12677,
+      "loinc_name_guess": "Lipid panel - Serum or Plasma"
+    },
+    {
+      "row_id": 12678,
+      "loinc_name_guess": "Respiratory bacteria DNA panel - Respiratory specimen by NAA"
+    },
+    {
+      "row_id": 12679,
+      "loinc_name_guess": "Respiratory pathogens NAA panel - Respiratory specimen"
+    },
+    {
+      "row_id": 12680,
+      "loinc_name_guess": "Respiratory viruses NAA panel - Respiratory specimen"
+    },
+    {
+      "row_id": 12681,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12682,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12683,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12684,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12685,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12686,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine by Test strip"
+    },
+    {
+      "row_id": 12687,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12688,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12689,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine by Test strip"
+    },
+    {
+      "row_id": 12690,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12691,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12692,
+      "loinc_name_guess": "Time in therapeutic range [Ratio] in Patient by calculation"
+    },
+    {
+      "row_id": 12693,
+      "loinc_name_guess": "Time in therapeutic range [Ratio] in Patient by calculation"
+    },
+    {
+      "row_id": 12694,
+      "loinc_name_guess": "Troponin T [Mass/volume] in Serum or Plasma by Point-of-care test"
+    },
+    {
+      "row_id": 12695,
+      "loinc_name_guess": "Troponin T [Mass/volume] in Serum or Plasma by Point-of-care test"
+    },
+    {
+      "row_id": 12696,
+      "loinc_name_guess": "CBC with differential panel - Blood"
+    },
+    {
+      "row_id": 12697,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12698,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12699,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12700,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12701,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Urine by calculation"
+    },
+    {
+      "row_id": 12702,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Urine by calculation"
+    },
+    {
+      "row_id": 12703,
+      "loinc_name_guess": "Osmolality.calculated [Moles/mass] in Urine by calculation"
+    },
+    {
+      "row_id": 12704,
+      "loinc_name_guess": "Urinalysis sediment microscopy panel - Urine"
+    },
+    {
+      "row_id": 12705,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12706,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12707,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12708,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine by Test strip"
+    },
+    {
+      "row_id": 12709,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine by Test strip"
+    },
+    {
+      "row_id": 12710,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12711,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine by Test strip"
+    },
+    {
+      "row_id": 12712,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 12713,
+      "loinc_name_guess": "Hypertension panel"
+    },
+    {
+      "row_id": 12714,
+      "loinc_name_guess": "Hypertension follow-up panel"
+    },
+    {
+      "row_id": 12715,
+      "loinc_name_guess": "Blood gas and Electrolyte panel - Blood"
+    },
+    {
+      "row_id": 12716,
+      "loinc_name_guess": "Blood gas and Metabolite panel - Blood"
+    },
+    {
+      "row_id": 12717,
+      "loinc_name_guess": "Urinalysis chemical screen panel - Urine"
+    },
+    {
+      "row_id": 12718,
+      "loinc_name_guess": "Cells [#/volume] in Urine"
+    },
+    {
+      "row_id": 12719,
+      "loinc_name_guess": "Cells [#/volume] in Urine"
+    },
+    {
+      "row_id": 12720,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    },
+    {
+      "row_id": 12721,
+      "loinc_name_guess": "Specific gravity of Urine [Specific gravity] in Urine"
+    }
+  ],
+  "reflection": "This group contained a mixture of well-defined lab tests, panels, and a significant number of administrative or billing codes. The administrative codes (e.g., `näytteenotto`, `talteen`, `konsultaatiopyyntö`, `maksu`) are unmappable and were correctly identified and left empty.\n\nThe main challenge was interpreting the breadth of panel codes. Terms like `perusterveyspaketti` (basic health package) were used as prefixes for individual results (ALT, Glucose, etc.). My approach was to map each row as the individual reported test, not the panel it belongs to, which is the correct way to handle such data. In contrast, codes like `b-täydellinenverenkuva` (complete blood count) or `rasvapaketti` (lipid package) represent the order for the panel itself and were mapped to LOINC panel concepts.\n\nSynonyms and local variations were common, especially for RDW (`punasolujen kokojakauma`, `koonvaihtelu`) and urine specific gravity (`suhteellinen tiheys`). Consistency in mapping these to a single canonical LOINC name is key. Adding method `by Test strip` for specific gravity was possible when the name contained hints like `kval`, `stix`, or `vieritesti`.\n\nFinally, some codes like `aikuistyypindiabetes,vuosikontrolli` (diabetes annual check-up) are very high-level concepts. Mapping them to a generic LOINC panel (e.g., `Diabetes mellitus follow-up panel`) is a reasonable guess to enable semantic search, even if a perfect match is unlikely."
+}

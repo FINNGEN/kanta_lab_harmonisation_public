@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,52 +139,52 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 20 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1265 | ehec(enterohemorraaginene.coli) |  | 100% | name | 1317 | 100 |  |  |  |  |
-| 1266 | ekg,12kytkentäälevossa |  | 100% | name | 6937 | 99.99 |  |  |  |  |
-| 1267 | ekg,12kytkentäälevossa(asi |  | 100% | name | 8872 | 100 |  |  |  |  |
-| 1268 | ekg,12kytkentäälevossa(asiakkaanottama) |  | 100% | name | 2232 | 100 |  |  |  |  |
-| 1269 | ekg,12kytkentäälevossa(asiakkanottama) |  | 100% | name | 1287 | 100 |  |  |  |  |
-| 1270 | ekg-12kytkentäälevossa |  | 100% | name | 2227 | 100 |  |  |  |  |
-| 1271 | enteroaggregatiivinene.colinho |  | 100% | name | 229 | 100 |  |  |  |  |
-| 1272 | enterohemorraginene.colinho |  | 100% | name | 383 | 100 |  |  |  |  |
-| 1273 | enteropatogeeninene.colinho |  | 100% | name | 229 | 100 |  |  |  |  |
-| 1274 | enterotoksigeeninene.colinho |  | 100% | name | 383 | 100 |  |  |  |  |
-| 1275 | etec(enterotoksigeeninene.coli) |  | 100% | name | 1317 | 100 |  |  |  |  |
-| 1276 | f-campylobacterspp.(jejuni&coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1277 | f-ehec(enterohemorraaginene.coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1278 | f-etec(enterotoksigeeninene.coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1279 | f-plesiomonasshigelloidesnukl.haponos. |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1280 | f-salmonellaspp.nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1281 | f-shigellaspp./eiec(enteroinvasiivinene.coli)nukl.haponos |  | 100% | name | 616 | 100 |  |  | Feces |  |
-| 1282 | f-yersiniaenterocoliticanukl.haponos. |  | 100% | name | 607 | 100 |  |  | Feces |  |
-| 1283 | li-cryptococcusneoformans,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1284 | li-cytomegalovirusnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1285 | li-escherichiacolik1nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1286 | li-herpessimplex1,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1287 | li-herpessimplex2,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1288 | li-l.monocytogenesnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1289 | li-neisseriameningitidisnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1290 | li-streptococcusagalactiaenukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1291 | li-streptococcuspneumoniaenukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1292 | li-varicella-zosternukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
-| 1293 | pt-ekg,12kytkentälevossa |  | 100% | name | 243 | 100 |  |  | Patient |  |
-| 1294 | pt-ekg,12kytkentää6tk |  | 100% | name | 368 | 100 |  |  | Patient |  |
-| 1295 | pt-ekg,12kytkentääep-terveyskeskus |  | 100% | name | 206 | 100 |  |  | Patient |  |
-| 1296 | pt-ekg,12kytkentäälevossa | 1 | 0% | name+unit | 55 | 0 |  |  | Patient |  |
-| 1297 | pt-ekg,12kytkentäälevossa |  | 100% | name | 54957 | 99.91 |  |  | Patient |  |
-| 1298 | pt-ekg,12kytkentäälevossa(k-pks:n)(ko) |  | 100% | name | 272 | 100 |  |  | Patient |  |
-| 1299 | pt-ekg,12kytkentäälevossa(ot.tk:ssa) |  | 100% | name | 210 | 100 |  |  | Patient |  |
-| 1300 | pt-ekg,12kytkentäälevossa,omarekisteröintimuseen |  | 100% | name | 2847 | 100 |  |  | Patient |  |
-| 1301 | pt-ekg,12kytkentäälevossaosastolla |  | 100% | name | 193 | 100 |  |  | Patient |  |
-| 1302 | pt-ekg,12kytkentäälevossa␤ |  | 100% | name | 2419 | 100 |  |  | Patient |  |
-| 1303 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg |  | 100% | name | 477 | 100 |  |  | Patient |  |
-| 1304 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne |  | 100% | name | 625 | 100 |  |  | Patient |  |
-| 1305 | pt-ekg,sisältäentietokoneanalyysin |  | 100% | name | 8257 | 100 |  |  | Patient |  |
-| 1306 | pt-ekg,sisältäentietokoneanalyysin(malmin)(pi) |  | 100% | name | 226 | 100 |  |  | Patient |  |
-| 1307 | pt-ekg,sisältäätietokoneanalyysin |  | 100% | name | 4178 | 100 |  |  | Patient |  |
-| 1308 | pt-ekgsis[lt[entietokoneanalyysin |  | 100% | name | 305 | 100 |  |  | Patient |  |
-| 1309 | pt-ekgsisältäentietokoneanalyysin |  | 100% | name | 347 | 100 |  |  | Patient |  |
-| 1310 | shigella/eiec(enteroinvasiivinene.coli) |  | 100% | name | 1318 | 100 |  |  |  |  |
+| 1246 | ehec(enterohemorraaginene.coli) |  | 100% | name | 1317 | 100 |  |  |  |  |
+| 1247 | ekg,12kytkentäälevossa |  | 100% | name | 6937 | 100 |  |  |  |  |
+| 1248 | ekg,12kytkentäälevossa(asi |  | 100% | name | 8872 | 100 |  |  |  |  |
+| 1249 | ekg,12kytkentäälevossa(asiakkaanottama) |  | 100% | name | 2232 | 100 |  |  |  |  |
+| 1250 | ekg,12kytkentäälevossa(asiakkanottama) |  | 100% | name | 1287 | 100 |  |  |  |  |
+| 1251 | ekg-12kytkentäälevossa |  | 100% | name | 2227 | 100 |  |  |  |  |
+| 1252 | enteroaggregatiivinene.colinho |  | 100% | name | 229 | 100 |  |  |  |  |
+| 1253 | enterohemorraginene.colinho |  | 100% | name | 383 | 100 |  |  |  |  |
+| 1254 | enteropatogeeninene.colinho |  | 100% | name | 229 | 100 |  |  |  |  |
+| 1255 | enterotoksigeeninene.colinho |  | 100% | name | 383 | 100 |  |  |  |  |
+| 1256 | etec(enterotoksigeeninene.coli) |  | 100% | name | 1317 | 100 |  |  |  |  |
+| 1257 | f-campylobacterspp.(jejuni&coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1258 | f-ehec(enterohemorraaginene.coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1259 | f-etec(enterotoksigeeninene.coli)nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1260 | f-plesiomonasshigelloidesnukl.haponos. |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1261 | f-salmonellaspp.nukl.haponos |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1262 | f-shigellaspp./eiec(enteroinvasiivinene.coli)nukl.haponos |  | 100% | name | 616 | 100 |  |  | Feces |  |
+| 1263 | f-yersiniaenterocoliticanukl.haponos. |  | 100% | name | 607 | 100 |  |  | Feces |  |
+| 1264 | li-cryptococcusneoformans,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1265 | li-cytomegalovirusnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1266 | li-escherichiacolik1nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1267 | li-herpessimplex1,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1268 | li-herpessimplex2,nukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1269 | li-l.monocytogenesnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1270 | li-neisseriameningitidisnukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1271 | li-streptococcusagalactiaenukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1272 | li-streptococcuspneumoniaenukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1273 | li-varicella-zosternukl.haponos. |  | 100% | name | 129 | 100 |  |  | Cerebrospinal fluid |  |
+| 1274 | pt-ekg,12kytkentälevossa |  | 100% | name | 243 | 100 |  |  | Patient |  |
+| 1275 | pt-ekg,12kytkentää6tk |  | 100% | name | 368 | 100 |  |  | Patient |  |
+| 1276 | pt-ekg,12kytkentääep-terveyskeskus |  | 100% | name | 206 | 100 |  |  | Patient |  |
+| 1277 | pt-ekg,12kytkentäälevossa | 1 | 0% | name+unit | 55 | 0 |  |  | Patient |  |
+| 1278 | pt-ekg,12kytkentäälevossa |  | 100% | name | 54957 | 100 |  |  | Patient |  |
+| 1279 | pt-ekg,12kytkentäälevossa(k-pks:n)(ko) |  | 100% | name | 272 | 100 |  |  | Patient |  |
+| 1280 | pt-ekg,12kytkentäälevossa(ot.tk:ssa) |  | 100% | name | 210 | 100 |  |  | Patient |  |
+| 1281 | pt-ekg,12kytkentäälevossa,omarekisteröintimuseen |  | 100% | name | 2847 | 100 |  |  | Patient |  |
+| 1282 | pt-ekg,12kytkentäälevossaosastolla |  | 100% | name | 193 | 100 |  |  | Patient |  |
+| 1283 | pt-ekg,12kytkentäälevossa␤ |  | 100% | name | 2419 | 100 |  |  | Patient |  |
+| 1284 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg |  | 100% | name | 477 | 100 |  |  | Patient |  |
+| 1285 | pt-ekg,eteisvärinänseulonta,valvontamonitori-ekg,lisätallenne |  | 100% | name | 625 | 100 |  |  | Patient |  |
+| 1286 | pt-ekg,sisältäentietokoneanalyysin |  | 100% | name | 8257 | 100 |  |  | Patient |  |
+| 1287 | pt-ekg,sisältäentietokoneanalyysin(malmin)(pi) |  | 100% | name | 226 | 100 |  |  | Patient |  |
+| 1288 | pt-ekg,sisältäätietokoneanalyysin |  | 100% | name | 4178 | 100 |  |  | Patient |  |
+| 1289 | pt-ekgsis[lt[entietokoneanalyysin |  | 100% | name | 305 | 100 |  |  | Patient |  |
+| 1290 | pt-ekgsisältäentietokoneanalyysin |  | 100% | name | 347 | 100 |  |  | Patient |  |
+| 1291 | shigella/eiec(enteroinvasiivinene.coli) |  | 100% | name | 1318 | 100 |  |  |  |  |
 

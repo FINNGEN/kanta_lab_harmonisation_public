@@ -1,373 +1,113 @@
 {
   "rows": [
     {
-      "row_id": 3431,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Respiratory specimen"
+      "row_id": 3294,
+      "loinc_name_guess": "Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3432,
-      "loinc_name_guess": "Human bocavirus Ag [Presence] in Respiratory specimen"
+      "row_id": 3295,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3433,
-      "loinc_name_guess": "Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
+      "row_id": 3296,
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3434,
-      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
+      "row_id": 3297,
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3435,
-      "loinc_name_guess": "Influenza virus A Ag [Presence] in Respiratory specimen"
+      "row_id": 3298,
+      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3436,
-      "loinc_name_guess": "Influenza virus A+B Ag [Presence] in Respiratory specimen"
+      "row_id": 3299,
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3437,
-      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA"
+      "row_id": 3300,
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3438,
-      "loinc_name_guess": "Influenza virus A H3 Ag [Presence] in Respiratory specimen"
+      "row_id": 3301,
+      "loinc_name_guess": "Bordetella pertussis+parapertussis DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3439,
-      "loinc_name_guess": "Influenza virus A H1N1(2009) Ag [Presence] in Respiratory specimen"
+      "row_id": 3302,
+      "loinc_name_guess": "Borrelia burgdorferi sensu lato DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3440,
-      "loinc_name_guess": "Influenza virus A H1 Ag [Presence] in Respiratory specimen"
+      "row_id": 3303,
+      "loinc_name_guess": "Parasites DNA [Presence] in Blood by NAA with probe detection"
     },
     {
-      "row_id": 3441,
-      "loinc_name_guess": "Influenza virus A H3 Ag [Presence] in Respiratory specimen"
+      "row_id": 3304,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
-      "row_id": 3442,
-      "loinc_name_guess": "Influenza virus A identified in Respiratory specimen"
+      "row_id": 3305,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3443,
-      "loinc_name_guess": "Influenza virus B Ag [Presence] in Respiratory specimen"
+      "row_id": 3306,
+      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3444,
-      "loinc_name_guess": "Influenza virus B identified in Respiratory specimen"
+      "row_id": 3307,
+      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3445,
-      "loinc_name_guess": "Influenza virus A Ag [Presence] in Respiratory specimen"
+      "row_id": 3308,
+      "loinc_name_guess": "Parasites DNA [Presence] in Blood by NAA with probe detection"
     },
     {
-      "row_id": 3446,
-      "loinc_name_guess": "Influenza virus B Ag [Presence] in Respiratory specimen"
+      "row_id": 3309,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Stool by NAA with probe detection"
     },
     {
-      "row_id": 3447,
-      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
+      "row_id": 3310,
+      "loinc_name_guess": "Parasites DNA [Presence] in Stool by NAA with probe detection"
     },
     {
-      "row_id": 3448,
-      "loinc_name_guess": "Influenza virus+Respiratory syncytial virus Ag [Presence] in Respiratory specimen"
+      "row_id": 3311,
+      "loinc_name_guess": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection"
     },
     {
-      "row_id": 3449,
-      "loinc_name_guess": "Embryo transfer"
+      "row_id": 3312,
+      "loinc_name_guess": "Sapovirus RNA [Presence] in Stool by NAA with probe detection"
     },
     {
-      "row_id": 3450,
-      "loinc_name_guess": "Coronavirus Ag [Presence] in Respiratory specimen"
+      "row_id": 3313,
+      "loinc_name_guess": "Coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3451,
-      "loinc_name_guess": "Human metapneumovirus Ag [Presence] in Respiratory specimen"
+      "row_id": 3314,
+      "loinc_name_guess": "Coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3452,
-      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory specimen"
+      "row_id": 3315,
+      "loinc_name_guess": "Coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3453,
-      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory specimen"
+      "row_id": 3316,
+      "loinc_name_guess": "Coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection"
     },
     {
-      "row_id": 3454,
-      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory specimen"
+      "row_id": 3317,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Cerebral spinal fluid by NAA with probe detection"
     },
     {
-      "row_id": 3455,
-      "loinc_name_guess": "Parainfluenza virus 1 Ag [Presence] in Respiratory specimen"
+      "row_id": 3318,
+      "loinc_name_guess": "Bacteria DNA [Presence] in Respiratory specimen by NAA with probe detection"
     },
     {
-      "row_id": 3456,
-      "loinc_name_guess": "Parainfluenza virus 2 Ag [Presence] in Respiratory specimen"
+      "row_id": 3319,
+      "loinc_name_guess": "Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection"
     },
     {
-      "row_id": 3457,
-      "loinc_name_guess": "Parainfluenza virus 3 Ag [Presence] in Respiratory specimen"
-    },
-    {
-      "row_id": 3458,
-      "loinc_name_guess": "Pneumocystis jirovecii Ag [Presence] in Respiratory specimen"
-    },
-    {
-      "row_id": 3459,
-      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
-    },
-    {
-      "row_id": 3460,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Respiratory specimen"
-    },
-    {
-      "row_id": 3461,
-      "loinc_name_guess": "Inflammatory marker [Presence] in Bile"
-    },
-    {
-      "row_id": 3462,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Stool"
-    },
-    {
-      "row_id": 3463,
-      "loinc_name_guess": "Giardia lamblia Ag [Presence] in Stool"
-    },
-    {
-      "row_id": 3464,
-      "loinc_name_guess": "Giardia lamblia+Cryptosporidium Ag [Presence] in Stool"
-    },
-    {
-      "row_id": 3465,
-      "loinc_name_guess": "Norovirus Ag [Presence] in Stool"
-    },
-    {
-      "row_id": 3466,
-      "loinc_name_guess": "Rotavirus Ag [Presence] in Stool"
-    },
-    {
-      "row_id": 3467,
-      "loinc_name_guess": "Enteric viruses Ag panel - Stool"
-    },
-    {
-      "row_id": 3468,
-      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3469,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3470,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3471,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3472,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3473,
-      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3474,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3475,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3476,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3477,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3478,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Cerebral spinal fluid"
-    },
-    {
-      "row_id": 3479,
-      "loinc_name_guess": "Influenza virus A+B+Respiratory syncytial virus Ag [Presence] in Nasal specimen"
-    },
-    {
-      "row_id": 3480,
-      "loinc_name_guess": "Adenovirus Ag [Presence] in Nasopharynx"
-    },
-    {
-      "row_id": 3481,
-      "loinc_name_guess": "Influenza virus A Ag [Presence] in Pharynx"
-    },
-    {
-      "row_id": 3482,
-      "loinc_name_guess": "Influenza virus B Ag [Presence] in Pharynx"
-    },
-    {
-      "row_id": 3483,
-      "loinc_name_guess": "Respiratory viruses Ag panel - Respiratory specimen"
-    },
-    {
-      "row_id": 3484,
-      "loinc_name_guess": "Adenovirus IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3485,
-      "loinc_name_guess": "Adenovirus IgG Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3486,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3487,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3488,
-      "loinc_name_guess": "Influenza virus A IgG Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3489,
-      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3490,
-      "loinc_name_guess": "Influenza virus B Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3491,
-      "loinc_name_guess": "Influenza virus B Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3492,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3493,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3494,
-      "loinc_name_guess": "Influenza virus B IgG Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3495,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3496,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3497,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3498,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3499,
-      "loinc_name_guess": "Infliximab Ab [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3500,
-      "loinc_name_guess": "Infliximab Ab [Presence] in Serum or Plasma"
-    },
-    {
-      "row_id": 3501,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3502,
-      "loinc_name_guess": "Infliximab [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3503,
-      "loinc_name_guess": "Infliximab and Infliximab Ab panel - Serum or Plasma"
-    },
-    {
-      "row_id": 3504,
-      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3505,
-      "loinc_name_guess": "Mycophenolic acid glucuronide [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3506,
-      "loinc_name_guess": "Mycoplasma pneumoniae Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3507,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3508,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3509,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3510,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3511,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3512,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3513,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
-    },
-    {
-      "row_id": 3514,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
-    },
-    {
-      "row_id": 3515,
-      "loinc_name_guess": "Mycoplasma pneumoniae IgM Ab [Ratio] in Serum"
-    },
-    {
-      "row_id": 3516,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 3517,
-      "loinc_name_guess": "Parainfluenza virus 1 IgG Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 3518,
-      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3519,
-      "loinc_name_guess": "Squamous cell carcinoma Ag [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 3520,
-      "loinc_name_guess": "Legionella pneumophila serogroup 1 Ag [Presence] in Urine"
-    },
-    {
-      "row_id": 3521,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine"
-    },
-    {
-      "row_id": 3522,
-      "loinc_name_guess": "Streptococcus pneumoniae Ag [Presence] in Urine"
+      "row_id": 3320,
+      "loinc_name_guess": "Salmonella sp DNA [Presence] in Specimen by NAA with probe detection"
     }
   ],
-  "reflection": "This group was dominated by microbiology tests, particularly viral antigens and antibodies. The leading hyphen in many codes (e.g., `-adenag`) made it impossible to determine the specimen system from the code alone. In these cases, I inferred a `Respiratory specimen` based on the analytes (Influenza, RSV, etc.), which is a reasonable but not guaranteed assumption. The `LongName` was very helpful when present, confirming analytes and sometimes specimens, as with `ps-adenag` which specified a nasopharyngeal sample.\n\nThere were many instances of the same test code appearing with and without quantitative information. I systematically mapped rows with units like `eiu`, `u/ml`, `index`, or `s/co` to quantitative properties (`[Units/volume]`, `[Ratio]`) and those without to qualitative `[Presence]`. This distinction is crucial. Units like `form` were interpreted as qualitative.\n\nSome abbreviations were ambiguous (`-coinrsv`, `bi-inflamm`) or likely misspelled (`s-micfaeg`), requiring interpretation from context or knowledge of common tests. The code `-ivf-et` (Embryo transfer) was a procedure rather than a lab test, which is a different category of concept in LOINC. Finally, several codes clearly represented panels (`-inabrsv`, `-infrpak`, `s-inflipa`), which I named using the LOINC panel convention."
+  "reflection": "This group was dominated by qualitative nucleic acid tests, identifiable by the `-nho` suffix and confirmed by several `LongName` entries containing `nukleiinihappo (kval)`. This allowed for a consistent mapping strategy using the `[Presence]` property and `by NAA with probe detection` method.\n\nThe main challenges were interpreting abbreviations where a `LongName` was missing:\n1.  **Inferring components from related codes:** `bopanho` was inferred to be *Bordetella parapertussis* based on the nearby `bopenho` for *B. pertussis*. Similarly, `boppnho` was interpreted as a combined test for both.\n2.  **Decoding prefixes:** Prefixes like `r-` (`-rbaktnho`) and `res-` (`resbaktnho`) were interpreted as `Respiratory specimen`, and `b-` (`-bparnho`, `bparanho`) as `Blood`. This was an educated guess based on common lab practice and comparison with codes that had explicit system prefixes like `f-` (Feces) and `li-` (CSF).\n3.  **Ambiguity:** For the majority of codes without a system prefix (e.g., `-aspenho`, `kv229enho`), the generic `Specimen` system was used. While this creates a useful search query, it's a significant ambiguity.\n\nData quality issues included leading hyphens (`-baktnho`) and trailing punctuation (`-bopenho.`), which appear to be artifacts. The `kv...nho` codes were very specific about the coronavirus strain but gave no clue about the specimen type."
 }

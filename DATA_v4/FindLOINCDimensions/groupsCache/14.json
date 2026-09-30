@@ -1,349 +1,341 @@
 {
   "rows": [
     {
+      "row_id": 957,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 958,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 959,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 960,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 961,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 962,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 963,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 964,
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    {
       "row_id": 965,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 966,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 967,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 968,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 969,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 970,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 971,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 972,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 973,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 974,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 975,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 976,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 977,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 978,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 979,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
     },
     {
       "row_id": 980,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
     },
     {
       "row_id": 981,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
     },
     {
       "row_id": 982,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Blood"
     },
     {
       "row_id": 983,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 984,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 985,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 986,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 987,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 988,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 989,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 990,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 991,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 992,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 993,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 994,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 995,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 996,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 997,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 998,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 999,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 1000,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1001,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1002,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum"
     },
     {
       "row_id": 1003,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum"
     },
     {
       "row_id": 1004,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1005,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1006,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1007,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1008,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Capillary blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1009,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Capillary blood"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1010,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1011,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1012,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1013,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1014,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1015,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1016,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1017,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1018,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1019,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1020,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1021,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1022,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1023,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1024,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1025,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1026,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1027,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1028,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1029,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 1030,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 1031,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1032,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1033,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Plasma"
     },
     {
       "row_id": 1034,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 1035,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 1036,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 1037,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     },
     {
       "row_id": 1038,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum"
     },
     {
       "row_id": 1039,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "C reactive protein [Mass/volume] in Serum"
     },
     {
       "row_id": 1040,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1041,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1042,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1043,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1044,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1045,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1046,
-      "loinc_name_guess": "C-reactive protein.high sensitivity [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1047,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1048,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1049,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
-    },
-    {
-      "row_id": 1050,
-      "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum"
+      "loinc_name_guess": "C reactive protein.high sensitivity [Mass/volume] in Serum"
     }
   ],
-  "reflection": "This group was entirely about C-reactive protein (CRP), but with many variations that test the mapping logic. The main challenges were:\n\n1.  **Standard vs. High-Sensitivity (hs-CRP):** The keyword `herkkä` (sensitive) was a reliable indicator for hs-CRP (`C-reactive protein.high sensitivity`). However, several codes without this keyword (e.g., rows 1043, 1049) showed value distributions characteristic of hs-CRP. I consistently prioritized the explicit name over the value distribution, mapping these to standard CRP. This is a safer bet for a search query, as the patient population can skew values, but it highlights a significant data ambiguity.\n\n2.  **Point-of-Care (POC) Tests:** Numerous terms indicated a POC or rapid test (`pika`, `vieritesti`, `hoitoyksikkö`, `ihopiston`). My strategy was to generally omit the method from the LOINC name guess, as most LOINC CRP terms are method-less. I only specified a different system, `Capillary blood`, when the term `ihopiston` (skin prick) gave a strong justification. This simplifies the search and avoids making it overly specific.\n\n3.  **Specimen Type:** Specimen was specified by prefix (`B-`, `P-`, `S-`), by a word in the name (`veri`, `plasma`, `seerumi`), or not at all. My rules were to use the specified specimen, and default to `Serum or Plasma` when unspecified, which is standard LOINC practice for general chemistry.\n\n4.  **Contradictory Information:** Row 1016 included `(kval)` suggesting qualitative, but the unit `mg/l` and quantitative values contradicted this. I correctly prioritized the quantitative evidence over the ambiguous text qualifier. Similarly, `osoitus` (indication) in row 1040 suggested qualitative, but a sibling row (1041) was clearly quantitative, so I mapped all of them to the quantitative concept."
+  "reflection": "This group was entirely focused on C-reactive protein (CRP) but presented several interesting challenges. The most significant was distinguishing between standard CRP and high-sensitivity CRP (hs-CRP). While some names included the Finnish word for 'sensitive' (`herkkä`), several did not but had value deciles clearly in the hs-CRP range (first decile < 1.0 mg/L). Following the instruction to 'work out what the test actually measures', I used these value distributions as strong evidence to assign the `C reactive protein.high sensitivity` component even when the local name was ambiguous (e.g., rows 1034, 1040). This should provide a much better search query than sticking to the literal name alone.\n\nAnother gotcha was the contradiction between local names and the data. Rows with `(kval)` or `osoitus` (detection) suggested a qualitative test, but the `mg/l` unit and quantitative deciles proved otherwise. I consistently prioritized the quantitative data over these likely erroneous name qualifiers.\n\nFinally, the data contained many synonyms for point-of-care testing (`pika`, `vieritesti`, `hoitoyksikössä`, `tehdään itse`). Since LOINC often handles this via Method (which is best omitted from a general query) or by having specific 'Point of care' terms, I chose to generate the base `C reactive protein` name for all of them. This creates a robust query that will retrieve the parent concept and its POC children, allowing the next step to select the best fit."
 }

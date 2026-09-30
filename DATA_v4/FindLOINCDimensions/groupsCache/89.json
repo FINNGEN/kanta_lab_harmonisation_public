@@ -1,117 +1,389 @@
 {
   "rows": [
     {
-      "row_id": 7014,
-      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervicovaginal specimen"
+      "row_id": 6679,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4"
     },
     {
-      "row_id": 7015,
-      "loinc_name_guess": ""
+      "row_id": 6680,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4"
     },
     {
-      "row_id": 7016,
-      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervicovaginal specimen"
+      "row_id": 6681,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood adjusted to pH 7.4"
     },
     {
-      "row_id": 7017,
-      "loinc_name_guess": "Hearing screen"
+      "row_id": 6682,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood"
     },
     {
-      "row_id": 7018,
-      "loinc_name_guess": "Blood donor infectious disease screen panel - Serum or Plasma"
+      "row_id": 6683,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood"
     },
     {
-      "row_id": 7019,
-      "loinc_name_guess": "Vision screen"
+      "row_id": 6684,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood"
     },
     {
-      "row_id": 7020,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6685,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial blood"
     },
     {
-      "row_id": 7021,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6686,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial plasma"
     },
     {
-      "row_id": 7022,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6687,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Arterial plasma"
     },
     {
-      "row_id": 7023,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6688,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood"
     },
     {
-      "row_id": 7024,
-      "loinc_name_guess": "Rh(D) Ab [Presence] in Serum or Plasma"
+      "row_id": 6689,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood"
     },
     {
-      "row_id": 7025,
-      "loinc_name_guess": "Extractable nuclear Ab panel - Serum"
+      "row_id": 6690,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7026,
-      "loinc_name_guess": "IVF screen panel - Serum"
+      "row_id": 6691,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7027,
-      "loinc_name_guess": "First trimester maternal screen panel - Serum"
+      "row_id": 6692,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7028,
-      "loinc_name_guess": "Second trimester maternal screen panel - Serum"
+      "row_id": 6693,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7029,
-      "loinc_name_guess": "Maternal screen panel - Serum"
+      "row_id": 6694,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7030,
-      "loinc_name_guess": "Maternal screen panel - Serum"
+      "row_id": 6695,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma adjusted to pH 7.4"
     },
     {
-      "row_id": 7031,
-      "loinc_name_guess": "Maternal screen panel - Serum"
+      "row_id": 6696,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 7032,
-      "loinc_name_guess": "Maternal screen panel - Serum"
+      "row_id": 6697,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum or Plasma"
     },
     {
-      "row_id": 7033,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+      "row_id": 6698,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary blood adjusted to pH 7.4"
     },
     {
-      "row_id": 7034,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6699,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary blood adjusted to pH 7.4"
     },
     {
-      "row_id": 7035,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6700,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 7036,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6701,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 7037,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6702,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary plasma"
     },
     {
-      "row_id": 7038,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6703,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Capillary plasma"
     },
     {
-      "row_id": 7039,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6704,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Dialysis fluid"
     },
     {
-      "row_id": 7040,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+      "row_id": 6705,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Dialysis fluid"
     },
     {
-      "row_id": 7041,
-      "loinc_name_guess": "Maternal screen panel - Serum"
+      "row_id": 6706,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Dialysis fluid"
+    },
+    {
+      "row_id": 6707,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 6708,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 6709,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6710,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6711,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6712,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6713,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6714,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6715,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6716,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6717,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6718,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6719,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6720,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6721,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6722,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6723,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6724,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6725,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6726,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6727,
+      "loinc_name_guess": "pH [Units] in Serum"
+    },
+    {
+      "row_id": 6728,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6729,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6730,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 6731,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 6732,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6733,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6734,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6735,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6736,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6737,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6738,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6739,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6740,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6741,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6742,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6743,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6744,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6745,
+      "loinc_name_guess": "Ammonium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 6746,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6747,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6748,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6749,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6750,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6751,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6752,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6753,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6754,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6755,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6756,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6757,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6758,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6759,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6760,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6761,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6762,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6763,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Serum adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6764,
+      "loinc_name_guess": "Magnesium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6765,
+      "loinc_name_guess": "Magnesium.ionized [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 6766,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6767,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood adjusted to pH 7.4"
+    },
+    {
+      "row_id": 6768,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood"
+    },
+    {
+      "row_id": 6769,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood"
+    },
+    {
+      "row_id": 6770,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood"
+    },
+    {
+      "row_id": 6771,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood"
+    },
+    {
+      "row_id": 6772,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous blood"
+    },
+    {
+      "row_id": 6773,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous plasma"
+    },
+    {
+      "row_id": 6774,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Venous plasma"
     }
   ],
-  "reflection": "This group was characterized by the suffix `-seul` or `-seula` (from `seulonta`, screening), making it clear that these were all screening tests. The main task was to determine whether a code represented a single-analyte screen (like HPV) or a multi-test panel (like maternal screens or urine chemical screens).\n\nKey takeaways:\n- **Panel Recognition**: Finnish codes like `S-Tr1Seul` (1st trimester screen), `U-Kemseul` (urine chemical screen), and `S-ENAScul` (ENA screen) are standard abbreviations for panels. Recognizing these and using the LOINC `Panel name - System` format was crucial.\n- **Non-Lab Procedures**: The presence of `hörsel` (hearing screen) and `näköseula` (vision screen) highlights that LOINC covers more than just laboratory tests. These were mapped to simple screen names without properties or systems.\n- **Ambiguity**: A code like `hoikemseul` (row 7015) was too garbled to interpret confidently, so leaving the guess empty was the correct action. In contrast, `s-ivfseul` (IVF screen) was specific enough to warrant a targeted panel guess, even if it might map to a more generic infectious disease panel in practice.\n- **Interpreting Data**: The decile values for `u-kemseul` (row 7037), which clearly matched urine specific gravity, were an excellent example of how quantitative data can exist for a test that is conceptually a panel. This reinforces the rule to prioritize the test's identity (a chemical screen panel) over the presence of values for one of its components."
+  "reflection": "This group predominantly featured ionized calcium tests, with a high degree of string variation for the same underlying concept. The main challenges were:\n\n1.  **Non-standard prefixes**: Codes like `ap-`, `cp-`, `mb-`, and `vp-` are not part of the standard Finnish set. I interpreted them as Arterial Plasma, Capillary Plasma, Mixed Blood, and Venous Plasma, respectively. This is a reasonable guess but remains an assumption.\n2.  **pH Adjustment**: The frequent appearance of `7.4` or `pH7.4` was a crucial clue that these were not just ionized calcium, but results adjusted to a standard pH. LOINC has specific concepts for this, so correctly identifying this feature (`...adjusted to pH 7.4`) is important for accurate mapping.\n3.  **Component Synonyms**: `Ca++`, `Ca-i`, and `Ca-ion` were all interpreted as `Calcium.ionized`.\n4.  **Hidden Component**: One code, `fs-ph(ca-ion)` (row 6727), was actually a pH measurement performed in serum, identifiable from the `ph` in the name and the value range `7.3-7.4`. This highlights the importance of not just looking at the main analyte (`Ca`) but the entire string and the values.\n5.  **Data Noise**: Incorrect units (`nmol/l` for values around 1.2, `unit_share`=0%, row 6747) and meaningless suffixes (`a`, `ac`, `vt`, `.`, `:`) were common and had to be filtered out."
 }

@@ -1,0 +1,269 @@
+{
+  "rows": [
+    {
+      "row_id": 6538,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Stomach tissue by Light microscopy"
+    },
+    {
+      "row_id": 6539,
+      "loinc_name_guess": "Papanicolaou smear [Identifier] in Cervical or vaginal specimen by Light microscopy"
+    },
+    {
+      "row_id": 6540,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6541,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6542,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunohistochemistry"
+    },
+    {
+      "row_id": 6543,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6544,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Colon tissue by Light microscopy"
+    },
+    {
+      "row_id": 6545,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Cervix tissue by Light microscopy"
+    },
+    {
+      "row_id": 6546,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Endometrium tissue by Light microscopy"
+    },
+    {
+      "row_id": 6547,
+      "loinc_name_guess": "Amyloid [Presence] in Tissue"
+    },
+    {
+      "row_id": 6548,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6549,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6550,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6551,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6552,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6553,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Colon tissue by Light microscopy"
+    },
+    {
+      "row_id": 6554,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6555,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6556,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6557,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6558,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6559,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6560,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6561,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Colon tissue by Light microscopy"
+    },
+    {
+      "row_id": 6562,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6563,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6564,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6565,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6566,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6567,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6568,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Electron microscopy"
+    },
+    {
+      "row_id": 6569,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6570,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunofluorescence"
+    },
+    {
+      "row_id": 6571,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunohistochemistry"
+    },
+    {
+      "row_id": 6572,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunohistochemistry"
+    },
+    {
+      "row_id": 6573,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunohistochemistry"
+    },
+    {
+      "row_id": 6574,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by In situ hybridization"
+    },
+    {
+      "row_id": 6575,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6576,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6577,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6578,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6579,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6580,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6581,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6582,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Head and neck tissue by Light microscopy"
+    },
+    {
+      "row_id": 6583,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Breast tissue by Light microscopy"
+    },
+    {
+      "row_id": 6584,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Central nervous system tissue by Light microscopy"
+    },
+    {
+      "row_id": 6585,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Colon tissue by Light microscopy"
+    },
+    {
+      "row_id": 6586,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by FISH"
+    },
+    {
+      "row_id": 6587,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Stomach tissue by Light microscopy"
+    },
+    {
+      "row_id": 6588,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Stomach tissue by Light microscopy"
+    },
+    {
+      "row_id": 6589,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Stomach tissue by Light microscopy"
+    },
+    {
+      "row_id": 6590,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Female genital tract tissue by Light microscopy"
+    },
+    {
+      "row_id": 6591,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Cervix tissue by Light microscopy"
+    },
+    {
+      "row_id": 6592,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Cervix tissue by Light microscopy"
+    },
+    {
+      "row_id": 6593,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6594,
+      "loinc_name_guess": "Gross observation [Identifier] in Tissue"
+    },
+    {
+      "row_id": 6595,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6596,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6597,
+      "loinc_name_guess": "Frozen section [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6598,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Prostate tissue by Light microscopy"
+    },
+    {
+      "row_id": 6599,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Oral cavity tissue by Light microscopy"
+    },
+    {
+      "row_id": 6600,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6601,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Light microscopy"
+    },
+    {
+      "row_id": 6602,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by Immunohistochemistry"
+    },
+    {
+      "row_id": 6603,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Breast tissue by Light microscopy"
+    }
+  ],
+  "reflection": "This group was overwhelmingly composed of histopathology tests, identifiable by the `Ts-PAD` structure. `PAD` (Patologian Anatomian Diagnoosi) consistently means histopathology. The key challenge was to differentiate the generic tests from those with specific sites or methods.\n\nThe strategy was to use `Microscopic observation [Identifier] in Tissue by Light microscopy` as the default for any `Ts-PAD` code, and then specialize it based on suffixes:\n- Site-specific suffixes (`gast`, `colo`, `brea`, `pros`, etc.) were used to refine the `<System>` from `Tissue` to e.g., `Stomach tissue`.\n- Method-specific suffixes (`-ih`, `-if`, `-em`, `-ish`, `-fish`) were used to refine the `<Method>`, e.g., `by Immunohistochemistry`.\n- Specific test types like `pika` (frozen section) and `makr` (gross observation) were mapped to their corresponding LOINC concepts.\n\nThe numbered suffixes (`-1`, `-2`, `-3`, etc.) and their `LongName`s clearly indicate they are billing or sample complexity/size modifiers (e.g., '1-3 small samples', 'large specimen'). These do not change the underlying nature of the test, so they were correctly mapped to the same general LOINC concept.\n\nA few codes like `ts-pad-1co` and `ts-pad-3co` were ambiguous. 'co' could mean 'colonoscopy', but since the base code `ts-pad-1` is generic, I specialized the system to `Colon tissue` with some confidence that this is the most likely meaning in context. Similarly for `ts-padgyn` I chose `Female genital tract tissue` as a reasonable guess for a gynecological sample.\n\nThe `pt-papa-1` code was unique, being `Pt-` (patient) based. Recognizing `papa` as Papanicolaou test was crucial. I mapped it to the cytology result concept, treating `Pt-` as an indication of the overall procedure but mapping the specific lab result component."
+}

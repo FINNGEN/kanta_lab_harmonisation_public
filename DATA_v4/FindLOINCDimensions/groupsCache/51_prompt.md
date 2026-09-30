@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,98 +139,33 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 51 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 3431 | -adenag |  | 100% | name | 1964 | 100 |  | -Adenovirus, antigeeni |  |  |
-| 3432 | -bokaag |  | 100% | name | 187 | 100 |  |  |  |  |
-| 3433 | -coinrsv |  | 100% | name | 2490 | 100 |  |  |  |  |
-| 3434 | -inabrsv |  | 100% | name | 19142 | 100 |  |  |  |  |
-| 3435 | -infaag |  | 100% | name | 10730 | 100 |  | -Influenssa A -virus, antigeeni |  |  |
-| 3436 | -infabag |  | 100% | name | 15107 | 100 |  | -Influenssa A ja B -virus, antigeeni |  |  |
-| 3437 | -infabnh |  | 100% | name | 961 | 100 |  |  |  |  |
-| 3438 | -infah03 |  | 100% | name | 227 | 100 |  |  |  |  |
-| 3439 | -infah09 |  | 100% | name | 488 | 100 |  |  |  |  |
-| 3440 | -infah1 |  | 100% | name | 480 | 100 |  |  |  |  |
-| 3441 | -infah3 |  | 100% | name | 261 | 100 |  |  |  |  |
-| 3442 | -infavt |  | 100% | name | 1271 | 100 |  |  |  |  |
-| 3443 | -infbag |  | 100% | name | 10722 | 100 |  | -Influenssa B -virus, antigeeni |  |  |
-| 3444 | -infbvt |  | 100% | name | 1271 | 100 |  |  |  |  |
-| 3445 | -infl.a |  | 100% | name | 220 | 100 |  |  |  |  |
-| 3446 | -infl.b |  | 100% | name | 220 | 100 |  |  |  |  |
-| 3447 | -infrpak |  | 100% | name | 1338 | 100 |  |  |  |  |
-| 3448 | -infrsv |  | 100% | name | 162 | 100 |  |  |  |  |
-| 3449 | -ivf-et |  | 100% | name | 194 | 100 |  |  |  | Special technique |
-| 3450 | -koroag |  | 100% | name | 625 | 100 |  |  |  |  |
-| 3451 | -metpnag |  | 100% | name | 370 | 100 |  |  |  |  |
-| 3452 | -pin1ag |  | 100% | name | 1146 | 100 |  | -Parainfluenssa 1 -virus, antigeeni |  |  |
-| 3453 | -pin2ag |  | 100% | name | 1147 | 100 |  | -Parainfluenssa 2 -virus, antigeeni |  |  |
-| 3454 | -pin3ag |  | 100% | name | 1147 | 100 |  | -Parainfluenssa 3 -virus, antigeeni |  |  |
-| 3455 | -pinf1ag |  | 100% | name | 235 | 100 |  |  |  |  |
-| 3456 | -pinf2ag |  | 100% | name | 235 | 100 |  |  |  |  |
-| 3457 | -pinf3ag |  | 100% | name | 235 | 100 |  |  |  |  |
-| 3458 | -pnjiag |  | 100% | name | 188 | 100 |  | -Pneumocystis jirovecii, antigeeni |  |  |
-| 3459 | -rvirag |  | 100% | name | 3025 | 100 |  | -Respiratoristen virusten antigeeni |  |  |
-| 3460 | -stpnag |  | 100% | name | 4094 | 100 |  | -Streptococcus pneumoniae, antigeeni |  |  |
-| 3461 | bi-inflamm |  | 100% | name | 311 | 100 |  |  | Bile |  |
-| 3462 | f-adenag |  | 100% | name | 863 | 100 |  | F -Adenovirus, antigeeni | Feces |  |
-| 3463 | f-giarag |  | 100% | name | 218 | 100 |  | F -Giardia, antigeeni | Feces |  |
-| 3464 | f-gicrag |  | 100% | name | 163 | 99.39 |  |  | Feces |  |
-| 3465 | f-noroag |  | 100% | name | 1048 | 100 |  |  | Feces |  |
-| 3466 | f-rotaag |  | 100% | name | 886 | 100 |  | F -Rotavirus, antigeeni | Feces |  |
-| 3467 | f-virag |  | 100% | name | 489 | 100 |  |  | Feces |  |
-| 3468 | li-adenabg |  | 100% | name | 215 | 100 |  | Li-Adenovirus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3469 | li-infaabg | eiu | 14% | name+unit | 40 | 0 |  | Li-Influenssa A -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3470 | li-infaabg |  | 86% | name | 240 | 100 |  | Li-Influenssa A -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3471 | li-infbabg | eiu | 7% | name+unit | 18 | 0 |  | Li-Influenssa B -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3472 | li-infbabg |  | 93% | name | 258 | 100 |  | Li-Influenssa B -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3473 | li-mypnab |  | 100% | name | 614 | 100 |  | Li-Mycoplasma pneumoniae, vasta-aineet | Cerebrospinal fluid |  |
-| 3474 | li-mypnabg | eiu | 2% | name+unit | 32 | 0 |  | Li-Mycoplasma pneumoniae, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3475 | li-mypnabg |  | 98% | name | 1292 | 100 |  | Li-Mycoplasma pneumoniae, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3476 | li-mypnabm |  | 100% | name | 1314 | 100 |  | Li-Mycoplasma pneumoniae, IgM-vasta-aineet | Cerebrospinal fluid |  |
-| 3477 | li-pin1abg | eiu | 4% | name+unit | 7 | 0 |  | Li-Parainfluenssa 1 -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3478 | li-pin1abg |  | 96% | name | 161 | 100 |  | Li-Parainfluenssa 1 -virus, IgG-vasta-aineet | Cerebrospinal fluid |  |
-| 3479 | ns-infab/r |  | 100% | name | 181 | 100 |  |  | Nasal secretion |  |
-| 3480 | ps-adenag |  | 100% | name | 1955 | 100 |  | Ps-Adenovirus, antigeeni (NPS-näyte) | Pharyngeal secretion |  |
-| 3481 | ps-infaag |  | 100% | name | 11885 | 100 |  |  | Pharyngeal secretion |  |
-| 3482 | ps-infbag |  | 100% | name | 11881 | 100 |  |  | Pharyngeal secretion |  |
-| 3483 | rvirag-o |  | 100% | name | 340 | 100 |  |  |  | Qualitative test (also semi-quantitative) |
-| 3484 | s-adenabg | eiu | 89% | name+unit+values | 240 | 0 | [29.8, 39.96, 46.52, 56.21, 66.99, 76.86, 88.44, 100.94, 123.7] | S -Adenovirus, IgG-vasta-aineet | Serum |  |
-| 3485 | s-adenabg |  | 11% | name | 30 | 96.67 |  | S -Adenovirus, IgG-vasta-aineet | Serum |  |
-| 3486 | s-infaabg | eiu | 79% | name+unit+values | 288 | 0 | [44.84, 67.49, 80.03, 92.84, 100.98, 109.5, 120.03, 134.44, 150.75] | S -Influenssa A -virus, IgG-vasta-aineet | Serum |  |
-| 3487 | s-infaabg | u/ml | 8% | name+unit | 31 | 0 |  | S -Influenssa A -virus, IgG-vasta-aineet | Serum |  |
-| 3488 | s-infaabg |  | 13% | name | 46 | 71.74 |  | S -Influenssa A -virus, IgG-vasta-aineet | Serum |  |
-| 3489 | s-infbab | eiu | 68% | name+unit+values | 84 | 0 | [37, 45.5, 59.88, 67.83, 76.88, 87.5, 108.12, 125, 142] | S -Influenssa B -virus, vasta-aineet | Serum |  |
-| 3490 | s-infbab | u/ml | 16% | name+unit | 20 | 0 |  | S -Influenssa B -virus, vasta-aineet | Serum |  |
-| 3491 | s-infbab |  | 16% | name | 20 | 100 |  | S -Influenssa B -virus, vasta-aineet | Serum |  |
-| 3492 | s-infbabg | eiu | 89% | name+unit+values | 202 | 0 | [27.36, 39.2, 49.01, 55.71, 69.1, 81.14, 95.12, 117.99, 145.85] | S-Influenssa B -virus, IgG-vasta-aineet | Serum |  |
-| 3493 | s-infbabg | u/ml | 2% | name+unit | 5 | 0 |  | S-Influenssa B -virus, IgG-vasta-aineet | Serum |  |
-| 3494 | s-infbabg |  | 8% | name | 19 | 73.68 |  | S-Influenssa B -virus, IgG-vasta-aineet | Serum |  |
-| 3495 | s-infli | mg/l | 74% | name+unit+values | 4337 | 0.09 | [2.45, 4.22, 5.77, 7.21, 8.78, 10.55, 12.36, 14.93, 19.68] | S -Infliksimabi | Serum |  |
-| 3496 | s-infli | ug/l | 1% | name+unit | 62 | 0 |  | S -Infliksimabi | Serum |  |
-| 3497 | s-infli | âug/ml | 0% | name+unit | 5 | 0 |  | S -Infliksimabi | Serum |  |
-| 3498 | s-infli |  | 25% | name+values | 1486 | 32.77 | [2.05, 3.56, 5.06, 6.2, 7.59, 8.94, 10.97, 13.84, 18.03] | S -Infliksimabi | Serum |  |
-| 3499 | s-infliab | au/ml | 8% | name+unit+values | 413 | 0.73 | [6.57, 14.16, 21.28, 34.4, 52.11, 73.2, 118.89, 190.88, 374.2] | S -Infliksimabi, vasta-aineet | Serum |  |
-| 3500 | s-infliab |  | 92% | name | 4455 | 99.89 |  | S -Infliksimabi, vasta-aineet | Serum |  |
-| 3501 | s-infliks | mg/l | 75% | name+unit+values | 951 | 0 | [1.81, 3, 4.49, 5.55, 6.66, 8.19, 10.34, 13.5, 19.13] |  | Serum |  |
-| 3502 | s-infliks |  | 25% | name+values | 310 | 30.97 | [1.21, 2.24, 3.08, 4.32, 5.17, 6.19, 7.17, 7.95, 9.17] |  | Serum |  |
-| 3503 | s-inflipa |  | 100% | name | 4630 | 100 |  |  | Serum |  |
-| 3504 | s-micfaeg | mg/l | 33% | name+unit | 45 | 0 |  |  | Serum |  |
-| 3505 | s-micfaeg |  | 67% | name | 90 | 76.67 |  |  | Serum |  |
-| 3506 | s-mypnab |  | 100% | name | 19694 | 99.92 |  | S -Mycoplasma pneumoniae, vasta-aineet | Serum |  |
-| 3507 | s-mypnabg | au/ml | 13% | name+unit+values | 2298 | 0 | [0.52, 1.18, 1.86, 2.68, 3.78, 5.69, 8.99, 16.54, 33.76] | S -Mycoplasma pneumoniae, IgG-vasta-aineet | Serum |  |
-| 3508 | s-mypnabg | eiu | 55% | name+unit+values | 9577 | 0 | [51.21, 64.99, 79.08, 95.09, 113.13, 134.88, 160.85, 200.43, 260.64] | S -Mycoplasma pneumoniae, IgG-vasta-aineet | Serum |  |
-| 3509 | s-mypnabg | form | 0% | name+unit | 53 | 0 |  | S -Mycoplasma pneumoniae, IgG-vasta-aineet | Serum |  |
-| 3510 | s-mypnabg | ru/ml | 2% | name+unit+values | 384 | 0 | [19.56, 23.19, 26.12, 30.65, 34.99, 40.45, 50.94, 60.03, 79.86] | S -Mycoplasma pneumoniae, IgG-vasta-aineet | Serum |  |
-| 3511 | s-mypnabg |  | 29% | name+values | 4994 | 100 | [0.53, 1.1, 1.73, 2.48, 3.76, 5.77, 9.79, 21.47, 68.82] | S -Mycoplasma pneumoniae, IgG-vasta-aineet | Serum |  |
-| 3512 | s-mypnabm | form | 0% | name+unit | 16 | 0 |  | S -Mycoplasma pneumoniae, IgM-vasta-aineet | Serum |  |
-| 3513 | s-mypnabm | index | 21% | name+unit+values | 3618 | 0 | [1.53, 2.22, 2.83, 3.43, 4.2, 5.16, 6.56, 8.38, 11.18] | S -Mycoplasma pneumoniae, IgM-vasta-aineet | Serum |  |
-| 3514 | s-mypnabm | s/co | 6% | name+unit+values | 1089 | 0 | [0.1, 0.1, 0.2, 0.2, 0.3, 0.33, 0.47, 0.63, 1.13] | S -Mycoplasma pneumoniae, IgM-vasta-aineet | Serum |  |
-| 3515 | s-mypnabm |  | 73% | name+values | 12775 | 100 | [1.19, 1.67, 2.14, 2.58, 3.04, 3.6, 4.51, 5.78, 8.21] | S -Mycoplasma pneumoniae, IgM-vasta-aineet | Serum |  |
-| 3516 | s-pin1abg | eiu | 96% | name+unit+values | 209 | 0 | [51.38, 65.97, 78.97, 87.7, 96.4, 106.81, 114.5, 126.75, 144.62] | S -Parainfluenssa 1 -virus, IgG-vasta-aineet | Serum |  |
-| 3517 | s-pin1abg |  | 4% | name | 9 | 88.89 |  | S -Parainfluenssa 1 -virus, IgG-vasta-aineet | Serum |  |
-| 3518 | s-scc-ag | ug/l | 66% | name+unit+values | 959 | 0 | [0.88, 1.03, 1.2, 1.38, 1.6, 2.01, 2.55, 3.56, 6.69] | S -Squamous cell carsinoma, antigeeni | Serum | Antigen |
-| 3519 | s-scc-ag |  | 34% | name | 493 | 95.94 |  | S -Squamous cell carsinoma, antigeeni | Serum | Antigen |
-| 3520 | u-lepnag |  | 100% | name | 3943 | 100 |  | U -Legionella pneumophila, antigeeni | Urine |  |
-| 3521 | u-pneuag |  | 100% | name | 2058 | 100 |  |  | Urine |  |
-| 3522 | u-stpnag |  | 100% | name | 2546 | 100 |  | U -Streptococcus pneumoniae, antigeeni | Urine |  |
+| 3294 | -aspenho |  | 100% | name | 680 | 100 |  | -Aspergillus, nukleiinihappo (kval) |  |  |
+| 3295 | -baktnho |  | 100% | name | 14771 | 100 |  | -Bakteeri, nukleiinihappo (kval) |  |  |
+| 3296 | -bocanho |  | 100% | name | 1008 | 100 |  |  |  |  |
+| 3297 | -bokanho |  | 100% | name | 13005 | 100 |  | -Bokavirus, nukleiinihappo (kval) |  |  |
+| 3298 | -bopanho |  | 100% | name | 1739 | 100 |  |  |  |  |
+| 3299 | -bopenho |  | 100% | name | 12052 | 100 |  | -Bordetella pertussis, nukleiinihappo (kval) |  |  |
+| 3300 | -bopenho. |  | 100% | name | 1314 | 100 |  |  |  |  |
+| 3301 | -boppnho |  | 100% | name | 3753 | 100 |  |  |  |  |
+| 3302 | -borrnho |  | 100% | name | 1762 | 100 |  | -Borrelia, nukleiinihappo (kval) |  |  |
+| 3303 | -bparnho |  | 100% | name | 314 | 100 |  |  |  |  |
+| 3304 | -rbaktnho |  | 100% | name | 4646 | 100 |  |  |  |  |
+| 3305 | baktnho |  | 100% | name | 328 | 100 |  |  |  |  |
+| 3306 | bokanho |  | 100% | name | 222 | 100 |  |  |  |  |
+| 3307 | bopenho |  | 100% | name | 608 | 100 |  |  |  |  |
+| 3308 | bparanho |  | 100% | name | 1650 | 100 |  |  |  |  |
+| 3309 | f-baktnho |  | 100% | name | 17469 | 100 |  |  | Feces |  |
+| 3310 | f-paranho |  | 100% | name | 14240 | 100 |  | F -Parasiitit, nukleiinihappo (kval) | Feces |  |
+| 3311 | f-salmnho |  | 100% | name | 2354 | 100 |  | F -Salmonella, nukleiinihappo (kval) | Feces |  |
+| 3312 | f-saponho |  | 100% | name | 4057 | 100 |  | F -Sapovirus, nukleiinihappo (kval) | Feces |  |
+| 3313 | kv229enho |  | 100% | name | 5976 | 100 |  |  |  |  |
+| 3314 | kvhku1nho |  | 100% | name | 537 | 100 |  |  |  |  |
+| 3315 | kvnl63nho |  | 100% | name | 5975 | 100 |  |  |  |  |
+| 3316 | kvoc43nho |  | 100% | name | 5977 | 100 |  |  |  |  |
+| 3317 | li-baktnho |  | 100% | name | 268 | 100 |  | Li-Bakteeri, nukleiinihappo (kval) | Cerebrospinal fluid |  |
+| 3318 | resbaktnho |  | 100% | name | 770 | 100 |  |  |  |  |
+| 3319 | s-parvnho |  | 100% | name | 208 | 100 |  | S -Parvovirus, nukleiinihappo (kval) | Serum |  |
+| 3320 | salmnho |  | 100% | name | 8183 | 100 |  |  |  |  |
 

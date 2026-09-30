@@ -1,0 +1,409 @@
+{
+  "rows": [
+    {
+      "row_id": 12722,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --post dialysis"
+    },
+    {
+      "row_id": 12723,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --pre dialysis"
+    },
+    {
+      "row_id": 12724,
+      "loinc_name_guess": "Alpha fetoprotein [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12725,
+      "loinc_name_guess": "Alpha fetoprotein [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12726,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --pre dialysis"
+    },
+    {
+      "row_id": 12727,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --pre dialysis"
+    },
+    {
+      "row_id": 12728,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --post dialysis"
+    },
+    {
+      "row_id": 12729,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --post dialysis"
+    },
+    {
+      "row_id": 12730,
+      "loinc_name_guess": "Urea reduction ratio [Ratio]"
+    },
+    {
+      "row_id": 12731,
+      "loinc_name_guess": "Fungus identified in Sputum by Culture"
+    },
+    {
+      "row_id": 12732,
+      "loinc_name_guess": "Protein.gamma globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12733,
+      "loinc_name_guess": "Yeast identified in Mucous membrane by Culture"
+    },
+    {
+      "row_id": 12734,
+      "loinc_name_guess": "Monoclonal protein [Presence] in Serum by Immunofixation"
+    },
+    {
+      "row_id": 12735,
+      "loinc_name_guess": "Clozapine [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12736,
+      "loinc_name_guess": "Clozapine [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12737,
+      "loinc_name_guess": "Clozapine [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12738,
+      "loinc_name_guess": "Creatine kinase.MB [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12739,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12740,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12741,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12742,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12743,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12744,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 12745,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 12746,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12747,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12748,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12749,
+      "loinc_name_guess": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area]"
+    },
+    {
+      "row_id": 12750,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12751,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12752,
+      "loinc_name_guess": "Monoclonal protein [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12753,
+      "loinc_name_guess": "Bacteria identified in Breast milk by Culture"
+    },
+    {
+      "row_id": 12754,
+      "loinc_name_guess": "Creatine kinase.MB [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 12755,
+      "loinc_name_guess": "Creatine kinase.MB [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 12756,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12757,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12758,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12759,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12760,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12761,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12762,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12763,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12764,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12765,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12766,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12767,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12768,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12769,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --10 minutes post dialysis"
+    },
+    {
+      "row_id": 12770,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --pre dialysis"
+    },
+    {
+      "row_id": 12771,
+      "loinc_name_guess": "Prealbumin [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 12772,
+      "loinc_name_guess": "Prealbumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12773,
+      "loinc_name_guess": "Protein electrophoresis panel - Serum"
+    },
+    {
+      "row_id": 12774,
+      "loinc_name_guess": "Protein electrophoresis panel - Serum"
+    },
+    {
+      "row_id": 12775,
+      "loinc_name_guess": "Protein electrophoresis panel - Serum"
+    },
+    {
+      "row_id": 12776,
+      "loinc_name_guess": "Protein.total [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12777,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12778,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12779,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12780,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Plasma"
+    },
+    {
+      "row_id": 12781,
+      "loinc_name_guess": "Protein electrophoresis panel - Serum"
+    },
+    {
+      "row_id": 12782,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12783,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12784,
+      "loinc_name_guess": "Rheumatoid factor [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12785,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12786,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum by Ultrasensitive"
+    },
+    {
+      "row_id": 12787,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12788,
+      "loinc_name_guess": "Testosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12789,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12790,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12791,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12792,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12793,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12794,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12795,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12796,
+      "loinc_name_guess": "Fungus identified in Wound by Culture"
+    },
+    {
+      "row_id": 12797,
+      "loinc_name_guess": "Fungus panel - Specimen"
+    },
+    {
+      "row_id": 12798,
+      "loinc_name_guess": "Fungus identified in Skin by Culture"
+    },
+    {
+      "row_id": 12799,
+      "loinc_name_guess": "Fungus identified in Skin by Culture"
+    },
+    {
+      "row_id": 12800,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12801,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12802,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12803,
+      "loinc_name_guess": "Testosterone.free.calculated [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12804,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12805,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12806,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12807,
+      "loinc_name_guess": "Triiodothyronine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12808,
+      "loinc_name_guess": "Thyroglobulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12809,
+      "loinc_name_guess": "Thyroglobulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 12810,
+      "loinc_name_guess": "Thyrotropin [Units/volume] in Serum"
+    },
+    {
+      "row_id": 12811,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12812,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12813,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12814,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 12815,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 12816,
+      "loinc_name_guess": "Thyroxine.free [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 12817,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 12818,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 12819,
+      "loinc_name_guess": "Urea [Moles/volume] in Serum or Plasma --post dialysis"
+    },
+    {
+      "row_id": 12820,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --post dialysis"
+    },
+    {
+      "row_id": 12821,
+      "loinc_name_guess": "Urea [Moles/volume] in Plasma --pre dialysis"
+    },
+    {
+      "row_id": 12822,
+      "loinc_name_guess": "Urea [Moles/volume] in Serum or Plasma --pre dialysis"
+    }
+  ],
+  "reflection": "This group was characterized by a large number of common chemistry tests, many of which were related to creatinine, thyroid function, and dialysis monitoring. The main challenges were:\n\n1.  **Disambiguating analytes from calculations**: Row 12749 (`kreatiniini,plasmasta` with unit `ml/min/173m2`) was clearly an eGFR result, not a creatinine measurement. The unit was the definitive clue. This highlights the importance of always considering the unit alongside the test name.\n2.  **Panel vs. Single Test**: Codes like `proteiini,fraktiot` (protein fractions) and `sieni,viljelyjanatiivi` (fungus, culture and native prep) strongly suggest a panel or a bundled test rather than a single analyte. I've named these as panels (e.g., `Protein electrophoresis panel - Serum`, `Fungus panel - Specimen`) which seems more appropriate than trying to force them into a single-analyte template.\n3.  **Decoding Local/Implicit Information**: The dialysis-related tests (`ennendialyysiä`, `dialyysinjälkeen`) required translating the timing into LOINC's `--pre dialysis` and `--post dialysis` challenge syntax. Similarly, `yskös` (sputum), `limakalvo` (mucous membrane), and `äidinmaito` (breast milk) had to be identified as the specimen/system.\n4.  **Interpreting Ambiguous Suffixes**: In row 12776, `proteiini,ty,seerumista` had a `Ty` suffix (typing) but the unit (`g/l`) and values strongly pointed to a Total Protein measurement. I prioritized the quantitative evidence over the ambiguous suffix, guessing `Protein.total [Mass/volume] in Serum`.\n\nOverall, the strategy of using `Serum or Plasma` as a default for S- or P- prefixed general chemistry and being specific (`in Serum`, `in Plasma`) when the source name explicitly states it worked well. For cultures, specifying the method (`by Culture`) and property (`identified`) is key."
+}

@@ -1,89 +1,89 @@
 {
   "rows": [
     {
-      "row_id": 1812,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
+      "row_id": 1782,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Culture"
     },
     {
-      "row_id": 1813,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture"
+      "row_id": 1783,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture"
     },
     {
-      "row_id": 1814,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture"
+      "row_id": 1784,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture"
     },
     {
-      "row_id": 1815,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture"
+      "row_id": 1785,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture"
     },
     {
-      "row_id": 1816,
-      "loinc_name_guess": "Gene variants and Copy number variants panel - Specimen by NGS"
+      "row_id": 1786,
+      "loinc_name_guess": "Genetic variants and Copy number variations panel - Blood or Tissue by NGS"
     },
     {
-      "row_id": 1817,
-      "loinc_name_guess": "Amphetamines & Benzodiazepines & Cannabinoids & Cocaine & Opiates screen panel - Urine"
+      "row_id": 1787,
+      "loinc_name_guess": "Drugs of abuse 5 screen panel - Urine"
     },
     {
-      "row_id": 1818,
-      "loinc_name_guess": "Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine"
+      "row_id": 1788,
+      "loinc_name_guess": "Drugs of abuse 6 screen panel - Urine"
     },
     {
-      "row_id": 1819,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
+      "row_id": 1789,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen"
     },
     {
-      "row_id": 1820,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture"
+      "row_id": 1790,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture"
     },
     {
-      "row_id": 1821,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Organism specific culture"
+      "row_id": 1791,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Nose by Culture"
     },
     {
-      "row_id": 1822,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture"
+      "row_id": 1792,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture"
     },
     {
-      "row_id": 1823,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Organism specific culture"
+      "row_id": 1793,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Throat by Culture"
     },
     {
-      "row_id": 1824,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture"
+      "row_id": 1794,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture"
     },
     {
-      "row_id": 1825,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Organism specific culture"
+      "row_id": 1795,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Perineum by Culture"
     },
     {
-      "row_id": 1826,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
+      "row_id": 1796,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant screen [Presence] in Specimen by Culture"
     },
     {
-      "row_id": 1827,
-      "loinc_name_guess": "EKG 24 hour study"
+      "row_id": 1797,
+      "loinc_name_guess": "24 hour ambulatory EKG panel"
     },
     {
-      "row_id": 1828,
-      "loinc_name_guess": "EKG 24 hour study"
+      "row_id": 1798,
+      "loinc_name_guess": "24 hour ambulatory EKG panel"
     },
     {
-      "row_id": 1829,
-      "loinc_name_guess": "EKG 48 hour study"
+      "row_id": 1799,
+      "loinc_name_guess": "48 hour ambulatory EKG panel"
     },
     {
-      "row_id": 1830,
-      "loinc_name_guess": "Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine"
+      "row_id": 1800,
+      "loinc_name_guess": "Drugs of abuse 6 screen panel - Urine"
     },
     {
-      "row_id": 1831,
-      "loinc_name_guess": "Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine"
+      "row_id": 1801,
+      "loinc_name_guess": "Drugs of abuse 6 screen panel - Urine"
     },
     {
-      "row_id": 1832,
-      "loinc_name_guess": "Amphetamines & Benzodiazepines & Buprenorphine & Cannabinoids & Cocaine & Opiates screen panel - Urine"
+      "row_id": 1802,
+      "loinc_name_guess": "Drugs of abuse 6 screen panel - Urine"
     }
   ],
-  "reflection": "This group primarily contained microbiology cultures, toxicology panels, and a few clinical procedures. The grouping by string similarity was essential for interpreting truncated names for MRSA culture sites (e.g., `viljelyne` next to `viljelynenästä` made it clear the site was `Nose`).\n\nThe drug screen panels were straightforward to parse into LOINC panel names by listing the analytes. `Urine` was a reasonable default system for these screens when not explicitly mentioned.\n\nThe Holter EKG tests were also clear, identified by `Pt-EKG` and `pitkäaikaisrekisteröinti` (long-term recording), easily mapping to `EKG XX hour study`.\n\nThe most ambiguous case was row 1816, a very long and generic description of a targeted NGS analysis. My guess, `Gene variants and Copy number variants panel - Specimen by NGS`, is a broad interpretation intended to capture the key methodological components mentioned in the name ('base changes', 'copy number variations', 'NGS'). This is a 'best effort' guess for what is more of a service description than a specific test."
+  "reflection": "This group contained a mixture of microbiology cultures, drug screening panels, a complex genetic test, and cardiology procedures. The grouping by string similarity was essential for interpreting the many truncated names for MRSA cultures (e.g., `viljelyne` for 'viljely nenästä'). The Finnish names for the MRSA cultures were very clear about the sample site (nose, throat, perineum), which mapped directly to the LOINC System.\n\nThe drug screen panels were identifiable by the keywords `huumeseula` or `huumeseulonta` and the lists of drugs. I opted for a generic panel name like `Drugs of abuse 6 screen panel` which is a more robust search query than trying to construct a very long component listing all drugs. The `U-` prefix clearly indicated urine, and I inferred urine for the others as it's the standard for such screens.\n\nThe genetic test name (row 1786) was exceptionally long and descriptive. A direct translation isn't feasible; instead, I had to abstract the core meaning ('study of base changes and small copy number variations... by NGS') into a plausible LOINC-style panel name to aim the search, `Genetic variants and Copy number variations panel - Blood or Tissue by NGS`.\n\nThe EKG tests (`pitkäaikaisrekisteröinti`) were clearly Holter monitor studies, and the duration (24h/48h) was explicit, allowing for specific panel names."
 }

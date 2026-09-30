@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,35 +139,181 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 126 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 10591 | -gluk-tbr | % | 100% | name+unit+values | 118 | 0 | [0, 0, 1, 1, 1, 2, 2.43, 4.38, 6.6] |  |  |  |
-| 10592 | -gluk-tir | % | 100% | name+unit+values | 120 | 0 | [25.5, 36.83, 44.57, 51.33, 60.25, 66, 72.25, 76.73, 81.25] |  |  |  |
-| 10593 | gluk-vieri |  | 100% | name+values | 309 | 0 | [5.09, 5.42, 5.78, 6.17, 6.7, 7.14, 8, 9.04, 11.23] |  |  |  |
-| 10594 | gluk0 | mmol/l | 93% | name+unit+values | 143 | 0 | [4.61, 4.8, 4.96, 5.03, 5.21, 5.48, 5.8, 6.24, 6.7] |  |  |  |
-| 10595 | gluk0 |  | 7% | name | 10 | 20 |  |  |  |  |
-| 10596 | gluk0min |  | 100% | name+values | 368 | 0 | [4.92, 5.32, 5.58, 5.75, 5.88, 6, 6.19, 6.58, 7.05] |  |  |  |
-| 10597 | gluk120min |  | 100% | name+values | 349 | 0 | [4.3, 5.17, 5.91, 6.49, 7.07, 7.6, 8.72, 10.59, 13.35] |  |  |  |
-| 10598 | gluk1h | mmol/l | 100% | name+unit+values | 282 | 0 | [5.36, 6.29, 6.9, 7.39, 7.93, 8.69, 9.15, 9.75, 11.47] |  |  |  |
-| 10599 | gluk2h | mmol/l | 98% | name+unit+values | 280 | 0 | [4.55, 5.28, 5.68, 6.16, 6.59, 6.99, 7.54, 8.2, 9.44] |  |  |  |
-| 10600 | gluk2h |  | 2% | name | 6 | 100 |  |  |  |  |
-| 10601 | gluk30min |  | 100% | name+values | 362 | 0 | [7.03, 7.79, 8.42, 8.84, 9.36, 9.74, 10.39, 11.2, 12.52] |  |  |  |
-| 10602 | gluk60min |  | 100% | name+values | 359 | 0 | [5.8, 6.9, 7.62, 8.52, 9.3, 10.21, 11.28, 12.5, 14.53] |  |  |  |
-| 10603 | glukbel-vp | mmol/l | 76% | name+unit+values | 664 | 0 | [4.52, 4.88, 5.29, 5.73, 5.99, 6.35, 6.81, 10.3, 12.64] |  |  |  |
-| 10604 | glukbel-vp |  | 24% | name | 209 | 100 |  |  |  |  |
-| 10605 | glukoosi120min | mmol/l | 100% | name+unit+values | 119 | 0 | [4.6, 5.12, 5.49, 5.84, 6.6, 7.25, 8.25, 9.68, 12.44] |  |  |  |
-| 10606 | glukr-0 | mmol/l | 100% | name+unit+values | 144 | 0 | [4.8, 5.18, 5.45, 5.64, 5.93, 6.16, 6.41, 6.64, 7.16] |  |  |  |
-| 10607 | glukr-1h | mmol/l | 100% | name+unit+values | 125 | 0 | [6.69, 7.13, 7.9, 8.73, 9.2, 10.36, 11.37, 12.79, 14.55] |  |  |  |
-| 10608 | glukr-2h | mmol/l | 100% | name+unit+values | 144 | 0 | [5.34, 5.79, 6.28, 6.91, 7.51, 8.15, 8.91, 10.16, 11.81] |  |  |  |
-| 10609 | glukr0 | mmol/l | 100% | name+unit+values | 204 | 0 | [4.5, 4.79, 4.89, 5.08, 5.2, 5.47, 5.8, 6.29, 6.89] |  |  |  |
-| 10610 | glukr0-n | mmol/l | 100% | name+unit+values | 618 | 0 | [4.67, 4.86, 5.09, 5.3, 5.57, 5.83, 6.03, 6.29, 6.69] |  |  |  |
-| 10611 | glukr1h | mmol/l | 100% | name+unit+values | 381 | 0 | [5.67, 6.21, 6.84, 7.42, 7.86, 8.3, 8.82, 9.42, 10.36] |  |  |  |
-| 10612 | glukr1valm |  | 100% | name | 333 | 100 |  |  |  |  |
-| 10613 | glukr2h | mmol/l | 100% | name+unit+values | 780 | 0 | [4.8, 5.34, 5.8, 6.21, 6.59, 7.03, 7.53, 8.19, 9.83] |  |  |  |
-| 10614 | glukras-0 | mmol/l | 76% | name+unit+values | 97 | 0 | [4.6, 4.78, 5, 5.1, 5.2, 5.43, 5.65, 5.9, 6.3] |  |  |  |
-| 10615 | glukras-0 |  | 24% | name | 30 | 3.33 |  |  |  |  |
-| 10616 | glukras120 | mmol/l | 100% | name+unit+values | 153 | 0 | [5.1, 5.47, 5.77, 6.11, 6.54, 6.97, 7.58, 8.12, 9.26] |  |  |  |
-| 10617 | glukrvalm |  | 100% | name | 2563 | 100 |  |  |  |  |
-| 10618 | glukvieri | mmol/l | 77% | name+unit+values | 823 | 0 | [5.3, 5.72, 6.09, 6.42, 6.92, 7.6, 8.66, 10.17, 12.3] |  |  |  |
-| 10619 | glukvieri |  | 23% | name+values | 251 | 1.59 | [5.24, 5.55, 5.81, 6.07, 6.3, 6.79, 7.52, 8.56, 10.76] |  |  |  |
+| 10411 | ab-hb-co | % | 100% | name+unit+values | 287747 | 0 | [0.4, 0.69, 0.86, 1, 1.15, 1.3, 1.48, 1.72, 2.12] |  | Arterial blood |  |
+| 10412 | ab-hb-co |  | 0% | name | 601 | 100 |  |  | Arterial blood |  |
+| 10413 | ab-hb-met | % | 100% | name+unit+values | 290833 | 0 | [0.16, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.96, 1.18] |  | Arterial blood |  |
+| 10414 | ab-hb-met |  | 0% | name+values | 523 | 100 | [-1, -0.6, -0.27, -0.06, 0.1, 0.2, 0.3, 0.4, 0.9] |  | Arterial blood |  |
+| 10415 | ab-hb-vt | g/l | 100% | name+unit+values | 225 | 0 | [111.19, 121, 130.27, 136.29, 140, 145.22, 150.6, 157.19, 167.12] |  | Arterial blood |  |
+| 10416 | ab-hkr | osuus | 77% | name+unit+values | 864 | 0 | [0.3, 0.32, 0.35, 0.37, 0.39, 0.41, 0.42, 0.45, 0.47] |  | Arterial blood |  |
+| 10417 | ab-hkr |  | 23% | name+values | 263 | 100 | [0.31, 0.34, 0.36, 0.38, 0.4, 0.41, 0.42, 0.45, 0.47] |  | Arterial blood |  |
+| 10418 | b-ghb-a1c | % | 87% | name+unit+values | 87878 | 0 | [5.2, 5.42, 5.59, 5.73, 5.91, 6.13, 6.47, 7.08, 8.13] |  | Blood |  |
+| 10419 | b-ghb-a1c | mmol | 0% | name+unit | 50 | 0 |  |  | Blood |  |
+| 10420 | b-ghb-a1c | mmol/mol | 2% | name+unit+values | 2333 | 0 | [37.33, 39.77, 41.82, 43.61, 45.59, 48.88, 52.44, 59, 68.33] |  | Blood |  |
+| 10421 | b-ghb-a1c |  | 11% | name | 11089 | 100 |  |  | Blood |  |
+| 10422 | b-ghb-a1c,tk | % | 100% | name+unit+values | 5304 | 0 | [5.43, 5.76, 6.16, 6.59, 7.03, 7.45, 7.9, 8.45, 9.34] |  | Blood |  |
+| 10423 | b-ghb-a1cv | mmol/mol | 98% | name+unit+values | 346 | 0 | [41.33, 44.54, 47.42, 50.55, 53.09, 56.35, 59.4, 64.46, 73.63] |  | Blood |  |
+| 10424 | b-ghb-a1cv |  | 2% | name | 6 | 100 |  |  | Blood |  |
+| 10425 | b-ghba1c | % | 99% | name+unit+values | 3607 | 0 | [5.39, 5.56, 5.73, 5.9, 6.1, 6.4, 6.8, 7.38, 8.29] |  | Blood |  |
+| 10426 | b-ghba1c |  | 1% | name | 36 | 100 |  |  | Blood |  |
+| 10427 | b-ghba1c- | % | 100% | name+unit | 123 | 0 |  |  | Blood |  |
+| 10428 | b-ghba1c-oma | % | 97% | name+unit+values | 360 | 0 | [5.7, 5.9, 6, 6.2, 6.4, 6.67, 6.91, 7.42, 8.16] |  | Blood |  |
+| 10429 | b-ghba1c-oma |  | 3% | name | 13 | 100 |  |  | Blood |  |
+| 10430 | b-ghba1c/ | % | 98% | name+unit+values | 566 | 0.35 | [5.6, 5.83, 6, 6.19, 6.39, 6.63, 6.84, 7.16, 7.71] |  | Blood |  |
+| 10431 | b-ghba1c/ |  | 2% | name | 11 | 100 |  |  | Blood |  |
+| 10432 | b-ghba1c/p | % | 71% | name+unit+values | 506 | 0 | [5.93, 6.26, 6.57, 6.86, 7.1, 7.44, 7.84, 8.32, 9.4] |  | Blood |  |
+| 10433 | b-ghba1c/p |  | 29% | name+values | 206 | 100 | [5.97, 6.26, 6.51, 6.72, 7.01, 7.3, 7.7, 8.34, 8.93] |  | Blood |  |
+| 10434 | b-ghba1cp | % | 100% | name+unit+values | 4868 | 0 | [5.97, 6.3, 6.58, 6.88, 7.16, 7.46, 7.8, 8.23, 8.9] |  | Blood |  |
+| 10435 | b-ghba1cp |  | 0% | name | 13 | 100 |  |  | Blood |  |
+| 10436 | b-ghba1cv |  | 100% | name | 423 | 100 |  |  | Blood |  |
+| 10437 | b-ghba1cvt |  | 100% | name | 135 | 100 |  |  | Blood |  |
+| 10438 | b-hb-a1c | % | 88% | name+unit+values | 62531 | 0 | [5.29, 5.44, 5.6, 5.77, 5.95, 6.17, 6.48, 6.96, 7.84] | B -Hemoglobiini-A1C, glykoitunut | Blood |  |
+| 10439 | b-hb-a1c | %/mmol | 0% | name+unit | 29 | 0 |  | B -Hemoglobiini-A1C, glykoitunut | Blood |  |
+| 10440 | b-hb-a1c | mmol/l | 0% | name+unit | 13 | 7.69 |  | B -Hemoglobiini-A1C, glykoitunut | Blood |  |
+| 10441 | b-hb-a1c | mmol/mol | 11% | name+unit+values | 7621 | 0 | [34.01, 36.12, 37.89, 39.5, 41.2, 43.55, 46.81, 52.53, 62.2] | B -Hemoglobiini-A1C, glykoitunut | Blood |  |
+| 10442 | b-hb-a1c |  | 2% | name | 1216 | 100 |  | B -Hemoglobiini-A1C, glykoitunut | Blood |  |
+| 10443 | b-hb-co | % | 90% | name+unit+values | 82164 | 0 | [0.89, 1.18, 1.38, 1.56, 1.71, 1.88, 2.05, 2.26, 2.63] | B -Hemoglobiini, hiilimonoksidi | Blood |  |
+| 10444 | b-hb-co |  | 10% | name+values | 9154 | 100 | [-0.38, -0.21, -0.17, -0.1, 0.02, 1, 1, 1, 1.99] | B -Hemoglobiini, hiilimonoksidi | Blood |  |
+| 10445 | b-hb-co. | % | 99% | name+unit+values | 1009 | 0 | [1.01, 1.42, 1.61, 1.79, 1.94, 2.14, 2.31, 2.51, 2.86] |  | Blood |  |
+| 10446 | b-hb-co. |  | 1% | name | 9 | 100 |  |  | Blood |  |
+| 10447 | b-hb-ef |  | 100% | name | 124 | 100 |  | B -Hemoglobiini, elektroforeesi, verestä | Blood |  |
+| 10448 | b-hb-f | % | 52% | name+unit+values | 609 | 0.49 | [0, 0.92, 2.09, 5.89, 14.57, 22.26, 24.76, 27.04, 30.81] | B -Hemoglobiini, fetaali | Blood |  |
+| 10449 | b-hb-f |  | 48% | name | 572 | 100 |  | B -Hemoglobiini, fetaali | Blood |  |
+| 10450 | b-hb-f-vr | % | 22% | name+unit | 24 | 0 |  | B -Hemoglobiini, fetaali, värjäys | Blood | Staining |
+| 10451 | b-hb-f-vr |  | 78% | name | 84 | 100 |  | B -Hemoglobiini, fetaali, värjäys | Blood | Staining |
+| 10452 | b-hb-fr |  | 100% | name | 398 | 100 |  | B -Hemoglobiini, fraktiot | Blood | Fractions |
+| 10453 | b-hb-hoi |  | 100% | name+values | 230 | 100 | [103.94, 111.88, 117.74, 122.95, 126.96, 132.1, 135.84, 143.2, 148.99] |  | Blood |  |
+| 10454 | b-hb-ief | form | 3% | name+unit | 10 | 0 |  | B -Hemoglobiini, isoelektrinen fokusointi | Blood | Isoelectric focusing |
+| 10455 | b-hb-ief |  | 97% | name | 298 | 100 |  | B -Hemoglobiini, isoelektrinen fokusointi | Blood | Isoelectric focusing |
+| 10456 | b-hb-met | % | 90% | name+unit+values | 81133 | 0 | [0.45, 0.62, 0.79, 0.9, 1, 1.1, 1.2, 1.3, 1.47] | B -Methemoglobiini | Blood |  |
+| 10457 | b-hb-met |  | 10% | name+values | 8996 | 100 | [-0.9, -0.36, -0.3, -0.2, -0.1, -0.1, -0.1, 0.48, 0.8] | B -Methemoglobiini | Blood |  |
+| 10458 | b-hb-met. | % | 99% | name+unit+values | 1016 | 0 | [0.63, 0.83, 0.94, 1.06, 1.11, 1.2, 1.3, 1.4, 1.6] |  | Blood |  |
+| 10459 | b-hb-met. |  | 1% | name | 10 | 100 |  |  | Blood |  |
+| 10460 | b-hb-o | g/l | 14% | name+unit | 36 | 13.89 |  |  | Blood | Qualitative test (also semi-quantitative) |
+| 10461 | b-hb-o |  | 86% | name+values | 229 | 100 | [95.33, 106.5, 114.78, 121.31, 126.79, 131.45, 137.03, 142.44, 148.67] |  | Blood | Qualitative test (also semi-quantitative) |
+| 10462 | b-hb-poc | g/l | 20% | name+unit | 26 | 3.85 |  |  | Blood |  |
+| 10463 | b-hb-poc |  | 80% | name+values | 106 | 100 | [109, 115.5, 120.67, 126.17, 128.33, 131.5, 135, 137.75, 145] |  | Blood |  |
+| 10464 | b-hb-pt | g/l | 80% | name+unit+values | 649 | 0 | [100.43, 115.06, 121.84, 129.26, 133.9, 138.93, 143.78, 148.8, 154.91] |  | Blood |  |
+| 10465 | b-hb-pt |  | 20% | name+values | 166 | 100 | [101.8, 109.84, 119.26, 127.38, 133.79, 137.87, 143.9, 152.16, 160.2] |  | Blood |  |
+| 10466 | b-hb-vt | g/l | 100% | name+unit+values | 4224 | 0 | [103.86, 114.44, 120.79, 126.22, 130.62, 135.07, 140.03, 145.79, 153.81] | B -Hemoglobiini, vieritutkimus | Blood |  |
+| 10467 | b-hb-vt |  | 0% | name | 6 | 100 |  | B -Hemoglobiini, vieritutkimus | Blood |  |
+| 10468 | b-hba1c | % | 0% | name+unit+values | 847 | 0 | [5.33, 5.59, 5.76, 5.92, 6.09, 6.4, 6.81, 7.45, 8.49] | B -Hemoglobiini-A1c | Blood |  |
+| 10469 | b-hba1c | form | 0% | name+unit | 16 | 0 |  | B -Hemoglobiini-A1c | Blood |  |
+| 10470 | b-hba1c | mmol | 0% | name+unit+values | 1356 | 0 | [34.05, 36, 37.63, 39.08, 40.8, 42.57, 45.91, 51.48, 61.02] | B -Hemoglobiini-A1c | Blood |  |
+| 10471 | b-hba1c | mmol/l | 0% | name+unit+values | 135 | 0.74 | [31.02, 33, 34, 35, 36, 37, 38, 39, 42] | B -Hemoglobiini-A1c | Blood |  |
+| 10472 | b-hba1c | mmol/m | 0% | name+unit+values | 2831 | 0 | [32.52, 34.15, 35.7, 37.07, 38.51, 40.34, 43, 48.76, 59.85] | B -Hemoglobiini-A1c | Blood |  |
+| 10473 | b-hba1c | mmol/ml | 0% | name+unit+values | 138 | 0 | [32, 33.68, 34.75, 35.94, 37.85, 38, 39.68, 41.38, 43] | B -Hemoglobiini-A1c | Blood |  |
+| 10474 | b-hba1c | mmol/mol | 93% | name+unit+values | 1976825 | 0 | [33.05, 35.18, 36.97, 38.1, 39.99, 42.16, 45.07, 50.32, 60.31] | B -Hemoglobiini-A1c | Blood |  |
+| 10475 | b-hba1c |  | 6% | name | 133002 | 100 |  | B -Hemoglobiini-A1c | Blood |  |
+| 10476 | b-hba1c,t |  | 100% | name+values | 10329 | 100 | [28.69, 39.63, 43.09, 47.24, 51.82, 56.59, 61.9, 68.13, 77.56] |  | Blood |  |
+| 10477 | b-hba1c,tk | mmol/mol | 100% | name+unit+values | 7907 | 0.01 | [35.82, 39.36, 43.46, 47.75, 52.16, 56.55, 61.35, 67.21, 76.08] |  | Blood |  |
+| 10478 | b-hba1c-o |  | 100% | name+values | 337 | 100 | [6.05, 6.44, 6.78, 7.33, 7.97, 10.13, 38.6, 48.91, 61.53] |  | Blood | Qualitative test (also semi-quantitative) |
+| 10479 | b-hba1c-om |  | 100% | name | 127 | 100 |  |  | Blood |  |
+| 10480 | b-hba1c-oma |  | 100% | name+values | 440 | 100 | [39, 41, 42, 43.9, 46, 49.06, 51.84, 56.91, 65.06] |  | Blood |  |
+| 10481 | b-hba1c-p | % | 14% | name+unit+values | 153 | 3.27 | [6.4, 6.72, 7.1, 7.6, 7.94, 8.2, 8.55, 9, 9.88] |  | Blood | Upright (standing) |
+| 10482 | b-hba1c-p | mmol/mol | 81% | name+unit+values | 867 | 0.35 | [44.02, 49.67, 54.3, 58.25, 62.24, 65.89, 70.4, 74.81, 84.61] |  | Blood | Upright (standing) |
+| 10483 | b-hba1c-p |  | 5% | name | 55 | 100 |  |  | Blood | Upright (standing) |
+| 10484 | b-hba1c/p | mmol/mol | 35% | name+unit+values | 568 | 0 | [37.94, 40, 42, 43.91, 45.94, 49.31, 51.37, 54.5, 60.85] |  | Blood |  |
+| 10485 | b-hba1c/p |  | 65% | name | 1078 | 100 |  |  | Blood |  |
+| 10486 | b-hba1c/pi |  | 100% | name+values | 1172 | 100 | [40.12, 43.68, 47.04, 50.61, 53.4, 56.88, 61.12, 66.65, 76.14] |  | Blood |  |
+| 10487 | b-hba1chy | mmol/mol | 100% | name+unit+values | 261 | 0 | [41.44, 47.08, 50.41, 54.19, 57.44, 60.77, 65.08, 71.6, 82.33] |  | Blood |  |
+| 10488 | b-hba1cp | % | 10% | name+unit+values | 1574 | 0.19 | [5.77, 6.01, 6.21, 6.46, 6.69, 6.98, 7.32, 7.75, 8.45] |  | Blood |  |
+| 10489 | b-hba1cp | mmol/mol | 89% | name+unit+values | 13769 | 0.02 | [40.97, 44.13, 47.25, 50.28, 53.07, 56.14, 59.73, 64.36, 71.61] |  | Blood |  |
+| 10490 | b-hba1cp |  | 0% | name | 60 | 100 |  |  | Blood |  |
+| 10491 | b-hba1cpi | mmol/mol | 100% | name+unit+values | 1299 | 0 | [37.79, 40.52, 42.7, 45.2, 48.39, 51.41, 55.01, 61.08, 69.91] |  | Blood |  |
+| 10492 | b-hba1cvt | % | 35% | name+unit+values | 7630 | 0 | [5.82, 6.13, 6.39, 6.65, 6.92, 7.24, 7.57, 8.02, 8.75] | B -Hemoglobiini-A1c, vieritutkimus | Blood |  |
+| 10493 | b-hba1cvt | mmol | 0% | name+unit | 7 | 0 |  | B -Hemoglobiini-A1c, vieritutkimus | Blood |  |
+| 10494 | b-hba1cvt | mmol/mol | 63% | name+unit+values | 13876 | 0.01 | [41.8, 45.73, 49.05, 52.33, 55.71, 59.15, 63.13, 68.18, 76.86] | B -Hemoglobiini-A1c, vieritutkimus | Blood |  |
+| 10495 | b-hba1cvt |  | 3% | name | 591 | 100 |  | B -Hemoglobiini-A1c, vieritutkimus | Blood |  |
+| 10496 | b-hbf-fc | % | 6% | name+unit | 16 | 0 |  | B -Immunofenotyypitys, fetaalihemoglobiini | Blood | Flow cytometry |
+| 10497 | b-hbf-fc | form | 9% | name+unit | 24 | 0 |  | B -Immunofenotyypitys, fetaalihemoglobiini | Blood | Flow cytometry |
+| 10498 | b-hbf-fc |  | 84% | name | 215 | 100 |  | B -Immunofenotyypitys, fetaalihemoglobiini | Blood | Flow cytometry |
+| 10499 | b-hbfvol | ml | 9% | name+unit | 14 | 0 |  |  | Blood |  |
+| 10500 | b-hbfvol |  | 91% | name | 139 | 100 |  |  | Blood |  |
+| 10501 | b-hbhoi | g/l | 88% | name+unit+values | 496 | 0 | [97.88, 110.36, 119.68, 125.02, 129.72, 135.92, 143.92, 151.3, 159.16] |  | Blood |  |
+| 10502 | b-hbhoi |  | 12% | name | 66 | 100 |  |  | Blood |  |
+| 10503 | b-hbhplc |  | 100% | name | 308 | 100 |  |  | Blood |  |
+| 10504 | b-hbpoc | g/l | 100% | name+unit+values | 639 | 0 | [97.85, 107.26, 112.9, 117.7, 122.88, 126.88, 132.06, 138.55, 147.12] |  | Blood |  |
+| 10505 | b-hkr | % | 46% | name+unit+values | 5020904 | 0 | [29.67, 33.32, 36, 37.79, 39.16, 40.79, 42, 43.3, 45.13] | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10506 | b-hkr | fl | 0% | name+unit+values | 7243 | 0 | [84.54, 86.11, 87.23, 88.3, 89.15, 90.24, 91.28, 92.73, 94.69] | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10507 | b-hkr | form | 0% | name+unit | 33 | 0 |  | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10508 | b-hkr | l/l | 0% | name+unit+values | 3192 | 0 | [0.36, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.45, 0.46] | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10509 | b-hkr | ratio | 53% | name+unit+values | 5806054 | 0 | [0.31, 0.34, 0.36, 0.38, 0.4, 0.41, 0.42, 0.44, 0.46] | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10510 | b-hkr |  | 1% | name | 119384 | 100 |  | B -Erytrosyytit, tilavuusosuus | Blood |  |
+| 10511 | b-hkr.fol | % | 15% | name+unit | 28 | 0 |  |  | Blood |  |
+| 10512 | b-hkr.fol |  | 85% | name+values | 153 | 100 | [0.36, 0.37, 0.39, 0.4, 0.41, 0.42, 0.43, 0.45, 0.46] |  | Blood |  |
+| 10513 | b-hkrhoi | osuus | 10% | name+unit | 18 | 0 |  |  | Blood |  |
+| 10514 | b-hkrhoi |  | 90% | name+values | 155 | 100 | [0.3, 0.32, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.49] |  | Blood |  |
+| 10515 | b-hkrp | % | 100% | name+unit+values | 1281 | 0 | [35.35, 37.88, 39.35, 40.46, 41.52, 42.63, 43.67, 45, 46.74] |  | Blood |  |
+| 10516 | b-hkrp |  | 0% | name | 6 | 100 |  |  | Blood |  |
+| 10517 | b-hla-bw | form | 7% | name+unit | 44 | 0 |  |  | Blood |  |
+| 10518 | b-hla-bw |  | 93% | name | 611 | 100 |  |  | Blood |  |
+| 10519 | b-hla1mun |  | 100% | name | 828 | 100 |  |  | Blood |  |
+| 10520 | b-hla1pk |  | 100% | name | 316 | 100 |  |  | Blood |  |
+| 10521 | b-hla2frk |  | 100% | name | 124 | 100 |  |  | Blood |  |
+| 10522 | b-hla2prk |  | 100% | name | 155 | 100 |  |  | Blood |  |
+| 10523 | b-hlaabac |  | 100% | name | 120 | 100 |  | B -Abacavir-yliherkkyys, HLA-assosiaatio, DNA-tutkimus | Blood |  |
+| 10524 | b-hlaad | form | 4% | name+unit | 65 | 0 |  | B -HLA-A, DNA-tutkimus | Blood |  |
+| 10525 | b-hlaad |  | 96% | name | 1525 | 100 |  | B -HLA-A, DNA-tutkimus | Blood |  |
+| 10526 | b-hlaadt | form | 6% | name+unit | 11 | 0 |  | B -HLA-A, DNA-tutkimus, tarkennettu | Blood |  |
+| 10527 | b-hlaadt |  | 94% | name | 186 | 100 |  | B -HLA-A, DNA-tutkimus, tarkennettu | Blood |  |
+| 10528 | b-hlaag |  | 100% | name | 126 | 100 |  |  | Blood |  |
+| 10529 | b-hlabd | form | 4% | name+unit | 66 | 0 |  | B -HLA-B, DNA-tutkimus | Blood |  |
+| 10530 | b-hlabd |  | 96% | name | 1637 | 100 |  | B -HLA-B, DNA-tutkimus | Blood |  |
+| 10531 | b-hlabdt | form | 5% | name+unit | 10 | 0 |  | B -HLA-B, DNA-tutkimus, tarkennettu | Blood |  |
+| 10532 | b-hlabdt |  | 95% | name | 185 | 100 |  | B -HLA-B, DNA-tutkimus, tarkennettu | Blood |  |
+| 10533 | b-hlabg |  | 100% | name | 126 | 100 |  |  | Blood |  |
+| 10534 | b-hlacdt | form | 5% | name+unit | 10 | 0 |  | B -HLA-C, DNA-tutkimus, tarkennettu | Blood |  |
+| 10535 | b-hlacdt |  | 95% | name | 187 | 100 |  | B -HLA-C, DNA-tutkimus, tarkennettu | Blood |  |
+| 10536 | b-hlacg |  | 100% | name | 117 | 100 |  |  | Blood |  |
+| 10537 | b-hladpb1g |  | 100% | name | 117 | 100 |  |  | Blood |  |
+| 10538 | b-hladpbd | form | 5% | name+unit | 10 | 0 |  | B -HLA-DPB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10539 | b-hladpbd |  | 95% | name | 186 | 100 |  | B -HLA-DPB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10540 | b-hladqb1g |  | 100% | name | 117 | 100 |  |  | Blood |  |
+| 10541 | b-hladqbd | form | 5% | name+unit | 10 | 0 |  | B -HLA-DQB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10542 | b-hladqbd |  | 95% | name | 184 | 100 |  | B -HLA-DQB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10543 | b-hladrb1g |  | 100% | name | 125 | 100 |  |  | Blood |  |
+| 10544 | b-hladrbd | form | 4% | name+unit | 62 | 0 |  | B -HLA-DRB, DNA-tutkimus | Blood |  |
+| 10545 | b-hladrbd |  | 96% | name | 1486 | 100 |  | B -HLA-DRB, DNA-tutkimus | Blood |  |
+| 10546 | b-hladrld | form | 6% | name+unit | 10 | 0 |  | B -HLA-DRB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10547 | b-hladrld |  | 94% | name | 158 | 100 |  | B -HLA-DRB, DNA-tutkimus, tarkennettu | Blood |  |
+| 10548 | b-hlamaks |  | 100% | name | 277 | 100 |  |  | Blood |  |
+| 10549 | b-hlasyke |  | 100% | name | 348 | 100 |  |  | Blood |  |
+| 10550 | b-hlatrb |  | 100% | name | 133 | 100 |  |  | Blood |  |
+| 10551 | b-vthba1c | mmol/mol | 99% | name+unit+values | 1184 | 0.08 | [45.54, 50.5, 53.58, 56.3, 58.39, 61.04, 63.92, 68.87, 77.06] |  | Blood |  |
+| 10552 | b-vthba1c |  | 1% | name | 8 | 100 |  |  | Blood |  |
+| 10553 | cb-hb-hy | g/l | 100% | name+unit+values | 1578 | 0.19 | [98.91, 111.68, 118.7, 123.76, 129.35, 133.47, 138.3, 144.32, 152.78] |  | Capillary blood |  |
+| 10554 | cb-hb-v |  | 100% | name+values | 312 | 100 | [95.63, 107.52, 115.55, 122.44, 129.89, 134.53, 139.44, 145.94, 153.46] |  | Capillary blood | Free or unconjugated |
+| 10555 | cb-hba1cnla | mmol/mol | 68% | name+unit | 212 | 0 |  |  | Capillary blood |  |
+| 10556 | cb-hba1cnla |  | 32% | name | 102 | 100 |  |  | Capillary blood |  |
+| 10557 | f-hb-hum |  | 100% | name | 457 | 100 |  |  | Feces |  |
+| 10558 | f-hb-o |  | 100% | name | 2079 | 100 |  | F -Hemoglobiini (kval) | Feces | Qualitative test (also semi-quantitative) |
+| 10559 | f-hb-o2 |  | 100% | name | 146 | 100 |  |  | Feces |  |
+| 10560 | f-hb-o3 |  | 100% | name | 125 | 100 |  |  | Feces |  |
+| 10561 | f-hhb-1 |  | 100% | name | 400 | 100 |  |  | Feces |  |
+| 10562 | f-hhb-2 |  | 100% | name | 400 | 100 |  |  | Feces |  |
+| 10563 | f-hhb-o | estimate | 0% | name+unit | 106 | 0 |  | F -Hemoglobiini, ihmisen (kval) | Feces | Qualitative test (also semi-quantitative) |
+| 10564 | f-hhb-o | form | 0% | name+unit | 18 | 0 |  | F -Hemoglobiini, ihmisen (kval) | Feces | Qualitative test (also semi-quantitative) |
+| 10565 | f-hhb-o |  | 100% | name | 52037 | 100 |  | F -Hemoglobiini, ihmisen (kval) | Feces | Qualitative test (also semi-quantitative) |
+| 10566 | f-hhb-ox3 |  | 100% | name | 141 | 100 |  |  | Feces |  |
+| 10567 | hba1c |  | 100% | name | 2374 | 100 |  |  |  |  |
+| 10568 | hoighb-a1c |  | 100% | name+values | 387 | 100 | [40.25, 44.21, 48.92, 53.87, 58.77, 64.48, 69.2, 76.02, 85.37] |  |  |  |
+| 10569 | hoihba1c |  | 100% | name+values | 652 | 100 | [45.35, 49.99, 53.1, 56.13, 59.42, 63, 67.63, 72.67, 79.74] |  |  |  |
+| 10570 | mb-hb-co | % | 100% | name+unit+values | 574 | 0 | [0.79, 0.91, 1.08, 1.11, 1.2, 1.3, 1.43, 1.59, 1.82] |  |  |  |
+| 10571 | mb-hb-met | % | 100% | name+unit+values | 574 | 0 | [0.5, 0.6, 0.7, 0.71, 0.8, 0.9, 0.98, 1.08, 1.33] |  |  |  |
+| 10572 | u-hb-dec |  | 100% | name+values | 152 | 100 | [1034.47, 1050, 1065.3, 1082.98, 1121.64, 1184.46, 1367.25, 1689.47, 1915.55] |  | Urine |  |
+| 10573 | u-hb-o | A | 0% | name+unit | 19 | 0 |  | U -Hemoglobiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10574 | u-hb-o | estimate | 0% | name+unit | 65 | 0 |  | U -Hemoglobiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10575 | u-hb-o |  | 100% | name+values | 350964 | 100 | [0, 0, 0, 0.02, 1, 1, 1.23, 2.66, 3.01] | U -Hemoglobiini (kval) | Urine | Qualitative test (also semi-quantitative) |
+| 10576 | u-hb-o. |  | 100% | name | 23128 | 100 |  |  | Urine |  |
+| 10577 | vb-hb-co | % | 99% | name+unit+values | 63056 | 0 | [0.3, 0.59, 0.79, 0.94, 1.09, 1.26, 1.44, 1.7, 2.22] |  | Venous blood |  |
+| 10578 | vb-hb-co |  | 1% | name+values | 421 | 100 | [-0.6, -0.35, -0.2, -0.1, 0.25, 0.91, 1.19, 1.53, 2.3] |  | Venous blood |  |
+| 10579 | vb-hb-met | % | 99% | name+unit+values | 62766 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.68, 0.78, 0.9, 1.09] |  | Venous blood |  |
+| 10580 | vb-hb-met |  | 1% | name | 329 | 100 |  |  | Venous blood |  |
+| 10581 | vb-hb-vt | 1 | 4% | name+unit | 40 | 0 |  |  | Venous blood |  |
+| 10582 | vb-hb-vt | g/l | 72% | name+unit+values | 790 | 0 | [111.74, 124.93, 132.25, 138.24, 143.08, 147.41, 152.55, 158.57, 167] |  | Venous blood |  |
+| 10583 | vb-hb-vt |  | 25% | name+values | 273 | 100 | [103.37, 120.62, 125.98, 130.71, 135.91, 139.96, 144.6, 150.76, 156.45] |  | Venous blood |  |
+| 10584 | vb-hkr-vt | 1 | 27% | name+unit | 40 | 0 |  |  | Venous blood |  |
+| 10585 | vb-hkr-vt |  | 73% | name | 110 | 100 |  |  | Venous blood |  |
 

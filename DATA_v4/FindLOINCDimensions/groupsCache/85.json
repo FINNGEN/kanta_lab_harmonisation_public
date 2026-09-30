@@ -1,149 +1,129 @@
 {
   "rows": [
     {
-      "row_id": 6680,
-      "loinc_name_guess": "Bacteria aerobic identified in Unspecified specimen by Culture"
+      "row_id": 6445,
+      "loinc_name_guess": "Lupus anticoagulant panel - Plasma"
     },
     {
-      "row_id": 6681,
-      "loinc_name_guess": "Bacteria anaerobic identified in Unspecified specimen by Culture"
+      "row_id": 6446,
+      "loinc_name_guess": "Lupus anticoagulant panel - Plasma"
     },
     {
-      "row_id": 6682,
-      "loinc_name_guess": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Unspecified specimen by NAA"
+      "row_id": 6447,
+      "loinc_name_guess": "Lupus anticoagulant panel - Plasma"
     },
     {
-      "row_id": 6683,
+      "row_id": 6448,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 6684,
-      "loinc_name_guess": "Cobalt [Mass/volume] in Blood"
-    },
-    {
-      "row_id": 6685,
-      "loinc_name_guess": "Candida sp identified in Unspecified specimen by Culture"
-    },
-    {
-      "row_id": 6686,
-      "loinc_name_guess": "Candida sp [Presence] in Unspecified specimen by Wet mount"
-    },
-    {
-      "row_id": 6687,
-      "loinc_name_guess": "Cladosporium herbarum Ab [Length] in Skin by Skin test"
-    },
-    {
-      "row_id": 6688,
-      "loinc_name_guess": "Cladosporium herbarum IgE Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 6689,
-      "loinc_name_guess": "Cladosporium herbarum IgE Ab [Presence] in Serum"
-    },
-    {
-      "row_id": 6690,
-      "loinc_name_guess": "Coronavirus 229E RNA [Presence] in Respiratory specimen by NAA"
-    },
-    {
-      "row_id": 6691,
-      "loinc_name_guess": "Coronavirus HKU1 RNA [Presence] in Respiratory specimen by NAA"
-    },
-    {
-      "row_id": 6692,
-      "loinc_name_guess": "Coronavirus NL63 RNA [Presence] in Respiratory specimen by NAA"
-    },
-    {
-      "row_id": 6693,
-      "loinc_name_guess": "Coronavirus OC43 RNA [Presence] in Respiratory specimen by NAA"
-    },
-    {
-      "row_id": 6694,
-      "loinc_name_guess": "Norovirus G1 RNA [Presence] in Stool by NAA"
-    },
-    {
-      "row_id": 6695,
-      "loinc_name_guess": "Norovirus G2 RNA [Presence] in Stool by NAA"
-    },
-    {
-      "row_id": 6696,
+      "row_id": 6449,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 6697,
-      "loinc_name_guess": "Human papillomavirus DNA+Chlamydia trachomatis DNA+Neisseria gonorrhoeae DNA [Presence] in Cervix by NAA"
+      "row_id": 6450,
+      "loinc_name_guess": "Antigen [Presence] in Throat"
     },
     {
-      "row_id": 6698,
-      "loinc_name_guess": "Human papillomavirus DNA [Presence] in Cervix by NAA"
+      "row_id": 6451,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6699,
-      "loinc_name_guess": "Norovirus G1 RNA [Presence] in Unspecified specimen by NAA"
+      "row_id": 6452,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6700,
-      "loinc_name_guess": "Norovirus G2 RNA [Presence] in Unspecified specimen by NAA"
+      "row_id": 6453,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6701,
-      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma"
+      "row_id": 6454,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6702,
-      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma"
+      "row_id": 6455,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6703,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6456,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6704,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6457,
+      "loinc_name_guess": "Audiometry panel"
     },
     {
-      "row_id": 6705,
+      "row_id": 6458,
+      "loinc_name_guess": "AUDIT total score [Score]"
+    },
+    {
+      "row_id": 6459,
+      "loinc_name_guess": "Hematopathology study"
+    },
+    {
+      "row_id": 6460,
+      "loinc_name_guess": "Surgical pathology study"
+    },
+    {
+      "row_id": 6461,
+      "loinc_name_guess": "Histocompatibility antigen typing"
+    },
+    {
+      "row_id": 6462,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 6706,
-      "loinc_name_guess": "Acetone [Moles/volume] in Serum or Plasma"
+      "row_id": 6463,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 6707,
-      "loinc_name_guess": "Acetone [Presence] in Serum or Plasma"
+      "row_id": 6464,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 6708,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6465,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 6709,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6466,
+      "loinc_name_guess": "Cytology study"
     },
     {
-      "row_id": 6710,
-      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma"
+      "row_id": 6467,
+      "loinc_name_guess": "Bone SPECT study"
     },
     {
-      "row_id": 6711,
-      "loinc_name_guess": "Valproic acid [Moles/volume] in Serum or Plasma"
+      "row_id": 6468,
+      "loinc_name_guess": "Bone scan"
     },
     {
-      "row_id": 6712,
-      "loinc_name_guess": "Gross description in Products of conception by Macroscopy"
+      "row_id": 6469,
+      "loinc_name_guess": "Bone density by DXA panel"
     },
     {
-      "row_id": 6713,
-      "loinc_name_guess": "Chlamydia trachomatis+Neisseria gonorrhoeae DNA [Presence] in Urine by NAA"
+      "row_id": 6470,
+      "loinc_name_guess": "Bone density by DXA panel"
     },
     {
-      "row_id": 6714,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6471,
+      "loinc_name_guess": "Bone density by DXA panel"
     },
     {
-      "row_id": 6715,
-      "loinc_name_guess": "Urate [Moles/volume] in Serum or Plasma"
+      "row_id": 6472,
+      "loinc_name_guess": "Bone density by DXA panel"
+    },
+    {
+      "row_id": 6473,
+      "loinc_name_guess": "Stress echocardiogram study"
+    },
+    {
+      "row_id": 6474,
+      "loinc_name_guess": "Speech audiometry panel"
+    },
+    {
+      "row_id": 6475,
+      "loinc_name_guess": "Pure tone audiometry panel"
     }
   ],
-  "reflection": "This group presented several challenges. \n\n1.  **Ambiguous and concatenated codes**: Codes like `-omactgc`, `hpvpapctgc`, and `hpvrefctgc` are difficult to parse. They seem to be local abbreviations, possibly concatenating multiple tests (like CT/GC) or using parts of a method name. My interpretation of `omactgc` as Chlamydia/Gonorrhea is a strong hypothesis, especially with the `u-` prefix (row 6713), but remains a guess.\n\n2.  **Administrative codes**: `annosvoim` (dose strength) and codes like `f-projekti` (project) are not lab tests. It's crucial to identify these and leave them empty rather than forcing a mapping.\n\n3.  **Context from different rows**: Seeing `cladosp.he` with `mm` units (row 6687) and `U/ml` units (row 6688) on separate rows was key to understanding that the same abbreviation was used for two completely different allergy testing methods (skin prick vs. serum IgE). This highlights the importance of not assuming a single mapping for one `TEST_NAME` string.\n\n4.  **Value of `LongName`**: The `LongName` for `ts-abortti` (row 6712), \"Dissection study of abortion tissue\", was indispensable. Without it, the code would have been unmappable. It allowed translation of a pathology procedure into a LOINC concept, a different type of test from the usual chemistry or microbiology.\n\n5.  **Qualitative vs. Quantitative**: For analytes like `asetoni`, where both qualitative and quantitative tests exist, the absence of units and values (e.g., rows 6702, 6707) makes it a judgment call. I opted for `[Presence]` as a safer guess for a screening-type purpose, given the 100% missing values."
+  "reflection": "This group was dominated by whole-patient (`Pt-`) investigations, including imaging, physiological tests, and questionnaires, rather than traditional laboratory tests. This required knowledge of Finnish abbreviations for procedures like bone densitometry (`luutih`), stress echo (`rasukg`), and bone scintigraphy (`luustog`). Several codes (`pt-lisälau`, `patlislaus`) were clearly administrative placeholders for \"additional reports\" and were left empty as they do not represent a specific clinical test.\n\nSeveral gotchas were present:\n1.  **Ambiguity**: `p-pbmcbio` was too ambiguous to guess, combining Plasma, PBMC, and an unclear suffix `bio`.\n2.  **Genericity**: `ps-nieluag` clearly means \"throat antigen test\", but without a specified antigen. I named it generically (`Antigen [Presence] in Throat`) to provide a useful search query.\n3.  **Typos**: `pt-luutil` was interpreted as a likely typo for `pt-luutih` (bone density), as `luutil` has no obvious medical meaning while being graphically similar to a common abbreviation.\n4.  **Specialized knowledge**: Distinguishing `puheaudio` (speech audiometry) from `äänesaudio` (guessed as pure tone audiometry) requires specific audiology domain knowledge."
 }

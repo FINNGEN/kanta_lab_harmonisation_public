@@ -1,16 +1,92 @@
 {
   "rows": [
     {
+      "row_id": 1292,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
+    },
+    {
+      "row_id": 1293,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
+    },
+    {
+      "row_id": 1294,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
+    },
+    {
+      "row_id": 1295,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1296,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1297,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1298,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1299,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
+    },
+    {
+      "row_id": 1300,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
+    },
+    {
+      "row_id": 1301,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1302,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1303,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1304,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1305,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 1306,
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 1307,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1308,
+      "loinc_name_guess": "Iron and iron binding capacity and transferrin saturation panel - Serum"
+    },
+    {
+      "row_id": 1309,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum"
+    },
+    {
+      "row_id": 1310,
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
+    },
+    {
       "row_id": 1311,
       "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
     },
     {
       "row_id": 1312,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
     },
     {
       "row_id": 1313,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
+      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Plasma"
     },
     {
       "row_id": 1314,
@@ -22,96 +98,16 @@
     },
     {
       "row_id": 1316,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 1317,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
+      "loinc_name_guess": "Transferrin receptor.soluble [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 1318,
       "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1319,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1320,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1321,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1322,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1323,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1324,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1325,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1326,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1327,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1328,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1329,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1330,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1331,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1332,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1333,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1334,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1335,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
-    },
-    {
-      "row_id": 1336,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1337,
-      "loinc_name_guess": "Soluble transferrin receptor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 1338,
-      "loinc_name_guess": "Transferrin saturation [Molar ratio] in Serum or Plasma"
     }
   ],
-  "reflection": "This group was straightforward, covering two main concepts: Transferrin Saturation and Soluble Transferrin Receptor. The Finnish names `rautakyllästeisyys` and `saturaatio` both clearly map to saturation, while `reseptori` maps to receptor.\n\nA key ambiguity was the representation of Transferrin Saturation. Some rows had values in the percentage range (e.g., 8-40) with unit `%`, while others had values in the fraction range (e.g., 0.08-0.40) with no unit or the unit `osuus` (fraction). Fortunately, the LOINC property `[Molar ratio]` correctly covers both representations, so a single LOINC name works for all of them. This is a good example of where relying on the value deciles is crucial when the unit is missing.\n\nThe unit `paketti` (package) on row 1327 was a potential gotcha. However, its very low `unit_share` (4%) and the fact that the name specifies a single analyte (`transferiininrautakyllästeisyys`) strongly suggest a data entry error rather than a true panel. I correctly interpreted this as noise and mapped it to the single analyte test."
+  "reflection": "This group primarily contained tests for transferrin saturation and soluble transferrin receptor, which were generally clear to identify. A key point of ambiguity was how to handle transferrin saturation results reported as percentages (e.g., 25%) versus those reported as fractions (e.g., 0.25). I concluded that both should map to a LOINC concept with the property `[Molar ratio]`, as this property covers the underlying quantity, and the difference is merely in the display unit. LOINC generally does not create separate concepts for such presentational variations.\n\nA specific challenge was row 1308, where the unit was `paketti` (package). Since transferrin saturation is a calculated value, this unit strongly suggests an orderable panel that includes the primary measurements (iron and either transferrin or TIBC). I proposed the name for a standard LOINC panel, `Iron and iron binding capacity and transferrin saturation panel - Serum`, which is a plausible match for what a 'package' for transferrin saturation would contain.\n\nThe prefixes (`p-`, `s-`, `fp-`, `fs-`) and explicit text (`seerumista`) were useful for determining the system (`Plasma`, `Serum`), and `Serum or Plasma` was used as a default where no system was specified. The fasting status indicated by `f-` prefixes or `paastotilassa` text was correctly treated as a pre-analytical condition and not included in the LOINC name."
 }

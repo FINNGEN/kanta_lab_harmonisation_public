@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,34 +139,102 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 89 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 7014 | -hpvseul |  | 100% | name | 3483 | 100 |  | -Papilloomavirus, seulonta |  |  |
-| 7015 | hoikemseul |  | 100% | name | 526 | 100 |  |  |  |  |
-| 7016 | hpvseul |  | 100% | name | 402 | 100 |  |  |  |  |
-| 7017 | hörsel |  | 100% | name | 112 | 100 |  |  |  |  |
-| 7018 | luov.seul. |  | 100% | name | 114 | 100 |  |  |  |  |
-| 7019 | näköseula |  | 100% | name+values | 207 | 3.86 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  |  |  |
-| 7020 | oma-kemseu |  | 100% | name | 242 | 100 |  |  |  |  |
-| 7021 | oma-kemseula |  | 100% | name | 108 | 100 |  |  |  |  |
-| 7022 | oma-u-kems |  | 100% | name | 761 | 100 |  |  |  |  |
-| 7023 | oma-u-kemseul |  | 100% | name | 230 | 100 |  |  |  |  |
-| 7024 | rhdnegseul |  | 100% | name | 161 | 100 |  |  |  |  |
-| 7025 | s-enaseul |  | 100% | name | 1344 | 99.78 |  |  | Serum |  |
-| 7026 | s-ivfseul |  | 100% | name | 168 | 100 |  |  | Serum |  |
-| 7027 | s-tr1seul |  | 100% | name | 26880 | 100 |  | S -Sikiön kehityshäiriöiden seulonta, ensimmäinen trimesteri | Serum |  |
-| 7028 | s-tr2seul |  | 100% | name | 527 | 100 |  | S -Sikiön kehityshäiriöiden seulonta, toinen trimesteri | Serum |  |
-| 7029 | s-trseul |  | 100% | name | 125 | 100 |  |  | Serum |  |
-| 7030 | s-äit-seul |  | 100% | name | 7521 | 100 |  |  | Serum |  |
-| 7031 | s-äit-seula |  | 100% | name | 117 | 100 |  |  | Serum |  |
-| 7032 | s-äitseul |  | 100% | name | 24752 | 100 |  |  | Serum |  |
-| 7033 | u-huseula |  | 100% | name | 2519 | 100 |  |  | Urine |  |
-| 7034 | u-kemseu |  | 100% | name | 15207 | 99.98 |  |  | Urine |  |
-| 7035 | u-kemseul | form | 0% | name+unit | 1298 | 0 |  | U -Kemiallinen seulonta | Urine |  |
-| 7036 | u-kemseul | h | 0% | name+unit | 100 | 0 |  | U -Kemiallinen seulonta | Urine |  |
-| 7037 | u-kemseul |  | 100% | name+values | 1336031 | 100 | [0, 1.01, 1.01, 1.02, 1.02, 1.02, 4.17, 5.87, 6.26] | U -Kemiallinen seulonta | Urine |  |
-| 7038 | u-kemseul, |  | 100% | name | 257 | 100 |  |  | Urine |  |
-| 7039 | u-kemseula |  | 100% | name | 124 | 100 |  |  | Urine |  |
-| 7040 | u-kemseup |  | 100% | name | 5478 | 99.91 |  |  | Urine |  |
-| 7041 | äit-seula |  | 100% | name | 210 | 100 |  |  |  |  |
+| 6679 | ab-ca++7.4 | mmol/l | 100% | name+unit+values | 1106 | 0 | [1.08, 1.12, 1.14, 1.16, 1.18, 1.2, 1.21, 1.23, 1.26] |  | Arterial blood |  |
+| 6680 | ab-ca-i7.4 | mmol/l | 87% | name+unit+values | 52168 | 0 | [1, 1.05, 1.08, 1.1, 1.13, 1.15, 1.17, 1.2, 1.24] |  | Arterial blood |  |
+| 6681 | ab-ca-i7.4 |  | 13% | name | 8114 | 100 |  |  | Arterial blood |  |
+| 6682 | ab-ca-ion | mmol/l | 87% | name+unit+values | 52238 | 0 | [1, 1.04, 1.07, 1.1, 1.12, 1.14, 1.16, 1.18, 1.22] |  | Arterial blood | Ionized |
+| 6683 | ab-ca-ion |  | 13% | name | 8098 | 100 |  |  | Arterial blood | Ionized |
+| 6684 | ab-caionvt | mmol/l | 40% | name+unit+values | 84 | 1.19 | [1.12, 1.15, 1.18, 1.18, 1.2, 1.21, 1.22, 1.24, 1.28] |  | Arterial blood |  |
+| 6685 | ab-caionvt |  | 60% | name+values | 124 | 100 | [1.1, 1.14, 1.15, 1.17, 1.19, 1.2, 1.23, 1.25, 1.28] |  | Arterial blood |  |
+| 6686 | ap-ca-ion | mmol/l | 94% | name+unit+values | 1484 | 0 | [1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23] |  |  | Ionized |
+| 6687 | ap-ca-ion |  | 6% | name | 102 | 100 |  |  |  | Ionized |
+| 6688 | b-caionpf | mmol/l | 85% | name+unit | 652 | 0 |  |  | Blood |  |
+| 6689 | b-caionpf |  | 15% | name | 111 | 100 |  |  | Blood |  |
+| 6690 | ca++/7.40 | mmol/l | 100% | name+unit+values | 126152 | 0 | [1.14, 1.19, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.31] |  |  |  |
+| 6691 | ca++/7.40 |  | 0% | name | 569 | 100 |  |  |  |  |
+| 6692 | ca++/ph7.4 | mmol/l | 97% | name+unit+values | 18482 | 0 | [1.1, 1.15, 1.18, 1.2, 1.22, 1.23, 1.25, 1.27, 1.31] |  |  |  |
+| 6693 | ca++/ph7.4 |  | 3% | name+values | 588 | 100 | [1.08, 1.12, 1.13, 1.14, 1.15, 1.16, 1.21, 1.26, 1.34] |  |  |  |
+| 6694 | ca++ph7.4 | mmol/l | 99% | name+unit+values | 16678 | 0 | [1.13, 1.16, 1.18, 1.2, 1.22, 1.23, 1.24, 1.26, 1.29] |  |  |  |
+| 6695 | ca++ph7.4 |  | 1% | name | 184 | 100 |  |  |  |  |
+| 6696 | ca-ion | mmol/l | 100% | name+unit+values | 126458 | 0 | [1.15, 1.19, 1.21, 1.23, 1.24, 1.26, 1.27, 1.29, 1.33] |  |  | Ionized |
+| 6697 | ca-ion |  | 0% | name | 549 | 100 |  |  |  | Ionized |
+| 6698 | cb-ca-i7.4 | mmol/l | 89% | name+unit+values | 1450 | 0 | [1.11, 1.15, 1.17, 1.19, 1.21, 1.22, 1.23, 1.25, 1.29] |  | Capillary blood |  |
+| 6699 | cb-ca-i7.4 |  | 11% | name | 185 | 100 |  |  | Capillary blood |  |
+| 6700 | cb-ca-ion | mmol/l | 88% | name+unit+values | 1880 | 0 | [1.11, 1.15, 1.17, 1.19, 1.2, 1.22, 1.24, 1.26, 1.3] |  | Capillary blood | Ionized |
+| 6701 | cb-ca-ion |  | 12% | name | 250 | 100 |  |  | Capillary blood | Ionized |
+| 6702 | cp-ca-ion | mmol/l | 92% | name+unit+values | 307 | 0 | [1.04, 1.1, 1.13, 1.15, 1.16, 1.18, 1.2, 1.22, 1.25] |  |  | Ionized |
+| 6703 | cp-ca-ion |  | 8% | name | 28 | 100 |  |  |  | Ionized |
+| 6704 | di-ca-ion | mmol/l | 98% | name+unit | 450 | 0 |  |  | Dialysis fluid | Ionized |
+| 6705 | di-ca-ion |  | 2% | name | 8 | 100 |  |  | Dialysis fluid | Ionized |
+| 6706 | di-ca-iona | mmol/l | 100% | name+unit | 456 | 0 |  |  | Dialysis fluid |  |
+| 6707 | fb-nh4-ion | umol/l | 81% | name+unit+values | 298 | 0 | [11, 13.44, 17.68, 24.49, 31.79, 42.13, 54.77, 72.94, 100.99] | fB-Ammonium-ioni | Fasting blood; Foreign body / implant | Ionized |
+| 6708 | fb-nh4-ion |  | 19% | name | 69 | 100 |  | fB-Ammonium-ioni | Fasting blood; Foreign body / implant | Ionized |
+| 6709 | fp-ca-ion | mmol/l | 99% | name+unit+values | 1040 | 0 | [1.12, 1.15, 1.17, 1.19, 1.2, 1.21, 1.23, 1.25, 1.28] |  | Fasting plasma | Ionized |
+| 6710 | fp-ca-ion |  | 1% | name | 8 | 100 |  |  | Fasting plasma | Ionized |
+| 6711 | fp-ca-ion. | mmol/l | 99% | name+unit+values | 22635 | 0.13 | [1.05, 1.09, 1.11, 1.13, 1.15, 1.16, 1.18, 1.2, 1.23] |  | Fasting plasma |  |
+| 6712 | fp-ca-ion. |  | 1% | name | 196 | 100 |  |  | Fasting plasma |  |
+| 6713 | fp-ca-iona | mmol/l | 97% | name+unit+values | 383 | 0 | [1.16, 1.19, 1.2, 1.21, 1.22, 1.23, 1.25, 1.26, 1.29] |  | Fasting plasma |  |
+| 6714 | fp-ca-iona |  | 3% | name | 13 | 100 |  |  | Fasting plasma |  |
+| 6715 | fp-nh4-ion | umol/l | 90% | name+unit+values | 22919 | 0 | [17.32, 22.53, 27.24, 32.28, 37.91, 44.96, 54.51, 68.52, 92.89] | fP-Ammonium-ioni | Fasting plasma | Ionized |
+| 6716 | fp-nh4-ion |  | 10% | name+values | 2418 | 100 | [18.27, 23.76, 29.8, 37.05, 45.85, 55.82, 65.3, 79.23, 103.94] | fP-Ammonium-ioni | Fasting plasma | Ionized |
+| 6717 | fs-ca++/7.40 |  | 100% | name+values | 10897 | 100 | [1.18, 1.21, 1.22, 1.23, 1.24, 1.25, 1.27, 1.28, 1.32] |  | Fasting serum |  |
+| 6718 | fs-ca++7.4 | mmol/l | 99% | name+unit+values | 8087 | 0 | [1.15, 1.19, 1.21, 1.22, 1.23, 1.25, 1.26, 1.28, 1.33] |  | Fasting serum |  |
+| 6719 | fs-ca++7.4 |  | 1% | name | 47 | 100 |  |  | Fasting serum |  |
+| 6720 | fs-ca-7.40 | mmol/l | 100% | name+unit+values | 987 | 0 | [1.19, 1.23, 1.25, 1.26, 1.28, 1.29, 1.31, 1.34, 1.38] |  | Fasting serum |  |
+| 6721 | fs-ca-ion | mmol/l | 39% | name+unit+values | 21952 | 0 | [1.18, 1.2, 1.22, 1.24, 1.25, 1.26, 1.28, 1.3, 1.34] |  | Fasting serum | Ionized |
+| 6722 | fs-ca-ion |  | 61% | name | 33916 | 100 |  |  | Fasting serum | Ionized |
+| 6723 | fs-ca-ion/ph7.40 | mmol/l | 99% | name+unit+values | 27031 | 0 | [1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31] |  | Fasting serum |  |
+| 6724 | fs-ca-ion/ph7.40 |  | 1% | name+values | 232 | 100 | [1.14, 1.31, 1.32, 1.33, 1.33, 1.34, 1.36, 1.38, 1.42] |  | Fasting serum |  |
+| 6725 | fs-ca-iona | mmol/l | 87% | name+unit+values | 1052 | 0 | [1.14, 1.17, 1.19, 1.2, 1.22, 1.23, 1.25, 1.28, 1.35] |  | Fasting serum |  |
+| 6726 | fs-ca-iona |  | 13% | name+values | 162 | 100 | [1.15, 1.16, 1.18, 1.19, 1.2, 1.21, 1.22, 1.24, 1.29] |  | Fasting serum |  |
+| 6727 | fs-ph(ca-ion) |  | 100% | name+values | 1713 | 100 | [7.33, 7.35, 7.37, 7.38, 7.39, 7.4, 7.41, 7.42, 7.44] |  | Fasting serum |  |
+| 6728 | mb-ca(7.4) | mmol/l | 96% | name+unit | 2502 | 0 |  |  |  |  |
+| 6729 | mb-ca(7.4) |  | 4% | name | 108 | 100 |  |  |  |  |
+| 6730 | mb-ca-ion | mmol/l | 96% | name+unit | 2504 | 0 |  |  |  | Ionized |
+| 6731 | mb-ca-ion |  | 4% | name | 105 | 100 |  |  |  | Ionized |
+| 6732 | p-ca(7.4) | mmol/l | 95% | name+unit+values | 23257 | 0 | [1.1, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.26] |  | Plasma |  |
+| 6733 | p-ca(7.4) |  | 5% | name | 1266 | 100 |  |  | Plasma |  |
+| 6734 | p-ca-ion | mmol/l | 28% | name+unit+values | 37155 | 0 | [1.09, 1.13, 1.15, 1.17, 1.18, 1.2, 1.21, 1.23, 1.27] | P -Kalsium, ionisoitunut | Plasma | Ionized |
+| 6735 | p-ca-ion |  | 72% | name+values | 93247 | 100 | [1.1, 1.13, 1.16, 1.18, 1.2, 1.21, 1.25, 1.29, 1.33] | P -Kalsium, ionisoitunut | Plasma | Ionized |
+| 6736 | p-ca-ion. | mmol/l | 100% | name+unit+values | 360997 | 0 | [1.03, 1.08, 1.11, 1.13, 1.16, 1.18, 1.2, 1.22, 1.26] |  | Plasma |  |
+| 6737 | p-ca-ion. |  | 0% | name | 756 | 100 |  |  | Plasma |  |
+| 6738 | p-ca-ion: | mmol/l | 100% | name+unit+values | 626 | 0 | [1.1, 1.14, 1.15, 1.17, 1.18, 1.19, 1.2, 1.22, 1.24] |  | Plasma |  |
+| 6739 | p-ca-iona | mmol/l | 100% | name+unit+values | 409206 | 0.01 | [1.04, 1.08, 1.11, 1.13, 1.15, 1.17, 1.19, 1.21, 1.25] |  | Plasma |  |
+| 6740 | p-ca-iona |  | 0% | name | 882 | 100 |  |  | Plasma |  |
+| 6741 | p-caio7.4: | mmol/l | 100% | name+unit+values | 608 | 0 | [1.1, 1.13, 1.15, 1.17, 1.19, 1.2, 1.21, 1.23, 1.25] |  | Plasma |  |
+| 6742 | p-caion7.4 | mmol/l | 54% | name+unit | 58 | 0 |  |  | Plasma |  |
+| 6743 | p-caion7.4 |  | 46% | name | 49 | 100 |  |  | Plasma |  |
+| 6744 | p-nh4-ion | umol/l | 86% | name+unit+values | 1298 | 0 | [24, 30.04, 34.97, 40.74, 46.76, 54.98, 66.47, 82.91, 111.7] |  | Plasma | Ionized |
+| 6745 | p-nh4-ion |  | 14% | name+values | 208 | 100 | [23, 29.64, 34, 40.9, 50.07, 57.7, 72.1, 92.36, 125.65] |  | Plasma | Ionized |
+| 6746 | s-ca(7.4) | mmol/l | 99% | name+unit+values | 132501 | 0 | [1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31] |  | Serum |  |
+| 6747 | s-ca(7.4) | nmol/l | 0% | name+unit+values | 93 | 0 | [1.18, 1.21, 1.23, 1.24, 1.25, 1.26, 1.28, 1.3, 1.37] |  | Serum |  |
+| 6748 | s-ca(7.4) |  | 1% | name | 1609 | 100 |  |  | Serum |  |
+| 6749 | s-ca++/7.40 |  | 100% | name+values | 5887 | 100 | [1.18, 1.2, 1.21, 1.23, 1.24, 1.25, 1.26, 1.28, 1.32] |  | Serum |  |
+| 6750 | s-ca-17.4 | mmol/l | 100% | name+unit+values | 835 | 0 | [1.18, 1.21, 1.22, 1.24, 1.25, 1.27, 1.28, 1.3, 1.33] |  | Serum |  |
+| 6751 | s-ca-i7.4 | mmol/l | 92% | name+unit+values | 46811 | 0 | [1.17, 1.2, 1.22, 1.24, 1.25, 1.27, 1.28, 1.3, 1.34] |  | Serum |  |
+| 6752 | s-ca-i7.4 |  | 8% | name | 4102 | 100 |  |  | Serum |  |
+| 6753 | s-ca-ion | mmol/l | 72% | name+unit+values | 507827 | 0 | [1.14, 1.18, 1.2, 1.21, 1.23, 1.24, 1.26, 1.28, 1.32] | S -Kalsium, ionisoitunut | Serum | Ionized |
+| 6754 | s-ca-ion |  | 28% | name | 192950 | 100 |  | S -Kalsium, ionisoitunut | Serum | Ionized |
+| 6755 | s-ca-iona | mmol/l | 99% | name+unit+values | 394912 | 0 | [1.14, 1.18, 1.2, 1.22, 1.23, 1.25, 1.26, 1.29, 1.32] |  | Serum |  |
+| 6756 | s-ca-iona |  | 1% | name | 2820 | 100 |  |  | Serum |  |
+| 6757 | s-caio7.4 | mmol/l | 100% | name+unit+values | 860 | 0 | [1.17, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.35] |  | Serum |  |
+| 6758 | s-caion7.4 | mmol/l | 99% | name+unit+values | 5310 | 0 | [1.16, 1.19, 1.21, 1.22, 1.23, 1.24, 1.25, 1.27, 1.29] |  | Serum |  |
+| 6759 | s-caion7.4 |  | 1% | name | 57 | 100 |  |  | Serum |  |
+| 6760 | s-caionac | mmol/l | 98% | name+unit+values | 863 | 0 | [1.16, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.34] |  | Serum |  |
+| 6761 | s-caionac |  | 2% | name | 15 | 100 |  |  | Serum |  |
+| 6762 | s-caph7.4 | mmol/l | 99% | name+unit+values | 5238 | 0 | [1.16, 1.19, 1.21, 1.22, 1.23, 1.25, 1.26, 1.28, 1.31] |  | Serum |  |
+| 6763 | s-caph7.4 |  | 1% | name | 67 | 100 |  |  | Serum |  |
+| 6764 | s-mg-ion | mmol/l | 95% | name+unit+values | 4664 | 0 | [0.5, 0.54, 0.56, 0.58, 0.6, 0.62, 0.64, 0.67, 0.71] |  | Serum | Ionized |
+| 6765 | s-mg-ion |  | 5% | name+values | 253 | 100 | [0.55, 0.58, 0.6, 0.62, 0.63, 0.65, 0.67, 0.69, 0.74] |  | Serum | Ionized |
+| 6766 | vb-ca-i7.4 | mmol/l | 81% | name+unit+values | 2427 | 0 | [0.99, 1.06, 1.1, 1.13, 1.15, 1.17, 1.19, 1.22, 1.26] |  | Venous blood |  |
+| 6767 | vb-ca-i7.4 |  | 19% | name | 580 | 100 |  |  | Venous blood |  |
+| 6768 | vb-ca-ion | mmol/l | 81% | name+unit+values | 2428 | 0 | [1.02, 1.08, 1.11, 1.14, 1.16, 1.18, 1.2, 1.22, 1.26] |  | Venous blood | Ionized |
+| 6769 | vb-ca-ion |  | 19% | name | 567 | 100 |  |  | Venous blood | Ionized |
+| 6770 | vb-caionvt | 1 | 5% | name+unit | 40 | 0 |  |  | Venous blood |  |
+| 6771 | vb-caionvt | mmol/l | 40% | name+unit+values | 308 | 0 | [1.1, 1.13, 1.15, 1.18, 1.19, 1.21, 1.22, 1.24, 1.27] |  | Venous blood |  |
+| 6772 | vb-caionvt |  | 55% | name+values | 422 | 100 | [1.12, 1.15, 1.17, 1.18, 1.2, 1.22, 1.23, 1.25, 1.27] |  | Venous blood |  |
+| 6773 | vp-ca-ion | mmol/l | 98% | name+unit+values | 10809 | 0 | [1.13, 1.16, 1.17, 1.19, 1.2, 1.21, 1.23, 1.24, 1.27] |  |  | Ionized |
+| 6774 | vp-ca-ion |  | 2% | name | 173 | 100 |  |  |  | Ionized |
 

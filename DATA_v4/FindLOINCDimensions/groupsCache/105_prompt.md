@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,98 +139,94 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 105 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 8557 | b-pvk | % | 0% | name+unit+values | 1036 | 0 | [12.98, 13, 13, 13, 13.02, 14, 14, 14, 14.9] | B -Perusverenkuva | Blood |  |
-| 8558 | b-pvk | e12/l | 0% | name+unit | 180 | 0 |  | B -Perusverenkuva | Blood |  |
-| 8559 | b-pvk | e9/l | 0% | name+unit | 180 | 0 |  | B -Perusverenkuva | Blood |  |
-| 8560 | b-pvk | fl | 0% | name+unit | 191 | 0 |  | B -Perusverenkuva | Blood |  |
-| 8561 | b-pvk | form | 0% | name+unit | 6 | 0 |  | B -Perusverenkuva | Blood |  |
-| 8562 | b-pvk | g/l | 0% | name+unit+values | 371 | 0 | [130.49, 135.97, 140.17, 143.56, 146.5, 149.94, 154.99, 161.16, 169.87] | B -Perusverenkuva | Blood |  |
-| 8563 | b-pvk | paketti | 0% | name+unit+values | 261 | 0 | [31329.79, 60496.46, 87166.96, 116360.34, 146168.26, 177141.71, 213025.07, 240401.38, 278743.21] | B -Perusverenkuva | Blood |  |
-| 8564 | b-pvk | pg | 0% | name+unit | 191 | 0 |  | B -Perusverenkuva | Blood |  |
-| 8565 | b-pvk |  | 100% | name | 1084645 | 100 |  | B -Perusverenkuva | Blood |  |
-| 8566 | b-pvk(pi) |  | 100% | name | 994 | 100 |  |  | Blood |  |
-| 8567 | b-pvk+eo |  | 100% | name | 1355 | 100 |  |  | Blood |  |
-| 8568 | b-pvk+kd |  | 100% | name | 335 | 100 |  |  | Blood |  |
-| 8569 | b-pvk+ne |  | 100% | name | 301325 | 100 |  |  | Blood |  |
-| 8570 | b-pvk+ner |  | 100% | name | 551 | 100 |  |  | Blood |  |
-| 8571 | b-pvk+t | % | 0% | name+unit+values | 16337 | 0 | [8.54, 11.43, 12.73, 13.01, 14.63, 21.66, 27.29, 34.08, 48.89] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8572 | b-pvk+t | %g | 0% | name+unit | 229 | 0 |  | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8573 | b-pvk+t | %l | 0% | name+unit+values | 229 | 0 | [15.3, 18.86, 20.93, 24.39, 26.09, 27.9, 29.48, 31.36, 37.88] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8574 | b-pvk+t | %m | 0% | name+unit+values | 229 | 0 | [9, 10, 10.3, 10.73, 11, 11.47, 11.97, 12.55, 13.3] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8575 | b-pvk+t | e12/l | 0% | name+unit | 8 | 0 |  | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8576 | b-pvk+t | e9/l | 0% | name+unit+values | 4647 | 0 | [0, 0, 0, 0, 0, 0, 2.04, 5.2, 8.91] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8577 | b-pvk+t | fl | 0% | name+unit | 8 | 0 |  | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8578 | b-pvk+t | form | 0% | name+unit+values | 361 | 0 | [0, 0, 0, 0, 0, 0, 0, 0.89, 1] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8579 | b-pvk+t | g/l | 0% | name+unit+values | 2746 | 0 | [312.86, 315.11, 317.96, 319.16, 327.56, 334.19, 340.53, 346.44, 355.56] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8580 | b-pvk+t | l/l | 0% | name+unit | 6 | 0 |  | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8581 | b-pvk+t | paketti | 0% | name+unit+values | 269 | 0 | [1, 1, 1, 1, 1, 1, 1, 1, 1] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8582 | b-pvk+t | pg | 0% | name+unit+values | 2769 | 0 | [29, 29.58, 30, 30.35, 31, 31.07, 32, 32.99, 34.11] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8583 | b-pvk+t |  | 99% | name+values | 4547373 | 100 | [1, 1, 1, 1, 1, 1, 1, 1, 1] | B -Perusverenkuva ja trombosyytit | Blood |  |
-| 8584 | b-pvk+t+e |  | 100% | name | 1491 | 100 |  |  | Blood |  |
-| 8585 | b-pvk+t+n |  | 100% | name | 20012 | 100 |  |  | Blood |  |
-| 8586 | b-pvk+t+ne |  | 100% | name | 1150 | 100 |  |  | Blood |  |
-| 8587 | b-pvk+t+r |  | 100% | name | 713 | 100 |  |  | Blood |  |
-| 8588 | b-pvk+tk |  | 100% | name | 466 | 100 |  |  | Blood |  |
-| 8589 | b-pvk+tkd | % | 0% | name+unit+values | 567 | 0 | [10.52, 11.98, 22.28, 26.53, 30.21, 32.92, 36.29, 39.43, 43.1] | B -Perusverenkuva, leukosyyttien erittelylaskenta koneella, solujakauma, trombosyytit | Blood |  |
-| 8590 | b-pvk+tkd | e9/l | 0% | name+unit | 5 | 0 |  | B -Perusverenkuva, leukosyyttien erittelylaskenta koneella, solujakauma, trombosyytit | Blood |  |
-| 8591 | b-pvk+tkd |  | 100% | name+values | 347141 | 99.77 | [1, 1, 1, 1, 1, 1, 1, 1, 1] | B -Perusverenkuva, leukosyyttien erittelylaskenta koneella, solujakauma, trombosyytit | Blood |  |
-| 8592 | b-pvk+tkd,baso | % | 50% | name+unit+values | 4387 | 0 | [0.13, 0.2, 0.3, 0.34, 0.4, 0.5, 0.59, 0.7, 0.91] |  | Blood |  |
-| 8593 | b-pvk+tkd,baso | e9/l | 50% | name+unit+values | 4345 | 0 | [0.01, 0.02, 0.02, 0.02, 0.03, 0.03, 0.04, 0.05, 0.06] |  | Blood |  |
-| 8594 | b-pvk+tkd,baso |  | 0% | name | 28 | 96.43 |  |  | Blood |  |
-| 8595 | b-pvk+tkd,eo | % | 50% | name+unit+values | 4389 | 0 | [0.28, 0.95, 1.44, 1.88, 2.38, 2.9, 3.5, 4.34, 5.77] |  | Blood |  |
-| 8596 | b-pvk+tkd,eo | e9/l | 50% | name+unit+values | 4355 | 0 | [0.02, 0.07, 0.1, 0.13, 0.16, 0.2, 0.24, 0.3, 0.39] |  | Blood |  |
-| 8597 | b-pvk+tkd,eo |  | 0% | name | 35 | 77.14 |  |  | Blood |  |
-| 8598 | b-pvk+tkd,eryt | e12/l | 99% | name+unit+values | 4432 | 0 | [3.69, 4.01, 4.19, 4.32, 4.47, 4.6, 4.71, 4.86, 5.08] |  | Blood |  |
-| 8599 | b-pvk+tkd,eryt |  | 1% | name | 28 | 82.14 |  |  | Blood |  |
-| 8600 | b-pvk+tkd,hb | g/l | 99% | name+unit+values | 4431 | 0 | [109.63, 119.87, 125.6, 130.31, 134.35, 137.72, 141.31, 145.38, 151.58] |  | Blood |  |
-| 8601 | b-pvk+tkd,hb |  | 1% | name | 28 | 82.14 |  |  | Blood |  |
-| 8602 | b-pvk+tkd,hkr | osuus | 99% | name+unit+values | 4430 | 0 | [0.34, 0.36, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.45] |  | Blood |  |
-| 8603 | b-pvk+tkd,hkr |  | 1% | name | 28 | 82.14 |  |  | Blood |  |
-| 8604 | b-pvk+tkd,ig | % | 50% | name+unit+values | 4380 | 0 | [0, 0.1, 0.18, 0.2, 0.2, 0.24, 0.3, 0.4, 0.66] |  | Blood |  |
-| 8605 | b-pvk+tkd,ig | e9/l | 50% | name+unit+values | 4329 | 0 | [0, 0.01, 0.01, 0.01, 0.01, 0.02, 0.02, 0.03, 0.06] |  | Blood |  |
-| 8606 | b-pvk+tkd,ig |  | 0% | name | 27 | 100 |  |  | Blood |  |
-| 8607 | b-pvk+tkd,leuk | e9/l | 99% | name+unit+values | 4441 | 0 | [4.64, 5.29, 5.87, 6.47, 7.06, 7.73, 8.41, 9.34, 10.91] |  | Blood |  |
-| 8608 | b-pvk+tkd,leuk |  | 1% | name+values | 23 | 100 | [4.39, 5.06, 5.62, 6.11, 6.7, 7.36, 7.96, 8.73, 10.19] |  | Blood |  |
-| 8609 | b-pvk+tkd,lymph | % | 50% | name+unit+values | 4402 | 0 | [14.51, 18.87, 22.17, 24.95, 27.85, 30.77, 33.85, 37.68, 42.79] |  | Blood |  |
-| 8610 | b-pvk+tkd,lymph | e9/l | 50% | name+unit+values | 4366 | 0 | [1.07, 1.3, 1.5, 1.68, 1.87, 2.05, 2.28, 2.59, 3.03] |  | Blood |  |
-| 8611 | b-pvk+tkd,lymph |  | 0% | name | 39 | 71.79 |  |  | Blood |  |
-| 8612 | b-pvk+tkd,mch | pg | 99% | name+unit+values | 4427 | 0 | [27.35, 28.81, 29.01, 30, 30, 30.98, 31, 31.99, 32.41] |  | Blood |  |
-| 8613 | b-pvk+tkd,mch |  | 1% | name | 26 | 88.46 |  |  | Blood |  |
-| 8614 | b-pvk+tkd,mchc | g/l | 99% | name+unit+values | 4422 | 0 | [316.84, 322.97, 327.09, 330.49, 333.34, 336.5, 339.82, 343.59, 348.74] |  | Blood |  |
-| 8615 | b-pvk+tkd,mchc |  | 1% | name | 27 | 85.19 |  |  | Blood |  |
-| 8616 | b-pvk+tkd,mcv | fl | 99% | name+unit+values | 4432 | 0 | [83.81, 86.19, 87.9, 89.02, 90.1, 91.52, 92.95, 94.05, 96.04] |  | Blood |  |
-| 8617 | b-pvk+tkd,mcv |  | 1% | name | 25 | 92 |  |  | Blood |  |
-| 8618 | b-pvk+tkd,mono | % | 50% | name+unit+values | 4397 | 0 | [6.39, 7.45, 8.16, 8.78, 9.38, 10.01, 10.67, 11.64, 13.06] |  | Blood |  |
-| 8619 | b-pvk+tkd,mono | e9/l | 50% | name+unit+values | 4364 | 0 | [0.41, 0.48, 0.54, 0.59, 0.65, 0.7, 0.78, 0.88, 1.03] |  | Blood |  |
-| 8620 | b-pvk+tkd,mono |  | 0% | name | 32 | 84.38 |  |  | Blood |  |
-| 8621 | b-pvk+tkd,neut | % | 50% | name+unit+values | 4407 | 0 | [43.3, 48.04, 51.9, 55.37, 58.56, 61.78, 65.36, 69.3, 74.25] |  | Blood |  |
-| 8622 | b-pvk+tkd,neut | e9/l | 50% | name+unit+values | 4373 | 0 | [2.18, 2.67, 3.11, 3.55, 4, 4.52, 5.12, 5.94, 7.37] |  | Blood |  |
-| 8623 | b-pvk+tkd,neut |  | 0% | name | 34 | 82.35 |  |  | Blood |  |
-| 8624 | b-pvk+tkd,rdw | % | 99% | name+unit+values | 4298 | 0 | [12.5, 12.85, 13.17, 13.49, 13.79, 14.12, 14.57, 15.17, 16.52] |  | Blood |  |
-| 8625 | b-pvk+tkd,rdw |  | 1% | name | 30 | 76.67 |  |  | Blood |  |
-| 8626 | b-pvk+tkd,trom | eg/l | 99% | name+unit+values | 4413 | 0 | [163.91, 190.28, 209.92, 228.62, 246.86, 267.53, 293.03, 326.64, 371.27] |  | Blood |  |
-| 8627 | b-pvk+tkd,trom |  | 1% | name | 31 | 74.19 |  |  | Blood |  |
-| 8628 | b-pvk+tmd | % | 0% | name+unit | 108 | 0 |  | B -Perusverenkuva, minidiffi, trombosyytit (erytrosyytit, Hb, leukosyytit, 2-3 leukosyyttiryhmää) | Blood |  |
-| 8629 | b-pvk+tmd |  | 100% | name | 31394 | 99.96 |  | B -Perusverenkuva, minidiffi, trombosyytit (erytrosyytit, Hb, leukosyytit, 2-3 leukosyyttiryhmää) | Blood |  |
-| 8630 | b-pvk-päi |  | 100% | name | 120 | 100 |  |  | Blood |  |
-| 8631 | b-pvk-t |  | 100% | name | 1651 | 100 |  |  | Blood |  |
-| 8632 | b-pvk-tkd |  | 100% | name | 5227 | 100 |  |  | Blood |  |
-| 8633 | b-pvkt |  | 100% | name | 540592 | 100 |  |  | Blood |  |
-| 8634 | b-pvkt+re |  | 100% | name | 3032 | 100 |  |  | Blood |  |
-| 8635 | b-pvktkdr |  | 100% | name | 6444 | 100 |  |  | Blood |  |
-| 8636 | b-pvktmdl |  | 100% | name | 275 | 100 |  |  | Blood |  |
-| 8637 | b-pvktmdp |  | 100% | name | 1012 | 100 |  |  | Blood |  |
-| 8638 | b-pvktnee |  | 100% | name | 9809 | 100 |  |  | Blood |  |
-| 8639 | b-pvktp |  | 100% | name | 5212 | 100 |  |  | Blood |  |
-| 8640 | b-tvk | % | 0% | name+unit+values | 505 | 0 | [0, 0, 0, 0, 1, 2.55, 12.33, 37.94, 62.13] | B -Täydellinen verenkuva | Blood |  |
-| 8641 | b-tvk | e9/l | 0% | name+unit+values | 368 | 0 | [0.03, 0.03, 0.04, 0.04, 0.05, 0.05, 0.06, 0.07, 0.09] | B -Täydellinen verenkuva | Blood |  |
-| 8642 | b-tvk | fl | 0% | name+unit | 17 | 0 |  | B -Täydellinen verenkuva | Blood |  |
-| 8643 | b-tvk | form | 0% | name+unit | 11 | 0 |  | B -Täydellinen verenkuva | Blood |  |
-| 8644 | b-tvk | g/l | 0% | name+unit | 19 | 0 |  | B -Täydellinen verenkuva | Blood |  |
-| 8645 | b-tvk | paketti | 0% | name+unit | 22 | 0 |  | B -Täydellinen verenkuva | Blood |  |
-| 8646 | b-tvk | pg | 0% | name+unit | 17 | 0 |  | B -Täydellinen verenkuva | Blood |  |
-| 8647 | b-tvk |  | 100% | name | 466809 | 100 |  | B -Täydellinen verenkuva | Blood |  |
-| 8648 | b-tvk+r |  | 100% | name | 465 | 100 |  |  | Blood |  |
+| 8512 | p-adam13 | % | 95% | name+unit+values | 292 | 0 | [22.2, 37.98, 43.11, 48.45, 54.49, 61.91, 68.59, 80.67, 92.98] | P -ADAMTS13, aktiivisuus, plasmasta | Plasma |  |
+| 8513 | p-adam13 |  | 5% | name | 16 | 100 |  | P -ADAMTS13, aktiivisuus, plasmasta | Plasma |  |
+| 8514 | p-afxaapi | ug/l | 83% | name+unit+values | 885 | 0 | [28.54, 41.81, 56.02, 69.84, 87.39, 115.17, 139.04, 176.98, 252.81] | P -Apiksabaani, estovaikutus hyytymistekijä Xa:han | Plasma |  |
+| 8515 | p-afxaapi |  | 17% | name | 175 | 100 |  | P -Apiksabaani, estovaikutus hyytymistekijä Xa:han | Plasma |  |
+| 8516 | p-afxariv | ug/l | 60% | name+unit+values | 267 | 0 | [22.28, 30.54, 37.21, 46.02, 57.42, 75.62, 109.39, 173.07, 263.74] | P -Rivaroksabaani, estovaikutus hyytymistekijä Xa:han | Plasma |  |
+| 8517 | p-afxariv |  | 40% | name | 177 | 100 |  | P -Rivaroksabaani, estovaikutus hyytymistekijä Xa:han | Plasma |  |
+| 8518 | p-apcres | form | 5% | name+unit | 14 | 0 |  | P -APC-resistenssi | Plasma |  |
+| 8519 | p-apcres |  | 95% | name+values | 261 | 100 | [1.8, 2, 2.5, 2.74, 2.87, 2.98, 3.02, 3.18, 3.5] | P -APC-resistenssi | Plasma |  |
+| 8520 | p-apcres. | form | 99% | name+unit+values | 3154 | 0 | [2.46, 2.7, 2.8, 2.87, 2.9, 3, 3, 3.1, 3.2] |  | Plasma |  |
+| 8521 | p-apcres. |  | 1% | name | 38 | 100 |  |  | Plasma |  |
+| 8522 | p-apot |  | 100% | name | 113 | 100 |  |  | Plasma |  |
+| 8523 | p-aptt | s | 98% | name+unit+values | 145452 | 0 | [24.74, 26.02, 27.07, 28.48, 29.86, 31.14, 33.13, 36.35, 45.81] | P -Tromboplastiiniaika, aktivoitu, partiaalinen | Plasma |  |
+| 8524 | p-aptt |  | 2% | name | 3095 | 100 |  | P -Tromboplastiiniaika, aktivoitu, partiaalinen | Plasma |  |
+| 8525 | p-aptt-l |  | 100% | name | 1896 | 100 |  |  | Plasma |  |
+| 8526 | p-aptt. | s | 96% | name+unit+values | 829 | 0 | [24.98, 26.3, 27.53, 28.64, 29.69, 30.7, 32, 33.93, 38.41] |  | Plasma |  |
+| 8527 | p-aptt. |  | 4% | name | 38 | 100 |  |  | Plasma |  |
+| 8528 | p-apttm/m |  | 100% | name+values | 1897 | 100 | [0.9, 0.93, 0.95, 0.96, 0.98, 1, 1.04, 1.06, 1.11] |  | Plasma |  |
+| 8529 | p-apttspr | s | 78% | name+unit+values | 146 | 0 | [31.44, 32.4, 33.4, 34.93, 35.75, 36.34, 37.27, 38.68, 43.4] |  | Plasma |  |
+| 8530 | p-apttspr |  | 22% | name | 41 | 100 |  |  | Plasma |  |
+| 8531 | p-ca++hoi | mmol/l | 7% | name+unit | 11 | 0 |  |  | Plasma |  |
+| 8532 | p-ca++hoi |  | 93% | name+values | 157 | 100 | [1.1, 1.13, 1.15, 1.17, 1.19, 1.21, 1.22, 1.24, 1.26] |  | Plasma |  |
+| 8533 | p-citratm |  | 100% | name | 1692 | 100 |  |  | Plasma |  |
+| 8534 | p-clhoi | mmol/l | 100% | name+unit+values | 161 | 0 | [96.78, 99.15, 100.83, 102, 103, 104.79, 105.84, 106.7, 108.47] |  | Plasma |  |
+| 8535 | p-f8paiv | % | 95% | name+unit+values | 216 | 0 | [39.62, 76.99, 102.21, 114.35, 129.3, 143.4, 157.7, 196.99, 246.74] |  | Plasma |  |
+| 8536 | p-f8paiv |  | 5% | name | 11 | 100 |  |  | Plasma |  |
+| 8537 | p-fii | % | 48% | name+unit+values | 879 | 0.23 | [61.57, 76.44, 83.11, 88.29, 93.18, 97.78, 102.21, 107.17, 113.51] | P -Protrombiini | Plasma |  |
+| 8538 | p-fii |  | 52% | name+values | 964 | 100 | [77.3, 84.03, 87.1, 90.88, 93.17, 96.37, 100.57, 105.9, 112.5] | P -Protrombiini | Plasma |  |
+| 8539 | p-fix | % | 95% | name+unit+values | 1416 | 0 | [47.55, 70.85, 82.85, 93.25, 101.17, 110, 119.02, 128.99, 143.26] | P -Hyytymistekijä IX | Plasma |  |
+| 8540 | p-fix |  | 5% | name | 76 | 100 |  | P -Hyytymistekijä IX | Plasma |  |
+| 8541 | p-fs-mix |  | 100% | name+values | 1895 | 100 | [28.6, 29.05, 29.55, 30, 30.68, 31, 31.77, 34.32, 37.6] |  | Plasma |  |
+| 8542 | p-fsl-mix |  | 100% | name+values | 1894 | 100 | [27.66, 28.22, 29, 29.5, 30, 30.17, 31, 31.97, 33.87] |  | Plasma |  |
+| 8543 | p-fsl/fs |  | 100% | name+values | 1889 | 100 | [0.93, 0.98, 1.01, 1.03, 1.06, 1.1, 1.14, 1.19, 1.29] |  | Plasma |  |
+| 8544 | p-fvii | % | 90% | name+unit+values | 1818 | 0.11 | [48.8, 69.53, 86.15, 96.16, 104.36, 113.05, 122.83, 135.25, 151.88] | P -Hyytymistekijä VII | Plasma |  |
+| 8545 | p-fvii |  | 10% | name+values | 196 | 100 | [67.45, 82.23, 90.82, 98.85, 107.17, 113, 125.69, 137.67, 161.9] | P -Hyytymistekijä VII | Plasma |  |
+| 8546 | p-fviii | % | 87% | name+unit+values | 4777 | 0.04 | [77.4, 100.3, 119.2, 140.02, 160.19, 184.44, 211.4, 247.19, 311.94] | P -Hyytymistekijä VIII | Plasma |  |
+| 8547 | p-fviii | form | 0% | name+unit | 7 | 0 |  | P -Hyytymistekijä VIII | Plasma |  |
+| 8548 | p-fviii |  | 13% | name+values | 696 | 100 | [83.7, 100.38, 111.11, 124.39, 139.14, 161.05, 180.1, 202.21, 238.65] | P -Hyytymistekijä VIII | Plasma |  |
+| 8549 | p-fviii. | % | 93% | name+unit+values | 28767 | 0 | [100.3, 128.09, 149.07, 170.88, 193.18, 217.07, 245.88, 283.52, 344.17] |  | Plasma |  |
+| 8550 | p-fviii. |  | 7% | name+values | 2051 | 100 | [102.57, 121.76, 137.04, 153.56, 169.71, 188.24, 205.8, 229.29, 273.79] |  | Plasma |  |
+| 8551 | p-fviiikr | % | 71% | name+unit | 124 | 0 |  |  | Plasma |  |
+| 8552 | p-fviiikr |  | 29% | name | 51 | 100 |  |  | Plasma |  |
+| 8553 | p-fviiire | % | 75% | name+unit | 251 | 0.4 |  | P-Hyytymistekijä VIII, rekombinantti | Plasma |  |
+| 8554 | p-fviiire | form | 7% | name+unit | 23 | 0 |  | P-Hyytymistekijä VIII, rekombinantti | Plasma |  |
+| 8555 | p-fviiire |  | 18% | name | 62 | 100 |  | P-Hyytymistekijä VIII, rekombinantti | Plasma |  |
+| 8556 | p-fviiit | % | 90% | name+unit+values | 361 | 0 | [16.3, 37.97, 59.33, 87.28, 110.35, 131.87, 148.05, 185.43, 226.83] |  | Plasma |  |
+| 8557 | p-fviiit |  | 10% | name | 38 | 100 |  |  | Plasma |  |
+| 8558 | p-fxi | % | 31% | name+unit+values | 395 | 0 | [50.08, 64.57, 75.25, 81.99, 89.24, 97.03, 104.84, 115.34, 141.06] | P -Hyytymistekijä XI | Plasma |  |
+| 8559 | p-fxi |  | 69% | name | 874 | 100 |  | P -Hyytymistekijä XI | Plasma |  |
+| 8560 | p-fxii | % | 29% | name+unit+values | 366 | 0 | [39.18, 49.17, 59.19, 66.57, 75.37, 84.82, 94.93, 104.19, 121.16] | P -Hyytymistekijä XII | Plasma |  |
+| 8561 | p-fxii |  | 71% | name | 879 | 100 |  | P -Hyytymistekijä XII | Plasma |  |
+| 8562 | p-fxiii | % | 92% | name+unit+values | 2087 | 0.1 | [46.67, 56.85, 67.27, 77.3, 88.74, 99.76, 113.43, 126.96, 141.89] | P -Hyytymistekijä XIII | Plasma |  |
+| 8563 | p-fxiii |  | 8% | name+values | 176 | 100 | [92, 99.83, 108.05, 114.95, 122.43, 128.18, 132.91, 138.11, 151.1] | P -Hyytymistekijä XIII | Plasma |  |
+| 8564 | p-fxiii. | % | 97% | name+unit+values | 814 | 0 | [69.07, 80.91, 90.57, 100.38, 110.55, 120.66, 130.07, 138.79, 146.65] |  | Plasma |  |
+| 8565 | p-fxiii. |  | 3% | name | 29 | 100 |  |  | Plasma |  |
+| 8566 | p-k-ses | mmol/l | 97% | name+unit+values | 571 | 0 | [3.47, 3.71, 3.9, 4.01, 4.2, 4.3, 4.5, 4.74, 5.26] |  | Plasma |  |
+| 8567 | p-k-ses |  | 3% | name | 16 | 100 |  |  | Plasma |  |
+| 8568 | p-khoi | mmol/l | 16% | name+unit | 47 | 0 |  |  | Plasma |  |
+| 8569 | p-khoi |  | 84% | name+values | 242 | 100 | [3.37, 3.59, 3.75, 3.89, 4, 4.13, 4.3, 4.49, 4.7] |  | Plasma |  |
+| 8570 | p-la1-mix |  | 100% | name+values | 1894 | 100 | [37, 38, 39, 39.98, 40.95, 41.63, 42.91, 44.68, 47.2] |  | Plasma |  |
+| 8571 | p-la1/la2 |  | 100% | name+values | 1893 | 100 | [1.11, 1.17, 1.22, 1.27, 1.31, 1.35, 1.42, 1.52, 1.74] |  | Plasma |  |
+| 8572 | p-la2-mix |  | 100% | name+values | 1892 | 100 | [33.9, 34.6, 35.36, 36.63, 38, 39.7, 41.52, 43.7, 50] |  | Plasma |  |
+| 8573 | p-lakthoi | mmol/l | 12% | name+unit | 31 | 0 |  |  | Plasma |  |
+| 8574 | p-lakthoi |  | 88% | name+values | 228 | 100 | [0.76, 0.9, 1.02, 1.13, 1.23, 1.39, 1.6, 1.91, 2.55] |  | Plasma |  |
+| 8575 | p-lh/fsh |  | 100% | name+values | 896 | 100 | [0.5, 0.7, 0.88, 1, 1.19, 1.4, 1.7, 2.14, 2.78] |  | Plasma |  |
+| 8576 | p-mitotan | mg/l | 94% | name+unit | 266 | 0 |  | P -Mitotaani (Lysodren) | Plasma |  |
+| 8577 | p-mitotan |  | 6% | name | 18 | 100 |  | P -Mitotaani (Lysodren) | Plasma |  |
+| 8578 | p-na-ses | mmol/l | 97% | name+unit+values | 454 | 0 | [133.95, 135.35, 136.94, 138, 139, 140, 141.09, 142.76, 144.44] |  | Plasma |  |
+| 8579 | p-na-ses |  | 3% | name | 16 | 100 |  |  | Plasma |  |
+| 8580 | p-nahoi | mmol/l | 100% | name+unit+values | 289 | 0 | [131.88, 133.99, 135.4, 137.05, 138.9, 140, 140.99, 141.97, 143.59] |  | Plasma |  |
+| 8581 | p-pg1/pg2 |  | 100% | name+values | 214 | 100 | [5.76, 7.27, 7.89, 8.45, 9.09, 9.69, 10.19, 11.33, 12.48] |  | Plasma |  |
+| 8582 | p-sit3.1 |  | 100% | name | 774 | 100 |  |  | Plasma |  |
+| 8583 | p-sitr3.8 |  | 100% | name | 1062 | 100 |  |  | Plasma |  |
+| 8584 | p-tau-217 | ng/l | 41% | name+unit+values | 132 | 0 | [0.1, 0.12, 0.16, 0.2, 0.29, 0.37, 0.49, 0.64, 0.88] | P -Tau-proteiini, 217-fosforyloitu | Plasma |  |
+| 8585 | p-tau-217 |  | 59% | name+values | 188 | 100 | [0.12, 0.16, 0.21, 0.28, 0.32, 0.38, 0.45, 0.59, 0.78] | P -Tau-proteiini, 217-fosforyloitu | Plasma |  |
+| 8586 | p-vwf-ag | % | 95% | name+unit+values | 3318 | 0 | [47.7, 69.31, 90.97, 109.28, 131.06, 156.66, 193.1, 221.66, 254.07] | P -von Willebrand-tekijä, antigeeni | Plasma | Antigen |
+| 8587 | p-vwf-ag |  | 5% | name+values | 164 | 100 | [42, 61.65, 79.42, 93.3, 113, 130.6, 161.7, 185.75, 231] | P -von Willebrand-tekijä, antigeeni | Plasma | Antigen |
+| 8588 | p-vwf-akt | % | 93% | name+unit+values | 4343 | 0.02 | [38.92, 62.29, 79.13, 94.16, 109.29, 126.62, 152.89, 186.7, 245.26] | P -von Willebrand -tekijä, aktiivisuus (GPIb sitoutuminen) | Plasma |  |
+| 8589 | p-vwf-akt |  | 7% | name+values | 340 | 100 | [55.5, 72.5, 81.5, 94.5, 101.75, 107.67, 129.5, 152.83, 223.5] | P -von Willebrand -tekijä, aktiivisuus (GPIb sitoutuminen) | Plasma |  |
+| 8590 | p-vwf-aktt | % | 88% | name+unit+values | 211 | 0 | [36.56, 51.18, 66.86, 84.71, 112.56, 127.89, 144.38, 168.66, 217.53] |  | Plasma |  |
+| 8591 | p-vwf-aktt |  | 12% | name | 28 | 100 |  |  | Plasma |  |
+| 8592 | p-vwfcb | % | 92% | name+unit+values | 98 | 0 | [20, 35, 41, 47.3, 52.25, 60.85, 71.65, 83.6, 92] | P -von Willebrand -tekijä, kollageenin sitomiskyky | Plasma |  |
+| 8593 | p-vwfcb |  | 8% | name | 8 | 100 |  | P -von Willebrand -tekijä, kollageenin sitomiskyky | Plasma |  |
+| 8594 | p-vwfpaiv | % | 89% | name+unit | 169 | 0 |  |  | Plasma |  |
+| 8595 | p-vwfpaiv |  | 11% | name | 20 | 100 |  |  | Plasma |  |
+| 8596 | p-vwfrco | % | 30% | name+unit | 35 | 0 |  | P -von Willebrand-tekijä, ristosetiinikofaktori | Plasma |  |
+| 8597 | p-vwfrco |  | 70% | name | 83 | 100 |  | P -von Willebrand-tekijä, ristosetiinikofaktori | Plasma |  |
+| 8598 | s-fit/pgf |  | 100% | name+values | 135 | 100 | [6.12, 10.5, 17.8, 26.98, 40.52, 58.17, 73.2, 107.03, 135.33] | S -Endoteelikasvutekijän liukoisen reseptorin (S -sFlt-1) ja plasentaalisen kasvutekijän (S -PlGF) suhde | Serum |  |
+| 8599 | s-flt/pgf |  | 100% | name+values | 326 | 100 | [2.33, 4.43, 7.66, 13.78, 25.02, 41.69, 56.09, 83.81, 137.49] |  | Serum |  |
 

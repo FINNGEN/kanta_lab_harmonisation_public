@@ -1,113 +1,581 @@
 {
   "rows": [
     {
-      "row_id": 5805,
-      "loinc_name_guess": "Aspergillus sp DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5588,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
-      "row_id": 5806,
-      "loinc_name_guess": "Bacteria identified in Specimen by NAA with probe detection"
+      "row_id": 5589,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
-      "row_id": 5807,
-      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5590,
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
     },
     {
-      "row_id": 5808,
-      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5591,
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
     },
     {
-      "row_id": 5809,
-      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5592,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
-      "row_id": 5810,
-      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5593,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
-      "row_id": 5811,
-      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5594,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Ascitic fluid"
     },
     {
-      "row_id": 5812,
-      "loinc_name_guess": "Bordetella pertussis+Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5595,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Ascitic fluid"
     },
     {
-      "row_id": 5813,
-      "loinc_name_guess": "Borrelia sp DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5596,
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
-      "row_id": 5814,
-      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5597,
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
-      "row_id": 5815,
-      "loinc_name_guess": "Bacteria identified in Respiratory specimen by NAA with probe detection"
+      "row_id": 5598,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in 24 hour Urine"
     },
     {
-      "row_id": 5816,
-      "loinc_name_guess": "Bacteria identified in Specimen by NAA with probe detection"
+      "row_id": 5599,
+      "loinc_name_guess": "Aldosterone [Mass/time] in 24 hour Urine"
     },
     {
-      "row_id": 5817,
-      "loinc_name_guess": "Human bocavirus DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5600,
+      "loinc_name_guess": "Aldosterone [Moles/time] in 24 hour Urine"
     },
     {
-      "row_id": 5818,
-      "loinc_name_guess": "Bordetella pertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5601,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5819,
-      "loinc_name_guess": "Bordetella parapertussis DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5602,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
-      "row_id": 5820,
-      "loinc_name_guess": "Bacteria identified in Stool by NAA with probe detection"
+      "row_id": 5603,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
-      "row_id": 5821,
-      "loinc_name_guess": "Parasites identified in Stool by NAA with probe detection"
+      "row_id": 5604,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5822,
-      "loinc_name_guess": "Salmonella sp DNA [Presence] in Stool by NAA with probe detection"
+      "row_id": 5605,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5823,
-      "loinc_name_guess": "Sapovirus RNA [Presence] in Stool by NAA with probe detection"
+      "row_id": 5606,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5824,
-      "loinc_name_guess": "Human coronavirus 229E RNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5607,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
-      "row_id": 5825,
-      "loinc_name_guess": "Human coronavirus HKU1 RNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5608,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Plasma"
     },
     {
-      "row_id": 5826,
-      "loinc_name_guess": "Human coronavirus NL63 RNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5609,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5827,
-      "loinc_name_guess": "Human coronavirus OC43 RNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5610,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5828,
-      "loinc_name_guess": "Bacteria identified in Cerebral spinal fluid by NAA with probe detection"
+      "row_id": 5611,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5829,
-      "loinc_name_guess": "Bacteria identified in Respiratory specimen by NAA with probe detection"
+      "row_id": 5612,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5830,
-      "loinc_name_guess": "Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection"
+      "row_id": 5613,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Plasma"
     },
     {
-      "row_id": 5831,
-      "loinc_name_guess": "Salmonella sp DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 5614,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Plasma"
+    },
+    {
+      "row_id": 5615,
+      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 5616,
+      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 5617,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid"
+    },
+    {
+      "row_id": 5618,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pancreatic fluid"
+    },
+    {
+      "row_id": 5619,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid"
+    },
+    {
+      "row_id": 5620,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Pleural fluid"
+    },
+    {
+      "row_id": 5621,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5622,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5623,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5624,
+      "loinc_name_guess": "Adalimumab Ab [Units/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5625,
+      "loinc_name_guess": "Adalimumab Ab [Presence] in Serum or Plasma"
+    },
+    {
+      "row_id": 5626,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5627,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5628,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5629,
+      "loinc_name_guess": "Adalimumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5630,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific/Alkaline phosphatase.total [Ratio] in Serum"
+    },
+    {
+      "row_id": 5631,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5632,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5633,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5634,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5635,
+      "loinc_name_guess": "Alkaline phosphatase.other [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5636,
+      "loinc_name_guess": "Alkaline phosphatase.other [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5637,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5638,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5639,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5640,
+      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5641,
+      "loinc_name_guess": "Alkaline phosphatase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5642,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5643,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5644,
+      "loinc_name_guess": "Alkaline phosphatase.bone specific [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5645,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5646,
+      "loinc_name_guess": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5647,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 1 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5648,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 1 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5649,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5650,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 2 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5651,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5652,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5653,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal/Alkaline phosphatase.total [Ratio] in Serum"
+    },
+    {
+      "row_id": 5654,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5655,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5656,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5657,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5658,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5659,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5660,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5661,
+      "loinc_name_guess": "Albumin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5662,
+      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5663,
+      "loinc_name_guess": "Aldolase [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5664,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5665,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5666,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --supine"
+    },
+    {
+      "row_id": 5667,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --supine"
+    },
+    {
+      "row_id": 5668,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --upright"
+    },
+    {
+      "row_id": 5669,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum --upright"
+    },
+    {
+      "row_id": 5670,
+      "loinc_name_guess": "Alpha 1 globulin [Mass Fraction] in Serum"
+    },
+    {
+      "row_id": 5671,
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5672,
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5673,
+      "loinc_name_guess": "Alpha 2 globulin [Mass Fraction] in Serum"
+    },
+    {
+      "row_id": 5674,
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5675,
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5676,
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5677,
+      "loinc_name_guess": "Alpha 1 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5678,
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5679,
+      "loinc_name_guess": "Alpha 2 globulin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 5680,
+      "loinc_name_guess": "Allergen specific IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5681,
+      "loinc_name_guess": "Allergen specific IgE Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5682,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5683,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5684,
+      "loinc_name_guess": "Amylase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5685,
+      "loinc_name_guess": "Amylase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5686,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5687,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5688,
+      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5689,
+      "loinc_name_guess": "Amylase.salivary [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5690,
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5691,
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5692,
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5693,
+      "loinc_name_guess": "Desmethylclozapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5694,
+      "loinc_name_guess": "Deamidated gliadin peptide Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5695,
+      "loinc_name_guess": "Deamidated gliadin peptide Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5696,
+      "loinc_name_guess": "Gliadin IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5697,
+      "loinc_name_guess": "Gliadin IgE Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5698,
+      "loinc_name_guess": "HLA donor specific Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5699,
+      "loinc_name_guess": "Fish IgE Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5700,
+      "loinc_name_guess": "Dog dander IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5701,
+      "loinc_name_guess": "Dog dander IgE Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5702,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5703,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5704,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5705,
+      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5706,
+      "loinc_name_guess": "Olanzapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5707,
+      "loinc_name_guess": "Ovalbumin IgE Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5708,
+      "loinc_name_guess": "Ovalbumin IgE Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5709,
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5710,
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5711,
+      "loinc_name_guess": "Salicylate [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5712,
+      "loinc_name_guess": "Topoisomerase I Ab [Presence] in Serum"
+    },
+    {
+      "row_id": 5713,
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5714,
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase-1 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5715,
+      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5716,
+      "loinc_name_guess": "Cholesterol in small dense LDL [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5717,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5718,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5719,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5720,
+      "loinc_name_guess": "Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum"
+    },
+    {
+      "row_id": 5721,
+      "loinc_name_guess": "Aldosterone [Moles/volume] in Serum"
+    },
+    {
+      "row_id": 5722,
+      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5723,
+      "loinc_name_guess": "Vedolizumab [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5724,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5725,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion"
+    },
+    {
+      "row_id": 5726,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Secretion"
+    },
+    {
+      "row_id": 5727,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5728,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine"
+    },
+    {
+      "row_id": 5729,
+      "loinc_name_guess": "Amylase [Enzymatic activity/volume] in Urine"
+    },
+    {
+      "row_id": 5730,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine"
+    },
+    {
+      "row_id": 5731,
+      "loinc_name_guess": "Amylase.pancreatic [Enzymatic activity/volume] in Urine"
     }
   ],
-  "reflection": "This group was dominated by nucleic acid tests, identifiable by the `nho` suffix and confirmed by `LongName`s like `nukleiinihappo (kval)`. The main tasks were to decode the analyte abbreviation and select the correct system.\n\n**Gotchas and Ambiguities:**\n*   **Component decoding:** Several codes were local inventions or typos. The group's string similarity was crucial for interpreting `-bocanho` as `-bokanho` (Bocavirus) and for identifying the block of `kv...nho` codes as various Human coronaviruses (e.g., `kv229enho` for HCoV-229E).\n*   **Interpreting Prefixes:** Non-standard prefixes like `r-` and `res-` required an educated guess (Respiratory specimen). Codes starting with a dash or lacking a prefix were mapped to the generic `Specimen`.\n*   **Property Choice (`[Presence]` vs. `[Identifier]`):** For broad-spectrum tests like `-baktnho` (Bacteria) or `f-paranho` (Parasites), I chose `[Identifier]` over `[Presence]`. My reasoning is that such tests typically aim to identify which organism is present (e.g., via a multiplex PCR panel or 16S sequencing), not just give a yes/no for the entire class. This is an interpretation based on clinical utility.\n*   **DNA vs. RNA:** I specified DNA or RNA in the component name based on the pathogen type (e.g., `Sapovirus RNA`, `Human bocavirus DNA`). This adds precision but requires external domain knowledge about the organisms.\n*   **Combination Tests:** The code `-boppnho` was interpreted as a combination test for *Bordetella pertussis* and *parapertussis*, a common pairing. LOINC's `+` syntax was used to represent this."
+  "reflection": "This group demonstrated significant variation in local abbreviations for the same analyte. For example, Adalimumab appeared as `s-adali`, `s-adalimu`, `s-adalip`, and `s-adalipa`. Similarly, alkaline phosphatase isoenzymes were represented by a variety of codes (`s-afluu`, `s-afluust`, `s-afosluu`, `s-afsuoli`) that required interpreting Finnish words (`luu` for bone, `suoli` for intestine) to differentiate them.\n\nSeveral `Aldosterone` tests (`s-oaldos`, `s-valdos`) had extremely high values, orders of magnitude above the physiological range. While I named them as Aldosterone, these are likely data errors, tests on non-human samples, or measurements of a different substance entirely (e.g., a metabolite or a drug that cross-reacts). It's a reminder that values, while helpful, can be misleading.\n\nSome codes were too generic or garbled to interpret, such as `s-kudosab` (tissue antibody), `s-ngmuut` (??-other), and `sp-suld`. For these, I correctly returned an empty name. The administrative code `saline` also fell into this category.\n\nFinally, for tests ordering multiple components like isoenzymes (`s-afos-is`, `s-amyl-is`), I chose to create a `panel` name, which is a better fit than guessing which single isoenzyme was reported."
 }

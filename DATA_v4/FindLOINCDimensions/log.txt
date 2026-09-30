@@ -1,3 +1,4 @@
+--clean: removing cached LLM answers in DATA_v4/FindLOINCDimensions/groupsCache
 - The project is out-of-sync -- use `renv::status()` for details.
 
 Attaching package: ‘dplyr’
@@ -11,8 +12,8 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  inputFile = DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
-  outDir = DATA/FindLOINCDimensions
+  inputFile = DATA_v4/GroupKnownInformationTable/knownInformationGrouped.tsv
+  outDir = DATA_v4/FindLOINCDimensions
   nGroups = 30
   seed = 1
   provider = google_vertex
@@ -20,19 +21,26 @@ Configuration:
   project = atlas-development-270609
   location = europe-north1
   workers = 6
-  cacheDir = DATA/FindLOINCDimensions/groupsCache
-Read 13804 rows from DATA/GroupKnownInformationTable/knownInformationGrouped.tsv
-Evidence levels: name=6954, name+unit=1578, name+unit+values=3814, name+values=1458
-Processing 30 of 170 groups (random sample, seed 1)
-Read 17911 characters of system prompt from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/STEPS/FindLOINCDimensions/scripts/systemPrompt.md
-Groups to send to the LLM: 0 (30 already cached)
-Resolved 0 groups this run (LLM cost USD 0.0000)
-Collected 1984 per-row answers from 30 groups
-1 returned row_id(s) are not in the processed groups; dropping them
-1 row(s) got no answer from the model; their name stays empty
-1890 / 1984 rows got a LOINC name guess
-Wrote 1984 rows to DATA/FindLOINCDimensions/codesWithLoincNames.tsv
-Wrote 30 group reflections to DATA/FindLOINCDimensions/reflections.md
+  cacheDir = DATA_v4/FindLOINCDimensions/groupsCache
+Read 13431 rows from DATA_v4/GroupKnownInformationTable/knownInformationGrouped.tsv
+Evidence levels: name=7173, name+unit=1234, name+unit+values=3950, name+values=1074
+Processing 30 of 164 groups (random sample, seed 1)
+Read 17929 characters of system prompt from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/STEPS/FindLOINCDimensions/scripts/systemPrompt.md
+Groups to send to the LLM: 30 (0 already cached)
+Resolving 30 groups across 6 workers
+Initiating cluster with 6 threads
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+- The project is out-of-sync -- use `renv::status()` for details.
+  |                                                                              |                                                                      |   0%  |                                                                              |==                                                                    |   3%  |                                                                              |=====                                                                 |   7%  |                                                                              |=======                                                               |  10%  |                                                                              |=========                                                             |  13%  |                                                                              |============                                                          |  17%  |                                                                              |==============                                                        |  20%  |                                                                              |================                                                      |  23%  |                                                                              |===================                                                   |  27%  |                                                                              |=====================                                                 |  30%  |                                                                              |=======================                                               |  33%  |                                                                              |==========================                                            |  37%  |                                                                              |============================                                          |  40%  |                                                                              |==============================                                        |  43%  |                                                                              |=================================                                     |  47%  |                                                                              |===================================                                   |  50%  |                                                                              |=====================================                                 |  53%  |                                                                              |========================================                              |  57%  |                                                                              |==========================================                            |  60%  |                                                                              |============================================                          |  63%  |                                                                              |===============================================                       |  67%  |                                                                              |=================================================                     |  70%  |                                                                              |===================================================                   |  73%  |                                                                              |======================================================                |  77%  |                                                                              |========================================================              |  80%  |                                                                              |==========================================================            |  83%  |                                                                              |=============================================================         |  87%  |                                                                              |===============================================================       |  90%  |                                                                              |=================================================================     |  93%  |                                                                              |====================================================================  |  97%  |                                                                              |======================================================================| 100%
+Resolved 30 groups this run (LLM cost USD 4.2487)
+Collected 2687 per-row answers from 30 groups
+2577 / 2687 rows got a LOINC name guess
+Wrote 2687 rows to DATA_v4/FindLOINCDimensions/codesWithLoincNames.tsv
+Wrote 30 group reflections to DATA_v4/FindLOINCDimensions/reflections.md
 - The project is out-of-sync -- use `renv::status()` for details.
 
 Attaching package: ‘dplyr’
@@ -46,16 +54,16 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  namesFile = DATA/FindLOINCDimensions/codesWithLoincNames.tsv
-  reflectionsFile = DATA/FindLOINCDimensions/reflections.md
-  outDir = DATA/FindLOINCDimensions
+  namesFile = DATA_v4/FindLOINCDimensions/codesWithLoincNames.tsv
+  reflectionsFile = DATA_v4/FindLOINCDimensions/reflections.md
+  outDir = DATA_v4/FindLOINCDimensions
   provider = google_vertex
   model = gemini-2.5-pro
-Read 1984 rows from DATA/FindLOINCDimensions/codesWithLoincNames.tsv
-Read 42202 characters of reflections from DATA/FindLOINCDimensions/reflections.md
-1890 / 1984 rows named; 1510 carry the full '<Component> [<Property>] in <System>' shape
-Summarised reflections into 10 findings, 5 improvements, 7 data problems
-Wrote stats report to DATA/FindLOINCDimensions/loincNamesStats.md
-Wrote DATA/FindLOINCDimensions/codesWithLoincNames.tsv
-Wrote DATA/FindLOINCDimensions/reflections.md
-Wrote DATA/FindLOINCDimensions/loincNamesStats.md
+Read 2687 rows from DATA_v4/FindLOINCDimensions/codesWithLoincNames.tsv
+Read 43784 characters of reflections from DATA_v4/FindLOINCDimensions/reflections.md
+2577 / 2687 rows named; 2046 carry the full '<Component> [<Property>] in <System>' shape
+Summarised reflections into 9 findings, 4 improvements, 8 data problems
+Wrote stats report to DATA_v4/FindLOINCDimensions/loincNamesStats.md
+Wrote DATA_v4/FindLOINCDimensions/codesWithLoincNames.tsv
+Wrote DATA_v4/FindLOINCDimensions/reflections.md
+Wrote DATA_v4/FindLOINCDimensions/loincNamesStats.md

@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,78 +139,102 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 106 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 8649 | -bakt-he |  | 100% | name | 111 | 100 |  |  |  | Antibiotic sensitivity |
-| 8650 | -bakt-lm |  | 100% | name | 545 | 100 |  |  |  | Species identification |
-| 8651 | -baktvi |  | 100% | name | 1515 | 100 |  | -Bakteeri, viljely |  |  |
-| 8652 | -baktvr |  | 100% | name | 22025 | 100 |  | -Bakteeri, värjäys |  |  |
-| 8653 | af-baktvi |  | 100% | name | 262 | 100 |  |  | Aspiration fluid |  |
-| 8654 | as-baktvr |  | 100% | name | 252 | 100 |  |  | Ascitic fluid |  |
-| 8655 | b-bakt-vi |  | 100% | name | 1757 | 100 |  |  | Blood | Culture |
-| 8656 | b-baktjvi |  | 100% | name | 28084 | 100 |  | B -Bakteeri, jatkoviljely | Blood |  |
-| 8657 | b-baktsvi |  | 100% | name | 6514 | 100 |  |  | Blood |  |
-| 8658 | b-baktvi |  | 100% | name | 506538 | 100 |  | B -Bakteeri, viljely | Blood |  |
-| 8659 | b-baktvi. |  | 100% | name | 2240 | 100 |  |  | Blood |  |
-| 8660 | b-baktvij |  | 100% | name | 1818 | 100 |  |  | Blood |  |
-| 8661 | bakteerit |  | 100% | name | 6114 | 100 |  |  |  |  |
-| 8662 | baktlm |  | 100% | name | 897 | 100 |  |  |  |  |
-| 8663 | baktvr |  | 100% | name | 339 | 100 |  |  |  |  |
-| 8664 | bl-baktvi |  | 100% | name | 303 | 100 |  |  | Bronchoalveolar lavage |  |
-| 8665 | bo-baktvi |  | 100% | name | 312 | 100 |  |  | Bone |  |
-| 8666 | ca-baktvi |  | 100% | name | 1564 | 100 |  | Ca-Bakteeri, viljely suonikanyylista |  |  |
-| 8667 | d-baktvi |  | 100% | name | 120 | 100 |  |  |  |  |
-| 8668 | ex-baktvi |  | 100% | name | 14096 | 100 |  | Ex-Bakteeri, viljely | Expectorate (sputum) |  |
-| 8669 | ex-baktvr |  | 100% | name | 3217 | 100 |  |  | Expectorate (sputum) |  |
-| 8670 | f-baktjvi |  | 100% | name | 281 | 100 |  |  | Feces |  |
-| 8671 | f-baktvi1 |  | 100% | name | 32771 | 100 |  | F -Bakteeri, viljely 1 (Salmonella, Shigella, Yersinia, Campylobacter) | Feces |  |
-| 8672 | f-baktvi2 |  | 100% | name | 739 | 100 |  | F -Bakteeri, viljely 2 (Clostridium difficile, Staphylococcus aureus, candida) | Feces |  |
-| 8673 | f-baktvi3 |  | 100% | name | 1380 | 100 |  | F -Bakteeri, viljely 3 (viljely 1 + Bacillus cereus, Clostridium perfringens, Staphylococcus aureus) | Feces |  |
-| 8674 | f-baktvip |  | 100% | name | 17284 | 100 |  |  | Feces |  |
-| 8675 | fl-baktna |  | 100% | name | 154 | 100 |  |  | Vaginal discharge |  |
-| 8676 | fl-baktvr |  | 100% | name | 11637 | 100 |  | Fl-Bakteeri, värjäys | Vaginal discharge |  |
-| 8677 | li-baktvi |  | 100% | name | 7020 | 100 |  | Li-Bakteeri, viljely | Cerebrospinal fluid |  |
-| 8678 | li-baktvr |  | 100% | name | 3747 | 100 |  | Li-Bakteeri, värjäys | Cerebrospinal fluid |  |
-| 8679 | pd-baktvi |  | 100% | name | 917 | 100 |  | Pd-Bakteeri, viljely peritoneaalidialyysinesteestä | Peritoneal dialysis fluid |  |
-| 8680 | pf-baktvr |  | 100% | name | 258 | 100 |  |  | Pleural fluid |  |
-| 8681 | pp-baktnh |  | 100% | name | 445 | 100 |  | Pp-Bakteeri, nukleiinihappo (kvant), ientasku | Periodontal pocket |  |
-| 8682 | ps-baktvi |  | 100% | name | 3894 | 99.97 |  | Ps-Bakteeri, viljely | Pharyngeal secretion |  |
-| 8683 | pu-baktvi1 |  | 100% | name | 132179 | 100 |  | Pu-Bakteeri, viljely 1 (anaerobi + aerobiviljely, syvämärkä) | Pus |  |
-| 8684 | pu-baktvi2 |  | 100% | name | 97752 | 100 |  | Pu-Bakteeri, viljely 2 (aerobiviljely, pintamärkä) | Pus |  |
-| 8685 | sy-baktvr |  | 100% | name | 1225 | 100 |  |  | Synovial fluid |  |
-| 8686 | u-bact |  | 100% | name+values | 4570 | 19.15 | [1.88, 4.41, 7.11, 12.12, 22.01, 65.08, 182.99, 478.65, 3425.04] |  | Urine |  |
-| 8687 | u-bakt | e6/l | 3% | name+unit+values | 12886 | 0 | [0.99, 1.98, 3.85, 6.56, 13.19, 31.1, 95.22, 562.86, 5560.98] |  | Urine |  |
-| 8688 | u-bakt | estimate | 3% | name+unit | 14084 | 99.66 |  |  | Urine |  |
-| 8689 | u-bakt | u/field | 0% | name+unit | 11 | 0 |  |  | Urine |  |
-| 8690 | u-bakt |  | 93% | name+values | 377251 | 99.78 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
-| 8691 | u-bakt-vi |  | 100% | name+values | 14923 | 100 | [10000, 10000, 10000, 10000, 1e+05, 1e+05, 1e+05, 1e+06, 1e+06] |  | Urine | Culture |
-| 8692 | u-bakt. | /sunf | 24% | name+unit+values | 514 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  | Urine |  |
-| 8693 | u-bakt. | /sunfält | 2% | name+unit | 40 | 0 |  |  | Urine |  |
-| 8694 | u-bakt. |  | 74% | name | 1617 | 100 |  |  | Urine |  |
-| 8695 | u-baktalv |  | 100% | name | 2258 | 99.42 |  | U -Bakteeri, aluslasiviljely | Urine |  |
-| 8696 | u-baktb |  | 100% | name+values | 210 | 4.29 | [1.72, 5.76, 11.77, 19.42, 30.15, 66.2, 213.28, 2129.49, 11056.23] |  | Urine |  |
-| 8697 | u-baktbv | e6/l | 98% | name+unit+values | 3962 | 0 | [0.82, 1.8, 3.97, 7.16, 16.23, 44.68, 171.24, 1315.3, 12976.36] |  | Urine |  |
-| 8698 | u-baktbv |  | 2% | name | 93 | 100 |  |  | Urine |  |
-| 8699 | u-bakteeri |  | 100% | name | 1711 | 100 |  |  | Urine |  |
-| 8700 | u-bakteerit | e6/l | 9% | name+unit+values | 1692 | 0 | [1, 3.34, 6.78, 15.13, 44.47, 159.79, 845.2, 5975.08, 24980.83] |  | Urine |  |
-| 8701 | u-bakteerit |  | 91% | name | 16840 | 99.96 |  |  | Urine |  |
-| 8702 | u-baktevi |  | 100% | name | 18799 | 99.99 |  | U -Bakteeri, erikoisviljely | Urine |  |
-| 8703 | u-baktjvi |  | 100% | name | 390824 | 100 |  | U -Bakteeri, jatkoviljely | Urine |  |
-| 8704 | u-baktjvi. |  | 100% | name | 11570 | 100 |  |  | Urine |  |
-| 8705 | u-baktla |  | 100% | name | 4577 | 100 |  |  | Urine |  |
-| 8706 | u-baktlm |  | 100% | name | 1437 | 100 |  |  | Urine |  |
-| 8707 | u-baktnim |  | 100% | name | 111 | 100 |  |  | Urine |  |
-| 8708 | u-bakts |  | 100% | name | 1045 | 100 |  |  | Urine |  |
-| 8709 | u-baktseu |  | 100% | name | 39886 | 99.99 |  |  | Urine |  |
-| 8710 | u-baktsjvi |  | 100% | name | 539 | 100 |  |  | Urine |  |
-| 8711 | u-bakttun |  | 100% | name | 653 | 100 |  |  | Urine |  |
-| 8712 | u-baktv |  | 100% | name | 1154 | 100 |  |  | Urine |  |
-| 8713 | u-baktvi | e6 | 0% | name+unit | 45 | 0 |  | U -Bakteeri, viljely | Urine |  |
-| 8714 | u-baktvi | e6/l | 0% | name+unit | 60 | 0 |  | U -Bakteeri, viljely | Urine |  |
-| 8715 | u-baktvi | form | 0% | name+unit | 10 | 0 |  | U -Bakteeri, viljely | Urine |  |
-| 8716 | u-baktvi |  | 100% | name+values | 1324678 | 99.99 | [106.83, 10000, 1e+05, 754545.45, 1e+06, 1e+07, 1e+08, 1e+08, 1e+08] | U -Bakteeri, viljely | Urine |  |
-| 8717 | u-baktvi/ |  | 100% | name | 562 | 100 |  |  | Urine |  |
-| 8718 | u-baktvi/oma |  | 100% | name | 629 | 100 |  |  | Urine |  |
-| 8719 | u-baktvi2 |  | 100% | name | 283 | 100 |  |  | Urine |  |
-| 8720 | u-baktvtk |  | 100% | name | 1637 | 100 |  |  | Urine |  |
+| 8600 | -omactgc |  | 100% | name | 591 | 100 |  |  |  |  |
+| 8601 | -viskos. |  | 100% | name | 1644 | 100 |  |  |  |  |
+| 8602 | b-koboltti | ug/l | 100% | name+unit+values | 157 | 0 | [0.5, 0.7, 0.95, 1.17, 1.75, 2.2, 4.11, 6.21, 10.68] |  | Blood |  |
+| 8603 | b-lakteh | mmol/l | 100% | name+unit+values | 345 | 0 | [0.88, 1, 1.19, 1.38, 1.53, 1.66, 1.88, 2.15, 2.77] |  | Blood |  |
+| 8604 | b-laktevt | mmol/l | 42% | name+unit+values | 408 | 0 | [0.74, 0.85, 1, 1.15, 1.35, 1.54, 1.77, 2.2, 2.94] |  | Blood |  |
+| 8605 | b-laktevt |  | 58% | name+values | 572 | 100 | [0.73, 0.87, 1.01, 1.15, 1.33, 1.55, 1.74, 2.11, 2.84] |  | Blood |  |
+| 8606 | b-laktteh | mmol/l | 86% | name+unit+values | 59507 | 0 | [0.7, 0.8, 0.91, 1.03, 1.18, 1.35, 1.59, 1.9, 2.56] |  | Blood |  |
+| 8607 | b-laktteh |  | 14% | name | 9379 | 100 |  |  | Blood |  |
+| 8608 | b-ohbutm | mmol/l | 81% | name+unit+values | 422 | 0 | [0.1, 0.16, 0.2, 0.3, 0.51, 0.84, 1.63, 2.94, 4.56] |  | Blood |  |
+| 8609 | b-ohbutm |  | 19% | name | 99 | 100 |  |  | Blood |  |
+| 8610 | b-ohbutvt | mmol/l | 87% | name+unit+values | 97 | 0 | [0.1, 0.1, 0.2, 0.2, 0.28, 0.31, 0.7, 1.16, 2.4] |  | Blood |  |
+| 8611 | b-ohbutvt |  | 13% | name | 14 | 100 |  |  | Blood |  |
+| 8612 | b-ohbutyr | mmol/l | 74% | name+unit+values | 147 | 0 | [0.1, 0.2, 0.2, 0.3, 0.41, 0.95, 1.64, 2.49, 4.08] | B -Beeta-hydroksibutyraatti | Blood |  |
+| 8613 | b-ohbutyr |  | 26% | name | 51 | 100 |  | B -Beeta-hydroksibutyraatti | Blood |  |
+| 8614 | b-sop.koe |  | 100% | name | 174 | 100 |  |  | Blood |  |
+| 8615 | b-sopkoe |  | 100% | name | 662 | 100 |  |  | Blood |  |
+| 8616 | cp-ohbutlb | mmol/l | 100% | name+unit+values | 245 | 0 | [0.1, 0.1, 0.2, 0.2, 0.33, 0.57, 1.04, 1.88, 3.21] |  |  |  |
+| 8617 | f-projekti |  | 100% | name | 469 | 100 |  |  | Feces |  |
+| 8618 | hpvpapctgc |  | 100% | name | 116 | 100 |  |  |  |  |
+| 8619 | hpvrefctgc |  | 100% | name | 135 | 100 |  |  |  |  |
+| 8620 | li-laktteh | mmol/l | 82% | name+unit+values | 299 | 0 | [1.4, 1.5, 1.68, 1.93, 2.14, 2.47, 2.77, 3.15, 4.3] |  | Cerebrospinal fluid |  |
+| 8621 | li-laktteh |  | 18% | name | 65 | 100 |  |  | Cerebrospinal fluid |  |
+| 8622 | mb-k-veka | mmol/l | 96% | name+unit | 2501 | 0 |  |  |  |  |
+| 8623 | mb-k-veka |  | 4% | name | 109 | 100 |  |  |  |  |
+| 8624 | mb-na-veka | mmol/l | 96% | name+unit | 2500 | 0 |  |  |  |  |
+| 8625 | mb-na-veka |  | 4% | name | 108 | 100 |  |  |  |  |
+| 8626 | p-gluveka | mmol/l | 98% | name+unit+values | 1581 | 0 | [4.71, 5.12, 5.39, 5.75, 6.24, 6.95, 7.79, 9.18, 12.1] |  | Plasma |  |
+| 8627 | p-gluveka |  | 2% | name | 35 | 100 |  |  | Plasma |  |
+| 8628 | p-haglund |  | 100% | name | 212 | 100 |  |  | Plasma |  |
+| 8629 | p-haptog | g/l | 87% | name+unit+values | 20134 | 0 | [0.43, 0.71, 0.93, 1.13, 1.34, 1.56, 1.81, 2.15, 2.66] |  | Plasma |  |
+| 8630 | p-haptog |  | 13% | name | 2978 | 100 |  |  | Plasma |  |
+| 8631 | p-hbcfdn |  | 100% | name | 3269 | 100 |  |  | Plasma |  |
+| 8632 | p-hbcfdna |  | 100% | name | 340 | 100 |  |  | Plasma |  |
+| 8633 | p-hyyerik | form | 8% | name+unit | 14 | 0 |  |  | Plasma |  |
+| 8634 | p-hyyerik |  | 92% | name | 156 | 100 |  |  | Plasma |  |
+| 8635 | p-hyyttek |  | 100% | name | 12967 | 100 |  |  | Plasma |  |
+| 8636 | p-k-veka | mmol/l | 96% | name+unit+values | 22023 | 0 | [3.49, 3.69, 3.83, 3.97, 4.08, 4.2, 4.32, 4.51, 4.81] |  | Plasma |  |
+| 8637 | p-k-veka |  | 4% | name+values | 965 | 100 | [3.5, 3.8, 3.8, 3.9, 4, 4.15, 4.25, 4.52, 4.72] |  | Plasma |  |
+| 8638 | p-laaptct | form | 1% | name+unit | 34 | 0 |  | P -Lupusantikoagulantti, aPTT, varmistus | Plasma |  |
+| 8639 | p-laaptct |  | 99% | name | 6713 | 100 |  | P -Lupusantikoagulantti, aPTT, varmistus | Plasma |  |
+| 8640 | p-laaptva |  | 100% | name | 508 | 100 |  |  | Plasma |  |
+| 8641 | p-lakveka | mmol/l | 98% | name+unit+values | 1581 | 0 | [0.89, 1.01, 1.18, 1.3, 1.48, 1.62, 1.82, 2.14, 2.81] |  | Plasma |  |
+| 8642 | p-lakveka |  | 2% | name | 36 | 100 |  |  | Plasma |  |
+| 8643 | p-larvvct | form | 0% | name+unit | 22 | 0 |  | P -Lupusantikoagulantti, dRVVT, varmistus | Plasma |  |
+| 8644 | p-larvvct |  | 100% | name | 6654 | 100 |  | P -Lupusantikoagulantti, dRVVT, varmistus | Plasma |  |
+| 8645 | p-larvvva |  | 100% | name | 486 | 100 |  |  | Plasma |  |
+| 8646 | p-luakptt | form | 0% | name+unit | 7 | 0 |  | P -Lupusantikoagulantti, PTT | Plasma |  |
+| 8647 | p-luakptt | ratio | 95% | name+unit+values | 3216 | 0 | [0.97, 1, 1.02, 1.03, 1.05, 1.06, 1.09, 1.12, 1.18] | P -Lupusantikoagulantti, PTT | Plasma |  |
+| 8648 | p-luakptt |  | 5% | name | 166 | 100 |  | P -Lupusantikoagulantti, PTT | Plasma |  |
+| 8649 | p-luakrvv | form | 0% | name+unit | 7 | 0 |  | P -Lupusantikoagulantti, dRVVT | Plasma |  |
+| 8650 | p-luakrvv | ratio | 95% | name+unit+values | 3188 | 0 | [0.89, 0.92, 0.95, 0.97, 0.98, 1.01, 1.03, 1.07, 1.16] | P -Lupusantikoagulantti, dRVVT | Plasma |  |
+| 8651 | p-luakrvv |  | 5% | name | 166 | 100 |  | P -Lupusantikoagulantti, dRVVT | Plasma |  |
+| 8652 | p-na-veka | mmol/l | 96% | name+unit+values | 22025 | 0 | [132.75, 135.51, 137, 138.23, 139.24, 140.1, 141.08, 142, 143.75] |  | Plasma |  |
+| 8653 | p-na-veka |  | 4% | name+values | 961 | 100 | [132.3, 136, 137.49, 138.3, 140, 141, 141.62, 142, 143.8] |  | Plasma |  |
+| 8654 | p-ohbut | mmol/l | 50% | name+unit | 56 | 0 |  | P -Hydroksivoihappo | Plasma |  |
+| 8655 | p-ohbut |  | 50% | name | 56 | 100 |  | P -Hydroksivoihappo | Plasma |  |
+| 8656 | p-ohbutyr | mmol/l | 75% | name+unit+values | 1065 | 0 | [0.13, 0.2, 0.34, 0.52, 0.77, 1.15, 1.8, 2.55, 3.82] | P -Beeta-hydroksibutyraatti | Plasma |  |
+| 8657 | p-ohbutyr |  | 25% | name | 352 | 100 |  | P -Beeta-hydroksibutyraatti | Plasma |  |
+| 8658 | p-troptkon | ng/l | 5% | name+unit | 14 | 0 |  |  | Plasma |  |
+| 8659 | p-troptkon |  | 95% | name | 282 | 100 |  |  | Plasma |  |
+| 8660 | p-uraatti | umol/l | 100% | name+unit+values | 6902 | 0.04 | [233.93, 271.59, 300.95, 327.89, 355.46, 383.67, 416.29, 458.67, 519.33] |  | Plasma |  |
+| 8661 | p-uraatti |  | 0% | name | 32 | 100 |  |  | Plasma |  |
+| 8662 | p-viskos | mpas | 92% | name+unit+values | 370 | 0 | [1.28, 1.39, 1.46, 1.54, 1.7, 1.84, 2.12, 2.46, 3.05] | P -Viskositeetti | Plasma |  |
+| 8663 | p-viskos |  | 8% | name | 32 | 100 |  | P -Viskositeetti | Plasma |  |
+| 8664 | p-vuotope |  | 100% | name | 147 | 100 |  |  | Plasma |  |
+| 8665 | p-vuotot |  | 100% | name | 2075 | 100 |  | P -Vuototaipumuksen selvittely | Plasma |  |
+| 8666 | pf-chylus |  | 100% | name | 157 | 100 |  |  | Pleural fluid |  |
+| 8667 | pf-laktteh | mmol/l | 84% | name+unit+values | 350 | 0 | [1.1, 1.31, 1.51, 1.78, 2.06, 2.43, 2.98, 3.98, 5.91] |  | Pleural fluid |  |
+| 8668 | pf-laktteh |  | 16% | name | 69 | 100 |  |  | Pleural fluid |  |
+| 8669 | pf-phglula |  | 100% | name | 168 | 100 |  |  | Pleural fluid |  |
+| 8670 | ph(akt) | ph | 98% | name+unit+values | 9848 | 0 | [7.34, 7.36, 7.37, 7.38, 7.39, 7.4, 7.41, 7.42, 7.44] |  |  |  |
+| 8671 | ph(akt) |  | 2% | name | 238 | 100 |  |  |  |  |
+| 8672 | phakt. | ph | 100% | name+unit+values | 140 | 0 | [7.35, 7.37, 7.38, 7.39, 7.4, 7.4, 7.42, 7.43, 7.44] |  |  |  |
+| 8673 | projekti1 |  | 100% | name | 160 | 100 |  |  |  |  |
+| 8674 | pt-dehglur |  | 100% | name | 168 | 100 |  |  | Patient |  |
+| 8675 | pt-hyytek |  | 100% | name | 106 | 100 |  |  | Patient |  |
+| 8676 | s-17hprog | nmol/l | 91% | name+unit+values | 645 | 0 | [0.62, 0.98, 1.4, 1.88, 2.53, 3.71, 5.41, 12.39, 77.92] | S -Hydroksiprogesteroni (17-) | Serum |  |
+| 8677 | s-17hprog |  | 9% | name | 61 | 100 |  | S -Hydroksiprogesteroni (17-) | Serum |  |
+| 8678 | s-haglund |  | 100% | name | 216 | 100 |  |  | Serum |  |
+| 8679 | s-haptog | g/l | 88% | name+unit+values | 11553 | 0 | [0.48, 0.72, 0.93, 1.13, 1.33, 1.55, 1.82, 2.16, 2.71] | S -Haptoglobiini | Serum |  |
+| 8680 | s-haptog |  | 12% | name | 1634 | 100 |  | S -Haptoglobiini | Serum |  |
+| 8681 | s-havtot |  | 100% | name | 3549 | 100 |  |  | Serum |  |
+| 8682 | s-hbvtut |  | 100% | name | 509 | 100 |  |  | Serum |  |
+| 8683 | s-hivab+tod |  | 100% | name | 172 | 100 |  |  | Serum |  |
+| 8684 | s-ph(akt) | ph | 99% | name+unit+values | 114319 | 0 | [7.34, 7.36, 7.38, 7.39, 7.4, 7.41, 7.42, 7.43, 7.45] |  | Serum |  |
+| 8685 | s-ph(akt) |  | 1% | name | 1327 | 100 |  |  | Serum |  |
+| 8686 | s-tbetot | titre | 13% | name+unit+values | 90 | 2.22 | [20, 20, 40, 40, 80, 80, 160, 320, 960] |  | Serum |  |
+| 8687 | s-tbetot |  | 87% | name | 604 | 100 |  |  | Serum |  |
+| 8688 | s-uraatti | umol/l | 94% | name+unit+values | 621 | 0 | [232.57, 257.68, 279.43, 297.99, 317.54, 343.17, 366.8, 401.68, 449.76] |  | Serum |  |
+| 8689 | s-uraatti |  | 6% | name | 38 | 100 |  |  | Serum |  |
+| 8690 | s-valproaatti | umol/l | 96% | name+unit+values | 431 | 0 | [242.9, 309.2, 356.11, 396.55, 425.09, 467.35, 503.25, 551.17, 625.19] |  | Serum |  |
+| 8691 | s-valproaatti |  | 4% | name | 16 | 100 |  |  | Serum |  |
+| 8692 | ts-abortti |  | 100% | name | 315 | 100 |  | Ts-Aborttikudoksen dissektiotutkimus | Tissue |  |
+| 8693 | u-omactgc |  | 100% | name | 480 | 100 |  |  | Urine |  |
+| 8694 | uraatti | umol/l | 99% | name+unit+values | 3560 | 0 | [230.36, 267.65, 298.52, 325.92, 354.53, 382.52, 413.88, 454.99, 511.79] |  |  |  |
+| 8695 | uraatti |  | 1% | name | 19 | 100 |  |  |  |  |
 

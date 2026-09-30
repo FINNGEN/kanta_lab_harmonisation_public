@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,28 +139,27 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 7 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 364 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 95% | name+unit+values | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.81, 1.01, 1.43] |  |  |  |
+| 364 | kudostransglutaminaasi,iga-vasta-aineet | u/ml | 95% | name+unit+values | 620 | 0 | [0.2, 0.3, 0.4, 0.5, 0.6, 0.69, 0.8, 1.03, 1.41] |  |  |  |
 | 365 | kudostransglutaminaasi,iga-vasta-aineet |  | 5% | name | 36 | 100 |  |  |  |  |
 | 366 | kudostransglutaminaasi,iga-vasta-aineet,seerumista |  | 100% | name | 134 | 100 |  |  |  |  |
 | 367 | kudostransglutaminaasi,igavasta-aineet | u/ml | 53% | name+unit+values | 70 | 0 | [0.2, 0.3, 0.3, 0.4, 0.5, 0.6, 0.75, 1.05, 2.8] |  |  |  |
 | 368 | kudostransglutaminaasi,igavasta-aineet |  | 47% | name | 62 | 100 |  |  |  |  |
-| 369 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 25% | name+unit | 169 | 0 |  |  |  |  |
+| 369 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ | u/ml | 25% | name+unit+values | 169 | 0 | [1, 1.1, 1.2, 1.3, 1.54, 1.7, 2.09, 3, 9.07] |  |  |  |
 | 370 | kudostransglutaminaasi,igavasta-aineet,seerumista␤ |  | 75% | name | 508 | 100 |  |  |  |  |
 | 371 | kudostransglutaminaasi,igg-vasta-aineet |  | 100% | name | 131 | 100 |  |  |  |  |
 | 372 | s-kudostransglutaminaasi,iga-vasta-aineet | u/ml | 11% | name+unit | 36 | 0 |  |  | Serum |  |
 | 373 | s-kudostransglutaminaasi,iga-vasta-aineet |  | 89% | name | 300 | 100 |  |  | Serum |  |
 | 374 | s-kudostransglutaminaasi,iga-vasta-aineetosatutk. |  | 100% | name | 426 | 100 |  |  | Serum |  |
 | 375 | s-kudostransglutaminaasi,igavasta-aineet | eliau/ml | 0% | name+unit | 10 | 0 |  |  | Serum |  |
-| 376 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 39% | name+unit+values | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.77, 0.99, 1.51] |  | Serum |  |
-| 377 | s-kudostransglutaminaasi,igavasta-aineet |  | 61% | name | 3189 | 99.94 |  |  | Serum |  |
-| 378 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) | u/ml | 3% | name+unit | 5 | 0 |  |  | Serum |  |
-| 379 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 97% | name | 149 | 100 |  |  | Serum |  |
-| 380 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 100% | name | 118 | 100 |  |  | Serum |  |
-| 381 | s-kudostransglutaminaasi,iggva(keliakia) |  | 100% | name | 133 | 100 |  |  | Serum |  |
-| 382 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 0% | name+unit | 6 | 0 |  |  | Serum |  |
-| 383 | s-kudostransglutaminaasi,iggvasta-aineet |  | 100% | name | 2026 | 100 |  |  | Serum |  |
-| 384 | s-transglutaminaasivasta-aineet | u/ml | 3% | name+unit | 12 | 0 |  |  | Serum |  |
-| 385 | s-transglutaminaasivasta-aineet |  | 97% | name | 454 | 100 |  |  | Serum |  |
+| 376 | s-kudostransglutaminaasi,igavasta-aineet | u/ml | 39% | name+unit+values | 2058 | 0 | [0.2, 0.3, 0.4, 0.45, 0.54, 0.64, 0.76, 0.99, 1.52] |  | Serum |  |
+| 377 | s-kudostransglutaminaasi,igavasta-aineet |  | 61% | name | 3189 | 100 |  |  | Serum |  |
+| 378 | s-kudostransglutaminaasi,igavasta-aineet(keliakia) |  | 100% | name | 149 | 100 |  |  | Serum |  |
+| 379 | s-kudostransglutaminaasi,igavasta-aineet,keliakiatutkimus |  | 100% | name | 118 | 100 |  |  | Serum |  |
+| 380 | s-kudostransglutaminaasi,iggva(keliakia) |  | 100% | name | 133 | 100 |  |  | Serum |  |
+| 381 | s-kudostransglutaminaasi,iggvasta-aineet | u/ml | 0% | name+unit | 6 | 0 |  |  | Serum |  |
+| 382 | s-kudostransglutaminaasi,iggvasta-aineet |  | 100% | name | 2026 | 100 |  |  | Serum |  |
+| 383 | s-transglutaminaasivasta-aineet | u/ml | 3% | name+unit | 12 | 0 |  |  | Serum |  |
+| 384 | s-transglutaminaasivasta-aineet |  | 97% | name | 454 | 100 |  |  | Serum |  |
 

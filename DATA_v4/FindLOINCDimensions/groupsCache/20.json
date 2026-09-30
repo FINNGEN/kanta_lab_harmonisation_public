@@ -1,189 +1,189 @@
 {
   "rows": [
     {
-      "row_id": 1265,
+      "row_id": 1246,
       "loinc_name_guess": "Escherichia coli.enterohemorrhagic [Presence] in Stool"
     },
     {
-      "row_id": 1266,
+      "row_id": 1247,
       "loinc_name_guess": "12 lead EKG panel"
     },
     {
-      "row_id": 1267,
+      "row_id": 1248,
       "loinc_name_guess": "12 lead EKG panel"
     },
     {
-      "row_id": 1268,
+      "row_id": 1249,
       "loinc_name_guess": "12 lead EKG panel"
     },
     {
-      "row_id": 1269,
+      "row_id": 1250,
       "loinc_name_guess": "12 lead EKG panel"
     },
     {
-      "row_id": 1270,
+      "row_id": 1251,
       "loinc_name_guess": "12 lead EKG panel"
     },
     {
-      "row_id": 1271,
-      "loinc_name_guess": "Escherichia coli.enteroaggregative [Presence] in Stool by NAA with probe detection"
+      "row_id": 1252,
+      "loinc_name_guess": "Escherichia coli.enteroaggregative DNA [Presence] in Stool by NAA"
     },
     {
-      "row_id": 1272,
-      "loinc_name_guess": "Escherichia coli.enterohemorrhagic [Presence] in Stool by NAA with probe detection"
+      "row_id": 1253,
+      "loinc_name_guess": "Escherichia coli.enterohemorrhagic DNA [Presence] in Stool by NAA"
     },
     {
-      "row_id": 1273,
-      "loinc_name_guess": "Escherichia coli.enteropathogenic [Presence] in Stool by NAA with probe detection"
+      "row_id": 1254,
+      "loinc_name_guess": "Escherichia coli.enteropathogenic DNA [Presence] in Stool by NAA"
     },
     {
-      "row_id": 1274,
-      "loinc_name_guess": "Escherichia coli.enterotoxigenic [Presence] in Stool by NAA with probe detection"
+      "row_id": 1255,
+      "loinc_name_guess": "Escherichia coli.enterotoxigenic DNA [Presence] in Stool by NAA"
     },
     {
-      "row_id": 1275,
+      "row_id": 1256,
       "loinc_name_guess": "Escherichia coli.enterotoxigenic [Presence] in Stool"
     },
     {
+      "row_id": 1257,
+      "loinc_name_guess": "Campylobacter sp DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1258,
+      "loinc_name_guess": "Escherichia coli.enterohemorrhagic DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1259,
+      "loinc_name_guess": "Escherichia coli.enterotoxigenic DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1260,
+      "loinc_name_guess": "Plesiomonas shigelloides DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1261,
+      "loinc_name_guess": "Salmonella sp DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1262,
+      "loinc_name_guess": "Shigella sp+Escherichia coli.enteroinvasive DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1263,
+      "loinc_name_guess": "Yersinia enterocolitica DNA [Presence] in Stool by NAA"
+    },
+    {
+      "row_id": 1264,
+      "loinc_name_guess": "Cryptococcus neoformans DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1265,
+      "loinc_name_guess": "Cytomegalovirus DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1266,
+      "loinc_name_guess": "Escherichia coli K1 antigen DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1267,
+      "loinc_name_guess": "Herpes simplex virus 1 DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1268,
+      "loinc_name_guess": "Herpes simplex virus 2 DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1269,
+      "loinc_name_guess": "Listeria monocytogenes DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1270,
+      "loinc_name_guess": "Neisseria meningitidis DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1271,
+      "loinc_name_guess": "Streptococcus agalactiae DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1272,
+      "loinc_name_guess": "Streptococcus pneumoniae DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1273,
+      "loinc_name_guess": "Varicella zoster virus DNA [Presence] in Cerebral spinal fluid by NAA"
+    },
+    {
+      "row_id": 1274,
+      "loinc_name_guess": "12 lead EKG panel"
+    },
+    {
+      "row_id": 1275,
+      "loinc_name_guess": "12 lead EKG panel"
+    },
+    {
       "row_id": 1276,
-      "loinc_name_guess": "Campylobacter sp [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1277,
-      "loinc_name_guess": "Escherichia coli.enterohemorrhagic [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1278,
-      "loinc_name_guess": "Escherichia coli.enterotoxigenic [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1279,
-      "loinc_name_guess": "Plesiomonas shigelloides [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1280,
-      "loinc_name_guess": "Salmonella sp [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1281,
-      "loinc_name_guess": "Shigella sp+Escherichia coli.enteroinvasive [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1282,
-      "loinc_name_guess": "Yersinia enterocolitica [Presence] in Stool by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1283,
-      "loinc_name_guess": "Cryptococcus neoformans [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG panel"
     },
     {
       "row_id": 1284,
-      "loinc_name_guess": "Cytomegalovirus [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "Atrial fibrillation [Presence] by EKG.monitor"
     },
     {
       "row_id": 1285,
-      "loinc_name_guess": "Escherichia coli.K1 [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "Atrial fibrillation [Presence] by EKG.monitor"
     },
     {
       "row_id": 1286,
-      "loinc_name_guess": "Herpes simplex virus 1 [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG with interpretation panel"
     },
     {
       "row_id": 1287,
-      "loinc_name_guess": "Herpes simplex virus 2 [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG with interpretation panel"
     },
     {
       "row_id": 1288,
-      "loinc_name_guess": "Listeria monocytogenes [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG with interpretation panel"
     },
     {
       "row_id": 1289,
-      "loinc_name_guess": "Neisseria meningitidis [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG with interpretation panel"
     },
     {
       "row_id": 1290,
-      "loinc_name_guess": "Streptococcus agalactiae [Presence] in Cerebral spinal fluid by NAA with probe detection"
+      "loinc_name_guess": "12 lead EKG with interpretation panel"
     },
     {
       "row_id": 1291,
-      "loinc_name_guess": "Streptococcus pneumoniae [Presence] in Cerebral spinal fluid by NAA with probe detection"
-    },
-    {
-      "row_id": 1292,
-      "loinc_name_guess": "Varicella zoster virus [Presence] in Cerebral spinal fluid by NAA with probe detection"
-    },
-    {
-      "row_id": 1293,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1294,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1295,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1296,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1297,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1298,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1299,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1300,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1301,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1302,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1303,
-      "loinc_name_guess": "Atrial fibrillation [Interpretation] by EKG.monitor"
-    },
-    {
-      "row_id": 1304,
-      "loinc_name_guess": "Atrial fibrillation [Interpretation] by EKG.monitor"
-    },
-    {
-      "row_id": 1305,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1306,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1307,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1308,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1309,
-      "loinc_name_guess": "12 lead EKG panel"
-    },
-    {
-      "row_id": 1310,
       "loinc_name_guess": "Shigella sp+Escherichia coli.enteroinvasive [Presence] in Stool"
     }
   ],
-  "reflection": "This group was dominated by two types of tests: electrocardiograms (ECG) and nucleic acid amplification tests (NAATs) for various pathogens. The Finnish names were quite descriptive, making interpretation straightforward.\n\n**ECGs:** Most codes referred to a standard \"12 lead resting ECG\" (`12 kytkentää levossa`), which maps well to the LOINC `12 lead EKG panel`. Numerous variations included administrative details like the recording location (`osastolla`, `terveyskeskus`), whether it was patient-recorded (`asiakkaan ottama`), or included a computer analysis (`sisältäen tietokoneanalyysin`). I consistently mapped these to the same core `12 lead EKG panel` because these details generally don't lead to a different top-level LOINC panel concept. A notable exception was the \"atrial fibrillation screening from monitor ECG\" (`eteisvärinänseulonta, valvontamonitori-ekg`), which is a different clinical procedure. I guessed `Atrial fibrillation [Interpretation] by EKG.monitor` to capture this specific screening intent, which is a departure from a diagnostic 12-lead study.\n\n**NAATs:** Many codes used the abbreviations `nukl.haponos` or `nho`, clearly indicating a nucleic acid test. The system was specified by prefixes (`F-` for Feces/Stool, `Li-` for CSF), and the target organism was named. This allowed for precise guesses like `Organism [Presence] in System by NAA with probe detection`. For pathogens where the specimen was not specified (e.g., `ehec`), I defaulted to `Stool` as the most common system for enteric pathogens."
+  "reflection": "This group was dominated by two categories: microbiology nucleic acid tests and ECGs. For the microbiology tests, the abbreviation `nukl. hapon os.` or `-nho` was a clear indicator for a nucleic acid test, which I mapped to `DNA [Presence] ... by NAA`. The specimen prefixes `F-` (Feces) and `Li-` (CSF) were very helpful. For codes lacking a specimen prefix, I defaulted to Stool, as it's the most common sample for enteric pathogens. The identical `n` counts for many of the `F-` prefixed tests (e.g., 607) strongly suggest they are components of a single multiplex panel, but per instructions, I've mapped them as individual tests.\n\nThe ECG codes were repetitive, with many variations containing administrative metadata (location, performer) in parentheses or appended. I mapped all standard `ekg, 12 kytkentää levossa` (12-lead ECG at rest) variants to `12 lead EKG panel`. A subset explicitly mentioned computer analysis (`sisältäen tietokoneanalyysin`), for which `12 lead EKG with interpretation panel` is a better fit. A specific screening test for atrial fibrillation using a monitor (`eteisvärinän seulonta, valvontamonitori-ekg`) was mapped to a more specific `Atrial fibrillation` concept."
 }

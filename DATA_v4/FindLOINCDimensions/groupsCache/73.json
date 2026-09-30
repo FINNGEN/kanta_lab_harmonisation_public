@@ -1,125 +1,333 @@
 {
   "rows": [
     {
-      "row_id": 5775,
-      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5776,
+      "row_id": 5506,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5777,
-      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5778,
-      "loinc_name_guess": "Influenza virus A+B RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5779,
-      "loinc_name_guess": "Influenza virus A+B and Respiratory syncytial virus RNA panel - Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5780,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5781,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5782,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5783,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5784,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5785,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5786,
-      "loinc_name_guess": "Influenza virus A subtype identified in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5787,
-      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5788,
-      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5789,
-      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5790,
-      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5791,
-      "loinc_name_guess": "Parainfluenza virus RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5792,
-      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 5793,
+      "row_id": 5507,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 5794,
-      "loinc_name_guess": "Haemophilus influenzae DNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5508,
+      "loinc_name_guess": "NUDT15 gene [Identifier] in Blood or Tissue by Molecular genetics method"
     },
     {
-      "row_id": 5795,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5509,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 5796,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5510,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 5797,
-      "loinc_name_guess": "Influenza virus A RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5511,
+      "loinc_name_guess": ""
     },
     {
-      "row_id": 5798,
-      "loinc_name_guess": "Influenza virus B RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5512,
+      "loinc_name_guess": "Spermatozoa [#/volume] in Semen"
     },
     {
-      "row_id": 5799,
-      "loinc_name_guess": "Influenza virus RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5513,
+      "loinc_name_guess": "Spermatozoa [#/volume] in Semen"
     },
     {
-      "row_id": 5800,
-      "loinc_name_guess": "Parainfluenza virus 1 RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5514,
+      "loinc_name_guess": "AUDIT total score [Score] in ^Patient"
     },
     {
-      "row_id": 5801,
-      "loinc_name_guess": "Parainfluenza virus 2 RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5515,
+      "loinc_name_guess": "AUDIT total score [Score] in ^Patient"
     },
     {
-      "row_id": 5802,
-      "loinc_name_guess": "Parainfluenza virus 3 RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5516,
+      "loinc_name_guess": "AUDIT-C total score [Score] in ^Patient"
     },
     {
-      "row_id": 5803,
-      "loinc_name_guess": "Parainfluenza virus 4 RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5517,
+      "loinc_name_guess": "DNA extracted [Mass] in Specimen"
     },
     {
-      "row_id": 5804,
-      "loinc_name_guess": "Rhinovirus RNA [Presence] in Respiratory specimen by NAA with probe detection"
+      "row_id": 5518,
+      "loinc_name_guess": "Parasite cysts [Presence] in Stool by Microscopy"
+    },
+    {
+      "row_id": 5519,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5520,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5521,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5522,
+      "loinc_name_guess": "Cystatin C [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5523,
+      "loinc_name_guess": "Cystatin C [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5524,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5525,
+      "loinc_name_guess": "Serotonin [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5526,
+      "loinc_name_guess": "Serotonin [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5527,
+      "loinc_name_guess": "Creatine kinase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5528,
+      "loinc_name_guess": "Connective tissue disease autoantibodies panel - Serum"
+    },
+    {
+      "row_id": 5529,
+      "loinc_name_guess": "1,25-Dihydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5530,
+      "loinc_name_guess": "1,25-Dihydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5531,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5532,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5533,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5534,
+      "loinc_name_guess": "25-Hydroxyvitamin D [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5535,
+      "loinc_name_guess": "25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5536,
+      "loinc_name_guess": "25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5537,
+      "loinc_name_guess": "25-Hydroxyvitamin D3 [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5538,
+      "loinc_name_guess": "25-Hydroxyvitamin D3 [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5539,
+      "loinc_name_guess": "Quetiapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5540,
+      "loinc_name_guess": "Quetiapine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5541,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5542,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5543,
+      "loinc_name_guess": "Creatine [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5544,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5545,
+      "loinc_name_guess": "Cystatin C [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5546,
+      "loinc_name_guess": "Cystatin C [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5547,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5548,
+      "loinc_name_guess": "Lactate dehydrogenase.1/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5549,
+      "loinc_name_guess": "Lactate dehydrogenase.1/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5550,
+      "loinc_name_guess": "Lactate dehydrogenase.2/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5551,
+      "loinc_name_guess": "Lactate dehydrogenase.2/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5552,
+      "loinc_name_guess": "Lactate dehydrogenase.3/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5553,
+      "loinc_name_guess": "Lactate dehydrogenase.3/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5554,
+      "loinc_name_guess": "Lactate dehydrogenase.4/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5555,
+      "loinc_name_guess": "Lactate dehydrogenase.4/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5556,
+      "loinc_name_guess": "Lactate dehydrogenase.5/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5557,
+      "loinc_name_guess": "Lactate dehydrogenase.5/Lactate dehydrogenase.total in Serum or Plasma"
+    },
+    {
+      "row_id": 5558,
+      "loinc_name_guess": "Lactate dehydrogenase isoenzymes panel - Serum"
+    },
+    {
+      "row_id": 5559,
+      "loinc_name_guess": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5560,
+      "loinc_name_guess": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 5561,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5562,
+      "loinc_name_guess": "Salmonella typhimurium O Ag [4,5,12] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5563,
+      "loinc_name_guess": "Salmonella typhimurium O Ag [4,5,12] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5564,
+      "loinc_name_guess": "PM/Scl Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5565,
+      "loinc_name_guess": "PM/Scl Ab [Units/volume] in Serum"
+    },
+    {
+      "row_id": 5566,
+      "loinc_name_guess": "Myositis specific autoantibodies panel - Serum"
+    },
+    {
+      "row_id": 5567,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5568,
+      "loinc_name_guess": "Salmonella paratyphi A H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5569,
+      "loinc_name_guess": "Salmonella paratyphi A H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5570,
+      "loinc_name_guess": "Salmonella paratyphi B H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5571,
+      "loinc_name_guess": "Salmonella paratyphi B H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5572,
+      "loinc_name_guess": "Salmonella typhi H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5573,
+      "loinc_name_guess": "Salmonella typhi H Ag Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5574,
+      "loinc_name_guess": "Salmonella enteritidis H Ag [g,m] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5575,
+      "loinc_name_guess": "Salmonella enteritidis H Ag [g,m] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5576,
+      "loinc_name_guess": "Salmonella typhimurium H Ag [i] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5577,
+      "loinc_name_guess": "Salmonella typhimurium H Ag [i] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5578,
+      "loinc_name_guess": "Salmonella paratyphi C O Ag [6,7] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5579,
+      "loinc_name_guess": "Salmonella paratyphi C O Ag [6,7] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5580,
+      "loinc_name_guess": "Salmonella typhi O Ag [9,12] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5581,
+      "loinc_name_guess": "Salmonella typhi O Ag [9,12] Ab [Titer] in Serum"
+    },
+    {
+      "row_id": 5582,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5583,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5584,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5585,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5586,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 5587,
+      "loinc_name_guess": ""
     }
   ],
-  "reflection": "This group was dominated by nucleic acid tests for respiratory pathogens. The local suffix `-nho` was a very reliable indicator for 'nukleiinihappo (kval)', which translates to a qualitative nucleic acid test. This allowed for consistent mapping to a `[Presence]` property and a `by NAA with probe detection` method.\n\nThe main challenges were:\n1.  **Ambiguous abbreviations**: Codes like `-hinnho` and `-tintnho` were too garbled to interpret reliably and were left empty.\n2.  **Context vs. direct reading**: The code `hinfnho` strongly suggests *Haemophilus influenzae*, a bacterium, even though it's surrounded by viral tests. I chose to map it as a bacterial DNA test, assuming it's a valid part of a differential diagnosis panel for respiratory symptoms.\n3.  **Data artifacts**: Many codes had a leading dash (`-`) or a stuttered suffix (`-hoho`), which were clearly artifacts and ignored in the mapping.\n4.  **Panel vs. single test**: The code `-inabrsnho` was interpreted as a panel for Influenza A, B, and RSV. The code `-inabnho` for Influenza A and B was interpreted as a single combined test rather than a panel, as LOINC has concepts for this pattern.\n\nSince no specimen information was provided in the codes, `Respiratory specimen` was used as a default, which is a safe and common choice for these pathogens."
+  "reflection": "This group contained a mixture of clearly defined chemical analytes, serological tests, panel tests, and ambiguous or administrative codes.\n\n* **Strengths in the data**: The `LongName` column was invaluable for confirming analytes like the various forms of Vitamin D, Creatine vs. Creatinine, and Cystatin C. The presence of a whole family of related tests (e.g., Vitamin D total, D2, D3, 1,25-OH) increased confidence in the interpretation of each individual code.\n\n* **Challenges**: \n    1.  **Ambiguous abbreviations**: Codes like `s-kipa` or `s-ctdscr` are difficult. For `s-ctdscr`, I made an educated guess (\"Connective Tissue Disease Screen\") based on the letters, but `s-kipa` was too vague to guess, despite its high frequency. \n    2.  **Administrative codes**: Many codes (`-kskäynt`, `-selvtyö`, `sjukhus`, `s-käsmak`) clearly referred to administrative concepts (visits, reports, fees) rather than clinical measurements and were unmappable.\n    3.  **Fragmented codes**: Several codes starting with a hyphen (`-kskäynt`, `-s.yht.`) appear to be fragments of longer codes, making them impossible to interpret on their own.\n    4.  **Serology knowledge**: Deciphering the Widal test codes (`s-w-h:a`, `s-w-o9.12`, etc.) required specific knowledge of Salmonella serotyping. The pattern was consistent, but not immediately obvious without that domain expertise.\n\n* **Suggestions**: Providing context for highly frequent but ambiguous codes like `s-kipa` would be very helpful. For instance, knowing which hospital department orders it most often could provide a strong clue (e.g., endocrinology -> thyroid). Similarly, if fragmented codes could be linked back to a more complete original string, their mappability would increase dramatically."
 }

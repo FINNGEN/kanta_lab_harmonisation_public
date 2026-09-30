@@ -1,373 +1,357 @@
 {
   "rows": [
     {
+      "row_id": 8512,
+      "loinc_name_guess": "ADAMTS13 [Activity] in Plasma"
+    },
+    {
+      "row_id": 8513,
+      "loinc_name_guess": "ADAMTS13 [Activity] in Plasma"
+    },
+    {
+      "row_id": 8514,
+      "loinc_name_guess": "Apixaban [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8515,
+      "loinc_name_guess": "Apixaban [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8516,
+      "loinc_name_guess": "Rivaroxaban [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8517,
+      "loinc_name_guess": "Rivaroxaban [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 8518,
+      "loinc_name_guess": "Activated protein C resistance [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8519,
+      "loinc_name_guess": "Activated protein C resistance [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8520,
+      "loinc_name_guess": "Activated protein C resistance [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8521,
+      "loinc_name_guess": "Activated protein C resistance [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8522,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 8523,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8524,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8525,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8526,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8527,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8528,
+      "loinc_name_guess": "Activated partial thromboplastin time.mixing study [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8529,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8530,
+      "loinc_name_guess": "Activated partial thromboplastin time [Time] in Plasma"
+    },
+    {
+      "row_id": 8531,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8532,
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8533,
+      "loinc_name_guess": "Citrate [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8534,
+      "loinc_name_guess": "Chloride [Moles/volume] in Plasma"
+    },
+    {
+      "row_id": 8535,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8536,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8537,
+      "loinc_name_guess": "Coagulation factor II [Activity] in Plasma"
+    },
+    {
+      "row_id": 8538,
+      "loinc_name_guess": "Coagulation factor II [Activity] in Plasma"
+    },
+    {
+      "row_id": 8539,
+      "loinc_name_guess": "Coagulation factor IX [Activity] in Plasma"
+    },
+    {
+      "row_id": 8540,
+      "loinc_name_guess": "Coagulation factor IX [Activity] in Plasma"
+    },
+    {
+      "row_id": 8541,
+      "loinc_name_guess": "Activated partial thromboplastin time.mixing study [Time] in Plasma"
+    },
+    {
+      "row_id": 8542,
+      "loinc_name_guess": "Dilute Russell viper venom time mix [Time] in Plasma"
+    },
+    {
+      "row_id": 8543,
+      "loinc_name_guess": "Dilute Russell viper venom time mix index [Ratio] in Plasma"
+    },
+    {
+      "row_id": 8544,
+      "loinc_name_guess": "Coagulation factor VII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8545,
+      "loinc_name_guess": "Coagulation factor VII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8546,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8547,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8548,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8549,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8550,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
+      "row_id": 8551,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma by Chromogenic"
+    },
+    {
+      "row_id": 8552,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma by Chromogenic"
+    },
+    {
+      "row_id": 8553,
+      "loinc_name_guess": "Coagulation factor VIII.recombinant [Activity] in Plasma"
+    },
+    {
+      "row_id": 8554,
+      "loinc_name_guess": "Coagulation factor VIII.recombinant [Activity] in Plasma"
+    },
+    {
+      "row_id": 8555,
+      "loinc_name_guess": "Coagulation factor VIII.recombinant [Activity] in Plasma"
+    },
+    {
+      "row_id": 8556,
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
+    },
+    {
       "row_id": 8557,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor VIII [Activity] in Plasma"
     },
     {
       "row_id": 8558,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XI [Activity] in Plasma"
     },
     {
       "row_id": 8559,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XI [Activity] in Plasma"
     },
     {
       "row_id": 8560,
-      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XII [Activity] in Plasma"
     },
     {
       "row_id": 8561,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XII [Activity] in Plasma"
     },
     {
       "row_id": 8562,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+      "loinc_name_guess": "Coagulation factor XIII [Activity] in Plasma"
     },
     {
       "row_id": 8563,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XIII [Activity] in Plasma"
     },
     {
       "row_id": 8564,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XIII [Activity] in Plasma"
     },
     {
       "row_id": 8565,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Coagulation factor XIII [Activity] in Plasma"
     },
     {
       "row_id": 8566,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8567,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8568,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8569,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Potassium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8570,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Dilute Russell viper venom time mix [Time] in Plasma"
     },
     {
       "row_id": 8571,
-      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Dilute Russell viper venom time.confirm/screen [Ratio] in Plasma"
     },
     {
       "row_id": 8572,
-      "loinc_name_guess": "Granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Dilute Russell viper venom time.confirm mix [Time] in Plasma"
     },
     {
       "row_id": 8573,
-      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
     },
     {
       "row_id": 8574,
-      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "Lactate [Moles/volume] in Plasma"
     },
     {
       "row_id": 8575,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "Luteinizing hormone/Follicle stimulating hormone [Molar ratio] in Plasma"
     },
     {
       "row_id": 8576,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "Mitotane [Mass/volume] in Plasma"
     },
     {
       "row_id": 8577,
-      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
+      "loinc_name_guess": "Mitotane [Mass/volume] in Plasma"
     },
     {
       "row_id": 8578,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Sodium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8579,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
+      "loinc_name_guess": "Sodium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8580,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
+      "loinc_name_guess": "Sodium [Moles/volume] in Plasma"
     },
     {
       "row_id": 8581,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Pepsinogen I/Pepsinogen II [Mass Ratio] in Plasma"
     },
     {
       "row_id": 8582,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 8583,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 8584,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Tau protein.phosphorylated 217 [Mass/volume] in Plasma"
     },
     {
       "row_id": 8585,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "Tau protein.phosphorylated 217 [Mass/volume] in Plasma"
     },
     {
       "row_id": 8586,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor Ag [Units/volume] in Plasma"
     },
     {
       "row_id": 8587,
-      "loinc_name_guess": "CBC with platelet and reticulocyte panel - Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor Ag [Units/volume] in Plasma"
     },
     {
       "row_id": 8588,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor.GPIb binding [Activity] in Plasma"
     },
     {
       "row_id": 8589,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
+      "loinc_name_guess": "von Willebrand factor.GPIb binding [Activity] in Plasma"
     },
     {
       "row_id": 8590,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
+      "loinc_name_guess": "von Willebrand factor.GPIb binding [Activity] in Plasma"
     },
     {
       "row_id": 8591,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
+      "loinc_name_guess": "von Willebrand factor.GPIb binding [Activity] in Plasma"
     },
     {
       "row_id": 8592,
-      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor.collagen binding [Activity] in Plasma"
     },
     {
       "row_id": 8593,
-      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor.collagen binding [Activity] in Plasma"
     },
     {
       "row_id": 8594,
-      "loinc_name_guess": "Basophils/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor [Activity] in Plasma"
     },
     {
       "row_id": 8595,
-      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor [Activity] in Plasma"
     },
     {
       "row_id": 8596,
-      "loinc_name_guess": "Eosinophils [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor.ristocetin cofactor [Activity] in Plasma"
     },
     {
       "row_id": 8597,
-      "loinc_name_guess": "Eosinophils/Leukocytes [# Ratio] in Blood by Automated count"
+      "loinc_name_guess": "von Willebrand factor.ristocetin cofactor [Activity] in Plasma"
     },
     {
       "row_id": 8598,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase 1/Placental growth factor [Mass Ratio] in Serum"
     },
     {
       "row_id": 8599,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8600,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
-    },
-    {
-      "row_id": 8601,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
-    },
-    {
-      "row_id": 8602,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
-    },
-    {
-      "row_id": 8603,
-      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood by Automated count"
-    },
-    {
-      "row_id": 8604,
-      "loinc_name_guess": "Immature granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8605,
-      "loinc_name_guess": "Immature granulocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8606,
-      "loinc_name_guess": "Immature granulocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8607,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8608,
-      "loinc_name_guess": "Leukocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8609,
-      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8610,
-      "loinc_name_guess": "Lymphocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8611,
-      "loinc_name_guess": "Lymphocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8612,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
-    },
-    {
-      "row_id": 8613,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
-    },
-    {
-      "row_id": 8614,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8615,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin concentration [Mass/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8616,
-      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8617,
-      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8618,
-      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8619,
-      "loinc_name_guess": "Monocytes [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8620,
-      "loinc_name_guess": "Monocytes/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8621,
-      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8622,
-      "loinc_name_guess": "Neutrophils [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8623,
-      "loinc_name_guess": "Neutrophils/Leukocytes [# Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8624,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8625,
-      "loinc_name_guess": "Erythrocyte distribution width [Ratio] in Blood by Automated count"
-    },
-    {
-      "row_id": 8626,
-      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8627,
-      "loinc_name_guess": "Platelets [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8628,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
-    },
-    {
-      "row_id": 8629,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
-    },
-    {
-      "row_id": 8630,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8631,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8632,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
-    },
-    {
-      "row_id": 8633,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8634,
-      "loinc_name_guess": "CBC with platelet and reticulocyte panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8635,
-      "loinc_name_guess": "CBC with automated differential and reticulocyte panel - Blood"
-    },
-    {
-      "row_id": 8636,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
-    },
-    {
-      "row_id": 8637,
-      "loinc_name_guess": "CBC with 3 part differential panel - Blood"
-    },
-    {
-      "row_id": 8638,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8639,
-      "loinc_name_guess": "CBC with platelet panel - Blood by Automated count"
-    },
-    {
-      "row_id": 8640,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
-    },
-    {
-      "row_id": 8641,
-      "loinc_name_guess": "Basophils [#/volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8642,
-      "loinc_name_guess": "Erythrocyte mean volume [Entitic volume] in Blood by Automated count"
-    },
-    {
-      "row_id": 8643,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
-    },
-    {
-      "row_id": 8644,
-      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
-    },
-    {
-      "row_id": 8645,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
-    },
-    {
-      "row_id": 8646,
-      "loinc_name_guess": "Erythrocyte mean hemoglobin [Entitic mass] in Blood by Automated count"
-    },
-    {
-      "row_id": 8647,
-      "loinc_name_guess": "CBC with automated differential panel - Blood"
-    },
-    {
-      "row_id": 8648,
-      "loinc_name_guess": "CBC with automated differential and reticulocyte panel - Blood"
+      "loinc_name_guess": "Soluble fms-like tyrosine kinase 1/Placental growth factor [Mass Ratio] in Serum"
     }
   ],
-  "reflection": "This group was challenging due to the pervasive use of panel codes (`B-PVK`, `B-TVK`) to report individual component results. The primary task was to distinguish between an order for a panel and a single result from that panel.\n\nThe `unit` and `deciles` columns were critical for this disambiguation. When a row had a specific unit (like `g/l`, `e12/l`, `fl`, `pg`) and a plausible value range, I mapped it to the corresponding component (e.g., Hemoglobin, Erythrocytes, MCV, MCH). When the unit was missing or ambiguous (`%`, `form`), or explicitly a 'package' (`paketti`), I mapped it to the panel concept (`CBC panel`, `CBC with automated differential panel`, etc.).\n\nA significant gotcha was interpreting the different flavors of CBC panels from the Finnish abbreviations:\n*   `B-PVK`: Perusverenkuva (Basic blood count). Mapped to `CBC with platelet panel` as platelets are standard.\n*   `B-PVK+T`: Explicitly includes trombosyytit (platelets), confirming the above.\n*   `B-PVK+TKD`: Includes koneellinen erittelylaskenta (automated differential). Mapped to `CBC with automated differential panel`.\n*   `B-TVK`: Täydellinen verenkuva (Complete blood count). Considered synonymous with `B-PVK+TKD`.\n*   `B-PVK+TMD`: Minidiffi. Mapped to `CBC with 3 part differential panel`.\n\nThe detailed `b-pvk+tkd,[component]` codes were straightforward, clearly indicating a specific result from the differential count. The main task was to choose the correct LOINC property (`[# Ratio]` for `%` and `[#/volume]` for `e9/l`) and component name format (`CellType/Leukocytes` vs. `CellType`).\n\nThe many garbled/concatenated codes (`b-pvkt`, `b-pvktkdr`) were handled by parsing the constituent parts and mapping to the corresponding panel."
+  "reflection": "This group was dominated by coagulation tests, mostly from plasma, which were generally well-defined by their long names. The primary challenge was interpreting local or ambiguous abbreviations. For instance, `p-apot` was too vague to identify an analyte. Similarly, `p-sit3.1` and `p-sitr3.8` were left empty as they likely refer to the collection tube's citrate concentration rather than the measured analyte, making the actual test unknowable.\n\nSuffixes like `-hoi` (likely point-of-care), `-ses`, and `-paiv` (emergency) were interpreted as context not usually encoded in the main LOINC name and were therefore omitted in favor of the plain test name. This seems like the correct strategy to avoid over-specifying the search query.\n\nThe codes for lupus anticoagulant testing (`p-la...` series and possibly the `p-fs...` series) were a good example of educated guessing. While `p-la1/la2` clearly pointed to a screen/confirm ratio, the underlying test (dRVVT, aPTT-based, etc.) was not specified. I chose `dRVVT` as it is a common method, but this is an assumption. Better documentation on what these local codes represent would be invaluable."
 }

@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -139,42 +139,37 @@ Additionally, return a short `reflection` (a few sentences to a short paragraph,
 [Prompt]
 Here is group 85 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 6680 | -aerobivi |  | 100% | name | 314 | 100 |  |  |  |  |
-| 6681 | -anaerobi |  | 100% | name | 320 | 100 |  |  |  |  |
-| 6682 | -omactgc |  | 100% | name | 591 | 100 |  |  |  |  |
-| 6683 | annosvoim |  | 100% | name | 182 | 65.93 |  |  |  |  |
-| 6684 | b-koboltti | ug/l | 100% | name+unit+values | 157 | 0 | [0.5, 0.72, 0.96, 1.18, 1.68, 2.2, 3.97, 6.08, 10.46] |  | Blood |  |
-| 6685 | cand-odl. |  | 100% | name | 542 | 89.67 |  |  |  |  |
-| 6686 | cand.nativ |  | 100% | name | 286 | 100 |  |  |  |  |
-| 6687 | cladosp.he | mm | 1% | name+unit | 11 | 0 |  |  |  |  |
-| 6688 | cladosp.he | u/ml | 9% | name+unit+values | 69 | 0 | [0, 0.01, 0.01, 0.04, 0.13, 0.41, 0.5, 0.87, 4.4] |  |  |  |
-| 6689 | cladosp.he |  | 89% | name | 680 | 93.82 |  |  |  |  |
-| 6690 | corona229e |  | 100% | name | 619 | 100 |  |  |  |  |
-| 6691 | coronahku1 |  | 100% | name | 619 | 100 |  |  |  |  |
-| 6692 | coronanl63 |  | 100% | name | 619 | 100 |  |  |  |  |
-| 6693 | coronaoc43 |  | 100% | name | 619 | 100 |  |  |  |  |
-| 6694 | f-norogi |  | 100% | name | 261 | 100 |  |  | Feces |  |
-| 6695 | f-norogii |  | 100% | name | 261 | 100 |  |  | Feces |  |
-| 6696 | f-projekti |  | 100% | name | 469 | 100 |  |  | Feces |  |
-| 6697 | hpvpapctgc |  | 100% | name | 116 | 100 |  |  |  |  |
-| 6698 | hpvrefctgc |  | 100% | name | 135 | 100 |  |  |  |  |
-| 6699 | norogi |  | 100% | name | 139 | 100 |  |  |  |  |
-| 6700 | norogii |  | 100% | name | 139 | 100 |  |  |  |  |
-| 6701 | p-asetoni | mmol/l | 36% | name+unit+values | 171 | 0 | [0, 0, 0, 0, 0, 0, 0.99, 1.7, 3.4] |  | Plasma |  |
-| 6702 | p-asetoni |  | 64% | name | 305 | 100 |  |  | Plasma |  |
-| 6703 | p-uraatti | umol/l | 100% | name+unit+values | 6902 | 0 | [234.14, 271.61, 301.37, 327.94, 355.71, 383.49, 416.66, 458.38, 518.94] |  | Plasma |  |
-| 6704 | p-uraatti |  | 0% | name | 32 | 87.5 |  |  | Plasma |  |
-| 6705 | projekti1 |  | 100% | name | 160 | 100 |  |  |  |  |
-| 6706 | s-asetoni | mmol/l | 9% | name+unit | 42 | 0 |  | S -Asetoni | Serum |  |
-| 6707 | s-asetoni |  | 91% | name | 414 | 100 |  | S -Asetoni | Serum |  |
-| 6708 | s-uraatti | umol/l | 94% | name+unit+values | 621 | 0 | [231.75, 257.74, 279.08, 298.35, 317.34, 343.64, 366.52, 401.97, 449.54] |  | Serum |  |
-| 6709 | s-uraatti |  | 6% | name | 38 | 100 |  |  | Serum |  |
-| 6710 | s-valproaatti | umol/l | 96% | name+unit+values | 431 | 0 | [243.85, 308.03, 356.19, 396.72, 425.61, 467.25, 503.69, 550.21, 628.49] |  | Serum |  |
-| 6711 | s-valproaatti |  | 4% | name | 16 | 87.5 |  |  | Serum |  |
-| 6712 | ts-abortti |  | 100% | name | 315 | 100 |  | Ts-Aborttikudoksen dissektiotutkimus | Tissue |  |
-| 6713 | u-omactgc |  | 100% | name | 480 | 100 |  |  | Urine |  |
-| 6714 | uraatti | umol/l | 99% | name+unit+values | 3560 | 0 | [230.56, 267.35, 298.53, 325.87, 354.19, 383.04, 414.66, 454.9, 512.27] |  |  |  |
-| 6715 | uraatti |  | 1% | name | 19 | 100 |  |  |  |  |
+| 6445 | p-lupusak | form | 0% | name+unit | 9 | 0 |  | P -Lupusantikoagulantti | Plasma |  |
+| 6446 | p-lupusak |  | 100% | name | 2978 | 100 |  | P -Lupusantikoagulantti | Plasma |  |
+| 6447 | p-lupusak. |  | 100% | name | 6143 | 100 |  |  | Plasma |  |
+| 6448 | p-pbmcbio |  | 100% | name | 440 | 100 |  |  | Plasma |  |
+| 6449 | patlislaus |  | 100% | name | 454 | 100 |  |  |  |  |
+| 6450 | ps-nieluag |  | 100% | name | 2331 | 100 |  |  | Pharyngeal secretion |  |
+| 6451 | pt-aud-koj |  | 100% | name | 121 | 100 |  |  | Patient |  |
+| 6452 | pt-audio |  | 100% | name | 661 | 100 |  |  | Patient |  |
+| 6453 | pt-audio, |  | 100% | name | 249 | 100 |  |  | Patient |  |
+| 6454 | pt-audio,tk |  | 100% | name | 446 | 100 |  |  | Patient |  |
+| 6455 | pt-audio-1 | form | 2% | name+unit | 27 | 0 |  |  | Patient |  |
+| 6456 | pt-audio-1 |  | 98% | name | 1274 | 100 |  |  | Patient |  |
+| 6457 | pt-audio/i |  | 100% | name+values | 442 | 100 | [1, 1, 1, 1, 1, 1, 1, 1, 1] |  | Patient |  |
+| 6458 | pt-audit |  | 100% | name+values | 113 | 100 | [0, 1, 1, 2, 3, 3.56, 4.44, 5, 8] |  | Patient |  |
+| 6459 | pt-hembio |  | 100% | name | 128 | 100 |  |  | Patient |  |
+| 6460 | pt-imutieg |  | 100% | name | 198 | 100 |  |  | Patient |  |
+| 6461 | pt-kudsop |  | 100% | name | 579 | 100 |  |  | Patient |  |
+| 6462 | pt-lausklf |  | 100% | name | 685 | 100 |  |  | Patient |  |
+| 6463 | pt-lisäla2 |  | 100% | name | 886 | 100 |  |  | Patient |  |
+| 6464 | pt-lisäla3 |  | 100% | name | 131 | 100 |  |  | Patient |  |
+| 6465 | pt-lisälau |  | 100% | name | 11756 | 100 |  |  | Patient |  |
+| 6466 | pt-lisäsyt |  | 100% | name | 2727 | 100 |  |  | Patient |  |
+| 6467 | pt-luuspeg |  | 100% | name | 113 | 100 |  |  | Patient |  |
+| 6468 | pt-luustog |  | 100% | name | 1368 | 100 |  |  | Patient |  |
+| 6469 | pt-luutih2 |  | 100% | name | 1595 | 100 |  |  | Patient |  |
+| 6470 | pt-luutih3 |  | 100% | name | 136 | 100 |  |  | Patient |  |
+| 6471 | pt-luutil2 |  | 100% | name | 1743 | 100 |  |  | Patient |  |
+| 6472 | pt-luutil3 |  | 100% | name | 267 | 100 |  |  | Patient |  |
+| 6473 | pt-rasukg |  | 100% | name | 109 | 100 |  |  | Patient |  |
+| 6474 | puheaudio |  | 100% | name | 156 | 100 |  |  |  |  |
+| 6475 | äänesaudio |  | 100% | name | 2795 | 100 |  |  |  |  |
 

@@ -1,121 +1,705 @@
 {
   "rows": [
     {
-      "row_id": 10591,
-      "loinc_name_guess": "Glucose.time below range (TBR) [Time Fraction] in Interstitial fluid"
+      "row_id": 10411,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Arterial blood"
     },
     {
-      "row_id": 10592,
-      "loinc_name_guess": "Glucose.time in range (TIR) [Time Fraction] in Interstitial fluid"
+      "row_id": 10412,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Arterial blood"
     },
     {
-      "row_id": 10593,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
+      "row_id": 10413,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Arterial blood"
     },
     {
-      "row_id": 10594,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10414,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Arterial blood"
     },
     {
-      "row_id": 10595,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10415,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Arterial blood"
     },
     {
-      "row_id": 10596,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10416,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Arterial blood"
     },
     {
-      "row_id": 10597,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10417,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Arterial blood"
     },
     {
-      "row_id": 10598,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+      "row_id": 10418,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10599,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10419,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
     },
     {
-      "row_id": 10600,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10420,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
     },
     {
-      "row_id": 10601,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --30 minutes post dose glucose"
+      "row_id": 10421,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10602,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+      "row_id": 10422,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10603,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10423,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
     },
     {
-      "row_id": 10604,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10424,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10605,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10425,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10606,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10426,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10607,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+      "row_id": 10427,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10608,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10428,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10609,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10429,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10610,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10430,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10611,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose"
+      "row_id": 10431,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10612,
-      "loinc_name_guess": ""
+      "row_id": 10432,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10613,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10433,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10614,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10434,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10615,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma"
+      "row_id": 10435,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10616,
-      "loinc_name_guess": "Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose"
+      "row_id": 10436,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10617,
-      "loinc_name_guess": ""
+      "row_id": 10437,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
     },
     {
-      "row_id": 10618,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
+      "row_id": 10438,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
     },
     {
-      "row_id": 10619,
-      "loinc_name_guess": "Glucose [Moles/volume] in Blood by Test strip"
+      "row_id": 10439,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10440,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10441,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10442,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10443,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10444,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10445,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10446,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10447,
+      "loinc_name_guess": "Hemoglobin.variants [Identifier] in Blood by Electrophoresis"
+    },
+    {
+      "row_id": 10448,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10449,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10450,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total [Mass Ratio] in Blood by Stain"
+    },
+    {
+      "row_id": 10451,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total in Blood by Stain"
+    },
+    {
+      "row_id": 10452,
+      "loinc_name_guess": "Hemoglobin fractions panel - Blood"
+    },
+    {
+      "row_id": 10453,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10454,
+      "loinc_name_guess": "Hemoglobin.variants [Identifier] in Blood by Isoelectric focusing"
+    },
+    {
+      "row_id": 10455,
+      "loinc_name_guess": "Hemoglobin.variants [Identifier] in Blood by Isoelectric focusing"
+    },
+    {
+      "row_id": 10456,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10457,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10458,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10459,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10460,
+      "loinc_name_guess": "Hemoglobin [Presence] in Blood"
+    },
+    {
+      "row_id": 10461,
+      "loinc_name_guess": "Hemoglobin [Presence] in Blood"
+    },
+    {
+      "row_id": 10462,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10463,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10464,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10465,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10466,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10467,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10468,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
+    },
+    {
+      "row_id": 10469,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Identifier] in Blood"
+    },
+    {
+      "row_id": 10470,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10471,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10472,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10473,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10474,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10475,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10476,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10477,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10478,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Presence] in Blood"
+    },
+    {
+      "row_id": 10479,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10480,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10481,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
+    },
+    {
+      "row_id": 10482,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10483,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10484,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10485,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10486,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10487,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10488,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood"
+    },
+    {
+      "row_id": 10489,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10490,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10491,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10492,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Ratio] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10493,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10494,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10495,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10496,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total [Mass Ratio] in Blood by Flow cytometry (FC)"
+    },
+    {
+      "row_id": 10497,
+      "loinc_name_guess": "Hemoglobin F identified in Blood by Flow cytometry (FC)"
+    },
+    {
+      "row_id": 10498,
+      "loinc_name_guess": "Hemoglobin F/Hemoglobin.total in Blood by Flow cytometry (FC)"
+    },
+    {
+      "row_id": 10499,
+      "loinc_name_guess": "Fetal blood [Volume] in Maternal blood"
+    },
+    {
+      "row_id": 10500,
+      "loinc_name_guess": "Fetal blood [Volume] in Maternal blood"
+    },
+    {
+      "row_id": 10501,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10502,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10503,
+      "loinc_name_guess": "Hemoglobin.variants [Identifier] in Blood by HPLC"
+    },
+    {
+      "row_id": 10504,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 10505,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10506,
+      "loinc_name_guess": "Erythrocyte mean corpuscular volume [Entitic volume] in Blood"
+    },
+    {
+      "row_id": 10507,
+      "loinc_name_guess": "Hematocrit [Identifier] in Blood"
+    },
+    {
+      "row_id": 10508,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10509,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10510,
+      "loinc_name_guess": "Hematocrit in Blood"
+    },
+    {
+      "row_id": 10511,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10512,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10513,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10514,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10515,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 10516,
+      "loinc_name_guess": "Hematocrit in Blood"
+    },
+    {
+      "row_id": 10517,
+      "loinc_name_guess": "HLA-Bw antigen [Identifier] in Blood"
+    },
+    {
+      "row_id": 10518,
+      "loinc_name_guess": "HLA-Bw antigen [Identifier] in Blood"
+    },
+    {
+      "row_id": 10519,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10520,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10521,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10522,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10523,
+      "loinc_name_guess": "HLA-B*57:01 allele [Presence] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10524,
+      "loinc_name_guess": "HLA-A [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10525,
+      "loinc_name_guess": "HLA-A [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10526,
+      "loinc_name_guess": "HLA-A high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10527,
+      "loinc_name_guess": "HLA-A high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10528,
+      "loinc_name_guess": "HLA antigen [Identifier] in Blood"
+    },
+    {
+      "row_id": 10529,
+      "loinc_name_guess": "HLA-B [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10530,
+      "loinc_name_guess": "HLA-B [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10531,
+      "loinc_name_guess": "HLA-B high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10532,
+      "loinc_name_guess": "HLA-B high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10533,
+      "loinc_name_guess": "HLA-B antigen [Identifier] in Blood"
+    },
+    {
+      "row_id": 10534,
+      "loinc_name_guess": "HLA-C high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10535,
+      "loinc_name_guess": "HLA-C high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10536,
+      "loinc_name_guess": "HLA-C antigen [Identifier] in Blood"
+    },
+    {
+      "row_id": 10537,
+      "loinc_name_guess": "HLA-DPB1 gene [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10538,
+      "loinc_name_guess": "HLA-DPB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10539,
+      "loinc_name_guess": "HLA-DPB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10540,
+      "loinc_name_guess": "HLA-DQB1 gene [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10541,
+      "loinc_name_guess": "HLA-DQB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10542,
+      "loinc_name_guess": "HLA-DQB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10543,
+      "loinc_name_guess": "HLA-DRB1 gene [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10544,
+      "loinc_name_guess": "HLA-DRB1 [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10545,
+      "loinc_name_guess": "HLA-DRB1 [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10546,
+      "loinc_name_guess": "HLA-DRB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10547,
+      "loinc_name_guess": "HLA-DRB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection"
+    },
+    {
+      "row_id": 10548,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10549,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10550,
+      "loinc_name_guess": "HLA typing [Identifier] in Blood"
+    },
+    {
+      "row_id": 10551,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10552,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood by Point-of-care"
+    },
+    {
+      "row_id": 10553,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Capillary blood"
+    },
+    {
+      "row_id": 10554,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Capillary blood"
+    },
+    {
+      "row_id": 10555,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Capillary blood"
+    },
+    {
+      "row_id": 10556,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Capillary blood"
+    },
+    {
+      "row_id": 10557,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10558,
+      "loinc_name_guess": "Hemoglobin [Presence] in Stool"
+    },
+    {
+      "row_id": 10559,
+      "loinc_name_guess": "Hemoglobin [Presence] in Stool"
+    },
+    {
+      "row_id": 10560,
+      "loinc_name_guess": "Hemoglobin [Presence] in Stool"
+    },
+    {
+      "row_id": 10561,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10562,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10563,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10564,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10565,
+      "loinc_name_guess": "Hemoglobin.human [Presence] in Stool"
+    },
+    {
+      "row_id": 10566,
+      "loinc_name_guess": "Hemoglobin.human Occult Blood panel - Stool"
+    },
+    {
+      "row_id": 10567,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    {
+      "row_id": 10568,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10569,
+      "loinc_name_guess": "Hemoglobin A1c/Hemoglobin.total [Molar ratio] in Blood"
+    },
+    {
+      "row_id": 10570,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10571,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Blood"
+    },
+    {
+      "row_id": 10572,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Urine"
+    },
+    {
+      "row_id": 10573,
+      "loinc_name_guess": "Hemoglobin [Presence] in Urine"
+    },
+    {
+      "row_id": 10574,
+      "loinc_name_guess": "Hemoglobin [Presence] in Urine"
+    },
+    {
+      "row_id": 10575,
+      "loinc_name_guess": "Hemoglobin [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 10576,
+      "loinc_name_guess": "Hemoglobin [Presence] in Urine"
+    },
+    {
+      "row_id": 10577,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Venous blood"
+    },
+    {
+      "row_id": 10578,
+      "loinc_name_guess": "Carboxyhemoglobin/Hemoglobin.total [Mass Ratio] in Venous blood"
+    },
+    {
+      "row_id": 10579,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Venous blood"
+    },
+    {
+      "row_id": 10580,
+      "loinc_name_guess": "Methemoglobin/Hemoglobin.total [Mass Ratio] in Venous blood"
+    },
+    {
+      "row_id": 10581,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Venous blood"
+    },
+    {
+      "row_id": 10582,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Venous blood"
+    },
+    {
+      "row_id": 10583,
+      "loinc_name_guess": "Hemoglobin [Mass/volume] in Venous blood"
+    },
+    {
+      "row_id": 10584,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Venous blood"
+    },
+    {
+      "row_id": 10585,
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Venous blood"
     }
   ],
-  "reflection": "This group was centered on glucose tests, primarily from glucose tolerance tests (GTT). The naming conventions were quite varied for the same underlying concept. For example, a 2-hour post-challenge glucose was represented by `gluk2h`, `gluk120min`, `glukoosi120min`, `glukr-2h`, `glukr2h`, and `glukras120`. This highlights the necessity of recognizing multiple synonyms for timings (`2h`, `120min`) and for challenge tests (`-r`, `ras`).\n\nThe most difficult codes were administrative ones. `glukr1valm` and `glukrvalm` likely mean \"glucose challenge preparation\" (`valmistelu`). These are not lab results and have no measurable value, so I left their names empty. A process to identify and flag such procedural or administrative codes would be beneficial.\n\nTwo codes, `-gluk-tbr` and `-gluk-tir`, were interesting as they represent modern Continuous Glucose Monitoring (CGM) metrics: Time Below Range and Time In Range. Recognizing these newer abbreviations (`TBR`, `TIR`) was key to correctly identifying them as `[Time Fraction]` in `Interstitial fluid`.\n\nThe `gluk-vieri` codes were clearly point-of-care tests, which I mapped to `Blood` as the system and `Test strip` as a likely method, which is a common LOINC pattern for such tests."
+  "reflection": "This group was dominated by hemoglobin-related tests, especially HbA1c, and HLA typing. The main challenges were:\n\n1.  **Conflicting Evidence**: Row 10506 (`b-hkr`) had a unit (`fl`) and values (`84-94`) that strongly indicated MCV (E-MCV), directly contradicting the test name for Hematocrit. I prioritized the quantitative evidence as it defined 'what was actually measured'. Conversely, for row 10461 (`b-hb-o`), the qualitative suffix `-O` conflicted with quantitative-looking values. I prioritized the explicit suffix from the national coding system, as it's a more deliberate part of the code's definition than a potentially erroneous value entry.\n2.  **Unit Errors**: HbA1c had many incorrect units like `mmol`, `mmol/l`, and `mmol/m`. I interpreted these as data entry errors for the standard IFCC unit `mmol/mol`, as the value distributions were consistent with it.\n3.  **Ambiguous Local Suffixes**: Numerous suffixes were not part of the standard Finnish set (e.g., `-hoi`, `-hy`, `-nla`, `-p`). I mapped these to the base test, assuming they are local administrative qualifiers without a separate LOINC equivalent. For point-of-care (`-vt`, `-poc`), I sometimes added `by Point-of-care`, though it's often safer to omit the method for search.\n4.  **Complex Components**: The HLA typing tests were challenging due to the high specificity and numerous local, undefined codes (`b-hlamaks`, `b-hla1mun`). For these, a generic guess like `HLA typing [Identifier] in Blood` was the only option. The distinction between low- and high-resolution typing (`-dt` suffix) was an important detail to capture.\n5.  **Component Representation**: Correctly representing fractions like HbA1c, Carboxyhemoglobin, and Methemoglobin as `Component/Hemoglobin.total` with properties like `[Ratio]` or `[Molar ratio]` was key. The data provided two distinct populations for HbA1c based on units (`%` vs. `mmol/mol`), corresponding to the NGSP and IFCC reporting standards, which require different LOINC properties."
 }

@@ -1,425 +1,389 @@
 {
   "rows": [
     {
+      "row_id": 2581,
+      "loinc_name_guess": "Complement C3d in Serum or Plasma"
+    },
+    {
+      "row_id": 2582,
+      "loinc_name_guess": "Carbohydrate deficient transferrin [Mass/volume] in Serum"
+    },
+    {
+      "row_id": 2583,
+      "loinc_name_guess": "Carcinoembryonic antigen [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2584,
+      "loinc_name_guess": "Carcinoembryonic antigen in Serum or Plasma"
+    },
+    {
+      "row_id": 2585,
+      "loinc_name_guess": "Chloride [Moles/volume] in Arterial blood"
+    },
+    {
+      "row_id": 2586,
+      "loinc_name_guess": "Chloride [Moles/volume] in Arterial plasma"
+    },
+    {
+      "row_id": 2587,
+      "loinc_name_guess": "Chloride in Arterial plasma"
+    },
+    {
+      "row_id": 2588,
+      "loinc_name_guess": "Chloride [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 2589,
+      "loinc_name_guess": "Chloride in Blood"
+    },
+    {
+      "row_id": 2590,
+      "loinc_name_guess": "Cobalt [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2591,
+      "loinc_name_guess": "Cobalt [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2592,
+      "loinc_name_guess": "Chromium [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2593,
+      "loinc_name_guess": "Chromium [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2594,
+      "loinc_name_guess": "Cyclosporine [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2595,
+      "loinc_name_guess": "Cyclosporine [Mass/volume] in Blood"
+    },
+    {
+      "row_id": 2596,
+      "loinc_name_guess": "Calcium in 24 hour Urine"
+    },
+    {
+      "row_id": 2597,
+      "loinc_name_guess": "Calcium [Moles/time] in 24 hour Urine"
+    },
+    {
+      "row_id": 2598,
+      "loinc_name_guess": "Calcium in 24 hour Urine"
+    },
+    {
+      "row_id": 2599,
+      "loinc_name_guess": "Chloride [Moles/time] in 24 hour Urine"
+    },
+    {
+      "row_id": 2600,
+      "loinc_name_guess": "Chloride in 24 hour Urine"
+    },
+    {
+      "row_id": 2601,
+      "loinc_name_guess": "Copper [Moles/time] in 24 hour Urine"
+    },
+    {
+      "row_id": 2602,
+      "loinc_name_guess": "Copper [Moles/time] in 24 hour Urine"
+    },
+    {
+      "row_id": 2603,
+      "loinc_name_guess": "Copper in 24 hour Urine"
+    },
+    {
+      "row_id": 2604,
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2605,
+      "loinc_name_guess": "Calcium in Serum or Plasma"
+    },
+    {
+      "row_id": 2606,
+      "loinc_name_guess": "Chromogranin A [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2607,
+      "loinc_name_guess": "Chromogranin A [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2608,
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2609,
+      "loinc_name_guess": "Calcium in Serum or Plasma"
+    },
+    {
+      "row_id": 2610,
+      "loinc_name_guess": "Chromogranin A [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2611,
+      "loinc_name_guess": "Chromogranin A [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2612,
+      "loinc_name_guess": "Chromogranin A [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2613,
+      "loinc_name_guess": "Chloride [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 2614,
+      "loinc_name_guess": "Chloride in Blood"
+    },
+    {
+      "row_id": 2615,
+      "loinc_name_guess": "Complement C3 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2616,
+      "loinc_name_guess": "Complement C3 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2617,
+      "loinc_name_guess": "Complement C4 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2618,
+      "loinc_name_guess": "Complement C4 [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2619,
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2620,
+      "loinc_name_guess": "Calcium in Serum or Plasma"
+    },
+    {
+      "row_id": 2621,
+      "loinc_name_guess": "Carcinoembryonic antigen [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2622,
+      "loinc_name_guess": "Carcinoembryonic antigen in Serum or Plasma"
+    },
+    {
+      "row_id": 2623,
+      "loinc_name_guess": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2624,
+      "loinc_name_guess": "Creatine kinase in Serum or Plasma"
+    },
+    {
+      "row_id": 2625,
+      "loinc_name_guess": "Chloride [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2626,
+      "loinc_name_guess": "Chloride [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2627,
+      "loinc_name_guess": "Copper [Moles/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 2628,
+      "loinc_name_guess": "Copper in Serum or Plasma"
+    },
+    {
+      "row_id": 2629,
+      "loinc_name_guess": "Complement C3 [Mass/volume] in Pleural fluid"
+    },
+    {
       "row_id": 2630,
-      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
+      "loinc_name_guess": "Complement C3 in Pleural fluid"
     },
     {
       "row_id": 2631,
-      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
+      "loinc_name_guess": "Complement C4 [Mass/volume] in Pleural fluid"
     },
     {
       "row_id": 2632,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
+      "loinc_name_guess": "Complement C4 in Pleural fluid"
     },
     {
       "row_id": 2633,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
+      "loinc_name_guess": "Carcinoembryonic antigen [Mass/volume] in Pleural fluid"
     },
     {
       "row_id": 2634,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Amniotic fluid"
+      "loinc_name_guess": "Carcinoembryonic antigen in Pleural fluid"
     },
     {
       "row_id": 2635,
-      "loinc_name_guess": "Platelet aggregation ADP induced [Area under curve] in Blood"
+      "loinc_name_guess": "Complement C3 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2636,
-      "loinc_name_guess": "Platelet aggregation ADP induced [Area under curve] in Blood"
+      "loinc_name_guess": "Complement C3 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2637,
-      "loinc_name_guess": "Platelet aggregation arachidonic acid induced [Area under curve] in Blood"
+      "loinc_name_guess": "Complement C4 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2638,
-      "loinc_name_guess": "Platelet aggregation arachidonic acid induced [Area under curve] in Blood"
+      "loinc_name_guess": "Complement C4 [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2639,
-      "loinc_name_guess": "Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets"
+      "loinc_name_guess": "Calcium [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2640,
-      "loinc_name_guess": "Vasodilator stimulated phosphoprotein phosphorylation [Ratio] in Platelets"
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2641,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
+      "loinc_name_guess": "Calcium [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2642,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
+      "loinc_name_guess": "Carbohydrate deficient transferrin/Transferrin.total [Molar ratio] in Serum"
     },
     {
       "row_id": 2643,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in 24 hour Urine"
+      "loinc_name_guess": "Carbohydrate deficient transferrin [Units/volume] in Serum"
     },
     {
       "row_id": 2644,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/time] in 24 hour Urine"
+      "loinc_name_guess": "Carbohydrate deficient transferrin in Serum"
     },
     {
       "row_id": 2645,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Carcinoembryonic antigen [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2646,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Carcinoembryonic antigen in Serum or Plasma"
     },
     {
       "row_id": 2647,
-      "loinc_name_guess": "Apolipoprotein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "Immune complex [Mass/volume] in Serum"
     },
     {
       "row_id": 2648,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Immune complex in Serum"
     },
     {
       "row_id": 2649,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
     },
     {
       "row_id": 2650,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Creatine kinase in Serum or Plasma"
     },
     {
       "row_id": 2651,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Chloride [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2652,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Copper [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2653,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Copper [Moles/volume] in Serum or Plasma"
     },
     {
       "row_id": 2654,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination"
+      "loinc_name_guess": "Collagen type I telopeptide.carboxyterminal [Mass/volume] in Serum"
     },
     {
       "row_id": 2655,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Cerebral spinal fluid by Hemagglutination"
+      "loinc_name_guess": "Collagen type I telopeptide.carboxyterminal [Mass/volume] in Serum"
     },
     {
       "row_id": 2656,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Collagen type I telopeptide.carboxyterminal in Serum"
     },
     {
       "row_id": 2657,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "Procalcitonin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2658,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "Procalcitonin [Mass/volume] in Serum or Plasma"
     },
     {
       "row_id": 2659,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": ""
     },
     {
       "row_id": 2660,
-      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Calcium [Moles/volume] in Urine"
     },
     {
       "row_id": 2661,
-      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Calcium [Moles/volume] in Urine"
     },
     {
       "row_id": 2662,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Cobalt [Presence] in Urine"
     },
     {
       "row_id": 2663,
-      "loinc_name_guess": ""
+      "loinc_name_guess": "Cobalt [Moles/volume] in Urine"
     },
     {
       "row_id": 2664,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Cobalt [Mass/volume] in Urine"
     },
     {
       "row_id": 2665,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Cobalt in Urine"
     },
     {
       "row_id": 2666,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Cotinine [Mass/volume] in Urine"
     },
     {
       "row_id": 2667,
-      "loinc_name_guess": "5-Hydroxyindoleacetic acid [Moles/volume] in Serum or Plasma"
+      "loinc_name_guess": "Cotinine [Mass/volume] in Urine"
     },
     {
       "row_id": 2668,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Cotinine [Presence] in Urine"
     },
     {
       "row_id": 2669,
-      "loinc_name_guess": "Angiotensin converting enzyme [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Chromium [Presence] in Urine"
     },
     {
       "row_id": 2670,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Chromium [Mass/volume] in Urine"
     },
     {
       "row_id": 2671,
-      "loinc_name_guess": "Adenosine deaminase [Enzymatic activity/volume] in Serum or Plasma"
+      "loinc_name_guess": "Chromium [Moles/volume] in Urine"
     },
     {
       "row_id": 2672,
-      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "Chromium in Urine"
     },
     {
       "row_id": 2673,
-      "loinc_name_guess": "Alpha-1-fetoprotein [Mass/volume] in Serum or Plasma"
+      "loinc_name_guess": "Hematocrit [Volume Fraction] in Blood"
     },
     {
       "row_id": 2674,
-      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "Calcium.ionized [Moles/volume] in Blood"
     },
     {
       "row_id": 2675,
-      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
+      "loinc_name_guess": "Chloride [Moles/volume] in Venous plasma"
     },
     {
       "row_id": 2676,
-      "loinc_name_guess": "Alpha-1-fetoprotein [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2677,
-      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2678,
-      "loinc_name_guess": "Anti-Mullerian hormone [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2679,
-      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2680,
-      "loinc_name_guess": "Amikacin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2681,
-      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
-    },
-    {
-      "row_id": 2682,
-      "loinc_name_guess": "Nuclear antibody [Titer] in Serum"
-    },
-    {
-      "row_id": 2683,
-      "loinc_name_guess": "Apolipoprotein [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2684,
-      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2685,
-      "loinc_name_guess": "Saccharomyces cerevisiae Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2686,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2687,
-      "loinc_name_guess": "Streptolysin O Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 2688,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2689,
-      "loinc_name_guess": "Streptolysin O Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2690,
-      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2691,
-      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2692,
-      "loinc_name_guess": "Staphylolysin Ab [Units/volume] in Serum"
-    },
-    {
-      "row_id": 2693,
-      "loinc_name_guess": "Bromide [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2694,
-      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2695,
-      "loinc_name_guess": "Dehydroepiandrosterone [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2696,
-      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2697,
-      "loinc_name_guess": "Dehydroepiandrosterone sulfate [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2698,
-      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2699,
-      "loinc_name_guess": "Estrone [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2700,
-      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2701,
-      "loinc_name_guess": "Estradiol [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2702,
-      "loinc_name_guess": "Endomysial Ab [Titer] in Serum"
-    },
-    {
-      "row_id": 2703,
-      "loinc_name_guess": "Extractable nuclear Ab [Ratio] in Serum"
-    },
-    {
-      "row_id": 2704,
-      "loinc_name_guess": "Extractable nuclear Ab panel - Serum"
-    },
-    {
-      "row_id": 2705,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2706,
-      "loinc_name_guess": "Erythropoietin [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2707,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2708,
-      "loinc_name_guess": "Erythropoietin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2709,
-      "loinc_name_guess": "Fatty acids.free [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2710,
-      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2711,
-      "loinc_name_guess": "Gentamicin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2712,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 2713,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 2714,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2715,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2716,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2717,
-      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2718,
-      "loinc_name_guess": "HE4 protein [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2719,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 2720,
-      "loinc_name_guess": "Cold agglutinin [Titer] in Serum"
-    },
-    {
-      "row_id": 2721,
-      "loinc_name_guess": "Cold agglutinin [Titer] in Serum"
-    },
-    {
-      "row_id": 2722,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2723,
-      "loinc_name_guess": "Sex hormone binding globulin [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2724,
-      "loinc_name_guess": "Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2725,
-      "loinc_name_guess": "Tumor associated trypsin inhibitor [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2726,
-      "loinc_name_guess": "Tumor associated trypsin inhibitor [Moles/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2727,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination"
-    },
-    {
-      "row_id": 2728,
-      "loinc_name_guess": "Treponema pallidum Ab [Titer] in Serum by Hemagglutination"
-    },
-    {
-      "row_id": 2729,
-      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2730,
-      "loinc_name_guess": "Vancomycin [Mass/volume] in Serum or Plasma"
-    },
-    {
-      "row_id": 2731,
-      "loinc_name_guess": "Estrogen and Progesterone receptor panel - Tissue"
-    },
-    {
-      "row_id": 2732,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine"
-    },
-    {
-      "row_id": 2733,
-      "loinc_name_guess": "Choriogonadotropin [Units/volume] in Urine"
-    },
-    {
-      "row_id": 2734,
-      "loinc_name_guess": "Choriogonadotropin [Presence] in Urine"
+      "loinc_name_guess": "Chloride in Venous plasma"
     }
   ],
-  "reflection": "This group contained several ambiguous abbreviations that were difficult to map without a LongName, leading to empty guesses. Examples include `p-hae`/`s-hae`, `s-hbe`, `p-hepg`, `p-hok`, and `s-kem`. The `fs-tp-*` series was also unidentifiable. The distinction between a screening test (`S-Ena`, row 2703) and a speciation panel (`S-Enal`, row 2704) was subtle but inferable from national code lists; the presence of quantitative values for the screen (a ratio) was a key piece of evidence.\n\nThe code `-ana` (row 2630-2631) with a leading dash is unusual and likely a data entry error, though its meaning was clear. Similarly, `s-afp/d` (row 2675) has an unclear `/d` suffix which I assumed was a local, non-mappable modifier.\n\nFor `U-hCG` without a unit (row 2734), I inferred a qualitative test (`[Presence]`) based on the most common clinical use case for urine hCG (i.e., pregnancy screening dipstick) and the high percentage of missing values, in contrast to the explicitly quantitative `iu/l` and `u/l` units on other rows for the same code. This is an interpretative leap but a pragmatic one."
+  "reflection": "This group was relatively straightforward, with many common chemistry analytes. The main challenge was the systematic misinterpretation of the abbreviation `Cl` for Chloride as the suffix for 'Clearance' by the upstream suffix decoder. This was easy to spot and ignore, as the component name and typical units/values for Chloride were clear. \n\nAnother ambiguity was the handling of non-standard prefixes like `ap-` (Arterial plasma), `vp-` (Venous plasma), and `mb-` (Mixed blood?). I chose to use the specific system when confident (e.g., `Arterial plasma`) but defaulted to a more general system like `Blood` or `Serum or Plasma` when the prefix was less certain or when LOINC typically doesn't make that distinction. For example, I used `Venous plasma` for `vp-` but just `Blood` for `mb-`.\n\nThe code `ts-cc` (row 2559) was impossible to decipher. 'Ts' is tissue, but 'cc' is too ambiguous without any other context, so I correctly left it empty. The `form` unit for some urine tests (e.g., 2662, 2669) was interpreted as a signal for a qualitative test, leading to a `[Presence]` property, which is a reasonable heuristic in the absence of other information."
 }

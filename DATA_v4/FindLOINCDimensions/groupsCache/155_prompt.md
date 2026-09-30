@@ -28,8 +28,8 @@ The group is given as a markdown table. Each row is one observed local lab test/
 - `UNIT` — the measurement unit as recorded locally (e.g. `mmol/l`, `g/l`, `%`, `U/l`, `E9/l`). May be empty, and may be wrong — see below.
 - `unit_share` — what percentage of this `TEST_NAME`'s records carry this row's `UNIT`. A unit holding a few percent of a code's records while another unit holds the rest is usually a data-entry error, not a second real test.
 - `n` — how many result records exist for this test/unit combination.
-- `p_missing` — percentage (0-100) of those records with no numeric value.
-- `deciles` — the 9 deciles of the observed numeric values, when available.
+- `value_missing_p` — percentage (0-100) of those records with no numeric value.
+- `value_deciles` — the 9 deciles of the observed numeric values, when available.
 - `LongName` — the official Finnish long name from the national code table, when the code could be matched. Often empty.
 - `prefix_meaning` — the decoded system prefix (e.g. "Serum", "Fasting plasma", "Urine"), when recognised. Derived from the code text, so a strong but not infallible hint.
 - `suffix_meaning` — the decoded suffix (e.g. "Qualitative test (also semi-quantitative)", "Antibodies", "Culture"), when recognised.
@@ -48,7 +48,7 @@ A row is one **`TEST_NAME` + `UNIT`** combination, and that pair is what you are
 
 **The name is the source of truth.** `prefix_meaning` and `suffix_meaning` were derived from the `TEST_NAME` string by an earlier step, so when a name is misspelled, truncated or locally invented, the decoded prefix and suffix are wrong in exactly the same way. Treat them as extra information that can confirm what the name says — never as something that outranks it. The specimen in particular is often spelled out as a Finnish word rather than carried by a prefix: `veri` = blood, `seerumi` = serum, `plasma` = plasma, `virtsa` = urine, `likvori` = cerebrospinal fluid, `uloste` = feces, `sylki` = saliva. `c-reaktiivinenproteiini,pikatesti,veri` names blood and has no decoded prefix at all — and its leading `c-` is the start of "C-reactive", not a specimen code.
 
-**Missing values are not evidence.** `p_missing` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
+**Missing values are not evidence.** `value_missing_p` describes this extract, not the laboratory test: a row with no values is a row where the numbers were not recorded or not carried through. Never conclude "no numbers, therefore qualitative". A test is qualitative when the CODE says so — the `-O` suffix, a `LongName` naming a qualitative or screening test, a component only ever reported as detected/not-detected.
 
 **Never borrow from another row.** The rows are grouped by string similarity of `TEST_NAME`, so a group is a bag of codes that merely look alike. A neighbouring row's unit is not evidence about this row, and the same code can also appear in another group carrying units you cannot see here — so the units visible around you are not the units this code uses. Do not take a unit, a quantity or an answer from a sibling row, not even from a row whose `TEST_NAME` is identical.
 
@@ -137,59 +137,127 @@ Return an entry for EVERY row of the table, including rows you can say almost no
 Additionally, return a short `reflection` (a few sentences to a short paragraph, markdown) covering: ideas to improve this process, gotchas and ambiguities you hit in THIS group, systematic problems in the data, and anything that would have helped you decide. Be concrete and specific to the rows you just saw; do not repeat these instructions back.
 
 [Prompt]
-Here is group 161 of the table. Write the LOINC Long Common Name for every row.
+Here is group 155 of the table. Write the LOINC Long Common Name for every row.
 
-| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | p_missing | deciles | LongName | prefix_meaning | suffix_meaning |
+| row_id | TEST_NAME | UNIT | unit_share | evidence_level | n | value_missing_p | value_deciles | LongName | prefix_meaning | suffix_meaning |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 13017 | b-fosfatidyylietanoli | umol/l | 49% | name+unit+values | 4792 | 0 | [0.06, 0.1, 0.15, 0.22, 0.3, 0.44, 0.64, 0.94, 1.57] |  | Blood |  |
-| 13018 | b-fosfatidyylietanoli |  | 51% | name+values | 4963 | 89.32 | [0.09, 0.13, 0.17, 0.29, 0.43, 0.63, 0.85, 1.22, 1.87] |  | Blood |  |
-| 13019 | b-fosfatidyylietanoli,verestä | umol/l | 50% | name+unit+values | 1555 | 0 | [0.06, 0.1, 0.15, 0.22, 0.29, 0.41, 0.59, 0.87, 1.44] |  | Blood |  |
-| 13020 | b-fosfatidyylietanoli,verestä |  | 50% | name | 1534 | 97.07 |  |  | Blood |  |
-| 13021 | b-fosfatidyylietanolivita | umol/l | 38% | name+unit | 43 | 0 |  |  | Blood |  |
-| 13022 | b-fosfatidyylietanolivita |  | 62% | name | 69 | 100 |  |  | Blood |  |
-| 13023 | b-haemophilusinfluenzae |  | 100% | name | 144 | 100 |  |  | Blood |  |
-| 13024 | b-suuretvärjäytymättömätsolut | e9/l | 100% | name+unit+values | 171 | 0 | [0.07, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.18] |  | Blood |  |
-| 13025 | chlamydiapneumoniae,nukleiin |  | 100% | name | 109 | 100 |  |  |  |  |
-| 13026 | follikkeliastimuloivahormoni | u/l | 100% | name+unit+values | 138 | 0 | [3, 4.75, 6.19, 8.24, 10, 19.35, 36.42, 56.82, 73.33] |  |  |  |
-| 13027 | fosfatidyylietanoli | umol/l | 49% | name+unit+values | 1540 | 0 | [0.05, 0.09, 0.14, 0.2, 0.29, 0.43, 0.63, 0.98, 1.62] |  |  |  |
-| 13028 | fosfatidyylietanoli |  | 51% | name+values | 1635 | 92.35 | [0.09, 0.19, 0.32, 0.43, 0.64, 0.89, 1.16, 1.43, 1.78] |  |  |  |
-| 13029 | fosfatidyylietanoli,verestä | umol/l | 50% | name+unit+values | 3284 | 0 | [0.06, 0.08, 0.12, 0.16, 0.22, 0.3, 0.44, 0.66, 1.2] |  |  |  |
-| 13030 | fosfatidyylietanoli,verestä |  | 50% | name | 3273 | 98.93 |  |  |  |  |
-| 13031 | fosfatidyylietanoli,verestätth | umol/l | 35% | name+unit | 35 | 0 |  |  |  |  |
-| 13032 | fosfatidyylietanoli,verestätth |  | 65% | name | 66 | 100 |  |  |  |  |
-| 13033 | fosfatidyylietanoli,veri | umol/l | 50% | name+unit+values | 335 | 0 | [0.06, 0.1, 0.15, 0.2, 0.28, 0.39, 0.6, 0.91, 1.55] |  |  |  |
-| 13034 | fosfatidyylietanoli,veri |  | 50% | name | 333 | 91.89 |  |  |  |  |
-| 13035 | haemophilusinfluenzaenukleii |  | 100% | name | 459 | 100 |  |  |  |  |
-| 13036 | humaanimetapneumovirus,nukle |  | 100% | name | 109 | 100 |  |  |  |  |
-| 13037 | humanmetapneumovirus,ag |  | 100% | name | 102 | 100 |  |  |  |  |
-| 13038 | l-suuretvärjääntymättömätsolut | % | 100% | name+unit+values | 171 | 0 | [1.19, 1.35, 1.5, 1.62, 1.83, 1.97, 2.16, 2.45, 2.85] |  | Leukocyte |  |
-| 13039 | legionellapneumoniaenukleiin |  | 100% | name | 109 | 100 |  |  |  |  |
-| 13040 | li-haemophilusinfluenzaenukl.haponos. |  | 100% | name | 119 | 100 |  |  | Cerebrospinal fluid |  |
-| 13041 | mycoplasmapneumoniae,nukleii |  | 100% | name | 141 | 100 |  |  |  |  |
-| 13042 | p-follikkeliastimuloivahormoni | u/l | 100% | name+unit+values | 511 | 0 | [2.89, 4.55, 5.71, 7.4, 9.51, 16.11, 32.21, 53.45, 77.25] |  | Plasma |  |
-| 13043 | p-glukoosi,2tuntiaaterianjälkeen | mmol/l | 100% | name+unit+values | 125 | 0 | [6.3, 7.71, 9.12, 10.17, 11.1, 12.22, 14.28, 15.89, 18.81] |  | Plasma |  |
-| 13044 | p-glukoosi,toimintakokeissa,1h | mmol/l | 100% | name+unit+values | 126 | 0 | [5.54, 6.18, 6.52, 7.01, 7.43, 7.82, 8.23, 9.1, 9.88] |  | Plasma |  |
-| 13045 | p-glukoosi,toimintakokeissa,2h | mmol/l | 100% | name+unit+values | 240 | 0 | [4.47, 5.01, 5.34, 5.8, 6.31, 7.03, 7.79, 8.75, 11.07] |  | Plasma |  |
-| 13046 | p-glukoosi,toimntakokeissa0m | mmol/l | 100% | name+unit+values | 242 | 0 | [4.3, 4.6, 4.8, 5.01, 5.22, 5.42, 5.83, 6.26, 6.93] |  | Plasma |  |
-| 13047 | p-luteinisoivahormoni | u/l | 95% | name+unit+values | 198 | 0 | [2.79, 3.77, 4.73, 5.42, 6.66, 8.63, 10.71, 14.48, 27.26] |  | Plasma |  |
-| 13048 | p-luteinisoivahormoni |  | 5% | name | 10 | 100 |  |  | Plasma |  |
-| 13049 | p-omagluk,,potilasmittaringlukoosi |  | 100% | name | 1376 | 100 |  |  | Plasma |  |
-| 13050 | potilasmittaringlukoosi,ihopisto | mmol/l | 54% | name+unit+values | 749 | 0 | [5.9, 6.36, 6.79, 7.19, 7.51, 7.86, 8.26, 8.85, 9.69] |  |  |  |
-| 13051 | potilasmittaringlukoosi,ihopisto |  | 46% | name | 638 | 100 |  |  |  |  |
-| 13052 | potilasmittaringlukoosi,sensori | mmol/l | 26% | name+unit+values | 201 | 0 | [5.55, 6.53, 7.01, 7.7, 8.35, 9.14, 10.02, 11.7, 13.49] |  |  |  |
-| 13053 | potilasmittaringlukoosi,sensori |  | 74% | name | 568 | 100 |  |  |  |  |
-| 13054 | s-c-peptidi1haterianjälkeen | nmol/l | 96% | name+unit+values | 275 | 0 | [0.5, 0.75, 0.96, 1.2, 1.4, 1.62, 1.92, 2.33, 3.08] |  | Serum |  |
-| 13055 | s-c-peptidi1haterianjälkeen |  | 4% | name | 10 | 90 |  |  | Serum |  |
-| 13056 | s-c-peptidiaterianjälkeen | nmol/l | 100% | name+unit+values | 150 | 0 | [0.4, 0.65, 0.9, 1.07, 1.22, 1.49, 2.03, 2.41, 2.88] |  | Serum |  |
-| 13057 | s-follikkeliastimuloivahormoni | iu/l | 83% | name+unit+values | 416 | 0 | [3.31, 4.85, 6.04, 7.33, 10.33, 18.46, 32.36, 54.77, 76.02] |  | Serum |  |
-| 13058 | s-follikkeliastimuloivahormoni | u/l | 16% | name+unit+values | 80 | 0 | [3.2, 4.8, 5.65, 6.55, 7.78, 10.22, 16.95, 45.35, 68.7] |  | Serum |  |
-| 13059 | s-follikkeliastimuloivahormoni |  | 1% | name | 7 | 100 |  |  | Serum |  |
-| 13060 | s-kertatyydyttymättömätrasvahapot | mmol/l | 100% | name+unit+values | 263 | 0 | [2.43, 2.7, 2.8, 2.99, 3.17, 3.35, 3.54, 3.9, 4.36] |  | Serum |  |
-| 13061 | s-luteinisoivahormoni | iu/l | 82% | name+unit+values | 178 | 0 | [1.51, 2.37, 3.11, 3.71, 4.6, 5.61, 7.56, 11.94, 22.46] |  | Serum |  |
-| 13062 | s-luteinisoivahormoni | u/l | 12% | name+unit | 26 | 0 |  |  | Serum |  |
-| 13063 | s-luteinisoivahormoni |  | 6% | name | 14 | 100 |  |  | Serum |  |
-| 13064 | s-monityydyttymättömätrasvahapot | mmol/l | 96% | name+unit+values | 255 | 0 | [4.74, 4.99, 5.23, 5.48, 5.58, 5.7, 5.92, 6.18, 6.55] |  | Serum |  |
-| 13065 | s-monityydyttymättömätrasvahapot |  | 4% | name | 11 | 100 |  |  | Serum |  |
-| 13066 | s-tyydyttyneetrasvahapot | mmol/l | 100% | name+unit+values | 265 | 0 | [3.09, 3.37, 3.58, 3.77, 3.9, 4.15, 4.36, 4.73, 5.26] |  | Serum |  |
-| 13067 | ulosteenripulivirukset,nukle |  | 100% | name | 109 | 100 |  |  |  |  |
+| 12603 | -cd4-solujensuhdecd8-soluihin |  | 100% | name+values | 667 | 100 | [0.26, 0.36, 0.55, 0.72, 0.99, 1.35, 1.81, 2.33, 3] |  |  |  |
+| 12604 | -respiratoristenmikrobientutkimus |  | 100% | name | 915 | 100 |  |  |  |  |
+| 12605 | aikuistyypindiabetes,vuosikontrolli |  | 100% | name | 120 | 100 |  |  |  |  |
+| 12606 | b-diffi,erittelylaskenta,klooni |  | 100% | name | 142 | 100 |  |  | Blood |  |
+| 12607 | b-talteen.kttutkimusnäytteille |  | 100% | name | 108 | 100 |  |  | Blood |  |
+| 12608 | b-täydellinenverenkuva |  | 100% | name | 22505 | 100 |  |  | Blood |  |
+| 12609 | b-täydellinenverenkuva(pi) |  | 100% | name | 226 | 100 |  |  | Blood |  |
+| 12610 | e-punasolujenkokojakaum | % | 100% | name+unit+values | 55570 | 0 | [12.19, 12.59, 12.95, 13.26, 13.67, 14.09, 14.51, 14.98, 15.7] |  | Erythrocyte |  |
+| 12611 | e-punasolujenkokojakaum |  | 0% | name | 7 | 100 |  |  | Erythrocyte |  |
+| 12612 | e-punasolujenkokojakauma | % | 99% | name+unit+values | 196935 | 0 | [12.01, 13, 13, 13, 13.68, 14, 14.06, 15, 16.36] |  | Erythrocyte |  |
+| 12613 | e-punasolujenkokojakauma |  | 1% | name+values | 1688 | 100 | [15, 15, 15.97, 16, 16, 16.48, 17, 18, 19.67] |  | Erythrocyte |  |
+| 12614 | e-rdw,punasolujenkokojakauma | % | 100% | name+unit+values | 25929 | 0 | [12.09, 13, 13, 13.03, 14, 14, 14.99, 15.72, 17.05] |  | Erythrocyte |  |
+| 12615 | e-rdw,punasolujenkokojakauma |  | 0% | name | 76 | 100 |  |  | Erythrocyte |  |
+| 12616 | happisaturaatiovastaanotolla |  | 100% | name | 231 | 100 |  |  |  |  |
+| 12617 | hba1cvieritestipoliklinikoille | mmol/mol | 100% | name+unit+values | 151 | 0 | [44, 47.52, 51.65, 54.55, 57.33, 61.17, 67.73, 72, 82.12] |  |  |  |
+| 12618 | kemiallinenseulonta |  | 100% | name | 5053 | 100 |  |  |  |  |
+| 12619 | kemiallinenseulonta,virtsasta |  | 100% | name | 635 | 100 |  |  |  |  |
+| 12620 | kemiallinenseulonta,virtsasta␤ |  | 100% | name | 13236 | 100 |  |  |  |  |
+| 12621 | keuhkoahtaumatautiriski(tupakoivilla) |  | 100% | name | 16624 | 100 |  |  |  |  |
+| 12622 | keuhkosyöpäriski(tupakoivilla) |  | 100% | name | 16625 | 100 |  |  |  |  |
+| 12623 | konsultaatiopyyntöerikoislääkärille |  | 100% | name | 404 | 100 |  |  |  |  |
+| 12624 | l-liuskatumaisetneutrofiilit␤ | % | 100% | name+unit+values | 1196 | 0 | [13.15, 25.85, 35.73, 42.46, 47.74, 54.3, 62, 69.63, 78.9] |  | Leukocyte |  |
+| 12625 | liuskatumaisetneutrofiilit | % | 100% | name+unit+values | 178 | 0 | [43.43, 49.11, 52.65, 55.28, 57.46, 60.28, 63.81, 67.35, 72.68] |  |  |  |
+| 12626 | middleeastrespiratorysyndro |  | 100% | name | 107 | 100 |  |  |  |  |
+| 12627 | mittaustulos(mg/l) |  | 100% | name+values | 467 | 100 | [62.77, 79.74, 112.23, 155.86, 234.07, 345.39, 553.16, 970.25, 2054.43] |  |  |  |
+| 12628 | mittaustulos(mmol/l) |  | 100% | name+values | 727 | 100 | [1.3, 1.99, 2.48, 3.01, 3.85, 5.13, 9.36, 30.82, 61.62] |  |  |  |
+| 12629 | moniresistentitgramnegatiivis |  | 100% | name | 141 | 100 |  |  |  |  |
+| 12630 | n-terminaalinenpro-bnp(nt-probnp) | ng/l | 99% | name+unit+values | 2053 | 0 | [69.55, 126.49, 216.69, 368.97, 703.13, 1221.6, 2011.38, 3140.89, 5892.21] |  |  |  |
+| 12631 | n-terminaalinenpro-bnp(nt-probnp) |  | 1% | name | 19 | 100 |  |  |  |  |
+| 12632 | näyteenlaatu,lipehemoikte,advia |  | 100% | name | 142 | 100 |  |  |  |  |
+| 12633 | näytteenotto(nordlab) |  | 100% | name | 605 | 100 |  |  |  |  |
+| 12634 | näytteenottoislab |  | 100% | name | 549 | 100 |  |  |  |  |
+| 12635 | näytteenottomaksu |  | 100% | name | 177 | 100 |  |  |  |  |
+| 12636 | osmolaliteetinestimaatti | mosm/kgh2o | 95% | name+unit+values | 5740 | 0 | [191.37, 245.31, 290.83, 332.27, 376.47, 424.83, 483.94, 560.86, 671.32] |  |  |  |
+| 12637 | osmolaliteetinestimaatti |  | 5% | name | 320 | 100 |  |  |  |  |
+| 12638 | osmolaliteetti,virtsa | mosm/kgh2o | 97% | name+unit+values | 310 | 0 | [180.62, 228.94, 270.61, 303.35, 343.48, 383.68, 433.88, 523.42, 615.38] |  |  |  |
+| 12639 | osmolaliteetti,virtsa |  | 3% | name | 11 | 100 |  |  |  |  |
+| 12640 | osmolaliteetti,virtsasta␤ | mosm/kgh2o | 100% | name+unit+values | 150 | 0 | [160, 215.89, 248, 281.67, 311.7, 350.56, 394.33, 486.67, 588.25] |  |  |  |
+| 12641 | osmolaliteettiestimoitu | mosm/kgh2o | 81% | name+unit+values | 212 | 0 | [410.43, 480, 536.25, 622.18, 682.22, 742.52, 843.5, 919, 1000] |  |  |  |
+| 12642 | osmolaliteettiestimoitu | mosm/l | 19% | name+unit | 51 | 0 |  |  |  |  |
+| 12643 | otettujenpurkkien/putkienlkm | u | 100% | name+unit+values | 36443 | 0 | [1, 1, 1, 1, 1, 1.91, 2.75, 3.05, 4] |  |  |  |
+| 12644 | p-talteen.kttutkimusnäytteille |  | 100% | name | 228 | 100 |  |  | Plasma |  |
+| 12645 | p-uraatti,plasma(umol/l) | umol/l | 100% | name+unit+values | 182 | 0 | [240.76, 275.03, 305.52, 328.86, 351.75, 381.77, 409.12, 446.27, 490.77] |  | Plasma |  |
+| 12646 | patologianlaskutus,päijät-häme |  | 100% | name | 167 | 100 |  |  |  |  |
+| 12647 | patologiannäytteenkäsittely |  | 100% | name | 120 | 100 |  |  |  |  |
+| 12648 | pef-seurantavastaanotolla |  | 100% | name | 182 | 100 |  |  |  |  |
+| 12649 | perusterveyspakettialat | u/l | 100% | name+unit+values | 259 | 0 | [16.28, 19.92, 22.99, 26.3, 30.01, 33.76, 39.55, 46.02, 53.72] |  |  |  |
+| 12650 | perusterveyspakettigluk | mmol/l | 100% | name+unit+values | 258 | 0 | [5.02, 5.2, 5.39, 5.54, 5.69, 5.89, 6.18, 6.43, 6.82] |  |  |  |
+| 12651 | perusterveyspakettigt | u/l | 100% | name+unit+values | 258 | 0 | [14.26, 16.76, 18.89, 21.68, 25.38, 28.56, 34.56, 41.52, 62.84] |  |  |  |
+| 12652 | perusterveyspakettihdl-kol | mmol/l | 100% | name+unit+values | 259 | 0 | [1.06, 1.23, 1.38, 1.53, 1.65, 1.73, 1.88, 2.01, 2.28] |  |  |  |
+| 12653 | perusterveyspakettikol | mmol/l | 100% | name+unit+values | 259 | 0 | [4.42, 4.8, 5.09, 5.31, 5.62, 5.83, 6.17, 6.58, 7.19] |  |  |  |
+| 12654 | perusterveyspakettikrea | umol/l | 100% | name+unit+values | 258 | 0 | [65.81, 72.28, 75.59, 78.42, 82.06, 85.51, 87.86, 92.35, 99.45] |  |  |  |
+| 12655 | perusterveyspakettilowdensitylipoprot | mmol/l | 100% | name+unit+values | 256 | 0 | [2.2, 2.62, 2.89, 3.09, 3.39, 3.69, 3.91, 4.3, 4.82] |  |  |  |
+| 12656 | perusterveyspakettitrigly | mmol/l | 100% | name+unit+values | 260 | 0 | [0.58, 0.71, 0.84, 0.97, 1.07, 1.23, 1.45, 1.79, 2.43] |  |  |  |
+| 12657 | pika-crptyöterveysasemalla |  | 100% | name+values | 251 | 100 | [8, 8, 8.18, 10.8, 15, 18.9, 24.17, 33.72, 56.7] |  |  |  |
+| 12658 | pt-ekg,tavallinen12kytkentää |  | 100% | name | 1482 | 100 |  |  | Patient |  |
+| 12659 | pt-näytteenotto,normaali |  | 100% | name | 4946 | 100 |  |  | Patient |  |
+| 12660 | pt-näytteenotto,päivystys |  | 100% | name | 302 | 100 |  |  | Patient |  |
+| 12661 | pt-näytteenottomaksu(oletus) |  | 100% | name | 37757 | 100 |  |  | Patient |  |
+| 12662 | pt-näytteensaapuminenjakäsittely |  | 100% | name | 1323 | 100 |  |  | Patient |  |
+| 12663 | punasolojenkokojakauma | % | 99% | name+unit+values | 1068 | 0 | [12, 12.09, 13, 13, 13, 13, 13.95, 14, 14.52] |  |  |  |
+| 12664 | punasolojenkokojakauma |  | 1% | name | 7 | 100 |  |  |  |  |
+| 12665 | punasolujenerittelylaskenta | % | 9% | name+unit | 41 | 0 |  |  |  |  |
+| 12666 | punasolujenerittelylaskenta |  | 91% | name+values | 433 | 100 | [12, 12, 12.16, 13, 13, 13, 13, 13.93, 14] |  |  |  |
+| 12667 | punasolujenesiasteet(erytroblastit) | e9/l | 98% | name+unit+values | 1040 | 0 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  |
+| 12668 | punasolujenesiasteet(erytroblastit) |  | 2% | name | 24 | 100 |  |  |  |  |
+| 12669 | punasolujenkokojakauma | % | 98% | name+unit+values | 155883 | 0 | [12.35, 13, 13, 13.02, 14, 14, 15, 15.82, 17] |  |  |  |
+| 12670 | punasolujenkokojakauma |  | 2% | name | 2478 | 100 |  |  |  |  |
+| 12671 | punasolujenkokojakautuma | % | 100% | name+unit+values | 683 | 0 | [13, 13, 13, 13, 13, 14, 14, 14, 14.94] |  |  |  |
+| 12672 | punasolujenkoonvaihtelu | % | 100% | name+unit+values | 2031 | 0 | [12.51, 12.91, 13.17, 13.34, 13.62, 13.91, 14.31, 14.86, 15.92] |  |  |  |
+| 12673 | punasolut,kokojakauma | % | 100% | name+unit+values | 121 | 0 | [13, 13, 13, 13, 14, 14, 14, 14, 15] |  |  |  |
+| 12674 | rasvapaketti(6027fp-lipidit) |  | 100% | name | 1232 | 100 |  |  |  |  |
+| 12675 | rasvapaketti(fp-lipidit) |  | 100% | name | 1715 | 100 |  |  |  |  |
+| 12676 | rasvapaketti(lipidit) | paketti | 1% | name+unit | 9 | 0 |  |  |  |  |
+| 12677 | rasvapaketti(lipidit) |  | 99% | name | 1205 | 100 |  |  |  |  |
+| 12678 | respiratorisetbakteerit,nukl |  | 100% | name | 453 | 100 |  |  |  |  |
+| 12679 | respiratorisetmikrobit,nukle |  | 100% | name | 108 | 100 |  |  |  |  |
+| 12680 | respiratorisetvirukset,nukle |  | 100% | name | 431 | 100 |  |  |  |  |
+| 12681 | s-näytteenotto,veriviljely |  | 100% | name | 863 | 100 |  |  | Serum |  |
+| 12682 | s-talteen.kttutkimusnäytteille |  | 100% | name | 222 | 100 |  |  | Serum |  |
+| 12683 | seerumisilmätippojennäytteenottoja-käsittely |  | 100% | name | 205 | 100 |  |  |  |  |
+| 12684 | suhteellinentiheys | ratio | 8% | name+unit | 17 | 0 |  |  |  |  |
+| 12685 | suhteellinentiheys |  | 92% | name+values | 184 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  |  |  |
+| 12686 | suhteellinentiheys(kval) |  | 100% | name+values | 306 | 100 | [1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02, 1.03, 1.03] |  |  |  |
+| 12687 | suhteellinentiheys,virtsasta |  | 100% | name+values | 1901 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  |  |  |
+| 12688 | suhteellinentiheys,virtsasta,osatutk. |  | 100% | name+values | 587 | 100 | [1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.03] |  |  |  |
+| 12689 | suhteellinentiheys,virtsasta,vieritesti |  | 100% | name+values | 448 | 100 | [1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02] |  |  |  |
+| 12690 | talteen(plasma,kts.näytteenotto-ohje) |  | 100% | name | 117 | 100 |  |  |  |  |
+| 12691 | talteen(seerumi,kts.näytteenotto-ohje) |  | 100% | name | 108 | 100 |  |  |  |  |
+| 12692 | timeintherapeuticrange(sis.inr:n) | % | 73% | name+unit+values | 1521 | 0 | [46.66, 56.63, 65.49, 71.45, 75.46, 80.93, 84.62, 88.53, 95.43] |  |  |  |
+| 12693 | timeintherapeuticrange(sis.inr:n) |  | 27% | name | 554 | 100 |  |  |  |  |
+| 12694 | tntvieritesti,terveyskeskuksille | ug/l | 14% | name+unit | 16 | 0 |  |  |  |  |
+| 12695 | tntvieritesti,terveyskeskuksille |  | 86% | name | 98 | 100 |  |  |  |  |
+| 12696 | täydellinenverenkuva |  | 100% | name | 17721 | 100 |  |  |  |  |
+| 12697 | u-kemiallinenseulonta |  | 100% | name | 34309 | 100 |  |  | Urine |  |
+| 12698 | u-kemiallinenseulonta,otsikko,osatutk |  | 100% | name | 149 | 100 |  |  | Urine |  |
+| 12699 | u-kemiallinenseulontatykslab |  | 100% | name | 151 | 100 |  |  | Urine |  |
+| 12700 | u-kemseul,kemiallisetosoituskokeet |  | 100% | name | 418 | 100 |  |  | Urine |  |
+| 12701 | u-osmolaliteetti,estimoitu | mosm/kgh2o | 90% | name+unit+values | 217 | 0 | [388.07, 452.89, 497.57, 542.8, 595.77, 640.56, 706.28, 793.37, 912.77] |  | Urine |  |
+| 12702 | u-osmolaliteetti,estimoitu |  | 10% | name | 23 | 100 |  |  | Urine |  |
+| 12703 | u-osmolaliteettilaskennallinenosatutkuf1000 | mosm/kgh2o | 100% | name+unit+values | 110 | 0 | [320.5, 356, 418.5, 456.77, 490.5, 543.17, 613.5, 662, 733] |  | Urine |  |
+| 12704 | u-solut,peruslaskenta |  | 100% | name | 1772 | 100 |  |  | Urine |  |
+| 12705 | u-suhteellinentiheys | 1 | 94% | name+unit+values | 17812 | 0 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine |  |
+| 12706 | u-suhteellinentiheys | kg/l | 0% | name+unit | 72 | 5.56 |  |  | Urine |  |
+| 12707 | u-suhteellinentiheys |  | 5% | name | 1020 | 100 |  |  | Urine |  |
+| 12708 | u-suhteellinentiheys,kval |  | 100% | name+values | 2800 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 12709 | u-suhteellinentiheys,kval,vierit.hoitoyksikös |  | 100% | name+values | 389 | 100 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02] |  | Urine |  |
+| 12710 | u-suhteellinentiheyskg/l |  | 100% | name+values | 1472 | 100 | [1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.02, 1.03] |  | Urine |  |
+| 12711 | u-suhteellinentiheysstix |  | 100% | name+values | 1515 | 100 | [1, 1.01, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02] |  | Urine |  |
+| 12712 | ultramaxtutkimusvastaanotolla |  | 100% | name | 1028 | 100 |  |  |  |  |
+| 12713 | verenpainetauti,erotusdiagnostiikka |  | 100% | name | 106 | 100 |  |  |  |  |
+| 12714 | verenpainetauti,laajakontrolli |  | 100% | name | 178 | 100 |  |  |  |  |
+| 12715 | verikaasut,elektrolyytitym., |  | 100% | name | 377 | 100 |  |  |  |  |
+| 12716 | verikaasut,metaboliititym., |  | 100% | name | 756 | 100 |  |  |  |  |
+| 12717 | virtsankemiallinenseulonta |  | 100% | name | 12406 | 100 |  |  |  |  |
+| 12718 | virtsansolujenhl7-siirtoon | e6/l | 94% | name+unit+values | 5551 | 0 | [0.1, 0.31, 0.54, 0.84, 1.34, 2.1, 3.37, 5.95, 12.57] |  |  |  |
+| 12719 | virtsansolujenhl7-siirtoon |  | 6% | name+values | 353 | 100 | [0, 0, 0, 0, 0, 0, 0, 0, 0] |  |  |  |
+| 12720 | virtsansuhteellinentiheys | kg/l | 49% | name+unit+values | 90 | 0 | [1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02, 1.03] |  |  |  |
+| 12721 | virtsansuhteellinentiheys |  | 51% | name | 95 | 100 |  |  |  |  |
 

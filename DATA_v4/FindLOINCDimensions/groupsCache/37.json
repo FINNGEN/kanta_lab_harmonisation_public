@@ -1,473 +1,465 @@
 {
   "rows": [
     {
-      "row_id": 1894,
-      "loinc_name_guess": "Cell block preparation [Procedure] in Cytology specimen by Histology"
+      "row_id": 1864,
+      "loinc_name_guess": "Cell block preparation [Process] in Cytology material"
     },
     {
-      "row_id": 1895,
-      "loinc_name_guess": "Human papilloma virus 16 DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 1865,
+      "loinc_name_guess": "Human papillomavirus 16 DNA [Presence] in Cervix by NAA with probe detection"
     },
     {
-      "row_id": 1896,
-      "loinc_name_guess": "Human papilloma virus 18 DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 1866,
+      "loinc_name_guess": "Human papillomavirus 18 DNA [Presence] in Cervix by NAA with probe detection"
     },
     {
-      "row_id": 1897,
-      "loinc_name_guess": "Human papilloma virus high risk types DNA [Presence] in Specimen by NAA with probe detection"
+      "row_id": 1867,
+      "loinc_name_guess": "Human papillomavirus high risk types DNA [Presence] in Cervix by NAA with probe detection"
     },
     {
-      "row_id": 1898,
+      "row_id": 1868,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 1899,
+      "row_id": 1869,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 1900,
+      "row_id": 1870,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 1901,
+      "row_id": 1871,
       "loinc_name_guess": ""
     },
     {
-      "row_id": 1902,
-      "loinc_name_guess": "Bacteria.Gram negative.multidrug resistant identified in Specimen by Culture"
+      "row_id": 1872,
+      "loinc_name_guess": "Bacteria gram negative multidrug resistant identified in Specimen by Culture"
     },
     {
-      "row_id": 1903,
-      "loinc_name_guess": "Bacteria.Gram negative.multidrug resistant identified in Specimen by Culture"
+      "row_id": 1873,
+      "loinc_name_guess": "Bacteria gram negative multidrug resistant identified in Specimen by Culture"
     },
     {
-      "row_id": 1904,
-      "loinc_name_guess": "Bacteria.Gram negative.resistant identified in Specimen by Culture"
+      "row_id": 1874,
+      "loinc_name_guess": "Bacteria gram negative multidrug resistant identified in Specimen by Culture"
     },
     {
-      "row_id": 1905,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
+      "row_id": 1875,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant identified in Specimen by Organism specific culture"
     },
     {
-      "row_id": 1906,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
+      "row_id": 1876,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant identified in Specimen by Organism specific culture"
     },
     {
-      "row_id": 1907,
+      "row_id": 1877,
       "loinc_name_guess": "Glucose [Moles/volume] in Blood"
     },
     {
-      "row_id": 1908,
-      "loinc_name_guess": "Karyotype [Identifier] in Blood for Hematology-Oncology"
+      "row_id": 1878,
+      "loinc_name_guess": "Chromosome analysis.Karyotype in Blood"
     },
     {
-      "row_id": 1909,
+      "row_id": 1879,
       "loinc_name_guess": "Creatinine [Moles/volume] in Blood"
     },
     {
-      "row_id": 1910,
+      "row_id": 1880,
       "loinc_name_guess": "Bacteria [#/volume] in Urine by Automated count"
     },
     {
-      "row_id": 1911,
-      "loinc_name_guess": "Leukemia-Lymphoma immunophenotyping panel - Bone marrow"
+      "row_id": 1881,
+      "loinc_name_guess": "Leukocyte immunophenotyping panel by Flow cytometry (FC) - Bone marrow"
     },
     {
-      "row_id": 1912,
-      "loinc_name_guess": "Minimal residual disease panel - Bone marrow by Flow cytometry (FC)"
+      "row_id": 1882,
+      "loinc_name_guess": "Minimal residual disease in Bone marrow by Flow cytometry (FC)"
     },
     {
-      "row_id": 1913,
+      "row_id": 1883,
       "loinc_name_guess": "Hemoglobin [Mass/volume] in Capillary blood"
     },
     {
-      "row_id": 1914,
-      "loinc_name_guess": "Glucose [Moles/volume] in Capillary plasma"
+      "row_id": 1884,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 1915,
-      "loinc_name_guess": "Glucose [Moles/volume] in Capillary plasma"
+      "row_id": 1885,
+      "loinc_name_guess": "Glucose [Moles/volume] in Capillary blood"
     },
     {
-      "row_id": 1916,
+      "row_id": 1886,
       "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
-      "row_id": 1917,
+      "row_id": 1887,
       "loinc_name_guess": "C-reactive protein [Mass/volume] in Serum or Plasma"
     },
     {
-      "row_id": 1918,
-      "loinc_name_guess": "Reticulocyte hemoglobin content [Entitic mass] in Blood"
+      "row_id": 1888,
+      "loinc_name_guess": "Reticulocyte.hemoglobin [Entitic mass] in Red Blood Cells"
     },
     {
-      "row_id": 1919,
-      "loinc_name_guess": "Reticulocyte hemoglobin content [Entitic mass] in Blood"
-    },
-    {
-      "row_id": 1920,
-      "loinc_name_guess": "Base excess [Moles/volume] in Venous blood"
-    },
-    {
-      "row_id": 1921,
-      "loinc_name_guess": "Base excess [Moles/volume] in Venous blood"
-    },
-    {
-      "row_id": 1922,
-      "loinc_name_guess": "Epithelial cells [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1923,
-      "loinc_name_guess": "Epithelial cells [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1924,
-      "loinc_name_guess": "Epstein-Barr virus DNA [Units/volume] in Plasma by NAA with probe detection"
-    },
-    {
-      "row_id": 1925,
-      "loinc_name_guess": "Epstein-Barr virus DNA [Units/volume] in Plasma by NAA with probe detection"
-    },
-    {
-      "row_id": 1926,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1927,
-      "loinc_name_guess": "Erythrocytes [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1928,
-      "loinc_name_guess": "Telopeptide.beta C-terminal.collagen type I [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1929,
-      "loinc_name_guess": "pH [Logarithmic Content] in Capillary blood"
-    },
-    {
-      "row_id": 1930,
-      "loinc_name_guess": "pH [Logarithmic Content] in Venous blood"
-    },
-    {
-      "row_id": 1931,
-      "loinc_name_guess": "Oxygen [Partial pressure] in Capillary blood"
-    },
-    {
-      "row_id": 1932,
-      "loinc_name_guess": "Blood gas panel - Venous blood"
-    },
-    {
-      "row_id": 1933,
-      "loinc_name_guess": "Hepatitis C virus RNA [Presence] in Plasma by NAA with probe detection"
-    },
-    {
-      "row_id": 1934,
-      "loinc_name_guess": "Carbon dioxide [Partial pressure] in Venous blood"
-    },
-    {
-      "row_id": 1935,
-      "loinc_name_guess": "Carbon dioxide [Partial pressure] in Venous blood"
-    },
-    {
-      "row_id": 1936,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 1937,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 1938,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 1939,
-      "loinc_name_guess": "HIV 1+2 Ab and p24 Ag [Presence] in Serum or Plasma"
-    },
-    {
-      "row_id": 1940,
-      "loinc_name_guess": "HIV 1+2 Ab and p24 Ag [Presence] in Serum or Plasma"
-    },
-    {
-      "row_id": 1941,
-      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
-    },
-    {
-      "row_id": 1942,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
-    },
-    {
-      "row_id": 1943,
-      "loinc_name_guess": "Potassium [Moles/volume] in Blood"
-    },
-    {
-      "row_id": 1944,
-      "loinc_name_guess": "Potassium [Moles/volume] in Blood"
-    },
-    {
-      "row_id": 1945,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Blood"
-    },
-    {
-      "row_id": 1946,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
-    },
-    {
-      "row_id": 1947,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
-    },
-    {
-      "row_id": 1948,
-      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
-    },
-    {
-      "row_id": 1949,
-      "loinc_name_guess": "Casts [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1950,
-      "loinc_name_guess": "Casts [#/volume] in Urine by Automated count"
-    },
-    {
-      "row_id": 1951,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 1952,
-      "loinc_name_guess": "Bone density study panel"
-    },
-    {
-      "row_id": 1953,
-      "loinc_name_guess": "INR [Ratio] in Capillary blood"
-    },
-    {
-      "row_id": 1954,
-      "loinc_name_guess": "Bacteria.Gram negative.multidrug resistant identified in Specimen by Culture"
-    },
-    {
-      "row_id": 1955,
-      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
-    },
-    {
-      "row_id": 1956,
-      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
-    },
-    {
-      "row_id": 1957,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1958,
-      "loinc_name_guess": "NK cells/Lymphocytes [# Ratio] in Blood"
-    },
-    {
-      "row_id": 1959,
-      "loinc_name_guess": "Osmolality [Osmolality] in Urine"
-    },
-    {
-      "row_id": 1960,
-      "loinc_name_guess": "Osmolality [Osmolality] in Urine"
-    },
-    {
-      "row_id": 1961,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1962,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1963,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1964,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1965,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1966,
-      "loinc_name_guess": "Natriuretic peptide B.N-terminal pro [Mass/volume] in Plasma"
-    },
-    {
-      "row_id": 1967,
-      "loinc_name_guess": "Ova and Parasites identified in Stool by Microscopy"
-    },
-    {
-      "row_id": 1968,
-      "loinc_name_guess": "Tissue examination.gross and microscopic [Interpretation] in Tissue"
-    },
-    {
-      "row_id": 1969,
-      "loinc_name_guess": "Influenza virus A+B and Respiratory syncytial virus and SARS-CoV-2 RNA panel - Respiratory specimen by NAA with probe detection"
-    },
-    {
-      "row_id": 1970,
-      "loinc_name_guess": "Carbon monoxide diffusing capacity [Volume/time/Pressure] in Exhaled gas"
-    },
-    {
-      "row_id": 1971,
-      "loinc_name_guess": ""
-    },
-    {
-      "row_id": 1972,
-      "loinc_name_guess": "Bone density 2 sites [Mass/area] by DXA"
-    },
-    {
-      "row_id": 1973,
-      "loinc_name_guess": "Echocardiogram.comprehensive panel"
-    },
-    {
-      "row_id": 1974,
-      "loinc_name_guess": "Peak expiratory flow rate diurnal variation"
-    },
-    {
-      "row_id": 1975,
-      "loinc_name_guess": "Sleep study.home limited panel"
-    },
-    {
-      "row_id": 1976,
-      "loinc_name_guess": "Sleep study.home panel"
-    },
-    {
-      "row_id": 1977,
-      "loinc_name_guess": "Bacteria identified in Pus by Aerobic and Anaerobic culture"
-    },
-    {
-      "row_id": 1978,
-      "loinc_name_guess": "Bacteria.Gram negative.resistant identified in Specimen by Culture"
-    },
-    {
-      "row_id": 1979,
-      "loinc_name_guess": "Reticulocyte hemoglobin content [Entitic mass] in Blood"
-    },
-    {
-      "row_id": 1980,
-      "loinc_name_guess": "Reticulocyte hemoglobin content [Entitic mass] in Blood"
-    },
-    {
-      "row_id": 1981,
-      "loinc_name_guess": "HIV 1+2 Ab and p24 Ag [Presence] in Serum"
-    },
-    {
-      "row_id": 1982,
-      "loinc_name_guess": "Fetal aneuploidy screen panel - Maternal blood by DNA analysis"
-    },
-    {
-      "row_id": 1983,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
-    },
-    {
-      "row_id": 1984,
-      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant [Presence] in Specimen by Organism specific culture"
-    },
-    {
-      "row_id": 1985,
-      "loinc_name_guess": "T-helper cells/Lymphocytes [# Ratio] in Blood"
-    },
-    {
-      "row_id": 1986,
-      "loinc_name_guess": "T-suppressor cells/Lymphocytes [# Ratio] in Blood"
-    },
-    {
-      "row_id": 1987,
-      "loinc_name_guess": "Troponin T [Mass/volume] in Blood"
-    },
-    {
-      "row_id": 1988,
-      "loinc_name_guess": "Troponin T [Mass/volume] in Blood"
+      "row_id": 1889,
+      "loinc_name_guess": "Reticulocyte.hemoglobin [Entitic mass] in Red Blood Cells"
     },
     {
       "row_id": 1890,
-      "loinc_name_guess": "Tissue examination.gross and microscopic [Interpretation] in Tissue"
+      "loinc_name_guess": "Base excess [Moles/volume] in Venous blood"
     },
     {
-      "row_id": 1990,
-      "loinc_name_guess": "Tissue examination.gross and microscopic [Interpretation] in Tissue"
+      "row_id": 1891,
+      "loinc_name_guess": "Base excess [Moles/volume] in Venous blood"
     },
     {
-      "row_id": 1991,
-      "loinc_name_guess": "Workplace drugs of abuse screen and confirmation 4 panel - Urine"
+      "row_id": 1892,
+      "loinc_name_guess": "Epithelial cells [#/volume] in Urine by Automated count"
     },
     {
-      "row_id": 1992,
-      "loinc_name_guess": "Workplace drugs of abuse screen and confirmation 7 panel - Urine"
+      "row_id": 1893,
+      "loinc_name_guess": "Epithelial cells [#/volume] in Urine by Automated count"
     },
     {
-      "row_id": 1993,
-      "loinc_name_guess": ""
+      "row_id": 1894,
+      "loinc_name_guess": "Epstein-Barr virus DNA [Units/volume] in Plasma by NAA with probe detection"
     },
     {
-      "row_id": 1994,
-      "loinc_name_guess": "CBC with Differential panel - Blood"
+      "row_id": 1895,
+      "loinc_name_guess": "Epstein-Barr virus DNA [Presence] in Plasma by NAA with probe detection"
     },
     {
-      "row_id": 1995,
-      "loinc_name_guess": "Amphetamine and Methamphetamine enantiomers panel - Urine"
+      "row_id": 1896,
+      "loinc_name_guess": "Erythrocytes [#/volume] in Urine by Automated count"
     },
     {
-      "row_id": 1996,
-      "loinc_name_guess": "Ketones [Presence] in Urine by Test strip"
+      "row_id": 1897,
+      "loinc_name_guess": "Erythrocytes [#/volume] in Urine by Automated count"
     },
     {
-      "row_id": 1997,
-      "loinc_name_guess": "Hemoglobin [Presence] in Urine by Test strip"
+      "row_id": 1898,
+      "loinc_name_guess": "Collagen type I cross-linked C-telopeptide.beta [Mass/volume] in Fasting Plasma"
     },
     {
-      "row_id": 1998,
-      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+      "row_id": 1899,
+      "loinc_name_guess": "pH of Capillary blood"
     },
     {
-      "row_id": 1999,
-      "loinc_name_guess": "pH [Logarithmic Content] in Urine by Test strip"
+      "row_id": 1900,
+      "loinc_name_guess": "pH of Venous blood"
     },
     {
-      "row_id": 2000,
-      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
+      "row_id": 1901,
+      "loinc_name_guess": "Oxygen [Partial pressure] in Capillary blood"
     },
     {
-      "row_id": 2001,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
-    },
-    {
-      "row_id": 2002,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
-    },
-    {
-      "row_id": 2003,
-      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
-    },
-    {
-      "row_id": 2004,
-      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
-    },
-    {
-      "row_id": 2005,
-      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
-    },
-    {
-      "row_id": 2006,
-      "loinc_name_guess": "Leukocyte esterase [Presence] in Urine by Test strip"
-    },
-    {
-      "row_id": 2007,
-      "loinc_name_guess": "Nitrite [Presence] in Urine by Test strip"
-    },
-    {
-      "row_id": 2008,
-      "loinc_name_guess": "Protein [Presence] in Urine by Test strip"
-    },
-    {
-      "row_id": 2009,
+      "row_id": 1902,
       "loinc_name_guess": "Blood gas panel - Venous blood"
     },
     {
-      "row_id": 2010,
-      "loinc_name_guess": "Yersinia enterocolitica+pseudotuberculosis+pestis DNA panel - Stool by NAA with probe detection"
+      "row_id": 1903,
+      "loinc_name_guess": "Hepatitis C virus RNA [Presence] in Plasma by NAA with probe detection"
+    },
+    {
+      "row_id": 1904,
+      "loinc_name_guess": "Carbon dioxide [Partial pressure] in Venous blood"
+    },
+    {
+      "row_id": 1905,
+      "loinc_name_guess": "Human papillomavirus 16 DNA [Presence] in Cervix by NAA with probe detection"
+    },
+    {
+      "row_id": 1906,
+      "loinc_name_guess": "Human papillomavirus 18 & 45 DNA [Presence] in Cervix by NAA with probe detection"
+    },
+    {
+      "row_id": 1907,
+      "loinc_name_guess": "Human papillomavirus high risk types DNA [Presence] in Cervix by NAA with probe detection"
+    },
+    {
+      "row_id": 1908,
+      "loinc_name_guess": "HIV 1+2 p24 Ag+Ab [Presence] in Serum or Plasma by Immunoassay"
+    },
+    {
+      "row_id": 1909,
+      "loinc_name_guess": "HIV 1+2 p24 Ag+Ab [Presence] in Serum or Plasma by Immunoassay"
+    },
+    {
+      "row_id": 1910,
+      "loinc_name_guess": "Drugs of abuse confirmation panel"
+    },
+    {
+      "row_id": 1911,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 1912,
+      "loinc_name_guess": "Potassium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 1913,
+      "loinc_name_guess": "Potassium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 1914,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 1915,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 1916,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 1917,
+      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
+    },
+    {
+      "row_id": 1918,
+      "loinc_name_guess": "Casts [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 1919,
+      "loinc_name_guess": "Casts [#/volume] in Urine by Automated count"
+    },
+    {
+      "row_id": 1920,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 1921,
+      "loinc_name_guess": "Bone density study, 2 sites with interpretation"
+    },
+    {
+      "row_id": 1922,
+      "loinc_name_guess": "INR in Capillary blood"
+    },
+    {
+      "row_id": 1923,
+      "loinc_name_guess": "Bacteria gram negative multidrug resistant identified in Specimen by Culture"
+    },
+    {
+      "row_id": 1924,
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 1925,
+      "loinc_name_guess": "Sodium [Moles/volume] in Blood"
+    },
+    {
+      "row_id": 1926,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1927,
+      "loinc_name_guess": "NK cells/Lymphocytes [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 1928,
+      "loinc_name_guess": "Osmolality [Osmolality] in Urine"
+    },
+    {
+      "row_id": 1929,
+      "loinc_name_guess": "Osmolality [Osmolality] in Urine"
+    },
+    {
+      "row_id": 1930,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1931,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1932,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1933,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1934,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1935,
+      "loinc_name_guess": "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Plasma"
+    },
+    {
+      "row_id": 1936,
+      "loinc_name_guess": "Ova and Parasites identified in Stool by Microscopy"
+    },
+    {
+      "row_id": 1937,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by H&E stain"
+    },
+    {
+      "row_id": 1938,
+      "loinc_name_guess": "Influenza virus A+B & Respiratory syncytial virus & SARS-CoV-2 (COVID-19) Ag panel - Nasopharynx by Rapid immunoassay"
+    },
+    {
+      "row_id": 1939,
+      "loinc_name_guess": "Carbon monoxide diffusing capacity in Lung by Single breath"
+    },
+    {
+      "row_id": 1940,
+      "loinc_name_guess": "Neurophysiology study [Interpretation]"
+    },
+    {
+      "row_id": 1941,
+      "loinc_name_guess": "Bone density study, 2 sites"
+    },
+    {
+      "row_id": 1942,
+      "loinc_name_guess": "Echocardiogram.Doppler+color flow+2D.complete - Heart"
+    },
+    {
+      "row_id": 1943,
+      "loinc_name_guess": "Expiratory peak flow during 24 hour"
+    },
+    {
+      "row_id": 1944,
+      "loinc_name_guess": "Polysomnography panel.ambulatory limited"
+    },
+    {
+      "row_id": 1945,
+      "loinc_name_guess": "Polysomnography panel.ambulatory with leg movement"
+    },
+    {
+      "row_id": 1946,
+      "loinc_name_guess": "Bacteria identified in Pus by Aerobic and Anaerobic culture"
+    },
+    {
+      "row_id": 1947,
+      "loinc_name_guess": "Bacteria gram negative multidrug resistant identified in Specimen by Culture"
+    },
+    {
+      "row_id": 1948,
+      "loinc_name_guess": "Reticulocyte.hemoglobin [Entitic mass] in Red Blood Cells"
+    },
+    {
+      "row_id": 1949,
+      "loinc_name_guess": "HIV 1+2 p24 Ag+Ab [Presence] in Serum by Immunoassay"
+    },
+    {
+      "row_id": 1950,
+      "loinc_name_guess": "Non-invasive prenatal testing panel - Maternal blood"
+    },
+    {
+      "row_id": 1951,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant identified in Specimen by Organism specific culture"
+    },
+    {
+      "row_id": 1952,
+      "loinc_name_guess": "Staphylococcus aureus.methicillin resistant identified in Specimen by Organism specific culture"
+    },
+    {
+      "row_id": 1953,
+      "loinc_name_guess": "T-helper cells/Lymphocytes [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 1954,
+      "loinc_name_guess": "T-suppressor cells/Lymphocytes [Volume Fraction] in Blood"
+    },
+    {
+      "row_id": 1955,
+      "loinc_name_guess": "Troponin T [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 1956,
+      "loinc_name_guess": "Troponin T [Mass/volume] in Serum or Plasma"
+    },
+    {
+      "row_id": 1957,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by H&E stain"
+    },
+    {
+      "row_id": 1958,
+      "loinc_name_guess": "Microscopic observation [Identifier] in Tissue by H&E stain"
+    },
+    {
+      "row_id": 1959,
+      "loinc_name_guess": "Workplace drugs of abuse screen and confirmation panel"
+    },
+    {
+      "row_id": 1960,
+      "loinc_name_guess": "Workplace drugs of abuse screen and confirmation panel"
+    },
+    {
+      "row_id": 1961,
+      "loinc_name_guess": ""
+    },
+    {
+      "row_id": 1962,
+      "loinc_name_guess": "CBC with Differential panel - Blood"
+    },
+    {
+      "row_id": 1963,
+      "loinc_name_guess": "Amphetamine & Methamphetamine enantiomers [Presence] in Urine by Chromatography"
+    },
+    {
+      "row_id": 1964,
+      "loinc_name_guess": "Ketones [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1965,
+      "loinc_name_guess": "Hemoglobin [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1966,
+      "loinc_name_guess": "Glucose [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1967,
+      "loinc_name_guess": "pH of Urine by Test strip"
+    },
+    {
+      "row_id": 1968,
+      "loinc_name_guess": "Drugs of abuse confirmation panel - Urine"
+    },
+    {
+      "row_id": 1969,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 1970,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine by Screen method"
+    },
+    {
+      "row_id": 1971,
+      "loinc_name_guess": "Urinalysis macro (dipstick) panel - Urine"
+    },
+    {
+      "row_id": 1972,
+      "loinc_name_guess": "Creatinine [Moles/volume] in Urine"
+    },
+    {
+      "row_id": 1973,
+      "loinc_name_guess": "Drugs of abuse screen panel - Urine"
+    },
+    {
+      "row_id": 1974,
+      "loinc_name_guess": "Leukocyte esterase [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1975,
+      "loinc_name_guess": "Nitrite [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1976,
+      "loinc_name_guess": "Protein [Presence] in Urine by Test strip"
+    },
+    {
+      "row_id": 1977,
+      "loinc_name_guess": "Blood gas panel - Venous blood"
+    },
+    {
+      "row_id": 1978,
+      "loinc_name_guess": "Yersinia sp DNA [Presence] in Stool by NAA with probe detection"
     }
   ],
-  "reflection": "This group contained a wide variety of tests, including standard chemistry, microbiology, hematology, point-of-care testing, complex procedures (`Pt-` prefixed codes), and several administrative or billing codes. \n\nGotchas and ambiguities:\n*   **Administrative codes:** Several codes were clearly for billing or administrative purposes (e.g., `lisämaksu...`, `lisävastaus...`, `pt-näytteenotto0maksu`). These were left with an empty guess.\n*   **Instrument-specific codes:** Rows 1936-1938 (`...aptimapanther...apututkimustulostensiirtoon`) appear to be codes for managing data flow from a specific instrument platform, not for ordering a clinical test. These were also left empty.\n*   **Point-of-care (`vieritesti`):** This qualifier was frequent. I chose to name the core test (e.g., `Glucose [Moles/volume] in Blood`) and omit the method, as `point-of-care` is often a separate attribute or part of a distinct LOINC concept. Including it in the name as `by Point-of-care` might make the search too specific and miss the core concept. The exception was for urine dipstick tests where `by Test strip` is standard LOINC practice.\n*   **Misleading prefixes:** Rows 1985 and 1986 (`t-auttajasolujen...`, `t-estäjäsolujen...`) used the `T-` prefix (for Thrombocytes), but the test names clearly describe T-lymphocyte subsets (helper/suppressor cells). I ignored the prefix and named the tests based on the full name and immunology context.\n*   **Panels vs. single tests:** Many codes clearly described panels (`CBC with Differential`, `Blood gas panel`, various drug screen panels). Other codes like the histology/pathology descriptions (`pienikudoskoepala...`) are ambiguous; they describe a procedure that results in a report, which functions like a panel. I used panel naming conventions where appropriate.\n*   **Unit errors:** Row 1945 for creatinine had unit `mmol/l` but values in the range of `µmol/l`. I trusted the numeric values over the stated unit."
+  "reflection": "This group was diverse, covering everything from billing codes to advanced molecular diagnostics and point-of-care testing. The main challenges were:\n\n1.  **Administrative/Procedural Codes**: Many codes (e.g., `1868`, `1869`, `1961`) were clearly for billing or administrative purposes (\"additional fee\", \"additional request\", \"0 fee sample collection\"). These are unmappable to clinical LOINC terms and were correctly left blank.\n2.  **Point-of-Care (POCT) Tests**: Numerous codes included \"vieritesti\" (POCT), \"pikatesti\" (rapid test), or \"hoitoyksikön\" (ward test). For most chemistry analytes (e.g., glucose, creatinine, electrolytes, CRP), LOINC does not distinguish POCT from central lab testing in the Long Common Name unless a specific method like `Test strip` is implied. I've generally mapped these to the standard lab term, which is correct LOINC practice. The `INR` test (`1922`) was an exception where `in Capillary blood` is often used for POCT.\n3.  **Ambiguous Systems**: For microbiology screens (MRSA, MDR GNR) and some molecular tests (HPV), the specimen type was not specified in the local code. I defaulted to a generic `in Specimen` or the most common system (e.g., `in Cervix` for HPV) to provide a useful search query.\n4.  **Panel Identification**: Several codes clearly indicated panels: `happoemästasejahappi` (acid-base and oxygen) became a blood gas panel, `täydellinenverenkuva` became a CBC w/ diff panel, and various urine dipstick codes were mapped to the `Urinalysis macro (dipstick) panel`. The combined respiratory virus test (`1938`) was also straightforward to map to a multiplex panel.\n5.  **Confusing Prefixes**: The prefix `T-` was used for T-cell subsets (`1953`, `1954`), which is confusing as `T` usually means Thrombocytes. The long name was essential to resolve this."
 }
