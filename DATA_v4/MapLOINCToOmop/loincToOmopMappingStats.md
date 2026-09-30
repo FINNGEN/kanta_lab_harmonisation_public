@@ -1,6 +1,6 @@
 # LOINC -> OMOP Mapping -- Stats
 
-Source: `DATA/MapLOINCToOmop/codesWithOMOP.tsv`
+Source: `DATA_v4/MapLOINCToOmop/codesWithOMOP.tsv`
 
 ## Overview
 
@@ -13,18 +13,18 @@ missed.
 
 | bucket | n | pct |
 |---|---|---|
-| total | 1984 | 100.0% |
-| named by FindLOINCDimensions | 1890 | 95.3% |
-| left unnamed |   94 | 4.7% |
+| total | 2687 | 100.0% |
+| named by FindLOINCDimensions | 2577 | 95.9% |
+| left unnamed |  110 | 4.1% |
 
 Of the rows a mapping was attempted for:
 
 | bucket | n | pct |
 |---|---|---|
-| attempted (a name was guessed) | 1890 | 100.0% |
-| mapped to an OMOP concept | 1559 | 82.5% |
-| unmapped (no candidate was right) |  331 | 17.5% |
-| distinct concepts used |  601 |  |
+| attempted (a name was guessed) | 2577 | 100.0% |
+| mapped to an OMOP concept | 2077 | 80.6% |
+| unmapped (no candidate was right) |  500 | 19.4% |
+| distinct concepts used |  705 |  |
 
 ## By domain (the chosen concept's `has_system`)
 
@@ -34,69 +34,75 @@ an unmapped row has no specimen to be counted under.
 
 | omop_has_system | n_rows | pct_of_rows |
 |---|---|---|
-| Serum or Plasma | 547 | 27.6% |
-| (unmapped) | 423 | 21.3% |
-| Blood | 181 | 9.1% |
-| Urine | 160 | 8.1% |
-| XXX | 104 | 5.2% |
-| Serum | 100 | 5.0% |
-| Serum, Plasma or Blood |  51 | 2.6% |
-| Respiratory system specimen |  39 | 2.0% |
-| Blood or Tissue |  38 | 1.9% |
-| Red Blood Cells |  33 | 1.7% |
-| Stool |  31 | 1.6% |
-| Heart |  27 | 1.4% |
-| Upper respiratory specimen |  24 | 1.2% |
-| Platelet poor plasma |  21 | 1.1% |
-| Blood capillary |  19 | 1.0% |
-| Urine sediment |  19 | 1.0% |
-| Cerebral spinal fluid |  18 | 0.9% |
-| Respiratory system |  18 | 0.9% |
-| Throat |  14 | 0.7% |
-| Blood venous |  11 | 0.6% |
-| Semen |   9 | 0.5% |
-| Plasma |   7 | 0.4% |
-| Pleural fluid |   7 | 0.4% |
-| Bone marrow |   6 | 0.3% |
-| Isolate |   6 | 0.3% |
-| Blood arterial |   5 | 0.3% |
-| Nose |   4 | 0.2% |
-| Reticulocytes |   4 | 0.2% |
-| Specimen |   4 | 0.2% |
-| Vaginal |   4 | 0.2% |
-| ^Patient |   4 | 0.2% |
-| Body fluid |   3 | 0.2% |
-| Bronchoalveolar lavage |   3 | 0.2% |
-| Interstitial fluid |   3 | 0.2% |
-| Pharynx |   3 | 0.2% |
-| Respiratory system airway |   3 | 0.2% |
-| Tissue and Smears |   3 | 0.2% |
-| Blood^BPU |   2 | 0.1% |
-| Dialysis fluid |   2 | 0.1% |
-| Hematopoietic progenitor cells^BPU |   2 | 0.1% |
-| Plasma arterial |   2 | 0.1% |
-| Plasma cell-free DNA |   2 | 0.1% |
-| Skeletal system |   2 | 0.1% |
-| Abscess |   1 | 0.1% |
-| Aspirate |   1 | 0.1% |
-| Blood central venous |   1 | 0.1% |
-| Blood cord |   1 | 0.1% |
-| Bone |   1 | 0.1% |
-| Cardiac echo study |   1 | 0.1% |
-| Cardiac stress study |   1 | 0.1% |
-| Catheter tip |   1 | 0.1% |
-| Dialysis fluid peritoneal |   1 | 0.1% |
-| Eye |   1 | 0.1% |
-| Nasopharynx |   1 | 0.1% |
-| Peritoneal fluid |   1 | 0.1% |
-| Pus |   1 | 0.1% |
-| Sputum |   1 | 0.1% |
-| Synovial fluid |   1 | 0.1% |
-| ^BPU |   1 | 0.1% |
+| Serum or Plasma | 834 | 31.0% |
+| (unmapped) | 609 | 22.7% |
+| Urine | 233 | 8.7% |
+| Blood | 162 | 6.0% |
+| Serum | 143 | 5.3% |
+| XXX | 104 | 3.9% |
+| Platelet poor plasma |  81 | 3.0% |
+| Tissue and Smears |  62 | 2.3% |
+| Serum, Plasma or Blood |  59 | 2.2% |
+| Stool |  40 | 1.5% |
+| Blood or Tissue |  34 | 1.3% |
+| Throat |  32 | 1.2% |
+| Urine sediment |  27 | 1.0% |
+| Blood venous |  25 | 0.9% |
+| Blood capillary |  24 | 0.9% |
+| Blood arterial |  21 | 0.8% |
+| Heart |  20 | 0.7% |
+| ^Patient |  19 | 0.7% |
+| Cerebral spinal fluid |  15 | 0.6% |
+| Red Blood Cells |  15 | 0.6% |
+| Pleural fluid |  14 | 0.5% |
+| Plasma |   9 | 0.3% |
+| Cervix or Vagina |   8 | 0.3% |
+| Blood mixed venous |   6 | 0.2% |
+| Cervix |   6 | 0.2% |
+| Body fluid |   5 | 0.2% |
+| Dialysis fluid |   4 | 0.1% |
+| Nose |   4 | 0.1% |
+| Pharynx |   4 | 0.1% |
+| Plasma venous |   4 | 0.1% |
+| Semen |   4 | 0.1% |
+| Skeletal system |   4 | 0.1% |
+| Sputum |   4 | 0.1% |
+| Plasma arterial |   3 | 0.1% |
+| Respiratory system specimen |   3 | 0.1% |
+| Reticulocytes |   3 | 0.1% |
+| Skin |   3 | 0.1% |
+| Vaginal |   3 | 0.1% |
+| Abscess |   2 | 0.1% |
+| Catheter tip |   2 | 0.1% |
+| Dialysis fluid peritoneal |   2 | 0.1% |
+| Duodenal fluid |   2 | 0.1% |
+| Genital |   2 | 0.1% |
+| Mother's milk |   2 | 0.1% |
+| Peritoneal fluid |   2 | 0.1% |
+| Respiratory system airway |   2 | 0.1% |
+| Synovial fluid |   2 | 0.1% |
+| Wound |   2 | 0.1% |
+| Amniotic fluid |   1 | 0.0% |
+| Aspirate |   1 | 0.0% |
+| Breast cancer specimen |   1 | 0.0% |
+| Bronchoalveolar lavage |   1 | 0.0% |
+| Drain |   1 | 0.0% |
+| Ear |   1 | 0.0% |
+| Gas delivery system |   1 | 0.0% |
+| Inhaled gas |   1 | 0.0% |
+| Isolate or Specimen |   1 | 0.0% |
+| Lung tissue |   1 | 0.0% |
+| Nervous system |   1 | 0.0% |
+| Plasma cell-free DNA |   1 | 0.0% |
+| Referral lab test |   1 | 0.0% |
+| Respiratory system |   1 | 0.0% |
+| Serum and Blood |   1 | 0.0% |
+| Specimen |   1 | 0.0% |
+| Upper respiratory specimen |   1 | 0.0% |
 
 ## Cross-check against the reference mapping
 
-`DATA/ReferenceMappings/lab_data_summary.csv` holds a separately curated Finnish-code -> OMOP mapping. Restricted to its `APPROVED` rows and matched to this table by `TEST_NAME`+`UNIT`, it is the only independent read on whether the concepts chosen here are the *right* ones.
+`DATA_v4/ReferenceMappings/lab_data_summary.csv` holds a separately curated Finnish-code -> OMOP mapping. Restricted to its `APPROVED` rows and matched to this table by `TEST_NAME`+`UNIT`, it is the only independent read on whether the concepts chosen here are the *right* ones.
 
 The join key is `TEST_NAME` + `UNIT`. An **empty `UNIT` counts as a unit**:
 a code with no unit recorded is a different row from the same code in
@@ -120,12 +126,12 @@ outcomes:
 
 | outcome | n | pct_of_all | pct_of_in_reference |
 |---|---|---|---|
-| not in reference | 1220 | 61.5% |  |
-| not automapped |   71 | 3.6% | 9.3% |
-| disagreement |  239 | 12.0% | 31.3% |
-| agreement |  454 | 22.9% | 59.4% |
+| not in reference | 1478 | 55.0% |  |
+| not automapped |  172 | 6.4% | 14.2% |
+| disagreement |  295 | 11.0% | 24.4% |
+| agreement |  742 | 27.6% | 61.4% |
 
-Agreement over the whole overlap: **454 / 764 = 59.4%**. Restricted to rows that carry real evidence (a unit, values, or both): **353 / 500 = 70.6%**.
+Agreement over the whole overlap: **742 / 1209 = 61.4%**. Restricted to rows that carry real evidence (a unit, values, or both): **565 / 768 = 73.6%**.
 
 The reference is the best mapping available, not ground truth — it contains
 errors of its own (it sends the rapid-test code `c-reaktiivinenproteiini,pika`
@@ -142,10 +148,10 @@ about them, and what this pipeline did anyway:
 
 | reference_status | rows | automapped | records |
 |---|---|---|---|
-| UNCHECKED | 849 | 574 (67.6%) | 786,229 |
-| NOT-FOUND | 243 | 202 (83.1%) | 116,974 |
-| (no row at all) |  93 | 77 (82.8%) | 42,625 |
-| IGNORED |  35 | 20 (57.1%) | 144,424 |
+| UNCHECKED | 1097 | 748 (68.2%) | 779,224 |
+| NOT-FOUND |  282 | 225 (79.8%) | 238,706 |
+| (no row at all) |   57 | 45 (78.9%) | 87,321 |
+| IGNORED |   42 | 27 (64.3%) | 156,750 |
 
 - **`UNCHECKED`** — nobody has curated the code yet. There is no answer to
   compare against, and these are where a working pipeline adds mappings that
@@ -164,13 +170,13 @@ The reference was curated for the codes that carry the data. It covers 97% of th
 
 | records | rows | in_reference | automapped | agreement |
 |---|---|---|---|---|
-| < 100 | 388 | 114 (29.4%) | 80.7% | 56 (49.1%) |
-| 100 - 499 | 772 | 183 (23.7%) | 89.6% | 120 (65.6%) |
-| 500 - 4,999 | 589 | 269 (45.7%) | 92.9% | 154 (57.2%) |
-| 5,000 - 49,999 | 171 | 136 (79.5%) | 92.6% | 81 (59.6%) |
-| >= 50,000 |  64 | 62 (96.9%) | 98.4% | 43 (69.4%) |
+| < 100 |  491 | 184 (37.5%) | 75.5% | 107 (58.2%) |
+| 100 - 499 | 1063 | 341 (32.1%) | 87.7% | 216 (63.3%) |
+| 500 - 4,999 |  780 | 376 (48.2%) | 88.0% | 242 (64.4%) |
+| 5,000 - 49,999 |  255 | 210 (82.4%) | 85.7% | 114 (54.3%) |
+| >= 50,000 |   98 | 98 (100.0%) | 89.8% | 63 (64.3%) |
 
-**Restricted to codes with >= 500 records — the range the reference actually covers: 278 / 467 = 59.5%** (63.6% of the 437 it automapped).
+**Restricted to codes with >= 500 records — the range the reference actually covers: 419 / 684 = 61.3%** (69.9% of the 599 it automapped).
 
 ### By evidence level
 
@@ -184,10 +190,10 @@ agree less often, and why they are reported apart from the evidenced ones:
 
 | evidence_level | n_rows | n_automapped | n_agreement | pct_automapped | pct_agree_of_rows | pct_agree_of_automapped |
 |---|---|---|---|---|---|---|
-| name+unit+values | 348 | 342 | 240 | 98.3% | 69.0% | 70.2% |
-| name | 264 | 203 | 101 | 76.9% | 38.3% | 49.8% |
-| name+values | 115 | 113 |  85 | 98.3% | 73.9% | 75.2% |
-| name+unit |  37 |  35 |  28 | 94.6% | 75.7% | 80.0% |
+| name+unit+values | 590 | 570 | 428 | 96.6% | 72.5% | 75.1% |
+| name | 441 | 292 | 177 | 66.2% | 40.1% | 60.6% |
+| name+values | 138 | 136 | 107 | 98.6% | 77.5% | 78.7% |
+| name+unit |  40 |  39 |  30 | 97.5% | 75.0% | 76.9% |
 
 ### Examples — disagreement
 
@@ -197,15 +203,15 @@ pairs so one recurring disagreement cannot fill the table. `reasoning` is what
 `FixLOINCDimensions` gave for that choice, clause by clause — so the mistake
 can be read rather than guessed at.
 
-*128 distinct disagreement rows; 5 shown:*
+*157 distinct disagreement rows; 5 shown:*
 
 | TEST_NAME | UNIT | evidence | certainty | loinc_name_guess | our_omop_concept_name | reference_OMOP_CONCEPT_NAME | reasoning |
 |---|---|---|---|---|---|---|---|
-| pt-sper-2 |  | name | medium | Semen analysis panel - Semen | Semen analysis panel | Semen analysis, post vasectomy | component: Semen analysis bcs LongName is 'Pt-Siemennestetutkimus, laaja' (Semen analysis, extensive) and TEST_NAME has `sper` ; property: panel bcs `Pt-` indicates a patient-level investigation, typically an orderable panel; the general panel is chosen as no 'extensive' variant is available |
-| u-alb-o | estimate | name+unit+values | high | Albumin [Presence] in Urine | Albumin [Presence] in Urine | Albumin [Presence] in Urine by Test strip | Albumin bcs 'Albumiini' in LongName ; [Presence] bcs '-O' suffix and '(kval)' in LongName indicate a qualitative test ; in Urine bcs 'U-' prefix means Urine ; method not specified |
-| s-maksa-1 | u/l | name+unit+values | medium | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma | Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma | Alanine aminotransferase bcs `s-maksa-1` is a local code for a primary liver enzyme, conventionally ALT ; [Enzymatic activity/volume] bcs unit `u/l` ; in Serum or Plasma bcs prefix `S-` |
-| kudostransglutaminaasi,iga-vasta-aineet |  | name | medium | Transglutaminase IgA Ab [Units/volume] in Serum or Plasma | Tissue transglutaminase IgA Ab [Units/volume] in Serum by Immunoassay | Tissue transglutaminase IgA Ab [Units/volume] in Serum | Tissue transglutaminase IgA Ab bcs name `kudostransglutaminaasi,iga-vasta-aineet` ; [Units/volume] bcs this is the standard property for this test, as seen in sibling rows with units ; in Serum bcs this is the default specimen ; by Immunoassay bcs this is the standard method and the concept is a top-2000 preferred target. |
-| se-amyl | u/l | name+unit+values | medium | Amylase [Enzymatic activity/volume] in Secretion | Amylase [Enzymatic activity/volume] in Body fluid | Amylase [Enzymatic activity/volume] in Specimen | Amylase from 'amyl' ; [Enzymatic activity/volume] bcs unit 'u/l' and deciles ; in Body fluid bcs this is a reasonable general mapping for prefix 'Se-' (Secretion). |
+| vb-ca-ion | mmol/l | name+unit+values | high | Calcium.ionized [Moles/volume] in Venous blood | Calcium.ionized [Moles/volume] in Venous blood | Calcium.ionized [Moles/volume] in Serum or Plasma | Calcium.ionized bcs 'vb-ca-ion' ; [Moles/volume] bcs unit mmol/l and values ~1.0-1.2 ; in Venous blood bcs prefix 'vb-' |
+| b-hladrld |  | name | high | HLA-DRB1 high resolution typing [Identifier] in Blood or Tissue by NAA with probe detection | HLA-DRB1 SBT [Type] in Specimen by High resolution | HLA-DR beta [Type] | HLA-DRB1 bcs `hladrb` ; by High resolution bcs suffix `-ld` (`tarkennettu`) ; in Blood bcs prefix `b-` |
+| s-afsuol3 | u/l | name+unit+values | high | Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum | Alkaline phosphatase.intestinal 3 [Enzymatic activity/volume] in Serum or Plasma | Alkaline phosphatase.intestinal [Enzymatic activity/volume] in Serum or Plasma | Alkaline phosphatase.intestinal 3 bcs TEST_NAME 's-afsuol3' where 'af'=alk phos, 'suol'=intestinal, '3'=fraction 3 ; [Enzymatic activity/volume] bcs UNIT is 'u/l' ; in Serum bcs TEST_NAME prefix 's-' |
+| p-tt | % | name+unit+values | medium | Prothrombin time (PT) [Ratio] in Platelet poor plasma | Prothrombin index in Platelet poor plasma by Coagulation assay | Prothrombin time (PT) actual/Normal | Prothrombin time ratio bcs LongName 'Tromboplastiiniaika' and UNIT '%' ; [Ratio] bcs this concept has a ratio property ('normal/actual') which corresponds to reporting in percent ; in Platelet poor plasma bcs prefix 'p-' (Plasma) is equivalent. |
+| u-gluk-0 |  | name+values | high | Glucose [Presence] in Urine | Glucose [Presence] in Urine | Glucose [Presence] in Urine by Test strip | Glucose bcs TEST_NAME has 'gluk' ; [Presence] bcs value_deciles are all 0, indicating a qualitative result ; in Urine bcs prefix is 'U-'. |
 
 
 ### Examples — not automapped
@@ -215,13 +221,13 @@ Five of the rows the reference maps but the pipeline left empty. An empty
 a filled one means the search returned nothing the model would accept.
 
 
-*65 distinct not automapped rows; 5 shown:*
+*156 distinct not automapped rows; 5 shown:*
 
 | TEST_NAME | UNIT | evidence | certainty | loinc_name_guess | our_omop_concept_name | reference_OMOP_CONCEPT_NAME | reasoning |
 |---|---|---|---|---|---|---|---|
-| u-alb-lb |  | name |  | Albumin [Mass/volume] in Urine |  | Albumin [Mass/volume] in Urine | The code 'u-alb-lb' indicates albumin in urine, but with no unit or values, the property (e.g., mass concentration, presence) cannot be determined. |
-| u-pi |  | name |  | Phosphate in Urine |  | Phosphate [Moles/volume] in Urine | The test is Phosphate in Urine, but there is no UNIT or deciles to determine the property (e.g., Moles/volume vs Mass/volume), so no concept can be chosen. |
-| li-mypnabm |  | name |  | Mycoplasma pneumoniae IgM Ab [Presence] in Cerebral spinal fluid |  | Mycoplasma pneumoniae IgM Ab [Titer] in Cerebral spinal fluid | The code `li-mypnabm` is for Mycoplasma pneumoniae IgM antibodies in cerebrospinal fluid, reported qualitatively. The candidate list does not contain a `[Presence]` concept for these specific antibodies in CSF. |
-| bm-bcr-qr |  | name |  | BCR gene/ABL1 gene fusion transcript [# Ratio] in Bone marrow by NAA |  | t(9;22)(q34.1;q11)(ABL1,BCR) e1a2 fusion transcript/control transcript [# Ratio] in Bone marrow by Molecular genetics method | The code `bm-bcr-qr` specifies a quantitative ratio of the BCR-ABL1 fusion transcript in bone marrow. No suitable candidate for a general (non-log, non-transcript-specific) ratio in bone marrow was found in the list. |
-| b-pvktkdr |  | name |  | CBC with automated differential and reticulocyte panel - Blood |  | Short blood count panel - Blood | No mapping chosen because the test `b-pvktkdr` (CBC with auto differential and reticulocytes) corresponds to a LOINC panel concept (e.g., 57782-5) that is not present in the candidate list. |
+| cu-alb-mi |  | name |  | Albumin in Collected urine |  | Albumin [Mass/time] in Urine collected for unspecified duration | The property (quantity type) cannot be determined as the row lacks a unit and value deciles. Candidates exist for [Mass/time], [Mass/volume] and [Presence]. |
+| p-gt |  | name |  | Gamma glutamyltransferase [Enzymatic activity/volume] in Plasma |  | Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma | The property cannot be determined from the name alone. Concepts for GGT exist with different properties (e.g., activity, mass), and without a unit or values, the choice is ambiguous. |
+| b-ghba1c-oma |  | name |  | Hemoglobin A1c/Hemoglobin.total in Blood |  | Hemoglobin A1c/Hemoglobin.total in Blood | Cannot map. Insufficient evidence to determine the property: [Mass Fraction] (for unit '%') vs. [Substance Ratio] (for unit 'mmol/mol'). |
+| p-apttspr | s | name+unit+values |  | Activated partial thromboplastin time [Time] in Plasma |  | aPTT in Blood by Coagulation assay | The candidate list is missing a concept for a basic aPTT measurement with a `Time` property. `p-apttspr` is an aPTT variant (unit `s` and values confirm), but the `spr` suffix is unclear and no suitable candidate exists. |
+| p-c-reaktiivinenproteiini |  | name |  | C reactive protein [Mass/volume] in Plasma |  | C reactive protein [Mass/volume] in Serum or Plasma | No unit or value deciles available, so the property (e.g., Mass/volume vs Moles/volume) cannot be determined. Both are possible for CRP. |
 
