@@ -39,3 +39,14 @@ NAME	UNIT	COUNT	%MISSING
 
 
 ## Once mapped as precise as possible, join them in compatible groups with same values 
+
+
+
+
+
+Basically the problem is 
+
+quantitative lab codes have the Flowsheet clasification 
+in between, what to do with a test with no unit, does it goes to quantitative or not Qn with no values ?
+not quantitative how to group them ? 
+separate from panels 
