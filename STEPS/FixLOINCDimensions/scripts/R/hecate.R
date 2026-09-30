@@ -14,7 +14,14 @@
 # a standard, valid, Measurement-domain LOINC concept, and in practice a LOINC
 # name identifies exactly one such concept.
 
-HECATE_BASE_URL <- "https://hecate.pantheon-hds.com/api/search"
+# Plain http, not https: the service's TLS certificate expired on 2026-09-29 and
+# every https lookup fails certificate verification, which R surfaces as a
+# connection error and this client turns into "no candidates" -- silently
+# emptying the candidate list for the whole run. The request carries no secret,
+# only a guessed LOINC name, and the response is public vocabulary data, so
+# dropping to http costs nothing here. Move it back to https once the
+# certificate is renewed.
+HECATE_BASE_URL <- "http://hecate.pantheon-hds.com/api/search"
 
 # Search Hecate for one LOINC Long Common Name. Returns a tibble with columns
 # concept_name, concept_id, concept_code, score (0 rows when nothing is found).

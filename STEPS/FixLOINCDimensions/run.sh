@@ -5,7 +5,7 @@ set -euo pipefail
 # --- Arguments -------------------------------------------------------------
 #
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--ngroups <N>] [--seed <N>] [--clean]" >&2
+  echo "Usage: $0 <PATH_TO_DATA_FOLDER> --env <ENV_NAME> [--llm <ellmer|claude>] [--model <MODEL>] [--ngroups <N>] [--seed <N>] [--clean]" >&2
   exit 1
 fi
 
@@ -13,6 +13,8 @@ DATA_DIR="$1"
 shift
 
 ENV_NAME=""
+LLM_BACKEND=""
+MODEL=""
 NGROUPS=""
 SEED=""
 CLEAN=0
@@ -20,6 +22,14 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     --env)
       ENV_NAME="$2"
+      shift 2
+      ;;
+    --llm)
+      LLM_BACKEND="$2"
+      shift 2
+      ;;
+    --model)
+      MODEL="$2"
       shift 2
       ;;
     --ngroups)
@@ -61,6 +71,28 @@ if [[ -n "$ENV_NAME" ]]; then
   fi
 fi
 
+# Which LLM backend answers the prompts, and with which model. Both are applied
+# AFTER the environment file is sourced, so a flag always beats the env file.
+#
+#   --llm ellmer  (default)  an ellmer HTTP provider, LLM_PROVIDER as set in the
+#                            environment file (default google_vertex).
+#   --llm claude             the `claude` CLI, via scripts/R/claudeClient.R.
+#
+# --model is passed straight through to the backend, so its spelling is the
+# backend's: "gemini-2.5-pro" for ellmer/Vertex, "sonnet" / "opus" /
+# "claude-opus-5" for claude. Left unset, each backend uses its own default.
+case "${LLM_BACKEND:-ellmer}" in
+  ellmer) ;;
+  claude) export LLM_PROVIDER="claude_code" ;;
+  *)
+    echo "Unknown --llm value: $LLM_BACKEND (expected 'ellmer' or 'claude')" >&2
+    exit 1
+    ;;
+esac
+if [[ -n "$MODEL" ]]; then
+  export LLM_MODEL="$MODEL"
+fi
+
 #
 # --- Input -------------------------------------------------------------
 #
@@ -91,7 +123,14 @@ if [[ ! -f "$STEP_DIR/scripts/systemPrompt.md" ]]; then
   echo "Missing input file: $STEP_DIR/scripts/systemPrompt.md" >&2
   exit 1
 fi
-if [[ -z "${GOOGLE_CLOUD_PROJECT:-}" ]]; then
+# Each backend needs a different thing to exist, so only the selected one is
+# checked: a claude run has no Vertex project, and an ellmer run needs no CLI.
+if [[ "${LLM_PROVIDER:-}" == "claude_code" ]]; then
+  if ! command -v claude >/dev/null 2>&1; then
+    echo "claude not found on PATH (needed by --llm claude)" >&2
+    exit 1
+  fi
+elif [[ -z "${GOOGLE_CLOUD_PROJECT:-}" ]]; then
   echo "GOOGLE_CLOUD_PROJECT is not set (expected from the --env environment file)" >&2
   exit 1
 fi

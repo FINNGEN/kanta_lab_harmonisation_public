@@ -42,15 +42,26 @@ scriptDir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), va
 if (is.na(scriptDir) || !nzchar(scriptDir)) scriptDir <- "."
 rDir <- file.path(scriptDir, "R")
 ellmerFixFile <- file.path(rDir, "ellmerFix.R")
+claudeClientFile <- file.path(rDir, "claudeClient.R")
 
 source(file.path(rDir, "clientFactory.R"))
 
+# Which backend answers the prompts. "claude_code" shells out to the `claude`
+# CLI (scripts/R/claudeClient.R); anything else is an ellmer HTTP provider.
+# The default model differs per backend, so it is resolved after the provider
+# is known rather than hard-coded in one Sys.getenv() default.
+llmProvider <- Sys.getenv("LLM_PROVIDER", "google_vertex")
+defaultModel <- if (identical(llmProvider, "claude_code")) "sonnet" else "gemini-2.5-pro"
+
 llmConfig <- list(
-  provider = Sys.getenv("LLM_PROVIDER", "google_vertex"),
-  model = Sys.getenv("LLM_MODEL", "gemini-2.5-pro"),
+  provider = llmProvider,
+  model = Sys.getenv("LLM_MODEL", defaultModel),
   project = Sys.getenv("GOOGLE_CLOUD_PROJECT"),
   location = Sys.getenv("GOOGLE_CLOUD_LOCATION"),
-  credentials = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+  credentials = Sys.getenv("GOOGLE_APPLICATION_CREDENTIALS"),
+  # Passed by path, not by value: parallel workers are separate processes and
+  # inherit no sourced functions, so the factory sources this file itself.
+  claudeClientFile = claudeClientFile
 )
 
 ParallelLogger::clearLoggers()
