@@ -3,7 +3,7 @@
 ## Inputs
 
 - `DATA/getSummaryData/labSummary.tsv` — one row per `TEST_NAME`/`UNIT`, with
-  `n`, `p_missing`, `deciles`.
+  `n`, `value_missing_p`, `value_deciles`.
 - `DATA/SourceLabelingData/lab_codes_kodistopalvely.tsv` — the Kanta
   Kodistopalvelu lab code table, with `Abbreviation` and `LongName`.
 - `DATA/SourceLabelingData/code_prefixes.tsv` — specimen/system prefix codes,
@@ -63,8 +63,8 @@ Then two scripts, run in order:
    - **Overview**, each table a plain `bucket`/`n`/`%` read with its own
      stated total, plus a short explanation of what it shows:
      - *Distinct TEST_NAME + UNIT* — one table: `total`; `with recorded data`
-       (rows where `p_missing < 95.0`); `with deciles computed` (rows where
-       `deciles` is not `NA`).
+       (rows where `value_missing_p < 95.0`); `with value_deciles computed` (rows where
+       `value_deciles` is not `NA`).
      - *Distinct TEST_NAME* — one row per `TEST_NAME`, with `n` summed across
        its `UNIT` rows. The same four buckets (`is number` — `TEST_NAME` is a
        bare digit code, never resolved to an abbreviation; `with long name`;

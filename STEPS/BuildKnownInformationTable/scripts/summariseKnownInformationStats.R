@@ -29,11 +29,11 @@ ParallelLogger::logInfo("Read ", nrow(knownInformation), " rows from ", knownInf
 #
 # Bucket table 1: distinct TEST_NAME + UNIT (one row per knownInformation row).
 testUnitBuckets <- tibble::tibble(
-  bucket = c("total", "with recorded data (p_missing < 95.0)", "with deciles computed"),
+  bucket = c("total", "with recorded data (value_missing_p < 95.0)", "with value_deciles computed"),
   n = c(
     nrow(knownInformation),
-    sum(knownInformation$p_missing < 95.0, na.rm = TRUE),
-    sum(!is.na(knownInformation$deciles))
+    sum(knownInformation$value_missing_p < 95.0, na.rm = TRUE),
+    sum(!is.na(knownInformation$value_deciles))
   )
 )
 testUnitTotal <- testUnitBuckets$n[testUnitBuckets$bucket == "total"]
@@ -118,7 +118,7 @@ md <- c(
   "",
   "Each row of `knownInformation.tsv` is one `TEST_NAME`/`UNIT` pair.",
   "`with recorded data` counts pairs that are not almost entirely missing",
-  "(`p_missing` < 95%); `with deciles computed` counts pairs that got a",
+  "(`value_missing_p` < 95%); `with value_deciles computed` counts pairs that got a",
   "decile summary.",
   "",
   "| bucket | n | % |",
