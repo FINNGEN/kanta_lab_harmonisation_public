@@ -3,7 +3,7 @@
 ## Inputs
 
 - `DATA/BuildKnownInformationTable/knownInformation.tsv` — one row per
-  `TEST_NAME`/`UNIT`, with `n`, `p_missing`, `deciles`, `LongName`,
+  `TEST_NAME`/`UNIT`, with `n`, `value_missing_p`, `value_deciles`, `LongName`,
   `prefix_meaning`, `suffix_meaning`.
 
 ## Outputs
