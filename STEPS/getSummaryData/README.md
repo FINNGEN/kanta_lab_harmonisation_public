@@ -99,6 +99,10 @@ writes `labSummaryStats.md`:
   / `n records` / `% records`, plus a totals row. "Has a value" is independent
   of `value_deciles` — a pair can have real values but too few for the
   upstream decile computation, or (per the caveat above) the reverse.
+- **Name / unit / deciles coverage** — the same table with `value_deciles`
+  computed in place of "has a value". Deliberately kept separate rather than
+  folded into one four-way table: the two are different facts (see above),
+  and this table's `X`s are always a subset of the value-coverage table's.
 - **Unit / value source composition** — the same four counts per
   `unit_source`/`value_source` bucket, recovered by parsing each bucket's
   share back out of its bracketed percentage string and multiplying by `n`
