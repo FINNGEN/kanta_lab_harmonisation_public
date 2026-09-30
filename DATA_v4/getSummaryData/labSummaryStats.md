@@ -26,6 +26,22 @@ carry: a real `TEST_NAME` (not the upstream's stringified missing value,
 | X |  |  | 17883 | 66.7% | 45275747 | 17.6% |
 | **total** | | | 26798 | 100.0% | 257815796 | 100.0% |
 
+### Name / unit / deciles coverage
+
+Same as above, with `value_deciles` computed in place of `value`. These
+are different facts, not two views of the same thing: `value_deciles` is
+empty for any pair below the upstream decile-computation's volume floor,
+whether or not it actually has recorded values (see Action) -- so this
+table's `X`s are a strict subset of the value-coverage table's.
+
+| name | unit | deciles | n rows | % rows | n records | % records |
+|---|---|---|---|---|---|---|
+| X | X | X | 4212 | 15.7% | 212319624 | 82.4% |
+| X | X |  | 4703 | 17.5% | 220425 | 0.1% |
+| X |  | X | 1121 | 4.2% | 6685374 | 2.6% |
+| X |  |  | 16762 | 62.5% | 38590373 | 15.0% |
+| **total** | | | 26798 | 100.0% | 257815796 | 100.0% |
+
 ## Unit source composition
 
 Each `unit_source` bucket: how many pairs have any record in it, and what
