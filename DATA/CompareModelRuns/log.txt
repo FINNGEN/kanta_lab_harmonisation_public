@@ -1,0 +1,34 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  referenceMappingFile = DATA/ReferenceMappings/lab_data_summary.csv
+  outDir = DATA/CompareModelRuns
+  volumeThreshold = 500
+  run 1: gemini-2.5-pro = DATA  (baseline)
+  run 2: claude-sonnet-5 = DATA_sonnet
+  run 3: claude-opus-5 = DATA_opus
+Read 1984 rows from DATA/MapLOINCToOmop/codesWithOMOP.tsv
+Read 1984 rows from DATA_sonnet/MapLOINCToOmop/codesWithOMOP.tsv
+Read 1984 rows from DATA_opus/MapLOINCToOmop/codesWithOMOP.tsv
+Read 28685 rows from DATA/ReferenceMappings/lab_data_summary.csv
+Reference holds 5933 APPROVED TEST_NAME+UNIT rows
+Per-run agreement over the reference overlap:
+  gemini-2.5-pro: 454 / 764 = 59.4% (cost USD 6.36)
+  claude-sonnet-5: 198 / 764 = 25.9% (cost USD 5.48)
+  claude-opus-5: 506 / 764 = 66.2% (cost USD 26.86)
+Rows present in every run: 1984
+368 reference-covered rows where the runs disagree about the reference
+Wrote comparison report to DATA/CompareModelRuns/modelComparisonStats.md
+Wrote 1984 per-row comparisons to DATA/CompareModelRuns/perRowComparison.tsv
+Wrote DATA/CompareModelRuns/modelComparisonStats.md
+Wrote DATA/CompareModelRuns/perRowComparison.tsv
