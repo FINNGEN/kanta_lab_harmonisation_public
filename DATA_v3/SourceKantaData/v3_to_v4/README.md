@@ -1,17 +1,17 @@
 # v3_to_v4
 
 A one-off conversion, not a pipeline step: `../source/*.tsv` are the old
-(v3) `source_kanta_summary` extract, in a different schema than the current
+(v3) `SourceKantaData` extract, in a different schema than the current
 (v4) one `1_GetSummaryData` reads. `convertV3ToV4.R` converts them into v4's
 schema and writes them as `../summaryTest.tsv`, `../summaryValuesSource.tsv`,
 `../summaryValues.tsv`, `../summaryOutcomes.tsv` — i.e. directly into
-`source_kanta_summary/`, alongside `source/`, so `1_GetSummaryData` can run
+`SourceKantaData/`, alongside `source/`, so `1_GetSummaryData` can run
 against `DATA_v3` the same way it runs against `DATA_v4`.
 
 ## Run
 
 ```
-Rscript DATA_v3/source_kanta_summary/v3_to_v4/convertV3ToV4.R
+Rscript DATA_v3/SourceKantaData/v3_to_v4/convertV3ToV4.R
 ```
 
 Reads from `../source/`, writes into `..` — both resolved relative to this
