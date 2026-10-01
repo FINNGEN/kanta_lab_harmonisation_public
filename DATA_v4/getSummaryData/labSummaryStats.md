@@ -20,10 +20,10 @@ carry: a real `TEST_NAME` (not the upstream's stringified missing value,
 
 | name | unit | value | n rows | % rows | n records | % records |
 |---|---|---|---|---|---|---|
-| X | X | X | 8896 | 33.2% | 212539826 | 82.4% |
-| X | X |  | 19 | 0.1% | 223 | 0.0% |
-| X |  | X | 0 | 0.0% | 0 | 0.0% |
-| X |  |  | 17883 | 66.7% | 45275747 | 17.6% |
+| X | X | X | 8745 | 32.6% | 212508947 | 82.4% |
+| X | X |  | 170 | 0.6% | 31102 | 0.0% |
+| X |  | X | 2928 | 10.9% | 10479927 | 4.1% |
+| X |  |  | 14955 | 55.8% | 34795820 | 13.5% |
 | **total** | | | 26798 | 100.0% | 257815796 | 100.0% |
 
 ### Name / unit / deciles coverage
@@ -49,10 +49,10 @@ share of all records fall in it.
 
 | bucket | n rows | % rows | n records | % records |
 |---|---|---|---|---|
-| Source | 1102 | 4.1% | 750487 | 0.3% |
-| PrimaryInjection | 37 | 0.1% | 38271 | 0.0% |
-| SecondaryCorrection | 17 | 0.1% | 28907 | 0.0% |
-| no unit_source recorded (NA) | 26798 | 100.0% | 256998597 | 99.7% |
+| Source | 8788 | 32.8% | 195844802 | 76.0% |
+| PrimaryInjection | 684 | 2.6% | 8986400 | 3.5% |
+| SecondaryCorrection | 27 | 0.1% | 7707753 | 3.0% |
+| no unit_source recorded (NA) | 18377 | 68.6% | 45277059 | 17.6% |
 
 ## Value source composition
 
@@ -60,7 +60,7 @@ Same as above, for `value_source`.
 
 | bucket | n rows | % rows | n records | % records |
 |---|---|---|---|---|
-| Source | 8788 | 32.8% | 184068490 | 71.4% |
-| Extracted | 907 | 3.4% | 28449624 | 11.0% |
-| QCOut | 37 | 0.1% | 19528 | 0.0% |
-| no value recorded (NA) | 18418 | 68.7% | 45277313 | 17.6% |
+| Source | 9872 | 36.8% | 184288129 | 71.5% |
+| Extracted | 3088 | 11.5% | 28921728 | 11.2% |
+| QCOut | 38 | 0.1% | 19544 | 0.0% |
+| no value recorded (NA) | 18606 | 69.4% | 44587916 | 17.3% |
