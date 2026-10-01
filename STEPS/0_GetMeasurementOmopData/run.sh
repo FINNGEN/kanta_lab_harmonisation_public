@@ -62,10 +62,12 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/pullMeasurementConceptAttributes.R" "$OUTDIR"
+Rscript "$STEP_DIR/scripts/pullLoincGroupMembership.R" "$OUTDIR"
 Rscript "$STEP_DIR/scripts/summariseMeasurementConceptAttributes.R" "$OUTDIR/measurement_concept_attributes.tsv" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/measurement_concept_attributes.tsv"
+echo "Wrote $OUTDIR/loinc_group_membership.tsv"
 echo "Wrote $OUTDIR/measurement_concept_attributes_summary.md"

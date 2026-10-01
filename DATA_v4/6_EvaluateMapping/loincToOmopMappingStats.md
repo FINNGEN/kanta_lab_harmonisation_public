@@ -16,7 +16,7 @@ to a concept that agrees with the separately curated reference mapping:
 | has a fixed loinc | 2,077 | 77.3% | 47,581,148 | 91.9% |
 | exists in reference | 1,209 | 45.0% | 50,528,414 | 97.6% |
 | agrees with reference (concept id) |   742 | 27.6% | 40,275,283 | 77.8% |
-| agrees with reference (LOINC Group) |   837 | 31.1% | 41,359,188 | 79.9% |
+| agrees with reference (LOINC Group) |   845 | 31.4% | 41,457,043 | 80.0% |
 
 "Reference" here and below means the reference's **`APPROVED`** rows
 only — a code with only an `UNCHECKED`/`NOT-FOUND`/`IGNORED` reference row
@@ -58,21 +58,21 @@ actually mapped, how many agreed:
 
 | evidence_level | n_codes | n_ai_mapped | n_agree | n_agree_group | p_codes | p_ai_mapped | p_agree | p_agree_group |
 |---|---|---|---|---|---|---|---|---|
-| name+unit+values |  590 |  570 | 428 | 483 | 48.8% | 96.6% | 75.1% | 84.7% |
-| name |  441 |  292 | 177 | 204 | 36.5% | 66.2% | 60.6% | 69.9% |
+| name+unit+values |  590 |  570 | 428 | 485 | 48.8% | 96.6% | 75.1% | 85.1% |
+| name |  441 |  292 | 177 | 210 | 36.5% | 66.2% | 60.6% | 71.9% |
 | name+values |  138 |  136 | 107 | 114 | 11.4% | 98.6% | 78.7% | 83.8% |
 | name+unit |   40 |   39 |  30 |  36 | 3.3% | 97.5% | 76.9% | 92.3% |
-| total | 1209 | 1037 | 742 | 837 | 100.0% | 85.8% | 71.6% | 80.7% |
+| total | 1209 | 1037 | 742 | 845 | 100.0% | 85.8% | 71.6% | 81.5% |
 
 The same breakdown weighted by records instead of codes:
 
 | evidence_level | n_events | n_ai_mapped | n_agree | n_agree_group | p_events | p_ai_mapped | p_agree | p_agree_group |
 |---|---|---|---|---|---|---|---|---|
-| name+unit+values | 41,984,023 | 39,805,270 | 36,624,587 | 37,568,753 | 83.1% | 94.8% | 92.0% | 94.4% |
-| name |  7,487,095 |  5,840,920 |  2,752,173 |  2,864,877 | 14.8% | 78.0% | 47.1% | 49.0% |
+| name+unit+values | 41,984,023 | 39,805,270 | 36,624,587 | 37,595,498 | 83.1% | 94.8% | 92.0% | 94.4% |
+| name |  7,487,095 |  5,840,920 |  2,752,173 |  2,935,987 | 14.8% | 78.0% | 47.1% | 50.3% |
 | name+values |  1,041,422 |  1,030,129 |    883,259 |    910,046 | 2.1% | 98.9% | 85.7% | 88.3% |
 | name+unit |     15,874 |     15,662 |     15,264 |     15,512 | 0.0% | 98.7% | 97.5% | 99.0% |
-| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,359,188 | 100.0% | 92.4% | 86.3% | 88.6% |
+| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,457,043 | 100.0% | 92.4% | 86.3% | 88.8% |
 
 ### By record volume
 
@@ -86,22 +86,22 @@ the tail it barely touches.
 | records | n_codes | n_ai_mapped | n_agree | n_agree_group | p_codes | p_ai_mapped | p_agree | p_agree_group |
 |---|---|---|---|---|---|---|---|---|
 | < 100 |  184 |  139 | 107 | 122 | 15.2% | 75.5% | 77.0% | 87.8% |
-| 100 - 499 |  341 |  299 | 216 | 241 | 28.2% | 87.7% | 72.2% | 80.6% |
-| 500 - 4,999 |  376 |  331 | 242 | 270 | 31.1% | 88.0% | 73.1% | 81.6% |
-| 5,000 - 49,999 |  210 |  180 | 114 | 135 | 17.4% | 85.7% | 63.3% | 75.0% |
-| >= 50,000 |   98 |   88 |  63 |  69 | 8.1% | 89.8% | 71.6% | 78.4% |
-| total | 1209 | 1037 | 742 | 837 | 100.0% | 85.8% | 71.6% | 80.7% |
+| 100 - 499 |  341 |  299 | 216 | 242 | 28.2% | 87.7% | 72.2% | 80.9% |
+| 500 - 4,999 |  376 |  331 | 242 | 273 | 31.1% | 88.0% | 73.1% | 82.5% |
+| 5,000 - 49,999 |  210 |  180 | 114 | 138 | 17.4% | 85.7% | 63.3% | 76.7% |
+| >= 50,000 |   98 |   88 |  63 |  70 | 8.1% | 89.8% | 71.6% | 79.5% |
+| total | 1209 | 1037 | 742 | 845 | 100.0% | 85.8% | 71.6% | 81.5% |
 
 The same breakdown weighted by records instead of codes:
 
 | records | n_events | n_ai_mapped | n_agree | n_agree_group | p_events | p_ai_mapped | p_agree | p_agree_group |
 |---|---|---|---|---|---|---|---|---|
 | < 100 |      7,560 |      5,659 |      4,298 |      4,981 | 0.0% | 74.9% | 75.9% | 88.0% |
-| 100 - 499 |     83,388 |     73,579 |     54,127 |     59,860 | 0.2% | 88.2% | 73.6% | 81.4% |
-| 500 - 4,999 |    638,860 |    551,372 |    389,318 |    438,266 | 1.3% | 86.3% | 70.6% | 79.5% |
-| 5,000 - 49,999 |  3,483,370 |  3,041,483 |  1,948,447 |  2,322,536 | 6.9% | 87.3% | 64.1% | 76.4% |
-| >= 50,000 | 46,315,236 | 43,019,888 | 37,879,093 | 38,533,545 | 91.7% | 92.9% | 88.1% | 89.6% |
-| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,359,188 | 100.0% | 92.4% | 86.3% | 88.6% |
+| 100 - 499 |     83,388 |     73,579 |     54,127 |     59,988 | 0.2% | 88.2% | 73.6% | 81.5% |
+| 500 - 4,999 |    638,860 |    551,372 |    389,318 |    444,114 | 1.3% | 86.3% | 70.6% | 80.5% |
+| 5,000 - 49,999 |  3,483,370 |  3,041,483 |  1,948,447 |  2,364,130 | 6.9% | 87.3% | 64.1% | 77.7% |
+| >= 50,000 | 46,315,236 | 43,019,888 | 37,879,093 | 38,583,830 | 91.7% | 92.9% | 88.1% | 89.7% |
+| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,457,043 | 100.0% | 92.4% | 86.3% | 88.8% |
 
 ### Agreement at LOINC Group level
 
@@ -113,43 +113,46 @@ Group are the same test measured differently, so scoring on the Group as well
 as on the id separates "wrong analyte" from "right analyte, different
 decoration".
 
-Each LOINC code is assigned to exactly ONE Group, by
-`scripts/buildLoincGroupIndex.R`: the Group file is not a tree -- its
-lab-facing ParentGroups overlap -- so collisions are resolved with a fixed
-most-specific-wins precedence. See `RESEARCH/UnderstandingGroups.md` section 4.
+Group membership comes from the OMOP vocabulary itself
+(`0_GetMeasurementOmopData/loinc_group_membership.tsv`), keyed by `concept_id`.
+A concept belongs to several Groups, so the test is whether the two concepts
+share one, and the Group reported is the most specific shared one. ParentGroups
+are excluded -- OMOP models those as Groups too, and LG100-4 "Flowsheet -
+laboratory" would make any two lab chemistry concepts look related.
 
-**531 / 1209 (43.9%) of the checked codes carry a Group on both sides** and can
+**737 / 1209 (61.0%) of the checked codes carry a Group on both sides** and can
 be judged this way at all; the rest are scored on the concept id alone, so the
 Group row below is a floor, not a ceiling.
 
 | level | n_codes | p_codes | n_events | p_events |
 |---|---|---|---|---|
 | agrees on the concept id (exact) | 742 | 61.4% | 40,275,283 | 79.7% |
-| agrees on the LOINC Group | 837 | 69.2% | 41,359,188 | 81.9% |
-| — of which recovered by the Group |  95 | 7.9% |  1,083,905 | 2.1% |
+| agrees on the LOINC Group | 845 | 69.9% | 41,457,043 | 82.0% |
+| — of which recovered by the Group | 103 | 8.5% |  1,181,760 | 2.3% |
 
-Which rollup rule did the recovering:
+How tight was the Group that did the recovering — the count of standard
+Measurement concepts it holds. A pair sharing a 4-member Group is a much
+stronger claim than one sharing a 200-member Group:
 
-| parent_group_id | n_codes |
+| shared_group_size | n_codes |
 |---|---|
-| LG100-4 | 63 |
-| LG74-7 | 18 |
-| LG97-8 |  8 |
-| LG27-5 |  6 |
+| 2 - 10 | 90 |
+| 11 - 50 | 12 |
+| > 200 |  1 |
 
 Rows the concept-id score counts as disagreements and the Group score
 counts as agreements — read the two concept names side by side to judge
 whether the rollup is fair in each case:
 
-*39 distinct recovered (our concept, reference concept) pairs; 5 shown:*
+*46 distinct recovered (our concept, reference concept) pairs; 5 shown:*
 
-| TEST_NAME | UNIT | our_omop_concept_name | reference_OMOP_CONCEPT_NAME | shared_loinc_group |
-|---|---|---|---|---|
-| ab-ca++7.4 | mmol/l | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma | Calcium.ionized^^adjusted to pH 7.4\|SCnc\|Pt\|ANYBldSerPl |
-| cp-gluk-hy | mmol/l | Glucose [Moles/volume] in Serum or Plasma | Glucose [Moles/volume] in Capillary blood | Glucose\|SCnc\|Pt\|ANYBldSerPl |
-| u-osmolaliteetti,estimoitu | mosm/kgh2o | Osmolality of Urine by calculated by sum of electrolytes | Osmolality of Urine | Observation\|Osmol\|Urine |
-| u-baktvi | e6/l | Bacteria [#/volume] in Urine by Culture | Bacteria [#/volume] in Urine by Automated count | Bacteria\|NCnc\|Urine |
-| ab-cl | mmol/l | Chloride [Moles/volume] in Arterial blood | Chloride [Moles/volume] in Serum or Plasma | Chloride\|SCnc\|Pt\|ANYBldSerPl |
+| TEST_NAME | UNIT | our_omop_concept_name | reference_OMOP_CONCEPT_NAME | shared_loinc_group | group_size |
+|---|---|---|---|---|---|
+| s-hcg-b-v |  | Choriogonadotropin.beta subunit free [Mass/volume] in Serum or Plasma | Choriogonadotropin.beta subunit free [Moles/volume] in Serum or Plasma | Choriogonadotropin.beta subunit.free\|Moment in time\|Serum or Plasma | 2 |
+| u-epiteelisolut,osatutkimus | e6/l | Epithelial cells [#/volume] in Urine by Automated | Epithelial cells [#/volume] in Urine | Epithelial cells\|Number Concentration (count/vol)\|Urine | 3 |
+| u-ph-hy |  | pH of Urine | pH of Urine by Test strip | pH\|Log Substance Concentration\|Urine | 8 |
+| u-hyalier | u/field | Hyaline casts [#/area] in Urine sediment by Microscopy low power field | Hyaline casts [#/area] in Urine sediment by Automated count | Hyaline casts\|Urine/Urine sed | 11 |
+| cp-gluk-hy | mmol/l | Glucose [Moles/volume] in Serum or Plasma | Glucose [Moles/volume] in Capillary blood | Glucose\|Substance Concentration\|Moment in time\|Blood, Serum or Plasma | 9 |
 
 ### Examples — not automapped
 

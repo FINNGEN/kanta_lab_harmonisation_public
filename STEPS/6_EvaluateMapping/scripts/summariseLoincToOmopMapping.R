@@ -10,12 +10,21 @@
 # agreement, never instead of it, and both are broken out by how much
 # evidence the local row actually had and by how many records it carries.
 #
-# Agreement is scored twice: on the concept id (exact), and on the LOINC Group
-# the concept belongs to. The second one exists because the most common way the
-# two mappings differ is not the analyte but the decoration around it -- method
-# (Automated count / Microscopy / Test strip / Refractometry) and granularity.
-# A LOINC Group rolls those up, so two different concept ids inside one Group
-# are the same test measured differently. See RESEARCH/UnderstandingGroups.md.
+# Agreement is scored twice: on the concept id (exact), and on whether the two
+# concepts SHARE a LOINC Group. The second one exists because the most common
+# way the two mappings differ is not the analyte but the decoration around it --
+# method (Automated count / Microscopy / Test strip / Refractometry) and
+# granularity. A LOINC Group rolls those up, so two different concept ids in one
+# Group are the same test measured differently.
+#
+# "Share a Group" is a set intersection, which is why Group membership is taken
+# from the OMOP vocabulary (0_GetMeasurementOmopData/loinc_group_membership.tsv)
+# rather than from LOINC's GroupFile distribution. A concept belongs to several
+# Groups at once, and the intersection asks the question directly. The earlier
+# GroupFile version had to force ONE Group per code with a precedence rule,
+# because its ParentGroups overlap each other -- which answered a different,
+# harder question and needed a licensed file as an input.
+# See RESEARCH/UnderstandingGroups.md.
 #
 
 #
@@ -30,18 +39,16 @@ args <- commandArgs(trailingOnly = TRUE)
 codesWithOmopFile <- args[1]
 referenceMappingFile <- args[2]
 outDir <- args[3]
-# Optional, and only needed together: without both of these the report is
-# scored on concept ids alone and the LOINC Group section is skipped.
-measurementConceptAttributesFile <- if (length(args) >= 4) args[4] else NA_character_
-loincGroupIndexFile <- if (length(args) >= 5) args[5] else NA_character_
+# Optional: without it the report is scored on concept ids alone and the LOINC
+# Group section is skipped.
+loincGroupMembershipFile <- if (length(args) >= 4) args[4] else NA_character_
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  codesWithOmopFile = ", codesWithOmopFile)
 ParallelLogger::logInfo("  referenceMappingFile = ", referenceMappingFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
-ParallelLogger::logInfo("  measurementConceptAttributesFile = ", measurementConceptAttributesFile)
-ParallelLogger::logInfo("  loincGroupIndexFile = ", loincGroupIndexFile)
+ParallelLogger::logInfo("  loincGroupMembershipFile = ", loincGroupMembershipFile)
 
 #
 # --- Input -------------------------------------------------------------
@@ -60,38 +67,41 @@ for (col in c("evidence_level", "certainty", "reasoning")) {
   }
 }
 
-# concept_id -> LOINC Group, built by scripts/buildLoincGroupIndex.R. Both
-# files are needed: the index is keyed by LOINC number, and the reference gives
-# only an OMOP concept id, so the vocabulary's concept_code is what joins them.
-# Missing either one is not an error -- the report drops to concept-id-only
-# scoring and says so.
-.filePresent <- function(path) !is.na(path) && nzchar(path) && file.exists(path)
-groupScoringAvailable <- .filePresent(measurementConceptAttributesFile) &&
-  .filePresent(loincGroupIndexFile)
-conceptGroupId <- character(0)
-conceptGroupName <- character(0)
+# concept_id -> the LOINC Groups it belongs to. Keyed by concept_id straight
+# from the vocabulary, so nothing has to be resolved through a LOINC number and
+# a non-LOINC concept simply has no Groups. Absent file is not an error -- the
+# report drops to concept-id-only scoring and says so.
+#
+# ParentGroups are excluded. OMOP models them as 'LOINC Group' concepts too, so
+# LG100-4 ("Flowsheet - laboratory", 3,538 descendants) and LG55-6 ("Mass-Molar
+# conversion", 4,296) would otherwise make any two lab chemistry concepts
+# "share a Group". They are flagged structurally upstream -- a ParentGroup is a
+# Group that subsumes other Groups -- not by a size threshold, which would also
+# have thrown away genuine large value sets like LG32757-3 "Influenza virus"
+# (460 descendants).
+groupScoringAvailable <- !is.na(loincGroupMembershipFile) &&
+  nzchar(loincGroupMembershipFile) && file.exists(loincGroupMembershipFile)
+conceptGroups <- list()
+groupName <- character(0)
+groupSize <- integer(0)
 
 if (groupScoringAvailable) {
-  attributes <- readr::read_tsv(measurementConceptAttributesFile, show_col_types = FALSE, na = "",
+  membership <- readr::read_tsv(loincGroupMembershipFile, show_col_types = FALSE, na = "",
                                 col_types = readr::cols(.default = readr::col_character()))
-  groupIndex <- readr::read_tsv(loincGroupIndexFile, show_col_types = FALSE, na = "",
-                                col_types = readr::cols(.default = readr::col_character()))
-  ParallelLogger::logInfo("Read ", nrow(attributes), " concepts from ", measurementConceptAttributesFile)
-  ParallelLogger::logInfo("Read ", nrow(groupIndex), " LOINC -> Group rows from ", loincGroupIndexFile)
+  ParallelLogger::logInfo("Read ", nrow(membership), " concept -> Group rows from ", loincGroupMembershipFile)
+  nParent <- dplyr::n_distinct(membership$group_concept_id[membership$is_parent_group == "TRUE"])
+  membership <- membership |> dplyr::filter(.data$is_parent_group != "TRUE")
 
-  loincConcepts <- attributes |>
-    dplyr::filter(.data$vocabulary_id == "LOINC") |>
-    dplyr::mutate(.group = groupIndex$group_id[match(.data$concept_code, groupIndex$loinc_number)],
-                  .groupName = groupIndex$group_name[match(.data$concept_code, groupIndex$loinc_number)]) |>
-    dplyr::filter(!is.na(.data$.group))
-  conceptGroupId <- stats::setNames(loincConcepts$.group, loincConcepts$concept_id)
-  conceptGroupName <- stats::setNames(loincConcepts$.groupName, loincConcepts$concept_id)
+  conceptGroups <- split(membership$group_concept_id, membership$concept_id)
+  groupName <- stats::setNames(membership$group_concept_name, membership$group_concept_id)
+  groupSize <- stats::setNames(as.integer(membership$n_descendants), membership$group_concept_id)
   ParallelLogger::logInfo(
-    length(conceptGroupId), " of ", sum(attributes$vocabulary_id == "LOINC"),
-    " LOINC concepts carry a Flowsheet Group"
+    length(conceptGroups), " concepts belong to ",
+    dplyr::n_distinct(membership$group_concept_id), " Groups after excluding ",
+    nParent, " ParentGroups"
   )
 } else {
-  ParallelLogger::logWarn("No LOINC Group index -- scoring agreement on concept ids only")
+  ParallelLogger::logWarn("No LOINC Group membership file -- scoring agreement on concept ids only")
 }
 
 #
@@ -181,19 +191,36 @@ if (referenceAvailable) {
     dplyr::inner_join(approved, by = c("TEST_NAME", "UNIT")) |>
     dplyr::mutate(agrees = .data$outcome == "agreement")
 
-  # Group-level agreement. Two different concept ids that resolve to the same
-  # LOINC Group are the same test measured differently -- the Group's rule rolls
-  # up Method (and, for the urine ParentGroups, granularity), which is where
-  # most of the pipeline-vs-reference disagreement actually sits. Scored on top
-  # of concept agreement, never instead of it: a row that already agrees on the
-  # id stays agreeing, and a row with no Group on either side can only be
-  # judged on the id.
+  # Group-level agreement. Two concepts that share a LOINC Group are the same
+  # test measured differently -- the Group's rule rolls up Method, and for some
+  # rules property or specimen granularity, which is where most of the
+  # pipeline-vs-reference disagreement actually sits. Scored on top of concept
+  # agreement, never instead of it: a row that already agrees on the id stays
+  # agreeing, and a row with no Group on either side can only be judged on the
+  # id.
+  #
+  # A concept belongs to several Groups, so the shared Group reported is the
+  # most specific one -- fewest descendants -- which is the tightest claim the
+  # vocabulary supports for that pair.
+  .groupsOf <- function(ids) lapply(as.character(ids), function(id) {
+    g <- conceptGroups[[id]]
+    if (is.null(g)) character(0) else g
+  })
+  ourGroupSets <- .groupsOf(checked$omop_concept_id)
+  refGroupSets <- .groupsOf(checked$OMOP_CONCEPT_ID)
+  sharedGroup <- vapply(seq_len(nrow(checked)), function(i) {
+    shared <- intersect(ourGroupSets[[i]], refGroupSets[[i]])
+    if (length(shared) == 0) return(NA_character_)
+    shared[which.min(groupSize[shared])]
+  }, character(1))
+
   checked <- checked |>
     dplyr::mutate(
-      ourGroup = unname(conceptGroupId[.data$omop_concept_id]),
-      refGroup = unname(conceptGroupId[as.character(.data$OMOP_CONCEPT_ID)]),
-      groupComparable = !is.na(.data$ourGroup) & !is.na(.data$refGroup),
-      agreesGroup = .data$agrees | (.data$groupComparable & .data$ourGroup == .data$refGroup),
+      groupComparable = lengths(ourGroupSets) > 0 & lengths(refGroupSets) > 0,
+      sharedGroupId = sharedGroup,
+      sharedGroupName = unname(groupName[sharedGroup]),
+      sharedGroupSize = unname(groupSize[sharedGroup]),
+      agreesGroup = .data$agrees | !is.na(.data$sharedGroupId),
       recoveredByGroup = .data$agreesGroup & !.data$agrees
     )
 
@@ -336,15 +363,25 @@ if (referenceAvailable) {
       ) |>
       dplyr::select("level", "n_codes", "p_codes", "n_events", "p_events")
 
-    # Which ParentGroup did the recovered rows land in -- i.e. which rollup rule
-    # is doing the work. A rule that recovers nothing is a rule this report does
-    # not need.
-    recoveredByParent <- checked |>
+    # How tight was the Group that did the recovering. A pair sharing a 4-member
+    # Group is a strong claim; one sharing a 200-member Group is a weak one, and
+    # this is the column that lets a reader discount the weak ones rather than
+    # take the headline figure on trust.
+    sizeBands <- list(
+      list(lo = 0,   hi = 10,  label = "2 - 10"),
+      list(lo = 10,  hi = 50,  label = "11 - 50"),
+      list(lo = 50,  hi = 200, label = "51 - 200"),
+      list(lo = 200, hi = Inf, label = "> 200")
+    )
+    recoveredBySize <- checked |>
       dplyr::filter(.data$recoveredByGroup) |>
-      dplyr::mutate(.parent = groupIndex$parent_group_id[match(.data$ourGroup, groupIndex$group_id)]) |>
-      dplyr::count(.data$.parent, name = "n_codes") |>
-      dplyr::arrange(dplyr::desc(.data$n_codes)) |>
-      dplyr::rename(parent_group_id = ".parent")
+      dplyr::mutate(.band = vapply(.data$sharedGroupSize, function(x) {
+        hit <- Filter(function(b) !is.na(x) && x > b$lo && x <= b$hi, sizeBands)
+        if (length(hit) == 0) "(unknown)" else hit[[1]]$label
+      }, character(1))) |>
+      dplyr::count(.data$.band, name = "n_codes") |>
+      dplyr::arrange(match(.data$.band, vapply(sizeBands, function(b) b$label, character(1)))) |>
+      dplyr::rename(shared_group_size = ".band")
 
     nAgreeGroupOverview <- nAgreeGroup
     eventsAgreeGroupOverview <- eventsOf(checked$agreesGroup)
@@ -362,7 +399,8 @@ if (referenceAvailable) {
           UNIT = dplyr::coalesce(UNIT, ""),
           our_omop_concept_name = dplyr::coalesce(omop_concept_name, ""),
           reference_OMOP_CONCEPT_NAME = dplyr::coalesce(OMOP_CONCEPT_NAME, ""),
-          shared_loinc_group = dplyr::coalesce(unname(conceptGroupName[omop_concept_id]), "")
+          shared_loinc_group = dplyr::coalesce(sharedGroupName, ""),
+          group_size = dplyr::coalesce(as.character(sharedGroupSize), "")
         )
       recoveredLines <- c(
         paste0("*", nRecoveredDistinct, " distinct recovered (our concept, reference concept) pairs; ",
@@ -387,11 +425,13 @@ if (referenceAvailable) {
       ), width = 80),
       "",
       strwrap(paste0(
-        "Each LOINC code is assigned to exactly ONE Group, by ",
-        "`scripts/buildLoincGroupIndex.R`: the Group file is not a tree -- its ",
-        "lab-facing ParentGroups overlap -- so collisions are resolved with a ",
-        "fixed most-specific-wins precedence. See ",
-        "`RESEARCH/UnderstandingGroups.md` section 4."
+        "Group membership comes from the OMOP vocabulary itself ",
+        "(`0_GetMeasurementOmopData/loinc_group_membership.tsv`), keyed by ",
+        "`concept_id`. A concept belongs to several Groups, so the test is ",
+        "whether the two concepts share one, and the Group reported is the ",
+        "most specific shared one. ParentGroups are excluded -- OMOP models ",
+        "those as Groups too, and LG100-4 \"Flowsheet - laboratory\" would make ",
+        "any two lab chemistry concepts look related."
       ), width = 80),
       "",
       strwrap(paste0(
@@ -403,9 +443,11 @@ if (referenceAvailable) {
       "",
       .markdownTable(levels),
       "",
-      "Which rollup rule did the recovering:",
+      "How tight was the Group that did the recovering — the count of standard",
+      "Measurement concepts it holds. A pair sharing a 4-member Group is a much",
+      "stronger claim than one sharing a 200-member Group:",
       "",
-      .markdownTable(recoveredByParent),
+      .markdownTable(recoveredBySize),
       if (length(recoveredLines) > 0) c(
         "",
         "Rows the concept-id score counts as disagreements and the Group score",

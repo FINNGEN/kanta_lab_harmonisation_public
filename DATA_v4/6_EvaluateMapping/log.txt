@@ -32,51 +32,17 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  groupFileDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/.scratchpad/Loinc_2.82/GroupFile
-  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping
-  categories = Flowsheet - laboratory; Flowsheet - vital signs; Flowsheet - weight, height, and head circumference
-  precedence = LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4 > LG47-3 > LG70-5
-Read 7519 groups from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/.scratchpad/Loinc_2.82/GroupFile/Group.csv
-Read 43813 group memberships from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/.scratchpad/Loinc_2.82/GroupFile/GroupLoincTerms.csv
-1 memberships name a GroupId that is not in Group.csv (yes do); dropping them
-8643 distinct LOINC codes across the Flowsheet categories; 334 of them sit in more than one Group and are resolved by precedence
-  LG100-4: 4350 codes
-  LG27-5: 341 codes
-  LG47-3: 75 codes
-  LG70-5: 17 codes
-  LG74-7: 1817 codes
-  LG78-8: 29 codes
-  LG97-8: 440 codes
-  LG99-4: 1574 codes
-8643 codes assigned to 3225 groups, exactly one each
-Wrote 8643 rows to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincGroupIndex.tsv
-- The project is out-of-sync -- use `renv::status()` for details.
-
-Attaching package: ‘dplyr’
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-
-Configuration:
   codesWithOmopFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
   referenceMappingFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/ReferenceMappings/lab_data_summary.csv
   outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping
-  measurementConceptAttributesFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-  loincGroupIndexFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincGroupIndex.tsv
+  loincGroupMembershipFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/0_GetMeasurementOmopData/loinc_group_membership.tsv
 Read 2687 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
-Read 102825 concepts from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Read 8643 LOINC -> Group rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincGroupIndex.tsv
-7796 of 68106 LOINC concepts carry a Flowsheet Group
+Read 41326 concept -> Group rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/0_GetMeasurementOmopData/loinc_group_membership.tsv
+18400 concepts belong to 5831 Groups after excluding 31 ParentGroups
 2577 / 2687 rows were named; 2077 / 2577 of those mapped to an OMOP concept
 Read 28685 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/ReferenceMappings/lab_data_summary.csv
 1209 / 2687 codes carry an APPROVED reference mapping; 742 (61.4%) agree with it
-531 of those carry a LOINC Group on both sides; agreement rises to 837 (69.2%) at Group level, recovering 95 disagreements
+737 of those carry a LOINC Group on both sides; agreement rises to 845 (69.9%) at Group level, recovering 103 disagreements
 Wrote stats report to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincToOmopMappingStats.md
 Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincGroupIndex.tsv
 Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/loincToOmopMappingStats.md

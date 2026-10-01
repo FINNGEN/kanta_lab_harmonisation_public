@@ -336,27 +336,24 @@ with the precedence rule in §4.** It collapses `Automated count` / `Microscopy`
 `Test strip` / `Refractometry` variants — one of the two main sources of
 pipeline-vs-reference disagreement.
 
-**Implemented** in `STEPS/6_EvaluateMapping`:
-`scripts/buildLoincGroupIndex.R` flattens the three `Flowsheet` Categories into
-one Group per LOINC code (precedence as in §4) and writes
-`DATA/6_EvaluateMapping/loincGroupIndex.tsv`;
-`scripts/summariseLoincToOmopMapping.R` then scores agreement at Group level
-alongside the concept id. Point `LOINC_GROUP_FILE_DIR` at an unpacked GroupFile
-to turn it on — the raw distribution stays out of `DATA/` (§7), only the derived
-index is written there. Result on the current run:
+**Implemented**, and *not* from this file — from the OMOP vocabulary. See §9
+for why. `STEPS/0_GetMeasurementOmopData/scripts/pullLoincGroupMembership.R`
+pulls `concept_class_id = 'LOINC Group'` ancestors into
+`loinc_group_membership.tsv`, and `6_EvaluateMapping` scores whether the two
+concepts **share** a Group. Result on the current run:
 
 | | codes | | events | |
 |---|---|---|---|---|
 | agrees on the concept id (exact) | 742 | 61.4% | 40,275,283 | 79.7% |
-| agrees on the LOINC Group | **837** | **69.2%** | **41,359,188** | **81.9%** |
-| — of which recovered by the Group | 95 | 7.9% | 1,083,905 | 2.1% |
+| agrees on the LOINC Group | **845** | **69.9%** | **41,457,043** | **82.0%** |
+| — of which recovered by the Group | 103 | 8.5% | 1,181,760 | 2.3% |
 
-Only 531 / 1,209 of the checked codes carry a Group on both sides, so 69.2% is a
-floor, not a ceiling. The recovering splits `LG100-4` 63, `LG74-7` 18, `LG97-8`
-8, `LG27-5` 6 — and the rows it recovers are exactly the specimen/method
-decorations: `vp-ca-ion` (`Serum or Plasma` vs `Venous blood`), `p-ca19-9`
-(methodless vs `by Immunoassay`), `u-sakka,eryt` (`Microscopy high power field`
-vs `Automated count`).
+737 / 1,209 of the checked codes carry a Group on both sides, so 69.9% is a
+floor. The recovering Groups are tight — 90 of the 103 share a Group with 2-10
+members, 12 with 11-50, one with more — and the rows recovered are exactly the
+specimen/method decorations: `ab-ca-ion` (`Arterial blood` vs `Serum or
+Plasma`), `u-ph-hy` (methodless vs `by Test strip`), `b-neutrofiilit`
+(`by Automated count` vs methodless).
 
 **For a general taxonomy of the APPROVED set → do not use the Group file.**
 Use `has_component` from
@@ -593,3 +590,92 @@ against 30,491 in `pmol/l`, both `APPROVED`, and no MW supplied. That is a
 167,377-event harmonisation gap the reference carries today, and the largest in
 this list by minority-side volume.
 
+
+## 9. GroupFile vs the OMOP vocabulary — why the pipeline uses the CDM
+
+The same Groups are in the CDM: `vocabulary_id = 'LOINC'`,
+`concept_class_id = 'LOINC Group'`, `standard_concept = 'C'` — 7,213 concepts,
+`concept_code` = the `LG` number, membership through `concept_ancestor`. Also
+present, and tested below: `LOINC Hierarchy` (75,901 concepts) and `LOINC Class`.
+
+Measured on the 1,209 checked codes:
+
+| scheme | both sides have a group | disagreements sharing one | agreement |
+|---|---|---|---|
+| GroupFile index, one group per code | 531 / 1209 (43.9%) | 95 / 295 (32.2%) | 837 (69.2%) |
+| **CDM LOINC Group, share-any** | **737 / 1209 (61.0%)** | **103 / 295 (34.9%)** | **845 (69.9%)** |
+| CDM LOINC Class | 1034 (85.5%) | 256 (86.8%) | 998 (82.5%) |
+| CDM LOINC Hierarchy | 1035 (85.6%) | 293 (99.3%) | 1035 (85.6%) |
+
+### The last two rows are illusions
+
+`LOINC Class` is just `CHEM` / `HEM/BC` / `MICRO`; two unrelated analytes share
+one. `LOINC Hierarchy` looks better still at 99.3%, until the *size* of the
+shared ancestor is checked — 163 of its 293 hits need a bucket with more than
+1,000 descendants, the worst being *"Lab terms not yet categorized"* with
+**24,969**, matching `u-suhti` (`Specific gravity of Urine` vs
+`by Refractometry`). Capped at a defensible bucket size the Hierarchy recovers
+only 58 — worse than LOINC Group. Purpose-built method rollups beat a generic
+hierarchy for this question.
+
+### The join key does not matter
+
+Only **3 of 1,209** checked rows involve a non-LOINC concept. And the coverage
+is identical by construction:
+
+```
+rows where both LOINC codes appear anywhere in the GroupFile : 737 / 1209
+rows where both have a CDM LOINC Group ancestor              : 737 / 1209
+```
+
+Same data. The 531 → 737 gain is not the CDM — it is dropping the restriction to
+the three `Flowsheet` categories, which the GroupFile would also allow. The
+remaining 472 are the codes with no Group in any category: the §6 structural
+gap, which no join change can fix.
+
+### What the CDM does buy
+
+**It removes the need for a precedence rule entirely.** The §4 ladder only
+existed because the problem was framed as *assign one Group, then compare*. The
+ancestor model asks *do these two concepts share a Group* — a set intersection,
+which is precedence-free and uses all 62 ParentGroups at once. On top of that it
+keys on `concept_id` directly, drops a licensed file from the pipeline's inputs,
+and keeps Groups on the same vocabulary release as every other concept
+`0_GetMeasurementOmopData` pulls.
+
+So the switch is an engineering win worth **+8 recovered codes** (95 → 103,
+69.2% → 69.9%) — real, but the reason to do it is the inputs and the missing
+precedence rule, not the number.
+
+### The one trap, and the right way out of it
+
+OMOP models a **ParentGroup as a `LOINC Group` concept too**. `LG100-4` is a
+concept named *"Flowsheet - laboratory"* with 3,538 descendants; `LG55-6` is
+*"Mass-Molar conversion"* with 4,296. Without excluding them, "shares a Group"
+fires on 161 of the 295 disagreements — but **52 of those are at ParentGroup
+level** and mean only "both are lab chemistry".
+
+A size threshold is the obvious fix and the wrong one: the 201-1000 band mixes
+five ParentGroups with four genuine value sets (`LG32757-3` Influenza virus 460,
+`LG41633-5` Borrelia 309, `LG41632-7` Rickettsia 235, `LG41638-4` Legionella
+224). The correct test is **structural — a ParentGroup is a Group that subsumes
+other Groups**:
+
+```sql
+SELECT DISTINCT ca.ancestor_concept_id
+FROM concept_ancestor ca
+JOIN concept g  ON g.concept_id  = ca.ancestor_concept_id
+JOIN concept cg ON cg.concept_id = ca.descendant_concept_id
+WHERE g.concept_class_id = 'LOINC Group'
+  AND cg.concept_class_id = 'LOINC Group'
+  AND ca.ancestor_concept_id <> ca.descendant_concept_id
+```
+
+That picks out exactly the ParentGroups — 31 in the Measurement-domain scope,
+each named after its Category — and leaves every genuine value set alone. The
+flag is carried as `is_parent_group` in `loinc_group_membership.tsv`; the file
+does not filter, so the policy lives at the point of use.
+
+With it, the 103 recoveries sit in Groups of 2-10 members (90), 11-50 (12) and
+one larger (`Borrelia`, 309 — `Borrelia burgdorferi DNA` vs `Borrelia sp DNA`,
+a fair rollup).
