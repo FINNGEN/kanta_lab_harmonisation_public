@@ -1,4 +1,4 @@
-Warning: DATA_v3/source_kanta_summary/summaryUnitSource.tsv not found -- unit_source_injection_correction_na_p will read as 100% NA for every pair
+Warning: DATA_v3/SourceKantaData/summaryUnitSource.tsv not found -- unit_source_injection_correction_na_p will read as 100% NA for every pair
 - The project is out-of-sync -- use `renv::status()` for details.
 
 Attaching package: ‘dplyr’
@@ -12,14 +12,14 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  summaryTestFile = DATA_v3/source_kanta_summary/summaryTest.tsv
+  summaryTestFile = DATA_v3/SourceKantaData/summaryTest.tsv
   summaryUnitSourceFile = 
-  summaryValuesSourceFile = DATA_v3/source_kanta_summary/summaryValuesSource.tsv
-  summaryValuesFile = DATA_v3/source_kanta_summary/summaryValues.tsv
+  summaryValuesSourceFile = DATA_v3/SourceKantaData/summaryValuesSource.tsv
+  summaryValuesFile = DATA_v3/SourceKantaData/summaryValues.tsv
   outDir = DATA_v3/1_GetSummaryData
-Read 26613 rows from DATA_v3/source_kanta_summary/summaryTest.tsv
-Read 13035 rows from DATA_v3/source_kanta_summary/summaryValuesSource.tsv
-Read 50688 rows from DATA_v3/source_kanta_summary/summaryValues.tsv
+Read 26613 rows from DATA_v3/SourceKantaData/summaryTest.tsv
+Read 13035 rows from DATA_v3/SourceKantaData/summaryValuesSource.tsv
+Read 50688 rows from DATA_v3/SourceKantaData/summaryValues.tsv
 No summaryUnitSourceFile given -- unit_source_injection_correction_na_p will read as 100% NA for every pair
 Read 0 rows from (none)
 26613 TEST_NAME/UNIT pairs written

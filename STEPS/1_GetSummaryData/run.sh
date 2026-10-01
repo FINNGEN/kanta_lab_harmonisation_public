@@ -49,7 +49,7 @@ fi
 #
 # --- Input -------------------------------------------------------------
 #
-SOURCE_DIR="$DATA_DIR/source_kanta_summary"
+SOURCE_DIR="$DATA_DIR/SourceKantaData"
 SUMMARY_TEST_FILE="$SOURCE_DIR/summaryTest.tsv"
 SUMMARY_UNIT_SOURCE_FILE="$SOURCE_DIR/summaryUnitSource.tsv"
 SUMMARY_VALUES_SOURCE_FILE="$SOURCE_DIR/summaryValuesSource.tsv"
@@ -61,7 +61,7 @@ for f in "$SUMMARY_TEST_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FIL
     exit 1
   fi
 done
-# summaryUnitSource.tsv is optional: some source_kanta_summary vintages (e.g.
+# summaryUnitSource.tsv is optional: some SourceKantaData vintages (e.g.
 # converted from the older v3 extract) never had it. An empty arg tells the R
 # script there is none, rather than erroring -- every pair's unit_source
 # breakdown then reads as 100% NA, which is exactly true when no unit_source

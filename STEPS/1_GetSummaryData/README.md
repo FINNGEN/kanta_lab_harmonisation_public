@@ -1,6 +1,6 @@
 # 1_GetSummaryData
 
-Turns the raw `source_kanta_summary` extract into one row per local
+Turns the raw `SourceKantaData` extract into one row per local
 `TEST_NAME`/`UNIT`: how many records, what share came from a plain source
 value vs. an injected/corrected unit or an extracted/QC-failed value, and
 the observed value's deciles. This `labSummary.tsv` is the base table every
@@ -8,20 +8,20 @@ later step builds on.
 
 ## Inputs
 
-- `DATA/source_kanta_summary/summaryTest.tsv` — one row per `TEST_NAME` +
+- `DATA/SourceKantaData/summaryTest.tsv` — one row per `TEST_NAME` +
   `MEASUREMENT_UNIT`, with `n_records` (see
-  `DATA/source_kanta_summary/kanta_summary.md`).
-- `DATA/source_kanta_summary/summaryUnitSource.tsv` (**optional**) — one row
+  `DATA/SourceKantaData/kanta_summary.md`).
+- `DATA/SourceKantaData/summaryUnitSource.tsv` (**optional**) — one row
   per `TEST_NAME` + `MEASUREMENT_UNIT` + `unit_source` (`Source` /
   `PrimaryInjection` / `SecondaryCorrection`), with `n_records`. Some
-  `source_kanta_summary` vintages never had this table at all (e.g. one
+  `SourceKantaData` vintages never had this table at all (e.g. one
   converted from the older v3 extract) — when it is missing,
   `unit_source_injection_correction_na_p` reads `[0,0,0,100]%` for every pair
   (100% "no unit_source recorded", which is exactly true).
-- `DATA/source_kanta_summary/summaryValuesSource.tsv` — one row per
+- `DATA/SourceKantaData/summaryValuesSource.tsv` — one row per
   `TEST_NAME` + `MEASUREMENT_UNIT` + `value_source` (`Source` / `Extracted` /
   `QCOut`), with `n_records`.
-- `DATA/source_kanta_summary/summaryValues.tsv` — one row per `TEST_NAME` +
+- `DATA/SourceKantaData/summaryValues.tsv` — one row per `TEST_NAME` +
   `MEASUREMENT_UNIT` + `decile` (0.1 .. 0.9), with `decile_MEASUREMENT_VALUE`.
 
 ## Outputs
@@ -64,7 +64,7 @@ default), so records with no test name at all arrive as a `TEST_NAME` of
 `"NA"`, one row per `UNIT` they happened to be grouped into. They carry no
 information that could be mapped to a lab test. (`2_AppendKnownInformation`
 keeps its own copy of this filter too — belt and suspenders, since it reads
-`labSummary.tsv` from whichever `source_kanta_summary` vintage produced it.)
+`labSummary.tsv` from whichever `SourceKantaData` vintage produced it.)
 
 Then:
 
@@ -86,7 +86,7 @@ Then:
    `decile`/`decile_MEASUREMENT_VALUE` rows (ascending by `decile`) into one
    bracketed string per pair. Deciles are only computed upstream for
    higher-volume pairs (5,354 of 26,828 in the current
-   `source_kanta_summary`); the rest are left empty.
+   `SourceKantaData`); the rest are left empty.
 
 `summaryValues.tsv` and `summaryValuesSource.tsv` are independent upstream
 aggregates (their own `kanta_summary.md` documents each on its own), each with

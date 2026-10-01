@@ -32,7 +32,7 @@ ParallelLogger::logInfo("Read ", nrow(summaryValuesSource), " rows from ", summa
 ParallelLogger::logInfo("Read ", nrow(summaryValues), " rows from ", summaryValuesFile)
 
 # summaryUnitSource.tsv is optional -- run.sh passes "" when it does not exist
-# for this source_kanta_summary (e.g. a v3-converted one, which never had it).
+# for this SourceKantaData (e.g. a v3-converted one, which never had it).
 # An empty table with the right columns makes every pair's unit_source
 # breakdown fall out as 100% NA, with no special-casing needed downstream.
 summaryUnitSource <- if (nzchar(summaryUnitSourceFile)) {

@@ -8,7 +8,7 @@ Index of the steps, numbered in the order they run.
    flag) from the FinnGen CDM vocabulary, then summarise it into a stats
    report. No dependency on any other step, which is why it can run first.
 1. [`1_GetSummaryData`](1_GetSummaryData/README.md) — aggregate the raw
-   `source_kanta_summary` tables (unit source, value source, deciles) into
+   `SourceKantaData` tables (unit source, value source, deciles) into
    `labSummary.tsv`, one row per `TEST_NAME`/`UNIT`.
 2. [`2_AppendKnownInformation`](2_AppendKnownInformation/README.md) — join
    `labSummary.tsv` with the Kodistopalvelu lab code table and the
