@@ -2,10 +2,10 @@
 
 A one-off conversion, not a pipeline step: `../source/*.tsv` are the old
 (v3) `source_kanta_summary` extract, in a different schema than the current
-(v4) one `getSummaryData` reads. `convertV3ToV4.R` converts them into v4's
+(v4) one `1_GetSummaryData` reads. `convertV3ToV4.R` converts them into v4's
 schema and writes them as `../summaryTest.tsv`, `../summaryValuesSource.tsv`,
 `../summaryValues.tsv`, `../summaryOutcomes.tsv` — i.e. directly into
-`source_kanta_summary/`, alongside `source/`, so `getSummaryData` can run
+`source_kanta_summary/`, alongside `source/`, so `1_GetSummaryData` can run
 against `DATA_v3` the same way it runs against `DATA_v4`.
 
 ## Run
@@ -46,5 +46,5 @@ extra decision for the one non-count table:
   `decile_MEASUREMENT_VALUE_HARMONIZED` is dropped.
 
 `summaryUnitSource` has no v3 equivalent at all and is not produced here —
-`getSummaryData` treats a missing `summaryUnitSource.tsv` as "no unit-source
+`1_GetSummaryData` treats a missing `summaryUnitSource.tsv` as "no unit-source
 data available" (see its own README).

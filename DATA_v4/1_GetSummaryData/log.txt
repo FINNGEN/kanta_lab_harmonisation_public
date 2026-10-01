@@ -1,0 +1,46 @@
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  summaryTestFile = DATA_v4/source_kanta_summary/summaryTest.tsv
+  summaryUnitSourceFile = DATA_v4/source_kanta_summary/summaryUnitSource.tsv
+  summaryValuesSourceFile = DATA_v4/source_kanta_summary/summaryValuesSource.tsv
+  summaryValuesFile = DATA_v4/source_kanta_summary/summaryValues.tsv
+  outDir = DATA_v4/1_GetSummaryData
+Read 26828 rows from DATA_v4/source_kanta_summary/summaryTest.tsv
+Read 13044 rows from DATA_v4/source_kanta_summary/summaryValuesSource.tsv
+Read 48186 rows from DATA_v4/source_kanta_summary/summaryValues.tsv
+Read 9551 rows from DATA_v4/source_kanta_summary/summaryUnitSource.tsv
+Dropping 30 row(s) whose TEST_NAME is the literal text "NA" (the upstream extract's stringified missing value), covering 56,407 records with no recorded test name
+26798 TEST_NAME/UNIT pairs written
+5333 of them carry a value_deciles distribution
+Wrote 26798 rows to DATA_v4/1_GetSummaryData/labSummary.tsv
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  labSummaryFile = DATA_v4/1_GetSummaryData/labSummary.tsv
+  outDir = DATA_v4/1_GetSummaryData
+Read 26798 rows from DATA_v4/1_GetSummaryData/labSummary.tsv
+Computed overview, coverage and unit/value source composition stats
+Wrote stats report to DATA_v4/1_GetSummaryData/labSummaryStats.md
+Wrote DATA_v4/1_GetSummaryData/labSummary.tsv
+Wrote DATA_v4/1_GetSummaryData/labSummaryStats.md

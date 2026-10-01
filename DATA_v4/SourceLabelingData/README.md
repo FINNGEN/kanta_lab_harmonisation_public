@@ -47,15 +47,15 @@ Columns:
 - `n_events` — how many lab records those codes cover (`n_records` summed).
 
 1,488 concepts covering 249M records. The 100 most used cover 89.5% of them —
-which is why `FindLOINCDimensions` embeds exactly that head in its prompt.
+which is why `4_FindLOINC` embeds exactly that head in its prompt.
 
-Both `FindLOINCDimensions` (as examples of how LOINC spells the tests this
-data contains) and `FixLOINCDimensions` (as a tie-breaker between candidates)
+Both `4_FindLOINC` (as examples of how LOINC spells the tests this
+data contains) and `5_FixLOINC` (as a tie-breaker between candidates)
 read this file.
 
-Built by `STEPS/FixLOINCDimensions/scripts/buildLoincNamesFrequency.R`, which
+Built by `STEPS/5_FixLOINC/scripts/buildLoincNamesFrequency.R`, which
 joins `DATA/ReferenceMappings/lab_data_summary.csv` to
-`DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv` on
+`DATA/0_GetMeasurementOmopData/measurement_concept_attributes.tsv` on
 `concept_id`. Only `status == "APPROVED"` reference rows are counted — the
 human-verified mappings — since `UNCHECKED` ones would add volume at the cost
 of feeding unverified concept assignments into what is meant to be a
@@ -63,9 +63,9 @@ trustworthy prior. Re-run it only when the reference mappings or the OMOP
 vocabulary snapshot change:
 
 ```
-Rscript STEPS/FixLOINCDimensions/scripts/buildLoincNamesFrequency.R \
+Rscript STEPS/5_FixLOINC/scripts/buildLoincNamesFrequency.R \
     DATA/ReferenceMappings/lab_data_summary.csv \
-    DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv \
+    DATA/0_GetMeasurementOmopData/measurement_concept_attributes.tsv \
     DATA/SourceLabelingData/loinc_names_frequency.tsv
 ```
 
@@ -76,7 +76,7 @@ LOINC codes that cover about 99.8% of the test volume of three large
 laboratory organisations, offered as the target set anyone mapping local lab
 codes to LOINC should aim at. Being on this list is the strongest available
 signal that a concept is the one a laboratory is *supposed* to map to, so
-`FixLOINCDimensions` flags its candidates with it and tells the model to
+`5_FixLOINC` flags its candidates with it and tells the model to
 prefer a flagged one when two candidates fit the evidence equally well.
 
 The source file, `LOINC_1.6_Top2000CommonLabResultsSI.csv`, is the **SI**
@@ -104,12 +104,12 @@ Columns:
 - `loinc_class` — the LOINC class (`Chem`, `HEM/BC`, `MICRO`, ...).
 
 Rebuilt from the CSV by
-`STEPS/FixLOINCDimensions/scripts/buildLoincTop2000.R`:
+`STEPS/5_FixLOINC/scripts/buildLoincTop2000.R`:
 
 ```
-Rscript STEPS/FixLOINCDimensions/scripts/buildLoincTop2000.R \
+Rscript STEPS/5_FixLOINC/scripts/buildLoincTop2000.R \
     DATA/SourceLabelingData/LOINC_1.6_Top2000CommonLabResultsSI.csv \
-    DATA/GetMeasurementOmopData/measurement_concept_attributes.tsv \
+    DATA/0_GetMeasurementOmopData/measurement_concept_attributes.tsv \
     DATA/SourceLabelingData/loinc_top2000.tsv
 ```
 

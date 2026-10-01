@@ -1,0 +1,47 @@
+Warning: DATA_v3/source_kanta_summary/summaryUnitSource.tsv not found -- unit_source_injection_correction_na_p will read as 100% NA for every pair
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  summaryTestFile = DATA_v3/source_kanta_summary/summaryTest.tsv
+  summaryUnitSourceFile = 
+  summaryValuesSourceFile = DATA_v3/source_kanta_summary/summaryValuesSource.tsv
+  summaryValuesFile = DATA_v3/source_kanta_summary/summaryValues.tsv
+  outDir = DATA_v3/1_GetSummaryData
+Read 26613 rows from DATA_v3/source_kanta_summary/summaryTest.tsv
+Read 13035 rows from DATA_v3/source_kanta_summary/summaryValuesSource.tsv
+Read 50688 rows from DATA_v3/source_kanta_summary/summaryValues.tsv
+No summaryUnitSourceFile given -- unit_source_injection_correction_na_p will read as 100% NA for every pair
+Read 0 rows from (none)
+26613 TEST_NAME/UNIT pairs written
+5632 of them carry a value_deciles distribution
+Wrote 26613 rows to DATA_v3/1_GetSummaryData/labSummary.tsv
+- The project is out-of-sync -- use `renv::status()` for details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  labSummaryFile = DATA_v3/1_GetSummaryData/labSummary.tsv
+  outDir = DATA_v3/1_GetSummaryData
+Read 26613 rows from DATA_v3/1_GetSummaryData/labSummary.tsv
+Computed overview, coverage and unit/value source composition stats
+Wrote stats report to DATA_v3/1_GetSummaryData/labSummaryStats.md
+Wrote DATA_v3/1_GetSummaryData/labSummary.tsv
+Wrote DATA_v3/1_GetSummaryData/labSummaryStats.md

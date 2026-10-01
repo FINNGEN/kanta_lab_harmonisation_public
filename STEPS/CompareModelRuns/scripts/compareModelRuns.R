@@ -11,7 +11,7 @@
 #
 #   1. AGAINST THE REFERENCE -- for each run on its own, how often does it
 #      produce the same OMOP concept as the curated Finnish mapping, over the
-#      rows both cover? This repeats MapLOINCToOmop's own cross-check, on the
+#      rows both cover? This repeats 6_EvaluateMapping's own cross-check, on the
 #      same join key and the same four outcomes, so every run is measured the
 #      way that step already measures one. It is agreement, not correctness:
 #      the reference is the best mapping available, not ground truth.
@@ -41,7 +41,7 @@ outDir <- args[2]
 runSpecs <- args[-(1:2)]
 
 # Records above which a code counts as high-volume. Same default and same
-# reason as MapLOINCToOmop: the curated reference was built mostly for the
+# reason as 6_EvaluateMapping: the curated reference was built mostly for the
 # codes that carry real data volume, so a single agreement figure over the
 # whole overlap mixes the codes it was written for with ones it barely touches.
 volumeThreshold <- suppressWarnings(as.numeric(Sys.getenv("VOLUME_THRESHOLD", "500")))
@@ -72,7 +72,7 @@ for (i in seq_len(nrow(runs))) {
 #
 # na = "" per development/STYLE.md: these files were written by this project.
 readRun <- function(label, path) {
-  f <- file.path(path, "MapLOINCToOmop", "codesWithOMOP.tsv")
+  f <- file.path(path, "6_EvaluateMapping", "codesWithOMOP.tsv")
   tbl <- readr::read_tsv(f, na = "", col_types = readr::cols(.default = readr::col_character()))
   ParallelLogger::logInfo("Read ", nrow(tbl), " rows from ", f)
   # Columns an older run may not carry. Added empty rather than left missing so
@@ -96,7 +96,7 @@ readRun <- function(label, path) {
       omop_concept_id = .data$omop_concept_id,
       omop_concept_name = .data$omop_concept_name,
       certainty = .data$certainty,
-      # MapLOINCToOmop's own flag: a chosen id AND that id present in the OMOP
+      # 6_EvaluateMapping's own flag: a chosen id AND that id present in the OMOP
       # vocabulary snapshot. A handful of ids per run are not (the model copied
       # a real-looking id the snapshot does not carry), and that step counts
       # them as unmapped -- so coverage here counts them the same way, or the
@@ -115,7 +115,7 @@ allRows <- dplyr::bind_rows(runTables)
 readCost <- function(path) {
   total <- 0
   found <- FALSE
-  for (step in c("FindLOINCDimensions", "FixLOINCDimensions")) {
+  for (step in c("4_FindLOINC", "5_FixLOINC")) {
     f <- file.path(path, step, "log.txt")
     if (!file.exists(f)) next
     hits <- grep("LLM cost USD", readLines(f, warn = FALSE), value = TRUE)
@@ -152,7 +152,7 @@ ParallelLogger::logInfo("Read ", nrow(reference), " rows from ", referenceMappin
 # A literal "|" would end a markdown cell early and shift every later column.
 .escapeCell <- function(x) gsub("|", "\\|", ifelse(is.na(x), "", as.character(x)), fixed = TRUE)
 
-## The reference, reduced to its APPROVED rows, keyed exactly as MapLOINCToOmop
+## The reference, reduced to its APPROVED rows, keyed exactly as 6_EvaluateMapping
 ## keys it: TEST_NAME + UNIT, with an empty UNIT a unit value in its own right.
 testIdParts <- stringr::str_match(reference$testId, "^(.*) \\[(.*)\\]$")
 approved <- reference |>
@@ -169,7 +169,7 @@ allRows <- allRows |>
     key = paste(.data$TEST_NAME, .data$UNIT, sep = "\r"),
     reference_concept_id = unname(refConcept[.data$key]),
     in_reference = !is.na(.data$reference_concept_id),
-    # The same four outcomes MapLOINCToOmop reports, computed the same way, so
+    # The same four outcomes 6_EvaluateMapping reports, computed the same way, so
     # a per-run figure here can be checked against that run's own report.
     outcome = dplyr::case_when(
       !.data$in_reference ~ "not in reference",
@@ -380,7 +380,7 @@ report <- c(
   "",
   "1. **Against the reference** — how often each run produces the same OMOP",
   "   concept as the curated Finnish mapping, over the rows both cover. This is",
-  "   MapLOINCToOmop's own cross-check, repeated per run on the same join key",
+  "   6_EvaluateMapping's own cross-check, repeated per run on the same join key",
   "   (`TEST_NAME` + `UNIT`, an empty `UNIT` counting as a unit) and the same",
   "   four outcomes. It is **agreement, not correctness**: the reference is the",
   "   best mapping available, not ground truth, and carries errors of its own.",
@@ -390,8 +390,8 @@ report <- c(
   "",
   "## Coverage and cost",
   "",
-  "`named` is how many rows `FindLOINCDimensions` could write a LOINC name for;",
-  "`mapped` how many of them `FixLOINCDimensions` then resolved to a real OMOP",
+  "`named` is how many rows `4_FindLOINC` could write a LOINC name for;",
+  "`mapped` how many of them `5_FixLOINC` then resolved to a real OMOP",
   "concept. Coverage is easy to inflate by never declining, so it is reported",
   "next to agreement, never instead of it. `cost_usd` is what the two LLM steps",
   "logged for that run.",
@@ -426,7 +426,7 @@ report <- c(
   "## Agreement by evidence level",
   "",
   "What the local row actually carried. A `name`-only row has nothing that",
-  "fixes its quantity, so `FixLOINCDimensions` is meant to decline there unless",
+  "fixes its quantity, so `5_FixLOINC` is meant to decline there unless",
   "the name alone settles the concept — which makes this the split where the",
   "models are most free to differ, and where a higher number is not",
   "automatically better.",

@@ -70,10 +70,10 @@ for spec in "${RUNS[@]}"; do
     echo "Malformed --run argument: $spec (expected <LABEL>=<PATH>)" >&2
     exit 1
   fi
-  for f in "$path/MapLOINCToOmop/codesWithOMOP.tsv" \
-           "$path/FixLOINCDimensions/codesWithOmopConcepts.tsv"; do
+  for f in "$path/6_EvaluateMapping/codesWithOMOP.tsv" \
+           "$path/5_FixLOINC/codesWithOmopConcepts.tsv"; do
     if [[ ! -f "$f" ]]; then
-      echo "Missing input file: $f (run FindLOINCDimensions, FixLOINCDimensions and MapLOINCToOmop on $path first)" >&2
+      echo "Missing input file: $f (run 4_FindLOINC, 5_FixLOINC and 6_EvaluateMapping on $path first)" >&2
       exit 1
     fi
   done

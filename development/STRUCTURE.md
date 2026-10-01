@@ -41,18 +41,18 @@ The design goals:
 │   └── <ENV_NAME>.env             # one file per environment → --env <ENV_NAME>
 ├── STEPS/
 │   ├── README.md                  # index: the steps, in the order they run
-│   └── <ActionInPascalCase>/      # a step, named as the action it performs
-│       ├── README.md              # inputs, outputs, action, env vars, how to run
+│   └── <N>_<ActionInPascalCase>/  # a step, named as its position + the action it performs
+│       ├── README.md              # purpose, inputs, outputs, action, env vars, how to run
 │       ├── run.sh                 # entry point: run.sh <DATA-folder> --env <name> [flags]
 │       └── scripts/               # R / Python / SQL / other, called by run.sh
 │           └── ...
 └── DATA/
-    └── <ActionInPascalCase>/  # a step's results, folder named after the step
-        └── log.txt            # run log, written by every step
+    └── <N>_<ActionInPascalCase>/  # a step's results, folder named after the step
+        └── log.txt                # run log, written by every step
 ```
 
 `DATA/` is a single flat folder: every step writes its results directly into
-`DATA/<ActionInPascalCase>/`, no intermediate folder.
+`DATA/<N>_<ActionInPascalCase>/`, no intermediate folder.
 
 ### Top-level files
 
@@ -73,21 +73,27 @@ The design goals:
 
 - **README.md** — an index listing every step, in the order they run.
 
-One subfolder per step, named as an **action in PascalCase** (verb-first, e.g.
-`ConvertX`, `FindY`, `FitZ`).
+One subfolder per step, named `<N>_<ActionInPascalCase>`: a zero-based number
+giving its position in run order, an underscore, then the action in PascalCase
+(verb-first, e.g. `ConvertX`, `FindY`, `FitZ`) — e.g. `0_PullSourceData`,
+`1_ConvertX`. A step that reads one or more already-finished runs rather than
+occupying a position in the pipeline (a cross-run comparison or audit utility)
+has no number prefix.
 
-- **README.md** — documents the step: **inputs** (which previous step folders /
-  files it reads), **outputs** (what it writes), the **action** it performs, the
-  **env vars** it needs, and **how to run it** (exact `run.sh` invocation).
+- **README.md** — starts with a one- or few-sentence **purpose** statement
+  (what the step is for, in plain terms) right after the title, then documents
+  the step: **inputs** (which previous step folders / files it reads),
+  **outputs** (what it writes), the **action** it performs, the **env vars** it
+  needs, and **how to run it** (exact `run.sh` invocation).
 - **run.sh** — the entry point. Contract:
   - **Arg 1**: path to the `DATA/` folder.
   - **`--env <name>`**: which environment to load. `run.sh` sources
     `ENVIRONMENTS/<name>.env`.
   - Additional flags as needed, documented in the step's README.
   - The step **reads** previous steps' output folders directly under `DATA/`,
-    and **writes** its own results into `DATA/<ActionInPascalCase>/` — a
+    and **writes** its own results into `DATA/<N>_<ActionInPascalCase>/` — a
     folder named after the step itself.
-  - The step **writes a run log** to `DATA/<ActionInPascalCase>/log.txt`
+  - The step **writes a run log** to `DATA/<N>_<ActionInPascalCase>/log.txt`
     (see [Run logging](#run-logging) below).
 - **scripts/** — the R / Python / SQL / other scripts that `run.sh` calls. No
   business logic in `run.sh` beyond arg parsing, env loading, and invoking these.
@@ -102,7 +108,7 @@ a subfolder named after the step (see above).
 ## Run logging
 
 **Every step must record a log of its run and save it in its output folder as
-`log.txt`** — i.e. `DATA/<ActionInPascalCase>/log.txt`. The log is a
+`log.txt`** — i.e. `DATA/<N>_<ActionInPascalCase>/log.txt`. The log is a
 first-class output: it makes a run auditable and reproducible, and it is what a
 reader consults to see what happened when a step ran (config values used, inputs
 read, actions taken, outputs written, warnings, errors).
@@ -124,8 +130,8 @@ from names alone. Follow these exactly.
 
 | Thing | Convention |
 |---|---|
-| Step folder | **PascalCase, verb-first action** |
-| Step result folder (under `DATA/`) | **identical to the step folder** |
+| Step folder | **`<N>_<ActionInPascalCase>`** — zero-based run-order number, underscore, verb-first action |
+| Step result folder (under `DATA/`) | **identical to the step folder**, numeric prefix included |
 | Run log (in a step result folder) | **fixed literal** `log.txt` |
 | Environment file | **UPPERCASE** + `.env` |
 | Script in `scripts/` | **camelCase** + language extension |
@@ -138,6 +144,13 @@ Rules:
 
 - The `--env` value is the environment file's basename without extension, so
   file case and the flag value match: e.g. `FINNGEN.env` ⇒ `--env FINNGEN`.
-- A step's result folder **must** be named identically to its step folder — that
-  is how the next step finds its inputs.
+- A step's result folder **must** be named identically to its step folder,
+  numeric prefix included — that is how the next step finds its inputs.
 - Step names are actions: start with a verb, PascalCase, no separators.
+- The number is the step's position in run order, zero-based, renumbered
+  (and every step's own folder, `run.sh` path references, and README
+  renamed/updated together) whenever a step is inserted, removed, or reordered
+  — it is never a stable id, only a position.
+- A step that reads one or more already-finished runs rather than occupying a
+  position in the pipeline (a cross-run comparison or audit utility, e.g.
+  `CompareModelRuns`) carries no number prefix at all.

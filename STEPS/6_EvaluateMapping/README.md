@@ -1,0 +1,127 @@
+# 6_EvaluateMapping
+
+Looks up the OMOP vocabulary's own record of each concept `5_FixLOINC`
+chose, then scores the mapping's quality — including agreement with the
+separately curated reference mapping. The final, reportable result of the
+pipeline.
+
+## Inputs
+
+- `DATA/5_FixLOINC/codesWithOmopConcepts.tsv` — one row per local
+  `TEST_NAME`/`UNIT`, with the `omop_concept_id` chosen for it (empty when no
+  candidate was right), its guessed name `loinc_name_guess`, the `reasoning`
+  and `certainty` behind the choice, and the computed `evidence_level` /
+  `unit_share` the report breaks down by.
+- `DATA/0_GetMeasurementOmopData/measurement_concept_attributes.tsv` — every
+  standard OMOP `Measurement`-domain concept, with its name, code, vocabulary
+  and the six LOINC axes pulled from the vocabulary itself.
+- `DATA/ReferenceMappings/lab_data_summary.csv` (optional) — a separately
+  curated Finnish-code -> OMOP mapping, `testId` formatted as `"TEST_NAME
+  [UNIT]"`, with a `status` column (`APPROVED`, `NOT-FOUND`, `IGNORED`,
+  `UNCHECKED`). Used as the cross-check in the stats report (see Action); the
+  report degrades gracefully if this file is absent.
+
+## Outputs
+
+- `DATA/6_EvaluateMapping/codesWithOMOP.tsv` — `codesWithOmopConcepts.tsv` with
+  the vocabulary's own record of the chosen concept appended:
+  - `omop_concept_name`, `omop_concept_code`, `omop_vocabulary_id` — taken
+    from the vocabulary, replacing the name the previous step copied from its
+    candidate list.
+  - `omop_is_panel`, `omop_has_component`, `omop_has_property`,
+    `omop_has_method`, `omop_has_scale_type`, `omop_has_system`,
+    `omop_has_time_aspect` — the concept's own axes. They describe the concept
+    that was chosen, not the local code, and are what the stats report breaks
+    the result down by.
+  - `mapped` — `TRUE` when the row carries a concept id that exists in the
+    vocabulary.
+- `DATA/6_EvaluateMapping/loincToOmopMappingStats.md` — stats on the mapping's
+  quality (see Action).
+- `DATA/6_EvaluateMapping/log.txt` — run log (written by `run.sh`'s `tee`; both R
+  scripts log through `ParallelLogger::logInfo()` with no logger registered,
+  per `development/STYLE.md`).
+
+## Action
+
+There is no matching left to do in this step. `5_FixLOINC` already
+returns an `omop_concept_id` per local code, chosen from concepts a semantic
+search actually found, so this step looks each id up and reports on the result.
+
+That is the change from the earlier version, which did the mapping here by
+joining the six LLM-inferred LOINC axes plus `is_panel` against the same seven
+columns on every OMOP concept. Such a join fires only when all seven land
+exactly right, which is combinatorially fragile: on a 30-group sample it
+matched 287 of 1,940 rows (14.8%), and of the rows that overlapped the curated
+Finnish mapping only 11.3% agreed with it. Choosing one concept from a
+retrieved shortlist replaces seven independent chances to be wrong with one.
+
+Two scripts, run in order:
+
+1. `scripts/mapLoincToOmop.R` joins each `omop_concept_id` to
+   `measurement_concept_attributes.tsv` and carries the vocabulary's name,
+   code, vocabulary id and axes alongside it. An id that is not in the
+   vocabulary is reported as unmapped, with a warning — it should not happen,
+   since `5_FixLOINC` validates its ids against the candidates it
+   offered, but a silent pass-through would hide it if it did.
+2. `scripts/summariseLoincToOmopMapping.R` reads `codesWithOMOP.tsv` and
+   writes `loincToOmopMappingStats.md`:
+   - **Overview** — how many rows were named at all, and of those, how many
+     carry a concept. "Unmapped" here means the model declined every
+     candidate, not that a join missed.
+   - **By domain** — which specimens the mapped codes ended up in, from the
+     chosen concept's own `has_system`.
+   - **Cross-check against the reference mapping** — the section that matters.
+     The reference's `APPROVED` rows are matched to this table by
+     `TEST_NAME`+`UNIT`, and for the overlap the report gives both how often
+     this pipeline answered at all and how often its answer *is* the
+     reference's concept. Coverage and agreement pull in opposite directions,
+     so reporting only the first would let the step look good by mapping
+     everything.
+
+     Every row falls into exactly one of four outcomes: **not in reference**,
+     **not automapped**, **disagreement**, **agreement**. The first is the
+     largest and its name oversells it — the cross-check compares against
+     `APPROVED` rows only, so a row lands there whenever the reference has no
+     `APPROVED` mapping for it, which is rarely the same as the reference
+     never having heard of the code. A further table splits that bucket by the
+     status the reference does carry, because the parts call for opposite
+     follow-up: `UNCHECKED` is uncurated work where a mapping would be new;
+     `NOT-FOUND` is where a curator looked and concluded nothing fits, so rows
+     this pipeline mapped there are its strongest claim to add something the
+     reference lacks *and* exactly where a hallucination would hide; and only a
+     small remainder is genuinely absent from the file.
+
+     Read it as **agreement, not correctness**. The reference is the best
+     mapping available, not ground truth: it sends the rapid-test code
+     `c-reaktiivinenproteiini,pika` to a high-sensitivity CRP concept although
+     that row's values floor at 5 mg/l, and it is internally inconsistent on
+     some panel families.
+
+     The figures are broken out by `evidence_level`, because the two mappings
+     do not have the same target. The reference gives more than one concept
+     across a code's units for only ~6% of multi-unit codes, so in practice it
+     maps `TEST_NAME` -> concept; this pipeline maps `(TEST_NAME, UNIT)` and
+     leaves a `name`-only row unmapped rather than assuming a quantity. On
+     those rows the two disagree by construction, so they are reported apart
+     from the evidenced rows — and agreement restricted to rows carrying real
+     evidence is the figure that tracks whether this pipeline picks the right
+     concept.
+
+     Two sets of 5 examples close the section: **disagreements**, sampled
+     from the distinct (our concept, reference concept) pairs so one recurring
+     disagreement cannot fill the table, and rows **not automapped**, deduped
+     by code. Both carry the `reasoning` `5_FixLOINC` gave, so the
+     mistake — or the refusal — can be read rather than guessed at. The two
+     need different fixes, a better prompt versus better retrieval or more
+     input evidence, so they are counted and shown apart. The section is
+     skipped (with a note, not an error) if the file isn't found.
+
+## Env vars
+
+None required.
+
+## How to run
+
+```
+./STEPS/6_EvaluateMapping/run.sh <PATH_TO_DATA_FOLDER> --env <ENV_NAME>
+```

@@ -8,13 +8,13 @@ curated reference mapping.
 
 One or more **run folders**, each named on the command line as
 `--run <LABEL>=<PATH>`. A run folder is an ordinary data folder that
-`FindLOINCDimensions`, `FixLOINCDimensions` and `MapLOINCToOmop` have already
+`4_FindLOINC`, `5_FixLOINC` and `6_EvaluateMapping` have already
 been run into:
 
-- `<run>/MapLOINCToOmop/codesWithOMOP.tsv` — the run's final mapping. This is
+- `<run>/6_EvaluateMapping/codesWithOMOP.tsv` — the run's final mapping. This is
   the only table the comparison reads: it already carries the guessed name, the
   evidence level, the chosen concept and the record count.
-- `<run>/FindLOINCDimensions/log.txt`, `<run>/FixLOINCDimensions/log.txt` —
+- `<run>/4_FindLOINC/log.txt`, `<run>/5_FixLOINC/log.txt` —
   read only for the `LLM cost USD` line each step logs, so the report can put
   money next to agreement.
 - `<first run>/ReferenceMappings/lab_data_summary.csv` — the separately curated
@@ -33,7 +33,7 @@ is the run the others are read as alternatives to.
   - **Agreement with the reference** — agreement over the whole overlap, over
     the rows the run actually answered, over the rows carrying real evidence,
     and over the high-volume codes the reference was really curated for.
-  - **Outcomes** — the same four buckets `MapLOINCToOmop` reports (not in
+  - **Outcomes** — the same four buckets `6_EvaluateMapping` reports (not in
     reference / not automapped / disagreement / agreement), one column per run.
   - **Agreement by evidence level** — where a run is entitled to differ.
   - **Run against run** — how often two runs chose the same concept on the rows
@@ -53,7 +53,7 @@ is the run the others are read as alternatives to.
 answers two questions that are deliberately kept apart:
 
 1. **Against the reference.** Each run on its own is scored the way
-   `MapLOINCToOmop` already scores one: joined to the reference's `APPROVED`
+   `6_EvaluateMapping` already scores one: joined to the reference's `APPROVED`
    rows on `TEST_NAME` + `UNIT` (an empty `UNIT` counting as a unit value in
    its own right), and classified into the same four outcomes. Repeating that
    step's logic rather than reading its report means every run is measured
@@ -80,7 +80,7 @@ model costs nothing.
 ## Env vars
 
 - `VOLUME_THRESHOLD` — records above which a code counts as high-volume,
-  default `500`. Same meaning and default as in `MapLOINCToOmop`: the reference
+  default `500`. Same meaning and default as in `6_EvaluateMapping`: the reference
   was curated mostly for the codes that carry the data volume, so a single
   agreement figure over the whole overlap mixes the codes it was written for
   with ones it barely touches.

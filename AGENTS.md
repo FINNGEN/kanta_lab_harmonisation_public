@@ -28,10 +28,16 @@ naming conventions.
 
 ## Creating a step
 
-Creating a step means creating its whole folder, `STEPS/<step>/`, and
+Creating a step means creating its whole folder, `STEPS/<N>_<step>/`, and
 every file in it: `README.md`, `run.sh`, and `scripts/`. See
 `development/STRUCTURE.md` for exactly what belongs in each file and how a
-step folder is laid out.
+step folder is laid out, including the `<N>_` run-order prefix (and when a
+step gets none).
+
+Inserting a step between two existing ones means renumbering every step from
+that point on — folder name, `DATA/` result folder, every other step's
+`run.sh` path references to it, and its own README — not just adding a
+decimal or a letter suffix.
 
 Once a step exists, `scripts/` is the source of truth for what that step
 does — the behavior is whatever the code does, and the code is edited
