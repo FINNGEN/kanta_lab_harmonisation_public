@@ -53,6 +53,14 @@ CODES_WITH_OMOP_CONCEPTS_FILE="$DATA_DIR/5_FixLOINC/codesWithOmopConcepts.tsv"
 MEASUREMENT_CONCEPT_ATTRIBUTES_FILE="$DATA_DIR/0_GetMeasurementOmopData/measurement_concept_attributes.tsv"
 REFERENCE_MAPPING_FILE="$DATA_DIR/ReferenceMappings/lab_data_summary.csv"
 
+# The LOINC Group file distribution (Group.csv + GroupLoincTerms.csv), used to
+# score agreement at Group level as well as on the concept id. Optional, and
+# deliberately not kept under DATA/: it is a licensed external vocabulary
+# release. Point LOINC_GROUP_FILE_DIR at an unpacked GroupFile folder (env file
+# or exported); the derived one-group-per-code index IS written to DATA/ and is
+# what the report joins on.
+LOINC_GROUP_FILE_DIR="${LOINC_GROUP_FILE_DIR:-$DATA_DIR/LoincGroups}"
+
 for f in "$CODES_WITH_OMOP_CONCEPTS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
@@ -70,11 +78,24 @@ fi
 Rscript "$STEP_DIR/scripts/mapLoincToOmop.R" \
   "$CODES_WITH_OMOP_CONCEPTS_FILE" "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE" "$OUTDIR"
 
+LOINC_GROUP_INDEX_FILE=""
+if [[ -f "$LOINC_GROUP_FILE_DIR/Group.csv" && -f "$LOINC_GROUP_FILE_DIR/GroupLoincTerms.csv" ]]; then
+  Rscript "$STEP_DIR/scripts/buildLoincGroupIndex.R" \
+    "$LOINC_GROUP_FILE_DIR" "$OUTDIR"
+  LOINC_GROUP_INDEX_FILE="$OUTDIR/loincGroupIndex.tsv"
+else
+  echo "No LOINC Group file at $LOINC_GROUP_FILE_DIR -- skipping Group-level agreement" >&2
+fi
+
 Rscript "$STEP_DIR/scripts/summariseLoincToOmopMapping.R" \
-  "$OUTDIR/codesWithOMOP.tsv" "$REFERENCE_MAPPING_FILE" "$OUTDIR"
+  "$OUTDIR/codesWithOMOP.tsv" "$REFERENCE_MAPPING_FILE" "$OUTDIR" \
+  "$MEASUREMENT_CONCEPT_ATTRIBUTES_FILE" "$LOINC_GROUP_INDEX_FILE"
 
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/codesWithOMOP.tsv"
+if [[ -n "$LOINC_GROUP_INDEX_FILE" ]]; then
+  echo "Wrote $OUTDIR/loincGroupIndex.tsv"
+fi
 echo "Wrote $OUTDIR/loincToOmopMappingStats.md"

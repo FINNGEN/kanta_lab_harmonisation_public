@@ -332,12 +332,31 @@ That gives a vocabulary-sourced conversion factor instead of a hand-maintained
 one. Highest-value use of this file for this repo.
 
 **For "same test, different method" rollup → Category `Flowsheet - laboratory`
-with the precedence rule in §4.** Use it to collapse `Automated count` /
-`Microscopy` / `Test strip` / `Refractometry` variants — which is one of the two
-main sources of pipeline-vs-reference disagreement (see
-`DATA_v4/6_EvaluateMapping/loincToOmopMappingStats.md`). A reasonable move is to
-score agreement at Group level as well as at concept level: method
-disagreements inside the same LG Group become agreements.
+with the precedence rule in §4.** It collapses `Automated count` / `Microscopy` /
+`Test strip` / `Refractometry` variants — one of the two main sources of
+pipeline-vs-reference disagreement.
+
+**Implemented** in `STEPS/6_EvaluateMapping`:
+`scripts/buildLoincGroupIndex.R` flattens the three `Flowsheet` Categories into
+one Group per LOINC code (precedence as in §4) and writes
+`DATA/6_EvaluateMapping/loincGroupIndex.tsv`;
+`scripts/summariseLoincToOmopMapping.R` then scores agreement at Group level
+alongside the concept id. Point `LOINC_GROUP_FILE_DIR` at an unpacked GroupFile
+to turn it on — the raw distribution stays out of `DATA/` (§7), only the derived
+index is written there. Result on the current run:
+
+| | codes | | events | |
+|---|---|---|---|---|
+| agrees on the concept id (exact) | 742 | 61.4% | 40,275,283 | 79.7% |
+| agrees on the LOINC Group | **837** | **69.2%** | **41,359,188** | **81.9%** |
+| — of which recovered by the Group | 95 | 7.9% | 1,083,905 | 2.1% |
+
+Only 531 / 1,209 of the checked codes carry a Group on both sides, so 69.2% is a
+floor, not a ceiling. The recovering splits `LG100-4` 63, `LG74-7` 18, `LG97-8`
+8, `LG27-5` 6 — and the rows it recovers are exactly the specimen/method
+decorations: `vp-ca-ion` (`Serum or Plasma` vs `Venous blood`), `p-ca19-9`
+(methodless vs `by Immunoassay`), `u-sakka,eryt` (`Microscopy high power field`
+vs `Automated count`).
 
 **For a general taxonomy of the APPROVED set → do not use the Group file.**
 Use `has_component` from

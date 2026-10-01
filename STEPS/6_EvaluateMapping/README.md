@@ -20,6 +20,14 @@ pipeline.
   [UNIT]"`, with a `status` column (`APPROVED`, `NOT-FOUND`, `IGNORED`,
   `UNCHECKED`). Used as the cross-check in the stats report (see Action); the
   report degrades gracefully if this file is absent.
+- `$LOINC_GROUP_FILE_DIR` (optional) — an unpacked LOINC **GroupFile**
+  distribution, i.e. a folder holding `Group.csv` and `GroupLoincTerms.csv`.
+  Defaults to `DATA/LoincGroups`. Deliberately NOT kept under `DATA/`: it is a
+  licensed external vocabulary release, and (per
+  `RESEARCH/UnderstandingGroups.md` section 7) Group membership is explicitly
+  unstable between LOINC versions, so only the derived index belongs in the
+  data folder. Absent → Group-level agreement is skipped and the rest of the
+  report is unchanged.
 
 ## Outputs
 
@@ -35,6 +43,12 @@ pipeline.
     the result down by.
   - `mapped` — `TRUE` when the row carries a concept id that exists in the
     vocabulary.
+- `DATA/6_EvaluateMapping/loincGroupIndex.tsv` — one row per LOINC code,
+  assigning it to exactly **one** LOINC Group: `loinc_number`, `loinc_name`,
+  `category`, `parent_group_id`, `group_id`, `group_name`, `n_group_members`
+  (members left after the one-group-per-code assignment) and
+  `n_group_members_raw` (the Group's full membership in the vocabulary). Only
+  written when `$LOINC_GROUP_FILE_DIR` resolves.
 - `DATA/6_EvaluateMapping/loincToOmopMappingStats.md` — stats on the mapping's
   quality (see Action).
 - `DATA/6_EvaluateMapping/log.txt` — run log (written by `run.sh`'s `tee`; both R
@@ -55,15 +69,36 @@ matched 287 of 1,940 rows (14.8%), and of the rows that overlapped the curated
 Finnish mapping only 11.3% agreed with it. Choosing one concept from a
 retrieved shortlist replaces seven independent chances to be wrong with one.
 
-Two scripts, run in order:
+Three scripts, run in order (the first is skipped when
+`$LOINC_GROUP_FILE_DIR` does not resolve):
 
-1. `scripts/mapLoincToOmop.R` joins each `omop_concept_id` to
+1. `scripts/buildLoincGroupIndex.R` flattens the LOINC Group file into one
+   group per LOINC code. The Group file is **not a tree**: each ParentGroup is
+   internally a disjoint partition of its own terms, but ParentGroups overlap
+   each other — inside `Flowsheet - laboratory`, 334 of 8,551 codes sit in two
+   Groups at once, because the urine ParentGroups overlap the chem catch-all and
+   the coarse urine+sediment rollup overlaps the finer urine one. A code in two
+   Groups cannot be used to score anything, so every collision is resolved with
+   a fixed most-specific-wins precedence
+   (`LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4 > LG47-3 > LG70-5`;
+   the chem catch-all `LG100-4` must stay last, since its system axis absorbs
+   `ANYUrineUrineSed` and it would otherwise win every urine collision). Scoped
+   to the three `Flowsheet` Categories: they are the lab-facing part of the
+   Group project, they share zero codes with each other, and their ParentGroups
+   roll up Method — the axis the two mappings most often disagree on. Swapping
+   `LG97-8` above `LG74-7` gives a coarser urine rollup (one bucket per urine
+   analyte regardless of how it was measured) and is the only real modelling
+   choice in the ladder. A membership naming a `GroupId` absent from
+   `Group.csv` is dropped with a warning — the 2.82 Beta ships exactly one such
+   row. See `RESEARCH/UnderstandingGroups.md` sections 3-4 for the full
+   analysis.
+2. `scripts/mapLoincToOmop.R` joins each `omop_concept_id` to
    `measurement_concept_attributes.tsv` and carries the vocabulary's name,
    code, vocabulary id and axes alongside it. An id that is not in the
    vocabulary is reported as unmapped, with a warning — it should not happen,
    since `5_FixLOINC` validates its ids against the candidates it
    offered, but a silent pass-through would hide it if it did.
-2. `scripts/summariseLoincToOmopMapping.R` reads `codesWithOMOP.tsv` and
+3. `scripts/summariseLoincToOmopMapping.R` reads `codesWithOMOP.tsv` and
    writes `loincToOmopMappingStats.md`:
    - **Overview** — one funnel table from every raw local code down to one
      that agrees with the reference: `total` -> `has a guessed loinc` ->
@@ -90,13 +125,20 @@ Two scripts, run in order:
      **By evidence level** and **By record volume** each give two tables —
      one over codes, one over their summed records — with columns
      `n_codes`/`n_events`, `n_ai_mapped` (this pipeline produced any concept),
-     `n_agree` (that concept matches the reference's), and a `p_` percentage
-     for each with its own denominator: `p_codes`/`p_events` is this row's
-     share of the section's grand total (so the rows sum to `total`);
-     `p_ai_mapped` is of this row's own codes/records, how many got AI-mapped
-     at all; `p_agree` is of the ones this row actually mapped, how many
-     agreed — so a row that answers rarely isn't penalized in `p_agree` for
-     the rows it never attempted. A `total` row closes each table.
+     `n_agree` (that concept matches the reference's), `n_agree_group` (the
+     same, scored on the LOINC Group instead of the concept id — see
+     **Agreement at LOINC Group level** below), and a `p_` percentage for each
+     with its own denominator: `p_codes`/`p_events` is this row's share of the
+     section's grand total (so the rows sum to `total`); `p_ai_mapped` is of
+     this row's own codes/records, how many got AI-mapped at all; `p_agree` and
+     `p_agree_group` are both of the ones this row actually mapped, how many
+     agreed — so a row that answers rarely isn't penalized for the rows it
+     never attempted, and the two agreement columns share a denominator and can
+     be read against each other. `p_agree_group` is always >= `p_agree`: a row
+     agreeing on the id agrees on the Group by construction. The two
+     `_group` columns are dropped entirely when `$LOINC_GROUP_FILE_DIR` does
+     not resolve, rather than printed as a duplicate of `n_agree`/`p_agree`.
+     A `total` row closes each table.
 
      *By evidence level* exists because the two mappings don't have the same
      target: the reference gives more than one concept across a code's units
@@ -105,6 +147,26 @@ Two scripts, run in order:
      `name`-only row unanswered rather than assuming a quantity — so those
      rows get AI-mapped less and agree less by construction, and belong in
      their own row rather than blended into the whole.
+
+     **Agreement at LOINC Group level** scores the same comparison a second
+     way. A LOINC Group is a value set of concepts differing only in an axis
+     the Group's rule rolls up — Method above all, which is where this pipeline
+     and the reference most often part company (`Automated count` vs
+     methodless, `Test strip`, `Refractometry`, `Microscopy`), and specimen
+     granularity for the urine rules. Two different concept ids inside one
+     Group are the same test measured differently, so this separates "wrong
+     analyte" from "right analyte, different decoration". It is scored **on top
+     of** concept agreement, never instead of it: a row already agreeing on the
+     id stays agreeing, and a row with no Group on either side can only be
+     judged on the id — which is why the section states up front how many of
+     the checked codes carry a Group on both sides, and why the Group figure is
+     a floor rather than a ceiling. The section reports concept-level vs
+     Group-level agreement over codes and events, which ParentGroup's rollup
+     rule did the recovering, and 5 example rows the concept score calls
+     disagreements and the Group score calls agreements, with the shared Group
+     named so the rollup can be judged fair or not case by case. The Overview
+     funnel carries both as its last two rows. Skipped, with the rest of the
+     report unchanged, when `$LOINC_GROUP_FILE_DIR` does not resolve.
 
      *By record volume* exists because the reference was curated for the
      codes that carry the data (it covers 97% of rows with 50,000+ records and
@@ -121,7 +183,9 @@ Two scripts, run in order:
 
 ## Env vars
 
-None required.
+- `LOINC_GROUP_FILE_DIR` (optional) — folder holding an unpacked LOINC
+  GroupFile distribution (`Group.csv`, `GroupLoincTerms.csv`). Defaults to
+  `DATA/LoincGroups`. Without it the report is scored on concept ids alone.
 
 ## How to run
 
