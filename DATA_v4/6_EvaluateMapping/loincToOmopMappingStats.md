@@ -1,6 +1,6 @@
 # LOINC -> OMOP Mapping -- Stats
 
-Source: `DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv`
+Source: `/Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv`
 
 ## Overview
 
@@ -15,7 +15,8 @@ to a concept that agrees with the separately curated reference mapping:
 | has a guessed loinc | 2,577 | 95.9% | 51,567,886 | 99.6% |
 | has a fixed loinc | 2,077 | 77.3% | 47,581,148 | 91.9% |
 | exists in reference | 1,209 | 45.0% | 50,528,414 | 97.6% |
-| agrees with reference |   742 | 27.6% | 40,275,283 | 77.8% |
+| agrees with reference (concept id) |   742 | 27.6% | 40,275,283 | 77.8% |
+| agrees with reference (LOINC Group) |   837 | 31.1% | 41,359,188 | 79.9% |
 
 "Reference" here and below means the reference's **`APPROVED`** rows
 only — a code with only an `UNCHECKED`/`NOT-FOUND`/`IGNORED` reference row
@@ -24,11 +25,11 @@ reference).
 
 ## Compare with reference
 
-`DATA_v4/ReferenceMappings/lab_data_summary.csv` holds a separately curated
-Finnish-code -> OMOP mapping, restricted here to its `APPROVED` rows and
-matched to this table by `TEST_NAME` + `UNIT` (an empty `UNIT` counts as a unit
-of its own, so a code with no unit recorded is a different row from the same
-code in `mmol/l`, on both sides of the join).
+`/Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA_v4/ReferenceMappings/lab_data_summary.csv`
+holds a separately curated Finnish-code -> OMOP mapping, restricted here to its
+`APPROVED` rows and matched to this table by `TEST_NAME` + `UNIT` (an empty
+`UNIT` counts as a unit of its own, so a code with no unit recorded is a
+different row from the same code in `mmol/l`, on both sides of the join).
 
 **1209 / 2687 codes (45.0%) carry an APPROVED reference mapping** for their
 `TEST_NAME`+`UNIT`. The rest of this section focuses only on those 1209 codes
@@ -55,23 +56,23 @@ often and agree less often. `p_codes` is this row's share of all
 own codes, how many got AI-mapped; `p_agree` is of the ones this row
 actually mapped, how many agreed:
 
-| evidence_level | n_codes | n_ai_mapped | n_agree | p_codes | p_ai_mapped | p_agree |
-|---|---|---|---|---|---|---|
-| name+unit+values |  590 |  570 | 428 | 48.8% | 96.6% | 75.1% |
-| name |  441 |  292 | 177 | 36.5% | 66.2% | 60.6% |
-| name+values |  138 |  136 | 107 | 11.4% | 98.6% | 78.7% |
-| name+unit |   40 |   39 |  30 | 3.3% | 97.5% | 76.9% |
-| total | 1209 | 1037 | 742 | 100.0% | 85.8% | 71.6% |
+| evidence_level | n_codes | n_ai_mapped | n_agree | n_agree_group | p_codes | p_ai_mapped | p_agree | p_agree_group |
+|---|---|---|---|---|---|---|---|---|
+| name+unit+values |  590 |  570 | 428 | 483 | 48.8% | 96.6% | 75.1% | 84.7% |
+| name |  441 |  292 | 177 | 204 | 36.5% | 66.2% | 60.6% | 69.9% |
+| name+values |  138 |  136 | 107 | 114 | 11.4% | 98.6% | 78.7% | 83.8% |
+| name+unit |   40 |   39 |  30 |  36 | 3.3% | 97.5% | 76.9% | 92.3% |
+| total | 1209 | 1037 | 742 | 837 | 100.0% | 85.8% | 71.6% | 80.7% |
 
 The same breakdown weighted by records instead of codes:
 
-| evidence_level | n_events | n_ai_mapped | n_agree | p_events | p_ai_mapped | p_agree |
-|---|---|---|---|---|---|---|
-| name+unit+values | 41,984,023 | 39,805,270 | 36,624,587 | 83.1% | 94.8% | 92.0% |
-| name |  7,487,095 |  5,840,920 |  2,752,173 | 14.8% | 78.0% | 47.1% |
-| name+values |  1,041,422 |  1,030,129 |    883,259 | 2.1% | 98.9% | 85.7% |
-| name+unit |     15,874 |     15,662 |     15,264 | 0.0% | 98.7% | 97.5% |
-| total | 50,528,414 | 46,691,981 | 40,275,283 | 100.0% | 92.4% | 86.3% |
+| evidence_level | n_events | n_ai_mapped | n_agree | n_agree_group | p_events | p_ai_mapped | p_agree | p_agree_group |
+|---|---|---|---|---|---|---|---|---|
+| name+unit+values | 41,984,023 | 39,805,270 | 36,624,587 | 37,568,753 | 83.1% | 94.8% | 92.0% | 94.4% |
+| name |  7,487,095 |  5,840,920 |  2,752,173 |  2,864,877 | 14.8% | 78.0% | 47.1% | 49.0% |
+| name+values |  1,041,422 |  1,030,129 |    883,259 |    910,046 | 2.1% | 98.9% | 85.7% | 88.3% |
+| name+unit |     15,874 |     15,662 |     15,264 |     15,512 | 0.0% | 98.7% | 97.5% | 99.0% |
+| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,359,188 | 100.0% | 92.4% | 86.3% | 88.6% |
 
 ### By record volume
 
@@ -82,25 +83,73 @@ to the 1209 codes with an APPROVED reference mapping -- shows whether agreement
 holds up for the high-volume codes the reference was written for, or only for
 the tail it barely touches.
 
-| records | n_codes | n_ai_mapped | n_agree | p_codes | p_ai_mapped | p_agree |
-|---|---|---|---|---|---|---|
-| < 100 |  184 |  139 | 107 | 15.2% | 75.5% | 77.0% |
-| 100 - 499 |  341 |  299 | 216 | 28.2% | 87.7% | 72.2% |
-| 500 - 4,999 |  376 |  331 | 242 | 31.1% | 88.0% | 73.1% |
-| 5,000 - 49,999 |  210 |  180 | 114 | 17.4% | 85.7% | 63.3% |
-| >= 50,000 |   98 |   88 |  63 | 8.1% | 89.8% | 71.6% |
-| total | 1209 | 1037 | 742 | 100.0% | 85.8% | 71.6% |
+| records | n_codes | n_ai_mapped | n_agree | n_agree_group | p_codes | p_ai_mapped | p_agree | p_agree_group |
+|---|---|---|---|---|---|---|---|---|
+| < 100 |  184 |  139 | 107 | 122 | 15.2% | 75.5% | 77.0% | 87.8% |
+| 100 - 499 |  341 |  299 | 216 | 241 | 28.2% | 87.7% | 72.2% | 80.6% |
+| 500 - 4,999 |  376 |  331 | 242 | 270 | 31.1% | 88.0% | 73.1% | 81.6% |
+| 5,000 - 49,999 |  210 |  180 | 114 | 135 | 17.4% | 85.7% | 63.3% | 75.0% |
+| >= 50,000 |   98 |   88 |  63 |  69 | 8.1% | 89.8% | 71.6% | 78.4% |
+| total | 1209 | 1037 | 742 | 837 | 100.0% | 85.8% | 71.6% | 80.7% |
 
 The same breakdown weighted by records instead of codes:
 
-| records | n_events | n_ai_mapped | n_agree | p_events | p_ai_mapped | p_agree |
-|---|---|---|---|---|---|---|
-| < 100 |      7,560 |      5,659 |      4,298 | 0.0% | 74.9% | 75.9% |
-| 100 - 499 |     83,388 |     73,579 |     54,127 | 0.2% | 88.2% | 73.6% |
-| 500 - 4,999 |    638,860 |    551,372 |    389,318 | 1.3% | 86.3% | 70.6% |
-| 5,000 - 49,999 |  3,483,370 |  3,041,483 |  1,948,447 | 6.9% | 87.3% | 64.1% |
-| >= 50,000 | 46,315,236 | 43,019,888 | 37,879,093 | 91.7% | 92.9% | 88.1% |
-| total | 50,528,414 | 46,691,981 | 40,275,283 | 100.0% | 92.4% | 86.3% |
+| records | n_events | n_ai_mapped | n_agree | n_agree_group | p_events | p_ai_mapped | p_agree | p_agree_group |
+|---|---|---|---|---|---|---|---|---|
+| < 100 |      7,560 |      5,659 |      4,298 |      4,981 | 0.0% | 74.9% | 75.9% | 88.0% |
+| 100 - 499 |     83,388 |     73,579 |     54,127 |     59,860 | 0.2% | 88.2% | 73.6% | 81.4% |
+| 500 - 4,999 |    638,860 |    551,372 |    389,318 |    438,266 | 1.3% | 86.3% | 70.6% | 79.5% |
+| 5,000 - 49,999 |  3,483,370 |  3,041,483 |  1,948,447 |  2,322,536 | 6.9% | 87.3% | 64.1% | 76.4% |
+| >= 50,000 | 46,315,236 | 43,019,888 | 37,879,093 | 38,533,545 | 91.7% | 92.9% | 88.1% | 89.6% |
+| total | 50,528,414 | 46,691,981 | 40,275,283 | 41,359,188 | 100.0% | 92.4% | 86.3% | 88.6% |
+
+### Agreement at LOINC Group level
+
+A LOINC Group is a value set of concepts that differ only in an axis the
+Group's rule rolls up -- Method above all, which is where this pipeline and the
+reference most often part company (`Automated count` vs methodless, `Test
+strip`, `Refractometry`, `Microscopy`). Two different concept ids inside one
+Group are the same test measured differently, so scoring on the Group as well
+as on the id separates "wrong analyte" from "right analyte, different
+decoration".
+
+Each LOINC code is assigned to exactly ONE Group, by
+`scripts/buildLoincGroupIndex.R`: the Group file is not a tree -- its
+lab-facing ParentGroups overlap -- so collisions are resolved with a fixed
+most-specific-wins precedence. See `RESEARCH/UnderstandingGroups.md` section 4.
+
+**531 / 1209 (43.9%) of the checked codes carry a Group on both sides** and can
+be judged this way at all; the rest are scored on the concept id alone, so the
+Group row below is a floor, not a ceiling.
+
+| level | n_codes | p_codes | n_events | p_events |
+|---|---|---|---|---|
+| agrees on the concept id (exact) | 742 | 61.4% | 40,275,283 | 79.7% |
+| agrees on the LOINC Group | 837 | 69.2% | 41,359,188 | 81.9% |
+| — of which recovered by the Group |  95 | 7.9% |  1,083,905 | 2.1% |
+
+Which rollup rule did the recovering:
+
+| parent_group_id | n_codes |
+|---|---|
+| LG100-4 | 63 |
+| LG74-7 | 18 |
+| LG97-8 |  8 |
+| LG27-5 |  6 |
+
+Rows the concept-id score counts as disagreements and the Group score
+counts as agreements — read the two concept names side by side to judge
+whether the rollup is fair in each case:
+
+*39 distinct recovered (our concept, reference concept) pairs; 5 shown:*
+
+| TEST_NAME | UNIT | our_omop_concept_name | reference_OMOP_CONCEPT_NAME | shared_loinc_group |
+|---|---|---|---|---|
+| ab-ca++7.4 | mmol/l | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Arterial blood | Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma | Calcium.ionized^^adjusted to pH 7.4\|SCnc\|Pt\|ANYBldSerPl |
+| cp-gluk-hy | mmol/l | Glucose [Moles/volume] in Serum or Plasma | Glucose [Moles/volume] in Capillary blood | Glucose\|SCnc\|Pt\|ANYBldSerPl |
+| u-osmolaliteetti,estimoitu | mosm/kgh2o | Osmolality of Urine by calculated by sum of electrolytes | Osmolality of Urine | Observation\|Osmol\|Urine |
+| u-baktvi | e6/l | Bacteria [#/volume] in Urine by Culture | Bacteria [#/volume] in Urine by Automated count | Bacteria\|NCnc\|Urine |
+| ab-cl | mmol/l | Chloride [Moles/volume] in Arterial blood | Chloride [Moles/volume] in Serum or Plasma | Chloride\|SCnc\|Pt\|ANYBldSerPl |
 
 ### Examples — not automapped
 
