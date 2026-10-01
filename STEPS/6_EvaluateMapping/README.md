@@ -65,56 +65,59 @@ Two scripts, run in order:
    offered, but a silent pass-through would hide it if it did.
 2. `scripts/summariseLoincToOmopMapping.R` reads `codesWithOMOP.tsv` and
    writes `loincToOmopMappingStats.md`:
-   - **Overview** — how many rows were named at all, and of those, how many
-     carry a concept. "Unmapped" here means the model declined every
-     candidate, not that a join missed.
-   - **By domain** — which specimens the mapped codes ended up in, from the
-     chosen concept's own `has_system`.
-   - **Cross-check against the reference mapping** — the section that matters.
-     The reference's `APPROVED` rows are matched to this table by
-     `TEST_NAME`+`UNIT`, and for the overlap the report gives both how often
-     this pipeline answered at all and how often its answer *is* the
-     reference's concept. Coverage and agreement pull in opposite directions,
-     so reporting only the first would let the step look good by mapping
-     everything.
-
-     Every row falls into exactly one of four outcomes: **not in reference**,
-     **not automapped**, **disagreement**, **agreement**. The first is the
-     largest and its name oversells it — the cross-check compares against
-     `APPROVED` rows only, so a row lands there whenever the reference has no
-     `APPROVED` mapping for it, which is rarely the same as the reference
-     never having heard of the code. A further table splits that bucket by the
-     status the reference does carry, because the parts call for opposite
-     follow-up: `UNCHECKED` is uncurated work where a mapping would be new;
-     `NOT-FOUND` is where a curator looked and concluded nothing fits, so rows
-     this pipeline mapped there are its strongest claim to add something the
-     reference lacks *and* exactly where a hallucination would hide; and only a
-     small remainder is genuinely absent from the file.
-
-     Read it as **agreement, not correctness**. The reference is the best
-     mapping available, not ground truth: it sends the rapid-test code
+   - **Overview** — one funnel table from every raw local code down to one
+     that agrees with the reference: `total` -> `has a guessed loinc` ->
+     `has a fixed loinc` -> `exists in reference` -> `agrees with reference`,
+     each row as both `n_codes`/`p_codes` (distinct `TEST_NAME`/`UNIT` pairs)
+     and `n_events`/`p_events` (their summed record counts, so a high-volume
+     code counts for more than a one-off). "Reference" always means the
+     reference's `APPROVED` rows only — a code with only an
+     `UNCHECKED`/`NOT-FOUND`/`IGNORED` row there counts as absent, not as a
+     match or a miss. The last two rows print `-` when
+     `DATA/ReferenceMappings/lab_data_summary.csv` is absent; the rest of the
+     report degrades the same way.
+   - **Compare with reference** — the section that matters, and (per the
+     Overview note above) scoped from here on to only the codes that carry an
+     `APPROVED` reference mapping for their `TEST_NAME`+`UNIT` — a code with
+     no such row has nothing to agree or disagree with, so it is dropped from
+     every table and example in this section. Read every figure here as
+     **agreement, not correctness**: the reference is the best mapping
+     available, not ground truth. It sends the rapid-test code
      `c-reaktiivinenproteiini,pika` to a high-sensitivity CRP concept although
      that row's values floor at 5 mg/l, and it is internally inconsistent on
      some panel families.
 
-     The figures are broken out by `evidence_level`, because the two mappings
-     do not have the same target. The reference gives more than one concept
-     across a code's units for only ~6% of multi-unit codes, so in practice it
-     maps `TEST_NAME` -> concept; this pipeline maps `(TEST_NAME, UNIT)` and
-     leaves a `name`-only row unmapped rather than assuming a quantity. On
-     those rows the two disagree by construction, so they are reported apart
-     from the evidenced rows — and agreement restricted to rows carrying real
-     evidence is the figure that tracks whether this pipeline picks the right
-     concept.
+     **By evidence level** and **By record volume** each give two tables —
+     one over codes, one over their summed records — with columns
+     `n_codes`/`n_events`, `n_ai_mapped` (this pipeline produced any concept),
+     `n_agree` (that concept matches the reference's), and a `p_` percentage
+     for each with its own denominator: `p_codes`/`p_events` is this row's
+     share of the section's grand total (so the rows sum to `total`);
+     `p_ai_mapped` is of this row's own codes/records, how many got AI-mapped
+     at all; `p_agree` is of the ones this row actually mapped, how many
+     agreed — so a row that answers rarely isn't penalized in `p_agree` for
+     the rows it never attempted. A `total` row closes each table.
 
-     Two sets of 5 examples close the section: **disagreements**, sampled
-     from the distinct (our concept, reference concept) pairs so one recurring
-     disagreement cannot fill the table, and rows **not automapped**, deduped
-     by code. Both carry the `reasoning` `5_FixLOINC` gave, so the
-     mistake — or the refusal — can be read rather than guessed at. The two
-     need different fixes, a better prompt versus better retrieval or more
-     input evidence, so they are counted and shown apart. The section is
-     skipped (with a note, not an error) if the file isn't found.
+     *By evidence level* exists because the two mappings don't have the same
+     target: the reference gives more than one concept across a code's units
+     for only ~6% of multi-unit codes, so in practice it maps `TEST_NAME` ->
+     concept, while this pipeline maps `(TEST_NAME, UNIT)` and leaves a
+     `name`-only row unanswered rather than assuming a quantity — so those
+     rows get AI-mapped less and agree less by construction, and belong in
+     their own row rather than blended into the whole.
+
+     *By record volume* exists because the reference was curated for the
+     codes that carry the data (it covers 97% of rows with 50,000+ records and
+     under 30% of those below 500), so one blended agreement figure mixes the
+     codes it was written for with the tail it barely touches.
+
+     Two sets of 5 examples close the section, in this order: codes
+     **not automapped** (deduped by code) and **disagreements** (deduped by
+     the distinct (our concept, reference concept) pair, so one recurring
+     disagreement cannot fill the table). Both carry the `reasoning`
+     `5_FixLOINC` gave, so the mistake — or the refusal — can be read
+     rather than guessed at. The whole section is skipped (with a note, not an
+     error) if the reference file isn't found.
 
 ## Env vars
 
