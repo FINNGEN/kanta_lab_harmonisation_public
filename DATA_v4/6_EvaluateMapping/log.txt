@@ -35,14 +35,10 @@ Configuration:
   codesWithOmopFile = DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
   referenceMappingFile = DATA_v4/ReferenceMappings/lab_data_summary.csv
   outDir = DATA_v4/6_EvaluateMapping
-  volumeThreshold = 500
 Read 2687 rows from DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
 2577 / 2687 rows were named; 2077 / 2577 of those mapped to an OMOP concept
-Grouped the mapped rows into 64 OMOP systems
 Read 28685 rows from DATA_v4/ReferenceMappings/lab_data_summary.csv
-Outcomes: not in reference=1478, not automapped=172, disagreement=295, agreement=742
-1209 rows overlap an APPROVED reference mapping; 1037 of them got a concept; 742 (61.4% of the overlap, 71.6% of those answered) agree with it
-Restricted to codes with >= 500 records: 419 / 684 (61.3%) agree
+1209 / 2687 codes carry an APPROVED reference mapping; 742 (61.4%) agree with it
 Wrote stats report to DATA_v4/6_EvaluateMapping/loincToOmopMappingStats.md
 Wrote DATA_v4/6_EvaluateMapping/codesWithOMOP.tsv
 Wrote DATA_v4/6_EvaluateMapping/loincToOmopMappingStats.md
