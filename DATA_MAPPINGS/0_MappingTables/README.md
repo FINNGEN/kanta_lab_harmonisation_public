@@ -1,8 +1,7 @@
 # MAPPINGS
 
 Minimal, reviewable reference tables that drive the Kanta lab harmonisation to
-OMOP. Each table is a plain, hand-editable file; correctness is guarded by the
-validation script in [`tests/tables_validation.py`](tests/tables_validation.py).
+OMOP. Each table is a plain, hand-editable file.
 
 ## File conventions
 
@@ -18,18 +17,25 @@ validation script in [`tests/tables_validation.py`](tests/tables_validation.py).
     provenance).
 - **Booleans** — literal `TRUE` / `FALSE`.
 
-Run the validations:
-
-```bash
-python3 MAPPINGS/tests/tables_validation.py
-```
-
-Exit code `0` = all hard checks pass (warnings allowed), `1` = at least one hard
-check failed. `[WARN]` findings are reported but never fail the run.
-
 ---
 
 ## Tables
+
+### `testname_unit_to_conceptid.tsv` — lab test → OMOP concept
+
+One row per source (`TEST_NAME`, `MEASUREMENT_UNIT`) pair and the OMOP
+measurement concept it maps to.
+
+| Column             | Type    | Description                                        |
+|--------------------|---------|----------------------------------------------------|
+| `TEST_NAME`        | string  | Source lab test name. Required.                    |
+| `MEASUREMENT_UNIT` | string  | Source unit; `""` = qualitative test (no unit).    |
+| `OMOP_ID`          | integer | Target OMOP measurement `concept_id`. Required.    |
+
+**Validations**
+
+- `TEST_NAME` and `OMOP_ID` cannot be empty.
+- `TEST_NAME` + `MEASUREMENT_UNIT` is unique.
 
 ### `UNITSfi.tsv` — source-unit dictionary
 
@@ -47,30 +53,17 @@ One row per distinct source measurement unit and its OMOP unit concept.
 - `MEASUREMENT_UNIT` is unique.
 - `UNIQUE_FOR_LAB` is strictly `TRUE` or `FALSE`.
 
-### `LABfi.tsv` — lab test → OMOP mapping
+### `unit_fix.tsv` — known unit corrections
 
-One row per (test abbreviation, unit) mapping to an OMOP measurement concept.
+Per test, a source unit known to be wrong and the unit it must be read as.
 
-| Column                              | Type    | Description                                              |
-|-------------------------------------|---------|----------------------------------------------------------|
-| `TEST_NAME_ABBREVIATION`            | string  | Source lab test abbreviation. Required.                  |
-| `MEASUREMENT_UNIT`                  | string  | Source unit; `""` = qualitative test (no unit).          |
-| `harmonization_omop::OMOP_ID`       | integer | Target OMOP measurement `concept_id`.                    |
-| `harmonization_omop::OMOP_NAME`     | string  | OMOP `concept_name` for `OMOP_ID`; `""` when unmapped.   |
-| `harmonization_omop::OMOP_QUANTITY` | string  | OMOP quantity/property (e.g. `Mass Concentration`).      |
-| `harmonization_omop::MAPPING_STATUS`| enum    | Review state: `APPROVED` or `UNCHECKED`.                 |
-
-**Validations**
-
-- `TEST_NAME_ABBREVIATION` cannot be empty.
-- `MAPPING_STATUS` cannot be empty; only the values present in the file are
-  allowed (`APPROVED`, `UNCHECKED`).
-- `TEST_NAME_ABBREVIATION` + `MEASUREMENT_UNIT` is unique.
-- A given `OMOP_ID` maps to exactly one `OMOP_QUANTITY` (no id with two
-  different quantities).
-- If `MAPPING_STATUS = APPROVED`, `OMOP_ID` cannot be empty or `0`.
-- If `MAPPING_STATUS = APPROVED` and a unit is present, that unit must exist in
-  `UNITSfi.tsv` (cross-table, below).
+| Column                   | Type   | Description                                       |
+|--------------------------|--------|---------------------------------------------------|
+| `TEST_NAME_ABBREVIATION` | string | Source lab test abbreviation.                     |
+| `source_unit_clean`      | string | Unit as it arrives after cleaning.                |
+| `source_unit_clean_fix`  | string | Unit it is corrected to.                          |
+| `notes`                  | string | Optional free-text.                               |
+| `INJECTION_NOTES`        | string | Review state of the unit injection (e.g. `VALID`).|
 
 ### `quantity_source_unit_conversion.tsv` — unit-conversion table
 
@@ -98,59 +91,14 @@ Per OMOP quantity, the allowed source units and how to convert between them.
   `OMOP_QUANTITY`) must have the reverse row `TO_MU → MU` with the reciprocal
   value (`c * reverse ≈ 1`). Formula conversions are exempt.
 
-### `harmonization_counts.tsv` — observed-usage provenance
-
-Per harmonised (concept, quantity, unit), the source of the unit decision and
-before/after unit distributions.
-
-| Column                              | Type    | Description                                                      |
-|-------------------------------------|---------|------------------------------------------------------------------|
-| `harmonization_omop::OMOP_ID`       | integer | OMOP measurement `concept_id`. Required.                         |
-| `harmonization_omop::OMOP_QUANTITY` | string  | OMOP quantity. Required.                                         |
-| `harmonization_omop::MEASUREMENT_UNIT` | string | Harmonised unit; `""` = no unit.                              |
-| `UNIT_SOURCE`                       | enum    | How the unit was decided: `SOURCE`, `INJECTED`, `MANUAL`.        |
-| `NOTES`                             | string  | Free-text.                                                       |
-| `PREV_SOURCE`                       | dict    | `{unit: fraction}` distribution before injection.                |
-| `PREV_INJECTED`                     | dict    | `{unit: fraction}` distribution after injection.                 |
-
-**Validations**
-
-- `OMOP_ID` and `OMOP_QUANTITY` cannot be empty.
-- `OMOP_ID` + `OMOP_QUANTITY` is unique.
-- `UNIT_SOURCE` only takes values present in the file (`SOURCE`, `INJECTED`,
-  `MANUAL`).
-- `PREV_SOURCE` and `PREV_INJECTED` parse as `{string: number}` dictionaries.
-
 ---
 
-## Table relationships & cross-table validations
+## Table relationships
 
-```
-                 UNITSfi.tsv
-              (unit dictionary)
-                     ▲
-                     │ APPROVED unit must be defined here
-                     │
-                 LABfi.tsv ──────────────► quantity_source_unit_conversion.tsv
-           (test → OMOP mapping)   APPROVED (quantity,unit)   (per-quantity units
-                     ▲              must be defined here        & conversions)
-                     │
-                     │ (soft) counts concept should map back
-                     │
-            harmonization_counts.tsv
-                (usage provenance)
-```
-
-- **LABfi → UNITSfi** — every `APPROVED` `LABfi` row **with a unit** must use a
-  `MEASUREMENT_UNIT` present in `UNITSfi.tsv`. Empty units (qualitative) are
-  exempt; `UNCHECKED` rows are not checked.
-- **LABfi → quantity table** — every `APPROVED` `LABfi`
-  (`OMOP_QUANTITY`, `MEASUREMENT_UNIT`) pair with a unit must be defined in
-  `quantity_source_unit_conversion.tsv`. The direction is one-way: `LABfi` must
-  be covered by the conversion table, not the reverse (the conversion table may
-  list units no approved test currently uses).
-- **counts → LABfi** *(warning only)* — every counts
-  (`OMOP_ID`, `OMOP_QUANTITY`, `MEASUREMENT_UNIT`) triple ideally exists in
-  `LABfi.tsv`. This is a **`[WARN]`**, not a failure: `harmonization_counts.tsv`
-  legitimately contains OMOP concepts that are not (yet) lab-mapped, e.g. rows
-  whose `OMOP_QUANTITY` is `NA`.
+- **testname_unit_to_conceptid → UNITSfi** — a mapped unit should be defined in
+  `UNITSfi.tsv`. Empty units (qualitative) are exempt.
+- **unit_fix** — applied to the source unit before it is looked up in
+  `quantity_source_unit_conversion.tsv`.
+- **testname_unit_to_conceptid → quantity table** — the OMOP quantity of a
+  mapped concept and its (fixed) unit should be defined in
+  `quantity_source_unit_conversion.tsv`.

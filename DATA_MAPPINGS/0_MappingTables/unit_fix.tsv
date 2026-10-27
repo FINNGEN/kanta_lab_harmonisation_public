@@ -1,0 +1,80 @@
+TEST_NAME_ABBREVIATION	source_unit_clean	source_unit_clean_fix	notes	INJECTION_NOTES
+p-tt-inr	form	inr		VALID
+u-ph	form	ph		VALID
+du-prot	g	g/24h		VALID
+du-prot.	mg	mg/24h		VALID
+du-na	mmol	mmol/24h		VALID
+du-kors-v	nmol	nmol/24h		VALID
+b-hkr	osuus	ratio		VALID
+b-erytrosyytit,tilavuusosuus	osuus	ratio		VALID
+b-pvk+tkd,hkr	osuus	ratio		VALID
+b-retind	osuus	%		OBVIOUS (OMOP quantity allows only unit '%')
+b-erytrosyyttientilavuusosuus	osuus	%		VALID
+erytrosyytit,tilavuusosuus	osuus	ratio		VALID
+pt-gfreepi	form	ml/min/173m2		VALID
+u-osmoest	mosm/l	mosm/kgh2o		OBVIOUS (OMOP quantity allows only unit 'mosm/kgh2o')
+u-suhti	g/ml	kg/l		VALID
+p-tsh	mlu/l	miu/l		VALID
+b-xkoe	form			OBVIOUS (OMOP quantity allows only unit 'NA')
+du-ca	mmol	mmol/24h		VALID
+u-keto-o	l	estimate		OBVIOUS (OMOP quantity allows only unit 'estimate')
+p-krea	mmol/l	umol/l		VALID
+kol/hdlsuh		ratio		VALID
+kol/hdl-su		ratio		VALID
+kol/hdl		ratio		VALID
+kolesterolinjahdl-kolest.suhde		ratio		VALID
+u-ominp-h		kg/l		VALID
+non-hdl		mmol/l		VALID
+u-suhti-o		ratio	Unitless ratio since it's a ratio of denities	VALID
+u-suhti.		ratio	Unitless ratio since it's a ratio of denities.N.B this is not suhti (kg/l!) OMOP ID	VALID
+-h-ind		index	index	VALID
+p-inr-hy		inr		VALID
+pappakmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
+ntkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
+hcgbvkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
+-l-ind		index	No harmonized reference data in this OMOP ID	VALID
+-i-ind		index	No harmonized reference data in this OMOP ID	VALID
+inr-vieri		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	VALID
+oma-p-crp		mg/l		VALID
+b-hba1c,tk		mmol/mol	For this omop id values in range [40,60] are mmol/mol	VALID
+snabb-inr		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	VALID
+crp,tk		mg/l		VALID
+p-inr-vt		inr		VALID
+b-ghb-a1c,tk		%	For this omop id values in range [4,6] are %	VALID
+cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID	VALID
+b-inr-pik		inr		VALID
+inr-pika		inr	No harmonized reference data in this OMOP ID	VALID
+cb-inrc-c		inr	No harmonized reference data in this OMOP ID	VALID
+cd4/cd8		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
+p-gluk,tk		mmol/l		VALID
+p-inr-pi		inr	No harmonized reference data	VALID
+ly-cd4/cd8		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
+s-apob/a1		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
+fp-kol-ind		mmol/l	Manually checked from thl	VALID
+u-lieriö		e6/l		VALID
+hba1c-pika		mmol/mol	For this omop id values in range [40,60] are mmol/mol	VALID
+p-gluk-vt		mmol/l	Distributions differ	VALID
+u-epitel		u/field		VALID
+cb-crp		mg/l		VALID
+b-peth	umol/l	mg/l	#85	VALID
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	ratio		VALID
+s-tsh	mlu/l	mu/l		VALID
+kolesteroli/hdl-suhde		ratio		VALID
+fs-kalsium,ionisoitunut		mmol/l		VALID
+p-tromboplastiiniaika,inr,tt		inr		VALID
+-cdt	NA	mg/l	injection_script	PASS,FAIL,PASS
+b-keto/pik	NA	mmol/l	injection_script	FAIL,PASS,PASS
+b-ketoaineet	NA	mmol/l	injection_script	FAIL,PASS,PASS
+du-alb	NA	mg/24h	injection_script	PASS,PASS,FAIL
+du-alb	mg	mg/24h	injection_script	PASS,PASS,FAIL
+li-igg-ind	index	ratio	injection_script	FAIL,PASS,PASS
+li-igg-ind	osuus	ratio	injection_script	FAIL,PASS,PASS
+s-apob/apoa1-suhde	NA	ratio	injection_script	PASS,FAIL,PASS
+s-ph	1	ph	injection_script	PASS,PASS,PASS
+u-hb-o	form	estimate	injection_script	PASS,PASS,PASS
+u-kemseul	form	NA	injection_script	PASS,PASS,PASS
+u-kemseul	h	NA	injection_script	PASS,PASS,PASS
+u-ph-o	N	ph	injection_script	PASS,FAIL,PASS
+u-ph-o	form	ph	injection_script	PASS,FAIL,PASS
+u-veri-o	form	estimate	injection_script	FAIL,FAIL,PASS
+ua-be	NA	mmol/l	injection_script	FAIL,FAIL,PASS
