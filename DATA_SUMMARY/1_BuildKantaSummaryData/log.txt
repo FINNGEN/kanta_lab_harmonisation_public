@@ -1,0 +1,26 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  summaryTestFile = DATA_SUMMARY/0_KantaSummaryTables/summaryTest.tsv
+  summaryUnitSourceFile = DATA_SUMMARY/0_KantaSummaryTables/summaryUnitSource.tsv
+  summaryValuesSourceFile = DATA_SUMMARY/0_KantaSummaryTables/summaryValuesSource.tsv
+  summaryValuesFile = DATA_SUMMARY/0_KantaSummaryTables/summaryValues.tsv
+  outDir = DATA_SUMMARY/1_BuildKantaSummaryData
+Read 26828 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryTest.tsv
+Read 9551 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryUnitSource.tsv
+Read 13044 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryValuesSource.tsv
+Read 48186 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryValues.tsv
+Dropping 30 row(s) whose TEST_NAME is the literal text "NA", covering 56,407 records
+26798 TEST_NAME/UNIT pairs
+47997 decile rows
+Wrote 69462 rows to DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
+Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
