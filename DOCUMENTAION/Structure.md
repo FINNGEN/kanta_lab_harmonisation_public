@@ -16,7 +16,7 @@ flowchart LR
     subgraph MAP["Build Harmonization Table"]
         M1["quantity_source_unit_conversion.tsv"]:::data
         M2["testname_unit_to_conceptid.tsv"]:::data
-        M5["unit_fix.tsv"]:::data
+        M4["conceptid_target_unit.tsv"]:::data
         OMOPDB[("OMOP CDM database")]:::db
         GETOMOP{{"GetMeasurementOmopData"}}:::script
         M6["measurement_concept_attributes.tsv"]:::data
@@ -38,7 +38,7 @@ flowchart LR
     SRC --> GSD --> SUMDATA
     M1 --> COMB
     M2 --> COMB
-    M5 --> COMB
+    M4 --> COMB
     OMOPDB --> GETOMOP
     GETOMOP --> M6
     GETOMOP --> M7
@@ -163,6 +163,13 @@ The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Their columns ar
 | **MEASUREMENT_UNIT** | Character | Source unit (empty for qualitative tests) |
 | OMOP_ID | Integer | Target OMOP measurement `concept_id` |
 
+**conceptid_target_unit.tsv** — the unit each OMOP concept is converted to.
+
+| Column | Type | Description |
+|---|---|---|
+| OMOP_ID | Integer | Target OMOP measurement `concept_id` |
+| TARGET_UNIT | Character | Unit the values of the concept are converted to |
+
 **unit_fix.tsv** — known unit errors and what they must be read as.
 
 | Column | Type | Description |
@@ -229,48 +236,49 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 
 ## Harmonization table
 
-`harmonizationTable.tsv`: built by `buildHarmonizationTable` from the 5 tables in the box above. One row per source **TEST_NAME** + **UNIT** pair, resolved all the way to its OMOP concept, target unit and conversion, so the harmonize scripts only have to join it. The columns below are the proposed design.
+`harmonizationTable.tsv`: built by the step `1_BuildHarmonizationTable` (`buildHarmonizationTable` in the diagram) from the 5 tables in the box above, into `DATA_MAPPINGS/1_BuildHarmonizationTable/`. One row per source **TEST_NAME** + **MEASUREMENT_UNIT** pair (several rows when the concept has several LOINC Groups), resolved all the way to its OMOP concept, target unit and conversion, so the harmonize scripts only have to join it.
 
 | Column | Type | Description | Comes from |
 |---|---|---|---|
 | **TEST_NAME** | Character | Source lab test name (join key) | `testname_unit_to_conceptid.tsv` |
-| **UNIT** | Character | Source unit (join key). Empty for qualitative tests | `testname_unit_to_conceptid.tsv` |
-| UNIT_FIXED | Character | Source unit after correcting known unit errors | `unit_fix.tsv` |
-| OMOP_ID | Integer | Target OMOP measurement `concept_id` | `testname_unit_to_conceptid.tsv` |
-| OMOP_NAME | Character | OMOP `concept_name` for `OMOP_ID` | `measurement_concept_attributes.tsv` |
-| OMOP_QUANTITY | Character | OMOP quantity (`has_property`), e.g. `Mass Concentration` | `measurement_concept_attributes.tsv` |
-| LOINC_GROUP | Character | LOINC group the concept belongs to | `loinc_group_membership.tsv` |
-| TO_UNIT | Character | Unit the value is converted to | `quantity_source_unit_conversion.tsv` |
-| CONVERSION | Numeric | Factor so that `value_in_TO_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
+| **MEASUREMENT_UNIT** | Character | Source unit (join key). Empty for qualitative tests | `testname_unit_to_conceptid.tsv` |
+| concept_id | Integer | Target OMOP measurement `concept_id` (`0` when unmapped) | `testname_unit_to_conceptid.tsv` |
+| concept_code, concept_name, vocabulary_id, is_panel | | The concept itself | `measurement_concept_attributes.tsv` |
+| has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes; `has_property` is the OMOP quantity | `measurement_concept_attributes.tsv` |
+| group_concept_id | Integer | LOINC Group the concept belongs to | `loinc_group_membership.tsv` |
+| TARGET_UNIT | Character | Unit the value is converted to | `conceptid_target_unit.tsv` |
+| CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_TARGET_UNIT = value_in_MEASUREMENT_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
 
 How the 5 tables combine:
 
-1. `testname_unit_to_conceptid.tsv` is the base: it gives each `TEST_NAME` + `UNIT` pair its `OMOP_ID`.
-2. `unit_fix.tsv` is joined on `TEST_NAME` + `UNIT` to add `UNIT_FIXED`, so a misspelled or mislabeled unit resolves to the right one.
-3. `measurement_concept_attributes.tsv` is joined on `OMOP_ID` to add the OMOP name and quantity.
-4. `loinc_group_membership.tsv` is joined on `OMOP_ID` to add the LOINC group.
-5. `quantity_source_unit_conversion.tsv` is joined on `OMOP_QUANTITY` + `UNIT_FIXED` to add the target unit and the conversion factor.
+1. `testname_unit_to_conceptid.tsv` is the base; its `OMOP_ID` is renamed `concept_id`.
+2. `measurement_concept_attributes.tsv` is joined on `concept_id`.
+3. `loinc_group_membership.tsv` is joined on `concept_id`, keeping only `group_concept_id`.
+4. `conceptid_target_unit.tsv`, with `OMOP_ID` renamed `concept_id`, is joined on `concept_id` to add `TARGET_UNIT`.
+5. `quantity_source_unit_conversion.tsv`, with `OMOP_QUANTITY` and `TO_MEASUREMENT_UNIT` renamed to `has_property` and `TARGET_UNIT`, is joined on `has_property` + `MEASUREMENT_UNIT` + `TARGET_UNIT` to add only `CONVERSION`. A rule with `ONLY_TO_OMOP_CONCEPTS` applies only to that `concept_id`.
+
+`unit_fix.tsv` is not used by the build yet.
 
 ---
 
 ## Harmonized Kanta data
 
-`HarmonizedKantaData`, produced by `harmonize` and sent to the sandbox. It is `PreprocessKantaData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + **UNIT**.
+`HarmonizedKantaData`, produced by `harmonize` and sent to the sandbox. It is `PreprocessKantaData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + the unit (**MEASUREMENT_UNIT**, called **UNIT** in the summary data).
 
 | Column | Type | Description |
 |---|---|---|
 | All columns of `PreprocessKantaData` |  | Including **TEST_NAME**, **MEASUREMENT_UNIT** and **VALUE** |
-| All columns of the harmonization table |  | `UNIT_FIXED`, `OMOP_ID`, `OMOP_NAME`, `OMOP_QUANTITY`, `LOINC_GROUP`, `TO_UNIT`, `CONVERSION` |
-| **VALUE_HARMONIZED** | Numeric | The raw **value** times `CONVERSION`, in `TO_UNIT` |
+| All columns of the harmonization table |  | `concept_id`, the concept attributes, `group_concept_id`, `TARGET_UNIT`, `CONVERSION` |
+| **VALUE_HARMONIZED** | Numeric | The raw **value** times `CONVERSION`, in `TARGET_UNIT` |
 
 ---
 
 ## Harmonized summary data
 
-`HarmonisedSummaryData`, produced by `harmonize` and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + **UNIT**.
+`HarmonisedSummaryData`, produced by `harmonize` and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + the unit (**MEASUREMENT_UNIT**, called **UNIT** in the summary data).
 
 | Column | Type | Description |
 |---|---|---|
 | All columns of `KantaSummaryData` |  | Including **TEST_NAME**, **UNIT** and **decile_value** |
-| All columns of the harmonization table |  | `UNIT_FIXED`, `OMOP_ID`, `OMOP_NAME`, `OMOP_QUANTITY`, `LOINC_GROUP`, `TO_UNIT`, `CONVERSION` |
-| **decile_value_harmonized** | Numeric | `decile_value` times `CONVERSION`, in `TO_UNIT` |
+| All columns of the harmonization table |  | `concept_id`, the concept attributes, `group_concept_id`, `TARGET_UNIT`, `CONVERSION` |
+| **decile_value_harmonized** | Numeric | `decile_value` times `CONVERSION`, in `TARGET_UNIT` |
