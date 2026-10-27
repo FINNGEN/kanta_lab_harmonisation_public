@@ -46,7 +46,7 @@ format and content are defined in `AGENTS.md`.
 Before committing, check each change against the relevant `README.md`:
 
 - **New/renamed/removed step** → reflected in its folder's `README.md` and in
-  `STEPS/README.md`'s step list.
+  its area's step list, `STEPS/<AREA>/README.md`.
 - **Changed input/output, env var, run invocation, or action** → matches that
   step's `README.md` sections.
 
@@ -55,20 +55,30 @@ If already in sync, do nothing. Otherwise make the **minimum** edits (per the
 
 ## Commit message format
 
-This repo is a pipeline of steps under `STEPS/`, each reading and writing its
-own results folder under `DATA/` (see `AGENTS.md`). The commit subject encodes
-*where* in that structure the change lands, inferred from the changed paths.
+This repo is a pipeline of steps in two areas: `STEPS/MAPPING/` with its data
+in `DATA_MAPPINGS/`, and `STEPS/SUMMARY/` with its data in `DATA_SUMMARY/` (see
+`AGENTS.md`). Each step reads and writes its own folder under its area's data
+folder. The commit subject encodes *where* in that structure the change lands,
+inferred from the changed paths.
 
 Subject line: `<step> (<location>): <summary>`
 
-- **`<step>`** — the step folder being edited, copied verbatim (PascalCase
-  action name, e.g. `ConvertPhenotypeToSignal`). Use `Infra` instead when the
+- **`<step>`** — the step folder being edited, without its number prefix and
+  copied verbatim (PascalCase action name, e.g. `BuildKantaSummaryData`; step
+  names are unique across areas, so the area is not repeated). A change to a
+  mapping table that no step produced (a hand edit in `DATA_MAPPINGS/`) uses
+  the table folder's name without its number (e.g. `MappingTables`). Use
+  `Infra` instead when the
   change is **not** inside a specific step — repo-wide or shared files such
   as `AGENTS.md`, `ENVIRONMENTS/`, `development/STRUCTURE.md`,
-  `development/STYLE.md`, `.claude/`, top-level `README.md`.
+  `development/STYLE.md`, `.claude/`, top-level `README.md`, `DOCUMENTAION/`,
+  `RESEARCH/`, `ARCHIVE/`, the area indexes `STEPS/README.md`,
+  `STEPS/<AREA>/README.md`.
 - **`(<location>)`** — tells *which side* of the step changed:
-  - `(STEPS)` — the step's code/docs was modified (under `STEPS/<step>/`).
-  - `(DATA)` — the step's results were modified (under `DATA/<step>/`).
+  - `(STEPS)` — the step's code/docs was modified (under
+    `STEPS/<AREA>/<N>_<step>/`).
+  - `(DATA)` — the step's results were modified (under
+    `DATA_SUMMARY/<N>_<step>/` or `DATA_MAPPINGS/<N>_<step>/`).
 - **summary** — imperative, no trailing period, based on the actual diff.
   Keep the whole subject line under ~72 characters. Start it with a label
   verb (below).
@@ -85,15 +95,15 @@ work; these suit a research pipeline better than software types:
   step to the repo layout).
 - `Remove` / `Ignore` — delete files, or stop tracking them via `.gitignore`.
 - `Record` / `Refresh` — save or regenerate run outputs, data, or plots in a
-  step's `DATA/` folder.
+  step's `DATA_<AREA>/` folder.
 - `Docs` — README / AGENTS / STYLE changes only.
 - `WIP` — a checkpoint save with no other clear label.
 
 ```
-CompareSelectedVariants (STEPS): Refine all-studies effects as reference
-CompareSelectedVariants (DATA): Refresh conceptRatios.tsv
-KeeperToCohort (STEPS): Add chart-review -> case/control cohort step
-Infra: Docs clarify step result-folder naming in AGENTS.md
+BuildKantaSummaryData (STEPS): Refine decile rows to one per decile
+BuildKantaSummaryData (DATA): Refresh kantaSummaryData.tsv
+MappingTables (DATA): Update unit conversion for mass concentration
+Infra: Docs split the project into MAPPING and SUMMARY areas
 ```
 
 **Body (optional):** add one when the *why* isn't obvious from the diff —
@@ -102,10 +112,10 @@ small, self-explanatory changes. Blank line after the subject, then free
 text wrapped at ~72 chars; bullets are fine.
 
 ```
-CompareSelectedVariants (STEPS): Refine all-studies effects as reference
+BuildKantaSummaryData (STEPS): Refine decile rows to one per decile
 
-Per-cohort betas were noisy for rare variants; the all-studies
-beta_all/se_all is the stable reference for the enrichment plot.
+The harmonize step multiplies each decile by the conversion factor, so
+one row per decile avoids parsing a bracketed string.
 ```
 
 ## Your task
