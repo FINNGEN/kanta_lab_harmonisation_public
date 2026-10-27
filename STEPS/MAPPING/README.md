@@ -5,6 +5,6 @@ them in this order:
 
 | Step | Purpose |
 |---|---|
-| | No steps yet. |
+| `0_GetMeasurementOmopData` | Pull every standard OMOP `Measurement` concept with its LOINC axes. |
 
 `DATA_MAPPINGS/0_MappingTables` holds the tables the area starts from, not a step.
