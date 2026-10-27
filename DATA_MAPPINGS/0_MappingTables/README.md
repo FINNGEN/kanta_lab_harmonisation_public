@@ -53,6 +53,15 @@ One row per distinct source measurement unit and its OMOP unit concept.
 - `MEASUREMENT_UNIT` is unique.
 - `UNIQUE_FOR_LAB` is strictly `TRUE` or `FALSE`.
 
+### `conceptid_target_unit.tsv` — target unit per concept
+
+The unit the values of an OMOP concept are converted to.
+
+| Column        | Type    | Description                                         |
+|---------------|---------|-----------------------------------------------------|
+| `OMOP_ID`     | integer | OMOP measurement `concept_id`. Primary key.         |
+| `TARGET_UNIT` | string  | Unit the values of the concept are converted to.    |
+
 ### `unit_fix.tsv` — known unit corrections
 
 Per test, a source unit known to be wrong and the unit it must be read as.
