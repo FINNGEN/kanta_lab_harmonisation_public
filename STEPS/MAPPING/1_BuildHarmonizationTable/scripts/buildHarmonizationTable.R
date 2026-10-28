@@ -3,6 +3,10 @@
 #
 library(dplyr)
 
+# the column types shared with validateHarmonizationTable.R
+scriptDir <- dirname(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)))
+source(file.path(scriptDir, "readTables.R"))
+
 #
 # --- Configuration -------------------------------------------------------------
 #
@@ -28,82 +32,12 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 #
 # --- Input -------------------------------------------------------------
 #
-readTsv <- function(file, colTypes) {
-  tbl <- readr::read_tsv(file, col_types = colTypes, na = "")
-  ParallelLogger::logInfo("Read ", nrow(tbl), " rows from ", file)
-  tbl
-}
-
-unitFix <- readTsv(
-  unitFixFile,
-  readr::cols(
-    TEST_NAME = readr::col_character(),
-    PREPROCESED_UNIT = readr::col_character(),
-    UNIT = readr::col_character(),
-    unit_fix_reasoning = readr::col_character(),
-    INJECTION_NOTES = readr::col_character()
-  )
-)
-
-testnameUnitToConceptid <- readTsv(
-  testnameUnitToConceptidFile,
-  readr::cols(
-    TEST_NAME = readr::col_character(),
-    UNIT = readr::col_character(),
-    concept_id = readr::col_integer()
-  )
-)
-
-measurementConceptAttributes <- readTsv(
-  measurementConceptAttributesFile,
-  readr::cols(
-    concept_id = readr::col_integer(),
-    concept_code = readr::col_character(),
-    concept_name = readr::col_character(),
-    vocabulary_id = readr::col_character(),
-    is_panel = readr::col_logical(),
-    has_component = readr::col_character(),
-    has_property = readr::col_character(),
-    has_method = readr::col_character(),
-    has_scale_type = readr::col_character(),
-    has_system = readr::col_character(),
-    has_time_aspect = readr::col_character()
-  )
-)
-
-loincGroupMembership <- readTsv(
-  loincGroupMembershipFile,
-  readr::cols(
-    concept_id = readr::col_integer(),
-    group_concept_id = readr::col_integer(),
-    group_concept_code = readr::col_character(),
-    group_concept_name = readr::col_character(),
-    n_descendants = readr::col_integer(),
-    is_parent_group = readr::col_logical()
-  )
-)
-
-conceptidTargetUnit <- readTsv(
-  conceptidTargetUnitFile,
-  readr::cols(
-    concept_id = readr::col_integer(),
-    HARMONISED_UNIT = readr::col_character()
-  )
-)
-
-# CONVERSION is character: it can be a formula in X (e.g. "0.703*X+0").
-# ONLY_TO_OMOP_CONCEPTS is character: it can list several concept ids.
-quantitySourceUnitConversion <- readTsv(
-  quantitySourceUnitConversionFile,
-  readr::cols(
-    has_property = readr::col_character(),
-    UNIT = readr::col_character(),
-    HARMONISED_UNIT = readr::col_character(),
-    CONVERSION = readr::col_character(),
-    ONLY_TO_OMOP_CONCEPTS = readr::col_character(),
-    VALIDATION_MESSAGES = readr::col_character()
-  )
-)
+unitFix <- readTable(unitFixFile, tableSpecs$unitFix)
+testnameUnitToConceptid <- readTable(testnameUnitToConceptidFile, tableSpecs$testnameUnitToConceptid)
+measurementConceptAttributes <- readTable(measurementConceptAttributesFile, tableSpecs$measurementConceptAttributes)
+loincGroupMembership <- readTable(loincGroupMembershipFile, tableSpecs$loincGroupMembership)
+conceptidTargetUnit <- readTable(conceptidTargetUnitFile, tableSpecs$conceptidTargetUnit)
+quantitySourceUnitConversion <- readTable(quantitySourceUnitConversionFile, tableSpecs$quantitySourceUnitConversion)
 
 #
 # --- Action -------------------------------------------------------------
@@ -177,7 +111,7 @@ result <- result |>
   dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION)) |>
   dplyr::select(
     TEST_NAME, PREPROCESED_UNIT, UNIT, unit_fix_reasoning,
-    concept_id,
+    concept_id, ignoreReason,
     concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect,
     group_concept_id, group_concept_code, group_concept_name,

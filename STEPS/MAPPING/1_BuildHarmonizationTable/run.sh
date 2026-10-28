@@ -57,8 +57,9 @@ ATTRIBUTES_FILE="$OMOP_DIR/measurement_concept_attributes.tsv"
 GROUPS_FILE="$OMOP_DIR/loinc_group_membership.tsv"
 TARGET_UNIT_FILE="$TABLES_DIR/conceptid_target_unit.tsv"
 CONVERSION_FILE="$TABLES_DIR/quantity_source_unit_conversion.tsv"
+UNITS_FILE="$TABLES_DIR/UNITSfi.tsv"
 
-for f in "$UNIT_FIX_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE"; do
+for f in "$UNIT_FIX_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" "$UNITS_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -75,7 +76,12 @@ fi
 Rscript "$STEP_DIR/scripts/buildHarmonizationTable.R" \
   "$UNIT_FIX_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" "$OUTDIR"
 
+Rscript "$STEP_DIR/scripts/validateHarmonizationTable.R" \
+  "$UNIT_FIX_FILE" "$UNITS_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" \
+  "$OUTDIR/harmonizationTable.tsv" "$OUTDIR"
+
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/harmonizationTable.tsv"
+echo "Wrote $OUTDIR/harmonizationTableValidation.md"
