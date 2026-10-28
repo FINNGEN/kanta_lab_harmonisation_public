@@ -68,4 +68,4 @@ Rscript "$STEP_DIR/scripts/pullLoincGroupMembership.R" "$OUTDIR"
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/measurement_concept_attributes.tsv"
-echo "Wrote $OUTDIR/loinc_group_membership.tsv"
+echo "Wrote $OUTDIR/flowsheet_loinc_groups.tsv"

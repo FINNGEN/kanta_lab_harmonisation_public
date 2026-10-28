@@ -54,12 +54,18 @@ standardConceptFlag <- "S"
 excludedVocabularyIds <- c("OMOP Genomic")
 excludedVocabularyIdsSql <- paste0("'", excludedVocabularyIds, "'", collapse = ", ")
 groupConceptClassId <- "LOINC Group"
+# Only the Flowsheet Groups are kept: the Groups whose name starts with this.
+groupNamePrefix <- "Flowsheet"
+# The six ParentGroups of "Flowsheet - laboratory" overlap on 334 codes (a concept in
+# two of them). Most specific wins, so a concept keeps one of them: see the step README.
+laboratoryGroupName <- "Flowsheet - laboratory"
+laboratoryPrecedence <- c("LG78-8", "LG74-7", "LG97-8", "LG27-5", "LG99-4", "LG100-4")
 # Size bands used only for the log summary -- the ParentGroup test is structural, not a
 # threshold (see the header note).
 sizeBandBreaks <- c(0, 10, 50, 200, 1000, Inf)
 sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 
-pathToLoincGroupMembershipTSV <- file.path(outDir, "loinc_group_membership.tsv")
+pathToLoincGroupMembershipTSV <- file.path(outDir, "flowsheet_loinc_groups.tsv")
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -68,6 +74,7 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  domainId = ", domainId)
 ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
 ParallelLogger::logInfo("  groupConceptClassId = ", groupConceptClassId)
+ParallelLogger::logInfo("  groupNamePrefix = ", groupNamePrefix)
 
 #
 # --- Connections -------------------------------------------------------------
@@ -153,6 +160,30 @@ membership <- DatabaseConnector::renderTranslateQuerySql(
   tibble::as_tibble() |>
   dplyr::rename_with(tolower) |>
   dplyr::mutate(is_parent_group = .data$is_parent_group == 1)
+
+# Keep only the Flowsheet Groups (e.g. "Flowsheet - laboratory").
+nAllRows <- nrow(membership)
+membership <- membership |>
+  dplyr::filter(startsWith(.data$group_concept_name, groupNamePrefix))
+ParallelLogger::logInfo(
+  "Kept the ", dplyr::n_distinct(membership$group_concept_id), " Groups whose name starts with '",
+  groupNamePrefix, "': ", nrow(membership), " of ", nAllRows, " membership rows"
+)
+
+# A concept in several "Flowsheet - laboratory" ParentGroups keeps the most specific one.
+nBeforePrecedence <- nrow(membership)
+membership <- membership |>
+  dplyr::mutate(precedence = match(.data$group_concept_code, laboratoryPrecedence)) |>
+  dplyr::group_by(.data$concept_id, .data$group_concept_name) |>
+  dplyr::arrange(.data$precedence, .by_group = TRUE) |>
+  dplyr::slice(1) |>
+  dplyr::ungroup() |>
+  dplyr::select(-"precedence") |>
+  dplyr::arrange(.data$concept_id, .data$group_concept_id)
+ParallelLogger::logInfo(
+  "Kept one '", laboratoryGroupName, "' Group per concept (", paste(laboratoryPrecedence, collapse = " > "),
+  "): ", nrow(membership), " of ", nBeforePrecedence, " rows"
+)
 
 ParallelLogger::logInfo(
   nrow(membership), " membership rows: ",
