@@ -111,7 +111,7 @@ result <- result |>
   dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION)) |>
   dplyr::select(
     TEST_NAME, PREPROCESED_UNIT, UNIT, unit_fix_reasoning,
-    concept_id, ignoreReason,
+    concept_id, ignore_mapping_reason,
     concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect,
     group_concept_id, group_concept_code, group_concept_name,
@@ -125,10 +125,14 @@ ParallelLogger::logInfo(
   dplyr::n_distinct(result$TEST_NAME[is.na(result$concept_code)], result$PREPROCESED_UNIT[is.na(result$concept_code)], result$UNIT[is.na(result$concept_code)]),
   " pairs whose concept_id is not in measurement_concept_attributes"
 )
+# A HARMONISED_UNIT without a CONVERSION cannot be applied, so it is set to missing.
+# It is cleared after the join above, which uses it as a key.
+nNoConversion <- nrow(dplyr::distinct(result |> dplyr::filter(!is.na(HARMONISED_UNIT), is.na(CONVERSION)), TEST_NAME, PREPROCESED_UNIT, UNIT))
+ParallelLogger::logWarn(nNoConversion, " pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty")
+result <- result |>
+  dplyr::mutate(HARMONISED_UNIT = dplyr::if_else(is.na(CONVERSION), NA_character_, HARMONISED_UNIT))
 nNoTarget <- nrow(dplyr::distinct(result |> dplyr::filter(is.na(HARMONISED_UNIT)), TEST_NAME, PREPROCESED_UNIT, UNIT))
 ParallelLogger::logWarn(nNoTarget, " pairs have no HARMONISED_UNIT")
-nNoConversion <- nrow(dplyr::distinct(result |> dplyr::filter(!is.na(HARMONISED_UNIT), is.na(CONVERSION)), TEST_NAME, PREPROCESED_UNIT, UNIT))
-ParallelLogger::logWarn(nNoConversion, " pairs have a HARMONISED_UNIT but no CONVERSION")
 
 #
 # --- Output -------------------------------------------------------------

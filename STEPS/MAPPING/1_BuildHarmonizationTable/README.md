@@ -11,7 +11,7 @@ From `DATA_MAPPINGS/`:
 - `0_MappingTables/unit_fix.tsv` — `TEST_NAME`, `PREPROCESED_UNIT`, `UNIT`,
   `unit_fix_reasoning`, `INJECTION_NOTES`. The known unit fixes.
 - `0_MappingTables/testname_unit_to_conceptid.tsv` — `TEST_NAME`, `UNIT`,
-  `concept_id`, `ignoreReason`. The base of the table.
+  `concept_id`, `ignore_mapping_reason`. The base of the table.
 - `0_GetMeasurementOmopData/measurement_concept_attributes.tsv` — the concept
   attributes, joined on the concept id.
 - `0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv` — the LOINC Groups of a
@@ -37,7 +37,7 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
 | group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `flowsheet_loinc_groups.tsv` |
-| HARMONISED_UNIT | Character | Unit the value is converted to | `conceptid_target_unit.tsv` |
+| HARMONISED_UNIT | Character | Unit the value is converted to. Empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
 
 - `harmonizationTableValidation.md` — the validation report: a validation
@@ -47,8 +47,9 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
   (empty on success; on error, how many rows failed, with a few examples).
 - `log.txt` — run log.
 
-A concept keeps one `Flowsheet - laboratory` Group, but can be in a second Flowsheet category, so such a pair takes
-one row per Group; every other column repeats.
+A concept keeps one Group, so the LOINC Group adds no rows. A pair has more than
+one row only when `unit_fix.tsv` and the base table give the same
+`PREPROCESED_UNIT` two `UNIT`s.
 
 ## Action
 
@@ -75,9 +76,11 @@ lost:
    applies only to those concepts, and wins over the general rule with the same
    keys.
 
-It warns about `unit_fix.tsv` rows whose `TEST_NAME` + `UNIT` is not in the
-base table, and logs how many pairs have no `HARMONISED_UNIT` and how many have
-one but no `CONVERSION`.
+A `HARMONISED_UNIT` without a `CONVERSION` cannot be applied, so after the join it
+is set to empty (the conversion is looked up with it, so it is cleared last). It
+warns about `unit_fix.tsv` rows whose `TEST_NAME` + `UNIT` is not in the
+base table, and logs how many pairs had a `HARMONISED_UNIT` cleared for lack of a
+`CONVERSION` and how many pairs end with no `HARMONISED_UNIT`.
 
 ## Validation
 
@@ -90,14 +93,14 @@ report and a warning in the log. Tests, per table:
 | Table | Tests |
 |---|---|
 | all tables | The columns match their declared types |
-| `unit_fix.tsv` | `TEST_NAME` has a value; `UNIT` is a valid unit; `TEST_NAME` + `PREPROCESED_UNIT` are unique; WARNING if a `TEST_NAME` + `UNIT` is not in `testname_unit_to_conceptid.tsv`, so the fix is not used downstream |
+| `unit_fix.tsv` | `TEST_NAME` has a value; `UNIT` is a valid unit; `TEST_NAME` + `PREPROCESED_UNIT` are unique; `TEST_NAME` + `PREPROCESED_UNIT` must not appear in `testname_unit_to_conceptid.tsv`; WARNING if a `TEST_NAME` + `UNIT` is not in `testname_unit_to_conceptid.tsv`, so the fix is not used downstream |
 | `UNITSfi.tsv` | Every column has a value; `UNIT` is unique |
-| `testname_unit_to_conceptid.tsv` | `TEST_NAME` and `concept_id` have a value; `concept_id` is not 0, unless there is an `ignoreReason`; `UNIT` is a valid unit; `TEST_NAME` + `UNIT` are unique; `concept_id` is in `measurement_concept_attributes.tsv`, unless there is an `ignoreReason` |
+| `testname_unit_to_conceptid.tsv` | `TEST_NAME` and `concept_id` have a value; `concept_id` is not 0, unless there is an `ignore_mapping_reason`; `UNIT` is a valid unit; `TEST_NAME` + `UNIT` are unique; `concept_id` is in `measurement_concept_attributes.tsv`, unless there is an `ignore_mapping_reason` |
 | `measurement_concept_attributes.tsv` | `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value; `concept_id` is unique |
-| `flowsheet_loinc_groups.tsv` | The four columns have a value; `concept_id` + `group_concept_id` are unique (a concept has several Groups, so `concept_id` alone repeats); `concept_id` is in `measurement_concept_attributes.tsv` |
+| `flowsheet_loinc_groups.tsv` | The four columns have a value; `concept_id` is unique (a concept keeps one Group); `concept_id` is in `measurement_concept_attributes.tsv` |
 | `conceptid_target_unit.tsv` | `concept_id` and `HARMONISED_UNIT` have a value (no empty units); `HARMONISED_UNIT` is a valid unit; `concept_id` is unique and in `measurement_concept_attributes.tsv` |
 | `quantity_source_unit_conversion.tsv` | `has_property`, `UNIT`, `HARMONISED_UNIT` and `CONVERSION` have a value (no empty units); `UNIT` and `HARMONISED_UNIT` are valid units; `has_property` + `UNIT` + `HARMONISED_UNIT` + `ONLY_TO_OMOP_CONCEPTS` are unique; `CONVERSION` is a number or a formula in `X`; `has_property` is a property of the attributes; `ONLY_TO_OMOP_CONCEPTS` are concept ids of the attributes |
-| `harmonizationTable.tsv` | `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignoreReason`; a row with a `HARMONISED_UNIT` has a `CONVERSION` |
+| `harmonizationTable.tsv` | The table has as many rows as `testname_unit_to_conceptid.tsv` joined with `unit_fix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; a row with a `HARMONISED_UNIT` has a `CONVERSION` |
 
 A valid unit is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test),
 except in `conceptid_target_unit.tsv` and `quantity_source_unit_conversion.tsv`,

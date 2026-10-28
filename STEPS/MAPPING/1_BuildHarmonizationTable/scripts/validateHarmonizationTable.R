@@ -78,9 +78,10 @@ formatExamples <- function(rows, what) {
 
 # Records one test. `bad` is a logical vector over the rows of `df`, TRUE where the
 # row fails; `what` says how to show a failing row (the columns pasted together).
+# `text` replaces the default message of a failing test.
 # `level` is the result of a failing test: "ERROR", or "WARNING" for a finding that
 # does not break the table.
-record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level = "ERROR") {
+record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level = "ERROR", text = NULL) {
   bad[is.na(bad)] <- TRUE
   nBad <- sum(bad)
   message <- ""
@@ -95,6 +96,7 @@ record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level
     if (length(examples) > 0) {
       message <- paste0(message, ", e.g. ", paste(utils::head(examples, 3), collapse = "; "))
     }
+    if (!is.null(text)) message <- text
   }
   results[[length(results) + 1]] <<- tibble::tibble(
     table = table,
@@ -166,6 +168,17 @@ record(
   extra = "not used downstream", level = "WARNING"
 )
 
+# A preprocessed unit that unit_fix.tsv fixes must not also be a row of the base table:
+# the pair would then have two answers (the fix and the unfixed row). An empty unit
+# counts as a unit here.
+pairKey <- function(test, unit) paste(test, tidyr::replace_na(unit, ""), sep = "\r")
+record(
+  "unit_fix.tsv", "TEST_NAME + PREPROCESED_UNIT must not appear in testname_unit_to_conceptid.tsv",
+  bad = pairKey(unitFix$TEST_NAME, unitFix$PREPROCESED_UNIT) %in%
+    pairKey(testnameUnitToConceptid$TEST_NAME, testnameUnitToConceptid$UNIT),
+  df = unitFix, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT")
+)
+
 # UNITSfi.tsv
 checkTypes("UNITSfi.tsv", units)
 checkHaveValue("UNITSfi.tsv", units, c("UNIT", "concept_id", "UNIQUE_FOR_LAB"))
@@ -176,16 +189,16 @@ checkTypes("testname_unit_to_conceptid.tsv", testnameUnitToConceptid)
 checkHaveValue("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, c("TEST_NAME", "concept_id"))
 checkValidUnit("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, "UNIT")
 checkUnique("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, c("TEST_NAME", "UNIT"))
-# A concept_id of 0 (no concept) is only allowed with an ignoreReason.
+# A concept_id of 0 (no concept) is only allowed with an ignore_mapping_reason.
 record(
-  "testname_unit_to_conceptid.tsv", "concept_id must not be 0, unless there is an ignoreReason",
-  bad = testnameUnitToConceptid$concept_id == 0L & is.na(testnameUnitToConceptid$ignoreReason),
+  "testname_unit_to_conceptid.tsv", "concept_id must not be 0, unless there is an ignore_mapping_reason",
+  bad = testnameUnitToConceptid$concept_id == 0L & is.na(testnameUnitToConceptid$ignore_mapping_reason),
   df = testnameUnitToConceptid, what = c("TEST_NAME", "UNIT", "concept_id")
 )
-# A row with an ignoreReason is not mapped, so its concept_id needs no attributes.
-withConcept <- testnameUnitToConceptid |> dplyr::filter(is.na(ignoreReason))
+# A row with an ignore_mapping_reason is not mapped, so its concept_id needs no attributes.
+withConcept <- testnameUnitToConceptid |> dplyr::filter(is.na(ignore_mapping_reason))
 record(
-  "testname_unit_to_conceptid.tsv", "concept_id is in measurement_concept_attributes.tsv, unless there is an ignoreReason",
+  "testname_unit_to_conceptid.tsv", "concept_id is in measurement_concept_attributes.tsv, unless there is an ignore_mapping_reason",
   bad = !(withConcept$concept_id %in% conceptIds),
   df = withConcept, what = c("TEST_NAME", "UNIT", "concept_id")
 )
@@ -198,14 +211,13 @@ checkHaveValue(
 )
 checkUnique("measurement_concept_attributes.tsv", measurementConceptAttributes, "concept_id")
 
-# flowsheet_loinc_groups.tsv. A concept belongs to several Groups, so concept_id
-# alone repeats by design: the unique key is the concept and its Group.
+# flowsheet_loinc_groups.tsv: a concept keeps one Group, so concept_id is unique.
 checkTypes("flowsheet_loinc_groups.tsv", loincGroupMembership)
 checkHaveValue(
   "flowsheet_loinc_groups.tsv", loincGroupMembership,
   c("concept_id", "group_concept_id", "group_concept_code", "group_concept_name")
 )
-checkUnique("flowsheet_loinc_groups.tsv", loincGroupMembership, c("concept_id", "group_concept_id"))
+checkUnique("flowsheet_loinc_groups.tsv", loincGroupMembership, "concept_id")
 record(
   "flowsheet_loinc_groups.tsv", "concept_id is in measurement_concept_attributes.tsv",
   bad = !(loincGroupMembership$concept_id %in% conceptIds),
@@ -260,6 +272,27 @@ record(
 # harmonizationTable.tsv
 checkTypes("harmonizationTable.tsv", harmonizationTable)
 checkUnique("harmonizationTable.tsv", harmonizationTable, c("TEST_NAME", "PREPROCESED_UNIT"))
+# The table only appends columns to testname_unit_to_conceptid.tsv joined with
+# unit_fix.tsv (a UNIT fixed from several PREPROCESED_UNITs takes one row for each).
+# The later joins add no rows, so the row count is that of the first join.
+nBase <- nrow(
+  dplyr::left_join(
+    testnameUnitToConceptid[c("TEST_NAME", "UNIT")],
+    unitFix[c("TEST_NAME", "UNIT")],
+    by = c("TEST_NAME", "UNIT"),
+    relationship = "one-to-many"
+  )
+)
+nOut <- nrow(harmonizationTable)
+record(
+  "harmonizationTable.tsv", "has as many rows as testname_unit_to_conceptid.tsv joined with unit_fix.tsv",
+  bad = nOut != nBase,
+  text = paste0(
+    format(nOut, big.mark = ","), " rows, testname_unit_to_conceptid.tsv joined with unit_fix.tsv has ",
+    format(nBase, big.mark = ","), " (", format(abs(nOut - nBase), big.mark = ","),
+    if (nOut > nBase) " more" else " fewer", ")"
+  )
+)
 record(
   "harmonizationTable.tsv", "every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept",
   bad = !(paste(testnameUnitToConceptid$TEST_NAME, testnameUnitToConceptid$UNIT) %in%
@@ -267,8 +300,8 @@ record(
   df = testnameUnitToConceptid, what = c("TEST_NAME", "UNIT")
 )
 record(
-  "harmonizationTable.tsv", "concept_id has its attributes, unless there is an ignoreReason",
-  bad = is.na(harmonizationTable$concept_code) & is.na(harmonizationTable$ignoreReason),
+  "harmonizationTable.tsv", "concept_id has its attributes, unless there is an ignore_mapping_reason",
+  bad = is.na(harmonizationTable$concept_code) & is.na(harmonizationTable$ignore_mapping_reason),
   df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "concept_id")
 )
 record(
