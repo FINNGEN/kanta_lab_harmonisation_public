@@ -35,28 +35,24 @@ Configuration:
   domainId = Measurement
   standardConceptFlag = S
   groupConceptClassId = LOINC Group
+  groupNamePrefix = Flowsheet
 Using temporary emulation schema: atlas-development-270609.sandbox
-41326 membership rows: 18400 concepts in 5862 Groups
-31 of the Groups are ParentGroups (they subsume other Groups) -- exclude them when testing whether two concepts share a Group:
-  LG55-6 (4296 descendants) Mass-Molar conversion
+Kept the 8 Groups whose name starts with 'Flowsheet': 8014 of 41326 membership rows
+Kept one 'Flowsheet - laboratory' Group per concept (LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4): 7709 of 8014 rows
+7709 membership rows: 7707 concepts in 8 Groups
+8 of the Groups are ParentGroups (they subsume other Groups) -- exclude them when testing whether two concepts share a Group:
   LG100-4 (3538 descendants) Flowsheet - laboratory
-  LG103-8 (2046 descendants) Reportable microbiology
   LG74-7 (2023 descendants) Flowsheet - laboratory
-  LG80-4 (1716 descendants) Drugs of abuse
-  LG106-1 (1643 descendants) Reportable microbiology
   LG99-4 (1457 descendants) Flowsheet - laboratory
-  LG105-3 (863 descendants) Reportable microbiology
-  LG66-3 (734 descendants) Respiratory microbiology
   LG97-8 (540 descendants) Flowsheet - laboratory
-  Groups with 2-10 descendants: 5668
-  Groups with 2-10 descendants (ParentGroup): 4
-  Groups with 11-50 descendants: 124
-  Groups with 11-50 descendants (ParentGroup): 9
-  Groups with 51-200 descendants: 35
-  Groups with 51-200 descendants (ParentGroup): 6
-  Groups with 201-1000 descendants: 4
-  Groups with 201-1000 descendants (ParentGroup): 5
-  Groups with > 1000 descendants (ParentGroup): 7
-Wrote 41326 rows to DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+  LG27-5 (335 descendants) Flowsheet - laboratory
+  LG47-3 (75 descendants) Flowsheet - vital signs
+  LG78-8 (29 descendants) Flowsheet - laboratory
+  LG70-5 (17 descendants) Flowsheet - weight, height, and head circumference
+  Groups with 11-50 descendants (ParentGroup): 2
+  Groups with 51-200 descendants (ParentGroup): 1
+  Groups with 201-1000 descendants (ParentGroup): 2
+  Groups with > 1000 descendants (ParentGroup): 3
+Wrote 7709 rows to DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Wrote DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Wrote DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+Wrote DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
