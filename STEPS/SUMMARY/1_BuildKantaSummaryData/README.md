@@ -31,6 +31,12 @@ In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
   - `value_source_extracted_qcout_na_p` — `[source%,extracted%,qcout%,na%]`.
   - `decile` — 0.1 to 0.9; empty for pairs with no deciles.
   - `decile_value` — the value at that decile; empty for pairs with no deciles.
+- `kantaSummaryDataStats.md` — a markdown report on `kantaSummaryData.tsv`: the
+  name / unit / value coverage table. One row per combination of the three
+  facts about a `TEST_NAME` + `UNIT` pair (has a name, has a recorded unit, has
+  a value), with `n rows`, `% rows`, `n records` and `% rec`, and a total row.
+  Name is always `X`, because the step drops the pairs whose `TEST_NAME` is the
+  text `NA`. A pair has a value when `value_missing_p` is under 100.
 - `log.txt` — run log.
 
 ## Action
@@ -48,6 +54,10 @@ In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
    zeros.
 5. Left-joins the long `summaryValues.tsv` deciles. Pairs with no deciles keep
    one row with empty `decile` and `decile_value`.
+
+`scripts/summariseKantaSummaryData.R` reads `kantaSummaryData.tsv` back, takes
+one row per pair (the file has one row per decile, with the pair's `n`
+repeated), and writes `kantaSummaryDataStats.md`.
 
 ## Env vars
 

@@ -72,7 +72,10 @@ fi
 Rscript "$STEP_DIR/scripts/buildKantaSummaryData.R" \
   "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$OUTDIR"
 
+Rscript "$STEP_DIR/scripts/summariseKantaSummaryData.R" "$OUTDIR/kantaSummaryData.tsv" "$OUTDIR"
+
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/kantaSummaryData.tsv"
+echo "Wrote $OUTDIR/kantaSummaryDataStats.md"
