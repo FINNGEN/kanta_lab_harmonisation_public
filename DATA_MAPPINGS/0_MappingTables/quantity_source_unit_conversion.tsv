@@ -1,4 +1,4 @@
-has_quantity	UNIT	HARMONISED_UNIT	CONVERSION	ONLY_TO_OMOP_CONCEPTS	VALIDATION_MESSAGES
+has_property	UNIT	HARMONISED_UNIT	CONVERSION	ONLY_TO_OMOP_CONCEPTS	VALIDATION_MESSAGES
 -			1		
 Arbitrary Concentration	index	index	1		
 Arbitrary Concentration	au/ml	au/ml	1		

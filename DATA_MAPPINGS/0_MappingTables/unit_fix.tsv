@@ -1,4 +1,4 @@
-TEST_NAME	PREVIOUS_UNIT	UNIT	notes	INJECTION_NOTES
+TEST_NAME	PREPROCESED_UNIT	UNIT	unit_fix_reasoning	INJECTION_NOTES
 p-tt-inr	form	inr		VALID
 u-ph	form	ph		VALID
 du-prot	g	g/24h		VALID
