@@ -22,8 +22,8 @@
 # nothing. They are flagged structurally rather than by a size threshold: a ParentGroup is
 # a Group that subsumes OTHER Groups, which picks out exactly the 45 ParentGroups that have
 # child Groups and leaves genuine large value sets alone (LG32757-3 "Influenza virus", 460
-# descendants, is a real Group and must survive). This script flags but does NOT filter, so
-# the policy lives at the point of use.
+# descendants, is a real Group and must survive). This script drops the ParentGroups from
+# its output; the Flowsheet ones are only used to pick the concepts to keep.
 #
 # See RESEARCH/UnderstandingGroups.md for what the Groups are and what they cover.
 #
@@ -54,14 +54,9 @@ standardConceptFlag <- "S"
 excludedVocabularyIds <- c("OMOP Genomic")
 excludedVocabularyIdsSql <- paste0("'", excludedVocabularyIds, "'", collapse = ", ")
 groupConceptClassId <- "LOINC Group"
-# Only the Flowsheet Groups are kept: the Groups whose name starts with this.
+# The concepts kept are those in a Group whose name starts with this (the Flowsheet ParentGroups).
 groupNamePrefix <- "Flowsheet"
-# The six ParentGroups of "Flowsheet - laboratory" overlap on 334 codes (a concept in
-# two of them). Most specific wins, so a concept keeps one of them: see the step README.
-laboratoryGroupName <- "Flowsheet - laboratory"
-laboratoryPrecedence <- c("LG78-8", "LG74-7", "LG97-8", "LG27-5", "LG99-4", "LG100-4")
-# Size bands used only for the log summary -- the ParentGroup test is structural, not a
-# threshold (see the header note).
+# Size bands used only for the log summary.
 sizeBandBreaks <- c(0, 10, 50, 200, 1000, Inf)
 sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 
@@ -161,72 +156,42 @@ membership <- DatabaseConnector::renderTranslateQuerySql(
   dplyr::rename_with(tolower) |>
   dplyr::mutate(is_parent_group = .data$is_parent_group == 1)
 
-# Keep only the Flowsheet Groups (e.g. "Flowsheet - laboratory").
+# The Flowsheet ParentGroups ("Flowsheet - laboratory", ...) only select the concepts to
+# keep: the concepts that are lab tests, vital signs, weight, height or head circumference.
 nAllRows <- nrow(membership)
-membership <- membership |>
-  dplyr::filter(startsWith(.data$group_concept_name, groupNamePrefix))
+flowsheetConceptIds <- membership |>
+  dplyr::filter(startsWith(.data$group_concept_name, groupNamePrefix)) |>
+  dplyr::pull(.data$concept_id) |>
+  unique()
 ParallelLogger::logInfo(
-  "Kept the ", dplyr::n_distinct(membership$group_concept_id), " Groups whose name starts with '",
-  groupNamePrefix, "': ", nrow(membership), " of ", nAllRows, " membership rows"
+  length(flowsheetConceptIds), " concepts are in a Group whose name starts with '", groupNamePrefix, "'"
 )
 
-# A concept in several "Flowsheet - laboratory" ParentGroups keeps the most specific one.
-nBeforePrecedence <- nrow(membership)
+# What is kept is the real LOINC Groups of those concepts, never the ParentGroups (they are
+# grouping rules that subsume other Groups, not sets of equivalent tests). A concept can be
+# in several Groups and keeps all of them: whether two concepts share a Group is a set
+# intersection and needs no precedence rule.
 membership <- membership |>
-  dplyr::mutate(precedence = match(.data$group_concept_code, laboratoryPrecedence)) |>
-  dplyr::group_by(.data$concept_id, .data$group_concept_name) |>
-  dplyr::arrange(.data$precedence, .by_group = TRUE) |>
-  dplyr::slice(1) |>
-  dplyr::ungroup() |>
-  dplyr::select(-"precedence") |>
-  dplyr::arrange(.data$concept_id, .data$group_concept_id)
+  dplyr::filter(.data$concept_id %in% flowsheetConceptIds, !.data$is_parent_group) |>
+  dplyr::select(-"is_parent_group") |>
+  dplyr::arrange(.data$concept_id, .data$n_descendants, .data$group_concept_code)
 ParallelLogger::logInfo(
-  "Kept one '", laboratoryGroupName, "' Group per concept (", paste(laboratoryPrecedence, collapse = " > "),
-  "): ", nrow(membership), " of ", nBeforePrecedence, " rows"
-)
-
-# A concept in two Flowsheet categories (laboratory and weight/height/head circumference)
-# keeps the most specific Group, the one with the fewest descendants, so a concept_id
-# appears only once.
-nBeforeOnePerConcept <- nrow(membership)
-membership <- membership |>
-  dplyr::group_by(.data$concept_id) |>
-  dplyr::arrange(.data$n_descendants, .by_group = TRUE) |>
-  dplyr::slice(1) |>
-  dplyr::ungroup() |>
-  dplyr::arrange(.data$concept_id)
-ParallelLogger::logInfo(
-  "Kept one Group per concept (fewest descendants): ", nrow(membership), " of ", nBeforeOnePerConcept, " rows"
-)
-
-ParallelLogger::logInfo(
-  nrow(membership), " membership rows: ",
+  "Kept ", nrow(membership), " of ", nAllRows, " membership rows: ",
   dplyr::n_distinct(membership$concept_id), " concepts in ",
   dplyr::n_distinct(membership$group_concept_id), " Groups"
 )
 
-# The ParentGroup-level concepts, called out in the log so a reader of the output knows
-# they are in there and why a consumer filters them.
-parents <- membership |>
-  dplyr::filter(.data$is_parent_group) |>
-  dplyr::distinct(.data$group_concept_code, .data$group_concept_name, .data$n_descendants) |>
-  dplyr::arrange(dplyr::desc(.data$n_descendants))
+groupsPerConcept <- dplyr::count(membership, .data$concept_id)
 ParallelLogger::logInfo(
-  nrow(parents), " of the Groups are ParentGroups (they subsume other Groups) -- ",
-  "exclude them when testing whether two concepts share a Group:"
+  sum(groupsPerConcept$n > 1), " concepts are in more than one Group (at most ", max(groupsPerConcept$n), ")"
 )
-for (i in seq_len(min(nrow(parents), 10L))) {
-  ParallelLogger::logInfo("  ", parents$group_concept_code[i], " (", parents$n_descendants[i],
-                          " descendants) ", parents$group_concept_name[i])
-}
 
 sizeBands <- membership |>
-  dplyr::distinct(.data$group_concept_id, .data$n_descendants, .data$is_parent_group) |>
+  dplyr::distinct(.data$group_concept_id, .data$n_descendants) |>
   dplyr::mutate(band = cut(.data$n_descendants, breaks = sizeBandBreaks, labels = sizeBandLabels)) |>
-  dplyr::count(.data$band, .data$is_parent_group)
+  dplyr::count(.data$band)
 for (i in seq_len(nrow(sizeBands))) {
-  ParallelLogger::logInfo("  Groups with ", as.character(sizeBands$band[i]), " descendants",
-                          if (sizeBands$is_parent_group[i]) " (ParentGroup)" else "", ": ", sizeBands$n[i])
+  ParallelLogger::logInfo("  Groups with ", as.character(sizeBands$band[i]), " descendants: ", sizeBands$n[i])
 }
 
 #
