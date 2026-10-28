@@ -7,7 +7,7 @@ share of records by unit source and value source.
 ## Inputs
 
 From `DATA_SUMMARY/0_KantaSummaryTables/` (produced outside this repo by
-`summarizePreprocessKantaData`, each keyed by `TEST_NAME` + `MEASUREMENT_UNIT`):
+`summarizePreprocessKantaData`, each keyed by `TEST_NAME` + `PREPROCESED_UNIT`):
 
 - `summaryTest.tsv` — `n_records` per pair.
 - `summaryUnitSource.tsv` — `n_records` per pair and `unit_source` (`Source` /

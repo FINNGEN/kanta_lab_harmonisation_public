@@ -47,7 +47,7 @@ fmtNum <- function(x) {
 # One row per TEST_NAME/UNIT, n = total records (the denominator every
 # percentage below is taken against).
 total <- summaryTest |>
-  dplyr::transmute(TEST_NAME, UNIT = MEASUREMENT_UNIT, n = n_records)
+  dplyr::transmute(TEST_NAME, UNIT = PREPROCESED_UNIT, n = n_records)
 
 # Drop the upstream's stringified missing test name: records with no test name
 # arrive as a TEST_NAME of literally "NA". Case-sensitive, lowercase "na" is a
@@ -66,7 +66,7 @@ if (any(isMissingTestName)) {
 # row here; the caller's left_join + replace_na(0) turns that into a real 0.
 widenSourceCounts <- function(df, labelCol, expectedLabels) {
   wide <- df |>
-    dplyr::rename(UNIT = MEASUREMENT_UNIT) |>
+    dplyr::rename(UNIT = PREPROCESED_UNIT) |>
     dplyr::select(TEST_NAME, UNIT, label = dplyr::all_of(labelCol), n_records) |>
     tidyr::pivot_wider(names_from = label, values_from = n_records, values_fill = 0)
   for (lab in setdiff(expectedLabels, names(wide))) wide[[lab]] <- 0
@@ -114,7 +114,7 @@ valueSource <- total |>
 # deciles upstream keep one row with an empty decile / decile_value.
 valueDeciles <- summaryValues |>
   dplyr::transmute(
-    TEST_NAME, UNIT = MEASUREMENT_UNIT, decile,
+    TEST_NAME, UNIT = PREPROCESED_UNIT, decile,
     decile_value = decile_MEASUREMENT_VALUE
   )
 
