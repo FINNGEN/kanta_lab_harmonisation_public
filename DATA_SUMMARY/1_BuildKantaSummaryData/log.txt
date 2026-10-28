@@ -40,5 +40,23 @@ Configuration:
 Read 69462 rows from DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
 26798 TEST_NAME/UNIT pairs, 257,815,796 records
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryDataStats.md
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  harmonizationTableFile = DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+  outDir = DATA_SUMMARY/1_BuildKantaSummaryData
+Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
+Wrote DATA_SUMMARY/1_BuildKantaSummaryData/harmonizationTable.md
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryDataStats.md
+Wrote DATA_SUMMARY/1_BuildKantaSummaryData/harmonizationTable.md
