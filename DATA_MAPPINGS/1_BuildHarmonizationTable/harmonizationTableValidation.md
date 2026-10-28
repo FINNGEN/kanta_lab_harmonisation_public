@@ -10,7 +10,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | UNITSfi.tsv | 3 | 0 | 0 |
 | testname_unit_to_conceptid.tsv | 6 | 0 | 0 |
 | measurement_concept_attributes.tsv | 3 | 0 | 0 |
-| loinc_group_membership.tsv | 4 | 0 | 0 |
+| flowsheet_loinc_groups.tsv | 4 | 0 | 0 |
 | conceptid_target_unit.tsv | 5 | 0 | 0 |
 | quantity_source_unit_conversion.tsv | 8 | 0 | 0 |
 | harmonizationTable.tsv | 3 | 0 | 2 |
@@ -37,10 +37,10 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | measurement_concept_attributes.tsv | SUCCESS | columns match their declared types |  |
 | measurement_concept_attributes.tsv | SUCCESS | concept_id, concept_code, concept_name, vocabulary_id, is_panel must have a value |  |
 | measurement_concept_attributes.tsv | SUCCESS | concept_id are unique |  |
-| loinc_group_membership.tsv | SUCCESS | columns match their declared types |  |
-| loinc_group_membership.tsv | SUCCESS | concept_id, group_concept_id, group_concept_code, group_concept_name must have a value |  |
-| loinc_group_membership.tsv | SUCCESS | concept_id + group_concept_id are unique |  |
-| loinc_group_membership.tsv | SUCCESS | concept_id is in measurement_concept_attributes.tsv |  |
+| flowsheet_loinc_groups.tsv | SUCCESS | columns match their declared types |  |
+| flowsheet_loinc_groups.tsv | SUCCESS | concept_id, group_concept_id, group_concept_code, group_concept_name must have a value |  |
+| flowsheet_loinc_groups.tsv | SUCCESS | concept_id + group_concept_id are unique |  |
+| flowsheet_loinc_groups.tsv | SUCCESS | concept_id is in measurement_concept_attributes.tsv |  |
 | conceptid_target_unit.tsv | SUCCESS | columns match their declared types |  |
 | conceptid_target_unit.tsv | SUCCESS | concept_id, HARMONISED_UNIT must have a value |  |
 | conceptid_target_unit.tsv | SUCCESS | HARMONISED_UNIT must be a valid unit in UNITSfi.tsv |  |
@@ -55,7 +55,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | quantity_source_unit_conversion.tsv | SUCCESS | has_property is a has_property of measurement_concept_attributes.tsv |  |
 | quantity_source_unit_conversion.tsv | SUCCESS | ONLY_TO_OMOP_CONCEPTS are concept ids in measurement_concept_attributes.tsv |  |
 | harmonizationTable.tsv | SUCCESS | columns match their declared types |  |
-| harmonizationTable.tsv | ERROR | TEST_NAME + PREPROCESED_UNIT are unique | 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde[%]; !psavapaanjatotaalinsuhde[]; -amyl[u/l] |
+| harmonizationTable.tsv | ERROR | TEST_NAME + PREPROCESED_UNIT are unique | 22 rows (11 repeated values), e.g. du-alb[mg]; du-ca[mmol]; du-kors-v[nmol] |
 | harmonizationTable.tsv | SUCCESS | every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept |  |
 | harmonizationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignoreReason |  |
-| harmonizationTable.tsv | ERROR | a row with a HARMONISED_UNIT has a CONVERSION | 6,997 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre] |
+| harmonizationTable.tsv | ERROR | a row with a HARMONISED_UNIT has a CONVERSION | 3,134 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre] |

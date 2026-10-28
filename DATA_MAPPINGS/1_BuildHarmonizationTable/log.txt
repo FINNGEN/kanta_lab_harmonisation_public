@@ -13,23 +13,23 @@ Configuration:
   unitFixFile = DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
   testnameUnitToConceptidFile = DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
   measurementConceptAttributesFile = DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-  loincGroupMembershipFile = DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+  loincGroupMembershipFile = DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
   conceptidTargetUnitFile = DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
   quantitySourceUnitConversionFile = DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
   outDir = DATA_MAPPINGS/1_BuildHarmonizationTable
 Read 79 rows from DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
 Read 7810 rows from DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
 Read 102825 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Read 41326 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+Read 7709 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 2 unit_fix rows have a TEST_NAME + UNIT that is not in testname_unit_to_conceptid
 179 general conversion rules, 2 concept-specific conversion rules
-7814 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 16451 rows
+7814 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7816 rows
 231 pairs whose concept_id is not in measurement_concept_attributes
 1087 pairs have no HARMONISED_UNIT
 3134 pairs have a HARMONISED_UNIT but no CONVERSION
-Wrote 16451 rows to DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+Wrote 7816 rows to DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 
 Attaching package: ‘dplyr’
 
@@ -46,7 +46,7 @@ Configuration:
   unitsFile = DATA_MAPPINGS/0_MappingTables/UNITSfi.tsv
   testnameUnitToConceptidFile = DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
   measurementConceptAttributesFile = DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-  loincGroupMembershipFile = DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+  loincGroupMembershipFile = DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
   conceptidTargetUnitFile = DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
   quantitySourceUnitConversionFile = DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
   harmonizationTableFile = DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
@@ -55,14 +55,14 @@ Read 79 rows from DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
 Read 142 rows from DATA_MAPPINGS/0_MappingTables/UNITSfi.tsv
 Read 7810 rows from DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
 Read 102825 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Read 41326 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/loinc_group_membership.tsv
+Read 7709 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
-Read 16451 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+Read 7816 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 39 tests: 36 SUCCESS, 1 WARNING, 2 ERROR
 unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows (not used downstream), e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
-harmonizationTable.tsv: TEST_NAME + PREPROCESED_UNIT are unique: 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde[%]; !psavapaanjatotaalinsuhde[]; -amyl[u/l]
-harmonizationTable.tsv: a row with a HARMONISED_UNIT has a CONVERSION: 6,997 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre]
+harmonizationTable.tsv: TEST_NAME + PREPROCESED_UNIT are unique: 22 rows (11 repeated values), e.g. du-alb[mg]; du-ca[mmol]; du-kors-v[nmol]
+harmonizationTable.tsv: a row with a HARMONISED_UNIT has a CONVERSION: 3,134 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre]
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
