@@ -45,6 +45,14 @@ then gets written back out as `""` — quietly losing that row's real
 identity. A file read from **outside** this project (a source table, an
 external vocabulary) is unaffected and can keep the parser's own default.
 
+**Naming a test and its unit.** In a report, a log line or a message, write a
+lab test and its unit as `TEST_NAME[unit]` (e.g. `-amyl[u/l]`), as in the
+Usagi `sourceCode`. A test with no unit is `TEST_NAME[]`. A chain of units
+(a preprocessed unit fixed to another) is joined with `->`:
+`u-hb-o[form->estimate]`. Never write them with `|` (`-amyl | u/l`): `|` is the
+column separator of a markdown table, so it breaks a table cell and is easy to
+confuse with the values.
+
 ---
 
 ## R Style
