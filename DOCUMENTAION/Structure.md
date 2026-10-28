@@ -167,11 +167,13 @@ Each table, the OMOP tables and the output are checked by the step `1_BuildHarmo
 | **UNIT** | Character | Source unit (empty for qualitative tests) |
 | concept_id | Integer | Target OMOP measurement `concept_id`. `0` (no concept) only with an `ignore_mapping_reason` |
 | ignore_mapping_reason | Character | Why the test is not mapped, e.g. `Diagnostic procedure, not lab test` |
+| APPROVED | Logical | `TRUE` if the mapping was approved (`mappingStatus` APPROVED in the old Usagi mapping), otherwise `FALSE` |
 
 **Validations**
 
 - `TEST_NAME` and `concept_id` have a value.
 - `concept_id` is not `0`, unless the row has an `ignore_mapping_reason`.
+- `APPROVED` is always `TRUE` or `FALSE`.
 - `UNIT` is a valid unit (or empty).
 - `TEST_NAME` + `UNIT` are unique.
 - `concept_id` is in `measurement_concept_attributes.tsv`, unless the row has an `ignore_mapping_reason`.
@@ -268,7 +270,7 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 - `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value.
 - `concept_id` is unique.
 
-**flowsheet_loinc_groups.tsv** — one row per concept, with the Flowsheet LOINC Group it keeps. Only the Groups whose name starts with `Flowsheet` are kept (`Flowsheet - laboratory`, `Flowsheet - vital signs`, `Flowsheet - weight, height, and head circumference`). A concept keeps the most specific `Flowsheet - laboratory` rule (`LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4`), and a concept in two categories keeps the Group with the fewest descendants, so each concept appears once. See the step README and `RESEARCH/UnderstandingGroups.md`.
+**flowsheet_loinc_groups.tsv** — one row per concept and LOINC Group it belongs to, for the concepts in a `Flowsheet` ParentGroup (`Flowsheet - laboratory`, `Flowsheet - vital signs`, `Flowsheet - weight, height, and head circumference`). The Flowsheet ParentGroups only select the concepts; the Groups listed are the real LOINC Groups (value sets of equivalent tests), never ParentGroups. A concept can be in several Groups. See the step README and `RESEARCH/UnderstandingGroups.md`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -277,12 +279,11 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | group_concept_code | Character | The `LG...` code of the Group |
 | group_concept_name | Character | Name of the Group |
 | n_descendants | Integer | How many standard `Measurement` concepts the Group holds |
-| is_parent_group | Logical | `TRUE` if the Group subsumes other Groups |
 
 **Validations**
 
 - `concept_id`, `group_concept_id`, `group_concept_code` and `group_concept_name` have a value.
-- `concept_id` is unique: a concept keeps one Group.
+- `concept_id` + `group_concept_id` are unique.
 - `concept_id` is in `measurement_concept_attributes.tsv`.
 
 ---
@@ -299,11 +300,13 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | unit_fix_reasoning | Character | Why the unit was fixed | `unit_fix.tsv` |
 | concept_id | Integer | Target OMOP measurement `concept_id` | `testname_unit_to_conceptid.tsv` |
 | ignore_mapping_reason | Character | Why the test is not mapped | `testname_unit_to_conceptid.tsv` |
+| APPROVED | Logical | `TRUE` if the mapping was approved | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
-| group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `flowsheet_loinc_groups.tsv` |
+| group_concept_id, group_concept_code, group_concept_name | Character | LOINC Groups the concept belongs to, joined with `;` | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to. Set to empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
+| Message | Character | Explains the error or warning of the row, starting with `ERROR:` or `WARNING:`; empty if none | Built from the checks of the step |
 
 **Validations**
 
@@ -312,12 +315,13 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 - Every `TEST_NAME` + `UNIT` of `testname_unit_to_conceptid.tsv` is kept.
 - `concept_id` has its attributes in `measurement_concept_attributes.tsv`, unless the row has an `ignore_mapping_reason`.
 - A row with a `HARMONISED_UNIT` has a `CONVERSION`.
+- `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv`. If not, the property of the mapped concept does not agree with the unit: an ERROR if the mapping is `APPROVED`, a WARNING if not.
 
 How the 5 tables combine:
 
 1. `testname_unit_to_conceptid.tsv` is the base, with `unit_fix.tsv` put in front of it, joined on `TEST_NAME` + `UNIT`. A pair that is not in `unit_fix.tsv` copies its `UNIT` into `PREPROCESED_UNIT`.
 2. `measurement_concept_attributes.tsv` is joined on `concept_id`.
-3. `flowsheet_loinc_groups.tsv` is joined on `concept_id`, keeping only `group_concept_id`, `group_concept_code` and `group_concept_name`.
+3. `flowsheet_loinc_groups.tsv` is joined on `concept_id`, keeping only `group_concept_id`, `group_concept_code` and `group_concept_name`, each joined with `;` over the Groups of the concept.
 4. `conceptid_target_unit.tsv` is joined on `concept_id` to add `HARMONISED_UNIT`.
 5. `quantity_source_unit_conversion.tsv` is joined on `has_property` + `UNIT` + `HARMONISED_UNIT` to add only `CONVERSION`. A rule with an empty `ONLY_TO_OMOP_CONCEPTS` applies to any concept; a rule with concept ids applies only to those.
 6. `HARMONISED_UNIT` is set to empty where no `CONVERSION` was found, since it cannot be applied.
