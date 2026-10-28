@@ -81,27 +81,29 @@ formatExamples <- function(rows, what) {
 # `text` replaces the default message of a failing test.
 # `level` is the result of a failing test: "ERROR", or "WARNING" for a finding that
 # does not break the table.
-record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level = "ERROR", text = NULL) {
+record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level = "ERROR", text = NULL, n = NULL) {
   bad[is.na(bad)] <- TRUE
-  nBad <- sum(bad)
+  nBad <- if (is.null(n)) sum(bad) else n
   message <- ""
-  if (nBad > 0) {
+  if (any(bad)) {
     examples <- if (!is.null(df) && !is.null(what)) {
       unique(formatExamples(df[bad, , drop = FALSE], what))
     } else {
       character(0)
     }
-    message <- paste0(format(nBad, big.mark = ","), " rows")
-    if (!is.null(extra)) message <- paste0(message, " (", extra, ")")
+    parts <- character(0)
+    if (!is.null(extra)) parts <- c(parts, extra)
     if (length(examples) > 0) {
-      message <- paste0(message, ", e.g. ", paste(utils::head(examples, 3), collapse = "; "))
+      parts <- c(parts, paste0("e.g. ", paste(utils::head(examples, 3), collapse = "; ")))
     }
+    message <- paste(parts, collapse = ", ")
     if (!is.null(text)) message <- text
   }
   results[[length(results) + 1]] <<- tibble::tibble(
     table = table,
-    result = ifelse(nBad == 0, "SUCCESS", level),
+    result = ifelse(!any(bad), "SUCCESS", level),
     test = test,
+    n_rows = if (any(bad)) format(nBad, big.mark = ",", trim = TRUE) else "",
     message = message
   )
 }
@@ -298,6 +300,7 @@ nOut <- nrow(harmonizationTable)
 record(
   "harmonizationTable.tsv", "has as many rows as testname_unit_to_conceptid.tsv joined with unit_fix.tsv",
   bad = nOut != nBase,
+  n = abs(nOut - nBase),
   text = paste0(
     format(nOut, big.mark = ","), " rows, testname_unit_to_conceptid.tsv joined with unit_fix.tsv has ",
     format(nBase, big.mark = ","), " (", format(abs(nOut - nBase), big.mark = ","),
@@ -337,6 +340,36 @@ for (level in c("ERROR", "WARNING")) {
   )
 }
 
+# A TEST_NAME with the same has_property (the old omop_quantity) should map to one concept.
+# Several concept_ids (e.g. the same analyte in blood and in urine) are a WARNING to review.
+# Ignored rows and rows without a concept are not checked.
+mapped <- harmonizationTable |>
+  dplyr::filter(is.na(ignore_mapping_reason), !is.na(concept_name)) |>
+  dplyr::distinct(TEST_NAME, has_property, concept_id, concept_name)
+severalConcepts <- mapped |>
+  dplyr::arrange(TEST_NAME, has_property, concept_id) |>
+  dplyr::summarise(
+    n_concepts = dplyr::n(),
+    concepts = paste0(concept_id, " (", concept_name, ")", collapse = " | "),
+    .by = c(TEST_NAME, has_property)
+  ) |>
+  dplyr::filter(n_concepts > 1)
+severalConceptsText <- paste0(
+  "testName '", severalConcepts$TEST_NAME, "' with omop_quantity '",
+  tidyr::replace_na(severalConcepts$has_property, ""), "' maps to different concept ids: ",
+  severalConcepts$concepts
+)
+record(
+  "harmonizationTable.tsv", "a TEST_NAME with the same has_property maps to one concept_id",
+  bad = nrow(severalConcepts) > 0,
+  level = "WARNING",
+  n = nrow(severalConcepts),
+  text = paste0(
+    "TEST_NAME + has_property map to different concept ids, e.g. ",
+    paste(utils::head(severalConceptsText, 2), collapse = "; ")
+  )
+)
+
 results <- dplyr::bind_rows(results)
 nError <- sum(results$result == "ERROR")
 nWarning <- sum(results$result == "WARNING")
@@ -345,7 +378,7 @@ ParallelLogger::logInfo(
   nWarning, " WARNING, ", nError, " ERROR"
 )
 for (i in which(results$result != "SUCCESS")) {
-  ParallelLogger::logWarn(results$table[i], ": ", results$test[i], ": ", results$message[i])
+  ParallelLogger::logWarn(results$table[i], ": ", results$test[i], ": ", results$n_rows[i], " rows, ", results$message[i])
 }
 
 #
@@ -380,9 +413,12 @@ md <- c(
   "",
   "## Tests",
   "",
-  "| table | result | test | message |",
-  "| --- | --- | --- | --- |",
-  paste0("| ", cell(results$table), " | ", results$result, " | ", cell(results$test), " | ", cell(results$message), " |")
+  "| table | result | test | n rows | message |",
+  "| --- | --- | --- | ---: | --- |",
+  paste0(
+    "| ", cell(results$table), " | ", results$result, " | ", cell(results$test), " | ",
+    results$n_rows, " | ", cell(results$message), " |"
+  )
 )
 outFile <- file.path(outDir, "harmonizationTableValidation.md")
 writeLines(md, outFile)

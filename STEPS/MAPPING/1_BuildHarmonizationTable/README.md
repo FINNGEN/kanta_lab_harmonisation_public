@@ -46,8 +46,8 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
 - `harmonizationTableValidation.md` — the validation report: a validation
   summary table (`table`, `SUCCESS`, `WARNING`, `ERROR`, with a row per table and
   an `ALL` row), then a table with a row per test and the columns `table` (an input or output table),
-  `result` (`SUCCESS`, `WARNING` or `ERROR`), `test` (a short description) and `message`
-  (empty on success; on error, how many rows failed, with a few examples).
+  `result` (`SUCCESS`, `WARNING` or `ERROR`), `test` (a short description), `n rows` (how many rows failed) and
+  `message` (empty on success; on failure, the detail with a few examples).
 - `log.txt` — run log.
 
 A concept can be in several LOINC Groups; they are joined with `;` into one value, so the Groups add no rows. A pair has more than
@@ -103,7 +103,7 @@ report and a warning in the log. Tests, per table:
 | `flowsheet_loinc_groups.tsv` | The four columns have a value; `concept_id` + `group_concept_id` are unique; `concept_id` is in `measurement_concept_attributes.tsv` |
 | `conceptid_target_unit.tsv` | `concept_id` and `HARMONISED_UNIT` have a value (no empty units); `HARMONISED_UNIT` is a valid unit; `concept_id` is unique and in `measurement_concept_attributes.tsv` |
 | `quantity_source_unit_conversion.tsv` | `has_property`, `UNIT`, `HARMONISED_UNIT` and `CONVERSION` have a value (no empty units); `UNIT` and `HARMONISED_UNIT` are valid units; `has_property` + `UNIT` + `HARMONISED_UNIT` + `ONLY_TO_OMOP_CONCEPTS` are unique; `CONVERSION` is a number or a formula in `X`; `has_property` is a property of the attributes; `ONLY_TO_OMOP_CONCEPTS` are concept ids of the attributes |
-| `harmonizationTable.tsv` | The table has as many rows as `testname_unit_to_conceptid.tsv` joined with `unit_fix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; a row with a `HARMONISED_UNIT` has a `CONVERSION`; `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv` (otherwise the property of the concept does not agree with the unit): an ERROR if the mapping is `APPROVED`, a WARNING if not |
+| `harmonizationTable.tsv` | The table has as many rows as `testname_unit_to_conceptid.tsv` joined with `unit_fix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; a row with a `HARMONISED_UNIT` has a `CONVERSION`; `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv` (otherwise the property of the concept does not agree with the unit): an ERROR if the mapping is `APPROVED`, a WARNING if not; WARNING: a `TEST_NAME` with the same `has_property` maps to more than one `concept_id` (ignored rows are not checked) |
 
 A valid unit is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test),
 except in `conceptid_target_unit.tsv` and `quantity_source_unit_conversion.tsv`,
