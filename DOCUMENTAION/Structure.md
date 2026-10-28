@@ -21,7 +21,7 @@ flowchart LR
         OMOPDB[("OMOP CDM database")]:::db
         GETOMOP{{"GetMeasurementOmopData"}}:::script
         M6["measurement_concept_attributes.tsv"]:::data
-        M7["loinc_group_membership.tsv"]:::data
+        M7["flowsheet_loinc_groups.tsv"]:::data
         COMB{{"buildHarmonizationTable"}}:::script
         HTAB["harmonizationTable.tsv"]:::data
     end
@@ -267,7 +267,7 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 - `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value.
 - `concept_id` is unique.
 
-**loinc_group_membership.tsv** — one row per concept and LOINC Group it belongs to (many-to-many).
+**flowsheet_loinc_groups.tsv** — one row per concept and Flowsheet LOINC Group it belongs to (many-to-many). Only the Groups whose name starts with `Flowsheet` are kept (`Flowsheet - laboratory`, `Flowsheet - vital signs`, `Flowsheet - weight, height, and head circumference`). A concept keeps the most specific `Flowsheet - laboratory` rule (`LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4`), so only a concept in two categories has two rows. See the step README and `RESEARCH/UnderstandingGroups.md`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -300,7 +300,7 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | ignoreReason | Character | Why the test is not mapped | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
-| group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `loinc_group_membership.tsv` |
+| group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
 
@@ -315,7 +315,7 @@ How the 5 tables combine:
 
 1. `testname_unit_to_conceptid.tsv` is the base, with `unit_fix.tsv` put in front of it, joined on `TEST_NAME` + `UNIT`. A pair that is not in `unit_fix.tsv` copies its `UNIT` into `PREPROCESED_UNIT`.
 2. `measurement_concept_attributes.tsv` is joined on `concept_id`.
-3. `loinc_group_membership.tsv` is joined on `concept_id`, keeping only `group_concept_id`, `group_concept_code` and `group_concept_name`.
+3. `flowsheet_loinc_groups.tsv` is joined on `concept_id`, keeping only `group_concept_id`, `group_concept_code` and `group_concept_name`.
 4. `conceptid_target_unit.tsv` is joined on `concept_id` to add `HARMONISED_UNIT`.
 5. `quantity_source_unit_conversion.tsv` is joined on `has_property` + `UNIT` + `HARMONISED_UNIT` to add only `CONVERSION`. A rule with an empty `ONLY_TO_OMOP_CONCEPTS` applies to any concept; a rule with concept ids applies only to those.
 
