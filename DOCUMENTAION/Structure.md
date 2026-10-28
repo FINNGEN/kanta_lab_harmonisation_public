@@ -155,7 +155,9 @@ flowchart LR
 
 ## Mapping tables
 
-The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Their columns are described in full in that folder's `README.md`.
+The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Every table is a TSV (tab-separated, UTF-8, one header row), and a missing value is the empty string.
+
+Each table, the OMOP tables and the output are checked by the step `1_BuildHarmonizationTable`, which writes `DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md`: a summary of SUCCESS, WARNING and ERROR per table, then one row per test. Every table also gets the test that its columns match the declared types. A failed test does not stop the step. A *valid unit* is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test) where the rules below say so.
 
 **testname_unit_to_conceptid.tsv** — one row per source lab test and unit, mapped to its OMOP concept.
 
@@ -163,14 +165,30 @@ The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Their columns ar
 |---|---|---|
 | **TEST_NAME** | Character | Source lab test name |
 | **UNIT** | Character | Source unit (empty for qualitative tests) |
-| concept_id | Integer | Target OMOP measurement `concept_id` |
+| concept_id | Integer | Target OMOP measurement `concept_id`. `0` (no concept) only with an `ignoreReason` |
+| ignoreReason | Character | Why the test is not mapped, e.g. `Diagnostic procedure, not lab test` |
+
+**Validations**
+
+- `TEST_NAME` and `concept_id` have a value.
+- `concept_id` is not `0`, unless the row has an `ignoreReason`.
+- `UNIT` is a valid unit (or empty).
+- `TEST_NAME` + `UNIT` are unique.
+- `concept_id` is in `measurement_concept_attributes.tsv`, unless the row has an `ignoreReason`.
 
 **conceptid_target_unit.tsv** — the unit each OMOP concept is converted to.
 
 | Column | Type | Description |
 |---|---|---|
 | concept_id | Integer | Target OMOP measurement `concept_id` |
-| HARMONISED_UNIT | Character | Unit the values of the concept are converted to |
+| HARMONISED_UNIT | Character | Unit the values of the concept are converted to. Never empty |
+
+**Validations**
+
+- `concept_id` and `HARMONISED_UNIT` have a value (no empty units).
+- `HARMONISED_UNIT` is a valid unit in `UNITSfi.tsv`, never empty.
+- `concept_id` is unique.
+- `concept_id` is in `measurement_concept_attributes.tsv`.
 
 **unit_fix.tsv** — known unit errors and what they must be read as.
 
@@ -182,15 +200,32 @@ The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Their columns ar
 | unit_fix_reasoning | Character | Why the unit is fixed |
 | INJECTION_NOTES | Character | Review state of the unit injection (e.g. `VALID`) |
 
+**Validations**
+
+- `TEST_NAME` has a value.
+- `UNIT` is a valid unit (or empty).
+- `TEST_NAME` + `PREPROCESED_UNIT` are unique.
+- WARNING: `TEST_NAME` + `UNIT` is in `testname_unit_to_conceptid.tsv`. A fix for a pair that is not there is not an error, it is only never used downstream.
+
 **quantity_source_unit_conversion.tsv** — per OMOP quantity, how to convert one unit to another.
 
 | Column | Type | Description |
 |---|---|---|
+| has_property | Character | OMOP quantity, e.g. `Mass Concentration` |
 | **UNIT** | Character | Source unit |
 | HARMONISED_UNIT | Character | Unit the value is converted to |
 | CONVERSION | Numeric or formula | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` |
 | ONLY_TO_OMOP_CONCEPTS | Character | Optional, restricts the rule to specific OMOP concept ids |
 | VALIDATION_MESSAGES | Character | Optional free-text notes |
+
+**Validations**
+
+- `has_property`, `UNIT`, `HARMONISED_UNIT` and `CONVERSION` have a value. Only `ONLY_TO_OMOP_CONCEPTS` and `VALIDATION_MESSAGES` can be empty.
+- `UNIT` and `HARMONISED_UNIT` are valid units in `UNITSfi.tsv`, never empty.
+- `has_property` + `UNIT` + `HARMONISED_UNIT` + `ONLY_TO_OMOP_CONCEPTS` are unique.
+- `CONVERSION` is a number or a formula in `X`.
+- `has_property` is a `has_property` of `measurement_concept_attributes.tsv`.
+- `ONLY_TO_OMOP_CONCEPTS` are concept ids in `measurement_concept_attributes.tsv`.
 
 **UNITSfi.tsv** — dictionary of source units, kept as is.
 
@@ -199,6 +234,11 @@ The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Their columns ar
 | **UNIT** | Character | Source unit code |
 | concept_id | Integer | OMOP unit `concept_id` (`0` for an unmapped unit) |
 | UNIQUE_FOR_LAB | Logical | Whether the unit is unique per lab |
+
+**Validations**
+
+- `UNIT`, `concept_id` and `UNIQUE_FOR_LAB` have a value.
+- `UNIT` is unique.
 
 ---
 
@@ -222,6 +262,11 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | has_system | Character | Specimen or body system |
 | has_time_aspect | Character | Timing of the collection |
 
+**Validations**
+
+- `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value.
+- `concept_id` is unique.
+
 **loinc_group_membership.tsv** — one row per concept and LOINC Group it belongs to (many-to-many).
 
 | Column | Type | Description |
@@ -232,6 +277,12 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | group_concept_name | Character | Name of the Group |
 | n_descendants | Integer | How many standard `Measurement` concepts the Group holds |
 | is_parent_group | Logical | `TRUE` if the Group subsumes other Groups |
+
+**Validations**
+
+- `concept_id`, `group_concept_id`, `group_concept_code` and `group_concept_name` have a value.
+- `concept_id` + `group_concept_id` are unique. A concept belongs to several Groups, so `concept_id` alone repeats.
+- `concept_id` is in `measurement_concept_attributes.tsv`.
 
 ---
 
@@ -245,12 +296,20 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | PREPROCESED_UNIT | Character | Unit as it arrives after preprocessing. The `UNIT` when the pair is not in `unit_fix.tsv` | `unit_fix.tsv` |
 | **UNIT** | Character | Unit after the fix (join key). Empty for qualitative tests | `testname_unit_to_conceptid.tsv` |
 | unit_fix_reasoning | Character | Why the unit was fixed | `unit_fix.tsv` |
-| concept_id | Integer | Target OMOP measurement `concept_id` (`0` when unmapped) | `testname_unit_to_conceptid.tsv` |
+| concept_id | Integer | Target OMOP measurement `concept_id` | `testname_unit_to_conceptid.tsv` |
+| ignoreReason | Character | Why the test is not mapped | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
 | group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `loinc_group_membership.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
+
+**Validations**
+
+- `TEST_NAME` + `PREPROCESED_UNIT` are unique.
+- Every `TEST_NAME` + `UNIT` of `testname_unit_to_conceptid.tsv` is kept.
+- `concept_id` has its attributes in `measurement_concept_attributes.tsv`, unless the row has an `ignoreReason`.
+- A row with a `HARMONISED_UNIT` has a `CONVERSION`.
 
 How the 5 tables combine:
 
