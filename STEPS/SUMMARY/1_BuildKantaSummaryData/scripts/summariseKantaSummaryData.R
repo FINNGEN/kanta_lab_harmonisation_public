@@ -108,6 +108,6 @@ md <- c(
 #
 # --- Output -------------------------------------------------------------
 #
-outFile <- file.path(outDir, "kantaSummaryDataStats.md")
+outFile <- file.path(outDir, "kantaSummaryData.md")
 writeLines(md, outFile)
 ParallelLogger::logInfo("Wrote ", outFile)
