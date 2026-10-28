@@ -80,8 +80,11 @@ Rscript "$STEP_DIR/scripts/validateHarmonizationTable.R" \
   "$UNIT_FIX_FILE" "$UNITS_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" \
   "$OUTDIR/harmonizationTable.tsv" "$OUTDIR"
 
+Rscript "$STEP_DIR/scripts/summariseHarmonizationTable.R" "$OUTDIR/harmonizationTable.tsv" "$OUTDIR"
+
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/harmonizationTable.tsv"
 echo "Wrote $OUTDIR/harmonizationTableValidation.md"
+echo "Wrote $OUTDIR/harmonizationTable.md"

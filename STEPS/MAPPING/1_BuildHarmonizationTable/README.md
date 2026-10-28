@@ -48,6 +48,13 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
   an `ALL` row), then a table with a row per test and the columns `table` (an input or output table),
   `result` (`SUCCESS`, `WARNING` or `ERROR`), `test` (a short description), `n rows` (how many rows failed) and
   `message` (empty on success; on failure, the detail with a few examples).
+- `harmonizationTable.md` — a summary of `harmonizationTable.tsv`. A table of the
+  mapping status (approved / not approved / ignored, with `n` and `%` of the rows,
+  and how many rows of each have a WARNING or an ERROR `Message`), and for the
+  approved rows how many distinct `concept_id`s, how many rows have a group (`n`,
+  `%`), how many distinct groups, and how many rows have a conversion (`n`, `%`). A
+  row is a `TEST_NAME` + `PREPROCESED_UNIT` pair; a row with an
+  `ignore_mapping_reason` is ignored, otherwise `APPROVED` decides.
 - `log.txt` — run log.
 
 A concept can be in several LOINC Groups; they are joined with `;` into one value, so the Groups add no rows. A pair has more than
@@ -86,6 +93,9 @@ base table, and logs how many pairs had a `HARMONISED_UNIT` cleared for lack of 
 `CONVERSION` and how many pairs end with no `HARMONISED_UNIT`.
 
 ## Validation
+
+`scripts/summariseHarmonizationTable.R` runs last and writes `harmonizationTable.md`
+from the table (see Outputs).
 
 `scripts/validateHarmonizationTable.R` runs after the build and checks every input
 table and the output, with the column types read from `scripts/readTables.R`, the
