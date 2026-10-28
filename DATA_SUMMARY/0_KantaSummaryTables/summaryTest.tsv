@@ -1,4 +1,4 @@
-TEST_NAME	MEASUREMENT_UNIT	n_records	n_subjects
+TEST_NAME	PREPROCESED_UNIT	n_records	n_subjects
 -respiratorisetvirukset,nukleiinihappo(kval)		14	14
 borreliaburgdorferi,nhosoitus,muukuinverinäyte␤		11	11
 p-transferriinireseptori,liukoinen(pi)	mg/l	12	9
