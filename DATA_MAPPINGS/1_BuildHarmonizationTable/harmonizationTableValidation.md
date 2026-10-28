@@ -8,13 +8,13 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | --- | --- | --- | --- |
 | unit_fix.tsv | 5 | 1 | 0 |
 | UNITSfi.tsv | 3 | 0 | 0 |
-| testname_unit_to_conceptid.tsv | 6 | 0 | 0 |
+| testname_unit_to_conceptid.tsv | 7 | 0 | 0 |
 | measurement_concept_attributes.tsv | 3 | 0 | 0 |
 | flowsheet_loinc_groups.tsv | 4 | 0 | 0 |
 | conceptid_target_unit.tsv | 5 | 0 | 0 |
 | quantity_source_unit_conversion.tsv | 8 | 0 | 0 |
-| harmonizationTable.tsv | 6 | 0 | 0 |
-| ALL | 40 | 1 | 0 |
+| harmonizationTable.tsv | 7 | 1 | 0 |
+| ALL | 42 | 2 | 0 |
 
 ## Tests
 
@@ -33,6 +33,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | testname_unit_to_conceptid.tsv | SUCCESS | TEST_NAME, concept_id must have a value |  |
 | testname_unit_to_conceptid.tsv | SUCCESS | UNIT must be a valid unit in UNITSfi.tsv (or empty) |  |
 | testname_unit_to_conceptid.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |
+| testname_unit_to_conceptid.tsv | SUCCESS | APPROVED must be TRUE or FALSE |  |
 | testname_unit_to_conceptid.tsv | SUCCESS | concept_id must not be 0, unless there is an ignore_mapping_reason |  |
 | testname_unit_to_conceptid.tsv | SUCCESS | concept_id is in measurement_concept_attributes.tsv, unless there is an ignore_mapping_reason |  |
 | measurement_concept_attributes.tsv | SUCCESS | columns match their declared types |  |
@@ -40,7 +41,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | measurement_concept_attributes.tsv | SUCCESS | concept_id are unique |  |
 | flowsheet_loinc_groups.tsv | SUCCESS | columns match their declared types |  |
 | flowsheet_loinc_groups.tsv | SUCCESS | concept_id, group_concept_id, group_concept_code, group_concept_name must have a value |  |
-| flowsheet_loinc_groups.tsv | SUCCESS | concept_id are unique |  |
+| flowsheet_loinc_groups.tsv | SUCCESS | concept_id + group_concept_id are unique |  |
 | flowsheet_loinc_groups.tsv | SUCCESS | concept_id is in measurement_concept_attributes.tsv |  |
 | conceptid_target_unit.tsv | SUCCESS | columns match their declared types |  |
 | conceptid_target_unit.tsv | SUCCESS | concept_id, HARMONISED_UNIT must have a value |  |
@@ -61,3 +62,5 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | harmonizationTable.tsv | SUCCESS | every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept |  |
 | harmonizationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignore_mapping_reason |  |
 | harmonizationTable.tsv | SUCCESS | a row with a HARMONISED_UNIT has a CONVERSION |  |
+| harmonizationTable.tsv | SUCCESS | has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for an APPROVED mapping |  |
+| harmonizationTable.tsv | WARNING | has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED | 247 rows (property does not agree with the unit), e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration |

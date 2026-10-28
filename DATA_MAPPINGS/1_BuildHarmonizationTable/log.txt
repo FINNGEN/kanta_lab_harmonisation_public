@@ -20,11 +20,12 @@ Configuration:
 Read 79 rows from DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
 Read 7756 rows from DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
 Read 102825 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Read 7707 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
+Read 9460 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 2 unit_fix rows have a TEST_NAME + UNIT that is not in testname_unit_to_conceptid
 179 general conversion rules, 2 concept-specific conversion rules
+0 rows with an ERROR message, 247 rows with a WARNING message
 7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
 231 pairs whose concept_id is not in measurement_concept_attributes
 3081 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
@@ -55,12 +56,13 @@ Read 79 rows from DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
 Read 142 rows from DATA_MAPPINGS/0_MappingTables/UNITSfi.tsv
 Read 7756 rows from DATA_MAPPINGS/0_MappingTables/testname_unit_to_conceptid.tsv
 Read 102825 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
-Read 7707 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
+Read 9460 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
-41 tests: 40 SUCCESS, 1 WARNING, 0 ERROR
+44 tests: 42 SUCCESS, 2 WARNING, 0 ERROR
 unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows (not used downstream), e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
+harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows (property does not agree with the unit), e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
