@@ -23,4 +23,22 @@ Dropping 30 row(s) whose TEST_NAME is the literal text "NA", covering 56,407 rec
 26798 TEST_NAME/UNIT pairs
 47997 decile rows
 Wrote 69462 rows to DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  kantaSummaryDataFile = DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
+  outDir = DATA_SUMMARY/1_BuildKantaSummaryData
+Read 69462 rows from DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
+26798 TEST_NAME/UNIT pairs, 257,815,796 records
+Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryDataStats.md
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
+Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryDataStats.md
