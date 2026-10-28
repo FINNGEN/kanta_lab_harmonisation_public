@@ -14,7 +14,7 @@ From `DATA_MAPPINGS/`:
   `concept_id`, `ignoreReason`. The base of the table.
 - `0_GetMeasurementOmopData/measurement_concept_attributes.tsv` — the concept
   attributes, joined on the concept id.
-- `0_GetMeasurementOmopData/loinc_group_membership.tsv` — the LOINC Groups of a
+- `0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv` — the LOINC Groups of a
   concept, joined on the concept id.
 - `0_MappingTables/conceptid_target_unit.tsv` — `OMOP_ID`, `HARMONISED_UNIT`. The target unit of each concept.
 - `0_MappingTables/UNITSfi.tsv` — the valid units, used only by the validation.
@@ -36,7 +36,7 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
 | concept_id | Integer | Target OMOP measurement `concept_id` (`0` when unmapped) | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
-| group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `loinc_group_membership.tsv` |
+| group_concept_id, group_concept_code, group_concept_name |  | LOINC Group the concept belongs to | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
 
@@ -47,7 +47,7 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
   (empty on success; on error, how many rows failed, with a few examples).
 - `log.txt` — run log.
 
-A concept belongs to several LOINC Groups, so a pair with several Groups takes
+A concept keeps one `Flowsheet - laboratory` Group, but can be in a second Flowsheet category, so such a pair takes
 one row per Group; every other column repeats.
 
 ## Action
@@ -66,7 +66,7 @@ lost:
    copies its `UNIT` into `PREPROCESED_UNIT`. A `UNIT` fixed from several
    `PREPROCESED_UNIT`s takes one row for each.
 2. Appends `measurement_concept_attributes.tsv` on `concept_id`.
-3. Appends `loinc_group_membership.tsv` on `concept_id`, keeping only
+3. Appends `flowsheet_loinc_groups.tsv` on `concept_id`, keeping only
    `group_concept_id`, `group_concept_code` and `group_concept_name`.
 4. Appends `conceptid_target_unit.tsv` on `concept_id` to get `HARMONISED_UNIT`.
 5. Appends `quantity_source_unit_conversion.tsv` on `has_property` + `UNIT` +
@@ -94,7 +94,7 @@ report and a warning in the log. Tests, per table:
 | `UNITSfi.tsv` | Every column has a value; `UNIT` is unique |
 | `testname_unit_to_conceptid.tsv` | `TEST_NAME` and `concept_id` have a value; `concept_id` is not 0, unless there is an `ignoreReason`; `UNIT` is a valid unit; `TEST_NAME` + `UNIT` are unique; `concept_id` is in `measurement_concept_attributes.tsv`, unless there is an `ignoreReason` |
 | `measurement_concept_attributes.tsv` | `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value; `concept_id` is unique |
-| `loinc_group_membership.tsv` | The four columns have a value; `concept_id` + `group_concept_id` are unique (a concept has several Groups, so `concept_id` alone repeats); `concept_id` is in `measurement_concept_attributes.tsv` |
+| `flowsheet_loinc_groups.tsv` | The four columns have a value; `concept_id` + `group_concept_id` are unique (a concept has several Groups, so `concept_id` alone repeats); `concept_id` is in `measurement_concept_attributes.tsv` |
 | `conceptid_target_unit.tsv` | `concept_id` and `HARMONISED_UNIT` have a value (no empty units); `HARMONISED_UNIT` is a valid unit; `concept_id` is unique and in `measurement_concept_attributes.tsv` |
 | `quantity_source_unit_conversion.tsv` | `has_property`, `UNIT`, `HARMONISED_UNIT` and `CONVERSION` have a value (no empty units); `UNIT` and `HARMONISED_UNIT` are valid units; `has_property` + `UNIT` + `HARMONISED_UNIT` + `ONLY_TO_OMOP_CONCEPTS` are unique; `CONVERSION` is a number or a formula in `X`; `has_property` is a property of the attributes; `ONLY_TO_OMOP_CONCEPTS` are concept ids of the attributes |
 | `harmonizationTable.tsv` | `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignoreReason`; a row with a `HARMONISED_UNIT` has a `CONVERSION` |

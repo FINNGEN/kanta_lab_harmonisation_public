@@ -198,16 +198,16 @@ checkHaveValue(
 )
 checkUnique("measurement_concept_attributes.tsv", measurementConceptAttributes, "concept_id")
 
-# loinc_group_membership.tsv. A concept belongs to several Groups, so concept_id
+# flowsheet_loinc_groups.tsv. A concept belongs to several Groups, so concept_id
 # alone repeats by design: the unique key is the concept and its Group.
-checkTypes("loinc_group_membership.tsv", loincGroupMembership)
+checkTypes("flowsheet_loinc_groups.tsv", loincGroupMembership)
 checkHaveValue(
-  "loinc_group_membership.tsv", loincGroupMembership,
+  "flowsheet_loinc_groups.tsv", loincGroupMembership,
   c("concept_id", "group_concept_id", "group_concept_code", "group_concept_name")
 )
-checkUnique("loinc_group_membership.tsv", loincGroupMembership, c("concept_id", "group_concept_id"))
+checkUnique("flowsheet_loinc_groups.tsv", loincGroupMembership, c("concept_id", "group_concept_id"))
 record(
-  "loinc_group_membership.tsv", "concept_id is in measurement_concept_attributes.tsv",
+  "flowsheet_loinc_groups.tsv", "concept_id is in measurement_concept_attributes.tsv",
   bad = !(loincGroupMembership$concept_id %in% conceptIds),
   df = loincGroupMembership, what = c("concept_id", "group_concept_id")
 )
