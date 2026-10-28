@@ -1,4 +1,4 @@
-TEST_NAME	UNIT	concept_id	ignoreReason
+TEST_NAME	UNIT	concept_id	ignore_mapping_reason
 e-mcv	fl	3024731	
 e-mch	pg	3035941	
 b-hb	g/l	3000963	
@@ -127,7 +127,6 @@ p-ca-albk	mmol/l	3020059
 s-b12-tc2	pmol/l	43054903	
 ts-padgast		40768797	
 ts-pad-3		3002256	
-kol/hdlsuh		3002109	
 kol/hdlsuh	ratio	3002109	
 p-hco3	mmol/l	3016293	
 p-inr	inr	3032080	
@@ -166,7 +165,6 @@ f-calpro	ug/g	3048689
 f-cldtnho		3051552	
 vb-po2	kpa	3024354	
 ts-pad-ih		4035726	
-u-suhti-o		3000330	
 p-fidd	mg/l	3051714	
 u-canna-o		3028300	
 u-bendi-o		3000764	
@@ -193,10 +191,8 @@ s-tfr	mg/l	3015399
 p-t4v	pmol/l	3008486	
 u-suhti	kg/l	3019150	
 b-k	mmol/l	3023103	
--h-ind		3052851	
 neut	%	3018010	
 p-ck-mbm	ug/l	3005785	
-non-hdl		42868678	
 non-hdl	mmol/l	42868678	
 ab-shco3	mmol/l	3008152	
 fp-fe	umol/l	3022948	
@@ -282,17 +278,12 @@ b-hemoglobiini	g/l	3000963
 fl-strbvi		3020321	
 -baktvr		36305247	
 u-hyalie	e6/l	3030981	
-p-inr-hy		3032080	
 vb-thb	g/l	3004119	
-ntkmom		40763531	
 p-igg	g/l	3005719	
-pappakmom		46235831	
 b-ph	ph	3010421	
 ikäriski		3049207	
-hcgbvkmom		3008714	
 monos	%	3019069	
 b-pco2	kpa	3013290	
-u-suhti.		3000330	
 u-leuk-o.		3045414	
 u-gluk-o.		3009261	
 u-keto-o.		3035350	
@@ -341,7 +332,6 @@ u-partik		40761535
 s-ccpab	u/ml	3041942	
 p-tsh	miu/l	3009201	
 f-shigvi		42529406	
--l-ind		3051611	
 sy-kide-o		3050238	
 f-para-o		3003327	
 pt-ekg		3013512	
@@ -363,7 +353,6 @@ s-cmvab		3017918
 b-neut	%	3018010	
 -trfesat	%	40763571	
 u-epi	e6/l	3000850	
-oma-p-crp		3020460	
 s-mypnabm		3010521	
 oma-pt-ekg		3013512	
 p-kysc	mg/l	3030366	
@@ -371,7 +360,6 @@ fs-ca-ion	mmol/l	3021347
 -infabag		3024891	
 -tbvr		3042631	
 s-anca		3001334	
-crp,tk		3020460	
 e-aborhsp		3003694	
 ts-pad-y		40768804	
 s-hbcabm		3013527	
@@ -401,7 +389,6 @@ ps-infaag		3046524
 ps-infbag		3043362	
 pt-klr-tje		4094501	
 s-ca19-9	u/ml	3022914	
-u-ominp-h		3019150	
 u-ominp-h	kg/l	3019150	
 lymängd	e9/l	3019198	
 u-baktjvi.		3026008	
@@ -454,7 +441,6 @@ b-bas	e9/l	3006315
 neutros	%	3018010	
 bm-mggfe		3042111	
 ab-hco3	mmol/l	3008152	
--i-ind		3051651	
 s-li	mmol/l	3024666	
 u-kemseul,ph		3022621	
 p-at3	%	3000515	
@@ -490,7 +476,6 @@ s-beta-1	g/l	3043723
 s-ca	mmol/l	3015377	
 pt-ekg-pa		3013512	
 s-hepyab		3038177	
-inr-vieri		3032080	
 p-fviii.	%	3019250	
 b-perusverenkuvajatrombosyytit		40758558	
 -rvirnho		3030692	
@@ -521,7 +506,6 @@ psa-v/psa	%	3001784
 ps-strjvi		3000924	
 s-havabm		3013327	
 campnho		3012568	
-b-hba1c,tk		3004410	
 u-kemseul,gluk		3009261	
 fp-pth	pmol/l	3010566	
 b-cya-ms	ug/l	3010375	
@@ -537,7 +521,6 @@ plesnho		21493466
 yersnho		3025468	
 p-ca12-5	u/ml	3037551	
 ts-pad		40768804	
-p-gluk,tk		3013826	
 b-tacro	ug/l	3026250	
 b-fv-d		3015816	
 lymfo	%	3002030	
@@ -608,7 +591,6 @@ li-baktvi		3016914
 b-thb	g/l	3000963	
 l-metamye	%	3002179	
 s-fsh	iu/l	3023323	
-snabb-inr		3032080	
 b-eosin	e9/l	3013115	
 u-kemseul,nitr		3006462	
 pt-papa		3050380	
@@ -643,7 +625,6 @@ p-laaptct		4268621
 lymph	%	3002030	
 bm-pad		3045142	
 p-haptog	g/l	3012336	
-cb-crp		3051387	
 -hsvnho		3028369	
 pt-glukr2h		43054914	
 b-lymf	%	3002030	
@@ -657,8 +638,6 @@ vp-laktaat	mmol/l	3008037
 s-igm	g/l	3028026	
 b-erytrosyyttientilavuusosuus	%	3009542	
 p-lupusak.		4268621	
-b-ghb-a1c,tk		3004410	
-fp-kol-ind		3019900	
 vp-k	mmol/l	3041354	
 vp-cl	mmol/l	3035285	
 b-tacroms	ug/l	3026250	
@@ -744,8 +723,6 @@ cb-hb-hy	g/l	3006184
 crpvieri	mg/l	3020460	
 u-epipien	e6/l	3030306	
 u-keto		3035350	
-cd4/cd8		40757349	
-du-ca	mmol	3010838	
 s-ssbabbl		40759844	
 s-rnpabbl		40759842	
 s-ssaabbl		40759843	
@@ -775,7 +752,6 @@ b-retind	%	3000012
 li-igg-oc		40759883	
 l-neut-m	%	3018010	
 f-crypnho		36305771	
-u-keto-o	l	3035350	
 e-rdw,osatutkimus(e-rdw)	%	3019897	
 f-giarnho		37020937	
 u-suhtih	kg/l	3019150	
@@ -906,7 +882,6 @@ cu-alb-mi	ug/min	3050449
 cb-gluk	mmol/l	3040151	
 s-nse	ug/l	3028531	
 b-eosabs	e9/l	3013115	
-ly-cd4/cd8		3020073	
 li-hsvnho		3008733	
 vb-ca-i7.4	mmol/l	3016431	
 p-crp/pika	mg/l	3035320	
@@ -1906,7 +1881,6 @@ du-mg	mmol	3017937
 b-pvk	fl	40761511	
 li-/s-alb	mg/g	3013247	
 plasmanc-reaktiivinenproteiiniosoitus	mg/l	3020460	
-du-alb	mg	3027035	
 p-glukpik	mmol/l	3013826	
 inrpika	inr	3032080	
 cb-hba1c	mmol/mol	3004410	
@@ -2085,7 +2059,6 @@ b-plas-p		3021691
 b-lakteh	mmol/l	3047181	
 -psa-v/t	%	3001784	
 fp-renin-p	mu/l	37021550	
-du-prot.	mg	3020876	
 b-laktevt	mmol/l	3047181	
 l-mono-kd	%	3019069	
 b-kdiffi,baso	%	3022096	
@@ -2428,7 +2401,6 @@ basofiilit,osatutkimus(l-baso)	%	3022096
 l-neutrofiilit,mikroskopointi	%	3018010	
 s-infliab	au/ml	1175556	
 fs-rf	kiu/l	3021614	
-li-igg-ind	index	4027681	
 du-uraat	mmol	3028714	
 fp-b6-vit	nmol/l	3042585	
 p-vwf-ty		3023693	
@@ -3369,8 +3341,6 @@ du-dala	umol/24h	3004149
 du-dala	umol	3004149	
 du-mg	mmol/24h	3017937	
 du-kalium	mmol	3010838	
-du-kors-v	nmol	3023030	
-du-na	mmol	3002079	
 p-prl	nmol/l	3051050	
 p-na	mmol/l	3019550	
 p-ca-iona	mmol/l	3021347	
@@ -3500,7 +3470,6 @@ fp-glukpi	mmol/l	3018251
 fb-gluk-o	mmol/l	46235168	
 p-glukoosi,2hnäyte	mmol/l	3016701	
 s-hepsid	mmol/l	42870325	
-p-krea	mmol/l	3020564	
 fp-gluk60	mmol/l	3015024	
 s-kol-hdlosatutk.	mmol/l	3023602	
 c-peptidi,proinsuliini	nmol/l	3032836	
@@ -3761,7 +3730,6 @@ du-iglcl	mg/24h	3002067
 du-proteiini,vuorokausivirtsa	mg/24h	3020876	
 du-a1miglo	mg	3018461	
 du-immunoglobuliini,kevyetketjut,lambda	g	3002067	
-du-prot	g	3020876	
 c-reaktiivinenproteiini,pika,tehdÄÄnitse	mg/l	3020460	
 p-prostataspesifinenantigeeni	ug/l	3013603	
 b-hemoglobiinipvk:nosana	g/l	3000963	
@@ -4354,7 +4322,6 @@ u-levyep		3029879
 -ca12-5		3037551	
 -ca15-3		3006588	
 -ca19-9		3022914	
--cdt		3025059	
 -cmvnh		3030558	
 -crp-pika		3020460	
 -crppika		3020460	
@@ -4590,7 +4557,6 @@ b-hkr.fol		3009542
 b-hkrhoi		3009542	
 b-hkrp		3009542	
 b-inr		3032080	
-b-inr-pik		3032080	
 b-inr-pt		3032080	
 b-inrpika		3032080	
 b-k		3023103	
@@ -4606,8 +4572,6 @@ b-kdiffi,neut		3018010
 b-keto(vo.hoitaja)		3008116	
 b-keto-0		3008116	
 b-keto/pi		3008116	
-b-keto/pik		3008116	
-b-ketoaineet		3008116	
 b-ketoaineet,pikahoitoyksiköt(beeta-hydroksibutyraatti)		3008116	
 b-keton-sn		3008116	
 b-konedif,neut		3018010	
@@ -4846,7 +4810,6 @@ desialotransferriini		3003031
 desialotransferriini,seerumista		3003031	
 di-liuskat		3017354	
 dna,vasta-aineet(natiivi)(dnanab)		3023420	
-du-alb		3027035	
 du-alb-mi		3005031	
 du-albumi		3012516	
 du-ca		3010838	
@@ -5616,7 +5579,6 @@ p-gluk-p		3013826
 p-gluk-pi		3013826	
 p-gluk-po		3013826	
 p-gluk-sn		3013826	
-p-gluk-vt		3013826	
 p-gluk-vt/0m		3013826	
 p-gluk.		3013826	
 p-gluk/0		3007821	
@@ -5684,7 +5646,6 @@ p-inr(pikamittari)		3032080
 p-inr-pik		3032080	
 p-inr-pika		3032080	
 p-inr-poc		3032080	
-p-inr-vt		3032080	
 p-inrviitasaari		3032080	
 p-k		3023103	
 p-k-hoi		3023103	
@@ -6876,7 +6837,6 @@ u-epit,epiteelisolut		3000850
 u-epiteelisolut		3000850	
 u-epiteelisolut,osatutkimus		3000850	
 u-epiteelit		3000850	
-u-epitel		3051014	
 u-epitla		3000850	
 u-epitlevy		3051014	
 u-eryt(pakettiu-solut)		3002582	
@@ -6928,7 +6888,6 @@ u-leukosyytitosatutk.		3018095
 u-levyepiteelisolut		3000850	
 u-lier		3030467	
 u-lieri?t		3030467	
-u-lieriö		3030467	
 u-lieriöt		3030981	
 u-lieriöt,osatutkuf1000		3030467	
 u-lierla		3030467	
@@ -6977,7 +6936,6 @@ u-uraat		3027874
 u-urea		3012898	
 u-välimep		3043681	
 ua-ahco3		3041008	
-ua-be		3004959	
 ua-hb		3027901	
 ua-hbo2sat		3027305	
 ua-hco3-st		3041008	
@@ -7070,10 +7028,7 @@ zb-ahco3		3006576
 zb-hco3		3006576	
 zb-pco2		3021513	
 zb-ph		3012544	
-cb-tt-inrpika		3032080	
-cb-inrc-c		3032080	
 b-muut	e9/l	3041806	
-inr-pika		3032080	
 hct	%	3009542	
 plt	e9/l	3007461	
 lymph	e9/l	3019198	
@@ -7081,8 +7036,6 @@ p-lakveka	mmol/l	3014111
 myel	%	3017181	
 prom	%	3021440	
 l-gran	%	3035933	
-p-inr-pi		3032080	
-s-apob/a1		3011831	
 ab-po2(t)	kpa	3022803	
 ab-pco2(t)	kpa	3045156	
 2hgluk	mmol/l	3012413	
@@ -7127,7 +7080,6 @@ ab-cl	mmol/l	3014576
 beta2-glob	g/l	3043747	
 kreapika	umol/l	3006442	
 ab-k	mmol/l	3043409	
-hba1c-pika		3004410	
 kpika	mmol/l	3023103	
 p-gluk120	mmol/l	3012413	
 cbpco2pika	kpa	3023024	
@@ -7161,7 +7113,6 @@ kreatiniini(krea)	umol/l	3006442
 u-asetoniaineet(kval)	estimate	3035350	
 b-t-cd4	e9/l	3028167	
 fs-ca	mmol/l	3015377	
-kol/hdl-su		3002109	
 kol/hdl-su	ratio	3002109	
 l-mon	e9/l	3001604	
 s-a2glob	g/l	3005229	
@@ -7221,7 +7172,6 @@ s-vehn�e	u/ml	3027231
 kalsium,ionisoitunut(7.4),seerumi	mmol/l	3016431	
 b-ba/abs	e9/l	3006315	
 eosinofiilit	%	3006504	
-kol/hdl		3002109	
 kol/hdl	ratio	3002109	
 s-afsuol3	u/l	3020013	
 gra	%	3035933	
@@ -7564,7 +7514,6 @@ vb-happamuusaste	ph	3012544
 paastoseeruminph	ph	3018418	
 ph,seerumista,osatutk	ph	3018418	
 glomerulussuodosnopeus,estimo	ml/min/173m2	40764999	
-s-apob/apoa1-suhde		3011831	
 b-hkr(erytrosyytit,tilavuusosuus)	ratio	3009542	
 e-mcv(erytrosyytit,keskitilavuus)	fl	3024731	
 ldl-kolesteroli	mmol/l	3001308	
@@ -7573,9 +7522,6 @@ p-kalsium-ioni,aktuaali	mmol/l	3021347
 s-kalsium-ioni.aktuaali	mmol/l	3021347	
 e-punasolujenkokojakaum	%	3002385	
 glom.suod.nopeusckd-epi	ml/min/173m2	40764999	
-kolesteroli/hdl-suhde		3002109	
-fs-kalsium,ionisoitunut		3021347	
-p-tromboplastiiniaika,inr,tt		3032080	
 ribonukleoproteiini,20-aineet(s-rnp70ab)		40762119	
 s-ribonukleoproteiin11geeni,vasta-aineet		40762119	
 s-agaaba,s-agaabg,s-18aba(celikey).	titre	40758059	
