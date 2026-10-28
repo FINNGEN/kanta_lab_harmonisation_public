@@ -63,15 +63,19 @@ result <- testnameUnitToConceptid |>
 result <- result |>
   dplyr::left_join(measurementConceptAttributes, by = "concept_id")
 
-# 3. Append the LOINC Group, only group_concept_id, group_concept_code and
-#    group_concept_name. A concept belongs to several Groups, so this adds one row
-#    per Group.
-result <- result |>
-  dplyr::left_join(
-    loincGroupMembership |> dplyr::select(concept_id, group_concept_id, group_concept_code, group_concept_name),
-    by = "concept_id",
-    relationship = "many-to-many"
+# 3. Append the LOINC Groups, only group_concept_id, group_concept_code and
+#    group_concept_name. A concept can be in several Groups; they are joined with ";"
+#    (in the same order in the three columns) so the table keeps one row per pair.
+groupsPerConcept <- loincGroupMembership |>
+  dplyr::arrange(concept_id, n_descendants, group_concept_code) |>
+  dplyr::summarise(
+    group_concept_id = paste(group_concept_id, collapse = ";"),
+    group_concept_code = paste(group_concept_code, collapse = ";"),
+    group_concept_name = paste(group_concept_name, collapse = ";"),
+    .by = concept_id
   )
+result <- result |>
+  dplyr::left_join(groupsPerConcept, by = "concept_id")
 
 # 4. Append the target unit by concept_id (one target unit per concept).
 result <- result |>
@@ -111,13 +115,35 @@ result <- result |>
   dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION)) |>
   dplyr::select(
     TEST_NAME, PREPROCESED_UNIT, UNIT, unit_fix_reasoning,
-    concept_id, ignore_mapping_reason,
+    concept_id, ignore_mapping_reason, APPROVED,
     concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect,
     group_concept_id, group_concept_code, group_concept_name,
     HARMONISED_UNIT, CONVERSION
   ) |>
-  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT, group_concept_id)
+  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT)
+
+# 6. Message: explains the error or warning of a row. A has_property + UNIT without a rule in
+#    quantity_source_unit_conversion.tsv means the property of the concept does not agree
+#    with the unit: an ERROR if the mapping is APPROVED, otherwise a WARNING.
+knownPropertyUnit <- paste(quantitySourceUnitConversion$has_property, quantitySourceUnitConversion$UNIT, sep = "\r")
+propertyUnitUnknown <- !is.na(result$has_property) & !is.na(result$UNIT) &
+  !(paste(result$has_property, result$UNIT, sep = "\r") %in% knownPropertyUnit)
+result <- result |>
+  dplyr::mutate(
+    Message = dplyr::if_else(
+      propertyUnitUnknown,
+      paste0(
+        dplyr::if_else(APPROVED, "ERROR", "WARNING"),
+        ": has_property '", has_property, "' and UNIT '", UNIT,
+        "' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit"
+      ),
+      NA_character_
+    )
+  )
+nMessageError <- sum(startsWith(result$Message, "ERROR"), na.rm = TRUE)
+nMessageWarning <- sum(startsWith(result$Message, "WARNING"), na.rm = TRUE)
+ParallelLogger::logWarn(nMessageError, " rows with an ERROR message, ", nMessageWarning, " rows with a WARNING message")
 
 nPairs <- nrow(dplyr::distinct(result, TEST_NAME, PREPROCESED_UNIT, UNIT))
 ParallelLogger::logInfo(nPairs, " TEST_NAME/PREPROCESED_UNIT/UNIT pairs in ", nrow(result), " rows")

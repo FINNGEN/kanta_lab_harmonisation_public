@@ -18,7 +18,7 @@ tableSpecs <- list(
     UNIT = chr(), concept_id = int(), UNIQUE_FOR_LAB = lgl()
   ),
   testnameUnitToConceptid = readr::cols(
-    TEST_NAME = chr(), UNIT = chr(), concept_id = int(), ignore_mapping_reason = chr()
+    TEST_NAME = chr(), UNIT = chr(), concept_id = int(), ignore_mapping_reason = chr(), APPROVED = lgl()
   ),
   measurementConceptAttributes = readr::cols(
     concept_id = int(), concept_code = chr(), concept_name = chr(), vocabulary_id = chr(),
@@ -27,7 +27,7 @@ tableSpecs <- list(
   ),
   loincGroupMembership = readr::cols(
     concept_id = int(), group_concept_id = int(), group_concept_code = chr(),
-    group_concept_name = chr(), n_descendants = int(), is_parent_group = lgl()
+    group_concept_name = chr(), n_descendants = int()
   ),
   conceptidTargetUnit = readr::cols(
     concept_id = int(), HARMONISED_UNIT = chr()
@@ -38,11 +38,11 @@ tableSpecs <- list(
   ),
   harmonizationTable = readr::cols(
     TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(), unit_fix_reasoning = chr(),
-    concept_id = int(), ignore_mapping_reason = chr(), concept_code = chr(), concept_name = chr(),
+    concept_id = int(), ignore_mapping_reason = chr(), APPROVED = lgl(), concept_code = chr(), concept_name = chr(),
     vocabulary_id = chr(), is_panel = lgl(), has_component = chr(), has_property = chr(),
     has_method = chr(), has_scale_type = chr(), has_system = chr(), has_time_aspect = chr(),
-    group_concept_id = int(), group_concept_code = chr(), group_concept_name = chr(),
-    HARMONISED_UNIT = chr(), CONVERSION = chr()
+    group_concept_id = chr(), group_concept_code = chr(), group_concept_name = chr(),
+    HARMONISED_UNIT = chr(), CONVERSION = chr(), Message = chr()
   )
 )
 

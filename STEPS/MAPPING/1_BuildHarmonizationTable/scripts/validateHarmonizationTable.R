@@ -189,6 +189,17 @@ checkTypes("testname_unit_to_conceptid.tsv", testnameUnitToConceptid)
 checkHaveValue("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, c("TEST_NAME", "concept_id"))
 checkValidUnit("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, "UNIT")
 checkUnique("testname_unit_to_conceptid.tsv", testnameUnitToConceptid, c("TEST_NAME", "UNIT"))
+# APPROVED is always the text TRUE or FALSE (read as text, since a logical column also
+# accepts T, F, true and false).
+approvedText <- readr::read_tsv(
+  testnameUnitToConceptidFile,
+  col_types = readr::cols(.default = readr::col_character()), na = ""
+)$APPROVED
+record(
+  "testname_unit_to_conceptid.tsv", "APPROVED must be TRUE or FALSE",
+  bad = !(approvedText %in% c("TRUE", "FALSE")),
+  df = tibble::tibble(APPROVED = approvedText), what = "APPROVED"
+)
 # A concept_id of 0 (no concept) is only allowed with an ignore_mapping_reason.
 record(
   "testname_unit_to_conceptid.tsv", "concept_id must not be 0, unless there is an ignore_mapping_reason",
@@ -211,13 +222,13 @@ checkHaveValue(
 )
 checkUnique("measurement_concept_attributes.tsv", measurementConceptAttributes, "concept_id")
 
-# flowsheet_loinc_groups.tsv: a concept keeps one Group, so concept_id is unique.
+# flowsheet_loinc_groups.tsv: a concept can be in several Groups, but only once in each.
 checkTypes("flowsheet_loinc_groups.tsv", loincGroupMembership)
 checkHaveValue(
   "flowsheet_loinc_groups.tsv", loincGroupMembership,
   c("concept_id", "group_concept_id", "group_concept_code", "group_concept_name")
 )
-checkUnique("flowsheet_loinc_groups.tsv", loincGroupMembership, "concept_id")
+checkUnique("flowsheet_loinc_groups.tsv", loincGroupMembership, c("concept_id", "group_concept_id"))
 record(
   "flowsheet_loinc_groups.tsv", "concept_id is in measurement_concept_attributes.tsv",
   bad = !(loincGroupMembership$concept_id %in% conceptIds),
@@ -309,6 +320,22 @@ record(
   bad = !is.na(harmonizationTable$HARMONISED_UNIT) & is.na(harmonizationTable$CONVERSION),
   df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
 )
+# A has_property + UNIT without a rule in quantity_source_unit_conversion.tsv means the
+# property of the mapped concept does not agree with the unit. The Message column of the
+# table (written by buildHarmonizationTable.R) says it: an ERROR if the mapping is
+# APPROVED, a WARNING if not. Rows without a has_property or a UNIT are not checked.
+propertyUnitMessage <- "are not in quantity_source_unit_conversion.tsv"
+propertyUnitTest <- "has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit)"
+for (level in c("ERROR", "WARNING")) {
+  record(
+    "harmonizationTable.tsv",
+    paste0(propertyUnitTest, if (level == "ERROR") ", for an APPROVED mapping" else ", for a mapping that is not APPROVED"),
+    bad = startsWith(tidyr::replace_na(harmonizationTable$Message, ""), level) &
+      grepl(propertyUnitMessage, tidyr::replace_na(harmonizationTable$Message, ""), fixed = TRUE),
+    df = harmonizationTable, what = c("TEST_NAME", "UNIT", "has_property"),
+    extra = "property does not agree with the unit", level = level
+  )
+}
 
 results <- dplyr::bind_rows(results)
 nError <- sum(results$result == "ERROR")
