@@ -24,7 +24,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | unit_fix.tsv | SUCCESS | TEST_NAME must have a value |  |
 | unit_fix.tsv | SUCCESS | UNIT must be a valid unit in UNITSfi.tsv (or empty) |  |
 | unit_fix.tsv | SUCCESS | TEST_NAME + PREPROCESED_UNIT are unique |  |
-| unit_fix.tsv | WARNING | TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv) | 2 rows (not used downstream), e.g. s-apob/apoa1-suhde \| (empty) \| ratio; u-hb-o \| form \| estimate |
+| unit_fix.tsv | WARNING | TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv) | 2 rows (not used downstream), e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate] |
 | UNITSfi.tsv | SUCCESS | columns match their declared types |  |
 | UNITSfi.tsv | SUCCESS | UNIT, concept_id, UNIQUE_FOR_LAB must have a value |  |
 | UNITSfi.tsv | SUCCESS | UNIT are unique |  |
@@ -55,7 +55,7 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | quantity_source_unit_conversion.tsv | SUCCESS | has_property is a has_property of measurement_concept_attributes.tsv |  |
 | quantity_source_unit_conversion.tsv | SUCCESS | ONLY_TO_OMOP_CONCEPTS are concept ids in measurement_concept_attributes.tsv |  |
 | harmonizationTable.tsv | SUCCESS | columns match their declared types |  |
-| harmonizationTable.tsv | ERROR | TEST_NAME + PREPROCESED_UNIT are unique | 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde \| %; !psavapaanjatotaalinsuhde \| (empty); -amyl \| u/l |
+| harmonizationTable.tsv | ERROR | TEST_NAME + PREPROCESED_UNIT are unique | 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde[%]; !psavapaanjatotaalinsuhde[]; -amyl[u/l] |
 | harmonizationTable.tsv | SUCCESS | every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept |  |
 | harmonizationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignoreReason |  |
-| harmonizationTable.tsv | ERROR | a row with a HARMONISED_UNIT has a CONVERSION | 6,997 rows, e.g. !psavapaanjatotaalinsuhde \| (empty) \| (empty) \| %; -amylp \| (empty) \| (empty) \| u/l; -ana \| (empty) \| (empty) \| titre |
+| harmonizationTable.tsv | ERROR | a row with a HARMONISED_UNIT has a CONVERSION | 6,997 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre] |

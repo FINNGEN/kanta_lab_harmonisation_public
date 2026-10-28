@@ -60,9 +60,9 @@ Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 Read 16451 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 39 tests: 36 SUCCESS, 1 WARNING, 2 ERROR
-unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows (not used downstream), e.g. s-apob/apoa1-suhde | (empty) | ratio; u-hb-o | form | estimate
-harmonizationTable.tsv: TEST_NAME + PREPROCESED_UNIT are unique: 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde | %; !psavapaanjatotaalinsuhde | (empty); -amyl | u/l
-harmonizationTable.tsv: a row with a HARMONISED_UNIT has a CONVERSION: 6,997 rows, e.g. !psavapaanjatotaalinsuhde | (empty) | (empty) | %; -amylp | (empty) | (empty) | u/l; -ana | (empty) | (empty) | titre
+unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows (not used downstream), e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
+harmonizationTable.tsv: TEST_NAME + PREPROCESED_UNIT are unique: 13,527 rows (4,881 repeated values), e.g. !psavapaanjatotaalinsuhde[%]; !psavapaanjatotaalinsuhde[]; -amyl[u/l]
+harmonizationTable.tsv: a row with a HARMONISED_UNIT has a CONVERSION: 6,997 rows, e.g. !psavapaanjatotaalinsuhde[->%]; -amylp[->u/l]; -ana[->titre]
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
