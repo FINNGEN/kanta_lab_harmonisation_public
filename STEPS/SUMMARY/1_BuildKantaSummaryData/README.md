@@ -19,6 +19,11 @@ From `DATA_SUMMARY/0_KantaSummaryTables/` (produced outside this repo by
 
 `summaryOutcomes.tsv` is not used.
 
+Optionally, with `--mappings`, from `DATA_MAPPINGS/` (read-only):
+
+- `1_BuildHarmonizationTable/harmonizationTable.tsv` — once built by the MAPPING step
+  `1_BuildHarmonizationTable`.
+
 ## Outputs
 
 In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
@@ -37,6 +42,12 @@ In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
   a value), with `n rows`, `% rows`, `n records` and `% rec`, and a total row.
   Name is always `X`, because the step drops the pairs whose `TEST_NAME` is the
   text `NA`. A pair has a value when `value_missing_p` is under 100.
+- `harmonizationTable.md` — only with `--mappings`: a summary of `harmonizationTable.tsv`.
+  A table of the mapping status (approved / not approved / ignored, with `n` and
+  `%` of the rows), and for the approved rows how many distinct `concept_id`s, how
+  many rows have a group (`n`, `%`), how many distinct groups, and how many rows
+  have a conversion (`n`, `%`). A row is a `TEST_NAME` + `PREPROCESED_UNIT` pair; a
+  row with an `ignore_mapping_reason` is ignored, otherwise `APPROVED` decides.
 - `log.txt` — run log.
 
 ## Action
@@ -59,6 +70,9 @@ In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
 one row per pair (the file has one row per decile, with the pair's `n`
 repeated), and writes `kantaSummaryDataStats.md`.
 
+`scripts/summariseHarmonizationTable.R` reads `harmonizationTable.tsv` and writes
+`harmonizationTable.md`. It runs only when `--mappings` is given.
+
 ## Env vars
 
 None required.
@@ -66,5 +80,5 @@ None required.
 ## How to run
 
 ```
-./STEPS/SUMMARY/1_BuildKantaSummaryData/run.sh <PATH_TO_DATA_SUMMARY> --env <ENV_NAME>
+./STEPS/SUMMARY/1_BuildKantaSummaryData/run.sh <PATH_TO_DATA_SUMMARY> --env <ENV_NAME> [--mappings <PATH_TO_DATA_MAPPINGS>]
 ```
