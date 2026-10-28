@@ -65,5 +65,23 @@ unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_con
 harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows, property does not agree with the unit, e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration
 harmonizationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id: 8 rows, TEST_NAME + has_property map to different concept ids, e.g. testName 'album' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma); testName 'albumiini' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma)
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  harmonizationTableFile = DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+  outDir = DATA_MAPPINGS/1_BuildHarmonizationTable
+Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
+Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
+Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.md
