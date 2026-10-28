@@ -50,6 +50,32 @@ harmonizationTable <- readTable(harmonizationTableFile, tableSpecs$harmonization
 #
 results <- list()
 
+# Shows the failing rows as examples. A test and its unit are written TEST_NAME[unit],
+# as in the Usagi sourceCode (an empty unit is TEST_NAME[]), and a chain of units
+# is joined with "->": TEST_NAME[PREPROCESED_UNIT->UNIT]. Any other column is shown
+# as column=value. Never "|", which is the separator of a markdown table.
+formatExamples <- function(rows, what) {
+  unitCols <- intersect(what, c("PREPROCESED_UNIT", "UNIT", "HARMONISED_UNIT"))
+  otherCols <- setdiff(what, c("TEST_NAME", unitCols))
+  text <- function(x) ifelse(is.na(x), "", as.character(x))
+  units <- if (length(unitCols) > 0) {
+    do.call(paste, c(lapply(rows[unitCols], text), sep = "->"))
+  } else {
+    NULL
+  }
+  if ("TEST_NAME" %in% what && !is.null(units)) {
+    shown <- paste0(rows$TEST_NAME, "[", units, "]")
+  } else if ("TEST_NAME" %in% what) {
+    shown <- as.character(rows$TEST_NAME)
+  } else if (!is.null(units)) {
+    shown <- ifelse(units == "", "(empty)", units)
+  } else {
+    shown <- rep("", nrow(rows))
+  }
+  for (col in otherCols) shown <- trimws(paste0(shown, " ", col, "=", text(rows[[col]])))
+  shown
+}
+
 # Records one test. `bad` is a logical vector over the rows of `df`, TRUE where the
 # row fails; `what` says how to show a failing row (the columns pasted together).
 # `level` is the result of a failing test: "ERROR", or "WARNING" for a finding that
@@ -60,8 +86,7 @@ record <- function(table, test, bad, df = NULL, what = NULL, extra = NULL, level
   message <- ""
   if (nBad > 0) {
     examples <- if (!is.null(df) && !is.null(what)) {
-      shown <- lapply(df[bad, what, drop = FALSE], function(x) ifelse(is.na(x), "(empty)", as.character(x)))
-      unique(do.call(paste, c(shown, sep = " | ")))
+      unique(formatExamples(df[bad, , drop = FALSE], what))
     } else {
       character(0)
     }
@@ -249,7 +274,7 @@ record(
 record(
   "harmonizationTable.tsv", "a row with a HARMONISED_UNIT has a CONVERSION",
   bad = !is.na(harmonizationTable$HARMONISED_UNIT) & is.na(harmonizationTable$CONVERSION),
-  df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT", "HARMONISED_UNIT")
+  df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
 )
 
 results <- dplyr::bind_rows(results)
