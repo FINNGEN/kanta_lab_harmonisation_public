@@ -3160,7 +3160,6 @@ concept_id	group_concept_id	group_concept_code	group_concept_name	n_descendants	
 3023536	40652433	LG100-4	Flowsheet - laboratory	3538	TRUE
 3023539	40652445	LG74-7	Flowsheet - laboratory	2023	TRUE
 3023540	40652430	LG70-5	Flowsheet - weight, height, and head circumference	17	TRUE
-3023540	40652445	LG74-7	Flowsheet - laboratory	2023	TRUE
 3023544	40652445	LG74-7	Flowsheet - laboratory	2023	TRUE
 3023548	40652433	LG100-4	Flowsheet - laboratory	3538	TRUE
 3023551	40652445	LG74-7	Flowsheet - laboratory	2023	TRUE
@@ -3344,7 +3343,6 @@ concept_id	group_concept_id	group_concept_code	group_concept_name	n_descendants	
 3025298	40652446	LG27-5	Flowsheet - laboratory	335	TRUE
 3025313	40652433	LG100-4	Flowsheet - laboratory	3538	TRUE
 3025315	40652430	LG70-5	Flowsheet - weight, height, and head circumference	17	TRUE
-3025315	40652445	LG74-7	Flowsheet - laboratory	2023	TRUE
 3025319	40652451	LG99-4	Flowsheet - laboratory	1457	TRUE
 3025337	40652451	LG99-4	Flowsheet - laboratory	1457	TRUE
 3025343	40652433	LG100-4	Flowsheet - laboratory	3538	TRUE

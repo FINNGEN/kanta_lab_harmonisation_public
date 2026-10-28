@@ -39,7 +39,8 @@ Configuration:
 Using temporary emulation schema: atlas-development-270609.sandbox
 Kept the 8 Groups whose name starts with 'Flowsheet': 8014 of 41326 membership rows
 Kept one 'Flowsheet - laboratory' Group per concept (LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4): 7709 of 8014 rows
-7709 membership rows: 7707 concepts in 8 Groups
+Kept one Group per concept (fewest descendants): 7707 of 7709 rows
+7707 membership rows: 7707 concepts in 8 Groups
 8 of the Groups are ParentGroups (they subsume other Groups) -- exclude them when testing whether two concepts share a Group:
   LG100-4 (3538 descendants) Flowsheet - laboratory
   LG74-7 (2023 descendants) Flowsheet - laboratory
@@ -53,6 +54,6 @@ Kept one 'Flowsheet - laboratory' Group per concept (LG78-8 > LG74-7 > LG97-8 > 
   Groups with 51-200 descendants (ParentGroup): 1
   Groups with 201-1000 descendants (ParentGroup): 2
   Groups with > 1000 descendants (ParentGroup): 3
-Wrote 7709 rows to DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
+Wrote 7707 rows to DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
 Wrote DATA_MAPPINGS/0_GetMeasurementOmopData/measurement_concept_attributes.tsv
 Wrote DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_groups.tsv
