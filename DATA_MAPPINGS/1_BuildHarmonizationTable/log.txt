@@ -60,9 +60,10 @@ Read 9460 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_group
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
-44 tests: 42 SUCCESS, 2 WARNING, 0 ERROR
-unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows (not used downstream), e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
-harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows (property does not agree with the unit), e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration
+45 tests: 42 SUCCESS, 3 WARNING, 0 ERROR
+unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
+harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows, property does not agree with the unit, e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration
+harmonizationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id: 8 rows, TEST_NAME + has_property map to different concept ids, e.g. testName 'album' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma); testName 'albumiini' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma)
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
