@@ -1,5 +1,4 @@
 has_property	UNIT	HARMONISED_UNIT	CONVERSION	ONLY_TO_OMOP_CONCEPTS	VALIDATION_MESSAGES
--			1		
 Arbitrary Concentration	index	index	1		
 Arbitrary Concentration	au/ml	au/ml	1		
 Arbitrary Concentration	eliau/ml	eliau/ml	1		
@@ -51,11 +50,9 @@ Entitic mass	pg/cell	pg	1
 Entitic mass	pg	pg/cell	1		
 Entitic mean volume	fl	fl	1		
 Entitic Mass/volume	g/l	g/l	1		
-Finding			1		
 Length fraction	%	%	1		
 Length	mm	mm	1		
 Log molar concentration	ph	ph	1		
-Log molar concentration		ph	1		
 Mass	g	g	1		
 Mass	mg	mg	1		
 Mass	kg	kg	1		
@@ -115,10 +112,6 @@ Partial pressure	%	%	1
 Partial pressure	kpa	kpa	1		
 Percentile	ratio	ratio	1		
 Presence or Threshold	estimate	estimate	1		
-Presence or Threshold	estimate		1		
-Presence or Threshold		estimate	1		
-Presence or Threshold			1		
-Presence or Identity			1		
 Ratio	%	%	1		
 Ratio	ratio	ratio	1		
 Ratio	ratio	%	100		

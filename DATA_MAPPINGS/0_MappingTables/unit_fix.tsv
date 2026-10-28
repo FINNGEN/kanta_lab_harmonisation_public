@@ -62,19 +62,19 @@ s-tsh	mlu/l	mu/l		VALID
 kolesteroli/hdl-suhde		ratio		VALID
 fs-kalsium,ionisoitunut		mmol/l		VALID
 p-tromboplastiiniaika,inr,tt		inr		VALID
--cdt	NA	mg/l	injection_script	PASS,FAIL,PASS
-b-keto/pik	NA	mmol/l	injection_script	FAIL,PASS,PASS
-b-ketoaineet	NA	mmol/l	injection_script	FAIL,PASS,PASS
-du-alb	NA	mg/24h	injection_script	PASS,PASS,FAIL
+-cdt		mg/l	injection_script	PASS,FAIL,PASS
+b-keto/pik		mmol/l	injection_script	FAIL,PASS,PASS
+b-ketoaineet		mmol/l	injection_script	FAIL,PASS,PASS
+du-alb		mg/24h	injection_script	PASS,PASS,FAIL
 du-alb	mg	mg/24h	injection_script	PASS,PASS,FAIL
 li-igg-ind	index	ratio	injection_script	FAIL,PASS,PASS
 li-igg-ind	osuus	ratio	injection_script	FAIL,PASS,PASS
-s-apob/apoa1-suhde	NA	ratio	injection_script	PASS,FAIL,PASS
+s-apob/apoa1-suhde		ratio	injection_script	PASS,FAIL,PASS
 s-ph	1	ph	injection_script	PASS,PASS,PASS
 u-hb-o	form	estimate	injection_script	PASS,PASS,PASS
-u-kemseul	form	NA	injection_script	PASS,PASS,PASS
-u-kemseul	h	NA	injection_script	PASS,PASS,PASS
+u-kemseul	form		injection_script	PASS,PASS,PASS
+u-kemseul	h		injection_script	PASS,PASS,PASS
 u-ph-o	N	ph	injection_script	PASS,FAIL,PASS
 u-ph-o	form	ph	injection_script	PASS,FAIL,PASS
 u-veri-o	form	estimate	injection_script	FAIL,FAIL,PASS
-ua-be	NA	mmol/l	injection_script	FAIL,FAIL,PASS
+ua-be		mmol/l	injection_script	FAIL,FAIL,PASS
