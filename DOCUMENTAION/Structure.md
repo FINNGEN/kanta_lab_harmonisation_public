@@ -157,7 +157,7 @@ flowchart LR
 
 The tables in `DATA_MAPPINGS/0_MappingTables/`, edited by hand. Every table is a TSV (tab-separated, UTF-8, one header row), and a missing value is the empty string.
 
-Each table, the OMOP tables and the output are checked by the step `1_BuildHarmonizationTable`, which writes `DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md`: a summary of SUCCESS, WARNING and ERROR per table, then one row per test. Every table also gets the test that its columns match the declared types. A failed test does not stop the step. A *valid unit* is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test) where the rules below say so.
+Each table, the OMOP tables and the output are checked by the step `1_BuildHarmonizationTable`, which writes `DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md`: a summary of SUCCESS, WARNING and ERROR per table, then one row per test with its `n rows` (how many rows failed) and `message`. Every table also gets the test that its columns match the declared types. A failed test does not stop the step. A *valid unit* is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test) where the rules below say so.
 
 **testname_unit_to_conceptid.tsv** — one row per source lab test and unit, mapped to its OMOP concept.
 
@@ -316,6 +316,7 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 - `concept_id` has its attributes in `measurement_concept_attributes.tsv`, unless the row has an `ignore_mapping_reason`.
 - A row with a `HARMONISED_UNIT` has a `CONVERSION`.
 - `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv`. If not, the property of the mapped concept does not agree with the unit: an ERROR if the mapping is `APPROVED`, a WARNING if not.
+- WARNING: a `TEST_NAME` with the same `has_property` maps to more than one `concept_id`, e.g. `leukosyytit` with `Number Concentration` maps to the concepts for Leukocytes in Blood and in Urine. Ignored rows are not checked.
 
 How the 5 tables combine:
 
