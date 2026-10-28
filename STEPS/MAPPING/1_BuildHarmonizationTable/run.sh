@@ -51,13 +51,14 @@ fi
 #
 TABLES_DIR="$DATA_DIR/0_MappingTables"
 OMOP_DIR="$DATA_DIR/0_GetMeasurementOmopData"
+UNIT_FIX_FILE="$TABLES_DIR/unit_fix.tsv"
 TESTNAME_UNIT_FILE="$TABLES_DIR/testname_unit_to_conceptid.tsv"
 ATTRIBUTES_FILE="$OMOP_DIR/measurement_concept_attributes.tsv"
 GROUPS_FILE="$OMOP_DIR/loinc_group_membership.tsv"
 TARGET_UNIT_FILE="$TABLES_DIR/conceptid_target_unit.tsv"
 CONVERSION_FILE="$TABLES_DIR/quantity_source_unit_conversion.tsv"
 
-for f in "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE"; do
+for f in "$UNIT_FIX_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -72,7 +73,7 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/buildHarmonizationTable.R" \
-  "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" "$OUTDIR"
+  "$UNIT_FIX_FILE" "$TESTNAME_UNIT_FILE" "$ATTRIBUTES_FILE" "$GROUPS_FILE" "$TARGET_UNIT_FILE" "$CONVERSION_FILE" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
