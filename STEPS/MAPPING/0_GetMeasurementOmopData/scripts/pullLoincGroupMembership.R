@@ -185,6 +185,20 @@ ParallelLogger::logInfo(
   "): ", nrow(membership), " of ", nBeforePrecedence, " rows"
 )
 
+# A concept in two Flowsheet categories (laboratory and weight/height/head circumference)
+# keeps the most specific Group, the one with the fewest descendants, so a concept_id
+# appears only once.
+nBeforeOnePerConcept <- nrow(membership)
+membership <- membership |>
+  dplyr::group_by(.data$concept_id) |>
+  dplyr::arrange(.data$n_descendants, .by_group = TRUE) |>
+  dplyr::slice(1) |>
+  dplyr::ungroup() |>
+  dplyr::arrange(.data$concept_id)
+ParallelLogger::logInfo(
+  "Kept one Group per concept (fewest descendants): ", nrow(membership), " of ", nBeforeOnePerConcept, " rows"
+)
+
 ParallelLogger::logInfo(
   nrow(membership), " membership rows: ",
   dplyr::n_distinct(membership$concept_id), " concepts in ",

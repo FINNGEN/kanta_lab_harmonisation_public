@@ -36,11 +36,12 @@ In `DATA_MAPPINGS/0_GetMeasurementOmopData/`:
   Flowsheet Group it belongs to). Only the Groups whose name starts with
   `Flowsheet` are kept: `Flowsheet - laboratory` (6 Groups), `Flowsheet - vital
   signs` and `Flowsheet - weight, height, and head circumference`. A concept
-  keeps **one** `Flowsheet - laboratory` Group, the most specific one (see
-  [Why one Flowsheet rule per concept](#why-one-flowsheet-rule-per-concept)). It
-  can still have two rows when it is in two categories: concepts `3023540` and
-  `3025315` are in both the laboratory and the weight/height/head circumference
-  Flowsheet Groups.
+  appears **once**: it keeps the most specific `Flowsheet - laboratory` rule (see
+  [Why one Flowsheet rule per concept](#why-one-flowsheet-rule-per-concept)), and
+  if it is also in another Flowsheet category it keeps the Group with the fewest
+  descendants. Concepts `3023540` and `3025315` are in both the laboratory and
+  the weight/height/head circumference Groups, and keep `LG70-5` (17
+  descendants).
 
 | Column | Type | Description |
 |---|---|---|
@@ -78,8 +79,10 @@ gap. It computes each Group's descendant count and flags the ParentGroups in the
 same query. The query keeps every Group; the script then keeps only the Groups
 whose name starts with `Flowsheet` (`groupNamePrefix`). Of the six
 `Flowsheet - laboratory` ParentGroups a concept keeps the most specific one,
-`LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4`, and the script logs how
-many rows each step leaves.
+`LG78-8 > LG74-7 > LG97-8 > LG27-5 > LG99-4 > LG100-4`. A concept still in two
+categories keeps the Group with the fewest descendants (the most specific, as
+`6_EvaluateMapping` reported the shared Group). So `concept_id` is unique. The
+script logs how many rows each step leaves.
 
 Taken from the CDM rather than from LOINC's GroupFile distribution because the
 ancestor model answers the question *do these two concepts share a Group* as a
