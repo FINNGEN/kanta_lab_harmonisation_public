@@ -294,18 +294,19 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 
 | Column | Type | Description | Comes from |
 |---|---|---|---|
+| **mapping_status** | Character | First column. `IGNORE` if there is an `ignore_mapping_reason`; `ERROR` if the mapping is `APPROVED` and has a warning not marked `ignore` (in either warning table); `APPROVED` if `APPROVED` is `TRUE`; `NOT-APPROVED` if it is `FALSE` | `testname_unit_to_conceptid.tsv` and the warning tables |
 | **TEST_NAME** | Character | Source lab test name (join key) | `testname_unit_to_conceptid.tsv` |
 | PREPROCESED_UNIT | Character | Unit as it arrives after preprocessing. The `UNIT` when the pair is not in `unit_fix.tsv` | `unit_fix.tsv` |
 | **UNIT** | Character | Unit after the fix (join key). Empty for qualitative tests | `testname_unit_to_conceptid.tsv` |
 | unit_fix_reasoning | Character | Why the unit was fixed | `unit_fix.tsv` |
 | concept_id | Integer | Target OMOP measurement `concept_id` | `testname_unit_to_conceptid.tsv` |
 | ignore_mapping_reason | Character | Why the test is not mapped | `testname_unit_to_conceptid.tsv` |
-| APPROVED | Logical | `TRUE` if the mapping was approved | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
 | group_concept_id, group_concept_code, group_concept_name | Character | LOINC Groups the concept belongs to, joined with `;` | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to. Set to empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
+| mapping_warning_messages | Character | Last column. Every message of the two warning tables that joins to the row (ignored or not), each starting with its type, `WrongProperty:` (property mismatch) or `SharedProperty:` (shared property), separated by ` \| `. Empty when there is none | the warning tables |
 
 **Validations**
 
@@ -363,6 +364,7 @@ How the 5 tables combine:
 
 | Column | Type | Description |
 |---|---|---|
+| **mapping_status** | Character | First column, from the harmonization table; `NOT-FOUND` for a pair that is not in it |
 | All columns of `KantaSummaryData` |  | Including **TEST_NAME**, **PREPROCESED_UNIT** and **decile_value** |
 | The columns of the harmonization table |  | **UNIT** (the unit after the fix, next to `PREPROCESED_UNIT`), `unit_fix_reasoning`, `concept_id`, the concept attributes, the LOINC Groups, `HARMONISED_UNIT`, `CONVERSION`, … |
 | **decile_value_harmonised** | Numeric | `decile_value` with `CONVERSION` applied (a factor or a formula in `X`), in `HARMONISED_UNIT`. Empty without a `CONVERSION` |
@@ -375,11 +377,11 @@ How the 5 tables combine:
 
 | Column | Type | Description |
 |---|---|---|
-| All columns of `harmonizedKantaSummaryData.tsv` except `decile` |  | One row per pair |
+| All columns of `harmonizedKantaSummaryData.tsv` except `decile` |  | One row per pair, with `mapping_status` as the first column |
 | **decile_value**, **decile_value_harmonised** | Character | The 9 deciles as text, e.g. `[ 1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23 ]` |
 | **KS** | Numeric | Kolmogorov-Smirnov statistic between the harmonised deciles of the pair and the reference (0 to 0.9) |
 | **KS_mlp** | Numeric | `-log10` of the KS p-value |
 | **log10_D5** | Numeric | `log10` of the pair's median (decile 5) over the reference's median. Positive: the pair is higher |
 | reference_group_concept_id, n_reference_pairs | | The LOINC Group the reference comes from and the number of pairs in it |
 
-The reference of a pair is, for each decile, the median of the harmonised deciles of the other pairs of the same LOINC Group, weighted by `sqrt(n)`. Only pairs whose mapping is `APPROVED` and not ignored are in the reference, and the pair itself never is. A concept has several Groups, so the most specific one (the first in `group_concept_id`) with at least 2 other approved pairs is used. A pair with no harmonised deciles, no Group, or no such Group is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
+The reference of a pair is, for each decile, the median of the harmonised deciles of the other pairs of the same LOINC Group, weighted by `sqrt(n)`. Only pairs whose `mapping_status` is `APPROVED` are in the reference, and the pair itself never is. A concept has several Groups, so the most specific one (the first in `group_concept_id`) with at least 2 other approved pairs is used. A pair with no harmonised deciles, no Group, or no such Group is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
