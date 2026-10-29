@@ -20,7 +20,7 @@ Read 9551 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryUnitSource.tsv
 Read 13044 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryValuesSource.tsv
 Read 48186 rows from DATA_SUMMARY/0_KantaSummaryTables/summaryValues.tsv
 Dropping 30 row(s) whose TEST_NAME is the literal text "NA", covering 56,407 records
-26798 TEST_NAME/UNIT pairs
+26798 TEST_NAME/PREPROCESED_UNIT pairs
 47997 decile rows
 Wrote 69462 rows to DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
 
@@ -38,7 +38,7 @@ Configuration:
   kantaSummaryDataFile = DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
   outDir = DATA_SUMMARY/1_BuildKantaSummaryData
 Read 69462 rows from DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
-26798 TEST_NAME/UNIT pairs, 257,815,796 records
+26798 TEST_NAME/PREPROCESED_UNIT pairs, 257,815,796 records
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.md
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
 Wrote DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.md
