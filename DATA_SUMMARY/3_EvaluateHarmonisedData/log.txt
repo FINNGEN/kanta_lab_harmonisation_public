@@ -1,0 +1,20 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  harmonizedFile = DATA_SUMMARY/2_HarmonizeKantaSummaryData/harmonizedKantaSummaryData.tsv
+  outDir = DATA_SUMMARY/3_EvaluateHarmonisedData
+  minReferencePairs = 2
+Read 69462 rows from DATA_SUMMARY/2_HarmonizeKantaSummaryData/harmonizedKantaSummaryData.tsv
+26798 TEST_NAME + PREPROCESED_UNIT pairs, 2410 with harmonised deciles, 2365 approved reference pairs
+1128 pairs tested, 1282 with harmonised deciles not tested (no LOINC Group with at least 2 other approved pairs)
+Wrote 26798 rows to DATA_SUMMARY/3_EvaluateHarmonisedData/evaluatedHarmonisedKantaSummaryData.tsv
+Wrote DATA_SUMMARY/3_EvaluateHarmonisedData/evaluatedHarmonisedKantaSummaryData.tsv
