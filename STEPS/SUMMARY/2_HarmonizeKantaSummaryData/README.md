@@ -17,12 +17,14 @@ harmonised unit with the table's `CONVERSION`.
 In `DATA_SUMMARY/2_HarmonizeKantaSummaryData/`:
 
 - `harmonizedKantaSummaryData.tsv` — `kantaSummaryData.tsv` (same rows, same
-  columns) followed by the columns of the harmonization table: `UNIT` (the unit
+  columns) followed by the columns of the harmonization table. `mapping_status` is the
+  first column. The others: `UNIT` (the unit
   after the fix, right after `PREPROCESED_UNIT`), `unit_fix_reasoning`,
-  `ignore_mapping_reason`, `APPROVED`, `concept_id`, the concept attributes, the
-  LOINC Groups, `HARMONISED_UNIT` and `CONVERSION`. The new column
+  `ignore_mapping_reason`, `concept_id`, the concept attributes, the
+  LOINC Groups, `HARMONISED_UNIT`, `CONVERSION` and `mapping_warning_messages`. The new column
   `decile_value_harmonised` sits right after `decile_value`. A pair that is not in
-  the harmonization table keeps its rows with the harmonization columns empty.
+  the harmonization table keeps its rows with `mapping_status` `NOT-FOUND` and the other
+  harmonization columns empty.
 - `log.txt` — run log.
 
 ## Action

@@ -47,7 +47,7 @@ harmonizationTable <- readr::read_tsv(
     unit_fix_reasoning = readr::col_character(),
     concept_id = readr::col_integer(),
     ignore_mapping_reason = readr::col_character(),
-    APPROVED = readr::col_logical(),
+    mapping_status = readr::col_character(),
     concept_code = readr::col_character(),
     concept_name = readr::col_character(),
     vocabulary_id = readr::col_character(),
@@ -62,7 +62,8 @@ harmonizationTable <- readr::read_tsv(
     group_concept_code = readr::col_character(),
     group_concept_name = readr::col_character(),
     HARMONISED_UNIT = readr::col_character(),
-    CONVERSION = readr::col_character()
+    CONVERSION = readr::col_character(),
+    mapping_warning_messages = readr::col_character()
   ),
   na = ""
 )
@@ -78,7 +79,9 @@ stopifnot(!anyDuplicated(harmonizationTable[c("TEST_NAME", "PREPROCESED_UNIT")])
 
 harmonized <- kantaSummaryData |>
   dplyr::left_join(harmonizationTable, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
-  dplyr::relocate(UNIT, .after = PREPROCESED_UNIT)
+  dplyr::relocate(UNIT, .after = PREPROCESED_UNIT) |>
+  dplyr::mutate(mapping_status = dplyr::coalesce(mapping_status, "NOT-FOUND")) |>
+  dplyr::relocate(mapping_status)
 
 pairs <- dplyr::distinct(harmonized, TEST_NAME, PREPROCESED_UNIT, concept_id)
 ParallelLogger::logInfo(
