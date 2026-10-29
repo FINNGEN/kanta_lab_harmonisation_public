@@ -306,7 +306,6 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 | group_concept_id, group_concept_code, group_concept_name | Character | LOINC Groups the concept belongs to, joined with `;` | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to. Set to empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
-| Message | Character | Explains the error or warning of the row, starting with `ERROR:` or `WARNING:`; empty if none | Built from the checks of the step |
 
 **Validations**
 
@@ -315,8 +314,7 @@ Written by `GetMeasurementOmopData` to `DATA_MAPPINGS/0_GetMeasurementOmopData/`
 - Every `TEST_NAME` + `UNIT` of `testname_unit_to_conceptid.tsv` is kept.
 - `concept_id` has its attributes in `measurement_concept_attributes.tsv`, unless the row has an `ignore_mapping_reason`.
 - A row with a `HARMONISED_UNIT` has a `CONVERSION`.
-- `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv`. If not, the property of the mapped concept does not agree with the unit: an ERROR if the mapping is `APPROVED`, a WARNING if not.
-- WARNING: a `TEST_NAME` with the same `has_property` maps to more than one `concept_id`, e.g. `leukosyytit` with `Number Concentration` maps to the concepts for Leukocytes in Blood and in Urine. Ignored rows are not checked.
+- The warnings are in two tables next to `harmonizationTable.tsv` (below). A warning not marked `ignore` is an ERROR if it affects an `APPROVED` mapping and a WARNING if it only affects mappings that are not approved; a warning marked `ignore` is neither. Property mismatch: `has_property` + `UNIT` is not in `quantity_source_unit_conversion.tsv`, so the property of the mapped concept does not agree with the unit. Shared property: a `TEST_NAME` with the same `has_property` maps to more than one `concept_id`, e.g. `leukosyytit` with `Number Concentration` maps to Leukocytes in Blood and in Urine; ignored rows are not checked.
 
 How the 5 tables combine:
 
@@ -326,6 +324,24 @@ How the 5 tables combine:
 4. `conceptid_target_unit.tsv` is joined on `concept_id` to add `HARMONISED_UNIT`.
 5. `quantity_source_unit_conversion.tsv` is joined on `has_property` + `UNIT` + `HARMONISED_UNIT` to add only `CONVERSION`. A rule with an empty `ONLY_TO_OMOP_CONCEPTS` applies to any concept; a rule with concept ids applies only to those.
 6. `HARMONISED_UNIT` is set to empty where no `CONVERSION` was found, since it cannot be applied.
+
+
+**testname_unit_property_missmatch_warning.tsv** and **testname_property_shared_warning.tsv** — the warnings of the harmonization table, written by the step `1_BuildHarmonizationTable` next to `harmonizationTable.tsv`. The `ignore` flags are edited by hand. The tables are only edited when a change appears: a new warning is added, a warning that is gone is removed, and one already there is left as it is (a changed `message` is a new warning, with `ignore` `FALSE`). `harmonizationTable.tsv` is sorted by `TEST_NAME` + `PREPROCESED_UNIT` + `UNIT`, and the two warning tables by their keys.
+
+- `testname_unit_property_missmatch_warning.tsv`: one row per `TEST_NAME` + `UNIT` whose `has_property` + `UNIT` is not in `quantity_source_unit_conversion.tsv`. Joins to the harmonization table on `TEST_NAME` + `UNIT`.
+- `testname_property_shared_warning.tsv`: one row per `TEST_NAME` + `has_property` that maps to more than one `concept_id`. Joins to the harmonization table on `TEST_NAME` + `has_property`.
+
+| Column | Type | Description |
+|---|---|---|
+| **TEST_NAME** | Character | Key of both tables |
+| **UNIT** / has_property | Character | Key of the first / of the second table |
+| message | Character | The detail of the warning |
+| ignore | Logical | `TRUE` to accept the warning, else `FALSE` |
+
+**Validations**
+
+- `TEST_NAME`, `message` and `ignore` have a value.
+- `TEST_NAME` + `UNIT` (first table) and `TEST_NAME` + `has_property` (second table) are unique.
 
 ---
 
@@ -343,10 +359,10 @@ How the 5 tables combine:
 
 ## Harmonized summary data
 
-`HarmonisedSummaryData`, produced by `harmonize` and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + the unit (**UNIT** in the summary data, **PREPROCESED_UNIT** in the harmonization table).
+`HarmonisedSummaryData`, produced by `harmonize` (the step `2_HarmonizeKantaSummaryData`, which writes `harmonizedKantaSummaryData.tsv`) and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + **UNIT**, the unit after the fix.
 
 | Column | Type | Description |
 |---|---|---|
 | All columns of `KantaSummaryData` |  | Including **TEST_NAME**, **UNIT** and **decile_value** |
-| All columns of the harmonization table |  | `PREPROCESED_UNIT`, `unit_fix_reasoning`, `concept_id`, the concept attributes, the LOINC Group, `HARMONISED_UNIT`, `CONVERSION` |
-| **decile_value_harmonized** | Numeric | `decile_value` times `CONVERSION`, in `HARMONISED_UNIT` |
+| The columns of the harmonization table, except `PREPROCESED_UNIT` and `unit_fix_reasoning` |  | `concept_id`, the concept attributes, the LOINC Groups, `HARMONISED_UNIT`, `CONVERSION`, … |
+| **decile_value_harmonised** | Numeric | `decile_value` with `CONVERSION` applied (a factor or a formula in `X`), in `HARMONISED_UNIT`. Empty without a `CONVERSION` |
