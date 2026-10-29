@@ -31,7 +31,7 @@ harmonizationTable <- readr::read_tsv(
     unit_fix_reasoning = readr::col_character(),
     concept_id = readr::col_integer(),
     ignore_mapping_reason = readr::col_character(),
-    APPROVED = readr::col_logical(),
+    mapping_status = readr::col_character(),
     concept_code = readr::col_character(),
     concept_name = readr::col_character(),
     vocabulary_id = readr::col_character(),
@@ -46,7 +46,8 @@ harmonizationTable <- readr::read_tsv(
     group_concept_code = readr::col_character(),
     group_concept_name = readr::col_character(),
     HARMONISED_UNIT = readr::col_character(),
-    CONVERSION = readr::col_character()
+    CONVERSION = readr::col_character(),
+    mapping_warning_messages = readr::col_character()
   ),
   na = ""
 )
@@ -79,13 +80,14 @@ ParallelLogger::logInfo(
 percent <- function(n, total) paste0(formatC(100 * n / total, format = "f", digits = 1), "%")
 count <- function(n) format(n, big.mark = ",", trim = TRUE)
 
-# Every row is a TEST_NAME + PREPROCESED_UNIT pair. A row with an ignore_mapping_reason is
-# ignored, whatever its APPROVED; the rest are approved or not approved.
+# Every row is a TEST_NAME + PREPROCESED_UNIT pair. mapping_status IGNORE is ignored; APPROVED
+# and ERROR (an approved mapping with a warning that is not ignored) are approved; NOT-APPROVED
+# is not approved.
 harmonizationTable <- harmonizationTable |>
   dplyr::mutate(
     status = dplyr::case_when(
-      !is.na(ignore_mapping_reason) ~ "ignored",
-      APPROVED ~ "approved",
+      mapping_status == "IGNORE" ~ "ignored",
+      mapping_status %in% c("APPROVED", "ERROR") ~ "approved",
       TRUE ~ "not approved"
     )
   )
@@ -152,7 +154,7 @@ md <- c(
   "",
   "## Mapping status",
   "",
-  "A row with an `ignore_mapping_reason` is ignored; otherwise it is approved or not approved by `APPROVED`. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.",
+  "A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APPROVED` or `ERROR` in `mapping_status`) or not approved. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.",
   "",
   mdTable(
     c("status", "n", "%", "n with warning", "n with error"),

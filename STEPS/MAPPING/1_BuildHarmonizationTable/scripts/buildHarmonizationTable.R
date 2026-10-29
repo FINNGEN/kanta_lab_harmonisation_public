@@ -209,6 +209,45 @@ ParallelLogger::logWarn(
   nrow(propertyShared), " TEST_NAME + has_property shared by several concept_ids (", sum(propertyShared$ignore), " ignored)"
 )
 
+# 7. mapping_status, the first column, replaces APPROVED:
+#    IGNORE if there is an ignore_mapping_reason; ERROR if the mapping is APPROVED and has a
+#    warning that is not marked `ignore` (in either warning table); APPROVED if it is
+#    APPROVED; NOT-APPROVED otherwise.
+#    mapping_warning_messages, the last column, has every message of the warning tables that
+#    joins to the row (ignored or not), each starting with its type (WrongProperty: for the
+#    property mismatch, SharedProperty: for the shared property), separated by " | ".
+result <- result |>
+  dplyr::left_join(
+    propertyMismatch |>
+      dplyr::transmute(TEST_NAME, UNIT, mismatch = paste0("WrongProperty: ", message), mismatchIgnore = ignore),
+    by = c("TEST_NAME", "UNIT"), relationship = "many-to-one"
+  ) |>
+  dplyr::left_join(
+    propertyShared |>
+      dplyr::transmute(TEST_NAME, has_property, shared = paste0("SharedProperty: ", message), sharedIgnore = ignore),
+    by = c("TEST_NAME", "has_property"), relationship = "many-to-one"
+  ) |>
+  dplyr::mutate(
+    hasWarning = (!is.na(mismatch) & !mismatchIgnore) | (!is.na(shared) & !sharedIgnore),
+    mapping_warning_messages = dplyr::case_when(
+      !is.na(mismatch) & !is.na(shared) ~ paste(mismatch, shared, sep = " | "),
+      !is.na(mismatch) ~ mismatch,
+      TRUE ~ shared
+    ),
+    mapping_status = dplyr::case_when(
+      !is.na(ignore_mapping_reason) ~ "IGNORE",
+      APPROVED %in% TRUE & hasWarning ~ "ERROR",
+      APPROVED %in% TRUE ~ "APPROVED",
+      TRUE ~ "NOT-APPROVED"
+    )
+  ) |>
+  dplyr::select(-APPROVED, -mismatch, -mismatchIgnore, -shared, -sharedIgnore, -hasWarning) |>
+  dplyr::relocate(mapping_status) |>
+  dplyr::relocate(mapping_warning_messages, .after = dplyr::last_col())
+ParallelLogger::logInfo(
+  paste(names(table(result$mapping_status)), table(result$mapping_status), collapse = ", "), " (mapping_status)"
+)
+
 nPairs <- nrow(dplyr::distinct(result, TEST_NAME, PREPROCESED_UNIT, UNIT))
 ParallelLogger::logInfo(nPairs, " TEST_NAME/PREPROCESED_UNIT/UNIT pairs in ", nrow(result), " rows")
 ParallelLogger::logInfo(

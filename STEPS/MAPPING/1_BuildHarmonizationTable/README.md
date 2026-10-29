@@ -29,18 +29,19 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
 
 | Column | Type | Description | Comes from |
 |---|---|---|---|
+| **mapping_status** | Character | First column. `IGNORE` if there is an `ignore_mapping_reason`; `ERROR` if the mapping is `APPROVED` and has a warning not marked `ignore` (in either warning table); `APPROVED` if `APPROVED` is `TRUE`; `NOT-APPROVED` if it is `FALSE` | `testname_unit_to_conceptid.tsv` and the warning tables |
 | **TEST_NAME** | Character | Source lab test name (join key) | `testname_unit_to_conceptid.tsv` |
 | PREPROCESED_UNIT | Character | Unit as it arrives after preprocessing. The `UNIT` when the pair is not in `unit_fix.tsv` | `unit_fix.tsv` |
 | **UNIT** | Character | Unit after the fix (join key). Empty for qualitative tests | `testname_unit_to_conceptid.tsv` |
 | unit_fix_reasoning | Character | Why the unit was fixed | `unit_fix.tsv` |
 | concept_id | Integer | Target OMOP measurement `concept_id` (`0` when unmapped) | `testname_unit_to_conceptid.tsv` |
 | ignore_mapping_reason | Character | Why the test is not mapped | `testname_unit_to_conceptid.tsv` |
-| APPROVED | Logical | `TRUE` if the mapping was approved | `testname_unit_to_conceptid.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel |  | The concept itself | `measurement_concept_attributes.tsv` |
 | has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect | Character | The 6 LOINC axes | `measurement_concept_attributes.tsv` |
 | group_concept_id, group_concept_code, group_concept_name | Character | LOINC Groups the concept belongs to, joined with `;` (same order in the three columns) | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to. Empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
+| mapping_warning_messages | Character | Last column. Every message of the two warning tables that joins to the row (ignored or not), each starting with its type, `WrongProperty:` (property mismatch) or `SharedProperty:` (shared property), separated by ` \| `. Empty when there is none | the warning tables |
 
 - `testname_unit_property_missmatch_warning.tsv` — one row per `TEST_NAME` + `UNIT`
   whose `has_property` + `UNIT` is not in `quantity_source_unit_conversion.tsv`: the
@@ -77,7 +78,7 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
   approved rows how many distinct `concept_id`s, how many rows have a group (`n`,
   `%`), how many distinct groups, and how many rows have a conversion (`n`, `%`). A
   row is a `TEST_NAME` + `PREPROCESED_UNIT` pair; a row with an
-  `ignore_mapping_reason` is ignored, otherwise `APPROVED` decides.
+  `ignore_mapping_reason` is ignored, otherwise `mapping_status` decides (`APPROVED` and `ERROR` are approved).
 - `log.txt` — run log.
 
 A concept can be in several LOINC Groups; they are joined with `;` into one value, so the Groups add no rows. A pair has more than

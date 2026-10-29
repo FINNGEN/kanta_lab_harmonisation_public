@@ -325,6 +325,21 @@ record(
   df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "concept_id")
 )
 record(
+  "harmonizationTable.tsv", "mapping_status is IGNORE, ERROR, APPROVED or NOT-APPROVED",
+  bad = !(harmonizationTable$mapping_status %in% c("IGNORE", "ERROR", "APPROVED", "NOT-APPROVED")),
+  df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
+)
+record(
+  "harmonizationTable.tsv", "mapping_status is IGNORE if and only if there is an ignore_mapping_reason",
+  bad = (harmonizationTable$mapping_status %in% "IGNORE") != !is.na(harmonizationTable$ignore_mapping_reason),
+  df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
+)
+record(
+  "harmonizationTable.tsv", "a row with mapping_status ERROR has mapping_warning_messages",
+  bad = harmonizationTable$mapping_status %in% "ERROR" & is.na(harmonizationTable$mapping_warning_messages),
+  df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
+)
+record(
   "harmonizationTable.tsv", "a row with a HARMONISED_UNIT has a CONVERSION",
   bad = !is.na(harmonizationTable$HARMONISED_UNIT) & is.na(harmonizationTable$CONVERSION),
   df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
@@ -353,7 +368,7 @@ recordWarnings <- function(table, test, notIgnored, level, examples) {
     message = if (n > 0) paste0("e.g. ", paste(utils::head(examples, 3), collapse = "; ")) else ""
   )
 }
-approvedRow <- harmonizationTable$APPROVED %in% TRUE & is.na(harmonizationTable$ignore_mapping_reason)
+approvedRow <- harmonizationTable$mapping_status %in% c("APPROVED", "ERROR")
 withApproved <- harmonizationTable |> dplyr::mutate(approvedRow = approvedRow)
 
 # A has_property + UNIT without a rule in quantity_source_unit_conversion.tsv means the
