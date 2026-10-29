@@ -30,6 +30,7 @@ Unchanged DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmat
 Read 8 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
 Unchanged DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv (8 rows)
 247 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
+APPROVED 7136, IGNORE 237, NOT-APPROVED 387 (mapping_status)
 7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
 231 pairs whose concept_id is not in measurement_concept_attributes
 3081 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
@@ -68,7 +69,7 @@ Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
 Read 247 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
 Read 8 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
-52 tests: 49 SUCCESS, 3 WARNING, 0 ERROR
+55 tests: 52 SUCCESS, 3 WARNING, 0 ERROR
 unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
 harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows, e.g. -calpro[mg/l]; -ebvnh[iu/ml]; -tpoab[%]
 harmonizationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id, for a mapping that is not APPROVED: 1 rows, e.g. a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) | 3047387 (IgG [Units/volume] in Serum)

@@ -4,7 +4,7 @@ Summary of `harmonizationTable.tsv`, one row per `TEST_NAME` + `PREPROCESED_UNIT
 
 ## Mapping status
 
-A row with an `ignore_mapping_reason` is ignored; otherwise it is approved or not approved by `APPROVED`. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.
+A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APPROVED` or `ERROR` in `mapping_status`) or not approved. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.
 
 | status | n | % | n with warning | n with error |
 | --- | ---: | ---: | ---: | ---: |

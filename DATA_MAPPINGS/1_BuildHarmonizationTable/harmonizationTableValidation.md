@@ -13,10 +13,10 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | flowsheet_loinc_groups.tsv | 4 | 0 | 0 |
 | conceptid_target_unit.tsv | 5 | 0 | 0 |
 | quantity_source_unit_conversion.tsv | 8 | 0 | 0 |
-| harmonizationTable.tsv | 8 | 2 | 0 |
+| harmonizationTable.tsv | 11 | 2 | 0 |
 | testname_unit_property_missmatch_warning.tsv | 3 | 0 | 0 |
 | testname_property_shared_warning.tsv | 3 | 0 | 0 |
-| ALL | 49 | 3 | 0 |
+| ALL | 52 | 3 | 0 |
 
 ## Tests
 
@@ -63,6 +63,9 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | harmonizationTable.tsv | SUCCESS | has as many rows as testname_unit_to_conceptid.tsv joined with unit_fix.tsv |  |  |
 | harmonizationTable.tsv | SUCCESS | every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept |  |  |
 | harmonizationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignore_mapping_reason |  |  |
+| harmonizationTable.tsv | SUCCESS | mapping_status is IGNORE, ERROR, APPROVED or NOT-APPROVED |  |  |
+| harmonizationTable.tsv | SUCCESS | mapping_status is IGNORE if and only if there is an ignore_mapping_reason |  |  |
+| harmonizationTable.tsv | SUCCESS | a row with mapping_status ERROR has mapping_warning_messages |  |  |
 | harmonizationTable.tsv | SUCCESS | a row with a HARMONISED_UNIT has a CONVERSION |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | columns match their declared types |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME, message, ignore must have a value |  |  |
