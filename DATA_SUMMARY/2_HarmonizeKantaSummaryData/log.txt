@@ -15,7 +15,7 @@ Configuration:
   outDir = DATA_SUMMARY/2_HarmonizeKantaSummaryData
 Read 69462 rows from DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
-26798 TEST_NAME + UNIT pairs, 20501 not in the harmonization table
-47997 decile values, 22086 harmonised (25911 without a CONVERSION)
+26798 TEST_NAME + PREPROCESED_UNIT pairs, 20546 not in the harmonization table
+47997 decile values, 21690 harmonised (26307 without a CONVERSION)
 Wrote 69462 rows to DATA_SUMMARY/2_HarmonizeKantaSummaryData/harmonizedKantaSummaryData.tsv
 Wrote DATA_SUMMARY/2_HarmonizeKantaSummaryData/harmonizedKantaSummaryData.tsv
