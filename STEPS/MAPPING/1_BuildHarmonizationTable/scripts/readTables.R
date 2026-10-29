@@ -42,7 +42,13 @@ tableSpecs <- list(
     vocabulary_id = chr(), is_panel = lgl(), has_component = chr(), has_property = chr(),
     has_method = chr(), has_scale_type = chr(), has_system = chr(), has_time_aspect = chr(),
     group_concept_id = chr(), group_concept_code = chr(), group_concept_name = chr(),
-    HARMONISED_UNIT = chr(), CONVERSION = chr(), Message = chr()
+    HARMONISED_UNIT = chr(), CONVERSION = chr()
+  ),
+  propertyMismatchWarning = readr::cols(
+    TEST_NAME = chr(), UNIT = chr(), message = chr(), ignore = lgl()
+  ),
+  propertySharedWarning = readr::cols(
+    TEST_NAME = chr(), has_property = chr(), message = chr(), ignore = lgl()
   )
 )
 

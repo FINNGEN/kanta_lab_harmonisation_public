@@ -19,7 +19,9 @@ loincGroupMembershipFile <- args[5]
 conceptidTargetUnitFile <- args[6]
 quantitySourceUnitConversionFile <- args[7]
 harmonizationTableFile <- args[8]
-outDir <- args[9]
+propertyMismatchWarningFile <- args[9]
+propertySharedWarningFile <- args[10]
+outDir <- args[11]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -31,6 +33,8 @@ ParallelLogger::logInfo("  loincGroupMembershipFile = ", loincGroupMembershipFil
 ParallelLogger::logInfo("  conceptidTargetUnitFile = ", conceptidTargetUnitFile)
 ParallelLogger::logInfo("  quantitySourceUnitConversionFile = ", quantitySourceUnitConversionFile)
 ParallelLogger::logInfo("  harmonizationTableFile = ", harmonizationTableFile)
+ParallelLogger::logInfo("  propertyMismatchWarningFile = ", propertyMismatchWarningFile)
+ParallelLogger::logInfo("  propertySharedWarningFile = ", propertySharedWarningFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -44,6 +48,8 @@ loincGroupMembership <- readTable(loincGroupMembershipFile, tableSpecs$loincGrou
 conceptidTargetUnit <- readTable(conceptidTargetUnitFile, tableSpecs$conceptidTargetUnit)
 quantitySourceUnitConversion <- readTable(quantitySourceUnitConversionFile, tableSpecs$quantitySourceUnitConversion)
 harmonizationTable <- readTable(harmonizationTableFile, tableSpecs$harmonizationTable)
+propertyMismatchWarning <- readTable(propertyMismatchWarningFile, tableSpecs$propertyMismatchWarning)
+propertySharedWarning <- readTable(propertySharedWarningFile, tableSpecs$propertySharedWarning)
 
 #
 # --- Action -------------------------------------------------------------
@@ -323,52 +329,68 @@ record(
   bad = !is.na(harmonizationTable$HARMONISED_UNIT) & is.na(harmonizationTable$CONVERSION),
   df = harmonizationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
 )
+# The warning tables: one row per warning, with a message and an `ignore` flag set to TRUE
+# by hand to accept the warning.
+checkTypes("testname_unit_property_missmatch_warning.tsv", propertyMismatchWarning)
+checkHaveValue("testname_unit_property_missmatch_warning.tsv", propertyMismatchWarning, c("TEST_NAME", "message", "ignore"))
+checkUnique("testname_unit_property_missmatch_warning.tsv", propertyMismatchWarning, c("TEST_NAME", "UNIT"))
+checkTypes("testname_property_shared_warning.tsv", propertySharedWarning)
+checkHaveValue("testname_property_shared_warning.tsv", propertySharedWarning, c("TEST_NAME", "message", "ignore"))
+checkUnique("testname_property_shared_warning.tsv", propertySharedWarning, c("TEST_NAME", "has_property"))
+
+# A warning that is not marked `ignore` fails: an ERROR if it affects an APPROVED mapping, a
+# WARNING if it only affects mappings that are not approved. A warning marked `ignore` is
+# neither. A warning is joined to harmonizationTable.tsv on its key and is APPROVED if any
+# row it joins to is approved (not ignored by an ignore_mapping_reason). `n rows` is the
+# number of warnings (rows of the warning table) of the test.
+recordWarnings <- function(table, test, notIgnored, level, examples) {
+  n <- nrow(notIgnored)
+  results[[length(results) + 1]] <<- tibble::tibble(
+    table = table,
+    result = ifelse(n == 0, "SUCCESS", level),
+    test = test,
+    n_rows = if (n > 0) format(n, big.mark = ",", trim = TRUE) else "",
+    message = if (n > 0) paste0("e.g. ", paste(utils::head(examples, 3), collapse = "; ")) else ""
+  )
+}
+approvedRow <- harmonizationTable$APPROVED %in% TRUE & is.na(harmonizationTable$ignore_mapping_reason)
+withApproved <- harmonizationTable |> dplyr::mutate(approvedRow = approvedRow)
+
 # A has_property + UNIT without a rule in quantity_source_unit_conversion.tsv means the
-# property of the mapped concept does not agree with the unit. The Message column of the
-# table (written by buildHarmonizationTable.R) says it: an ERROR if the mapping is
-# APPROVED, a WARNING if not. Rows without a has_property or a UNIT are not checked.
-propertyUnitMessage <- "are not in quantity_source_unit_conversion.tsv"
+# property of the mapped concept does not agree with the unit. Joined on TEST_NAME + UNIT.
+approvedByPair <- withApproved |>
+  dplyr::summarise(approved = any(approvedRow), .by = c(TEST_NAME, UNIT))
+mismatch <- propertyMismatchWarning |>
+  dplyr::filter(!ignore) |>
+  dplyr::inner_join(approvedByPair, by = c("TEST_NAME", "UNIT"), relationship = "one-to-one")
 propertyUnitTest <- "has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit)"
 for (level in c("ERROR", "WARNING")) {
-  record(
+  inLevel <- mismatch[mismatch$approved == (level == "ERROR"), ]
+  recordWarnings(
     "harmonizationTable.tsv",
     paste0(propertyUnitTest, if (level == "ERROR") ", for an APPROVED mapping" else ", for a mapping that is not APPROVED"),
-    bad = startsWith(tidyr::replace_na(harmonizationTable$Message, ""), level) &
-      grepl(propertyUnitMessage, tidyr::replace_na(harmonizationTable$Message, ""), fixed = TRUE),
-    df = harmonizationTable, what = c("TEST_NAME", "UNIT", "has_property"),
-    extra = "property does not agree with the unit", level = level
+    inLevel, level = level,
+    examples = formatExamples(inLevel, c("TEST_NAME", "UNIT"))
   )
 }
 
-# A TEST_NAME with the same has_property (the old omop_quantity) should map to one concept.
-# Several concept_ids (e.g. the same analyte in blood and in urine) are a WARNING to review.
-# Ignored rows and rows without a concept are not checked.
-mapped <- harmonizationTable |>
-  dplyr::filter(is.na(ignore_mapping_reason), !is.na(concept_name)) |>
-  dplyr::distinct(TEST_NAME, has_property, concept_id, concept_name)
-severalConcepts <- mapped |>
-  dplyr::arrange(TEST_NAME, has_property, concept_id) |>
-  dplyr::summarise(
-    n_concepts = dplyr::n(),
-    concepts = paste0(concept_id, " (", concept_name, ")", collapse = " | "),
-    .by = c(TEST_NAME, has_property)
-  ) |>
-  dplyr::filter(n_concepts > 1)
-severalConceptsText <- paste0(
-  "testName '", severalConcepts$TEST_NAME, "' with omop_quantity '",
-  tidyr::replace_na(severalConcepts$has_property, ""), "' maps to different concept ids: ",
-  severalConcepts$concepts
-)
-record(
-  "harmonizationTable.tsv", "a TEST_NAME with the same has_property maps to one concept_id",
-  bad = nrow(severalConcepts) > 0,
-  level = "WARNING",
-  n = nrow(severalConcepts),
-  text = paste0(
-    "TEST_NAME + has_property map to different concept ids, e.g. ",
-    paste(utils::head(severalConceptsText, 2), collapse = "; ")
+# A TEST_NAME with the same has_property should map to one concept_id. Joined on
+# TEST_NAME + has_property.
+approvedByProperty <- withApproved |>
+  dplyr::summarise(approved = any(approvedRow), .by = c(TEST_NAME, has_property))
+shared <- propertySharedWarning |>
+  dplyr::filter(!ignore) |>
+  dplyr::inner_join(approvedByProperty, by = c("TEST_NAME", "has_property"), relationship = "one-to-one")
+sharedTest <- "a TEST_NAME with the same has_property maps to one concept_id"
+for (level in c("ERROR", "WARNING")) {
+  inLevel <- shared[shared$approved == (level == "ERROR"), ]
+  recordWarnings(
+    "harmonizationTable.tsv",
+    paste0(sharedTest, if (level == "ERROR") ", for an APPROVED mapping" else ", for a mapping that is not APPROVED"),
+    inLevel, level = level,
+    examples = inLevel$message
   )
-)
+}
 
 results <- dplyr::bind_rows(results)
 nError <- sum(results$result == "ERROR")

@@ -41,16 +41,39 @@ In `DATA_MAPPINGS/1_BuildHarmonizationTable/`:
 | group_concept_id, group_concept_code, group_concept_name | Character | LOINC Groups the concept belongs to, joined with `;` (same order in the three columns) | `flowsheet_loinc_groups.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to. Empty when there is no `CONVERSION` | `conceptid_target_unit.tsv` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `quantity_source_unit_conversion.tsv` |
-| Message | Character | Explains the error or warning of the row, starting with `ERROR:` or `WARNING:`; empty if none | Built by the step |
+
+- `testname_unit_property_missmatch_warning.tsv` — one row per `TEST_NAME` + `UNIT`
+  whose `has_property` + `UNIT` is not in `quantity_source_unit_conversion.tsv`: the
+  property of the concept does not agree with the unit. Joins to
+  `harmonizationTable.tsv` on `TEST_NAME` + `UNIT`.
+- `testname_property_shared_warning.tsv` — one row per `TEST_NAME` + `has_property`
+  where the `TEST_NAME` maps to more than one `concept_id` with that `has_property`
+  (e.g. Leukocytes in Blood and in Urine); the message lists the ids. Ignored rows
+  are not checked. Joins to `harmonizationTable.tsv` on `TEST_NAME` + `has_property`.
+
+| Column | Type | Description |
+|---|---|---|
+| TEST_NAME, UNIT (first table) or TEST_NAME, has_property (second) | Character | The key of the warning |
+| message | Character | The detail of the warning |
+| ignore | Logical | `FALSE`, or `TRUE` when the warning was accepted by hand |
+
+  The warnings are not columns of `harmonizationTable.tsv`. The tables are sorted by
+  `TEST_NAME` + `PREPROCESED_UNIT` + `UNIT` (`harmonizationTable.tsv`), `TEST_NAME` +
+  `UNIT` (the mismatch table) and `TEST_NAME` + `has_property` (the shared table). The
+  warning tables are only edited when a change appears: a warning that is not in the file
+  yet is added (`ignore` `FALSE`), a warning that is gone is removed, and a warning already
+  in the file is left as it is, with its hand-set `ignore`. A warning is its key plus its
+  `message`, so a changed message is a new warning. If nothing changed the file is not
+  written.
 
 - `harmonizationTableValidation.md` — the validation report: a validation
   summary table (`table`, `SUCCESS`, `WARNING`, `ERROR`, with a row per table and
   an `ALL` row), then a table with a row per test and the columns `table` (an input or output table),
-  `result` (`SUCCESS`, `WARNING` or `ERROR`), `test` (a short description), `n rows` (how many rows failed) and
-  `message` (empty on success; on failure, the detail with a few examples).
+  `result` (`SUCCESS`, `WARNING` or `ERROR`), `test` (a short description), `n rows` (how many rows failed; for the warning
+  tables, how many warnings not marked `ignore`) and `message` (empty on success; on failure, the detail with a few examples).
 - `harmonizationTable.md` — a summary of `harmonizationTable.tsv`. A table of the
   mapping status (approved / not approved / ignored, with `n` and `%` of the rows,
-  and how many rows of each have a WARNING or an ERROR `Message`), and for the
+  and how many rows of each have a WARNING or an ERROR from the warning tables that are not marked `ignore`), and for the
   approved rows how many distinct `concept_id`s, how many rows have a group (`n`,
   `%`), how many distinct groups, and how many rows have a conversion (`n`, `%`). A
   row is a `TEST_NAME` + `PREPROCESED_UNIT` pair; a row with an
@@ -113,7 +136,8 @@ report and a warning in the log. Tests, per table:
 | `flowsheet_loinc_groups.tsv` | The four columns have a value; `concept_id` + `group_concept_id` are unique; `concept_id` is in `measurement_concept_attributes.tsv` |
 | `conceptid_target_unit.tsv` | `concept_id` and `HARMONISED_UNIT` have a value (no empty units); `HARMONISED_UNIT` is a valid unit; `concept_id` is unique and in `measurement_concept_attributes.tsv` |
 | `quantity_source_unit_conversion.tsv` | `has_property`, `UNIT`, `HARMONISED_UNIT` and `CONVERSION` have a value (no empty units); `UNIT` and `HARMONISED_UNIT` are valid units; `has_property` + `UNIT` + `HARMONISED_UNIT` + `ONLY_TO_OMOP_CONCEPTS` are unique; `CONVERSION` is a number or a formula in `X`; `has_property` is a property of the attributes; `ONLY_TO_OMOP_CONCEPTS` are concept ids of the attributes |
-| `harmonizationTable.tsv` | The table has as many rows as `testname_unit_to_conceptid.tsv` joined with `unit_fix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; a row with a `HARMONISED_UNIT` has a `CONVERSION`; `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv` (otherwise the property of the concept does not agree with the unit): an ERROR if the mapping is `APPROVED`, a WARNING if not; WARNING: a `TEST_NAME` with the same `has_property` maps to more than one `concept_id` (ignored rows are not checked) |
+| `harmonizationTable.tsv` | The table has as many rows as `testname_unit_to_conceptid.tsv` joined with `unit_fix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of the base table is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; a row with a `HARMONISED_UNIT` has a `CONVERSION`; each warning table is joined to `harmonizationTable.tsv` and a warning that is not marked `ignore` fails, as an ERROR if it affects an `APPROVED` mapping and a WARNING if it only affects mappings that are not approved (a warning marked `ignore` is neither): `has_property` + `UNIT` is in `quantity_source_unit_conversion.tsv`; a `TEST_NAME` with the same `has_property` maps to one `concept_id` |
+| `testname_unit_property_missmatch_warning.tsv`, `testname_property_shared_warning.tsv` | The columns match their declared types; `TEST_NAME`, `message` and `ignore` have a value; the key (`TEST_NAME` + `UNIT`, or `TEST_NAME` + `has_property`) is unique |
 
 A valid unit is a unit in `UNITSfi.tsv`, or an empty one (a qualitative test),
 except in `conceptid_target_unit.tsv` and `quantity_source_unit_conversion.tsv`,

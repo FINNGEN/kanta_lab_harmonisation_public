@@ -123,27 +123,91 @@ result <- result |>
   ) |>
   dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT)
 
-# 6. Message: explains the error or warning of a row. A has_property + UNIT without a rule in
-#    quantity_source_unit_conversion.tsv means the property of the concept does not agree
-#    with the unit: an ERROR if the mapping is APPROVED, otherwise a WARNING.
-knownPropertyUnit <- paste(quantitySourceUnitConversion$has_property, quantitySourceUnitConversion$UNIT, sep = "\r")
-propertyUnitUnknown <- !is.na(result$has_property) & !is.na(result$UNIT) &
-  !(paste(result$has_property, result$UNIT, sep = "\r") %in% knownPropertyUnit)
-result <- result |>
-  dplyr::mutate(
-    Message = dplyr::if_else(
-      propertyUnitUnknown,
-      paste0(
-        dplyr::if_else(APPROVED, "ERROR", "WARNING"),
-        ": has_property '", has_property, "' and UNIT '", UNIT,
-        "' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit"
-      ),
-      NA_character_
+# 6. The warnings go to their own tables (written below), not into this table. Each has a
+#    message with the details and an `ignore` flag, set to TRUE by hand to accept the
+#    warning. They are only edited when a warning appears or goes away (syncWarnings).
+#    - testname_unit_property_missmatch_warning.tsv, one row per TEST_NAME + UNIT: a
+#      has_property + UNIT without a rule in quantity_source_unit_conversion.tsv, so the
+#      property of the concept does not agree with the unit.
+#    - testname_property_shared_warning.tsv, one row per TEST_NAME + has_property: the
+#      TEST_NAME maps to more than one concept_id with the same has_property (e.g. the
+#      same analyte in blood and in urine). Ignored rows and rows without a concept
+#      are not checked.
+# Brings a warning table up to date and writes it only if something changed: a warning that
+# is not in the file yet is added (ignore FALSE), a warning that is gone is removed, and a
+# warning already in the file is left as it is. A warning is the key plus its message, so a
+# changed message is a new warning (ignore FALSE again). Sorted by the key.
+syncWarnings <- function(warnings, file, spec, keys) {
+  warnings <- warnings |>
+    dplyr::mutate(ignore = FALSE) |>
+    dplyr::arrange(dplyr::across(dplyr::all_of(keys)))
+  previous <- if (file.exists(file)) readTable(file, spec) else NULL
+  if (!is.null(previous)) {
+    warnings <- warnings |>
+      dplyr::left_join(
+        previous |> dplyr::select(dplyr::all_of(keys), message, previous_ignore = ignore),
+        by = c(keys, "message")
+      ) |>
+      dplyr::mutate(ignore = dplyr::coalesce(previous_ignore, FALSE), previous_ignore = NULL)
+    nAdded <- nrow(dplyr::anti_join(warnings, previous, by = c(keys, "message")))
+    nRemoved <- nrow(dplyr::anti_join(previous, warnings, by = c(keys, "message")))
+  } else {
+    nAdded <- nrow(warnings)
+    nRemoved <- 0L
+  }
+  unchanged <- !is.null(previous) && identical(as.data.frame(warnings), as.data.frame(previous))
+  if (unchanged) {
+    ParallelLogger::logInfo("Unchanged ", file, " (", nrow(warnings), " rows)")
+  } else {
+    readr::write_tsv(warnings, file, na = "")
+    ParallelLogger::logInfo(
+      "Wrote ", nrow(warnings), " rows to ", file, " (", nAdded, " added, ", nRemoved, " removed)"
     )
-  )
-nMessageError <- sum(startsWith(result$Message, "ERROR"), na.rm = TRUE)
-nMessageWarning <- sum(startsWith(result$Message, "WARNING"), na.rm = TRUE)
-ParallelLogger::logWarn(nMessageError, " rows with an ERROR message, ", nMessageWarning, " rows with a WARNING message")
+  }
+  warnings
+}
+
+knownPropertyUnit <- paste(quantitySourceUnitConversion$has_property, quantitySourceUnitConversion$UNIT, sep = "\r")
+propertyMismatchFile <- file.path(outDir, "testname_unit_property_missmatch_warning.tsv")
+propertyMismatch <- result |>
+  dplyr::filter(
+    !is.na(has_property), !is.na(UNIT),
+    !(paste(has_property, UNIT, sep = "\r") %in% knownPropertyUnit)
+  ) |>
+  dplyr::distinct(TEST_NAME, UNIT, has_property) |>
+  dplyr::transmute(
+    TEST_NAME, UNIT,
+    message = paste0(
+      "has_property '", has_property, "' and UNIT '", UNIT,
+      "' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit"
+    )
+  ) |>
+  syncWarnings(propertyMismatchFile, tableSpecs$propertyMismatchWarning, c("TEST_NAME", "UNIT"))
+
+propertySharedFile <- file.path(outDir, "testname_property_shared_warning.tsv")
+propertyShared <- result |>
+  dplyr::filter(is.na(ignore_mapping_reason), !is.na(concept_name)) |>
+  dplyr::distinct(TEST_NAME, has_property, concept_id, concept_name) |>
+  dplyr::arrange(TEST_NAME, has_property, concept_id) |>
+  dplyr::summarise(
+    n_concepts = dplyr::n(),
+    concepts = paste0(concept_id, " (", concept_name, ")", collapse = " | "),
+    .by = c(TEST_NAME, has_property)
+  ) |>
+  dplyr::filter(n_concepts > 1) |>
+  dplyr::transmute(
+    TEST_NAME, has_property,
+    message = paste0(
+      "a TEST_NAME with the same has_property maps to one concept_id, but has_property '",
+      tidyr::replace_na(has_property, ""), "' maps to different concept ids: ", concepts
+    )
+  ) |>
+  syncWarnings(propertySharedFile, tableSpecs$propertySharedWarning, c("TEST_NAME", "has_property"))
+
+ParallelLogger::logWarn(
+  nrow(propertyMismatch), " TEST_NAME + UNIT with a property mismatch (", sum(propertyMismatch$ignore), " ignored), ",
+  nrow(propertyShared), " TEST_NAME + has_property shared by several concept_ids (", sum(propertyShared$ignore), " ignored)"
+)
 
 nPairs <- nrow(dplyr::distinct(result, TEST_NAME, PREPROCESED_UNIT, UNIT))
 ParallelLogger::logInfo(nPairs, " TEST_NAME/PREPROCESED_UNIT/UNIT pairs in ", nrow(result), " rows")
