@@ -25,7 +25,11 @@ Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 2 unit_fix rows have a TEST_NAME + UNIT that is not in testname_unit_to_conceptid
 179 general conversion rules, 2 concept-specific conversion rules
-0 rows with an ERROR message, 247 rows with a WARNING message
+Read 247 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
+Unchanged DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv (247 rows)
+Read 8 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
+Unchanged DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv (8 rows)
+247 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
 7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
 231 pairs whose concept_id is not in measurement_concept_attributes
 3081 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
@@ -51,6 +55,8 @@ Configuration:
   conceptidTargetUnitFile = DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
   quantitySourceUnitConversionFile = DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
   harmonizationTableFile = DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+  propertyMismatchWarningFile = DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
   outDir = DATA_MAPPINGS/1_BuildHarmonizationTable
 Read 79 rows from DATA_MAPPINGS/0_MappingTables/unit_fix.tsv
 Read 142 rows from DATA_MAPPINGS/0_MappingTables/UNITSfi.tsv
@@ -60,10 +66,12 @@ Read 9460 rows from DATA_MAPPINGS/0_GetMeasurementOmopData/flowsheet_loinc_group
 Read 974 rows from DATA_MAPPINGS/0_MappingTables/conceptid_target_unit.tsv
 Read 181 rows from DATA_MAPPINGS/0_MappingTables/quantity_source_unit_conversion.tsv
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
-45 tests: 42 SUCCESS, 3 WARNING, 0 ERROR
+Read 247 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
+Read 8 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
+52 tests: 49 SUCCESS, 3 WARNING, 0 ERROR
 unit_fix.tsv: TEST_NAME + UNIT is used downstream (it is in testname_unit_to_conceptid.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
-harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows, property does not agree with the unit, e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration
-harmonizationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id: 8 rows, TEST_NAME + has_property map to different concept ids, e.g. testName 'album' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma); testName 'albumiini' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) | 3024561 (Albumin [Mass/volume] in Serum or Plasma)
+harmonizationTable.tsv: has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 247 rows, e.g. -calpro[mg/l]; -ebvnh[iu/ml]; -tpoab[%]
+harmonizationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id, for a mapping that is not APPROVED: 1 rows, e.g. a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) | 3047387 (IgG [Units/volume] in Serum)
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 
 Attaching package: ‘dplyr’
@@ -78,10 +86,15 @@ The following objects are masked from ‘package:base’:
 
 Configuration:
   harmonizationTableFile = DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+  propertyMismatchWarningFile = DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
   outDir = DATA_MAPPINGS/1_BuildHarmonizationTable
 Read 7760 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+Read 247 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv and 8 rows from DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
 approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.tsv
+Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/testname_unit_property_missmatch_warning.tsv
+Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/testname_property_shared_warning.tsv
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTableValidation.md
 Wrote DATA_MAPPINGS/1_BuildHarmonizationTable/harmonizationTable.md

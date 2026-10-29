@@ -1,0 +1,248 @@
+TEST_NAME	UNIT	message	ignore
+-calpro	mg/l	has_property 'Mass Content' and UNIT 'mg/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+-ebvnh	iu/ml	has_property 'Number Concentration' and UNIT 'iu/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+-tpoab	%	has_property 'Arbitrary Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-co	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-co	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-co	mmol/l	has_property 'Mass fraction' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-co	°c	has_property 'Mass fraction' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-met	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-met	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-met	mmol/l	has_property 'Mass fraction' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hb-met	°c	has_property 'Mass fraction' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2	mmol/l	has_property 'Mass fraction' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2	°c	has_property 'Mass fraction' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2sat	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2sat	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-hbo2sat	°c	has_property 'Mass fraction' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-pco2	°c	has_property 'Partial pressure' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-ph	%	has_property 'Log molar concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-ph	g/l	has_property 'Log molar concentration' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-ph	kpa	has_property 'Log molar concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-ph	°c	has_property 'Log molar concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-po2	g/l	has_property 'Partial pressure' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-thb	%	has_property 'Mass Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-thb	kpa	has_property 'Mass Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ab-thb	°c	has_property 'Mass Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ap-k	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ap-laktaat	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ap-laktaat	°c	has_property 'Substance Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+ap-na	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+as-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-diffi	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-diffi	e9/l	has_property '-' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-eryt	g/l	has_property 'Number Concentration' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hb	e9/l	has_property 'Mass Concentration' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hb-a1c	mmol	has_property 'Mass fraction' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hb-a1c	mmol/l	has_property 'Mass fraction' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hba1c	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hba1c	mmol	has_property 'Mass fraction' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hba1c	mmol/l	has_property 'Mass fraction' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hhv6nh	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hkr	e9/l	has_property 'Volume Fraction' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hkr	fl	has_property 'Volume Fraction' and UNIT 'fl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hkr	pg	has_property 'Volume Fraction' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-hladq2	%	has_property 'Presence or Threshold' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-la	mm	has_property 'Velocity (distance/time)' and UNIT 'mm' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-la	mmol	has_property 'Velocity (distance/time)' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-leuk	g/l	has_property 'Number Concentration' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-leuk-vt	ng/l	has_property 'Number Concentration' and UNIT 'ng/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	e12/l	has_property '-' and UNIT 'e12/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	e9/l	has_property '-' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	fl	has_property '-' and UNIT 'fl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	g/l	has_property '-' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	pg	has_property '-' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk	ph	has_property '-' and UNIT 'ph' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	%g	has_property '-' and UNIT '%g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	%l	has_property '-' and UNIT '%l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	%m	has_property '-' and UNIT '%m' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	e12/l	has_property '-' and UNIT 'e12/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	e9/l	has_property '-' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	fl	has_property '-' and UNIT 'fl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	g/l	has_property '-' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+t	pg	has_property '-' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+tkd	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+tkd	e9/l	has_property '-' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-pvk+tkd	pg	has_property '-' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-trom	g/l	has_property 'Number Concentration' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-trom-s	e9/l	has_property '-' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+b-vakuly	%	has_property 'Presence or Threshold' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+cb-he-tase,cb-pco2	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+cb-he-tase,cb-po2	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-5hiaa	umol	has_property 'Substance Concentration' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-a1miglo	mg	has_property 'Mass Rate' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-alb-mi	mg	has_property 'Mass Concentration' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-aldos	nmol	has_property 'Substance Rate' and UNIT 'nmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-amyl	u	has_property 'Catalytic Concentration' and UNIT 'u' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-ca(laskennallinen)	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-cl	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-cu	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-dala	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-hva	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-iglck	g	has_property 'Mass Rate' and UNIT 'g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-iglck	mg	has_property 'Mass Rate' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-iglcl	g	has_property 'Mass Concentration' and UNIT 'g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-iglcl	mg	has_property 'Mass Concentration' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-immunoglobuliini,kevyetketjut,lambda	g	has_property 'Mass Rate' and UNIT 'g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-k	mmol	has_property 'Substance Concentration' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-kalium	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-kalsium	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-korsn-v	nmol	has_property 'Substance Rate' and UNIT 'nmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-krea	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-metnef	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-mg	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-moma	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-normet	nmol	has_property 'Substance Rate' and UNIT 'nmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-normet	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-pbg	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-pi	mmol	has_property 'Mass or Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-sitraat	mg	has_property 'Substance Rate' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-sitraat	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-uraat	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-uraat	umol	has_property 'Substance Rate' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+du-urea	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-fragm	%	has_property 'Presence or Threshold' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mch	e9/l	has_property 'Entitic mass' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mch	fl	has_property 'Entitic mass' and UNIT 'fl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mch	g/l	has_property 'Entitic mass' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mchc	e12/l	has_property 'Entitic Mass/volume' and UNIT 'e12/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mchc	e9/l	has_property 'Entitic Mass/volume' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mchc	pg	has_property 'Entitic Mass/volume' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mcv	%	has_property 'Entitic mean volume' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mcv	e9/l	has_property 'Entitic mean volume' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-mcv	pg	has_property 'Entitic mean volume' and UNIT 'pg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+e-rdw,osatutkimus(e-rdw)	mmol/l	has_property 'DistWidth' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+f-hb-o	ug/g	has_property 'Mass fraction' and UNIT 'ug/g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+f-hhb	ug/g	has_property 'Mass fraction' and UNIT 'ug/g' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+fp-ca-ion.	°c	has_property 'Substance Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+fp-gluk-2h	mmol/mol	has_property 'Substance Concentration' and UNIT 'mmol/mol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+fp-kol	mmol	has_property 'Substance Concentration' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+fs-transf	%	has_property 'Mass Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+kalsium,ionisoitunutph	ph	has_property 'Substance Concentration' and UNIT 'ph' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-ba42/40	ng/l	has_property 'Mass Ratio' and UNIT 'ng/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-borrabg	u	has_property 'Arbitrary Concentration' and UNIT 'u' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-borrabm	u	has_property 'Arbitrary Concentration' and UNIT 'u' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-cmvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-evirabg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-hhv6abg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-hsv1abg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-hsv2abg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-hsvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-igg.	mg/l	has_property 'Impression/interpretation of study' and UNIT 'mg/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-immunoglobuliinig,li-ig-oc:nosatutkimus,huslab	mg/l	has_property 'Presence or Threshold' and UNIT 'mg/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-infaabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-infbabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-mypnabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-tbeabg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+li-vzvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-afos	umol/l	has_property 'Catalytic Concentration' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-alb	%	has_property 'Mass Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-amyl	umol/l	has_property 'Catalytic Concentration' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-antifxa	umol/l	has_property 'Arbitrary Concentration' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-asat	umol/l	has_property 'Catalytic Concentration' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-ca-iona	°c	has_property 'Substance Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-cl	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-cl	°c	has_property 'Substance Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-fviiiab	bu/ml	has_property 'Presence or Threshold' and UNIT 'bu/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gluk	g/l	has_property 'Substance Concentration' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gluk	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gluk	mmol	has_property 'Substance Concentration' and UNIT 'mmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gluk	°c	has_property 'Substance Concentration' and UNIT '°c' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gt	mg/l	has_property 'Catalytic Concentration' and UNIT 'mg/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-gt	mg/ml	has_property 'Catalytic Concentration' and UNIT 'mg/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-jcvnh	u/ml	has_property 'Number Concentration' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-k	mmol/mol	has_property 'Substance Concentration' and UNIT 'mmol/mol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-kardabg	gpl	has_property 'Arbitrary Concentration' and UNIT 'gpl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-krea	umol	has_property 'Substance Concentration' and UNIT 'umol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-prl	nmol/l	has_property 'Substance Fraction' and UNIT 'nmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-psa-v	%	has_property 'Mass Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-tsh	pmol/l	has_property 'Arbitrary Concentration' and UNIT 'pmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-uraatti	umol/l	has_property 'Mass Concentration' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+p-vwf-aktt	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pd-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pf-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pt-gfre	ml	has_property 'Volume Rate/Area' and UNIT 'ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pt-gluk-r1	mmol/l	has_property '-' and UNIT 'mmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pt-krea-cl	ml/s	has_property 'Volume Rate/Area' and UNIT 'ml/s' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+pt-pituus	cm	has_property 'Length' and UNIT 'cm' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+retikulosyytit	e9/l	has_property 'Arbitrary Concentration' and UNIT 'e9/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-afosma	u/l	has_property 'Osmolality' and UNIT 'u/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-allige	mm	has_property '-' and UNIT 'mm' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ana-ty	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-anaty-jt	u/ml	has_property '-' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-aqp4ab	titre	has_property 'Presence or Threshold' and UNIT 'titre' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-aspeag	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-b2gpabg	sgu	has_property 'Arbitrary Concentration' and UNIT 'sgu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-cdt	u/l	has_property 'Mass fraction' and UNIT 'u/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ch100cl	%	has_property 'Arbitrary Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-chpnaba	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-chpnabg	bu/ml	has_property 'Arbitrary Concentration' and UNIT 'bu/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-chpnabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-chpnabm	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ck-mm	%	has_property 'Catalytic Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-clteab	spu/ml	has_property 'Presence or Threshold' and UNIT 'spu/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-cmvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-cmvavi	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-codiab	spu/ml	has_property 'Presence or Threshold' and UNIT 'spu/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-crp-o	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-d-1,25	pmol/l	has_property '-' and UNIT 'pmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-d-1,25-	pmol/l	has_property '-' and UNIT 'pmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-d-1.25	pmol/l	has_property '-' and UNIT 'pmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ebvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ebvavi	%	has_property 'Presence or Threshold' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ena	ratio	has_property 'Arbitrary Concentration' and UNIT 'ratio' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ena,seu	ratio	has_property 'Arbitrary Concentration' and UNIT 'ratio' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-enaab	ratio	has_property 'Arbitrary Concentration' and UNIT 'ratio' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-epo	pmol/l	has_property 'Arbitrary Concentration' and UNIT 'pmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-golimab	au/ml	has_property 'Mass Concentration' and UNIT 'au/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-hepyabg	eiu	has_property 'Titer' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-hepyabg	index	has_property 'Titer' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-hsvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-hsvabm	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-igg-oc	g/l	has_property 'Presence or Threshold' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-immfix	g/l	has_property 'Impression/interpretation of study' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-infaabg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-k/l-s-v	mg/l	has_property 'Mass Ratio' and UNIT 'mg/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-kard-abg	gpl	has_property 'Presence or Threshold' and UNIT 'gpl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-kardabg	gpl	has_property 'Presence or Threshold' and UNIT 'gpl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-kardabm	mpl	has_property 'Presence or Threshold' and UNIT 'mpl' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-legiabg	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-mypnabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-mypnabm	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-mypnabm	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-normet	u/ml	has_property 'Substance Concentration' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-parvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-prl	nmol/l	has_property 'Arbitrary Concentration' and UNIT 'nmol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-prot-fr	g/l	has_property '-' and UNIT 'g/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-psa	%	has_property 'Mass Concentration' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-puumabg	eiu	has_property 'Titer' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-scl70+ib	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-scl70bl	s	has_property 'Presence or Threshold' and UNIT 's' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-smabbl	s	has_property 'Presence or Threshold' and UNIT 's' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-ssbabbl	s	has_property 'Presence or Threshold' and UNIT 's' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-tbeabg	eiu	has_property 'Presence or Threshold' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-testo	nmol	has_property 'Substance Concentration' and UNIT 'nmol' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-tfr	mg	has_property 'Mass Concentration' and UNIT 'mg' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-toxoavi	index	has_property 'Ratio' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-tpoab	ku/l	has_property 'Arbitrary Concentration' and UNIT 'ku/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-trpaab	index	has_property 'Presence or Threshold' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-vzvabg	eiu	has_property 'Titer' and UNIT 'eiu' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+s-vzvabg	index	has_property 'Titer' and UNIT 'index' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+se-amyl	ug/l	has_property 'Catalytic Concentration' and UNIT 'ug/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+sy-diffi	%	has_property '-' and UNIT '%' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+sy-eryt	e6	has_property 'Number Concentration' and UNIT 'e6' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+sy-leuk	e6	has_property 'Number Concentration' and UNIT 'e6' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+sy-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+t4v	mu/l	has_property 'Substance Concentration' and UNIT 'mu/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-ctgcnho	umol/l	has_property 'Presence or Threshold' and UNIT 'umol/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-diffi	e6/l	has_property 'Type' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-eryt	u	has_property 'Number Concentration' and UNIT 'u' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-intp	ratio	has_property 'Substance Concentration' and UNIT 'ratio' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-jcvnh	u/ml	has_property 'Number Concentration' and UNIT 'u/ml' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-leuk	u	has_property 'Number Concentration' and UNIT 'u' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE
+u-osmoest	e6/l	has_property 'Osmolality' and UNIT 'e6/l' are not in quantity_source_unit_conversion.tsv: the property of the concept does not agree with the unit	FALSE

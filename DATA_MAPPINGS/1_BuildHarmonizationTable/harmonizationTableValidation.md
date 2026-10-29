@@ -13,8 +13,10 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | flowsheet_loinc_groups.tsv | 4 | 0 | 0 |
 | conceptid_target_unit.tsv | 5 | 0 | 0 |
 | quantity_source_unit_conversion.tsv | 8 | 0 | 0 |
-| harmonizationTable.tsv | 7 | 2 | 0 |
-| ALL | 42 | 3 | 0 |
+| harmonizationTable.tsv | 8 | 2 | 0 |
+| testname_unit_property_missmatch_warning.tsv | 3 | 0 | 0 |
+| testname_property_shared_warning.tsv | 3 | 0 | 0 |
+| ALL | 49 | 3 | 0 |
 
 ## Tests
 
@@ -62,6 +64,13 @@ Validation of the input and output tables of `1_BuildHarmonizationTable`.
 | harmonizationTable.tsv | SUCCESS | every TEST_NAME + UNIT of testname_unit_to_conceptid.tsv is kept |  |  |
 | harmonizationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignore_mapping_reason |  |  |
 | harmonizationTable.tsv | SUCCESS | a row with a HARMONISED_UNIT has a CONVERSION |  |  |
+| testname_unit_property_missmatch_warning.tsv | SUCCESS | columns match their declared types |  |  |
+| testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME, message, ignore must have a value |  |  |
+| testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |
+| testname_property_shared_warning.tsv | SUCCESS | columns match their declared types |  |  |
+| testname_property_shared_warning.tsv | SUCCESS | TEST_NAME, message, ignore must have a value |  |  |
+| testname_property_shared_warning.tsv | SUCCESS | TEST_NAME + has_property are unique |  |  |
 | harmonizationTable.tsv | SUCCESS | has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for an APPROVED mapping |  |  |
-| harmonizationTable.tsv | WARNING | has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED | 247 | property does not agree with the unit, e.g. -calpro[mg/l] has_property=Mass Content; -ebvnh[iu/ml] has_property=Number Concentration; -tpoab[%] has_property=Arbitrary Concentration |
-| harmonizationTable.tsv | WARNING | a TEST_NAME with the same has_property maps to one concept_id | 8 | TEST_NAME + has_property map to different concept ids, e.g. testName 'album' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) \| 3024561 (Albumin [Mass/volume] in Serum or Plasma); testName 'albumiini' with omop_quantity 'Mass Concentration' maps to different concept ids: 3012516 (Albumin [Mass/volume] in Urine) \| 3024561 (Albumin [Mass/volume] in Serum or Plasma) |
+| harmonizationTable.tsv | WARNING | has_property + UNIT is in quantity_source_unit_conversion.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED | 247 | e.g. -calpro[mg/l]; -ebvnh[iu/ml]; -tpoab[%] |
+| harmonizationTable.tsv | SUCCESS | a TEST_NAME with the same has_property maps to one concept_id, for an APPROVED mapping |  |  |
+| harmonizationTable.tsv | WARNING | a TEST_NAME with the same has_property maps to one concept_id, for a mapping that is not APPROVED | 1 | e.g. a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) \| 3047387 (IgG [Units/volume] in Serum) |
