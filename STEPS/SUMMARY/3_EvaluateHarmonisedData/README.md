@@ -14,7 +14,8 @@ In `DATA_SUMMARY/3_EvaluateHarmonisedData/`:
 
 - `evaluatedHarmonisedKantaSummaryData.tsv` — one row per `TEST_NAME` +
   `PREPROCESED_UNIT` + `UNIT`, with the columns of `harmonizedKantaSummaryData.tsv`
-  except `decile`, and:
+  except `decile`, with `mapping_status` as the first column (`NOT-FOUND` for a pair that is not in the
+  harmonization table), and:
   - `decile_value`, `decile_value_harmonised` — the 9 deciles as text, e.g.
     `[ 1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23 ]` (3 significant digits;
     empty if the pair has no complete deciles).
@@ -35,7 +36,7 @@ In `DATA_SUMMARY/3_EvaluateHarmonisedData/`:
 2. Builds the reference of each pair that has the 9 harmonised deciles and at least 2
    values (`n` times the share of records with a value). The pair's LOINC Groups are
    tried in the order of `group_concept_id` (the most specific first). The first Group
-   with at least 2 **other** pairs whose mapping is `APPROVED` and not ignored is the
+   with at least 2 **other** pairs whose `mapping_status` is `APPROVED` (not `ERROR`, `IGNORE` or `NOT-APPROVED`) is the
    reference group. The pair itself is never in its reference, so a large pair cannot
    agree with itself. Approved pairs are tested against the others; pairs that are not
    approved are tested against the approved ones. For each decile the reference is the

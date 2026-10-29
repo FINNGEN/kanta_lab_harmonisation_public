@@ -41,7 +41,7 @@ harmonized <- readr::read_tsv(
     unit_fix_reasoning = readr::col_character(),
     concept_id = readr::col_integer(),
     ignore_mapping_reason = readr::col_character(),
-    APPROVED = readr::col_logical(),
+    mapping_status = readr::col_character(),
     concept_code = readr::col_character(),
     concept_name = readr::col_character(),
     vocabulary_id = readr::col_character(),
@@ -56,7 +56,8 @@ harmonized <- readr::read_tsv(
     group_concept_code = readr::col_character(),
     group_concept_name = readr::col_character(),
     HARMONISED_UNIT = readr::col_character(),
-    CONVERSION = readr::col_character()
+    CONVERSION = readr::col_character(),
+    mapping_warning_messages = readr::col_character()
   ),
   na = ""
 )
@@ -92,12 +93,12 @@ decilesHarmonised <- decileMatrix("decile_value_harmonised")
 # 2. The reference of a pair: the LOINC Groups of its concept, the most specific first (the
 #    order of group_concept_id). The first group that has at least minReferencePairs OTHER
 #    approved pairs gives the reference; the pair itself is never part of it. A pair is
-#    approved when its mapping is APPROVED and not ignored. The reference deciles are, for
+#    approved when its mapping_status is APPROVED (not ERROR, IGNORE or NOT-APPROVED). The reference deciles are, for
 #    each decile, the median of the harmonised deciles of those pairs, each weighted by
 #    sqrt(n values), so a very large pair does not take over.
 nValues <- pairs$n * (1 - dplyr::coalesce(pairs$value_missing_p, 0) / 100)
 hasDeciles <- complete.cases(decilesHarmonised) & nValues >= 2
-isApproved <- pairs$APPROVED %in% TRUE & is.na(pairs$ignore_mapping_reason)
+isApproved <- pairs$mapping_status %in% "APPROVED"
 isReference <- hasDeciles & isApproved
 
 groupsOfPair <- strsplit(pairs$group_concept_id, ";")
@@ -187,7 +188,8 @@ evaluated <- pairs |>
     reference_group_concept_id = referenceGroup,
     n_reference_pairs = nReferencePairs
   ) |>
-  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT)
+  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT) |>
+  dplyr::relocate(mapping_status)
 
 #
 # --- Output -------------------------------------------------------------
