@@ -26,7 +26,7 @@ kantaSummaryData <- readr::read_tsv(
   kantaSummaryDataFile,
   col_types = readr::cols(
     TEST_NAME = readr::col_character(),
-    UNIT = readr::col_character(),
+    PREPROCESED_UNIT = readr::col_character(),
     n = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     value_missing_p = readr::col_double(),
@@ -72,21 +72,17 @@ ParallelLogger::logInfo("Read ", nrow(harmonizationTable), " rows from ", harmon
 # --- Action -------------------------------------------------------------
 #
 
-# 1. Join the harmonization table on TEST_NAME + UNIT. The UNIT of the summary data is the
-#    unit after the fix, the UNIT of the harmonization table. A UNIT fixed from several
-#    PREPROCESED_UNITs takes several rows of the table that differ only in the columns
-#    dropped here, so a pair joins once.
-harmonizationByUnit <- harmonizationTable |>
-  dplyr::select(-PREPROCESED_UNIT, -unit_fix_reasoning) |>
-  dplyr::distinct()
-stopifnot(!anyDuplicated(harmonizationByUnit[c("TEST_NAME", "UNIT")]))
+# 1. Join the harmonization table on TEST_NAME + PREPROCESED_UNIT, the key of both tables. The
+#    table adds the UNIT (the unit after the fix) and the rest of its columns.
+stopifnot(!anyDuplicated(harmonizationTable[c("TEST_NAME", "PREPROCESED_UNIT")]))
 
 harmonized <- kantaSummaryData |>
-  dplyr::left_join(harmonizationByUnit, by = c("TEST_NAME", "UNIT"))
+  dplyr::left_join(harmonizationTable, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
+  dplyr::relocate(UNIT, .after = PREPROCESED_UNIT)
 
-pairs <- dplyr::distinct(harmonized, TEST_NAME, UNIT, concept_id)
+pairs <- dplyr::distinct(harmonized, TEST_NAME, PREPROCESED_UNIT, concept_id)
 ParallelLogger::logInfo(
-  nrow(pairs), " TEST_NAME + UNIT pairs, ", sum(is.na(pairs$concept_id)),
+  nrow(pairs), " TEST_NAME + PREPROCESED_UNIT pairs, ", sum(is.na(pairs$concept_id)),
   " not in the harmonization table"
 )
 
