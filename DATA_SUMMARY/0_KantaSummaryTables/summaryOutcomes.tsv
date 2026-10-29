@@ -113,7 +113,7 @@ TEST_NAME	PREPROCESED_UNIT	TEST_OUTCOME	n_TEST_OUTCOME	n_subjects
 -candvi		A	1057	816
 -cd138-solujeneristysluuydin-taiverinäytteestä		N	22	21
 -cd4-solujensuhdecd8-soluihin		N	238	162
--cdt	mg/l	N	82	74
+-cdt		N	82	74
 -cea	ug/l	N	30	29
 -cea		N	12	12
 -cenp-a-ab(ib)		N	30	30
@@ -264,7 +264,7 @@ TEST_NAME	PREPROCESED_UNIT	TEST_OUTCOME	n_TEST_OUTCOME	n_subjects
 -gluk-1h	mmol/l	A	6	6
 -glutamyylitransferaasi-desialotransferriini-indeksi		N	457	396
 -glutamyylitransferaasi-desialotransferriini-indeksi		A	269	186
--h-ind	index	N	9263	2372
+-h-ind		N	9263	2372
 -hbpika		A	10	9
 -hbvnh		N	37	37
 -hcgbsuh		N	841	217
@@ -330,7 +330,7 @@ TEST_NAME	PREPROCESED_UNIT	TEST_OUTCOME	n_TEST_OUTCOME	n_subjects
 -humanpapillomavirusgenotyyppi18		N	16	16
 -humanpapillomavirusgenotyyppimuupatogeeninenhpv		A	44	34
 -humanpapillomavirusgenotyyppimuupatogeeninenhpv		N	16	16
--i-ind	index	N	58	58
+-i-ind		N	58	58
 -icsi		N	48	44
 -imm-ong		N	78	72
 -immunoglobuliini,alaluokkag1	g/l	A	26	18
@@ -438,7 +438,7 @@ TEST_NAME	PREPROCESED_UNIT	TEST_OUTCOME	n_TEST_OUTCOME	n_subjects
 -ku72/86		A	12	8
 -kudosnäytteenhistologinentutkimus,makropreparaatti		N	106	105
 -kylskåp		N	8	6
--l-ind	index	N	4747	1830
+-l-ind		N	4747	1830
 -lak/sak		A	16	15
 -ld	u/l	N	17	15
 -leginho		N	164	142
@@ -1916,11 +1916,11 @@ b-erytrosyytit,normoblastit,mikroskopointi		A	16	10
 b-erytrosyytit,poc-tutkimus	e12/l	N	350	123
 b-erytrosyytit,poc-tutkimus	e12/l	H	15	6
 b-erytrosyytit,poc-tutkimus	e12/l	L	83	31
-b-erytrosyytit,tilavuusosuus	ratio	N	56204	27720
-b-erytrosyytit,tilavuusosuus	ratio	A	61904	12704
-b-erytrosyytit,tilavuusosuus	ratio	H	2892	1700
+b-erytrosyytit,tilavuusosuus	osuus	N	56204	27720
+b-erytrosyytit,tilavuusosuus	osuus	A	61904	12704
+b-erytrosyytit,tilavuusosuus	osuus	H	2892	1700
 b-erytrosyytit,tilavuusosuus	%	A	27685	4391
-b-erytrosyytit,tilavuusosuus	ratio	L	27114	4643
+b-erytrosyytit,tilavuusosuus	osuus	L	27114	4643
 b-erytrosyytit,tilavuusosuus	%	N	8487	4217
 b-erytrosyytit,tilavuusosuus	%	L	31	19
 b-erytrosyytit,tilavuusosuus		N	96	93
@@ -1935,8 +1935,8 @@ b-erytrosyytit,tilavuusosuus,pikatesti	osuus	A	12	11
 b-erytrosyytit,tilavuusosuuspoc-tutkimus	%	N	365	123
 b-erytrosyytit,tilavuusosuuspoc-tutkimus	%	H	19	8
 b-erytrosyytit,tilavuusosuuspoc-tutkimus	%	L	65	23
-b-erytrosyyttientilavuusosuus	%	N	13460	5392
-b-erytrosyyttientilavuusosuus	%	A	468	326
+b-erytrosyyttientilavuusosuus	osuus	N	13460	5392
+b-erytrosyyttientilavuusosuus	osuus	A	468	326
 b-erytrosyyttientilavuusosuus		N	6	6
 b-escherichiacoli		A	35	30
 b-etoh	umol/l	N	8	7
@@ -2235,14 +2235,14 @@ b-hhv6nh	u/ml	N	93	29
 b-hkr	%	L	804404	64963
 b-hkr	%	N	1447596	218789
 b-hkr		A	35152	6323
-b-hkr	ratio	L	240483	26499
+b-hkr	osuus	L	240483	26499
 b-hkr	%	A	712031	70734
-b-hkr	ratio	A	1624302	133300
-b-hkr	ratio	N	492628	115340
+b-hkr	osuus	A	1624302	133300
+b-hkr	osuus	N	492628	115340
 b-hkr	%	H	79024	28893
 b-hkr		N	2543	2186
 b-hkr	fl	N	3893	2958
-b-hkr	ratio	H	27446	9269
+b-hkr	osuus	H	27446	9269
 b-hkr	l/l	N	659	465
 b-hkr	fl	H	136	107
 b-hkr		L	299	274
@@ -2250,12 +2250,12 @@ b-hkr	l/l	L	365	167
 b-hkr	l/l	H	84	58
 b-hkr	fl	L	203	154
 b-hkr	l/l	A	41	40
-b-hkr	ratio	AA	165	67
+b-hkr	osuus	AA	165	67
 b-hkr		H	25	23
 b-hkr		AA	8	8
-b-hkr(erytrosyytit,tilavuusosuus)	ratio	A	10098	2331
-b-hkr(erytrosyytit,tilavuusosuus)	ratio	H	301	174
-b-hkr(erytrosyytit,tilavuusosuus)	ratio	L	3090	485
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	A	10098	2331
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	H	301	174
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	L	3090	485
 b-hkr(erytrosyytit,tilavuusosuus)		A	19	16
 b-hkr.fol		A	32	28
 b-hkr.fol	%	A	9	8
@@ -2306,9 +2306,9 @@ b-hunt-d		N	10	9
 b-hyytymistekijävgeeni,dna-tutkimus		N	12	11
 b-igshm		N	65	65
 b-inhibit	%	A	9	9
-b-inr-pik	inr	N	748	708
-b-inr-pik	inr	L	229	224
-b-inr-pik	inr	A	11	11
+b-inr-pik		N	748	708
+b-inr-pik		L	229	224
+b-inr-pik		A	11	11
 b-inr-pt	inr	A	26	23
 b-inr-vt		A	295	49
 b-inr-vt		H	13	9
@@ -2876,9 +2876,9 @@ b-perusverenkuvajatrombosyytit,paketti		N	43	41
 b-perusverenkuvajatrombosyytit,paketti	form	N	7	7
 b-peruverenkuva,trombosyytitjaeosinofiinit		N	9	9
 b-peth		N	7221	5380
-b-peth	mg/l	H	4512	2633
-b-peth	mg/l	A	4811	2760
-b-peth	mg/l	N	3731	2810
+b-peth	umol/l	H	4512	2633
+b-peth	umol/l	A	4811	2760
+b-peth	umol/l	N	3731	2810
 b-peth		H	67	64
 b-peth		A	89	82
 b-peth,fosfatidyylietanoli		N	53	52
@@ -2965,9 +2965,9 @@ b-pvk+tkd,eryt	e12/l	H	127	40
 b-pvk+tkd,hb	g/l	N	3118	540
 b-pvk+tkd,hb	g/l	L	1176	144
 b-pvk+tkd,hb	g/l	H	137	42
-b-pvk+tkd,hkr	ratio	N	3396	550
-b-pvk+tkd,hkr	ratio	L	918	136
-b-pvk+tkd,hkr	ratio	H	116	29
+b-pvk+tkd,hkr	osuus	N	3396	550
+b-pvk+tkd,hkr	osuus	L	918	136
+b-pvk+tkd,hkr	osuus	H	116	29
 b-pvk+tkd,leuk	e9/l	N	3025	516
 b-pvk+tkd,leuk	e9/l	H	1358	252
 b-pvk+tkd,leuk	e9/l	L	58	27
@@ -3036,7 +3036,7 @@ b-retikulosyytit	e9/l	A	422	243
 b-retikulosyytit	e9/l	N	417	380
 b-retikulosyytit	e9/l	H	50	47
 b-retikulosyytit,perusverenkuvajatrombosyytit		N	77	72
-b-retind	%	N	165	145
+b-retind	osuus	N	165	145
 b-retind		N	18	17
 b-retlnd		N	26	18
 b-retlnd	osuus	N	70	58
@@ -3283,7 +3283,7 @@ b-vrabtu5		N	655	375
 b-vrabtup		N	10	9
 b-vrisägr		N	8	8
 b-vthba1c	mmol/mol	A	1107	335
-b-xkoe		N	81673	40090
+b-xkoe	form	N	81673	40090
 b-xkompl		N	33	33
 b-ykrom-d		N	34	34
 b-zn	umol/l	N	319	256
@@ -3750,8 +3750,8 @@ cb-inrati		H	56	17
 cb-inrati		L	46	13
 cb-inratio		N	76	7
 cb-inratio		H	22	8
-cb-inrc-c	inr	N	2979	108
-cb-inrc-c	inr	A	1310	109
+cb-inrc-c		N	2979	108
+cb-inrc-c		A	1310	109
 cb-inrpika		A	217	188
 cb-k	mmol/l	A	37	8
 cb-k-veka	mmol/l	A	6	6
@@ -3938,8 +3938,8 @@ crp,omalab		A	21	19
 crp,pikaquikread	mg/l	N	22	19
 crp,pikaquikread		N	56	37
 crp,pikaquikread	mg/l	H	80	46
-crp,tk	mg/l	N	7827	3298
-crp,tk	mg/l	H	5428	2309
+crp,tk		N	7827	3298
+crp,tk		H	5428	2309
 crp-p		N	350	247
 crp-p	mg/l	A	846	299
 crp-p	mg/l	N	205	162
@@ -4114,10 +4114,10 @@ du-5hiaa		A	13	12
 du-a1miglo	mg	A	13	13
 du-adr	umol/24h	N	7	7
 du-adrnor		N	6	6
-du-alb	mg/24h	A	699	356
-du-alb	mg/24h	N	81	65
-du-alb	mg/24h	H	72	57
-du-alb	mg/24h	HH	19	17
+du-alb		A	699	356
+du-alb		N	81	65
+du-alb		H	72	57
+du-alb		HH	19	17
 du-aldos	nmol	A	258	216
 du-aldos	nmol	N	135	127
 du-aldos	nmol	H	99	91
@@ -4125,11 +4125,11 @@ du-aldos	nmol/l	N	7	7
 du-aldos		A	29	24
 du-aldos		H	12	12
 du-aldos		N	18	18
-du-ca	mmol/24h	H	1221	793
-du-ca	mmol/24h	A	4501	2592
-du-ca	mmol/24h	N	1397	1144
+du-ca	mmol	H	1221	793
+du-ca	mmol	A	4501	2592
+du-ca	mmol	N	1397	1144
 du-ca		A	179	149
-du-ca	mmol/24h	L	202	181
+du-ca	mmol	L	202	181
 du-ca	*sai	A	6	6
 du-ca		L	23	23
 du-ca		N	21	21
@@ -4168,10 +4168,10 @@ du-k		H	27	26
 du-kalium	mmol	A	8	8
 du-kalsium	mmol	A	30	29
 du-kalsium	mmol	N	22	22
-du-kors-v	nmol/24h	N	331	277
-du-kors-v	nmol/24h	A	658	455
-du-kors-v	nmol/24h	L	70	68
-du-kors-v	nmol/24h	H	160	113
+du-kors-v	nmol	N	331	277
+du-kors-v	nmol	A	658	455
+du-kors-v	nmol	L	70	68
+du-kors-v	nmol	H	160	113
 du-kors-v		L	7	7
 du-kors-v		H	13	10
 du-kors-v		A	49	43
@@ -4195,12 +4195,12 @@ du-moma	umol	A	6	6
 du-moma		A	6	6
 du-moma	umol	N	6	6
 du-mta	umol	N	6	6
-du-na	mmol/24h	A	1048	879
-du-na	mmol/24h	N	393	347
+du-na	mmol	A	1048	879
+du-na	mmol	N	393	347
 du-na		A	152	137
 du-na		L	33	33
-du-na	mmol/24h	H	101	94
-du-na	mmol/24h	L	153	145
+du-na	mmol	H	101	94
+du-na	mmol	L	153	145
 du-na		N	40	39
 du-na		H	19	18
 du-natrium	mmol	A	12	10
@@ -4225,23 +4225,23 @@ du-pi	mmol	L	38	34
 du-pi		A	11	11
 du-prot	mg	A	7080	2484
 du-prot	mg	H	1893	1045
-du-prot	g/24h	A	5244	2224
+du-prot	g	A	5244	2224
 du-prot		H	48	37
 du-prot	mg	N	180	141
 du-prot		N	260	205
 du-prot		A	726	409
 du-prot	mg/24h	N	11	6
 du-prot	mg/24h	A	131	57
-du-prot	g/24h	H	145	106
-du-prot	g/24h	N	25	24
+du-prot	g	H	145	106
+du-prot	g	N	25	24
 du-prot	mg/24h	H	21	15
 du-prot	mg	HH	29	20
 du-prot-fr		N	1344	837
 du-prot-fr		A	132	56
-du-prot.	mg/24h	H	1197	760
-du-prot.	mg/24h	N	181	140
+du-prot.	mg	H	1197	760
+du-prot.	mg	N	181	140
 du-prot.		N	216	154
-du-prot.	mg/24h	A	101	82
+du-prot.	mg	A	101	82
 du-proteiini	mg	H	30	29
 du-proteiini	mg	A	127	65
 du-proteiini		A	8	8
@@ -4679,8 +4679,8 @@ erytrosyytit,pvkosatutkimus	%	N	67	43
 erytrosyytit,pvkosatutkimus	e12/l	L	16	7
 erytrosyytit,pvkosatutkimus	%	L	13	6
 erytrosyytit,selkäydinneste	e6/l	A	17	17
-erytrosyytit,tilavuusosuus	ratio	N	3400	2367
-erytrosyytit,tilavuusosuus	ratio	A	3998	1090
+erytrosyytit,tilavuusosuus	osuus	N	3400	2367
+erytrosyytit,tilavuusosuus	osuus	A	3998	1090
 erytrosyytit,tilavuusosuus		N	9	9
 erytrosyytit,tilavuusosuus(b-hkr)	%	N	60	52
 erytrosyytit,verestä,pikatesti	e12/l	A	14	13
@@ -5436,8 +5436,8 @@ fp-kol-hdl		A	657	549
 fp-kol-hdl		N	878	825
 fp-kol-hdl		L	30	30
 fp-kol-hdl	mmol/l	AA	9	7
-fp-kol-ind	mmol/l	N	1887	1214
-fp-kol-ind	mmol/l	A	1486	1063
+fp-kol-ind		N	1887	1214
+fp-kol-ind		A	1486	1063
 fp-kol-ldl	mmol/l	H	144424	71990
 fp-kol-ldl	mmol/l	N	213428	107845
 fp-kol-ldl	mmol/l	A	218816	95087
@@ -5796,7 +5796,7 @@ fs-insu		A	10	9
 fs-insu	mu/l	N	28	24
 fs-jc-pept	nmol/l	A	66	66
 fs-kalsium	mmol/l	N	20	20
-fs-kalsium,ionisoitunut	mmol/l	N	2610	2077
+fs-kalsium,ionisoitunut		N	2610	2077
 fs-kalsium,ionisoitunut,aktuaal.	mmol/l	N	26	25
 fs-kalsium,ionisoitunut,ph7.4:ssa	mmol/l	H	252	103
 fs-kalsium,ionisoitunut,ph7.4:ssa	mmol/l	L	257	106
@@ -6229,7 +6229,7 @@ hb-pikatesti	u	N	7	6
 hb-vier		N	11	11
 hb-vieri		N	280	195
 hb-vieri		L	108	66
-hba1c-pika	mmol/mol	N	106	79
+hba1c-pika		N	106	79
 hba1c-vier	mmol/mol	N	24	21
 hba1c-vier	mmol/mol	H	76	44
 hba1c-vieri	mmol/mol	H	80	46
@@ -6241,7 +6241,7 @@ hbpika		N	95	81
 hbpika		L	108	77
 hc-diffi		N	158	98
 hcgbv		N	11	8
-hcgbvkmom	ratio	N	4344	3836
+hcgbvkmom		N	4344	3836
 hct	%	A	715	201
 hct		A	23	20
 hct(hkr)-v	%pcv	N	16	16
@@ -6514,10 +6514,10 @@ inr,tk		L	500	93
 inr-liuska		H	30	8
 inr-liuska		N	110	12
 inr-liuska		L	72	9
-inr-pika	inr	N	249	34
-inr-vieri	inr	N	7301	194
-inr-vieri	inr	H	513	117
-inr-vieri	inr	L	21	11
+inr-pika		N	249	34
+inr-vieri		N	7301	194
+inr-vieri		H	513	117
+inr-vieri		L	21	11
 inr/hoito		A	207	19
 inrpika	inr	A	38	37
 insuliini	mu/l	N	19	18
@@ -6759,11 +6759,11 @@ kol-hdl-suhde		A	8	8
 kol-hdl-suhde		N	12	11
 kol-hdl/kol	mmol/l	N	129	102
 kol.kvot		N	115	98
-kol/hdl	ratio	N	207	155
-kol/hdl	ratio	A	71	54
-kol/hdl	ratio	H	36	21
-kol/hdl-su	ratio	H	249	188
-kol/hdlsuh	ratio	A	10	9
+kol/hdl		N	207	155
+kol/hdl		A	71	54
+kol/hdl		H	36	21
+kol/hdl-su		H	249	188
+kol/hdlsuh		A	10	9
 kol/hdlsuho1		A	6	6
 kol/kol-hdl-suhde		N	7	7
 kolesteroli	mmol/l	N	3368	2966
@@ -6808,8 +6808,8 @@ kolesteroli,plasmasta,paastotilassa(fp-kol)	mmol/l	N	1343	1102
 kolesteroli-ldl	mmol/l	N	17	15
 kolesteroli-ldl	mmol/l	A	22	18
 kolesteroli/hdl-kolesteroli-suhde		N	8	8
-kolesteroli/hdl-suhde	ratio	H	2321	2215
-kolesteroli/hdl-suhde	ratio	N	7538	7191
+kolesteroli/hdl-suhde		H	2321	2215
+kolesteroli/hdl-suhde		N	7538	7191
 kolesteroli/hdl-suhdevv65		N	22	22
 kolesteroli/lipidit	mmol/l	A	1323	947
 kolesteroli/lipidit	mmol/l	N	1580	1163
@@ -6821,8 +6821,8 @@ kolesteroli/lipiditosatutkimus	mmol/l	N	651	534
 kolesteroli/lipiditosatutkimus	mmol/l	A	530	421
 kolesteroli/s-lipa	mmol/l	A	27	19
 kolesteroli/s-lipa	mmol/l	N	27	23
-kolesterolinjahdl-kolest.suhde	ratio	A	60	39
-kolesterolinjahdl-kolest.suhde	ratio	N	207	134
+kolesterolinjahdl-kolest.suhde		A	60	39
+kolesterolinjahdl-kolest.suhde		N	207	134
 kolesterolinjahdl-kolesterolinsuhde		N	635	502
 kolesterolinjahdl-kolesterolinsuhde		A	221	178
 kolesterolinjahdl-kolesterolinsuhde	%	N	22	22
@@ -7650,12 +7650,12 @@ li-igg	mg/l	N	336	328
 li-igg		L	16	15
 li-igg	mg/l	HH	6	6
 li-igg	g/l	A	10	10
-li-igg-ind	ratio	A	719	689
-li-igg-ind	ratio	N	395	383
-li-igg-ind	ratio	H	187	182
+li-igg-ind	index	A	719	689
+li-igg-ind	index	N	395	383
+li-igg-ind	index	H	187	182
 li-igg-ind		A	18	18
 li-igg-ind		N	14	14
-li-igg-ind	ratio	L	23	23
+li-igg-ind	index	L	23	23
 li-igg-oc		N	462	436
 li-igg.	mg/l	H	211	200
 li-igg.	mg/l	N	237	227
@@ -7857,7 +7857,7 @@ ly-cd4-t	%	A	1106	571
 ly-cd4-t		A	55	49
 ly-cd4-t	%	H	127	99
 ly-cd4-t		N	21	21
-ly-cd4/cd8	ratio	A	1021	522
+ly-cd4/cd8		A	1021	522
 ly-cd4/cd8suhde		A	90	70
 ly-cd4/cd8suhde		N	57	48
 ly-cd8	%	A	1409	712
@@ -8404,9 +8404,9 @@ nlt	%	A	1945	758
 nlt	%	N	7	7
 no-ex		N	122	101
 no-ex	ppb	H	34	22
-non-hdl	mmol/l	H	16992	13030
-non-hdl	mmol/l	N	5360	5207
-non-hdl	mmol/l	A	139	80
+non-hdl		H	16992	13030
+non-hdl		N	5360	5207
+non-hdl		A	139	80
 non-hdl(paasto)		H	623	609
 non-hdl(paasto)		N	1118	1079
 non-hdl-kolesteroli	mmol/l	N	42	41
@@ -8449,7 +8449,7 @@ nst	%	N	8	8
 nt		N	25	17
 nt,niskaturvotus		N	63	63
 nt-probnp	ng/l	H	10	7
-ntkmom	ratio	N	4345	3837
+ntkmom		N	4345	3837
 nu-5c-porf	nmol/l	A	12	8
 nu-5c-porf		N	19	9
 nu-6c-porf		N	19	9
@@ -9328,8 +9328,8 @@ p-gluk	mmol	A	65	55
 p-gluk		HH	39	32
 p-gluk	mmol/l	LL	46	39
 p-gluk		L	52	51
-p-gluk,tk	mmol/l	N	631	503
-p-gluk,tk	mmol/l	H	2767	1533
+p-gluk,tk		N	631	503
+p-gluk,tk		H	2767	1533
 p-gluk-0	mmol/l	N	61	34
 p-gluk-0h	mmol/l	A	136	113
 p-gluk-1	mmol/l	N	13	12
@@ -9352,9 +9352,9 @@ p-gluk-p	mmol/l	A	10	9
 p-gluk-pt	mmol/l	A	18	17
 p-gluk-sn		N	2688	413
 p-gluk-sn	mmol/l	N	1252	343
-p-gluk-vt	mmol/l	A	1428	676
+p-gluk-vt		A	1428	676
 p-gluk-vt	1	N	17	13
-p-gluk-vt	mmol/l	N	374	266
+p-gluk-vt		N	374	266
 p-gluk-vt	1	H	21	15
 p-gluk-vt/0m	mmol/l	N	26	20
 p-gluk/120	mmol/l	N	85	74
@@ -9579,8 +9579,8 @@ p-inr		H	46	36
 p-inr-poc		A	31	17
 p-inr-pt		A	45	16
 p-inr-pt	inruikk	A	37	18
-p-inr-vt	inr	A	2567	1381
-p-inr-vt	inr	N	2426	83
+p-inr-vt		A	2567	1381
+p-inr-vt		N	2426	83
 p-inrhoi		A	20	13
 p-inrhoit		A	100	29
 p-inrpika		A	1903	1637
@@ -9765,18 +9765,18 @@ p-kp	mmol/l	L	37	21
 p-kp	mmol/l	N	299	104
 p-kp	mmol/l	H	10	7
 p-kpika	mmol/l	A	20	19
-p-krea	umol/l	N	1361095	214251
-p-krea	umol/l	H	651625	59413
-p-krea	umol/l	L	251169	41586
-p-krea	umol/l	A	1623120	156425
+p-krea	mmol/l	N	1361095	214251
+p-krea	mmol/l	H	651625	59413
+p-krea	mmol/l	L	251169	41586
+p-krea	mmol/l	A	1623120	156425
 p-krea		L	340	67
 p-krea		N	2185	1630
 p-krea		A	14646	3756
 p-krea	ml/min/173m2	A	171	112
 p-krea	umol	A	314	97
-p-krea	umol/l	HH	11879	1133
+p-krea	mmol/l	HH	11879	1133
 p-krea		H	58	53
-p-krea	umol/l	AA	35	17
+p-krea	mmol/l	AA	35	17
 p-krea		AA	8	8
 p-krea	ml/min/173m2	N	14	13
 p-krea(gfre)	umol/l	A	17	11
@@ -10500,9 +10500,9 @@ p-tromboplastiiniaika,inr		N	18	9
 p-tromboplastiiniaika,inr	inr	A	20	17
 p-tromboplastiiniaika,inr		A	128	66
 p-tromboplastiiniaika,inr	inr	N	19	10
-p-tromboplastiiniaika,inr,tt	inr	L	2740	1130
-p-tromboplastiiniaika,inr,tt	inr	H	597	156
-p-tromboplastiiniaika,inr,tt	inr	HH	12	10
+p-tromboplastiiniaika,inr,tt		L	2740	1130
+p-tromboplastiiniaika,inr,tt		H	597	156
+p-tromboplastiiniaika,inr,tt		HH	12	10
 p-tromboplastiiniaika,inr-tulos	inr	A	3970	492
 p-tromboplastiiniaika,inr-tulos	1	A	919	222
 p-tromboplastiiniaika,inr-tulos	1	N	8127	666
@@ -10574,10 +10574,10 @@ p-tsh	mu/l	L	46622	17555
 p-tsh	mu/l	H	53140	21597
 p-tsh	mu/l	N	358995	149047
 p-tsh	mu/l	A	188672	58770
-p-tsh	miu/l	N	19021	6415
+p-tsh	mlu/l	N	19021	6415
 p-tsh		A	17604	5925
 p-tsh		L	6603	2470
-p-tsh	miu/l	A	6390	2288
+p-tsh	mlu/l	A	6390	2288
 p-tsh		N	908	836
 p-tsh	mu/l	HH	68	39
 p-tsh		H	6	6
@@ -10596,15 +10596,15 @@ p-tt	form	N	7	6
 p-tt-	%	A	320	109
 p-tt-		A	23	11
 p-tt-in		N	26	17
-p-tt-inr	inr	A	639052	103594
-p-tt-inr	inr	L	92698	28193
-p-tt-inr	inr	N	175431	19220
+p-tt-inr	form	A	639052	103594
+p-tt-inr	form	L	92698	28193
+p-tt-inr	form	N	175431	19220
 p-tt-inr		A	26005	10914
-p-tt-inr	inr	H	93891	6678
+p-tt-inr	form	H	93891	6678
 p-tt-inr		N	1858	529
-p-tt-inr	inr	HH	302	207
+p-tt-inr	form	HH	302	207
 p-tt-inr		HH	133	102
-p-tt-inr	inr	AA	29	22
+p-tt-inr	form	AA	29	22
 p-tt-inr		H	161	113
 p-tt-inr		L	113	94
 p-tt-inr	1	A	8	7
@@ -10794,7 +10794,7 @@ papilloomavirus,nukleiinihappo(kval)		N	23	23
 papilloomavirus,nukleiinihappo,(kval)		A	30	20
 papilloomavirus,seulonta		A	34	31
 papiloomavirusseulonta		A	195	195
-pappakmom	ratio	N	4343	3835
+pappakmom		N	4343	3835
 parainfluenssa,tyypit1-3,va:t(cf)/virus,laaja	titre	N	6	6
 parasiitit,ulosteesta(alkueläintenkystat,madot,madonmunat,toukat)		A	8	6
 parasiitituloste		N	8	8
@@ -11298,10 +11298,10 @@ pt-gfreep	ml/min/173m2	A	4290	1021
 pt-gfreep		H	214	144
 pt-gfreep		N	18	17
 pt-gfreepi		L	25881	18519
-pt-gfreepi	ml/min/173m2	H	44338	10945
-pt-gfreepi	ml/min/173m2	A	611449	83686
-pt-gfreepi	ml/min/173m2	L	149781	34179
-pt-gfreepi	ml/min/173m2	N	177278	54000
+pt-gfreepi	form	H	44338	10945
+pt-gfreepi	form	A	611449	83686
+pt-gfreepi	form	L	149781	34179
+pt-gfreepi	form	N	177278	54000
 pt-gfreepi		N	19945	4436
 pt-gfreepi		A	137	132
 pt-gfreepinosatutkimus		N	669	416
@@ -12283,10 +12283,10 @@ s-antitry	g/l	L	93	87
 s-antitry		H	15	15
 s-apim10e	u/ml	A	9	8
 s-apim10e	u/ml	N	8	8
-s-apob/a1	ratio	H	957	826
+s-apob/a1		H	957	826
 s-apob/a1-suhde		N	144	143
 s-apob/a1-suhde		H	49	49
-s-apob/apoa1-suhde	ratio	H	1049	1044
+s-apob/apoa1-suhde		H	1049	1044
 s-apolipoproteiinia1	g/l	N	246	228
 s-apolipoproteiinia1	g/l	L	11	11
 s-apolipoproteiinia1	g/l	H	8	8
@@ -15378,12 +15378,12 @@ s-persile	u/ml	N	8	8
 s-pertussis,igmvasta-aineet		N	9	8
 s-perunae	u/ml	A	7	7
 s-perunae	u/ml	N	11	11
-s-ph	ph	N	117743	36510
+s-ph	1	N	117743	36510
 s-ph		N	182	163
 s-ph		A	1043	573
-s-ph	ph	A	3134	1634
-s-ph	ph	H	320	172
-s-ph	ph	L	101	63
+s-ph	1	A	3134	1634
+s-ph	1	H	320	172
+s-ph	1	L	101	63
 s-ph(akt)	ph	N	1812	1418
 s-ph(akt)		N	10	10
 s-ph(s-kalsium,ionisoitunut)		N	39	27
@@ -16567,20 +16567,20 @@ s-tryptaasi	ug/l	N	196	178
 s-tryptaasi	ug/l	A	62	31
 s-tryptaasi	ug/l	H	13	9
 s-tsh	miu/l	H	8519	5064
-s-tsh	mu/l	N	87420	63602
+s-tsh	mlu/l	N	87420	63602
 s-tsh	miu/l	N	4613	3882
-s-tsh	mu/l	A	10364	5486
-s-tsh	mu/l	L	11768	6636
+s-tsh	mlu/l	A	10364	5486
+s-tsh	mlu/l	L	11768	6636
 s-tsh		L	1936	1247
-s-tsh	mu/l	H	9396	5760
+s-tsh	mlu/l	H	9396	5760
 s-tsh	miu/l	A	4602	2760
 s-tsh	miu/l	L	7555	4179
 s-tsh		N	118	101
 s-tsh		A	830	444
 s-tsh	u/l	N	57	45
 s-tsh		LL	60	48
-s-tsh	mu/l	LL	23	19
-s-tsh	mu/l	HH	13	10
+s-tsh	mlu/l	LL	23	19
+s-tsh	mlu/l	HH	13	10
 s-tsh-abr		N	38	27
 s-tsh-abr	mu/l	N	115	48
 s-tsh-reseptori,vasta-aineet	iu/l	H	21	16
@@ -17104,7 +17104,7 @@ smkomp-1	g/l	H	11	8
 smycoplasmapneumoniae,abgvasta-aineet	eiu	A	23	20
 snabb-crp		A	990	391
 snabb-crp		N	1159	498
-snabb-inr	inr	N	6282	104
+snabb-inr		N	6282	104
 snabbcrp		N	71	43
 snabbsvalg		N	16	14
 so-b-cd19	%	N	7	7
@@ -18096,8 +18096,8 @@ u-epiteelisolut,osatutkimus	e6/l	A	12	10
 u-epiteelit	e6/l	A	275	218
 u-epiteelit	e6/l	N	711	577
 u-epitel	/sunf	N	1316	494
-u-epitel	u/field	N	1936	833
-u-epitel	u/field	A	57	45
+u-epitel		N	1936	833
+u-epitel		A	57	45
 u-epitel	sunf	N	66	53
 u-epitla	e6/l	A	393	299
 u-eryt	e6/l	H	65783	28630
@@ -18188,7 +18188,7 @@ u-happamuusaste,huumeseulonta		N	17	7
 u-hb		N	10	9
 u-hb-o		N	113482	46347
 u-hb-o		A	55127	17615
-u-hb-o	estimate	N	57	42
+u-hb-o	form	N	57	42
 u-hb-o	A	A	19	17
 u-hb-o.		N	6977	4043
 u-hcg	iu/l	N	64	61
@@ -18272,11 +18272,11 @@ u-kemiallinenseulonta,otsikko,osatutk		N	148	90
 u-kemiallinenseulontamedipoctku,jkl		N	32	29
 u-kemiallinenseulontasatadiag		N	30	26
 u-kemiallinenseulontatykslab		N	151	131
-u-kemseul		N	160985	67398
-u-kemseul		A	9109	4718
-u-kemseul		H	16	12
-u-kemseul		L	146	110
-u-kemseul		IND	25	24
+u-kemseul	form	N	160985	67398
+u-kemseul	form	A	9109	4718
+u-kemseul	form	H	16	12
+u-kemseul	form	L	146	110
+u-kemseul	form	IND	25	24
 u-kemseul,gluk		N	3251	1950
 u-kemseul,kemiallisetosoituskokeet		N	308	224
 u-kemseul,osatutkimus1881		N	73	53
@@ -18291,10 +18291,10 @@ u-keto-0		A	115	95
 u-keto-0		N	1479	383
 u-keto-hy		A	298	259
 u-keto-o		N	146514	57882
-u-keto-o	estimate	N	17895	6968
+u-keto-o	l	N	17895	6968
 u-keto-o		A	19417	14028
 u-keto-o	form	N	915	567
-u-keto-o	estimate	A	7	7
+u-keto-o	l	A	7	7
 u-keto-o.		N	6951	4034
 u-ketoaineet		N	79	58
 u-ketoaineet,kval		N	194	131
@@ -18416,8 +18416,8 @@ u-lier		H	93	93
 u-lieri?t	e6/l	A	28	24
 u-lieri?t	e6/l	N	378	278
 u-lieri?t		N	7	7
-u-lieriö	e6/l	A	1128	638
-u-lieriö	e6/l	N	42	31
+u-lieriö		A	1128	638
+u-lieriö		N	42	31
 u-lieriöt	e6/l	A	4246	3026
 u-lieriöt	e6/l	N	11458	6359
 u-lieriöt		N	368	288
@@ -18500,7 +18500,7 @@ u-oksikodoni(kval)		N	44	42
 u-om.p.-o		N	60	47
 u-ominaispaino		N	10109	6716
 u-ominaispaino	5170	N	8	8
-u-ominp-h	kg/l	N	3956	2265
+u-ominp-h		N	3956	2265
 u-opiaa-o		N	6886	4239
 u-opiaa-o		A	317	217
 u-opiaact		A	13	10
@@ -18516,8 +18516,8 @@ u-osmest		N	22	22
 u-osmoe	mosm/kgh2o	N	366	271
 u-osmoe		N	14	12
 u-osmoe	mosm/kgh2o	A	31	27
-u-osmoest	mosm/kgh2o	A	14090	5148
-u-osmoest	mosm/kgh2o	N	11549	4164
+u-osmoest	mosm/l	A	14090	5148
+u-osmoest	mosm/l	N	11549	4164
 u-osmoest		N	89	84
 u-osmoest	e6/l	N	1767	520
 u-osmoest	e6/l	A	659	262
@@ -18556,23 +18556,23 @@ u-partikkelienperuslaskenta,koneellinen		N	389	302
 u-pbg	umol/l	N	27	26
 u-pbg	umol/l	A	17	13
 u-pbg-o		N	63	59
-u-ph	ph	N	149439	63082
-u-ph	ph	H	44673	17161
-u-ph	ph	A	46633	17736
+u-ph	form	N	149439	63082
+u-ph	form	H	44673	17161
+u-ph	form	A	46633	17736
 u-ph		L	72	69
 u-ph		N	1482	1374
 u-ph		A	162	142
 u-ph		H	56	53
-u-ph	ph	L	26	26
+u-ph	form	L	26	26
 u-ph,huumetutkimuksiin		N	11	9
 u-ph,huumetutkimuksiin/u-huumeseulonta,kval.		N	35	31
 u-ph-0		N	1720	430
 u-ph-0		A	74	57
 u-ph-huu		N	4016	2274
-u-ph-o	ph	N	14215	4371
-u-ph-o	ph	H	95	92
+u-ph-o	N	N	14215	4371
+u-ph-o	N	H	95	92
 u-ph-o		N	197	147
-u-ph-o	ph	A	869	464
+u-ph-o	N	A	869	464
 u-ph-o		L	11	11
 u-ph.		N	6978	4044
 u-phhu		N	14	8
@@ -18686,20 +18686,20 @@ u-suhteellinentiheys,osatutkimus		N	129	66
 u-suhteellinentiheys,osatutkimus		A	25	16
 u-suhteellinentiheyskg/l		A	862	622
 u-suhteellinentiheysstix		N	1056	738
-u-suhti	kg/l	N	21348	12151
-u-suhti	kg/l	A	49585	18316
+u-suhti	g/ml	N	21348	12151
+u-suhti	g/ml	A	49585	18316
 u-suhti		A	4800	3665
-u-suhti	kg/l	L	24028	12046
+u-suhti	g/ml	L	24028	12046
 u-suhti		L	2179	2022
-u-suhti	kg/l	H	29272	13978
+u-suhti	g/ml	H	29272	13978
 u-suhti		H	1595	1239
 u-suhti		N	1628	1217
 u-suhti	ratio	A	299	61
 u-suhti	form	N	27	22
 u-suhti	ratio	N	9	9
-u-suhti-o	ratio	A	12530	4873
-u-suhti-o	ratio	N	13506	4590
-u-suhti.	ratio	N	7113	4111
+u-suhti-o		A	12530	4873
+u-suhti-o		N	13506	4590
+u-suhti.		N	7113	4111
 u-suhtih	kg/l	A	6712	3509
 u-suhtih	kg/l	N	5735	2402
 u-suhtih		N	569	386
@@ -18746,9 +18746,9 @@ u-veri(kval)		A	56	47
 u-veri,osatutkperustutkimuksissa		A	9	9
 u-veri-0		A	24	18
 u-veri-o		N	9759	3257
-u-veri-o	estimate	N	2519	764
+u-veri-o	form	N	2519	764
 u-veri-o		A	8058	3416
-u-veri-o	estimate	A	20	17
+u-veri-o	form	A	20	17
 u-veri-ou		A	295	166
 u-virtsanhemoglobiini		N	16	14
 u-virtsanhemoglobiini	form	N	6	6
@@ -18768,7 +18768,7 @@ u-välimuotoisetepiteelit	u/field	N	75	63
 u-välimuotoisetepiteelit		N	20	20
 u-överg.ep		N	2027	587
 u-överg.ep	/sunf	N	124	93
-ua-be	mmol/l	N	62	62
+ua-be		N	62	62
 ua-hb	g/l	N	51	51
 ua-hco3-st	mmol/l	N	62	62
 ua-hetashb		N	51	51

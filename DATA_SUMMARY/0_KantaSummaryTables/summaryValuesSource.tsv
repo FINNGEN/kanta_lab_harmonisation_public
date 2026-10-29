@@ -24,7 +24,7 @@ s-amyl	u/l	Source	10384	8915
 s-asat	u/l	Source	22999	15342
 s-crp	mg/l	Source	154064	76537
 s-gt	u/l	Source	178336	95682
-u-ph	ph	Source	292049	106330
+u-ph	form	Source	292049	106330
 cb-hbo2sat	%	Source	27897	9221
 cb-be	mmol/l	Source	63917	18924
 cb-hco3-st	mmol/l	Source	64098	15292
@@ -43,18 +43,18 @@ s-uraat	umol/l	Source	36444	23688
 s-ccpab	eliau/ml	Source	5657	5282
 e-rdw	%	Source	5840046	349362
 p-crp	mg/l	Source	3912584	320498
-p-krea	umol/l	Source	7090993	406766
+p-krea	mmol/l	Source	7090993	406766
 pt-gfre	ml/min/173m2	Source	1212479	215194
 p-ck	u/l	Source	260958	120037
 p-ck-mbm	ug/l	Source	69812	29673
-b-hkr	ratio	Source	5109820	289804
+b-hkr	osuus	Source	5109820	289804
 p-tnt	ng/l	Source	400486	104223
 vb-hb-co	%	Source	63013	20034
 p-alat	u/l	Source	4341303	409442
 p-tni	ng/l	Source	218200	55613
 tromboplastiiniaika,inr-tulostus,plasma	inr	Source	11740	2775
 b-erytrosyytit	e12/l	Source	324095	72924
-b-erytrosyytit,tilavuusosuus	ratio	Source	299805	67584
+b-erytrosyytit,tilavuusosuus	osuus	Source	299805	67584
 e-erytrosyytit,kokojakaumaindeksi	%	Source	75220	8724
 b-erytroblastit	e9/l	Source	151955	27028
 b-leukosyytit	e9/l	Source	369235	82071
@@ -71,7 +71,7 @@ s-d-25	nmol/l	Source	380348	165604
 s-ferrit	ug/l	Source	228331	97993
 fs-folaat	nmol/l	Source	163920	103558
 fp-krea	umol/l	Source	763214	110113
-s-tsh	mu/l	Source	248600	128301
+s-tsh	mlu/l	Source	248600	128301
 s-rf	iu/ml	Source	11352	10236
 p-uraat	umol/l	Source	226201	81039
 p-afos	u/l	Source	2453415	302836
@@ -106,11 +106,11 @@ b-neutrofiilit,3-osa	e9/l	Source	2068	1750
 b-lymfosyytit,3-osa	e9/l	Source	2067	1750
 glom.suod.nopeusckd-epi	ml/min/173m2	Source	25374	19545
 u-leuk	e6/l	Source	295037	107171
-u-ph-o	ph	Extracted	11734	9393
+u-ph-o	N	Extracted	11734	9393
 u-ominaispaino		Extracted	5476	4572
 p-troponiinii	ng/l	Source	7302	3444
 s-alat	u/l	Source	323441	128728
-u-ph	ph	Extracted	341977	114581
+u-ph	form	Extracted	341977	114581
 s-cea	ug/l	Source	87852	23245
 fs-krea	umol/l	Source	277772	123620
 punasolujenkokojakauma	%	Source	155883	44869
@@ -119,14 +119,14 @@ rdw	%	Source	6273	2819
 s-pappa	mu/l	Source	33757	22951
 s-hcg-b-v	ug/l	Source	15993	10532
 p-aptt	s	Source	143604	65424
-p-tt-inr	inr	Source	922151	137607
+p-tt-inr	form	Source	922151	137607
 b-eos	e9/l	Source	1092817	199804
 s-tsh	miu/l	Extracted	21304	15447
 b-baso	e9/l	Extracted	359144	69500
 b-ly	e9/l	Source	784145	156373
 b-monos	e9/l	Extracted	374732	75551
 b-neut	e9/l	Extracted	684525	96411
-p-krea	umol/l	Extracted	598371	123657
+p-krea	mmol/l	Extracted	598371	123657
 l-neut(a)	%	Extracted	48894	16672
 l-lymf(a)	%	Extracted	50575	17332
 l-mono(a)	%	Extracted	49710	16936
@@ -154,7 +154,7 @@ fe-folaat	nmol/l	Source	76626	54453
 p-alb	g/l	Source	871719	172462
 p-ca	mmol/l	Extracted	24978	17932
 p-ca-albk	mmol/l	Extracted	18841	13368
-pt-gfreepi	ml/min/173m2	Extracted	502802	113972
+pt-gfreepi	form	Extracted	502802	113972
 s-prl	mu/l	Source	28203	16832
 lymfo	%	Source	7681	5973
 neutro	%	Source	7682	5976
@@ -170,13 +170,13 @@ s-ttgaba	u/ml	Source	32264	26920
 fp-kol-hdl	mmol/l	Source	1111880	317836
 fp-trigly	mmol/l	Source	1105094	315771
 fp-kol-ldl	mmol/l	Source	1266029	329743
-kol/hdlsuh	ratio	Source	66482	40185
-non-hdl	mmol/l	Source	37690	27426
+kol/hdlsuh		Source	66482	40185
+non-hdl		Source	37690	27426
 f-calpro	ug/g	Extracted	13214	8824
 p-tt	%	Source	465964	109816
 pt-gfre	ml/min/173m2	Extracted	1351858	133272
 p-tsh	mu/l	Source	1315441	310825
-pt-gfreepi	ml/min/173m2	Source	2256308	256010
+pt-gfreepi	form	Source	2256308	256010
 p-t4v	pmol/l	Source	90253	28197
 hdl/kol	%	Source	131590	34448
 b-ghb-a1c	%	Source	48918	28782
@@ -237,7 +237,7 @@ s-ana	titre	Source	16705	12787
 b-nk	e6/l	Source	5898	2078
 b-cd4	e6/l	Source	3893	1258
 b-cd8	e6/l	Source	3892	1258
-cd4/cd8	ratio	Source	3730	1208
+cd4/cd8		Source	3730	1208
 b-cd19	e6/l	Source	3891	1257
 b-cd3	e6/l	Source	3891	1257
 ly-cd3	%	Source	3709	1794
@@ -272,7 +272,7 @@ s-kol-hdl	mmol/l	Source	33871	27876
 s-kol-ldl	mmol/l	Source	30028	26625
 s-lipoa1	g/l	Source	16694	15755
 s-lipob	g/l	Source	16695	15756
-s-apob/apoa1-suhde	ratio	Extracted	16805	15846
+s-apob/apoa1-suhde		Extracted	16805	15846
 b-crp-vt	mg/l	Source	17701	11286
 s-caph7.4	mmol/l	Source	5238	2741
 s-ca-akt	mmol/l	Source	5288	2755
@@ -281,7 +281,7 @@ l-neut	%	Source	386388	72764
 s-cdt	%	Source	89739	52880
 p-t4-v	pmol/l	Source	904446	245236
 u-alb-o	estimate	Source	116314	41583
-u-keto-o	estimate	Source	145599	46027
+u-keto-o	l	Source	145599	46027
 u-eryt-o	estimate	Source	109873	40217
 u-gluk-o	estimate	Source	132125	43378
 u-leuk-o	estimate	Source	111987	41260
@@ -300,7 +300,7 @@ l-blastit	%	Source	23548	6532
 l-promyel	%	Source	23133	6312
 l-myelos	%	Source	22200	5974
 l-metamye	%	Source	18583	4965
-b-peth	mg/l	Source	18316	9951
+b-peth	umol/l	Source	18316	9951
 p-ca-ion	mmol/l	Source	37104	15940
 p-angap	mmol/l	Source	4593	2525
 b-hb-co	%	Source	82147	17084
@@ -351,7 +351,7 @@ l-monosyytti	%	Source	17110	6655
 p-tfr	mg/l	Source	152659	68852
 p-prealbumiini	g/l	Source	1203	864
 p-ferrit	ug/l	Source	415013	136414
-p-tt-inr	inr	Extracted	469158	59248
+p-tt-inr	form	Extracted	469158	59248
 fb-b1-vit	nmol/l	Source	3059	2403
 s-b12-vit	pmol/l	Source	76553	49942
 emäsylimäärä,laskimoveri		Extracted	1300	719
@@ -411,7 +411,7 @@ u-alb	mg/l	Source	248391	83243
 u-krea	mmol/l	Source	392995	121070
 nu-albkrea	mg/mmol	Source	11440	6637
 b-tbifng	iu/ml	Source	2858	2632
-s-ph	ph	Source	234685	63938
+s-ph	1	Source	234685	63938
 s-ca-iona	mmol/l	Source	382969	90453
 s-cmvavi		Source	273	265
 s-cmvabg	au/ml	Source	3508	2738
@@ -462,7 +462,7 @@ fp-fe	umol/l	Source	142085	52710
 fp-transf	g/l	Source	145221	53564
 fp-trfesat	%	Source	88645	32057
 otettujenpurkkien/putkienlkm	u	Extracted	36443	25010
-b-hkr	ratio	Extracted	693235	103396
+b-hkr	osuus	Extracted	693235	103396
 s-dmklots	umol/l	Extracted	515	206
 s-klotsa	umol/l	Extracted	747	236
 fp-ca	mmol/l	Extracted	8291	6076
@@ -524,7 +524,7 @@ s-ihovab	titre	Source	248	190
 pt-gfrekce	ml/min/173m2	Source	850	427
 l-ly	%	Source	137436	31932
 l-meta	%	Source	6151	1881
-u-suhti	kg/l	Source	163092	57263
+u-suhti	g/ml	Source	163092	57263
 p-fe	umol/l	Source	2840	1754
 p-tffesat	%	Source	2968	1611
 ab-hbo2sat	%	Source	123740	26720
@@ -587,7 +587,7 @@ b-laktaatti,päivystystutkimus	mmol/l	Source	11297	3143
 b-hemoglobiini-a1c	mmol/m	Source	7630	6862
 u-suhteellinentiheys	1	Source	9847	5713
 u-lieriöt	e6/l	Source	60707	26245
-u-suhti	kg/l	Extracted	144683	39572
+u-suhti	g/ml	Extracted	144683	39572
 s-psa	ug/l	Source	88951	40190
 s-psa-v	ug/l	Source	22261	10345
 s-psa-suh	%	Source	15340	7847
@@ -595,7 +595,7 @@ fs-gluk	mmol/l	Source	17573	10869
 b-baso	%	Source	10493	3578
 b-hba1c	mmol/ml	Source	138	112
 u-alb-o	estimate	Extracted	40583	16059
-u-keto-o	estimate	Extracted	44298	16780
+u-keto-o	l	Extracted	44298	16780
 u-eryt-o	estimate	Extracted	34210	14999
 u-gluk-o	estimate	Extracted	41928	16207
 u-leuk-o	estimate	Extracted	29906	14508
@@ -608,8 +608,8 @@ monos	%	Source	27780	14669
 basof	%	Source	18756	13271
 eosin	%	Source	18337	13257
 s-crp,herkkä	mg/l	Source	6628	5400
-kolesteroli/hdl-suhde	ratio	Extracted	33789	25505
-non-hdl	mmol/l	Extracted	28300	22042
+kolesteroli/hdl-suhde		Extracted	33789	25505
+non-hdl		Extracted	28300	22042
 neutrofiilit,5-osa	%	Source	4342	3786
 lymfosyytit,5-osa	%	Source	4342	3786
 monosyytit,5-osa	%	Source	4342	3786
@@ -631,17 +631,17 @@ p-fviii.	%	Source	28767	11057
 s-borrabg	responseequivalent/ml	Source	1756	1316
 p-crp/pika	mg/l	Source	5634	2510
 p-kol-ldl	mmol/l	Extracted	76347	39857
-b-peth	mg/l	Extracted	1483	878
+b-peth	umol/l	Extracted	1483	878
 hdl/kol	%	Extracted	89062	23076
 pt-glomerulustensuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	Source	30449	14208
 p-transferriininrautakyllästeisyys	%	Source	288	228
 s-hbsab	miu/ml	Source	6910	5475
 u-epit	e6/l	Extracted	17703	12202
 u-osmole	mosm/kgh2o	Extracted	8881	6246
-s-ph	ph	Extracted	161962	46340
+s-ph	1	Extracted	161962	46340
 p-crp/pik	mg/l	Source	3425	2088
 pt-gfreep		Extracted	771	564
-du-kors-v	nmol/24h	Source	2471	1725
+du-kors-v	nmol	Source	2471	1725
 ab-ph	ph	Extracted	266735	23505
 ab-o2-vol	%	Source	247132	24275
 ab-hb	g/l	Source	300767	29008
@@ -715,15 +715,15 @@ hdl/kol.	%	Extracted	11554	9563
 p-trigly	mmol/l	Extracted	60100	33053
 p-kol	mmol/l	Extracted	63594	34729
 p-kol-hdl	mmol/l	Extracted	61151	33327
-u-ominp-h	kg/l	Extracted	6799	3100
+u-ominp-h		Extracted	6799	3100
 u-ph-huu		Extracted	6949	3121
 b-hba1c,t		Extracted	4688	1897
 p-b12-vit	pmol/l	Source	37088	24940
-p-tsh	miu/l	Source	37289	10283
+p-tsh	mlu/l	Source	37289	10283
 pt-gfre-cg	ml/min/173m2	Source	10063	4646
 s-afp	ug/l	Source	2510	947
-b-ghb-a1c,tk	%	Source	5234	2221
-b-hba1c,tk	mmol/mol	Source	6492	2700
+b-ghb-a1c,tk		Source	5234	2221
+b-hba1c,tk		Source	6492	2700
 s-prealb	g/l	Extracted	2234	1383
 u-kreat	mmol/l	Source	2903	1916
 pt-fib-4		Source	6048	4597
@@ -731,7 +731,7 @@ s-t4vvert	pmol/l	Source	12	12
 e-erytbla	e9/l	Source	20590	2927
 p-tromboplastiiniaika,inr-tulos	inr	Source	6341	1844
 e-mcv(erytrosyytit,keskitilavuus)	fl	Source	26897	9397
-b-hkr(erytrosyytit,tilavuusosuus)	ratio	Source	39618	10768
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	Source	39618	10768
 p-albumiini	g/l	Source	7305	3926
 kreatiniini	umol/l	Source	23902	9587
 glomerulussuodosnopeus,estimoitu	ml/min/173m2	Source	46730	14340
@@ -769,12 +769,12 @@ u-levyepiteelisolut	e6/l	Source	8564	4928
 u-pienetepiteelisolut	e6/l	Source	8457	4831
 u-leukosyytit	e6/l	Source	20737	11106
 p-psa-suh	%	Extracted	20591	9482
--h-ind	index	Source	20175	6365
+-h-ind		Source	20175	6365
 u-bact		Extracted	3532	2772
 vb-ph	ph	Extracted	85100	22156
 vb-po2	kpa	Extracted	3374	1717
 vb-pco2	kpa	Extracted	3380	1722
--h-ind	index	Extracted	21011	7981
+-h-ind		Extracted	21011	7981
 s-ca-ion	mmol/l	Extracted	25145	16687
 p-antifxa	iu/ml	Source	13788	4248
 p-inr-pika	%	Source	3790	180
@@ -800,7 +800,7 @@ s-k/l-s-v	ratio	Source	21991	7205
 fs-ca++/7.40		Extracted	10501	6437
 fs-ca-ion	mmol/l	Extracted	10580	6506
 du-k	mmol	Source	2075	1709
-du-na	mmol/24h	Source	2838	2228
+du-na	mmol	Source	2838	2228
 s-ca-i7.4	mmol/l	Source	45599	14583
 s-osmol	mosm/kgh2o	Source	4890	3275
 s-probnp	ng/l	Source	2092	1753
@@ -810,7 +810,7 @@ b-lap	mm/h	Source	2727	2271
 s-lzm	mg/l	Extracted	1021	897
 leukosyytit	e9/l	Source	30962	9534
 ihopisto	mmol/l	Source	4075	1972
-b-inr-pik	inr	Source	4392	1441
+b-inr-pik		Source	4392	1441
 p-antifxa	u/ml	Source	10810	3643
 s-vzvabg	eiu	Source	3325	3086
 li-eryt	e6/l	Source	11730	8020
@@ -818,9 +818,9 @@ li-leuk	e6/l	Source	10901	7617
 s-enaab	u/ml	Source	1872	1575
 -nt	mm	Source	11777	8637
 s-hcgbv/d	ug/l	Source	14571	9986
-hcgbvkmom	ratio	Extracted	9392	7626
-pappakmom	ratio	Extracted	9297	7577
-ntkmom	ratio	Extracted	9402	7629
+hcgbvkmom		Extracted	9392	7626
+pappakmom		Extracted	9297	7577
+ntkmom		Extracted	9402	7629
 pituus(cm)		Extracted	4130	3399
 raskauksienmäärä,g		Extracted	6871	3960
 synnytystenmäärä,p		Extracted	5868	3693
@@ -876,8 +876,8 @@ vb-kokonaishemoglobiini,verikaasuanalysaattorista	g/l	Source	11985	4647
 p-kalsium-ioni,aktuaali	mmol/l	Source	15119	4962
 p-kalsium,ionisoitunut	mmol/l	Source	11149	4229
 b-trombos	e9/l	Source	2827	641
--l-ind	index	Extracted	4747	1830
-b-erytrosyyttientilavuusosuus	%	Source	13928	5478
+-l-ind		Extracted	4747	1830
+b-erytrosyyttientilavuusosuus	osuus	Source	13928	5478
 fp-ca-ion.	mmol/l	Source	22605	4053
 u-albumiini(kval)	estimate	Source	10494	6324
 u-asetoniaineet(kval)	estimate	Source	16819	9305
@@ -921,7 +921,7 @@ vb-o2-vol	%	Source	15588	4778
 u-alb-mi	mg/l	Source	7016	2685
 b-hba1c-p		Extracted	51	45
 b-hba1c-p	mmol/mol	Source	864	329
-fp-kol-ind	mmol/l	Source	2479	1698
+fp-kol-ind		Source	2479	1698
 p-glukoma	mmol/l	Source	17	16
 u-albumiinimikroalbuminuriamg/l(u-albkre)	mg/l	Source	1114	762
 u-kreatiniinimmol/l(u-albkre)	mmol/l	Source	1616	1116
@@ -959,10 +959,10 @@ ca-ion	mmol/l	Source	99245	25297
 pt-glomerulussuodusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	Source	15425	4819
 oma-crp-pi		Extracted	1195	638
 crp-pika	mg/l	Source	7911	3422
-hba1c-pika	mmol/mol	Source	1434	210
+hba1c-pika		Source	1434	210
 gluk-pika	mmol/l	Extracted	1080	267
 p-ca12-5	u/ml	Source	29708	9667
-b-retind	%	Source	9202	4095
+b-retind	osuus	Source	9202	4095
 fp-pth	pmol/l	Source	30415	8775
 p-aptt	s	Extracted	1772	1550
 cb-bil	umol/l	Source	331	151
@@ -974,7 +974,7 @@ u-prot	g/l	Source	12582	3379
 p-happamuusaste(ionis.ca)		Extracted	22461	8169
 fs-ca-ion/ph7.40	mmol/l	Source	27031	10626
 s-valpr	umol/l	Source	31519	6014
-u-ominp-h	kg/l	Source	5772	2408
+u-ominp-h		Source	5772	2408
 u-ph-huu		Source	5920	2472
 s-fsh	iu/l	Source	14890	11585
 b-hba1c	%	Extracted	70	65
@@ -1114,16 +1114,16 @@ b-erytroblastit,absoluuttiset,automaattidiffi	e9/l	Source	6511	3831
 p-fsh	u/l	Extracted	1936	1629
 fb-b6-vit	nmol/l	Source	808	616
 s-tpoab	iu/ml	Extracted	3244	2840
-u-suhti-o	ratio	Source	40670	9804
+u-suhti-o		Source	40670	9804
 u-hyalier	e6/l	Source	11469	4232
-u-osmoest	mosm/kgh2o	Source	40236	9785
+u-osmoest	mosm/l	Source	40236	9785
 u-muulier	e6/l	Source	11537	4270
 s-tpoab	u/ml	Source	5058	4496
 gluk0min		Source	359	344
 gluk30min		Source	354	341
 gluk60min		Source	351	338
 gluk120min		Source	349	334
-crp,tk	mg/l	Source	6021	2646
+crp,tk		Source	6021	2646
 l-ly␤	%	Source	1080	195
 b-eos␤	e9/l	Source	1006	195
 b-neut␤	e9/l	Source	1046	197
@@ -1217,8 +1217,8 @@ s-lh	iu/l	Extracted	2743	2000
 s-hevohie	u/ml	Source	3108	2884
 s-clahere	u/ml	Source	2058	1936
 p-urea	mmol/l	Extracted	5614	1833
--l-ind	index	Source	10340	2491
--i-ind	index	Source	9788	2488
+-l-ind		Source	10340	2491
+-i-ind		Source	9788	2488
 fp-fe	umol/l	Extracted	11322	7847
 fp-transf	g/l	Extracted	12807	8865
 pd-leuk	e6/l	Source	1688	157
@@ -1241,10 +1241,10 @@ s-mypnabg	eiu	Extracted	2013	1739
 b-lymf	e9/l	Extracted	9853	5767
 l-lymf	%	Extracted	13466	7563
 p-prl	mu/l	Extracted	1916	1482
-pappakmom	ratio	Source	11371	8820
-hcgbvkmom	ratio	Source	11194	8703
+pappakmom		Source	11371	8820
+hcgbvkmom		Source	11194	8703
 nt-		Source	2405	2000
-ntkmom	ratio	Source	11270	8745
+ntkmom		Source	11270	8745
 s-hcgbv	ug/l	Source	3401	2620
 fs-sappih	umol/l	Extracted	1438	995
 s-ucrp	mg/l	Source	3232	1929
@@ -1296,7 +1296,7 @@ neut	%	Extracted	12164	4803
 lymf	e9/l	Extracted	12966	5050
 mono	e9/l	Extracted	12681	4991
 s-prostataspesifinenantigeeni,vapaa/totaali	%	Source	4124	2203
-u-ph-o	ph	Source	40731	13200
+u-ph-o	N	Source	40731	13200
 b-leuc	e9/l	Source	4054	1241
 b-leuc-v		Extracted	538	390
 l-mono	%	Extracted	4860	1773
@@ -1385,7 +1385,7 @@ l-baso-m	%	Source	6599	1999
 l-monos-m	%	Source	6378	1933
 l-lymf-m	%	Source	6498	1963
 l-neut-m	%	Source	7115	2165
-p-inr-vt	inr	Source	6829	2189
+p-inr-vt		Source	6829	2189
 11821	mosm/kgh2o	Source	465	259
 s-kalsium,ionisoitunut,ph7.4-korjattu	mmol/l	Source	14759	5864
 s-kalsium,ionisoitunut,aktuaali	mmol/l	Source	14573	5981
@@ -1393,22 +1393,22 @@ cu-alb-mi	ug/min	Extracted	1367	947
 cu-vm		Extracted	706	505
 pt-gfre-cg		Extracted	967	704
 fp-gluk,t		Extracted	750	553
-crp,tk	mg/l	Extracted	2890	1408
+crp,tk		Extracted	2890	1408
 s-keto,tk		Extracted	126	107
-u-suhti-o	ratio	Extracted	5267	2358
-u-osmoest	mosm/kgh2o	Extracted	5163	2300
+u-suhti-o		Extracted	5267	2358
+u-osmoest	mosm/l	Extracted	5163	2300
 p-b12-vit	pmol/l	Extracted	9314	7559
 s-hepyabg	u/ml	Extracted	1282	1126
 u-hyalier		Extracted	564	404
 u-muulier		Extracted	537	380
 s-hepyaba		Extracted	496	459
-p-gluk,tk	mmol/l	Extracted	3902	1864
+p-gluk,tk		Extracted	3902	1864
 b-hba1c,t		Source	559	485
 cu-vm	ml	Source	2759	1052
 b-hb,tk		Source	486	389
 fp-ohbutyr	mmol/l	Source	47	41
 fb-nh4-ion	umol/l	Source	298	152
-p-gluk-vt	mmol/l	Extracted	1923	1037
+p-gluk-vt		Extracted	1923	1037
 0mgluk	mmol/l	Source	2692	1820
 60mgluk	mmol/l	Source	1176	709
 120mgluk	mmol/l	Source	1305	814
@@ -1436,7 +1436,7 @@ u-kemseul,u-ph		Extracted	1825	524
 ps-crp		Extracted	487	107
 ps-gluk		Extracted	184	70
 p-supar	ug/l	Source	351	287
-du-ca	mmol/24h	Extracted	1294	787
+du-ca	mmol	Extracted	1294	787
 us-tsh	mu/l	Source	412	412
 uv-ph		Source	120	112
 uv-pco2	kpa	Source	142	134
@@ -1446,7 +1446,7 @@ uv-hco3-st	mmol/l	Source	71	71
 ua-ph		Source	323	311
 ua-pco2	kpa	Source	394	381
 ua-po2	kpa	Source	383	370
-ua-be	mmol/l	Extracted	331	321
+ua-be		Extracted	331	321
 ua-hco3-st	mmol/l	Source	359	352
 p-bil-lap	umol/l	Source	1420	378
 s-maitoe	u/ml	Source	1309	1106
@@ -1457,7 +1457,7 @@ pf-leukmuu	%	Source	383	316
 pf-neut	%	Source	1249	950
 pf-ly	%	Source	490	394
 p-inrpika		Source	2481	1915
-p-inr-hy	inr	Source	13888	477
+p-inr-hy		Source	13888	477
 u-solu.		Source	17	17
 ap-lakt	mmol/l	Source	1456	704
 p-laite	ug/l	Source	106	85
@@ -1582,7 +1582,7 @@ li-eryt	e6/l	Extracted	3040	2096
 li-igg	mg/l	Source	3935	3387
 li-leuk	e6/l	Extracted	3046	2096
 li-igg/alb	osuus	Extracted	546	525
-li-igg-ind	ratio	Extracted	1108	1064
+li-igg-ind	index	Extracted	1108	1064
 li-/s-alb	mg/g	Source	1128	1049
 fp-b6-vit		Extracted	448	347
 s-mpoabg	iu/ml	Extracted	686	141
@@ -1595,7 +1595,7 @@ s-estdiol	nmol/l	Source	648	351
 l-erblast	u/100leuk	Source	1310	416
 l-blast	%	Source	5230	1673
 fs-ph	ph	Extracted	17422	5026
-du-ca	mmol/24h	Source	12533	7208
+du-ca	mmol	Source	12533	7208
 eryt	e6/l	Source	10099	5926
 lieriöt	e6/l	Extracted	2944	2140
 u-epilevy	e6/l	Source	14635	8104
@@ -1645,7 +1645,7 @@ p-fxi	%	Source	395	291
 du-iglck	mg	Source	481	209
 p-fviiit	%	Source	361	145
 p-vwf-aktt	%	Source	211	130
-du-alb	mg/24h	Source	1274	676
+du-alb		Source	1274	676
 du-iglcl	mg	Source	365	132
 s-cmvabg	eiu	Source	1562	1043
 b-cd34	e6/l	Source	193	118
@@ -1688,9 +1688,9 @@ p-hyytymistekijäviii(t)	%	Source	108	38
 p-vonwillebrand-tekijä,aktiivisuus(t)	%	Source	122	33
 sy-leuk	e6/l	Extracted	3117	2141
 p-reumafaktori,rf	iu/ml	Source	351	299
-p-inr-hy	inr	Extracted	6338	282
+p-inr-hy		Extracted	6338	282
 oma-p-tnt		Extracted	220	158
-oma-p-crp	mg/l	Source	7444	3992
+oma-p-crp		Source	7444	3992
 c-reaktiivinenproteiini		Source	655	479
 c-reaktiivinenproteiini	mg/l	Source	7963	3524
 s-b12-vitamiini,transkobalamiiniii:nsitoutunut	pmol/l	Source	1049	993
@@ -1768,7 +1768,7 @@ p-ph		Source	5125	2765
 s-dgpaba	u/ml	Source	975	913
 fs-lipoa1	g/l	Source	4095	3075
 fs-lipob	g/l	Source	5513	3661
-s-apob/a1	ratio	Source	2605	2050
+s-apob/a1		Source	2605	2050
 p-apcres.	form	Extracted	757	715
 p-fviii.		Extracted	489	427
 p-kardabg		Extracted	219	184
@@ -1797,7 +1797,7 @@ s-b12-vitamiini.aktiivinen	pmol/l	Source	1127	1068
 transferriininrautakyllästeisyys	%	Source	1179	890
 fp-parathormoni	pmol/l	Source	423	292
 s-haptoglobiini	g/l	Source	99	89
-du-prot.	mg/24h	Source	1502	957
+du-prot.	mg	Source	1502	957
 virtsamäärä	ml	Source	4544	2728
 vb-hblask	g/l	Source	285	231
 l-lymfos	%	Extracted	19507	7633
@@ -1823,7 +1823,7 @@ p-b2gpabg	u/ml	Source	3762	3018
 s-etane	mg/l	Source	255	199
 s-smab	u/ml	Source	1653	1199
 u-ph.		Source	21314	9463
-u-suhti.	ratio	Source	21009	9374
+u-suhti.		Source	21009	9374
 s-mypnabm	index	Source	3434	3156
 s-cefacle	u/ml	Source	64	63
 s-ttgaba	eliau/ml	Source	2714	2581
@@ -1837,14 +1837,14 @@ b-ko/epi1	s	Source	525	411
 b-ko/epi2	s	Source	526	412
 b-ko/adp1	s	Source	570	438
 b-ko/adp2	s	Source	565	440
-inr-pika	inr	Source	4298	120
+inr-pika		Source	4298	120
 p-tt-inrqc	inr	Source	767	157
 s-psa	ug/l	Extracted	2767	1913
 s-gadab		Extracted	910	844
 s-c-pept	nmol/l	Source	1452	1086
 hba1cvieri	mmol/mol	Extracted	162	95
 ca++/ph7.4	mmol/l	Source	18482	4544
-p-tromboplastiiniaika,inr,tt	inr	Extracted	9462	1190
+p-tromboplastiiniaika,inr,tt		Extracted	9462	1190
 happamuusaste,virtsasta		Source	1393	271
 epiteelisolut,virtsasta	e6/l	Source	4910	1904
 lieriöt,virtsasta	e6/l	Source	4909	1904
@@ -1867,7 +1867,7 @@ b-temp	°c	Source	5091	1621
 s-c-anca	titre	Source	307	143
 p-nh4-ion	umol/l	Source	1290	449
 du-tilav	ml	Source	3526	1918
-du-prot	g/24h	Source	5060	2173
+du-prot	g	Source	5060	2173
 s-igd	mg/l	Source	173	100
 bl-solut	e6/l	Source	816	714
 vb-o2hb	%	Source	778	100
@@ -1875,14 +1875,14 @@ vb-to2c	ml/dl	Source	777	99
 ab-o2hb	%	Source	1813	602
 ab-to2c	ml/dl	Source	1798	594
 b-cd19	e9/l	Source	2853	1391
-ly-cd4/cd8	ratio	Source	2626	1328
+ly-cd4/cd8		Source	2626	1328
 b-cd3	e9/l	Source	2851	1390
 b-cd16/56	e9/l	Source	2589	1296
 b-cd4	e9/l	Source	2853	1391
 b-cd8	e9/l	Source	2853	1391
 21777	mg/l	Source	246	242
 li-igg/alb	osuus	Source	1489	1396
-li-igg-ind	ratio	Source	2709	2538
+li-igg-ind	index	Source	2709	2538
 s-igg-oc	g/l	Source	999	936
 s-kerulo	mg/l	Source	2183	2059
 b-hba1c/pika		Extracted	952	533
@@ -1921,7 +1921,7 @@ li-leuk-3		Extracted	6	6
 li-tau		Extracted	192	192
 li-bam42		Extracted	189	189
 b-hb,tk		Extracted	529	404
-p-gluk,tk	mmol/l	Source	3391	1821
+p-gluk,tk		Source	3391	1821
 fp-gluk,tk		Source	1197	1049
 u-krea	umol/l	Source	4281	2779
 c-reaktiivinenproteiini,herkkä,seerumista	mg/l	Source	7396	6211
@@ -1929,9 +1929,9 @@ fs-kol	mmol/l	Extracted	2781	2334
 fs-kol-hdl	mmol/l	Extracted	3009	2496
 fs-kol-ldl	mmol/l	Extracted	2724	2287
 fs-trigly	mmol/l	Extracted	3037	2517
-s-tsh	mu/l	Extracted	4569	3584
+s-tsh	mlu/l	Extracted	4569	3584
 s-crp,herkkä	mg/l	Extracted	3757	3059
-cb-crp	mg/l	Extracted	2378	877
+cb-crp		Extracted	2378	877
 u-seulont,ph		Extracted	424	259
 b-konedif,lymph	%	Source	1314	592
 b-konedif,mxd	%	Source	1308	589
@@ -1949,7 +1949,7 @@ vb-he-tase,vb-na	mmol/l	Source	330	241
 vb-he-tase,vb-k	mmol/l	Source	328	240
 vb-he-tase,vb-hb		Source	233	176
 s-hbsab	iu/l	Source	1584	1479
-cb-crp	mg/l	Source	1002	477
+cb-crp		Source	1002	477
 pt-glomerulussuodosnopeus,pt-gfreepiestimoitu,ckd-epi-kaava	ml/min/173m2	Source	6938	3729
 s-normet	nmol/l	Source	8228	6242
 du-aldos	nmol	Source	1112	969
@@ -2131,7 +2131,7 @@ u-hyaliinilieriöt	e6/l	Source	432	264
 b-siklosporiinia,massaspektrometrinen		Extracted	12	10
 fs-transferiininrautakyllästeisyys		Extracted	275	235
 b-siklosporiinia,massaspektrometrinen	âug/l	Source	33	17
-kolesterolinjahdl-kolest.suhde	ratio	Source	267	163
+kolesterolinjahdl-kolest.suhde		Source	267	163
 vp-ph		Source	5039	1003
 b-rethe	pg	Source	3993	1501
 fs-pth	ng/l	Source	1065	588
@@ -2158,7 +2158,7 @@ b-ghb-a1c	mmol/mol	Extracted	275	167
 p-hb		Source	281	221
 p-c-reaktiivinenproteiini(pikanäyte)		Source	271	223
 b-tnt-vt		Source	62	42
-u-lieriö	e6/l	Source	7199	1895
+u-lieriö		Source	7199	1895
 cu-aika(s)	s	Source	1458	670
 li-fostau	ng/l	Source	1969	1927
 li-tau	ng/l	Source	2008	1966
@@ -2199,7 +2199,7 @@ erytrosyytit,virtsa	e6/l	Source	7631	2842
 leukosyytit,virtsa	e6/l	Source	6451	2542
 epiteelisolut,virtsa	e6/l	Source	7631	2842
 lieriöt,virtsa	e6/l	Source	7631	2842
-kol/hdl-su	ratio	Source	979	739
+kol/hdl-su		Source	979	739
 p-ca-iona	mmol/l	Extracted	4519	1518
 ab-po2	kpa	Extracted	3272	1560
 fp-laktaat	mmol/l	Extracted	2207	1065
@@ -2228,7 +2228,7 @@ pf-gran	%	Source	439	344
 p-haptog	g/l	Extracted	1821	1584
 tffesat	%	Extracted	2728	1823
 u-ph.		Extracted	2875	1490
-u-suhti.	ratio	Extracted	2722	1442
+u-suhti.		Extracted	2722	1442
 vp-gluk-0h	mmol/l	Source	715	574
 vp-gluk-2h	mmol/l	Source	712	571
 vp-gluk-1h	mmol/l	Source	247	174
@@ -2255,7 +2255,7 @@ p-prostataspesifinenantigeeni,vapaa,osuus	%	Source	204	169
 crp(päiv.hoitaja)	mg/l	Extracted	2927	1110
 crp(päiv.hoitaja)	mg/l	Source	361	290
 erytrosyytit	e12/l	Source	16829	4695
-erytrosyytit,tilavuusosuus	ratio	Source	16822	4690
+erytrosyytit,tilavuusosuus	osuus	Source	16822	4690
 trombosyytit	e9/l	Source	16801	4687
 s-he4proteiini	pmol/l	Source	308	270
 p-crppika		Source	759	399
@@ -2515,7 +2515,7 @@ s-hevonee	u/ml	Source	1781	1702
 b-pvk+t	%m	Source	229	162
 b-pvk+t	%l	Source	229	162
 b-pvk+t	%g	Source	229	162
-u-kemseul		Extracted	255	180
+u-kemseul	form	Extracted	255	180
 p-ph		Extracted	2503	1944
 p-plasmanneurofilamentti,kevytketju		Extracted	88	86
 p-tau-proteiini,217-fosforyloitu	ng/l	Source	74	74
@@ -2551,7 +2551,7 @@ p-c-reaktiivinenproteiini,pikatesti		Source	1819	1130
 s-vapaanjakokonais-psa:nsuhde	%	Source	643	465
 b-fidd-vt		Extracted	215	190
 s-hscrp	mg/l	Source	676	585
-p-gluk-vt	mmol/l	Source	3440	1902
+p-gluk-vt		Source	3440	1902
 b-zn	umol/l	QCOut	457	380
 b-mn	umol/l	Source	325	259
 kalium,kokoveren	mmol/l	QCOut	31	29
@@ -2646,7 +2646,7 @@ p-gluk2h		Source	68	51
 fp-trigl	mmol/l	Source	8566	1590
 u-eryt	/sunf	Source	1182	446
 u-prot-o	form	Source	10588	2883
-u-veri-o	estimate	Source	2539	781
+u-veri-o	form	Source	2539	781
 b-hba1cvt	%	Source	7582	1170
 NA	u/l	Source	2435	1449
 e-rwd	%	Source	46	41
@@ -2659,7 +2659,7 @@ prostataspesifinenantigeeni,suhde	%	Source	1497	1279
 troponiini	ng/l	Source	1588	1158
 n-terminaalinenpro-bnp(nt-probnp)	ng/l	Source	2053	1505
 s-b12-vitamiini,transkobalamiiniii:eensitoutunut,seerumista	pmol/l	Source	75	64
-b-erytrosyytit,tilavuusosuus	ratio	Extracted	2862	1352
+b-erytrosyytit,tilavuusosuus	osuus	Extracted	2862	1352
 s-ferritiini	ug/l	Source	670	431
 e-hemoglobiini,keskimassakonsentraatio	g/l	Extracted	67	58
 s-ferritiini(ko)	ug/l	Source	97	74
@@ -2671,7 +2671,7 @@ liuskatumaisetneutrofiilit	%	Source	178	111
 p-gluk-0h	mmol/l	Source	750	541
 p-gluk-2h	mmol/l	Source	897	656
 p-etoh	mmol/l	Source	778	564
-oma-p-crp	mg/l	Extracted	1588	1074
+oma-p-crp		Extracted	1588	1074
 b-t-cd4	e9/l	Source	4080	1822
 ly-t-cd4.	%	Source	1462	514
 s-mtx	umol/l	Source	4829	512
@@ -2942,7 +2942,7 @@ pt-ekg-12		Extracted	731	420
 fosfatidyylietanoli,verestä	umol/l	Source	3284	2394
 s-sital	nmol/l	Source	110	87
 s-etoh	promille	Extracted	137	73
-b-inr-pik	inr	Extracted	1032	977
+b-inr-pik		Extracted	1032	977
 s-pappa	form	Source	136	95
 glukbel-vp	mmol/l	Source	664	216
 b-probnp	ng/l	Source	1338	591
@@ -3191,7 +3191,7 @@ s-uraatti	umol/l	Source	621	544
 s-desialotransferriini	%	Source	995	770
 11784	nmol/l	Source	211	181
 fp-transferriininrautasaturaatio	%	Source	400	336
-fp-kol-ind	mmol/l	Extracted	2589	1541
+fp-kol-ind		Extracted	2589	1541
 glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	Source	920	269
 pt-glomerulussuodosnopeus,estimoitu,kystatiinic-kaava	ml/min/173m2	Source	1128	352
 emäsylimäärä,kapillaariveri	mmol/l	Source	3948	1698
@@ -3215,7 +3215,7 @@ no-ex	ppb	Source	282	180
 s-bopeabm	index	Source	114	89
 s-chpnaba	eiu	Source	328	287
 11679	u/ml	Source	22	22
-b-retind	%	Extracted	1699	1155
+b-retind	osuus	Extracted	1699	1155
 p-psamob	ug/l	Source	575	171
 s-asetyylikoliinireseptori,vasta-aineet	nmol/l	Source	10	8
 s-non-hdl-kolesteroliosatutkimus	mmol/l	Source	28	27
@@ -3277,7 +3277,7 @@ paastoplasmankalsium-ioni,aktuaali	mmol/l	Source	758	388
 paastoseeruminkalsium-ioni.aktuaali	mmol/l	Source	371	166
 fp-kalsium,ionisoitunut	mmol/l	Source	172	113
 paastoplasmanph		Source	174	114
-b-erytrosyytit,tilavuusosuus	ratio	QCOut	809	661
+b-erytrosyytit,tilavuusosuus	osuus	QCOut	809	661
 fosfaatti,epäorgaaninen	mmol/l	Source	275	203
 paastoseeruminkalsium-ioni.	mmol/l	Source	575	385
 alkalinenfosfataasi	u/l	Source	4090	3042
@@ -3372,7 +3372,7 @@ erytropoietiini	iu/l	Source	114	107
 p-psa-suh	ug/l	Source	253	133
 b-keto		Source	32	31
 sensori	mmol/l	Source	1224	482
-du-prot	g/24h	Extracted	926	550
+du-prot	g	Extracted	926	550
 s-parvabg	eiu	Source	67	66
 u-prot	g/l	Extracted	1483	889
 potilasmittaringlukoosi,sensori	mmol/l	Source	201	138
@@ -3651,7 +3651,7 @@ b-pvk+tkd,eryt	e12/l	Source	4432	574
 b-pvk+tkd,ig	e9/l	Source	4329	572
 b-pvk+tkd,rdw	%	Source	4297	568
 b-pvk+tkd,hb	g/l	Source	4431	574
-b-pvk+tkd,hkr	ratio	Source	4430	574
+b-pvk+tkd,hkr	osuus	Source	4430	574
 b-pvk+tkd,mcv	fl	Source	4432	574
 b-pvk+tkd,mch	pg	Source	4427	573
 b-pvk+tkd,mchc	g/l	Source	4422	573
@@ -3687,7 +3687,7 @@ kolesteroli,plasmasta,paastotilassa(fp-kol)	mmol/l	Source	3522	2434
 kolesteroli,highdensitylipoprotein,plasmasta,paastotilassa(fp-kol-hdl)	mmol/l	Source	3523	2434
 triglyseridit,plasmasta,paastotilassa(fp-trigly)	mmol/l	Source	3521	2434
 kreatiniini,virtsasta(huumeseulonnanyhteydessä)	mmol/l	Source	874	756
--cdt	mg/l	Source	170	110
+-cdt		Source	170	110
 -transf	g/l	Source	143	84
 p-gluk60	mmol/l	Source	934	606
 prostataspesifinenantigeeni,vapaa(4900p-psa-v)	ug/l	Source	95	55
@@ -3706,7 +3706,7 @@ c-reaktiivinenproteiini	1	Source	925	654
 u-levyep	u/field	Source	387	333
 u-gran	u/field	Source	491	410
 u-välimep	u/field	Source	191	170
-inr-vieri	inr	Source	8630	208
+inr-vieri		Source	8630	208
 l-lym	%	Source	167	146
 s-valpr	%	Source	33	32
 13983	ug/l	Source	861	326
@@ -3770,7 +3770,7 @@ s-norklot	nmol/l	Extracted	2539	305
 p-troponiinii,herkkä	ng/l	Source	455	304
 s-prealbumiini	g/l	Source	498	387
 fs-transferiininrautakyllästeisyys		Source	541	447
-u-suhti	kg/l	QCOut	140	129
+u-suhti	g/ml	QCOut	140	129
 pt-stareie		Extracted	11	11
 pt-stareio		Extracted	11	11
 s-venlaf	nmol/l	Source	353	235
@@ -4074,8 +4074,8 @@ i-statglu		Extracted	573	346
 erikoisnäyte		Extracted	40	39
 cladosp.he	u/ml	Source	69	68
 s-hevonhie	u/ml	Source	128	127
-u-osmoest	mosm/kgh2o	QCOut	94	89
-u-kemseul		Source	1143	362
+u-osmoest	mosm/l	QCOut	94	89
+u-kemseul	form	Source	1143	362
 myelosyytit,osuusleukosyysteistä	%	Source	239	87
 metamyelosyytit,osuusleukosyyteistä	%	Source	171	70
 u-urea	mmol/l	Source	717	438
@@ -4661,7 +4661,7 @@ s-amyl		Extracted	87	81
 fs-gluk		Extracted	54	52
 s-gt		Extracted	237	195
 s-na		Extracted	86	64
-cd4/cd8	ratio	Extracted	201	163
+cd4/cd8		Extracted	201	163
 b-keto/pi	mmol/l	Source	31	27
 p-hiv1nh	u/ml	Extracted	796	257
 pikahb		Source	686	408
@@ -4757,7 +4757,7 @@ pt-glukr1/2h	mmol/l	Source	19	19
 he4,antigeeni4	pmol/l	Source	22	22
 se-gluk	mmol/l	Source	226	99
 p-gluk-0	mmol/l	Source	264	197
-b-keto/pik	mmol/l	Extracted	359	259
+b-keto/pik		Extracted	359	259
 s-echiab	od	Source	15	15
 s-filaab	od	Source	35	35
 s-stroab	od	Source	120	113
@@ -4993,7 +4993,7 @@ fibtem/a10	mm	Source	228	139
 fibtem/a15	mm	Source	228	139
 p-psa-v	form	Source	7	7
 pt-gluk-r1	mmol/l	Source	369	169
-cb-inrc-c	inr	Source	4266	117
+cb-inrc-c		Source	4266	117
 s-beta1	g/l	Source	1765	1009
 s-beta2	g/l	Source	1772	1017
 s-alfa1	g/l	Source	1708	966
@@ -5074,7 +5074,7 @@ glomerulussuodosnopeus,estimoitukystatiinic:stä	ml/min/173m2	Source	130	112
 c-pepta	nmol/l	Source	13	10
 tromboplastiiniaika,inr-tulostus,laaduntarkkailu	inr	Source	127	32
 glukoosi,pikatesti,veri		Extracted	216	93
-inr-pika	inr	Extracted	46	33
+inr-pika		Extracted	46	33
 s-tsh-peg	mu/l	Source	565	315
 b-gluk		Extracted	375	315
 s-parvabg	iu/ml	Source	57	57
@@ -5368,7 +5368,7 @@ s-alfa2		Extracted	47	46
 s-beta1		Extracted	47	46
 s-beta2		Extracted	56	54
 cb-tt-inrp		Source	1908	156
-cb-tt-inrpika	inr	Source	4839	179
+cb-tt-inrpika		Source	4839	179
 120mp-gluk	mmol/l	QCOut	508	397
 fp-gluk0,osatutk.		Extracted	57	50
 p-gluk120,osatutk.		Extracted	56	49
@@ -5398,7 +5398,7 @@ b-hg	nmol/l	Source	63	44
 d-toxoabg		Extracted	19	18
 b-pvk	paketti	Source	261	116
 crp-p	mg/l	Source	1051	389
-u-epitel	u/field	Source	1120	473
+u-epitel		Source	1120	473
 u-eryt	form	Source	1189	540
 u-hyallie	e6/l	Source	146	99
 -bil	umol/l	Source	433	269
@@ -5468,7 +5468,7 @@ ferritiini(ferrit)	ug/l	Source	94	73
 du-5hiaa		Extracted	49	48
 du-moma	umol/24h	Source	19	19
 s-5hiaa		Extracted	29	28
-b-keto/pik	mmol/l	Source	173	133
+b-keto/pik		Source	173	133
 s-sertral	nmol/l	Source	85	66
 b-vasp	%	Source	164	156
 pt-glomerulussuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	Source	212	124
@@ -5499,7 +5499,7 @@ p-acth		Extracted	289	255
 s-tnt		Extracted	46	42
 pulssi		Extracted	56	56
 diabetes	form	Source	187	187
-p-inr-pi	inr	Source	2836	113
+p-inr-pi		Source	2836	113
 p-fidd-os		Extracted	27	25
 s-antitry		Extracted	543	519
 timoteinsiitepöly(g6),ige-vasta-aineet	u/ml	Source	48	46
@@ -5646,7 +5646,7 @@ infliksimabipitoisuus,seerumista␤	mg/l	Source	36	28
 infliksimabipitoisuus,seerumista␤		Source	11	11
 s-ca-17.4	mmol/l	Source	835	393
 b-verensokeripikatesti		Source	57	51
-u-hb-o	estimate	Source	65	48
+u-hb-o	form	Source	65	48
 kolesteroli/hdl-kolesteroli-suhde		Extracted	57	56
 s-iga/pre		Extracted	18	17
 s-hevabm		Source	8	8
@@ -6018,7 +6018,7 @@ lymfosyytit,absoluuttiset	e9/l	Source	152	101
 monosyytit,absoluuttiset	e9/l	Source	150	100
 neutrofiilit,absoluuttiset	e9/l	Source	152	101
 s-insu-ab	%	Source	62	49
-b-hkr	ratio	QCOut	272	166
+b-hkr	osuus	QCOut	272	166
 b-trom	%	Source	131	50
 s-nse		Extracted	114	102
 s-hepyabg	eiu	Source	206	203
@@ -6206,7 +6206,7 @@ s-m-komp1	g/l	Source	239	17
 u-osmoie	mosm/kgh2o	Source	273	128
 s-ecp		Extracted	67	60
 du-tilavu		Extracted	15	15
-du-alb	mg/24h	Extracted	78	74
+du-alb		Extracted	78	74
 p-at-jatk	%	Source	63	51
 pikau-sti,u-gluk-o		Source	85	80
 pikau-sti,u-keto-o		Source	84	79
@@ -6352,7 +6352,7 @@ cp-ph		Extracted	53	36
 p-preurea	mmol/l	Source	2928	178
 p-posturea	mmol/l	Source	1583	157
 p-preurea		Extracted	327	105
-kol/hdl	ratio	Source	397	276
+kol/hdl		Source	397	276
 s-borrelia,iggvasta-aineet	au/ml	Source	106	93
 -prot	g/l	Source	74	72
 -gluk	mmol/l	Source	34	33
@@ -6363,7 +6363,7 @@ u-uraat	mmol/l	Source	106	95
 s-osacdt		Extracted	27	23
 s-osacdtr		Extracted	26	22
 s-serto	mg/l	Source	108	93
-b-ghb-a1c,tk	%	QCOut	61	56
+b-ghb-a1c,tk		QCOut	61	56
 p-gluk-o		Source	9	9
 du-oksal	umol/24h	Extracted	259	200
 u-epiteelisolut		Extracted	81	70
@@ -6586,7 +6586,7 @@ leukosyytit(leuk)	e9/l	Source	31	29
 happamuusaste		Extracted	442	376
 p-ldllaskennallinen	mmol/l	Source	654	608
 c6-indeksi		Extracted	349	293
-p-tt-inr	inr	QCOut	10	9
+p-tt-inr	form	QCOut	10	9
 b-k-diffi,lym		Extracted	21	10
 b-k-diffi,mxd	%	Source	23	10
 b-k-diffi,neut	%	Source	23	10
@@ -6595,7 +6595,7 @@ b-k-diffi,mxd	e9/l	Source	23	10
 b-k-diffi,neut	e9/l	Source	23	10
 u-kemseul,u-suhtih		Source	168	77
 u-kemseul,u-ph		Source	175	77
-p-inr-vt	inr	Extracted	3094	229
+p-inr-vt		Extracted	3094	229
 s-pistaae	u/ml	Source	47	45
 maapähkinä(f13),ige-vasta-aineet	u/ml	Source	7	6
 hasselpähkinä,rekombinanttipr-10coraa1(f428),ige-vasta-aineet	u/ml	Source	6	6
@@ -7365,7 +7365,7 @@ ab-hbo2svt	%	Source	64	52
 ab-caionvt	mmol/l	Source	83	62
 e-punasolujenkoonvaihtelu	%	Source	27	24
 pt-glomerulustensuodatusnopeus	ml/min/173m2	Source	16	15
-ua-be	mmol/l	Source	108	107
+ua-be		Source	108	107
 p-tnt-hy		Source	43	31
 s-ebnaab	u/ml	Source	134	118
 21758		Source	26	25
@@ -7392,7 +7392,7 @@ p-apttspr		Extracted	33	30
 cp-gluk-l		Extracted	12	11
 p-glukoosi,2tuntiaaterianjälkeen	mmol/l	Source	125	118
 fs-gh	ug/l	Extracted	41	10
--i-ind	index	Extracted	61	61
+-i-ind		Extracted	61	61
 rf	iu/ml	Source	21	21
 ana	titre	Source	6	6
 tpoab	u/ml	Source	9	9
@@ -7405,7 +7405,7 @@ p-ebvnh	gekv/ml	Source	464	104
 s-testosteroni,massaspektrometrinen	nmol/l	Source	89	79
 p-sukupuolihormonejasitovaglobuliini	nmol/l	Source	153	130
 fp-transferriininrautakyllästeisyys,plasmasta	%	Source	66	59
--cdt	mg/l	Extracted	291	276
+-cdt		Extracted	291	276
 -transf		Extracted	315	299
 p-vwfcb	%	Source	98	67
 u-ominaisp		Extracted	298	216
@@ -7497,7 +7497,7 @@ näköseula		Extracted	151	138
 p-glukoosi120	mmol/l	Source	20	20
 cp-keto	mmpl/l	Source	11	8
 s-ifx	mg/l	Extracted	57	43
-kol/hdlsuh	ratio	Extracted	472	184
+kol/hdlsuh		Extracted	472	184
 kol/hdlsuho1		Extracted	42	37
 b-diffi,l-neutr	%	Source	38	17
 b-diffi,l-eos	%	Source	99	63
@@ -7559,7 +7559,7 @@ p-prostataspesifinenantigeeni(pi)	ug/l	Source	78	54
 s-borrelia,iggvasta-aineet	u/ml	Source	19	19
 fp-trfe-sa		Extracted	114	65
 du-urea		Extracted	24	22
-b-ketoaineet	mmol/l	Extracted	80	71
+b-ketoaineet		Extracted	80	71
 s-fenob	umol/l	Source	228	27
 p-haptoglobiini		Extracted	6	6
 di-eryt	e6/l	Source	54	11
@@ -8368,7 +8368,7 @@ s-kalaryh	u/ml	Source	17	17
 l-eos-m␤		Source	15	10
 l-baso-m␤		Source	11	8
 l-lymf-m␤		Source	18	12
-u-ph	ph	QCOut	102	97
+u-ph	form	QCOut	102	97
 b-hba1c-opikamittari		Source	65	45
 pt-dxm-r1	nmol/l	Source	76	76
 b-hb-met		Extracted	75	65
@@ -8381,7 +8381,7 @@ u-prot-o.		Source	9	9
 pf-neut+eo	%	Source	32	26
 b-tnt/pika		Extracted	38	29
 b-hemocue		Extracted	70	49
-u-lieriö	e6/l	Extracted	27	18
+u-lieriö		Extracted	27	18
 leukosyytit,vieritesti	ng/l	Source	41	29
 kalium,vieritestinä,sotekäyttää		Source	33	22
 s-hsv2abg	au	Source	44	41
@@ -8963,7 +8963,7 @@ erytrosyytit,virtsasta,partikkelinlaskijalla,osatutk.	e6/l	Source	202	123
 s-hasselpähkinä,igevasta-aineet	u/ml	Source	6	6
 s-salmab		Extracted	42	41
 ps-strvi	form	Source	34	32
-snabb-inr	inr	Source	6262	98
+snabb-inr		Source	6262	98
 s-flekain		Extracted	74	55
 emäsylimäärä,venaverestä,osatutk.	mmol/l	Source	31	21
 aktuaalibikarbonaatti,venaverestä,osatutk.	mmol/l	Source	62	30
@@ -10182,7 +10182,7 @@ ruoka-aineryhmä	u/ml	Source	29	29
 s-negadab	mu/ml	Source	28	14
 hepyaba	u/ml	Source	8	8
 hepyabg	u/ml	Source	6	6
-u-ph-o	ph	QCOut	28	28
+u-ph-o	N	QCOut	28	28
 amylaasi,plasmasta	u/l	Source	13	9
 s-frtuab		Extracted	21	14
 11094	au/ml	Source	21	18
@@ -11020,7 +11020,7 @@ as-alb		Extracted	40	36
 s-ruoka5e		Extracted	11	11
 s-home1er		Extracted	7	7
 cp-glukpot		Extracted	15	7
-u-veri-o	estimate	Extracted	15	15
+u-veri-o	form	Extracted	15	15
 beeta-hydroksibutyraatti	mmol/l	Source	21	15
 s-etosux	umol/l	Source	60	16
 p-fiddp	mg/l	Source	33	20
@@ -12087,7 +12087,7 @@ p-fakbb		Extracted	7	7
 u-tutk-1(oma),ph		Source	25	6
 b-gluk(vo.hoitaja)	atj/3t	Source	11	10
 s-kurkkue	u/ml	Source	7	7
-ly-cd4/cd8	ratio	Extracted	11	11
+ly-cd4/cd8		Extracted	11	11
 b-cd16/56		Extracted	12	12
 s-lis1ba		Extracted	7	7
 s-lis4ba		Extracted	6	6
@@ -13042,4 +13042,4 @@ li-muutsol	%	Source	6	6
 fp-aldos-p	pmol/l	Source	6	6
 s-treponemapallidum,hemagglutinaatio	titre	Source	21	7
 pt-ada-indeksi		Source	6	6
-p-inr-vt	inr	QCOut	6	6
+p-inr-vt		QCOut	6	6
