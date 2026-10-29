@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kanta harmonisation dashboard</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --fg: #1f2933; --muted: #6b7280; --line: #e3e6ea;
+  --accent: #2b4c7e; --head: #f0f2f5;
+  --approved: #3fae4a; --error: #d64545; --notapproved: #d99a2b; --ignore: #7b8794; --notfound: #b68b5a;
+  --agree-bg: #d4f1d4; --warn-bg: #fdf3c4; --dis-bg: #f9d3d3;
+  --bar-source: #2f5fd0; --bar-extracted: #d98a2b; --bar-qc: #d64545; --bar-na: #cfd4da;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181d; --panel: #1c2128; --fg: #e4e8ec; --muted: #9aa4af; --line: #2d343c;
+    --accent: #7fa6e0; --head: #232a32;
+    --agree-bg: #1f4a28; --warn-bg: #4d4318; --dis-bg: #5a2323;
+    --bar-na: #444c55;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+header { padding: 14px 20px 0; }
+h1 { font-size: 20px; margin: 0 0 10px; }
+nav { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+nav button { background: none; border: 0; padding: 8px 16px; font: inherit; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; }
+nav button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+main { padding: 16px 20px 40px; }
+section.panel[hidden] { display: none; }
+h2 { font-size: 16px; margin: 22px 0 8px; }
+h2:first-child { margin-top: 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 4px 0; overflow-x: auto; }
+table.summary { width: 100%; border-collapse: collapse; }
+table.summary th, table.summary td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.summary th { font-weight: 600; }
+table.summary .num { text-align: right; font-variant-numeric: tabular-nums; }
+table.summary tr:last-child td { border-bottom: 0; }
+table.summary tr.total td { font-weight: 600; border-top: 2px solid var(--line); }
+.note { color: var(--muted); font-size: 12.5px; margin: 8px 2px 0; max-width: 900px; }
+.st { font-weight: 700; font-size: 12.5px; }
+.st-APPROVED { color: var(--approved); }
+.st-ERROR { color: var(--error); }
+.st-NOT-APPROVED { color: var(--notapproved); }
+.st-IGNORE { color: var(--ignore); }
+.st-NOT-FOUND { color: var(--notfound); }
+.ks { padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+.ks.agree { background: var(--agree-bg); }
+.ks.warn { background: var(--warn-bg); }
+.ks.dis { background: var(--dis-bg); }
+.ks small { color: var(--muted); }
+/* table tab */
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
+.toolbar button, .toolbar select { font: inherit; padding: 4px 10px; background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 4px; cursor: pointer; }
+.toolbar button:disabled { opacity: .45; cursor: default; }
+.toolbar .info { color: var(--muted); }
+.tablewrap { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: auto; max-height: calc(100vh - 190px); }
+table.data { border-collapse: collapse; width: max-content; min-width: 100%; font-size: 12px; }
+table.data th { position: sticky; top: 0; z-index: 2; background: var(--head); text-align: left; vertical-align: bottom; padding: 8px 6px 6px; border-bottom: 1px solid var(--line); }
+table.data th .label { cursor: pointer; user-select: none; display: block; margin-bottom: 4px; white-space: normal; }
+table.data th .arrow { color: var(--accent); }
+table.data th input, table.data th select { width: 100%; min-width: 48px; font: inherit; padding: 3px 4px; background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 3px; }
+table.data th input.bad { border-color: var(--error); outline: 1px solid var(--error); }
+table.data td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.data tbody tr:hover td { background: var(--head); }
+table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.data td.wide { min-width: 170px; max-width: 260px; }
+table.data td.msg { min-width: 260px; max-width: 420px; color: var(--muted); }
+.bar { display: flex; width: 56px; height: 9px; border-radius: 2px; overflow: hidden; background: var(--bar-na); margin-top: 3px; }
+.bar span { display: block; height: 100%; }
+.empty { padding: 30px; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kanta harmonisation dashboard</h1>
+  <nav role="tablist">
+    <button role="tab" id="tab-summary" aria-selected="true" aria-controls="panel-summary">Summary</button>
+    <button role="tab" id="tab-table" aria-selected="false" aria-controls="panel-table">Table</button>
+  </nav>
+</header>
+<main>
+  <section class="panel" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
+    <h2>Harmonised Events</h2>
+    <div class="card">__EVENTS_TABLE__</div>
+    <p class="note">A pair is a <code>TEST_NAME</code> + <code>PREPROCESED_UNIT</code>. Status is the <code>mapping_status</code> of its mapping; NOT-FOUND is a pair that is not in the harmonization table. Pairs with a warning have a message of a warning table (ignored or not).</p>
+
+    <h2>Harmonised Values</h2>
+    <div class="card">__VALUES_TABLE__</div>
+    <p class="note">The harmonised deciles of a pair are compared with a reference: the median, decile by decile, of the other approved pairs in the same LOINC Group (the pair is never part of its own reference). KS is the Kolmogorov-Smirnov distance between the two sets of deciles, from 0 (same) to 0.9 (no overlap).</p>
+  </section>
+
+  <section class="panel" id="panel-table" role="tabpanel" aria-labelledby="tab-table" hidden>
+    <div class="toolbar">
+      <span class="info" id="info"></span>
+      <label>Rows per page <select id="pagesize"><option>25</option><option selected>50</option><option>100</option><option>250</option></select></label>
+      <button id="first" title="First page">&laquo;</button>
+      <button id="prev" title="Previous page">&lsaquo;</button>
+      <button id="next" title="Next page">&rsaquo;</button>
+      <button id="last" title="Last page">&raquo;</button>
+      <button id="clear">Clear filters</button>
+    </div>
+    <div class="tablewrap"><table class="data" id="grid"><thead></thead><tbody></tbody></table></div>
+    <p class="note">Click a header to sort. Filters: text matches anywhere (case insensitive); numeric columns take <code>&gt;0.5</code>, <code>&lt;=2</code>, <code>=0.3</code> or a range <code>0.2..0.5</code>. The bars are the share of records by source: blue Source, orange Extracted (value) or PrimaryInjection (unit), red QCOut or SecondaryCorrection, grey missing.</p>
+  </section>
+</main>
+
+<script id="config" type="application/json">__CONFIG_JSON__</script>
+<script id="data" type="application/json">__DATA_JSON__</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var CFG = JSON.parse(document.getElementById("config").textContent);
+  var N = D.status.length;
+
+  // ---- tabs
+  var tabs = { summary: document.getElementById("tab-summary"), table: document.getElementById("tab-table") };
+  function showTab(name) {
+    Object.keys(tabs).forEach(function (k) {
+      tabs[k].setAttribute("aria-selected", k === name ? "true" : "false");
+      document.getElementById("panel-" + k).hidden = k !== name;
+    });
+  }
+  Object.keys(tabs).forEach(function (k) { tabs[k].addEventListener("click", function () { showTab(k); }); });
+
+  // ---- columns
+  var COLS = [
+    { key: "status", label: "Status", type: "status" },
+    { key: "concept_id", label: "OMOP concept ID", type: "num", plain: true },
+    { key: "concept_name", label: "OMOP name", type: "text", cls: "wide" },
+    { key: "quantity", label: "OMOP quantity", type: "text" },
+    { key: "unit_change", label: "Unit change", type: "text" },
+    { key: "test", label: "TestCode[Unit]", type: "text", cls: "wide" },
+    { key: "n", label: "N records", type: "num" },
+    { key: "value_source", label: "Value source", type: "bar", names: ["Source", "Extracted", "QCOut", "Missing"] },
+    { key: "unit_source", label: "Unit source", type: "bar", names: ["Source", "PrimaryInjection", "SecondaryCorrection", "Missing"] },
+    { key: "deciles", label: "Decile of measurement value", type: "text", cls: "wide" },
+    { key: "ks", label: "KS (-log10 p)", type: "ks" },
+    { key: "conversion", label: "Value unit harmonisation", type: "text" },
+    { key: "deciles_h", label: "Decile of harmonised value", type: "text", cls: "wide" },
+    { key: "log10_d5", label: "log10 D5", type: "num" },
+    { key: "reference", label: "Reference group", type: "text", cls: "wide" },
+    { key: "message", label: "Warnings", type: "text", cls: "msg" }
+  ];
+  var BAR_COLORS = ["var(--bar-source)", "var(--bar-extracted)", "var(--bar-qc)", "var(--bar-na)"];
+
+  // ---- state
+  var filters = {};      // key -> raw text
+  var matchers = {};     // key -> function(index) -> bool
+  var sortKey = null, sortDir = 1;
+  var page = 0;
+  var order = [];        // indexes after filter and sort
+  var lower = {};        // lower-cased text per text column
+  COLS.forEach(function (c) {
+    if (c.type === "text") {
+      lower[c.key] = D[c.key].map(function (v) { return v == null ? "" : String(v).toLowerCase(); });
+    }
+  });
+
+  // ---- helpers
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function ksClass(ks) { return ks < CFG.ksAgree ? "agree" : (ks <= CFG.ksDisagree ? "warn" : "dis"); }
+  function parseBar(s) {
+    if (s == null) return null;
+    var m = String(s).match(/^\[([^\]]*)\]/);
+    if (!m) return null;
+    var p = m[1].split(",").map(Number);
+    return p.length === 4 && p.every(function (x) { return isFinite(x); }) ? p : null;
+  }
+  function numMatcher(text, col) {
+    var t = text.trim();
+    if (!t) return null;
+    var m = t.match(/^(>=|<=|>|<|=)?\s*(-?\d*\.?\d+(?:e[-+]?\d+)?)$/i), r = t.match(/^(-?\d*\.?\d+)\s*\.\.\s*(-?\d*\.?\d+)$/);
+    var vals = D[col.key];
+    if (m) {
+      var op = m[1] || "=", v = parseFloat(m[2]);
+      return function (i) {
+        var x = vals[i];
+        if (x == null) return false;
+        switch (op) {
+          case ">": return x > v;
+          case ">=": return x >= v - 1e-9;
+          case "<": return x < v;
+          case "<=": return x <= v + 1e-9;
+          default: return Math.abs(x - v) < 1e-9;
+        }
+      };
+    }
+    if (r) {
+      var lo = parseFloat(r[1]), hi = parseFloat(r[2]);
+      return function (i) { var x = vals[i]; return x != null && x >= lo - 1e-9 && x <= hi + 1e-9; };
+    }
+    return false; // invalid expression
+  }
+
+  // ---- filter and sort
+  function applyFilters() {
+    matchers = {};
+    var bad = {};
+    COLS.forEach(function (c) {
+      var text = filters[c.key];
+      if (!text || !text.trim()) return;
+      if (c.type === "num" || c.type === "ks") {
+        var f = numMatcher(text, c);
+        if (f === false) { bad[c.key] = true; return; }
+        matchers[c.key] = f;
+      } else if (c.type === "status") {
+        matchers[c.key] = function (i) { return D.status[i] === text; };
+      } else if (c.type === "text") {
+        var needle = text.trim().toLowerCase(), arr = lower[c.key];
+        matchers[c.key] = function (i) { return arr[i].indexOf(needle) !== -1; };
+      }
+    });
+    document.querySelectorAll("#grid thead input").forEach(function (el) {
+      el.classList.toggle("bad", !!bad[el.dataset.key]);
+    });
+    var fs = Object.keys(matchers).map(function (k) { return matchers[k]; });
+    order = [];
+    for (var i = 0; i < N; i++) {
+      var ok = true;
+      for (var j = 0; j < fs.length; j++) { if (!fs[j](i)) { ok = false; break; } }
+      if (ok) order.push(i);
+    }
+    applySort();
+  }
+  function applySort() {
+    if (sortKey) {
+      var col = COLS.filter(function (c) { return c.key === sortKey; })[0];
+      var v = D[sortKey];
+      var rank = col.type === "status" ? function (x) { return CFG.statusOrder.indexOf(x); } : null;
+      var numeric = col.type === "num" || col.type === "ks";
+      order.sort(function (a, b) {
+        var x = v[a], y = v[b];
+        if (x == null && y == null) return a - b;
+        if (x == null) return 1;
+        if (y == null) return -1;
+        if (rank) { x = rank(x); y = rank(y); }
+        else if (col.type === "bar") { x = (parseBar(x) || [0, 0, 0, 100])[3]; y = (parseBar(y) || [0, 0, 0, 100])[3]; }
+        else if (!numeric) { var c = String(x).localeCompare(String(y)); return c ? c * sortDir : a - b; }
+        return x === y ? a - b : (x < y ? -sortDir : sortDir);
+      });
+    }
+    page = 0;
+    render();
+  }
+
+  // ---- render
+  function cell(c, i) {
+    var v = D[c.key][i];
+    switch (c.type) {
+      case "status":
+        return '<td><span class="st st-' + esc(v) + '">' + esc(v) + "</span></td>";
+      case "num":
+        return '<td class="num">' + (v == null ? "" : (c.plain ? v : (c.key === "log10_d5" ? v : v.toLocaleString("en-US")))) + "</td>";
+      case "ks":
+        return "<td>" + (v == null ? "" : '<span class="ks ' + ksClass(v) + '">' + v + " <small>(" + D.ks_mlp[i] + ")</small></span>") + "</td>";
+      case "bar":
+        var p = parseBar(v);
+        if (!p) return "<td></td>";
+        var title = c.names.map(function (n, k) { return n + " " + p[k] + "%"; }).join(", ");
+        return '<td><div class="bar" title="' + esc(title) + '">' + p.map(function (x, k) {
+          return '<span style="width:' + x + "%;background:" + BAR_COLORS[k] + '"></span>';
+        }).join("") + "</div></td>";
+      default:
+        return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + (v == null ? "" : esc(v)) + "</td>";
+    }
+  }
+  function render() {
+    var size = parseInt(document.getElementById("pagesize").value, 10);
+    var pages = Math.max(1, Math.ceil(order.length / size));
+    page = Math.min(page, pages - 1);
+    var from = page * size, to = Math.min(order.length, from + size);
+    var html = [];
+    for (var r = from; r < to; r++) {
+      var i = order[r];
+      html.push("<tr>" + COLS.map(function (c) { return cell(c, i); }).join("") + "</tr>");
+    }
+    var body = document.querySelector("#grid tbody");
+    body.innerHTML = html.length ? html.join("") : '<tr><td class="empty" colspan="' + COLS.length + '">No rows match the filters</td></tr>';
+    document.getElementById("info").textContent = order.length
+      ? (from + 1).toLocaleString("en-US") + "–" + to.toLocaleString("en-US") + " of " + order.length.toLocaleString("en-US") +
+        (order.length < N ? " (filtered from " + N.toLocaleString("en-US") + ")" : "") + " · page " + (page + 1) + "/" + pages
+      : "0 of " + N.toLocaleString("en-US");
+    document.getElementById("first").disabled = document.getElementById("prev").disabled = page === 0;
+    document.getElementById("next").disabled = document.getElementById("last").disabled = page >= pages - 1;
+    COLS.forEach(function (c) {
+      var el = document.getElementById("arrow-" + c.key);
+      el.textContent = c.key === sortKey ? (sortDir === 1 ? " ▲" : " ▼") : "";
+    });
+  }
+
+  // ---- header with the label (sort) and the filter
+  var head = "<tr>" + COLS.map(function (c) {
+    var input;
+    if (c.type === "status") {
+      input = '<select data-key="' + c.key + '"><option value=""></option>' +
+        CFG.statusOrder.map(function (s) { return '<option value="' + s + '">' + s + "</option>"; }).join("") + "</select>";
+    } else if (c.type === "bar") {
+      input = "";
+    } else {
+      input = '<input data-key="' + c.key + '" type="text" autocomplete="off">';
+    }
+    return '<th><span class="label" data-key="' + c.key + '">' + esc(c.label) + '<span class="arrow" id="arrow-' + c.key + '"></span></span>' + input + "</th>";
+  }).join("") + "</tr>";
+  document.querySelector("#grid thead").innerHTML = head;
+
+  document.querySelectorAll("#grid thead .label").forEach(function (el) {
+    el.addEventListener("click", function () {
+      var k = el.dataset.key;
+      if (sortKey === k) { sortDir = -sortDir; } else { sortKey = k; sortDir = 1; }
+      applySort();
+    });
+  });
+  var timer = null;
+  document.querySelectorAll("#grid thead input, #grid thead select").forEach(function (el) {
+    var handler = function () {
+      filters[el.dataset.key] = el.value;
+      clearTimeout(timer);
+      timer = setTimeout(applyFilters, el.tagName === "SELECT" ? 0 : 150);
+    };
+    el.addEventListener(el.tagName === "SELECT" ? "change" : "input", handler);
+  });
+  document.getElementById("pagesize").addEventListener("change", function () { page = 0; render(); });
+  document.getElementById("first").addEventListener("click", function () { page = 0; render(); });
+  document.getElementById("prev").addEventListener("click", function () { page = Math.max(0, page - 1); render(); });
+  document.getElementById("next").addEventListener("click", function () { page += 1; render(); });
+  document.getElementById("last").addEventListener("click", function () { page = 1e9; render(); });
+  document.getElementById("clear").addEventListener("click", function () {
+    filters = {};
+    document.querySelectorAll("#grid thead input, #grid thead select").forEach(function (el) { el.value = ""; });
+    applyFilters();
+  });
+
+  applyFilters();
+})();
+</script>
+</body>
+</html>
