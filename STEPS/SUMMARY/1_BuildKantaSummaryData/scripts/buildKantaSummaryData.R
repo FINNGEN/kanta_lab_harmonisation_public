@@ -44,10 +44,10 @@ fmtNum <- function(x) {
   sub("\\.$", "", s)
 }
 
-# One row per TEST_NAME/UNIT, n = total records (the denominator every
+# One row per TEST_NAME/PREPROCESED_UNIT, n = total records (the denominator every
 # percentage below is taken against).
 total <- summaryTest |>
-  dplyr::transmute(TEST_NAME, UNIT = PREPROCESED_UNIT, n = n_records)
+  dplyr::transmute(TEST_NAME, PREPROCESED_UNIT, n = n_records)
 
 # Drop the upstream's stringified missing test name: records with no test name
 # arrive as a TEST_NAME of literally "NA". Case-sensitive, lowercase "na" is a
@@ -61,13 +61,12 @@ if (any(isMissingTestName)) {
   total <- total[!isMissingTestName, ]
 }
 
-# Widen a long TEST_NAME/UNIT/<labelCol>/n_records table into one row per
-# TEST_NAME/UNIT with one column per label. A pair absent from `df` gets no
+# Widen a long TEST_NAME/PREPROCESED_UNIT/<labelCol>/n_records table into one row per
+# TEST_NAME/PREPROCESED_UNIT with one column per label. A pair absent from `df` gets no
 # row here; the caller's left_join + replace_na(0) turns that into a real 0.
 widenSourceCounts <- function(df, labelCol, expectedLabels) {
   wide <- df |>
-    dplyr::rename(UNIT = PREPROCESED_UNIT) |>
-    dplyr::select(TEST_NAME, UNIT, label = dplyr::all_of(labelCol), n_records) |>
+    dplyr::select(TEST_NAME, PREPROCESED_UNIT, label = dplyr::all_of(labelCol), n_records) |>
     tidyr::pivot_wider(names_from = label, values_from = n_records, values_fill = 0)
   for (lab in setdiff(expectedLabels, names(wide))) wide[[lab]] <- 0
   wide
@@ -77,10 +76,10 @@ widenSourceCounts <- function(df, labelCol, expectedLabels) {
 # n minus every labeled record.
 unitSourceWide <- widenSourceCounts(summaryUnitSource, "unit_source", c("Source", "PrimaryInjection", "SecondaryCorrection"))
 unitSource <- total |>
-  dplyr::left_join(unitSourceWide, by = c("TEST_NAME", "UNIT")) |>
+  dplyr::left_join(unitSourceWide, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
   dplyr::mutate(dplyr::across(c(Source, PrimaryInjection, SecondaryCorrection), ~ tidyr::replace_na(.x, 0))) |>
   dplyr::transmute(
-    TEST_NAME, UNIT,
+    TEST_NAME, PREPROCESED_UNIT,
     unit_na = n - (Source + PrimaryInjection + SecondaryCorrection),
     unit_source_injection_correction_na_p = sprintf(
       "[%s,%s,%s,%s]%%",
@@ -95,10 +94,10 @@ unitSource <- total |>
 # record, i.e. a record with no usable value at all.
 valueSourceWide <- widenSourceCounts(summaryValuesSource, "value_source", c("Source", "Extracted", "QCOut"))
 valueSource <- total |>
-  dplyr::left_join(valueSourceWide, by = c("TEST_NAME", "UNIT")) |>
+  dplyr::left_join(valueSourceWide, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
   dplyr::mutate(dplyr::across(c(Source, Extracted, QCOut), ~ tidyr::replace_na(.x, 0))) |>
   dplyr::transmute(
-    TEST_NAME, UNIT,
+    TEST_NAME, PREPROCESED_UNIT,
     value_na = n - (Source + Extracted + QCOut),
     value_missing_p = fmtNum(100 * value_na / n),
     value_source_extracted_qcout_na_p = sprintf(
@@ -114,24 +113,24 @@ valueSource <- total |>
 # deciles upstream keep one row with an empty decile / decile_value.
 valueDeciles <- summaryValues |>
   dplyr::transmute(
-    TEST_NAME, UNIT = PREPROCESED_UNIT, decile,
+    TEST_NAME, PREPROCESED_UNIT, decile,
     decile_value = decile_MEASUREMENT_VALUE
   )
 
 result <- total |>
-  dplyr::left_join(unitSource |> dplyr::select(-unit_na), by = c("TEST_NAME", "UNIT")) |>
-  dplyr::left_join(valueSource |> dplyr::select(-value_na), by = c("TEST_NAME", "UNIT")) |>
-  dplyr::left_join(valueDeciles, by = c("TEST_NAME", "UNIT")) |>
-  dplyr::arrange(TEST_NAME, UNIT, decile) |>
+  dplyr::left_join(unitSource |> dplyr::select(-unit_na), by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
+  dplyr::left_join(valueSource |> dplyr::select(-value_na), by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
+  dplyr::left_join(valueDeciles, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
+  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, decile) |>
   dplyr::select(
-    TEST_NAME, UNIT, n,
+    TEST_NAME, PREPROCESED_UNIT, n,
     unit_source_injection_correction_na_p,
     value_missing_p,
     value_source_extracted_qcout_na_p,
     decile, decile_value
   )
 
-ParallelLogger::logInfo(dplyr::n_distinct(result$TEST_NAME, result$UNIT), " TEST_NAME/UNIT pairs")
+ParallelLogger::logInfo(dplyr::n_distinct(result$TEST_NAME, result$PREPROCESED_UNIT), " TEST_NAME/PREPROCESED_UNIT pairs")
 ParallelLogger::logInfo(sum(!is.na(result$decile)), " decile rows")
 
 #

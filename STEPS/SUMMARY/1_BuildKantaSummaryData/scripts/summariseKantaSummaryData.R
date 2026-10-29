@@ -22,7 +22,7 @@ kantaSummaryData <- readr::read_tsv(
   kantaSummaryDataFile,
   col_types = readr::cols(
     TEST_NAME = readr::col_character(),
-    UNIT = readr::col_character(),
+    PREPROCESED_UNIT = readr::col_character(),
     n = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     value_missing_p = readr::col_double(),
@@ -38,14 +38,14 @@ ParallelLogger::logInfo("Read ", nrow(kantaSummaryData), " rows from ", kantaSum
 # --- Action -------------------------------------------------------------
 #
 
-# One row per TEST_NAME + UNIT pair: the file has one row per decile, with the
+# One row per TEST_NAME + PREPROCESED_UNIT pair: the file has one row per decile, with the
 # pair's n and percentages repeated on each.
 pairs <- kantaSummaryData |>
-  dplyr::distinct(TEST_NAME, UNIT, n, value_missing_p)
+  dplyr::distinct(TEST_NAME, PREPROCESED_UNIT, n, value_missing_p)
 
 nPairs <- nrow(pairs)
 totalRecords <- sum(pairs$n)
-ParallelLogger::logInfo(nPairs, " TEST_NAME/UNIT pairs, ", format(totalRecords, big.mark = ","), " records")
+ParallelLogger::logInfo(nPairs, " TEST_NAME/PREPROCESED_UNIT pairs, ", format(totalRecords, big.mark = ","), " records")
 
 # Name / unit / value coverage: one row per combination of three yes/no facts
 # about a pair. Name is always X: buildKantaSummaryData drops the pairs whose
@@ -53,7 +53,7 @@ ParallelLogger::logInfo(nPairs, " TEST_NAME/UNIT pairs, ", format(totalRecords, 
 # value_missing_p is under 100, i.e. at least one record has a value.
 coverage <- pairs |>
   dplyr::transmute(
-    hasUnit = !is.na(UNIT) & nzchar(UNIT),
+    hasUnit = !is.na(PREPROCESED_UNIT) & nzchar(PREPROCESED_UNIT),
     hasValue = is.na(value_missing_p) | value_missing_p < 100,
     n
   )
@@ -96,7 +96,7 @@ md <- c(
   "",
   paste0(
     "Name / unit / value coverage of `kantaSummaryData.tsv`, one row per ",
-    "`TEST_NAME` + `UNIT` pair. An `X` under unit means the pair has a recorded unit; ",
+    "`TEST_NAME` + `PREPROCESED_UNIT` pair. An `X` under unit means the pair has a recorded unit; ",
     "under value, that at least one of its records has a value."
   ),
   "",

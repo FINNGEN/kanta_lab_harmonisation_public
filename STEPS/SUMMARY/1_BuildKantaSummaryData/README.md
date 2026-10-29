@@ -1,7 +1,7 @@
 # 1_BuildKantaSummaryData
 
 Combines the Kanta summary tables (`0_KantaSummaryTables`) into one table,
-`KantaSummaryData`: one row per `TEST_NAME` + `UNIT` pair and decile, with the
+`KantaSummaryData`: one row per `TEST_NAME` + `PREPROCESED_UNIT` pair and decile, with the
 share of records by unit source and value source.
 
 ## Inputs
@@ -23,8 +23,8 @@ From `DATA_SUMMARY/0_KantaSummaryTables/` (produced outside this repo by
 
 In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
 
-- `kantaSummaryData.tsv` — one row per `TEST_NAME` + `UNIT` pair and decile:
-  - `TEST_NAME`, `UNIT` (empty when no unit is recorded).
+- `kantaSummaryData.tsv` — one row per `TEST_NAME` + `PREPROCESED_UNIT` pair and decile:
+  - `TEST_NAME`, `PREPROCESED_UNIT` (empty when no unit is recorded).
   - `n` — total records of the pair, repeated on every decile row.
   - `unit_source_injection_correction_na_p` — `[source%,injection%,correction%,na%]`.
   - `value_missing_p` — percent of the pair's records with no value.
@@ -33,7 +33,7 @@ In `DATA_SUMMARY/1_BuildKantaSummaryData/`:
   - `decile_value` — the value at that decile; empty for pairs with no deciles.
 - `kantaSummaryData.md` — a markdown report on `kantaSummaryData.tsv`: the
   name / unit / value coverage table. One row per combination of the three
-  facts about a `TEST_NAME` + `UNIT` pair (has a name, has a recorded unit, has
+  facts about a `TEST_NAME` + `PREPROCESED_UNIT` pair (has a name, has a recorded unit, has
   a value), with `n rows`, `% rows`, `n records` and `% rec`, and a total row.
   Name is always `X`, because the step drops the pairs whose `TEST_NAME` is the
   text `NA`. A pair has a value when `value_missing_p` is under 100.
