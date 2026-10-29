@@ -138,12 +138,12 @@ flowchart LR
 
 ## Kanta summary data
 
-`KantaSummaryData`: the 5 summary tables combined by `buildKantaSummaryData` into one table, one row per **TEST_NAME** + **UNIT** pair and decile. It is the long form of `DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv`: instead of packing all the deciles into one `value_deciles` string, each decile gets its own row.
+`KantaSummaryData`: the 5 summary tables combined by `buildKantaSummaryData` into one table, one row per **TEST_NAME** + **PREPROCESED_UNIT** pair and decile. It is the long form of `DATA_SUMMARY/1_BuildKantaSummaryData/kantaSummaryData.tsv`: instead of packing all the deciles into one `value_deciles` string, each decile gets its own row.
 
 | Column | Type | Description |
 |---|---|---|
 | **TEST_NAME** | Character | Lab test name |
-| **UNIT** | Character | Lab test unit (empty when no unit is recorded) |
+| **PREPROCESED_UNIT** | Character | Lab test unit (empty when no unit is recorded) |
 | n | Integer | Number of records for the pair (repeated on every decile row) |
 | unit_source_injection_correction_na_p | Character | `[source%,injection%,correction%,na%]`, the percent of the pair's records whose unit comes from the `Source`, `PrimaryInjection`, `SecondaryCorrection`, or is missing |
 | value_missing_p | Numeric | Percent of the pair's records with no value |
@@ -359,10 +359,27 @@ How the 5 tables combine:
 
 ## Harmonized summary data
 
-`HarmonisedSummaryData`, produced by `harmonize` (the step `2_HarmonizeKantaSummaryData`, which writes `harmonizedKantaSummaryData.tsv`) and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + **UNIT**, the unit after the fix.
+`HarmonisedSummaryData`, produced by `harmonize` (the step `2_HarmonizeKantaSummaryData`, which writes `harmonizedKantaSummaryData.tsv`) and sent to the Github-Page and to Risteys. It is `KantaSummaryData` left-joined to `harmonizationTable.tsv` on **TEST_NAME** + **PREPROCESED_UNIT**.
 
 | Column | Type | Description |
 |---|---|---|
-| All columns of `KantaSummaryData` |  | Including **TEST_NAME**, **UNIT** and **decile_value** |
-| The columns of the harmonization table, except `PREPROCESED_UNIT` and `unit_fix_reasoning` |  | `concept_id`, the concept attributes, the LOINC Groups, `HARMONISED_UNIT`, `CONVERSION`, … |
+| All columns of `KantaSummaryData` |  | Including **TEST_NAME**, **PREPROCESED_UNIT** and **decile_value** |
+| The columns of the harmonization table |  | **UNIT** (the unit after the fix, next to `PREPROCESED_UNIT`), `unit_fix_reasoning`, `concept_id`, the concept attributes, the LOINC Groups, `HARMONISED_UNIT`, `CONVERSION`, … |
 | **decile_value_harmonised** | Numeric | `decile_value` with `CONVERSION` applied (a factor or a formula in `X`), in `HARMONISED_UNIT`. Empty without a `CONVERSION` |
+
+---
+
+## Evaluated harmonised summary data
+
+`evaluatedHarmonisedKantaSummaryData.tsv`, written by the step `3_EvaluateHarmonisedData`. It is `harmonizedKantaSummaryData.tsv` collapsed to one row per **TEST_NAME** + **PREPROCESED_UNIT** + **UNIT**, with a test of whether the values of the pair agree with the other pairs of its LOINC Group.
+
+| Column | Type | Description |
+|---|---|---|
+| All columns of `harmonizedKantaSummaryData.tsv` except `decile` |  | One row per pair |
+| **decile_value**, **decile_value_harmonised** | Character | The 9 deciles as text, e.g. `[ 1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23 ]` |
+| **KS** | Numeric | Kolmogorov-Smirnov statistic between the harmonised deciles of the pair and the reference (0 to 0.9) |
+| **KS_mlp** | Numeric | `-log10` of the KS p-value |
+| **log10_D5** | Numeric | `log10` of the pair's median (decile 5) over the reference's median. Positive: the pair is higher |
+| reference_group_concept_id, n_reference_pairs | | The LOINC Group the reference comes from and the number of pairs in it |
+
+The reference of a pair is, for each decile, the median of the harmonised deciles of the other pairs of the same LOINC Group, weighted by `sqrt(n)`. Only pairs whose mapping is `APPROVED` and not ignored are in the reference, and the pair itself never is. A concept has several Groups, so the most specific one (the first in `group_concept_id`) with at least 2 other approved pairs is used. A pair with no harmonised deciles, no Group, or no such Group is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
