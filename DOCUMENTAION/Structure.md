@@ -385,3 +385,9 @@ How the 5 tables combine:
 | reference_group_concept_id, n_reference_pairs | | The LOINC Group the reference comes from and the number of pairs in it |
 
 The reference of a pair is, for each decile, the median of the harmonised deciles of the other pairs of the same LOINC Group, weighted by `sqrt(n)`. Only pairs whose `mapping_status` is `APPROVED` are in the reference, and the pair itself never is. A concept has several Groups, so the most specific one (the first in `group_concept_id`) with at least 2 other approved pairs is used. A pair with no harmonised deciles, no Group, or no such Group is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
+
+---
+
+## Dashboard
+
+`dashboard.html`, written by the step `4_BuildDashboard` from `evaluatedHarmonisedKantaSummaryData.tsv`. A single HTML file with the data inside and no external libraries, with two tabs: a summary (the pairs and records by `mapping_status`, and the pairs and records by how their values compare with the LOINC Group: no values, AGREE with a KS under 0.5, WARNING up to 0.8, DISAGREE over 0.8, or not compared) and a table with a sortable, filterable row per pair.
