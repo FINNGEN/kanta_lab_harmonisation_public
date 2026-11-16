@@ -1,0 +1,45 @@
+Warning: environment file not found: /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/1_Input/1_BuildKantaAgregatedTable/../../../ENVIRONMENTS/LOCAL.env
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  summaryTestFile = DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
+  summaryUnitSourceFile = DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
+  summaryValuesSourceFile = DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
+  summaryValuesFile = DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
+  outDir = DATA/1_Input/1_BuildKantaAgregatedTable
+Read 26828 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
+Read 9551 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
+Read 13044 rows from DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
+Read 48186 rows from DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
+Dropping 30 row(s) whose TEST_NAME is the literal text "NA", covering 56,407 records
+26798 TEST_NAME/PREPROCESED_UNIT pairs
+47997 decile rows
+Wrote 69462 rows to DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  kantaAgregatedTableFile = DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+  outDir = DATA/1_Input/1_BuildKantaAgregatedTable
+Read 69462 rows from DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+26798 TEST_NAME/PREPROCESED_UNIT pairs, 257,815,796 records
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md
