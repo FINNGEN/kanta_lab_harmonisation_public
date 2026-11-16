@@ -54,8 +54,9 @@ SUMMARY_TEST_FILE="$SOURCE_DIR/summaryTest.tsv"
 SUMMARY_UNIT_SOURCE_FILE="$SOURCE_DIR/summaryUnitSource.tsv"
 SUMMARY_VALUES_SOURCE_FILE="$SOURCE_DIR/summaryValuesSource.tsv"
 SUMMARY_VALUES_FILE="$SOURCE_DIR/summaryValues.tsv"
+SUMMARY_REFERENCE_FILE="$SOURCE_DIR/summaryReference.tsv"
 
-for f in "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE"; do
+for f in "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -70,7 +71,7 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/buildKantaAgregatedTable.R" \
-  "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$OUTDIR"
+  "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE" "$OUTDIR"
 
 Rscript "$STEP_DIR/scripts/summariseKantaAgregatedTable.R" "$OUTDIR/kantaAgregatedTable.tsv" "$OUTDIR"
 
