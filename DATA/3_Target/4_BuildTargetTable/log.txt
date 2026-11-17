@@ -1,0 +1,26 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+  groupsFile = DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+  membershipFile = DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+  unitFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+  fixFile = DATA/3_Target/2b_HarmonisedUnitFixes/harmonisedUnitFixes.tsv
+  outDir = DATA/3_Target/4_BuildTargetTable
+Read 33154 lab2clean units from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+Read 1 unit fixes from DATA/3_Target/2b_HarmonisedUnitFixes/harmonisedUnitFixes.tsv
+Read 102825 concepts from DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+Read 2997 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Read 8351 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+103613 rows, 102825 concepts; 7563 concepts in a Group, 33155 with a harmonised unit
+Wrote 103613 rows to DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+Wrote DATA/3_Target/4_BuildTargetTable/targetTable.tsv
