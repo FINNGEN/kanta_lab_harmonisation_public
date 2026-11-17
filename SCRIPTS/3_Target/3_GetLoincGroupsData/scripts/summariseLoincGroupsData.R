@@ -93,35 +93,31 @@ groups <- groups |>
   dplyr::left_join(dplyr::select(groupProperty, "group_concept_id", "has_property", "hasPs"), by = "group_concept_id") |>
   dplyr::mutate(
     has_property = dplyr::coalesce(.data$has_property, "(none)"),
-    hasPs = dplyr::coalesce(.data$hasPs, FALSE),
-    hasUnit = !is.na(.data$group_harmonised_unit)
+    hasPs = dplyr::coalesce(.data$hasPs, FALSE)
   )
 
-nWithUnit <- sum(groups$hasUnit)
 nConcepts <- dplyr::n_distinct(membership$concept_id)
+nSeveralGroups <- sum(dplyr::count(membership, .data$concept_id)$n > 1)
 
 groupsTable <- tibble::tibble(
-  groups = c("with a harmonised unit", "with no harmonised unit", "total"),
-  `n groups` = fmtInt(c(nWithUnit, nGroups - nWithUnit, nGroups)),
-  `% groups` = c(fmtPct(100 * nWithUnit / nGroups), fmtPct(100 * (nGroups - nWithUnit) / nGroups), "100%")
+  what = c("Groups", "concepts in a Group", "concepts in more than one Group"),
+  n = fmtInt(c(nGroups, nConcepts, nSeveralGroups))
 )
 
 propertyTable <- groups |>
   dplyr::group_by(.data$has_property) |>
-  dplyr::summarise(n = dplyr::n(), nPs = sum(.data$hasPs), nNoUnit = sum(!.data$hasUnit), .groups = "drop") |>
+  dplyr::summarise(n = dplyr::n(), nPs = sum(.data$hasPs), .groups = "drop") |>
   dplyr::arrange(dplyr::desc(.data$n)) |>
   dplyr::transmute(
     has_property,
     `n groups` = fmtInt(n),
     `% groups` = fmtPct(100 * n / nGroups),
-    `n also PS` = fmtInt(nPs),
-    `n with no unit` = fmtInt(nNoUnit)
+    `n also PS` = fmtInt(nPs)
   ) |>
   dplyr::bind_rows(
     tibble::tibble(
       has_property = "total", `n groups` = fmtInt(nGroups), `% groups` = "100%",
-      `n also PS` = fmtInt(sum(groups$hasPs)),
-      `n with no unit` = fmtInt(nGroups - nWithUnit)
+      `n also PS` = fmtInt(sum(groups$hasPs))
     )
   )
 
@@ -135,8 +131,6 @@ md <- c(
   "",
   "# Groups",
   "",
-  "A Group has a harmonised unit when lab2clean gives it a reference unit.",
-  "",
   mdTable(groupsTable),
   "",
   "# has_property",
@@ -146,8 +140,7 @@ md <- c(
     "(`measurementOmopData.tsv`) leaving out the conventional concepts mapped from their SI partner ",
     "(they are converted, not a property of their own) and `Presence or Threshold`: `(several)` when the rest differ, ",
     "`(none)` when no concept has one. `n also PS` is the Groups that also hold ",
-    "`Presence or Threshold` concepts next to that property: those concepts also map to a ",
-    "presence/threshold result, which has no unit."
+    "`Presence or Threshold` concepts next to that property."
   ),
   "",
   mdTable(propertyTable)

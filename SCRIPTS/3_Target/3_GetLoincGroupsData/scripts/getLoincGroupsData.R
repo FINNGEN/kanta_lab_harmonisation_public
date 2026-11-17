@@ -1,11 +1,10 @@
 #
 # Pulls the LOINC Groups of the standard Measurement concepts from the OMOP vocabulary
-# (concept_class_id = 'LOINC Group' ancestors via concept_ancestor), and gives each Group
-# its harmonised unit from lab2clean.
+# (concept_class_id = 'LOINC Group' ancestors via concept_ancestor).
 #
 # A LOINC Group is a value set of concepts that differ only in an axis the Group's rule
 # rolls up -- Method above all. Two concepts in one Group are the same test measured
-# differently, so they can share one unit.
+# differently.
 #
 # IMPORTANT: OMOP models a ParentGroup as a 'LOINC Group' concept too -- LG100-4 is a
 # concept named "Flowsheet - laboratory" with ~3,500 descendants, LG55-6 is "Mass-Molar
@@ -14,17 +13,11 @@
 # drops the ParentGroups from its output; the Flowsheet ones are only used to pick the
 # concepts to keep.
 #
-# The harmonised unit of a Group is lab2clean's reference_unit (Zayed et al., Int J Med
-# Inform 205 (2026) 106131). lab2clean's table loinc_reference_unit_v1 has one row per LOINC
-# code with its UCUM reference_unit, and its property_group_id ("<ParentGroupId>/<GroupId>")
-# names the Group. lab2clean chooses the unit per Group, so every code of a Group and unit
-# system has the same unit. It is read from the lab2clean source package on CRAN.
-#
-# The Groups are SI only. A concept whose lab2clean unit system is "conventional" (the mass
-# side of a mass-molar pair, e.g. ug/L against nmol/L) is put in the Groups of its SI partner
-# (lab2clean's mass_molar_loinc), and the conventional/SI conversion is saved for a later step.
-# Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) mix
-# both unit systems, so they are dropped.
+# The Groups are SI only. A conventional concept (the mass side of a mass-molar pair, e.g.
+# ug/L against nmol/L) is put in the Groups of its SI partner instead of its own, using the
+# conversion table of lab2clean, which this step saves.
+# Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
+# a mass concept with a substance concept, so they are dropped.
 #
 # See this step's README.md for the outputs.
 #
@@ -61,12 +54,13 @@ groupNamePrefix <- "Flowsheet"
 sizeBandBreaks <- c(0, 10, 50, 200, 1000, Inf)
 sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 
+# ParentGroup whose child Groups pair a mass concept with a substance concept.
+massMolarParentGroupCode <- "LG55-6"
+
 # lab2clean, read from its source tarball on CRAN (pinned version).
 lab2cleanVersion <- "2.0.0"
 lab2cleanUrl <- paste0("https://cran.r-project.org/src/contrib/lab2clean_", lab2cleanVersion, ".tar.gz")
 lab2cleanDataFile <- "lab2clean/data/loinc_reference_unit_v1.rda"
-# ParentGroup whose child Groups pair a mass concept with a substance concept.
-massMolarParentGroupCode <- "LG55-6"
 
 pathToConversionTSV <- file.path(outDir, "loincSiConventionalConversion.tsv")
 pathToLoincGroupsTSV <- file.path(outDir, "loincGroups.tsv")
@@ -75,13 +69,13 @@ pathToLoincGroupMembershipTSV <- file.path(outDir, "loincGroupMembership.tsv")
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  environment = ", environment)
+ParallelLogger::logInfo("  lab2cleanUrl = ", lab2cleanUrl)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  domainId = ", domainId)
 ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
 ParallelLogger::logInfo("  groupConceptClassId = ", groupConceptClassId)
 ParallelLogger::logInfo("  groupNamePrefix = ", groupNamePrefix)
 ParallelLogger::logInfo("  massMolarParentGroupCode = ", massMolarParentGroupCode)
-ParallelLogger::logInfo("  lab2cleanUrl = ", lab2cleanUrl)
 
 #
 # --- Connections -------------------------------------------------------------
@@ -229,8 +223,8 @@ ParallelLogger::logInfo(
   dplyr::n_distinct(membership$group_concept_id), " Groups"
 )
 
-# The harmonised unit of each Group, from lab2clean: the SI reference_unit of the codes whose
-# property_group_id ends in the Group's LG code. A Group lab2clean does not have gets no unit.
+# SI only. The conventional concepts take the Groups of their SI partner instead of their own;
+# one whose partner is in no Group is in no Group.
 tarFile <- tempfile(fileext = ".tar.gz")
 download.file(lab2cleanUrl, tarFile, mode = "wb", quiet = TRUE)
 untar(tarFile, files = lab2cleanDataFile, exdir = tempdir())
@@ -239,9 +233,7 @@ load(file.path(tempdir(), lab2cleanDataFile), envir = lab2cleanEnv)
 loincReferenceUnit <- tibble::as_tibble(lab2cleanEnv$loinc_reference_unit_v1)
 ParallelLogger::logInfo("Read ", nrow(loincReferenceUnit), " LOINC codes from lab2clean ", lab2cleanVersion)
 
-# SI only. The concepts whose lab2clean unit system is "conventional" are the mass side of a
-# mass-molar pair; lab2clean's mass_molar_loinc is their SI partner. They get the Groups of
-# the partner instead of their own, and the conversion between the two is saved.
+# The LOINC code of each standard Measurement concept.
 sqlLoincConcepts <- "
 SELECT concept_id, concept_code
 FROM @vocabularyDatabaseSchema.concept
@@ -259,8 +251,10 @@ loincConcepts <- DatabaseConnector::renderTranslateQuerySql(
 ) |>
   tibble::as_tibble() |>
   dplyr::rename_with(tolower) |>
-  dplyr::mutate(concept_id = as.numeric(.data$concept_id))
+  dplyr::mutate(concept_id = as.character(.data$concept_id))
 
+# The conventional-to-SI conversion of lab2clean: one row per conventional code (the mass side
+# of a mass-molar pair) with its SI partner, mass_molar_loinc.
 conversion <- loincReferenceUnit |>
   dplyr::filter(.data$unit_system == "conventional", !is.na(.data$mass_molar_loinc)) |>
   dplyr::transmute(
@@ -284,10 +278,9 @@ ParallelLogger::logInfo(
   "lab2clean has ", nrow(conversion), " conventional codes with an SI partner; ",
   sum(!is.na(conversion$concept_id) & !is.na(conversion$si_concept_id)), " have both concepts in the vocabulary"
 )
-
 conventionalToSi <- conversion |>
   dplyr::filter(!is.na(.data$concept_id), !is.na(.data$si_concept_id)) |>
-  dplyr::transmute(conventionalId = as.character(.data$concept_id), siId = as.character(.data$si_concept_id))
+  dplyr::transmute(conventionalId = .data$concept_id, siId = .data$si_concept_id)
 membership <- membership |>
   dplyr::mutate(concept_id = as.character(.data$concept_id))
 siMembership <- membership |>
@@ -323,30 +316,10 @@ for (i in seq_len(nrow(sizeBands))) {
 }
 
 
-lab2cleanGroupUnit <- loincReferenceUnit |>
-  dplyr::filter(!is.na(.data$property_group_id), !is.na(.data$reference_unit), .data$unit_system == "si") |>
-  dplyr::mutate(group_concept_code = sub(".*/", "", .data$property_group_id)) |>
-  dplyr::group_by(.data$group_concept_code) |>
-  dplyr::summarise(
-    n_units = dplyr::n_distinct(.data$reference_unit),
-    group_harmonised_unit = dplyr::first(.data$reference_unit),
-    .groups = "drop"
-  )
-if (any(lab2cleanGroupUnit$n_units > 1)) {
-  ParallelLogger::logWarn(sum(lab2cleanGroupUnit$n_units > 1), " Groups have more than one lab2clean unit; the first is used")
-}
-ParallelLogger::logInfo("lab2clean gives a unit to ", nrow(lab2cleanGroupUnit), " Groups")
-
 groups <- membership |>
   dplyr::distinct(.data$group_concept_id, .data$group_concept_code, .data$group_concept_name) |>
-  dplyr::left_join(
-    dplyr::select(lab2cleanGroupUnit, "group_concept_code", "group_harmonised_unit"),
-    by = "group_concept_code"
-  ) |>
   dplyr::arrange(.data$group_concept_code)
-ParallelLogger::logInfo(
-  sum(!is.na(groups$group_harmonised_unit)), " of ", nrow(groups), " Groups have a harmonised unit"
-)
+ParallelLogger::logInfo(nrow(groups), " Groups")
 
 #
 # --- Output -------------------------------------------------------------

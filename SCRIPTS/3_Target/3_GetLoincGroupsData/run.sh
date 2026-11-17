@@ -27,7 +27,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 STEP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTDIR="$DATA_DIR/3_Target/0_GetLoincGroupsData"
+OUTDIR="$DATA_DIR/3_Target/3_GetLoincGroupsData"
 mkdir -p "$OUTDIR"
 
 exec > >(tee "$OUTDIR/log.txt") 2>&1
@@ -53,9 +53,9 @@ if [[ -z "${FG_DATABASE_ENV:-}" ]]; then
   echo "FG_DATABASE_ENV is not set (expected from the --env environment file)" >&2
   exit 1
 fi
-MEASUREMENT_FILE="$DATA_DIR/3_Target/0_GetMeasurementOmopData/measurementOmopData.tsv"
+MEASUREMENT_FILE="$DATA_DIR/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv"
 if [[ ! -f "$MEASUREMENT_FILE" ]]; then
-  echo "Missing input file: $MEASUREMENT_FILE (run 0_GetMeasurementOmopData first)" >&2
+  echo "Missing input file: $MEASUREMENT_FILE (run 1_GetMeasurementOmopData first)" >&2
   exit 1
 fi
 if ! command -v Rscript >/dev/null 2>&1; then
