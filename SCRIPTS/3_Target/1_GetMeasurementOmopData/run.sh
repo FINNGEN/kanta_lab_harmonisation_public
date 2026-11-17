@@ -27,7 +27,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 STEP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTDIR="$DATA_DIR/3_Target/0_GetMeasurementOmopData"
+OUTDIR="$DATA_DIR/3_Target/1_GetMeasurementOmopData"
 mkdir -p "$OUTDIR"
 
 exec > >(tee "$OUTDIR/log.txt") 2>&1

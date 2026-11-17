@@ -1,4 +1,4 @@
-# 0_GetMeasurementOmopData
+# 1_GetMeasurementOmopData
 
 Pulls every standard OMOP `Measurement`-domain concept with its six LOINC axes
 and whether it is a panel, straight from the FinnGen OMOP CDM.
@@ -10,7 +10,7 @@ None from `DATA/`. The step queries the FinnGen OMOP vocabulary tables
 
 ## Outputs
 
-In `DATA/3_Target/0_GetMeasurementOmopData/`:
+In `DATA/3_Target/1_GetMeasurementOmopData/`:
 
 - `measurementOmopData.tsv` — one row per standard `Measurement`-domain concept:
 
@@ -58,5 +58,5 @@ and writes `measurementOmopData.md`.
 ## How to run
 
 ```
-./SCRIPTS/3_Target/0_GetMeasurementOmopData/run.sh <PATH_TO_DATA> --env <ENV_NAME>
+./SCRIPTS/3_Target/1_GetMeasurementOmopData/run.sh <PATH_TO_DATA> --env <ENV_NAME>
 ```
