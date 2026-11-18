@@ -10,19 +10,19 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  unitFixFile = DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
-  mappingFile = DATA/2_Harmonisation/2_MappingTable/mapping.tsv
-  unitHarmonisationFile = DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+  unitFixFile = DATA/2_Harmonisation/unitFix.tsv
+  mappingFile = DATA/2_Harmonisation/mapping.tsv
+  unitHarmonisationFile = DATA/2_Harmonisation/unitHarmonisation.tsv
   targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
   outDir = DATA/4_BuildHarmonisationTable
-Read 79 rows from DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
-Read 7756 rows from DATA/2_Harmonisation/2_MappingTable/mapping.tsv
-Read 136 rows from DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+Read 79 rows from DATA/2_Harmonisation/unitFix.tsv
+Read 7756 rows from DATA/2_Harmonisation/mapping.tsv
+Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
 Read 103613 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 2 unitFix rows have a TEST_NAME + UNIT that is not in the mapping
 133 conversion rules of a property, 3 conversion rules of a concept
-Read 365 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Wrote 337 rows to DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv (0 added, 28 removed)
+Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Unchanged DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv (337 rows)
 Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
 Unchanged DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv (8 rows)
 337 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
@@ -44,9 +44,9 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  unitFixFile = DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
-  mappingFile = DATA/2_Harmonisation/2_MappingTable/mapping.tsv
-  unitHarmonisationFile = DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+  unitFixFile = DATA/2_Harmonisation/unitFix.tsv
+  mappingFile = DATA/2_Harmonisation/mapping.tsv
+  unitHarmonisationFile = DATA/2_Harmonisation/unitHarmonisation.tsv
   targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
   harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
   propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
@@ -54,9 +54,9 @@ Configuration:
   lab2cleanUnitFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
   unitOverwriteFile = DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
   outDir = DATA/4_BuildHarmonisationTable
-Read 79 rows from DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
-Read 7756 rows from DATA/2_Harmonisation/2_MappingTable/mapping.tsv
-Read 136 rows from DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+Read 79 rows from DATA/2_Harmonisation/unitFix.tsv
+Read 7756 rows from DATA/2_Harmonisation/mapping.tsv
+Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
 Read 103613 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
