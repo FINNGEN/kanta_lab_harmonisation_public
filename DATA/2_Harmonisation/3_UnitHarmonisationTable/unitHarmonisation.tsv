@@ -1,0 +1,137 @@
+context	UNIT	HARMONISED_UNIT	CONVERSION	VALIDATION_MESSAGES
+Arbitrary Concentration	au/ml	10*3.[arb'U]/L	1	
+Arbitrary Concentration	eliau/ml	10*3.[arb'U]/L	1	
+Arbitrary Concentration	eliau/ml	[arb'U]/L	1000	
+Arbitrary Concentration	iu/l	10*3.[arb'U]/L	0.001	
+Arbitrary Concentration	iu/l	10*3.[iU]/L	0.001	
+Arbitrary Concentration	iu/l	[iU]/L	1	
+Arbitrary Concentration	iu/ml	10*3.[arb'U]/L	1	
+Arbitrary Concentration	iu/ml	10*3.[iU]/L	1	
+Arbitrary Concentration	iu/ml	[iU]/L	1000	
+Arbitrary Concentration	kiu/l	10*3.[iU]/L	1	
+Arbitrary Concentration	ku/l	10*3.[iU]/L	1	
+Arbitrary Concentration	miu/l	10*-3.[iU]/L	1	
+Arbitrary Concentration	miu/l	10*-6.[iU]/L	1000	
+Arbitrary Concentration	miu/ml	10*3.[arb'U]/L	0.001	
+Arbitrary Concentration	miu/ml	[iU]/L	1	
+Arbitrary Concentration	mu/l	10*-3.[iU]/L	1	
+Arbitrary Concentration	mu/l	10*-6.[iU]/L	1000	
+Arbitrary Concentration	mu/l	10*3.[iU]/L	0.000001	
+Arbitrary Concentration	mu/l	[arb'U]/L	0.001	
+Arbitrary Concentration	mu/l	[iU]/L	0.001	
+Arbitrary Concentration	u/l	10*-3.[iU]/L	1000	
+Arbitrary Concentration	u/l	10*3.[arb'U]/L	0.001	
+Arbitrary Concentration	u/l	[iU]/L	1	
+Arbitrary Concentration	u/ml	10*3.[arb'U]/L	1	
+Arbitrary Concentration	u/ml	10*3.[iU]/L	1	
+Arbitrary Concentration	u/ml	10*6.[iU]/L	0.001	
+Arbitrary Concentration	u/ml	[arb'U]/L	1000	
+Arbitrary Concentration	u/ml	[iU]/L	1000	
+Catalytic Concentration	u/l	U/L	1	
+Catalytic Fraction	%	%	1	
+Catalytic Ratio	%	1	0.01	
+DistWidth	%	%	1	
+Entitic Mass/volume	g/l	g/L	1	
+Entitic mass	pg	pg	1	
+Entitic mean volume	fl	fL	1	
+Length fraction	%	%	1	
+Log molar concentration	ph	[pH]	1	
+Mass	g	g	1	
+Mass	mg	g	0.001	
+Mass Concentration	g/l	g/L	1	
+Mass Concentration	g/l	mg/L	1000	
+Mass Concentration	g/l	ug/L	1000000	
+Mass Concentration	mg/l	g/L	0.001	
+Mass Concentration	mg/l	mg/L	1	
+Mass Concentration	mg/l	ug/L	1000	
+Mass Concentration	mg/ml	g/L	1	
+Mass Concentration	mg/ml	mg/L	1000	
+Mass Concentration	ng/l	ng/L	1	
+Mass Concentration	ng/l	ug/L	0.001	
+Mass Concentration	ng/ml	ng/L	1000	
+Mass Concentration	ng/ml	ug/L	1	
+Mass Concentration	ug/l	mg/L	0.001	
+Mass Concentration	ug/l	ng/L	1000	
+Mass Concentration	ug/l	ug/L	1	
+Mass Concentration	umol/l	umol/L	1	
+Mass Content	ug/g	/10*3	0.001	
+Mass Content	ug/g	/10*6	1	
+Mass Rate	g/24h	g/(24.h)	1	
+Mass Rate	mg/24h	g/(24.h)	0.001	
+Mass Rate	mg/24h	mg/(24.h)	1	
+Mass Rate	ug/min	mg/(24.h)	1.44	
+Mass Ratio	%	1	0.01	
+Mass Ratio	ratio	1	1	
+Mass fraction	%	%	1	
+Mass fraction	ratio	%	100	
+Mass fraction	ug/g	%	0.0001	
+Multiple of the median	mom	1	1	
+Multiple of the median	ratio	1	1	
+Number Areic (per area)	u/field	/[HPF]	1	
+Number Concentration	e12/l	10*12/L	1	
+Number Concentration	e12/l	10*9/L	1000	
+Number Concentration	e6/l	10*12/L	0.000001	
+Number Concentration	e6/l	10*3/L	1000	
+Number Concentration	e6/l	10*6/L	1	
+Number Concentration	e6/l	10*9/L	0.001	
+Number Concentration	e9/l	10*12/L	0.001	
+Number Concentration	e9/l	10*6/L	1000	
+Number Concentration	e9/l	10*9/L	1	
+Number Fraction	%	%	1	
+Number Ratio	ratio	%	100	
+Osmolality	mosm/kgh2o	mmol/kg	1	
+Partial pressure	kpa	mm[Hg]	7.500637554	
+Presence or Threshold	estimate		1	
+Ratio	%	%	1	
+Ratio	g/mol	g/mol	1	
+Ratio	g/mol	kg/mol	0.001	
+Ratio	mg/mmol	g/mol	1	
+Ratio	mg/mmol	kg/mol	0.001	
+Relative Arbitrary Concentration	%	%	1	
+Relative Mass Concentration	%	%	1	
+Relative Ratio	%	%	1	
+Relative Ratio	mg/g	1	0.001	
+Relative catalytic concentration	%	%	1	
+Relative time	%	%	1	
+Relative time	%	1	0.01	
+Relative time	inr	1	1	
+Specific gravity	ratio	1	1	
+Substance Concentration	mmol/l	mmol/L	1	
+Substance Concentration	mmol/l	nmol/L	1000000	
+Substance Concentration	mmol/l	pmol/L	1000000000	
+Substance Concentration	mmol/l	umol/L	1000	
+Substance Concentration	mol/l	mmol/L	1000	
+Substance Concentration	nmol/l	mmol/L	0.000001	
+Substance Concentration	nmol/l	nmol/L	1	
+Substance Concentration	nmol/l	pmol/L	1000	
+Substance Concentration	nmol/l	umol/L	0.001	
+Substance Concentration	ph	mmol/L	1000	
+Substance Concentration	pmol/l	mmol/L	0.000000001	
+Substance Concentration	pmol/l	nmol/L	0.001	
+Substance Concentration	pmol/l	pmol/L	1	
+Substance Concentration	umol/l	mmol/L	0.001	
+Substance Concentration	umol/l	nmol/L	1000	
+Substance Concentration	umol/l	umol/L	1	
+Substance Rate	mmol/24h	mmol/(24.h)	1	
+Substance Rate	mmol/24h	umol/(24.h)	1000	
+Substance Rate	nmol/24h	nmol/(24.h)	1	
+Substance Rate	umol/24h	nmol/(24.h)	1000	
+Substance Rate	umol/24h	umol/(24.h)	1	
+Substance Ratio	%	/10*3	10	
+Substance Ratio	ratio	/10*3	1000	
+Temperature	°c	°c	1	
+Time (e.g. seconds)	min	h	0.01666666667	
+Time (e.g. seconds)	s	h	0.0002777777778	
+Time (e.g. seconds)	s	s	1	
+Titer	titre	1	1	
+Velocity (distance/time)	mm/h	mm/h	1	
+Volume	l	mL	1000	
+Volume	ml	mL	1	
+Volume Fraction	%	%	1	
+Volume Fraction	ml/dl	%	1	
+Volume Fraction	ratio	%	100	
+Volume Fraction	vol%	%	1	
+Volume Rate/Area	ml/s	mL/min	60	
+3004410	mmol/mol	%	(X+23.50)/10.93	
+3004410	%	%	1	
+44816559	mg/l	ug/L	703*X+0	
