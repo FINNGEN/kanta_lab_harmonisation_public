@@ -43,7 +43,7 @@ In `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/`:
 `scripts/summariseHarmonisedUnitFromLab2Clean.R` reads the unit table back and writes `harmonisedUnit_lab2clean.md`.
 
 lab2clean's unit is the unit it aims for, not what the Kanta data report. Concepts it has no
-unit for, or whose unit is wrong for the data, are set by hand in `2b_HarmonisedUnitFixes`.
+unit for, or whose unit is wrong for the data, are set by hand in `2b_HarmonisedUnitOverwrite`.
 
 ## Env vars
 
