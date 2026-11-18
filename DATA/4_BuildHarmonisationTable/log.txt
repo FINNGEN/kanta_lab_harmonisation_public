@@ -1,0 +1,100 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  unitFixFile = DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
+  mappingFile = DATA/2_Harmonisation/2_MappingTable/mapping.tsv
+  unitHarmonisationFile = DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+  targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  outDir = DATA/4_BuildHarmonisationTable
+Read 79 rows from DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
+Read 7756 rows from DATA/2_Harmonisation/2_MappingTable/mapping.tsv
+Read 136 rows from DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+Read 103613 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+2 unitFix rows have a TEST_NAME + UNIT that is not in the mapping
+133 conversion rules of a property, 3 conversion rules of a concept
+Read 365 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Wrote 337 rows to DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv (0 added, 28 removed)
+Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Unchanged DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv (8 rows)
+337 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
+APPROVED 7062, ERROR 74, IGNORE 237, NOT-APPROVED 387 (mapping_status)
+7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
+231 pairs whose concept_id is not in the target table
+3364 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
+4387 pairs have no HARMONISED_UNIT
+Wrote 7760 rows to DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  unitFixFile = DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
+  mappingFile = DATA/2_Harmonisation/2_MappingTable/mapping.tsv
+  unitHarmonisationFile = DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+  targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  lab2cleanUnitFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+  unitOverwriteFile = DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+  outDir = DATA/4_BuildHarmonisationTable
+Read 79 rows from DATA/2_Harmonisation/1_UnitFixTable/unitFix.tsv
+Read 7756 rows from DATA/2_Harmonisation/2_MappingTable/mapping.tsv
+Read 136 rows from DATA/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv
+Read 103613 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Read 33154 rows from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+Read 1 rows from DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+43 tests: 36 SUCCESS, 4 WARNING, 3 ERROR
+unitFix.tsv: TEST_NAME + UNIT is used downstream (it is in mapping.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
+unitHarmonisation.tsv: the target unit of an approved concept (targetTable.tsv) has a rule for its has_property: 14 rows, 47 approved concepts, 14 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L
+harmonisationTable.tsv: an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it: 206 rows, 85 concepts, e.g. -baso[%->%] TARGET=10*9/L; -ca12-5[u/ml->u/ml] TARGET=[arb'U]; -ca15-3[u/ml->u/ml] TARGET=[arb'U]
+harmonisationTable.tsv: an APPROVED pair whose concept has a target unit has a UNIT (no unit cannot be converted): 2,924 rows, 928 concepts, e.g. !psavapaanjatotaalinsuhde[] TARGET=%; -amylp[] TARGET=U/L; -ana[] TARGET=1
+harmonisationTable.tsv: has_property + UNIT is in unitHarmonisation.tsv (the concept's property agrees with the unit), for an APPROVED mapping: 73 rows, e.g. -baso[%]; -eos[%]; -h-ind[index]
+harmonisationTable.tsv: has_property + UNIT is in unitHarmonisation.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 264 rows, e.g. -calpro[mg/l]; -ebvnh[iu/ml]; -tpoab[%]
+harmonisationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id, for a mapping that is not APPROVED: 1 rows, e.g. a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) | 3047387 (IgG [Units/volume] in Serum)
+Wrote DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  outDir = DATA/4_BuildHarmonisationTable
+Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
+Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
+Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Wrote DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Wrote DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Wrote DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
+Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
