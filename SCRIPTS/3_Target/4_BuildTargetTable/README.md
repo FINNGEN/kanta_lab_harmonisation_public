@@ -11,7 +11,7 @@ From `DATA/3_Target/`:
 - `3_GetLoincGroupsData/loincGroups.tsv` — the Groups.
 - `3_GetLoincGroupsData/loincGroupMembership.tsv` — which concept is in which Group.
 - `2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` — the lab2clean unit of each concept.
-- `2b_HarmonisedUnitFixes/harmonisedUnitFixes.tsv` — the units set by hand.
+- `2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv` — the units that overwrite lab2clean's.
 
 ## Outputs
 
@@ -22,8 +22,9 @@ In `DATA/3_Target/4_BuildTargetTable/`:
   `has_component`, `has_property`, `has_method`, `has_scale_type`, `has_system`,
   `has_time_aspect` (as in `measurementOmopData.tsv`), then `group_concept_id`,
   `group_concept_code`, `group_concept_name` (as in `loincGroups.tsv`), then
-  `harmonised_unit` and `harmonised_unit_source` (`fix` or `lab2clean`; empty for a
-  concept with no unit). A concept in several Groups has several rows; a concept in
+  `harmonised_unit` and `harmonised_unit_source` (`lab2clean` when the unit
+  comes from `2a`, the `note` of the overwrite when it comes from `2b`, or `isQualitative` for a concept of a
+  qualitative property, whose `harmonised_unit` is empty; empty for a concept with no unit). A concept in several Groups has several rows; a concept in
   no Group has one row with the `group_*` columns empty.
 - `log.txt` — run log.
 
@@ -31,7 +32,7 @@ In `DATA/3_Target/4_BuildTargetTable/`:
 
 `scripts/buildTargetTable.R` left-joins the concepts to the membership by
 `concept_id`, then to the Groups by `group_concept_id` and to the units by
-`concept_id` (the unit of a concept is its fix when it has one, else its lab2clean unit), keeps the columns above
+`concept_id` (the unit of a concept is its overwrite in `2b` when it has one, else its lab2clean unit from `2a`; a concept with `has_property` `Presence or Threshold` and no overwrite has no unit and the source `isQualitative`), keeps the columns above
 and sorts by `concept_id` and Group code. It logs how many concepts are in a
 Group and how many have a harmonised unit.
 
