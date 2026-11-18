@@ -49,9 +49,9 @@ fi
 #
 # --- Input -------------------------------------------------------------
 #
-UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/1_UnitFixTable/unitFix.tsv"
-MAPPING_FILE="$DATA_DIR/2_Harmonisation/2_MappingTable/mapping.tsv"
-UNIT_HARMONISATION_FILE="$DATA_DIR/2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv"
+UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
+MAPPING_FILE="$DATA_DIR/2_Harmonisation/mapping.tsv"
+UNIT_HARMONISATION_FILE="$DATA_DIR/2_Harmonisation/unitHarmonisation.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
 LAB2CLEAN_UNIT_FILE="$DATA_DIR/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv"
 UNIT_OVERWRITE_FILE="$DATA_DIR/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv"

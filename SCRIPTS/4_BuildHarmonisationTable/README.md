@@ -8,11 +8,11 @@ it, so the harmonise scripts only have to join it.
 
 From `DATA/`:
 
-- `2_Harmonisation/1_UnitFixTable/unitFix.tsv` — `TEST_NAME`, `PREPROCESED_UNIT`, `UNIT`,
+- `2_Harmonisation/unitFix.tsv` — `TEST_NAME`, `PREPROCESED_UNIT`, `UNIT`,
   `unit_fix_reasoning`, `INJECTION_NOTES`. The known unit fixes.
-- `2_Harmonisation/2_MappingTable/mapping.tsv` — `TEST_NAME`, `UNIT`, `concept_id`,
+- `2_Harmonisation/mapping.tsv` — `TEST_NAME`, `UNIT`, `concept_id`,
   `ignore_mapping_reason`, `APPROVED`. The base of the table.
-- `2_Harmonisation/3_UnitHarmonisationTable/unitHarmonisation.tsv` — `context`, `UNIT`,
+- `2_Harmonisation/unitHarmonisation.tsv` — `context`, `UNIT`,
   `HARMONISED_UNIT`, `CONVERSION`. The conversion per property or concept, source unit and
   harmonised unit (a unit of lab2clean or of the unit overwrite table).
 - `3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` and
