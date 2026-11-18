@@ -1,0 +1,23 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  evaluatedFile = DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+  templateFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/6_BuildDashboard/scripts/dashboardTemplate.html
+  outDir = DATA/6_BuildDashboard
+  ksAgree = 0.5
+  ksDisagree = 0.8
+Read 28772 rows from DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+APPROVED 5796, ERROR 62, NOT-APPROVED 262, IGNORE 234, NOT-FOUND 22418 pairs; 280,959,762 records
+no_values 16254, AGREE 1600, WARNING 137, DISAGREE 32, not_mapped 8160, no_unit 2013, no_reference 576 pairs
+28772 rows in the table, 5.26 MB of data
+Wrote DATA/6_BuildDashboard/dashboard.html (5.28 MB)
+Wrote DATA/6_BuildDashboard/dashboard.html
