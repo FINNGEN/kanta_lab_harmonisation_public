@@ -7,13 +7,13 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | table | SUCCESS | WARNING | ERROR |
 | --- | --- | --- | --- |
 | unitFix.tsv | 5 | 1 | 0 |
-| mapping.tsv | 6 | 0 | 0 |
+| mapping.tsv | 5 | 0 | 1 |
 | unitHarmonisation.tsv | 6 | 0 | 1 |
 | targetTable.tsv | 3 | 0 | 0 |
-| harmonisationTable.tsv | 10 | 3 | 2 |
+| harmonisationTable.tsv | 9 | 3 | 3 |
 | testname_unit_property_missmatch_warning.tsv | 3 | 0 | 0 |
 | testname_property_shared_warning.tsv | 3 | 0 | 0 |
-| ALL | 36 | 4 | 3 |
+| ALL | 34 | 4 | 5 |
 
 ## Tests
 
@@ -30,14 +30,14 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | mapping.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |
 | mapping.tsv | SUCCESS | APPROVED must be TRUE or FALSE |  |  |
 | mapping.tsv | SUCCESS | concept_id must not be 0, unless there is an ignore_mapping_reason |  |  |
-| mapping.tsv | SUCCESS | concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason |  |  |
+| mapping.tsv | ERROR | concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason | 113 | e.g. s-iga[g/l] concept_id=3007164; p-iga[g/l] concept_id=3007164; p-igg[g/l] concept_id=3005719 |
 | unitHarmonisation.tsv | SUCCESS | columns match their declared types |  |  |
 | unitHarmonisation.tsv | SUCCESS | context, UNIT, CONVERSION must have a value |  |  |
 | unitHarmonisation.tsv | SUCCESS | context + UNIT + HARMONISED_UNIT are unique |  |  |
 | unitHarmonisation.tsv | SUCCESS | CONVERSION is a number or a formula in X |  |  |
 | unitHarmonisation.tsv | SUCCESS | context is a has_property or a concept_id of targetTable.tsv |  |  |
 | unitHarmonisation.tsv | SUCCESS | HARMONISED_UNIT is a lab2clean unit (or a unit of the unit overwrite table) |  |  |
-| unitHarmonisation.tsv | ERROR | the target unit of an approved concept (targetTable.tsv) has a rule for its has_property | 14 | 47 approved concepts, 14 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L |
+| unitHarmonisation.tsv | ERROR | the target unit of an approved concept (targetTable.tsv) has a rule for its has_property | 11 | 31 approved concepts, 11 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L |
 | targetTable.tsv | SUCCESS | columns match their declared types |  |  |
 | targetTable.tsv | SUCCESS | concept_id, concept_code, concept_name, vocabulary_id, is_panel must have a value |  |  |
 | targetTable.tsv | SUCCESS | concept_id + group_concept_id are unique |  |  |
@@ -45,13 +45,13 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | harmonisationTable.tsv | SUCCESS | TEST_NAME + PREPROCESED_UNIT are unique |  |  |
 | harmonisationTable.tsv | SUCCESS | has as many rows as mapping.tsv joined with unitFix.tsv |  |  |
 | harmonisationTable.tsv | SUCCESS | every TEST_NAME + UNIT of mapping.tsv is kept |  |  |
-| harmonisationTable.tsv | SUCCESS | concept_id has its attributes, unless there is an ignore_mapping_reason |  |  |
+| harmonisationTable.tsv | ERROR | concept_id has its attributes, unless there is an ignore_mapping_reason | 113 | e.g. b-co[ug/l] concept_id=3026470; b-co[] concept_id=3026470; b-cr[ug/l] concept_id=3025577 |
 | harmonisationTable.tsv | SUCCESS | mapping_status is IGNORE, ERROR, APPROVED or NOT-APPROVED |  |  |
 | harmonisationTable.tsv | SUCCESS | mapping_status is IGNORE if and only if there is an ignore_mapping_reason |  |  |
 | harmonisationTable.tsv | SUCCESS | a row with mapping_status ERROR has mapping_warning_messages |  |  |
 | harmonisationTable.tsv | SUCCESS | a row with a HARMONISED_UNIT has a CONVERSION |  |  |
-| harmonisationTable.tsv | ERROR | an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it | 206 | 85 concepts, e.g. -baso[%->%] TARGET=10*9/L; -ca12-5[u/ml->u/ml] TARGET=[arb'U]; -ca15-3[u/ml->u/ml] TARGET=[arb'U] |
-| harmonisationTable.tsv | WARNING | an APPROVED pair whose concept has a target unit has a UNIT (no unit cannot be converted) | 2,924 | 928 concepts, e.g. !psavapaanjatotaalinsuhde[] TARGET=%; -amylp[] TARGET=U/L; -ana[] TARGET=1 |
+| harmonisationTable.tsv | ERROR | an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it | 140 | 55 concepts, e.g. -baso[%->%] TARGET=10*9/L; -ca12-5[u/ml->u/ml] TARGET=[arb'U]; -ca15-3[u/ml->u/ml] TARGET=[arb'U] |
+| harmonisationTable.tsv | WARNING | an APPROVED pair whose concept has a target unit has a UNIT (no unit cannot be converted) | 2,879 | 911 concepts, e.g. !psavapaanjatotaalinsuhde[] TARGET=%; -amylp[] TARGET=U/L; -ana[] TARGET=1 |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | columns match their declared types |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME, message, ignore must have a value |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |

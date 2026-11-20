@@ -19,6 +19,6 @@ A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APP
 | --- | ---: | ---: |
 | rows (TEST_NAME + PREPROCESED_UNIT) | 7,136 |  |
 | distinct concept_ids | 1,523 |  |
-| rows with a group | 3,525 | 49.4% |
-| distinct groups | 403 |  |
+| rows with a group | 3,512 | 49.2% |
+| distinct groups | 400 |  |
 | rows with a conversion | 3,329 | 46.7% |

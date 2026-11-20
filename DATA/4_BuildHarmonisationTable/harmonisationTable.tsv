@@ -474,10 +474,10 @@ APPROVED	b-cd8	e6/l	e6/l		3001405		14135-8	CD3+CD8+ (T8 suppressor) cells [#/vol
 APPROVED	b-cd8				3001405		14135-8	CD3+CD8+ (T8 suppressor) cells [#/volume] in Blood	LOINC	FALSE	CD3+CD8+ (T8 suppressor) cells	Number Concentration						
 APPROVED	b-cl	mmol/l	mmol/l		3018572		2069-3	Chloride [Moles/volume] in Blood	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	b-cl				3018572		2069-3	Chloride [Moles/volume] in Blood	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-co	ug/l	ug/l		3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-co				3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-cr	ug/l	ug/l		3025577		5619-2	Chromium [Mass/volume] in Blood	LOINC	FALSE	Chromium	Mass Concentration	40652817	LG3201-3	Chromium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-cr				3025577		5619-2	Chromium [Mass/volume] in Blood	LOINC	FALSE	Chromium	Mass Concentration	40652817	LG3201-3	Chromium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	b-co	ug/l	ug/l		3026470													
+APPROVED	b-co				3026470													
+APPROVED	b-cr	ug/l	ug/l		3025577													
+APPROVED	b-cr				3025577													
 APPROVED	b-crp	mg/l	mg/l		42870365		71426-1	C reactive protein [Mass/volume] in Blood by High sensitivity method	LOINC	FALSE	C reactive protein	Mass Concentration				mg/L	1	
 APPROVED	b-crp				42870365		71426-1	C reactive protein [Mass/volume] in Blood by High sensitivity method	LOINC	FALSE	C reactive protein	Mass Concentration						
 APPROVED	b-crp-0	mg/l	mg/l		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1	
@@ -820,7 +820,7 @@ APPROVED	b-keton-sn				3008116		22702-5	Ketones [Moles/volume] in Urine by Test 
 APPROVED	b-kllfish				21493619		82256-9	Chromosome 12 trisomy and chromosome region 11q22.3 and 13q14 and 17p13.1 deletion in Blood or Tissue by FISH	LOINC	FALSE	Chromosome 12 trisomy and chromosome region 11q22.3 and 13q14 and 17p13.1 deletion	Finding						
 APPROVED	b-kloridi	mmol/l	mmol/l		3014576		2075-0	Chloride [Moles/volume] in Serum or Plasma	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	b-kml-qr				40771901		69380-4	t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale) [# Ratio] in Blood or Tissue by Molecular genetics method	LOINC	FALSE	t(9;22)(q34.1;q11)(ABL1,BCR) b2a2+b3a2 fusion transcript/control transcript (International Scale)	Number Ratio						
-APPROVED	b-koboltti	ug/l	ug/l		3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	b-koboltti	ug/l	ug/l		3026470													
 APPROVED	b-konedif,lymph	%	%		3002030		26478-8	Lymphocytes/Leukocytes in Blood	LOINC	FALSE	Lymphocytes/leukocytes	Number Fraction				%	1	
 APPROVED	b-konedif,neut	%	%		3018010		26511-6	Neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	1	
 APPROVED	b-konedif,neut				3018010		26511-6	Neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction						
@@ -962,8 +962,8 @@ APPROVED	b-pbnp-pt	ng/l	ng/l		3029187		33762-6	Natriuretic peptide.B prohormone 
 APPROVED	b-pbnp-pt				3029187		33762-6	Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma	LOINC	FALSE	Natriuretic peptide.B prohormone N-Terminal	Mass Concentration	40653381	LG13322-9	Natriuretic peptide.B prohormone N-Terminal|Mass Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	b-pco2	kpa	kpa		3013290		11557-6	Carbon dioxide [Partial pressure] in Blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	7.500637554	
 APPROVED	b-pco2				3013290		11557-6	Carbon dioxide [Partial pressure] in Blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-pct	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	b-pct				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
+APPROVED	b-pct	ug/l	ug/l		3046279													
+APPROVED	b-pct				3046279													
 APPROVED	b-perusverenkuvajatrombosyytit				40758558		55429-5	Short blood count panel - Blood	LOINC	TRUE	Short blood count panel	-						
 APPROVED	b-peth	umol/l	mg/l	#85	44816559		74661-0	Phosphatidylethanol [Mass/volume] in Blood	LOINC	FALSE	Phosphatidylethanol	Mass Concentration				ug/L	703*X+0	
 APPROVED	b-peth				44816559		74661-0	Phosphatidylethanol [Mass/volume] in Blood	LOINC	FALSE	Phosphatidylethanol	Mass Concentration						
@@ -1075,8 +1075,8 @@ APPROVED	b-temp	°c	°c		3020891		8310-5	Body temperature	LOINC	FALSE	Body tempe
 APPROVED	b-temp				3020891		8310-5	Body temperature	LOINC	FALSE	Body temperature	Temperature	40654162	LG33052-8	Body temperature|Temperature|Moment in time|Without specimen			
 APPROVED	b-thb	g/l	g/l		3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	1	
 APPROVED	b-thb				3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration						
-APPROVED	b-ti	ug/l	ug/l		40762814		59753-4	Titanium [Mass/volume] in Blood	LOINC	FALSE	Titanium	Mass Concentration	40653847	LG20243-8	Titanium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	b-ti				40762814		59753-4	Titanium [Mass/volume] in Blood	LOINC	FALSE	Titanium	Mass Concentration	40653847	LG20243-8	Titanium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	b-ti	ug/l	ug/l		40762814													
+APPROVED	b-ti				40762814													
 APPROVED	b-tni	ug/l	ug/l		3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	1	
 APPROVED	b-tni				3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	b-tni-vt	ng/l	ng/l		3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	0.001	
@@ -1816,7 +1816,7 @@ APPROVED	f-shigvi				42529406		82300-5	Shigella sp [Presence] in Stool by Cultur
 APPROVED	f-virem				3007147		10737-5	Virus identified in Stool by Electron microscopy	LOINC	FALSE	Virus	Presence or Identity						
 APPROVED	f-yersvi				3014765		28549-4	Yersinia sp identified in Stool by Organism specific culture	LOINC	FALSE	Yersinia sp	Presence or Identity						
 APPROVED	fb-b1-vit	nmol/l	nmol/l		3006653		32554-8	Thiamine [Moles/volume] in Blood	LOINC	FALSE	Thiamine	Substance Concentration	40653823	LG7088-0	Thiamine|Substance Concentration|Moment in time|Blood, Serum or Plasma	nmol/L	1	
-APPROVED	fb-b1-vit	ug/l	ug/l		3028717		2998-3	Thiamine [Mass/volume] in Blood	LOINC	FALSE	Thiamine	Mass Concentration	40653823	LG7088-0	Thiamine|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	fb-b1-vit	ug/l	ug/l		3028717													
 APPROVED	fb-folaat	nmol/l	nmol/l		3006270		25415-1	Folate [Moles/volume] in Blood	LOINC	FALSE	Folate	Substance Concentration	40652996	LG2348-3	Folate|Substance Concentration|Moment in time|Blood, Serum or Plasma	nmol/L	1	
 APPROVED	fb-folaat				3006270		25415-1	Folate [Moles/volume] in Blood	LOINC	FALSE	Folate	Substance Concentration	40652996	LG2348-3	Folate|Substance Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	fb-folaatti	nmol/l	nmol/l		3006270		25415-1	Folate [Moles/volume] in Blood	LOINC	FALSE	Folate	Substance Concentration	40652996	LG2348-3	Folate|Substance Concentration|Moment in time|Blood, Serum or Plasma	nmol/L	1	
@@ -2380,25 +2380,25 @@ APPROVED	homokysteiini	umol/l	umol/l		3016724		13965-9	Homocysteine [Moles/volum
 APPROVED	homokysteiini				3016724		13965-9	Homocysteine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Homocysteine	Substance Concentration						
 APPROVED	i-statna	mmol/l	mmol/l		3000285		2947-0	Sodium [Moles/volume] in Blood	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	ica(7.4)	mmol/l	mmol/l		3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
-APPROVED	iga	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	iga				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	iga	g/l	g/l		3007164													
+APPROVED	iga				3007164													
 APPROVED	igehevonen	u/ml	u/ml		3010726		6143-2	Horse dander IgE Ab [Units/volume] in Serum	LOINC	FALSE	Horse dander IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	igekoira	u/ml	u/ml		3014133		6098-8	Dog dander IgE Ab [Units/volume] in Serum	LOINC	FALSE	Dog dander IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	igekoivu	u/ml	u/ml		3027300		15283-5	Silver Birch IgE Ab [Units/volume] in Serum	LOINC	FALSE	Silver Birch (Betula verrucosa) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
-APPROVED	igg	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	igg				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	igm	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	igm				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
+APPROVED	igg	g/l	g/l		3005719													
+APPROVED	igg				3005719													
+APPROVED	igm	g/l	g/l		3028026													
+APPROVED	igm				3028026													
 IGNORE	ihottumanäytteenhistologinentutkimus				0	Histology/pathology procedure												
 APPROVED	ikäriski				3049207		49090-4	Fetal Trisomy 21 risk [Likelihood] Based on maternal age	LOINC	FALSE	Fetal trisomy 21 risk	Likelihood						
-APPROVED	immunoglobuliinia	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	immunoglobuliinia				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	immunoglobuliinia,osatutkimus	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	immunoglobuliinia,osatutkimus				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	immunoglobuliinia	g/l	g/l		3007164													
+APPROVED	immunoglobuliinia				3007164													
+APPROVED	immunoglobuliinia,osatutkimus	g/l	g/l		3007164													
+APPROVED	immunoglobuliinia,osatutkimus				3007164													
 APPROVED	immunoglobuliinie	u/ml	u/ml		3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	[iU]/L	1000	
 APPROVED	immunoglobuliinie				3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	immunoglobuliinig	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	immunoglobuliinig				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	immunoglobuliinig	g/l	g/l		3005719													
+APPROVED	immunoglobuliinig				3005719													
 APPROVED	immunoglobuliinig1	g/l	g/l		3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration				mg/L	1000	
 APPROVED	immunoglobuliinig1				3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration						
 APPROVED	immunoglobuliinig2	g/l	g/l		3028192		2467-9	IgG subclass 2 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 2	Mass Concentration				mg/L	1000	
@@ -2447,8 +2447,8 @@ NOT-APPROVED	kalsium,ionisoitunutph	ph	ph		3016431		19072-8	Calcium.ionized [Mol
 APPROVED	kalsium,osatutkimus(p-ca)	mmol/l	mmol/l		3015377		2000-8	Calcium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Calcium	Substance Concentration	40652746	LG6218-4	Calcium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	kalsium,osatutkimus(p-ca)				3015377		2000-8	Calcium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Calcium	Substance Concentration	40652746	LG6218-4	Calcium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
 NOT-APPROVED	kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	mmol		3010838		14637-3	Calcium [Moles/time] in 24 hour Urine	LOINC	FALSE	Calcium	Substance Rate	40655995	LG34926-2	Calcium|Substance Rate|Urine			WrongProperty: has_property 'Substance Rate' and UNIT 'mmol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
-APPROVED	keliakia,immunoglobuliinia	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	keliakia,immunoglobuliinia				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	keliakia,immunoglobuliinia	g/l	g/l		3007164													
+APPROVED	keliakia,immunoglobuliinia				3007164													
 APPROVED	keliakia,kudostransglutaminaasiigavasta-aineet				3019050		31017-7	Tissue transglutaminase IgA Ab [Units/volume] in Serum	LOINC	FALSE	Tissue Transglutaminase IgA	Arbitrary Concentration	40653843	LG12238-8	Tissue transglutaminase Ab.IgA|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	keliakiatutkimus,laa25,s-emaba,s-ttgaba)				36660697		94494-2	Celiac disease serology panel - Serum	LOINC	TRUE	Celiac disease serology panel	-						
 APPROVED	keliakiatutkimus,seulonta(sis.s-iga,s-ttgaba)				3019050		31017-7	Tissue transglutaminase IgA Ab [Units/volume] in Serum	LOINC	FALSE	Tissue Transglutaminase IgA	Arbitrary Concentration	40653843	LG12238-8	Tissue transglutaminase Ab.IgA|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
@@ -2879,9 +2879,9 @@ NOT-APPROVED	li-hsvabg	eiu	eiu		3025927		9659-4	Herpes simplex virus IgG Ab [Uni
 APPROVED	li-hsvabg				3025927		9659-4	Herpes simplex virus IgG Ab [Units/volume] in Cerebral spinal fluid by Immunoassay	LOINC	FALSE	Herpes simplex virus IgG	Arbitrary Concentration						
 APPROVED	li-hsvabm				3044212		41150-4	Herpes simplex virus 1+2 IgM Ab [Presence] in Cerebral spinal fluid	LOINC	FALSE	Herpes simplex virus 1+2 IgM	Presence or Threshold						
 APPROVED	li-hsvnho				3008733		5013-8	Herpes simplex virus DNA [Presence] in Cerebral spinal fluid by NAA with probe detection	LOINC	FALSE	Herpes simplex virus DNA	Presence or Threshold						
-APPROVED	li-igg	g/l	g/l		3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	li-igg	mg/l	mg/l		3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	li-igg				3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	li-igg	g/l	g/l		3007368													
+APPROVED	li-igg	mg/l	mg/l		3007368													
+APPROVED	li-igg				3007368													
 APPROVED	li-igg-ind	%	%		4027681		1324000	Cerebrospinal fluid IgG ratio and IgG index	SNOMED	FALSE	Immunoglobulin G; Immunologic substance	Ratio						
 ERROR	li-igg-ind	index	ratio	injection_script	4027681		1324000	Cerebrospinal fluid IgG ratio and IgG index	SNOMED	FALSE	Immunoglobulin G; Immunologic substance	Ratio						WrongProperty: has_property 'Ratio' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 ERROR	li-igg-ind	osuus	ratio	injection_script	4027681		1324000	Cerebrospinal fluid IgG ratio and IgG index	SNOMED	FALSE	Immunoglobulin G; Immunologic substance	Ratio						WrongProperty: has_property 'Ratio' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
@@ -3275,7 +3275,7 @@ APPROVED	osmolaliteetti,virtsa				3026782		2695-5	Osmolality of Urine	LOINC	FALS
 IGNORE	otettujenpurkkien/putkienlkm				0	Sample collection/processing code												
 IGNORE	ottotapa	h	h		0	Non-test metadata/admin field												
 IGNORE	ottotapa				0	Non-test metadata/admin field												
-APPROVED	p-acth	ng/l	ng/l		3035637		2141-0	Corticotropin [Mass/volume] in Plasma	LOINC	FALSE	Corticotropin	Mass Concentration						
+APPROVED	p-acth	ng/l	ng/l		3035637													
 APPROVED	p-acth	pmol/l	pmol/l		3035963		14674-6	Corticotropin [Moles/volume] in Plasma	LOINC	FALSE	Corticotropin	Substance Concentration				pmol/L	1	
 APPROVED	p-afos	u/l	u/l		3035995		6768-6	Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Alkaline phosphatase	Catalytic Concentration	40652549	LG5665-7	Alkaline phosphatase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma	U/L	1	
 NOT-APPROVED	p-afos	umol/l	umol/l		3035995		6768-6	Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Alkaline phosphatase	Catalytic Concentration	40652549	LG5665-7	Alkaline phosphatase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Catalytic Concentration' and UNIT 'umol/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
@@ -3460,7 +3460,7 @@ APPROVED	p-ckmbm				3005785		13969-1	Creatine kinase.MB [Mass/volume] in Serum o
 APPROVED	p-ckviitasaari	u/l	u/l		3007220		2157-6	Creatine kinase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Creatine kinase	Catalytic Concentration				U/L	1	
 APPROVED	p-ckviitasaari				3007220		2157-6	Creatine kinase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Creatine kinase	Catalytic Concentration						
 ERROR	p-cl	%	%		3014576		2075-0	Chloride [Moles/volume] in Serum or Plasma	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Substance Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
-APPROVED	p-cl	g/l	g/l		36303415		87475-0	Chloride [Mass/volume] in Specimen	LOINC	FALSE	Chloride	Mass Concentration						
+APPROVED	p-cl	g/l	g/l		36303415													
 NOT-APPROVED	p-cl	kpa	kpa		3014576		2075-0	Chloride [Moles/volume] in Serum or Plasma	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Substance Concentration' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	p-cl	mmol/l	mmol/l		3014576		2075-0	Chloride [Moles/volume] in Serum or Plasma	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 NOT-APPROVED	p-cl	°c	°c		3014576		2075-0	Chloride [Moles/volume] in Serum or Plasma	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Substance Concentration' and UNIT '°c' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
@@ -3521,7 +3521,7 @@ APPROVED	p-ebvnh	u/ml	u/ml		3043849		43730-1	Epstein Barr virus DNA [Units/volum
 APPROVED	p-ebvnh				3043849		43730-1	Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	Epstein Barr virus DNA	Arbitrary Concentration						
 APPROVED	p-einr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	1	
 APPROVED	p-einr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time						
-APPROVED	p-etoh	g/l	g/l		3012920		5643-2	Ethanol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Mass Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	p-etoh	g/l	g/l		3012920													
 APPROVED	p-etoh	mmol/l	mmol/l		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 ERROR	p-etoh	promille	promille		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Substance Concentration' and UNIT 'promille' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	p-fakb	g/l	g/l		3002568		2269-9	Complement factor B [Mass/volume] in Serum or Plasma	LOINC	FALSE	Complement factor B	Mass Concentration				mg/L	1000	
@@ -3602,8 +3602,8 @@ ERROR	p-gfr-kre	ml/min/173m2	ml/min/173m2		40764999		62238-1	Glomerular filtrati
 APPROVED	p-gfr-kre				40764999		62238-1	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma			
 ERROR	p-gfreepi	ml/min/173m2	ml/min/173m2		40764999		62238-1	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	p-gfreepi				40764999		62238-1	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma			
-APPROVED	p-glkg	ng/l	ng/l		3023436		2338-2	Glucagon [Mass/volume] in Serum or Plasma	LOINC	FALSE	Glucagon	Mass Concentration						
-APPROVED	p-glkg				3023436		2338-2	Glucagon [Mass/volume] in Serum or Plasma	LOINC	FALSE	Glucagon	Mass Concentration						
+APPROVED	p-glkg	ng/l	ng/l		3023436													
+APPROVED	p-glkg				3023436													
 APPROVED	p-glu/0	mmol/l	mmol/l		3007821		14768-6	Glucose [Moles/volume] in Serum or Plasma --baseline	LOINC	FALSE	Glucose^baseline	Substance Concentration				mmol/L	1	
 APPROVED	p-glu/0				3007821		14768-6	Glucose [Moles/volume] in Serum or Plasma --baseline	LOINC	FALSE	Glucose^baseline	Substance Concentration						
 APPROVED	p-glu/1h	mmol/l	mmol/l		3015024		14756-1	Glucose [Moles/volume] in Serum or Plasma --1 hour post dose glucose	LOINC	FALSE	Glucose^1H post dose glucose	Substance Concentration				mmol/L	1	
@@ -3766,26 +3766,26 @@ APPROVED	p-hs-crp	mg/l	mg/l		3010156		30522-7	C reactive protein [Mass/volume] i
 APPROVED	p-hs-crp				3010156		30522-7	C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method	LOINC	FALSE	C reactive protein	Mass Concentration						
 APPROVED	p-hstni	ng/l	ng/l		3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	0.001	
 APPROVED	p-hstni				3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	p-iga	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	p-iga				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	p-iga	g/l	g/l		3007164													
+APPROVED	p-iga				3007164													
 APPROVED	p-ige	u/ml	u/ml		3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	[iU]/L	1000	
 APPROVED	p-ige				3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	p-igg	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	p-igg				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	p-igm	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	p-igm				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
+APPROVED	p-igg	g/l	g/l		3005719													
+APPROVED	p-igg				3005719													
+APPROVED	p-igm	g/l	g/l		3028026													
+APPROVED	p-igm				3028026													
 APPROVED	p-il2r	u/ml	u/ml		3007847		9654-5	Interleukin 2 Receptor Soluble [Units/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 2 Receptor Soluble	Arbitrary Concentration				10*3.[arb'U]/L	1	
 APPROVED	p-il2r				3007847		9654-5	Interleukin 2 Receptor Soluble [Units/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 2 Receptor Soluble	Arbitrary Concentration						
 APPROVED	p-il6	ng/l	ng/l		3023091		26881-3	Interleukin 6 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 6	Mass Concentration				ng/L	1	
 APPROVED	p-il6				3023091		26881-3	Interleukin 6 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 6	Mass Concentration						
 APPROVED	p-il8	ng/l	ng/l		3046594		33211-4	Interleukin 8 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 8	Mass Concentration				ng/L	1	
 APPROVED	p-il8				3046594		33211-4	Interleukin 8 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 8	Mass Concentration						
-APPROVED	p-immunoglobuliinia(pi)	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	p-immunoglobuliinia(pi)				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	p-immunoglobuliinig(pi)	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	p-immunoglobuliinig(pi)				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	p-immunoglobuliinim(pi)	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	p-immunoglobuliinim(pi)				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
+APPROVED	p-immunoglobuliinia(pi)	g/l	g/l		3007164													
+APPROVED	p-immunoglobuliinia(pi)				3007164													
+APPROVED	p-immunoglobuliinig(pi)	g/l	g/l		3005719													
+APPROVED	p-immunoglobuliinig(pi)				3005719													
+APPROVED	p-immunoglobuliinim(pi)	g/l	g/l		3028026													
+APPROVED	p-immunoglobuliinim(pi)				3028026													
 APPROVED	p-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	1	
 APPROVED	p-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time						
 APPROVED	p-inr(pikamittari)	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	1	
@@ -3971,8 +3971,8 @@ APPROVED	p-mg	mmol/l	mmol/l		3012095		2601-3	Magnesium [Moles/volume] in Serum o
 APPROVED	p-mg				3012095		2601-3	Magnesium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Magnesium	Substance Concentration	40653292	LG343-0	Magnesium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	p-myogl	ug/l	ug/l		3005895		2639-3	Myoglobin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Myoglobin	Mass Concentration	40653378	LG10799-1	Myoglobin|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	1	
 APPROVED	p-myogl				3005895		2639-3	Myoglobin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Myoglobin	Mass Concentration	40653378	LG10799-1	Myoglobin|Mass Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	p-mypa	mg/l	mg/l		3027653		23905-3	Mycophenolate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Mycophenolate	Mass Concentration						
-APPROVED	p-mypa				3027653		23905-3	Mycophenolate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Mycophenolate	Mass Concentration						
+APPROVED	p-mypa	mg/l	mg/l		3027653													
+APPROVED	p-mypa				3027653													
 APPROVED	p-na	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	p-na				3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	p-na-hoi	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
@@ -4040,15 +4040,15 @@ APPROVED	p-pc	%	%		3020287		27819-2	Protein C actual/normal in Platelet poor pla
 APPROVED	p-pc				3020287		27819-2	Protein C actual/normal in Platelet poor plasma by Coagulation assay	LOINC	FALSE	Protein C actual/Normal	Relative time						
 APPROVED	p-pc-ag	%	%		3002022		27820-0	Protein C Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	FALSE	Protein C Ag actual/Normal	Relative Mass Concentration				%	1	
 APPROVED	p-pc-ag				3002022		27820-0	Protein C Ag actual/normal in Platelet poor plasma by Immunoassay	LOINC	FALSE	Protein C Ag actual/Normal	Relative Mass Concentration						
-APPROVED	p-pct	ng/ml	ng/ml		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct-o	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct-o				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct-poc	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pct-poc				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pctpika	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	p-pctpika				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
+APPROVED	p-pct	ng/ml	ng/ml		3046279													
+APPROVED	p-pct	ug/l	ug/l		3046279													
+APPROVED	p-pct				3046279													
+APPROVED	p-pct-o	ug/l	ug/l		3046279													
+APPROVED	p-pct-o				3046279													
+APPROVED	p-pct-poc	ug/l	ug/l		3046279													
+APPROVED	p-pct-poc				3046279													
+APPROVED	p-pctpika	ug/l	ug/l		3046279													
+APPROVED	p-pctpika				3046279													
 APPROVED	p-pegtsh	mu/l	mu/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	1	
 APPROVED	p-pegtsh				3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	p-ph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	1	
@@ -4337,7 +4337,7 @@ APPROVED	p-tyroksiini,vapaa(pi)				3008486		14920-3	Thyroxine (T4) free [Moles/v
 APPROVED	p-uraat	mmol/l	mmol/l		3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration				umol/L	1000	
 APPROVED	p-uraat	umol/l	umol/l		3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration				umol/L	1	
 APPROVED	p-uraat				3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration						
-NOT-APPROVED	p-uraatti	umol/l	umol/l		3037556		3084-1	Urate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Urate	Mass Concentration				umol/L	1	
+NOT-APPROVED	p-uraatti	umol/l	umol/l		3037556													
 APPROVED	p-uraatti,plasma(umol/l)	umol/l	umol/l		3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration				umol/L	1	
 APPROVED	p-uraattiviitasaar	umol/l	umol/l		3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration				umol/L	1	
 APPROVED	p-uraattiviitasaar				3026493		14933-6	Urate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urate	Substance Concentration						
@@ -5220,7 +5220,7 @@ APPROVED	s-c4.	g/l	g/l		3017766		4498-2	Complement C4 [Mass/volume] in Serum or 
 APPROVED	s-c4.				3017766		4498-2	Complement C4 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Complement C4	Mass Concentration						
 APPROVED	s-c4h	g/l	g/l		3017766		4498-2	Complement C4 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Complement C4	Mass Concentration				mg/L	1000	
 APPROVED	s-c4h				3017766		4498-2	Complement C4 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Complement C4	Mass Concentration						
-APPROVED	s-ca	g/l	g/l		3006906		17861-6	Calcium [Mass/volume] in Serum or Plasma	LOINC	FALSE	Calcium	Mass Concentration	40652746	LG6218-4	Calcium|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	s-ca	g/l	g/l		3006906													
 APPROVED	s-ca	mmol/l	mmol/l		3015377		2000-8	Calcium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Calcium	Substance Concentration	40652746	LG6218-4	Calcium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	s-ca(7.4)	mmol/l	mmol/l		3048816		47598-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	s-ca(7.4)				3048816		47598-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Blood	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma			
@@ -5395,7 +5395,7 @@ APPROVED	s-dgpabg				40766189		63459-2	Gliadin peptide IgG Ab [Units/volume] in 
 APPROVED	s-dheas	umol/l	umol/l		3016616		14688-6	Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma	LOINC	FALSE	Dehydroepiandrosterone sulfate	Substance Concentration				umol/L	1	
 APPROVED	s-dheas				3016616		14688-6	Dehydroepiandrosterone sulfate (DHEA-S) [Moles/volume] in Serum or Plasma	LOINC	FALSE	Dehydroepiandrosterone sulfate	Substance Concentration						
 APPROVED	s-digoks	nmol/l	nmol/l		3027456		14698-5	Digoxin [Moles/volume] in Serum or Plasma	LOINC	FALSE	Digoxin	Substance Concentration	40652920	LG2940-7	Digoxin|Substance Concentration|Moment in time|Blood, Serum or Plasma	nmol/L	1	
-APPROVED	s-digoks	ug/l	ug/l		3011335		10535-3	Digoxin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Digoxin	Mass Concentration	40652920	LG2940-7	Digoxin|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	s-digoks	ug/l	ug/l		3011335													
 APPROVED	s-digoks				3027456		14698-5	Digoxin [Moles/volume] in Serum or Plasma	LOINC	FALSE	Digoxin	Substance Concentration	40652920	LG2940-7	Digoxin|Substance Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-dmklots	nmol/l	nmol/l		3008832		14851-0	Norclozapine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Substance Concentration				nmol/L	1	
 APPROVED	s-dmklots	umol/l	umol/l		3008832		14851-0	Norclozapine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Substance Concentration				nmol/L	1000	
@@ -5477,7 +5477,7 @@ APPROVED	s-etane	mg/l	mg/l		42528615		82470-6	Etanercept [Mass/volume] in Serum 
 APPROVED	s-etane				42528615		82470-6	Etanercept [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	FALSE	Etanercept	Mass Concentration						
 APPROVED	s-etglygc	mmol/l	mmol/l		3027318		14721-5	Ethylene glycol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethylene glycol	Substance Concentration				mmol/L	1	
 APPROVED	s-etglygc				3027318		14721-5	Ethylene glycol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethylene glycol	Substance Concentration						
-APPROVED	s-etoh	g/l	g/l		3012920		5643-2	Ethanol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Mass Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma			
+APPROVED	s-etoh	g/l	g/l		3012920													
 APPROVED	s-etoh	mmol/l	mmol/l		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 ERROR	s-etoh	promille	promille		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Substance Concentration' and UNIT 'promille' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	s-etosux	umol/l	umol/l		3012787		14720-7	Ethosuximide [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethosuximide	Substance Concentration				umol/L	1	
@@ -5533,8 +5533,8 @@ APPROVED	s-gbmab	u/ml	u/ml		3032700		49774-3	Glomerular basement membrane Ab [Un
 APPROVED	s-gbmab				3032700		49774-3	Glomerular basement membrane Ab [Units/volume] in Serum	LOINC	FALSE	Glomerular basement membrane Ab	Arbitrary Concentration	40653074	LG20048-1	Glomerular basement membrane Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-gbmif	titre	titre		3041082		53259-8	Glomerular basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	FALSE	Glomerular basement membrane Ab	Titer				1	1	
 APPROVED	s-gbmif				3041082		53259-8	Glomerular basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	FALSE	Glomerular basement membrane Ab	Titer						
-APPROVED	s-gen	mg/l	mg/l		3035510		35668-3	Gentamicin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Gentamicin	Mass Concentration						
-APPROVED	s-gen				3035510		35668-3	Gentamicin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Gentamicin	Mass Concentration						
+APPROVED	s-gen	mg/l	mg/l		3035510													
+APPROVED	s-gen				3035510													
 APPROVED	s-gh	ug/l	ug/l		3023709		2963-7	Somatotropin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Somatotropin	Mass Concentration				ug/L	1	
 APPROVED	s-gh				3023709		2963-7	Somatotropin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Somatotropin	Mass Concentration						
 NOT-APPROVED	s-gliadiinipeptidit,deamidoidut,iga-vasta-aineet	u/ml	u/ml		40766189		63459-2	Gliadin peptide IgG Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Gliadin peptide IgG	Arbitrary Concentration	40653068	LG24121-2	Gliadin peptide Ab.IgG|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	1	
@@ -5662,12 +5662,12 @@ APPROVED	s-ia2ab				3016273		31209-0	Islet cell 512 Ab [Units/volume] in Serum	L
 APPROVED	s-ica-vieri	mmol/l	mmol/l		3013784		12180-6	Calcium.ionized [Moles/volume] in Serum or Plasma by Ion-selective membrane electrode (ISE)	LOINC	FALSE	Calcium.ionized	Substance Concentration	40652743	LG655-7	Calcium.ionized|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1	
 APPROVED	s-if-ab	au/ml	au/ml		3011324		11564-2	Intrinsic factor Ab [Units/volume] in Serum	LOINC	FALSE	Itrinsic factor Ab	Arbitrary Concentration	40653202	LG351-3	Intrinsic factor Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	1	
 APPROVED	s-if-ab				3011324		11564-2	Intrinsic factor Ab [Units/volume] in Serum	LOINC	FALSE	Itrinsic factor Ab	Arbitrary Concentration	40653202	LG351-3	Intrinsic factor Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	s-iga	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-iga	mg/l	mg/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-iga				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-igakeli	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-igakeli	ug/l	ug/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-igakeli				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	s-iga	g/l	g/l		3007164													
+APPROVED	s-iga	mg/l	mg/l		3007164													
+APPROVED	s-iga				3007164													
+APPROVED	s-igakeli	g/l	g/l		3007164													
+APPROVED	s-igakeli	ug/l	ug/l		3007164													
+APPROVED	s-igakeli				3007164													
 APPROVED	s-igd	g/l	g/l		3016135		2460-4	IgD [Mass/volume] in Serum	LOINC	FALSE	IgD	Mass Concentration				mg/L	1000	
 NOT-APPROVED	s-igd	iu/ml	iu/ml		3047387		38488-3	IgG [Units/volume] in Serum	LOINC	FALSE	IgG	Arbitrary Concentration				10*3.[arb'U]/L	1	SharedProperty: a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) | 3047387 (IgG [Units/volume] in Serum)
 APPROVED	s-igd	mg/l	mg/l		3016135		2460-4	IgD [Mass/volume] in Serum	LOINC	FALSE	IgD	Mass Concentration				mg/L	1	
@@ -5679,12 +5679,12 @@ APPROVED	s-igf1	nmol/l	nmol/l		3014326		29775-4	Insulin-like growth factor-I [Mo
 APPROVED	s-igf1				3014326		29775-4	Insulin-like growth factor-I [Moles/volume] in Serum or Plasma	LOINC	FALSE	Insulin-like growth factor-I	Substance Concentration						
 APPROVED	s-igf1sds	nmol/l	nmol/l		3019083		25528-1	Insulin-like growth factor [Moles/volume] in Serum or Plasma	LOINC	FALSE	Insulin-like growth factor	Substance Concentration				pmol/L	1000	
 APPROVED	s-igf1sds				3019083		25528-1	Insulin-like growth factor [Moles/volume] in Serum or Plasma	LOINC	FALSE	Insulin-like growth factor	Substance Concentration						
-APPROVED	s-igg	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	s-igg				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	s-igg	g/l	g/l		3005719													
+APPROVED	s-igg				3005719													
 NOT-APPROVED	s-igg-oc	g/l	g/l		40759881		56762-8	Oligoclonal Bands IgG [Presence] in Serum or Plasma	LOINC	FALSE	Protein fractions.oligoclonal bands.IgG	Presence or Threshold	40653612	LG23345-8	Protein fractions.oligoclonal bands.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Presence or Threshold' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	s-igg-sc				4062490		1712009	Immunoglobulin typing, IgG	SNOMED	FALSE	Immunologic substance							
-APPROVED	s-igg-sum	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	s-igg-sum				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	s-igg-sum	g/l	g/l		3005719													
+APPROVED	s-igg-sum				3005719													
 APPROVED	s-igg1	g/l	g/l		3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration				mg/L	1000	
 APPROVED	s-igg1				3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration						
 APPROVED	s-igg2	g/l	g/l		3028192		2467-9	IgG subclass 2 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 2	Mass Concentration				mg/L	1000	
@@ -5699,8 +5699,8 @@ APPROVED	s-iglck-v	mg/l	mg/l		3034860		36916-5	Kappa light chains.free [Mass/vol
 APPROVED	s-iglck-v				3034860		36916-5	Kappa light chains.free [Mass/volume] in Serum	LOINC	FALSE	Kappa light chains.free	Mass Concentration	40653172	LG14797-1	Immunoglobulin light chains.kappa.free|Mass Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-iglcl-v	mg/l	mg/l		3047169		33944-0	Lambda light chains.free [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lambda light chains.free	Mass Concentration	40653178	LG14589-2	Immunoglobulin light chains.lambda.free|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1	
 APPROVED	s-iglcl-v				3047169		33944-0	Lambda light chains.free [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lambda light chains.free	Mass Concentration	40653178	LG14589-2	Immunoglobulin light chains.lambda.free|Mass Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	s-igm	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	s-igm				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
+APPROVED	s-igm	g/l	g/l		3028026													
+APPROVED	s-igm				3028026													
 APPROVED	s-ihotab	titre	titre		40760847		57737-9	Basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	FALSE	Basement membrane Ab	Titer	40652668	LG451-1	Basement membrane Ab|Titer|Moment in time|Blood, Serum or Plasma	1	1	
 APPROVED	s-ihotab				40760847		57737-9	Basement membrane Ab [Titer] in Serum by Immunofluorescence	LOINC	FALSE	Basement membrane Ab	Titer	40652668	LG451-1	Basement membrane Ab|Titer|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-ihovab	titre	titre		42870308		71368-5	Desmosome IgG Ab [Titer] in Serum by Immunofluorescence	LOINC	FALSE	Desmosome IgG	Titer				1	1	
@@ -5713,22 +5713,22 @@ NOT-APPROVED	s-immunoglobuliini,kevyetketjut,vapaat,kappa-	ratio	ratio		3007778	
 APPROVED	s-immunoglobuliini,kevyetketjut,vapaat,kappa-				3007778		15189-4	Kappa light chains/Lambda light chains [Mass Ratio] in Serum	LOINC	FALSE	Immunoglobulin light chains.kappa/Immunoglobulin light chains.lambda	Mass Ratio	40653174	LG3250-0	Immunoglobulin light chains.kappa/Immunoglobulin light chains.lambda|Mass Ratio|Moment in time|Blood, Serum or Plasma			
 NOT-APPROVED	s-immunoglobuliini,kevyetketjut,vapaat,lambdaosatutk	mg/l	mg/l		3047169		33944-0	Lambda light chains.free [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lambda light chains.free	Mass Concentration	40653178	LG14589-2	Immunoglobulin light chains.lambda.free|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1	
 NOT-APPROVED	s-immunoglobuliini,kevyetketjut,vapaat,lambdaosatutk				3047169		33944-0	Lambda light chains.free [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lambda light chains.free	Mass Concentration	40653178	LG14589-2	Immunoglobulin light chains.lambda.free|Mass Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	s-immunoglobuliinia	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliinia				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliinia(ko)	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliinia(ko)				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliinia(paketti)	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliinia(paketti)				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliiniapakettiin	g/l	g/l		3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
-APPROVED	s-immunoglobuliiniapakettiin				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration						
+APPROVED	s-immunoglobuliinia	g/l	g/l		3007164													
+APPROVED	s-immunoglobuliinia				3007164													
+APPROVED	s-immunoglobuliinia(ko)	g/l	g/l		3007164													
+APPROVED	s-immunoglobuliinia(ko)				3007164													
+APPROVED	s-immunoglobuliinia(paketti)	g/l	g/l		3007164													
+APPROVED	s-immunoglobuliinia(paketti)				3007164													
+APPROVED	s-immunoglobuliiniapakettiin	g/l	g/l		3007164													
+APPROVED	s-immunoglobuliiniapakettiin				3007164													
 APPROVED	s-immunoglobuliinie	u/ml	u/ml		3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	[iU]/L	1000	
 APPROVED	s-immunoglobuliinie				3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-immunoglobuliinie(pi)	u/ml	u/ml		3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	[iU]/L	1000	
 APPROVED	s-immunoglobuliinie(pi)				3005322		19113-0	IgE [Units/volume] in Serum or Plasma	LOINC	FALSE	IgE	Arbitrary Concentration	40653147	LG5901-6	IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	s-immunoglobuliinig	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	s-immunoglobuliinig				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	s-immunoglobuliinig(ko)	g/l	g/l		3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	s-immunoglobuliinig(ko)				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	s-immunoglobuliinig	g/l	g/l		3005719													
+APPROVED	s-immunoglobuliinig				3005719													
+APPROVED	s-immunoglobuliinig(ko)	g/l	g/l		3005719													
+APPROVED	s-immunoglobuliinig(ko)				3005719													
 APPROVED	s-immunoglobuliinig,alaluokka1	g/l	g/l		3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration				mg/L	1000	
 APPROVED	s-immunoglobuliinig,alaluokka1				3027135		2466-1	IgG subclass 1 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 1	Mass Concentration						
 APPROVED	s-immunoglobuliinig,alaluokka2	g/l	g/l		3028192		2467-9	IgG subclass 2 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 2	Mass Concentration				mg/L	1000	
@@ -5737,10 +5737,10 @@ APPROVED	s-immunoglobuliinig,alaluokka3	g/l	g/l		3024139		2468-7	IgG subclass 3 
 APPROVED	s-immunoglobuliinig,alaluokka3				3024139		2468-7	IgG subclass 3 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 3	Mass Concentration						
 APPROVED	s-immunoglobuliinig,alaluokka4	g/l	g/l		3024980		2469-5	IgG subclass 4 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 4	Mass Concentration				mg/L	1000	
 APPROVED	s-immunoglobuliinig,alaluokka4				3024980		2469-5	IgG subclass 4 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 4	Mass Concentration						
-APPROVED	s-immunoglobuliinim	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	s-immunoglobuliinim				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	s-immunoglobuliinim(ko)	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
-APPROVED	s-immunoglobuliinim(ko)				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration						
+APPROVED	s-immunoglobuliinim	g/l	g/l		3028026													
+APPROVED	s-immunoglobuliinim				3028026													
+APPROVED	s-immunoglobuliinim(ko)	g/l	g/l		3028026													
+APPROVED	s-immunoglobuliinim(ko)				3028026													
 APPROVED	s-infaab				3005117		22365-1	Influenza virus A Ab [Titer] in Serum	LOINC	FALSE	Influenza virus A Ab	Titer						
 NOT-APPROVED	s-infaabg	eiu	eiu		3042885		43837-4	Influenza virus A IgG Ab [Presence] in Serum	LOINC	FALSE	Influenza virus A IgG	Presence or Threshold						WrongProperty: has_property 'Presence or Threshold' and UNIT 'eiu' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	s-infaabg	u/ml	u/ml		3015147		31437-7	Influenza virus A IgG Ab [Units/volume] in Serum	LOINC	FALSE	Influenza virus A IgG	Arbitrary Concentration						
@@ -5852,7 +5852,7 @@ APPROVED	s-koiranhilse,igevasta-aineet	u/ml	u/ml		3014133		6098-8	Dog dander IgE
 APPROVED	s-koirhie	u/ml	u/ml		3014133		6098-8	Dog dander IgE Ab [Units/volume] in Serum	LOINC	FALSE	Dog dander IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-koirhie				3014133		6098-8	Dog dander IgE Ab [Units/volume] in Serum	LOINC	FALSE	Dog dander IgE	Arbitrary Concentration						
 APPROVED	s-koivunsiitepöly,igevasta-aineet	u/ml	u/ml		3027300		15283-5	Silver Birch IgE Ab [Units/volume] in Serum	LOINC	FALSE	Silver Birch (Betula verrucosa) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
-APPROVED	s-kol	mg/ml	mg/ml		3027114		2093-3	Cholesterol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol	Mass Concentration						
+APPROVED	s-kol	mg/ml	mg/ml		3027114													
 APPROVED	s-kol	mmol/l	mmol/l		3019900		14647-2	Cholesterol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol	Substance Concentration				mmol/L	1	
 APPROVED	s-kol-hdl	mmol/l	mmol/l		3023602		14646-4	Cholesterol in HDL [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol in HDL	Substance Concentration				mmol/L	1	
 APPROVED	s-kol-hdl				3023602		14646-4	Cholesterol in HDL [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol in HDL	Substance Concentration						
@@ -5932,7 +5932,7 @@ APPROVED	s-laktaattidehydrogenaasi3(s-ld-is)	%	%		3007858		2542-9	Lactate dehydr
 APPROVED	s-laktaattidehydrogenaasi3(s-ld-is)				3007858		2542-9	Lactate dehydrogenase 3/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	FALSE	Lactate dehydrogenase 3/Lactate dehydrogenase.total	Catalytic Fraction						
 APPROVED	s-laktaattidehydrogenaasi4(s-ld-is)	%	%		3024830		2545-2	Lactate dehydrogenase 4/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	FALSE	Lactate dehydrogenase 4/Lactate dehydrogenase.total	Catalytic Fraction				%	1	
 APPROVED	s-laktaattidehydrogenaasi4(s-ld-is)				3024830		2545-2	Lactate dehydrogenase 4/Lactate dehydrogenase.total in Serum or Plasma by Electrophoresis	LOINC	FALSE	Lactate dehydrogenase 4/Lactate dehydrogenase.total	Catalytic Fraction						
-APPROVED	s-lamotri	mg/l	mg/l		3023261		6948-4	lamoTRIgine [Mass/volume] in Serum or Plasma	LOINC	FALSE	lamoTRIgine	Mass Concentration						
+APPROVED	s-lamotri	mg/l	mg/l		3023261													
 APPROVED	s-lamotri	umol/l	umol/l		3037826		25458-1	lamoTRIgine [Moles/volume] in Serum or Plasma	LOINC	FALSE	lamoTRIgine	Substance Concentration				umol/L	1	
 APPROVED	s-lamotrig	umol/l	umol/l		40769427		66769-1	Triglyceride [Moles/volume] in Peritoneal fluid	LOINC	FALSE	Triglyceride	Substance Concentration				mmol/L	0.001	
 APPROVED	s-lamotrig				40769427		66769-1	Triglyceride [Moles/volume] in Peritoneal fluid	LOINC	FALSE	Triglyceride	Substance Concentration						
@@ -5978,8 +5978,8 @@ APPROVED	s-lkmab				3003265		9838-4	Liver kidney microsomal Ab [Titer] in Serum 
 APPROVED	s-lohie	u/ml	u/ml		3036312		6237-2	Salmon IgE Ab [Units/volume] in Serum	LOINC	FALSE	Salmon (Salmo salar) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-lohie				3036312		6237-2	Salmon IgE Ab [Units/volume] in Serum	LOINC	FALSE	Salmon (Salmo salar) IgE	Arbitrary Concentration						
 APPROVED	s-luust	u/l	u/l		3001467		1777-2	Alkaline phosphatase.bone [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Alkaline phosphatase.bone	Catalytic Concentration				U/L	1	
-APPROVED	s-lzm	mg/l	mg/l		3012110		2589-0	Lysozyme [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lysozyme	Mass Concentration						
-APPROVED	s-lzm				3012110		2589-0	Lysozyme [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lysozyme	Mass Concentration						
+APPROVED	s-lzm	mg/l	mg/l		3012110													
+APPROVED	s-lzm				3012110													
 APPROVED	s-maapähe	u/ml	u/ml		3012494		6206-7	Peanut IgE Ab [Units/volume] in Serum	LOINC	FALSE	Peanut (Arachis hypogaea) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-maapähe				3012494		6206-7	Peanut IgE Ab [Units/volume] in Serum	LOINC	FALSE	Peanut (Arachis hypogaea) IgE	Arbitrary Concentration						
 APPROVED	s-macro-ck	u/l	u/l		3015531		2153-5	Creatine kinase.macromolecular [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Creatine kinase.macromolecular	Catalytic Concentration				U/L	1	
@@ -6009,7 +6009,7 @@ APPROVED	s-marsepe				3012138		6134-1	Guinea pig epithelium IgE Ab [Units/volume
 APPROVED	s-meoh	mmol/l	mmol/l		3008402		14835-3	Methanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Methanol	Substance Concentration				mmol/L	1	
 APPROVED	s-meoh				3008402		14835-3	Methanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Methanol	Substance Concentration						
 APPROVED	s-metmal	nmol/l	nmol/l		3016426		13964-2	Methylmalonate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Methylmalonate	Substance Concentration				nmol/L	1	
-APPROVED	s-metmal	ug/l	ug/l		3009799		2629-4	Methylmalonate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Methylmalonate	Mass Concentration						
+APPROVED	s-metmal	ug/l	ug/l		3009799													
 APPROVED	s-metnef	nmol/l	nmol/l		3032155		49700-8	Metanephrine Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Metanephrine Free	Substance Concentration				nmol/L	1	
 APPROVED	s-metnef				3032155		49700-8	Metanephrine Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Metanephrine Free	Substance Concentration						
 APPROVED	s-metnor	nmol/l	nmol/l		3009340		25473-0	Metanephrine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Metanephrine	Substance Concentration				nmol/L	1	
@@ -6081,7 +6081,7 @@ APPROVED	s-ngapob	g/l	g/l		3008364		1869-7	Apolipoprotein A-I [Mass/volume] in S
 APPROVED	s-ngapob				3008364		1869-7	Apolipoprotein A-I [Mass/volume] in Serum or Plasma	LOINC	FALSE	Apolipoprotein A-I	Mass Concentration						
 APPROVED	s-nkaseie	u/ml	u/ml		3011897		6062-4	Casein IgE Ab [Units/volume] in Serum	LOINC	FALSE	Casein IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-norklot	nmol/l	nmol/l		3008832		14851-0	Norclozapine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Substance Concentration				nmol/L	1	
-NOT-APPROVED	s-norklot				3012984		10992-6	Norclozapine [Mass/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Mass Concentration						
+NOT-APPROVED	s-norklot				3012984													
 APPROVED	s-normet	nmol/l	nmol/l		3026179		25489-6	Normetanephrine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Normetanephrine	Substance Concentration				nmol/L	1	
 NOT-APPROVED	s-normet	u/ml	u/ml		3026179		25489-6	Normetanephrine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Normetanephrine	Substance Concentration						WrongProperty: has_property 'Substance Concentration' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	s-normet	umol/l	umol/l		3026179		25489-6	Normetanephrine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Normetanephrine	Substance Concentration				nmol/L	1000	
@@ -6132,8 +6132,8 @@ APPROVED	s-parvabg				3009550		25630-5	Parvovirus B19 IgG Ab [Titer] in Serum	LO
 APPROVED	s-parvabm				3026515		7984-8	Parvovirus B19 IgM Ab [Units/volume] in Serum	LOINC	FALSE	Parvovirus B19 IgM	Arbitrary Concentration						
 APPROVED	s-parvnho				3015822		9572-9	Parvovirus B19 DNA [Presence] in Serum by NAA with probe detection	LOINC	FALSE	Parvovirus B19 DNA	Presence or Threshold						
 APPROVED	s-pavaabe				3029889		50680-8	Paecilomyces variottii IgE Ab [Units/volume] in Serum	LOINC	FALSE	Paecilomyces variottii Ab.IgE	Arbitrary Concentration						
-APPROVED	s-pct	ug/l	ug/l		3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
-APPROVED	s-pct				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration						
+APPROVED	s-pct	ug/l	ug/l		3046279													
+APPROVED	s-pct				3046279													
 APPROVED	s-pebrabe				3026868		6211-7	Penicillium brevicompactum IgE Ab [Units/volume] in Serum	LOINC	FALSE	Penicillium brevicompactum IgE	Arbitrary Concentration						
 APPROVED	s-pemfiab	u/ml	u/ml		40760848		57738-7	Basement membrane zone BP180 Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Basement membrane zone BP180 Ab	Arbitrary Concentration	40652669	LG18104-6	Basement membrane zone BP180 Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	1	
 APPROVED	s-pemfiab				40760848		57738-7	Basement membrane zone BP180 Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Basement membrane zone BP180 Ab	Arbitrary Concentration	40652669	LG18104-6	Basement membrane zone BP180 Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma			
@@ -6295,7 +6295,7 @@ APPROVED	s-ribonukleoproteiinit,nukleaarinen,vasta-ainee				3006999		29374-6	Rib
 APPROVED	s-ricoab	titre	titre		3026657		29678-0	Rickettsia conorii Ab [Titer] in Serum	LOINC	FALSE	Rickettsia conorii Ab	Titer				1	1	
 APPROVED	s-ricoab				3026657		29678-0	Rickettsia conorii Ab [Titer] in Serum	LOINC	FALSE	Rickettsia conorii Ab	Titer						
 APPROVED	s-risper	nmol/l	nmol/l		3038864		39799-2	risperiDONE [Moles/volume] in Serum or Plasma	LOINC	FALSE	risperiDONE	Substance Concentration				nmol/L	1	
-APPROVED	s-risper	ug/l	ug/l		3003195		9393-0	risperiDONE [Mass/volume] in Serum or Plasma	LOINC	FALSE	risperiDONE	Mass Concentration						
+APPROVED	s-risper	ug/l	ug/l		3003195													
 APPROVED	s-rityab	titre	titre		3027540		29684-8	Rickettsia typhi Ab [Titer] in Serum	LOINC	FALSE	Rickettsia typhi Ab	Titer				1	1	
 APPROVED	s-rityab				3027540		29684-8	Rickettsia typhi Ab [Titer] in Serum	LOINC	FALSE	Rickettsia typhi Ab	Titer						
 APPROVED	s-rjugr1e	u/ml	u/ml		3011841		7765-1	English Walnut IgE Ab [Units/volume] in Serum	LOINC	FALSE	English Walnut (Juglans regia) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
@@ -6490,7 +6490,7 @@ APPROVED	s-tbg	nmol/l	nmol/l		3036566		27980-2	Thyroxine binding globulin [Moles
 APPROVED	s-tbg				3036566		27980-2	Thyroxine binding globulin [Moles/volume] in Serum or Plasma	LOINC	FALSE	Thyroxine binding globulin	Substance Concentration						
 APPROVED	s-teikab	titre	titre		3026480		22571-4	Teichoate Ab [Titer] in Serum	LOINC	FALSE	Teichoate Ab	Titer				1	1	
 APPROVED	s-teikab				3026480		22571-4	Teichoate Ab [Titer] in Serum	LOINC	FALSE	Teichoate Ab	Titer						
-APPROVED	s-teofy	mg/l	mg/l		3016072		4049-3	Theophylline [Mass/volume] in Serum or Plasma	LOINC	FALSE	Theophylline	Mass Concentration						
+APPROVED	s-teofy	mg/l	mg/l		3016072													
 APPROVED	s-teofy	umol/l	umol/l		3018851		14915-3	Theophylline [Moles/volume] in Serum or Plasma	LOINC	FALSE	Theophylline	Substance Concentration				umol/L	1	
 APPROVED	s-tes-vlik	pmol/l	pmol/l		3018301		14914-6	Testosterone Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Testosterone Free	Substance Concentration	40653809	LG2970-4	Testosterone.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1	
 APPROVED	s-tesmsvl	pmol/l	pmol/l		3017446		14913-8	Testosterone [Moles/volume] in Serum or Plasma	LOINC	FALSE	Testosterone	Substance Concentration	40653811	LG2969-6	Testosterone|Substance Concentration|Moment in time|Blood, Serum or Plasma	nmol/L	0.001	
@@ -6549,11 +6549,11 @@ APPROVED	s-tni	ug/l	ug/l		3021337		10839-9	Troponin I.cardiac [Mass/volume] in S
 APPROVED	s-tni				3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	s-tnt	ng/l	ng/l		3019800		6598-7	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin T.cardiac	Mass Concentration	40653874	LG19584-8	Troponin T.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	0.001	
 APPROVED	s-tnt				3019800		6598-7	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin T.cardiac	Mass Concentration	40653874	LG19584-8	Troponin T.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma			
-APPROVED	s-tob	mg/l	mg/l		3035509		35670-9	Tobramycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tobramycin	Mass Concentration						
-APPROVED	s-tob				3035509		35670-9	Tobramycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tobramycin	Mass Concentration						
+APPROVED	s-tob	mg/l	mg/l		3035509													
+APPROVED	s-tob				3035509													
 APPROVED	s-tocaab				3015350		26660-1	Toxocara sp Ab [Presence] in Serum	LOINC	FALSE	Toxocara sp Ab	Presence or Threshold						
-APPROVED	s-topira	mg/l	mg/l		3025481		17713-9	Topiramate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Topiramate	Mass Concentration						
-APPROVED	s-topira				3025481		17713-9	Topiramate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Topiramate	Mass Concentration						
+APPROVED	s-topira	mg/l	mg/l		3025481													
+APPROVED	s-topira				3025481													
 APPROVED	s-tosilit	mg/l	mg/l		36031836		95922-1	Tocilizumab [Mass/volume] in Serum	LOINC	FALSE	Tocilizumab	Mass Concentration				mg/L	1	
 APPROVED	s-tosilit				36031836		95922-1	Tocilizumab [Mass/volume] in Serum	LOINC	FALSE	Tocilizumab	Mass Concentration						
 APPROVED	s-tosilits	mg/l	mg/l		36031836		95922-1	Tocilizumab [Mass/volume] in Serum	LOINC	FALSE	Tocilizumab	Mass Concentration				mg/L	1	
@@ -6596,9 +6596,9 @@ APPROVED	s-trpaab				3019832		22587-0	Treponema pallidum Ab [Presence] in Serum	
 APPROVED	s-trspab				3002814		22596-1	Trichinella spiralis Ab [Titer] in Serum	LOINC	FALSE	Trichinella spiralis Ab	Titer						
 APPROVED	s-trviabg	mg/l	mg/l		3033016		49687-7	Trichoderma viride IgG Ab [Mass/volume] in Serum	LOINC	FALSE	Trichoderma viride IgG	Mass Concentration				mg/L	1	
 APPROVED	s-trviabg				3033016		49687-7	Trichoderma viride IgG Ab [Mass/volume] in Serum	LOINC	FALSE	Trichoderma viride IgG	Mass Concentration						
-APPROVED	s-trypt	ug/l	ug/l		3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration						
-APPROVED	s-trypt				3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration						
-APPROVED	s-tryptaasi	ug/l	ug/l		3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration						
+APPROVED	s-trypt	ug/l	ug/l		3019420													
+APPROVED	s-trypt				3019420													
+APPROVED	s-tryptaasi	ug/l	ug/l		3019420													
 APPROVED	s-tsh	miu/l	miu/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	1	
 APPROVED	s-tsh	mlu/l	mu/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	1	
 APPROVED	s-tsh	u/l	u/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	1000	
@@ -6676,8 +6676,8 @@ APPROVED	s-valksie				3006840		6122-6	Garlic IgE Ab [Units/volume] in Serum	LOIN
 ERROR	s-valpr	%	%		3009466		14946-8	Valproate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Valproate	Substance Concentration						WrongProperty: has_property 'Substance Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 APPROVED	s-valpr	umol/l	umol/l		3009466		14946-8	Valproate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Valproate	Substance Concentration				umol/L	1	
 APPROVED	s-valpr				3009466		14946-8	Valproate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Valproate	Substance Concentration						
-APPROVED	s-van	mg/l	mg/l		3005715		20578-1	Vancomycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Vancomycin	Mass Concentration						
-APPROVED	s-van				3005715		20578-1	Vancomycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Vancomycin	Mass Concentration						
+APPROVED	s-van	mg/l	mg/l		3005715													
+APPROVED	s-van				3005715													
 APPROVED	s-vedol	mg/l	mg/l		36305075		86898-4	Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	FALSE	Vedolizumab	Mass Concentration				mg/L	1	
 APPROVED	s-vedol				36305075		86898-4	Vedolizumab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	FALSE	Vedolizumab	Mass Concentration						
 APPROVED	s-vedolpa				1175553		90794-9	Vedolizumab and Vedolizumab Ab panel [Mass/volume] - Serum or Plasma	LOINC	TRUE	Vedolizumab and Vedolizumab Ab panel	Mass Concentration						
@@ -6686,7 +6686,7 @@ APPROVED	s-vehnäe	u/ml	u/ml		40760435		57316-2	Tropomyosin IgE Ab [Units/volume
 APPROVED	s-vehnäe				40760435		57316-2	Tropomyosin IgE Ab [Units/volume] in Serum	LOINC	FALSE	Tropomyosin IgE	Arbitrary Concentration						
 APPROVED	s-vehn�e	u/ml	u/ml		3027231		6276-0	Wheat IgE Ab [Units/volume] in Serum	LOINC	FALSE	Wheat (Triticum aestivum) IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-venlaf	nmol/l	nmol/l		3045519		34386-3	Venlafaxine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Venlafaxine	Substance Concentration				nmol/L	1	
-APPROVED	s-venlaf	ug/l	ug/l		3020071		9630-5	Venlafaxine [Mass/volume] in Serum or Plasma	LOINC	FALSE	Venlafaxine	Mass Concentration						
+APPROVED	s-venlaf	ug/l	ug/l		3020071													
 NOT-APPROVED	s-viseabm,borreliaburgdorferinvisejaospcproteiinit,vasta-ainetigm	au/ml	au/ml		3008230		7818-8	Borrelia burgdorferi IgM Ab [Units/volume] in Serum	LOINC	FALSE	Borrelia burgdorferi IgM	Arbitrary Concentration				10*3.[arb'U]/L	1	
 APPROVED	s-vpenige	u/ml	u/ml		3026029		6210-9	Penicillin V IgE Ab [Units/volume] in Serum	LOINC	FALSE	Penicillin V IgE	Arbitrary Concentration				10*3.[iU]/L	1	
 APPROVED	s-vpenige				3026029		6210-9	Penicillin V IgE Ab [Units/volume] in Serum	LOINC	FALSE	Penicillin V IgE	Arbitrary Concentration						
@@ -7000,7 +7000,7 @@ APPROVED	troponiinit(pikatesti)(b-tnt-o)				3019800		6598-7	Troponin T.cardiac [
 APPROVED	troponiinit,plasma	ng/l	ng/l		3019800		6598-7	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin T.cardiac	Mass Concentration	40653874	LG19584-8	Troponin T.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	0.001	
 APPROVED	troponiinit,plasma				3019800		6598-7	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin T.cardiac	Mass Concentration	40653874	LG19584-8	Troponin T.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma			
 APPROVED	trpaab				3019832		22587-0	Treponema pallidum Ab [Presence] in Serum	LOINC	FALSE	Treponema pallidum Ab	Presence or Threshold						
-APPROVED	tryptaasi	ug/l	ug/l		3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration						
+APPROVED	tryptaasi	ug/l	ug/l		3019420													
 IGNORE	ts-basave				0	Histology/pathology procedure												
 APPROVED	ts-bcl2-d				3020893		21808-1	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method	LOINC	FALSE	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript	Arbitrary						
 APPROVED	ts-braf-d				40761516		58415-1	BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method	LOINC	FALSE	BRAF gene p.Val600Glu	Presence or Threshold						
@@ -7247,7 +7247,7 @@ APPROVED	u-erytrosyytit,osatutkimus	e6/l	e6/l		3002582		30391-7	Erythrocytes [#/
 APPROVED	u-erytrosyytit,osatutkimus				3002582		30391-7	Erythrocytes [#/volume] in Urine	LOINC	FALSE	Erythrocytes	Number Concentration	40656107;40657685	LG35160-7;LG40868-8	Erythrocytes|Number Concentration (count/vol)|Urine;Erythrocytes|Urine/Urine sed			
 APPROVED	u-fensy-o				3017509		3936-2	Phencyclidine [Presence] in Urine	LOINC	FALSE	Phencyclidine	Presence or Threshold	40653539;40656657	LG2848-2;LG37547-3	Phencyclidine|Presence or Threshold|Moment in time|Any Urine specimen;Phencyclidine|Any Property|Any Time|Any System|Any Method			
 APPROVED	u-gcnho				3003510		21416-3	Neisseria gonorrhoeae DNA [Presence] in Urine by NAA with probe detection	LOINC	FALSE	Neisseria gonorrhoeae DNA	Presence or Threshold						
-APPROVED	u-gluk	g/l	g/l		3020399		2350-7	Glucose [Mass/volume] in Urine	LOINC	FALSE	Glucose	Mass Concentration	40656148	LG34879-3	Glucose|Substance Concentration|Urine			
+APPROVED	u-gluk	g/l	g/l		3020399													
 APPROVED	u-gluk	mmol/l	mmol/l		3005570		15076-3	Glucose [Moles/volume] in Urine	LOINC	FALSE	Glucose	Substance Concentration	40656148	LG34879-3	Glucose|Substance Concentration|Urine	mmol/L	1	
 APPROVED	u-gluk				3005570		15076-3	Glucose [Moles/volume] in Urine	LOINC	FALSE	Glucose	Substance Concentration	40656148	LG34879-3	Glucose|Substance Concentration|Urine			
 APPROVED	u-gluk-0	estimate	estimate		3009261		25428-4	Glucose [Presence] in Urine by Test strip	LOINC	FALSE	Glucose	Presence or Threshold	40656147;40657691	LG35248-0;LG40865-4	Glucose|Presence or Threshold|Urine;Glucose|Urine/Urine sed		1	
@@ -7271,8 +7271,8 @@ APPROVED	u-hyalie	e6/l	e6/l		3030981		51484-4	Hyaline casts [#/volume] in Urine 
 APPROVED	u-hyalie				3030981		51484-4	Hyaline casts [#/volume] in Urine by Automated count	LOINC	FALSE	Hyaline casts	Number Concentration	40657698;1094439	LG40890-2;LG51651-4	Hyaline casts|Urine/Urine sed;Hyaline casts|Number Concentration (count/vol)|Urine			
 APPROVED	u-hyalier	e6/l	e6/l		3030981		51484-4	Hyaline casts [#/volume] in Urine by Automated count	LOINC	FALSE	Hyaline casts	Number Concentration	40657698;1094439	LG40890-2;LG51651-4	Hyaline casts|Urine/Urine sed;Hyaline casts|Number Concentration (count/vol)|Urine	10*6/L	1	
 APPROVED	u-hyalier	u/field	u/field		3043722		33223-9	Hyaline casts [#/area] in Urine sediment by Automated count	LOINC	FALSE	Hyaline casts	Number Areic (per area)	40657698	LG40890-2	Hyaline casts|Urine/Urine sed	/[HPF]	1	
-APPROVED	u-igg	mg/l	mg/l		3047185		33415-1	IgG [Mass/volume] in Urine	LOINC	FALSE	IgG	Mass Concentration						
-APPROVED	u-igg				3047185		33415-1	IgG [Mass/volume] in Urine	LOINC	FALSE	IgG	Mass Concentration						
+APPROVED	u-igg	mg/l	mg/l		3047185													
+APPROVED	u-igg				3047185													
 APPROVED	u-iglck	g/l	g/l		3035082		27365-6	Kappa light chains [Mass/volume] in Urine	LOINC	FALSE	Kappa light chains	Mass Concentration	40656233;40656227	LG34996-5;LG36305-7	Immunoglobulin light chains.kappa|Mass Concentration|Urine;Immunoglobulin light chains panel|-|Urine	mg/L	1000	
 APPROVED	u-iglck				3035082		27365-6	Kappa light chains [Mass/volume] in Urine	LOINC	FALSE	Kappa light chains	Mass Concentration	40656233;40656227	LG34996-5;LG36305-7	Immunoglobulin light chains.kappa|Mass Concentration|Urine;Immunoglobulin light chains panel|-|Urine			
 APPROVED	u-iglcl	g/l	g/l		3006969		27394-6	Lambda light chains [Mass/volume] in Urine	LOINC	FALSE	Lambda light chains	Mass Concentration	40656237;40656227	LG34995-7;LG36305-7	Immunoglobulin light chains.lambda|Mass Concentration|Urine;Immunoglobulin light chains panel|-|Urine	mg/L	1000	
