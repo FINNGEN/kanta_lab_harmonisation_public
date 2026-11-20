@@ -6,6 +6,10 @@ an interactive table with one row per pair.
 
 ## Inputs
 
+- `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
+- `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
+  and `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
+
 - `DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv` — one row
   per `TEST_NAME` + `PREPROCESED_UNIT` + `UNIT` pair (see `5_EvaluateHarmonisedData`).
 
@@ -14,9 +18,17 @@ an interactive table with one row per pair.
 In `DATA/6_BuildDashboard/`:
 
 - `dashboard.html` — one file with no external libraries or fonts: the data is inside
-  the page, so it opens offline in a browser. Two tabs:
-  - **Summary**:
-    - *Harmonised Events* — by `mapping_status` (APPROVED, ERROR, NOT-APPROVED, IGNORE,
+  the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
+  - **Input Data**: the tables of `kantaAgregatedTable.md` (Name Unit Value combinations,
+    Units, Reference Ranges, Values), computed from the same pairs of the evaluated table.
+  - **Target Data**: the tables of `targetTable.md` (Concepts, Groups, Validations and the Groups with
+    more than one `harmonised_unit`), computed from `targetTable.tsv`.
+  - **Mapping Summary**:
+    - *Fixed Units* — one row: the number of test+unit fixes (rows of `unitFix.tsv`), the number of
+      test+unit combinations (pairs) fixed, i.e. whose
+      `PREPROCESED_UNIT` was changed to a different `UNIT` (of the mapped pairs), the number of
+      records and the percentage of records.
+    - *Harmonised test+unit* — by `mapping_status` (APPROVED, ERROR, NOT-APPROVED, IGNORE,
       NOT-FOUND): the pairs with a warning message, the number of test+unit
       combinations (pairs), the number of records and the percentage of records, and a
       total row.
@@ -27,7 +39,7 @@ In `DATA/6_BuildDashboard/`:
       and those that are not compared, each reason apart: not mapped (NOT-FOUND or
       IGNORE), no conversion to a harmonised unit, and no LOINC Group or concept with enough
       approved pairs. The rows add up to the total.
-  - **Table**: one row per pair, with `mapping_status`, the OMOP concept (id, name with
+  - **Mapping Table**: one row per pair, with `mapping_status`, the OMOP concept (id, name with
     ` (panel)` added when the concept is a panel, quantity = `has_property`), `Unit change` (`PREPROCESED_UNIT->UNIT`, only when the
     two differ and the pair is mapped), `TEST_NAME[PREPROCESED_UNIT]`, the number of
     records, bars with the share of records by value source and by unit source (hover a

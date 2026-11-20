@@ -38,6 +38,7 @@ table.summary th { font-weight: 600; }
 table.summary .num { text-align: right; font-variant-numeric: tabular-nums; }
 table.summary tr:last-child td { border-bottom: 0; }
 table.summary tr.total td { font-weight: 600; border-top: 2px solid var(--line); }
+.card.scroll { max-height: 420px; overflow: auto; }
 .note { color: var(--muted); font-size: 12.5px; margin: 8px 2px 0; max-width: 900px; }
 .st { font-weight: 700; font-size: 12.5px; }
 .st-APPROVED { color: var(--approved); }
@@ -85,13 +86,27 @@ table.data .sub { color: var(--muted); }
 <header>
   <h1>Kanta harmonisation dashboard</h1>
   <nav role="tablist">
-    <button role="tab" id="tab-summary" aria-selected="true" aria-controls="panel-summary">Summary</button>
-    <button role="tab" id="tab-table" aria-selected="false" aria-controls="panel-table">Table</button>
+    <button role="tab" id="tab-input" aria-selected="false" aria-controls="panel-input">Input Data</button>
+    <button role="tab" id="tab-target" aria-selected="false" aria-controls="panel-target">Target Data</button>
+    <button role="tab" id="tab-summary" aria-selected="true" aria-controls="panel-summary">Mapping Summary</button>
+    <button role="tab" id="tab-table" aria-selected="false" aria-controls="panel-table">Mapping Table</button>
   </nav>
 </header>
 <main>
+  <section class="panel" id="panel-input" role="tabpanel" aria-labelledby="tab-input" hidden>
+    __INPUT_SECTIONS__
+  </section>
+
+  <section class="panel" id="panel-target" role="tabpanel" aria-labelledby="tab-target" hidden>
+    __TARGET_SECTIONS__
+  </section>
+
   <section class="panel" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
-    <h2>Harmonised Events</h2>
+    <h2>Fixed Units</h2>
+    <div class="card">__FIXED_TABLE__</div>
+    <p class="note">The fixes are the rows of <code>unitFix.tsv</code>. A unit is fixed when the <code>PREPROCESED_UNIT</code> of a mapped pair is replaced by a different <code>UNIT</code> by <code>unitFix.tsv</code> (the <em>Unit change</em> column of the Table tab). The percentage is of all the records.</p>
+
+    <h2>Harmonised test+unit</h2>
     <div class="card">__EVENTS_TABLE__</div>
     <p class="note">A pair is a <code>TEST_NAME</code> + <code>PREPROCESED_UNIT</code>. Status is the <code>mapping_status</code> of its mapping; NOT-FOUND is a pair that is not in the harmonisation table. Pairs with a warning have a message of a warning table (ignored or not).</p>
 
@@ -125,7 +140,7 @@ table.data .sub { color: var(--muted); }
   var N = D.status.length;
 
   // ---- tabs
-  var tabs = { summary: document.getElementById("tab-summary"), table: document.getElementById("tab-table") };
+  var tabs = { input: document.getElementById("tab-input"), target: document.getElementById("tab-target"), summary: document.getElementById("tab-summary"), table: document.getElementById("tab-table") };
   function showTab(name) {
     Object.keys(tabs).forEach(function (k) {
       tabs[k].setAttribute("aria-selected", k === name ? "true" : "false");
