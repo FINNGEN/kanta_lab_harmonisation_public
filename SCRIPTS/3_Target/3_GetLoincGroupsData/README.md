@@ -48,7 +48,10 @@ In `DATA/3_Target/3_GetLoincGroupsData/`:
    share a Group; no precedence rule is needed. It leaves out:
    - **panels** (a concept with a `Panel contains` relationship): in no Group;
    - the child Groups of the **Mass-Molar conversion** ParentGroup (`LG55-6`):
-     they put a mass concept and a substance concept in one Group.
+     they put a mass concept and a substance concept in one Group;
+   - the child Groups of the **UrineAndSed** ParentGroup (`LG97-8`): they keep only the
+     component and roll up the property, so they mix counts per field (`/[HPF]`), per volume
+     (`10*6/L`), mass and presence. lab2clean does not use them either.
 3. Keeps the Groups SI only. A concept in the conversion table is moved to the Groups
    of its SI partner, replacing its own; one whose partner is in no Group is in no Group.
 4. Writes the Groups and the membership.

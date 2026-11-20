@@ -17,7 +17,8 @@
 # ug/L against nmol/L) is put in the Groups of its SI partner instead of its own, using the
 # conversion table of lab2clean, saved by 2a_GetHarmonisedUnitFromLab2Clean.
 # Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
-# a mass concept with a substance concept, so they are dropped.
+# a mass concept with a substance concept, and those of the "UrineAndSed" ParentGroup (LG97-8)
+# mix properties, so both are dropped.
 #
 # See this step's README.md for the outputs.
 #
@@ -55,8 +56,12 @@ groupNamePrefix <- "Flowsheet"
 sizeBandBreaks <- c(0, 10, 50, 200, 1000, Inf)
 sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 
-# ParentGroup whose child Groups pair a mass concept with a substance concept.
-massMolarParentGroupCode <- "LG55-6"
+# ParentGroups whose child Groups are dropped: "Mass-Molar conversion" (LG55-6) pairs a mass
+# concept with a substance concept; "UrineAndSed" (LG97-8) keeps only the component and rolls up
+# the property, so it mixes counts per field, per volume, mass and presence (lab2clean does not
+# use it either).
+excludedParentGroupCodes <- c("LG55-6", "LG97-8")
+excludedParentGroupCodesSql <- paste0("'", excludedParentGroupCodes, "'", collapse = ", ")
 
 pathToLoincGroupsTSV <- file.path(outDir, "loincGroups.tsv")
 pathToLoincGroupMembershipTSV <- file.path(outDir, "loincGroupMembership.tsv")
@@ -70,7 +75,7 @@ ParallelLogger::logInfo("  domainId = ", domainId)
 ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
 ParallelLogger::logInfo("  groupConceptClassId = ", groupConceptClassId)
 ParallelLogger::logInfo("  groupNamePrefix = ", groupNamePrefix)
-ParallelLogger::logInfo("  massMolarParentGroupCode = ", massMolarParentGroupCode)
+ParallelLogger::logInfo("  excludedParentGroupCodes = ", paste(excludedParentGroupCodes, collapse = ", "))
 
 #
 # --- Connections -------------------------------------------------------------
@@ -104,13 +109,13 @@ WITH parent_groups AS (
         AND cg.concept_class_id = '@groupConceptClassId'
         AND ca.ancestor_concept_id <> ca.descendant_concept_id
 ),
-mass_molar_groups AS (
-    -- The child Groups of the Mass-Molar conversion ParentGroup.
+excluded_groups AS (
+    -- The child Groups of the excluded ParentGroups (Mass-Molar conversion, UrineAndSed).
     SELECT DISTINCT ca.descendant_concept_id AS group_concept_id
     FROM @vocabularyDatabaseSchema.concept_ancestor ca
     INNER JOIN @vocabularyDatabaseSchema.concept p
         ON p.concept_id = ca.ancestor_concept_id
-    WHERE p.concept_code = '@massMolarParentGroupCode'
+    WHERE p.concept_code IN (@excludedParentGroupCodesSql)
         AND p.concept_class_id = '@groupConceptClassId'
         AND ca.ancestor_concept_id <> ca.descendant_concept_id
 ),
@@ -142,7 +147,7 @@ SELECT
     g.concept_name AS group_concept_name,
     gs.n_descendants AS n_descendants,
     CASE WHEN pg.ancestor_concept_id IS NULL THEN 0 ELSE 1 END AS is_parent_group,
-    CASE WHEN mm.group_concept_id IS NULL THEN 0 ELSE 1 END AS is_mass_molar_group,
+    CASE WHEN eg.group_concept_id IS NULL THEN 0 ELSE 1 END AS is_excluded_group,
     CASE WHEN pa.concept_id IS NULL THEN 0 ELSE 1 END AS is_panel
 FROM @vocabularyDatabaseSchema.concept_ancestor ca
 INNER JOIN @vocabularyDatabaseSchema.concept c
@@ -153,8 +158,8 @@ INNER JOIN group_size gs
     ON gs.ancestor_concept_id = ca.ancestor_concept_id
 LEFT JOIN parent_groups pg
     ON pg.ancestor_concept_id = ca.ancestor_concept_id
-LEFT JOIN mass_molar_groups mm
-    ON mm.group_concept_id = ca.ancestor_concept_id
+LEFT JOIN excluded_groups eg
+    ON eg.group_concept_id = ca.ancestor_concept_id
 LEFT JOIN panels pa
     ON pa.concept_id = ca.descendant_concept_id
 WHERE g.concept_class_id = '@groupConceptClassId'
@@ -170,7 +175,7 @@ membership <- DatabaseConnector::renderTranslateQuerySql(
   sql = sql,
   vocabularyDatabaseSchema = vocabularyDatabaseSchema,
   groupConceptClassId = groupConceptClassId,
-  massMolarParentGroupCode = massMolarParentGroupCode,
+  excludedParentGroupCodesSql = excludedParentGroupCodesSql,
   domainId = domainId,
   standardConceptFlag = standardConceptFlag,
   excludedVocabularyIdsSql = excludedVocabularyIdsSql,
@@ -180,7 +185,7 @@ membership <- DatabaseConnector::renderTranslateQuerySql(
   dplyr::rename_with(tolower) |>
   dplyr::mutate(
     is_parent_group = .data$is_parent_group == 1,
-    is_mass_molar_group = .data$is_mass_molar_group == 1,
+    is_excluded_group = .data$is_excluded_group == 1,
     is_panel = .data$is_panel == 1
   )
 
@@ -197,20 +202,21 @@ ParallelLogger::logInfo(
 
 # What is kept is the real LOINC Groups of those concepts, never the ParentGroups (they are
 # grouping rules that subsume other Groups, not sets of equivalent tests), and never the
-# mass-molar Groups (they mix both unit systems). A panel is in no Group. A concept can be in
+# Groups of the excluded ParentGroups (mass-molar Groups mix both unit systems, UrineAndSed
+# Groups mix properties). A panel is in no Group. A concept can be in
 # several Groups and keeps all of them: whether two concepts share a Group is a set
 # intersection and needs no precedence rule.
 ParallelLogger::logInfo(
   dplyr::n_distinct(membership$concept_id[membership$is_panel & membership$concept_id %in% flowsheetConceptIds]),
   " panel concepts are left out of the Groups; ",
-  dplyr::n_distinct(membership$group_concept_id[membership$is_mass_molar_group]), " mass-molar Groups are dropped"
+  dplyr::n_distinct(membership$group_concept_id[membership$is_excluded_group]), " Groups of the excluded ParentGroups are dropped"
 )
 membership <- membership |>
   dplyr::filter(
     .data$concept_id %in% flowsheetConceptIds,
-    !.data$is_parent_group, !.data$is_mass_molar_group, !.data$is_panel
+    !.data$is_parent_group, !.data$is_excluded_group, !.data$is_panel
   ) |>
-  dplyr::select(-"is_parent_group", -"is_mass_molar_group", -"is_panel") |>
+  dplyr::select(-"is_parent_group", -"is_excluded_group", -"is_panel") |>
   dplyr::arrange(.data$concept_id, .data$n_descendants, .data$group_concept_code)
 ParallelLogger::logInfo(
   "Kept ", nrow(membership), " of ", nAllRows, " membership rows: ",
