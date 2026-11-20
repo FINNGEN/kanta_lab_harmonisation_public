@@ -240,7 +240,7 @@ record(
 # The target unit of every approved concept needs a rule in the table: a rule of its has_property
 # with that HARMONISED_UNIT, or a rule of the concept itself.
 approvedTargets <- harmonisationTable |>
-  dplyr::filter(mapping_status %in% c("APPROVED", "ERROR")) |>
+  dplyr::filter(grepl("^(APPROVED|ERROR)", mapping_status)) |>
   dplyr::distinct(concept_id) |>
   dplyr::inner_join(
     targetTable |> dplyr::distinct(concept_id, has_property, harmonised_unit),
@@ -304,9 +304,11 @@ record(
   bad = is.na(harmonisationTable$concept_code) & is.na(harmonisationTable$ignore_mapping_reason),
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "concept_id")
 )
+# The reasons of an ERROR, as set by buildHarmonisationTable.R.
+errorReasons <- c("MissingConceptId", "PropertyUnitMismatch", "SharedProperty", "MissingConversion", "LoincGroupUnitsMissmatch")
 record(
-  "harmonisationTable.tsv", "mapping_status is IGNORE, ERROR, APPROVED or NOT-APPROVED",
-  bad = !(harmonisationTable$mapping_status %in% c("IGNORE", "ERROR", "APPROVED", "NOT-APPROVED")),
+  "harmonisationTable.tsv", "mapping_status is IGNORE, ERROR:<reason>, APPROVED or NOT-APPROVED",
+  bad = !(harmonisationTable$mapping_status %in% c("IGNORE", "APPROVED", "NOT-APPROVED", paste0("ERROR:", errorReasons))),
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
 )
 record(
@@ -315,8 +317,9 @@ record(
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
 )
 record(
-  "harmonisationTable.tsv", "a row with mapping_status ERROR has mapping_warning_messages",
-  bad = harmonisationTable$mapping_status %in% "ERROR" & is.na(harmonisationTable$mapping_warning_messages),
+  "harmonisationTable.tsv", "a row with mapping_status ERROR:PropertyUnitMismatch or ERROR:SharedProperty has mapping_warning_messages",
+  bad = harmonisationTable$mapping_status %in% c("ERROR:PropertyUnitMismatch", "ERROR:SharedProperty") &
+    is.na(harmonisationTable$mapping_warning_messages),
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "mapping_status")
 )
 record(
@@ -324,29 +327,21 @@ record(
   bad = !is.na(harmonisationTable$HARMONISED_UNIT) & is.na(harmonisationTable$CONVERSION),
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
 )
-# The target unit of the concept needs a CONVERSION: an approved pair with a unit whose concept has a
-# target unit in targetTable.tsv but no CONVERSION is not harmonised. (The build clears a HARMONISED_UNIT
-# without a CONVERSION, so the unit is taken from the target table, not from the output.) A pair with no
-# unit cannot be converted by any table, so it is a WARNING of its own.
+# The target unit of the concept needs a CONVERSION: an approved pair with a UNIT whose concept has a
+# target unit in targetTable.tsv but no CONVERSION is not harmonised. A pair with no UNIT is not
+# converted, so it is not checked. (The build clears a HARMONISED_UNIT without a CONVERSION, so the unit is taken from
+# the target table, not from the output.)
 conceptTargetUnit <- targetTable |> dplyr::distinct(concept_id, targetUnit = harmonised_unit)
 notHarmonised <- harmonisationTable |>
-  dplyr::filter(mapping_status %in% c("APPROVED", "ERROR")) |>
+  dplyr::filter(grepl("^(APPROVED|ERROR)", mapping_status)) |>
   dplyr::left_join(conceptTargetUnit, by = "concept_id", relationship = "many-to-one") |>
-  dplyr::filter(!is.na(targetUnit), is.na(CONVERSION)) |>
+  dplyr::filter(!is.na(UNIT), !is.na(targetUnit), is.na(CONVERSION)) |>
   dplyr::mutate(TARGET = targetUnit)
-withUnit <- notHarmonised |> dplyr::filter(!is.na(UNIT))
-noUnit <- notHarmonised |> dplyr::filter(is.na(UNIT))
 record(
   "harmonisationTable.tsv", "an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it",
-  bad = rep(TRUE, nrow(withUnit)),
-  df = withUnit, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT", "TARGET"),
-  extra = paste0(dplyr::n_distinct(withUnit$concept_id), " concepts")
-)
-record(
-  "harmonisationTable.tsv", "an APPROVED pair whose concept has a target unit has a UNIT (no unit cannot be converted)",
-  bad = rep(TRUE, nrow(noUnit)),
-  df = noUnit, what = c("TEST_NAME", "PREPROCESED_UNIT", "TARGET"),
-  extra = paste0(dplyr::n_distinct(noUnit$concept_id), " concepts"), level = "WARNING"
+  bad = rep(TRUE, nrow(notHarmonised)),
+  df = notHarmonised, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT", "TARGET"),
+  extra = paste0(dplyr::n_distinct(notHarmonised$concept_id), " concepts")
 )
 # The warning tables: one row per warning, with a message and an `ignore` flag set to TRUE
 # by hand to accept the warning.
@@ -372,7 +367,7 @@ recordWarnings <- function(table, test, notIgnored, level, examples) {
     message = if (n > 0) paste0("e.g. ", paste(utils::head(examples, 3), collapse = "; ")) else ""
   )
 }
-approvedRow <- harmonisationTable$mapping_status %in% c("APPROVED", "ERROR")
+approvedRow <- grepl("^(APPROVED|ERROR)", harmonisationTable$mapping_status)
 withApproved <- harmonisationTable |> dplyr::mutate(approvedRow = approvedRow)
 
 # A has_property + UNIT without a rule in unitHarmonisation.tsv means the

@@ -81,7 +81,7 @@ stopifnot(!anyDuplicated(harmonisationTable[c("TEST_NAME", "PREPROCESED_UNIT")])
 harmonised <- kantaAgregatedTable |>
   dplyr::left_join(harmonisationTable, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
   dplyr::relocate(UNIT, .after = PREPROCESED_UNIT) |>
-  dplyr::mutate(mapping_status = dplyr::coalesce(mapping_status, "NOT-FOUND")) |>
+  dplyr::mutate(mapping_status = dplyr::coalesce(mapping_status, "MISSING")) |>
   dplyr::relocate(mapping_status)
 
 pairs <- dplyr::distinct(harmonised, TEST_NAME, PREPROCESED_UNIT, concept_id)

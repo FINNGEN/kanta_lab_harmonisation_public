@@ -37,13 +37,13 @@ percent <- function(n, total) paste0(formatC(100 * n / total, format = "f", digi
 count <- function(n) format(n, big.mark = ",", trim = TRUE)
 
 # Every row is a TEST_NAME + PREPROCESED_UNIT pair. mapping_status IGNORE is ignored; APPROVED
-# and ERROR (an approved mapping with a warning that is not ignored) are approved; NOT-APPROVED
+# and ERROR:<reason> (an approved mapping with an error) are approved; NOT-APPROVED
 # is not approved.
 harmonisationTable <- harmonisationTable |>
   dplyr::mutate(
     status = dplyr::case_when(
       mapping_status == "IGNORE" ~ "ignored",
-      mapping_status %in% c("APPROVED", "ERROR") ~ "approved",
+      grepl("^(APPROVED|ERROR)", mapping_status) ~ "approved",
       TRUE ~ "not approved"
     )
   )
@@ -63,7 +63,7 @@ withWarnings <- harmonisationTable |>
   dplyr::mutate(
     hasWarning = (!is.na(mismatch) & !dplyr::coalesce(mismatchIgnore, FALSE)) |
       (!is.na(shared) & !dplyr::coalesce(sharedIgnore, FALSE)),
-    isError = hasWarning & status == "approved",
+    isError = grepl("^ERROR", mapping_status),
     isWarning = hasWarning & status != "approved"
   )
 statusTable <- withWarnings |>
@@ -110,7 +110,7 @@ md <- c(
   "",
   "## Mapping status",
   "",
-  "A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APPROVED` or `ERROR` in `mapping_status`) or not approved. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.",
+  "A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APPROVED` or `ERROR:<reason>` in `mapping_status`) or not approved. `n with warning` and `n with error` count the rows with a warning that is not marked `ignore`: an error on an approved row, a warning on any other.",
   "",
   mdTable(
     c("status", "n", "%", "n with warning", "n with error"),

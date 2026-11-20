@@ -24,13 +24,13 @@ In `DATA/5_EvaluateHarmonisedData/`:
   (`concept_code`, `concept_name`, `vocabulary_id`, `is_panel`, `has_component`, `has_property`), the LOINC
   Groups, `HARMONISED_UNIT`, `CONVERSION` and `mapping_warning_messages`. The new column
   `decile_value_harmonised` sits right after `decile_value`. A pair that is not in the harmonisation table
-  keeps its rows with `mapping_status` `NOT-FOUND` and the other harmonisation columns empty.
+  keeps its rows with `mapping_status` `MISSING` and the other harmonisation columns empty.
 - The rows are sorted by `n` from largest to smallest (then `TEST_NAME`, `PREPROCESED_UNIT` and
   `decile`, so the rows of a pair stay together).
 
 - `evaluatedHarmonisedKantaAgregatedTable.tsv` — one row per `TEST_NAME` +
   `PREPROCESED_UNIT` + `UNIT`, with the columns of `harmonisedKantaAgregatedTable.tsv`
-  except `decile`, with `mapping_status` as the first column (`NOT-FOUND` for a pair that is not in the
+  except `decile`, with `mapping_status` as the first column (`MISSING` for a pair that is not in the
   harmonisation table), and:
   - `decile_value`, `decile_value_harmonised` — the 9 deciles as text, e.g.
     `[ 1.08, 1.11, 1.13, 1.14, 1.16, 1.17, 1.19, 1.2, 1.23 ]` (3 significant digits;
@@ -80,7 +80,7 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
    values (`n` times the share of records with a value). The reference is the LOINC
    Group of the concept: all the pairs in it. A concept can be in several Groups, tried
    in the order of `group_concept_id` (the most specific first): the first Group with at
-   least 2 **other** pairs whose `mapping_status` is `APPROVED` (not `ERROR`, `IGNORE` or
+   least 2 **other** pairs whose `mapping_status` is `APPROVED` (not `ERROR:<reason>`, `IGNORE` or
    `NOT-APPROVED`) is the reference. If the concept is in no LOINC Group, the reference
    is the concept: all the pairs with the same `concept_id`, with the same condition.
    Only the pairs with the same `HARMONISED_UNIT` as the tested pair are in the reference.

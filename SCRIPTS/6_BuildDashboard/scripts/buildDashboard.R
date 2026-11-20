@@ -9,10 +9,12 @@ library(dplyr)
 args <- commandArgs(trailingOnly = TRUE)
 evaluatedFile <- args[1]
 unitFixFile <- args[2]
-measurementFile <- args[3]
-conversionFile <- args[4]
-targetFile <- args[5]
-outDir <- args[6]
+mismatchWarningFile <- args[3]
+sharedWarningFile <- args[4]
+measurementFile <- args[5]
+conversionFile <- args[6]
+targetFile <- args[7]
+outDir <- args[8]
 
 # The scripts folder of this step, where the HTML template is.
 scriptDir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])))
@@ -28,6 +30,8 @@ ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  evaluatedFile = ", evaluatedFile)
 ParallelLogger::logInfo("  unitFixFile = ", unitFixFile)
+ParallelLogger::logInfo("  mismatchWarningFile = ", mismatchWarningFile)
+ParallelLogger::logInfo("  sharedWarningFile = ", sharedWarningFile)
 ParallelLogger::logInfo("  measurementFile = ", measurementFile)
 ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  targetFile = ", targetFile)
@@ -64,6 +68,8 @@ ParallelLogger::logInfo("Read ", nrow(evaluated), " rows from ", evaluatedFile)
 evaluated <- evaluated |>
   dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, UNIT)
 unitFix <- readr::read_tsv(unitFixFile, col_types = readr::cols(.default = chr()), na = "")
+mismatchWarnings <- readr::read_tsv(mismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
+sharedWarnings <- readr::read_tsv(sharedWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 measurement <- readr::read_tsv(measurementFile, col_types = readr::cols(.default = chr()), na = "")
 conversion <- readr::read_tsv(conversionFile, col_types = readr::cols(.default = chr()), na = "")
 targetTable <- readr::read_tsv(targetFile, col_types = readr::cols(.default = chr()), na = "")
@@ -90,32 +96,57 @@ htmlTable <- function(header, rows, numericFrom = 2, totalLast = TRUE) {
   }, character(1))
   paste0("<table class=\"summary\"><thead><tr>", cells("th", header), "</tr></thead><tbody>", paste(body, collapse = ""), "</tbody></table>")
 }
-statusSpan <- function(status) paste0("<span class=\"st st-", status, "\">", status, "</span>")
+statusSpan <- function(status) paste0("<span class=\"st st-", sub(":.*", "", status), "\">", status, "</span>")
 
 # 1. Harmonised events: the pairs (TEST_NAME + PREPROCESED_UNIT), their records, and the pairs
 #    with a warning message, by mapping_status.
-statusOrder <- c("APPROVED", "ERROR", "NOT-APPROVED", "IGNORE", "NOT-FOUND")
+# An ERROR carries its reason (ERROR:<reason>); this table counts them all as ERROR, the next one by reason.
+statusOrder <- c("APPROVED", "NOT-APPROVED", "IGNORE", "MISSING", "ERROR")
+errorReasons <- tibble::tribble(
+  ~reason, ~label,
+  "MissingConceptId", "Missing concept_id",
+  "MissingConversion", "Missing conversion",
+  "PropertyUnitMismatch", "Property and unit mismatch",
+  "SharedProperty", "Shared property",
+  "LoincGroupUnitsMissmatch", "LOINC Group units mismatch"
+)
+# Each pair has at most one warning of each warning table; a warning is not ignored when its
+# `ignore` is FALSE.
+warningOf <- function(table, by) {
+  hit <- dplyr::left_join(
+    dplyr::select(evaluated, dplyr::all_of(names(by))), dplyr::select(table, dplyr::all_of(unname(by)), ignore),
+    by = by, na_matches = "never"
+  )
+  list(total = !is.na(hit$ignore), notIgnored = hit$ignore %in% FALSE)
+}
+mismatchWarning <- warningOf(mismatchWarnings, c(TEST_NAME = "TEST_NAME", UNIT = "UNIT"))
+sharedWarning <- warningOf(sharedWarnings, c(TEST_NAME = "TEST_NAME", has_property = "has_property"))
+evaluated$n_warnings <- mismatchWarning$total + sharedWarning$total
+evaluated$n_warnings_not_ignored <- mismatchWarning$notIgnored + sharedWarning$notIgnored
+stopifnot(identical(evaluated$n_warnings > 0, !is.na(evaluated$mapping_warning_messages)))
 events <- evaluated |>
   dplyr::summarise(
     pairs = dplyr::n(), records = sum(n),
-    with_warning = sum(!is.na(mapping_warning_messages)),
+    warnings = sum(n_warnings), warnings_not_ignored = sum(n_warnings_not_ignored),
     .by = mapping_status
   ) |>
+  dplyr::mutate(mapping_status = sub(":.*", "", mapping_status)) |>
+  dplyr::summarise(dplyr::across(dplyr::everything(), sum), .by = mapping_status) |>
   dplyr::right_join(tibble::tibble(mapping_status = statusOrder), by = "mapping_status") |>
   dplyr::mutate(dplyr::across(-mapping_status, \(x) dplyr::coalesce(x, 0))) |>
   dplyr::arrange(match(mapping_status, statusOrder))
 totalRecords <- sum(events$records)
 eventsTable <- htmlTable(
-  c("Status", "Pairs with a warning", "Number of test+unit combinations", "Number of records", "Percentage of records"),
+  c("Status", "Warnings(total)", "Number of test+unit combinations", "Number of records", "Percentage of records"),
   dplyr::bind_rows(
     events |>
       dplyr::transmute(
-        statusSpan(mapping_status), fmtInt(with_warning), fmtInt(pairs), fmtInt(records),
+        statusSpan(mapping_status), paste0(fmtInt(warnings_not_ignored), " (", fmtInt(warnings), ")"), fmtInt(pairs), fmtInt(records),
         fmtPct(100 * records / totalRecords)
       ) |>
       rlang::set_names(paste0("c", 1:5)),
     tibble::tibble(
-      c1 = "TOTAL", c2 = fmtInt(sum(events$with_warning)), c3 = fmtInt(sum(events$pairs)),
+      c1 = "TOTAL", c2 = paste0(fmtInt(sum(events$warnings_not_ignored)), " (", fmtInt(sum(events$warnings)), ")"), c3 = fmtInt(sum(events$pairs)),
       c4 = fmtInt(totalRecords), c5 = "100.00%"
     )
   )
@@ -123,6 +154,39 @@ eventsTable <- htmlTable(
 ParallelLogger::logInfo(
   paste0(events$mapping_status, " ", events$pairs, collapse = ", "), " pairs; ", fmtInt(totalRecords), " records"
 )
+
+# 1b. Errors: the ERROR pairs by reason, only when there are any.
+errors <- evaluated |>
+  dplyr::filter(startsWith(mapping_status, "ERROR:")) |>
+  dplyr::mutate(reason = sub("^ERROR:", "", mapping_status)) |>
+  dplyr::summarise(pairs = dplyr::n(), records = sum(n), .by = reason)
+stopifnot(all(errors$reason %in% errorReasons$reason))
+errorsTable <- if (nrow(errors) == 0) "" else {
+  errorRows <- errorReasons |>
+    dplyr::inner_join(errors, by = "reason")
+  paste0(
+    "<h2>Errors</h2><div class=\"card\">",
+    htmlTable(
+      c("Status", "Reason", "Number of test+unit combinations", "Number of records", "Percentage of records"),
+      dplyr::bind_rows(
+        errorRows |>
+          dplyr::transmute(statusSpan(paste0("ERROR:", reason)), label, fmtInt(pairs), fmtInt(records), fmtPct(100 * records / totalRecords)) |>
+          rlang::set_names(paste0("c", 1:5)),
+        tibble::tibble(
+          c1 = "TOTAL", c2 = "", c3 = fmtInt(sum(errorRows$pairs)), c4 = fmtInt(sum(errorRows$records)),
+          c5 = fmtPct(100 * sum(errorRows$records) / totalRecords)
+        )
+      ),
+      numericFrom = 3
+    ),
+    "</div><p class=\"note\">The approved pairs with an error, by reason (the first that applies, in this order): ",
+    "the concept_id is not in the target table; the property of the concept does not agree with the unit, or the TEST_NAME ",
+    "shares a property with another concept (a warning not marked <code>ignore</code>); the pair has a UNIT but no CONVERSION ",
+    "from it to the target unit (a pair with no UNIT is not converted, so it is no error); a LOINC Group of ",
+    "the concept has approved pairs with different target units. The percentage is of all the records.</p>"
+  )
+}
+ParallelLogger::logInfo(nrow(errors), " error reasons, ", sum(errors$pairs), " ERROR pairs")
 
 # Input data tab: the tables of 1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md, from the
 # same pairs (the evaluated table has one row per pair, with the same n and source columns).
@@ -309,7 +373,7 @@ targetSections <- paste0(
 
 # 0. Fixed units: the pairs whose PREPROCESED_UNIT was changed to a different UNIT (only a mapped
 #    pair has the fix applied), in one row.
-isUnitFixed <- evaluated$mapping_status != "NOT-FOUND" &
+isUnitFixed <- evaluated$mapping_status != "MISSING" &
   tidyr::replace_na(evaluated$PREPROCESED_UNIT, "") != tidyr::replace_na(evaluated$UNIT, "")
 nFixes <- nrow(unitFix)
 fixedPairs <- sum(isUnitFixed)
@@ -333,7 +397,7 @@ valueClass <- evaluated |>
       !is.na(KS) & KS < ksAgree ~ "AGREE",
       !is.na(KS) & KS <= ksDisagree ~ "WARNING",
       !is.na(KS) ~ "DISAGREE",
-      mapping_status %in% c("NOT-FOUND", "IGNORE") ~ "not_mapped",
+      mapping_status %in% c("MISSING", "IGNORE") ~ "not_mapped",
       is.na(decile_value_harmonised) ~ "no_unit",
       TRUE ~ "no_reference"
     )
@@ -345,7 +409,7 @@ valueRows <- tibble::tribble(
   "AGREE", paste0("<span class=\"ks agree\">AGREE</span> KS &lt; ", ksAgree),
   "WARNING", paste0("<span class=\"ks warn\">WARNING</span> ", ksAgree, " &le; KS &le; ", ksDisagree),
   "DISAGREE", paste0("<span class=\"ks dis\">DISAGREE</span> KS &gt; ", ksDisagree),
-  "not_mapped", "Not compared: not mapped (NOT-FOUND or IGNORE)",
+  "not_mapped", "Not compared: not mapped (MISSING or IGNORE)",
   "no_unit", "Not compared: no conversion to a harmonised unit",
   "no_reference", "Not compared: no LOINC Group or concept with enough approved pairs"
 ) |>
@@ -390,7 +454,7 @@ table <- tibble::tibble(
   ),
   quantity = evaluated$has_property,
   unit_change = dplyr::if_else(
-    evaluated$mapping_status != "NOT-FOUND" &
+    evaluated$mapping_status != "MISSING" &
       tidyr::replace_na(evaluated$PREPROCESED_UNIT, "") != tidyr::replace_na(evaluated$UNIT, ""),
     paste0(tidyr::replace_na(evaluated$PREPROCESED_UNIT, ""), "->", tidyr::replace_na(evaluated$UNIT, "")),
     NA_character_
@@ -424,7 +488,10 @@ toJson <- function(x) {
   gsub("</", "<\\/", as.character(json), fixed = TRUE)
 }
 dataJson <- toJson(as.list(table))
-configJson <- toJson(list(ksAgree = ksAgree, ksDisagree = ksDisagree, statusOrder = statusOrder))
+configJson <- toJson(list(
+  ksAgree = ksAgree, ksDisagree = ksDisagree,
+  statusOrder = c(setdiff(statusOrder, "ERROR"), paste0("ERROR:", errorReasons$reason))
+))
 ParallelLogger::logInfo(nrow(table), " rows in the table, ", format(nchar(dataJson, type = "bytes") / 1e6, digits = 3), " MB of data")
 
 fill <- function(template, placeholder, value) {
@@ -437,6 +504,7 @@ html <- template |>
   fill("__TARGET_SECTIONS__", targetSections) |>
   fill("__FIXED_TABLE__", fixedTable) |>
   fill("__EVENTS_TABLE__", eventsTable) |>
+  fill("__ERRORS_TABLE__", errorsTable) |>
   fill("__VALUES_TABLE__", valuesTable) |>
   fill("__CONFIG_JSON__", configJson) |>
   fill("__DATA_JSON__", dataJson)

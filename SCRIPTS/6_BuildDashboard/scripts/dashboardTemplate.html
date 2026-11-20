@@ -45,7 +45,7 @@ table.summary tr.total td { font-weight: 600; border-top: 2px solid var(--line);
 .st-ERROR { color: var(--error); }
 .st-NOT-APPROVED { color: var(--notapproved); }
 .st-IGNORE { color: var(--ignore); }
-.st-NOT-FOUND { color: var(--notfound); }
+.st-MISSING { color: var(--notfound); }
 .ks { padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
 .ks.agree { background: var(--agree-bg); }
 .ks.warn { background: var(--warn-bg); }
@@ -108,7 +108,9 @@ table.data .sub { color: var(--muted); }
 
     <h2>Harmonised test+unit</h2>
     <div class="card">__EVENTS_TABLE__</div>
-    <p class="note">A pair is a <code>TEST_NAME</code> + <code>PREPROCESED_UNIT</code>. Status is the <code>mapping_status</code> of its mapping; NOT-FOUND is a pair that is not in the harmonisation table. Pairs with a warning have a message of a warning table (ignored or not).</p>
+    <p class="note">A pair is a <code>TEST_NAME</code> + <code>PREPROCESED_UNIT</code>. Status is the <code>mapping_status</code> of its mapping; MISSING is a pair that is not in the harmonisation table, and ERROR counts every <code>ERROR:&lt;reason&gt;</code>. Warnings are the messages of the two warning tables of step 4 (a pair has at most one of each): the number not marked <code>ignore</code>, and in brackets the total.</p>
+
+    __ERRORS_TABLE__
 
     <h2>Harmonised Values</h2>
     <div class="card">__VALUES_TABLE__</div>
@@ -283,7 +285,7 @@ table.data .sub { color: var(--muted); }
     var v = D[c.key][i];
     switch (c.type) {
       case "status":
-        return '<td><span class="st st-' + esc(v) + '">' + esc(v) + "</span></td>";
+        return '<td><span class="st st-' + esc(String(v).replace(/:.*/, "")) + '">' + esc(v) + "</span></td>";
       case "num":
         return '<td class="num">' + (v == null ? "" : (c.plain || c.key === "log10_d5" ? v : v.toLocaleString("en-US"))) + "</td>";
       case "ks":

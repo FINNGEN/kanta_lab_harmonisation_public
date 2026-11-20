@@ -6,6 +6,8 @@ an interactive table with one row per pair.
 
 ## Inputs
 
+- `DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv` and
+  `testname_property_shared_warning.tsv` — to tell the warnings that are marked `ignore`.
 - `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
 - `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
   and `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
@@ -28,15 +30,20 @@ In `DATA/6_BuildDashboard/`:
       test+unit combinations (pairs) fixed, i.e. whose
       `PREPROCESED_UNIT` was changed to a different `UNIT` (of the mapped pairs), the number of
       records and the percentage of records.
-    - *Harmonised test+unit* — by `mapping_status` (APPROVED, ERROR, NOT-APPROVED, IGNORE,
-      NOT-FOUND): the pairs with a warning message, the number of test+unit
+    - *Harmonised test+unit* — by `mapping_status` (APPROVED, NOT-APPROVED, IGNORE, MISSING,
+      ERROR, which counts every `ERROR:<reason>`): the warnings not ignored and, in brackets, the total (from the two warning tables of
+      `4_BuildHarmonisationTable`), the number of test+unit
       combinations (pairs), the number of records and the percentage of records, and a
       total row.
+    - *Errors* — only when there are ERROR pairs: one row per reason (`ERROR:MissingConceptId`,
+      `ERROR:PropertyUnitMismatch`, `ERROR:SharedProperty`, `ERROR:MissingConversion`,
+      `ERROR:LoincGroupUnitsMissmatch`, those that occur), with the number of pairs and records, the percentage of
+      all the records, and a total row.
     - *Harmonised Values* — the number of codes (pairs) and records, and the percentage
       of records, of the pairs that have no values (100% of the records without a
       value), those that AGREE with their LOINC Group (KS under 0.5), those with a
       WARNING (KS from 0.5 to 0.8, both included), those that DISAGREE (KS over 0.8),
-      and those that are not compared, each reason apart: not mapped (NOT-FOUND or
+      and those that are not compared, each reason apart: not mapped (MISSING or
       IGNORE), no conversion to a harmonised unit, and no LOINC Group or concept with enough
       approved pairs. The rows add up to the total.
   - **Mapping Table**: one row per pair, with `mapping_status`, the OMOP concept (id, name with

@@ -54,7 +54,9 @@ UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
 MEASUREMENT_FILE="$DATA_DIR/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv"
 CONVERSION_FILE="$DATA_DIR/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
-for f in "$EVALUATED_FILE" "$UNIT_FIX_FILE" "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$TARGET_TABLE_FILE"; do
+WARNING_MISMATCH_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv"
+WARNING_SHARED_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_property_shared_warning.tsv"
+for f in "$EVALUATED_FILE" "$UNIT_FIX_FILE" "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$TARGET_TABLE_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -69,7 +71,7 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/buildDashboard.R" "$EVALUATED_FILE" "$UNIT_FIX_FILE" \
-  "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$TARGET_TABLE_FILE" "$OUTDIR"
+  "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$TARGET_TABLE_FILE" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------

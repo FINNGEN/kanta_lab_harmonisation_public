@@ -206,10 +206,33 @@ ParallelLogger::logWarn(
   nrow(propertyShared), " TEST_NAME + has_property shared by several concept_ids (", sum(propertyShared$ignore), " ignored)"
 )
 
+# The LOINC Groups whose approved pairs have more than one target unit (HARMONISED_UNIT, before it is
+# cleared below). A pair with a target unit is in a mismatched Group when any of its Groups is; a pair
+# with no target unit (e.g. a qualitative concept) is not.
+groupUnits <- result |>
+  dplyr::filter(APPROVED %in% TRUE, is.na(ignore_mapping_reason), !is.na(group_concept_id), !is.na(HARMONISED_UNIT)) |>
+  dplyr::distinct(group_concept_id, HARMONISED_UNIT) |>
+  tidyr::separate_longer_delim(group_concept_id, ";") |>
+  dplyr::distinct(group_concept_id, HARMONISED_UNIT) |>
+  dplyr::count(group_concept_id, name = "n_units")
+mismatchedGroups <- groupUnits$group_concept_id[groupUnits$n_units > 1]
+result$groupUnitsMismatch <- !is.na(result$HARMONISED_UNIT) & vapply(
+  strsplit(dplyr::coalesce(result$group_concept_id, ""), ";", fixed = TRUE),
+  function(ids) any(ids %in% mismatchedGroups), logical(1)
+)
+ParallelLogger::logInfo(length(mismatchedGroups), " LOINC Groups with approved pairs of more than one target unit")
+
 # 6. mapping_status, the first column, replaces APPROVED:
-#    IGNORE if there is an ignore_mapping_reason; ERROR if the mapping is APPROVED and has a
-#    warning that is not marked `ignore` (in either warning table); APPROVED if it is
-#    APPROVED; NOT-APPROVED otherwise.
+#    IGNORE if there is an ignore_mapping_reason; ERROR:<reason> if the mapping is APPROVED and
+#    has an error; APPROVED if it is APPROVED; NOT-APPROVED otherwise. The reason is the first
+#    of (in this order):
+#    - MissingConceptId: the concept_id is not in the target table;
+#    - PropertyUnitMismatch: a property mismatch warning not marked `ignore`;
+#    - SharedProperty: a shared property warning not marked `ignore`;
+#    - MissingConversion: the pair has a UNIT and the concept a target unit, but there is no
+#      CONVERSION. A pair with no UNIT is not converted, so it is no error;
+#    - LoincGroupUnitsMissmatch: a LOINC Group of the concept has approved pairs with different
+#      target units (HARMONISED_UNIT), so its values cannot be compared.
 #    mapping_warning_messages, the last column, has every message of the warning tables that
 #    joins to the row (ignored or not), each starting with its type (WrongProperty: for the
 #    property mismatch, SharedProperty: for the shared property), separated by " | ".
@@ -225,7 +248,13 @@ result <- result |>
     by = c("TEST_NAME", "has_property"), relationship = "many-to-one"
   ) |>
   dplyr::mutate(
-    hasWarning = (!is.na(mismatch) & !mismatchIgnore) | (!is.na(shared) & !sharedIgnore),
+    errorReason = dplyr::case_when(
+      is.na(concept_code) ~ "MissingConceptId",
+      !is.na(mismatch) & !mismatchIgnore ~ "PropertyUnitMismatch",
+      !is.na(shared) & !sharedIgnore ~ "SharedProperty",
+      !is.na(UNIT) & !is.na(HARMONISED_UNIT) & is.na(CONVERSION) ~ "MissingConversion",
+      groupUnitsMismatch ~ "LoincGroupUnitsMissmatch"
+    ),
     mapping_warning_messages = dplyr::case_when(
       !is.na(mismatch) & !is.na(shared) ~ paste(mismatch, shared, sep = " | "),
       !is.na(mismatch) ~ mismatch,
@@ -233,12 +262,12 @@ result <- result |>
     ),
     mapping_status = dplyr::case_when(
       !is.na(ignore_mapping_reason) ~ "IGNORE",
-      APPROVED %in% TRUE & hasWarning ~ "ERROR",
+      APPROVED %in% TRUE & !is.na(errorReason) ~ paste0("ERROR:", errorReason),
       APPROVED %in% TRUE ~ "APPROVED",
       TRUE ~ "NOT-APPROVED"
     )
   ) |>
-  dplyr::select(-APPROVED, -mismatch, -mismatchIgnore, -shared, -sharedIgnore, -hasWarning) |>
+  dplyr::select(-APPROVED, -mismatch, -mismatchIgnore, -shared, -sharedIgnore, -errorReason, -groupUnitsMismatch) |>
   dplyr::relocate(mapping_status) |>
   dplyr::relocate(mapping_warning_messages, .after = dplyr::last_col())
 ParallelLogger::logInfo(
