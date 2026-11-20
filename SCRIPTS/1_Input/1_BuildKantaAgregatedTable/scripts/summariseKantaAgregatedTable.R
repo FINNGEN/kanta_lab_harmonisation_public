@@ -119,7 +119,7 @@ sourceTable <- function(pctColumn, labels) {
     present <- shares[, lab] > 0
     nRecords <- round(sum(pairs$n * shares[, lab] / 100))
     tibble::tibble(
-      source = lab,
+      source = if (lab == "na") "" else lab,
       `n rows` = fmtInt(sum(present)),
       `% rows` = fmtPct(100 * sum(present) / nPairs),
       `n records` = fmtInt(nRecords),

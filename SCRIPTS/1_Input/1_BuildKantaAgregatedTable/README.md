@@ -47,10 +47,10 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
     always `X`, because the step drops the pairs whose `TEST_NAME` is the text
     `NA`. A pair has a value when `value_missing_p` is under 100.
   - `# Units` — one row per unit source (`Source`, `PrimaryInjection`,
-    `SecondaryCorrection`, `na`).
+    `SecondaryCorrection`, and an empty source for the rest).
   - `# Reference Ranges` — one row per combination of bins (`AF`, `AM`, `MF`,
     `MM`) present in `reference_range`; the row with no bin has no range.
-  - `# Values` — one row per value source (`Source`, `Extracted`, `QCOut`, `na`).
+  - `# Values` — one row per value source (`Source`, `Extracted`, `QCOut`, and an empty source for the rest).
 
   In the source tables a pair counts as a row of a source when some of its
   records come from it, so `% rows` does not add up to 100%; `n records` is
