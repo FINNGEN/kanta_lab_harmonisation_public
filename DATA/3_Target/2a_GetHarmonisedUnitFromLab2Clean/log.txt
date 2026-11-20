@@ -20,7 +20,11 @@ Using temporary emulation schema: atlas-development-270609.sandbox
 Read 33197 LOINC codes from lab2clean 2.0.0
 Read 68106 LOINC concepts from the vocabulary
 33154 of 33197 lab2clean codes are concepts of the vocabulary with a unit
+3881 lab2clean codes are concepts of the vocabulary with a Group
+lab2clean has 1662 conventional codes with an SI partner; 1662 have both concepts in the vocabulary
 Wrote 33154 rows to DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+Wrote 1662 rows to DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
+Wrote 3881 rows to DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv
 
 Attaching package: ‘dplyr’
 
@@ -39,3 +43,5 @@ Read 33154 rows from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedU
 Wrote DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.md
 Wrote DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
 Wrote DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.md
+Wrote DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
+Wrote DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv

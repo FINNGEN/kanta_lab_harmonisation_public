@@ -11,7 +11,7 @@ The following objects are masked from ‘package:base’:
 
 Configuration:
   environment = build
-  lab2cleanUrl = https://cran.r-project.org/src/contrib/lab2clean_2.0.0.tar.gz
+  conversionFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   outDir = DATA/3_Target/3_GetLoincGroupsData
   domainId = Measurement
   standardConceptFlag = S
@@ -22,8 +22,7 @@ Using temporary emulation schema: atlas-development-270609.sandbox
 7707 concepts are in a Group whose name starts with 'Flowsheet'
 42 panel concepts are left out of the Groups; 2240 mass-molar Groups are dropped
 Kept 8487 of 41326 membership rows: 7665 concepts in 3123 Groups
-Read 33197 LOINC codes from lab2clean 2.0.0
-lab2clean has 1662 conventional codes with an SI partner; 1662 have both concepts in the vocabulary
+Read 1662 conventional-to-SI codes from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
 286 conventional concepts are mapped to the Groups of their SI partner; the rest of the conventional concepts are in no Group
 Membership: 8351 rows, 7563 concepts in 2997 Groups
 671 concepts are in more than one Group (at most 9)
@@ -32,7 +31,6 @@ Membership: 8351 rows, 7563 concepts in 2997 Groups
   Groups with 51-200 descendants: 10
   Groups with 201-1000 descendants: 3
 2997 Groups
-Wrote 1662 rows to DATA/3_Target/3_GetLoincGroupsData/loincSiConventionalConversion.tsv
 Wrote 2997 Groups to DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
 Wrote 8351 rows to DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 
@@ -50,14 +48,13 @@ Configuration:
   groupsFile = DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
   membershipFile = DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
   measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  conversionFile = DATA/3_Target/3_GetLoincGroupsData/loincSiConventionalConversion.tsv
+  conversionFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   outDir = DATA/3_Target/3_GetLoincGroupsData
 Read 2997 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
 Read 8351 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 Read 102825 concepts from DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-Read 1662 conventional concepts from DATA/3_Target/3_GetLoincGroupsData/loincSiConventionalConversion.tsv
+Read 1662 conventional concepts from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.md
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Wrote DATA/3_Target/3_GetLoincGroupsData/loincSiConventionalConversion.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.md
