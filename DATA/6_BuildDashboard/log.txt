@@ -10,14 +10,19 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  evaluatedFile = DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+  evaluatedFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+  unitFixFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
+  measurementFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+  conversionFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
+  targetFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
   templateFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/6_BuildDashboard/scripts/dashboardTemplate.html
-  outDir = DATA/6_BuildDashboard
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard
   ksAgree = 0.5
   ksDisagree = 0.8
-Read 28772 rows from DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+Read 28772 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
 APPROVED 5796, ERROR 62, NOT-APPROVED 262, IGNORE 234, NOT-FOUND 22418 pairs; 280,959,762 records
-no_values 16254, AGREE 1600, WARNING 137, DISAGREE 32, not_mapped 8160, no_unit 2013, no_reference 576 pairs
-28772 rows in the table, 5.26 MB of data
-Wrote DATA/6_BuildDashboard/dashboard.html (5.28 MB)
-Wrote DATA/6_BuildDashboard/dashboard.html
+77 pairs with a fixed unit, 8,621,196 records
+no_values 16254, AGREE 1600, WARNING 137, DISAGREE 32, not_mapped 8160, no_unit 2014, no_reference 575 pairs
+28772 rows in the table, 5.25 MB of data
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard/dashboard.html (5.3 MB)
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard/dashboard.html

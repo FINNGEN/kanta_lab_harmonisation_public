@@ -19,7 +19,7 @@ Where the unit of the records came from (`unit_source_injection_correction_na_p`
 | Source | 9,366 | 32.6% | 190,405,264 | 67.8% |
 | PrimaryInjection | 917 | 3.2% | 32,460,092 | 11.6% |
 | SecondaryCorrection | 76 | 0.3% | 8,640,193 | 3.1% |
-| na | 19,703 | 68.5% | 49,454,213 | 17.6% |
+|  | 19,703 | 68.5% | 49,454,213 | 17.6% |
 | total | 28,772 | 100% | 280,959,762 | 100% |
 
 # Reference Ranges
@@ -48,5 +48,5 @@ Where the value of the records came from (`value_source_extracted_qcout_na_p`); 
 | Source | 10,539 | 36.6% | 200,315,814 | 71.3% |
 | Extracted | 3,313 | 11.5% | 31,999,765 | 11.4% |
 | QCOut | 38 | 0.1% | 21,443 | 0.0% |
-| na | 19,945 | 69.3% | 48,618,069 | 17.3% |
+|  | 19,945 | 69.3% | 48,618,069 | 17.3% |
 | total | 28,772 | 100% | 280,959,762 | 100% |

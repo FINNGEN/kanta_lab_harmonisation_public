@@ -10,14 +10,14 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  kantaAgregatedTableFile = DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
-  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-  outDir = DATA/5_EvaluateHarmonisedData
-Read 74556 rows from DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
-Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  kantaAgregatedTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+  harmonisationTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData
+Read 74556 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
+Read 7760 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 28772 TEST_NAME + PREPROCESED_UNIT pairs, 22418 not in the harmonisation table
-51507 decile values, 21105 harmonised (30402 without a CONVERSION)
-Wrote 74556 rows to DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
+51507 decile values, 21096 harmonised (30411 without a CONVERSION)
+Wrote 74556 rows to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
 
 Attaching package: ‘dplyr’
 
@@ -30,13 +30,13 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  harmonisedFile = DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
-  outDir = DATA/5_EvaluateHarmonisedData
+  harmonisedFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData
   minReferencePairs = 2
-Read 74556 rows from DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
-28772 TEST_NAME + PREPROCESED_UNIT pairs, 2345 with harmonised deciles, 2308 approved reference pairs
-1769 pairs tested, 576 with harmonised deciles not tested (no LOINC Group or concept with at least 2 other approved pairs)
+Read 74556 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
+28772 TEST_NAME + PREPROCESED_UNIT pairs, 2344 with harmonised deciles, 2308 approved reference pairs
+1769 pairs tested, 575 with harmonised deciles not tested (no LOINC Group or concept with at least 2 other approved pairs)
 1063 pairs with the LOINC Group as reference, 706 with the concept_id (the concept is in no LOINC Group)
-Wrote 28772 rows to DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
-Wrote DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
-Wrote DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+Wrote 28772 rows to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv

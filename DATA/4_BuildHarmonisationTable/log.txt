@@ -10,28 +10,28 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  unitFixFile = DATA/2_Harmonisation/unitFix.tsv
-  mappingFile = DATA/2_Harmonisation/mapping.tsv
-  unitHarmonisationFile = DATA/2_Harmonisation/unitHarmonisation.tsv
-  targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-  outDir = DATA/4_BuildHarmonisationTable
-Read 79 rows from DATA/2_Harmonisation/unitFix.tsv
-Read 7756 rows from DATA/2_Harmonisation/mapping.tsv
-Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
-Read 101924 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  unitFixFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
+  mappingFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/mapping.tsv
+  unitHarmonisationFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitHarmonisation.tsv
+  targetTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable
+Read 79 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
+Read 7756 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/mapping.tsv
+Read 136 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitHarmonisation.tsv
+Read 101924 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 2 unitFix rows have a TEST_NAME + UNIT that is not in the mapping
 133 conversion rules of a property, 3 conversion rules of a concept
-Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Unchanged DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv (337 rows)
-Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-Unchanged DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv (8 rows)
+Read 337 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Unchanged /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv (337 rows)
+Read 8 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Unchanged /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv (8 rows)
 337 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
 APPROVED 7062, ERROR 74, IGNORE 237, NOT-APPROVED 387 (mapping_status)
 7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
 344 pairs whose concept_id is not in the target table
 3252 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
 4388 pairs have no HARMONISED_UNIT
-Wrote 7760 rows to DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Wrote 7760 rows to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 
 Attaching package: ‘dplyr’
 
@@ -44,25 +44,25 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  unitFixFile = DATA/2_Harmonisation/unitFix.tsv
-  mappingFile = DATA/2_Harmonisation/mapping.tsv
-  unitHarmonisationFile = DATA/2_Harmonisation/unitHarmonisation.tsv
-  targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-  propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-  propertySharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-  lab2cleanUnitFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
-  unitOverwriteFile = DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
-  outDir = DATA/4_BuildHarmonisationTable
-Read 79 rows from DATA/2_Harmonisation/unitFix.tsv
-Read 7756 rows from DATA/2_Harmonisation/mapping.tsv
-Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
-Read 101924 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-Read 33154 rows from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
-Read 1 rows from DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+  unitFixFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
+  mappingFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/mapping.tsv
+  unitHarmonisationFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitHarmonisation.tsv
+  targetTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  harmonisationTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  propertyMismatchWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  lab2cleanUnitFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+  unitOverwriteFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable
+Read 79 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
+Read 7756 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/mapping.tsv
+Read 136 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitHarmonisation.tsv
+Read 101924 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+Read 7760 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Read 337 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Read 8 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Read 33154 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+Read 1 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
 43 tests: 34 SUCCESS, 4 WARNING, 5 ERROR
 unitFix.tsv: TEST_NAME + UNIT is used downstream (it is in mapping.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
 mapping.tsv: concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason: 113 rows, e.g. s-iga[g/l] concept_id=3007164; p-iga[g/l] concept_id=3007164; p-igg[g/l] concept_id=3005719
@@ -73,7 +73,7 @@ harmonisationTable.tsv: an APPROVED pair whose concept has a target unit has a U
 harmonisationTable.tsv: has_property + UNIT is in unitHarmonisation.tsv (the concept's property agrees with the unit), for an APPROVED mapping: 73 rows, e.g. -baso[%]; -eos[%]; -h-ind[index]
 harmonisationTable.tsv: has_property + UNIT is in unitHarmonisation.tsv (the concept's property agrees with the unit), for a mapping that is not APPROVED: 264 rows, e.g. -calpro[mg/l]; -ebvnh[iu/ml]; -tpoab[%]
 harmonisationTable.tsv: a TEST_NAME with the same has_property maps to one concept_id, for a mapping that is not APPROVED: 1 rows, e.g. a TEST_NAME with the same has_property maps to one concept_id, but has_property 'Arbitrary Concentration' maps to different concept ids: 3017895 (Helicobacter pylori Ab [Units/volume] in Serum) | 3047387 (IgG [Units/volume] in Serum)
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
 
 Attaching package: ‘dplyr’
 
@@ -86,17 +86,17 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-  propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-  propertySharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-  outDir = DATA/4_BuildHarmonisationTable
-Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  harmonisationTableFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+  propertyMismatchWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+  propertySharedWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable
+Read 7760 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Read 337 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Read 8 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
 approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-Wrote DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Wrote DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.md
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTableValidation.md
+Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/harmonisationTable.md

@@ -303,7 +303,7 @@ APPROVED	e-rdw			85296	[0,0,0,100]%	AF[0,15];AM[0,14];MF[0,15];MM[0,14.29]	100	[
 APPROVED	l-eosinofiilit	%	%	85247	[97.76,2.24,0,0]%	AF[1,5.29];AM[1,5.28]	0	[97.76,2.24,0,0]%	[ 0, 1, 2, 2, 2, 3, 4, 5, 6 ]	[ 0, 1, 2, 2, 2, 3, 4, 5, 6 ]	[ 0, 1, 1.9, 2, 2, 3, 4, 4, 6 ]		3006504		26450-7	Eosinophils/Leukocytes in Blood	LOINC	FALSE	Eosinophils/leukocytes	Number Fraction				%	1		0.1	300	0	TRUE	concept_id		23
 APPROVED	b-hb-co	%	%	85107	[99.98,0.02,0,0]%	AF[0,2.82];AM[0,2.84];MF[,2.43];MM[,2.5]	0	[99.98,0,0.02,0]%	[ 0.9, 1.2, 1.4, 1.6, 1.7, 1.9, 2, 2.3, 2.6 ]	[ 0.9, 1.2, 1.4, 1.6, 1.7, 1.9, 2, 2.3, 2.6 ]	[ 0.4, 0.7, 0.9, 1, 1.1, 1.3, 1.5, 1.7, 2.1 ]		3023081		20563-3	Carboxyhemoglobin/Hemoglobin.total in Blood	LOINC	FALSE	Carboxyhemoglobin/Hemoglobin.total	Mass fraction	40652768	LG6297-8	Carboxyhemoglobin/Hemoglobin.total|Mass Fraction|Moment in time|Blood, Serum or Plasma	%	1		0.4	300	0.189	TRUE	LOINC Group	40652768	6
 APPROVED	s-tfr	mg/l	mg/l	84856	[97.59,2.41,0,0]%	AF[1.25,2.96];AM[1.35,3.14];MF[1.27,3.38];MM[1.37,3.28]	0	[97.61,2.39,0,0]%	[ 1, 1.2, 1.5, 1.9, 2.31, 2.8, 3.3, 4.1, 5.6 ]	[ 1, 1.2, 1.5, 1.9, 2.31, 2.8, 3.3, 4.1, 5.6 ]	[ 0.9, 1.5, 2.2, 2.6, 3, 3.4, 4, 4.8, 6.4 ]		3015399		30248-9	Transferrin receptor.soluble [Mass/volume] in Serum or Plasma	LOINC	FALSE	Transferrin receptor.soluble	Mass Concentration				mg/L	1		0.2	300	-0.114	TRUE	concept_id		4
-APPROVED	p-igg	g/l	g/l	84759	[95.45,4.55,0,0]%	AF[6.79,15];AM[6.79,15];MF[6.78,14.98];MM[6.79,14.99]	0	[95.48,4.52,0,0]%	[ 5.1, 6.6, 7.8, 8.8, 9.7, 10.7, 11.8, 13.4, 16.6 ]				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	p-igg	g/l	g/l	84759	[95.45,4.55,0,0]%	AF[6.79,15];AM[6.79,15];MF[6.78,14.98];MM[6.79,14.99]	0	[95.48,4.52,0,0]%	[ 5.1, 6.6, 7.8, 8.8, 9.7, 10.7, 11.8, 13.4, 16.6 ]				3005719																	FALSE			
 NOT-FOUND	14272	e9/l		84724	[93.32,6.68,0,0]%	AF[1.5,6.7];AM[1.5,6.7]	0	[93.32,6.68,0,0]%	[ 1.08, 1.73, 2.24, 2.73, 3.24, 3.83, 4.61, 5.76, 8.02 ]																					FALSE			
 APPROVED	u-osmole	mosm/kgh2o	mosm/kgh2o	84024	[84.36,15.64,0,0]%	AF[197.95,900];AM[178.91,900];MF[175,900];MM[150,900]	0	[89.45,10.55,0,0]%	[ 347, 419, 474, 525, 573, 628, 687, 762, 869 ]	[ 347, 419, 474, 525, 573, 628, 687, 762, 869 ]	[ 262, 327, 378, 425, 460, 526, 584, 660, 768 ]		3026782		2695-5	Osmolality of Urine	LOINC	FALSE	Observation	Osmolality	40656347;3967176;1472312	LG35626-7;LG51466-7;LG51749-6	Observation|Osmolality|Urine;Supersaturation panel|-|Urine;Observation|Osmolality|Moment in time|Any Urine specimen	mmol/kg	1		0.3	300	0.095	TRUE	LOINC Group	40656347	7
 APPROVED	b-hb-met	%	%	83981	[99.92,0.08,0,0]%	AF[0,2.74];AM[,2.77];MF[,2.46];MM[,2.37]	0	[99.92,0.08,0,0]%	[ 0.4, 0.6, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.5 ]	[ 0.4, 0.6, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.5 ]	[ 0.1, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1 ]		3007930		2614-6	Methemoglobin/Hemoglobin.total in Blood	LOINC	FALSE	Methemoglobin/Hemoglobin.total	Mass fraction	40653325	LG9913-7	Methemoglobin/Hemoglobin.total|Mass Fraction|Moment in time|Blood, Serum or Plasma	%	1		0.4	300	0.222	TRUE	LOINC Group	40653325	4
@@ -352,7 +352,7 @@ APPROVED	vb-hb-co	%	%	66974	[100,0,0,0]%	AF[0.4,2];AM[0.4,2];MF[0.4,2];MM[0.4,2]
 APPROVED	u-nitriitti(kval)			66827	[0,0,0,100]%		99.94	[0,0.06,0,99.94]%					3021601		5802-4	Nitrite [Presence] in Urine by Test strip	LOINC	FALSE	Nitrite	Presence or Threshold	40656325;40657709	LG35986-5;LG40866-2	Nitrite|Presence or Threshold|Urine;Nitrite|Urine/Urine sed							FALSE			
 APPROVED	p-psa			66771	[0,0,0,100]%	AM[0,5.92]	100	[0,0,0,100]%					3013603		2857-1	Prostate specific Ag [Mass/volume] in Serum or Plasma	LOINC	FALSE	Prostate specific Ag	Mass Concentration	40653611	LG11034-2	Prostate specific Ag|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 APPROVED	vb-hb-met	%	%	66702	[100,0,0,0]%	AF[0,2];AM[0,2];MF[0,2];MM[0,2]	0	[99.46,0,0.54,0]%	[ 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1 ]	[ 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1 ]	[ 0.1, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1 ]		3024889		2617-9	Methemoglobin/Hemoglobin.total in Venous blood	LOINC	FALSE	Methemoglobin/Hemoglobin.total	Mass fraction	40653325	LG9913-7	Methemoglobin/Hemoglobin.total|Mass Fraction|Moment in time|Blood, Serum or Plasma	%	1		0.1	300	0	TRUE	LOINC Group	40653325	4
-APPROVED	p-iga	g/l	g/l	66484	[85.05,14.95,0,0]%	AF[0.52,4.02];AM[0.88,4.84];MF[0.5,3.93];MM[0.84,4.71]	0.09	[84.97,14.94,0,0.09]%	[ 0.8, 1.2, 1.5, 1.76, 2.04, 2.37, 2.77, 3.33, 4.48 ]				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	p-iga	g/l	g/l	66484	[85.05,14.95,0,0]%	AF[0.52,4.02];AM[0.88,4.84];MF[0.5,3.93];MM[0.84,4.71]	0.09	[84.97,14.94,0,0.09]%	[ 0.8, 1.2, 1.5, 1.76, 2.04, 2.37, 2.77, 3.33, 4.48 ]				3007164																	FALSE			
 APPROVED	pt-lämpöt	°c	°c	66463	[100,0,0,0]%		0	[100,0,0,0]%	[ 36.3, 36.7, 37, 37, 37, 37, 37, 37.3, 37.7 ]	[ 36.3, 36.7, 37, 37, 37, 37, 37, 37.3, 37.7 ]	[ 36.8, 37, 37, 37, 37, 37, 37, 37, 37 ]		3020891		8310-5	Body temperature	LOINC	FALSE	Body temperature	Temperature	40654162	LG33052-8	Body temperature|Temperature|Moment in time|Without specimen	°c	1		0.2	300	0	TRUE	LOINC Group	40654162	4
 APPROVED	vb-hb	g/l	g/l	65623	[100,0,0,0]%	AF[117,155];AM[134,167];MF[114.4,149.02];MM[118.05,152.07]	0	[100,0,0,0]%	[ 89, 96, 103, 109, 116, 124, 133, 141, 152 ]	[ 89, 96, 103, 109, 116, 124, 133, 141, 152 ]	[ 96, 106, 114, 121, 128, 134, 141, 147, 156 ]		3004119		30350-3	Hemoglobin [Mass/volume] in Venous blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	1		0.2	300	-0.043	TRUE	concept_id		3
 APPROVED	l-mono	%	%	65566	[89.09,10.91,0,0]%	AF[2.51,10.55];AM[2.42,10.62];MF[2.95,10.01];MM[3.04,9.96]	0	[92.47,7.53,0,0]%	[ 4, 6, 7, 8, 9, 9.2, 10, 11.6, 14 ]	[ 4, 6, 7, 8, 9, 9.2, 10, 11.6, 14 ]	[ 5.9, 7, 7.5, 8, 9, 10, 10.4, 11.8, 13 ]		3019069		26485-3	Monocytes/Leukocytes in Blood	LOINC	FALSE	Monocytes/leukocytes	Number Fraction				%	1		0.1	300	0	TRUE	concept_id		23
@@ -436,12 +436,12 @@ APPROVED	pt-gfre-md			46404	[0,0,0,100]%	AF[60,];AM[60,]	100	[0,0,0,100]%					46
 APPROVED	s-ca12-5	u/ml	u/ml	45636	[100,0,0,0]%	AF[0,35];AM[0,35];MF[,35];MM[,35]	0	[100,0,0,0]%	[ 7, 9.8, 12, 15, 19, 26, 41, 83, 238 ]				3037551		10334-1	Cancer Ag 125 [Units/volume] in Serum or Plasma	LOINC	FALSE	Cancer Ag 125	Arbitrary Concentration	40652750	LG108-7	Cancer Ag 125|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 APPROVED	e-hemoglobiini(massakonsentraatio)	g/l	g/l	45365	[100,0,0,0]%	AF[320,355];AM[320,355]	0	[100,0,0,0]%	[ 314, 320, 324, 327, 329, 332, 335, 339, 344 ]	[ 314, 320, 324, 327, 329, 332, 335, 339, 344 ]	[ 314, 320, 324, 328, 331, 333, 337, 340, 346 ]		3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	FALSE	Hemoglobin	Entitic Mass/volume				g/L	1		0.1	300	-0.003	TRUE	concept_id		5
 APPROVED	e-erytrosyytit,tilavuus	fl	fl	45313	[100,0,0,0]%	AF[82,98];AM[82,98]	0	[100,0,0,0]%	[ 86, 88, 90, 91, 92, 93, 95, 97, 99 ]	[ 86, 88, 90, 91, 92, 93, 95, 97, 99 ]	[ 85, 87, 89, 90, 91, 93, 94, 96, 99 ]		3024731		30428-7	MCV [Entitic mean volume] in Red Blood Cells	LOINC	FALSE	Observation	Entitic mean volume				fL	1		0.1	300	0.005	TRUE	concept_id		8
-APPROVED	s-igakeli			45286	[0,0,0,100]%	AF[0.32,];AM[0.07,];MF[0.07,];MM[0.07,]	100	[0,0,0,100]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	s-igakeli			45286	[0,0,0,100]%	AF[0.32,];AM[0.07,];MF[0.07,];MM[0.07,]	100	[0,0,0,100]%					3007164																	FALSE			
 APPROVED	neutrofiilit	%	%	45173	[100,0,0,0]%	AF[37.01,75.01];AM[37,75];MF[39.38,74.85];MM[38.74,74.12]	0	[100,0,0,0]%	[ 42, 48, 52, 56, 59, 62, 65, 69, 76 ]	[ 42, 48, 52, 56, 59, 62, 65, 69, 76 ]	[ 41, 48, 52, 55, 59, 62, 65, 70, 76 ]		3018010		26511-6	Neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	1		0.1	300	0	TRUE	concept_id		27
 APPROVED	fs-fe	umol/l	umol/l	44959	[100,0,0,0]%	AF[9,34];AM[9,34];MF[8.87,33.57];MM[8.71,33.14]	0	[100,0,0,0]%	[ 5, 7.5, 9, 11, 13, 15, 17, 20, 24 ]	[ 5, 7.5, 9, 11, 13, 15, 17, 20, 24 ]	[ 5, 7, 8.7, 10.3, 11.9, 13.6, 15.5, 18, 22 ]		3022948		14798-3	Iron [Moles/volume] in Serum or Plasma	LOINC	FALSE	Iron	Substance Concentration				umol/L	1		0.1	300	0.038	TRUE	concept_id		6
 APPROVED	u-kreatiniini	mmol/l	mmol/l	44285	[91.74,8.26,0,0]%	AF[1.69,19.41];AM[2.29,23.48]	0	[91.76,8.24,0,0]%	[ 3.3, 4.2, 5, 5.9, 6.7, 7.7, 9, 10.7, 13.4 ]	[ 3.3, 4.2, 5, 5.9, 6.7, 7.7, 9, 10.7, 13.4 ]	[ 3.1, 4.1, 5, 5.9, 6.9, 8, 9.4, 11.4, 14.7 ]		3009508		14683-7	Creatinine [Moles/volume] in Urine	LOINC	FALSE	Creatinine	Substance Concentration	40652875;40656060;40656083;1177435	LG2924-1;LG34933-8;LG37282-7;LG50120-1	Creatinine|Substance Concentration|Moment in time|Any Urine specimen;Creatinine|Substance Concentration|Urine;Delta aminolevulinate, porphobilinogen and creatinine panel|-|Urine;Cystinuria panel|-|Urine	mmol/L	1		0.1	300	-0.013	TRUE	LOINC Group	40652875	7
 APPROVED	s-klotsa	nmol/l	nmol/l	44279	[91.47,8.53,0,0]%	AF[1081.5,1781.34];AM[1099.68,1818.49]	0.07	[91.43,8.5,0,0.07]%	[ 582, 865, 1090, 1310, 1520, 1730, 1980, 2300, 2780 ]	[ 582, 865, 1090, 1310, 1520, 1730, 1980, 2300, 2780 ]	[ 627, 877, 1080, 1290, 1450, 1620, 1820, 2070, 2500 ]		3000081		14656-3	cloZAPine [Moles/volume] in Serum or Plasma	LOINC	FALSE	cloZAPine	Substance Concentration				nmol/L	1		0.1	100.74	0.021	TRUE	concept_id		4
-APPROVED	p-igm	g/l	g/l	44276	[94.25,5.75,0,0]%	AF[0.47,2.83];AM[0.36,2.59];MF[0.47,2.81];MM[0.36,2.57]	0.01	[94.26,5.73,0,0.01]%	[ 0.27, 0.41, 0.57, 0.71, 0.9, 1.1, 1.38, 1.86, 3.62 ]				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
+APPROVED	p-igm	g/l	g/l	44276	[94.25,5.75,0,0]%	AF[0.47,2.83];AM[0.36,2.59];MF[0.47,2.81];MM[0.36,2.57]	0.01	[94.26,5.73,0,0.01]%	[ 0.27, 0.41, 0.57, 0.71, 0.9, 1.1, 1.38, 1.86, 3.62 ]				3028026																	FALSE			
 APPROVED	p-alkalinenfosfataasi	u/l	u/l	44236	[99.98,0.02,0,0]%	AF[35,105];AM[35,105]	0	[99.98,0.02,0,0]%	[ 52, 61, 67, 74, 81, 89, 99, 114, 154 ]	[ 52, 61, 67, 74, 81, 89, 99, 114, 154 ]	[ 49, 57, 64, 70, 77, 85, 95, 111, 150 ]		3035995		6768-6	Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Alkaline phosphatase	Catalytic Concentration	40652549	LG5665-7	Alkaline phosphatase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma	U/L	1		0.1	300	0.022	TRUE	LOINC Group	40652549	6
 APPROVED	s-borrab			43907	[0,0,0,100]%	AF[0,172.25];AM[0,250.91]	99.92	[0,0.08,0,99.92]%					3008230		7818-8	Borrelia burgdorferi IgM Ab [Units/volume] in Serum	LOINC	FALSE	Borrelia burgdorferi IgM	Arbitrary Concentration										FALSE			
 APPROVED	p-tyroksiini,vapaa	pmol/l	pmol/l	43759	[94.34,5.66,0,0]%	AF[10.97,22.23];AM[10.99,22.27];MF[11.1,22.52]	0	[94.34,5.66,0,0]%	[ 12.8, 14, 14.6, 15.1, 16, 16.7, 17.4, 18.3, 20 ]	[ 12.8, 14, 14.6, 15.1, 16, 16.7, 17.4, 18.3, 20 ]	[ 12, 13, 14, 14.7, 15.3, 16, 17, 18, 19.6 ]		3008486		14920-3	Thyroxine (T4) free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Thyroxine free	Substance Concentration	40653839	LG2976-1	Thyroxine.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1		0.1	300	0.019	TRUE	LOINC Group	40653839	11
@@ -456,7 +456,7 @@ APPROVED	s-li	mmol/l	mmol/l	41410	[88.3,11.7,0,0]%	AF[0.5,1.2];AM[0.5,1.2];MF[0.
 APPROVED	s-prealb	mg/l	mg/l	41223	[97.65,2.35,0,0]%	AF[169.96,349.92];AM[199.93,389.86];MF[169.91,349.91];MM[199.68,389.75]	0	[97.65,2.35,0,0]%	[ 120, 155, 182, 203, 222, 239, 258, 279, 310 ]	[ 120, 155, 182, 203, 222, 239, 258, 279, 310 ]	[ 90, 130, 160, 180, 200, 220, 240, 260, 290 ]		3013742		14338-8	Prealbumin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Prealbumin	Mass Concentration	40653598	LG2038-0	Prealbumin|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1		0.2	300	0.045	TRUE	LOINC Group	40653598	9
 ERROR	-h-ind		index	41191	[0,0,100,0]%		0	[48.98,51.02,0,0]%	[ 0, 0, 0, 0.01, 0.03, 0.05, 0.09, 2, 6 ]			index	3052851		46424-8	Hemolysis interference index of Serum or Plasma	LOINC	FALSE	Hemolysis interference index	Arbitrary Concentration						WrongProperty: has_property 'Arbitrary Concentration' and UNIT 'index' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	e-rdw,punasolujenkokojakauma	%		41163	[100,0,0,0]%	AF[,15];AM[,14]	0	[100,0,0,0]%	[ 12, 13, 13, 13, 14, 14, 15, 16, 17 ]																					FALSE			
-APPROVED	s-iga	g/l	g/l	40973	[93.95,6.05,0,0]%	AF[0.55,4.01];AM[0.83,4.62];MF[0.49,3.77];MM[0.54,3.7]	0.05	[93.99,5.96,0,0.05]%	[ 1.05, 1.35, 1.56, 1.77, 1.99, 2.23, 2.53, 2.94, 3.68 ]				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	s-iga	g/l	g/l	40973	[93.95,6.05,0,0]%	AF[0.55,4.01];AM[0.83,4.62];MF[0.49,3.77];MM[0.54,3.7]	0.05	[93.99,5.96,0,0.05]%	[ 1.05, 1.35, 1.56, 1.77, 1.99, 2.23, 2.53, 2.94, 3.68 ]				3007164																	FALSE			
 APPROVED	p-ca-ion	mmol/l	mmol/l	40367	[100,0,0,0]%	AF[1.15,1.3];AM[1.15,1.3];MF[1.15,1.3];MM[1.15,1.3]	0.13	[99.87,0,0,0.13]%	[ 1.09, 1.13, 1.15, 1.17, 1.18, 1.2, 1.21, 1.23, 1.27 ]	[ 1.09, 1.13, 1.15, 1.17, 1.18, 1.2, 1.21, 1.23, 1.27 ]	[ 1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31 ]		3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.3	300	-0.018	TRUE	LOINC Group	40652741	32
 NOT-FOUND	p-happamuusaste(ionis.ca)			40366	[0,0,0,100]%		0.34	[11.76,87.9,0,0.34]%	[ 7.33, 7.35, 7.36, 7.37, 7.38, 7.39, 7.4, 7.42, 7.44 ]																					FALSE			
 IGNORE	pt-näytteenottomaksu(oletus)			40311	[0,0,0,100]%		100	[0,0,0,100]%					0	Sample collection/processing code																FALSE			
@@ -474,7 +474,7 @@ APPROVED	s-uraat	umol/l	umol/l	39564	[100,0,0,0]%	AF[154.77,383.96];AM[229.67,47
 ERROR	glom.suod.nopeusckd-epi	ml/min/173m2	ml/min/173m2	39262	[100,0,0,0]%	AF[77.1,];AM[74.68,]	0	[100,0,0,0]%	[ 66, 74, 80, 85, 89, 93, 97, 102, 109 ]				40764999		62238-1	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 APPROVED	psa-v/psa	%	%	39227	[64.66,35.34,0,0]%	AM[15,]	0	[65.01,34.99,0,0]%	[ 8.8, 11.5, 13.9, 16.2, 18.4, 20.8, 23.6, 27.1, 32.7 ]	[ 8.8, 11.5, 13.9, 16.2, 18.4, 20.8, 23.6, 27.1, 32.7 ]	[ 8, 11, 14, 16.1, 19, 21.9, 25, 29, 35 ]		3001784		12841-3	Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma	LOINC	FALSE	Prostate specific Ag.free/Prostate specific Ag.total	Mass fraction	40653609	LG2277-4	Prostate specific Ag.free/Prostate specific Ag.total|Mass Fraction|Moment in time|Blood, Serum or Plasma	%	1		0.1	275.95	-0.014	TRUE	LOINC Group	40653609	12
 APPROVED	p-c-reaktiivinenproteiini			39161	[0,0,0,100]%	AF[,4.08];AM[,4.06];MF[,4];MM[,4]	99.82	[0.18,0,0,99.82]%					3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
-APPROVED	s-van	mg/l	mg/l	39013	[93.79,6.21,0,0]%	AF[5.95,18.32];AM[5.98,18.31]	0.08	[93.72,6.2,0,0.08]%	[ 7, 8.7, 10, 11.2, 12.5, 13.8, 15, 17, 20 ]				3005715		20578-1	Vancomycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Vancomycin	Mass Concentration										FALSE			
+APPROVED	s-van	mg/l	mg/l	39013	[93.79,6.21,0,0]%	AF[5.95,18.32];AM[5.98,18.31]	0.08	[93.72,6.2,0,0.08]%	[ 7, 8.7, 10, 11.2, 12.5, 13.8, 15, 17, 20 ]				3005715																	FALSE			
 APPROVED	s-mkomp-1	g/l	g/l	38717	[86.95,13.05,0,0]%	AF[0,0];AM[0,0];MF[0,0]	0	[86.95,13.05,0,0]%	[ 0, 0, 0, 0, 0, 0.7, 2.5, 5.9, 12.3 ]	[ 0, 0, 0, 0, 0, 0.7, 2.5, 5.9, 12.3 ]			3029713		51435-6	Protein.monoclonal band 1 [Mass/volume] in Serum or Plasma by Electrophoresis	LOINC	FALSE	Protein.monoclonal band 1	Mass Concentration	1990639	LG51330-5	Protein.monoclonal band 1|Mass Concentration|Moment in time|Blood, Serum or Plasma	g/L	1					TRUE			
 APPROVED	u-veri-o			38667	[0,0,0,100]%		100	[0,0,0,100]%					3011397		5794-3	Hemoglobin [Presence] in Urine by Test strip	LOINC	FALSE	Hemoglobin	Presence or Threshold	40656173;40657695	LG36977-3;LG40952-0	Hemoglobin|Presence or Threshold|Urine;Hemoglobin|Urine/Urine sed							FALSE			
 APPROVED	fs-ca-ion/ph7.40	mmol/l	mmol/l	38397	[100,0,0,0]%	AF[1.16,1.3];AM[1.16,1.3];MF[1.16,1.3]	0	[100,0,0,0]%	[ 1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.26, 1.28, 1.31 ]	[ 1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.26, 1.28, 1.31 ]	[ 1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31 ]		3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	300	0	TRUE	LOINC Group	40652741	32
@@ -581,7 +581,7 @@ NOT-FOUND	perusverenkuvajatrombosyytit,verestä			27884	[0,0,0,100]%		100	[0,0,0
 APPROVED	monos	%	%	27793	[100,0,0,0]%	AF[2,10];AM[2,10];MF[2,10];MM[2,10.67]	0	[100,0,0,0]%	[ 6, 6.9, 7.4, 8, 8.5, 9, 9.8, 10.6, 12 ]	[ 6, 6.9, 7.4, 8, 8.5, 9, 9.8, 10.6, 12 ]	[ 5.8, 7, 7.5, 8, 9, 10, 10.4, 11.8, 13 ]		3019069		26485-3	Monocytes/Leukocytes in Blood	LOINC	FALSE	Monocytes/leukocytes	Number Fraction				%	1		0.2	300	-0.025	TRUE	concept_id		23
 APPROVED	s-alb	g/l	g/l	27699	[95.87,4.13,0,0]%	AF[35.59,45.94];AM[35.41,46.4];MF[35.73,47.55]	0	[95.97,4.03,0,0]%	[ 34, 37, 38, 39, 40, 41, 42, 43, 45 ]	[ 34, 37, 38, 39, 40, 41, 42, 43, 45 ]	[ 25, 29, 32, 34, 36, 37, 38, 39.7, 41 ]		3024561		1751-7	Albumin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Albumin	Mass Concentration	40652534	LG5465-2	Albumin|Mass Concentration|Moment in time|Blood, Serum or Plasma	g/L	1		0.4	300	0.046	TRUE	LOINC Group	40652534	13
 APPROVED	s-ttgabg			27615	[0,0,0,100]%	AF[0,8.27];AM[0,8.01];MF[0,8.96];MM[0,9.18]	99.48	[0,0.52,0,99.48]%	[ 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.6, 3.8 ]				3046870		32998-7	Tissue transglutaminase IgG Ab [Units/volume] in Serum	LOINC	FALSE	Tissue Transglutaminase IgG	Arbitrary Concentration	40653845	LG13588-5	Tissue transglutaminase Ab.IgG|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
-APPROVED	s-lzm	mg/l	mg/l	27437	[96.24,3.76,0,0]%	AF[0.26,10.39];AM[0.26,10.33];MF[0.22,9.97];MM[0.32,9.38]	0.02	[96.22,3.76,0,0.02]%	[ 1.9, 8.3, 10, 11.3, 12.6, 14, 15, 17, 20 ]				3012110		2589-0	Lysozyme [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lysozyme	Mass Concentration										FALSE			
+APPROVED	s-lzm	mg/l	mg/l	27437	[96.24,3.76,0,0]%	AF[0.26,10.39];AM[0.26,10.33];MF[0.22,9.97];MM[0.32,9.38]	0.02	[96.22,3.76,0,0.02]%	[ 1.9, 8.3, 10, 11.3, 12.6, 14, 15, 17, 20 ]				3012110																	FALSE			
 APPROVED	monosyytit,absol.arvot	e9/l	e9/l	27352	[100,0,0,0]%	AF[0.2,0.8];AM[0.2,0.8];MF[0.03,0.54];MM[0.03,0.54]	0	[100,0,0,0]%	[ 0.35, 0.42, 0.48, 0.53, 0.58, 0.63, 0.7, 0.79, 0.93 ]	[ 0.35, 0.42, 0.48, 0.53, 0.58, 0.63, 0.7, 0.79, 0.93 ]	[ 0.33, 0.4, 0.47, 0.51, 0.57, 0.62, 0.7, 0.8, 0.94 ]		3001604		26484-6	Monocytes [#/volume] in Blood	LOINC	FALSE	Monocytes	Number Concentration	40654069	LG32885-2	Monocytes|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	1		0.1	233.31	0.008	TRUE	LOINC Group	40654069	16
 APPROVED	l-lymfosyytit,automaatio	%	%	27348	[100,0,0,0]%	AF[20,45];AM[20,45];MF[20,45]	0	[100,0,0,0]%	[ 15, 20, 24, 27, 29, 32, 35, 39, 44 ]	[ 15, 20, 24, 27, 29, 32, 35, 39, 44 ]	[ 12.6, 18, 21, 25, 28, 31, 34, 38, 44 ]		3002030		26478-8	Lymphocytes/Leukocytes in Blood	LOINC	FALSE	Lymphocytes/leukocytes	Number Fraction				%	1		0.1	233.14	0.015	TRUE	concept_id		36
 APPROVED	l-neutrofiilit,automaatio	%	%	27346	[100,0,0,0]%	AF[41,81];AM[41,81];MF[41,81]	0	[100,0,0,0]%	[ 41, 47, 51, 54, 57, 60, 63, 67, 73 ]	[ 41, 47, 51, 54, 57, 60, 63, 67, 73 ]	[ 41, 48, 52, 55, 59, 62, 65, 70, 76 ]		3018010		26511-6	Neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	1		0.1	233.03	-0.015	TRUE	concept_id		27
@@ -593,7 +593,7 @@ NOT-FOUND	u-ctngnho			27134	[0,0,0,100]%		100	[0,0,0,100]%																						
 APPROVED	s-norklot	nmol/l	nmol/l	27127	[90.64,9.36,0,0]%		0	[90.64,9.36,0,0]%	[ 345, 488, 609, 731, 858, 997, 1160, 1380, 1710 ]	[ 345, 488, 609, 731, 858, 997, 1160, 1380, 1710 ]	[ 356, 495, 612, 727, 850, 986, 1140, 1340, 1630 ]		3008832		14851-0	Norclozapine [Moles/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Substance Concentration				nmol/L	1		0.1	113.63	0.004	TRUE	concept_id		2
 APPROVED	-tbvi			27084	[0,0,0,100]%		100	[0,0,0,100]%					3014162		13956-8	Mycobacterium tuberculosis DNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Mycobacterium tuberculosis DNA	Presence or Threshold										FALSE			
 APPROVED	p-alb			27050	[0,0,0,100]%	AF[35.4,45.45];AM[35.22,45.26];MM[35.75,49.5]	100	[0,0,0,100]%					3024561		1751-7	Albumin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Albumin	Mass Concentration	40652534	LG5465-2	Albumin|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
-APPROVED	p-pct	ug/l	ug/l	27026	[92.77,7.23,0,0]%	AF[0,0.11];AM[0,0.11];MF[0,0.08];MM[0,0.26]	0.87	[92.07,7.06,0,0.87]%	[ 0.07, 0.1, 0.13, 0.18, 0.26, 0.39, 0.66, 1.35, 4.91 ]				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pct	ug/l	ug/l	27026	[92.77,7.23,0,0]%	AF[0,0.11];AM[0,0.11];MF[0,0.08];MM[0,0.26]	0.87	[92.07,7.06,0,0.87]%	[ 0.07, 0.1, 0.13, 0.18, 0.26, 0.39, 0.66, 1.35, 4.91 ]				3046279																	FALSE			
 NOT-FOUND	b-na-vt	mmol/l		27007	[100,0,0,0]%	AF[137,144.99];AM[137,144.99];MF[137,145];MM[137,145]	0	[100,0,0,0]%	[ 131, 135, 136, 137, 139, 139, 141, 142, 144 ]																					FALSE			
 NOT-FOUND	b-k-vt	mmol/l		26997	[100,0,0,0]%	AF[3.3,4.9];AM[3.3,4.9];MF[3.3,4.9];MM[3.3,4.9]	0	[100,0,0,0]%	[ 3.5, 3.7, 3.8, 3.9, 4.1, 4.2, 4.3, 4.5, 4.8 ]																					FALSE			
 APPROVED	s-emaba			26851	[0,0,0,100]%	AF[0,6.41];AM[0,6.48];MF[0,5.25];MM[0,5.49]	99.42	[0,0.58,0,99.42]%	[ 10, 10, 40, 40, 50, 160, 160, 250, 640 ]				3020961		10863-9	Endomysium IgA Ab [Titer] in Serum	LOINC	FALSE	Endomysium IgA	Titer	40652947	LG452-9	Endomysium Ab.IgA|Titer|Moment in time|Blood, Serum or Plasma							FALSE			
@@ -653,7 +653,7 @@ APPROVED	u-glukoosi(kval)	estimate	estimate	23839	[100,0,0,0]%		0	[100,0,0,0]%	[
 APPROVED	vb-emäsylimäärä	mmol/l	mmol/l	23825	[79.74,20.26,0,0]%	AF[-2.5,2.5];AM[-2.5,2.5];MF[-2.5,2.5];MM[-2.5,2.5]	0	[80.05,19.95,0,0]%	[ -4.8, -2.3, -0.8, 0.3, 1.2, 2.1, 3, 4.1, 6 ]	[ -4.8, -2.3, -0.8, 0.3, 1.2, 2.1, 3, 4.1, 6 ]	[ -5.1, -2.9, -1.5, -0.4, 0.5, 1.4, 2.3, 3.4, 5.2 ]		3002032		1927-3	Base excess in Venous blood by calculation	LOINC	FALSE	Base excess	Substance Concentration				mmol/L	1		0.1	182.99	0.38	TRUE	concept_id		4
 APPROVED	oma-crp	mg/l	mg/l	23782	[5.66,94.34,0,0]%	AF[7.75,10];AM[7.87,10]	0	[42.43,57.56,0,0]%	[ 6, 8, 11, 16, 22, 30, 42, 61, 96 ]	[ 6, 8, 11, 16, 22, 30, 42, 61, 96 ]	[ 3, 6, 8, 13, 21, 33, 48, 69, 105 ]		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1		0.1	205.29	0.02	TRUE	LOINC Group	40652733	64
 NOT-FOUND	p-punasoluvasta-aineet			23736	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-igg	g/l	g/l	23733	[93.34,6.66,0,0]%	AF[6.84,15.19];AM[6.85,15.2];MF[6.87,15.22];MM[7.02,15.64]	0.01	[93.36,6.64,0,0.01]%	[ 5.6, 7.2, 8.22, 9.1, 9.96, 10.8, 11.8, 13.2, 16 ]				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	s-igg	g/l	g/l	23733	[93.34,6.66,0,0]%	AF[6.84,15.19];AM[6.85,15.2];MF[6.87,15.22];MM[7.02,15.64]	0.01	[93.36,6.64,0,0.01]%	[ 5.6, 7.2, 8.22, 9.1, 9.96, 10.8, 11.8, 13.2, 16 ]				3005719																	FALSE			
 APPROVED	u-prot			23674	[0,0,0,100]%	AF[0,43.23];AM[0,43.12];MF[0,133.9];MM[0,163.82]	100	[0,0,0,100]%					3037121		2888-6	Protein [Mass/volume] in Urine	LOINC	FALSE	Protein	Mass Concentration	40656425;40656226;40656414;40657714;3967162	LG34512-0;LG35785-1;LG36112-7;LG40870-4;LG51450-1	Protein|Mass Concentration|Urine;Immunoelectrophoresis panel|-|Urine;Protein fractions panel|-|Urine;Protein|Urine/Urine sed;Protein electrophoresis & monoclonal protein isotype panel|-|Urine							FALSE			
 NOT-FOUND	s-apob/apoa1-suhde			23390	[0,0,100,0]%		0.58	[0,99.42,0,0.58]%	[ 0.38, 0.43, 0.48, 0.52, 0.57, 0.61, 0.67, 0.74, 0.84 ]																					FALSE			
 APPROVED	s-ana	titre	titre	23310	[79.22,20.78,0,0]%	AF[0.13,318.63];AM[0,318.06];MF[0,318.49];MM[0,311.9]	1.56	[77.69,20.75,0,1.56]%	[ 80, 160, 160, 320, 320, 320, 400, 1280, 1280 ]	[ 80, 160, 160, 320, 320, 320, 400, 1280, 1280 ]	[ 80, 160, 200, 320, 320, 320, 320, 640, 1280 ]		3037522		29953-7	Nuclear Ab [Titer] in Serum	LOINC	FALSE	Nuclear Ab	Titer	40653450	LG7004-7	Nuclear Ab|Titer|Moment in time|Blood, Serum or Plasma	1	1		0.1	9.98	0	TRUE	LOINC Group	40653450	3
@@ -1032,7 +1032,7 @@ APPROVED	u-muulier	e6/l	e6/l	11538	[100,0,0,0]%	AF[0,1];AM[0,1];MM[,1]	0	[100,0,
 APPROVED	s-c4	g/l	g/l	11512	[99.24,0.76,0,0]%	AF[0.12,0.35];AM[0.12,0.35];MF[0.12,0.41];MM[0.12,0.41]	0	[99.24,0.76,0,0]%	[ 0.11, 0.14, 0.17, 0.2, 0.22, 0.25, 0.27, 0.3, 0.35 ]	[ 110, 140, 170, 200, 220, 250, 270, 300, 350 ]	[ 100, 130, 160, 180, 200, 220, 240, 270, 310 ]		3017766		4498-2	Complement C4 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Complement C4	Mass Concentration				mg/L	1000		0.2	225.79	0.041	TRUE	concept_id		2
 APPROVED	np-pkorsi			11509	[0,0,0,100]%		100	[0,0,0,100]%					36031861		95941-1	Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel - Respiratory system specimen by NAA with probe detection	LOINC	TRUE	Influenza virus A and B and SARS-CoV-2 (COVID-19) and Respiratory syncytial virus RNA panel	-										FALSE			
 NOT-FOUND	fs-trfesat	osuus		11503	[3.92,96.08,0,0]%	AF[0.15,0.45];AM[0.15,0.45];MF[0.15,0.45];MM[0.15,0.45]	0	[96.97,3.03,0,0]%	[ 0.09, 0.13, 0.16, 0.19, 0.22, 0.25, 0.29, 0.34, 0.42 ]																					FALSE			
-APPROVED	s-igm	g/l	g/l	11497	[99.54,0.46,0,0]%	AF[0.48,2.82];AM[0.4,2.6];MF[0.52,2.79];MM[0.5,2.55]	0.03	[99.5,0.46,0,0.03]%	[ 0.31, 0.48, 0.63, 0.78, 0.94, 1.12, 1.36, 1.72, 2.54 ]				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
+APPROVED	s-igm	g/l	g/l	11497	[99.54,0.46,0,0]%	AF[0.48,2.82];AM[0.4,2.6];MF[0.52,2.79];MM[0.5,2.55]	0.03	[99.5,0.46,0,0.03]%	[ 0.31, 0.48, 0.63, 0.78, 0.94, 1.12, 1.36, 1.72, 2.54 ]				3028026																	FALSE			
 APPROVED	s-psatot+v			11471	[0,0,0,100]%		99.93	[0.07,0,0,99.93]%					3039443		53764-7	Prostate specific Ag panel - Serum or Plasma	LOINC	TRUE	Prostate specific Ag panel	-										FALSE			
 APPROVED	u-hyalier	e6/l	e6/l	11470	[100,0,0,0]%	AF[0,1];AM[0,1];MM[,1]	0	[100,0,0,0]%	[ 0, 0, 0, 0, 0, 0.1, 0.1, 0.3, 0.6 ]	[ 0, 0, 0, 0, 0, 0.1, 0.1, 0.3, 0.6 ]	[ 0, 0, 0, 0, 0, 0, 0.14, 0.42, 1 ]		3030981		51484-4	Hyaline casts [#/volume] in Urine by Automated count	LOINC	FALSE	Hyaline casts	Number Concentration	40657698;1094439	LG40890-2;LG51651-4	Hyaline casts|Urine/Urine sed;Hyaline casts|Number Concentration (count/vol)|Urine	10*6/L	1		0.1	88.96		TRUE	LOINC Group	40657698	2
 APPROVED	-vrevi			11412	[0,0,0,100]%		100	[0,0,0,100]%					3023601		13316-5	Vancomycin resistant enterococcus [Presence] in Specimen by Organism specific culture	LOINC	FALSE	Vancomycin resistant enterococcus	Presence or Threshold										FALSE			
@@ -1074,7 +1074,7 @@ APPROVED	vp-laktaat	mmol/l	mmol/l	10893	[100,0,0,0]%	AF[0.5,2.2];AM[0.5,2.2];MF[
 APPROVED	vp-gluk	mmol/l	mmol/l	10892	[100,0,0,0]%	AF[3,10];AM[3,10];MF[3,10];MM[3,10]	0	[100,0,0,0]%	[ 5.3, 5.8, 6.2, 6.6, 7.1, 7.8, 8.7, 10.2, 12.9 ]	[ 5.3, 5.8, 6.2, 6.6, 7.1, 7.8, 8.7, 10.2, 12.9 ]	[ 5.1, 5.5, 5.8, 6.2, 6.6, 7.1, 7.8, 8.8, 10.9 ]		3038515		39480-9	Glucose [Moles/volume] in Venous blood	LOINC	FALSE	Glucose	Substance Concentration	40653087	LG2432-5	Glucose|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	93.58	0.032	TRUE	LOINC Group	40653087	35
 APPROVED	vp-k	mmol/l	mmol/l	10892	[100,0,0,0]%	AF[3.44,4.8];AM[3.45,4.8]	0	[100,0,0,0]%	[ 3.6, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.5, 4.7 ]	[ 3.6, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.5, 4.7 ]	[ 3.5, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.6 ]		3041354		39789-3	Potassium [Moles/volume] in Venous blood	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	94.19	0.011	TRUE	LOINC Group	40653596	24
 APPROVED	vp-cl	mmol/l	mmol/l	10891	[100,0,0,0]%	AF[98.34,108.75];AM[98.26,108.69];MF[97.07,107.8];MM[98.22,108.67]	0	[100,0,0,0]%	[ 100, 102, 104, 105, 106, 107, 108, 110, 111 ]	[ 100, 102, 104, 105, 106, 107, 108, 110, 111 ]	[ 98, 101, 103, 104, 105, 107, 108, 109, 111 ]		3035285		41649-5	Chloride [Moles/volume] in Venous blood	LOINC	FALSE	Chloride	Substance Concentration	40652796	LG6373-7	Chloride|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	92.4	0.004	TRUE	LOINC Group	40652796	10
-APPROVED	p-acth	ng/l	ng/l	10871	[99.65,0.35,0,0]%	AF[6.93,50.58];AM[6.98,50.45];MF[7,46.1];MM[7,46.29]	0.39	[99.26,0.35,0,0.39]%	[ 8, 11, 14, 17, 21, 25, 31, 40, 66 ]				3035637		2141-0	Corticotropin [Mass/volume] in Plasma	LOINC	FALSE	Corticotropin	Mass Concentration										FALSE			
+APPROVED	p-acth	ng/l	ng/l	10871	[99.65,0.35,0,0]%	AF[6.93,50.58];AM[6.98,50.45];MF[7,46.1];MM[7,46.29]	0.39	[99.26,0.35,0,0.39]%	[ 8, 11, 14, 17, 21, 25, 31, 40, 66 ]				3035637																	FALSE			
 NOT-FOUND	u-bakteeri,jatkoviljely,seulottunäyte			10854	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-klotsa	umol/l	umol/l	10851	[92.32,7.68,0,0]%	AF[2.08,4.94];AM[2.56,5.23]	0	[92.18,7.68,0.15,0]%	[ 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.8, 2, 2.5 ]	[ 500, 700, 900, 1100, 1300, 1500, 1800, 2000, 2500 ]	[ 582, 865, 1090, 1310, 1520, 1730, 1980, 2300, 2780 ]		3000081		14656-3	cloZAPine [Moles/volume] in Serum or Plasma	LOINC	FALSE	cloZAPine	Substance Concentration				nmol/L	1000		0.2	300	-0.067	TRUE	concept_id		4
 NOT-FOUND	-hpvseul			10840	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -1139,7 +1139,7 @@ IGNORE	näyt.ot.			10009	[0,0,0,100]%		100	[0,0,0,100]%					0	Sample collection/
 APPROVED	s-hepyab			9938	[0,0,0,100]%		100	[0,0,0,100]%					3038177		22310-7	Helicobacter pylori Ab [Presence] in Serum	LOINC	FALSE	Helicobacter pylori Ab	Presence or Threshold										FALSE			
 ERROR	pt-gfrekce	ml/min/173m2	ml/min/173m2	9922	[11.51,88.49,0,0]%	AF[75.61,];AM[73.75,]	0	[11.51,88.49,0,0]%	[ 19, 25, 31, 37, 43, 50, 58, 68, 84 ]				46236952		77147-7	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	kilpirauhasentutkimuspaketti			9919	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-NOT-APPROVED	p-uraatti	umol/l	umol/l	9913	[99.97,0,0,0.03]%	AF[155,399.31];AM[230,480]	0.03	[99.97,0,0,0.03]%	[ 232, 269, 298, 324, 351, 380, 411, 453, 512 ]	[ 232, 269, 298, 324, 351, 380, 411, 453, 512 ]			3037556		3084-1	Urate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Urate	Mass Concentration				umol/L	1					FALSE			
+NOT-APPROVED	p-uraatti	umol/l	umol/l	9913	[99.97,0,0,0.03]%	AF[155,399.31];AM[230,480]	0.03	[99.97,0,0,0.03]%	[ 232, 269, 298, 324, 351, 380, 411, 453, 512 ]				3037556																	FALSE			
 APPROVED	-koronho			9912	[0,0,0,100]%		100	[0,0,0,100]%					3042596		41001-9	Human coronavirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Human coronavirus RNA	Presence or Threshold										FALSE			
 APPROVED	vb-vekaas			9897	[0,0,0,100]%		100	[0,0,0,100]%					3000991		24339-4	Gas panel - Venous blood	LOINC	TRUE	Gas panel	-										FALSE			
 APPROVED	fp-kolesteroli,lowdensitylipoproteiinit	mmol/l	mmol/l	9869	[99.07,0.93,0,0]%	AF[,3];AM[,3]	0	[99.07,0.93,0,0]%	[ 1.2, 1.4, 1.7, 1.9, 2.1, 2.5, 2.8, 3.2, 3.8 ]	[ 1.2, 1.4, 1.7, 1.9, 2.1, 2.5, 2.8, 3.2, 3.8 ]	[ 1.5, 1.8, 2.1, 2.4, 2.6, 2.9, 3.2, 3.6, 4.1 ]		3001308		22748-8	Cholesterol in LDL [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol in LDL	Substance Concentration	40652806	LG7921-2	Cholesterol.in LDL|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.2	300	-0.093	TRUE	LOINC Group	40652806	18
@@ -1778,7 +1778,7 @@ NOT-FOUND	pt-papa1			4531	[0,0,0,100]%		100	[0,0,0,100]%																						FA
 APPROVED	l-liuska	%	%	4519	[100,0,0,0]%	AF[38.79,72.98];AM[39.15,73.58]	0	[100,0,0,0]%	[ 10, 22.5, 35, 44, 51, 58, 64, 71, 79 ]	[ 10, 22.5, 35, 44, 51, 58, 64, 71, 79 ]			3013727		26471-3	Leukocytes other/Leukocytes in Blood	LOINC	FALSE	Leukocytes other/leukocytes	Number Fraction				%	1					TRUE			
 APPROVED	l-neut	e9/l	e9/l	4519	[100,0,0,0]%	AF[1.6,6.3];AM[1.6,6.3];MF[1.6,6.3]	0	[100,0,0,0]%	[ 1.98, 2.49, 2.91, 3.37, 3.8, 4.3, 4.9, 5.7, 7 ]	[ 1.98, 2.49, 2.91, 3.37, 3.8, 4.3, 4.9, 5.7, 7 ]	[ 1.69, 2.3, 2.76, 3.2, 3.67, 4.2, 4.85, 5.8, 7.57 ]		3017732		26499-4	Neutrophils [#/volume] in Blood	LOINC	FALSE	Neutrophils	Number Concentration	40654088	LG32886-0	Neutrophils|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	1		0.1	38.89	0.015	TRUE	LOINC Group	40654088	24
 APPROVED	s-hepyaba	u/ml	u/ml	4518	[99.2,0.8,0,0]%	AF[0,17.41];AM[0,16.89]	0	[99.2,0.8,0,0]%	[ 0.1, 3.6, 10, 10.5, 11, 12, 13.7, 18, 33.8 ]				3017895		7900-4	Helicobacter pylori Ab [Units/volume] in Serum	LOINC	FALSE	Helicobacter pylori Ab	Arbitrary Concentration										FALSE			
-APPROVED	s-pct	ug/l	ug/l	4513	[100,0,0,0]%	AF[,0.05];AM[,0.05];MF[,0.05]	0	[100,0,0,0]%	[ 0.06, 0.09, 0.12, 0.17, 0.23, 0.34, 0.54, 1, 3.05 ]				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	s-pct	ug/l	ug/l	4513	[100,0,0,0]%	AF[,0.05];AM[,0.05];MF[,0.05]	0	[100,0,0,0]%	[ 0.06, 0.09, 0.12, 0.17, 0.23, 0.34, 0.54, 1, 3.05 ]				3046279																	FALSE			
 APPROVED	s-anaab			4512	[0,0,0,100]%	AF[0,320];AM[0,320];MF[,320]	88.72	[0,11.28,0,88.72]%	[ 80, 80, 80, 80, 320, 320, 320, 1280, 1280 ]				3037522		29953-7	Nuclear Ab [Titer] in Serum	LOINC	FALSE	Nuclear Ab	Titer	40653450	LG7004-7	Nuclear Ab|Titer|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	fibrosis-4-indeksi			4511	[0,0,0,100]%		1.31	[81.87,16.83,0,1.31]%	[ 0.74, 0.93, 1.08, 1.23, 1.4, 1.57, 1.79, 2.07, 2.55 ]																					FALSE			
 NOT-FOUND	-pnjinho			4510	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -1809,7 +1809,7 @@ APPROVED	s-crp-o	mg/l	mg/l	4416	[60.24,39.76,0,0]%	AF[0.01,8.98];AM[0,8.55]	0	[8
 NOT-FOUND	eosinofiil.			4414	[0,0,0,100]%		4.58	[0,95.42,0,4.58]%	[ 0, 0, 0, 0, 0, 1, 1, 2, 3 ]																					FALSE			
 NOT-FOUND	b-pvk+tkd,trom	eg/l		4413	[100,0,0,0]%	AF[150,360];AM[150,360];MF[151.06,361.91]	0	[100,0,0,0]%	[ 164, 191, 210, 228, 247, 268, 293, 327, 371 ]																					FALSE			
 APPROVED	p-tpoab			4413	[0,0,0,100]%	AF[0,34];AM[0,34];MF[0,34];MM[0,34]	82.08	[0,17.92,0,82.08]%	[ 7, 8, 10, 11, 13, 16, 36, 91, 229 ]				3027238		8099-4	Thyroperoxidase Ab [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyroperoxidase Ab	Arbitrary Concentration	40653832	LG359-6	Thyroperoxidase Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
-APPROVED	b-co	ug/l	ug/l	4409	[89,11,0,0]%	AF[0.49,3.81];AM[0.49,3.82]	0.02	[88.98,11,0,0.02]%	[ 0.6, 0.8, 1.1, 1.4, 1.9, 2.8, 4.2, 6.6, 11 ]				3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-co	ug/l	ug/l	4409	[89,11,0,0]%	AF[0.49,3.81];AM[0.49,3.82]	0.02	[88.98,11,0,0.02]%	[ 0.6, 0.8, 1.1, 1.4, 1.9, 2.8, 4.2, 6.6, 11 ]				3026470																	FALSE			
 APPROVED	b-pvk+tkd,neut	%	%	4407	[100,0,0,0]%	AF[35,72];AM[35,72];MF[35.66,72]	0	[100,0,0,0]%	[ 43.3, 48, 51.8, 55.3, 58.5, 61.7, 65.4, 69.3, 74.3 ]	[ 43.3, 48, 51.8, 55.3, 58.5, 61.7, 65.4, 69.3, 74.3 ]	[ 41, 48, 52, 55, 59, 62, 65, 70, 76 ]		3018010		26511-6	Neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	1		0.1	37.87	-0.004	TRUE	concept_id		27
 NOT-FOUND	u-lepnag			4403	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	b-pvk+tkd,lymph	%	%	4402	[100,0,0,0]%	AF[18,52];AM[18,52];MF[19.26,51.38]	0	[100,0,0,0]%	[ 14.6, 18.8, 22.2, 24.9, 27.9, 30.8, 33.8, 37.6, 42.6 ]	[ 14.6, 18.8, 22.2, 24.9, 27.9, 30.8, 33.8, 37.6, 42.6 ]	[ 12.6, 18, 21, 25, 28, 31, 34, 38, 44 ]		3002030		26478-8	Lymphocytes/Leukocytes in Blood	LOINC	FALSE	Lymphocytes/leukocytes	Number Fraction				%	1		0.1	37.83	-0.002	TRUE	concept_id		36
@@ -1893,7 +1893,7 @@ APPROVED	pin2nho			4139	[0,0,0,100]%		100	[0,0,0,100]%					3012158		29909-9	Para
 APPROVED	pin3nho			4139	[0,0,0,100]%		100	[0,0,0,100]%					3006262		29910-7	Parainfluenza virus 3 RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Parainfluenza virus 3 RNA	Presence or Threshold										FALSE			
 APPROVED	pin4nho			4136	[0,0,0,100]%		100	[0,0,0,100]%					3038297		41010-0	Parainfluenza virus 4 RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Parainfluenza virus 4 RNA	Presence or Threshold										FALSE			
 NOT-FOUND	-influenssaavirus,nukleiinihappo(kval)			4134	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	li-igg	mg/l	mg/l	4132	[100,0,0,0]%	AF[12,40.33]	0	[100,0,0,0]%	[ 14, 18, 22, 26, 31, 36, 44, 55, 82 ]				3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	li-igg	mg/l	mg/l	4132	[100,0,0,0]%	AF[12,40.33]	0	[100,0,0,0]%	[ 14, 18, 22, 26, 31, 36, 44, 55, 82 ]				3007368																	FALSE			
 APPROVED	p-crp/pika			4132	[0,0,0,100]%	AF[0,10];AM[0,10];MF[0,10];MM[0,10]	100	[0,0,0,100]%					3035320		16503-5	C reactive protein [Mass/volume] in Body fluid	LOINC	FALSE	C reactive protein	Mass Concentration										FALSE			
 NOT-FOUND	u-oksik-o			4127	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-ca-i7.4			4123	[0,0,0,100]%	AF[1.18,1.33];AM[1.18,1.33];MM[1.16,1.32]	100	[0,0,0,100]%					3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
@@ -1977,7 +1977,7 @@ NOT-FOUND	14348	g/l		3880	[94.77,5.23,0,0]%	AF[5.1,8.1];AM[5.1,8.1]	0	[94.77,5.2
 NOT-FOUND	14349	g/l		3880	[94.64,5.36,0,0]%	AF[3.8,5.8];AM[3.8,5.8]	0	[94.64,5.36,0,0]%	[ 3.6, 3.8, 4, 4.2, 4.4, 4.5, 4.7, 5, 5.3 ]																					FALSE			
 NOT-FOUND	14350	g/l		3880	[94.74,5.26,0,0]%	AF[0.9,3.4];AM[0.9,3.4]	0	[94.74,5.26,0,0]%	[ 1.8, 2.1, 2.2, 2.4, 2.6, 2.8, 3.1, 3.6, 4.8 ]																					FALSE			
 NOT-FOUND	14351	g/l		3880	[94.95,5.05,0,0]%	AF[4.7,12.2];AM[4.7,12.2]	0	[94.95,5.05,0,0]%	[ 3.5, 5, 6.2, 7.1, 8, 8.9, 10.2, 12, 16.5 ]																					FALSE			
-APPROVED	b-cr	ug/l	ug/l	3879	[87.65,12.35,0,0]%	AF[0,2.21];AM[0,2.15]	0.03	[87.63,12.35,0,0.03]%	[ 0.7, 1, 1.2, 1.4, 1.7, 2.1, 2.8, 3.7, 5.6 ]				3025577		5619-2	Chromium [Mass/volume] in Blood	LOINC	FALSE	Chromium	Mass Concentration	40652817	LG3201-3	Chromium|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-cr	ug/l	ug/l	3879	[87.65,12.35,0,0]%	AF[0,2.21];AM[0,2.15]	0.03	[87.63,12.35,0,0.03]%	[ 0.7, 1, 1.2, 1.4, 1.7, 2.1, 2.8, 3.7, 5.6 ]				3025577																	FALSE			
 APPROVED	fs-rf			3875	[0,0,0,100]%	AF[0,14.06];AM[0,14.03];MF[0,14.07];MM[,14.11]	91.02	[0,8.98,0,91.02]%	[ 6, 7, 8, 9, 9, 10, 12, 17, 29 ]				3021614		11572-5	Rheumatoid factor [Units/volume] in Serum or Plasma	LOINC	FALSE	Rheumatoid factor	Arbitrary Concentration	40653663	LG357-0	Rheumatoid factor|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	p-tromboplastiiniaika	%		3875	[100,0,0,0]%	AF[70,130];AM[70,130]	0	[100,0,0,0]%	[ 55, 67, 75, 82, 88, 94, 101, 108, 119 ]																					FALSE			
 NOT-FOUND	punasolujenkoonvaihtelu	%		3872	[100,0,0,0]%	AF[0,15];AM[0,14]	0	[100,0,0,0]%	[ 12.5, 12.9, 13.1, 13.3, 13.6, 13.9, 14.3, 14.9, 16 ]																					FALSE			
@@ -2019,7 +2019,7 @@ APPROVED	vb-ph			3758	[0,0,0,100]%	AF[7.32,7.43];AM[7.32,7.43];MF[7.32,7.42];MM[
 APPROVED	bikarbonaatti(aktuaali),kapillaariveri	mmol/l	mmol/l	3757	[100,0,0,0]%	AF[22,27];AM[22,27];MF[22,27];MM[22,27]	0	[100,0,0,0]%	[ 18.5, 20.6, 22.1, 23.2, 24.2, 25.3, 26.5, 28.1, 30.9 ]	[ 18.5, 20.6, 22.1, 23.2, 24.2, 25.3, 26.5, 28.1, 30.9 ]	[ 20, 22, 23.2, 24.1, 25, 26, 27, 28, 30.1 ]		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	32.13	-0.014	TRUE	LOINC Group	40652704	21
 APPROVED	ts-pad-ish			3756	[0,0,0,100]%		100	[0,0,0,100]%					3049539		48674-6	Genetic diseases [Identifier] in Blood or Tissue by FISH Nominal	LOINC	FALSE	Genetic diseases	Presence or Identity										FALSE			
 APPROVED	s-hevohie	u/ml	u/ml	3754	[99.68,0.32,0,0]%	AF[0,0.35];AM[0,0.35];MF[,0.35];MM[,0.35]	2.85	[96.83,0.32,0,2.85]%	[ 0, 0.01, 0.02, 0.05, 0.12, 0.24, 0.54, 1.3, 4.32 ]	[ 0, 0.01, 0.02, 0.05, 0.12, 0.24, 0.54, 1.3, 4.32 ]	[ 0, 0.01, 0.01, 0.02, 0.04, 0.1, 0.3, 1.03, 4.09 ]		3010726		6143-2	Horse dander IgE Ab [Units/volume] in Serum	LOINC	FALSE	Horse dander IgE	Arbitrary Concentration				10*3.[iU]/L	1		0.2	51.09	0.477	TRUE	concept_id		6
-APPROVED	s-trypt	ug/l	ug/l	3752	[99.97,0,0,0.03]%	AF[0,13.5];AM[0,13.5];MF[,13.5];MM[,13.5]	0.08	[99.92,0,0,0.08]%	[ 2.7, 3.5, 4.2, 4.9, 5.9, 7.6, 12, 18.5, 44.4 ]				3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration										FALSE			
+APPROVED	s-trypt	ug/l	ug/l	3752	[99.97,0,0,0.03]%	AF[0,13.5];AM[0,13.5];MF[,13.5];MM[,13.5]	0.08	[99.92,0,0,0.08]%	[ 2.7, 3.5, 4.2, 4.9, 5.9, 7.6, 12, 18.5, 44.4 ]				3019420																	FALSE			
 APPROVED	mb-ph	ph	ph	3745	[7.45,92.55,0,0]%		0	[83.12,16.88,0,0]%	[ 7.29, 7.32, 7.34, 7.36, 7.38, 7.39, 7.4, 7.42, 7.44 ]	[ 7.29, 7.32, 7.34, 7.36, 7.38, 7.39, 7.4, 7.42, 7.44 ]	[ 7.34, 7.36, 7.38, 7.39, 7.4, 7.41, 7.42, 7.43, 7.45 ]		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	1		0.3	291.66	-0.001	TRUE	LOINC Group	40653530	9
 APPROVED	hmpvnho			3742	[0,0,0,100]%		100	[0,0,0,100]%					3042194		38917-1	Human metapneumovirus RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Human metapneumovirus RNA	Presence or Threshold										FALSE			
 APPROVED	s-hevabm			3741	[0,0,0,100]%		99.79	[0.21,0,0,99.79]%					3002222		14212-5	Hepatitis E virus IgM Ab [Presence] in Serum	LOINC	FALSE	Hepatitis E virus IgM	Presence or Threshold										FALSE			
@@ -2827,7 +2827,7 @@ APPROVED	s-d-25-32	nmol/l	nmol/l	1987	[100,0,0,0]%	AF[49.98,];AM[50,];MF[50,];MM
 APPROVED	b-erytrosyytit,tilavuusosuus			1983	[0,0,0,100]%	AF[1.47,1.87];AM[0.77,0.98]	100	[0,0,0,100]%					3009542		20570-8	Hematocrit [Volume Fraction] of Blood by calculation	LOINC	FALSE	Erythrocyte/Blood	Volume Fraction										FALSE			
 APPROVED	crppika			1976	[0,0,0,100]%	AF[0,10];AM[0,10]	64.73	[33,2.28,0,64.73]%	[ 5, 10, 16, 23, 31, 43, 59, 88, 121 ]				3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 APPROVED	pt-ttr+inr	%	%	1974	[100,0,0,0]%		0	[100,0,0,0]%	[ 36, 52, 60, 68, 73, 78, 83, 91, 99 ]	[ 36, 52, 60, 68, 73, 78, 83, 91, 99 ]	[ 47, 57, 65, 71, 76, 81, 85, 89, 95 ]		43055246		72281-9	Days in therapeutic INR range/Days INR result determined [Ratio]	LOINC	FALSE	Days in therapeutic INR range/Days INR result determined	Ratio				%	1		0.1	9.51	-0.017	TRUE	concept_id		2
-APPROVED	p-iga			1973	[0,0,0,100]%	AF[0.52,4.02];AM[0.88,4.84];MM[0.88,4.84]	100	[0,0,0,100]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	p-iga			1973	[0,0,0,100]%	AF[0.52,4.02];AM[0.88,4.84];MM[0.88,4.84]	100	[0,0,0,100]%					3007164																	FALSE			
 APPROVED	p-tnih	ng/l	ng/l	1972	[100,0,0,0]%	AM[,57]	0	[100,0,0,0]%	[ 4, 6, 8, 11, 16, 28, 54, 162, 1640 ]	[ 0.004, 0.006, 0.008, 0.011, 0.016, 0.028, 0.054, 0.162, 1.64 ]	[ 0.004, 0.005, 0.007, 0.01, 0.015, 0.024, 0.045, 0.114, 0.706 ]		3021337		10839-9	Troponin I.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin I.cardiac	Mass Concentration	40653873	LG433-9	Troponin I.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	0.001		0.1	16.7	0.028	TRUE	LOINC Group	40653873	8
 APPROVED	-hsvag			1971	[0,0,0,100]%		100	[0,0,0,100]%					3001964		16945-8	Herpes simplex virus Ag [Presence] in Specimen	LOINC	FALSE	Herpes simplex virus Ag	Presence or Threshold										FALSE			
 APPROVED	s-t4-vdi	pmol/l	pmol/l	1969	[99.95,0,0,0.05]%	AF[8.03,21.03];AM[8,21]	0.2	[99.8,0,0,0.2]%	[ 9.7, 11, 12, 14, 15, 16, 17, 18, 21 ]	[ 9.7, 11, 12, 14, 15, 16, 17, 18, 21 ]	[ 12, 13, 14, 14.7, 15.3, 16, 17, 18, 19.6 ]		42868691		70217-5	Thyroxine (T4) free [Moles/volume] in Serum or Plasma by Dialysis	LOINC	FALSE	Thyroxine free	Substance Concentration	40653839	LG2976-1	Thyroxine.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1		0.2	67.89	-0.009	TRUE	LOINC Group	40653839	11
@@ -2859,7 +2859,7 @@ NOT-FOUND	cd4	%/lumf		1920	[100,0,0,0]%		0	[100,0,0,0]%	[ 14, 19, 25, 30, 35, 41
 APPROVED	fs-trfesat	%	%	1915	[100,0,0,0]%	AF[16.8,51.94];AM[17,52]	0	[100,0,0,0]%	[ 7, 11, 14, 17, 20, 23, 27, 32, 39 ]				40763571		60517-0	Iron/Transferrin [Ratio] in Serum or Plasma	LOINC	FALSE	Iron/Transferrin	Ratio										FALSE			
 NOT-FOUND	p-aktuaalinenbikarbonaatti	mmol/l		1912	[100,0,0,0]%		0	[100,0,0,0]%	[ 21, 23, 25, 26, 27, 28, 29, 30, 33 ]																					FALSE			
 APPROVED	p-urea-de	mmol/l	mmol/l	1912	[100,0,0,0]%		0	[100,0,0,0]%	[ 13.3, 15.3, 16.7, 18, 19.1, 20.3, 21.6, 23.3, 25.9 ]	[ 13.3, 15.3, 16.7, 18, 19.1, 20.3, 21.6, 23.3, 25.9 ]	[ 4.2, 5.6, 7, 8.7, 10.9, 13.4, 16.4, 20, 25.3 ]		3020779		22664-7	Urea [Moles/volume] in Serum or Plasma	LOINC	FALSE	Urea	Substance Concentration	40653904	LG7767-9	Urea|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.5	300	0.244	TRUE	LOINC Group	40653904	6
-APPROVED	s-igg-sum	g/l	g/l	1912	[24.95,75.05,0,0]%		0	[25.05,74.95,0,0]%	[ 7.06, 8.28, 9.14, 9.9, 10.8, 11.7, 12.8, 14.3, 17.4 ]				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	s-igg-sum	g/l	g/l	1912	[24.95,75.05,0,0]%		0	[25.05,74.95,0,0]%	[ 7.06, 8.28, 9.14, 9.9, 10.8, 11.7, 12.8, 14.3, 17.4 ]				3005719																	FALSE			
 APPROVED	ts-hepyvi			1910	[0,0,0,100]%		100	[0,0,0,100]%					36306090		87953-6	Helicobacter pylori [Presence] in Tissue by Organism specific culture	LOINC	FALSE	Helicobacter pylori	Presence or Threshold										FALSE			
 NOT-FOUND	plesiomonasshigelloides			1909	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-apttm/m			1907	[0,0,0,100]%		95.6	[4.4,0,0,95.6]%	[ 0.9, 0.93, 0.95, 0.96, 0.97, 1, 1.04, 1.06, 1.11 ]																					FALSE			
@@ -2951,7 +2951,7 @@ NOT-FOUND	b-baktvij			1818	[0,0,0,100]%		100	[0,0,0,100]%																						F
 NOT-FOUND	fp-lipidi			1818	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-barb-o			1817	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-kemseul,u-leuk-o			1817	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-van			1816	[0,0,0,100]%	AF[5.19,18.07];AM[5.12,18]	100	[0,0,0,100]%					3005715		20578-1	Vancomycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Vancomycin	Mass Concentration										FALSE			
+APPROVED	s-van			1816	[0,0,0,100]%	AF[5.19,18.07];AM[5.12,18]	100	[0,0,0,100]%					3005715																	FALSE			
 APPROVED	p-glu/2h	mmol/l	mmol/l	1814	[100,0,0,0]%	AF[,8.35];AM[,7.82]	0	[100,0,0,0]%	[ 4.5, 5.1, 5.5, 5.9, 6.39, 6.9, 7.7, 8.86, 11 ]	[ 4.5, 5.1, 5.5, 5.9, 6.39, 6.9, 7.7, 8.86, 11 ]	[ 4.6, 5.3, 5.8, 6.2, 6.6, 7.1, 7.9, 8.8, 10.5 ]		3016701		14759-5	Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose	LOINC	FALSE	Glucose^2H post dose glucose	Substance Concentration				mmol/L	1		0.1	11.44	-0.014	TRUE	concept_id		14
 APPROVED	phadiatop			1814	[0,0,0,100]%	AF[,0.35];AM[,0.35];MF[,0.35]	80.71	[0,19.29,0,80.71]%	[ 0.5, 0.82, 1.2, 2, 3.6, 6.2, 10, 18, 35 ]				3025443		7599-4	Phadiatop IgE Ab [Units/volume] in Serum	LOINC	FALSE	Phadiotop IgE	Arbitrary Concentration										FALSE			
 NOT-FOUND	u-huuml-o			1814	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -3027,7 +3027,7 @@ NOT-FOUND	-sameus			1752	[0,0,0,100]%		100	[0,0,0,100]%																						FAL
 NOT-FOUND	bparanho			1752	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-talt.kn			1751	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	kalsium,ionisoitunut,aktuaaliosatutk.	mmol/l		1749	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.13, 1.17, 1.18, 1.2, 1.21, 1.23, 1.24, 1.27, 1.31 ]																					FALSE			
-APPROVED	p-mypa	mg/l	mg/l	1749	[100,0,0,0]%		0.06	[99.94,0,0,0.06]%	[ 0.63, 1, 1.34, 1.71, 2.14, 2.67, 3.41, 4.42, 6.29 ]				3027653		23905-3	Mycophenolate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Mycophenolate	Mass Concentration										FALSE			
+APPROVED	p-mypa	mg/l	mg/l	1749	[100,0,0,0]%		0.06	[99.94,0,0,0.06]%	[ 0.63, 1, 1.34, 1.71, 2.14, 2.67, 3.41, 4.42, 6.29 ]				3027653																	FALSE			
 NOT-FOUND	kalsium,ionisoitunut,ph7.4-korjattu,seerumista,osatutk	mmol/l		1747	[100,0,0,0]%	AF[1.2,1.33];AM[1.2,1.33]	0	[100,0,0,0]%	[ 1.15, 1.18, 1.19, 1.21, 1.22, 1.24, 1.25, 1.27, 1.31 ]																					FALSE			
 NOT-FOUND	8633			1745	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	8634			1744	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -3304,7 +3304,7 @@ APPROVED	s-ssaab	u/ml	u/ml	1501	[100,0,0,0]%	AF[0,7];AM[0,7]	0	[100,0,0,0]%	[ 0.
 NOT-FOUND	pikau-stix,u-keto-o			1500	[0,0,0,100]%		0.6	[99.4,0,0,0.6]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 1 ]																					FALSE			
 NOT-FOUND	pt-gluk-2h	mmol/l		1500	[100,0,0,0]%		0	[100,0,0,0]%	[ 4.5, 5, 5.4, 5.8, 6.3, 6.7, 7.4, 8.2, 9.8 ]																					FALSE			
 NOT-FOUND	s-kem			1500	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	p-pct	ng/ml	ng/ml	1499	[100,0,0,0]%	AF[0,0.5];AM[0,0.5]	0	[100,0,0,0]%	[ 0.1, 0.1, 0.2, 0.3, 0.4, 0.6, 1.2, 2.7, 9.2 ]				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pct	ng/ml	ng/ml	1499	[100,0,0,0]%	AF[0,0.5];AM[0,0.5]	0	[100,0,0,0]%	[ 0.1, 0.1, 0.2, 0.3, 0.4, 0.6, 1.2, 2.7, 9.2 ]				3046279																	FALSE			
 NOT-FOUND	p-psa,sädehoidettupotilas			1498	[0,0,0,100]%		19.83	[0,80.17,0,19.83]%	[ 0.016, 0.033, 0.055, 0.087, 0.12, 0.16, 0.22, 0.301, 0.47 ]																					FALSE			
 NOT-FOUND	strep-a			1498	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 IGNORE	ts-padgas2			1497	[0,0,0,100]%		100	[0,0,0,100]%					0	Histology/pathology procedure																FALSE			
@@ -3433,7 +3433,7 @@ NOT-APPROVED	pt-glomerulussuodosnopeus,estimoitu,kystatiinic-kaava	ml/min/173m2	
 NOT-FOUND	-pr+np	%		1415	[100,0,0,0]%	AM[40,];MM[40,]	0	[100,0,0,0]%	[ 21, 31, 39, 44, 50, 56, 61, 67, 74 ]																					FALSE			
 NOT-FOUND	21909			1415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-dnanab	kiu/l	kiu/l	1415	[100,0,0,0]%	AF[0,10];AM[0,10];MF[0,10]	0	[100,0,0,0]%	[ 0.7, 0.9, 1.1, 1.4, 1.8, 2.9, 4.7, 12, 31 ]	[ 0.7, 0.9, 1.1, 1.4, 1.8, 2.9, 4.7, 12, 31 ]	[ 1, 2, 2, 3, 4, 6, 8, 11, 32 ]		3023420		5130-0	DNA double strand Ab [Units/volume] in Serum	LOINC	FALSE	DNA double strand Ab	Arbitrary Concentration	40652934	LG350-5	DNA double strand Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[iU]/L	1		0.4	173.42	-0.347	TRUE	LOINC Group	40652934	5
-APPROVED	s-igm			1415	[0,0,0,100]%	AF[0.47,2.84];AM[0.36,2.59]	45.51	[0,54.49,0,45.51]%	[ 0.31, 0.48, 0.65, 0.82, 0.99, 1.2, 1.51, 2.33, 5.5 ]				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
+APPROVED	s-igm			1415	[0,0,0,100]%	AF[0.47,2.84];AM[0.36,2.59]	45.51	[0,54.49,0,45.51]%	[ 0.31, 0.48, 0.65, 0.82, 0.99, 1.2, 1.51, 2.33, 5.5 ]				3028026																	FALSE			
 NOT-FOUND	u-bakteeri,viljelytk(suupohja,kuusiokunnat,jik)			1415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	u-lieriöt			1415	[0,0,0,100]%	AF[0,1.12];AM[0,1.09]	100	[0,0,0,100]%					3030981		51484-4	Hyaline casts [#/volume] in Urine by Automated count	LOINC	FALSE	Hyaline casts	Number Concentration	40657698;1094439	LG40890-2;LG51651-4	Hyaline casts|Urine/Urine sed;Hyaline casts|Number Concentration (count/vol)|Urine							FALSE			
 APPROVED	b-crp-pik	mg/l	mg/l	1414	[24.96,75.04,0,0]%	AF[0,10];AM[0,10]	0	[24.96,75.04,0,0]%	[ 7, 11, 14, 20, 26, 35, 48, 63, 100 ]	[ 7, 11, 14, 20, 26, 35, 48, 63, 100 ]	[ 3, 6, 9, 13, 21, 33, 47, 68, 104 ]		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	1		0.2	48.81	0.093	TRUE	LOINC Group	40652733	64
@@ -3463,7 +3463,7 @@ NOT-FOUND	b-sekvy-d			1398	[0,0,0,100]%		100	[0,0,0,100]%																						F
 APPROVED	fp-gluk-sn	mmol/l	mmol/l	1398	[100,0,0,0]%		0	[100,0,0,0]%	[ 5, 5.7, 6.2, 6.7, 7.2, 7.7, 8.3, 9.1, 10.8 ]	[ 5, 5.7, 6.2, 6.7, 7.2, 7.7, 8.3, 9.1, 10.8 ]	[ 5, 5.3, 5.5, 5.7, 5.9, 6.1, 6.4, 6.9, 7.9 ]		3018251		14771-0	Fasting glucose [Moles/volume] in Serum or Plasma	LOINC	FALSE	Glucose^post CFst	Substance Concentration	40653084	LG2460-6	Glucose^post CFst|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.4	193.86	0.086	TRUE	LOINC Group	40653084	18
 APPROVED	l-mono	e9/l	e9/l	1397	[100,0,0,0]%	AF[0.2,0.8];AM[0.2,0.8];MF[0.2,0.8]	0	[100,0,0,0]%	[ 0.38, 0.45, 0.5, 0.55, 0.6, 0.67, 0.76, 0.89, 1.07 ]	[ 0.38, 0.45, 0.5, 0.55, 0.6, 0.67, 0.76, 0.89, 1.07 ]	[ 0.33, 0.4, 0.47, 0.51, 0.57, 0.62, 0.7, 0.8, 0.94 ]		3001604		26484-6	Monocytes [#/volume] in Blood	LOINC	FALSE	Monocytes	Number Concentration	40654069	LG32885-2	Monocytes|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	1		0.1	11.82	0.022	TRUE	LOINC Group	40654069	16
 NOT-FOUND	s-ch100l	%		1397	[100,0,0,0]%		0	[100,0,0,0]%	[ 0, 5, 25, 51, 78, 96, 108, 119, 134 ]																					FALSE			
-APPROVED	p-igm			1396	[0,0,0,100]%	AF[0.47,2.84];AM[0.36,2.59]	100	[0,0,0,100]%					3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
+APPROVED	p-igm			1396	[0,0,0,100]%	AF[0.47,2.84];AM[0.36,2.59]	100	[0,0,0,100]%					3028026																	FALSE			
 APPROVED	s-testo-v	pmol/l	pmol/l	1396	[100,0,0,0]%	AF[3.02,12.38];AM[102.64,288.05]	0	[100,0,0,0]%	[ 12, 20.1, 25.3, 29.5, 34.3, 41.8, 56.2, 121, 214 ]	[ 12, 20.1, 25.3, 29.5, 34.3, 41.8, 56.2, 121, 214 ]	[ 132, 163, 184, 200, 217, 234, 255, 280, 327 ]		3018301		14914-6	Testosterone Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Testosterone Free	Substance Concentration	40653809	LG2970-4	Testosterone.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1		0.8	300	-0.801	TRUE	LOINC Group	40653809	3
 NOT-FOUND	s-dsg1ab			1391	[0,0,0,100]%	AF[0,13.11];AM[0,14]	100	[0,0,0,100]%																						FALSE			
 APPROVED	s-c-reaktiivinenproteiini,herkkä	mg/l	mg/l	1389	[100,0,0,0]%	AF[0.01,3.97];AM[0.01,4.49]	0	[100,0,0,0]%	[ 0.4, 0.6, 0.8, 1.1, 1.6, 2.2, 3.2, 4.9, 8.3 ]	[ 0.4, 0.6, 0.8, 1.1, 1.6, 2.2, 3.2, 4.9, 8.3 ]	[ 0.4, 0.6, 1, 1.4, 1.8, 2.3, 3.1, 4.47, 8.13 ]		3010156		30522-7	C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method	LOINC	FALSE	C reactive protein	Mass Concentration				mg/L	1		0.1	11.05	-0.051	TRUE	concept_id		10
@@ -3472,7 +3472,7 @@ IGNORE	ts-kudosnäytteenhistologinenerikois-/lisävärjäys			1385	[0,0,0,100]%	
 NOT-FOUND	b-lytbifn			1384	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-hbvnho			1384	[0,0,0,100]%		100	[0,0,0,100]%					3022058		29610-3	Hepatitis B virus DNA [Presence] in Serum or Plasma by NAA with probe detection	LOINC	FALSE	Hepatitis B virus DNA	Presence or Threshold										FALSE			
 APPROVED	u-suhteellinentiheys			1383	[0,0,0,100]%	AF[1.01,1.03];AM[1.01,1.03]	100	[0,0,0,100]%					3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451;40657705	LG35800-8;LG40859-7	Observation|SpGrav|Urine;Observation|Urine/Urine sed							FALSE			
-APPROVED	s-pct			1382	[0,0,0,100]%	AF[,0.05];AM[,0.05]	91.53	[0,8.47,0,91.53]%	[ 1.4, 2, 10.1, 11.9, 16, 23.7, 28.7, 42.9, 69.5 ]				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	s-pct			1382	[0,0,0,100]%	AF[,0.05];AM[,0.05]	91.53	[0,8.47,0,91.53]%	[ 1.4, 2, 10.1, 11.9, 16, 23.7, 28.7, 42.9, 69.5 ]				3046279																	FALSE			
 NOT-FOUND	vb-verikaasuanalyysilaaja,elektrolyytit,glu,lakt			1381	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	hemoglobiini(totaali),valtimoveri	g/l	g/l	1379	[100,0,0,0]%	AF[117,155];AM[134,167]	0	[100,0,0,0]%	[ 89, 99, 108, 115, 123, 129, 135, 142, 153 ]	[ 89, 99, 108, 115, 123, 129, 135, 142, 153 ]	[ 87, 94, 99, 104, 109, 116, 122, 130, 140 ]		3002173		30313-1	Hemoglobin [Mass/volume] in Arterial blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	1		0.3	107.12	0.052	TRUE	concept_id		5
 APPROVED	s-aldos			1378	[0,0,0,100]%	AF[0,520];AM[0,520];MF[0,520]	72.79	[0,27.21,0,72.79]%	[ 93, 129, 170, 215, 272, 341, 443, 556, 862 ]				3001788		14586-2	Aldosterone [Moles/volume] in Serum or Plasma	LOINC	FALSE	Aldosterone	Substance Concentration										FALSE			
@@ -3800,7 +3800,7 @@ APPROVED	pd-diffi			1160	[0,0,0,100]%		100	[0,0,0,100]%					3040562		40533-2	Leu
 APPROVED	-lymph	%	%	1159	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.167, 0.216, 0.245, 0.272, 0.298, 0.322, 0.352, 0.383, 0.424 ]	[ 0.167, 0.216, 0.245, 0.272, 0.298, 0.322, 0.352, 0.383, 0.424 ]	[ 12.6, 18, 21, 25, 28, 31, 34, 38, 44 ]		3002030		26478-8	Lymphocytes/Leukocytes in Blood	LOINC	FALSE	Lymphocytes/leukocytes	Number Fraction				%	1		0.9	300	-1.973	TRUE	concept_id		36
 ERROR	-mono	%	%	1159	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.069, 0.078, 0.084, 0.089, 0.096, 0.102, 0.11, 0.119, 0.139 ]				3001604		26484-6	Monocytes [#/volume] in Blood	LOINC	FALSE	Monocytes	Number Concentration	40654069	LG32885-2	Monocytes|Number Concentration (count/vol)|Moment in time|Blood			WrongProperty: has_property 'Number Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	sy-kiteet(kval)			1158	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	p-pct			1156	[0,0,0,100]%	AF[0,0.13];AM[0,0.12]	100	[0,0,0,100]%					3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pct			1156	[0,0,0,100]%	AF[0,0.13];AM[0,0.12]	100	[0,0,0,100]%					3046279																	FALSE			
 NOT-FOUND	u-ds5b			1156	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	b-crp-pik			1155	[0,0,0,100]%	AF[0,10];AM[0,10]	100	[0,0,0,100]%					3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	s-kolesteroli/hdl-kolesterolisuhde			1155	[0,0,0,100]%		39.39	[0,60.61,0,39.39]%	[ 2.1, 2.3, 2.4, 2.6, 2.8, 3, 3.3, 3.7, 4.3 ]																					FALSE			
@@ -4017,7 +4017,7 @@ APPROVED	p-korsol			1049	[0,0,0,100]%	AF[139.92,437.31];AM[138.43,461.25]	100	[0
 APPROVED	f-noroag			1048	[0,0,0,100]%		100	[0,0,0,100]%					3052592		49117-5	Norovirus Ag [Presence] in Stool	LOINC	FALSE	Norovirus Ag	Presence or Threshold										FALSE			
 APPROVED	maksa-1-is	u/l	u/l	1048	[100,0,0,0]%	AF[,68];AM[,67]	0	[100,0,0,0]%	[ 35, 46, 53, 61, 70, 78, 89, 109, 158 ]	[ 35, 46, 53, 61, 70, 78, 89, 109, 158 ]	[ 30.2, 42, 51, 58, 67, 78, 90, 110, 156 ]		3035062		13874-3	Alkaline phosphatase.liver 1 [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Alkaline phosphatase.liver 1	Catalytic Concentration				U/L	1		0.1	5.3	0.019	TRUE	concept_id		7
 APPROVED	s-hscrp	mg/l	mg/l	1048	[100,0,0,0]%	AF[0.59,2.91];AM[0.21,2.89]	0	[100,0,0,0]%	[ 0.3, 0.5, 0.7, 0.9, 1.2, 1.58, 2.2, 3.34, 5.9 ]	[ 0.3, 0.5, 0.7, 0.9, 1.2, 1.58, 2.2, 3.34, 5.9 ]	[ 0.4, 0.6, 1, 1.4, 1.8, 2.3, 3.1, 4.47, 8.13 ]		3010156		30522-7	C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method	LOINC	FALSE	C reactive protein	Mass Concentration				mg/L	1		0.2	34.48	-0.176	TRUE	concept_id		10
-APPROVED	b-cr			1047	[0,0,0,100]%	AF[0,2.94];AM[0,2.82]	91.69	[0,8.31,0,91.69]%	[ 1, 1, 1, 1.1, 1.5, 2, 2.1, 2.9, 3.6 ]				3025577		5619-2	Chromium [Mass/volume] in Blood	LOINC	FALSE	Chromium	Mass Concentration	40652817	LG3201-3	Chromium|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-cr			1047	[0,0,0,100]%	AF[0,2.94];AM[0,2.82]	91.69	[0,8.31,0,91.69]%	[ 1, 1, 1, 1.1, 1.5, 2, 2.1, 2.9, 3.6 ]				3025577																	FALSE			
 APPROVED	glomerulussuodosnopeus,estimoitu			1046	[0,0,0,100]%	AF[66.85,];AM[65.97,]	100	[0,0,0,100]%					40764999		62238-1	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	u-ketostix			1046	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	natrium			1045	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -4219,7 +4219,7 @@ APPROVED	fp-glukr0h	mmol/l	mmol/l	961	[99.38,0.62,0,0]%		0	[99.38,0.62,0,0]%	[ 5
 IGNORE	oma-u-tutk,u-gluk-o			961	[0,0,0,100]%		26.12	[5.72,68.16,0,26.12]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]				0	Patient home/self-test																FALSE			
 NOT-FOUND	s-sakspäe	u/ml		961	[100,0,0,0]%		0	[100,0,0,0]%	[ 0, 0, 0, 0.01, 0.01, 0.02, 0.06, 0.19, 1.39 ]																					FALSE			
 NOT-FOUND	-trvanho			960	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	b-ti			959	[0,0,0,100]%		97.91	[0,2.09,0,97.91]%					40762814		59753-4	Titanium [Mass/volume] in Blood	LOINC	FALSE	Titanium	Mass Concentration	40653847	LG20243-8	Titanium|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-ti			959	[0,0,0,100]%		97.91	[0,2.09,0,97.91]%					40762814																	FALSE			
 NOT-FOUND	vb-veionos			959	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	-respiratorisetmikrobit,nukleiinihappo			958	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 IGNORE	oma-u-tutk,u-eryt-o			958	[0,0,0,100]%		46.76	[5.95,47.29,0,46.76]%	[ 0, 0, 0, 0, 0, 0, 1, 2, 3 ]				0	Patient home/self-test																FALSE			
@@ -4406,7 +4406,7 @@ APPROVED	p-fii	%	%	888	[99.77,0,0,0.23]%	AF[78.11,115.37];AM[76,121.33]	0.34	[99
 APPROVED	p-gluk-2h	mmol/l	mmol/l	888	[100,0,0,0]%	AF[,7.8];AM[,7.8]	0	[100,0,0,0]%	[ 4.8, 5.3, 5.8, 6.2, 6.5, 7.1, 7.7, 8.5, 10 ]	[ 4.8, 5.3, 5.8, 6.2, 6.5, 7.1, 7.7, 8.5, 10 ]	[ 4.6, 5.3, 5.7, 6.1, 6.6, 7.1, 7.9, 8.86, 10.5 ]		3016701		14759-5	Glucose [Moles/volume] in Serum or Plasma --2 hours post dose glucose	LOINC	FALSE	Glucose^2H post dose glucose	Substance Concentration				mmol/L	1		0.1	6.45	-0.007	TRUE	concept_id		14
 NOT-FOUND	hepatiitticvirus,antigeenijavasta-aineet,yhdistelmätutkimus			887	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-trijodityroniini,vapaa	pmol/l	pmol/l	887	[100,0,0,0]%	AF[3.1,6.8];AM[3.1,6.8]	0	[100,0,0,0]%	[ 3.6, 3.9, 4.2, 4.4, 4.6, 4.7, 4.9, 5.2, 5.6 ]	[ 3.6, 3.9, 4.2, 4.4, 4.6, 4.7, 4.9, 5.2, 5.6 ]	[ 3.5, 3.8, 4.1, 4.3, 4.6, 4.8, 5.1, 5.5, 6.2 ]		3026989		14928-6	Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Triiodothyronine Free	Substance Concentration	40653866	LG2984-5	Triiodothyronine.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1		0.1	7.34	0	TRUE	LOINC Group	40653866	6
-APPROVED	s-igg			887	[0,0,0,100]%	AF[6.77,15];AM[6.77,15]	100	[0,0,0,100]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	s-igg			887	[0,0,0,100]%	AF[6.77,15];AM[6.77,15]	100	[0,0,0,100]%					3005719																	FALSE			
 NOT-FOUND	s-valpr-v	umol/l		887	[100,0,0,0]%	AF[31.79,63.57];AM[30.77,61.54]	0	[100,0,0,0]%	[ 26, 30, 35, 40, 45, 50, 57, 68, 86 ]																					FALSE			
 NOT-FOUND	tromboplastiiniaika,aktivoitu,partiaalinen.plasma	s		887	[100,0,0,0]%		0	[100,0,0,0]%	[ 27, 28, 29, 30, 31, 32, 33, 35, 39 ]																					FALSE			
 NOT-FOUND	li-cmvnho			886	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -4477,14 +4477,14 @@ NOT-FOUND	b-hla1mun			863	[0,0,0,100]%		100	[0,0,0,100]%																						FA
 APPROVED	s-caionac	mmol/l	mmol/l	863	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.17, 1.2, 1.22, 1.23, 1.24, 1.26, 1.28, 1.3, 1.34 ]	[ 1.17, 1.2, 1.22, 1.23, 1.24, 1.26, 1.28, 1.3, 1.34 ]	[ 1.13, 1.16, 1.18, 1.2, 1.22, 1.23, 1.25, 1.27, 1.31 ]		3021347		1995-0	Calcium.ionized [Moles/volume] in Serum or Plasma	LOINC	FALSE	Calcium.ionized	Substance Concentration	40652743	LG655-7	Calcium.ionized|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.2	29.66	0.007	TRUE	LOINC Group	40652743	39
 NOT-FOUND	tbvr			863	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	ysköksenkolonisaatioviljely			863	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	fb-b1-vit	ug/l	ug/l	862	[100,0,0,0]%	AF[29.43,91.49];AM[30.35,95.66]	0	[100,0,0,0]%	[ 44, 50, 54, 57, 59, 63, 67, 74, 82 ]				3028717		2998-3	Thiamine [Mass/volume] in Blood	LOINC	FALSE	Thiamine	Mass Concentration	40653823	LG7088-0	Thiamine|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	fb-b1-vit	ug/l	ug/l	862	[100,0,0,0]%	AF[29.43,91.49];AM[30.35,95.66]	0	[100,0,0,0]%	[ 44, 50, 54, 57, 59, 63, 67, 74, 82 ]				3028717																	FALSE			
 NOT-FOUND	pef			862	[0,0,0,100]%		96.75	[3.25,0,0,96.75]%																						FALSE			
 NOT-APPROVED	s-ebvabg	eiu	eiu	861	[100,0,0,0]%		0	[100,0,0,0]%	[ 20, 30, 45, 55, 60, 70, 80, 85, 95 ]				3007080		31374-2	Epstein Barr virus nuclear IgG Ab [Units/volume] in Serum	LOINC	FALSE	Epstein Barr virus nuclear IgG	Arbitrary Concentration						WrongProperty: has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	13983	ug/l		860	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.014, 0.03, 0.052, 0.087, 0.124, 0.175, 0.271, 0.406, 0.749 ]																					FALSE			
 NOT-FOUND	b-cyp2c19			860	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-hemafc			860	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-caio7.4	mmol/l	mmol/l	860	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.17, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.35 ]	[ 1.17, 1.2, 1.22, 1.23, 1.25, 1.26, 1.28, 1.3, 1.35 ]	[ 1.13, 1.17, 1.19, 1.21, 1.23, 1.24, 1.25, 1.27, 1.31 ]		3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.2	29.56	0.007	TRUE	LOINC Group	40652741	32
-APPROVED	s-iga			860	[0,0,0,100]%	AF[0.56,4.02];AM[0.83,4.65]	100	[0,0,0,100]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	s-iga			860	[0,0,0,100]%	AF[0.56,4.02];AM[0.83,4.65]	100	[0,0,0,100]%					3007164																	FALSE			
 NOT-FOUND	b-extem			859	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	f-rotavirus,nukleiinihappo			859	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-fibtem			858	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -4533,7 +4533,7 @@ APPROVED	s-d-1,25			846	[0,0,0,100]%	AF[48.31,190.8];AM[48.13,190.77]	14.3	[0,85
 APPROVED	u-muulier			846	[0,0,0,100]%	AF[0,1];AM[0,1]	36.52	[0,63.48,0,36.52]%	[ 0, 0, 0, 0, 0, 0, 0, 0, 0.13 ]				3030467		51483-6	Casts [#/volume] in Urine by Automated count	LOINC	FALSE	Casts	Number Concentration	40657669	LG40873-8	Casts|Urine/Urine sed							FALSE			
 NOT-FOUND	21808			845	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	li-hhvnh2			845	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-tob	mg/l	mg/l	845	[99.76,0,0,0.24]%		1.18	[98.82,0,0,1.18]%	[ 0.3, 0.5, 0.6, 0.8, 1, 1.3, 1.5, 1.9, 2.9 ]				3035509		35670-9	Tobramycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tobramycin	Mass Concentration										FALSE			
+APPROVED	s-tob	mg/l	mg/l	845	[99.76,0,0,0.24]%		1.18	[98.82,0,0,1.18]%	[ 0.3, 0.5, 0.6, 0.8, 1, 1.3, 1.5, 1.9, 2.9 ]				3035509																	FALSE			
 NOT-FOUND	-solut			843	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-pähcome			842	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 IGNORE	tark1(eipaasto)			842	[0,0,0,100]%		100	[0,0,0,100]%					0	Bundled test package																FALSE			
@@ -4915,7 +4915,7 @@ NOT-FOUND	tilaatämähepatiittic-virus,vasta-aineet,osoitus			739	[0,0,0,100]%		
 APPROVED	p-ebvnh	u/ml	u/ml	738	[100,0,0,0]%		8.81	[91.19,0,0,8.81]%	[ 50, 50, 100, 200, 300, 600, 1700, 5300, 35000 ]	[ 50, 50, 100, 200, 300, 600, 1700, 5300, 35000 ]			3043849		43730-1	Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	Epstein Barr virus DNA	Arbitrary Concentration				10*3.[iU]/L	1					TRUE			
 NOT-FOUND	b-lydikll			737	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-APPROVED	fp-kolesteroli,highdensitylipoprotein,plasmasta	mmol/l	mmol/l	737	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.03, 1.15, 1.25, 1.33, 1.43, 1.54, 1.64, 1.83, 2.02 ]	[ 1.03, 1.15, 1.25, 1.33, 1.43, 1.54, 1.64, 1.83, 2.02 ]	[ 0.96, 1.1, 1.2, 1.3, 1.4, 1.51, 1.64, 1.8, 2.03 ]		3023602		14646-4	Cholesterol in HDL [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol in HDL	Substance Concentration				mmol/L	1		0.1	6.1	0.009	FALSE	concept_id		16
-APPROVED	li-igg			737	[0,0,0,100]%	AF[0,28.34];AM[0,25.02]	30.66	[0,69.34,0,30.66]%	[ 0.02, 0.026, 0.035, 0.054, 0.134, 18, 26.9, 36, 51.4 ]				3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	li-igg			737	[0,0,0,100]%	AF[0,28.34];AM[0,25.02]	30.66	[0,69.34,0,30.66]%	[ 0.02, 0.026, 0.035, 0.054, 0.134, 18, 26.9, 36, 51.4 ]				3007368																	FALSE			
 APPROVED	u-phv			737	[0,0,0,100]%		0.27	[62.28,37.45,0,0.27]%	[ 5, 5.5, 5.5, 5.5, 6, 6, 6.5, 7, 7 ]				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355;40657712	LG35753-9;LG40956-1	pH|Log Substance Concentration|Urine;pH|Urine/Urine sed							FALSE			
 NOT-FOUND	wbc-largecellcount	e9/l		737	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	wbc-middlecellratio	%		737	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -5137,7 +5137,7 @@ APPROVED	testo/shbg			667	[0,0,0,100]%	AM[410,1400]	0	[78.56,21.44,0,0]%	[ 9.3, 
 NOT-FOUND	-trichophytonverrucosumnho			666	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	bm-mrd-vs			666	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-ph-pika			666	[0,0,0,100]%		1.5	[0,98.5,0,1.5]%	[ 5.5, 5.5, 5.5, 6, 6, 6, 6.5, 7, 7 ]																					FALSE			
-NOT-APPROVED	s-norklot			665	[0,0,0,100]%		100	[0,0,0,100]%					3012984		10992-6	Norclozapine [Mass/volume] in Serum or Plasma	LOINC	FALSE	Norclozapine	Mass Concentration										FALSE			
+NOT-APPROVED	s-norklot			665	[0,0,0,100]%		100	[0,0,0,100]%					3012984																	FALSE			
 NOT-FOUND	-pyör.s.	e6/ml		664	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.2, 0.3, 0.4, 0.6, 0.8, 1.1, 1.5, 2, 3.2 ]																					FALSE			
 NOT-FOUND	ab-happamuusaste,lämpötilakorjattu			664	[0,0,0,100]%		0.9	[99.1,0,0,0.9]%	[ 7.32, 7.37, 7.39, 7.41, 7.42, 7.44, 7.45, 7.47, 7.49 ]																					FALSE			
 APPROVED	b-kromhem			664	[0,0,0,100]%		100	[0,0,0,100]%					40765096		62355-3	Chromosome analysis panel by Banding	LOINC	TRUE	Chromosome analysis panel	-										FALSE			
@@ -5195,7 +5195,7 @@ NOT-FOUND	bordetellaparapertussisnukle			652	[0,0,0,100]%		100	[0,0,0,100]%					
 NOT-FOUND	glukoosi-koe,oraalinenlyhyt			652	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	hoihba1c			652	[0,0,0,100]%		0.15	[99.85,0,0,0.15]%	[ 45, 50, 53, 56, 59, 63, 68, 73, 80 ]																					FALSE			
 APPROVED	p-il6	ng/l	ng/l	652	[100,0,0,0]%		0.31	[99.69,0,0,0.31]%	[ 3.1, 4.9, 7.9, 13, 19.8, 28.6, 48.6, 84.5, 197 ]	[ 3.1, 4.9, 7.9, 13, 19.8, 28.6, 48.6, 84.5, 197 ]			3023091		26881-3	Interleukin 6 [Mass/volume] in Serum or Plasma	LOINC	FALSE	Interleukin 6	Mass Concentration				ng/L	1					TRUE			
-APPROVED	s-digoks	ug/l	ug/l	652	[100,0,0,0]%	AF[0.74,1.89];AM[0.76,1.91]	0	[100,0,0,0]%	[ 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1, 1.3 ]				3011335		10535-3	Digoxin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Digoxin	Mass Concentration	40652920	LG2940-7	Digoxin|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	s-digoks	ug/l	ug/l	652	[100,0,0,0]%	AF[0.74,1.89];AM[0.76,1.91]	0	[100,0,0,0]%	[ 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1, 1.3 ]				3011335																	FALSE			
 APPROVED	b-hb-pt	g/l	g/l	651	[100,0,0,0]%	AF[117,155];AM[134,167]	0	[100,0,0,0]%	[ 100, 115, 122, 129, 134, 139, 144, 149, 155 ]	[ 100, 115, 122, 129, 134, 139, 144, 149, 155 ]	[ 99, 111, 119, 125, 131, 135, 140, 145, 152 ]		3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	1		0.1	5.35	0.01	TRUE	concept_id		21
 APPROVED	hb-pika			651	[0,0,0,100]%		4.92	[26.57,68.51,0,4.92]%	[ 95, 111, 120, 126, 130, 135, 140, 146, 155 ]				3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration										FALSE			
 NOT-FOUND	mypnnho			651	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -5389,7 +5389,7 @@ NOT-FOUND	b-mito,osatutkimus			606	[0,0,0,100]%		100	[0,0,0,100]%															
 NOT-FOUND	b-tnt/pika			606	[0,0,0,100]%		91.91	[0,8.09,0,91.91]%																						FALSE			
 APPROVED	ca++/ph7.4			606	[0,0,0,100]%	AF[1.16,1.3];AM[1.16,1.3]	16.34	[8.09,75.58,0,16.34]%	[ 1.08, 1.12, 1.13, 1.14, 1.15, 1.16, 1.21, 1.26, 1.34 ]				3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	emäsylimäärä,valtimoveri			606	[0,0,0,100]%	AF[-3,3];AM[-3,3]	29.54	[0,70.46,0,29.54]%	[ -10.5, -6.5, -4.6, -3.6, -2.8, -2.2, -1.7, -1.1, -0.6 ]																					FALSE			
-APPROVED	b-ti	ug/l	ug/l	605	[54.38,45.62,0,0]%		0	[54.38,45.62,0,0]%	[ 2.2, 2.3, 2.5, 2.7, 2.9, 3.2, 3.6, 4.2, 6 ]				40762814		59753-4	Titanium [Mass/volume] in Blood	LOINC	FALSE	Titanium	Mass Concentration	40653847	LG20243-8	Titanium|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-ti	ug/l	ug/l	605	[54.38,45.62,0,0]%		0	[54.38,45.62,0,0]%	[ 2.2, 2.3, 2.5, 2.7, 2.9, 3.2, 3.6, 4.2, 6 ]				40762814																	FALSE			
 NOT-FOUND	fl-bakteeri,värjäys(jorvinpyyntö)			605	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	hoitajienhemoglobiini-a1c			605	[0,0,0,100]%		0	[100,0,0,0]%	[ 46, 50, 53, 56, 58, 61, 65, 70, 78 ]																					FALSE			
 NOT-FOUND	s-rsvcf	titre		605	[98.84,1.16,0,0]%		0	[98.84,1.16,0,0]%	[ 8, 8, 8, 8, 8, 16, 16, 32, 32 ]																					FALSE			
@@ -5557,7 +5557,7 @@ APPROVED	b-laktevt			572	[0,0,0,100]%		1.57	[0,98.43,0,1.57]%	[ 0.72, 0.87, 1, 1
 NOT-FOUND	papilloomavirus,seulonta			572	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-k-ses	mmol/l	mmol/l	571	[100,0,0,0]%		0	[100,0,0,0]%	[ 3.5, 3.7, 3.9, 4, 4.2, 4.3, 4.5, 4.7, 5.26 ]	[ 3.5, 3.7, 3.9, 4, 4.2, 4.3, 4.5, 4.7, 5.26 ]	[ 3.5, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.6 ]		3023103		2823-3	Potassium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.2	19.54	0.021	TRUE	LOINC Group	40653596	24
 NOT-FOUND	s-kubico			571	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-tob			571	[0,0,0,100]%		82.14	[0,17.86,0,82.14]%					3035509		35670-9	Tobramycin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tobramycin	Mass Concentration										FALSE			
+APPROVED	s-tob			571	[0,0,0,100]%		82.14	[0,17.86,0,82.14]%					3035509																	FALSE			
 NOT-FOUND	s-vrabtu			571	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	ca++/7.40			570	[0,0,0,100]%	AF[1.16,1.3];AM[1.16,1.3]	100	[0,0,0,100]%					3016431		19072-8	Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma	LOINC	FALSE	Calcium.ionized^^adjusted to pH 7.4	Substance Concentration	40652741	LG5743-2	Calcium.ionized^^adjusted to pH 7.4|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 APPROVED	s-ca12-5antigeeni	u/ml	u/ml	570	[100,0,0,0]%		0	[100,0,0,0]%	[ 7, 9, 11, 14, 19, 27, 52, 95, 281 ]				3037551		10334-1	Cancer Ag 125 [Units/volume] in Serum or Plasma	LOINC	FALSE	Cancer Ag 125	Arbitrary Concentration	40652750	LG108-7	Cancer Ag 125|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
@@ -5693,7 +5693,7 @@ APPROVED	s-stpn7f	mg/l	mg/l	542	[97.23,2.77,0,0]%		0	[97.23,2.77,0,0]%	[ 0.071, 
 APPROVED	timotei			541	[0,0,0,100]%	AF[0,0.35];AM[,0.35]	61.74	[0,38.26,0,61.74]%	[ 0.46, 0.72, 1.1, 1.8, 3.2, 5.3, 8, 15, 30 ]				3003888		6265-3	Timothy IgE Ab [Units/volume] in Serum	LOINC	FALSE	Timothy (Phleum pratense) IgE	Arbitrary Concentration										FALSE			
 NOT-FOUND	veriryhmävasta-aineet,raskaudenaikaiset,veri			541	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	-mycoty			540	[0,0,0,100]%		100	[0,0,0,100]%					36659890		94541-0	Mycobacterial identification panel - Specimen by Molecular genetics method	LOINC	TRUE	Mycobacterial identification panel	-										FALSE			
-APPROVED	b-co			540	[0,0,0,100]%	AF[0.5,3.9];AM[0.49,3.85]	83.7	[0,16.3,0,83.7]%	[ 0.9, 1, 1, 1.1, 1.6, 2, 3.1, 4.1, 6 ]				3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-co			540	[0,0,0,100]%	AF[0.5,3.9];AM[0.49,3.85]	83.7	[0,16.3,0,83.7]%	[ 0.9, 1, 1, 1.1, 1.6, 2, 3.1, 4.1, 6 ]				3026470																	FALSE			
 APPROVED	crp(hoitaja)			540	[0,0,0,100]%		100	[0,0,0,100]%					3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	di-solut			540	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	virtsanbakteeriviljely,erikoisviljely			540	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -5733,7 +5733,7 @@ NOT-FOUND	fl-hiiva,viljely			534	[0,0,0,100]%		100	[0,0,0,100]%																	
 NOT-FOUND	haemophilusinfluenzae,nukleiinihappo(kval)			534	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	neutrofiilit+eosinofiilit,nivelneste			534	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-aminoh			534	[0,0,0,100]%		100	[0,0,0,100]%					3013336		12468-5	Amino acids [Identifier] in Serum or Plasma	LOINC	FALSE	Amino acids	Presence or Identity	40652583	LG1141-3	Amino acids|Presence or Identity|Moment in time|Blood, Serum or Plasma							FALSE			
-APPROVED	s-tryptaasi	ug/l	ug/l	534	[100,0,0,0]%	AF[,11.68];AM[,12.25]	0	[100,0,0,0]%	[ 3, 3.8, 4.5, 5.2, 6, 6.8, 8.3, 12.5, 21.2 ]				3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration										FALSE			
+APPROVED	s-tryptaasi	ug/l	ug/l	534	[100,0,0,0]%	AF[,11.68];AM[,12.25]	0	[100,0,0,0]%	[ 3, 3.8, 4.5, 5.2, 6, 6.8, 8.3, 12.5, 21.2 ]				3019420																	FALSE			
 IGNORE	työt			534	[0,0,0,100]%		100	[0,0,0,100]%					0	Non-test metadata/admin field																FALSE			
 NOT-FOUND	s-papp-a	mu/l		533	[100,0,0,0]%		0	[100,0,0,0]%	[ 221, 356, 456, 566, 707, 898, 1150, 1390, 2160 ]																					FALSE			
 NOT-FOUND	s-pisto1			533	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -6214,7 +6214,7 @@ APPROVED	s-rbere1e	u/ml	u/ml	455	[98.68,1.32,0,0]%		0	[98.68,1.32,0,0]%	[ 0, 0, 
 NOT-FOUND	50073			454	[0,0,0,100]%		97.14	[2.86,0,0,97.14]%																						FALSE			
 APPROVED	p-na-ses	mmol/l	mmol/l	454	[100,0,0,0]%		0	[100,0,0,0]%	[ 134, 135, 137, 138, 139, 140, 141, 143, 144 ]	[ 134, 135, 137, 138, 139, 140, 141, 143, 144 ]	[ 134, 136, 138, 139, 140, 140, 141, 142, 143 ]		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.1	3.64	-0.003	TRUE	LOINC Group	40653762	29
 NOT-FOUND	patlislaus			454	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-immunoglobuliinia	g/l	g/l	454	[100,0,0,0]%	AF[0.53,4.01];AM[0.86,4.75]	0	[100,0,0,0]%	[ 1.14, 1.36, 1.6, 1.79, 1.96, 2.19, 2.42, 2.7, 3.33 ]				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	s-immunoglobuliinia	g/l	g/l	454	[100,0,0,0]%	AF[0.53,4.01];AM[0.86,4.75]	0	[100,0,0,0]%	[ 1.14, 1.36, 1.6, 1.79, 1.96, 2.19, 2.42, 2.7, 3.33 ]				3007164																	FALSE			
 APPROVED	ua-ph			454	[0,0,0,100]%		2.42	[71.15,26.43,0,2.42]%	[ 7.14, 7.19, 7.22, 7.25, 7.27, 7.29, 7.31, 7.33, 7.37 ]				3006598		28646-8	pH of Arterial cord blood	LOINC	FALSE	pH	Log molar concentration										FALSE			
 APPROVED	-bil	umol/l	umol/l	453	[100,0,0,0]%		0	[100,0,0,0]%	[ 8, 11, 18, 25, 36, 52, 90, 156, 425 ]	[ 8, 11, 18, 25, 36, 52, 90, 156, 425 ]	[ 5, 6, 7, 8, 9, 11, 13, 17, 25 ]		3006140		14631-6	Bilirubin.total [Moles/volume] in Serum or Plasma	LOINC	FALSE	Bilirubin	Substance Concentration	40652712	LG2811-0	Bilirubin|Substance Concentration|Moment in time|Blood, Serum or Plasma	umol/L	1		0.6	141.31	0.602	TRUE	LOINC Group	40652712	7
 APPROVED	cp-hco3st	mmol/l	mmol/l	453	[100,0,0,0]%		0	[100,0,0,0]%	[ 20, 21, 22, 23, 23, 23, 24, 25, 26 ]	[ 20, 21, 22, 23, 23, 23, 24, 25, 26 ]	[ 20, 22, 23.2, 24.1, 25, 26, 27, 28, 30.1 ]		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.4	62.61	-0.036	TRUE	LOINC Group	40652704	21
@@ -6474,7 +6474,7 @@ NOT-FOUND	s-evircf	titre		416	[98.32,1.68,0,0]%		0	[98.32,1.68,0,0]%	[ 8, 8, 8, 
 APPROVED	b-pb			415	[0,0,0,100]%	AM[0,0.09]	100	[0,0,0,100]%					3003577		14807-2	Lead [Moles/volume] in Blood	LOINC	FALSE	Lead	Substance Concentration	40653247	LG2615-5	Lead|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	kalium(verikaasulaite),plasm	mmol/l		415	[100,0,0,0]%	AF[3.3,4.8];AM[3.3,4.8]	0	[100,0,0,0]%	[ 3.4, 3.6, 3.8, 3.9, 4, 4.1, 4.3, 4.5, 5 ]																					FALSE			
 NOT-FOUND	li-talt.kn			415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	p-glkg	ng/l	ng/l	415	[100,0,0,0]%	AF[0,209];AM[0,209]	1.69	[98.31,0,0,1.69]%	[ 139, 155, 170, 183, 194, 210, 236, 278, 337 ]				3023436		2338-2	Glucagon [Mass/volume] in Serum or Plasma	LOINC	FALSE	Glucagon	Mass Concentration										FALSE			
+APPROVED	p-glkg	ng/l	ng/l	415	[100,0,0,0]%	AF[0,209];AM[0,209]	1.69	[98.31,0,0,1.69]%	[ 139, 155, 170, 183, 194, 210, 236, 278, 337 ]				3023436																	FALSE			
 NOT-FOUND	pad			415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	pt-ekgoma			415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-neutrofiilisetsytoplasma-antigeeni,vasta-aineet			415	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -6638,7 +6638,7 @@ NOT-FOUND	b-trmulti			396	[0,0,0,100]%		100	[0,0,0,100]%																						FA
 NOT-FOUND	hb-vieri			396	[0,0,0,100]%	AF[117,168];AM[117,168]	0	[100,0,0,0]%	[ 97, 109, 118, 126, 131, 135, 140, 145, 152 ]																					FALSE			
 NOT-FOUND	kudosnäytteet,1-3pientänäytepurkkia			396	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	oma-k+(kalium)epoc	1		396	[100,0,0,0]%		0	[100,0,0,0]%	[ 3.4, 3.6, 3.7, 3.8, 3.9, 4.1, 4.2, 4.3, 4.6 ]																					FALSE			
-APPROVED	p-igg			396	[0,0,0,100]%	AF[6.79,15];AM[6.8,15]	100	[0,0,0,100]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	p-igg			396	[0,0,0,100]%	AF[6.79,15];AM[6.8,15]	100	[0,0,0,100]%					3005719																	FALSE			
 NOT-APPROVED	pt-glomerulustensuodatusnopeus,estimoitu,mdrd-kaava			396	[0,0,0,100]%		0	[0,100,0,0]%	[ 46, 55, 61, 66, 70, 77, 81, 88, 100 ]				46236952		77147-7	Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M	LOINC	FALSE	Glomerular filtration rate	Volume Rate/Area	36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma							FALSE			
 APPROVED	u-levyep	u/field	u/field	396	[100,0,0,0]%		2.27	[97.73,0,0,2.27]%	[ 0, 1, 1, 1, 1, 1, 1, 2, 3 ]	[ 0, 1, 1, 1, 1, 1, 1, 2, 3 ]	[ 0, 0, 0, 0, 1, 1, 2, 5, 10 ]		3051014		46702-7	Leukocytes [#/area] in Urine sediment by Automated count	LOINC	FALSE	Leukocytes	Number Areic (per area)	40657704	LG40867-0	Leukocytes|Urine/Urine sed	/[HPF]	1		0.3	27.5	0	TRUE	LOINC Group	40657704	5
 APPROVED	ua-pco2	kpa	kpa	396	[99.75,0,0,0.25]%		0.25	[99.75,0,0,0.25]%	[ 5, 5.9, 6.4, 6.8, 7.1, 7.6, 8, 8.4, 9.5 ]	[ 37.5, 44.3, 48, 51, 53.3, 57, 60, 63, 71.3 ]			3003932		28644-3	Carbon dioxide [Partial pressure] in Arterial cord blood	LOINC	FALSE	Carbon dioxide	Partial pressure				mm[Hg]	7.500637554					TRUE			
@@ -6769,7 +6769,7 @@ NOT-FOUND	norovirus,nukleiinihaponosoittaminen(kval),ulosteesta			380	[0,0,0,100
 NOT-FOUND	oma-cl-(kloridi)epoc	1		380	[100,0,0,0]%		0	[100,0,0,0]%	[ 95, 99, 101, 103, 104, 105, 106, 107, 108 ]																					FALSE			
 APPROVED	pf-muutsol	%	%	380	[100,0,0,0]%		12.63	[87.37,0,0,12.63]%	[ 0, 1, 2, 3, 5, 8, 15, 23, 40 ]	[ 0, 1, 2, 3, 5, 8, 15, 23, 40 ]			3028029		30431-1	Mesothelial cells/Leukocytes in Pleural fluid	LOINC	FALSE	Mesothelial cells/leukocytes	Number Fraction				%	1					TRUE			
 NOT-APPROVED	pt-gluk-r1	mmol/l	mmol/l	380	[100,0,0,0]%	AF[1.48,7.16]	0	[100,0,0,0]%	[ 5, 5.3, 5.7, 6, 6.4, 6.8, 7.3, 8.2, 9.6 ]				43054914		72171-2	Glucose tolerance 2 hours panel - Serum or Plasma	LOINC	TRUE	Glucose tolerance 2 hours panel	-						WrongProperty: has_property '-' and UNIT 'mmol/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
-APPROVED	s-gen	mg/l	mg/l	380	[99.74,0,0,0.26]%		0.79	[99.21,0,0,0.79]%	[ 0.5, 0.6, 0.7, 0.9, 1, 1.1, 1.5, 1.9, 3.6 ]				3035510		35668-3	Gentamicin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Gentamicin	Mass Concentration										FALSE			
+APPROVED	s-gen	mg/l	mg/l	380	[99.74,0,0,0.26]%		0.79	[99.21,0,0,0.79]%	[ 0.5, 0.6, 0.7, 0.9, 1, 1.1, 1.5, 1.9, 3.6 ]				3035510																	FALSE			
 APPROVED	s-immunoglobuliinig,alaluokka4	g/l	g/l	380	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.1, 0.216, 0.34, 0.46, 0.61, 0.79, 1.1, 1.73, 2.71 ]	[ 100, 216, 340, 460, 610, 790, 1100, 1730, 2710 ]			3024980		2469-5	IgG subclass 4 [Mass/volume] in Serum	LOINC	FALSE	IgG subclass 4	Mass Concentration				mg/L	1000					TRUE			
 NOT-FOUND	b-kreatiniini,pikatesti,veri	umol/l		379	[100,0,0,0]%		0	[100,0,0,0]%	[ 67, 74, 80, 86, 93, 100, 114, 127, 161 ]																					FALSE			
 NOT-FOUND	b-leuk/pi			379	[0,0,0,100]%		0	[0,100,0,0]%	[ 4.5, 5, 5.8, 6.5, 7.5, 8.5, 9.3, 10.9, 13.4 ]																					FALSE			
@@ -6910,14 +6910,14 @@ NOT-FOUND	du-parprot			369	[0,0,0,100]%		100	[0,0,0,100]%																						F
 NOT-FOUND	li-mononukleaarisetsolut			369	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	phadiatop	u/ml	u/ml	369	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.45, 0.67, 1.1, 1.6, 2.8, 5.4, 7.4, 13, 28 ]	[ 0.45, 0.67, 1.1, 1.6, 2.8, 5.4, 7.4, 13, 28 ]			3025443		7599-4	Phadiatop IgE Ab [Units/volume] in Serum	LOINC	FALSE	Phadiotop IgE	Arbitrary Concentration				10*3.[iU]/L	1					TRUE			
 NOT-FOUND	pt-utp-2			369	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-trypt			369	[0,0,0,100]%	AF[0,13.5];AM[,13.5]	18.7	[0,81.3,0,18.7]%	[ 2.9, 3.4, 4, 4.6, 5.2, 6.1, 7.2, 9.7, 16.4 ]				3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration										FALSE			
+APPROVED	s-trypt			369	[0,0,0,100]%	AF[0,13.5];AM[,13.5]	18.7	[0,81.3,0,18.7]%	[ 2.9, 3.4, 4, 4.6, 5.2, 6.1, 7.2, 9.7, 16.4 ]				3019420																	FALSE			
 NOT-FOUND	työkyky0-10	form		369	[100,0,0,0]%		0	[100,0,0,0]%	[ 7, 8, 8, 8, 9, 9, 9, 10, 10 ]																					FALSE			
 NOT-APPROVED	-calpro	mg/l	mg/l	368	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.1, 0.28, 0.83, 2.6, 7.09, 15.4, 36.5, 72.7, 216 ]				3048689		38445-3	Calprotectin [Mass/mass] in Stool	LOINC	FALSE	Calprotectin	Mass Content						WrongProperty: has_property 'Mass Content' and UNIT 'mg/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	b-meca/c-geeni			368	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-staphylococcusepidermidis			368	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-staphylococcuslugdunensis			368	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	gluk0min			368	[0,0,0,100]%		0	[97.55,2.45,0,0]%	[ 4.9, 5.3, 5.6, 5.8, 5.9, 6, 6.2, 6.6, 7.2 ]																					FALSE			
-APPROVED	s-gen			368	[0,0,0,100]%		86.96	[0,13.04,0,86.96]%					3035510		35668-3	Gentamicin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Gentamicin	Mass Concentration										FALSE			
+APPROVED	s-gen			368	[0,0,0,100]%		86.96	[0,13.04,0,86.96]%					3035510																	FALSE			
 NOT-FOUND	s-plasmaproteiinia	mu/l		368	[100,0,0,0]%		0	[100,0,0,0]%	[ 226, 383, 525, 634, 761, 910, 1120, 1430, 2180 ]																					FALSE			
 APPROVED	s-rarah3e			368	[0,0,0,100]%		70.65	[0,29.35,0,70.65]%	[ 0, 0, 0, 0, 0, 0, 0, 0.01, 0.04 ]				40761871		58777-4	Peanut recombinant (rAra h) 3 IgE Ab [Units/volume] in Serum	LOINC	FALSE	Peanut (Arachis hypogaea) recombinant (rAra h) 3 IgE	Arbitrary Concentration										FALSE			
 APPROVED	s-stpn5			368	[0,0,0,100]%		81.52	[0,18.48,0,81.52]%					36204286		86130-2	Streptococcus pneumoniae Danish serotype 5 IgG Ab [Mass/volume] in Serum	LOINC	FALSE	Streptococcus pneumoniae Danish serotype 5 IgG	Mass Concentration										FALSE			
@@ -6997,7 +6997,7 @@ NOT-FOUND	sydämenuä			359	[0,0,0,100]%		100	[0,0,0,100]%																						
 NOT-FOUND	ts-kras-d			359	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-virtsanominaispainohuumemäärityksissä			359	[0,0,0,100]%		5.01	[75.77,19.22,0,5.01]%	[ 1, 1.01, 1.01, 1.01, 1.01, 1.02, 1.02, 1.02, 1.02 ]																					FALSE			
 NOT-FOUND	b-mxa			358	[0,0,0,100]%		97.77	[0,2.23,0,97.77]%																						FALSE			
-APPROVED	immunoglobuliinia	g/l	g/l	358	[100,0,0,0]%	AF[0.52,4.02];AM[0.88,4.84]	0	[100,0,0,0]%	[ 1.08, 1.36, 1.67, 1.87, 2.16, 2.4, 2.83, 3.26, 3.98 ]				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	immunoglobuliinia	g/l	g/l	358	[100,0,0,0]%	AF[0.52,4.02];AM[0.88,4.84]	0	[100,0,0,0]%	[ 1.08, 1.36, 1.67, 1.87, 2.16, 2.4, 2.83, 3.26, 3.98 ]				3007164																	FALSE			
 NOT-FOUND	li-ba42/40			358	[0,0,0,100]%	AF[0.07,];AM[0.08,]	0.56	[68.44,31.01,0,0.56]%	[ 0.042, 0.053, 0.061, 0.08, 0.09, 0.105, 0.13, 0.16, 0.2 ]																					FALSE			
 NOT-FOUND	li-crypnho			358	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-cytomegalovirus,nukleiinihappo(kvant)			358	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -7210,7 +7210,7 @@ NOT-FOUND	edta-veril			336	[0,0,0,100]%		100	[0,0,0,100]%																						F
 NOT-FOUND	f-elastaasi1	ug/g		336	[98.81,0,0,1.19]%	AF[200,99999]	1.19	[98.81,0,0,1.19]%	[ 60, 103, 124, 154, 182, 216, 259, 309, 402 ]																					FALSE			
 APPROVED	fb-leukosyytitpvk:nosatutkimus	e9/l	e9/l	336	[100,0,0,0]%	AF[3.4,8.2];AM[3.4,8.2]	0	[100,0,0,0]%	[ 4.4, 4.9, 5.3, 5.7, 5.9, 6.2, 6.8, 7.4, 8.5 ]	[ 4.4, 4.9, 5.3, 5.7, 5.9, 6.2, 6.8, 7.4, 8.5 ]	[ 4.4, 5.1, 5.7, 6.3, 6.9, 7.6, 8.4, 9.5, 11.6 ]		3010813		26464-8	Leukocytes [#/volume] in Blood	LOINC	FALSE	Leukocytes	Number Concentration	40654026	LG32857-1	Leukocytes|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	1		0.3	25.96	-0.068	TRUE	LOINC Group	40654026	21
 NOT-FOUND	reumanturvakokeet-tutkimuspaketti			336	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-lzm			336	[0,0,0,100]%	AF[0.03,11.66];AM[0.17,10.67]	100	[0,0,0,100]%					3012110		2589-0	Lysozyme [Mass/volume] in Serum or Plasma	LOINC	FALSE	Lysozyme	Mass Concentration										FALSE			
+APPROVED	s-lzm			336	[0,0,0,100]%	AF[0.03,11.66];AM[0.17,10.67]	100	[0,0,0,100]%					3012110																	FALSE			
 NOT-FOUND	ts-kromos			336	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-pvk+kd			335	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-APPROVED	du-5hiaa	umol	umol	335	[100,0,0,0]%	AF[9.09,42.45]	1.49	[98.51,0,0,1.49]%	[ 15, 18, 20, 22, 24, 27, 29, 35, 52 ]				3010801		25971-3	5-Hydroxyindoleacetate [Moles/volume] in 24 hour Urine	LOINC	FALSE	5-Hydroxyindoleacetate	Substance Concentration	40655872	LG34857-9	5-Hydroxyindoleacetate|Substance Concentration|Urine			WrongProperty: has_property 'Substance Concentration' and UNIT 'umol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
@@ -8354,7 +8354,7 @@ APPROVED	fb-folat	nmol/l	nmol/l	247	[100,0,0,0]%	AF[150,];AM[150,]	0	[100,0,0,0]
 NOT-FOUND	hiv,antigeenijavasta-aineet,yhdistelmätutkimus,seerumista			247	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	li-mikrobx			247	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	monosyytit			247	[0,0,0,100]%		91.09	[8.91,0,0,91.09]%																						FALSE			
-APPROVED	p-mypa			247	[0,0,0,100]%		76.52	[6.07,17.41,0,76.52]%					3027653		23905-3	Mycophenolate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Mycophenolate	Mass Concentration										FALSE			
+APPROVED	p-mypa			247	[0,0,0,100]%		76.52	[6.07,17.41,0,76.52]%					3027653																	FALSE			
 ERROR	s-asat	iu/l	iu/l	247	[100,0,0,0]%		0	[100,0,0,0]%	[ 18, 20, 22, 24, 25, 27, 30, 34, 42 ]				3013721		1920-8	Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Aspartate aminotransferase	Catalytic Concentration	40652640	LG6033-7	Aspartate aminotransferase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma			WrongProperty: has_property 'Catalytic Concentration' and UNIT 'iu/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit				FALSE			
 NOT-FOUND	s-borreliaigm,vasta-aineet			247	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-insu			247	[0,0,0,100]%	AF[2,20];AM[2,20];MF[2,20];MM[2,20]	55.06	[0,44.94,0,55.06]%	[ 3.6, 4.9, 7.1, 10.7, 14.5, 17.7, 26, 33.9, 44.8 ]				3016244		20448-7	Insulin [Units/volume] in Serum or Plasma	LOINC	FALSE	Insulin	Arbitrary Concentration										FALSE			
@@ -8402,7 +8402,7 @@ NOT-FOUND	u-leuk-pika			245	[0,0,0,100]%		100	[0,0,0,100]%																						
 NOT-FOUND	-sieni,natiivivalmiste			244	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	hpv-gt16aptimapanther,apututkimustulostensiirtoon			244	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	hpv-gt18-45aptimapanther,apututkimustulostensiirtoon			244	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	immunoglobuliinig	g/l	g/l	244	[100,0,0,0]%	AF[6.77,15];AM[6.77,15]	0	[100,0,0,0]%	[ 6.42, 7.93, 8.71, 9.44, 10.3, 11.1, 12, 13.1, 15.8 ]				3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	immunoglobuliinig	g/l	g/l	244	[100,0,0,0]%	AF[6.77,15];AM[6.77,15]	0	[100,0,0,0]%	[ 6.42, 7.93, 8.71, 9.44, 10.3, 11.1, 12, 13.1, 15.8 ]				3005719																	FALSE			
 APPROVED	inrvieritesti	inr	inr	244	[100,0,0,0]%		1.23	[98.77,0,0,1.23]%					3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	1					FALSE			
 APPROVED	l-sauva			244	[0,0,0,100]%	AF[0.98,6];AM[0.96,5.89]	43.03	[29.92,27.05,0,43.03]%	[ 0, 0, 0, 0, 1, 1, 2, 2.5, 4 ]				3004809		26508-2	Band form neutrophils/Leukocytes in Blood	LOINC	FALSE	Neutrophils.band form/leukocytes	Number Fraction										FALSE			
 NOT-FOUND	li-perust2			244	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -9431,7 +9431,7 @@ NOT-FOUND	pölyryhmä(phadiatop),igevasta-aineet,seerumista			187	[0,0,0,100]%		
 NOT-FOUND	s-crneag			187	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-dermatophagoidespteronyssinus,igevasta-aineet	u/ml		187	[98.93,0,0,1.07]%	AF[0,0.35];AM[0,0.35]	1.07	[98.93,0,0,1.07]%	[ 0.02, 0.04, 0.06, 0.12, 0.4, 0.56, 1.06, 1.86, 3.77 ]																					FALSE			
 NOT-FOUND	tb1(b-tbifngosatutkimus)			187	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	tryptaasi	ug/l	ug/l	187	[100,0,0,0]%	AF[0,13.5];AM[0,13.5]	0	[100,0,0,0]%	[ 2.9, 3.5, 4.4, 5.4, 6.2, 7.6, 14.7, 26.9, 95.1 ]				3019420		21582-2	Tryptase [Mass/volume] in Serum or Plasma	LOINC	FALSE	Tryptase	Mass Concentration										FALSE			
+APPROVED	tryptaasi	ug/l	ug/l	187	[100,0,0,0]%	AF[0,13.5];AM[0,13.5]	0	[100,0,0,0]%	[ 2.9, 3.5, 4.4, 5.4, 6.2, 7.6, 14.7, 26.9, 95.1 ]				3019420																	FALSE			
 NOT-FOUND	u-tutkimus1,seulonta,osavastausblo			187	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-tutkimus1,seulonta,osavastausleu			187	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-tutkimus1,seulonta,osavastausnit			187	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -9752,7 +9752,7 @@ NOT-FOUND	-cdt	mg/l		173	[98.27,0,0,1.73]%		1.73	[98.27,0,0,1.73]%	[ 31.3, 35, 3
 NOT-FOUND	-infrsvnho			173	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	-mrsajvi			173	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	b-keto/pik	mmol/l		173	[100,0,0,0]%		0	[100,0,0,0]%	[ 0, 0.1, 0.1, 0.1, 0.2, 0.2, 0.2, 0.3, 0.6 ]																					FALSE			
-APPROVED	b-koboltti	ug/l	ug/l	173	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.5, 0.7, 0.9, 1.2, 1.7, 2.2, 3.9, 6.2, 10 ]				3026470		5625-9	Cobalt [Mass/volume] in Blood	LOINC	FALSE	Cobalt	Mass Concentration	40652825	LG3202-1	Cobalt|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	b-koboltti	ug/l	ug/l	173	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.5, 0.7, 0.9, 1.2, 1.7, 2.2, 3.9, 6.2, 10 ]				3026470																	FALSE			
 NOT-FOUND	b-konediffi,5-osanen,osavastauseos	%		173	[100,0,0,0]%	AF[1,6];AM[1,6]	0	[100,0,0,0]%																						FALSE			
 APPROVED	b-lymfos	%	%	173	[100,0,0,0]%		0	[100,0,0,0]%	[ 23.1, 27.5, 29.4, 31.1, 33.6, 36.2, 39.2, 41.6, 47.3 ]	[ 23.1, 27.5, 29.4, 31.1, 33.6, 36.2, 39.2, 41.6, 47.3 ]	[ 12.6, 18, 21, 25, 28, 31, 34, 38, 44 ]		3002030		26478-8	Lymphocytes/Leukocytes in Blood	LOINC	FALSE	Lymphocytes/leukocytes	Number Fraction				%	1		0.3	13.22	0.079	TRUE	concept_id		36
 NOT-FOUND	b-vasp	%		173	[99.42,0,0,0.58]%		0.58	[99.42,0,0,0.58]%	[ 16, 23, 29, 35, 39, 50, 57, 62, 75 ]																					FALSE			
@@ -10213,7 +10213,7 @@ NOT-FOUND	ekg(hoitaja)			156	[0,0,0,100]%		100	[0,0,0,100]%																					
 APPROVED	fp-gluk-0h	mmol/l	mmol/l	156	[100,0,0,0]%		0	[100,0,0,0]%	[ 5.6, 5.9, 6, 6.2, 6.3, 6.4, 6.7, 6.9, 7.2 ]	[ 5.6, 5.9, 6, 6.2, 6.3, 6.4, 6.7, 6.9, 7.2 ]	[ 5, 5.3, 5.5, 5.7, 5.9, 6.1, 6.4, 6.9, 7.9 ]		3018251		14771-0	Fasting glucose [Moles/volume] in Serum or Plasma	LOINC	FALSE	Glucose^post CFst	Substance Concentration	40653084	LG2460-6	Glucose^post CFst|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1		0.3	11.89	0.028	TRUE	LOINC Group	40653084	18
 APPROVED	fs-rauta	umol/l	umol/l	156	[100,0,0,0]%	AF[9,34];AM[9,34]	0	[100,0,0,0]%	[ 6, 8, 10, 12, 14, 16, 18, 21, 26 ]	[ 6, 8, 10, 12, 14, 16, 18, 21, 26 ]	[ 5, 7.1, 9, 10.6, 12.3, 14.2, 16, 18.6, 22.5 ]		3022948		14798-3	Iron [Moles/volume] in Serum or Plasma	LOINC	FALSE	Iron	Substance Concentration				umol/L	1		0.1	1.05	0.056	TRUE	concept_id		6
 NOT-FOUND	hbsag-o/ko			156	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	iga	g/l	g/l	156	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.12, 1.42, 1.71, 1.94, 2.1, 2.33, 2.66, 3, 3.85 ]				3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	iga	g/l	g/l	156	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.12, 1.42, 1.71, 1.94, 2.1, 2.33, 2.66, 3, 3.85 ]				3007164																	FALSE			
 NOT-FOUND	la-cd34	e6/kg		156	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.6, 0.9, 1.2, 1.4, 1.7, 2.1, 2.5, 3.4, 4.9 ]																					FALSE			
 NOT-FOUND	p-beeta-2-glykoproteiini,iggvasta-aine			156	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-hyyerik			156	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -10608,7 +10608,7 @@ NOT-FOUND	mb-pco2			141	[0,0,0,100]%		74.47	[0,25.53,0,74.47]%																		
 NOT-FOUND	mediscrn			141	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-edta			141	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-inrosoitus			141	[0,0,0,100]%		2.84	[0,97.16,0,2.84]%	[ 1, 1, 1.1, 1.2, 1.3, 1.5, 1.7, 2.1, 2.6 ]																					FALSE			
-APPROVED	p-pctpika	ug/l	ug/l	141	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.06, 0.08, 0.1, 0.12, 0.17, 0.24, 0.36, 0.71, 2.1 ]				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pctpika	ug/l	ug/l	141	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.06, 0.08, 0.1, 0.12, 0.17, 0.24, 0.36, 0.71, 2.1 ]				3046279																	FALSE			
 NOT-FOUND	pt-sppesu			141	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-9-hrisp			141	[0,0,0,100]%		21.28	[0,78.72,0,21.28]%																						FALSE			
 APPROVED	s-ceakym	ug/l	ug/l	141	[100,0,0,0]%		0	[100,0,0,0]%	[ 1.4, 1.8, 2.2, 2.6, 3, 3.9, 4.8, 6.7, 12.8 ]	[ 1.4, 1.8, 2.2, 2.6, 3, 3.9, 4.8, 6.7, 12.8 ]	[ 1.1, 1.4, 1.7, 2, 2.4, 3, 4, 6.2, 16.7 ]		3003785		2039-6	Carcinoembryonic Ag [Mass/volume] in Serum or Plasma	LOINC	FALSE	Carcinoembryonic Ag	Mass Concentration	40652769	LG6799-3	Carcinoembryonic Ag|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	1		0.2	4.59	0.097	TRUE	LOINC Group	40652769	3
@@ -12502,7 +12502,7 @@ NOT-FOUND	sprv-ktlau			93	[0,0,0,100]%		100	[0,0,0,100]%																						FA
 NOT-FOUND	ts-sekvy-d			93	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-baktalv,kefotaks			93	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	u-baktbv			93	[0,0,0,100]%		100	[0,0,0,100]%					3031040		51480-2	Bacteria [#/volume] in Urine by Automated count	LOINC	FALSE	Bacteria	Number Concentration	40657658;1761301	LG40875-3;LG51412-1	Bacteria|Urine/Urine sed;Bacteria|Number Concentration (count/vol)|Urine							FALSE			
-APPROVED	u-igg			93	[0,0,0,100]%		41.94	[0,58.06,0,41.94]%					3047185		33415-1	IgG [Mass/volume] in Urine	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	u-igg			93	[0,0,0,100]%		41.94	[0,58.06,0,41.94]%					3047185																	FALSE			
 NOT-FOUND	-vks/vcs			92	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	ab-emäsylimäärä			92	[0,0,0,100]%	AF[-2.39,2.39];AM[-2.41,2.41]	100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	ab-pco2-vt	kpa		92	[100,0,0,0]%		0	[100,0,0,0]%	[ 3.52, 3.88, 4.23, 4.33, 4.51, 4.74, 4.95, 5.3, 5.63 ]																					FALSE			
@@ -12994,7 +12994,7 @@ NOT-FOUND	s-endoteelikasvutekijänliukoinenreseptori	ng/l		84	[100,0,0,0]%		0	[1
 NOT-FOUND	s-envabcf			84	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-epstein-barrvirus,iggvasta-aineet			84	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-estradioli	nmol/l	nmol/l	84	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.07, 0.09, 0.11, 0.13, 0.15, 0.22, 0.26, 0.33, 0.48 ]	[ 70, 90, 110, 130, 150, 220, 260, 330, 480 ]			3026725		14715-7	Estradiol (E2) [Moles/volume] in Serum or Plasma	LOINC	FALSE	Estradiol	Substance Concentration	40652962	LG2331-9	Estradiol|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	1000					TRUE			
-APPROVED	s-etoh	g/l	g/l	84	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.23, 1.31, 1.71, 2.08, 2.31, 2.48, 2.67, 3.12, 3.63 ]				3012920		5643-2	Ethanol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Mass Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	s-etoh	g/l	g/l	84	[100,0,0,0]%		0	[100,0,0,0]%	[ 0.23, 1.31, 1.71, 2.08, 2.31, 2.48, 2.67, 3.12, 3.63 ]				3012920																	FALSE			
 APPROVED	s-histoni,vasta-aineet(immunoblotting)			84	[0,0,0,100]%		100	[0,0,0,100]%					40759836		56717-2	Histone Ab [Presence] in Serum by Immunoblot	LOINC	FALSE	Histone Ab	Presence or Threshold	40653114	LG21281-7	Histone Ab|Presence or Threshold|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	s-infbab	eiu		84	[89.29,10.71,0,0]%		0	[89.29,10.71,0,0]%	[ 36, 45, 63, 69, 79, 91, 112, 129, 145 ]																					FALSE			
 APPROVED	s-kaurjae	u/ml	u/ml	84	[100,0,0,0]%	AF[,0.35]	0	[100,0,0,0]%	[ 0.01, 0.02, 0.02, 0.03, 0.04, 0.05, 0.09, 0.27, 1.32 ]	[ 0.01, 0.02, 0.02, 0.03, 0.04, 0.05, 0.09, 0.27, 1.32 ]			3018001		6190-3	Oat IgE Ab [Units/volume] in Serum	LOINC	FALSE	Oat (Avena sativa) IgE	Arbitrary Concentration	40652648	LG26168-1	Avena sativa Ab.IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[iU]/L	1					TRUE			
@@ -13306,7 +13306,7 @@ NOT-FOUND	muutsolut,askitesneste	%		79	[100,0,0,0]%		0	[100,0,0,0]%													
 NOT-FOUND	mycobacteriumtuberculosis,nukleiinihappo(kval)			79	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-dabi-ta			79	[0,0,0,100]%		100	[0,0,0,100]%					43055459		72625-7	Dabigatran [Mass/volume] in Serum or Plasma	LOINC	FALSE	Dabigatran	Mass Concentration	40652895	LG27575-6	Dabigatran|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	p-epstein-barr-virus(ebv),dna-osoitus,kvantit			79	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	p-glkg			79	[0,0,0,100]%		30.38	[0,69.62,0,30.38]%					3023436		2338-2	Glucagon [Mass/volume] in Serum or Plasma	LOINC	FALSE	Glucagon	Mass Concentration										FALSE			
+APPROVED	p-glkg			79	[0,0,0,100]%		30.38	[0,69.62,0,30.38]%					3023436																	FALSE			
 APPROVED	p-glutamyylitransferaasi			79	[0,0,0,100]%	AF[0,40];AM[0,60]	91.14	[8.86,0,0,91.14]%					3026910		2324-2	Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Gamma glutamyl transferase	Catalytic Concentration										FALSE			
 NOT-FOUND	p-kalsium,albumiinikorjattu,plasmasta			79	[0,0,0,100]%		3.8	[96.2,0,0,3.8]%	[ 2.27, 2.35, 2.37, 2.4, 2.43, 2.46, 2.49, 2.52, 2.6 ]																					FALSE			
 NOT-FOUND	p-pepsin1/pepsin2-suhde			79	[0,0,0,100]%	AF[3,20];AM[3,20]	0	[0,100,0,0]%	[ 6.63, 8.11, 8.99, 9.64, 10.2, 10.6, 11.5, 12.2, 13.1 ]																					FALSE			
@@ -15602,7 +15602,7 @@ NOT-FOUND	monosyytitosatutk2225diffi	e9/l		50	[100,0,0,0]%	AF[0.2,0.8];AM[0.2,0.
 NOT-FOUND	nu-uporf3	nmol/l		50	[100,0,0,0]%		4	[96,0,0,4]%																						FALSE			
 NOT-FOUND	p-alaniiniaminotransferaasi,paikallisanalytiikka,kuivakemia			50	[0,0,0,100]%	AF[,35];AM[,50]	100	[0,0,0,100]%																						FALSE			
 APPROVED	p-b12-tc2			50	[0,0,0,100]%	AF[35,];AM[35,]	100	[0,0,0,100]%					3009035		14685-2	Cobalamin (Vitamin B12) [Moles/volume] in Serum or Plasma	LOINC	FALSE	Cobalamin	Substance Concentration										FALSE			
-APPROVED	p-etoh	g/l	g/l	50	[100,0,0,0]%		0	[100,0,0,0]%					3012920		5643-2	Ethanol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Mass Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	p-etoh	g/l	g/l	50	[100,0,0,0]%		0	[100,0,0,0]%					3012920																	FALSE			
 APPROVED	p-koriongonadotropiini,totaali,plasmasta			50	[0,0,0,100]%		100	[0,0,0,100]%					3018171		19080-1	Choriogonadotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Choriogonadotropin	Arbitrary Concentration	40652815	LG5747-3	Choriogonadotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	p-metnor			50	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-troponiinit:nosoituskoe	ng/l		50	[100,0,0,0]%	AF[0,40];AM[0,40]	0	[100,0,0,0]%																						FALSE			
@@ -16284,7 +16284,7 @@ NOT-FOUND	s-follikkeliastimuloivahormoni,seerumista	iu/l		44	[100,0,0,0]%		0	[10
 NOT-FOUND	s-fosfolipaasi-a2-reseptori,vasta-aineet	titre		44	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-hepatiittibvirus,s-antigeeni,vasta-aineet	u/l		44	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-hsv2abg	au		44	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
-APPROVED	s-immunoglobuliinig	g/l	g/l	44	[100,0,0,0]%	AF[6.79,15.12]	0	[100,0,0,0]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	s-immunoglobuliinig	g/l	g/l	44	[100,0,0,0]%	AF[6.79,15.12]	0	[100,0,0,0]%					3005719																	FALSE			
 NOT-FOUND	s-inaabcf	titre		44	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-kaniepe	u/ml		44	[100,0,0,0]%		2.27	[97.73,0,0,2.27]%																						FALSE			
 NOT-FOUND	s-kolesteroli(paketti)	mmol/l		44	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -17197,7 +17197,7 @@ NOT-FOUND	kromi	ug/l		37	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE
 NOT-FOUND	leukosyytit,pvkosatutkimus	1		37	[100,0,0,0]%	AF[3.4,8.2];AM[3.4,8.2]	0	[100,0,0,0]%																						FALSE			
 APPROVED	li-borabmv			37	[0,0,0,100]%		72.97	[0,27.03,0,72.97]%					3014973		22133-3	Borrelia burgdorferi IgM Ab [Units/volume] in Cerebral spinal fluid	LOINC	FALSE	Borrelia burgdorferi IgM	Arbitrary Concentration										FALSE			
 NOT-FOUND	li-hhv6ab			37	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	li-igg	g/l	g/l	37	[100,0,0,0]%		0	[100,0,0,0]%					3007368		2464-6	IgG [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	li-igg	g/l	g/l	37	[100,0,0,0]%		0	[100,0,0,0]%					3007368																	FALSE			
 APPROVED	li-lzm			37	[0,0,0,100]%		100	[0,0,0,100]%					40759057		55936-9	Lysozyme [Mass/volume] in Cerebral spinal fluid	LOINC	FALSE	Lysozyme	Mass Concentration										FALSE			
 NOT-FOUND	li-mogab			37	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	li-puutiaisenkefaliitti,igmvasta-aineet			37	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -17210,7 +17210,7 @@ NOT-FOUND	oma-astma			37	[0,0,0,100]%		0	[40.54,59.46,0,0]%																					
 NOT-FOUND	p-alat-pa	u/l		37	[100,0,0,0]%	AF[,35];AM[,50]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	p-dnegseu			37	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-hb	g/l	g/l	37	[100,0,0,0]%		0	[100,0,0,0]%					3022493		721-1	Free Hemoglobin [Mass/volume] in Plasma	LOINC	FALSE	Free Hemoglobin	Mass Concentration				mg/L	1000					FALSE			
-APPROVED	p-pctpika			37	[0,0,0,100]%		100	[0,0,0,100]%					3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pctpika			37	[0,0,0,100]%		100	[0,0,0,100]%					3046279																	FALSE			
 NOT-FOUND	p-pepsin1	ug/l		37	[100,0,0,0]%	AM[30,160]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	p-probnp-osoitus	ng/l		37	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	pakettib-perusverenkuvajatrombosyytit,paketti	form		37	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -17587,7 +17587,7 @@ NOT-FOUND	s-rekoveriini,vasta-aineet,seerumista			35	[0,0,0,100]%		100	[0,0,0,10
 NOT-FOUND	s-seerhec			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-seerl			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-sytomegalovirus,igm-vasta-aineet			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-topira	mg/l	mg/l	35	[100,0,0,0]%		0	[100,0,0,0]%					3025481		17713-9	Topiramate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Topiramate	Mass Concentration										FALSE			
+APPROVED	s-topira	mg/l	mg/l	35	[100,0,0,0]%		0	[100,0,0,0]%					3025481																	FALSE			
 NOT-FOUND	s-vzv,igmvasta-aineet			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	saksanpähkinä(f256),igevasta-aineet			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	sc-hygienia,viljely			35	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -18306,7 +18306,7 @@ NOT-FOUND	s-hepatiittib-virus,vasta-aineetpinta-antigeenille.	miu/ml		31	[100,0,
 NOT-FOUND	s-hepyaba	form		31	[100,0,0,0]%	AF[0,16.8];AM[0,14.36]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-hydroksikarbatsepiini	umol/l		31	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-immunoglobuliini,kev.ketjut,vapaat,kappa			31	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-immunoglobuliinim	g/l	g/l	31	[100,0,0,0]%		0	[100,0,0,0]%					3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
+APPROVED	s-immunoglobuliinim	g/l	g/l	31	[100,0,0,0]%		0	[100,0,0,0]%					3028026																	FALSE			
 APPROVED	s-infaabg	u/ml	u/ml	31	[100,0,0,0]%		0	[100,0,0,0]%					3015147		31437-7	Influenza virus A IgG Ab [Units/volume] in Serum	LOINC	FALSE	Influenza virus A IgG	Arbitrary Concentration										FALSE			
 NOT-FOUND	s-infli	âug/ml		31	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-kanelie	u/ml		31	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -20372,7 +20372,7 @@ NOT-FOUND	s-hevonene	u/ml		22	[100,0,0,0]%	AF[,0.35]	0	[100,0,0,0]%													
 NOT-FOUND	s-hevosennhilse,igevasta-aineet	u/ml		22	[100,0,0,0]%	AF[,0.35]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-hiv-ot			22	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-hs-c-reaktiivinenproteiini			22	[0,0,0,100]%	AF[0,3]	100	[0,0,0,100]%																						FALSE			
-APPROVED	s-igg-sum			22	[0,0,0,100]%		100	[0,0,0,100]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	s-igg-sum			22	[0,0,0,100]%		100	[0,0,0,100]%					3005719																	FALSE			
 NOT-FOUND	s-kalsium(paketti)	mmol/l		22	[100,0,0,0]%	AF[2.15,2.51]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-karba-v	umol/l		22	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-karbae			22	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -20401,7 +20401,7 @@ NOT-FOUND	s-ruokae,ruoka-aineryhmäjakomponentit	u/ml		22	[0,95.45,0,4.55]%		4.5
 NOT-FOUND	s-stpn33f	fmiau/ml		22	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-stpn8	fmiau/ml		22	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-tick-borneencephalitisvirus,igmvasta-aineet			22	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-topira			22	[0,0,0,100]%		54.55	[0,45.45,0,54.55]%					3025481		17713-9	Topiramate [Mass/volume] in Serum or Plasma	LOINC	FALSE	Topiramate	Mass Concentration										FALSE			
+APPROVED	s-topira			22	[0,0,0,100]%		54.55	[0,45.45,0,54.55]%					3025481																	FALSE			
 NOT-FOUND	s-turska,igevasta-aineet			22	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-tyreotropiinitth	mu/l		22	[100,0,0,0]%	AF[0.56,3.94]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-vlseabg,borreliaburgdorferinvlse-proteiini,vasta-aineet,igg			22	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -21712,7 +21712,7 @@ NOT-FOUND	u-fentact			18	[0,0,0,100]%		100	[0,0,0,100]%																						FAL
 NOT-FOUND	u-fentanyyli			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-fyl-hy			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-gag-o			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	u-gluk	g/l	g/l	18	[100,0,0,0]%		11.11	[88.89,0,0,11.11]%					3020399		2350-7	Glucose [Mass/volume] in Urine	LOINC	FALSE	Glucose	Mass Concentration	40656148	LG34879-3	Glucose|Substance Concentration|Urine							FALSE			
+APPROVED	u-gluk	g/l	g/l	18	[100,0,0,0]%		11.11	[88.89,0,0,11.11]%					3020399																	FALSE			
 NOT-FOUND	u-huumeseula6			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-huums-o			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-kemiallinenseulonta(pi)			18	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -22696,7 +22696,7 @@ APPROVED	p-krea-hoi	umol/l	umol/l	15	[100,0,0,0]%		0	[100,0,0,0]%					3020564		1
 NOT-FOUND	p-kryof-o			15	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	p-luteinisoivahormoni			15	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	p-na-hoi	mmol/l	mmol/l	15	[100,0,0,0]%		0	[100,0,0,0]%					3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	1					FALSE			
-APPROVED	p-pct-o			15	[0,0,0,100]%		100	[0,0,0,100]%					3046279		33959-8	Procalcitonin [Mass/volume] in Serum or Plasma	LOINC	FALSE	Procalcitonin	Mass Concentration										FALSE			
+APPROVED	p-pct-o			15	[0,0,0,100]%		100	[0,0,0,100]%					3046279																	FALSE			
 APPROVED	p-probnp(pika)			15	[0,0,0,100]%	AF[0,306.3]	100	[0,0,0,100]%					3029187		33762-6	Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma	LOINC	FALSE	Natriuretic peptide.B prohormone N-Terminal	Mass Concentration	40653381	LG13322-9	Natriuretic peptide.B prohormone N-Terminal|Mass Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
 NOT-FOUND	p-prostataspesifinenantigeeni,plasmasta(kela65)	ug/l		15	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 APPROVED	p-psa-suhd	%	%	15	[100,0,0,0]%		0	[100,0,0,0]%					3001784		12841-3	Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma	LOINC	FALSE	Prostate specific Ag.free/Prostate specific Ag.total	Mass fraction	40653609	LG2277-4	Prostate specific Ag.free/Prostate specific Ag.total|Mass Fraction|Moment in time|Blood, Serum or Plasma	%	1					FALSE			
@@ -23708,7 +23708,7 @@ NOT-FOUND	s-björk	u/ml		13	[100,0,0,0]%	AF[0,0.35]	0	[100,0,0,0]%														
 NOT-FOUND	s-bor-abm	au/ml		13	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-borrigg			13	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 APPROVED	s-c1inhbk			13	[0,0,0,100]%		100	[0,0,0,100]%					3023659		10634-4	Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total in Serum or Plasma	LOINC	FALSE	Complement C1 esterase inhibitor.functional/Complement C1 esterase inhibitor.total	Mass fraction										FALSE			
-APPROVED	s-ca	g/l	g/l	13	[100,0,0,0]%	AF[5.78,8.2]	0	[100,0,0,0]%					3006906		17861-6	Calcium [Mass/volume] in Serum or Plasma	LOINC	FALSE	Calcium	Mass Concentration	40652746	LG6218-4	Calcium|Substance Concentration|Moment in time|Blood, Serum or Plasma							FALSE			
+APPROVED	s-ca	g/l	g/l	13	[100,0,0,0]%	AF[5.78,8.2]	0	[100,0,0,0]%					3006906																	FALSE			
 NOT-FOUND	s-chlamydiapneumoniae,abmvasta-aineet			13	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-chlamydiatrachomatis,igg-vasta-aineet	au/ml		13	[100,0,0,0]%	AF[0,22]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-chtrabg	titre		13	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -24300,7 +24300,7 @@ NOT-FOUND	s-prlbiol.akt.	mu/l		12	[100,0,0,0]%		0	[100,0,0,0]%																		
 NOT-FOUND	s-prostataspesifinenantigeenit	ug/l		12	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-psavapaanjatotaali			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-riponukleoproteiini,nukleaarinen,vasta-aineet			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	s-risper	ug/l	ug/l	12	[100,0,0,0]%		0	[100,0,0,0]%					3003195		9393-0	risperiDONE [Mass/volume] in Serum or Plasma	LOINC	FALSE	risperiDONE	Mass Concentration										FALSE			
+APPROVED	s-risper	ug/l	ug/l	12	[100,0,0,0]%		0	[100,0,0,0]%					3003195																	FALSE			
 NOT-FOUND	s-rp11(ib)			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-rp155(ib)			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-seerlasi			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -24330,7 +24330,7 @@ NOT-FOUND	s-tuma,liukag.va,laaja	ratio		12	[100,0,0,0]%	AF[,0.7]	0	[100,0,0,0]%	
 NOT-FOUND	s-tuma,liukag.va,laaja			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-tyroksiini,vapaatth	pmol/l		12	[100,0,0,0]%	AF[9,19]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-vadelme	u/ml		12	[100,0,0,0]%		16.67	[83.33,0,0,16.67]%																						FALSE			
-APPROVED	s-venlaf	ug/l	ug/l	12	[100,0,0,0]%		0	[100,0,0,0]%					3020071		9630-5	Venlafaxine [Mass/volume] in Serum or Plasma	LOINC	FALSE	Venlafaxine	Mass Concentration										FALSE			
+APPROVED	s-venlaf	ug/l	ug/l	12	[100,0,0,0]%		0	[100,0,0,0]%					3020071																	FALSE			
 NOT-FOUND	s-veritapaturmankohde-tutkimuspaketti			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-veritartuntaaltistus,seerumista			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-waseabe			12	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -25571,7 +25571,7 @@ NOT-FOUND	s-t1daab			10	[0,0,0,100]%		100	[0,0,0,100]%																						FALS
 NOT-FOUND	s-t2drisk	%		10	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-t2dscor			10	[0,0,0,100]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-tbeabg	u/ml		10	[80,0,0,20]%	AF[,86.33]	20	[80,0,0,20]%																						FALSE			
-APPROVED	s-teofy	mg/l	mg/l	10	[100,0,0,0]%		0	[100,0,0,0]%					3016072		4049-3	Theophylline [Mass/volume] in Serum or Plasma	LOINC	FALSE	Theophylline	Mass Concentration										FALSE			
+APPROVED	s-teofy	mg/l	mg/l	10	[100,0,0,0]%		0	[100,0,0,0]%					3016072																	FALSE			
 NOT-FOUND	s-testosteroni,vapaa,laskettu,voitilata	pmol/l		10	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-treponemapallidumvasta-aineet			10	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-tsh-reseptori,vasta-aineet(korvaa3059tyreoideaastimuloivatvasta-aineet)	iu/l		10	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -26195,7 +26195,7 @@ APPROVED	s-karmpue	u/ml	u/ml	9	[100,0,0,0]%		11.11	[88.89,0,0,11.11]%					303470
 NOT-FOUND	s-koihspe	u/ml		9	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-koirhie	form		9	[100,0,0,0]%	AF[0,0.35]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-koivunsiitepöly,igevasta-aineet(ko)	u/ml		9	[77.78,0,0,22.22]%		22.22	[77.78,0,0,22.22]%																						FALSE			
-APPROVED	s-kol	mg/ml	mg/ml	9	[100,0,0,0]%		0	[100,0,0,0]%					3027114		2093-3	Cholesterol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Cholesterol	Mass Concentration										FALSE			
+APPROVED	s-kol	mg/ml	mg/ml	9	[100,0,0,0]%		0	[100,0,0,0]%					3027114																	FALSE			
 NOT-FOUND	s-koriongonadotropiini,ihmisen	iu/l		9	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 APPROVED	s-kryopre	g/l	g/l	9	[100,0,0,0]%		0	[100,0,0,0]%					21491868		78989-1	Cryoglobulin [Mass/volume] in Serum	LOINC	FALSE	Cryoglobulin	Mass Concentration				g/L	1					FALSE			
 NOT-FOUND	s-kudostransglutaminaasi,iggvasta-aineet	u/ml		9	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -26697,7 +26697,7 @@ NOT-FOUND	kalsium,plasmasta,osatutk.11162	mmol/l		8	[100,0,0,0]%		0	[100,0,0,0]%
 NOT-FOUND	kananliha	u/ml		8	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	kardiovaskulaarinenriskiluku			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	kattavakardiologinenpaneeli(184geeniä,blueprint)dna-tutk.			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	keliakia,immunoglobuliinia	g/l	g/l	8	[100,0,0,0]%		0	[100,0,0,0]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	keliakia,immunoglobuliinia	g/l	g/l	8	[100,0,0,0]%		0	[100,0,0,0]%					3007164																	FALSE			
 NOT-FOUND	keliakia,vasta-ainetutkimus,seerumista,osatutkimus			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	keliakiatutkimus,laaja(kelit)			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	kelilausunto			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -26947,7 +26947,7 @@ NOT-FOUND	s-iglcl-v2	mg/l		8	[100,0,0,0]%		0	[100,0,0,0]%																						F
 NOT-FOUND	s-igls-v			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-ihmisepididymaalag	pmol/l		8	[100,0,0,0]%	AF[,79.33]	0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-immunoglobuliini,kevytketjut,kappa,vapaatli-iglck-i	mg/l		8	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
-APPROVED	s-immunoglobuliinia(paketti)	g/l	g/l	8	[100,0,0,0]%		0	[100,0,0,0]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	s-immunoglobuliinia(paketti)	g/l	g/l	8	[100,0,0,0]%		0	[100,0,0,0]%					3007164																	FALSE			
 NOT-FOUND	s-immunokompleksit,kiertävät(pipa)			8	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	s-insraba	ratio		8	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	s-jgadab	iu/ml		8	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
@@ -27458,9 +27458,9 @@ NOT-FOUND	ig-vaiht			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE
 NOT-FOUND	iga/pre			7	[0,0,0,100]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	igekaura(jauho)/havre(mjöl)			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	igetolueeni-di-isosyanaatti/isocyanat,tdi			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	igg	g/l	g/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
-APPROVED	igm	g/l	g/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration										FALSE			
-APPROVED	immunoglobuliinig			7	[0,0,0,100]%		100	[0,0,0,100]%					3005719		2465-3	IgG [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	igg	g/l	g/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3005719																	FALSE			
+APPROVED	igm	g/l	g/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3028026																	FALSE			
+APPROVED	immunoglobuliinig			7	[0,0,0,100]%		100	[0,0,0,100]%					3005719																	FALSE			
 NOT-FOUND	immunoglobuliinig,indeksi,selkäydinneste	index		7	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	immunoglobuliinig,seerumista(vainlikvorinkanssa)			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	influenssaa-virus,nukleiinihaponosoitus			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -27977,7 +27977,7 @@ NOT-FOUND	u-hemsi-o	estimate		7	[100,0,0,0]%		100	[0,0,0,100]%																		
 NOT-FOUND	u-hop			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-huum7a			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	u-hydroksiproliini			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	u-igg	mg/l	mg/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3047185		33415-1	IgG [Mass/volume] in Urine	LOINC	FALSE	IgG	Mass Concentration										FALSE			
+APPROVED	u-igg	mg/l	mg/l	7	[100,0,0,0]%		0	[100,0,0,0]%					3047185																	FALSE			
 NOT-FOUND	u-immunoglobuliini,kevyetketjut,lambda	mg/l		7	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	u-immunoglobuliini,lambda-kevyetketjut	g/l		7	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	u-isoleusiini			7	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
@@ -28282,7 +28282,7 @@ NOT-FOUND	igekoira(hilse)/hund(mjäll)	u/ml		6	[100,0,0,0]%		0	[100,0,0,0]%					
 NOT-FOUND	igeohra(jauho)/korn(mjöl)			6	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	immunofenotyypitys,veritauti,verestä			6	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	immunoglobuliini,kevytketjut			6	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
-APPROVED	immunoglobuliinia			6	[0,0,0,100]%		100	[0,0,0,100]%					3007164		2458-8	IgA [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgA	Mass Concentration										FALSE			
+APPROVED	immunoglobuliinia			6	[0,0,0,100]%		100	[0,0,0,100]%					3007164																	FALSE			
 NOT-FOUND	immunoglobuliinie,pölyseos	u/ml		6	[100,0,0,0]%		0	[100,0,0,0]%																						FALSE			
 NOT-FOUND	infcvag			6	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
 NOT-FOUND	influenssaajab,covid-19nukleiinihappo(kval)			6	[0,0,0,100]%		100	[0,0,0,100]%																						FALSE			
