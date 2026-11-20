@@ -10,23 +10,23 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  measurementFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  groupsFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-  membershipFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
-  unitFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
-  overwriteFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
-  conversionFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
-  lab2cleanGroupFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv
-  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable
-Read 33154 lab2clean units from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
-Read 1 unit overwrites from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
-Read 102825 concepts from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-Read 2997 Groups from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Read 8351 concept/Group rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+  measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+  groupsFile = DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+  membershipFile = DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+  unitFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+  overwriteFile = DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+  conversionFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
+  lab2cleanGroupFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv
+  outDir = DATA/3_Target/4_BuildTargetTable
+Read 33154 lab2clean units from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
+Read 1 unit overwrites from DATA/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv
+Read 102825 concepts from DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+Read 2899 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Read 7811 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 Removed 1662 conventional concepts with an SI partner, 101163 concepts left
 2377 panels and 15603 qualitative concepts (no unit)
-101924 rows, 101163 concepts; 7277 concepts in a Group, 31493 with a harmonised unit
-Wrote 101924 rows to /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+101824 rows, 101163 concepts; 6843 concepts in a Group, 31493 with a harmonised unit
+Wrote 101824 rows to DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 
 Attaching package: ‘dplyr’
 
@@ -39,15 +39,15 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  measurementFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  conversionFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
-  targetFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable
-Read 101924 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+  conversionFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
+  targetFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  outDir = DATA/3_Target/4_BuildTargetTable
+Read 101824 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 SUCCESS: concept_id and Group are unique - 0 duplicated (concept_id, Group) rows
-WARNING: concept_id is unique - 648 concepts have one row per Group (in several Groups)
+WARNING: concept_id is unique - 549 concepts have one row per Group (in several Groups)
 SUCCESS: all concepts of a lab2clean Group have the same harmonised_unit - 0 of 1,701 lab2clean Groups have more than one unit
-WARNING: all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit - 179 of 2,997 Groups have more than one unit
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.md
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.md
+WARNING: all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit - 102 of 2,899 Groups have more than one unit
+Wrote DATA/3_Target/4_BuildTargetTable/targetTable.md
+Wrote DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+Wrote DATA/3_Target/4_BuildTargetTable/targetTable.md

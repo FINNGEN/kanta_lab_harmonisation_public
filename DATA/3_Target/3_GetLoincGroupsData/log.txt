@@ -17,22 +17,22 @@ Configuration:
   standardConceptFlag = S
   groupConceptClassId = LOINC Group
   groupNamePrefix = Flowsheet
-  massMolarParentGroupCode = LG55-6
+  excludedParentGroupCodes = LG55-6, LG97-8
 Using temporary emulation schema: atlas-development-270609.sandbox
 7707 concepts are in a Group whose name starts with 'Flowsheet'
-42 panel concepts are left out of the Groups; 2240 mass-molar Groups are dropped
-Kept 8487 of 41326 membership rows: 7665 concepts in 3123 Groups
+42 panel concepts are left out of the Groups; 2338 Groups of the excluded ParentGroups are dropped
+Kept 7947 of 41326 membership rows: 7231 concepts in 3025 Groups
 Read 1662 conventional-to-SI codes from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
 286 conventional concepts are mapped to the Groups of their SI partner; the rest of the conventional concepts are in no Group
-Membership: 8351 rows, 7563 concepts in 2997 Groups
-671 concepts are in more than one Group (at most 9)
-  Groups with 2-10 descendants: 2921
-  Groups with 11-50 descendants: 63
+Membership: 7811 rows, 7129 concepts in 2899 Groups
+566 concepts are in more than one Group (at most 9)
+  Groups with 2-10 descendants: 2828
+  Groups with 11-50 descendants: 58
   Groups with 51-200 descendants: 10
   Groups with 201-1000 descendants: 3
-2997 Groups
-Wrote 2997 Groups to DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Wrote 8351 rows to DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+2899 Groups
+Wrote 2899 Groups to DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Wrote 7811 rows to DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 
 Attaching package: ‘dplyr’
 
@@ -50,8 +50,8 @@ Configuration:
   measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
   conversionFile = DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   outDir = DATA/3_Target/3_GetLoincGroupsData
-Read 2997 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Read 8351 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+Read 2899 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Read 7811 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 Read 102825 concepts from DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
 Read 1662 conventional concepts from DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.md

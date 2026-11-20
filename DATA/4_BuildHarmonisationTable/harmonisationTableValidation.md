@@ -10,10 +10,10 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | mapping.tsv | 5 | 0 | 1 |
 | unitHarmonisation.tsv | 6 | 0 | 1 |
 | targetTable.tsv | 3 | 0 | 0 |
-| harmonisationTable.tsv | 9 | 3 | 3 |
+| harmonisationTable.tsv | 9 | 2 | 3 |
 | testname_unit_property_missmatch_warning.tsv | 3 | 0 | 0 |
 | testname_property_shared_warning.tsv | 3 | 0 | 0 |
-| ALL | 34 | 4 | 5 |
+| ALL | 34 | 3 | 5 |
 
 ## Tests
 
@@ -46,12 +46,11 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | harmonisationTable.tsv | SUCCESS | has as many rows as mapping.tsv joined with unitFix.tsv |  |  |
 | harmonisationTable.tsv | SUCCESS | every TEST_NAME + UNIT of mapping.tsv is kept |  |  |
 | harmonisationTable.tsv | ERROR | concept_id has its attributes, unless there is an ignore_mapping_reason | 113 | e.g. b-co[ug/l] concept_id=3026470; b-co[] concept_id=3026470; b-cr[ug/l] concept_id=3025577 |
-| harmonisationTable.tsv | SUCCESS | mapping_status is IGNORE, ERROR, APPROVED or NOT-APPROVED |  |  |
+| harmonisationTable.tsv | SUCCESS | mapping_status is IGNORE, ERROR:<reason>, APPROVED or NOT-APPROVED |  |  |
 | harmonisationTable.tsv | SUCCESS | mapping_status is IGNORE if and only if there is an ignore_mapping_reason |  |  |
-| harmonisationTable.tsv | SUCCESS | a row with mapping_status ERROR has mapping_warning_messages |  |  |
+| harmonisationTable.tsv | SUCCESS | a row with mapping_status ERROR:PropertyUnitMismatch or ERROR:SharedProperty has mapping_warning_messages |  |  |
 | harmonisationTable.tsv | SUCCESS | a row with a HARMONISED_UNIT has a CONVERSION |  |  |
 | harmonisationTable.tsv | ERROR | an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it | 140 | 55 concepts, e.g. -baso[%->%] TARGET=10*9/L; -ca12-5[u/ml->u/ml] TARGET=[arb'U]; -ca15-3[u/ml->u/ml] TARGET=[arb'U] |
-| harmonisationTable.tsv | WARNING | an APPROVED pair whose concept has a target unit has a UNIT (no unit cannot be converted) | 2,879 | 911 concepts, e.g. !psavapaanjatotaalinsuhde[] TARGET=%; -amylp[] TARGET=U/L; -ana[] TARGET=1 |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | columns match their declared types |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME, message, ignore must have a value |  |  |
 | testname_unit_property_missmatch_warning.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |

@@ -1,6 +1,6 @@
 # targetTable stats
 
-Summary of `targetTable.tsv`: 101,924 rows, one per concept and Group, for 101,163 concepts.
+Summary of `targetTable.tsv`: 101,824 rows, one per concept and Group, for 101,163 concepts.
 
 # Concepts
 
@@ -21,16 +21,16 @@ Where the `harmonised_unit` of each concept came from (`harmonised_unit_source`)
 
 | item | n |
 | --- | --- |
-| Groups | 2,997 |
-| concepts in a Group | 7,277 |
-| concepts in no Group | 93,886 |
-| concepts in more than one Group | 648 |
+| Groups | 2,899 |
+| concepts in a Group | 6,843 |
+| concepts in no Group | 94,320 |
+| concepts in more than one Group | 549 |
 
 Where the Group of a concept came from (`group_source`): `lab2clean` when lab2clean gives the concept that Group, `LOINC` for the other memberships.
 
 | group_source | n concept-Group rows | n Groups | n concepts |
 | --- | --- | --- | --- |
-| LOINC | 4,535 | 1,332 | 4,132 |
+| LOINC | 4,001 | 1,234 | 3,643 |
 | lab2clean | 3,503 | 1,701 | 3,503 |
 
 # Validations
@@ -38,9 +38,9 @@ Where the Group of a concept came from (`group_source`): `lab2clean` when lab2cl
 | result | test | message |
 | --- | --- | --- |
 | SUCCESS | concept_id and Group are unique | 0 duplicated (concept_id, Group) rows |
-| WARNING | concept_id is unique | 648 concepts have one row per Group (in several Groups) |
+| WARNING | concept_id is unique | 549 concepts have one row per Group (in several Groups) |
 | SUCCESS | all concepts of a lab2clean Group have the same harmonised_unit | 0 of 1,701 lab2clean Groups have more than one unit |
-| WARNING | all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit | 179 of 2,997 Groups have more than one unit |
+| WARNING | all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit | 102 of 2,899 Groups have more than one unit |
 
 Groups with more than one `harmonised_unit` (units of the concepts that have one):
 
@@ -54,7 +54,6 @@ Groups with more than one `harmonised_unit` (units of the concepts that have one
 | LG50125-0 | 2 | [arb'U]/L, 10*3.[arb'U]/L |
 | LG50130-0 | 49 | /10*6, mg/L, ug/L, umol/L |
 | LG50120-1 | 14 | /10*3, mmol/(24.h), mmol/L, umol/(24.h) |
-| LG50093-0 | 3 | mg/(24.h), mg/L |
 | LG51600-1 | 3 | [arb'U]/L, 10*3.[arb'U]/L, 10*3.U/L |
 | LG51732-2 | 2 | [iU]/L, ug/L |
 | LG51738-9 | 2 | g/L, mg/L |
@@ -63,30 +62,12 @@ Groups with more than one `harmonised_unit` (units of the concepts that have one
 | LG51080-6 | 2 | /10*3, 1 |
 | LG51390-9 | 3 | mg/L, ng/L |
 | LG51391-7 | 3 | mg/L, ng/L |
-| LG51352-9 | 2 | /[HPF], 10*6/L |
-| LG51351-1 | 2 | /[HPF], 10*6/L |
-| LG51360-2 | 2 | /[HPF], 10*6/L |
-| LG51361-0 | 2 | /[HPF], 10*6/L |
-| LG51349-5 | 2 | /[HPF], 10*6/L |
-| LG51358-6 | 2 | /[HPF], 10*6/L |
-| LG51362-8 | 2 | /[HPF], 10*6/L |
-| LG51350-3 | 2 | /[HPF], 10*6/L |
-| LG51347-9 | 2 | /[HPF], 10*6/L |
-| LG51346-1 | 2 | /[HPF], 10*6/L |
-| LG51355-2 | 2 | /[HPF], 10*6/L |
-| LG51356-0 | 2 | /[HPF], 10*6/L |
-| LG51348-7 | 3 | /[HPF], 10*6/L |
-| LG51357-8 | 2 | /[HPF], 10*6/L |
-| LG51363-6 | 2 | /[HPF], 10*6/L |
-| LG51354-5 | 2 | /[HPF], 10*6/L |
-| LG51353-7 | 2 | /[HPF], 10*6/L |
 | LG51037-6 | 2 | [iU]/L, 10*3.[arb'U]/L |
 | LG51032-7 | 2 | [arb'U]/L, 10*3.[arb'U]/L |
 | LG51063-2 | 3 | [arb'U]/L, 10*3.[arb'U]/L, 10*3.[iU]/L |
 | LG51052-5 | 21 | /10*6, ug/(24.h), ug/L |
 | LG51055-8 | 7 | /10*6, h, mg/(24.h), mg/L, mL, ug/L |
 | LG51054-1 | 2 | mg/L, ug/L |
-| LG51053-3 | 3 | /[HPF], 1, 10*6/L |
 | LG50984-0 | 20 | /10*6, ug/(24.h) |
 | LG51435-2 | 6 | /10*6, h, mL, ug/(24.h) |
 | LG51472-5 | 2 | mmol/L, umol/L |
@@ -166,62 +147,4 @@ Groups with more than one `harmonised_unit` (units of the concepts that have one
 | LG35480-9 | 2 | /10*3, 1 |
 | LG37542-4 | 9 | g/L, mg/L |
 | LG37570-5 | 2 | mg/L, ug/L |
-| LG40874-6 | 2 | /[HPF], /[LPF] |
-| LG40875-3 | 5 | /[HPF], 10*6/L |
-| LG40876-1 | 2 | /[HPF], /[LPF] |
-| LG40895-1 | 4 | /[LPF], 10*6/L |
-| LG40877-9 | 4 | /[HPF], /[LPF], 10*6/L |
-| LG40878-7 | 6 | /[HPF], /[LPF], 10*6/L |
-| LG40879-5 | 4 | /[HPF], /[LPF], 10*6/L |
-| LG40928-0 | 2 | /[HPF], 10*6/L |
-| LG40873-8 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40881-1 | 4 | /[HPF], /[LPF], 10*6/L |
-| LG40930-6 | 2 | /[HPF], 10*6/L |
-| LG40959-5 | 4 | /[HPF], 10*6/L |
-| LG40882-9 | 2 | /[HPF], /[LPF] |
-| LG40926-4 | 4 | /[HPF], 10*6/L |
-| LG40883-7 | 4 | /[HPF], /[LPF], 10*6/L |
-| LG40885-2 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40929-8 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40860-5 | 6 | /[HPF], /[LPF], 10*3/L, 10*6/L |
-| LG40856-3 | 7 | /[HPF], /[LPF], 10*3/L, 10*6/L |
-| LG40869-6 | 7 | /[HPF], /[LPF], 10*6/L |
-| LG40900-9 | 6 | /[HPF], /[LPF], /uL, 10*6/L |
-| LG40961-1 | 4 | /[HPF], 10*6/L |
-| LG40971-0 | 3 | /[HPF], 10*6/L |
-| LG40868-8 | 12 | /[HPF], /min, 10*12/L, 10*3/L, 10*6/L |
-| LG40960-3 | 3 | /[HPF], 10*6/L |
-| LG40887-8 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40897-7 | 4 | /[HPF], /[LPF] |
-| LG40898-5 | 4 | /[HPF], /[LPF] |
-| LG40888-6 | 7 | /[HPF], /[LPF], /uL, 10*6/L |
-| LG40889-4 | 2 | /[HPF], /[LPF] |
-| LG40890-2 | 8 | /[HPF], /[LPF], 10*6/L |
-| LG40908-2 | 5 | mg/L, mmol/L |
-| LG40891-0 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40899-3 | 6 | /[HPF], /[LPF], /uL, 10*6/L |
-| LG40917-3 | 5 | /[HPF], 10*6/L |
-| LG40867-0 | 12 | /(24.h), /[HPF], /[LPF], /min, 10*6/L, 10*9/L |
-| LG40922-3 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40937-1 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40886-0 | 4 | /[HPF], 10*6/L |
-| LG40964-5 | 2 | /[HPF], 10*6/L |
-| LG40861-3 | 5 | /[HPF], /[LPF], 10*3/L, 10*6/L |
-| LG40870-4 | 7 | 10*3.[arb'U]/L, g, g/(24.h), mg/L |
-| LG40914-0 | 2 | /[HPF], /[LPF] |
-| LG40896-9 | 2 | 10*3.[arb'U]/L, mg/L |
-| LG40916-5 | 2 | /[HPF], /[LPF] |
-| LG40902-5 | 3 | /[HPF], 10*6/L |
-| LG40904-1 | 2 | /[HPF], /[LPF] |
-| LG40894-4 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40920-7 | 4 | /[HPF], /[LPF], 10*6/L |
-| LG40905-8 | 6 | /[HPF], /[LPF], 10*6/L |
-| LG40915-7 | 5 | /[HPF], /[LPF], 10*6/L |
-| LG40862-1 | 5 | /[HPF], /[LPF], 10*3/L, 10*6/L |
-| LG40903-3 | 6 | /[HPF], /[LPF], 10*6/L |
-| LG40864-7 | 3 | [EU]/L, umol/L |
-| LG40901-7 | 6 | /[HPF], /[LPF], 10*3/L, 10*6/L |
-| LG40927-2 | 3 | /[HPF], 10*6/L |
-| LG40923-1 | 2 | /[HPF], 10*6/L |
-| LG40933-0 | 5 | /[HPF], /[LPF], 10*6/L |
 | LG41057-7 | 2 | mg/L, mm |
