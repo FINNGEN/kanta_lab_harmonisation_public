@@ -15,7 +15,7 @@
 #
 # The Groups are SI only. A conventional concept (the mass side of a mass-molar pair, e.g.
 # ug/L against nmol/L) is put in the Groups of its SI partner instead of its own, using the
-# conversion table of lab2clean, which this step saves.
+# conversion table of lab2clean, saved by 2a_GetHarmonisedUnitFromLab2Clean.
 # Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
 # a mass concept with a substance concept, so they are dropped.
 #
@@ -35,6 +35,7 @@ library(readr)
 #
 args <- commandArgs(trailingOnly = TRUE)
 outDir <- args[1]
+conversionFile <- args[2]
 
 environment <- Sys.getenv("FG_DATABASE_ENV")
 if (environment == "") {
@@ -57,19 +58,13 @@ sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 # ParentGroup whose child Groups pair a mass concept with a substance concept.
 massMolarParentGroupCode <- "LG55-6"
 
-# lab2clean, read from its source tarball on CRAN (pinned version).
-lab2cleanVersion <- "2.0.0"
-lab2cleanUrl <- paste0("https://cran.r-project.org/src/contrib/lab2clean_", lab2cleanVersion, ".tar.gz")
-lab2cleanDataFile <- "lab2clean/data/loinc_reference_unit_v1.rda"
-
-pathToConversionTSV <- file.path(outDir, "loincSiConventionalConversion.tsv")
 pathToLoincGroupsTSV <- file.path(outDir, "loincGroups.tsv")
 pathToLoincGroupMembershipTSV <- file.path(outDir, "loincGroupMembership.tsv")
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  environment = ", environment)
-ParallelLogger::logInfo("  lab2cleanUrl = ", lab2cleanUrl)
+ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  domainId = ", domainId)
 ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
@@ -225,59 +220,8 @@ ParallelLogger::logInfo(
 
 # SI only. The conventional concepts take the Groups of their SI partner instead of their own;
 # one whose partner is in no Group is in no Group.
-tarFile <- tempfile(fileext = ".tar.gz")
-download.file(lab2cleanUrl, tarFile, mode = "wb", quiet = TRUE)
-untar(tarFile, files = lab2cleanDataFile, exdir = tempdir())
-lab2cleanEnv <- new.env()
-load(file.path(tempdir(), lab2cleanDataFile), envir = lab2cleanEnv)
-loincReferenceUnit <- tibble::as_tibble(lab2cleanEnv$loinc_reference_unit_v1)
-ParallelLogger::logInfo("Read ", nrow(loincReferenceUnit), " LOINC codes from lab2clean ", lab2cleanVersion)
-
-# The LOINC code of each standard Measurement concept.
-sqlLoincConcepts <- "
-SELECT concept_id, concept_code
-FROM @vocabularyDatabaseSchema.concept
-WHERE domain_id = '@domainId'
-    AND standard_concept = '@standardConceptFlag'
-    AND vocabulary_id = 'LOINC'
-"
-loincConcepts <- DatabaseConnector::renderTranslateQuerySql(
-  connection = connection,
-  sql = sqlLoincConcepts,
-  vocabularyDatabaseSchema = vocabularyDatabaseSchema,
-  domainId = domainId,
-  standardConceptFlag = standardConceptFlag,
-  snakeCaseToCamelCase = FALSE
-) |>
-  tibble::as_tibble() |>
-  dplyr::rename_with(tolower) |>
-  dplyr::mutate(concept_id = as.character(.data$concept_id))
-
-# The conventional-to-SI conversion of lab2clean: one row per conventional code (the mass side
-# of a mass-molar pair) with its SI partner, mass_molar_loinc.
-conversion <- loincReferenceUnit |>
-  dplyr::filter(.data$unit_system == "conventional", !is.na(.data$mass_molar_loinc)) |>
-  dplyr::transmute(
-    concept_code = .data$loinc_code,
-    conventional_unit = .data$reference_unit,
-    si_concept_code = .data$mass_molar_loinc,
-    si_unit = .data$mass_molar_unit,
-    molecular_weight = .data$molecular_weight
-  ) |>
-  dplyr::left_join(loincConcepts, by = "concept_code") |>
-  dplyr::left_join(
-    dplyr::rename(loincConcepts, si_concept_id = "concept_id", si_concept_code = "concept_code"),
-    by = "si_concept_code"
-  ) |>
-  dplyr::select(
-    "concept_id", "concept_code", "conventional_unit",
-    "si_concept_id", "si_concept_code", "si_unit", "molecular_weight"
-  ) |>
-  dplyr::arrange(.data$concept_code)
-ParallelLogger::logInfo(
-  "lab2clean has ", nrow(conversion), " conventional codes with an SI partner; ",
-  sum(!is.na(conversion$concept_id) & !is.na(conversion$si_concept_id)), " have both concepts in the vocabulary"
-)
+conversion <- readr::read_tsv(conversionFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
+ParallelLogger::logInfo("Read ", nrow(conversion), " conventional-to-SI codes from ", conversionFile)
 conventionalToSi <- conversion |>
   dplyr::filter(!is.na(.data$concept_id), !is.na(.data$si_concept_id)) |>
   dplyr::transmute(conventionalId = .data$concept_id, siId = .data$si_concept_id)
@@ -324,8 +268,6 @@ ParallelLogger::logInfo(nrow(groups), " Groups")
 #
 # --- Output -------------------------------------------------------------
 #
-readr::write_tsv(conversion, pathToConversionTSV, na = "")
-ParallelLogger::logInfo("Wrote ", nrow(conversion), " rows to ", pathToConversionTSV)
 readr::write_tsv(groups, pathToLoincGroupsTSV, na = "")
 ParallelLogger::logInfo("Wrote ", nrow(groups), " Groups to ", pathToLoincGroupsTSV)
 readr::write_tsv(dplyr::select(membership, "concept_id", "group_concept_id"), pathToLoincGroupMembershipTSV, na = "")

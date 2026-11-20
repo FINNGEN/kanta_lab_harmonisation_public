@@ -70,3 +70,5 @@ Rscript "$STEP_DIR/scripts/summariseHarmonisedUnitFromLab2Clean.R" "$OUTDIR/harm
 #
 echo "Wrote $OUTDIR/harmonisedUnit_lab2clean.tsv"
 echo "Wrote $OUTDIR/harmonisedUnit_lab2clean.md"
+echo "Wrote $OUTDIR/loincSiConventionalConversion.tsv"
+echo "Wrote $OUTDIR/harmonisedGroup_lab2clean.tsv"

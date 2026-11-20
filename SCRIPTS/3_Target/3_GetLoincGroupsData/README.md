@@ -2,19 +2,21 @@
 
 Pulls the LOINC Groups of the standard OMOP `Measurement` concepts and which
 concepts are in each, SI only: a conventional concept is put in the Groups of its
-SI partner. It also keeps a copy of the conventional-to-SI conversion table.
+SI partner. 
 
 ## Inputs
 
-From `DATA/3_Target/`, only for the report: `1_GetMeasurementOmopData/measurementOmopData.tsv`
-(run that step first).
+From `DATA/3_Target/`:
+
+- `2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — the conventional
+  concepts and their SI partner, to give the conventional concepts the Groups of their partner.
+- `1_GetMeasurementOmopData/measurementOmopData.tsv` — only for the report.
+
+Run those steps first.
 
 The step also reads:
 
-- the FinnGen OMOP vocabulary (`concept`, `concept_ancestor`) through `FinnGenUtilsR`;
-- the `loinc_reference_unit_v1` table of the `lab2clean` 2.0.0 source package,
-  downloaded from CRAN (Zayed et al., *Int J Med Inform* 205 (2026) 106131), for the
-  conventional-to-SI conversion table.
+- the FinnGen OMOP vocabulary (`concept`, `concept_ancestor`) through `FinnGenUtilsR`.
 
 ## Outputs
 
@@ -31,16 +33,6 @@ In `DATA/3_Target/3_GetLoincGroupsData/`:
 - `loincGroupMembership.tsv` — one row per (concept, Group): `concept_id`,
   `group_concept_id`. A concept can be in several Groups. A panel is in none, and a
   conventional concept is listed under the Groups of its SI partner (see Action).
-- `loincSiConventionalConversion.tsv` — lab2clean's mass-molar pairs, one row per
-  conventional LOINC code with its SI partner, for the step that converts the values:
-
-| Column | Description |
-|---|---|
-| concept_id, concept_code | The conventional concept |
-| conventional_unit | Its UCUM unit (mass, e.g. `ug/L`) |
-| si_concept_id, si_concept_code | The SI partner concept (`mass_molar_loinc`) |
-| si_unit | Its UCUM unit (molar, e.g. `nmol/L`; `mass_molar_unit`) |
-| molecular_weight | g/mol, to convert between the two |
 - `log.txt` — run log.
 
 ## Action
@@ -57,13 +49,9 @@ In `DATA/3_Target/3_GetLoincGroupsData/`:
    - **panels** (a concept with a `Panel contains` relationship): in no Group;
    - the child Groups of the **Mass-Molar conversion** ParentGroup (`LG55-6`):
      they put a mass concept and a substance concept in one Group.
-3. Downloads the lab2clean source package and builds its conventional-to-SI
-   conversion table: every `conventional` code (the mass side of a mass-molar pair) with
-   its SI partner (`mass_molar_loinc`), the units and the molecular weight, with the
-   concept ids of both sides.
-4. Keeps the Groups SI only. A concept in the conversion table is moved to the Groups
+3. Keeps the Groups SI only. A concept in the conversion table is moved to the Groups
    of its SI partner, replacing its own; one whose partner is in no Group is in no Group.
-5. Writes the Groups, the membership and the conversion table.
+4. Writes the Groups and the membership.
 
 `scripts/summariseLoincGroupsData.R` reads the two tables back and the measurement
 table, and writes `loincGroups.md`.

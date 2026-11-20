@@ -8,6 +8,8 @@
 # SI partner, mass_molar_unit its unit and molecular_weight what converts between the two.
 # The table is read from the lab2clean source package on CRAN.
 #
+# This step also saves the conventional-to-SI conversion table, one row per conventional code.
+#
 # See this step's README.md for the outputs.
 #
 
@@ -41,6 +43,8 @@ lab2cleanUrl <- paste0("https://cran.r-project.org/src/contrib/lab2clean_", lab2
 lab2cleanDataFile <- "lab2clean/data/loinc_reference_unit_v1.rda"
 
 pathToHarmonisedUnitTSV <- file.path(outDir, "harmonisedUnit_lab2clean.tsv")
+pathToConversionTSV <- file.path(outDir, "loincSiConventionalConversion.tsv")
+pathToGroupTSV <- file.path(outDir, "harmonisedGroup_lab2clean.tsv")
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -117,8 +121,48 @@ ParallelLogger::logInfo(
   nrow(lab2cleanUnit), " of ", nrow(loincReferenceUnit), " lab2clean codes are concepts of the vocabulary with a unit"
 )
 
+# The LOINC Group lab2clean gives to a code: property_group_id is "ParentGroup/Group", the Group is
+# the part after the slash. Every code has at most one.
+lab2cleanGroup <- loincReferenceUnit |>
+  dplyr::filter(!is.na(.data$property_group_id)) |>
+  dplyr::transmute(concept_code = .data$loinc_code, group_concept_code = sub(".*/", "", .data$property_group_id)) |>
+  dplyr::inner_join(loincConcepts, by = "concept_code") |>
+  dplyr::select("concept_id", "group_concept_code") |>
+  dplyr::arrange(as.numeric(.data$concept_id))
+ParallelLogger::logInfo(nrow(lab2cleanGroup), " lab2clean codes are concepts of the vocabulary with a Group")
+
+# The conventional-to-SI conversion of lab2clean: one row per conventional code (the mass side
+# of a mass-molar pair) with its SI partner, mass_molar_loinc.
+conversion <- loincReferenceUnit |>
+  dplyr::filter(.data$unit_system == "conventional", !is.na(.data$mass_molar_loinc)) |>
+  dplyr::transmute(
+    concept_code = .data$loinc_code,
+    conventional_unit = .data$reference_unit,
+    si_concept_code = .data$mass_molar_loinc,
+    si_unit = .data$mass_molar_unit,
+    molecular_weight = .data$molecular_weight
+  ) |>
+  dplyr::left_join(loincConcepts, by = "concept_code") |>
+  dplyr::left_join(
+    dplyr::rename(loincConcepts, si_concept_id = "concept_id", si_concept_code = "concept_code"),
+    by = "si_concept_code"
+  ) |>
+  dplyr::select(
+    "concept_id", "concept_code", "conventional_unit",
+    "si_concept_id", "si_concept_code", "si_unit", "molecular_weight"
+  ) |>
+  dplyr::arrange(.data$concept_code)
+ParallelLogger::logInfo(
+  "lab2clean has ", nrow(conversion), " conventional codes with an SI partner; ",
+  sum(!is.na(conversion$concept_id) & !is.na(conversion$si_concept_id)), " have both concepts in the vocabulary"
+)
+
 #
 # --- Output -------------------------------------------------------------
 #
 readr::write_tsv(dplyr::select(lab2cleanUnit, "concept_id", "harmonised_unit"), pathToHarmonisedUnitTSV, na = "")
 ParallelLogger::logInfo("Wrote ", nrow(lab2cleanUnit), " rows to ", pathToHarmonisedUnitTSV)
+readr::write_tsv(conversion, pathToConversionTSV, na = "")
+ParallelLogger::logInfo("Wrote ", nrow(conversion), " rows to ", pathToConversionTSV)
+readr::write_tsv(lab2cleanGroup, pathToGroupTSV, na = "")
+ParallelLogger::logInfo("Wrote ", nrow(lab2cleanGroup), " rows to ", pathToGroupTSV)

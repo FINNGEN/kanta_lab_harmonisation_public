@@ -25,7 +25,7 @@ tableSpecs <- list(
     concept_id = int(), concept_code = chr(), concept_name = chr(), vocabulary_id = chr(),
     is_panel = lgl(), has_component = chr(), has_property = chr(), has_method = chr(),
     has_scale_type = chr(), has_system = chr(), has_time_aspect = chr(),
-    group_concept_id = int(), group_concept_code = chr(), group_concept_name = chr(),
+    group_concept_id = int(), group_concept_code = chr(), group_concept_name = chr(), group_source = chr(),
     harmonised_unit = chr(), harmonised_unit_source = chr()
   ),
   harmonisationTable = readr::cols(
