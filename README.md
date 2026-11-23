@@ -82,14 +82,18 @@ an error.
 
 - **Missing conversion**
   - Label: `mapping_status` = `ERROR:MissingConversion`.
-  - Description: the unit of the test is fine for the concept, but we do not know how to convert it to the
-    unit of the concept, so the values stay unconverted. A test with no unit is not converted, so it is no
-    error.
-  - Source: the pair has a `UNIT` and its concept a target unit (`target_unit` of `harmonisationTable.tsv`), but
-    `unitHarmonisation.tsv` has no row for `has_property` (or `concept_id`) + `UNIT` + `harmonised_unit`.
+  - Description: the test has a unit, but its values cannot be converted: we do not know how to convert it to
+    the unit of the concept, or the (quantitative) concept has no target unit at all. A test with no unit is
+    not converted, so it is no error.
+  - Source: a row in `DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv` with `ignore` =
+    `FALSE`: the pair has a `UNIT`, and either `unitHarmonisation.tsv` has no row for `has_property` (or
+    `concept_id`) + `UNIT` + target unit, or the concept has no `target_unit` (not qualitative or a panel, not in
+    lab2clean and no row in `harmonisedUnitOverwrite.tsv`).
   - Solution 1: add a row with the conversion to `unitHarmonisation.tsv` (for the property, or for the
     concept when it only holds for it).
-  - Solution 2: the `UNIT` is wrong; fix it in `unitFix.tsv`.
+  - Solution 2: the concept has no target unit; add a row to `harmonisedUnitOverwrite.tsv` (and the conversion).
+  - Solution 3: the `UNIT` is wrong; fix it in `unitFix.tsv`.
+  - Solution 4: it is known and accepted; set `ignore` to `TRUE` in `test_unit_context_unit_missing_warning.tsv`.
 - **Property and unit mismatch**
   - Label: `mapping_status` = `ERROR:PropertyUnitMismatch`.
   - Description: the unit of the test does not fit what the concept measures, e.g. a percentage for a
@@ -111,12 +115,15 @@ an error.
     cells counted per field and per litre, are dropped in `3_GetLoincGroupsData`.)
   - Source: in `harmonisationTable.tsv`, the `APPROVED` pairs (not ignored) of one `group_concept_id` have
     more than one target unit (`target_unit`); every approved
-    pair in such a Group that has a target unit gets the error (a qualitative pair, with none, does not). In `targetTable.md` the same check runs on all the concepts of a
+    pair in such a Group that has a target unit gets a row in
+    `DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv`, an error while its `ignore` is
+    `FALSE` (a qualitative pair, with no target unit, does not). In `targetTable.md` the same check runs on all the concepts of a
     Group: ERROR when `group_source` = `lab2clean`, WARNING when `LOINC`.
   - Solution 1: they are the same quantity in different units; pick one unit in
     `harmonisedUnitOverwrite.tsv`.
   - Solution 2: one of the mappings is wrong (another quantity than the test); fix it in `mapping.tsv`.
-  - Solution 3: the Group mixes quantities on purpose; nothing to fix in the mapping.
+  - Solution 3: the Group mixes quantities on purpose; set `ignore` to `TRUE` in
+    `test_unit_loinc_group_unit_mismatch_warning.tsv`.
 
 ### Value
 
@@ -137,34 +144,13 @@ an error.
 The `harmonisation_values_status` column of `DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv`,
 and the Harmonised Values table of the dashboard, put each pair in the first row that applies: AGREE, WARNING,
 DISAGREE, then the rows below. Only `APPROVED` pairs are compared. (A pair with no values is counted under
-**No value: fewer than 1000 values** whatever its status.)
+**No value: fewer than 1000 values or 60 subjects** whatever its status.)
 
-- **Error: missing unit** ("Error" in red)
-  - Label: the "Error: missing unit" row of the dashboard.
+- **Error: values with missing units** ("Error" in red)
+  - Label: the "Error: values with missing units" row of the dashboard.
   - Description: the test has values but was reported with no unit, so they cannot be converted.
   - Source: an `APPROVED` pair with no `UNIT` (and a concept that is not qualitative or a panel).
   - Solution: add a row to `unitFix.tsv` giving it the unit its values show.
-- **Error: missing target unit** ("Error" in red)
-  - Label: the "Error: missing target unit" row of the dashboard; **Harm. Unit** is empty in the Mapping
-    Table.
-  - Description: the test has a unit, but its (quantitative) concept has no target unit to convert to.
-  - Source: an `APPROVED` pair with a `UNIT` whose concept has no `target_unit` in `harmonisationTable.tsv`
-    (lab2clean has no unit for it and there is no row in `harmonisedUnitOverwrite.tsv`).
-  - Solution: add a row to `harmonisedUnitOverwrite.tsv` with the target unit of the concept.
-- **Error: missing conversion** ("Error" in red)
-  - Label: the "Error: missing conversion" row of the dashboard.
-  - Description: the test has a unit and its concept a target unit, but no rule converts one to the other.
-    Such a pair is normally `ERROR:MissingConversion` already, so it is not approved and the row is empty.
-  - Source: an `APPROVED` pair with a `UNIT` and a target unit but no `CONVERSION`.
-  - Solution: add the conversion to `unitHarmonisation.tsv`, if one is possible and makes sense.
-- **Not compared: no harmonised deciles** ("Not compared" in yellow)
-  - Label: the "Not compared: no harmonised deciles" row of the dashboard.
-  - Description: the test has enough values, but the summary has no complete set of nine deciles for it.
-  - Source: an `APPROVED` pair with a `UNIT` and a target unit but an incomplete `decile_value` in
-    `kantaAgregatedTable.tsv`, so no `decile_value_harmonised`.
-  - Solution: report it upstream, to whoever built the Kanta aggregated summaries
-    (`DATA/1_Input/0_KantaAgregatedData`).
-
 ### Informative only
 
 These rows of the dashboard are not errors. They count the pairs whose values are not compared, and
@@ -174,7 +160,7 @@ nothing needs to be done about them here (an unmapped test is handled by the **M
 |---|---|
 | Not compared: only one pair per group | approved pairs with fewer than 2 other approved pairs with harmonised deciles and the same `HARMONISED_UNIT` in any LOINC Group of their concept, or in the concept itself when it is in no Group |
 | No value: value ignored, is qualitative or panel | approved pairs whose concept has `harmonised_unit_source` `isQualitative` or `panel` (no unit, so never compared; `no unit` in grey in the KS column) |
-| No value: fewer than 1000 values | pairs with under 1000 non-missing values, `n` × (1 − `value_missing_p` / 100), whatever their status (`minValues` in `5_EvaluateHarmonisedData` and `6_BuildDashboard`) |
+| No value: fewer than 1000 values or 60 subjects | pairs with fewer non-missing values (`n` × (1 − `value_missing_p` / 100)) than `n_records_no_value_threshold`, or fewer subjects than `n_subjects_no_value_threshold`, of `DATA/1_Input/0_KantaAgregatedData/upstreamSettings.yaml`, whatever their status. A pair above both always has its deciles: `1_BuildKantaAgregatedTable` stops otherwise (report it upstream) |
 | Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR) | pairs whose `mapping_status` is not `APPROVED`: only approved mappings are compared |
 
 - Solution: none; this is only informative.
@@ -194,7 +180,7 @@ records, where the unit and the value came from, the reference ranges and the de
 
 ## 2_Harmonisation
 
-Hand-edited tables, the only place where the mapping is decided (besides the `ignore` flags of the two warning
+Hand-edited tables, the only place where the mapping is decided (besides the `ignore` flags of the four warning
 tables of `4_BuildHarmonisationTable`):
 
 - `unitFix.tsv` — the `PREPROCESED_UNIT` may be wrong or missing; this table gives the corrected `UNIT`
