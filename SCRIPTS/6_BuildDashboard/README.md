@@ -10,7 +10,7 @@ an interactive table with one row per pair.
   `testname_property_shared_warning.tsv` — to tell the warnings that are marked `ignore`.
 - `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
 - `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
-  and `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
+  and `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
 
 - `DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv` — one row
   per `TEST_NAME` + `PREPROCESED_UNIT` + `UNIT` pair (see `5_EvaluateHarmonisedData`).
@@ -39,15 +39,25 @@ In `DATA/6_BuildDashboard/`:
       `ERROR:PropertyUnitMismatch`, `ERROR:SharedProperty`, `ERROR:MissingConversion`,
       `ERROR:LoincGroupUnitsMissmatch`, those that occur), with the number of pairs and records, the percentage of
       all the records, and a total row.
-    - *Harmonised Values* — the number of codes (pairs) and records, and the percentage
-      of records, of the pairs that have no values (100% of the records without a
-      value), those that AGREE with their LOINC Group (KS under 0.5), those with a
-      WARNING (KS from 0.5 to 0.8, both included), those that DISAGREE (KS over 0.8),
-      and those that are not compared, each reason apart: not mapped (MISSING or
-      IGNORE), no conversion to a harmonised unit, and no LOINC Group or concept with enough
-      approved pairs. The rows add up to the total.
-  - **Mapping Table**: one row per pair, with `mapping_status`, the OMOP concept (id, name with
-    ` (panel)` added when the concept is a panel, quantity = `has_property`), `Unit change` (`PREPROCESED_UNIT->UNIT`, only when the
+    - *Harmonised Values* — one row per `harmonisation_values_status` of
+      `evaluatedHarmonisedKantaAgregatedTable.tsv` (set by `5_EvaluateHarmonisedData`): the number of codes (pairs) and records, and the percentage of records,
+      in this order (each pair in the first that applies, the rows add up to the total; only
+      `APPROVED` pairs are compared):
+      AGREE with their LOINC Group (KS under 0.5); WARNING (KS from 0.5 to 0.8, both included);
+      DISAGREE (KS over 0.8); error: missing unit (no `UNIT`; "Error" in red); error: missing target unit (a
+      `UNIT`, but the concept has no target unit; in red); error: missing conversion (a `UNIT` and a target
+      unit but no `CONVERSION`; in red);
+      not compared: no harmonised deciles (incomplete deciles; in yellow); not compared: only one pair
+      per group (fewer than 2 other approved pairs in its LOINC Group or concept; grey row); no value: value ignored, is qualitative or panel (the concept's `harmonised_unit_source` is
+      `isQualitative` or `panel`; grey row); no values (fewer than 1000 non-missing values; grey row);
+      not mapped (`NOT-APPROVED`, `IGNORE`, `MISSING` or `ERROR`; grey row). A pair with no values is
+      counted there first, whatever its status. In the KS column of the Mapping Table an approved pair
+      whose concept has no target unit shows `no unit` in grey.
+  - **Mapping Table**: one row per pair, with `mapping_status` and, below it in the same cell, the
+    harmonised values status of the pair (its row of the *Harmonised Values* table, with the same
+    colour; a second filter under the Status header selects it), the OMOP concept (id, name with
+    ` (panel)` added when the concept is a panel), *Harm. Unit* (the target unit of the concept, `target_unit` of
+    the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`; empty for a qualitative concept or a panel), the quantity (`has_property`), `Unit change` (`PREPROCESED_UNIT->UNIT`, only when the
     two differ and the pair is mapped), `TEST_NAME[PREPROCESED_UNIT]`, the number of
     records, bars with the share of records by value source and by unit source (hover a
     bar for a small table with `pRecords` and the approximate `nRecords`), the deciles,

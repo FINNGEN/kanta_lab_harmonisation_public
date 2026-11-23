@@ -15,7 +15,8 @@ unitFixFile <- args[1]
 mappingFile <- args[2]
 unitHarmonisationFile <- args[3]
 targetTableFile <- args[4]
-outDir <- args[5]
+unitOverwriteFile <- args[5]
+outDir <- args[6]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -23,6 +24,7 @@ ParallelLogger::logInfo("  unitFixFile = ", unitFixFile)
 ParallelLogger::logInfo("  mappingFile = ", mappingFile)
 ParallelLogger::logInfo("  unitHarmonisationFile = ", unitHarmonisationFile)
 ParallelLogger::logInfo("  targetTableFile = ", targetTableFile)
+ParallelLogger::logInfo("  unitOverwriteFile = ", unitOverwriteFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -32,6 +34,7 @@ unitFix <- readTable(unitFixFile, tableSpecs$unitFix)
 mapping <- readTable(mappingFile, tableSpecs$mapping)
 unitHarmonisation <- readTable(unitHarmonisationFile, tableSpecs$unitHarmonisation)
 targetTable <- readTable(targetTableFile, tableSpecs$targetTable)
+unitOverwrite <- readTable(unitOverwriteFile, tableSpecs$unitOverwrite)
 
 #
 # --- Action -------------------------------------------------------------
@@ -61,8 +64,23 @@ concepts <- targetTable |>
   dplyr::distinct(
     concept_id, concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property, has_method, has_scale_type, has_system, has_time_aspect,
-    HARMONISED_UNIT = harmonised_unit
-  )
+    target_unit = harmonised_unit, target_unit_source = harmonised_unit_source
+  ) |>
+  # The target unit set by hand (2_Harmonisation/harmonisedUnitOverwrite.tsv) wins over the one of the
+  # target table, also for a qualitative concept or a panel; its source is the note.
+  dplyr::left_join(
+    unitOverwrite |> dplyr::transmute(concept_id, overwrite_unit = harmonised_unit, overwrite_note = dplyr::coalesce(note, "overwrite")),
+    by = "concept_id", relationship = "many-to-one"
+  ) |>
+  dplyr::mutate(
+    target_unit_source = dplyr::if_else(is.na(overwrite_unit), target_unit_source, overwrite_note),
+    target_unit = dplyr::coalesce(overwrite_unit, target_unit),
+    HARMONISED_UNIT = target_unit
+  ) |>
+  dplyr::select(-overwrite_unit, -overwrite_note)
+ParallelLogger::logInfo(
+  sum(concepts$concept_id %in% unitOverwrite$concept_id), " concepts take their target unit from ", unitOverwriteFile
+)
 if (anyDuplicated(concepts$concept_id) > 0) {
   ParallelLogger::logWarn(
     sum(duplicated(concepts$concept_id)), " concept_ids have more than one set of attributes or units in the target table"
@@ -112,7 +130,7 @@ result <- result |>
     concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property,
     group_concept_id, group_concept_code, group_concept_name,
-    HARMONISED_UNIT, CONVERSION
+    target_unit, target_unit_source, HARMONISED_UNIT, CONVERSION
   ) |>
   dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT)
 

@@ -9,14 +9,14 @@
   --bg: #f6f7f9; --panel: #ffffff; --fg: #1f2933; --muted: #6b7280; --line: #e3e6ea;
   --accent: #2b4c7e; --head: #f0f2f5;
   --approved: #3fae4a; --error: #d64545; --notapproved: #d99a2b; --ignore: #7b8794; --notfound: #b68b5a;
-  --agree-bg: #d4f1d4; --warn-bg: #fdf3c4; --dis-bg: #f9d3d3;
+  --agree-bg: #d4f1d4; --warn-bg: #fdf3c4; --dis-bg: #f9d3d3; --none-bg: #e5e7eb;
   --bar-source: #2f5fd0; --bar-extracted: #d98a2b; --bar-qc: #d64545; --bar-na: #cfd4da;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14181d; --panel: #1c2128; --fg: #e4e8ec; --muted: #9aa4af; --line: #2d343c;
     --accent: #7fa6e0; --head: #232a32;
-    --agree-bg: #1f4a28; --warn-bg: #4d4318; --dis-bg: #5a2323;
+    --agree-bg: #1f4a28; --warn-bg: #4d4318; --dis-bg: #5a2323; --none-bg: #3a4048;
     --bar-na: #444c55;
   }
 }
@@ -50,6 +50,11 @@ table.summary tr.total td { font-weight: 600; border-top: 2px solid var(--line);
 .ks.agree { background: var(--agree-bg); }
 .ks.warn { background: var(--warn-bg); }
 .ks.dis { background: var(--dis-bg); }
+.ks.none { background: var(--none-bg); color: var(--muted); }
+table.summary tr.row-grey td { color: var(--muted); }
+.vs { display: inline-block; margin-top: 3px; font-size: 11.5px; }
+.vs-grey { color: var(--muted); }
+table.summary tr.row-yellow td { background: var(--warn-bg); }
 .ks small { color: var(--muted); }
 /* table tab */
 .toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
@@ -61,6 +66,7 @@ table.data { border-collapse: collapse; table-layout: fixed; width: 100%; min-wi
 table.data th { position: sticky; top: 0; z-index: 2; background: var(--head); text-align: left; vertical-align: bottom; padding: 6px 4px 5px; border-bottom: 1px solid var(--line); }
 table.data th .label { cursor: pointer; user-select: none; display: block; margin-bottom: 4px; white-space: normal; line-height: 1.2; }
 table.data th .arrow { color: var(--accent); }
+table.data th select + select { margin-top: 3px; }
 table.data th input, table.data th select { width: 100%; min-width: 0; font: inherit; padding: 2px 3px; background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 3px; }
 table.data th input.bad { border-color: var(--error); outline: 1px solid var(--error); }
 table.data td { padding: 4px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
@@ -158,6 +164,7 @@ table.data .sub { color: var(--muted); }
     { key: "status", label: "Status", type: "status", w: 86 },
     { key: "concept_id", label: "OMOP concept ID", type: "num", plain: true, w: 70 },
     { key: "concept_name", label: "OMOP name", type: "text", w: 135 },
+    { key: "harm_unit", label: "Harm.<br>Unit", html: true, type: "text", w: 60 },
     { key: "quantity", label: "OMOP quantity", type: "text", w: 82 },
     { key: "unit_change", label: "Unit change", type: "text", w: 74 },
     { key: "test", label: "TestCode[Unit]", type: "text", w: 118 },
@@ -247,6 +254,10 @@ table.data .sub { color: var(--muted); }
         matchers[c.key] = function (i) { return arr[i].indexOf(needle) !== -1; };
       }
     });
+    if (filters.value_status) {
+      var valueText = filters.value_status;
+      matchers.value_status = function (i) { return D.value_status[i] === valueText; };
+    }
     document.querySelectorAll("#grid thead input").forEach(function (el) {
       el.classList.toggle("bad", !!bad[el.dataset.key]);
     });
@@ -285,10 +296,12 @@ table.data .sub { color: var(--muted); }
     var v = D[c.key][i];
     switch (c.type) {
       case "status":
-        return '<td><span class="st st-' + esc(String(v).replace(/:.*/, "")) + '">' + esc(v) + "</span></td>";
+        return '<td><span class="st st-' + esc(String(v).replace(/:.*/, "")) + '">' + esc(v) + "</span><br>" +
+          '<span class="vs ' + esc(D.value_style[i]) + '">' + esc(D.value_status[i]) + "</span></td>";
       case "num":
         return '<td class="num">' + (v == null ? "" : (c.plain || c.key === "log10_d5" ? v : v.toLocaleString("en-US"))) + "</td>";
       case "ks":
+        if (v == null && D.no_unit[i]) return '<td><span class="ks none">no unit</span></td>';
         return "<td>" + (v == null ? "" : '<span class="ks ' + ksClass(v) + '">' + v + " <small>(" + D.ks_mlp[i] + ")</small></span>") + "</td>";
       case "bar":
         var p = parseBar(v);
@@ -368,14 +381,16 @@ table.data .sub { color: var(--muted); }
   var head = "<tr>" + COLS.map(function (c) {
     var input;
     if (c.type === "status") {
-      input = '<select data-key="' + c.key + '"><option value=""></option>' +
-        CFG.statusOrder.map(function (s) { return '<option value="' + s + '">' + s + "</option>"; }).join("") + "</select>";
+      input = '<select data-key="' + c.key + '" title="Mapping status"><option value=""></option>' +
+        CFG.statusOrder.map(function (s) { return '<option value="' + s + '">' + s + "</option>"; }).join("") + "</select>" +
+        '<select data-key="value_status" title="Harmonised values status"><option value=""></option>' +
+        CFG.valueStatusOrder.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("") + "</select>";
     } else if (c.type === "bar") {
       input = "";
     } else {
       input = '<input data-key="' + c.key + '" type="text" autocomplete="off">';
     }
-    return '<th style="width:' + c.w + 'px"><span class="label" data-key="' + c.key + '">' + esc(c.label) + '<span class="arrow" id="arrow-' + c.key + '"></span></span>' + input + "</th>";
+    return '<th style="width:' + c.w + 'px"><span class="label" data-key="' + c.key + '">' + (c.html ? c.label : esc(c.label)) + '<span class="arrow" id="arrow-' + c.key + '"></span></span>' + input + "</th>";
   }).join("") + "</tr>";
   document.querySelector("#grid thead").innerHTML = head;
 

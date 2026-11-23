@@ -33,6 +33,7 @@ tableSpecs <- list(
     concept_id = int(), ignore_mapping_reason = chr(), concept_code = chr(), concept_name = chr(),
     vocabulary_id = chr(), is_panel = lgl(), has_component = chr(), has_property = chr(),
     group_concept_id = chr(), group_concept_code = chr(), group_concept_name = chr(),
+    target_unit = chr(), target_unit_source = chr(),
     HARMONISED_UNIT = chr(), CONVERSION = chr(), mapping_warning_messages = chr()
   ),
   lab2cleanUnit = readr::cols(

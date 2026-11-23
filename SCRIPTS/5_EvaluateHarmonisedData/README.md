@@ -37,6 +37,14 @@ In `DATA/5_EvaluateHarmonisedData/`:
     empty if the pair has no complete deciles).
   - `reference_decile_value_harmonised` — the deciles of the reference (see Action), in the
     same text format, right after `decile_value_harmonised`; empty if the pair is not tested.
+  - `harmonisation_values_status` — second column, right after `mapping_status`: the row of the Harmonised
+    Values table of the dashboard the pair falls in, the first that applies: `AGREE` (KS under 0.5),
+    `WARNING` (0.5 to 0.8), `DISAGREE` (over 0.8), `Error: missing unit` (no `UNIT`), `Error: missing target
+    unit` (no `target_unit`), `Error: missing conversion` (no `CONVERSION`), `Not compared: no
+    harmonised deciles`, `Not compared: only one pair per group`, `No value: value ignored, is qualitative or
+    panel` (`target_unit_source` is `isQualitative` or `panel`), `No value: fewer than 1000
+    values` (checked first, whatever the status) and `Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)`
+    (any pair that is not `APPROVED`). The errors and the not-compared rows apply to approved pairs only.
   - `KS` — the Kolmogorov-Smirnov statistic between the pair and its reference.
   - `KS_mlp` — `-log10` of the KS p-value (capped at 300).
   - `log10_D5` — `log10(decile 5 of the pair / decile 5 of the reference)`; positive
@@ -76,8 +84,9 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
 
 1. Collapses the table to one row per pair, with the deciles of `decile_value` and
    `decile_value_harmonised` as columns.
-2. Builds the reference of each pair that has the 9 harmonised deciles and at least 2
-   values (`n` times the share of records with a value). The reference is the LOINC
+2. Builds the reference of each pair that has the 9 harmonised deciles and at least 1000
+   values (`n` times the share of records with a value; `minValues`). A pair with fewer values
+   counts as having no values: it is neither tested nor part of a reference. The reference is the LOINC
    Group of the concept: all the pairs in it. A concept can be in several Groups, tried
    in the order of `group_concept_id` (the most specific first): the first Group with at
    least 2 **other** pairs whose `mapping_status` is `APPROVED` (not `ERROR:<reason>`, `IGNORE` or
@@ -85,15 +94,18 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
    is the concept: all the pairs with the same `concept_id`, with the same condition.
    Only the pairs with the same `HARMONISED_UNIT` as the tested pair are in the reference.
    The pair itself is never in its reference, so a large pair cannot
-   agree with itself. Approved pairs are tested against the others; pairs that are not
-   approved are tested against the approved ones. For each decile the reference is the
+   agree with itself. Only the approved pairs are tested, each against the other approved
+   pairs; a pair that is not `APPROVED` (`NOT-APPROVED`, `ERROR:<reason>`, `IGNORE`, `MISSING`) is not
+   tested. For each decile the reference is the
    median of the harmonised deciles of those pairs, weighted by `sqrt(n values)`.
 3. `KS`: each set of deciles is a step CDF (at a value, the highest decile level at or
    below it; 0 below the lowest decile). `KS` is the largest gap between the CDFs over
    the decile values of both, as in the earlier `labDataSummary.R`. As the levels stop
    at 0.9, `KS` is at most 0.9. The p-value is the asymptotic KS one, with the pair's
    n values and the sum of the reference pairs'. `log10_D5` is the shift of the median.
-4. A pair with no harmonised deciles (no `CONVERSION`), or whose Groups (or concept, when
+4. A pair with no `HARMONISED_UNIT` (a qualitative concept, a panel, or a concept with no target
+   unit) is neither tested nor part of a reference.
+5. A pair with no harmonised deciles (no `CONVERSION`), or whose Groups (or concept, when
    there is no Group) have fewer than 2 other approved pairs, is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
    The log counts the pairs tested, by type of reference, and not tested.
 

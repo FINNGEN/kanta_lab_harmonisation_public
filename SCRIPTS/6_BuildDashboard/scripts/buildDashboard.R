@@ -24,6 +24,8 @@ pathToDashboard <- file.path(outDir, "dashboard.html")
 # A pair whose values agree with the reference has a KS under ksAgree; above ksDisagree it
 # disagrees; in between it is a warning.
 ksAgree <- 0.5
+# A pair with fewer non-missing values than this counts as "No values" (as in 5_EvaluateHarmonisedData).
+minValues <- 1000
 ksDisagree <- 0.8
 
 ParallelLogger::clearLoggers()
@@ -47,7 +49,7 @@ chr <- readr::col_character
 evaluated <- readr::read_tsv(
   evaluatedFile,
   col_types = readr::cols(
-    mapping_status = chr(), TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(),
+    mapping_status = chr(), harmonisation_values_status = chr(), TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(),
     n = readr::col_double(),
     unit_source_injection_correction_na_p = chr(),
     reference_range = chr(),
@@ -58,7 +60,7 @@ evaluated <- readr::read_tsv(
     concept_code = chr(), concept_name = chr(), vocabulary_id = chr(), is_panel = readr::col_logical(),
     has_component = chr(), has_property = chr(),
     group_concept_id = chr(), group_concept_code = chr(), group_concept_name = chr(),
-    HARMONISED_UNIT = chr(), CONVERSION = chr(), mapping_warning_messages = chr(),
+    target_unit = chr(), target_unit_source = chr(), HARMONISED_UNIT = chr(), CONVERSION = chr(), mapping_warning_messages = chr(),
     KS = readr::col_double(), KS_mlp = readr::col_double(), log10_D5 = readr::col_double(),
     in_reference = readr::col_logical(), reference_type = chr(), reference_group_concept_id = chr(), n_reference_pairs = readr::col_integer()
   ),
@@ -85,14 +87,15 @@ esc <- function(x) {
   x <- gsub("<", "&lt;", x, fixed = TRUE)
   gsub(">", "&gt;", x, fixed = TRUE)
 }
-htmlTable <- function(header, rows, numericFrom = 2, totalLast = TRUE) {
+htmlTable <- function(header, rows, numericFrom = 2, totalLast = TRUE, rowClasses = NULL) {
   cells <- function(tag, values, class = "") {
     cls <- ifelse(seq_along(values) >= numericFrom, " class=\"num\"", "")
     paste0("<", tag, cls, ">", values, "</", tag, ">", collapse = "")
   }
   body <- vapply(seq_len(nrow(rows)), function(i) {
     last <- totalLast && i == nrow(rows)
-    paste0("<tr", if (last) " class=\"total\"", ">", cells("td", unlist(rows[i, ], use.names = FALSE)), "</tr>")
+    rowClass <- if (last) "total" else if (!is.null(rowClasses) && i <= length(rowClasses)) rowClasses[i] else ""
+    paste0("<tr", if (nzchar(rowClass)) paste0(" class=\"", rowClass, "\""), ">", cells("td", unlist(rows[i, ], use.names = FALSE)), "</tr>")
   }, character(1))
   paste0("<table class=\"summary\"><thead><tr>", cells("th", header), "</tr></thead><tbody>", paste(body, collapse = ""), "</tbody></table>")
 }
@@ -272,13 +275,12 @@ nSource <- function(x) sum(concepts$harmonised_unit_source %in% x)
 conceptRows <- tibble::tibble(
   step = c(
     "concepts in measurementOmopData.tsv", "removed: conventional with an SI partner", "concepts in the table",
-    "panel (no unit)", "isQualitative (no unit)", "unit from lab2clean", "unit from the overwrite",
+    "panel (no unit)", "isQualitative (no unit)", "unit from lab2clean",
     "no unit (not in lab2clean)"
   ),
   n = c(
     nrow(measurement), sum(measurement$concept_id %in% conversion$concept_id), nConcepts,
     nSource("panel"), nSource("isQualitative"), nSource("lab2clean"),
-    sum(!concepts$harmonised_unit_source %in% c(NA, "panel", "isQualitative", "lab2clean")),
     sum(is.na(concepts$harmonised_unit_source))
   )
 ) |>
@@ -388,34 +390,53 @@ fixedTable <- htmlTable(
 )
 ParallelLogger::logInfo(fixedPairs, " pairs with a fixed unit, ", fmtInt(fixedRecords), " records")
 
-# 2. Harmonised values: each pair has no values, or its values are compared with the reference
-#    (AGREE / WARNING / DISAGREE by KS), or they are not compared, and why.
-valueClass <- evaluated |>
-  dplyr::mutate(
-    valueClass = dplyr::case_when(
-      dplyr::coalesce(value_missing_p, 0) >= 100 ~ "no_values",
-      !is.na(KS) & KS < ksAgree ~ "AGREE",
-      !is.na(KS) & KS <= ksDisagree ~ "WARNING",
-      !is.na(KS) ~ "DISAGREE",
-      mapping_status %in% c("MISSING", "IGNORE") ~ "not_mapped",
-      is.na(decile_value_harmonised) ~ "no_unit",
-      TRUE ~ "no_reference"
-    )
-  ) |>
-  dplyr::summarise(pairs = dplyr::n(), records = sum(n), .by = valueClass)
+# An approved pair whose concept has no target unit (a qualitative concept, a panel, or a concept with no
+# unit) is not compared: shown grey.
+noTargetUnit <- evaluated$mapping_status %in% "APPROVED" & is.na(evaluated$target_unit)
+
+# 2. Harmonised values: one row per harmonisation_values_status, in this order, with its label and style.
+notCompared <- function(class) paste0("<span class=\"ks ", class, "\">Not compared</span>: ")
 valueRows <- tibble::tribble(
-  ~valueClass, ~label,
-  "no_values", "No values",
-  "AGREE", paste0("<span class=\"ks agree\">AGREE</span> KS &lt; ", ksAgree),
-  "WARNING", paste0("<span class=\"ks warn\">WARNING</span> ", ksAgree, " &le; KS &le; ", ksDisagree),
-  "DISAGREE", paste0("<span class=\"ks dis\">DISAGREE</span> KS &gt; ", ksDisagree),
-  "not_mapped", "Not compared: not mapped (MISSING or IGNORE)",
-  "no_unit", "Not compared: no conversion to a harmonised unit",
-  "no_reference", "Not compared: no LOINC Group or concept with enough approved pairs"
-) |>
+  ~valueClass, ~status, ~label, ~rowClass,
+  "AGREE", "AGREE", paste0("<span class=\"ks agree\">AGREE</span> KS &lt; ", ksAgree), "",
+  "WARNING", "WARNING", paste0("<span class=\"ks warn\">WARNING</span> ", ksAgree, " &le; KS &le; ", ksDisagree), "",
+  "DISAGREE", "DISAGREE", paste0("<span class=\"ks dis\">DISAGREE</span> KS &gt; ", ksDisagree), "",
+  "no_unit", "Error: missing unit", "<span class=\"ks dis\">Error</span>: missing unit", "",
+  "no_target_unit", "Error: missing target unit", "<span class=\"ks dis\">Error</span>: missing target unit", "",
+  "no_conversion", "Error: missing conversion", "<span class=\"ks dis\">Error</span>: missing conversion", "",
+  "no_deciles", "Not compared: no harmonised deciles", paste0(notCompared("warn"), "no harmonised deciles"), "",
+  "no_reference", "Not compared: only one pair per group", "Not compared: only one pair per group", "row-grey",
+  "qualitative_panel", "No value: value ignored, is qualitative or panel", "No value: value ignored, is qualitative or panel", "row-grey",
+  "no_values", paste0("No value: fewer than ", minValues, " values"), paste0("No value: fewer than ", minValues, " values"), "row-grey",
+  "not_approved", "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)", "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)", "row-grey"
+)
+# The status of each pair is its harmonisation_values_status, set by 5_EvaluateHarmonisedData: one of
+# the `status` of valueRows (minValues and the KS thresholds must match that step).
+pairValueClass <- valueRows$valueClass[match(evaluated$harmonisation_values_status, valueRows$status)]
+stopifnot(!anyNA(pairValueClass))
+valueClass <- tibble::tibble(valueClass = pairValueClass, n = evaluated$n) |>
+  dplyr::summarise(pairs = dplyr::n(), records = sum(n), .by = valueClass)
+valueRows <- valueRows |>
   dplyr::left_join(valueClass, by = "valueClass") |>
   dplyr::mutate(dplyr::across(c(pairs, records), \(x) dplyr::coalesce(x, 0)))
 stopifnot(sum(valueRows$records) == totalRecords)
+# The values status of each pair, shown under its mapping status in the Mapping Table: a short label
+# and its style (the colour of its row in the Harmonised Values table).
+valueStatus <- tibble::tribble(
+  ~valueClass, ~short, ~style,
+  "AGREE", "AGREE", "ks agree",
+  "WARNING", "WARNING", "ks warn",
+  "DISAGREE", "DISAGREE", "ks dis",
+  "no_unit", "Error: missing unit", "ks dis",
+  "no_target_unit", "Error: missing target unit", "ks dis",
+  "no_conversion", "Error: missing conversion", "ks dis",
+  "no_deciles", "Not compared: no harmonised deciles", "ks warn",
+  "no_reference", "Not compared: one pair per group", "vs-grey",
+  "qualitative_panel", "No value: qualitative or panel", "vs-grey",
+  "no_values", "No value: too few values", "vs-grey",
+  "not_approved", "Not mapped", "vs-grey"
+)
+stopifnot(all(pairValueClass %in% valueStatus$valueClass))
 valuesTable <- htmlTable(
   c("", "Number of codes", "Number of records", "Percentage of records"),
   dplyr::bind_rows(
@@ -423,7 +444,8 @@ valuesTable <- htmlTable(
       dplyr::transmute(label, fmtInt(pairs), fmtInt(records), fmtPct(100 * records / totalRecords)) |>
       rlang::set_names(paste0("c", 1:4)),
     tibble::tibble(c1 = "TOTAL", c2 = fmtInt(sum(valueRows$pairs)), c3 = fmtInt(totalRecords), c4 = "100.00%")
-  )
+  ),
+  rowClasses = valueRows$rowClass
 )
 ParallelLogger::logInfo(paste0(valueRows$valueClass, " ", valueRows$pairs, collapse = ", "), " pairs")
 
@@ -452,6 +474,7 @@ table <- tibble::tibble(
   concept_name = dplyr::if_else(
     evaluated$is_panel %in% TRUE, paste0(evaluated$concept_name, " (panel)"), evaluated$concept_name
   ),
+  harm_unit = evaluated$target_unit,
   quantity = evaluated$has_property,
   unit_change = dplyr::if_else(
     evaluated$mapping_status != "MISSING" &
@@ -466,6 +489,9 @@ table <- tibble::tibble(
   deciles = evaluated$decile_value,
   ks = evaluated$KS,
   ks_mlp = evaluated$KS_mlp,
+  no_unit = noTargetUnit,
+  value_status = valueStatus$short[match(pairValueClass, valueStatus$valueClass)],
+  value_style = valueStatus$style[match(pairValueClass, valueStatus$valueClass)],
   conversion = conversion,
   conversion_unit = conversionUnit,
   deciles_h = evaluated$decile_value_harmonised,
@@ -490,7 +516,8 @@ toJson <- function(x) {
 dataJson <- toJson(as.list(table))
 configJson <- toJson(list(
   ksAgree = ksAgree, ksDisagree = ksDisagree,
-  statusOrder = c(setdiff(statusOrder, "ERROR"), paste0("ERROR:", errorReasons$reason))
+  statusOrder = c(setdiff(statusOrder, "ERROR"), paste0("ERROR:", errorReasons$reason)),
+  valueStatusOrder = valueStatus$short
 ))
 ParallelLogger::logInfo(nrow(table), " rows in the table, ", format(nchar(dataJson, type = "bytes") / 1e6, digits = 3), " MB of data")
 

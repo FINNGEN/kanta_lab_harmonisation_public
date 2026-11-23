@@ -237,16 +237,12 @@ record(
     " units not in lab2clean"
   )
 )
-# The target unit of every approved concept needs a rule in the table: a rule of its has_property
-# with that HARMONISED_UNIT, or a rule of the concept itself.
+# The target unit of every approved concept (target_unit of the harmonisation table: the one of
+# targetTable.tsv, or of harmonisedUnitOverwrite.tsv) needs a rule in the table: a rule of its
+# has_property with that HARMONISED_UNIT, or a rule of the concept itself.
 approvedTargets <- harmonisationTable |>
-  dplyr::filter(grepl("^(APPROVED|ERROR)", mapping_status)) |>
-  dplyr::distinct(concept_id) |>
-  dplyr::inner_join(
-    targetTable |> dplyr::distinct(concept_id, has_property, harmonised_unit),
-    by = "concept_id"
-  ) |>
-  dplyr::filter(!is.na(harmonised_unit))
+  dplyr::filter(grepl("^(APPROVED|ERROR)", mapping_status), !is.na(target_unit)) |>
+  dplyr::distinct(concept_id, has_property, harmonised_unit = target_unit)
 hasRule <- paste(approvedTargets$has_property, approvedTargets$harmonised_unit, sep = "\r") %in%
   paste(unitHarmonisation$context, unitHarmonisation$HARMONISED_UNIT, sep = "\r") |
   paste(approvedTargets$concept_id, approvedTargets$harmonised_unit, sep = "\r") %in%
@@ -254,7 +250,7 @@ hasRule <- paste(approvedTargets$has_property, approvedTargets$harmonised_unit, 
 targetUnits <- approvedTargets |> dplyr::mutate(hasRule = hasRule) |>
   dplyr::summarise(hasRule = any(hasRule), nConcepts = dplyr::n(), .by = c(has_property, harmonised_unit))
 record(
-  "unitHarmonisation.tsv", "the target unit of an approved concept (targetTable.tsv) has a rule for its has_property",
+  "unitHarmonisation.tsv", "the target unit of an approved concept has a rule for its has_property",
   bad = !targetUnits$hasRule,
   df = targetUnits, what = c("has_property", "harmonised_unit"),
   extra = paste0(sum(targetUnits$nConcepts[!targetUnits$hasRule]), " approved concepts, ", sum(!targetUnits$hasRule), " has_property + unit")
@@ -328,15 +324,12 @@ record(
   df = harmonisationTable, what = c("TEST_NAME", "PREPROCESED_UNIT", "HARMONISED_UNIT")
 )
 # The target unit of the concept needs a CONVERSION: an approved pair with a UNIT whose concept has a
-# target unit in targetTable.tsv but no CONVERSION is not harmonised. A pair with no UNIT is not
-# converted, so it is not checked. (The build clears a HARMONISED_UNIT without a CONVERSION, so the unit is taken from
-# the target table, not from the output.)
-conceptTargetUnit <- targetTable |> dplyr::distinct(concept_id, targetUnit = harmonised_unit)
+# target unit (target_unit) but no CONVERSION is not harmonised. A pair with no UNIT is not converted,
+# so it is not checked. (The build clears a HARMONISED_UNIT without a CONVERSION, so target_unit is used.)
 notHarmonised <- harmonisationTable |>
   dplyr::filter(grepl("^(APPROVED|ERROR)", mapping_status)) |>
-  dplyr::left_join(conceptTargetUnit, by = "concept_id", relationship = "many-to-one") |>
-  dplyr::filter(!is.na(UNIT), !is.na(targetUnit), is.na(CONVERSION)) |>
-  dplyr::mutate(TARGET = targetUnit)
+  dplyr::filter(!is.na(UNIT), !is.na(target_unit), is.na(CONVERSION)) |>
+  dplyr::mutate(TARGET = target_unit)
 record(
   "harmonisationTable.tsv", "an APPROVED pair with a UNIT whose concept has a target unit has a CONVERSION to it",
   bad = rep(TRUE, nrow(notHarmonised)),

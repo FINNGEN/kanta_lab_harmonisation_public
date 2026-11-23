@@ -52,7 +52,7 @@ fi
 EVALUATED_FILE="$DATA_DIR/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv"
 UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
 MEASUREMENT_FILE="$DATA_DIR/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv"
-CONVERSION_FILE="$DATA_DIR/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
+CONVERSION_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
 WARNING_MISMATCH_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv"
 WARNING_SHARED_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_property_shared_warning.tsv"

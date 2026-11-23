@@ -14,9 +14,10 @@ From `DATA/`:
   `ignore_mapping_reason`, `APPROVED`. The base of the table.
 - `2_Harmonisation/unitHarmonisation.tsv` — `context`, `UNIT`,
   `HARMONISED_UNIT`, `CONVERSION`. The conversion per property or concept, source unit and
-  harmonised unit (a unit of lab2clean or of the unit overwrite table).
-- `3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` and
-  `3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv` — only to validate the units.
+  harmonised unit (a unit of lab2clean or of `harmonisedUnitOverwrite.tsv`).
+- `2_Harmonisation/harmonisedUnitOverwrite.tsv` — `concept_id`, `harmonised_unit`, `note`. The target unit of a
+  concept set by hand; it wins over the one of `targetTable.tsv`.
+- `3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` — only to validate the units.
 - `3_Target/4_BuildTargetTable/targetTable.tsv` — the concept, its LOINC axes, its Groups and
   its harmonised unit (`harmonised_unit`), joined on the concept id.
 
@@ -37,7 +38,9 @@ In `DATA/4_BuildHarmonisationTable/`:
 | ignore_mapping_reason | Character | Why the test is not mapped | `mapping.tsv` |
 | concept_code, concept_name, vocabulary_id, is_panel, has_component, has_property |  | The concept itself; `has_property` (the kind of quantity) is what decides the unit conversion | `targetTable.tsv` |
 | group_concept_id, group_concept_code, group_concept_name | Character | The LOINC Groups the concept belongs to, joined with `;` (same order in the three columns, by group code) | `targetTable.tsv` |
-| HARMONISED_UNIT | Character | Unit the value is converted to. Empty when there is no `CONVERSION` | `targetTable.tsv` (`harmonised_unit`) |
+| target_unit | Character | The target unit of the concept: its row of `harmonisedUnitOverwrite.tsv`, else `harmonised_unit` of `targetTable.tsv`. Empty for a qualitative concept, a panel, or a concept with no unit | `harmonisedUnitOverwrite.tsv`, `targetTable.tsv` |
+| target_unit_source | Character | Where `target_unit` came from: the `note` of the overwrite, else `harmonised_unit_source` of `targetTable.tsv` (`lab2clean`, `isQualitative`, `panel`) | `harmonisedUnitOverwrite.tsv`, `targetTable.tsv` |
+| HARMONISED_UNIT | Character | Unit the value is converted to: `target_unit`, but empty when there is no `CONVERSION` | `target_unit` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `unitHarmonisation.tsv` |
 | mapping_warning_messages | Character | Last column. Every message of the two warning tables that joins to the row (ignored or not), each starting with its type, `WrongProperty:` (property mismatch) or `SharedProperty:` (shared property), separated by ` \| `. Empty when there is none | the warning tables |
 
@@ -89,7 +92,10 @@ Every table is read with `readr::read_tsv()` and an explicit `col_types` for eac
    `PREPROCESED_UNIT` and `unit_fix_reasoning` come from the fix; a pair that is not in `unitFix.tsv`
    copies its `UNIT` into `PREPROCESED_UNIT`.
 2. Appends the concept columns and `harmonised_unit` of `targetTable.tsv` (a row per concept and Group,
-   so one row per concept is taken) on `concept_id`; `harmonised_unit` becomes `HARMONISED_UNIT`.
+   so one row per concept is taken) on `concept_id`. The target unit of a concept in
+   `harmonisedUnitOverwrite.tsv` is replaced by its row there (also for a qualitative concept or a panel),
+   with the `note` as its source: this gives `target_unit` and `target_unit_source`, and `HARMONISED_UNIT`
+   starts as `target_unit`.
 3. Appends the Groups of the concept from `targetTable.tsv`, joined with `;`.
 4. Appends `CONVERSION` from `unitHarmonisation.tsv` on `context` + `UNIT` + `HARMONISED_UNIT`. A rule
    whose `context` is a LOINC property applies to every concept with that `has_property`; a rule whose

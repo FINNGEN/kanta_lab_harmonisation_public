@@ -53,8 +53,8 @@ UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
 MAPPING_FILE="$DATA_DIR/2_Harmonisation/mapping.tsv"
 UNIT_HARMONISATION_FILE="$DATA_DIR/2_Harmonisation/unitHarmonisation.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
-LAB2CLEAN_UNIT_FILE="$DATA_DIR/3_Target/2a_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv"
-UNIT_OVERWRITE_FILE="$DATA_DIR/3_Target/2b_HarmonisedUnitOverwrite/harmonisedUnitOverwrite.tsv"
+LAB2CLEAN_UNIT_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv"
+UNIT_OVERWRITE_FILE="$DATA_DIR/2_Harmonisation/harmonisedUnitOverwrite.tsv"
 
 for f in "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$LAB2CLEAN_UNIT_FILE" "$UNIT_OVERWRITE_FILE"; do
   if [[ ! -f "$f" ]]; then
@@ -71,7 +71,7 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/buildHarmonisationTable.R" \
-  "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$OUTDIR"
+  "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$OUTDIR"
 
 Rscript "$STEP_DIR/scripts/validateHarmonisationTable.R" \
   "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" \

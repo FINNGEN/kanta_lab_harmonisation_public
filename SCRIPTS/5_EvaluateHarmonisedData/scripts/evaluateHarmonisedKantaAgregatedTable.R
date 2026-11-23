@@ -12,6 +12,13 @@ outDir <- args[2]
 
 # A pair is only tested when its reference is made of at least this many other pairs.
 minReferencePairs <- 2
+# A pair with fewer non-missing values than this counts as having no values: it is neither tested
+# nor part of a reference.
+minValues <- 1000
+# KS thresholds of harmonisation_values_status: AGREE under ksAgree, WARNING up to ksDisagree,
+# DISAGREE above.
+ksAgree <- 0.5
+ksDisagree <- 0.8
 
 pathToEvaluatedTSV <- file.path(outDir, "evaluatedHarmonisedKantaAgregatedTable.tsv")
 pairKey <- c("TEST_NAME", "PREPROCESED_UNIT")
@@ -20,6 +27,7 @@ ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  harmonisedFile = ", harmonisedFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
+ParallelLogger::logInfo("  minValues = ", minValues)
 ParallelLogger::logInfo("  minReferencePairs = ", minReferencePairs)
 
 #
@@ -52,6 +60,8 @@ harmonised <- readr::read_tsv(
     group_concept_id = readr::col_character(),
     group_concept_code = readr::col_character(),
     group_concept_name = readr::col_character(),
+    target_unit = readr::col_character(),
+    target_unit_source = readr::col_character(),
     HARMONISED_UNIT = readr::col_character(),
     CONVERSION = readr::col_character(),
     mapping_warning_messages = readr::col_character()
@@ -96,11 +106,14 @@ decilesHarmonised <- decileMatrix("decile_value_harmonised")
 #    same scale. The pair itself is never part of its reference. A pair is approved when its mapping_status is APPROVED (not
 #    ERROR, IGNORE or NOT-APPROVED). The reference deciles are, for each decile, the median
 #    of the harmonised deciles of those pairs, each weighted by sqrt(n values), so a very
-#    large pair does not take over.
+#    large pair does not take over. A pair with no HARMONISED_UNIT (a qualitative concept, a
+#    panel, or a concept with no target unit) is neither tested nor part of a reference. Only
+#    the APPROVED pairs are tested (NOT-APPROVED, ERROR, IGNORE and MISSING pairs are not).
 nValues <- pairs$n * (1 - dplyr::coalesce(pairs$value_missing_p, 0) / 100)
-hasDeciles <- complete.cases(decilesHarmonised) & nValues >= 2
+hasDeciles <- complete.cases(decilesHarmonised) & nValues >= minValues
 isApproved <- pairs$mapping_status %in% "APPROVED"
-isReference <- hasDeciles & isApproved
+hasUnit <- !is.na(pairs$HARMONISED_UNIT)
+isReference <- hasDeciles & isApproved & hasUnit
 
 referenceKeysOfPair <- purrr::map2(pairs$group_concept_id, pairs$concept_id, function(groups, conceptId) {
   if (!is.na(groups)) {
@@ -141,7 +154,7 @@ ksTest <- function(deciles1, deciles2, n1, n2) {
   c(KS = D, pValue = max(min(pValue, 1), 0))
 }
 
-testable <- which(hasDeciles & lengths(referenceKeysOfPair) > 0)
+testable <- which(hasDeciles & hasUnit & isApproved & lengths(referenceKeysOfPair) > 0)
 ks <- rep(NA_real_, nrow(pairs))
 pValue <- rep(NA_real_, nrow(pairs))
 log10D5 <- rep(NA_real_, nrow(pairs))
@@ -177,8 +190,8 @@ ParallelLogger::logInfo(
 )
 ParallelLogger::logInfo(
   sum(!is.na(ks)), " pairs tested, ", sum(hasDeciles) - sum(!is.na(ks)),
-  " with harmonised deciles not tested (no LOINC Group or concept with at least ", minReferencePairs,
-  " other approved pairs)"
+  " with harmonised deciles not tested (not APPROVED, no HARMONISED_UNIT, or no LOINC Group or concept with at least ",
+  minReferencePairs, " other approved pairs)"
 )
 ParallelLogger::logInfo(
   sum(referenceType %in% "LOINC Group"), " pairs with the LOINC Group as reference, ",
@@ -209,8 +222,36 @@ evaluated <- pairs |>
     reference_group_concept_id = referenceGroup,
     n_reference_pairs = nReferencePairs
   ) |>
-  dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, UNIT) |>
-  dplyr::relocate(mapping_status)
+  dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, UNIT)
+
+# 5. harmonisation_values_status: the row of the Harmonised Values table of the dashboard each pair
+#    falls in, the first that applies. Only APPROVED pairs are compared. A pair with fewer than
+#    minValues values has no value whatever its status. An approved pair that is not compared is an
+#    error (no UNIT, its concept has no target_unit, no CONVERSION), has incomplete deciles, is
+#    qualitative or a panel (target_unit_source), or has too few other approved pairs in its Group
+#    (or concept).
+isApprovedPair <- evaluated$mapping_status %in% "APPROVED"
+evaluated <- evaluated |>
+  dplyr::mutate(
+    harmonisation_values_status = dplyr::case_when(
+      n * (1 - dplyr::coalesce(value_missing_p, 0) / 100) < minValues ~ paste0("No value: fewer than ", minValues, " values"),
+      !is.na(KS) & KS < ksAgree ~ "AGREE",
+      !is.na(KS) & KS <= ksDisagree ~ "WARNING",
+      !is.na(KS) ~ "DISAGREE",
+      !isApprovedPair ~ "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)",
+      target_unit_source %in% c("isQualitative", "panel") ~ "No value: value ignored, is qualitative or panel",
+      is.na(UNIT) ~ "Error: missing unit",
+      is.na(target_unit) ~ "Error: missing target unit",
+      is.na(CONVERSION) ~ "Error: missing conversion",
+      is.na(decile_value_harmonised) ~ "Not compared: no harmonised deciles",
+      TRUE ~ "Not compared: only one pair per group"
+    )
+  ) |>
+  dplyr::relocate(mapping_status, harmonisation_values_status)
+ParallelLogger::logInfo(
+  paste(names(table(evaluated$harmonisation_values_status)), table(evaluated$harmonisation_values_status), collapse = ", "),
+  " (harmonisation_values_status)"
+)
 
 #
 # --- Output -------------------------------------------------------------

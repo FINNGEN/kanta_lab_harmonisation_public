@@ -62,6 +62,8 @@ harmonisationTable <- readr::read_tsv(
     group_concept_id = readr::col_character(),
     group_concept_code = readr::col_character(),
     group_concept_name = readr::col_character(),
+    target_unit = readr::col_character(),
+    target_unit_source = readr::col_character(),
     HARMONISED_UNIT = readr::col_character(),
     CONVERSION = readr::col_character(),
     mapping_warning_messages = readr::col_character()
