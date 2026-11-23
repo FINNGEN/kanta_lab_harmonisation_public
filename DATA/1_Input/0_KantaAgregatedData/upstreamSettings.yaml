@@ -1,0 +1,2 @@
+n_records_no_value_threshold: 1000 # Pairs with fewer non-missing values than this are considered as having no values
+n_subjects_no_value_threshold: 60 # Pairs with fewer subjects than this are considered as having no values
