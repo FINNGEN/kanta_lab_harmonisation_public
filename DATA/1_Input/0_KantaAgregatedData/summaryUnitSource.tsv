@@ -49,7 +49,6 @@ TEST_NAME	MEASUREMENT_UNIT	unit_source	n_records	n_subjects
 -calpro	mg/l	Source	368	226
 -calpro	ug/g	Source	37	34
 -cdt	mg/l	Source	170	110
--cdt		SecondaryCorrection	292	278
 -cea	ug/l	Source	91	84
 -cmvnh	iu/ml	Source	216	93
 -cmvnh	u/ml	Source	290	166
@@ -99,12 +98,10 @@ TEST_NAME	MEASUREMENT_UNIT	unit_source	n_records	n_subjects
 -gluk-2h	mmol/l	Source	8	8
 -gluk-tbr	%	Source	160	77
 -gluk-tir	%	Source	164	79
--h-ind		SecondaryCorrection	41191	12426
 -hcgb-v/hcg	%	Source	6	6
 -hcgbsuh	%	Source	349	86
 -hdl/kol	%	Source	5342	3622
 -hdl/kol.	%	Source	6937	4436
--i-ind		SecondaryCorrection	9851	2548
 -immunoglobuliini,alaluokkag1	g/l	Source	111	62
 -immunoglobuliini,alaluokkag2	g/l	Source	112	62
 -intem/a10	mm	Source	39	20
@@ -124,7 +121,6 @@ TEST_NAME	MEASUREMENT_UNIT	unit_source	n_records	n_subjects
 -kol/adr	s	Source	22	18
 -krea	umol/l	Source	810	558
 -kreatiniini,vieritutkimus	umol/l	Source	142	123
--l-ind		SecondaryCorrection	15091	4295
 -ld	u/l	Source	106	101
 -leuk	e6/l	PrimaryInjection	521	444
 -leuk	e6/l	Source	191	175
@@ -1034,7 +1030,8 @@ b-erytrosyytit,poc-tutkimus	e12/l	Source	584	151
 b-erytrosyytit,tilavuusosuus	%	PrimaryInjection	18	18
 b-erytrosyytit,tilavuusosuus	%	Source	123931	20797
 b-erytrosyytit,tilavuusosuus	1	Source	12	12
-b-erytrosyytit,tilavuusosuus	osuus	SecondaryCorrection	433951	85573
+b-erytrosyytit,tilavuusosuus	osuus	PrimaryInjection	30050	16912
+b-erytrosyytit,tilavuusosuus	osuus	Source	403901	74409
 b-erytrosyytit,tilavuusosuus(hematokriitti)	%	Source	177	167
 b-erytrosyytit,tilavuusosuus,pikahoitoyksiköt	osuus	Source	57	49
 b-erytrosyytit,tilavuusosuus,pikatesti	osuus	Source	30	28
@@ -1042,7 +1039,7 @@ b-erytrosyytit,tilavuusosuus,vieritutkimus	%	Source	37	27
 b-erytrosyytit,tilavuusosuuspoc-tutkimus	%	Source	584	151
 b-erytrosyytit,vieritutkimus	e12/l	Source	37	27
 b-erytrosyyttientilavuusosuus	%	Source	7609	3811
-b-erytrosyyttientilavuusosuus	osuus	SecondaryCorrection	6321	3290
+b-erytrosyyttientilavuusosuus	osuus	Source	6321	3290
 b-etoh	promille	Source	11	11
 b-etoh	umol/l	Source	40	19
 b-everoli	ug/l	Source	275	18
@@ -1077,7 +1074,6 @@ b-ghb-a1c	%	Source	48548	28512
 b-ghb-a1c	mmol	PrimaryInjection	50	43
 b-ghb-a1c	mmol/mol	PrimaryInjection	275	167
 b-ghb-a1c	mmol/mol	Source	2058	863
-b-ghb-a1c,tk		SecondaryCorrection	5305	2244
 b-ghb-a1cv	mmol/mol	Source	344	138
 b-ghba1c	%	Source	3604	2424
 b-ghba1c-	%	Source	123	47
@@ -1151,7 +1147,6 @@ b-hba1c	mmol/m	Source	10023	7577
 b-hba1c	mmol/ml	Source	230	158
 b-hba1c	mmol/mol	PrimaryInjection	395477	113359
 b-hba1c	mmol/mol	Source	1755069	382067
-b-hba1c,tk		SecondaryCorrection	7907	2703
 b-hba1c-e	mmol/mol	Source	85	61
 b-hba1c-p	%	Source	148	99
 b-hba1c-p	mmol/mol	Source	864	329
@@ -1226,8 +1221,9 @@ b-hkr	%	Source	5297548	332151
 b-hkr	fl	Source	9436	6419
 b-hkr	form	Source	33	33
 b-hkr	l/l	Source	3621	1451
-b-hkr	osuus	SecondaryCorrection	6118946	299418
-b-hkr(erytrosyytit,tilavuusosuus)	osuus	SecondaryCorrection	81224	15051
+b-hkr	osuus	PrimaryInjection	1617782	161999
+b-hkr	osuus	Source	4501164	251737
+b-hkr(erytrosyytit,tilavuusosuus)	osuus	Source	81224	15051
 b-hkr-vt	%	Source	264	239
 b-hkr.fol	%	Source	28	24
 b-hkrhoi	osuus	Source	18	18
@@ -1246,7 +1242,6 @@ b-hlanark	form	Source	9	9
 b-igshm-d	form	Source	7	7
 b-inhibit	%	Source	11	11
 b-inr	inr	Source	41	39
-b-inr-pik		SecondaryCorrection	5531	2405
 b-inr-pt	inr	Source	390	375
 b-inrpika	inr	PrimaryInjection	1505	52
 b-inrpika	inr	Source	1540	51
@@ -1278,8 +1273,6 @@ b-kdiffi,neut	%	Source	467	59
 b-kefabat	%	Source	18	18
 b-keto/pi	mmol/l	Source	31	27
 b-keto/pik	mmol/l	Source	173	133
-b-keto/pik		SecondaryCorrection	442	313
-b-ketoaineet		SecondaryCorrection	81	71
 b-keton-sn	mmol/l	Source	14	12
 b-kloridi	mmol/l	Source	11703	2776
 b-ko/adp1	s	Source	602	458
@@ -1557,7 +1550,8 @@ b-perusverenkuvajatrombosyytit	form	Source	17	10
 b-perusverenkuvajatrombosyytit,paketti	form	Source	7	7
 b-perusverenkuvajatrombosyytit,vieritutkimus,osavastausb-hkr-vt	%	PrimaryInjection	19	17
 b-perusverenkuvajatrombosyytit,vieritutkimus,osavastause-rdw-vt	%	PrimaryInjection	18	16
-b-peth	umol/l	SecondaryCorrection	22834	12098
+b-peth	umol/l	PrimaryInjection	1896	1122
+b-peth	umol/l	Source	20938	11221
 b-peth,fosfatidyylietanoli	umol/l	Source	47	35
 b-ph	ph	PrimaryInjection	3551	1122
 b-ph	ph	Source	36252	9175
@@ -1602,7 +1596,7 @@ b-pvk+tkd,eo	%	Source	4389	573
 b-pvk+tkd,eo	e9/l	Source	4356	573
 b-pvk+tkd,eryt	e12/l	Source	4432	574
 b-pvk+tkd,hb	g/l	Source	4432	574
-b-pvk+tkd,hkr	osuus	SecondaryCorrection	4431	574
+b-pvk+tkd,hkr	osuus	Source	4431	574
 b-pvk+tkd,ig	%	Source	4380	572
 b-pvk+tkd,ig	e9/l	Source	4330	572
 b-pvk+tkd,leuk	e9/l	PrimaryInjection	1051	304
@@ -1635,7 +1629,8 @@ b-retikulosyytit(osatutk)	e9/l	Source	18	16
 b-retikulosyytit,indeksi	osuus	Source	22	20
 b-retikulosyytit,tuotantoindeksi	osuus	Source	617	393
 b-retikulosyyttientuotantoindeksi	osuus	Source	526	340
-b-retind	osuus	SecondaryCorrection	11249	5142
+b-retind	osuus	PrimaryInjection	2020	1415
+b-retind	osuus	Source	9229	4086
 b-retlnd	osuus	Source	111	96
 b-ristoh	auc	Source	28	26
 b-rte-abs	e9/l	PrimaryInjection	36	29
@@ -1754,6 +1749,7 @@ b-vnp2y12	u	Source	33	26
 b-vnpru	pru	Source	21	16
 b-vpenbat	%	Source	17	17
 b-vthba1c	mmol/mol	Source	1184	346
+b-xkoe	form	Source	2985	2561
 b-ykrom-d	form	Source	7	7
 b-zn	umol/l	Source	488	408
 b1-vitamiini(tiamiini)	ug/l	Source	12	10
@@ -1965,7 +1961,6 @@ cb-ca-i7.4	mmol/l	Source	1462	648
 cb-ca-ion	mmol/l	Source	1892	749
 cb-ca-iona	mmol/l	Source	27	25
 cb-chb	g/l	Source	262	108
-cb-crp		SecondaryCorrection	5408	1445
 cb-crp(qr)	mg/l	Source	3602	1138
 cb-emäsylimäärä	mmol/l	Source	15666	6549
 cb-ghb-a1c	%	Source	21	7
@@ -1996,7 +1991,6 @@ cb-hemoglobiini,vieritestihoitoyksikössä	g/l	Source	128	91
 cb-hemoglobiini-a1c,ihopistosn,vierithoitoy:ssä	mmol/mol	Source	19	14
 cb-hiilidioksidiosapaine	kpa	Source	242	170
 cb-inr-hoi	inr	Source	799	96
-cb-inrc-c		SecondaryCorrection	4289	125
 cb-k	mmol/l	Source	61	11
 cb-k-veka	mmol/l	Source	17	15
 cb-kalsium,ionisoitunut	mmol/l	Source	234	122
@@ -2030,7 +2024,6 @@ cb-thb	g/l	Source	22	19
 cb-to2c	%	Source	7533	2851
 cb-to2c	ml/dl	Source	8900	4949
 cb-tt-inr	inr	Source	1073	55
-cb-tt-inrpika		SecondaryCorrection	4859	181
 cbhbo2satp	%	Source	1695	710
 cbhco3pika	mmol/l	Source	4580	1489
 cbpco2pika	kpa	Source	3196	1193
@@ -2041,7 +2034,6 @@ cd4	%	Source	1036	473
 cd4	%/lumf	Source	1920	761
 cd4+solut	x109/l	Source	19	16
 cd4+tsolut	x109/l	Source	14	11
-cd4/cd8		SecondaryCorrection	3956	1288
 cd45ra+,ccr7+cd4t-solut	%	Source	14	11
 cd45ra+,ccr7+cd8t-solut	%	Source	14	11
 cd45ra+,ccr7-cd4t-solut	%	Source	14	11
@@ -2118,7 +2110,6 @@ crp,herkkä	mg/l	Source	227	185
 crp,pikamääritys,qid-reedlaitteella	1	Source	12	8
 crp,pikaquikread	mg/l	Source	122	65
 crp,pikaquikreadpolab	mg/l	Source	25	14
-crp,tk		SecondaryCorrection	13305	4161
 crp-p	mg/l	Source	1050	388
 crp-pika	mg/l	PrimaryInjection	5410	2428
 crp-pika	mg/l	Source	3087	1554
@@ -2229,9 +2220,8 @@ du-5hiaa	umol/l	Source	25	24
 du-a1miglo	mg	Source	14	14
 du-adr	umol	Source	10	10
 du-adr	umol/24h	Source	23	23
-du-alb	mg	SecondaryCorrection	1272	650
+du-alb	mg	Source	1272	650
 du-alb	mg/24h	Source	65	55
-du-alb		SecondaryCorrection	493	363
 du-alb-mi	ug/min	Source	37	33
 du-albumi	mg/l	Source	57	34
 du-albumiinifraktionosuus,elektroforeesi	mg/l	Source	54	22
@@ -2241,7 +2231,8 @@ du-aldos	nmol/l	Source	40	35
 du-aldos	ug/24h	Source	12	12
 du-aldosteroni	nmol	Source	11	9
 du-ca	*sai	Source	6	6
-du-ca	mmol	SecondaryCorrection	14429	8046
+du-ca	mmol	PrimaryInjection	1337	816
+du-ca	mmol	Source	13092	7456
 du-ca	mmol/24h	Source	208	156
 du-ca(laskennallinen)	mmol	Source	42	39
 du-ca(laskennallinen)	mmol/l	Source	7	7
@@ -2269,7 +2260,7 @@ du-kalium	mmol	Source	26	24
 du-kalsium	mmol	Source	215	191
 du-kalsium,vuorokausivirtsa	mmol/24h	Source	9	7
 du-kloridi	mmol	Source	7	7
-du-kors-v	nmol	SecondaryCorrection	2523	1745
+du-kors-v	nmol	Source	2523	1745
 du-kors-v	nmol/24h	Source	86	78
 du-kors-v	nmol/l	Source	48	42
 du-korsn-v	nmol	Source	8	8
@@ -2288,7 +2279,7 @@ du-mhistam	ug/g	Source	8	8
 du-moma	umol	Source	76	73
 du-moma	umol/24h	Source	19	19
 du-mta	umol	Source	48	38
-du-na	mmol	SecondaryCorrection	2947	2295
+du-na	mmol	Source	2947	2295
 du-na	mmol/24h	Source	62	54
 du-natrium	mmol	Source	61	53
 du-ni	umol	Source	9	9
@@ -2306,13 +2297,14 @@ du-oksal	umol/24h	Source	512	334
 du-oksalaatti	umol/24h	Source	14	9
 du-osmol	mosm/kgh2o	Source	8	8
 du-pi	mmol	Source	629	488
-du-prot	g	SecondaryCorrection	6031	2567
+du-prot	g	PrimaryInjection	936	557
+du-prot	g	Source	5095	2159
 du-prot	g/24h	Source	147	98
 du-prot	mg	PrimaryInjection	804	499
 du-prot	mg	Source	10309	3951
 du-prot	mg/24h	Source	204	97
 du-prot-fr	form	Source	14	14
-du-prot.	mg	SecondaryCorrection	1702	1075
+du-prot.	mg	Source	1702	1075
 du-proteiini	g	Source	277	137
 du-proteiini	mg	Source	270	174
 du-proteiini(kok.)jatkoa	ml	Source	13	13
@@ -2528,7 +2520,7 @@ erytrosyytit,pleuranesteestä,osatutk	e6/l	Source	14	10
 erytrosyytit,pvkosatutkimus	%	Source	84	47
 erytrosyytit,pvkosatutkimus	e12/l	Source	84	47
 erytrosyytit,selkäydinneste	e6/l	Source	105	102
-erytrosyytit,tilavuusosuus	osuus	SecondaryCorrection	16907	4697
+erytrosyytit,tilavuusosuus	osuus	Source	16907	4697
 erytrosyytit,tilavuusosuus(b-hkr)	%	Source	61	53
 erytrosyytit,verestä,pikatesti	e12/l	Source	30	28
 erytrosyytit,virtsa	e6/l	Source	9501	3275
@@ -2762,7 +2754,6 @@ fp-kol	mmol/l	Source	1215083	329731
 fp-kol-hd	mmol/l	Source	91	90
 fp-kol-hdl	mmol/l	PrimaryInjection	237122	88289
 fp-kol-hdl	mmol/l	Source	1165168	324677
-fp-kol-ind		SecondaryCorrection	5096	3107
 fp-kol-ldl	mmol/	Source	19	19
 fp-kol-ldl	mmol/l	PrimaryInjection	302115	108277
 fp-kol-ldl	mmol/l	Source	1317888	335889
@@ -2946,7 +2937,6 @@ fs-insu	mu/l	Source	583	316
 fs-jc-pept	nmol/l	Source	166	166
 fs-kalsitoniini	pmol/l	Source	8	6
 fs-kalsium	mmol/l	Source	22	22
-fs-kalsium,ionisoitunut		SecondaryCorrection	7101	4272
 fs-kalsium,ionisoitunut,aktuaal.	mmol/l	Source	2661	1019
 fs-kalsium,ionisoitunut,ph7.4:ssa	mmol/l	Source	2653	1018
 fs-kalsium-ioni.aktuaali	mmol/l	Source	216	182
@@ -3245,7 +3235,6 @@ hb(vo.hoitaja)	g/l	Source	9	9
 hb-pika	g/l	Source	1804	1117
 hb-pikamääritys	1	Source	77	69
 hb-pikatesti	u	Source	7	6
-hba1c-pika		SecondaryCorrection	1446	214
 hba1c-vier	mmol/mol	Source	100	62
 hba1c-vieri	mmol/mol	Source	111	65
 hba1cpika	%	PrimaryInjection	278	207
@@ -3262,7 +3251,6 @@ hbpika	g/l	Source	1100	830
 hbvieri	g/l	Source	1633	1034
 hcgb-v/hcg	%	Source	13	10
 hcgbv	ug/l	Source	9	8
-hcgbvkmom		SecondaryCorrection	22241	14861
 hct	%	PrimaryInjection	8	7
 hct	%	Source	3080	561
 hct(hkr)-v	%pcv	Source	20	20
@@ -3477,9 +3465,7 @@ infliksimabi,pitoisuus	mg/l	Source	62	31
 infliksimabi,pitoisuusmääritysseerumista	mg/l	Source	13	8
 infliksimabipitoisuus,seerumista	mg/l	Source	36	28
 infliksimabivasta-aineet,seerumista	au/ml	Source	9	8
-inr-pika		SecondaryCorrection	4365	126
 inr-pikamittaus	1	Source	27	16
-inr-vieri		SecondaryCorrection	8661	209
 inrpika	inr	Source	227	215
 inrvieri	inr	Source	1325	69
 inrvierimittaus	1	Source	18	6
@@ -3636,9 +3622,6 @@ koivunsiitepöly,ige-vasta-aineet,seerumista	u/ml	Source	14	13
 koivut6	mm	Source	9	9
 kokonaisprolaktiini	mu/l	Source	18	18
 kol-hdl/kol	mmol/l	Source	129	102
-kol/hdl		SecondaryCorrection	397	276
-kol/hdl-su		SecondaryCorrection	980	739
-kol/hdlsuh		SecondaryCorrection	67038	40389
 kolesteroli	mmol/l	PrimaryInjection	117	100
 kolesteroli	mmol/l	Source	27961	20919
 kolesteroli(4515fp-kol),osatutkimus	mmol/l	Source	45	41
@@ -3665,13 +3648,11 @@ kolesteroli,plasmasta	mmol/l	Source	431	418
 kolesteroli,plasmasta,paastotilassa(fp-kol)	mmol/l	Source	3522	2434
 kolesteroli-ldl	mmol/l	Source	39	29
 kolesteroli.itse	mmol/l	Source	13	12
-kolesteroli/hdl-suhde		SecondaryCorrection	51597	34581
 kolesteroli/lipidit	mmol/l	Source	2903	1922
 kolesteroli/lipidit(4515fp-kol/lipidit),osatutkimus	mmol/l	Source	80	78
 kolesteroli/lipidit,osatutkimus(4515fp-kol/lipidit)	mmol/l	Source	190	177
 kolesteroli/lipiditosatutkimus	mmol/l	Source	1181	890
 kolesteroli/s-lipa	mmol/l	Source	71	46
-kolesterolinjahdl-kolest.suhde		SecondaryCorrection	268	163
 kolesterolinjahdl-kolesterolinsuhde	%	Source	22	22
 kolesteroliplasmasta	mmol/l	Source	695	501
 kolestrolivldl	mmol/l	Source	80	72
@@ -4131,8 +4112,9 @@ li-hsvabg	eiu	Source	185	161
 li-igg	g/l	Source	37	36
 li-igg	mg/l	Source	4132	3561
 li-igg-ind	g/l	Source	39	38
-li-igg-ind	index	SecondaryCorrection	111	108
-li-igg-ind	osuus	SecondaryCorrection	3723	3481
+li-igg-ind	index	Source	111	108
+li-igg-ind	osuus	PrimaryInjection	2947	2757
+li-igg-ind	osuus	Source	776	731
 li-igg-ind	ratio	Source	77	77
 li-igg.	mg/l	Source	603	566
 li-igg/alb	osuus	PrimaryInjection	1250	1166
@@ -4241,7 +4223,6 @@ ly-cd4+8+	%	Source	41	36
 ly-cd4-8-	%	Source	207	119
 ly-cd4-cd8-	%	Source	33	25
 ly-cd4-t	%	Source	4820	2125
-ly-cd4/cd8		SecondaryCorrection	2752	1375
 ly-cd8	%	Source	3889	1869
 ly-lymfosyytit,b-cd19-solujenosuus	%	Source	218	162
 ly-lymfosyytit,b-solujenosuus	%	Source	36	20
@@ -4574,7 +4555,6 @@ no-ex	form	Source	15	13
 no-ex	ppb	Source	283	181
 nollanäyte	mmol/l	Source	24	23
 non-hdl	mmol/l	Source	9	9
-non-hdl		SecondaryCorrection	80866	46653
 non-hdl-kolesteroli	mmol/l	PrimaryInjection	467	425
 non-hdl-kolesteroli	mmol/l	Source	3576	3087
 non-hdl-kolesteroli(-non-hdl)	mmol/l	Source	1864	1605
@@ -4590,7 +4570,6 @@ normetanefriiniseerumista	nmol/l	Source	92	73
 nst	%	PrimaryInjection	1388	576
 nst	%	Source	3295	1261
 nt-probnp	ng/l	Source	14	11
-ntkmom		SecondaryCorrection	22336	14900
 nu-5c-porf	nmol/l	Source	40	18
 nu-6c-porf	nmol/l	Source	20	11
 nu-7c-porf	nmol/l	Source	56	25
@@ -4658,7 +4637,6 @@ oma-k+(kalium)epoc	1	Source	396	283
 oma-kreaepoc	1	Source	372	269
 oma-lac(laktaatti)epoc	1	Source	388	277
 oma-na+(natrium)epoc	1	Source	400	284
-oma-p-crp		SecondaryCorrection	14773	6234
 oma-p-gluk	mmol/l	PrimaryInjection	14	12
 oma-pco2(hiilidioksidiosapaine)epoc	1	Source	403	285
 oma-phepoc	1	Source	402	284
@@ -5053,7 +5031,6 @@ p-gluk	mmol/l	PrimaryInjection	36309	24975
 p-gluk	mmol/l	Source	1242355	248249
 p-gluk(2	mmol/l	Source	18	14
 p-gluk(2)	mmol/l	Source	6	6
-p-gluk,tk		SecondaryCorrection	7423	2698
 p-gluk-0	mmol/l	Source	264	197
 p-gluk-0h	mmol/l	Source	761	548
 p-gluk-1	mmol/l	Source	42	29
@@ -5072,7 +5049,6 @@ p-gluk-sn	mmol/l	Source	1252	343
 p-gluk-vt	1	PrimaryInjection	3315	1388
 p-gluk-vt	1	Source	63	44
 p-gluk-vt	mmol/l	Source	2048	1376
-p-gluk-vt		SecondaryCorrection	2512	1526
 p-gluk-vt/0m	mmol/l	Source	27	20
 p-gluk.	mmol/l	Source	752	269
 p-gluk/120	mmol/l	Source	95	82
@@ -5202,16 +5178,13 @@ p-inr	form	Source	229	25
 p-inr	inr	PrimaryInjection	1097690	44347
 p-inr	inr	Source	73256	7182
 p-inr	ng	Source	382	38
-p-inr-hy		SecondaryCorrection	20586	570
 p-inr-hy,hoitoyksikkö	1	Source	573	56
-p-inr-pi		SecondaryCorrection	2844	114
 p-inr-pik	inr	Source	8	7
 p-inr-pika	%	PrimaryInjection	2999	142
 p-inr-pika	%	Source	829	62
 p-inr-poc	inr	Source	11	7
 p-inr-pt	inruikk	Source	330	60
 p-inr-vt	inr	Source	1439	970
-p-inr-vt		SecondaryCorrection	8921	1688
 p-inrviitasaari	inr	Source	98	18
 p-insu	mu/l	Source	574	175
 p-insu60	mu/l	Source	54	14
@@ -5318,7 +5291,7 @@ p-kp	mmol/l	Source	346	110
 p-kpika	mmol/l	Source	302	229
 p-krea	1	Source	6	6
 p-krea	ml/min/173m2	Source	185	124
-p-krea	mmol/l	SecondaryCorrection	7	7
+p-krea	mmol/l	Source	7	7
 p-krea	uml/l	Source	122	104
 p-krea	umol	Source	1295	373
 p-krea	umol/l	PrimaryInjection	637139	130321
@@ -5713,7 +5686,6 @@ p-tromboplastiiniaika,-tulostushuslab	%	Source	10	10
 p-tromboplastiiniaika,aktivoitu,partiaalinen	s	Source	2586	1910
 p-tromboplastiiniaika,aktivoitu,partiaalinen(huslab)	s	Source	11	11
 p-tromboplastiiniaika,inr	inr	Source	45	25
-p-tromboplastiiniaika,inr,tt		SecondaryCorrection	12438	1450
 p-tromboplastiiniaika,inr-tulos	1	PrimaryInjection	8125	871
 p-tromboplastiiniaika,inr-tulos	1	Source	13750	889
 p-tromboplastiiniaika,inr-tulos	inr	Source	11781	2987
@@ -5749,7 +5721,7 @@ p-trristo	%	Source	22	20
 p-trtrap	%	PrimaryInjection	10	9
 p-trtrap	%	Source	20	18
 p-tsh	miu/l	Source	32583	9284
-p-tsh	mlu/l	SecondaryCorrection	4706	1285
+p-tsh	mlu/l	Source	4706	1285
 p-tsh	mu/l	PrimaryInjection	377036	118965
 p-tsh	mu/l	Source	1425956	322910
 p-tsh-ong	mu/l	Source	267	215
@@ -5766,7 +5738,7 @@ p-tt	form	Source	20	19
 p-tt-	%	Source	1432	250
 p-tt-hus	%	Source	15	14
 p-tt-inr	1	Source	32	10
-p-tt-inr	form	SecondaryCorrection	24200	752
+p-tt-inr	form	Source	24200	752
 p-tt-inr	inr	PrimaryInjection	1083464	130730
 p-tt-inr	inr	Source	353032	50765
 p-tt-inrp	inr	Source	16	10
@@ -5882,7 +5854,6 @@ pakettis-tsh	mu/l	Source	35	33
 pakettis-tyroksiini,vapaa	pmol/l	Source	46	41
 palmitiinihappo	%	Source	315	255
 palmitoleiinihappo	%	Source	315	255
-pappakmom		SecondaryCorrection	22332	14901
 paprika	u/ml	Source	11	11
 parainfluenssa,tyypit1-3,va:t(cf)/virus,laaja	titre	Source	6	6
 parapähkin	u/ml	Source	16	16
@@ -6187,7 +6158,7 @@ pt-gfre-md	form	Source	16	15
 pt-gfre-md	ml/min/173m2	PrimaryInjection	2218	1527
 pt-gfre-md	ml/min/173m2	Source	28489	12061
 pt-gfreep	ml/min/173m2	Source	12678	2687
-pt-gfreepi	form	SecondaryCorrection	17022	3023
+pt-gfreepi	form	Source	17022	3023
 pt-gfreepi	ml/min/173m2	PrimaryInjection	893296	159868
 pt-gfreepi	ml/min/173m2	Source	1902792	230365
 pt-gfreepio1	ml/min/173m2	Source	680	237
@@ -6636,8 +6607,6 @@ s-antistreptolysiini	iu/ml	Source	41	39
 s-antistreptolysiini	u/ml	Source	18	18
 s-antitry	g/l	Source	7075	6534
 s-apim10e	u/ml	Source	84	81
-s-apob/a1		SecondaryCorrection	2607	2051
-s-apob/apoa1-suhde		SecondaryCorrection	23390	21072
 s-apolipoproteiinia1	g/l	Source	267	245
 s-apolipoproteiinib	g/l	Source	267	245
 s-appelse	u/ml	Source	87	84
@@ -8408,7 +8377,8 @@ s-persile	u/ml	Source	16	16
 s-perunae	u/ml	Source	51	49
 s-pespabe	u/ml	Source	6	6
 s-pespabg	mg/l	Source	6	6
-s-ph	1	SecondaryCorrection	429834	96040
+s-ph	1	PrimaryInjection	429655	95996
+s-ph	1	Source	179	127
 s-ph	mmol	Source	10	8
 s-ph	ph	Source	28	20
 s-ph(akt)	ph	PrimaryInjection	18690	10175
@@ -9052,7 +9022,7 @@ s-trypg2	ug/l	Source	459	104
 s-trypt	ug/l	Source	3751	2416
 s-tryptaasi	ug/l	Source	534	421
 s-tsh	miu/l	Source	95437	51397
-s-tsh	mlu/l	SecondaryCorrection	113	87
+s-tsh	mlu/l	Source	113	87
 s-tsh	mu/l	PrimaryInjection	28087	20203
 s-tsh	mu/l	Source	277574	137862
 s-tsh	u/l	Source	142	86
@@ -9324,7 +9294,6 @@ sm(smith),vasta-aineet(s-smab)	u/ml	Source	7	6
 sm,vasta-aineet,seerumista	u/ml	Source	19	19
 smkomp-1	g/l	Source	40	33
 smycoplasmapneumoniae,abgvasta-aineet	eiu	Source	30	26
-snabb-inr		SecondaryCorrection	6286	104
 so-b-cd19	%	Source	13	13
 so-nk	%	Source	13	13
 so-t-cd3	%	Source	167	135
@@ -9780,7 +9749,6 @@ u-epiteelisolut,osatutkimus	e6/l	Source	150	112
 u-epiteelit	e6/l	Source	4205	2400
 u-epitel	/sunf	Source	1316	494
 u-epitel	sunf	Source	66	53
-u-epitel		SecondaryCorrection	1994	844
 u-epitla	e6/l	Source	2611	1464
 u-epitlevy	u/field	Source	14	11
 u-epitmuut	u/field	Source	13	10
@@ -9820,7 +9788,7 @@ u-happamuusaste	5170	Source	19	19
 u-happamuusaste(kval)	form	PrimaryInjection	3579	1690
 u-happamuusaste(kval)	form	Source	32	22
 u-hb-o	A	Source	19	17
-u-hb-o	form	SecondaryCorrection	66	49
+u-hb-o	form	Source	66	49
 u-hcg	iu/l	PrimaryInjection	61	59
 u-hcg	iu/l	Source	39	36
 u-hcg	u/l	Source	16	16
@@ -9862,9 +9830,13 @@ u-kemiallinenseulonta,osavastausu-ph	1	Source	52	36
 u-kemiallinenseulonta,osavastausu-suhtih	1	Source	47	35
 u-kemiallinenseulontapolab,osavastausu-ph	1	Source	8	8
 u-kemiallinenseulontapolab,osavastausu-suhtih	1	Source	7	7
+u-kemseul	form	PrimaryInjection	1270	406
+u-kemseul	form	Source	104	51
+u-kemseul	h	PrimaryInjection	100	96
 u-keto-o	estimate	Source	138347	44353
 u-keto-o	form	Source	971	613
-u-keto-o	l	SecondaryCorrection	60858	21294
+u-keto-o	l	PrimaryInjection	54216	19803
+u-keto-o	l	Source	6642	1502
 u-kiteet	estimate	Source	12	12
 u-kivi	form	Source	60	56
 u-koka-o	estimate	Source	206	140
@@ -9931,7 +9903,6 @@ u-lier	e6/l	PrimaryInjection	174430	61073
 u-lier	e6/l	Source	195839	72434
 u-lieri?t	e6/l	Source	408	296
 u-lieriö	e6/l	Source	5122	1640
-u-lieriö		SecondaryCorrection	2459	1022
 u-lieriöt	e6/l	PrimaryInjection	4557	2544
 u-lieriöt	e6/l	Source	78923	32434
 u-lieriöt	u/field	Source	278	201
@@ -9972,7 +9943,6 @@ u-nitriitti(kval)	estimate	Source	24624	12556
 u-normetl	umol/l	Source	7	7
 u-oksal	umol/l	Source	9	8
 u-ominaispaino	5170	Source	8	8
-u-ominp-h		SecondaryCorrection	13503	5153
 u-opiaa-o	estimate	Source	206	140
 u-orgah	form	Source	8	7
 u-osmest	mosm/kgh2o	PrimaryInjection	7285	5165
@@ -9981,7 +9951,7 @@ u-osmoe	mosm/kgh2o	Source	398	290
 u-osmoest	e6/l	Source	2426	581
 u-osmoest	mosm/kgh2o	PrimaryInjection	5941	2728
 u-osmoest	mosm/kgh2o	Source	25256	7890
-u-osmoest	mosm/l	SecondaryCorrection	14299	5124
+u-osmoest	mosm/l	Source	14299	5124
 u-osmoest(pi)	mosm/kgh2o	Source	7	7
 u-osmoet	mosm/kgh2o	Source	356	218
 u-osmoie	mosm/kgh2o	Source	281	129
@@ -10002,11 +9972,13 @@ u-osmolie	mosm/kgh2o	Source	8	8
 u-pbg	umol/l	Source	252	214
 u-pbg	umol/mmol	Source	6	6
 u-ph	1	Source	663	536
-u-ph	form	SecondaryCorrection	688668	200735
+u-ph	form	PrimaryInjection	670545	194498
+u-ph	form	Source	18123	13598
 u-ph	ph	PrimaryInjection	7	6
 u-ph	ph	Source	222	123
-u-ph-o	N	SecondaryCorrection	55588	24346
-u-ph-o	form	SecondaryCorrection	1990	1493
+u-ph-o	N	PrimaryInjection	53512	23804
+u-ph-o	N	Source	2076	585
+u-ph-o	form	Source	1990	1493
 u-pi	mmol/l	Source	828	356
 u-pien.ep	e6/l	Source	1002	851
 u-pienep	e6/l	PrimaryInjection	153149	52334
@@ -10051,12 +10023,10 @@ u-suhteellinentiheys	1	Source	331	223
 u-suhteellinentiheys	kg/l	Source	82	55
 u-suhti	1	Source	664	536
 u-suhti	form	Source	38	31
-u-suhti	g/ml	SecondaryCorrection	3084	2234
+u-suhti	g/ml	Source	3084	2234
 u-suhti	kg/l	PrimaryInjection	286362	78065
 u-suhti	kg/l	Source	41628	12844
 u-suhti	ratio	Source	607	94
-u-suhti-o		SecondaryCorrection	47147	10381
-u-suhti.		SecondaryCorrection	25914	11547
 u-suhtih	kg/l	PrimaryInjection	41989	12758
 u-suhtih	kg/l	Source	4621	1513
 u-tilav	ml	Source	23	17
@@ -10072,7 +10042,8 @@ u-uraat	umol/l	Source	16	16
 u-urea	mmol/l	Source	768	476
 u-vahlier	u/field	Source	26	25
 u-veri(kval)	estimate	Source	6926	3741
-u-veri-o	form	SecondaryCorrection	2554	796
+u-veri-o	form	PrimaryInjection	2513	789
+u-veri-o	form	Source	41	37
 u-virtsanhemoglobiini	form	Source	7	7
 u-virtsanleukosyytit	form	Source	7	6
 u-virtsanominaispaino	form	Source	22	20
@@ -10088,7 +10059,6 @@ u-zn	umol/l	Source	7	6
 u-överg.ep	/sunf	Source	124	93
 ua-be	mmol/l	PrimaryInjection	11	11
 ua-be	mmol/l	Source	109	108
-ua-be		SecondaryCorrection	329	319
 ua-happikyllästeisyys(hemoglobiini),napavaltimo	%	Source	61	55
 ua-happiosapaine,napavaltimo	kpa	Source	58	52
 ua-hb	g/l	Source	181	180
