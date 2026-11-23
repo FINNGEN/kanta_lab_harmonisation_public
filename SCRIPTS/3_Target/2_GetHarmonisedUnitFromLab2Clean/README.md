@@ -1,7 +1,8 @@
 # 2_GetHarmonisedUnitFromLab2Clean
 
-Gets the harmonised unit lab2clean gives to every OMOP concept it has, every concept in an
-SI unit.
+Gets the harmonised unit lab2clean gives to every OMOP concept it has: the reference unit of its
+LOINC code. A conventional code (the mass side of a mass-molar pair, e.g. IgA in `mg/L`) keeps its own
+unit, as its SI partner does: both are targets, and the mapping decides which one a test goes to.
 
 ## Inputs
 
@@ -25,8 +26,8 @@ In `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/`:
 | harmonised_unit | UCUM SI unit lab2clean harmonises the concept to |
 
 - `loincSiConventionalConversion.tsv` — lab2clean's mass-molar pairs, one row per
-  conventional LOINC code with its SI partner, for the steps that remove the conventional
-  concepts, move them to the Groups of their partner and convert the values:
+  conventional LOINC code with its SI partner. No step uses it now; it is kept for reference (e.g. to
+  convert between the two sides with the molecular weight, which lab2clean gives wrong for proteins):
 
 | Column | Description |
 |---|---|
@@ -50,9 +51,7 @@ In `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/`:
    (one row per LOINC code: UCUM `reference_unit`, `unit_system`, and for the
    mass-molar pairs `mass_molar_loinc`, `mass_molar_unit`, `molecular_weight`).
 2. Reads the LOINC code and concept id of every standard `Measurement` concept.
-3. Sets the unit of a concept to the code's `reference_unit`, except for a
-   `conventional` code, which takes the SI unit of its partner (`mass_molar_unit`).
-   Every unit is thus SI.
+3. Sets the unit of a concept to the code's `reference_unit`, also for a `conventional` code.
 4. Saves the Group lab2clean gives to each concept.
 5. Saves the conventional-to-SI conversion table: every `conventional` code with its SI
    partner (`mass_molar_loinc`), the units, the molecular weight and the concept ids of both sides.

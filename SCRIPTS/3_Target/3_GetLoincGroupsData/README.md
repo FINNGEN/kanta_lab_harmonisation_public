@@ -1,18 +1,16 @@
 # 3_GetLoincGroupsData
 
 Pulls the LOINC Groups of the standard OMOP `Measurement` concepts and which
-concepts are in each, SI only: a conventional concept is put in the Groups of its
-SI partner. 
+concepts are in each. Every concept keeps its own Groups, a conventional concept (the mass side of a
+mass-molar pair) as well as its SI partner.
 
 ## Inputs
 
 From `DATA/3_Target/`:
 
-- `2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — the conventional
-  concepts and their SI partner, to give the conventional concepts the Groups of their partner.
 - `1_GetMeasurementOmopData/measurementOmopData.tsv` — only for the report.
 
-Run those steps first.
+Run that step first.
 
 The step also reads:
 
@@ -31,8 +29,7 @@ In `DATA/3_Target/3_GetLoincGroupsData/`:
 | group_concept_name | Name of the Group |
 
 - `loincGroupMembership.tsv` — one row per (concept, Group): `concept_id`,
-  `group_concept_id`. A concept can be in several Groups. A panel is in none, and a
-  conventional concept is listed under the Groups of its SI partner (see Action).
+  `group_concept_id`. A concept can be in several Groups. A panel is in none.
 - `log.txt` — run log.
 
 ## Action
@@ -52,9 +49,7 @@ In `DATA/3_Target/3_GetLoincGroupsData/`:
    - the child Groups of the **UrineAndSed** ParentGroup (`LG97-8`): they keep only the
      component and roll up the property, so they mix counts per field (`/[HPF]`), per volume
      (`10*6/L`), mass and presence. lab2clean does not use them either.
-3. Keeps the Groups SI only. A concept in the conversion table is moved to the Groups
-   of its SI partner, replacing its own; one whose partner is in no Group is in no Group.
-4. Writes the Groups and the membership.
+3. Writes the Groups and the membership.
 
 `scripts/summariseLoincGroupsData.R` reads the two tables back and the measurement
 table, and writes `loincGroups.md`.

@@ -12,7 +12,6 @@ From `DATA/3_Target/`:
 - `3_GetLoincGroupsData/loincGroupMembership.tsv` — which concept is in which Group.
 - `2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` — the lab2clean unit of each concept.
 - `2_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv` — the Group lab2clean gives to a concept.
-- `2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — the conventional concepts that have an SI partner.
 
 ## Outputs
 
@@ -29,7 +28,7 @@ In `DATA/3_Target/4_BuildTargetTable/`:
   comes from `2`, `panel` for a panel or `isQualitative` for a concept of a
   qualitative property, whose `harmonised_unit` is empty; empty for a concept with no unit). A concept in several Groups has several rows; a concept in
   no Group has one row with the `group_*` columns empty.
-- `targetTable.md` — a markdown report on the table: the concepts at each step (original, removed,
+- `targetTable.md` — a markdown report on the table: the concepts at each step (original,
   panel, isQualitative, lab2clean unit, no unit), the Groups (number, concepts
   in none) and the validations.
 - `log.txt` — run log.
@@ -39,11 +38,10 @@ In `DATA/3_Target/4_BuildTargetTable/`:
 The table is built from the concept list of `1_GetMeasurementOmopData`, to which
 the unit and the Group are added:
 
-1. **Concepts.** Every concept of `measurementOmopData.tsv` is a row, except the
-   *conventional* concepts that have an SI equivalent (the mass side of a mass-molar
-   pair, listed in `loincSiConventionalConversion.tsv`), which are removed. Their SI
-   partner stays.
-2. **Unit from lab2clean (`2`).** The unit of each remaining concept is its
+1. **Concepts.** Every concept of `measurementOmopData.tsv` is a row. A *conventional*
+   concept (the mass side of a mass-molar pair, e.g. IgA in `mg/L`) and its SI partner
+   (`umol/L`) are both kept: the mapping decides which one a test goes to.
+2. **Unit from lab2clean (`2`).** The unit of each concept is its
    lab2clean unit, `harmonised_unit_source` = `lab2clean`. A concept lab2clean has no
    unit for gets none.
 3. **Panels and qualitative concepts.** A panel (`is_panel`) and a concept whose
@@ -73,9 +71,7 @@ these validations (it stops on an ERROR):
 
 ```mermaid
 flowchart TD
-    A["(1) measurementOmopData.tsv<br/>all concepts + LOINC axes"] --> B
-    X["(2) loincSiConventionalConversion.tsv<br/>conventional concepts with an SI partner"] --> B
-    B(["Remove conventional concepts<br/>with an SI equivalent"]) --> C
+    A["(1) measurementOmopData.tsv<br/>all concepts + LOINC axes"] --> C
     D["(2) harmonisedUnit_lab2clean.tsv<br/>lab2clean unit per concept"] --> C
     C(["Add unit<br/>source = lab2clean"]) --> F
     F(["Overwrite previous: unit empty, source by rule<br/>is_panel: panel<br/>has_property = Presence or Threshold: isQualitative"]) --> H

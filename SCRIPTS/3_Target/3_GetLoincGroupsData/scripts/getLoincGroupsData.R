@@ -13,9 +13,8 @@
 # drops the ParentGroups from its output; the Flowsheet ones are only used to pick the
 # concepts to keep.
 #
-# The Groups are SI only. A conventional concept (the mass side of a mass-molar pair, e.g.
-# ug/L against nmol/L) is put in the Groups of its SI partner instead of its own, using the
-# conversion table of lab2clean, saved by 2_GetHarmonisedUnitFromLab2Clean.
+# Every concept keeps its own Groups: a conventional concept (the mass side of a mass-molar pair)
+# and its SI partner are both targets, each in its own Groups.
 # Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
 # a mass concept with a substance concept, and those of the "UrineAndSed" ParentGroup (LG97-8)
 # mix properties, so both are dropped.
@@ -36,7 +35,6 @@ library(readr)
 #
 args <- commandArgs(trailingOnly = TRUE)
 outDir <- args[1]
-conversionFile <- args[2]
 
 environment <- Sys.getenv("FG_DATABASE_ENV")
 if (environment == "") {
@@ -69,7 +67,6 @@ pathToLoincGroupMembershipTSV <- file.path(outDir, "loincGroupMembership.tsv")
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  environment = ", environment)
-ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  domainId = ", domainId)
 ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
@@ -224,29 +221,9 @@ ParallelLogger::logInfo(
   dplyr::n_distinct(membership$group_concept_id), " Groups"
 )
 
-# SI only. The conventional concepts take the Groups of their SI partner instead of their own;
-# one whose partner is in no Group is in no Group.
-conversion <- readr::read_tsv(conversionFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
-ParallelLogger::logInfo("Read ", nrow(conversion), " conventional-to-SI codes from ", conversionFile)
-conventionalToSi <- conversion |>
-  dplyr::filter(!is.na(.data$concept_id), !is.na(.data$si_concept_id)) |>
-  dplyr::transmute(conventionalId = .data$concept_id, siId = .data$si_concept_id)
 membership <- membership |>
-  dplyr::mutate(concept_id = as.character(.data$concept_id))
-siMembership <- membership |>
-  dplyr::inner_join(conventionalToSi, by = c("concept_id" = "siId"), relationship = "many-to-many") |>
-  dplyr::mutate(concept_id = .data$conventionalId) |>
-  dplyr::select(-"conventionalId")
-nConventional <- dplyr::n_distinct(siMembership$concept_id)
-membership <- membership |>
-  dplyr::filter(!.data$concept_id %in% conventionalToSi$conventionalId) |>
-  dplyr::bind_rows(siMembership) |>
-  dplyr::distinct() |>
+  dplyr::mutate(concept_id = as.character(.data$concept_id)) |>
   dplyr::arrange(as.numeric(.data$concept_id), .data$n_descendants, .data$group_concept_code)
-ParallelLogger::logInfo(
-  nConventional, " conventional concepts are mapped to the Groups of their SI partner; ",
-  "the rest of the conventional concepts are in no Group"
-)
 ParallelLogger::logInfo(
   "Membership: ", nrow(membership), " rows, ", dplyr::n_distinct(membership$concept_id), " concepts in ",
   dplyr::n_distinct(membership$group_concept_id), " Groups"

@@ -7,8 +7,8 @@ in this order:
 | Step | Purpose |
 |---|---|
 | `1_GetMeasurementOmopData` | Pull every standard OMOP `Measurement` concept with its LOINC axes. |
-| `2_GetHarmonisedUnitFromLab2Clean` | Get the SI unit and the LOINC Group lab2clean gives to each concept; save the conventional-to-SI conversion table. |
-| `3_GetLoincGroupsData` | Pull the LOINC Groups and which concepts are in each; conventional concepts go to the Groups of their SI partner. |
+| `2_GetHarmonisedUnitFromLab2Clean` | Get the unit and the LOINC Group lab2clean gives to each concept; save the conventional-to-SI conversion table (for reference). |
+| `3_GetLoincGroupsData` | Pull the LOINC Groups and which concepts are in each. |
 | `4_BuildTargetTable` | Join them into one table, one row per concept and Group, with the concept's harmonised unit (lab2clean, or none for a qualitative concept or a panel). |
 
 `1_GetMeasurementOmopData` runs first: the report of `3_GetLoincGroupsData` reads its
@@ -36,7 +36,7 @@ lab2clean's `loinc_reference_unit_v1` gives some LOINC codes a `property_group_i
 - They come from four ParentGroups only: `LG100-4` (Chem, drugs, serology…), `LG74-7` (Urine), `LG27-5`
   (Cell differential counts) and `LG78-8` (Urine microalbumin).
 - lab2clean picks one reference unit per Group: all the codes of a lab2clean Group share one unit (0 of
-  1,701 Groups have more than one). `4_BuildTargetTable` checks it (an ERROR if not).
+  1,823 Groups have more than one). `4_BuildTargetTable` checks it (an ERROR if not).
 
 ### `LOINC` Groups (`3_GetLoincGroupsData`)
 
@@ -52,25 +52,24 @@ every `LOINC Group` ancestor of each standard `Measurement` concept (`concept_an
    - `LG97-8` UrineAndSed: it keeps only the component and rolls up the property and the system (urine
      and sediment), so a Group mixes cells per field (`/[HPF]`), per volume (`10*6/L`), mass and presence.
      lab2clean does not use it either.
-5. A conventional concept takes the Groups of its SI partner (it is removed from the target anyway).
-6. A concept keeps all its remaining Groups: "do two concepts share a Group" is a set intersection, so
+5. A concept keeps all its remaining Groups: "do two concepts share a Group" is a set intersection, so
    no precedence rule is needed.
 
 ### Joining them (`4_BuildTargetTable`)
 
 Every membership of `3` is a row of `targetTable.tsv`. `group_source` is `lab2clean` when the
-(concept, Group) pair is the one lab2clean gives the concept, else `LOINC`. Every lab2clean pair of a
-concept kept in the target is also a membership of `3`, so no Group is lost. Today:
+(concept, Group) pair is the one lab2clean gives the concept, else `LOINC`. Every lab2clean pair
+(all 3,881) is also a membership of `3`, so no Group is lost. Today:
 
 | group_source | concept-Group rows | Groups | concepts |
 |---|---|---|---|
-| `lab2clean` | 3,503 | 1,701 | 3,503 |
-| `LOINC` | 4,001 | 1,234 | 3,643 |
+| `lab2clean` | 3,881 | 1,823 | 3,881 |
+| `LOINC` | 4,066 | 1,245 | 3,698 |
 
-(A Group can have rows of both sources: 2,899 Groups, 6,843 concepts in a Group.)
+(A Group can have rows of both sources: 3,025 Groups, 7,231 concepts in a Group.)
 
 The `LOINC` memberships widen the Groups beyond lab2clean, but lab2clean's one-unit guarantee does not
-cover them: 102 Groups mix units (a WARNING in `targetTable.md`). In `4_BuildHarmonisationTable` an
+cover them: 103 Groups mix units (a WARNING in `targetTable.md`). In `4_BuildHarmonisationTable` an
 approved pair in a Group whose approved pairs have different target units gets
 `ERROR:LoincGroupUnitsMissmatch`. The ones left are the `LG74-7` urine panel Groups, which hold a
 collection volume (`mL`), a duration (`h`), concentrations and 24 h amounts.

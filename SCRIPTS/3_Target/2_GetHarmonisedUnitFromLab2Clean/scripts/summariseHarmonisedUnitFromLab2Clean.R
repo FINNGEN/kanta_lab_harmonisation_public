@@ -54,7 +54,7 @@ md <- c(
   "",
   paste0(
     "Summary of `harmonisedUnit_lab2clean.tsv`: ", fmtInt(nConcepts),
-    " standard `Measurement` concepts with a lab2clean unit, every one in an SI unit (a conventional code takes the unit of its SI partner)."
+    " standard `Measurement` concepts with a lab2clean unit, the reference unit of its LOINC code (a conventional code keeps its own mass unit)."
   ),
   "",
   "# harmonised_unit",

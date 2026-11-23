@@ -12,9 +12,8 @@ unitFixFile <- args[2]
 mismatchWarningFile <- args[3]
 sharedWarningFile <- args[4]
 measurementFile <- args[5]
-conversionFile <- args[6]
-targetFile <- args[7]
-outDir <- args[8]
+targetFile <- args[6]
+outDir <- args[7]
 
 # The scripts folder of this step, where the HTML template is.
 scriptDir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])))
@@ -35,7 +34,6 @@ ParallelLogger::logInfo("  unitFixFile = ", unitFixFile)
 ParallelLogger::logInfo("  mismatchWarningFile = ", mismatchWarningFile)
 ParallelLogger::logInfo("  sharedWarningFile = ", sharedWarningFile)
 ParallelLogger::logInfo("  measurementFile = ", measurementFile)
-ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  targetFile = ", targetFile)
 ParallelLogger::logInfo("  templateFile = ", templateFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
@@ -73,7 +71,6 @@ unitFix <- readr::read_tsv(unitFixFile, col_types = readr::cols(.default = chr()
 mismatchWarnings <- readr::read_tsv(mismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 sharedWarnings <- readr::read_tsv(sharedWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 measurement <- readr::read_tsv(measurementFile, col_types = readr::cols(.default = chr()), na = "")
-conversion <- readr::read_tsv(conversionFile, col_types = readr::cols(.default = chr()), na = "")
 targetTable <- readr::read_tsv(targetFile, col_types = readr::cols(.default = chr()), na = "")
 template <- paste(readLines(templateFile, encoding = "UTF-8"), collapse = "\n")
 
@@ -191,7 +188,7 @@ errorsTable <- if (nrow(errors) == 0) "" else {
 }
 ParallelLogger::logInfo(nrow(errors), " error reasons, ", sum(errors$pairs), " ERROR pairs")
 
-# Input data tab: the tables of 1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md, from the
+# Input data tab: the tables of 1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.summary.md, from the
 # same pairs (the evaluated table has one row per pair, with the same n and source columns).
 fmtPct1 <- function(x) sprintf("%.1f%%", x)
 nPairs <- nrow(evaluated)
@@ -274,18 +271,18 @@ nConcepts <- nrow(concepts)
 nSource <- function(x) sum(concepts$harmonised_unit_source %in% x)
 conceptRows <- tibble::tibble(
   step = c(
-    "concepts in measurementOmopData.tsv", "removed: conventional with an SI partner", "concepts in the table",
+    "concepts in measurementOmopData.tsv", "concepts in the table",
     "panel (no unit)", "isQualitative (no unit)", "unit from lab2clean",
     "no unit (not in lab2clean)"
   ),
   n = c(
-    nrow(measurement), sum(measurement$concept_id %in% conversion$concept_id), nConcepts,
+    nrow(measurement), nConcepts,
     nSource("panel"), nSource("isQualitative"), nSource("lab2clean"),
     sum(is.na(concepts$harmonised_unit_source))
   )
 ) |>
   dplyr::mutate(
-    pct = dplyr::if_else(dplyr::row_number() <= 2, "", fmtPct1(100 * n / nConcepts)),
+    pct = dplyr::if_else(dplyr::row_number() <= 1, "", fmtPct1(100 * n / nConcepts)),
     n = fmtInt(n)
   )
 conceptsHtml <- htmlTable(c("step", "n concepts", "% concepts in the table"), conceptRows, totalLast = FALSE)

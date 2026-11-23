@@ -10,15 +10,13 @@ args <- commandArgs(trailingOnly = TRUE)
 groupsFile <- args[1]
 membershipFile <- args[2]
 measurementFile <- args[3]
-conversionFile <- args[4]
-outDir <- args[5]
+outDir <- args[4]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  groupsFile = ", groupsFile)
 ParallelLogger::logInfo("  membershipFile = ", membershipFile)
 ParallelLogger::logInfo("  measurementFile = ", measurementFile)
-ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -35,13 +33,6 @@ measurement <- readr::read_tsv(
 ) |>
   dplyr::select("concept_id", "has_property")
 ParallelLogger::logInfo("Read ", nrow(measurement), " concepts from ", measurementFile)
-conventionalConceptIds <- readr::read_tsv(
-  conversionFile,
-  col_types = readr::cols(.default = readr::col_character()),
-  na = ""
-) |>
-  dplyr::pull("concept_id")
-ParallelLogger::logInfo("Read ", length(conventionalConceptIds), " conventional concepts from ", conversionFile)
 
 #
 # --- Action -------------------------------------------------------------
@@ -60,9 +51,8 @@ mdTable <- function(df) {
   )
 }
 
-# The property of a Group is the has_property of its concepts, leaving out the conventional
-# concepts mapped to the Group from their SI partner (a mass concentration in a molar Group
-# is converted, it is not a second property) and "Presence or Threshold" (psProperty): the one the rest share, "(several)" when they differ. A Group with
+# The property of a Group is the has_property of its concepts, leaving out
+# "Presence or Threshold" (psProperty): the one the rest share, "(several)" when they differ. A Group with
 # only "Presence or Threshold" concepts has that property; one with no property at all is
 # "(none)". hasPs marks the Groups that also hold "Presence or Threshold" concepts next to
 # another property: their concepts also map to a presence/threshold result, which has no
@@ -70,7 +60,6 @@ mdTable <- function(df) {
 # `Bilirubin|Moment in time|Urine`.)
 psProperty <- "Presence or Threshold"
 groupProperty <- membership |>
-  dplyr::filter(!.data$concept_id %in% conventionalConceptIds) |>
   dplyr::left_join(measurement, by = "concept_id") |>
   dplyr::group_by(.data$group_concept_id) |>
   dplyr::summarise(
@@ -137,8 +126,7 @@ md <- c(
   "",
   paste0(
     "The kind of quantity of the Group, the `has_property` of its concepts ",
-    "(`measurementOmopData.tsv`) leaving out the conventional concepts mapped from their SI partner ",
-    "(they are converted, not a property of their own) and `Presence or Threshold`: `(several)` when the rest differ, ",
+    "(`measurementOmopData.tsv`) leaving out `Presence or Threshold`: `(several)` when the rest differ, ",
     "`(none)` when no concept has one. `n also PS` is the Groups that also hold ",
     "`Presence or Threshold` concepts next to that property."
   ),

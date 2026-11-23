@@ -53,9 +53,8 @@ MEASUREMENT_FILE="$DATA_DIR/3_Target/1_GetMeasurementOmopData/measurementOmopDat
 GROUPS_FILE="$DATA_DIR/3_Target/3_GetLoincGroupsData/loincGroups.tsv"
 MEMBERSHIP_FILE="$DATA_DIR/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv"
 UNIT_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv"
-CONVERSION_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
 LAB2CLEAN_GROUP_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedGroup_lab2clean.tsv"
-for f in "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" "$CONVERSION_FILE" "$LAB2CLEAN_GROUP_FILE"; do
+for f in "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" "$LAB2CLEAN_GROUP_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -69,9 +68,9 @@ fi
 #
 # --- Action -------------------------------------------------------------
 #
-Rscript "$STEP_DIR/scripts/buildTargetTable.R" "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" "$CONVERSION_FILE" "$LAB2CLEAN_GROUP_FILE" "$OUTDIR"
+Rscript "$STEP_DIR/scripts/buildTargetTable.R" "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" "$LAB2CLEAN_GROUP_FILE" "$OUTDIR"
 
-Rscript "$STEP_DIR/scripts/summariseTargetTable.R" "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$OUTDIR/targetTable.tsv" "$OUTDIR"
+Rscript "$STEP_DIR/scripts/summariseTargetTable.R" "$MEASUREMENT_FILE" "$OUTDIR/targetTable.tsv" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------

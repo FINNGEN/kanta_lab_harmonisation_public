@@ -8,14 +8,12 @@ library(dplyr)
 #
 args <- commandArgs(trailingOnly = TRUE)
 measurementFile <- args[1]
-conversionFile <- args[2]
-targetFile <- args[3]
-outDir <- args[4]
+targetFile <- args[2]
+outDir <- args[3]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  measurementFile = ", measurementFile)
-ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  targetFile = ", targetFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
@@ -24,7 +22,6 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 #
 readTsv <- function(file) readr::read_tsv(file, col_types = readr::cols(.default = readr::col_character()), na = "")
 measurement <- readTsv(measurementFile)
-conversion <- readTsv(conversionFile)
 targetTable <- readTsv(targetFile)
 ParallelLogger::logInfo("Read ", nrow(targetTable), " rows from ", targetFile)
 
@@ -46,7 +43,6 @@ mdTable <- function(df) {
 # One row per concept (a concept in several Groups has several rows, all with the same unit).
 concepts <- dplyr::distinct(targetTable, .data$concept_id, .data$is_panel, .data$harmonised_unit, .data$harmonised_unit_source)
 nOriginal <- nrow(measurement)
-nRemoved <- sum(measurement$concept_id %in% conversion$concept_id)
 nConcepts <- nrow(concepts)
 
 # Concepts: where the unit came from.
@@ -54,7 +50,6 @@ nSource <- function(x) sum(concepts$harmonised_unit_source %in% x)
 conceptRows <- tibble::tibble(
   step = c(
     "concepts in `measurementOmopData.tsv`",
-    "removed: conventional with an SI partner",
     "concepts in the table",
     "panel (no unit)",
     "isQualitative (no unit)",
@@ -62,12 +57,12 @@ conceptRows <- tibble::tibble(
     "no unit (not in lab2clean)"
   ),
   n = c(
-    nOriginal, nRemoved, nConcepts, nSource("panel"), nSource("isQualitative"), nSource("lab2clean"),
+    nOriginal, nConcepts, nSource("panel"), nSource("isQualitative"), nSource("lab2clean"),
     sum(is.na(concepts$harmonised_unit_source))
   )
 ) |>
   dplyr::mutate(
-    `% concepts in the table` = dplyr::if_else(row_number() <= 2, "", fmtPct(100 * n / nConcepts)),
+    `% concepts in the table` = dplyr::if_else(row_number() <= 1, "", fmtPct(100 * n / nConcepts)),
     n = fmtInt(n)
   ) |>
   dplyr::rename(`n concepts` = n)

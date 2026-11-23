@@ -58,11 +58,6 @@ if [[ ! -f "$MEASUREMENT_FILE" ]]; then
   echo "Missing input file: $MEASUREMENT_FILE (run 1_GetMeasurementOmopData first)" >&2
   exit 1
 fi
-CONVERSION_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
-if [[ ! -f "$CONVERSION_FILE" ]]; then
-  echo "Missing input file: $CONVERSION_FILE (run 2_GetHarmonisedUnitFromLab2Clean first)" >&2
-  exit 1
-fi
 if ! command -v Rscript >/dev/null 2>&1; then
   echo "Rscript not found on PATH" >&2
   exit 1
@@ -71,9 +66,9 @@ fi
 #
 # --- Action -------------------------------------------------------------
 #
-Rscript "$STEP_DIR/scripts/getLoincGroupsData.R" "$OUTDIR" "$CONVERSION_FILE"
+Rscript "$STEP_DIR/scripts/getLoincGroupsData.R" "$OUTDIR"
 
-Rscript "$STEP_DIR/scripts/summariseLoincGroupsData.R" "$OUTDIR/loincGroups.tsv" "$OUTDIR/loincGroupMembership.tsv" "$MEASUREMENT_FILE" "$CONVERSION_FILE" "$OUTDIR"
+Rscript "$STEP_DIR/scripts/summariseLoincGroupsData.R" "$OUTDIR/loincGroups.tsv" "$OUTDIR/loincGroupMembership.tsv" "$MEASUREMENT_FILE" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------

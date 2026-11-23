@@ -1,6 +1,6 @@
 #
 # Gets the harmonised unit lab2clean (Zayed et al., Int J Med Inform 205 (2026) 106131) gives
-# to every OMOP concept it has, every concept in an SI unit.
+# to every OMOP concept it has: the reference unit of its LOINC code.
 #
 # lab2clean's table loinc_reference_unit_v1 has one row per LOINC code with its UCUM
 # reference_unit and its unit_system: "si" or "conventional". The conventional codes (1,662)
@@ -101,16 +101,13 @@ ParallelLogger::logInfo("Read ", nrow(loincConcepts), " ", vocabularyId, " conce
 # --- Action -------------------------------------------------------------
 #
 
-# The unit lab2clean harmonises every concept to, in SI: a conventional code takes the SI unit
-# of its partner (mass_molar_unit), the others keep their own reference_unit.
+# The unit lab2clean gives every concept: the reference_unit of its code. A conventional code (the
+# mass side of a mass-molar pair, e.g. IgA in mg/L) keeps its own unit: both concepts of a pair are
+# targets, and the mapping decides which one a test goes to.
 lab2cleanUnit <- loincReferenceUnit |>
   dplyr::transmute(
     concept_code = .data$loinc_code,
-    harmonised_unit = dplyr::if_else(
-      .data$unit_system == "conventional" & !is.na(.data$mass_molar_unit),
-      .data$mass_molar_unit,
-      .data$reference_unit
-    ),
+    harmonised_unit = .data$reference_unit,
     unit_system = .data$unit_system
   ) |>
   dplyr::inner_join(loincConcepts, by = "concept_code") |>

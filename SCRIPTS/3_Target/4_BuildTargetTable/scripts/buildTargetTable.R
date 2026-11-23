@@ -11,9 +11,8 @@ measurementFile <- args[1]
 groupsFile <- args[2]
 membershipFile <- args[3]
 unitFile <- args[4]
-conversionFile <- args[5]
-lab2cleanGroupFile <- args[6]
-outDir <- args[7]
+lab2cleanGroupFile <- args[5]
+outDir <- args[6]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -21,7 +20,6 @@ ParallelLogger::logInfo("  measurementFile = ", measurementFile)
 ParallelLogger::logInfo("  groupsFile = ", groupsFile)
 ParallelLogger::logInfo("  membershipFile = ", membershipFile)
 ParallelLogger::logInfo("  unitFile = ", unitFile)
-ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  lab2cleanGroupFile = ", lab2cleanGroupFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
@@ -32,7 +30,6 @@ measurement <- readr::read_tsv(measurementFile, show_col_types = FALSE, na = "",
 groups <- readr::read_tsv(groupsFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 membership <- readr::read_tsv(membershipFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 lab2cleanUnit <- readr::read_tsv(unitFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
-conversion <- readr::read_tsv(conversionFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 lab2cleanGroup <- readr::read_tsv(lab2cleanGroupFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c")) |>
   dplyr::mutate(group_source = "lab2clean")
 ParallelLogger::logInfo("Read ", nrow(lab2cleanUnit), " lab2clean units from ", unitFile)
@@ -50,13 +47,8 @@ ParallelLogger::logInfo("Read ", nrow(membership), " concept/Group rows from ", 
 # --- Action -------------------------------------------------------------
 #
 
-# The target is SI only: a conventional concept with an SI partner (the mass side of a mass-molar
-# pair) is removed, its SI partner stays.
-nBefore <- nrow(measurement)
-measurement <- dplyr::filter(measurement, !(.data$concept_id %in% conversion$concept_id))
-ParallelLogger::logInfo(
-  "Removed ", nBefore - nrow(measurement), " conventional concepts with an SI partner, ", nrow(measurement), " concepts left"
-)
+# Every concept is a target: a conventional concept (the mass side of a mass-molar pair) and its SI
+# partner are both kept, and the mapping decides which one a test goes to.
 
 # The unit of each concept (lab2clean, replaced by empty for a panel or a qualitative concept), then one
 # row per concept and Group it belongs to; a concept in no Group keeps one row with
