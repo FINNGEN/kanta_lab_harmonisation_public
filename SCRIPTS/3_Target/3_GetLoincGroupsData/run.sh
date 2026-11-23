@@ -58,9 +58,9 @@ if [[ ! -f "$MEASUREMENT_FILE" ]]; then
   echo "Missing input file: $MEASUREMENT_FILE (run 1_GetMeasurementOmopData first)" >&2
   exit 1
 fi
-CONVERSION_FILE="$DATA_DIR/3_Target/2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
+CONVERSION_FILE="$DATA_DIR/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv"
 if [[ ! -f "$CONVERSION_FILE" ]]; then
-  echo "Missing input file: $CONVERSION_FILE (run 2a_GetHarmonisedUnitFromLab2Clean first)" >&2
+  echo "Missing input file: $CONVERSION_FILE (run 2_GetHarmonisedUnitFromLab2Clean first)" >&2
   exit 1
 fi
 if ! command -v Rscript >/dev/null 2>&1; then

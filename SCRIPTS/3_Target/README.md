@@ -7,15 +7,16 @@ in this order:
 | Step | Purpose |
 |---|---|
 | `1_GetMeasurementOmopData` | Pull every standard OMOP `Measurement` concept with its LOINC axes. |
-| `2a_GetHarmonisedUnitFromLab2Clean` | Get the SI unit and the LOINC Group lab2clean gives to each concept; save the conventional-to-SI conversion table. |
-| `2b_HarmonisedUnitOverwrite` | The units that overwrite lab2clean's unit for some concepts (a hand-edited table, not a step). |
+| `2_GetHarmonisedUnitFromLab2Clean` | Get the SI unit and the LOINC Group lab2clean gives to each concept; save the conventional-to-SI conversion table. |
 | `3_GetLoincGroupsData` | Pull the LOINC Groups and which concepts are in each; conventional concepts go to the Groups of their SI partner. |
-| `4_BuildTargetTable` | Join them into one table, one row per concept and Group, with the concept's harmonised unit (2b overwrite if any, else 2a lab2clean). |
+| `4_BuildTargetTable` | Join them into one table, one row per concept and Group, with the concept's harmonised unit (lab2clean, or none for a qualitative concept or a panel). |
 
 `1_GetMeasurementOmopData` runs first: the report of `3_GetLoincGroupsData` reads its
 table. 
 
-`2b_HarmonisedUnitOverwrite` is a hand-edited input.
+The block is built only from the source data (OMOP, lab2clean): nothing in it is edited by hand. A
+target unit that is missing or wrong is fixed in `2_Harmonisation/harmonisedUnitOverwrite.tsv`, which
+`4_BuildHarmonisationTable` applies.
 
 ## How the LOINC Groups are built
 
@@ -25,10 +26,10 @@ are compared with each other in `5_EvaluateHarmonisedData`. Every Group is a LOI
 code); what differs is who says which concept is in which Group. `targetTable.tsv` records it in
 `group_source`.
 
-### `lab2clean` Groups (`2a_GetHarmonisedUnitFromLab2Clean`)
+### `lab2clean` Groups (`2_GetHarmonisedUnitFromLab2Clean`)
 
 lab2clean's `loinc_reference_unit_v1` gives some LOINC codes a `property_group_id`, written
-`<ParentGroup>/<Group>` (e.g. `LG100-4/LG51386-7`). `2a` keeps the Group part and saves it in
+`<ParentGroup>/<Group>` (e.g. `LG100-4/LG51386-7`). `2` keeps the Group part and saves it in
 `harmonisedGroup_lab2clean.tsv`.
 
 - Only 3,881 of lab2clean's 33,197 codes have one, and each code has at most one Group.

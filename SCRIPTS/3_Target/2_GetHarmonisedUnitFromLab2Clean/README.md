@@ -1,4 +1,4 @@
-# 2a_GetHarmonisedUnitFromLab2Clean
+# 2_GetHarmonisedUnitFromLab2Clean
 
 Gets the harmonised unit lab2clean gives to every OMOP concept it has, every concept in an
 SI unit.
@@ -14,7 +14,7 @@ None from `DATA/`. The step reads:
 
 ## Outputs
 
-In `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/`:
+In `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/`:
 
 - `harmonisedUnit_lab2clean.tsv` — one row per lab2clean code that is a standard
   `Measurement` concept of the vocabulary:
@@ -59,7 +59,7 @@ In `DATA/3_Target/2a_GetHarmonisedUnitFromLab2Clean/`:
 `scripts/summariseHarmonisedUnitFromLab2Clean.R` reads the unit table back and writes `harmonisedUnit_lab2clean.md`.
 
 lab2clean's unit is the unit it aims for, not what the Kanta data report. Concepts it has no
-unit for, or whose unit is wrong for the data, are set by hand in `2b_HarmonisedUnitOverwrite`.
+unit for, or whose unit is wrong for the data, are set by hand in `2_Harmonisation/harmonisedUnitOverwrite.tsv`.
 
 ## Env vars
 
@@ -71,5 +71,5 @@ unit for, or whose unit is wrong for the data, are set by hand in `2b_Harmonised
 Needs network access to CRAN.
 
 ```
-./SCRIPTS/3_Target/2a_GetHarmonisedUnitFromLab2Clean/run.sh <PATH_TO_DATA> --env <ENV_NAME>
+./SCRIPTS/3_Target/2_GetHarmonisedUnitFromLab2Clean/run.sh <PATH_TO_DATA> --env <ENV_NAME>
 ```

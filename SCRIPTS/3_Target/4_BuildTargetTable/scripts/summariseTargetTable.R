@@ -59,12 +59,10 @@ conceptRows <- tibble::tibble(
     "panel (no unit)",
     "isQualitative (no unit)",
     "unit from lab2clean",
-    "unit from the overwrite",
     "no unit (not in lab2clean)"
   ),
   n = c(
     nOriginal, nRemoved, nConcepts, nSource("panel"), nSource("isQualitative"), nSource("lab2clean"),
-    sum(!concepts$harmonised_unit_source %in% c(NA, "panel", "isQualitative", "lab2clean")),
     sum(is.na(concepts$harmonised_unit_source))
   )
 ) |>

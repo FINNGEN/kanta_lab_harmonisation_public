@@ -15,7 +15,7 @@
 #
 # The Groups are SI only. A conventional concept (the mass side of a mass-molar pair, e.g.
 # ug/L against nmol/L) is put in the Groups of its SI partner instead of its own, using the
-# conversion table of lab2clean, saved by 2a_GetHarmonisedUnitFromLab2Clean.
+# conversion table of lab2clean, saved by 2_GetHarmonisedUnitFromLab2Clean.
 # Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
 # a mass concept with a substance concept, and those of the "UrineAndSed" ParentGroup (LG97-8)
 # mix properties, so both are dropped.

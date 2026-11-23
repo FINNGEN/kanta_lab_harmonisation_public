@@ -1,11 +1,13 @@
 # 2_Harmonisation
 
-The tables that map the input onto the target: the unit fixes, the mapping of each source lab test and
-unit to an OMOP concept, and the conversion of each source unit to the harmonised unit. They are not
+The hand-edited tables that map the input onto the target: the unit fixes, the mapping of each source
+lab test and unit to an OMOP concept, the conversion of each source unit to the harmonised unit, and the
+fixes of the target unit of a concept. Every table edited by hand is here; `3_Target` is built only from
+the source data (OMOP, lab2clean) and is not edited. They are not
 steps (there is no `run.sh` or `scripts/`): they are plain files in `DATA/2_Harmonisation/`, copied in from
 the earlier version of the project and edited by hand, so every change to a mapping is a reviewable diff.
 
-The step `4_BuildHarmonisationTable` (in `SCRIPTS/`, next to the blocks) validates the three tables and joins them with
+The step `4_BuildHarmonisationTable` (in `SCRIPTS/`, next to the blocks) validates the four tables and joins them with
 `3_Target` into the harmonisation table.
 
 | Table | Purpose |
@@ -13,6 +15,7 @@ The step `4_BuildHarmonisationTable` (in `SCRIPTS/`, next to the blocks) validat
 | `unitFix.tsv` | The known fixes of a source unit, per test name. |
 | `mapping.tsv` | The mapping of each test name and unit to an OMOP `concept_id`. |
 | `unitHarmonisation.tsv` | The conversion of each source unit to the harmonised unit, per LOINC property or concept. |
+| `harmonisedUnitOverwrite.tsv` | The target unit of a concept, where the one of `3_Target` is missing or wrong. |
 
 ## unitFix.tsv
 
@@ -53,12 +56,13 @@ project (181 rows).
 |---|---|
 | context | What the conversion applies to: a LOINC property (e.g. `Arbitrary Concentration`) for every concept of that property, or an OMOP `concept_id` for that concept only |
 | UNIT | The source unit |
-| HARMONISED_UNIT | The unit it is harmonised to, or empty for a unit with no unit (a qualitative result, `estimate`): a unit of lab2clean (`3_Target/2a_GetHarmonisedUnitFromLab2Clean`) or of the unit overwrite table (`3_Target/2b_HarmonisedUnitOverwrite`), as in `targetTable.tsv` (e.g. `g/L`, `10*3.[iU]/L`). `UNIT` is the source unit, in the notation of the Kanta data (e.g. `g/l`) |
+| HARMONISED_UNIT | The unit it is harmonised to, or empty for a unit with no unit (a qualitative result, `estimate`): a unit of lab2clean (`3_Target/2_GetHarmonisedUnitFromLab2Clean`) or of `harmonisedUnitOverwrite.tsv` (e.g. `g/L`, `10*3.[iU]/L`). `UNIT` is the source unit, in the notation of the Kanta data (e.g. `g/l`) |
 | CONVERSION | A factor, or a formula in `X`, so that `value in HARMONISED_UNIT = value in UNIT * CONVERSION` |
 | VALIDATION_MESSAGES | Warnings from the check of the conversion; empty in every row now |
 
-The harmonised unit of a concept comes from `3_Target` (`harmonised_unit` in `4_BuildTargetTable`); this table gives the
-conversion of a source unit to it, so the `HARMONISED_UNIT` of a row must be a target unit of `3_Target`.
+The harmonised unit of a concept comes from `3_Target` (`harmonised_unit` in `4_BuildTargetTable`), or from
+`harmonisedUnitOverwrite.tsv` when the concept has a row there; this table gives the conversion of a source unit to it,
+so the `HARMONISED_UNIT` of a row must be one of those units.
 
 The table was rebuilt for lab2clean's units. Its rows are the conversions from every source `UNIT` of the mapping
 (`mapping.tsv`, after the fixes of `unitFix.tsv`) to the target unit of the concept, for the concepts that have one:
@@ -69,9 +73,24 @@ The table was rebuilt for lab2clean's units. Its rows are the conversions from e
 - **Arbitrary units:** a unit of the family `u`, `iu`, `au`, `eliau` per volume converts to `[iU]` or `[arb'U]` per litre by the prefix and
   volume only, taking a generic `u` as an international unit, as the earlier table did.
 - **Concepts with a formula:** `3004410` (HbA1c), `mmol/mol` and `%` to `mmol/mol` (`10.93*X-23.50`), because its target unit is
-  `mmol/mol` (see `3_Target/2b_HarmonisedUnitOverwrite`); and `44816559`, `mg/l` to `ug/L` with `703*X+0` (the earlier `0.703*X+0`,
+  `mmol/mol`; and `44816559`, `mg/l` to `ug/L` with `703*X+0` (the earlier `0.703*X+0`,
   in mg/L, times 1000).
 
 A source unit that cannot be converted to the target of its concept has no row: a different dimension (e.g. `%` to a concentration), an
 arbitrary unit to a unit that is not (e.g. `u/ml` to `1`), or a unit lab2clean does not read (`index`, `eiu`, `ml/min/173m2`). The
 validation of `4_BuildHarmonisationTable` lists them.
+
+## harmonisedUnitOverwrite.tsv
+
+`DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv` sets the target unit of a concept by hand, where the
+`harmonised_unit` of `3_Target/4_BuildTargetTable/targetTable.tsv` is missing or wrong for the data (e.g. lab2clean has
+no unit for it). `4_BuildHarmonisationTable` applies it: a concept with a row here takes this unit, whatever
+`targetTable.tsv` says (also a qualitative concept or a panel), and its source is the `note`.
+
+| Column | Description |
+|---|---|
+| concept_id | OMOP concept id |
+| harmonised_unit | The target unit of the concept |
+| note | Why the unit is set by hand; it becomes the `target_unit_source` of the harmonisation table |
+
+For now it has one row: concept 3020891 (body temperature), `°c`, because lab2clean does not have it.

@@ -8,7 +8,7 @@ SI partner.
 
 From `DATA/3_Target/`:
 
-- `2a_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — the conventional
+- `2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — the conventional
   concepts and their SI partner, to give the conventional concepts the Groups of their partner.
 - `1_GetMeasurementOmopData/measurementOmopData.tsv` — only for the report.
 

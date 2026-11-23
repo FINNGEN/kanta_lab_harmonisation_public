@@ -27880,7 +27880,7 @@ concept_id	concept_code	concept_name	vocabulary_id	is_panel	has_component	has_pr
 3020888	18-2	Amoxicillin [Susceptibility] by Serum bactericidal titer	LOINC	FALSE	Amoxicillin	Titer	Serum bactericidal titer	SemiQn	Isolate and Serum	Point in time (spot)					1	lab2clean
 3020889	6475-8	Mobiluncus sp rRNA [Presence] in Specimen by Probe	LOINC	FALSE	Mobiluncus sp rRNA	Presence or Threshold	Probe	Ord	XXX	Point in time (spot)						isQualitative
 3020890	5145-8	Echovirus 6 Ab [Titer] in Serum by Complement fixation	LOINC	FALSE	Echovirus 6 Ab	Titer	Complement fixation	SemiQn	Serum	Point in time (spot)					1	lab2clean
-3020891	8310-5	Body temperature	LOINC	FALSE	Body temperature	Temperature		Qn	^Patient	Point in time (spot)	40654162	LG33052-8	Body temperature|Temperature|Moment in time|Without specimen	LOINC	°c	Body temperature not in lab2clean
+3020891	8310-5	Body temperature	LOINC	FALSE	Body temperature	Temperature		Qn	^Patient	Point in time (spot)	40654162	LG33052-8	Body temperature|Temperature|Moment in time|Without specimen	LOINC		
 3020892	9640-4	Androstanediol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Androstanediol	Mass Concentration		Qn	Serum or Plasma	Point in time (spot)					ng/L	lab2clean
 3020893	21808-1	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method	LOINC	FALSE	t(14;18)(q32;q21.3)(IGH,BCL2) fusion transcript	Arbitrary	Molecular genetics	Ord	Blood or Tissue	Point in time (spot)						
 3020894	15247-0	Food Allergen Mix H (Pineapple+Lemon+Strawberry+Avocado) IgE Ab [Presence] in Serum by Multidisk	LOINC	FALSE	Food Allergen Mix H (Pineapple+Lemon+Strawberry+Avocado) IgE	Presence or Threshold	Multidisk	Ord	Serum	Point in time (spot)						isQualitative

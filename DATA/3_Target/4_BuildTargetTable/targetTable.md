@@ -14,8 +14,7 @@ Where the `harmonised_unit` of each concept came from (`harmonised_unit_source`)
 | panel (no unit) | 2,377 | 2.3% |
 | isQualitative (no unit) | 15,603 | 15.4% |
 | unit from lab2clean | 31,492 | 31.1% |
-| unit from the overwrite | 1 | 0.0% |
-| no unit (not in lab2clean) | 51,690 | 51.1% |
+| no unit (not in lab2clean) | 51,691 | 51.1% |
 
 # Groups
 

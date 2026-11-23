@@ -11,10 +11,9 @@ measurementFile <- args[1]
 groupsFile <- args[2]
 membershipFile <- args[3]
 unitFile <- args[4]
-overwriteFile <- args[5]
-conversionFile <- args[6]
-lab2cleanGroupFile <- args[7]
-outDir <- args[8]
+conversionFile <- args[5]
+lab2cleanGroupFile <- args[6]
+outDir <- args[7]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -22,7 +21,6 @@ ParallelLogger::logInfo("  measurementFile = ", measurementFile)
 ParallelLogger::logInfo("  groupsFile = ", groupsFile)
 ParallelLogger::logInfo("  membershipFile = ", membershipFile)
 ParallelLogger::logInfo("  unitFile = ", unitFile)
-ParallelLogger::logInfo("  overwriteFile = ", overwriteFile)
 ParallelLogger::logInfo("  conversionFile = ", conversionFile)
 ParallelLogger::logInfo("  lab2cleanGroupFile = ", lab2cleanGroupFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
@@ -34,22 +32,15 @@ measurement <- readr::read_tsv(measurementFile, show_col_types = FALSE, na = "",
 groups <- readr::read_tsv(groupsFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 membership <- readr::read_tsv(membershipFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 lab2cleanUnit <- readr::read_tsv(unitFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
-overwriteUnit <- readr::read_tsv(overwriteFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 conversion <- readr::read_tsv(conversionFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c"))
 lab2cleanGroup <- readr::read_tsv(lab2cleanGroupFile, show_col_types = FALSE, na = "", col_types = readr::cols(.default = "c")) |>
   dplyr::mutate(group_source = "lab2clean")
 ParallelLogger::logInfo("Read ", nrow(lab2cleanUnit), " lab2clean units from ", unitFile)
-ParallelLogger::logInfo("Read ", nrow(overwriteUnit), " unit overwrites from ", overwriteFile)
 
 # A panel and a concept of a qualitative property have no unit: its harmonised_unit is empty and
-# its source is "panel" or "isQualitative". The overwrite is applied after, so a concept with an
-# overwrite keeps it.
+# its source is "panel" or "isQualitative". (The units set by hand are applied later, in
+# 4_BuildHarmonisationTable, from 2_Harmonisation/harmonisedUnitOverwrite.tsv.)
 qualitativeProperties <- c("Presence or Threshold")
-
-# The overwrite of a concept; its source is the note.
-overwrite <- dplyr::transmute(
-  overwriteUnit, concept_id, overwrite_unit = .data$harmonised_unit, overwrite_source = dplyr::coalesce(.data$note, "overwrite")
-)
 
 ParallelLogger::logInfo("Read ", nrow(measurement), " concepts from ", measurementFile)
 ParallelLogger::logInfo("Read ", nrow(groups), " Groups from ", groupsFile)
@@ -67,7 +58,7 @@ ParallelLogger::logInfo(
   "Removed ", nBefore - nrow(measurement), " conventional concepts with an SI partner, ", nrow(measurement), " concepts left"
 )
 
-# The unit of each concept (lab2clean, replaced by empty for a panel or a qualitative concept, then the overwrite), then one
+# The unit of each concept (lab2clean, replaced by empty for a panel or a qualitative concept), then one
 # row per concept and Group it belongs to; a concept in no Group keeps one row with
 # empty group_* columns, a concept in several Groups appears once per Group.
 targetTable <- measurement |>
@@ -81,13 +72,6 @@ targetTable <- measurement |>
       isPanel ~ "panel",
       isQualitative ~ "isQualitative",
       .default = .data$harmonised_unit_source
-    )
-  ) |>
-  dplyr::left_join(overwrite, by = "concept_id", relationship = "many-to-one") |>
-  dplyr::mutate(
-    harmonised_unit = dplyr::coalesce(.data$overwrite_unit, .data$harmonised_unit),
-    harmonised_unit_source = dplyr::if_else(
-      is.na(.data$overwrite_unit), .data$harmonised_unit_source, .data$overwrite_source
     )
   ) |>
   dplyr::left_join(membership, by = "concept_id", relationship = "one-to-many") |>
