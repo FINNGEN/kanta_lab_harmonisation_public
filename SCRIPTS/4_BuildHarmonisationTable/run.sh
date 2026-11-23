@@ -76,15 +76,12 @@ Rscript "$STEP_DIR/scripts/validateHarmonisationTable.R" \
 Rscript "$STEP_DIR/scripts/buildHarmonisationTable.R" \
   "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$OUTDIR"
 
-Rscript "$STEP_DIR/scripts/summariseHarmonisationTable.R" "$OUTDIR/harmonisationTable.tsv" \
-  "$OUTDIR/testname_unit_property_missmatch_warning.tsv" "$OUTDIR/testname_property_shared_warning.tsv" \
-  "$OUTDIR/test_unit_context_unit_missing_warning.tsv" "$OUTDIR/test_unit_loinc_group_unit_mismatch_warning.tsv" "$OUTDIR"
-
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/harmonisationTable.tsv"
 echo "Wrote $OUTDIR/testname_unit_property_missmatch_warning.tsv"
 echo "Wrote $OUTDIR/testname_property_shared_warning.tsv"
+echo "Wrote $OUTDIR/test_unit_context_unit_missing_warning.tsv"
+echo "Wrote $OUTDIR/test_unit_loinc_group_unit_mismatch_warning.tsv"
 echo "Wrote $OUTDIR/harmonisationTable.validation.md"
-echo "Wrote $OUTDIR/harmonisationTable.md"

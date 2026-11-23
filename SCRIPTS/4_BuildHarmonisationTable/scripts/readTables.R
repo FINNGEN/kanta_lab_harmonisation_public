@@ -2,8 +2,7 @@
 # --- Table specs -------------------------------------------------------------
 #
 # The column types of every table the step reads or writes, shared by
-# buildHarmonisationTable.R, validateHarmonisationTable.R and
-# summariseHarmonisationTable.R so all read a table the same way. CONVERSION is
+# buildHarmonisationTable.R and validateHarmonisationTable.R so both read a table the same way. CONVERSION is
 # character because it can be a formula in X; `context` is character because it is a
 # LOINC property or a concept id.
 chr <- readr::col_character

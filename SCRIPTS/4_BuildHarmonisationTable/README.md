@@ -76,10 +76,6 @@ In `DATA/4_BuildHarmonisationTable/`:
   test and the columns `table`, `result` (`SUCCESS`, `WARNING` or `ERROR`), `test`, `n rows` (how many
   rows failed) and `message` (empty on
   success; on failure, the detail with a few examples).
-- `harmonisationTable.md` — a summary of `harmonisationTable.tsv`: the mapping status (approved / not
-  approved / ignored, with `n` and `%` of the rows and how many have a warning or an error that is not
-  marked `ignore`), and for the approved rows how many distinct `concept_id`s, how many rows have a group,
-  how many distinct groups and how many rows have a conversion.
 - `harmonisationTable.log.txt` — run log.
 
 A concept can be in several LOINC Groups; they are joined with `;` into one value, so the Groups add no
