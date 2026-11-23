@@ -11,9 +11,12 @@ evaluatedFile <- args[1]
 unitFixFile <- args[2]
 mismatchWarningFile <- args[3]
 sharedWarningFile <- args[4]
-measurementFile <- args[5]
-targetFile <- args[6]
-outDir <- args[7]
+contextUnitMissingWarningFile <- args[5]
+loincGroupUnitMismatchWarningFile <- args[6]
+measurementFile <- args[7]
+targetFile <- args[8]
+settingsFile <- args[9]
+outDir <- args[10]
 
 # The scripts folder of this step, where the HTML template is.
 scriptDir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])))
@@ -23,8 +26,15 @@ pathToDashboard <- file.path(outDir, "dashboard.html")
 # A pair whose values agree with the reference has a KS under ksAgree; above ksDisagree it
 # disagrees; in between it is a warning.
 ksAgree <- 0.5
-# A pair with fewer non-missing values than this counts as "No values" (as in 5_EvaluateHarmonisedData).
-minValues <- 1000
+# A pair with fewer non-missing values than this counts as "No values": n_records_no_value_threshold and n_subjects_no_value_threshold of
+# 1_Input/0_KantaAgregatedData/upstreamSettings.yaml, as in 5_EvaluateHarmonisedData.
+readSetting <- function(settingsFile, key) {
+  value <- yaml::read_yaml(settingsFile)[[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+  value
+}
+minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
 ksDisagree <- 0.8
 
 ParallelLogger::clearLoggers()
@@ -33,6 +43,8 @@ ParallelLogger::logInfo("  evaluatedFile = ", evaluatedFile)
 ParallelLogger::logInfo("  unitFixFile = ", unitFixFile)
 ParallelLogger::logInfo("  mismatchWarningFile = ", mismatchWarningFile)
 ParallelLogger::logInfo("  sharedWarningFile = ", sharedWarningFile)
+ParallelLogger::logInfo("  contextUnitMissingWarningFile = ", contextUnitMissingWarningFile)
+ParallelLogger::logInfo("  loincGroupUnitMismatchWarningFile = ", loincGroupUnitMismatchWarningFile)
 ParallelLogger::logInfo("  measurementFile = ", measurementFile)
 ParallelLogger::logInfo("  targetFile = ", targetFile)
 ParallelLogger::logInfo("  templateFile = ", templateFile)
@@ -49,6 +61,7 @@ evaluated <- readr::read_tsv(
   col_types = readr::cols(
     mapping_status = chr(), harmonisation_values_status = chr(), TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(),
     n = readr::col_double(),
+    n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = chr(),
     reference_range = chr(),
     value_missing_p = readr::col_double(),
@@ -70,6 +83,8 @@ evaluated <- evaluated |>
 unitFix <- readr::read_tsv(unitFixFile, col_types = readr::cols(.default = chr()), na = "")
 mismatchWarnings <- readr::read_tsv(mismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 sharedWarnings <- readr::read_tsv(sharedWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
+contextUnitMissingWarnings <- readr::read_tsv(contextUnitMissingWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
+loincGroupUnitMismatchWarnings <- readr::read_tsv(loincGroupUnitMismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 measurement <- readr::read_tsv(measurementFile, col_types = readr::cols(.default = chr()), na = "")
 targetTable <- readr::read_tsv(targetFile, col_types = readr::cols(.default = chr()), na = "")
 template <- paste(readLines(templateFile, encoding = "UTF-8"), collapse = "\n")
@@ -111,18 +126,24 @@ errorReasons <- tibble::tribble(
   "LoincGroupUnitsMissmatch", "LOINC Group units mismatch"
 )
 # Each pair has at most one warning of each warning table; a warning is not ignored when its
-# `ignore` is FALSE.
+# `ignore` is FALSE. A pair that is not in the harmonisation table (MISSING) has none. An empty
+# UNIT matches an empty UNIT, as in 4_BuildHarmonisationTable.
+isMapped <- evaluated$mapping_status != "MISSING"
 warningOf <- function(table, by) {
   hit <- dplyr::left_join(
     dplyr::select(evaluated, dplyr::all_of(names(by))), dplyr::select(table, dplyr::all_of(unname(by)), ignore),
-    by = by, na_matches = "never"
+    by = by, na_matches = "na"
   )
-  list(total = !is.na(hit$ignore), notIgnored = hit$ignore %in% FALSE)
+  list(total = isMapped & !is.na(hit$ignore), notIgnored = isMapped & hit$ignore %in% FALSE)
 }
-mismatchWarning <- warningOf(mismatchWarnings, c(TEST_NAME = "TEST_NAME", UNIT = "UNIT"))
-sharedWarning <- warningOf(sharedWarnings, c(TEST_NAME = "TEST_NAME", has_property = "has_property"))
-evaluated$n_warnings <- mismatchWarning$total + sharedWarning$total
-evaluated$n_warnings_not_ignored <- mismatchWarning$notIgnored + sharedWarning$notIgnored
+warnings <- list(
+  warningOf(mismatchWarnings, c(TEST_NAME = "TEST_NAME", UNIT = "UNIT")),
+  warningOf(sharedWarnings, c(TEST_NAME = "TEST_NAME", has_property = "has_property")),
+  warningOf(contextUnitMissingWarnings, c(TEST_NAME = "TEST_NAME", UNIT = "UNIT")),
+  warningOf(loincGroupUnitMismatchWarnings, c(TEST_NAME = "TEST_NAME", UNIT = "UNIT"))
+)
+evaluated$n_warnings <- Reduce(`+`, lapply(warnings, `[[`, "total"))
+evaluated$n_warnings_not_ignored <- Reduce(`+`, lapply(warnings, `[[`, "notIgnored"))
 stopifnot(identical(evaluated$n_warnings > 0, !is.na(evaluated$mapping_warning_messages)))
 events <- evaluated |>
   dplyr::summarise(
@@ -398,17 +419,14 @@ valueRows <- tibble::tribble(
   "AGREE", "AGREE", paste0("<span class=\"ks agree\">AGREE</span> KS &lt; ", ksAgree), "",
   "WARNING", "WARNING", paste0("<span class=\"ks warn\">WARNING</span> ", ksAgree, " &le; KS &le; ", ksDisagree), "",
   "DISAGREE", "DISAGREE", paste0("<span class=\"ks dis\">DISAGREE</span> KS &gt; ", ksDisagree), "",
-  "no_unit", "Error: missing unit", "<span class=\"ks dis\">Error</span>: missing unit", "",
-  "no_target_unit", "Error: missing target unit", "<span class=\"ks dis\">Error</span>: missing target unit", "",
-  "no_conversion", "Error: missing conversion", "<span class=\"ks dis\">Error</span>: missing conversion", "",
-  "no_deciles", "Not compared: no harmonised deciles", paste0(notCompared("warn"), "no harmonised deciles"), "",
+  "no_unit", "Error: values with missing units", "<span class=\"ks dis\">Error</span>: values with missing units", "",
   "no_reference", "Not compared: only one pair per group", "Not compared: only one pair per group", "row-grey",
   "qualitative_panel", "No value: value ignored, is qualitative or panel", "No value: value ignored, is qualitative or panel", "row-grey",
-  "no_values", paste0("No value: fewer than ", minValues, " values"), paste0("No value: fewer than ", minValues, " values"), "row-grey",
+  "no_values", paste0("No value: fewer than ", minValues, " values or ", minSubjects, " subjects"), paste0("No value: fewer than ", minValues, " values or ", minSubjects, " subjects"), "row-grey",
   "not_approved", "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)", "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)", "row-grey"
 )
 # The status of each pair is its harmonisation_values_status, set by 5_EvaluateHarmonisedData: one of
-# the `status` of valueRows (minValues and the KS thresholds must match that step).
+# the `status` of valueRows (the KS thresholds must match that step).
 pairValueClass <- valueRows$valueClass[match(evaluated$harmonisation_values_status, valueRows$status)]
 stopifnot(!anyNA(pairValueClass))
 valueClass <- tibble::tibble(valueClass = pairValueClass, n = evaluated$n) |>
@@ -424,10 +442,7 @@ valueStatus <- tibble::tribble(
   "AGREE", "AGREE", "ks agree",
   "WARNING", "WARNING", "ks warn",
   "DISAGREE", "DISAGREE", "ks dis",
-  "no_unit", "Error: missing unit", "ks dis",
-  "no_target_unit", "Error: missing target unit", "ks dis",
-  "no_conversion", "Error: missing conversion", "ks dis",
-  "no_deciles", "Not compared: no harmonised deciles", "ks warn",
+  "no_unit", "Error: values with missing units", "ks dis",
   "no_reference", "Not compared: one pair per group", "vs-grey",
   "qualitative_panel", "No value: qualitative or panel", "vs-grey",
   "no_values", "No value: too few values", "vs-grey",

@@ -28,6 +28,7 @@ kantaAgregatedTable <- readr::read_tsv(
     TEST_NAME = readr::col_character(),
     MEASUREMENT_UNIT = readr::col_character(),
     n = readr::col_double(),
+    n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     reference_range = readr::col_character(),
     value_missing_p = readr::col_double(),

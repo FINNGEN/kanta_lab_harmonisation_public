@@ -8,13 +8,20 @@ library(dplyr)
 #
 args <- commandArgs(trailingOnly = TRUE)
 harmonisedFile <- args[1]
-outDir <- args[2]
+settingsFile <- args[2]
+outDir <- args[3]
 
 # A pair is only tested when its reference is made of at least this many other pairs.
 minReferencePairs <- 2
 # A pair with fewer non-missing values than this counts as having no values: it is neither tested
-# nor part of a reference.
-minValues <- 1000
+# nor part of a reference. n_records_no_value_threshold and n_subjects_no_value_threshold of 1_Input/0_KantaAgregatedData/upstreamSettings.yaml.
+readSetting <- function(settingsFile, key) {
+  value <- yaml::read_yaml(settingsFile)[[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+  value
+}
+minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
 # KS thresholds of harmonisation_values_status: AGREE under ksAgree, WARNING up to ksDisagree,
 # DISAGREE above.
 ksAgree <- 0.5
@@ -27,7 +34,7 @@ ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  harmonisedFile = ", harmonisedFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
-ParallelLogger::logInfo("  minValues = ", minValues)
+ParallelLogger::logInfo("  settingsFile = ", settingsFile, " (n_records_no_value_threshold = ", minValues, ", n_subjects_no_value_threshold = ", minSubjects, ")")
 ParallelLogger::logInfo("  minReferencePairs = ", minReferencePairs)
 
 #
@@ -40,6 +47,7 @@ harmonised <- readr::read_tsv(
     PREPROCESED_UNIT = readr::col_character(),
     UNIT = readr::col_character(),
     n = readr::col_double(),
+    n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     reference_range = readr::col_character(),
     value_missing_p = readr::col_double(),
@@ -110,7 +118,7 @@ decilesHarmonised <- decileMatrix("decile_value_harmonised")
 #    panel, or a concept with no target unit) is neither tested nor part of a reference. Only
 #    the APPROVED pairs are tested (NOT-APPROVED, ERROR, IGNORE and MISSING pairs are not).
 nValues <- pairs$n * (1 - dplyr::coalesce(pairs$value_missing_p, 0) / 100)
-hasDeciles <- complete.cases(decilesHarmonised) & nValues >= minValues
+hasDeciles <- complete.cases(decilesHarmonised) & nValues >= minValues & dplyr::coalesce(pairs$n_subjects, 0) >= minSubjects
 isApproved <- pairs$mapping_status %in% "APPROVED"
 hasUnit <- !is.na(pairs$HARMONISED_UNIT)
 isReference <- hasDeciles & isApproved & hasUnit
@@ -226,24 +234,24 @@ evaluated <- pairs |>
 
 # 5. harmonisation_values_status: the row of the Harmonised Values table of the dashboard each pair
 #    falls in, the first that applies. Only APPROVED pairs are compared. A pair with fewer than
-#    minValues values has no value whatever its status. An approved pair that is not compared is an
-#    error (no UNIT, its concept has no target_unit, no CONVERSION), has incomplete deciles, is
+#    minValues values or fewer than minSubjects subjects has no value whatever its status. An approved pair that is not compared has no
+#    UNIT (an error), has incomplete deciles, is
 #    qualitative or a panel (target_unit_source), or has too few other approved pairs in its Group
 #    (or concept).
 isApprovedPair <- evaluated$mapping_status %in% "APPROVED"
 evaluated <- evaluated |>
   dplyr::mutate(
     harmonisation_values_status = dplyr::case_when(
-      n * (1 - dplyr::coalesce(value_missing_p, 0) / 100) < minValues ~ paste0("No value: fewer than ", minValues, " values"),
+      n * (1 - dplyr::coalesce(value_missing_p, 0) / 100) < minValues | dplyr::coalesce(n_subjects, 0) < minSubjects ~
+        paste0("No value: fewer than ", minValues, " values or ", minSubjects, " subjects"),
       !is.na(KS) & KS < ksAgree ~ "AGREE",
       !is.na(KS) & KS <= ksDisagree ~ "WARNING",
       !is.na(KS) ~ "DISAGREE",
       !isApprovedPair ~ "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)",
       target_unit_source %in% c("isQualitative", "panel") ~ "No value: value ignored, is qualitative or panel",
-      is.na(UNIT) ~ "Error: missing unit",
-      is.na(target_unit) ~ "Error: missing target unit",
-      is.na(CONVERSION) ~ "Error: missing conversion",
-      is.na(decile_value_harmonised) ~ "Not compared: no harmonised deciles",
+      is.na(UNIT) ~ "Error: values with missing units",
+      is.na(target_unit) | is.na(CONVERSION) ~ "unexpected: approved pair with a UNIT but no conversion",
+      is.na(decile_value_harmonised) ~ "unexpected: pair with enough values but no deciles",
       TRUE ~ "Not compared: only one pair per group"
     )
   ) |>
@@ -252,6 +260,13 @@ ParallelLogger::logInfo(
   paste(names(table(evaluated$harmonisation_values_status)), table(evaluated$harmonisation_values_status), collapse = ", "),
   " (harmonisation_values_status)"
 )
+# An approved pair with a UNIT always has a CONVERSION to a target unit: otherwise
+# 4_BuildHarmonisationTable gives it ERROR:MissingConversion (or another error), so it is not approved.
+# A pair with enough values and subjects always has its deciles: 1_BuildKantaAgregatedTable stops otherwise.
+nUnexpected <- sum(startsWith(evaluated$harmonisation_values_status, "unexpected"))
+if (nUnexpected > 0) {
+  stop(nUnexpected, " pairs have an unexpected status (no CONVERSION, or no deciles); see harmonisation_values_status")
+}
 
 #
 # --- Output -------------------------------------------------------------

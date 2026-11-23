@@ -12,6 +12,7 @@ From `DATA/`:
   `MEASUREMENT_UNIT` pair and decile (see `1_Input/1_BuildKantaAgregatedTable`). Its `MEASUREMENT_UNIT` is
   read as the `PREPROCESED_UNIT` of the harmonisation table.
 - `4_BuildHarmonisationTable/harmonisationTable.tsv` — see `4_BuildHarmonisationTable`.
+- `1_Input/0_KantaAgregatedData/upstreamSettings.yaml` — `n_records_no_value_threshold` (1000) or `n_subjects_no_value_threshold` (60), under which a pair has no values.
 
 ## Outputs
 
@@ -39,12 +40,10 @@ In `DATA/5_EvaluateHarmonisedData/`:
     same text format, right after `decile_value_harmonised`; empty if the pair is not tested.
   - `harmonisation_values_status` — second column, right after `mapping_status`: the row of the Harmonised
     Values table of the dashboard the pair falls in, the first that applies: `AGREE` (KS under 0.5),
-    `WARNING` (0.5 to 0.8), `DISAGREE` (over 0.8), `Error: missing unit` (no `UNIT`), `Error: missing target
-    unit` (no `target_unit`), `Error: missing conversion` (no `CONVERSION`), `Not compared: no
-    harmonised deciles`, `Not compared: only one pair per group`, `No value: value ignored, is qualitative or
+    `WARNING` (0.5 to 0.8), `DISAGREE` (over 0.8), `Error: values with missing units` (no `UNIT`), `Not compared: only one pair per group`, `No value: value ignored, is qualitative or
     panel` (`target_unit_source` is `isQualitative` or `panel`), `No value: fewer than 1000
-    values` (checked first, whatever the status) and `Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)`
-    (any pair that is not `APPROVED`). The errors and the not-compared rows apply to approved pairs only.
+    values or 60 subjects` (checked first, whatever the status) and `Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)`
+    (any pair that is not `APPROVED`). An approved pair with a `UNIT` always has a `CONVERSION` (otherwise step 4 makes it `ERROR:MissingConversion`); and a pair with enough values and subjects always has its deciles (`1_BuildKantaAgregatedTable` stops otherwise); the step stops if either does not. The errors and the not-compared rows apply to approved pairs only.
   - `KS` — the Kolmogorov-Smirnov statistic between the pair and its reference.
   - `KS_mlp` — `-log10` of the KS p-value (capped at 300).
   - `log10_D5` — `log10(decile 5 of the pair / decile 5 of the reference)`; positive
@@ -84,8 +83,9 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
 
 1. Collapses the table to one row per pair, with the deciles of `decile_value` and
    `decile_value_harmonised` as columns.
-2. Builds the reference of each pair that has the 9 harmonised deciles and at least 1000
-   values (`n` times the share of records with a value; `minValues`). A pair with fewer values
+2. Builds the reference of each pair that has the 9 harmonised deciles and at least
+   `n_records_no_value_threshold` values (`n` times the share of records with a value) and
+   `n_subjects_no_value_threshold` subjects (`upstreamSettings.yaml`). A pair with fewer values or subjects
    counts as having no values: it is neither tested nor part of a reference. The reference is the LOINC
    Group of the concept: all the pairs in it. A concept can be in several Groups, tried
    in the order of `group_concept_id` (the most specific first): the first Group with at

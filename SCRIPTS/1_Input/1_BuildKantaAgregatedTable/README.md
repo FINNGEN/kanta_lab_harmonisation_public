@@ -22,6 +22,8 @@ From `DATA/1_Input/0_KantaAgregatedData/` (produced outside this repo by
 
 `summaryOutcomes.tsv` — `n_TEST_OUTCOME` per pair and `TEST_OUTCOME`; only validated, not used in the table.
 
+`upstreamSettings.yaml` — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, the numbers of values and of subjects from which a pair must have its deciles.
+
 ## Outputs
 
 In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
@@ -29,6 +31,7 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
 - `kantaAgregatedTable.tsv` — one row per `TEST_NAME` + `MEASUREMENT_UNIT` pair and decile:
   - `TEST_NAME`, `MEASUREMENT_UNIT` (empty when no unit is recorded).
   - `n` — total records of the pair, repeated on every decile row.
+  - `n_subjects` — subjects of the pair (`summaryTest.tsv`), repeated on every decile row.
   - `unit_source_injection_correction_na_p` — `[source%,injection%,correction%,na%]`.
   - `reference_range` — the reference range of each demographic bin,
     `<bin>[low,high]`, joined with `;` and sorted by bin (e.g.
@@ -72,7 +75,7 @@ any test is an ERROR.
 | all six | The columns are the expected ones, in order; `TEST_NAME` has a value; the key (`TEST_NAME` + `MEASUREMENT_UNIT`, plus `unit_source`, `value_source`, `decile`, `DEMOGRAPHICS_BIN` or `TEST_OUTCOME`) is unique; the counts (`n_records`, `n_subjects`, `n_TEST_OUTCOME`) are whole numbers above 0; `n_subjects` is above 5 (small counts are removed upstream); `n_records` (or `n_TEST_OUTCOME`) is at least `n_subjects`; every pair is in `summaryTest.tsv` |
 | `summaryUnitSource.tsv` | `unit_source` is `Source` or `PrimaryInjection`; the `n_records` of a pair add up to no more than its `n_records` in `summaryTest.tsv` (rows with few subjects are removed, so they can add up to less) |
 | `summaryValuesSource.tsv` | `value_source` is `Source`, `Extracted` or `QCOut`; the same sum test |
-| `summaryValues.tsv` | `decile_MEASUREMENT_VALUE` is a number; `decile` is 0.1 to 0.9; every pair has the 9 deciles; the deciles of a pair do not decrease |
+| `summaryValues.tsv` | `decile_MEASUREMENT_VALUE` is a number; `decile` is 0.1 to 0.9; every pair has the 9 deciles; the deciles of a pair do not decrease; every pair with at least `n_records_no_value_threshold` values (the records of `summaryValuesSource.tsv`) and `n_subjects_no_value_threshold` subjects (`summaryTest.tsv`) has its deciles |
 | `summaryReference.tsv` | `REFERENCE_RANGE_LOW_MEAN` and `REFERENCE_RANGE_HIGH_MEAN` are numbers; `DEMOGRAPHICS_BIN` is `Adult-Female`, `Adult-Male`, `Minor-Female` or `Minor-Male`; WARNING if the low limit is above the high one |
 
 `scripts/buildKantaAgregatedTable.R`:

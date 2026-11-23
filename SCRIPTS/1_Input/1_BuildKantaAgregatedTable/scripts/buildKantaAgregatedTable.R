@@ -51,9 +51,9 @@ fmtNum <- function(x) {
 }
 
 # One row per TEST_NAME/MEASUREMENT_UNIT, n = total records (the denominator every
-# percentage below is taken against).
+# percentage below is taken against), n_subjects = its number of subjects.
 total <- summaryTest |>
-  dplyr::transmute(TEST_NAME, MEASUREMENT_UNIT, n = n_records)
+  dplyr::transmute(TEST_NAME, MEASUREMENT_UNIT, n = n_records, n_subjects = as.numeric(n_subjects))
 
 # Drop the upstream's stringified missing test name: records with no test name
 # arrive as a TEST_NAME of literally "NA". Case-sensitive, lowercase "na" is a
@@ -149,7 +149,7 @@ result <- total |>
   dplyr::left_join(valueDeciles, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
   dplyr::arrange(TEST_NAME, MEASUREMENT_UNIT, decile) |>
   dplyr::select(
-    TEST_NAME, MEASUREMENT_UNIT, n,
+    TEST_NAME, MEASUREMENT_UNIT, n, n_subjects,
     unit_source_injection_correction_na_p,
     reference_range,
     value_missing_p,

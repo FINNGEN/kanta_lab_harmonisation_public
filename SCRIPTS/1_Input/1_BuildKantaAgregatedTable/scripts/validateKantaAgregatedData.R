@@ -22,12 +22,22 @@ summaryValuesSourceFile <- args[3]
 summaryValuesFile <- args[4]
 summaryReferenceFile <- args[5]
 summaryOutcomesFile <- args[6]
-outDir <- args[7]
+settingsFile <- args[7]
+outDir <- args[8]
 
 # The pair key of every table.
 pairKey <- c("TEST_NAME", "MEASUREMENT_UNIT")
 # Small counts are removed upstream: no row may have this many subjects or fewer.
 maxRemovedSubjects <- 5
+# A pair with at least this many records with a value must have its deciles: n_records_no_value_threshold and n_subjects_no_value_threshold of
+# upstreamSettings.yaml, under which a pair counts as having no values (the whole repo uses it).
+readSetting <- function(settingsFile, key) {
+  value <- yaml::read_yaml(settingsFile)[[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+  value
+}
+minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
 unitSources <- c("Source", "PrimaryInjection")
 valueSources <- c("Source", "Extracted", "QCOut")
 demographicsBins <- c("Adult-Female", "Adult-Male", "Minor-Female", "Minor-Male")
@@ -73,6 +83,7 @@ tableSpecs <- list(
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 for (name in names(tableSpecs)) ParallelLogger::logInfo("  ", name, " = ", tableSpecs[[name]]$file)
+ParallelLogger::logInfo("  settingsFile = ", settingsFile, " (n_records_no_value_threshold = ", minValues, ", n_subjects_no_value_threshold = ", minSubjects, ")")
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -174,6 +185,20 @@ if (identical(names(values), tableSpecs$summaryValues.tsv$columns)) {
     )
   record("summaryValues.tsv", "every pair has the 9 deciles", perPair$n_deciles != length(deciles), perPair, c(pairKey, "n_deciles"))
   record("summaryValues.tsv", "the deciles of a pair do not decrease", perPair$decreasing, perPair, pairKey)
+  # A pair with enough values (the records of summaryValuesSource.tsv, which all have a value) and enough
+  # subjects (summaryTest.tsv) needs its deciles: without them its values cannot be harmonised or compared.
+  withValues <- tables$summaryValuesSource.tsv |>
+    dplyr::summarise(n_values = sum(asNumber(n_records)), .by = dplyr::all_of(pairKey)) |>
+    dplyr::inner_join(summaryTest |> dplyr::transmute(TEST_NAME, MEASUREMENT_UNIT, n_subjects = asNumber(n_subjects)), by = pairKey) |>
+    dplyr::filter(n_values >= minValues, n_subjects >= minSubjects)
+  noDeciles <- dplyr::anti_join(withValues, dplyr::distinct(values, dplyr::across(dplyr::all_of(pairKey))), by = pairKey)
+  record(
+    "summaryValues.tsv", paste0(
+      "every pair with at least ", minValues, " values (summaryValuesSource.tsv) and ", minSubjects,
+      " subjects (summaryTest.tsv) has its deciles"
+    ),
+    rep(TRUE, nrow(noDeciles)), noDeciles, pairKey
+  )
 }
 
 # summaryReference.tsv: the bins, and a low limit that is not above the high one.

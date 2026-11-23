@@ -6,9 +6,11 @@ an interactive table with one row per pair.
 
 ## Inputs
 
-- `DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv` and
-  `testname_property_shared_warning.tsv` — to tell the warnings that are marked `ignore`.
+- `DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv`,
+  `testname_property_shared_warning.tsv`, `test_unit_context_unit_missing_warning.tsv` and
+  `test_unit_loinc_group_unit_mismatch_warning.tsv` — to tell the warnings that are marked `ignore`.
 - `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
+- `DATA/1_Input/0_KantaAgregatedData/upstreamSettings.yaml` — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, for the "No value" row.
 - `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
   and `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
 
@@ -31,7 +33,7 @@ In `DATA/6_BuildDashboard/`:
       `PREPROCESED_UNIT` was changed to a different `UNIT` (of the mapped pairs), the number of
       records and the percentage of records.
     - *Harmonised test+unit* — by `mapping_status` (APPROVED, NOT-APPROVED, IGNORE, MISSING,
-      ERROR, which counts every `ERROR:<reason>`): the warnings not ignored and, in brackets, the total (from the two warning tables of
+      ERROR, which counts every `ERROR:<reason>`): the warnings not ignored and, in brackets, the total (from the four warning tables of
       `4_BuildHarmonisationTable`), the number of test+unit
       combinations (pairs), the number of records and the percentage of records, and a
       total row.
@@ -44,12 +46,10 @@ In `DATA/6_BuildDashboard/`:
       in this order (each pair in the first that applies, the rows add up to the total; only
       `APPROVED` pairs are compared):
       AGREE with their LOINC Group (KS under 0.5); WARNING (KS from 0.5 to 0.8, both included);
-      DISAGREE (KS over 0.8); error: missing unit (no `UNIT`; "Error" in red); error: missing target unit (a
-      `UNIT`, but the concept has no target unit; in red); error: missing conversion (a `UNIT` and a target
-      unit but no `CONVERSION`; in red);
-      not compared: no harmonised deciles (incomplete deciles; in yellow); not compared: only one pair
+      DISAGREE (KS over 0.8); error: values with missing units (no `UNIT`; "Error" in red);
+      not compared: only one pair
       per group (fewer than 2 other approved pairs in its LOINC Group or concept; grey row); no value: value ignored, is qualitative or panel (the concept's `harmonised_unit_source` is
-      `isQualitative` or `panel`; grey row); no values (fewer than 1000 non-missing values; grey row);
+      `isQualitative` or `panel`; grey row); no value (fewer than `n_records_no_value_threshold` values or `n_subjects_no_value_threshold` subjects; grey row);
       not mapped (`NOT-APPROVED`, `IGNORE`, `MISSING` or `ERROR`; grey row). A pair with no values is
       counted there first, whatever its status. In the KS column of the Mapping Table an approved pair
       whose concept has no target unit shows `no unit` in grey.

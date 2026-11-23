@@ -53,9 +53,12 @@ EVALUATED_FILE="$DATA_DIR/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgreg
 UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
 MEASUREMENT_FILE="$DATA_DIR/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
+SETTINGS_FILE="$DATA_DIR/1_Input/0_KantaAgregatedData/upstreamSettings.yaml"
 WARNING_MISMATCH_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv"
 WARNING_SHARED_FILE="$DATA_DIR/4_BuildHarmonisationTable/testname_property_shared_warning.tsv"
-for f in "$EVALUATED_FILE" "$UNIT_FIX_FILE" "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$MEASUREMENT_FILE" "$TARGET_TABLE_FILE"; do
+WARNING_CONVERSION_FILE="$DATA_DIR/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv"
+WARNING_GROUP_FILE="$DATA_DIR/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv"
+for f in "$EVALUATED_FILE" "$UNIT_FIX_FILE" "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$WARNING_CONVERSION_FILE" "$WARNING_GROUP_FILE" "$MEASUREMENT_FILE" "$TARGET_TABLE_FILE" "$SETTINGS_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -70,7 +73,8 @@ fi
 # --- Action -------------------------------------------------------------
 #
 Rscript "$STEP_DIR/scripts/buildDashboard.R" "$EVALUATED_FILE" "$UNIT_FIX_FILE" \
-  "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$MEASUREMENT_FILE" "$TARGET_TABLE_FILE" "$OUTDIR"
+  "$WARNING_MISMATCH_FILE" "$WARNING_SHARED_FILE" "$WARNING_CONVERSION_FILE" "$WARNING_GROUP_FILE" \
+  "$MEASUREMENT_FILE" "$TARGET_TABLE_FILE" "$SETTINGS_FILE" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
