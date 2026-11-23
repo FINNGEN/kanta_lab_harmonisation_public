@@ -21,7 +21,7 @@ In `DATA/6_BuildDashboard/`:
 
 - `dashboard.html` — one file with no external libraries or fonts: the data is inside
   the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
-  - **Input Data**: the tables of `kantaAgregatedTable.md` (Name Unit Value combinations,
+  - **Input Data**: the tables of `kantaAgregatedTable.summary.md` (Name Unit Value combinations,
     Units, Reference Ranges, Values), computed from the same pairs of the evaluated table.
   - **Target Data**: the tables of `targetTable.md` (Concepts, Groups, Validations and the Groups with
     more than one `harmonised_unit`), computed from `targetTable.tsv`.

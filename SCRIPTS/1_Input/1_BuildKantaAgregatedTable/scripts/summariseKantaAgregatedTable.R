@@ -218,6 +218,6 @@ md <- c(
 #
 # --- Output -------------------------------------------------------------
 #
-outFile <- file.path(outDir, "kantaAgregatedTable.md")
+outFile <- file.path(outDir, "kantaAgregatedTable.summary.md")
 writeLines(md, outFile)
 ParallelLogger::logInfo("Wrote ", outFile)

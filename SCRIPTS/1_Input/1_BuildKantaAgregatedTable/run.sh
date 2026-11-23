@@ -30,7 +30,7 @@ STEP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUTDIR="$DATA_DIR/1_Input/1_BuildKantaAgregatedTable"
 mkdir -p "$OUTDIR"
 
-exec > >(tee "$OUTDIR/log.txt") 2>&1
+exec > >(tee "$OUTDIR/kantaAgregatedTable.log.txt") 2>&1
 
 #
 # --- Configuration -------------------------------------------------------------
@@ -55,8 +55,9 @@ SUMMARY_UNIT_SOURCE_FILE="$SOURCE_DIR/summaryUnitSource.tsv"
 SUMMARY_VALUES_SOURCE_FILE="$SOURCE_DIR/summaryValuesSource.tsv"
 SUMMARY_VALUES_FILE="$SOURCE_DIR/summaryValues.tsv"
 SUMMARY_REFERENCE_FILE="$SOURCE_DIR/summaryReference.tsv"
+SUMMARY_OUTCOMES_FILE="$SOURCE_DIR/summaryOutcomes.tsv"
 
-for f in "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE"; do
+for f in "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE" "$SUMMARY_OUTCOMES_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -70,6 +71,11 @@ fi
 #
 # --- Action -------------------------------------------------------------
 #
+# The input tables are validated first; the step stops if a test is an ERROR.
+Rscript "$STEP_DIR/scripts/validateKantaAgregatedData.R" \
+  "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE" \
+  "$SUMMARY_OUTCOMES_FILE" "$OUTDIR"
+
 Rscript "$STEP_DIR/scripts/buildKantaAgregatedTable.R" \
   "$SUMMARY_TEST_FILE" "$SUMMARY_UNIT_SOURCE_FILE" "$SUMMARY_VALUES_SOURCE_FILE" "$SUMMARY_VALUES_FILE" "$SUMMARY_REFERENCE_FILE" "$OUTDIR"
 
@@ -78,5 +84,6 @@ Rscript "$STEP_DIR/scripts/summariseKantaAgregatedTable.R" "$OUTDIR/kantaAgregat
 #
 # --- Output -------------------------------------------------------------
 #
+echo "Wrote $OUTDIR/kantaAgregatedTable.validation.md"
 echo "Wrote $OUTDIR/kantaAgregatedTable.tsv"
-echo "Wrote $OUTDIR/kantaAgregatedTable.md"
+echo "Wrote $OUTDIR/kantaAgregatedTable.summary.md"

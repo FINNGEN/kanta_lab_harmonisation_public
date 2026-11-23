@@ -20,7 +20,7 @@ From `DATA/1_Input/0_KantaAgregatedData/` (produced outside this repo by
 - `summaryReference.tsv` — `REFERENCE_RANGE_LOW_MEAN` and
   `REFERENCE_RANGE_HIGH_MEAN` per pair and `DEMOGRAPHICS_BIN`.
 
-`summaryOutcomes.tsv` is not used.
+`summaryOutcomes.tsv` — `n_TEST_OUTCOME` per pair and `TEST_OUTCOME`; only validated, not used in the table.
 
 ## Outputs
 
@@ -39,7 +39,10 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
   - `value_source_extracted_qcout_na_p` — `[source%,extracted%,qcout%,na%]`.
   - `decile` — 0.1 to 0.9; empty for pairs with no deciles.
   - `decile_value` — the value at that decile; empty for pairs with no deciles.
-- `kantaAgregatedTable.md` — a markdown report on `kantaAgregatedTable.tsv`, one
+- `kantaAgregatedTable.validation.md` — the validation of the input tables: a summary per table
+  (`SUCCESS`, `WARNING`, `ERROR`, and an `ALL` row) and one row per test with its result, the number of
+  failing rows and examples.
+- `kantaAgregatedTable.summary.md` — a markdown report on `kantaAgregatedTable.tsv`, one
   row per `TEST_NAME` + `MEASUREMENT_UNIT` pair, with `n rows`, `% rows`,
   `n records` and `% rec` in every table and a total row. Four sections:
   - `# Name Unit Value combinations` — one row per combination of the three
@@ -56,9 +59,21 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
   records come from it, so `% rows` does not add up to 100%; `n records` is
   `n` times the share, summed over pairs, and is approximate (shares are
   rounded to 2 decimals).
-- `log.txt` — run log.
+- `kantaAgregatedTable.log.txt` — run log.
 
 ## Action
+
+`scripts/validateKantaAgregatedData.R` runs first and validates the six input tables. A failing test is an
+ERROR, or a WARNING when it does not break the table; the step stops (and does not build the table) when
+any test is an ERROR.
+
+| Table | Tests |
+|---|---|
+| all six | The columns are the expected ones, in order; `TEST_NAME` has a value; the key (`TEST_NAME` + `MEASUREMENT_UNIT`, plus `unit_source`, `value_source`, `decile`, `DEMOGRAPHICS_BIN` or `TEST_OUTCOME`) is unique; the counts (`n_records`, `n_subjects`, `n_TEST_OUTCOME`) are whole numbers above 0; `n_subjects` is above 5 (small counts are removed upstream); `n_records` (or `n_TEST_OUTCOME`) is at least `n_subjects`; every pair is in `summaryTest.tsv` |
+| `summaryUnitSource.tsv` | `unit_source` is `Source` or `PrimaryInjection`; the `n_records` of a pair add up to no more than its `n_records` in `summaryTest.tsv` (rows with few subjects are removed, so they can add up to less) |
+| `summaryValuesSource.tsv` | `value_source` is `Source`, `Extracted` or `QCOut`; the same sum test |
+| `summaryValues.tsv` | `decile_MEASUREMENT_VALUE` is a number; `decile` is 0.1 to 0.9; every pair has the 9 deciles; the deciles of a pair do not decrease |
+| `summaryReference.tsv` | `REFERENCE_RANGE_LOW_MEAN` and `REFERENCE_RANGE_HIGH_MEAN` are numbers; `DEMOGRAPHICS_BIN` is `Adult-Female`, `Adult-Male`, `Minor-Female` or `Minor-Male`; WARNING if the low limit is above the high one |
 
 `scripts/buildKantaAgregatedTable.R`:
 
@@ -78,7 +93,7 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
 
 `scripts/summariseKantaAgregatedTable.R` reads `kantaAgregatedTable.tsv` back, takes
 one row per pair (the file has one row per decile, with the pair's `n`
-repeated), and writes `kantaAgregatedTable.md`.
+repeated), and writes `kantaAgregatedTable.summary.md`.
 
 ## Env vars
 
