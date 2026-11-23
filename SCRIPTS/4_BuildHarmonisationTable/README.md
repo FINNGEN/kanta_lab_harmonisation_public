@@ -17,7 +17,6 @@ From `DATA/`:
   harmonised unit (a unit of lab2clean or of `harmonisedUnitOverwrite.tsv`).
 - `2_Harmonisation/harmonisedUnitOverwrite.tsv` — `concept_id`, `harmonised_unit`, `note`. The target unit of a
   concept set by hand; it wins over the one of `targetTable.tsv`.
-- `3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv` — only to validate the units.
 - `3_Target/4_BuildTargetTable/targetTable.tsv` — the concept, its LOINC axes, its Groups and
   its harmonised unit (`harmonised_unit`), joined on the concept id.
 
@@ -29,7 +28,7 @@ In `DATA/4_BuildHarmonisationTable/`:
 
 | Column | Type | Description | Comes from |
 |---|---|---|---|
-| **mapping_status** | Character | First column. `IGNORE` if there is an `ignore_mapping_reason`; `ERROR:<reason>` if the mapping is `APPROVED` and has an error, the first of `MissingConceptId` (the `concept_id` is not in `targetTable.tsv`), `PropertyUnitMismatch` and `SharedProperty` (a warning of that table not marked `ignore`), `MissingConversion` (a `UNIT` and a target unit but no `CONVERSION`; a pair with no `UNIT` is not converted, so it is no error), `LoincGroupUnitsMissmatch` (a LOINC Group of the concept has approved pairs with different target units, and the pair has a target unit); `APPROVED` if `APPROVED` is `TRUE`; `NOT-APPROVED` if it is `FALSE` | `mapping.tsv` and the warning tables |
+| **mapping_status** | Character | First column. `IGNORE` if there is an `ignore_mapping_reason`; `ERROR:<reason>` if the mapping is `APPROVED` and has an error, the first of `MissingConceptId` (the `concept_id` is not in `targetTable.tsv`), `PropertyUnitMismatch` and `SharedProperty` (a warning of that table not marked `ignore`), `MissingConversion` and `LoincGroupUnitsMissmatch` (a warning of `test_unit_context_unit_missing_warning.tsv` or `test_unit_loinc_group_unit_mismatch_warning.tsv` not marked `ignore`); `APPROVED` if `APPROVED` is `TRUE`; `NOT-APPROVED` if it is `FALSE` | `mapping.tsv` and the warning tables |
 | **TEST_NAME** | Character | Source lab test name (join key) | `mapping.tsv` |
 | PREPROCESED_UNIT | Character | Unit as it arrives after preprocessing. The `UNIT` when the pair is not in `unitFix.tsv` | `unitFix.tsv` |
 | **UNIT** | Character | Unit after the fix (join key). Empty for qualitative tests | `mapping.tsv` |
@@ -42,7 +41,7 @@ In `DATA/4_BuildHarmonisationTable/`:
 | target_unit_source | Character | Where `target_unit` came from: the `note` of the overwrite, else `harmonised_unit_source` of `targetTable.tsv` (`lab2clean`, `isQualitative`, `panel`) | `harmonisedUnitOverwrite.tsv`, `targetTable.tsv` |
 | HARMONISED_UNIT | Character | Unit the value is converted to: `target_unit`, but empty when there is no `CONVERSION` | `target_unit` |
 | CONVERSION | Character | Factor, or a formula in `X`, so that `value_in_HARMONISED_UNIT = value_in_UNIT * CONVERSION` | `unitHarmonisation.tsv` |
-| mapping_warning_messages | Character | Last column. Every message of the two warning tables that joins to the row (ignored or not), each starting with its type, `WrongProperty:` (property mismatch) or `SharedProperty:` (shared property), separated by ` \| `. Empty when there is none | the warning tables |
+| mapping_warning_messages | Character | Last column. Every message of the four warning tables that joins to the row (ignored or not), each starting with its type, `WrongProperty:` (property mismatch), `SharedProperty:` (shared property), `MissingConversion:` (context unit missing) or `LoincGroupUnitsMismatch:` (LOINC Group unit mismatch), separated by ` \| `. Empty when there is none | the warning tables |
 
   Of the concept's six LOINC axes only `has_component` and `has_property` are in the table.
 
@@ -52,6 +51,12 @@ In `DATA/4_BuildHarmonisationTable/`:
 - `testname_property_shared_warning.tsv` — one row per `TEST_NAME` + `has_property` where the
   `TEST_NAME` maps to more than one `concept_id` with that `has_property` (e.g. Leukocytes in Blood and
   in Urine); the message lists the ids. Ignored rows are not checked.
+- `test_unit_context_unit_missing_warning.tsv` — one row per `TEST_NAME` + `UNIT` that has a `UNIT` and whose
+  concept has a target unit, but `unitHarmonisation.tsv` has no rule (for the `has_property` or the `concept_id`)
+  from that `UNIT` to the target unit: its values cannot be converted. Joins on `TEST_NAME` + `UNIT`.
+- `test_unit_loinc_group_unit_mismatch_warning.tsv` — one row per `TEST_NAME` + `UNIT` with a target unit in a
+  LOINC Group whose approved pairs have more than one target unit; the message lists the Groups and their
+  units. Joins on `TEST_NAME` + `UNIT`.
 
 | Column | Type | Description |
 |---|---|---|
@@ -66,16 +71,16 @@ In `DATA/4_BuildHarmonisationTable/`:
   file is not written. They are the same tables as in the earlier version of the project (with the file
   name in the message updated), so the `ignore` flags carry over.
 
-- `harmonisationTableValidation.md` — the validation report: a validation summary table (`table`,
+- `harmonisationTable.validation.md` — the validation report of the input tables: a validation summary table (`table`,
   `SUCCESS`, `WARNING`, `ERROR`, with a row per table and an `ALL` row), then a table with a row per
   test and the columns `table`, `result` (`SUCCESS`, `WARNING` or `ERROR`), `test`, `n rows` (how many
-  rows failed; for the warning tables, how many warnings not marked `ignore`) and `message` (empty on
+  rows failed) and `message` (empty on
   success; on failure, the detail with a few examples).
 - `harmonisationTable.md` — a summary of `harmonisationTable.tsv`: the mapping status (approved / not
   approved / ignored, with `n` and `%` of the rows and how many have a warning or an error that is not
   marked `ignore`), and for the approved rows how many distinct `concept_id`s, how many rows have a group,
   how many distinct groups and how many rows have a conversion.
-- `log.txt` — run log.
+- `harmonisationTable.log.txt` — run log.
 
 A concept can be in several LOINC Groups; they are joined with `;` into one value, so the Groups add no
 rows. A pair has more than one row only when `unitFix.tsv` and `mapping.tsv` give the same
@@ -101,7 +106,7 @@ Every table is read with `readr::read_tsv()` and an explicit `col_types` for eac
    whose `context` is a LOINC property applies to every concept with that `has_property`; a rule whose
    `context` is a concept id applies only to that concept and wins over the rule of the property with the
    same units.
-5. Writes the two warning tables (see above) and sets `mapping_status` and `mapping_warning_messages`.
+5. Writes the four warning tables (see above) and sets `mapping_status` and `mapping_warning_messages`.
 
 A `HARMONISED_UNIT` without a `CONVERSION` cannot be applied, so it is set to empty. The step logs how
 many pairs had a `HARMONISED_UNIT` cleared for lack of a `CONVERSION` and how many pairs end with none.
@@ -111,7 +116,10 @@ The `HARMONISED_UNIT` of `targetTable.tsv` (lab2clean's notation, e.g. `g/L`) mu
 
 ## Validation
 
-`scripts/validateHarmonisationTable.R` runs after the build and checks every input table and the output.
+`scripts/validateHarmonisationTable.R` runs before the build and checks only the input tables (the tables of
+`2_Harmonisation` and `targetTable.tsv`). The problems of the mappings themselves (property mismatch, shared
+property, missing conversion, ...) are not part of it: they are in the four warning tables and in
+`mapping_status` (`ERROR:<reason>`).
 A failed test does not stop the step: it is an `ERROR` (or, for a finding that does not break the table, a
 `WARNING`) row in the report and a warning in the log. Tests, per table:
 
@@ -120,11 +128,9 @@ A failed test does not stop the step: it is an `ERROR` (or, for a finding that d
 | all tables | The columns match their declared types |
 | `unitFix.tsv` | `TEST_NAME` has a value; `TEST_NAME` + `PREPROCESED_UNIT` are unique; `UNIT` differs from `PREPROCESED_UNIT`; `TEST_NAME` + `PREPROCESED_UNIT` must not appear in `mapping.tsv`; WARNING if a `TEST_NAME` + `UNIT` is not in `mapping.tsv`, so the fix is not used |
 | `mapping.tsv` | `TEST_NAME` and `concept_id` have a value; `TEST_NAME` + `UNIT` are unique; `APPROVED` is `TRUE` or `FALSE`; `concept_id` is not 0, unless there is an `ignore_mapping_reason`; `concept_id` is in `targetTable.tsv`, unless there is an `ignore_mapping_reason` |
-| `unitHarmonisation.tsv` | `context`, `UNIT` and `CONVERSION` have a value (an empty `HARMONISED_UNIT` is a unit that maps to no unit, e.g. `estimate`); `context` + `UNIT` + `HARMONISED_UNIT` are unique; `CONVERSION` is a number or a formula in `X`; `context` is a `has_property` or a `concept_id` of `targetTable.tsv`; `HARMONISED_UNIT` is a unit of lab2clean or of the unit overwrite table; the target unit of every approved concept (`targetTable.tsv`) has a rule for its `has_property` |
+| `unitHarmonisation.tsv` | Only checks of the table itself, with no input or target data: `context`, `UNIT` and `CONVERSION` have a value (an empty `HARMONISED_UNIT` is a unit that maps to no unit, e.g. `estimate`); `context` + `UNIT` + `HARMONISED_UNIT` are unique; `CONVERSION` is a number or a formula in `X` |
 | `harmonisedUnitOverwrite.tsv` | `concept_id`, `harmonised_unit` and `note` have a value; `concept_id` is unique; `concept_id` is in `targetTable.tsv`; WARNING if `harmonised_unit` is the one the concept already has in `targetTable.tsv` (the row is not needed); WARNING if `harmonised_unit` has no rule in `unitHarmonisation.tsv` for the `has_property` or the `concept_id` (nothing converts to it) |
 | `targetTable.tsv` | `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` and `is_panel` have a value; `concept_id` + `group_concept_id` are unique |
-| `harmonisationTable.tsv` | The table has as many rows as `mapping.tsv` joined with `unitFix.tsv`; `TEST_NAME` + `PREPROCESED_UNIT` are unique; every `TEST_NAME` + `UNIT` of `mapping.tsv` is kept; `concept_id` has its attributes, unless there is an `ignore_mapping_reason`; `mapping_status` is one of the four values, and `IGNORE` if and only if there is an `ignore_mapping_reason`; a row with `ERROR` has `mapping_warning_messages`; a row with a `HARMONISED_UNIT` has a `CONVERSION`; an approved pair with a `UNIT` whose concept has a target unit has a `CONVERSION` to it (ERROR; a pair with no `UNIT` is not checked); each warning not marked `ignore` is an `ERROR` if it affects an `APPROVED` mapping, a `WARNING` otherwise |
-| the two warning tables | The columns match their declared types; `TEST_NAME`, `message` and `ignore` have a value; the key (`TEST_NAME` + `UNIT`, or `TEST_NAME` + `has_property`) is unique |
 
 The earlier version also checked that a unit is a valid unit of `UNITSfi.tsv`; that table is not in this
 project, so no unit validation is run.

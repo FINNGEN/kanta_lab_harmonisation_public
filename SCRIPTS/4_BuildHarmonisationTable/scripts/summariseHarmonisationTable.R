@@ -14,13 +14,17 @@ args <- commandArgs(trailingOnly = TRUE)
 harmonisationTableFile <- args[1]
 propertyMismatchWarningFile <- args[2]
 propertySharedWarningFile <- args[3]
-outDir <- args[4]
+contextUnitMissingWarningFile <- args[4]
+loincGroupUnitMismatchWarningFile <- args[5]
+outDir <- args[6]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  harmonisationTableFile = ", harmonisationTableFile)
 ParallelLogger::logInfo("  propertyMismatchWarningFile = ", propertyMismatchWarningFile)
 ParallelLogger::logInfo("  propertySharedWarningFile = ", propertySharedWarningFile)
+ParallelLogger::logInfo("  contextUnitMissingWarningFile = ", contextUnitMissingWarningFile)
+ParallelLogger::logInfo("  loincGroupUnitMismatchWarningFile = ", loincGroupUnitMismatchWarningFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -29,6 +33,8 @@ ParallelLogger::logInfo("  outDir = ", outDir)
 harmonisationTable <- readTable(harmonisationTableFile, tableSpecs$harmonisationTable)
 propertyMismatchWarning <- readTable(propertyMismatchWarningFile, tableSpecs$propertyMismatchWarning)
 propertySharedWarning <- readTable(propertySharedWarningFile, tableSpecs$propertySharedWarning)
+contextUnitMissingWarning <- readTable(contextUnitMissingWarningFile, tableSpecs$contextUnitMissingWarning)
+loincGroupUnitMismatchWarning <- readTable(loincGroupUnitMismatchWarningFile, tableSpecs$loincGroupUnitMismatchWarning)
 
 #
 # --- Action -------------------------------------------------------------
@@ -48,8 +54,8 @@ harmonisationTable <- harmonisationTable |>
     )
   )
 nRows <- nrow(harmonisationTable)
-# The warning tables are joined to the table (the property mismatch on TEST_NAME + UNIT, the
-# shared property on TEST_NAME + has_property). A warning not marked `ignore` is an ERROR on
+# The warning tables are joined to the table (the shared property on TEST_NAME + has_property, the
+# other three on TEST_NAME + UNIT). A warning not marked `ignore` is an ERROR on
 # an approved row and a WARNING on any other row; an ignored warning is neither.
 withWarnings <- harmonisationTable |>
   dplyr::left_join(
@@ -60,9 +66,19 @@ withWarnings <- harmonisationTable |>
     propertySharedWarning |> dplyr::select(TEST_NAME, has_property, shared = message, sharedIgnore = ignore),
     by = c("TEST_NAME", "has_property"), relationship = "many-to-one"
   ) |>
+  dplyr::left_join(
+    contextUnitMissingWarning |> dplyr::select(TEST_NAME, UNIT, conversionMissing = message, conversionMissingIgnore = ignore),
+    by = c("TEST_NAME", "UNIT"), relationship = "many-to-one"
+  ) |>
+  dplyr::left_join(
+    loincGroupUnitMismatchWarning |> dplyr::select(TEST_NAME, UNIT, groupMismatch = message, groupMismatchIgnore = ignore),
+    by = c("TEST_NAME", "UNIT"), relationship = "many-to-one"
+  ) |>
   dplyr::mutate(
     hasWarning = (!is.na(mismatch) & !dplyr::coalesce(mismatchIgnore, FALSE)) |
-      (!is.na(shared) & !dplyr::coalesce(sharedIgnore, FALSE)),
+      (!is.na(shared) & !dplyr::coalesce(sharedIgnore, FALSE)) |
+      (!is.na(conversionMissing) & !dplyr::coalesce(conversionMissingIgnore, FALSE)) |
+      (!is.na(groupMismatch) & !dplyr::coalesce(groupMismatchIgnore, FALSE)),
     isError = grepl("^ERROR", mapping_status),
     isWarning = hasWarning & status != "approved"
   )

@@ -234,11 +234,70 @@ groupUnits <- result |>
   dplyr::distinct(group_concept_id, HARMONISED_UNIT) |>
   dplyr::count(group_concept_id, name = "n_units")
 mismatchedGroups <- groupUnits$group_concept_id[groupUnits$n_units > 1]
-result$groupUnitsMismatch <- !is.na(result$HARMONISED_UNIT) & vapply(
-  strsplit(dplyr::coalesce(result$group_concept_id, ""), ";", fixed = TRUE),
-  function(ids) any(ids %in% mismatchedGroups), logical(1)
-)
 ParallelLogger::logInfo(length(mismatchedGroups), " LOINC Groups with approved pairs of more than one target unit")
+# The units of each mismatched Group, for the message.
+mismatchedGroupUnits <- result |>
+  dplyr::filter(APPROVED %in% TRUE, is.na(ignore_mapping_reason), !is.na(group_concept_id), !is.na(HARMONISED_UNIT)) |>
+  dplyr::select(group_concept_id, group_concept_code, HARMONISED_UNIT) |>
+  tidyr::separate_longer_delim(c(group_concept_id, group_concept_code), ";") |>
+  dplyr::filter(group_concept_id %in% mismatchedGroups) |>
+  dplyr::summarise(
+    units = paste(sort(unique(HARMONISED_UNIT)), collapse = ", "),
+    .by = c(group_concept_id, group_concept_code)
+  )
+
+# test_unit_context_unit_missing_warning.tsv, one row per TEST_NAME + UNIT: the pair has a UNIT but its values
+# cannot be converted, because its concept has no target unit (it is not qualitative or a panel, but lab2clean
+# has no unit for it and harmonisedUnitOverwrite.tsv has no row), or because unitHarmonisation.tsv has no rule
+# (for the has_property or the concept_id) from that UNIT to the target unit. Ignored rows, and concepts that
+# are not in the target table (MissingConceptId), are not checked.
+contextUnitMissingFile <- file.path(outDir, "test_unit_context_unit_missing_warning.tsv")
+contextUnitMissing <- result |>
+  dplyr::filter(
+    is.na(ignore_mapping_reason), !is.na(UNIT), !is.na(concept_code), is.na(CONVERSION),
+    !is.na(HARMONISED_UNIT) | !(target_unit_source %in% c("isQualitative", "panel"))
+  ) |>
+  dplyr::distinct(TEST_NAME, UNIT, concept_id, has_property, HARMONISED_UNIT) |>
+  dplyr::transmute(
+    TEST_NAME, UNIT,
+    message = dplyr::if_else(
+      is.na(HARMONISED_UNIT),
+      paste0(
+        "concept_id ", concept_id, " has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), ",
+        "so UNIT '", UNIT, "' cannot be converted"
+      ),
+      paste0(
+        "no rule in unitHarmonisation.tsv from UNIT '", UNIT, "' to the target unit '", HARMONISED_UNIT,
+        "' for has_property '", tidyr::replace_na(has_property, ""), "' or concept_id ", concept_id
+      )
+    )
+  ) |>
+  syncWarnings(contextUnitMissingFile, tableSpecs$contextUnitMissingWarning, c("TEST_NAME", "UNIT"))
+
+# test_unit_loinc_group_unit_mismatch_warning.tsv, one row per TEST_NAME + UNIT: the pair has a target unit
+# and a LOINC Group of its concept has approved pairs with different target units, so its values cannot be
+# compared with the Group. Ignored rows are not checked.
+loincGroupUnitMismatchFile <- file.path(outDir, "test_unit_loinc_group_unit_mismatch_warning.tsv")
+pairGroups <- result |>
+  dplyr::filter(is.na(ignore_mapping_reason), !is.na(HARMONISED_UNIT), !is.na(group_concept_id)) |>
+  dplyr::distinct(TEST_NAME, UNIT, group_concept_id, group_concept_code) |>
+  tidyr::separate_longer_delim(c(group_concept_id, group_concept_code), ";") |>
+  dplyr::inner_join(dplyr::select(mismatchedGroupUnits, group_concept_id, units), by = "group_concept_id")
+loincGroupUnitMismatch <- pairGroups |>
+  dplyr::arrange(TEST_NAME, UNIT, group_concept_code) |>
+  dplyr::summarise(
+    groups = paste0(group_concept_code, " (", units, ")", collapse = "; "),
+    .by = c(TEST_NAME, UNIT)
+  ) |>
+  dplyr::transmute(
+    TEST_NAME, UNIT,
+    message = paste0("LOINC Group with approved pairs in more than one target unit: ", groups)
+  ) |>
+  syncWarnings(loincGroupUnitMismatchFile, tableSpecs$loincGroupUnitMismatchWarning, c("TEST_NAME", "UNIT"))
+ParallelLogger::logWarn(
+  nrow(contextUnitMissing), " TEST_NAME + UNIT with no conversion to the target unit (", sum(contextUnitMissing$ignore), " ignored), ",
+  nrow(loincGroupUnitMismatch), " TEST_NAME + UNIT in a LOINC Group with mixed units (", sum(loincGroupUnitMismatch$ignore), " ignored)"
+)
 
 # 6. mapping_status, the first column, replaces APPROVED:
 #    IGNORE if there is an ignore_mapping_reason; ERROR:<reason> if the mapping is APPROVED and
@@ -247,13 +306,13 @@ ParallelLogger::logInfo(length(mismatchedGroups), " LOINC Groups with approved p
 #    - MissingConceptId: the concept_id is not in the target table;
 #    - PropertyUnitMismatch: a property mismatch warning not marked `ignore`;
 #    - SharedProperty: a shared property warning not marked `ignore`;
-#    - MissingConversion: the pair has a UNIT and the concept a target unit, but there is no
-#      CONVERSION. A pair with no UNIT is not converted, so it is no error;
-#    - LoincGroupUnitsMissmatch: a LOINC Group of the concept has approved pairs with different
-#      target units (HARMONISED_UNIT), so its values cannot be compared.
+#    - MissingConversion: a context unit missing warning not marked `ignore` (the pair has a UNIT
+#      and the concept a target unit, but there is no CONVERSION; a pair with no UNIT is not
+#      converted, so it is no error);
+#    - LoincGroupUnitsMissmatch: a LOINC Group unit mismatch warning not marked `ignore`.
 #    mapping_warning_messages, the last column, has every message of the warning tables that
-#    joins to the row (ignored or not), each starting with its type (WrongProperty: for the
-#    property mismatch, SharedProperty: for the shared property), separated by " | ".
+#    joins to the row (ignored or not), each starting with its type (WrongProperty:,
+#    SharedProperty:, MissingConversion:, LoincGroupUnitsMismatch:), separated by " | ".
 result <- result |>
   dplyr::left_join(
     propertyMismatch |>
@@ -265,18 +324,27 @@ result <- result |>
       dplyr::transmute(TEST_NAME, has_property, shared = paste0("SharedProperty: ", message), sharedIgnore = ignore),
     by = c("TEST_NAME", "has_property"), relationship = "many-to-one"
   ) |>
+  dplyr::left_join(
+    contextUnitMissing |>
+      dplyr::transmute(TEST_NAME, UNIT, conversionMissing = paste0("MissingConversion: ", message), conversionMissingIgnore = ignore),
+    by = c("TEST_NAME", "UNIT"), relationship = "many-to-one"
+  ) |>
+  dplyr::left_join(
+    loincGroupUnitMismatch |>
+      dplyr::transmute(TEST_NAME, UNIT, groupMismatch = paste0("LoincGroupUnitsMismatch: ", message), groupMismatchIgnore = ignore),
+    by = c("TEST_NAME", "UNIT"), relationship = "many-to-one"
+  ) |>
   dplyr::mutate(
     errorReason = dplyr::case_when(
       is.na(concept_code) ~ "MissingConceptId",
       !is.na(mismatch) & !mismatchIgnore ~ "PropertyUnitMismatch",
       !is.na(shared) & !sharedIgnore ~ "SharedProperty",
-      !is.na(UNIT) & !is.na(HARMONISED_UNIT) & is.na(CONVERSION) ~ "MissingConversion",
-      groupUnitsMismatch ~ "LoincGroupUnitsMissmatch"
+      !is.na(conversionMissing) & !conversionMissingIgnore ~ "MissingConversion",
+      !is.na(groupMismatch) & !groupMismatchIgnore ~ "LoincGroupUnitsMissmatch"
     ),
-    mapping_warning_messages = dplyr::case_when(
-      !is.na(mismatch) & !is.na(shared) ~ paste(mismatch, shared, sep = " | "),
-      !is.na(mismatch) ~ mismatch,
-      TRUE ~ shared
+    mapping_warning_messages = purrr::pmap_chr(
+      list(mismatch, shared, conversionMissing, groupMismatch),
+      function(...) { m <- c(...); m <- m[!is.na(m)]; if (length(m) == 0) NA_character_ else paste(m, collapse = " | ") }
     ),
     mapping_status = dplyr::case_when(
       !is.na(ignore_mapping_reason) ~ "IGNORE",
@@ -285,7 +353,8 @@ result <- result |>
       TRUE ~ "NOT-APPROVED"
     )
   ) |>
-  dplyr::select(-APPROVED, -mismatch, -mismatchIgnore, -shared, -sharedIgnore, -errorReason, -groupUnitsMismatch) |>
+  dplyr::select(-APPROVED, -mismatch, -mismatchIgnore, -shared, -sharedIgnore, -conversionMissing, -conversionMissingIgnore,
+    -groupMismatch, -groupMismatchIgnore, -errorReason) |>
   dplyr::relocate(mapping_status) |>
   dplyr::relocate(mapping_warning_messages, .after = dplyr::last_col())
 ParallelLogger::logInfo(

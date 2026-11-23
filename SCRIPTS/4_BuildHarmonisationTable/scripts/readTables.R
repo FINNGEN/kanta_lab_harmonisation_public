@@ -47,6 +47,12 @@ tableSpecs <- list(
   ),
   propertySharedWarning = readr::cols(
     TEST_NAME = chr(), has_property = chr(), message = chr(), ignore = lgl()
+  ),
+  contextUnitMissingWarning = readr::cols(
+    TEST_NAME = chr(), UNIT = chr(), message = chr(), ignore = lgl()
+  ),
+  loincGroupUnitMismatchWarning = readr::cols(
+    TEST_NAME = chr(), UNIT = chr(), message = chr(), ignore = lgl()
   )
 )
 
