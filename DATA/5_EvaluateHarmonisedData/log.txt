@@ -32,11 +32,13 @@ The following objects are masked from ‘package:base’:
 Configuration:
   harmonisedFile = DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
   outDir = DATA/5_EvaluateHarmonisedData
+  minValues = 1000
   minReferencePairs = 2
 Read 74556 rows from DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
-28772 TEST_NAME + PREPROCESED_UNIT pairs, 2344 with harmonised deciles, 2277 approved reference pairs
-1752 pairs tested, 592 with harmonised deciles not tested (no LOINC Group or concept with at least 2 other approved pairs)
-1027 pairs with the LOINC Group as reference, 725 with the concept_id (the concept is in no LOINC Group)
+28772 TEST_NAME + PREPROCESED_UNIT pairs, 1331 with harmonised deciles, 1276 approved reference pairs
+915 pairs tested, 416 with harmonised deciles not tested (not APPROVED, no HARMONISED_UNIT, or no LOINC Group or concept with at least 2 other approved pairs)
+569 pairs with the LOINC Group as reference, 346 with the concept_id (the concept is in no LOINC Group)
+AGREE 865, DISAGREE 7, Error: missing target unit 9, Error: missing unit 27, No value: fewer than 1000 values 26798, No value: value ignored, is qualitative or panel 24, Not compared: no harmonised deciles 2, Not compared: only one pair per group 361, Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR) 636, WARNING 43 (harmonisation_values_status)
 Wrote 28772 rows to DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
 Wrote DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
 Wrote DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv

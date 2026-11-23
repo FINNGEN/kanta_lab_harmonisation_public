@@ -37,7 +37,7 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | unitHarmonisation.tsv | SUCCESS | CONVERSION is a number or a formula in X |  |  |
 | unitHarmonisation.tsv | SUCCESS | context is a has_property or a concept_id of targetTable.tsv |  |  |
 | unitHarmonisation.tsv | SUCCESS | HARMONISED_UNIT is a lab2clean unit (or a unit of the unit overwrite table) |  |  |
-| unitHarmonisation.tsv | ERROR | the target unit of an approved concept (targetTable.tsv) has a rule for its has_property | 11 | 31 approved concepts, 11 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L |
+| unitHarmonisation.tsv | ERROR | the target unit of an approved concept has a rule for its has_property | 11 | 31 approved concepts, 11 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L |
 | targetTable.tsv | SUCCESS | columns match their declared types |  |  |
 | targetTable.tsv | SUCCESS | concept_id, concept_code, concept_name, vocabulary_id, is_panel must have a value |  |  |
 | targetTable.tsv | SUCCESS | concept_id + group_concept_id are unique |  |  |
