@@ -15,17 +15,16 @@ Configuration:
   mismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
   sharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
   measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  conversionFile = DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   targetFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
   templateFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/6_BuildDashboard/scripts/dashboardTemplate.html
   outDir = DATA/6_BuildDashboard
   ksAgree = 0.5
   ksDisagree = 0.8
 Read 28772 rows from DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
-APPROVED 5584, NOT-APPROVED 262, IGNORE 234, MISSING 22418, ERROR 274 pairs; 280,959,762 records
-4 error reasons, 274 ERROR pairs
+APPROVED 5660, NOT-APPROVED 262, IGNORE 234, MISSING 22418, ERROR 198 pairs; 280,959,762 records
+3 error reasons, 198 ERROR pairs
 77 pairs with a fixed unit, 8,621,196 records
-AGREE 865, WARNING 43, DISAGREE 7, no_unit 27, no_target_unit 9, no_conversion 0, no_deciles 2, no_reference 361, qualitative_panel 24, no_values 26798, not_approved 636 pairs
-28772 rows in the table, 6.49 MB of data
-Wrote DATA/6_BuildDashboard/dashboard.html (6.53 MB)
+AGREE 871, WARNING 43, DISAGREE 7, no_unit 27, no_target_unit 9, no_conversion 0, no_deciles 2, no_reference 373, qualitative_panel 24, no_values 26798, not_approved 618 pairs
+28772 rows in the table, 6.5 MB of data
+Wrote DATA/6_BuildDashboard/dashboard.html (6.54 MB)
 Wrote DATA/6_BuildDashboard/dashboard.html

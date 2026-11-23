@@ -8,10 +8,10 @@ A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APP
 
 | status | n | % | n with warning | n with error |
 | --- | ---: | ---: | ---: | ---: |
-| approved | 7,136 | 92.0% | 0 | 350 |
+| approved | 7,136 | 92.0% | 0 | 239 |
 | not approved | 387 | 5.0% | 264 | 0 |
 | ignored | 237 | 3.1% | 2 | 0 |
-| total | 7,760 | 100.0% | 266 | 350 |
+| total | 7,760 | 100.0% | 266 | 239 |
 
 ## Approved
 
@@ -19,6 +19,6 @@ A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APP
 | --- | ---: | ---: |
 | rows (TEST_NAME + PREPROCESED_UNIT) | 7,136 |  |
 | distinct concept_ids | 1,523 |  |
-| rows with a group | 3,444 | 48.3% |
-| distinct groups | 375 |  |
-| rows with a conversion | 3,329 | 46.7% |
+| rows with a group | 3,534 | 49.5% |
+| distinct groups | 395 |  |
+| rows with a conversion | 3,395 | 47.6% |

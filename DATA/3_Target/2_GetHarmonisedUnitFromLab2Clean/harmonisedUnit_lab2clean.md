@@ -1,32 +1,32 @@
 # harmonisedUnit_lab2clean stats
 
-Summary of `harmonisedUnit_lab2clean.tsv`: 33,154 standard `Measurement` concepts with a lab2clean unit, every one in an SI unit (a conventional code takes the unit of its SI partner).
+Summary of `harmonisedUnit_lab2clean.tsv`: 33,154 standard `Measurement` concepts with a lab2clean unit, the reference unit of its LOINC code (a conventional code keeps its own mass unit).
 
 # harmonised_unit
 
 | harmonised_unit | n concepts | % concepts |
 | --- | --- | --- |
 | 1 | 4,226 | 12.7% |
-| mg/L | 3,293 | 9.9% |
+| mg/L | 4,154 | 12.5% |
+| ug/L | 3,629 | 10.9% |
 | % | 3,260 | 9.8% |
-| ug/L | 3,077 | 9.3% |
 | 10*3.[arb'U]/L | 2,800 | 8.4% |
-| umol/L | 2,365 | 7.1% |
+| umol/L | 1,843 | 5.6% |
 | 10*3.[iU]/L | 1,679 | 5.1% |
-| nmol/L | 1,634 | 4.9% |
-| mmol/L | 1,453 | 4.4% |
-| ng/L | 896 | 2.7% |
-| /10*6 | 878 | 2.6% |
+| ng/L | 1,115 | 3.4% |
+| nmol/L | 1,083 | 3.3% |
+| mmol/L | 1,039 | 3.1% |
+| /10*6 | 880 | 2.7% |
 | /10*3 | 743 | 2.2% |
-| pmol/L | 567 | 1.7% |
 | 10*9/L | 463 | 1.4% |
 | 10*6/L | 395 | 1.2% |
+| pmol/L | 395 | 1.2% |
 | 10*3/L | 390 | 1.2% |
 | /10*9 | 376 | 1.1% |
 | mg | 371 | 1.1% |
 | U/L | 358 | 1.1% |
+| g/L | 329 | 1.0% |
 | 10*-3.[iU]/L | 324 | 1.0% |
-| g/L | 301 | 0.9% |
 | mmol/kg | 220 | 0.7% |
 | mg/(24.h) | 215 | 0.6% |
 | [iU]/L | 198 | 0.6% |
@@ -53,7 +53,7 @@ Summary of `harmonisedUnit_lab2clean.tsv`: 33,154 standard `Measurement` concept
 | umol/h/L | 53 | 0.2% |
 | 10*6.[iU]/L | 51 | 0.2% |
 | pmol | 39 | 0.1% |
-| mol/L | 36 | 0.1% |
+| mol/L | 34 | 0.1% |
 | ng/mL/h | 30 | 0.1% |
 | g | 28 | 0.1% |
 | cm | 27 | 0.1% |
@@ -89,7 +89,6 @@ Summary of `harmonisedUnit_lab2clean.tsv`: 33,154 standard `Measurement` concept
 | Cel | 4 | 0.0% |
 | L | 4 | 0.0% |
 | amol | 4 | 0.0% |
-| fmol/L | 4 | 0.0% |
 | mg/mol | 4 | 0.0% |
 | mm/h | 4 | 0.0% |
 | nm | 4 | 0.0% |
@@ -101,6 +100,7 @@ Summary of `harmonisedUnit_lab2clean.tsv`: 33,154 standard `Measurement` concept
 | 10*9 | 3 | 0.0% |
 | [APL'U] | 3 | 0.0% |
 | fmol | 3 | 0.0% |
+| fmol/L | 3 | 0.0% |
 | hPa | 3 | 0.0% |
 | pmol/(24.h) | 3 | 0.0% |
 | ukat/L | 3 | 0.0% |

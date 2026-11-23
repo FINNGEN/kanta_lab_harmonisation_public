@@ -11,7 +11,6 @@ The following objects are masked from ‘package:base’:
 
 Configuration:
   environment = build
-  conversionFile = DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   outDir = DATA/3_Target/3_GetLoincGroupsData
   domainId = Measurement
   standardConceptFlag = S
@@ -22,17 +21,15 @@ Using temporary emulation schema: atlas-development-270609.sandbox
 7707 concepts are in a Group whose name starts with 'Flowsheet'
 42 panel concepts are left out of the Groups; 2338 Groups of the excluded ParentGroups are dropped
 Kept 7947 of 41326 membership rows: 7231 concepts in 3025 Groups
-Read 1662 conventional-to-SI codes from DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
-286 conventional concepts are mapped to the Groups of their SI partner; the rest of the conventional concepts are in no Group
-Membership: 7811 rows, 7129 concepts in 2899 Groups
-566 concepts are in more than one Group (at most 9)
-  Groups with 2-10 descendants: 2828
-  Groups with 11-50 descendants: 58
+Membership: 7947 rows, 7231 concepts in 3025 Groups
+596 concepts are in more than one Group (at most 9)
+  Groups with 2-10 descendants: 2951
+  Groups with 11-50 descendants: 61
   Groups with 51-200 descendants: 10
   Groups with 201-1000 descendants: 3
-2899 Groups
-Wrote 2899 Groups to DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Wrote 7811 rows to DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+3025 Groups
+Wrote 3025 Groups to DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Wrote 7947 rows to DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 
 Attaching package: ‘dplyr’
 
@@ -48,12 +45,10 @@ Configuration:
   groupsFile = DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
   membershipFile = DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
   measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  conversionFile = DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
   outDir = DATA/3_Target/3_GetLoincGroupsData
-Read 2899 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
-Read 7811 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
+Read 3025 Groups from DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
+Read 7947 concept/Group rows from DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv
 Read 102825 concepts from DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-Read 1662 conventional concepts from DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.md
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroups.tsv
 Wrote DATA/3_Target/3_GetLoincGroupsData/loincGroupMembership.tsv

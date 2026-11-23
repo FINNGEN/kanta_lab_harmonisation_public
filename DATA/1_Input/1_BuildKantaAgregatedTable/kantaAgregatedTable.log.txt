@@ -1,4 +1,31 @@
-Warning: environment file not found: /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/1_Input/1_BuildKantaAgregatedTable/../../../ENVIRONMENTS/LOCAL.env
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Configuration:
+  summaryTest.tsv = DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
+  summaryUnitSource.tsv = DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
+  summaryValuesSource.tsv = DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
+  summaryValues.tsv = DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
+  summaryReference.tsv = DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
+  summaryOutcomes.tsv = DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
+  outDir = DATA/1_Input/1_BuildKantaAgregatedTable
+Read 28802 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
+Read 10358 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
+Read 13936 rows from DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
+Read 51696 rows from DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
+Read 10192 rows from DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
+Read 21058 rows from DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
+59 tests: 58 SUCCESS, 1 WARNING, 0 ERROR
+WARNING: summaryReference.tsv: REFERENCE_RANGE_LOW_MEAN is not above REFERENCE_RANGE_HIGH_MEAN: 7 rows, e.g. TEST_NAME=p-d-25 MEASUREMENT_UNIT= DEMOGRAPHICS_BIN=Adult-Female REFERENCE_RANGE_LOW_MEAN=49.444444 REFERENCE_RANGE_HIGH_MEAN=21.333333; TEST_NAME=p-d-25 MEASUREMENT_UNIT= DEMOGRAPHICS_BIN=Adult-Male REFERENCE_RANGE_LOW_MEAN=48.985507 REFERENCE_RANGE_HIGH_MEAN=36.888889; TEST_NAME=p-kolesteroli,highdensitylipoproteiinit MEASUREMENT_UNIT=mmol/l DEMOGRAPHICS_BIN=Adult-Female REFERENCE_RANGE_LOW_MEAN=1.196983 REFERENCE_RANGE_HIGH_MEAN=0.0
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.validation.md
 
 Attaching package: ‘dplyr’
 
@@ -18,7 +45,7 @@ Configuration:
   summaryReferenceFile = DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
   outDir = DATA/1_Input/1_BuildKantaAgregatedTable
 Read 28802 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
-Read 10388 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
+Read 10358 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
 Read 13936 rows from DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
 Read 51696 rows from DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
 Read 10192 rows from DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
@@ -42,6 +69,7 @@ Configuration:
   outDir = DATA/1_Input/1_BuildKantaAgregatedTable
 Read 74556 rows from DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
 28772 TEST_NAME/MEASUREMENT_UNIT pairs, 280,959,762 records
-Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.summary.md
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.validation.md
 Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
-Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.md
+Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.summary.md

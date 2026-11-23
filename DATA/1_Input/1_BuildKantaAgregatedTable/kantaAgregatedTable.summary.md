@@ -16,10 +16,10 @@ Where the unit of the records came from (`unit_source_injection_correction_na_p`
 
 | source | n rows | % rows | n records | % rec |
 | --- | --- | --- | --- | --- |
-| Source | 9,366 | 32.6% | 190,405,264 | 67.8% |
-| PrimaryInjection | 917 | 3.2% | 32,460,092 | 11.6% |
-| SecondaryCorrection | 76 | 0.3% | 8,640,193 | 3.1% |
-|  | 19,703 | 68.5% | 49,454,213 | 17.6% |
+| Source | 9,398 | 32.7% | 195,572,464 | 69.6% |
+| PrimaryInjection | 931 | 3.2% | 35,328,941 | 12.6% |
+| SecondaryCorrection | 0 | 0.0% | 0 | 0.0% |
+|  | 19,746 | 68.6% | 50,058,357 | 17.8% |
 | total | 28,772 | 100% | 280,959,762 | 100% |
 
 # Reference Ranges
