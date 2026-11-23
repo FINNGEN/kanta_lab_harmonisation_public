@@ -9,11 +9,12 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | unitFix.tsv | 5 | 1 | 0 |
 | mapping.tsv | 5 | 0 | 1 |
 | unitHarmonisation.tsv | 6 | 0 | 1 |
+| harmonisedUnitOverwrite.tsv | 6 | 0 | 0 |
 | targetTable.tsv | 3 | 0 | 0 |
 | harmonisationTable.tsv | 9 | 2 | 3 |
 | testname_unit_property_missmatch_warning.tsv | 3 | 0 | 0 |
 | testname_property_shared_warning.tsv | 3 | 0 | 0 |
-| ALL | 34 | 3 | 5 |
+| ALL | 40 | 3 | 5 |
 
 ## Tests
 
@@ -38,6 +39,12 @@ Validation of the input and output tables of `4_BuildHarmonisationTable`.
 | unitHarmonisation.tsv | SUCCESS | context is a has_property or a concept_id of targetTable.tsv |  |  |
 | unitHarmonisation.tsv | SUCCESS | HARMONISED_UNIT is a lab2clean unit (or a unit of the unit overwrite table) |  |  |
 | unitHarmonisation.tsv | ERROR | the target unit of an approved concept has a rule for its has_property | 11 | 31 approved concepts, 11 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L |
+| harmonisedUnitOverwrite.tsv | SUCCESS | columns match their declared types |  |  |
+| harmonisedUnitOverwrite.tsv | SUCCESS | concept_id, harmonised_unit, note must have a value |  |  |
+| harmonisedUnitOverwrite.tsv | SUCCESS | concept_id are unique |  |  |
+| harmonisedUnitOverwrite.tsv | SUCCESS | concept_id is in targetTable.tsv |  |  |
+| harmonisedUnitOverwrite.tsv | SUCCESS | harmonised_unit differs from the harmonised_unit of the concept in targetTable.tsv |  |  |
+| harmonisedUnitOverwrite.tsv | SUCCESS | harmonised_unit has a rule in unitHarmonisation.tsv (for the has_property or the concept_id) |  |  |
 | targetTable.tsv | SUCCESS | columns match their declared types |  |  |
 | targetTable.tsv | SUCCESS | concept_id, concept_code, concept_name, vocabulary_id, is_panel must have a value |  |  |
 | targetTable.tsv | SUCCESS | concept_id + group_concept_id are unique |  |  |

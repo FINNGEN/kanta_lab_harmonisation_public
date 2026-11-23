@@ -67,7 +67,7 @@ Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmat
 Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
 Read 33154 rows from DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/harmonisedUnit_lab2clean.tsv
 Read 1 rows from DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv
-42 tests: 34 SUCCESS, 3 WARNING, 5 ERROR
+48 tests: 40 SUCCESS, 3 WARNING, 5 ERROR
 unitFix.tsv: TEST_NAME + UNIT is used downstream (it is in mapping.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
 mapping.tsv: concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason: 113 rows, e.g. s-iga[g/l] concept_id=3007164; p-iga[g/l] concept_id=3007164; p-igg[g/l] concept_id=3005719
 unitHarmonisation.tsv: the target unit of an approved concept has a rule for its has_property: 11 rows, 31 approved concepts, 11 has_property + unit, e.g. has_property=Arbitrary Concentration harmonised_unit=[arb'U]; has_property=Ratio harmonised_unit=mmol/kg; has_property=Substance Concentration harmonised_unit=mol/L
