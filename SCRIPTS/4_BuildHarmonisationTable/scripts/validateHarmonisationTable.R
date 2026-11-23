@@ -256,6 +256,36 @@ record(
   extra = paste0(sum(targetUnits$nConcepts[!targetUnits$hasRule]), " approved concepts, ", sum(!targetUnits$hasRule), " has_property + unit")
 )
 
+# harmonisedUnitOverwrite.tsv: the target units set by hand. Each row needs a concept of the target and
+# a note; a row that gives the concept the unit it already has is not needed; nothing converts to a unit
+# with no rule in unitHarmonisation.tsv.
+checkTypes("harmonisedUnitOverwrite.tsv", unitOverwrite)
+checkHaveValue("harmonisedUnitOverwrite.tsv", unitOverwrite, c("concept_id", "harmonised_unit", "note"))
+checkUnique("harmonisedUnitOverwrite.tsv", unitOverwrite, c("concept_id"))
+record(
+  "harmonisedUnitOverwrite.tsv", "concept_id is in targetTable.tsv",
+  bad = !(unitOverwrite$concept_id %in% conceptIds),
+  df = unitOverwrite, what = c("concept_id", "harmonised_unit")
+)
+overwriteVsTarget <- unitOverwrite |>
+  dplyr::left_join(
+    targetTable |> dplyr::distinct(concept_id, has_property, targetUnit = harmonised_unit),
+    by = "concept_id", relationship = "many-to-one"
+  )
+record(
+  "harmonisedUnitOverwrite.tsv", "harmonised_unit differs from the harmonised_unit of the concept in targetTable.tsv",
+  bad = !is.na(overwriteVsTarget$targetUnit) & overwriteVsTarget$harmonised_unit == overwriteVsTarget$targetUnit,
+  df = overwriteVsTarget, what = c("concept_id", "harmonised_unit"), level = "WARNING"
+)
+record(
+  "harmonisedUnitOverwrite.tsv", "harmonised_unit has a rule in unitHarmonisation.tsv (for the has_property or the concept_id)",
+  bad = !(paste(overwriteVsTarget$has_property, overwriteVsTarget$harmonised_unit, sep = "\r") %in%
+    paste(unitHarmonisation$context, unitHarmonisation$HARMONISED_UNIT, sep = "\r") |
+    paste(overwriteVsTarget$concept_id, overwriteVsTarget$harmonised_unit, sep = "\r") %in%
+      paste(unitHarmonisation$context, unitHarmonisation$HARMONISED_UNIT, sep = "\r")),
+  df = overwriteVsTarget, what = c("concept_id", "has_property", "harmonised_unit"), level = "WARNING"
+)
+
 # targetTable.tsv
 checkTypes("targetTable.tsv", targetTable)
 checkHaveValue(
