@@ -63,11 +63,10 @@ an error.
   - Solution: none needed.
 - **Concept not in the target**
   - Label: `mapping_status` = `ERROR:MissingConceptId`.
-  - Description: the test is mapped to a concept we do not use as a target, e.g. a conventional (mass unit)
-    concept that was replaced by its SI partner or OMOP vocab was updated.
+  - Description: the test is mapped to a concept that is not a target: not a standard `Measurement` concept
+    (e.g. an old concept after an update of the OMOP vocabulary), or not in the vocabulary at all.
   - Source: the `concept_id` of the `TEST_NAME [UNIT]` in `mapping.tsv` is not in `targetTable.tsv`
-  - Solution 1: The `concept_id` is in `loincSiConventionalConversion.tsv` then change `mapping.tsv` to mapp to the equivalent SI partner and add the conversion to `unitHarmonisation.tsv` with context = concept_id.
-  - Solution 2: The `concept_id` is not in `loincSiConventionalConversion.tsv`, may be an old or wrong concept_id, remove mapping from `mapping.tsv`.
+  - Solution: map it to the right standard concept in `mapping.tsv`, or give it an `ignore_mapping_reason`.
 - **Shared property**
   - Label: `mapping_status` = `ERROR:SharedProperty`.
   - Description: one test, reported in different units, is mapped to different concepts that measure the
@@ -214,8 +213,8 @@ tables of `4_BuildHarmonisationTable`):
 Groups and the unit its values are harmonised to. It is built only from the source data, and never edited:
 
 - the OMOP vocabulary (concepts, LOINC axes, LOINC Groups);
-- lab2clean (the SI unit of each LOINC code, the LOINC Group it assigns, and the conventional-to-SI
-  pairs; a conventional concept with an SI partner is removed);
+- lab2clean (the reference unit of each LOINC code and the LOINC Group it assigns; both sides of a mass-molar
+  pair, e.g. IgA in `mg/L` and in `umol/L`, are targets, and the mapping decides);
 - our rules: a panel and a `Presence or Threshold` (qualitative) concept have no unit.
 
 ## 4_BuildHarmonisationTable
