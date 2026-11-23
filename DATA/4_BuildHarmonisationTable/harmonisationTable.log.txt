@@ -56,8 +56,8 @@ Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning
 Unchanged DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv (8 rows)
 337 TEST_NAME + UNIT with a property mismatch (0 ignored), 8 TEST_NAME + has_property shared by several concept_ids (7 ignored)
 10 LOINC Groups with approved pairs of more than one target unit
-Read 328 rows from DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
-Wrote 358 rows to DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv (30 added, 0 removed)
+Read 358 rows from DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
+Unchanged DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv (358 rows)
 Read 104 rows from DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
 Unchanged DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv (104 rows)
 358 TEST_NAME + UNIT with no conversion to the target unit (0 ignored), 104 TEST_NAME + UNIT in a LOINC Group with mixed units (0 ignored)
@@ -67,33 +67,9 @@ APPROVED 6885, ERROR:LoincGroupUnitsMissmatch 92, ERROR:MissingConversion 85, ER
 3299 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
 4322 pairs have no HARMONISED_UNIT
 Wrote 7760 rows to DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-
-Attaching package: ‘dplyr’
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-
-Configuration:
-  harmonisationTableFile = DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-  propertyMismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-  propertySharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-  contextUnitMissingWarningFile = DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
-  loincGroupUnitMismatchWarningFile = DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
-  outDir = DATA/4_BuildHarmonisationTable
-Read 7760 rows from DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
-Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-Read 8 rows from DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-Read 358 rows from DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
-Read 104 rows from DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
-approved: 7136, not approved: 387, ignored: 237; 7136 approved rows with 1523 concept_ids
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
 Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 Wrote DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
 Wrote DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+Wrote DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
+Wrote DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
 Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.validation.md
-Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.md
