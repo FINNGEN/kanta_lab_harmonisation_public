@@ -8,10 +8,10 @@ A row with an `ignore_mapping_reason` is ignored; otherwise it is approved (`APP
 
 | status | n | % | n with warning | n with error |
 | --- | ---: | ---: | ---: | ---: |
-| approved | 7,136 | 92.0% | 0 | 239 |
-| not approved | 387 | 5.0% | 264 | 0 |
+| approved | 7,136 | 92.0% | 0 | 251 |
+| not approved | 387 | 5.0% | 274 | 0 |
 | ignored | 237 | 3.1% | 2 | 0 |
-| total | 7,760 | 100.0% | 266 | 239 |
+| total | 7,760 | 100.0% | 276 | 251 |
 
 ## Approved
 

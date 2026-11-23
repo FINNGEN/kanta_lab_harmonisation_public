@@ -16,6 +16,7 @@ Configuration:
   summaryValues.tsv = DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
   summaryReference.tsv = DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
   summaryOutcomes.tsv = DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
+  settingsFile = DATA/1_Input/0_KantaAgregatedData/upstreamSettings.yaml (n_records_no_value_threshold = 1000, n_subjects_no_value_threshold = 60)
   outDir = DATA/1_Input/1_BuildKantaAgregatedTable
 Read 28802 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
 Read 10358 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
@@ -23,7 +24,7 @@ Read 13936 rows from DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
 Read 51696 rows from DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
 Read 10192 rows from DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
 Read 21058 rows from DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
-59 tests: 58 SUCCESS, 1 WARNING, 0 ERROR
+60 tests: 59 SUCCESS, 1 WARNING, 0 ERROR
 WARNING: summaryReference.tsv: REFERENCE_RANGE_LOW_MEAN is not above REFERENCE_RANGE_HIGH_MEAN: 7 rows, e.g. TEST_NAME=p-d-25 MEASUREMENT_UNIT= DEMOGRAPHICS_BIN=Adult-Female REFERENCE_RANGE_LOW_MEAN=49.444444 REFERENCE_RANGE_HIGH_MEAN=21.333333; TEST_NAME=p-d-25 MEASUREMENT_UNIT= DEMOGRAPHICS_BIN=Adult-Male REFERENCE_RANGE_LOW_MEAN=48.985507 REFERENCE_RANGE_HIGH_MEAN=36.888889; TEST_NAME=p-kolesteroli,highdensitylipoproteiinit MEASUREMENT_UNIT=mmol/l DEMOGRAPHICS_BIN=Adult-Female REFERENCE_RANGE_LOW_MEAN=1.196983 REFERENCE_RANGE_HIGH_MEAN=0.0
 Wrote DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.validation.md
 

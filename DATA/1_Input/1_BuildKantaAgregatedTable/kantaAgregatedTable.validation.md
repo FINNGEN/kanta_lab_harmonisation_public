@@ -10,10 +10,10 @@ The step stops when a test is an ERROR.
 | summaryTest.tsv | 7 | 0 | 0 |
 | summaryUnitSource.tsv | 10 | 0 | 0 |
 | summaryValuesSource.tsv | 10 | 0 | 0 |
-| summaryValues.tsv | 12 | 0 | 0 |
+| summaryValues.tsv | 13 | 0 | 0 |
 | summaryReference.tsv | 11 | 1 | 0 |
 | summaryOutcomes.tsv | 8 | 0 | 0 |
-| ALL | 58 | 1 | 0 |
+| ALL | 59 | 1 | 0 |
 
 ## Tests
 
@@ -58,6 +58,7 @@ The step stops when a test is an ERROR.
 | summaryValues.tsv | SUCCESS | decile is one of 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 |  |  |
 | summaryValues.tsv | SUCCESS | every pair has the 9 deciles |  |  |
 | summaryValues.tsv | SUCCESS | the deciles of a pair do not decrease |  |  |
+| summaryValues.tsv | SUCCESS | every pair with at least 1000 values (summaryValuesSource.tsv) and 60 subjects (summaryTest.tsv) has its deciles |  |  |
 | summaryReference.tsv | SUCCESS | columns are TEST_NAME, MEASUREMENT_UNIT, DEMOGRAPHICS_BIN, REFERENCE_RANGE_LOW_MEAN, REFERENCE_RANGE_HIGH_MEAN, n_records, n_subjects |  |  |
 | summaryReference.tsv | SUCCESS | TEST_NAME has a value |  |  |
 | summaryReference.tsv | SUCCESS | TEST_NAME + MEASUREMENT_UNIT + DEMOGRAPHICS_BIN are unique |  |  |
