@@ -17,6 +17,47 @@ ca19-9antigeeni	u/ml	2a13d1d
 cb-hbo2sat		cf9102e
 cb-hbo2sat	%	cf9102e
 ckd-epi-yhtälö	ml/min/173m2	ecfc5df
+cu-a1migl		b8dbfc6
+cu-a1migl	ug/min	b8dbfc6
+cu-a1miglo		b8dbfc6
+cu-a1miglo	ug/min	b8dbfc6
+cu-aika(s)		b8dbfc6
+cu-aika(s)	s	b8dbfc6
+cu-kesto		b8dbfc6
+cu-kesto	min	b8dbfc6
+cu-tilav		b8dbfc6
+cu-tilav	ml	b8dbfc6
+cu-tilavu	ml	b8dbfc6
+cu-vm		b8dbfc6
+cu-vm	ml	b8dbfc6
+du-a1miglo	mg	b8dbfc6
+du-cl		b8dbfc6
+du-cl	mmol	b8dbfc6
+du-iglck		b8dbfc6
+du-iglck	g	b8dbfc6
+du-iglck	mg	b8dbfc6
+du-iglcl		b8dbfc6
+du-iglcl	g	b8dbfc6
+du-iglcl	mg	b8dbfc6
+du-immunoglobuliini,kevyetketjut,lambda	g	b8dbfc6
+du-k		b8dbfc6
+du-k	mmol/24h	b8dbfc6
+du-na	mmol	b8dbfc6
+du-na	mmol/24h	b8dbfc6
+du-oksal	mg/24h	b8dbfc6
+du-oksal	umol/24h	b8dbfc6
+du-prot		b8dbfc6
+du-prot	g	b8dbfc6
+du-prot	g/24h	b8dbfc6
+du-prot	mg/24h	b8dbfc6
+du-prot.	mg	b8dbfc6
+du-sitraat	mg/24h	b8dbfc6
+du-sitraat	mmol	b8dbfc6
+du-sitraat	mmol/24h	b8dbfc6
+du-tilav		b8dbfc6
+du-tilav	ml	b8dbfc6
+du-tilavu		b8dbfc6
+du-tilavu	ml	b8dbfc6
 fp-tffesat		8d4ce0c
 fp-tffesat	%	8d4ce0c
 fp-transferriininrautakyllästeisyys		8d4ce0c
@@ -40,6 +81,15 @@ glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,ckd-epi-kaavalla	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,ckd-epi-tutkimuksenkaava	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	ecfc5df
+happamuusaste,virtsasta		b8dbfc6
+multistix-,ph		b8dbfc6
+multistix-vieri,ph		b8dbfc6
+nu-osmol		b8dbfc6
+nu-osmol	mosm/kgh2o	b8dbfc6
+osmolaliteetti(laskennallinen)	mosm/kgh2o	b8dbfc6
+osmolaliteetti,estimoitu	mosm/kgh2o	b8dbfc6
+osmolaliteetti,virtsa		b8dbfc6
+osmolaliteetti,virtsa	mosm/kgh2o	b8dbfc6
 p-ca12-5		2a13d1d
 p-ca12-5	u/ml	2a13d1d
 p-ca12-5antigeeni		2a13d1d
@@ -111,13 +161,52 @@ transferriininrautakyllästeisyys(fp-)	%	8d4ce0c
 transferriininrautakyllästeisyys(fp-trfesat)	%	8d4ce0c
 transferriininrautakyllästeisyys(trfesat)	%	8d4ce0c
 trfesat	%	8d4ce0c
+u-cakre		b8dbfc6
+u-cl		b8dbfc6
+u-cl	mmol/l	b8dbfc6
+u-iglck		b8dbfc6
+u-iglck	g/l	b8dbfc6
+u-iglcl		b8dbfc6
+u-iglcl	g/l	b8dbfc6
+u-k		b8dbfc6
+u-k	mmol/l	b8dbfc6
+u-na		b8dbfc6
+u-na	mmol/l	b8dbfc6
 u-ominp-h		31fc687
+u-osmest		b8dbfc6
+u-osmest	mosm/kgh2o	b8dbfc6
+u-osmoest		b8dbfc6
+u-osmoest	e6/l	b8dbfc6
+u-osmoest	mosm/kgh2o	b8dbfc6
+u-osmoest	mosm/l	b8dbfc6
+u-osmoie		b8dbfc6
+u-osmoie	mosm/kgh2o	b8dbfc6
+u-osmol		b8dbfc6
+u-osmol	mosm/kgh2o	b8dbfc6
+u-osmolaliteetti		b8dbfc6
+u-osmolaliteetti	mosm/kgh2o	b8dbfc6
+u-osmolaliteetti,estimoitu		b8dbfc6
+u-osmolaliteetti,estimoitu	mosm/kgh2o	b8dbfc6
+u-osmolaliteetti,virtsa	mosm/kgh2o	b8dbfc6
+u-osmolaliteettilaskennallinenosatutkuf1000	mosm/kgh2o	b8dbfc6
+u-osmole		b8dbfc6
+u-osmole	mosm/kgh2o	b8dbfc6
+u-ph		b8dbfc6
+u-ph	form	b8dbfc6
+u-ph	ph	b8dbfc6
+u-ph-huu		b8dbfc6
+u-ph-o	N	b8dbfc6
+u-ph-o	form	b8dbfc6
+u-prot		b8dbfc6
+u-prot	g/l	b8dbfc6
+u-prot	mg/l	b8dbfc6
 u-suhteellinentiheys	kg/l	31fc687
 u-suhti	g/ml	31fc687
 u-suhti	kg/l	31fc687
 u-suhti-o		31fc687
 u-suhti.		31fc687
 u-suhtih	kg/l	31fc687
+u-tutk-1,ph		b8dbfc6
 vb-hbo2sat		cf9102e
 vb-hbo2sat	%	cf9102e
 vb-o2sat		cf9102e
@@ -125,4 +214,5 @@ vb-o2sat	%	cf9102e
 vertca12-5	u/ml	2a13d1d
 vertca15-3	u/ml	2a13d1d
 vertca19-9	u/ml	2a13d1d
+virtsamäärä	ml	b8dbfc6
 zb-hbo2sat	%	cf9102e
