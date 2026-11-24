@@ -19,7 +19,8 @@ From `DATA/`:
 
 In `DATA/5_EvaluateHarmonisedData/`:
 
-- `harmonisedKantaAgregatedTable.tsv` — `kantaAgregatedTable.tsv` (same rows, same columns, with
+- `harmonisedKantaAgregatedTable.tsv` — an intermediary table, ignored by git (everything in it is in
+  `evaluatedHarmonisedKantaAgregatedTable.tsv`; run the step to get it). `kantaAgregatedTable.tsv` (same rows, same columns, with
   `MEASUREMENT_UNIT` called `MEASUREMENT_UNIT`) followed by the columns of the harmonisation table.
   `mapping_status` is the first column. The others: `UNIT` (the unit after the fix, right after
   `MEASUREMENT_UNIT`), `unit_fix_reasoning`, `ignore_mapping_reason`, `concept_id`, the concept columns

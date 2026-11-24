@@ -27,7 +27,7 @@ an interactive table with one row per pair.
 
 In `DATA/7_BuildDashboard/`:
 
-- `dashboard.html` — one file with no external libraries or fonts: the data is inside
+- `dashboard.html` — ignored by git, run the step to get it. One file with no external libraries or fonts: the data is inside
   the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
   - **Input Data**: the tables of `kantaAgregatedTable.summary.md` (Name Unit Value combinations,
     Units, Values, Reference Ranges, Test Outcomes), computed from the same pairs of the evaluated table.
