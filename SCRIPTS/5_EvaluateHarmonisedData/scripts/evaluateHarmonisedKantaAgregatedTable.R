@@ -238,7 +238,7 @@ evaluated <- pairs |>
 # 5. harmonisation_values_status: the row of the Harmonised Values table of the dashboard each pair
 #    falls in, the first that applies. Only APPROVED pairs are compared. A pair with fewer than
 #    minValues values or fewer than minSubjects subjects has no value whatever its status. An approved pair that is not compared has no
-#    UNIT (an error), has incomplete deciles, is
+#    UNIT and no CONVERSION (an error; a property with no unit, e.g. pH, is converted with no UNIT), has incomplete deciles, is
 #    qualitative or a panel (target_unit_source), or has too few other approved pairs in its Group
 #    (or concept).
 isApprovedPair <- evaluated$mapping_status %in% "APPROVED"
@@ -252,7 +252,7 @@ evaluated <- evaluated |>
       !is.na(KS) ~ "DISAGREE",
       !isApprovedPair ~ "Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)",
       target_unit_source %in% c("isQualitative", "panel") ~ "No value: value ignored, is qualitative or panel",
-      is.na(UNIT) ~ "Error: values with missing units",
+      is.na(UNIT) & is.na(CONVERSION) ~ "Error: values with missing units",
       is.na(target_unit) | is.na(CONVERSION) ~ "unexpected: approved pair with a UNIT but no conversion",
       is.na(decile_value_harmonised) ~ "unexpected: pair with enough values but no deciles",
       TRUE ~ "Not compared: only one pair per group"

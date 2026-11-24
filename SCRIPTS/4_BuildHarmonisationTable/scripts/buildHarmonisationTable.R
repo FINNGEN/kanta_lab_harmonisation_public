@@ -18,6 +18,16 @@ targetTableFile <- args[4]
 unitOverwriteFile <- args[5]
 outDir <- args[6]
 
+# The properties whose values have no unit, with their target unit: pH, INR, specific gravity. A pair of a
+# concept with one of these that arrives with no UNIT is converted x1 to the target unit. (Not every
+# concept with target unit 1: e.g. a Titer or an Arbitrary Concentration may have lost its unit.)
+noUnitTargets <- tibble::tribble(
+  ~has_property, ~HARMONISED_UNIT,
+  "Log molar concentration", "[pH]",
+  "Relative time", "1",
+  "Specific gravity", "1"
+)
+
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
 ParallelLogger::logInfo("  unitFixFile = ", unitFixFile)
@@ -26,6 +36,9 @@ ParallelLogger::logInfo("  unitHarmonisationFile = ", unitHarmonisationFile)
 ParallelLogger::logInfo("  targetTableFile = ", targetTableFile)
 ParallelLogger::logInfo("  unitOverwriteFile = ", unitOverwriteFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
+ParallelLogger::logInfo(
+  "  noUnitTargets = ", paste0(noUnitTargets$has_property, " [", noUnitTargets$HARMONISED_UNIT, "]", collapse = ", ")
+)
 
 #
 # --- Input -------------------------------------------------------------
@@ -130,7 +143,17 @@ ParallelLogger::logInfo(
 result <- result |>
   dplyr::left_join(conversionGeneral, by = c("has_property", "UNIT", "HARMONISED_UNIT")) |>
   dplyr::left_join(conversionConcept, by = c("concept_id", "UNIT", "HARMONISED_UNIT")) |>
-  dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION)) |>
+  dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION))
+
+# A pair with no UNIT of a property whose values have no unit (noUnitTargets) is converted x1; its UNIT stays
+# empty. Any other pair with no UNIT has no CONVERSION.
+isNoUnitTarget <- is.na(result$UNIT) & is.na(result$CONVERSION) &
+  paste(result$has_property, result$HARMONISED_UNIT, sep = "\r") %in%
+    paste(noUnitTargets$has_property, noUnitTargets$HARMONISED_UNIT, sep = "\r")
+result$CONVERSION[isNoUnitTarget] <- "1"
+ParallelLogger::logInfo(sum(isNoUnitTarget), " pairs with no UNIT of a property with no unit are converted x1")
+
+result <- result |>
   dplyr::select(
     TEST_NAME, MEASUREMENT_UNIT, UNIT, unit_fix_reasoning,
     concept_id, ignore_mapping_reason, APPROVED,
