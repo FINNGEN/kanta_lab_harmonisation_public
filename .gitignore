@@ -26,3 +26,6 @@ log.txt
 
 # The dashboard is rebuilt by 7_BuildDashboard
 DATA/7_BuildDashboard/dashboard.html
+
+# Intermediary table of 5_EvaluateHarmonisedData, all of it is in the evaluated table
+DATA/5_EvaluateHarmonisedData/harmonisedKantaAgregatedTable.tsv
