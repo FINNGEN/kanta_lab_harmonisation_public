@@ -16,6 +16,15 @@ commits of a pair (`git show <hash>`) before working on it again. This skill hol
 a case teaches one that changes how to work, add it as one line in the step it belongs to, with no case
 narrative.
 
+Two scripts in `scripts/` do the analysis of every case, run from the root of the repo:
+
+- `python3 .claude/skills/fix-errors/scripts/showPairs.py <pattern|concept_id> [...] [--min-n N]` — the
+  evidence (step 2): the pairs whose `TEST_NAME` contains a pattern or whose concept or Group is an id,
+  their rows of `mapping.tsv` and `unitFix.tsv`, their concepts and Groups, and the target units of the
+  concepts of their properties.
+- `python3 .claude/skills/fix-errors/scripts/compareWithHead.py` — the result (steps 5 and 6): the pairs that
+  changed against `HEAD`, the records newly approved and the change of the status counts.
+
 ## Guardrails
 
 - Edit only the tables of `DATA/2_Harmonisation/` and the `ignore` column of the warning tables. Never edit
@@ -25,6 +34,9 @@ narrative.
 - **Never set `APPROVED` or `ignore` to `TRUE` without the user's explicit confirmation**: both declare the
   mapping right. A new mapping row goes in with `APPROVED` = `FALSE` unless the user approves it.
 - One decision at a time: fix the unit before judging the values, and the mapping before the unit.
+- **One case per commit.** Start a case only from a clean working tree (`git status`): `HEAD` is the
+  baseline of `compareWithHead.py`, and the commit body records only that case. If the tree is not clean,
+  ask the user to commit or set the changes aside first.
 - Never commit (see `AGENTS.md`).
 
 ## 1. Choose what to work on
@@ -41,7 +53,8 @@ When the user does not name a pair, list the open errors and propose an order:
 
 ## 2. Gather the evidence
 
-For a pair `TEST_NAME[MEASUREMENT_UNIT]`, collect and show in one short table:
+Run `showPairs.py` on the `TEST_NAME` stems and the concepts of the case. For a pair
+`TEST_NAME[MEASUREMENT_UNIT]`, show in one short table:
 
 | Evidence | Where |
 |---|---|
@@ -53,6 +66,7 @@ For a pair `TEST_NAME[MEASUREMENT_UNIT]`, collect and show in one short table:
 | the concept and its LOINC axes | `targetTable.tsv`: `concept_name`, `has_component`, `has_property`, `has_system`, `has_scale_type`, `harmonised_unit`, `harmonised_unit_source`, the Groups |
 | the other pairs of the concept or Group | the evaluated table, same `concept_id` or `group_concept_id`: their units and deciles |
 | the warning that holds the error | the `message` of its row in the `_warning.tsv` of step 4 or in `ks_test_warning.tsv` |
+| where the target unit comes from, when it is in question | `target_unit_source`, and the target units of the other concepts of the same property (end of `showPairs.py`): a unit few concepts of the property have points to a lab2clean error, not a missing rule |
 
 The `TEST_NAME` prefix gives the specimen; check it against `has_system` of the concept. As the approved
 mappings use them: `b-` and `l-` Blood, `p-`, `s-`, `fp-`, `fs-` Serum or Plasma, `u-`, `du-`, `cu-` Urine,
@@ -108,19 +122,32 @@ Write the exact rows, in the format of each table (tab separated, `""` for missi
   `unitHarmonisation.tsv`: the lab2clean unit may be a shortened label the repo already converts to (e.g.
   `mL/min` for `Volume Rate/Area`), and an overwrite needs a row per concept of the Group.
 
-Show the effect you expect: the new `mapping_status`, the `HARMONISED_UNIT`, and for a unit fix the
-deciles after the conversion against the reference.
+Show the effect you expect: the new `mapping_status`, the `HARMONISED_UNIT`, the `harmonisation_values_status`
+(will the pair be compared, and against which pairs), and for a unit fix the deciles after the conversion
+against the reference.
+
+- When there is more than one way to fix it, give the options (A, B, ...) with the recommended one first,
+  and say why the others are left out.
+- End with **one question that covers every decision** the user must take (e.g. "remap to 3000185, keep
+  the 43 rows APPROVED, and add the `osuus` fix?"), so that one answer is enough to go on.
 
 ## 5. Apply, rerun and check
 
 After the user agrees:
 
-1. Edit the table(s).
-2. Rerun from step 4: `./SCRIPTS/4_BuildHarmonisationTable/run.sh DATA --env build`, then steps 5 and 7
-   (see "Rerunning after an edit" in `README.md`).
-3. Check `harmonisationTable.validation.md` has no ERROR and no new WARNING about the edited rows.
-4. Check the pair's new `mapping_status` and `harmonisation_values_status`, and that no other pair of the
-   same concept or Group changed status unexpectedly (its reference changed).
+1. Edit the table(s). The tables have empty last columns and some no final newline: change a column with
+   `awk -F'\t' 'BEGIN{OFS="\t"} ...'` and add rows with `printf '...\t...\n'` (one call per row, not a shell
+   loop that splits words), and read the `git diff` of the table before rerunning.
+2. Check that every row has as many columns as the header, before the rerun (seconds, against minutes for
+   step 4 to stop on it):
+   `awk -F'\t' 'FNR==1{n=NF} NF!=n{print FILENAME": "FNR}' DATA/2_Harmonisation/*.tsv`
+3. Rerun from step 4: `./SCRIPTS/4_BuildHarmonisationTable/run.sh DATA --env build`, then steps 5 and 7
+   (see "Rerunning after an edit" in `README.md`), and check that each one exits with 0.
+4. Check `harmonisationTable.validation.md` has no ERROR and no new WARNING about the edited rows.
+5. Run `compareWithHead.py` and **compare the result with the effect expected in the proposal**: the new
+   `mapping_status` and `harmonisation_values_status` of the pairs, and no other pair of the same concept or
+   Group changing status unexpectedly (its reference changed). Explain every difference (e.g. a pair "Not
+   compared" when AGREE was expected) before reporting.
 
 ## 6. Report
 
@@ -129,8 +156,12 @@ write it to stand alone:
 
 - The rows added or changed, table by table.
 - What was checked (the evidence) and what was decided, with the options left out and why.
-- The pair before and after: `mapping_status`, `harmonisation_values_status`, `KS`, `log10_D5`.
-- The change of the dashboard counts (Events and Harmonised Values tables), and any other pair that
-  changed status.
+- The result, from `compareWithHead.py`: the pairs before and after (`mapping_status`,
+  `harmonisation_values_status`, `KS`, `log10_D5`), the records newly approved, the change of the counts,
+  and any other pair that changed (e.g. the pairs with no unit of a remapped concept).
+- Where the result differs from the expected effect, and why.
 - What is left open, and anything the user should decide.
 - If the work came from a GitHub issue, its number, so the commit is logged as `#<issue>:<hash>`.
+- A dashboard link to the pairs of the case (see step 2).
+
+End by proposing the next case (step 1), so the user can commit and go on in one answer.
