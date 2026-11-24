@@ -17,7 +17,8 @@ measurementFile <- args[7]
 targetFile <- args[8]
 settingsFile <- args[9]
 ksWarningFile <- args[10]
-outDir <- args[11]
+changesFile <- args[11]
+outDir <- args[12]
 
 # The scripts folder of this step, where the HTML template is.
 scriptDir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])))
@@ -36,6 +37,9 @@ minValues <- readSetting(settingsFile, "1_Input", "n_records_no_value_threshold"
 minSubjects <- readSetting(settingsFile, "1_Input", "n_subjects_no_value_threshold")
 ksAgree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_agree_threshold")
 ksDisagree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_disagree_threshold")
+# The GitHub repository the Change Log column links to.
+githubUrl <- sub("/+$", "", yaml::read_yaml(settingsFile)[["7_BuildDashboard"]][["github_url"]])
+if (!is.character(githubUrl) || length(githubUrl) != 1) stop("7_BuildDashboard: github_url is missing in ", settingsFile)
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -51,6 +55,8 @@ ParallelLogger::logInfo("  templateFile = ", templateFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 ParallelLogger::logInfo("  ksAgree = ", ksAgree)
 ParallelLogger::logInfo("  ksDisagree = ", ksDisagree)
+ParallelLogger::logInfo("  changesFile = ", changesFile)
+ParallelLogger::logInfo("  githubUrl = ", githubUrl)
 
 #
 # --- Input -------------------------------------------------------------
@@ -89,6 +95,7 @@ loincGroupUnitMismatchWarnings <- readr::read_tsv(loincGroupUnitMismatchWarningF
 ksWarnings <- readr::read_tsv(ksWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 measurement <- readr::read_tsv(measurementFile, col_types = readr::cols(.default = chr()), na = "")
 targetTable <- readr::read_tsv(targetFile, col_types = readr::cols(.default = chr()), na = "")
+changes <- readr::read_tsv(changesFile, col_types = readr::cols(.default = chr()), na = "")
 template <- paste(readLines(templateFile, encoding = "UTF-8"), collapse = "\n")
 
 #
@@ -564,6 +571,22 @@ table <- tibble::tibble(
   in_reference = dplyr::if_else(evaluated$in_reference %in% TRUE, "yes", NA_character_),
   message = evaluated$mapping_warning_messages
 )
+# The Change Log of each pair: the commits (or #<issue>:<commit>) of TestCodeUnitChanges.tsv.
+duplicatedChanges <- changes |> dplyr::count(TEST_NAME, MEASUREMENT_UNIT) |> dplyr::filter(n > 1)
+if (nrow(duplicatedChanges) > 0) {
+  stop("TEST_NAME + MEASUREMENT_UNIT are not unique in ", changesFile, ", e.g. ", duplicatedChanges$TEST_NAME[1])
+}
+pairChanges <- evaluated |>
+  dplyr::select(TEST_NAME, MEASUREMENT_UNIT) |>
+  dplyr::left_join(changes, by = c("TEST_NAME", "MEASUREMENT_UNIT"), na_matches = "na")
+stopifnot(nrow(pairChanges) == nrow(evaluated))
+unknownChanges <- dplyr::anti_join(changes, evaluated, by = c("TEST_NAME", "MEASUREMENT_UNIT"), na_matches = "na")
+if (nrow(unknownChanges) > 0) {
+  ParallelLogger::logWarn(nrow(unknownChanges), " pairs of ", changesFile, " are not in the Kanta data, e.g. ", unknownChanges$TEST_NAME[1])
+}
+ParallelLogger::logInfo(sum(!is.na(pairChanges$changes)), " pairs with a Change Log")
+table$changes <- pairChanges$changes
+
 toJson <- function(x) {
   json <- jsonlite::toJSON(x, na = "null", digits = NA, auto_unbox = TRUE)
   # "</script>" inside the data must not end the script element
@@ -571,7 +594,7 @@ toJson <- function(x) {
 }
 dataJson <- toJson(as.list(table))
 configJson <- toJson(list(
-  ksAgree = ksAgree, ksDisagree = ksDisagree,
+  ksAgree = ksAgree, ksDisagree = ksDisagree, githubUrl = githubUrl,
   statusOrder = c(setdiff(statusOrder, "ERROR"), paste0("ERROR:", errorReasons$reason)),
   valueStatusOrder = valueStatus$short
 ))

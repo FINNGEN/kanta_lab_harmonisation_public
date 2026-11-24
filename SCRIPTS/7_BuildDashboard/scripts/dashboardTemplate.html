@@ -178,7 +178,8 @@ table.data .sub { color: var(--muted); }
     { key: "log10_d5", label: "log10 D5", type: "num", w: 50 },
     { key: "reference", label: "Reference group", type: "text", w: 110 },
     { key: "in_reference", label: "In reference", type: "text", w: 52 },
-    { key: "message", label: "Warnings", type: "text", cls: "msg", w: 170 }
+    { key: "message", label: "Warnings", type: "text", cls: "msg", w: 170 },
+    { key: "changes", label: "Change Log", type: "changes", w: 90 }
   ];
   COLS.forEach(function (c) { c.keys = c.keys || [c.key]; });
   var BAR_COLORS = ["var(--bar-source)", "var(--bar-extracted)", "var(--bar-qc)", "var(--bar-na)"];
@@ -314,6 +315,15 @@ table.data .sub { color: var(--muted); }
         var second = D[c.keys[1]][i];
         return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + (v == null ? "" : "<div>" + esc(v) + "</div>") +
           (second == null ? "" : '<div class="sub">' + (c.type === "conv" ? "\u2192 " : "") + esc(second) + "</div>") + "</td>";
+      case "changes":
+        // A comma separated list of commits, or #<issue>:<commit> for a change made through a GitHub issue.
+        if (v == null) return "<td></td>";
+        return "<td>" + String(v).split(",").map(function (entry) {
+          var m = entry.trim().match(/^#(\d+):(\w+)$/);
+          var link = function (path, text) { return '<a href="' + esc(CFG.githubUrl + path) + '" target="_blank">' + esc(text) + "</a>"; };
+          if (m) return link("/issues/" + m[1], "#" + m[1]) + ":" + link("/commit/" + m[2], m[2]);
+          return link("/commit/" + entry.trim(), entry.trim());
+        }).join("<br>") + "</td>";
       default:
         return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + (v == null ? "" : esc(v)) + "</td>";
     }
