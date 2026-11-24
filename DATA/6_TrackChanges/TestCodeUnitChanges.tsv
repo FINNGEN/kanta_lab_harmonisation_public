@@ -7,11 +7,15 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -trfe-sa	%	8d4ce0c
 -trfesat		8d4ce0c
 -trfesat	%	8d4ce0c
+ab-hbo2sat	%	cf9102e
+ab-o2sat	%	cf9102e
 ca12-5antigeeni		2a13d1d
 ca12-5antigeeni	u/ml	2a13d1d
 ca15-3antigeeni	u/ml	2a13d1d
 ca19-9antigeeni		2a13d1d
 ca19-9antigeeni	u/ml	2a13d1d
+cb-hbo2sat		cf9102e
+cb-hbo2sat	%	cf9102e
 ckd-epi-yhtälö	ml/min/173m2	ecfc5df
 fp-tffesat		8d4ce0c
 fp-tffesat	%	8d4ce0c
@@ -114,6 +118,11 @@ u-suhti	kg/l	31fc687
 u-suhti-o		31fc687
 u-suhti.		31fc687
 u-suhtih	kg/l	31fc687
+vb-hbo2sat		cf9102e
+vb-hbo2sat	%	cf9102e
+vb-o2sat		cf9102e
+vb-o2sat	%	cf9102e
 vertca12-5	u/ml	2a13d1d
 vertca15-3	u/ml	2a13d1d
 vertca19-9	u/ml	2a13d1d
+zb-hbo2sat	%	cf9102e
