@@ -14,3 +14,20 @@ concept_id	harmonised_unit	note
 40762498	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
 40762499	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
 40762509	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+3007080	10*3.[arb'U]/L	lab2clean gives 1 with no volume; EBV nuclear IgG Ab is reported in U/mL
+3007844	10*3.[arb'U]/L	lab2clean gives 1 with no volume; EBV capsid IgM Ab is reported in U/mL
+3016284	10*3.[arb'U]/L	lab2clean gives 1 with no volume; EBV nuclear Ab is reported in U/mL
+3017895	10*3.[arb'U]/L	lab2clean gives 1 with no volume; Helicobacter pylori Ab is reported in U/mL
+3009041	10*3.[arb'U]/L	lab2clean gives [GPL'U] with no volume; Cardiolipin IgG Ab is reported in GPL U/mL
+3006999	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; RNP Ab is reported in U/mL
+3018114	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; RNP Ab is reported in U/mL
+3038792	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; RNP Ab is reported in U/mL
+3016888	10*3.[arb'U]/L	lab2clean gives 1 with no volume; Borrelia IgG Ab is reported in U/mL
+3039162	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Centromere protein B Ab is reported in U/mL
+42529528	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Centromere protein B Ab is reported in U/mL
+3046870	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Tissue transglutaminase IgG Ab is reported in U/mL
+40759657	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Tissue transglutaminase IgG Ab is reported in U/mL
+3014178	10*3.[arb'U]/L	lab2clean gives 1 with no volume; Parietal cell Ab is reported in U/mL
+40759268	10*3.[arb'U]/L	lab2clean gives 1 with no volume; Parietal cell Ab is reported in U/mL
+3015147	10*3.[arb'U]/L	lab2clean gives 1 with no volume; Influenza A IgG Ab is reported in U/mL
+3013924	10*3.[iU]/L	lab2clean gives no unit; Clostridium tetani IgG Ab is reported in IU/mL

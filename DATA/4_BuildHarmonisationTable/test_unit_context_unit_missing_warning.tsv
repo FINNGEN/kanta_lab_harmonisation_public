@@ -119,7 +119,6 @@ fp-gluk-2h	mmol/mol	no rule in unitHarmonisation.tsv from UNIT 'mmol/mol' to the
 fp-kol	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3019900	FALSE
 fs-transf	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3004789	FALSE
 kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target unit 'mmol/(24.h)' for has_property 'Substance Rate' or concept_id 3010838	FALSE
-kudostransglutamanaasi,iggvasta-aineet(s-ttgabg)	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3046870	FALSE
 l-meta	%	concept_id 43055361 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
 li-ba42/40	ng/l	no rule in unitHarmonisation.tsv from UNIT 'ng/l' to the target unit '1' for has_property 'Mass Ratio' or concept_id 1617024	FALSE
 li-borrabg	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3010380	FALSE
@@ -159,10 +158,8 @@ p-gt	mg/l	no rule in unitHarmonisation.tsv from UNIT 'mg/l' to the target unit '
 p-gt	mg/ml	no rule in unitHarmonisation.tsv from UNIT 'mg/ml' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3026910	FALSE
 p-jcvnh	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '10*3/L' for has_property 'Number Concentration' or concept_id 3032185	FALSE
 p-k	mmol/mol	no rule in unitHarmonisation.tsv from UNIT 'mmol/mol' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3023103	FALSE
-p-kardabg	gpl	no rule in unitHarmonisation.tsv from UNIT 'gpl' to the target unit '[GPL'U]' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
-p-kardabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[GPL'U]' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
+p-kardabg	gpl	no rule in unitHarmonisation.tsv from UNIT 'gpl' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
 p-kardabm	mpl	concept_id 44806071 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mpl' cannot be converted	FALSE
-p-kardiolipiini,iggvasta-aineet	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[GPL'U]' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
 p-krea	umol	no rule in unitHarmonisation.tsv from UNIT 'umol' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3020564	FALSE
 p-luakptt	ratio	concept_id 3048518 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
 p-omagluk	mmol/l	concept_id 4146454 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mmol/l' cannot be converted	FALSE
@@ -176,10 +173,6 @@ pt-gfre-cg	ml/min/173m2	concept_id 44806420 has no target unit (not in lab2clean
 pt-paino	kg	concept_id 3025315 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'kg' cannot be converted	FALSE
 pt-pituus	cm	concept_id 3035463 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'cm' cannot be converted	FALSE
 retikulosyytit	e9/l	no rule in unitHarmonisation.tsv from UNIT 'e9/l' to the target unit '10*3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3021584	FALSE
-ribonukleoproteiini,nukleaarinen,vasta	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-ribonukleoproteiini,nukleaarinen,vasta-aineet(s-rnpab)	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-ribonukleoproteiini,nukleaarinen,vasta-aineet(u1rnp)	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-rnpab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
 s-aa	mg/l	concept_id 3003722 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mg/l' cannot be converted	FALSE
 s-afos	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3035995	FALSE
 s-afosma	u/l	no rule in unitHarmonisation.tsv from UNIT 'u/l' to the target unit 'mmol/kg' for has_property 'Osmolality' or concept_id 3008295	FALSE
@@ -188,35 +181,23 @@ s-allige	mm	concept_id 36660136 has no target unit (not in lab2clean, no row in 
 s-apob/a1	ratio	concept_id 3011831 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
 s-asat	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3013721	FALSE
 s-b2gpabg	sgu	no rule in unitHarmonisation.tsv from UNIT 'sgu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018658	FALSE
-s-borabgv	au/ml	no rule in unitHarmonisation.tsv from UNIT 'au/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3016888	FALSE
-s-borrabg	au/ml	no rule in unitHarmonisation.tsv from UNIT 'au/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3016888	FALSE
-s-borrabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3016888	FALSE
-s-borrigg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3016888	FALSE
 s-cdt	u/l	no rule in unitHarmonisation.tsv from UNIT 'u/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3003031	FALSE
 s-ch100cl	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018993	FALSE
 s-chpnabg	bu/ml	no rule in unitHarmonisation.tsv from UNIT 'bu/ml' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3038769	FALSE
 s-chpnabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3038769	FALSE
 s-ck-mm	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3016913	FALSE
-s-clteab	iu/ml	concept_id 3013924 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'iu/ml' cannot be converted	FALSE
 s-cmvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3010130	FALSE
-s-ebnaab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3016284	FALSE
-s-ebvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3007080	FALSE
-s-ebvabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3007080	FALSE
-s-ebvabm	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3007844	FALSE
-s-ebvnabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3007080	FALSE
+s-ebvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3007080	FALSE
 s-ena	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3015171	FALSE
 s-ena,seu	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3015171	FALSE
 s-enaab	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3015171	FALSE
 s-epo	pmol/l	no rule in unitHarmonisation.tsv from UNIT 'pmol/l' to the target unit '[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3024172	FALSE
 s-etoh	promille	no rule in unitHarmonisation.tsv from UNIT 'promille' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3020191	FALSE
 s-gt	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3026910	FALSE
-s-hepyaba	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3017895	FALSE
 s-hepyabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Titer' or concept_id 3027696	FALSE
 s-hepyabg	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '1' for has_property 'Titer' or concept_id 3027696	FALSE
-s-hepyabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3017895	FALSE
 s-hsvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3041365	FALSE
 s-immfix	g/l	concept_id 3037756 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'g/l' cannot be converted	FALSE
-s-infaabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3015147	FALSE
 s-k/l-s-v	mg/l	no rule in unitHarmonisation.tsv from UNIT 'mg/l' to the target unit '1' for has_property 'Mass Ratio' or concept_id 3007778	FALSE
 s-ld	u/l	concept_id 3016436 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'u/l' cannot be converted	FALSE
 s-mypnabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018387	FALSE
@@ -225,19 +206,11 @@ s-parvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target uni
 s-parvabg	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3006120	FALSE
 s-prl	nmol/l	no rule in unitHarmonisation.tsv from UNIT 'nmol/l' to the target unit '10*-3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3021387	FALSE
 s-psa	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'ug/L' for has_property 'Mass Concentration' or concept_id 3013603	FALSE
-s-psolab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3014178	FALSE
 s-puumabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Titer' or concept_id 3012447	FALSE
 s-pölyer	u/ml	concept_id 44813793 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'u/ml' cannot be converted	FALSE
-s-ribonukleoproteiin13n,vasta-aineet	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-s-rnp-ab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-s-rnpab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3006999	FALSE
-s-sentab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3039162	FALSE
-s-sentbab	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3039162	FALSE
 s-testo	nmol	no rule in unitHarmonisation.tsv from UNIT 'nmol' to the target unit 'nmol/L' for has_property 'Substance Concentration' or concept_id 3017446	FALSE
 s-tfr	mg	no rule in unitHarmonisation.tsv from UNIT 'mg' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3015399	FALSE
 s-toxoavi	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '%' for has_property 'Ratio' or concept_id 40760109	FALSE
-s-ttgabg	eliau/ml	no rule in unitHarmonisation.tsv from UNIT 'eliau/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3046870	FALSE
-s-ttgabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3046870	FALSE
 s-valpr	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3009466	FALSE
 s-vzvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Titer' or concept_id 3003220	FALSE
 s-vzvabg	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '1' for has_property 'Titer' or concept_id 3003220	FALSE
