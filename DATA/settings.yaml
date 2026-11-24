@@ -1,2 +1,6 @@
-n_records_no_value_threshold: 1000 # Pairs with fewer non-missing values than this are considered as having no values
-n_subjects_no_value_threshold: 60 # Pairs with fewer subjects than this are considered as having no values
+1_Input:
+  n_records_no_value_threshold: 1000 # Pairs with fewer non-missing values than this are considered as having no values
+  n_subjects_no_value_threshold: 60 # Pairs with fewer subjects than this are considered as having no values
+5_EvaluateHarmonisedData:
+  ks_agree_threshold: 0.5 # A pair whose KS with its reference is under this AGREEs
+  ks_disagree_threshold: 0.8 # A pair whose KS is over this DISAGREEs; in between it is a WARNING
