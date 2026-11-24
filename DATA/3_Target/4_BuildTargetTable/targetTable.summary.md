@@ -1,6 +1,6 @@
 # targetTable stats
 
-Summary of `targetTable.tsv`: 103,541 rows, one per concept and Group, for 102,825 concepts.
+Summary of `targetTable.tsv`: 103,231 rows, one per concept and Group, for 102,825 concepts.
 
 # Concepts
 
@@ -19,15 +19,15 @@ Where the `harmonised_unit` of each concept came from (`harmonised_unit_source`)
 
 | item | n |
 | --- | --- |
-| Groups | 3,025 |
-| concepts in a Group | 7,231 |
-| concepts in no Group | 95,594 |
-| concepts in more than one Group | 596 |
+| Groups | 3,000 |
+| concepts in a Group | 6,978 |
+| concepts in no Group | 95,847 |
+| concepts in more than one Group | 384 |
 
 Where the Group of a concept came from (`group_source`): `lab2clean` when lab2clean gives the concept that Group, `LOINC` for the other memberships.
 
 | group_source | n concept-Group rows | n Groups | n concepts |
 | --- | --- | --- | --- |
-| LOINC | 4,066 | 1,245 | 3,698 |
+| LOINC | 3,503 | 1,220 | 3,290 |
 | lab2clean | 3,881 | 1,823 | 3,881 |
 

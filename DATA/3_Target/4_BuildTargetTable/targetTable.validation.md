@@ -52,9 +52,9 @@ The step stops when a test is an ERROR.
 | loincGroupMembership.tsv | SUCCESS | concept_id is in measurementOmopData.tsv |  |  |
 | loincGroupMembership.tsv | SUCCESS | a panel is in no Group |  |  |
 | targetTable.tsv | SUCCESS | concept_id + group_concept_id are unique |  |  |
-| targetTable.tsv | WARNING | concept_id is unique (a concept in several Groups has one row per Group) | 1,312 | 596 concepts in several Groups |
+| targetTable.tsv | WARNING | concept_id is unique (a concept in several Groups has one row per Group) | 790 | 384 concepts in several Groups |
 | targetTable.tsv | SUCCESS | all concepts of a lab2clean Group have the same harmonised_unit |  |  |
-| targetTable.tsv | WARNING | all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit | 103 | e.g. group_concept_code=LG50937-8 units=/10*3, /10*6, 1, g/(24.h), h, mg/L, mL, nmol/(24.h); group_concept_code=LG51732-2 units=[iU]/L, ug/L; group_concept_code=LG51466-7 units=[pH], /10*3, /10*6, /10*9, g/(24.h), h, kJ/mol, mg/(24.h), mg/L, mL, mmol/(24.h), mmol/kg, mmol/L, ug/(24.h), umol/(24.h), umol/L |
+| targetTable.tsv | WARNING | all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit | 83 | e.g. group_concept_code=LG51732-2 units=[iU]/L, ug/L; group_concept_code=LG34933-8 units=mmol/L, umol/L; group_concept_code=LG51600-1 units=[arb'U]/L, 10*3.[arb'U]/L, 10*3.U/L |
 
 ## Groups with more than one harmonised_unit
 
@@ -75,7 +75,6 @@ The step stops when a test is an ERROR.
 | LG29228-0 | 2 | nmol/L, umol/L |
 | LG2967-0 | 3 | nmol/L, umol/L |
 | LG3200-5 | 2 | nmol/L, umol/L |
-| LG32754-0 | 3 | 1, mg/L, U/L |
 | LG32810-0 | 2 | 10*3/L, 10*9/L |
 | LG32815-9 | 2 | 10*6/L, 10*9/L |
 | LG32819-1 | 2 | 10*6/L, 10*9/L |
@@ -99,8 +98,6 @@ The step stops when a test is an ERROR.
 | LG35054-2 | 5 | g/L, mg/L |
 | LG35176-3 | 3 | mg/L, ug/L |
 | LG35244-9 | 4 | g/L, mg/L |
-| LG35255-5 | 6 | mmol/(24.h), mmol/L |
-| LG35257-1 | 4 | mg/L, ug/L |
 | LG35429-6 | 2 | mmol/L, nmol/L |
 | LG35440-3 | 2 | /10*3, /10*6 |
 | LG35461-9 | 2 | mmol/L, umol/L |
@@ -109,46 +106,29 @@ The step stops when a test is an ERROR.
 | LG35535-0 | 2 | nmol/L, umol/L |
 | LG35538-4 | 2 | nmol/L, umol/L |
 | LG35743-0 | 2 | /10*3, /10*6 |
-| LG35785-1 | 18 | %, g/(24.h), g/L, h, mg/L, mL |
 | LG35809-9 | 2 | /10*3, /10*6 |
 | LG35882-6 | 3 | g/(24.h), mg/(24.h) |
 | LG35998-0 | 2 | mmol/L, umol/L |
 | LG36059-0 | 2 | /10*3, 1 |
 | LG36066-5 | 4 | g/L, mg/L |
 | LG36067-3 | 4 | g/L, mg/L |
-| LG36111-9 | 8 | /10*3, g/(24.h), h, mg/(24.h), mg/L, mL |
-| LG36112-7 | 27 | %, g/(24.h), g/L, h, mg/(24.h), mg/L, mL |
 | LG36185-3 | 2 | /10*3, /10*6 |
 | LG36189-5 | 2 | /10*3, /10*6 |
 | LG36192-9 | 2 | /10*3, /10*6 |
-| LG36305-7 | 8 | 1, g/(24.h), mg/(24.h), mg/L, mL |
 | LG36509-4 | 2 | /10*3, /10*6 |
 | LG36540-9 | 2 | ng/L, ug/L |
-| LG37118-3 | 12 | /10*3, /10*6, mg/L, mmol/(24.h), umol/(24.h), umol/L |
-| LG37123-3 | 12 | /10*3, /10*6, mg/L, umol/(24.h), umol/L |
-| LG37282-7 | 6 | /10*3, /10*6, mmol/L, umol/L |
-| LG37310-6 | 100 | /10*3, /10*6, 1, g/mol, nmol/(24.h), nmol/L, umol/(24.h), umol/L |
 | LG37542-4 | 9 | g/L, mg/L |
 | LG37570-5 | 3 | mg/L, ug/L |
 | LG41057-7 | 2 | mg/L, mm |
-| LG50120-1 | 14 | /10*3, mmol/(24.h), mmol/L, umol/(24.h) |
 | LG50125-0 | 2 | [arb'U]/L, 10*3.[arb'U]/L |
-| LG50130-0 | 51 | /10*6, mg/L, ug/L, umol/L |
-| LG50937-8 | 27 | /10*3, /10*6, 1, g/(24.h), h, mg/L, mL, nmol/(24.h) |
-| LG50984-0 | 26 | /10*6, ug/(24.h), ug/L |
 | LG51032-7 | 2 | [arb'U]/L, 10*3.[arb'U]/L |
 | LG51037-6 | 2 | [iU]/L, 10*3.[arb'U]/L |
-| LG51052-5 | 23 | /10*6, ug/(24.h), ug/L |
 | LG51054-1 | 2 | mg/L, ug/L |
-| LG51055-8 | 9 | /10*6, h, mg/(24.h), mg/L, mL, ug/L |
 | LG51063-2 | 3 | [arb'U]/L, 10*3.[arb'U]/L, 10*3.[iU]/L |
 | LG51079-8 | 2 | /10*3, /10*6 |
 | LG51080-6 | 2 | /10*3, 1 |
 | LG51390-9 | 3 | mg/L, ng/L |
 | LG51391-7 | 3 | mg/L, ng/L |
-| LG51435-2 | 6 | /10*6, h, mL, ug/(24.h) |
-| LG51450-1 | 21 | /10*3, 1, g/(24.h), g/L, h, mg/(24.h), mg/L, mL |
-| LG51466-7 | 54 | [pH], /10*3, /10*6, /10*9, g/(24.h), h, kJ/mol, mg/(24.h), mg/L, mL, mmol/(24.h), mmol/kg, mmol/L, ug/(24.h), umol/(24.h), umol/L |
 | LG51472-5 | 2 | mmol/L, umol/L |
 | LG51600-1 | 3 | [arb'U]/L, 10*3.[arb'U]/L, 10*3.U/L |
 | LG51671-2 | 2 | 10*3.[arb'U]/L, 10*3.U/L |

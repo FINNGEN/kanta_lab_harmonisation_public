@@ -972,9 +972,6 @@ group_concept_id	group_concept_code	group_concept_name
 40652976	LG3267-4	Fatty acids.nonesterified|Substance Concentration|Moment in time|Blood, Serum or Plasma
 40653139	LG32670-8	IgA subclass 1/IgA.total|Mass Fraction|Moment in time|Blood, Serum or Plasma
 40653008	LG3268-2	Follitropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma
-40653950	LG32752-4	Hepatitis B virus
-40653951	LG32754-0	Hepatitis C virus
-40653953	LG32757-3	Influenza virus
 40654108	LG32776-3	Platelets|Number Concentration (count/vol)|Moment in time|Plasma
 40654011	LG32777-1	Erythrocytes|Number Concentration (count/vol)|Moment in time|Pericardial fluid
 40654028	LG32778-9	Leukocytes|Number Concentration (count/vol)|Moment in time|Bronchial
@@ -1414,9 +1411,7 @@ group_concept_id	group_concept_code	group_concept_name
 40656096	LG35246-4	Dopamine|Mass Concentration|Urine
 40656147	LG35248-0	Glucose|Presence or Threshold|Urine
 40656189	LG35249-8	Histidine|Presence or Threshold|Urine
-40656099	LG35255-5	Electrolytes 3 panel|-|Urine
 40656201	LG35256-3	Homogentisate|Mass Concentration|Urine
-40656098	LG35257-1	Drugs of abuse 5 panel|-|Urine
 40656182	LG35266-2	Hexanoylglycine/Creatinine|Substance Ratio|Urine
 40656258	LG35268-8	Isovalerylglycine/Creatinine|Substance Ratio|Urine
 40656362	LG35269-6	Phenylpropionylglycine/Creatinine|Substance Ratio|Urine
@@ -1641,7 +1636,6 @@ group_concept_id	group_concept_code	group_concept_name
 40655856	LG35773-7	3-Hydroxypropionate/Creatinine|Substance Ratio|Urine
 40655869	LG35778-6	5-Hydroxyindoleacetate/Creatinine|Substance Ratio|Urine
 40655837	LG35781-0	2-Ethylhydracrylate/Creatinine|Substance Ratio|Urine
-40656226	LG35785-1	Immunoelectrophoresis panel|-|Urine
 40656446	LG35787-7	Sodium/Potassium|Substance Ratio|Urine
 40655974	LG35789-3	Beta hydroxybutyrate|Presence or Threshold|Urine
 40653662	LG358-8	Rheumatoid factor.IgM|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma
@@ -1729,8 +1723,6 @@ group_concept_id	group_concept_code	group_concept_name
 40656259	LG36084-8	Karyotype|Presence or Identity|Urine
 40655825	LG36085-5	17-Hydroxycorticosteroids/Creatinine|Mass Ratio|Urine
 40656512	LG36088-9	Uroporphyrin/Creatinine|Mass Ratio|Urine
-40656314	LG36111-9	Microalbumin/Creatinine ratio panel|-|Urine
-40656414	LG36112-7	Protein fractions panel|-|Urine
 40656390	LG36136-6	Porphyrins|Substance Concentration|Urine
 40656035	LG36138-2	Coproporphyrin 3/Coproporphyrin 1|Substance Ratio|Urine
 40656527	LG36158-0	Xanthurenate|Presence or Threshold|Urine
@@ -1770,7 +1762,6 @@ group_concept_id	group_concept_code	group_concept_name
 40655982	LG36283-6	Bilirubin|Substance Concentration|Urine
 40656420	LG36287-7	Protein.monoclonal/Protein.total|Mass Fraction|Urine
 40656229	LG36303-2	Immunoglobulin light chains.kappa.free/Immunoglobulin light chains.lambda.free|Mass Ratio|Urine
-40656227	LG36305-7	Immunoglobulin light chains panel|-|Urine
 40656385	LG36306-5	Porphyrin fractions|Impression/interpretation of study|Urine
 40656015	LG36314-9	Chloride/Creatinine|Ratio|Urine
 40656392	LG36315-6	Potassium/Creatinine|Ratio|Urine
@@ -1821,9 +1812,7 @@ group_concept_id	group_concept_code	group_concept_name
 40656277	LG36980-7	Leukocyte esterase|Presence or Threshold|Urine
 40656021	LG37082-1	Citrate|Mass Rate|Urine
 40656510	LG37091-2	Uroporphyrin 1 isomer/Creatinine|Substance Ratio|Urine
-40656295	LG37118-3	Metanephrine, Normetanephrine & Creatinine panel|-|Urine
 40656091	LG37122-5	Deoxypyridinoline|Mass Rate|Urine
-40656296	LG37123-3	Metanephrine, Normetanephrine, 3-Methoxytyramine & Creatinine panel|-|Urine
 40656475	LG37125-8	Tetrahydrodeoxycortisol|Substance Concentration|Urine
 40655821	LG37127-4	16-Alpha hydroxydehydroepiandrosterone|Substance Concentration|Urine
 40655824	LG37129-0	16-Ketoandrostenediol|Substance Concentration|Urine
@@ -1847,10 +1836,8 @@ group_concept_id	group_concept_code	group_concept_name
 40656528	LG37231-4	Yeast|Presence or Threshold|Urine
 40655823	LG37277-7	16-Beta,18-dihydroxydehydroepiandrosterone|Substance Concentration|Urine
 40655822	LG37280-1	16-Alpha hydroxypregnenolone|Substance Concentration|Urine
-40656083	LG37282-7	Delta aminolevulinate, porphobilinogen and creatinine panel|-|Urine
 40656053	LG37307-2	Cortisone.free|Substance Concentration|Urine
 40656454	LG37309-8	Steroid fractions interpretation|Impression/interpretation of study|Urine
-40656455	LG37310-6	Steroid fractions panel|-|Urine
 40656470	LG37311-4	Tetrahydrocorticosterone|Substance Concentration|Urine
 40656472	LG37313-0	Tetrahydrocortisol|Substance Concentration|Urine
 40656474	LG37315-5	Tetrahydrocortisone|Substance Concentration|Urine
@@ -2297,7 +2284,6 @@ group_concept_id	group_concept_code	group_concept_name
 40658064	LG41728-3	TildipirosinSusc|Isolate
 40657897	LG41729-1	GamithromycinSusc|Isolate
 40652686	LG4174-1	Beta galactosidase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma
-40654125	LG41761-4	Exercise/Activity
 40657763	LG41784-6	BedaquilineSusc|Isolate
 40652545	LG4193-1	Alkaline phosphatase isoenzymes|Catalytic Concentration|Moment in time|Blood, Serum or Plasma
 40653895	LG4212-9	Urate dihydrate crystals|Presence or Threshold|Moment in time|Calculus
@@ -2376,14 +2362,12 @@ group_concept_id	group_concept_code	group_concept_name
 1177472	LG50104-5	DelafloxacinSusc|Isolate
 40653105	LG5011-4	Hexacarboxylporphyrin|Mass Concentration|Moment in time|Blood, Serum or Plasma
 1177400	LG50118-5	Adalimumab Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma
-1177435	LG50120-1	Cystinuria panel|-|Urine
 1177405	LG50122-7	Neuronal nuclear type 3 Ab|Titer|Moment in time|Cerebral spinal fluid
 1177403	LG50123-5	Glutamate decarboxylase 65 Ab|Arbitrary Concentration|Moment in time|Cerebral spinal fluid
 1177401	LG50124-3	Aquaporin 4 water channel Ab.IgG|Presence or Threshold|Moment in time|Cerebral spinal fluid
 1177402	LG50125-0	CV2 Ab|Arbitrary Concentration|Moment in time|Cerebral spinal fluid
 1177404	LG50126-8	Ma+Ta Ab|Presence or Threshold|Moment in time|Cerebral spinal fluid
 1177406	LG50127-6	Purkinje cell cytoplasmic type Tr Ab|Presence or Threshold|Moment in time|Cerebral spinal fluid
-1177434	LG50130-0	Benzodiazepines panel|-|Urine
 1177412	LG50141-7	Pregnancy test
 1177407	LG50142-5	Thiopurine methyltransferase|Catalytic Concentration|Moment in time|Erythrocytes
 1177437	LG50143-3	Barbiturates|Any Property|Any Time|Any System|Any Method
@@ -2418,7 +2402,6 @@ group_concept_id	group_concept_code	group_concept_name
 1002486	LG50934-5	Alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionate receptor 2 Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 1002487	LG50935-2	Alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionate receptor 2 Ab.IgG|Presence or Threshold|Moment in time|Cerebral spinal fluid
 1002498	LG50936-0	Cholesterol crystals|Presence or Threshold|Moment in time|Calculus
-1002648	LG50937-8	Porphyrin fractions panel|-|Urine
 1002510	LG50938-6	Keratan sulfate|Mass Concentration|Moment in time|Blood, Serum or Plasma
 1002633	LG50942-8	Beta-2-Microglobulin/Creatinine|Ratio|Urine
 1002703	LG50943-6	EravacyclineSusc|Isolate
@@ -2440,7 +2423,6 @@ group_concept_id	group_concept_code	group_concept_name
 36662599	LG50968-3	Amphiphysin Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 36662621	LG50969-1	Neuronal nuclear type 2 Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 40653410	LG5098-1	Neutrophil cytoplasmic Ab.classic|Presence or Threshold|Moment in time|Blood, Serum or Plasma
-36662652	LG50984-0	Heavy metals panel|-|Urine
 36662606	LG50985-7	Dipeptidyl aminopeptidase-like protein 6 Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 36662614	LG50986-5	Glomerular filtration rate|Volume Rate/Area|Moment in time|Blood, Serum or Plasma
 36662615	LG50987-3	Glutamate decarboxylase 65 Ab|Substance Concentration|Moment in time|Blood, Serum or Plasma
@@ -2475,9 +2457,7 @@ group_concept_id	group_concept_code	group_concept_name
 36032988	LG51041-8	Hydroxychloroquine|Mass Concentration|Moment in time|Blood, Serum or Plasma
 36033094	LG51045-9	DelamanidSusc|Isolate
 40653106	LG5105-4	Hexane|Mass Concentration|Moment in time|Blood, Serum or Plasma
-36033059	LG51052-5	Arsenic fractions panel|-|Urine
 36033064	LG51054-1	Retinol binding protein|Mass Concentration|Urine
-36033062	LG51055-8	Retinol binding protein panel|-|Urine
 36033063	LG51056-6	Retinol binding protein/Creatinine|Mass Ratio|Urine
 36032994	LG51057-4	Inositol 1,4,5-trisphosphate receptor type 1 Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 36032995	LG51058-2	Inositol 1,4,5-trisphosphate receptor type 1 Ab.IgG|Presence or Threshold|Moment in time|Cerebral spinal fluid
@@ -2498,7 +2478,6 @@ group_concept_id	group_concept_code	group_concept_name
 40653429	LG5119-5	Norflunitrazepam|Mass Concentration|Moment in time|Blood, Serum or Plasma
 40653471	LG5128-6	Organic acids|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma
 1990638	LG51308-1	Procaine Ab.IgE|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma
-1990690	LG51309-9	Antipsychotics drug panel|-|Urine
 1990651	LG51310-7	Urate|Mass Concentration|Moment in time|Blood, Serum or Plasma
 1990650	LG51311-5	Transferrin|Mass Concentration|Moment in time|Blood, Serum or Plasma
 1990654	LG51312-3	Nucleated cells|Number Concentration (count/vol)|Moment in time|Synovial fluid
@@ -2549,7 +2528,6 @@ group_concept_id	group_concept_code	group_concept_name
 1761926	LG51402-2	Protein fractions.oligoclonal bands|Number|Moment in time|Blood, Serum or Plasma
 40653705	LG5141-9	SCL-70 extractable nuclear Ab|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 1761925	LG51410-5	Protein.abnormal band|Mass Concentration|Moment in time|Blood, Serum or Plasma
-1761937	LG51411-3	Urinary tract pathogens panel|-|Urine
 1761301	LG51412-1	Bacteria|Number Concentration (count/vol)|Urine
 40653703	LG5142-7	SCL-70 extractable nuclear Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 3967134	LG51422-0	Leukotriene E4/Creatinine|Mass Ratio|Urine
@@ -2560,7 +2538,6 @@ group_concept_id	group_concept_code	group_concept_name
 3964547	LG51429-5	Contactin-associated protein 2 Ab|Presence or Threshold|Moment in time|Cerebral spinal fluid
 3964550	LG51430-3	Dipeptidyl aminopeptidase-like protein 6 Ab|Presence or Threshold|Moment in time|Cerebral spinal fluid
 3967133	LG51431-1	Leucine-rich glioma-inactivated protein 1 Ab|Presence or Threshold|Moment in time|Cerebral spinal fluid
-3964548	LG51435-2	Cortisol & Cortisone panel|-|Urine
 3967172	LG51436-0	Soluble urokinase plasminogen activator receptor|Mass Concentration|Moment in time|Blood, Serum or Plasma
 3967171	LG51437-8	Solitary lung nodule risk of malignancy|Scale|Moment in time|^Patient
 3967146	LG51439-4	Neurochondrin Ab|Presence or Threshold|Moment in time|Blood, Serum or Plasma
@@ -2571,7 +2548,6 @@ group_concept_id	group_concept_code	group_concept_name
 3967169	LG51444-4	Septin-7 Ab.IgG|Presence or Threshold|Moment in time|Blood, Serum or Plasma
 3964500	LG51448-5	14-3-3 Ag|Mass Concentration|Moment in time|Cerebral spinal fluid
 3967179	LG51449-3	Tau protein|Mass Concentration|Moment in time|Cerebral spinal fluid
-3967162	LG51450-1	Protein electrophoresis & monoclonal protein isotype panel|-|Urine
 3967164	LG51451-9	Protein.monoclonal isotype|Presence or Identity|Urine
 3967163	LG51452-7	Protein.monoclonal|Presence or Threshold|Urine
 3967158	LG51453-5	PML Ab|Presence or Threshold|Moment in time|Blood, Serum or Plasma
@@ -2583,7 +2559,6 @@ group_concept_id	group_concept_code	group_concept_name
 3967129	LG51460-0	Inositol 1,4,5-trisphosphate receptor type 1 Ab.IgG|Titer|Moment in time|Cerebral spinal fluid
 3967125	LG51461-8	IgLON family member 5 Ab.IgG|Titer|Moment in time|Blood, Serum or Plasma
 3967126	LG51462-6	IgLON family member 5 Ab.IgG|Titer|Moment in time|Cerebral spinal fluid
-3967176	LG51466-7	Supersaturation panel|-|Urine
 3967116	LG51472-5	Glycolate|Substance Concentration|Moment in time|Blood, Serum or Plasma
 3967139	LG51473-3	Melatonin|Substance Concentration|Moment in time|Saliva
 3964526	LG51474-1	Budgerigar feather Ab.IgE|Presence or Threshold|Moment in time|Blood, Serum or Plasma
