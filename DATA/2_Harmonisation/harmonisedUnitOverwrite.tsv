@@ -7,3 +7,10 @@ concept_id	harmonised_unit	note
 42529200	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 15-3 is reported in U/mL
 3022914	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 19-9 is reported in U/mL
 42529201	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 19-9 is reported in U/mL
+3013502	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+3018465	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+3021901	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+3024928	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+40762498	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+40762499	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %
+40762509	%	lab2clean gives no unit; the Oxygen saturation Group (40654168) is in %

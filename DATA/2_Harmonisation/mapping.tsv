@@ -227,7 +227,7 @@ s-prot	g/l	3020630		TRUE
 p-amylp	u/l	3016417		TRUE
 s-testo	nmol/l	3017446		TRUE
 fp-trfesat	%	3000185		TRUE
-vb-hbo2sat	%	3004529		TRUE
+vb-hbo2sat	%	3024928		TRUE
 cb-po2	kpa	3028626		TRUE
 cb-hco3-st	mmol/l	3004490		TRUE
 u-lieriöt	e6/l	3030981		TRUE
@@ -6978,7 +6978,7 @@ vb-hb-vt		3004119		TRUE
 vb-hb02sat		3019230		TRUE
 vb-hblask		3004119		TRUE
 vb-hbo2		3019230		TRUE
-vb-hbo2sat		3004529		TRUE
+vb-hbo2sat		3024928		TRUE
 vb-hco3		3027273		TRUE
 vb-hco3-st		3007628		TRUE
 vb-he-tase,p-k		3023103		TRUE

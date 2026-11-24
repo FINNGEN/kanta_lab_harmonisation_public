@@ -62,7 +62,6 @@ b-neutrofiilit	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target un
 b-pvk+tmd	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3007461	FALSE
 b-retik	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3023520	FALSE
 b-trom	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3007461	FALSE
-cb-hbo2sat	%	concept_id 3021901 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
 cb-he-tase,cb-pco2	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3015235	FALSE
 cb-he-tase,cb-po2	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3015235	FALSE
 cbhbo2satp	%	concept_id 42869593 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
@@ -254,8 +253,5 @@ u-jcvnh	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target uni
 u-leuk	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3018095	FALSE
 u-osmoest	e6/l	no rule in unitHarmonisation.tsv from UNIT 'e6/l' to the target unit 'mmol/kg' for has_property 'Osmolality' or concept_id 3026782	FALSE
 u-rakkoai	h	concept_id 4088671 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'h' cannot be converted	FALSE
-vb-hbo2sat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3004529	FALSE
 vb-o2-sis	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3004529	FALSE
 vb-o2-vol	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mol/L' for has_property 'Substance Concentration' or concept_id 3011648	FALSE
-vb-o2sat	%	concept_id 3024928 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
-zb-hbo2sat	%	concept_id 3024928 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
