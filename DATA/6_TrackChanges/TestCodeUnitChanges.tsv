@@ -12,9 +12,14 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -trfesat		8d4ce0c
 -trfesat	%	8d4ce0c
 ab-hbo2sat	%	cf9102e
+ab-o2-sis	%	5ae0267
+ab-o2-vol		5ae0267
+ab-o2-vol	%	5ae0267
+ab-o2-vol	vol%	5ae0267
 ab-o2sat	%	cf9102e
 ab-ph		746ec0e
 ab-ph(t)		746ec0e
+ab-to2c	ml/dl	5ae0267
 ap-ph		746ec0e
 b-inr		746ec0e
 b-inr-pik		746ec0e
@@ -340,6 +345,10 @@ vb-happamuusaste		746ec0e
 vb-hbo2sat		cf9102e
 vb-hbo2sat	%	cf9102e
 vb-he-tase,vb-ph		746ec0e
+vb-o2-sis		5ae0267
+vb-o2-sis	%	5ae0267
+vb-o2-vol		5ae0267
+vb-o2-vol	%	5ae0267
 vb-o2sat		cf9102e
 vb-o2sat	%	cf9102e
 vb-ph		746ec0e
@@ -353,4 +362,5 @@ virtsamäärä	ml	b8dbfc6
 vp-happamuusaste		746ec0e
 vp-ph		746ec0e
 zb-hbo2sat	%	cf9102e
+zb-o2-vol	%	5ae0267
 zb-ph		746ec0e
