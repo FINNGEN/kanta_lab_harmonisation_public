@@ -7478,16 +7478,16 @@ p-nfl	ng/l	3966310		FALSE
 u-prot-o	estimate	3014051		TRUE
 u-suhti-o	ratio	3000330		TRUE
 u-veri-o	estimate	3011397		TRUE
--h-ind	index	3052851		TRUE
+-h-ind	index	3052851	Sample quality index, mixed scales and no unit in Kanta	FALSE
 p-inr-hy	inr	3032080		TRUE
 ntkmom	ratio	40763531		TRUE
 pappakmom	ratio	46235831		TRUE
 hcgbvkmom	ratio	3008714		TRUE
 u-suhti.	ratio	3000330		TRUE
--l-ind	index	3051611		TRUE
+-l-ind	index	3051611	Sample quality index, mixed scales and no unit in Kanta	FALSE
 s-mypnabm	estimate	3010521		TRUE
 crp,tk	mg/l	3020460		TRUE
--i-ind	index	3051651		TRUE
+-i-ind	index	3051651	Sample quality index, mixed scales and no unit in Kanta	FALSE
 u-kemseul,ph	ph	3022621		TRUE
 u-gluk-0	estimate	3009261		TRUE
 inr-vieri	inr	3032080		TRUE

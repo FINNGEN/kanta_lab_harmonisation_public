@@ -3,9 +3,6 @@ TEST_NAME	UNIT	message	ignore
 -calpro	mg/l	no rule in unitHarmonisation.tsv from UNIT 'mg/l' to the target unit '/10*6' for has_property 'Mass Content' or concept_id 3048689	FALSE
 -ebvnh	iu/ml	no rule in unitHarmonisation.tsv from UNIT 'iu/ml' to the target unit '10*3/L' for has_property 'Number Concentration' or concept_id 3031321	FALSE
 -eos	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3013115	FALSE
--h-ind	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3052851	FALSE
--i-ind	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3051651	FALSE
--l-ind	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3051611	FALSE
 -liik.pr	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 40761995	FALSE
 -mono	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3001604	FALSE
 -neut	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3017732	FALSE
