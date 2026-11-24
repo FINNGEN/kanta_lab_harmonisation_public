@@ -53,7 +53,7 @@ In `DATA/7_BuildDashboard/`:
       in this order (each pair in the first that applies, the rows add up to the total; only
       `APPROVED` pairs are compared):
       AGREE with their LOINC Group (KS under 0.5); WARNING (KS from 0.5 to 0.8, both included);
-      DISAGREE (KS over 0.8); error: values with missing units (no `UNIT`; "Error" in red);
+      DISAGREE (KS over 0.8); error: values with missing units (no `UNIT` and no `CONVERSION`; "Error" in red);
       not compared: only one pair
       per group (fewer than 2 other approved pairs in its LOINC Group or concept; grey row); no value: value ignored, is qualitative or panel (the concept's `harmonised_unit_source` is
       `isQualitative` or `panel`; grey row); no value (fewer than `n_records_no_value_threshold` values or `n_subjects_no_value_threshold` subjects; grey row);

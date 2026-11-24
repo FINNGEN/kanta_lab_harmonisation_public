@@ -42,7 +42,7 @@ In `DATA/5_EvaluateHarmonisedData/`:
     same text format, right after `decile_value_harmonised`; empty if the pair is not tested.
   - `harmonisation_values_status` — second column, right after `mapping_status`: the row of the Harmonised
     Values table of the dashboard the pair falls in, the first that applies: `AGREE` (KS under 0.5),
-    `WARNING` (0.5 to 0.8), `DISAGREE` (over 0.8), `Error: values with missing units` (no `UNIT`), `Not compared: only one pair per group`, `No value: value ignored, is qualitative or
+    `WARNING` (0.5 to 0.8), `DISAGREE` (over 0.8), `Error: values with missing units` (no `UNIT` and no `CONVERSION`: a pair of a property whose values have no unit, e.g. pH, is converted with no `UNIT`, see `4_BuildHarmonisationTable`), `Not compared: only one pair per group`, `No value: value ignored, is qualitative or
     panel` (`target_unit_source` is `isQualitative` or `panel`), `No value: fewer than 1000
     values or 60 subjects` (checked first, whatever the status) and `Not mapped (NOT-APPROVED, IGNORE, MISSING or ERROR)`
     (any pair that is not `APPROVED`). An approved pair with a `UNIT` always has a `CONVERSION` (otherwise step 4 makes it `ERROR:MissingConversion`); and a pair with enough values and subjects always has its deciles (`1_BuildKantaAgregatedTable` stops otherwise); the step stops if either does not. The errors and the not-compared rows apply to approved pairs only.

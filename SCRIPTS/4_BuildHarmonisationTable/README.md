@@ -109,7 +109,11 @@ Every table is read with `readr::read_tsv()` and an explicit `col_types` for eac
 4. Appends `CONVERSION` from `unitHarmonisation.tsv` on `context` + `UNIT` + `HARMONISED_UNIT`. A rule
    whose `context` is a LOINC property applies to every concept with that `has_property`; a rule whose
    `context` is a concept id applies only to that concept and wins over the rule of the property with the
-   same units.
+   same units. A pair with no `UNIT` whose property has values with no unit (`noUnitTargets` in the
+   Configuration of the script: `Log molar concentration` to `[pH]`, `Relative time` to `1` (INR),
+   `Specific gravity` to `1`) gets `CONVERSION` 1, and its `UNIT` stays empty: pH, INR and specific gravity
+   need no `unitFix.tsv` row to be converted. Other concepts with target unit `1` (e.g. a Titer or an
+   Arbitrary Concentration) are left out, as a missing unit there may be a lost one.
 5. Writes the four warning tables (see above) and sets `mapping_status` and `mapping_warning_messages`.
 
 A `HARMONISED_UNIT` without a `CONVERSION` cannot be applied, so it is set to empty. The step logs how

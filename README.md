@@ -176,7 +176,9 @@ DISAGREE, then the rows below. Only `APPROVED` pairs are compared. (A pair with 
 - **Error: values with missing units** ("Error" in red)
   - Label: the "Error: values with missing units" row of the dashboard.
   - Description: the test has values but was reported with no unit, so they cannot be converted.
-  - Source: an `APPROVED` pair with no `UNIT` (and a concept that is not qualitative or a panel).
+  - Source: an `APPROVED` pair with no `UNIT` (and a concept that is not qualitative or a panel). A pair of a
+    property whose values have no unit (pH, INR, specific gravity) is not an error: `4_BuildHarmonisationTable`
+    converts it x1 to the target unit.
   - Solution: add a row to `unitFix.tsv` giving it the unit its values show.
 ### Informative only
 
