@@ -95,6 +95,7 @@ Relative catalytic concentration	%	%	1
 Relative time	%	%	1	
 Relative time	%	1	0.01	
 Relative time	inr	1	1	
+Specific gravity	kg/l	1	1	
 Specific gravity	ratio	1	1	
 Substance Concentration	mmol/l	mmol/L	1	
 Substance Concentration	mmol/l	nmol/L	1000000	

@@ -300,13 +300,8 @@ u-eryt	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*6
 u-intp	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3014038	FALSE
 u-jcvnh	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '10*3/L' for has_property 'Number Concentration' or concept_id 3032390	FALSE
 u-leuk	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3018095	FALSE
-u-ominp-h	kg/l	no rule in unitHarmonisation.tsv from UNIT 'kg/l' to the target unit '1' for has_property 'Specific gravity' or concept_id 3019150	FALSE
 u-osmoest	e6/l	no rule in unitHarmonisation.tsv from UNIT 'e6/l' to the target unit 'mmol/kg' for has_property 'Osmolality' or concept_id 3026782	FALSE
 u-rakkoai	h	concept_id 4088671 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'h' cannot be converted	FALSE
-u-suhteellinentiheys	kg/l	no rule in unitHarmonisation.tsv from UNIT 'kg/l' to the target unit '1' for has_property 'Specific gravity' or concept_id 3019150	FALSE
-u-suhti	kg/l	no rule in unitHarmonisation.tsv from UNIT 'kg/l' to the target unit '1' for has_property 'Specific gravity' or concept_id 3019150	FALSE
-u-suhtih	kg/l	no rule in unitHarmonisation.tsv from UNIT 'kg/l' to the target unit '1' for has_property 'Specific gravity' or concept_id 3019150	FALSE
-u-suhtivi	kg/l	no rule in unitHarmonisation.tsv from UNIT 'kg/l' to the target unit '1' for has_property 'Specific gravity' or concept_id 3019150	FALSE
 vb-hbo2sat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3004529	FALSE
 vb-o2-sis	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3004529	FALSE
 vb-o2-vol	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mol/L' for has_property 'Substance Concentration' or concept_id 3011648	FALSE
