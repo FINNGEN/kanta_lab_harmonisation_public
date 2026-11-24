@@ -10,23 +10,26 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 Configuration:
-  evaluatedFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
-  unitFixFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/2_Harmonisation/unitFix.tsv
-  mismatchWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
-  sharedWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
-  contextUnitMissingWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
-  loincGroupUnitMismatchWarningFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
-  measurementFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
-  targetFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/3_Target/4_BuildTargetTable/targetTable.tsv
-  templateFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/6_BuildDashboard/scripts/dashboardTemplate.html
-  outDir = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard
+  evaluatedFile = DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+  unitFixFile = DATA/2_Harmonisation/unitFix.tsv
+  mismatchWarningFile = DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
+  sharedWarningFile = DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv
+  contextUnitMissingWarningFile = DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.tsv
+  loincGroupUnitMismatchWarningFile = DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
+  measurementFile = DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv
+  targetFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
+  templateFile = /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/SCRIPTS/7_BuildDashboard/scripts/dashboardTemplate.html
+  outDir = DATA/7_BuildDashboard
   ksAgree = 0.5
   ksDisagree = 0.8
-Read 28772 rows from /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
-APPROVED 5668, NOT-APPROVED 262, IGNORE 234, MISSING 22392, ERROR 216 pairs; 280,959,762 records
-3 error reasons, 216 ERROR pairs
+  changesFile = DATA/6_TrackChanges/TestCodeUnitChanges.tsv
+  githubUrl = https://github.com/FINNGEN/kanta_lab_harmonisation_public
+Read 28772 rows from DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
+APPROVED 5692, NOT-APPROVED 262, IGNORE 234, MISSING 22392, ERROR 192 pairs; 280,959,762 records
+3 error reasons, 192 ERROR pairs
 77 pairs with a fixed unit, 8,621,196 records
-AGREE 879, WARNING 43, DISAGREE 7, no_unit 27, no_reference 373, qualitative_panel 25, no_values 26809, not_approved 609 pairs
-28772 rows in the table, 6.56 MB of data
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard/dashboard.html (6.62 MB)
-Wrote /Users/javier/Documents/Repos/FINNGEN/kanta_lab_harmonisation_public/DATA/6_BuildDashboard/dashboard.html
+AGREE 891, WARNING 47, DISAGREE 7, no_unit 27, no_reference 373, qualitative_panel 25, no_values 26809, not_approved 593 pairs
+0 pairs with a Change Log
+28772 rows in the table, 6.69 MB of data
+Wrote DATA/7_BuildDashboard/dashboard.html (6.75 MB)
+Wrote DATA/7_BuildDashboard/dashboard.html

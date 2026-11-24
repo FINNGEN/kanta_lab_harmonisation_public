@@ -77,7 +77,6 @@ cb-he-tase,cb-pco2	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the t
 cb-he-tase,cb-po2	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3015235	FALSE
 cbhbo2satp	%	concept_id 42869593 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
 cd4	%/lymf	no rule in unitHarmonisation.tsv from UNIT '%/lymf' to the target unit '%' for has_property 'Number Fraction' or concept_id 21494815	FALSE
-ckd-epi-yhtälö	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
 cu-alb	ug/min	concept_id 3050449 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ug/min' cannot be converted	FALSE
 cu-alb-mi	ug/min	concept_id 3050449 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ug/min' cannot be converted	FALSE
 du-5hiaa	umol	no rule in unitHarmonisation.tsv from UNIT 'umol' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3010801	FALSE
@@ -138,16 +137,6 @@ fs-tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '
 fs-transf	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3004789	FALSE
 fs-trfesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 fs-trfesat	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-gfr-e-epi	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glom.suod.nopeusckd-epi	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimo	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu(6354pt-gfre)	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu(pt-gfre)	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-kaavalla	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-tutkimuksenkaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
 kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target unit 'mmol/(24.h)' for has_property 'Substance Rate' or concept_id 3010838	FALSE
 kudostransglutamanaasi,iggvasta-aineet(s-ttgabg)	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3046870	FALSE
 l-meta	%	concept_id 43055361 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
@@ -186,8 +175,6 @@ p-cl	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/L
 p-cl	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3014576	FALSE
 p-cl	°c	no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3014576	FALSE
 p-etoh	promille	no rule in unitHarmonisation.tsv from UNIT 'promille' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3020191	FALSE
-p-gfr-kre	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-p-gfreepi	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
 p-gluk	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3013826	FALSE
 p-gluk	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3013826	FALSE
 p-gluk	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3013826	FALSE
@@ -201,11 +188,7 @@ p-kardabg	gpl	no rule in unitHarmonisation.tsv from UNIT 'gpl' to the target uni
 p-kardabg	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[GPL'U]' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
 p-kardabm	mpl	concept_id 44806071 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mpl' cannot be converted	FALSE
 p-kardiolipiini,iggvasta-aineet	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[GPL'U]' for has_property 'Arbitrary Concentration' or concept_id 3009041	FALSE
-p-krea	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
 p-krea	umol	no rule in unitHarmonisation.tsv from UNIT 'umol' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3020564	FALSE
-p-krea+gfr,pt-gfre	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-p-krea+gfr,pt-gfre-md	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-p-krea+gfrviitasaar,pt-gfre	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
 p-luakptt	ratio	concept_id 3048518 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
 p-omagluk	mmol/l	concept_id 4146454 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mmol/l' cannot be converted	FALSE
 p-prl	nmol/l	no rule in unitHarmonisation.tsv from UNIT 'nmol/l' to the target unit '%' for has_property 'Substance Fraction' or concept_id 3051050	FALSE
@@ -215,33 +198,8 @@ p-transferriininrautakyllästeisyys	%	no rule in unitHarmonisation.tsv from UNIT
 p-tsh	pmol/l	no rule in unitHarmonisation.tsv from UNIT 'pmol/l' to the target unit '10*-3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3009201	FALSE
 p-uraatti	umol/l	no rule in unitHarmonisation.tsv from UNIT 'umol/l' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3037556	FALSE
 p-viskos	mpas	no rule in unitHarmonisation.tsv from UNIT 'mpas' to the target unit 'cP' for has_property 'Viscosity' or concept_id 3024316	FALSE
-pt-gfr-arv	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
 pt-gfre	ml	no rule in unitHarmonisation.tsv from UNIT 'ml' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-gfre	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-gfre-3	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
 pt-gfre-cg	ml/min/173m2	concept_id 44806420 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ml/min/173m2' cannot be converted	FALSE
-pt-gfre-md	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
-pt-gfreep	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-gfreepi	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-gfreepio1	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-gfrekce	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
-pt-gfrekys	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
-pt-glomerulussuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-ep	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaav	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava(p-kreaosatutkimus)	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava(pt-gfre-3osatutkimus)	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,estimoitu,kystatiinic-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
-pt-glomerulussuodosnopeus,estimoituckd-epikaavallakystatiinic:stä	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodosnopeus,pt-gfreepiestimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulussuodusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulustensuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-glomerulustensuodatusnopeus,estimoitu,mdrd-kaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 46236952	FALSE
-pt-glumerulussuodosnopeus,estimoitu,cjd-epikaava	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40764999	FALSE
-pt-krea-cl	ml/min/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/min/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40771922	FALSE
-pt-krea-cl	ml/s/173m2	no rule in unitHarmonisation.tsv from UNIT 'ml/s/173m2' to the target unit 'mL/min' for has_property 'Volume Rate/Area' or concept_id 40771922	FALSE
 pt-paino	kg	concept_id 3025315 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'kg' cannot be converted	FALSE
 pt-pituus	cm	concept_id 3035463 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'cm' cannot be converted	FALSE
 retikulosyytit	e9/l	no rule in unitHarmonisation.tsv from UNIT 'e9/l' to the target unit '10*3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3021584	FALSE

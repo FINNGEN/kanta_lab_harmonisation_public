@@ -92,7 +92,6 @@ cb-he-tase,cb-pco2	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are
 cb-he-tase,cb-po2	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 cbhbo2satp	%	has_property 'Decimal mass fraction' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 cd4	%/lymf	has_property 'Number Fraction' and UNIT '%/lymf' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-ckd-epi-yhtälö	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 du-5hiaa	umol	has_property 'Substance Concentration' and UNIT 'umol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 du-a1miglo	mg	has_property 'Mass Rate' and UNIT 'mg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 du-alb-mi	mg	has_property 'Mass Concentration' and UNIT 'mg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -145,16 +144,6 @@ fp-gluk-2h	mmol/mol	has_property 'Substance Concentration' and UNIT 'mmol/mol' a
 fp-kol	mmol	has_property 'Substance Concentration' and UNIT 'mmol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 fs-transf	%	has_property 'Mass Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 fs-trfesat	ratio	has_property 'Ratio' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-gfr-e-epi	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glom.suod.nopeusckd-epi	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimo	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu(6354pt-gfre)	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu(pt-gfre)	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-kaavalla	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu,ckd-epi-tutkimuksenkaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 l-meta	%	has_property 'Decimal number fraction' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 li-ba42/40	ng/l	has_property 'Mass Ratio' and UNIT 'ng/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -189,8 +178,6 @@ p-cl	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in unitHa
 p-cl	°c	has_property 'Substance Concentration' and UNIT '°c' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-etoh	promille	has_property 'Substance Concentration' and UNIT 'promille' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-fviiiab	bu/ml	has_property 'Presence or Threshold' and UNIT 'bu/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-gfr-kre	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-gfreepi	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-gluk	%	has_property 'Substance Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-gluk	g/l	has_property 'Substance Concentration' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-gluk	kpa	has_property 'Substance Concentration' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -201,11 +188,7 @@ p-gt	mg/ml	has_property 'Catalytic Concentration' and UNIT 'mg/ml' are not in un
 p-jcvnh	u/ml	has_property 'Number Concentration' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-k	mmol/mol	has_property 'Substance Concentration' and UNIT 'mmol/mol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-kardabg	gpl	has_property 'Arbitrary Concentration' and UNIT 'gpl' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-krea	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-krea	umol	has_property 'Substance Concentration' and UNIT 'umol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-krea+gfr,pt-gfre	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-krea+gfr,pt-gfre-md	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-p-krea+gfrviitasaar,pt-gfre	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-luakptt	ratio	has_property 'Relative time' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-prl	nmol/l	has_property 'Substance Fraction' and UNIT 'nmol/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 p-psa-v	%	has_property 'Mass Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -215,33 +198,8 @@ p-vwf-aktt	%	has_property '-' and UNIT '%' are not in unitHarmonisation.tsv: the
 paino	kg	has_property 'Mass' and UNIT 'kg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pd-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pf-solut	e6/l	has_property '-' and UNIT 'e6/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfr-arv	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pt-gfre	ml	has_property 'Volume Rate/Area' and UNIT 'ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfre	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfre-3	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfre-md	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfreep	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfreepi	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfreepio1	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfrekce	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-gfrekys	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-ep	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaav	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava(p-kreaosatutkimus)	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,ckd-epi-kaava(pt-gfre-3osatutkimus)	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoitu,kystatiinic-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,estimoituckd-epikaavallakystatiinic:stä	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodosnopeus,pt-gfreepiestimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulussuodusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulustensuodatusnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glomerulustensuodatusnopeus,estimoitu,mdrd-kaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pt-gluk-r1	mmol/l	has_property '-' and UNIT 'mmol/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-glumerulussuodosnopeus,estimoitu,cjd-epikaava	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-krea-cl	ml/min/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/min/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-pt-krea-cl	ml/s/173m2	has_property 'Volume Rate/Area' and UNIT 'ml/s/173m2' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pt-paino	kg	has_property 'Mass' and UNIT 'kg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pt-pituus	cm	has_property 'Length' and UNIT 'cm' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 retikulosyytit	e9/l	has_property 'Arbitrary Concentration' and UNIT 'e9/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
