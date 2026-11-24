@@ -62,7 +62,7 @@ table.summary tr.row-yellow td { background: var(--warn-bg); }
 .toolbar button:disabled { opacity: .45; cursor: default; }
 .toolbar .info { color: var(--muted); }
 .tablewrap { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: auto; max-height: calc(100vh - 190px); }
-table.data { border-collapse: collapse; table-layout: fixed; width: 100%; min-width: 1330px; font-size: 11.5px; }
+table.data { border-collapse: collapse; table-layout: fixed; width: 100%; min-width: 1430px; font-size: 11.5px; }
 table.data th { position: sticky; top: 0; z-index: 2; background: var(--head); text-align: left; vertical-align: bottom; padding: 6px 4px 5px; border-bottom: 1px solid var(--line); }
 table.data th .label { cursor: pointer; user-select: none; display: block; margin-bottom: 4px; white-space: normal; line-height: 1.2; }
 table.data th .arrow { color: var(--accent); }
@@ -136,7 +136,7 @@ table.data .sub { color: var(--muted); }
       <button id="clear">Clear filters</button>
     </div>
     <div class="tablewrap"><table class="data" id="grid"><thead></thead><tbody></tbody></table></div>
-    <p class="note">Click a header to sort. Filters: text matches anywhere (case insensitive); numeric columns take <code>&gt;0.5</code>, <code>&lt;=2</code>, <code>=0.3</code> or a range <code>0.2..0.5</code>. The bars are the share of records by source: blue Source, orange Extracted (value) or PrimaryInjection (unit), red QCOut or SecondaryCorrection, grey missing; hover a bar for the percentages and the (approximate) number of records. Under the harmonised deciles are the deciles of the reference, followed by the number of pairs they come from, e.g. (36). The reference of a pair is one of the LOINC Groups of its concept (the first with enough approved pairs); In reference = yes marks the pairs that make up the references. The harmonised unit is shown only when it is not the unit of the test.</p>
+    <p class="note">Click a header to sort. Filters: text matches anywhere (case insensitive); numeric columns take <code>&gt;0.5</code>, <code>&lt;=2</code>, <code>=0.3</code> or a range <code>0.2..0.5</code>. The bars are the share of records by source: blue Source, orange Extracted (value) or PrimaryInjection (unit), red QCOut or SecondaryCorrection, grey missing; hover a bar for the percentages and the (approximate) number of records. The reference range is one line per demographic bin, e.g. AF[117,155]. Under the harmonised deciles are the deciles of the reference, followed by the number of pairs they come from, e.g. (36). The reference of a pair is one of the LOINC Groups of its concept (the first with enough approved pairs); In reference = yes marks the pairs that make up the references. The harmonised unit is shown only when it is not the unit of the test.</p>
   </section>
 </main>
 
@@ -163,6 +163,7 @@ table.data .sub { color: var(--muted); }
   var VALUE_NAMES = ["Source", "Extracted", "QCOut", "Missing"];
   var UNIT_NAMES = ["Source", "PrimaryInjection", "SecondaryCorrection", "Missing"];
   // grey: the column has a grey background, to tell the groups of columns apart
+  // split: a text column shown one part per line, split at this separator
   var COLS = [
     { key: "status", label: "Status", type: "status", w: 86 },
     { key: "group_id", keys: ["group_id", "group_pos"], label: "Group<br>Concept ID", html: true, type: "idpos", grey: true, w: 74 },
@@ -177,6 +178,7 @@ table.data .sub { color: var(--muted); }
     { key: "unit_source", label: "Unit<br>Source", html: true, type: "bar", names: UNIT_NAMES, grey: true, w: 46 },
     { key: "value_source", label: "Value<br>Source", html: true, type: "bar", names: VALUE_NAMES, grey: true, w: 46 },
     { key: "deciles", label: "Decile of measurement value", type: "text", cls: "dec", grey: true, w: 130 },
+    { key: "ref_range", label: "Reference range", type: "text", cls: "dec", split: ";", grey: true, w: 100 },
     { key: "conversion", keys: ["conversion", "conversion_unit"], label: "Value unit harmonisation", type: "conv", w: 84 },
     { key: "deciles_h", keys: ["deciles_h", "ref_deciles"], label: "Decile of harmonised value (top) and reference (below)", type: "stack", cls: "dec", w: 130 },
     { key: "ks", label: "KS (-log10 p)<br>log10 D5", html: true, type: "ks", w: 78 },
@@ -336,7 +338,8 @@ table.data .sub { color: var(--muted); }
           return link("/commit/" + entry.trim(), entry.trim());
         }).join("<br>") + "</td>";
       default:
-        return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + (v == null ? "" : esc(v)) + "</td>";
+        var text = v == null ? "" : (c.split ? String(v).split(c.split).map(esc).join("<br>") : esc(v));
+        return "<td" + (c.cls ? ' class="' + c.cls + '"' : "") + ">" + text + "</td>";
     }
   }
 

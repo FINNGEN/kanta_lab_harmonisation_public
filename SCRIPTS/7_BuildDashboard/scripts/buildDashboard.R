@@ -580,6 +580,7 @@ table <- tibble::tibble(
   value_source = evaluated$value_source_extracted_qcout_na_p,
   unit_source = evaluated$unit_source_injection_correction_na_p,
   deciles = evaluated$decile_value,
+  ref_range = evaluated$reference_range,
   ks = evaluated$KS,
   ks_mlp = evaluated$KS_mlp,
   no_unit = noTargetUnit,
