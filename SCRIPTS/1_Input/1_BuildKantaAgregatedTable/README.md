@@ -20,7 +20,7 @@ From `DATA/1_Input/0_KantaAgregatedData/` (produced outside this repo by
 - `summaryReference.tsv` — `REFERENCE_RANGE_LOW_MEAN` and
   `REFERENCE_RANGE_HIGH_MEAN` per pair and `DEMOGRAPHICS_BIN`.
 
-`summaryOutcomes.tsv` — `n_TEST_OUTCOME` per pair and `TEST_OUTCOME`; only validated, not used in the table.
+`summaryOutcomes.tsv` — `n_TEST_OUTCOME` per pair and `TEST_OUTCOME`.
 
 `DATA/settings.yaml` (section `1_Input`) — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, the numbers of values and of subjects from which a pair must have its deciles.
 
@@ -38,6 +38,9 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
     `AF[0,1.09];AM[0,1.09]`). Bins are abbreviated: `Adult-Female` AF,
     `Adult-Male` AM, `Minor-Female` MF, `Minor-Male` MM. An unknown bound is left
     empty (`[,21]`); empty when the pair has no reference range.
+  - `test_outcome` — the number of records of each test outcome, `<outcome>[n]`, joined with `;` in the
+    order `N`, `A`, `AA`, `L`, `LL`, `H`, `HH`, `POS`, `NEG`, `IND`, `I` and then any other outcome
+    alphabetically (e.g. `N[94];A[37]`); empty when the pair has no test outcome.
   - `value_missing_p` — percent of the pair's records with no value.
   - `value_source_extracted_qcout_na_p` — `[source%,extracted%,qcout%,na%]`.
   - `decile` — 0.1 to 0.9; empty for pairs with no deciles.
@@ -47,16 +50,18 @@ In `DATA/1_Input/1_BuildKantaAgregatedTable/`:
   failing rows and examples.
 - `kantaAgregatedTable.summary.md` — a markdown report on `kantaAgregatedTable.tsv`, one
   row per `TEST_NAME` + `MEASUREMENT_UNIT` pair, with `n rows`, `% rows`,
-  `n records` and `% rec` in every table and a total row. Four sections:
+  `n records` and `% rec` in every table and a total row. Five sections:
   - `# Name Unit Value combinations` — one row per combination of the three
     facts about a pair (has a name, has a recorded unit, has a value). Name is
     always `X`, because the step drops the pairs whose `TEST_NAME` is the text
     `NA`. A pair has a value when `value_missing_p` is under 100.
   - `# Units` — one row per unit source (`Source`, `PrimaryInjection`,
     `SecondaryCorrection`, and an empty source for the rest).
+  - `# Values` — one row per value source (`Source`, `Extracted`, `QCOut`, and an empty source for the rest).
   - `# Reference Ranges` — one row per combination of bins (`AF`, `AM`, `MF`,
     `MM`) present in `reference_range`; the row with no bin has no range.
-  - `# Values` — one row per value source (`Source`, `Extracted`, `QCOut`, and an empty source for the rest).
+  - `# Test Outcomes` — one row per combination of the outcomes present in `test_outcome`, one column
+    per outcome; the row with no outcome has no test outcome.
 
   In the source tables a pair counts as a row of a source when some of its
   records come from it, so `% rows` does not add up to 100%; `n records` is
@@ -90,7 +95,8 @@ any test is an ERROR.
 4. Percentages are `100 * records / n`, rounded to 2 decimals without trailing
    zeros.
 5. Collapses `summaryReference.tsv` to one `reference_range` string per pair
-   (bounds rounded like the percentages).
+   (bounds rounded like the percentages), and `summaryOutcomes.tsv` to one `test_outcome` string per
+   pair.
 6. Left-joins the long `summaryValues.tsv` deciles. Pairs with no deciles keep
    one row with empty `decile` and `decile_value`.
 

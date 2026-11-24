@@ -213,7 +213,8 @@ and `2_Harmonisation` are data and hand-edited tables, with no `run.sh`.
 ## 1_Input
 
 The source values to map: one row per `TEST_NAME [MEASUREMENT_UNIT]` pair of Kanta, with the number of
-records, where the unit and the value came from, the reference ranges and the deciles of the values.
+records, where the unit and the value came from, the reference ranges, the test outcomes and the deciles of
+the values.
 
 ## 2_Harmonisation
 

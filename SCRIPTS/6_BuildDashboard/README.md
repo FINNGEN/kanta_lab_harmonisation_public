@@ -27,7 +27,7 @@ In `DATA/6_BuildDashboard/`:
 - `dashboard.html` — one file with no external libraries or fonts: the data is inside
   the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
   - **Input Data**: the tables of `kantaAgregatedTable.summary.md` (Name Unit Value combinations,
-    Units, Reference Ranges, Values), computed from the same pairs of the evaluated table.
+    Units, Values, Reference Ranges, Test Outcomes), computed from the same pairs of the evaluated table.
   - **Target Data**: the tables of `targetTable.summary.md` and `targetTable.validation.md` (Concepts, Groups, Validations and the Groups with
     more than one `harmonised_unit`), computed from `targetTable.tsv`.
   - **Mapping Summary**:
@@ -62,7 +62,8 @@ In `DATA/6_BuildDashboard/`:
     colour; a second filter under the Status header selects it), the OMOP concept (id, name with
     ` (panel)` added when the concept is a panel), *Harm. Unit* (the target unit of the concept, `target_unit` of
     the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`; empty for a qualitative concept or a panel), the quantity (`has_property`), `Unit change` (`MEASUREMENT_UNIT->UNIT`, only when the
-    two differ and the pair is mapped), `TEST_NAME[MEASUREMENT_UNIT]`, the number of
+    two differ and the pair is mapped), `TestCode[Unit]` (`TEST_NAME[UNIT]`, the unit after the fix; `TEST_NAME[MEASUREMENT_UNIT]` for a `MISSING`
+    pair, which has no `UNIT`), the number of
     records, bars with the share of records by value source and by unit source (hover a
     bar for a small table with `pRecords` and the approximate `nRecords`), the deciles,
     the value unit harmonisation (the conversion factor, and below it the harmonised unit

@@ -44,12 +44,14 @@ Configuration:
   summaryValuesSourceFile = DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
   summaryValuesFile = DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
   summaryReferenceFile = DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
+  summaryOutcomesFile = DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
   outDir = DATA/1_Input/1_BuildKantaAgregatedTable
 Read 28802 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
 Read 10358 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
 Read 13936 rows from DATA/1_Input/0_KantaAgregatedData/summaryValuesSource.tsv
 Read 51696 rows from DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
 Read 10192 rows from DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
+Read 21058 rows from DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
 Dropping 30 row(s) whose TEST_NAME is the literal text "NA", covering 56,409 records
 28772 TEST_NAME/MEASUREMENT_UNIT pairs
 51507 decile rows

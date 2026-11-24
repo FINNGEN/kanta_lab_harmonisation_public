@@ -64,6 +64,7 @@ evaluated <- readr::read_tsv(
     n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = chr(),
     reference_range = chr(),
+    test_outcome = chr(),
     value_missing_p = readr::col_double(),
     value_source_extracted_qcout_na_p = chr(),
     decile_value = chr(), decile_value_harmonised = chr(), reference_decile_value_harmonised = chr(),
@@ -276,15 +277,31 @@ refRangeHtml <- inputTable(
   dplyr::mutate(refRanges[bins], dplyr::across(dplyr::everything(), \(x) ifelse(x, "X", ""))),
   refRanges
 )
+# Test outcomes: one row per combination of TEST_OUTCOME, one column per outcome.
+outcomeLists <- lapply(stringr::str_match_all(tidyr::replace_na(evaluated$test_outcome, ""), "([^;\\[]+)\\["), \(m) m[, 2])
+outcomes <- unique(unlist(outcomeLists))
+outcomeOrder <- c("N", "A", "AA", "L", "LL", "H", "HH", "POS", "NEG", "IND", "I")
+outcomes <- c(intersect(outcomeOrder, outcomes), sort(setdiff(outcomes, outcomeOrder)))
+testOutcomes <- tibble::as_tibble(stats::setNames(lapply(outcomes, \(o) vapply(outcomeLists, \(l) o %in% l, logical(1))), outcomes)) |>
+  dplyr::mutate(n = evaluated$n) |>
+  dplyr::summarise(n_rows = dplyr::n(), n_records = sum(n), .by = dplyr::all_of(outcomes)) |>
+  dplyr::arrange(dplyr::desc(n_rows))
+testOutcomeHtml <- inputTable(
+  outcomes,
+  dplyr::mutate(testOutcomes[outcomes], dplyr::across(dplyr::everything(), \(x) ifelse(x, "X", ""))),
+  testOutcomes
+)
 inputSections <- paste0(
   "<h2>Name Unit Value combinations</h2><div class=\"card\">", coverageHtml, "</div>",
   "<p class=\"note\">Name / unit / value coverage of the Kanta aggregated table, one row per <code>TEST_NAME</code> + <code>MEASUREMENT_UNIT</code> pair. An <code>X</code> under unit means the pair has a recorded unit; under value, that at least one of its records has a value.</p>",
   "<h2>Units</h2><div class=\"card\">", unitSourceHtml, "</div>",
   "<p class=\"note\">Where the unit of the records came from. A pair counts in a source when some of its records come from it, so % rows does not add up to 100%. n records is approximate (shares are rounded). The empty source is the records with no unit source.</p>",
+  "<h2>Values</h2><div class=\"card\">", valueSourceHtml, "</div>",
+  "<p class=\"note\">Where the value of the records came from. The empty source is the records with no value. Same counting as Units.</p>",
   "<h2>Reference Ranges</h2><div class=\"card\">", refRangeHtml, "</div>",
   "<p class=\"note\">Combinations of demographic bins with a reference range: AF adult female, AM adult male, MF minor female, MM minor male. An X means the pair has a range for that bin; the row with no X has no reference range.</p>",
-  "<h2>Values</h2><div class=\"card\">", valueSourceHtml, "</div>",
-  "<p class=\"note\">Where the value of the records came from. The empty source is the records with no value. Same counting as Units.</p>"
+  "<h2>Test Outcomes</h2><div class=\"card\">", testOutcomeHtml, "</div>",
+  "<p class=\"note\">Combinations of test outcomes: N normal, A abnormal, L / H low / high, AA / LL / HH very abnormal / low / high, POS / NEG positive / negative. An X means some records of the pair have that outcome; the row with no X has no test outcome.</p>"
 )
 
 # Target data tab: the tables of 3_Target/4_BuildTargetTable/targetTable.summary.md and targetTable.validation.md.
@@ -515,7 +532,13 @@ table <- tibble::tibble(
     paste0(tidyr::replace_na(evaluated$MEASUREMENT_UNIT, ""), "->", tidyr::replace_na(evaluated$UNIT, "")),
     NA_character_
   ),
-  test = paste0(evaluated$TEST_NAME, "[", tidyr::replace_na(evaluated$MEASUREMENT_UNIT, ""), "]"),
+  # The test with its unit after the fix (UNIT); a pair that is not mapped (MISSING) has no UNIT, so its
+  # MEASUREMENT_UNIT is shown. The unit as it came in is in unit_change when it was fixed.
+  test = paste0(
+    evaluated$TEST_NAME, "[",
+    tidyr::replace_na(dplyr::if_else(evaluated$mapping_status == "MISSING", evaluated$MEASUREMENT_UNIT, evaluated$UNIT), ""),
+    "]"
+  ),
   n = evaluated$n,
   value_source = evaluated$value_source_extracted_qcout_na_p,
   unit_source = evaluated$unit_source_injection_correction_na_p,

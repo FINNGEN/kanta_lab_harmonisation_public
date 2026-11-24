@@ -52,6 +52,7 @@ harmonised <- readr::read_tsv(
     n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     reference_range = readr::col_character(),
+    test_outcome = readr::col_character(),
     value_missing_p = readr::col_double(),
     value_source_extracted_qcout_na_p = readr::col_character(),
     decile = readr::col_double(),

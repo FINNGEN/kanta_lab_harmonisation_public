@@ -26,6 +26,7 @@ kantaAgregatedTable <- readr::read_tsv(
     n = readr::col_double(),
     unit_source_injection_correction_na_p = readr::col_character(),
     reference_range = readr::col_character(),
+    test_outcome = readr::col_character(),
     value_missing_p = readr::col_double(),
     value_source_extracted_qcout_na_p = readr::col_character(),
     decile = readr::col_double(),
@@ -44,7 +45,7 @@ ParallelLogger::logInfo("Read ", nrow(kantaAgregatedTable), " rows from ", kanta
 pairs <- kantaAgregatedTable |>
   dplyr::distinct(
     TEST_NAME, MEASUREMENT_UNIT, n, value_missing_p,
-    unit_source_injection_correction_na_p, reference_range,
+    unit_source_injection_correction_na_p, reference_range, test_outcome,
     value_source_extracted_qcout_na_p
   )
 
@@ -174,6 +175,34 @@ refRangeTable <- refRange |>
     )
   )
 
+# Test outcomes: one row per combination of TEST_OUTCOME present in a pair's test_outcome, most frequent
+# first, with one column per outcome in the order of the test_outcome strings. The row with no outcome is
+# the pairs with no test outcome.
+outcomeLists <- stringr::str_match_all(tidyr::replace_na(pairs$test_outcome, ""), "([^;\\[]+)\\[")
+outcomeLists <- lapply(outcomeLists, function(m) m[, 2])
+outcomes <- unique(unlist(outcomeLists))
+outcomeOrder <- c("N", "A", "AA", "L", "LL", "H", "HH", "POS", "NEG", "IND", "I")
+outcomes <- c(intersect(outcomeOrder, outcomes), sort(setdiff(outcomes, outcomeOrder)))
+outcomePresence <- tibble::as_tibble(
+  stats::setNames(lapply(outcomes, function(o) vapply(outcomeLists, function(l) o %in% l, logical(1))), outcomes)
+)
+outcomeTable <- dplyr::bind_cols(outcomePresence, n = pairs$n) |>
+  dplyr::group_by(dplyr::across(dplyr::all_of(outcomes))) |>
+  dplyr::summarise(n_rows = dplyr::n(), n_records = sum(n), .groups = "drop") |>
+  dplyr::arrange(dplyr::desc(n_rows)) |>
+  dplyr::transmute(
+    dplyr::across(dplyr::all_of(outcomes), ~ ifelse(.x, "X", "")),
+    `n rows` = fmtInt(n_rows),
+    `% rows` = fmtPct(100 * n_rows / nPairs),
+    `n records` = fmtInt(n_records),
+    `% rec` = fmtPct(100 * n_records / totalRecords)
+  )
+outcomeTotal <- stats::setNames(as.list(c("total", rep("", length(outcomes) - 1))), outcomes)
+outcomeTable <- dplyr::bind_rows(
+  outcomeTable,
+  tibble::as_tibble(c(outcomeTotal, list(`n rows` = fmtInt(nPairs), `% rows` = "100%", `n records` = fmtInt(totalRecords), `% rec` = "100%")))
+)
+
 md <- c(
   "# Name Unit Value combinations",
   "",
@@ -195,6 +224,15 @@ md <- c(
   "",
   mdTable(unitSourceTable),
   "",
+  "# Values",
+  "",
+  paste0(
+    "Where the value of the records came from (`value_source_extracted_qcout_na_p`); `na` is records with no value. ",
+    "Same counting as Units."
+  ),
+  "",
+  mdTable(valueSourceTable),
+  "",
   "# Reference Ranges",
   "",
   paste0(
@@ -205,14 +243,15 @@ md <- c(
   "",
   mdTable(refRangeTable),
   "",
-  "# Values",
+  "# Test Outcomes",
   "",
   paste0(
-    "Where the value of the records came from (`value_source_extracted_qcout_na_p`); `na` is records with no value. ",
-    "Same counting as Units."
+    "Combinations of test outcomes (`test_outcome`, from `summaryOutcomes.tsv`), e.g. `N` normal, `A` abnormal, ",
+    "`L` / `H` low / high, `AA` / `LL` / `HH` very abnormal / low / high, `POS` / `NEG` positive / negative. ",
+    "An `X` means some records of the pair have that outcome; the row with no `X` has no test outcome."
   ),
   "",
-  mdTable(valueSourceTable)
+  mdTable(outcomeTable)
 )
 
 #

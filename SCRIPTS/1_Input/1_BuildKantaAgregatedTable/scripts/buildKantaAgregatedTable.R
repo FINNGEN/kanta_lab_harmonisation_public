@@ -12,7 +12,8 @@ summaryUnitSourceFile <- args[2]
 summaryValuesSourceFile <- args[3]
 summaryValuesFile <- args[4]
 summaryReferenceFile <- args[5]
-outDir <- args[6]
+summaryOutcomesFile <- args[6]
+outDir <- args[7]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -21,6 +22,7 @@ ParallelLogger::logInfo("  summaryUnitSourceFile = ", summaryUnitSourceFile)
 ParallelLogger::logInfo("  summaryValuesSourceFile = ", summaryValuesSourceFile)
 ParallelLogger::logInfo("  summaryValuesFile = ", summaryValuesFile)
 ParallelLogger::logInfo("  summaryReferenceFile = ", summaryReferenceFile)
+ParallelLogger::logInfo("  summaryOutcomesFile = ", summaryOutcomesFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -31,11 +33,13 @@ summaryUnitSource <- readr::read_tsv(summaryUnitSourceFile, show_col_types = FAL
 summaryValuesSource <- readr::read_tsv(summaryValuesSourceFile, show_col_types = FALSE, na = "")
 summaryValues <- readr::read_tsv(summaryValuesFile, show_col_types = FALSE, na = "")
 summaryReference <- readr::read_tsv(summaryReferenceFile, show_col_types = FALSE, na = "")
+summaryOutcomes <- readr::read_tsv(summaryOutcomesFile, col_types = readr::cols(TEST_OUTCOME = readr::col_character()), na = "")
 ParallelLogger::logInfo("Read ", nrow(summaryTest), " rows from ", summaryTestFile)
 ParallelLogger::logInfo("Read ", nrow(summaryUnitSource), " rows from ", summaryUnitSourceFile)
 ParallelLogger::logInfo("Read ", nrow(summaryValuesSource), " rows from ", summaryValuesSourceFile)
 ParallelLogger::logInfo("Read ", nrow(summaryValues), " rows from ", summaryValuesFile)
 ParallelLogger::logInfo("Read ", nrow(summaryReference), " rows from ", summaryReferenceFile)
+ParallelLogger::logInfo("Read ", nrow(summaryOutcomes), " rows from ", summaryOutcomesFile)
 
 #
 # --- Action -------------------------------------------------------------
@@ -142,9 +146,20 @@ referenceRange <- summaryReference |>
     .groups = "drop"
   )
 
+# test_outcome: one entry per TEST_OUTCOME, <outcome>[n_TEST_OUTCOME], joined with ";", in the order
+# N, A, AA, L, LL, H, HH, POS, NEG, IND, I and then any other outcome alphabetically. Pairs with no
+# outcome get an empty string.
+outcomeOrder <- c("N", "A", "AA", "L", "LL", "H", "HH", "POS", "NEG", "IND", "I")
+outcomeOrder <- c(outcomeOrder, sort(setdiff(unique(summaryOutcomes$TEST_OUTCOME), outcomeOrder)))
+testOutcome <- summaryOutcomes |>
+  dplyr::arrange(TEST_NAME, MEASUREMENT_UNIT, match(TEST_OUTCOME, outcomeOrder)) |>
+  dplyr::group_by(TEST_NAME, MEASUREMENT_UNIT) |>
+  dplyr::summarise(test_outcome = paste0(TEST_OUTCOME, "[", n_TEST_OUTCOME, "]", collapse = ";"), .groups = "drop")
+
 result <- total |>
   dplyr::left_join(unitSource |> dplyr::select(-unit_na), by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
   dplyr::left_join(referenceRange, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
+  dplyr::left_join(testOutcome, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
   dplyr::left_join(valueSource |> dplyr::select(-value_na), by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
   dplyr::left_join(valueDeciles, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
   dplyr::arrange(TEST_NAME, MEASUREMENT_UNIT, decile) |>
@@ -152,6 +167,7 @@ result <- total |>
     TEST_NAME, MEASUREMENT_UNIT, n, n_subjects,
     unit_source_injection_correction_na_p,
     reference_range,
+    test_outcome,
     value_missing_p,
     value_source_extracted_qcout_na_p,
     decile, decile_value
