@@ -226,7 +226,7 @@ pt-fvspird		3000492		TRUE
 s-prot	g/l	3020630		TRUE
 p-amylp	u/l	3016417		TRUE
 s-testo	nmol/l	3017446		TRUE
-fp-trfesat	%	40763571		TRUE
+fp-trfesat	%	3000185		TRUE
 vb-hbo2sat	%	3004529		TRUE
 cb-po2	kpa	3028626		TRUE
 cb-hco3-st	mmol/l	3004490		TRUE
@@ -351,7 +351,7 @@ e-coomb-o		3024403		TRUE
 vb-ahco3	mmol/l	3027273		TRUE
 s-cmvab		3017918		TRUE
 b-neut	%	3018010		TRUE
--trfesat	%	40763571		TRUE
+-trfesat	%	3000185		TRUE
 u-epi	e6/l	3000850		TRUE
 s-mypnabm		3010521		TRUE
 oma-pt-ekg		3013512		TRUE
@@ -977,7 +977,7 @@ u-levyepi	u/field	3047166		TRUE
 fp-glukoosi	mmol/l	3018251		TRUE
 ua-hb	g/l	3027901		TRUE
 ts-her2ish		44816752		TRUE
-fs-trfesat	%	40763571		TRUE
+fs-trfesat	%	3000185		TRUE
 s-dgpaba	eliau/ml	40766183		TRUE
 cb-o2-sis	%	40767503		TRUE
 -legivi		3037692		TRUE
@@ -997,7 +997,7 @@ s-dmklots	nmol/l	3008832		TRUE
 s-hcg	u/l	3018171		TRUE
 s-tbeabm		42868414		TRUE
 pf-gluk	mmol/l	3036782		TRUE
-p-tffesat	%	40763571		TRUE
+p-tffesat	%	3000185		TRUE
 e-hemoglobiini(massakonsentraatio)	g/l	3003338		TRUE
 b-ghba1c	%	3004410		TRUE
 b-crp-pika	mg/l	3020460		TRUE
@@ -1244,7 +1244,7 @@ u-glukoosi(kval)	estimate	3009261		TRUE
 fs-kreatiniini	umol/l	3020564		TRUE
 b-hba1c-p	mmol/mol	3004410		TRUE
 ua-be	mmol/l	3004959		TRUE
-fp-tffesat	%	40763571		TRUE
+fp-tffesat	%	3000185		TRUE
 s-chlaab		3005011		TRUE
 u-krea	umol/l	3009508		TRUE
 b-hba1cpi	mmol/mol	3004410		TRUE
@@ -1295,7 +1295,7 @@ p-aspartaattiaminotransferaasi	u/l	3013721		TRUE
 s-kalsium	mmol/l	3015377		TRUE
 b-pvk	%	40761511		FALSE
 p-vwf-ag	%	3036035		TRUE
-fp-trfe-sa	%	40763571		TRUE
+fp-trfe-sa	%	3000185		TRUE
 sy-unäkö-n		3024263		TRUE
 p-ps	%	3036669		TRUE
 pf-eryt	e6/l	3028308		TRUE
@@ -1344,7 +1344,7 @@ pd-baktvi		40763091		TRUE
 s-desialotransferriini	%	3003031		TRUE
 b-hbhoi	g/l	3000963		TRUE
 -jo-1		3036086		TRUE
-transf-sat	%	40763571		TRUE
+transf-sat	%	3000185		TRUE
 b-konedif,neut	%	3018010		TRUE
 p-tnt-o	ng/l	3019800		TRUE
 kolesteroliplasmasta	mmol/l	3019900		TRUE
@@ -1818,7 +1818,7 @@ b-leuk	g/l	3010813		FALSE
 s-prlbio	mu/l	21491979		TRUE
 b-heparab		40760871		TRUE
 b-eryt	g/l	3026361		FALSE
-tffesat	%	40763571		TRUE
+tffesat	%	3000185		TRUE
 p-osmol	mosm/kgh2o	3008295		TRUE
 triglyseriditplasmasta,paastotila(ko)	mmol/l	3025839		TRUE
 s-hivab		3011325		TRUE
@@ -2012,7 +2012,7 @@ u-krealb	mmol/l	3009508		TRUE
 s-ast	u/ml	3021236		TRUE
 li-evirab		3031659		TRUE
 kalsium,osatutkimus(p-ca)	mmol/l	3015377		TRUE
-transferriininrautakyllästeisyys(fp-)	%	40763571		TRUE
+transferriininrautakyllästeisyys(fp-)	%	3000185		TRUE
 u-sakka,eryt	u/field	3048402		TRUE
 u-co	nmol/l	3044336		TRUE
 fp-triglyseridit,plasma	mmol/l	3048773		TRUE
@@ -2310,7 +2310,7 @@ fs-reuma,lausunto		3021614		TRUE
 s-langab	titre	3005593		TRUE
 p-kolesteroli,highdensitylipoproteiinit	mmol/l	3023602		TRUE
 p-k	mmol/mol	3023103		FALSE
--trfe-sa	%	40763571		TRUE
+-trfe-sa	%	3000185		TRUE
 bm-cbfb-qr		43054952		TRUE
 l-neut-kd	%	3018010		TRUE
 l-basofiilisetsolut	%	3022096		TRUE
@@ -2340,7 +2340,7 @@ monosyytit,osatutkimus(l-monos)	%	3019069		TRUE
 s-stpn5	mg/l	36204286		TRUE
 fp-trans	g/l	3004789		TRUE
 p-k-vieri	mmol/l	3023103		TRUE
-fp-transferriininrautakyllästeisyys	%	40763571		TRUE
+fp-transferriininrautakyllästeisyys	%	3000185		TRUE
 sk-if-iga		3046682		TRUE
 eosinofiilit,osatutkimus(l-eos)	%	3006504		TRUE
 l-basofiilisetleukosyytit	%	3022096		TRUE
@@ -2379,7 +2379,7 @@ y.pse3abm		3040944		TRUE
 p-gluk1h	mmol/l	3015024		TRUE
 cb-glukr	mmol/l	3040151		TRUE
 cb-kalsium,ionisoitunut,ph7.4-korjattu	mmol/l	3039602		TRUE
-transferriininrautakyllästeisyys	%	40763571		TRUE
+transferriininrautakyllästeisyys	%	3000185		TRUE
 y.ent9aba		3039817		TRUE
 y.ent9abg		46236344		TRUE
 y.pse3aba		3042341		TRUE
@@ -2458,7 +2458,7 @@ s-reumafaktori	kiu/l	3021614		TRUE
 s-kudostransglutaminaasi,iggva(keliakia)		3046870		TRUE
 pb-shco3	mmol/l	3006576		TRUE
 zb-hco3	mmol/l	3006576		TRUE
--tffesat	%	40763571		TRUE
+-tffesat	%	3000185		TRUE
 b-pvk+tmd	%	3007461		TRUE
 b-crp-pt	mg/l	3020460		TRUE
 cladosp.he	u/ml	3005136		TRUE
@@ -2534,7 +2534,7 @@ s-ldestre	u/ml	3000510		TRUE
 reumafaktori		3021614		TRUE
 b-hkr.fol	%	3009542		TRUE
 p-viskos	mpas	3024316		TRUE
-trfesat	%	40763571		TRUE
+trfesat	%	3000185		TRUE
 e-rdw,kokojakauma	%	3019897		TRUE
 s-rrnpabbl		40759842		TRUE
 p-kalsium,plasma(ko)	mmol/l	3015377		TRUE
@@ -2765,7 +2765,7 @@ kudostransglutaminaasi,iga-vasta-aineet		3019050		TRUE
 du-5hiaa	umol/24h	3009461		TRUE
 pd-krea	umol/l	3037441		TRUE
 s-kalsium,ionisoitunut,aktuaalisessaph:ssa	mmol/l	3021347		TRUE
-p-transferriininrautakyllästeisyys	%	40763571		TRUE
+p-transferriininrautakyllästeisyys	%	3000185		TRUE
 l-leukosyytit,basofiiliset,mikroskopointi	%	3022096		TRUE
 lymfosyytit,absol.arvot,osatutkimus(b-lymf)	e9/l	3019198		TRUE
 monosyytit(b-monos)	e9/l	3001604		TRUE
@@ -3010,7 +3010,7 @@ s-kolesteroli	mmol/l	3019900		TRUE
 fs-krea	mmol/l	3020564		TRUE
 fp-glukoosi,0-näyte	mmol/l	3018251		TRUE
 li-vgkcab		40771459		TRUE
-fs-tffesat	%	40763571		TRUE
+fs-tffesat	%	3000185		TRUE
 li-aminoh		3032940		TRUE
 sy-erytrosyytit	e6/l	3000475		TRUE
 vb-hb02sat	%	3019230		TRUE
@@ -3047,7 +3047,7 @@ pt-dxm-r1	nmol/l	3048821		TRUE
 p-kaliumpikahoitoyksiköt	mmol/l	3023103		TRUE
 s-kalsium,ionisoitunut,seerumista	mmol/l	3021347		TRUE
 b-ketoaineet,pikahoitoyksiköt(beeta-hydroksibutyraatti)	mmol/l	3008116		FALSE
-transferriininrautakyllästeisyys(trfesat)	%	40763571		TRUE
+transferriininrautakyllästeisyys(trfesat)	%	3000185		TRUE
 p-fviiiab	bu/ml	40761593		FALSE
 li-hhv6abg	eiu	3043257		FALSE
 li-tbeabg	eiu	42868418		FALSE
@@ -3120,7 +3120,7 @@ u-pb	umol/l	3002480		TRUE
 s-metnor,s-metnef	nmol/l	3026179		TRUE
 p-tt-inrp	inr	3032080		TRUE
 p-at3ag	%	3003771		TRUE
-transferriininrautakyllästeisyys(fp-trfesat)	%	40763571		TRUE
+transferriininrautakyllästeisyys(fp-trfesat)	%	3000185		TRUE
 s-clteab	spu/ml	3035407		FALSE
 s-legiabg	u/ml	3032743		FALSE
 osmolaliteetti,virtsa	mosm/kgh2o	3026782		TRUE
@@ -3579,12 +3579,12 @@ e-punasolujenkokojakauma	%	3002385		TRUE
 punasolujenkokojakauma	%	3002385		TRUE
 erytrosyytit,tilavuusosuus	ratio	3009542		TRUE
 punasolujenkokojakautuma	%	3002385		TRUE
-transferiininrautakyllästeisyys,seerumista,paastotilassa	%	40763571		FALSE
-transferriininrautakyllÄsteisyys	%	40763571		TRUE
+transferiininrautakyllästeisyys,seerumista,paastotilassa	%	3000185		FALSE
+transferriininrautakyllÄsteisyys	%	3000185		TRUE
 u-albkre	g/mol	3020682		TRUE
 b-erytrosyytit,tilavuusosuus,pikahoitoyksiköt	%	3009542		TRUE
-transferriininrautakyllästeisyys(4606-trfesat)	%	40763571		TRUE
-fp-transferriininrautakyllästeisyys(pi)	%	40763571		TRUE
+transferriininrautakyllästeisyys(4606-trfesat)	%	3000185		TRUE
+fp-transferriininrautakyllästeisyys(pi)	%	3000185		TRUE
 e-rdw,osatutkimus(e-rdw)	mmol/l	3019897		FALSE
 s-toxoavi	%	40760109		TRUE
 e-rdw,osatutkimus(19976e-rdw)	%	3019897		TRUE
@@ -4336,11 +4336,11 @@ u-levyep		3029879		TRUE
 -prealb		3013742		TRUE
 -probnppoc		3029187		TRUE
 -psa-v/t		3001784		TRUE
--tffesat		40763571		TRUE
+-tffesat		3000185		TRUE
 -transf		3004789		TRUE
 -transferriini		3004789		TRUE
--trfe-sa		40763571		TRUE
--trfesat		40763571		TRUE
+-trfe-sa		3000185		TRUE
+-trfesat		3000185		TRUE
 -trigly		3025839		TRUE
 0mtsh		3009201		TRUE
 120mp-gluk		3009035		TRUE
@@ -5020,14 +5020,14 @@ fp-renin-m		37019676		TRUE
 fp-renin-p		37021550		TRUE
 fp-reninm		3011985		TRUE
 fp-rf		3021614		TRUE
-fp-tffesat		40763571		TRUE
+fp-tffesat		3000185		TRUE
 fp-trans		3004789		TRUE
 fp-transf		3004789		TRUE
 fp-transferriini		3004789		TRUE
-fp-transferriininrautakyllästeisyys		40763571		TRUE
-fp-transferriininrautakyllästeisyys(pi)		40763571		TRUE
-fp-trfe-sa		40763571		TRUE
-fp-trfesat		40763571		TRUE
+fp-transferriininrautakyllästeisyys		3000185		TRUE
+fp-transferriininrautakyllästeisyys(pi)		3000185		TRUE
+fp-trfe-sa		3000185		TRUE
+fp-trfesat		3000185		TRUE
 fp-trigl		3048773		TRUE
 fp-trigly		3048773		TRUE
 fp-triglyseridit		3048773		TRUE
@@ -5086,10 +5086,10 @@ fs-pi		3003458		TRUE
 fs-pp		40758355		TRUE
 fs-rf		3021614		TRUE
 fs-sappih		3034274		TRUE
-fs-tffesat		40763571		TRUE
+fs-tffesat		3000185		TRUE
 fs-transf		3004789		TRUE
 fs-transferriini		3004789		TRUE
-fs-trfesat		40763571		TRUE
+fs-trfesat		3000185		TRUE
 fs-trigly		3048773		TRUE
 fs-triglyseridit		3048773		TRUE
 fs-urea		3020779		TRUE
@@ -5810,7 +5810,7 @@ p-t3-v		3026989		TRUE
 p-t4-v		3008486		TRUE
 p-t4-vver		3008486		TRUE
 p-t4v		3008486		TRUE
-p-tffesat		40763571		TRUE
+p-tffesat		3000185		TRUE
 p-tfr		3015399		TRUE
 p-tkfiddo		3051714		TRUE
 p-tni		3021337		TRUE
@@ -5834,7 +5834,7 @@ p-tpoab		3027238		TRUE
 p-traihus		3036489		TRUE
 p-traika		3036489		TRUE
 p-transf		3004789		TRUE
-p-transferriininrautakyllästeisyys		40763571		TRUE
+p-transferriininrautakyllästeisyys		3000185		TRUE
 p-transferriinireseptori		3015399		TRUE
 p-transferriinireseptori,liukoinen(pi)		3015399		TRUE
 p-trigly		3025839		TRUE
@@ -6744,29 +6744,29 @@ testosteronivapaa,laskettu		36032269		TRUE
 testosteronivapaalaskettu		36032269		TRUE
 testov		3027401		TRUE
 testovapaalaskettu(sis.testo+shbg)		36032269		TRUE
-tffesat		40763571		TRUE
+tffesat		3000185		TRUE
 timeintherapeuticrange(sis.inr:n)		43055246		TRUE
 timotei		3003888		TRUE
 tnipika		3021337		TRUE
 tnt(päiv.hoitaja)		3019800		TRUE
 tntvieri		3019800		TRUE
 tntvieritesti,terveyskeskuksille		3019800		TRUE
-transf-sat		40763571		TRUE
-transferiininrautakyllästeisyys,seerumista,paastotilassa		40763571		FALSE
+transf-sat		3000185		TRUE
+transferiininrautakyllästeisyys,seerumista,paastotilassa		3000185		FALSE
 transferriini		3004789		TRUE
 transferriini(4567fp-transf)		3004789		TRUE
 transferriini(fp-transf)		3004789		TRUE
 transferriini,seerumista,paastonäyte		3004789		TRUE
-transferriininrautakyllÄsteisyys		40763571		TRUE
-transferriininrautakyllästeisyys		40763571		TRUE
-transferriininrautakyllästeisyys(4606-trfesat)		40763571		TRUE
-transferriininrautakyllästeisyys(fp-)		40763571		TRUE
-transferriininrautakyllästeisyys(fp-trfesat)		40763571		TRUE
-transferriininrautakyllästeisyys(trfesat)		40763571		TRUE
+transferriininrautakyllÄsteisyys		3000185		TRUE
+transferriininrautakyllästeisyys		3000185		TRUE
+transferriininrautakyllästeisyys(4606-trfesat)		3000185		TRUE
+transferriininrautakyllästeisyys(fp-)		3000185		TRUE
+transferriininrautakyllästeisyys(fp-trfesat)		3000185		TRUE
+transferriininrautakyllästeisyys(trfesat)		3000185		TRUE
 transferriinireseptori,liukoinen		3015399		TRUE
 transferriinireseptori,liukoinen(p-tfr)		3015399		TRUE
 transferriinireseptori,liukoinen(tfr)		3015399		TRUE
-trfesat		40763571		TRUE
+trfesat		3000185		TRUE
 triglyseridit		3025839		TRUE
 triglyseridit(trigly)/lipidit		3025839		TRUE
 triglyseridit(trigly)/lipiditosatutkimus		3025839		TRUE
@@ -7499,7 +7499,7 @@ b-ghb-a1c,tk	%	3004410		TRUE
 fp-kol-ind	mmol/l	3019900		TRUE
 cd4/cd8	ratio	40757349		TRUE
 ly-cd4/cd8	ratio	3020073		TRUE
-fs-trfesat	ratio	40763571		TRUE
+fs-trfesat	ratio	3000185		TRUE
 cb-tt-inrpika	inr	3032080		TRUE
 cb-inrc-c	inr	3032080		TRUE
 inr-pika	inr	3032080		TRUE

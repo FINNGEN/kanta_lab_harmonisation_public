@@ -143,7 +143,6 @@ fp-ca-ion.	°c	has_property 'Substance Concentration' and UNIT '°c' are not in 
 fp-gluk-2h	mmol/mol	has_property 'Substance Concentration' and UNIT 'mmol/mol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 fp-kol	mmol	has_property 'Substance Concentration' and UNIT 'mmol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 fs-transf	%	has_property 'Mass Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-fs-trfesat	ratio	has_property 'Ratio' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	has_property 'Substance Rate' and UNIT 'mmol' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 l-meta	%	has_property 'Decimal number fraction' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 li-ba42/40	ng/l	has_property 'Mass Ratio' and UNIT 'ng/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE

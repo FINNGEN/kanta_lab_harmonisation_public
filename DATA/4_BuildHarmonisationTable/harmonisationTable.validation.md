@@ -27,7 +27,7 @@ Validation of the input tables of `4_BuildHarmonisationTable`: the tables of `2_
 | mapping.tsv | SUCCESS | columns match their declared types |  |  |
 | mapping.tsv | SUCCESS | TEST_NAME, concept_id must have a value |  |  |
 | mapping.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |
-| mapping.tsv | WARNING | TEST_NAME + UNIT is in the Kanta data (kantaAgregatedTable.tsv), directly or through a fix of unitFix.tsv | 1,406 | not in the Kanta data, e.g. ab-ph[mmol/l]; ab-po2[mmol/l]; ab-hbo2[mmol/l] |
+| mapping.tsv | WARNING | TEST_NAME + UNIT is in the Kanta data (kantaAgregatedTable.tsv), directly or through a fix of unitFix.tsv | 1,405 | not in the Kanta data, e.g. ab-ph[mmol/l]; ab-po2[mmol/l]; ab-hbo2[mmol/l] |
 | mapping.tsv | SUCCESS | APPROVED must be TRUE or FALSE |  |  |
 | mapping.tsv | SUCCESS | concept_id must not be 0, unless there is an ignore_mapping_reason |  |  |
 | mapping.tsv | SUCCESS | concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason |  |  |

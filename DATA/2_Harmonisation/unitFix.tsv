@@ -78,3 +78,4 @@ u-ph-o	N	ph	injection_script	PASS,FAIL,PASS
 u-ph-o	form	ph	injection_script	PASS,FAIL,PASS
 u-veri-o	form	estimate	injection_script	FAIL,FAIL,PASS
 ua-be		mmol/l	injection_script	FAIL,FAIL,PASS
+fs-trfesat	osuus	ratio	Transferrin saturation given as a fraction (0.09-0.45), as fs-trfesat[ratio]	VALID

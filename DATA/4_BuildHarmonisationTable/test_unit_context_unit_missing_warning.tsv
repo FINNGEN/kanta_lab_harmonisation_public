@@ -10,10 +10,7 @@ TEST_NAME	UNIT	message	ignore
 -mono	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3001604	FALSE
 -neut	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3017732	FALSE
 -nt	mm	concept_id 3005033 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mm' cannot be converted	FALSE
--tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 -tpoab	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3027238	FALSE
--trfe-sa	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
--trfesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 ab-hb-co	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3028653	FALSE
 ab-hb-co	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit '%' for has_property 'Mass fraction' or concept_id 3028653	FALSE
 ab-hb-co	mmol/l	no rule in unitHarmonisation.tsv from UNIT 'mmol/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3028653	FALSE
@@ -121,15 +118,7 @@ fp-ca-ion.	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '
 fp-ca-ion.	°c	no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3021347	FALSE
 fp-gluk-2h	mmol/mol	no rule in unitHarmonisation.tsv from UNIT 'mmol/mol' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3016701	FALSE
 fp-kol	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3019900	FALSE
-fp-tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fp-transferriininrautakyllästeisyys	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fp-transferriininrautakyllästeisyys(pi)	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fp-trfe-sa	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fp-trfesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fs-tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 fs-transf	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3004789	FALSE
-fs-trfesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-fs-trfesat	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 kalsium,vuorokausivirtsa(du-ca),osatutkimus	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target unit 'mmol/(24.h)' for has_property 'Substance Rate' or concept_id 3010838	FALSE
 kudostransglutamanaasi,iggvasta-aineet(s-ttgabg)	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '[arb'U]' for has_property 'Arbitrary Concentration' or concept_id 3046870	FALSE
 l-meta	%	concept_id 43055361 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT '%' cannot be converted	FALSE
@@ -180,8 +169,6 @@ p-luakptt	ratio	concept_id 3048518 has no target unit (not in lab2clean, no row 
 p-omagluk	mmol/l	concept_id 4146454 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mmol/l' cannot be converted	FALSE
 p-prl	nmol/l	no rule in unitHarmonisation.tsv from UNIT 'nmol/l' to the target unit '%' for has_property 'Substance Fraction' or concept_id 3051050	FALSE
 p-psa-v	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'ug/L' for has_property 'Mass Concentration' or concept_id 3005013	FALSE
-p-tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-p-transferriininrautakyllästeisyys	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 p-tsh	pmol/l	no rule in unitHarmonisation.tsv from UNIT 'pmol/l' to the target unit '10*-3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3009201	FALSE
 p-uraatti	umol/l	no rule in unitHarmonisation.tsv from UNIT 'umol/l' to the target unit 'mg/L' for has_property 'Mass Concentration' or concept_id 3037556	FALSE
 p-viskos	mpas	no rule in unitHarmonisation.tsv from UNIT 'mpas' to the target unit 'cP' for has_property 'Viscosity' or concept_id 3024316	FALSE
@@ -260,16 +247,6 @@ sy-eryt	e6	no rule in unitHarmonisation.tsv from UNIT 'e6' to the target unit '1
 sy-leuk	e6	no rule in unitHarmonisation.tsv from UNIT 'e6' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3000475	FALSE
 sy-leukmuu	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3000475	FALSE
 t4v	mu/l	no rule in unitHarmonisation.tsv from UNIT 'mu/l' to the target unit 'pmol/L' for has_property 'Substance Concentration' or concept_id 3008486	FALSE
-tffesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transf-sat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferiininrautakyllästeisyys,seerumista,paastotilassa	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllÄsteisyys	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllästeisyys	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllästeisyys(4606-trfesat)	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllästeisyys(fp-)	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllästeisyys(fp-trfesat)	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-transferriininrautakyllästeisyys(trfesat)	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
-trfesat	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mmol/kg' for has_property 'Ratio' or concept_id 40763571	FALSE
 u-diffi	e6/l	concept_id 40761539 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'e6/l' cannot be converted	FALSE
 u-eryt	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3002582	FALSE
 u-intp	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit 'umol/L' for has_property 'Substance Concentration' or concept_id 3014038	FALSE
