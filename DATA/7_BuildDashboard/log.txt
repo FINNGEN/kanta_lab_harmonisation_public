@@ -29,7 +29,7 @@ APPROVED 5692, NOT-APPROVED 262, IGNORE 234, MISSING 22392, ERROR 192 pairs; 280
 3 error reasons, 192 ERROR pairs
 77 pairs with a fixed unit, 8,621,196 records
 AGREE 891, WARNING 47, DISAGREE 7, no_unit 27, no_reference 373, qualitative_panel 25, no_values 26809, not_approved 593 pairs
-0 pairs with a Change Log
+43 pairs with a Change Log
 28772 rows in the table, 6.69 MB of data
 Wrote DATA/7_BuildDashboard/dashboard.html (6.75 MB)
 Wrote DATA/7_BuildDashboard/dashboard.html
