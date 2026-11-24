@@ -129,7 +129,6 @@ e-fragm	%	has_property 'Presence or Threshold' and UNIT '%' are not in unitHarmo
 e-mch	e9/l	has_property 'Entitic mass' and UNIT 'e9/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 e-mch	fl	has_property 'Entitic mass' and UNIT 'fl' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 e-mch	g/l	has_property 'Entitic mass' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-e-mch	pg/cell	has_property 'Entitic mass' and UNIT 'pg/cell' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 e-mchc	e12/l	has_property 'Entitic Mass/volume' and UNIT 'e12/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 e-mchc	e9/l	has_property 'Entitic Mass/volume' and UNIT 'e9/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 e-mchc	pg	has_property 'Entitic Mass/volume' and UNIT 'pg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE

@@ -7755,3 +7755,4 @@ potilasmittaringlukoosi,sensori	mmol/l	0	Patient characteristic/vital sign	FALSE
 vb-lämpöti	°c	0	Patient characteristic/vital sign	FALSE
 poikkeavalämpötila	°c	0	Patient characteristic/vital sign	FALSE
 vb-temp	°c	0	Patient characteristic/vital sign	FALSE
+e-mchp	pg	3035941		TRUE

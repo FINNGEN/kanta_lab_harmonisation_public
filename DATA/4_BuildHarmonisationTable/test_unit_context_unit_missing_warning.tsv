@@ -101,7 +101,6 @@ du-urea	mmol	no rule in unitHarmonisation.tsv from UNIT 'mmol' to the target uni
 e-mch	e9/l	no rule in unitHarmonisation.tsv from UNIT 'e9/l' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941	FALSE
 e-mch	fl	no rule in unitHarmonisation.tsv from UNIT 'fl' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941	FALSE
 e-mch	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941	FALSE
-e-mch	pg/cell	no rule in unitHarmonisation.tsv from UNIT 'pg/cell' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941	FALSE
 e-mchc	e12/l	no rule in unitHarmonisation.tsv from UNIT 'e12/l' to the target unit 'g/L' for has_property 'Entitic Mass/volume' or concept_id 3003338	FALSE
 e-mchc	e9/l	no rule in unitHarmonisation.tsv from UNIT 'e9/l' to the target unit 'g/L' for has_property 'Entitic Mass/volume' or concept_id 3003338	FALSE
 e-mchc	pg	no rule in unitHarmonisation.tsv from UNIT 'pg' to the target unit 'g/L' for has_property 'Entitic Mass/volume' or concept_id 3003338	FALSE

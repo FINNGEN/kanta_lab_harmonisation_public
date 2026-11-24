@@ -1677,7 +1677,7 @@ NOT-APPROVED	e-mch	e9/l	e9/l		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	He
 NOT-APPROVED	e-mch	fl	fl		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			WrongProperty: has_property 'Entitic mass' and UNIT 'fl' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'fl' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941
 NOT-APPROVED	e-mch	g/l	g/l		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			WrongProperty: has_property 'Entitic mass' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941
 APPROVED	e-mch	pg	pg		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
-ERROR:PropertyUnitMismatch	e-mch	pg/cell	pg/cell		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			WrongProperty: has_property 'Entitic mass' and UNIT 'pg/cell' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'pg/cell' to the target unit 'pg' for has_property 'Entitic mass' or concept_id 3035941
+APPROVED	e-mch	pg/cell	pg/cell		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
 APPROVED	e-mch				3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			
 APPROVED	e-mch-hy	pg	pg		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
 APPROVED	e-mch-hy				3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			
@@ -1692,6 +1692,7 @@ APPROVED	e-mchcp	g/l	g/l		3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blo
 APPROVED	e-mchcp				3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	FALSE	Hemoglobin	Entitic Mass/volume				g/L	lab2clean			
 APPROVED	e-mchcpika	g/l	g/l		3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	FALSE	Hemoglobin	Entitic Mass/volume				g/L	lab2clean	g/L	1	
 APPROVED	e-mchcpika				3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	FALSE	Hemoglobin	Entitic Mass/volume				g/L	lab2clean			
+APPROVED	e-mchp	pg	pg		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
 APPROVED	e-mchpika	pg	pg		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
 APPROVED	e-mchpika				3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			
 NOT-APPROVED	e-mcv	%	%		3024731		30428-7	MCV [Entitic mean volume] in Red Blood Cells	LOINC	FALSE	Observation	Entitic mean volume				fL	lab2clean			WrongProperty: has_property 'Entitic mean volume' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'fL' for has_property 'Entitic mean volume' or concept_id 3024731

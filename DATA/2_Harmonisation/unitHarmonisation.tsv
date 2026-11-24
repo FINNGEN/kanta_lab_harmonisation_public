@@ -33,6 +33,7 @@ Catalytic Ratio	%	1	0.01
 DistWidth	%	%	1	
 Entitic Mass/volume	g/l	g/L	1	
 Entitic mass	pg	pg	1	
+Entitic mass	pg/cell	pg	1	
 Entitic mean volume	fl	fL	1	
 Length fraction	%	%	1	
 Log molar concentration	ph	[pH]	1	
