@@ -4,3 +4,5 @@
 5_EvaluateHarmonisedData:
   ks_agree_threshold: 0.5 # A pair whose KS with its reference is under this AGREEs
   ks_disagree_threshold: 0.8 # A pair whose KS is over this DISAGREEs; in between it is a WARNING
+7_BuildDashboard:
+  github_url: https://github.com/FINNGEN/kanta_lab_harmonisation_public # The commits and issues of the Change Log column link to this repository
