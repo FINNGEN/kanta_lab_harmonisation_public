@@ -17,7 +17,9 @@
 # and its SI partner are both targets, each in its own Groups.
 # Panels are in no Group. The Groups of the "Mass-Molar conversion" ParentGroup (LG55-6) pair
 # a mass concept with a substance concept, and those of the "UrineAndSed" ParentGroup (LG97-8)
-# mix properties, so both are dropped.
+# mix properties, so both are dropped. So are the panel Groups (e.g. "Supersaturation panel|-|Urine"):
+# a Group whose direct children are panel concepts holds the members of the panel, tests ordered
+# together (pH, osmolality, 24 h rates, ...), not the same test.
 #
 # See this step's README.md for the outputs.
 #
@@ -60,6 +62,10 @@ sizeBandLabels <- c("2-10", "11-50", "51-200", "201-1000", "> 1000")
 # use it either).
 excludedParentGroupCodes <- c("LG55-6", "LG97-8")
 excludedParentGroupCodesSql <- paste0("'", excludedParentGroupCodes, "'", collapse = ", ")
+# The property field of the name of a panel Group is "-" (no single property): only used to check that
+# no Group named as a panel is missed by the vocabulary structure. The structure also finds a few Groups
+# by component with a panel among their children (e.g. "Hepatitis C virus"); they mix properties too.
+panelGroupNamePattern <- "|-|"
 
 pathToLoincGroupsTSV <- file.path(outDir, "loincGroups.tsv")
 pathToLoincGroupMembershipTSV <- file.path(outDir, "loincGroupMembership.tsv")
@@ -73,6 +79,7 @@ ParallelLogger::logInfo("  standardConceptFlag = ", standardConceptFlag)
 ParallelLogger::logInfo("  groupConceptClassId = ", groupConceptClassId)
 ParallelLogger::logInfo("  groupNamePrefix = ", groupNamePrefix)
 ParallelLogger::logInfo("  excludedParentGroupCodes = ", paste(excludedParentGroupCodes, collapse = ", "))
+ParallelLogger::logInfo("  panelGroupNamePattern = ", panelGroupNamePattern)
 
 #
 # --- Connections -------------------------------------------------------------
@@ -122,6 +129,18 @@ panels AS (
     WHERE cr.relationship_id = 'Panel contains'
         AND cr.invalid_reason IS NULL
 ),
+panel_groups AS (
+    -- A Group whose direct children are panel concepts: it holds the members of the panel, tests
+    -- ordered together with different properties, not the same test.
+    SELECT DISTINCT ca.ancestor_concept_id AS group_concept_id
+    FROM @vocabularyDatabaseSchema.concept_ancestor ca
+    INNER JOIN @vocabularyDatabaseSchema.concept g
+        ON g.concept_id = ca.ancestor_concept_id
+    INNER JOIN panels pa
+        ON pa.concept_id = ca.descendant_concept_id
+    WHERE g.concept_class_id = '@groupConceptClassId'
+        AND ca.min_levels_of_separation = 1
+),
 group_size AS (
     SELECT
         ca.ancestor_concept_id,
@@ -145,6 +164,7 @@ SELECT
     gs.n_descendants AS n_descendants,
     CASE WHEN pg.ancestor_concept_id IS NULL THEN 0 ELSE 1 END AS is_parent_group,
     CASE WHEN eg.group_concept_id IS NULL THEN 0 ELSE 1 END AS is_excluded_group,
+    CASE WHEN pgr.group_concept_id IS NULL THEN 0 ELSE 1 END AS is_panel_group,
     CASE WHEN pa.concept_id IS NULL THEN 0 ELSE 1 END AS is_panel
 FROM @vocabularyDatabaseSchema.concept_ancestor ca
 INNER JOIN @vocabularyDatabaseSchema.concept c
@@ -157,6 +177,8 @@ LEFT JOIN parent_groups pg
     ON pg.ancestor_concept_id = ca.ancestor_concept_id
 LEFT JOIN excluded_groups eg
     ON eg.group_concept_id = ca.ancestor_concept_id
+LEFT JOIN panel_groups pgr
+    ON pgr.group_concept_id = ca.ancestor_concept_id
 LEFT JOIN panels pa
     ON pa.concept_id = ca.descendant_concept_id
 WHERE g.concept_class_id = '@groupConceptClassId'
@@ -183,6 +205,7 @@ membership <- DatabaseConnector::renderTranslateQuerySql(
   dplyr::mutate(
     is_parent_group = .data$is_parent_group == 1,
     is_excluded_group = .data$is_excluded_group == 1,
+    is_panel_group = .data$is_panel_group == 1,
     is_panel = .data$is_panel == 1
   )
 
@@ -200,7 +223,8 @@ ParallelLogger::logInfo(
 # What is kept is the real LOINC Groups of those concepts, never the ParentGroups (they are
 # grouping rules that subsume other Groups, not sets of equivalent tests), and never the
 # Groups of the excluded ParentGroups (mass-molar Groups mix both unit systems, UrineAndSed
-# Groups mix properties). A panel is in no Group. A concept can be in
+# Groups mix properties), and never the panel Groups (the members of a panel). A panel is in no
+# Group. A concept can be in
 # several Groups and keeps all of them: whether two concepts share a Group is a set
 # intersection and needs no precedence rule.
 ParallelLogger::logInfo(
@@ -208,12 +232,34 @@ ParallelLogger::logInfo(
   " panel concepts are left out of the Groups; ",
   dplyr::n_distinct(membership$group_concept_id[membership$is_excluded_group]), " Groups of the excluded ParentGroups are dropped"
 )
+
+# The panel Groups of the concepts kept, checked against the name: a Group named with "-" as property
+# that is not found by structure is logged as a warning.
+candidateGroups <- membership |>
+  dplyr::filter(.data$concept_id %in% flowsheetConceptIds, !.data$is_parent_group, !.data$is_excluded_group) |>
+  dplyr::distinct(.data$group_concept_code, .data$group_concept_name, .data$is_panel_group)
+panelGroups <- dplyr::filter(candidateGroups, .data$is_panel_group)
+ParallelLogger::logInfo(nrow(panelGroups), " panel Groups are dropped:")
+for (i in seq_len(nrow(panelGroups))) {
+  ParallelLogger::logInfo("  ", panelGroups$group_concept_code[i], " ", panelGroups$group_concept_name[i])
+}
+panelGroupsByName <- grepl(panelGroupNamePattern, candidateGroups$group_concept_name, fixed = TRUE)
+ParallelLogger::logInfo(
+  sum(candidateGroups$is_panel_group & !panelGroupsByName), " of them are not named with '",
+  panelGroupNamePattern, "' (Groups by component with a panel among their children)"
+)
+for (i in which(panelGroupsByName & !candidateGroups$is_panel_group)) {
+  ParallelLogger::logWarn(
+    "Group named as a panel but with no panel among its children, kept: ",
+    candidateGroups$group_concept_code[i], " ", candidateGroups$group_concept_name[i]
+  )
+}
 membership <- membership |>
   dplyr::filter(
     .data$concept_id %in% flowsheetConceptIds,
-    !.data$is_parent_group, !.data$is_excluded_group, !.data$is_panel
+    !.data$is_parent_group, !.data$is_excluded_group, !.data$is_panel_group, !.data$is_panel
   ) |>
-  dplyr::select(-"is_parent_group", -"is_excluded_group", -"is_panel") |>
+  dplyr::select(-"is_parent_group", -"is_excluded_group", -"is_panel_group", -"is_panel") |>
   dplyr::arrange(.data$concept_id, .data$n_descendants, .data$group_concept_code)
 ParallelLogger::logInfo(
   "Kept ", nrow(membership), " of ", nAllRows, " membership rows: ",
