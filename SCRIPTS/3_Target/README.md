@@ -52,7 +52,11 @@ every `LOINC Group` ancestor of each standard `Measurement` concept (`concept_an
    - `LG97-8` UrineAndSed: it keeps only the component and rolls up the property and the system (urine
      and sediment), so a Group mixes cells per field (`/[HPF]`), per volume (`10*6/L`), mass and presence.
      lab2clean does not use it either.
-5. A concept keeps all its remaining Groups: "do two concepts share a Group" is a set intersection, so
+5. It drops the panel Groups: a Group whose direct children are panel concepts holds the members of the
+   panel, tests ordered together with different properties (e.g. "Supersaturation panel|-|Urine": pH,
+   osmolality, volume, 24 h rates), not the same test. Most are named with `-` as property; a few are
+   Groups by component with a panel among their children (e.g. "Hepatitis C virus"), mixed too.
+6. A concept keeps all its remaining Groups: "do two concepts share a Group" is a set intersection, so
    no precedence rule is needed.
 
 ### Joining them (`4_BuildTargetTable`)
@@ -64,15 +68,14 @@ Every membership of `3` is a row of `targetTable.tsv`. `group_source` is `lab2cl
 | group_source | concept-Group rows | Groups | concepts |
 |---|---|---|---|
 | `lab2clean` | 3,881 | 1,823 | 3,881 |
-| `LOINC` | 4,066 | 1,245 | 3,698 |
+| `LOINC` | 3,503 | 1,220 | 3,290 |
 
-(A Group can have rows of both sources: 3,025 Groups, 7,231 concepts in a Group.)
+(A Group can have rows of both sources: 3,000 Groups, 6,978 concepts in a Group.)
 
 The `LOINC` memberships widen the Groups beyond lab2clean, but lab2clean's one-unit guarantee does not
-cover them: 103 Groups mix units (a WARNING in `targetTable.validation.md`). In `4_BuildHarmonisationTable` an
+cover them: 83 Groups mix units (a WARNING in `targetTable.validation.md`). In `4_BuildHarmonisationTable` an
 approved pair in a Group whose approved pairs have different target units gets
-`ERROR:LoincGroupUnitsMissmatch`. The ones left are the `LG74-7` urine panel Groups, which hold a
-collection volume (`mL`), a duration (`h`), concentrations and 24 h amounts.
+`ERROR:LoincGroupUnitsMissmatch`. Since the panel Groups are dropped, no approved pair has it.
 
 ### Choices considered
 

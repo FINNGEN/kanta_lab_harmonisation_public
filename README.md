@@ -133,8 +133,9 @@ an error.
     `DATA/3_Target/4_BuildTargetTable/targetTable.validation.md`.
   - Description: tests mapped to concepts of the same LOINC Group end up in different units, so their values
     cannot be compared with each other. Often the Group holds different quantities, e.g. a 24 h urine
-    panel with a volume (`mL`), a duration (`h`) and concentrations. (The `UrineAndSed` Groups, which mix
-    cells counted per field and per litre, are dropped in `3_GetLoincGroupsData`.)
+    collection with a volume (`mL`), a duration (`h`) and concentrations. (The `UrineAndSed` Groups, which
+    mix cells counted per field and per litre, and the panel Groups, which hold the members of a panel,
+    e.g. "Supersaturation panel|-|Urine", are dropped in `3_GetLoincGroupsData`.)
   - Source: in `harmonisationTable.tsv`, the `APPROVED` pairs (not ignored) of one `group_concept_id` have
     more than one target unit (`target_unit`); every approved
     pair in such a Group that has a target unit gets a row in
