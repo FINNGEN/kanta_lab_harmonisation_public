@@ -69,7 +69,7 @@ Every membership of `3` is a row of `targetTable.tsv`. `group_source` is `lab2cl
 (A Group can have rows of both sources: 3,025 Groups, 7,231 concepts in a Group.)
 
 The `LOINC` memberships widen the Groups beyond lab2clean, but lab2clean's one-unit guarantee does not
-cover them: 103 Groups mix units (a WARNING in `targetTable.md`). In `4_BuildHarmonisationTable` an
+cover them: 103 Groups mix units (a WARNING in `targetTable.validation.md`). In `4_BuildHarmonisationTable` an
 approved pair in a Group whose approved pairs have different target units gets
 `ERROR:LoincGroupUnitsMissmatch`. The ones left are the `LG74-7` urine panel Groups, which hold a
 collection volume (`mL`), a duration (`h`), concentrations and 24 h amounts.

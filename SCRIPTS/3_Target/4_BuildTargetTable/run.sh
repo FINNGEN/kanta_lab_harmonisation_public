@@ -70,10 +70,15 @@ fi
 #
 Rscript "$STEP_DIR/scripts/buildTargetTable.R" "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" "$LAB2CLEAN_GROUP_FILE" "$OUTDIR"
 
+# The inputs and the target table are validated; the step stops if a test is an ERROR.
+Rscript "$STEP_DIR/scripts/validateTargetTable.R" "$MEASUREMENT_FILE" "$GROUPS_FILE" "$MEMBERSHIP_FILE" "$UNIT_FILE" \
+  "$LAB2CLEAN_GROUP_FILE" "$OUTDIR/targetTable.tsv" "$OUTDIR"
+
 Rscript "$STEP_DIR/scripts/summariseTargetTable.R" "$MEASUREMENT_FILE" "$OUTDIR/targetTable.tsv" "$OUTDIR"
 
 #
 # --- Output -------------------------------------------------------------
 #
 echo "Wrote $OUTDIR/targetTable.tsv"
-echo "Wrote $OUTDIR/targetTable.md"
+echo "Wrote $OUTDIR/targetTable.validation.md"
+echo "Wrote $OUTDIR/targetTable.summary.md"

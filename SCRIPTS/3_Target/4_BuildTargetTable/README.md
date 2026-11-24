@@ -28,9 +28,10 @@ In `DATA/3_Target/4_BuildTargetTable/`:
   comes from `2`, `panel` for a panel or `isQualitative` for a concept of a
   qualitative property, whose `harmonised_unit` is empty; empty for a concept with no unit). A concept in several Groups has several rows; a concept in
   no Group has one row with the `group_*` columns empty.
-- `targetTable.md` — a markdown report on the table: the concepts at each step (original,
-  panel, isQualitative, lab2clean unit, no unit), the Groups (number, concepts
-  in none) and the validations.
+- `targetTable.summary.md` — a markdown report on the table: the concepts at each step (original,
+  panel, isQualitative, lab2clean unit, no unit) and the Groups (number, concepts in none, by source).
+- `targetTable.validation.md` — the validation of the inputs and of the table: a summary per table and one
+  row per test, then the Groups with more than one `harmonised_unit`.
 - `log.txt` — run log.
 
 ## Action
@@ -61,13 +62,20 @@ fixed target. A target unit that is missing or wrong is set by hand in
 The rows are sorted by `concept_id` and Group code. The log gives the number of
 panels, qualitative concepts, concepts in a Group and concepts with a harmonised unit.
 
-`scripts/summariseTargetTable.R` reads the table back and writes `targetTable.md`, with
-these validations (it stops on an ERROR):
+`scripts/validateTargetTable.R` validates the inputs and the table and writes `targetTable.validation.md`.
+A failing test is an ERROR, or a WARNING when it does not break the table; the step stops on an ERROR, so
+the steps after it do not run on a broken target:
 
-- each `concept_id` and Group appears once (ERROR);
-- `concept_id` is unique: WARNING, because a concept in several Groups has one row per Group;
-- all concepts of a `lab2clean` Group have the same `harmonised_unit` (ERROR);
-- all concepts of a Group, from either source, have the same `harmonised_unit` (WARNING, with the Groups that do not).
+| Table | Tests |
+|---|---|
+| `measurementOmopData.tsv` | the columns are there; `concept_id`, `concept_code`, `concept_name`, `vocabulary_id` have a value; `concept_id` is unique; `is_panel` is `TRUE` or `FALSE` |
+| `harmonisedUnit_lab2clean.tsv` | `concept_id` and `harmonised_unit` have a value; `concept_id` is unique and in `measurementOmopData.tsv` |
+| `harmonisedGroup_lab2clean.tsv` | `concept_id` and `group_concept_code` have a value; `concept_id` is unique (one Group per concept) and in `measurementOmopData.tsv`; every concept + Group is a membership of `loincGroupMembership.tsv` |
+| `loincGroups.tsv` | the three columns have a value; `group_concept_id` and `group_concept_code` are unique; every Group has a member |
+| `loincGroupMembership.tsv` | `concept_id` + `group_concept_id` have a value and are unique; the Group is in `loincGroups.tsv`; the concept is in `measurementOmopData.tsv`; a panel is in no Group |
+| `targetTable.tsv` | `concept_id` + `group_concept_id` are unique; all concepts of a `lab2clean` Group have the same `harmonised_unit`; WARNING if `concept_id` is not unique (a concept in several Groups); WARNING if the concepts of a Group, from either source, have different units |
+
+`scripts/summariseTargetTable.R` reads the table back and writes `targetTable.summary.md`.
 
 ```mermaid
 flowchart TD

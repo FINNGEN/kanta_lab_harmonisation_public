@@ -94,43 +94,6 @@ sourceRows <- inGroup |>
     `n Groups` = fmtInt(.data$n_groups), `n concepts` = fmtInt(.data$n_concepts)
   )
 
-# Validations.
-nDuplicatedPairs <- sum(duplicated(targetTable[c("concept_id", "group_concept_id")]))
-nSeveralGroups <- sum(dplyr::count(targetTable, .data$concept_id)$n > 1)
-groupUnitsOf <- function(df) df |>
-  dplyr::filter(!is.na(.data$harmonised_unit)) |>
-  dplyr::group_by(.data$group_concept_id, .data$group_concept_code) |>
-  dplyr::summarise(
-    units = paste(sort(unique(.data$harmonised_unit)), collapse = ", "),
-    n_units = dplyr::n_distinct(.data$harmonised_unit),
-    n_concepts = dplyr::n_distinct(.data$concept_id),
-    .groups = "drop"
-  ) |>
-  dplyr::filter(.data$n_units > 1)
-groupUnits <- groupUnitsOf(inGroup)
-lab2cleanGroupUnits <- groupUnitsOf(dplyr::filter(inGroup, .data$group_source == "lab2clean"))
-validations <- tibble::tribble(
-  ~result, ~test, ~message,
-  dplyr::if_else(nDuplicatedPairs == 0, "SUCCESS", "ERROR"),
-  "concept_id and Group are unique",
-  paste0(fmtInt(nDuplicatedPairs), " duplicated (concept_id, Group) rows"),
-  dplyr::if_else(nSeveralGroups == 0, "SUCCESS", "WARNING"),
-  "concept_id is unique",
-  paste0(fmtInt(nSeveralGroups), " concepts have one row per Group (in several Groups)"),
-  dplyr::if_else(nrow(lab2cleanGroupUnits) == 0, "SUCCESS", "ERROR"),
-  "all concepts of a lab2clean Group have the same harmonised_unit",
-  paste0(
-    fmtInt(nrow(lab2cleanGroupUnits)), " of ", fmtInt(dplyr::n_distinct(inGroup$group_concept_id[inGroup$group_source == "lab2clean"])),
-    " lab2clean Groups have more than one unit"
-  ),
-  dplyr::if_else(nrow(groupUnits) == 0, "SUCCESS", "WARNING"),
-  "all concepts of a Group (lab2clean or LOINC) have the same harmonised_unit",
-  paste0(fmtInt(nrow(groupUnits)), " of ", fmtInt(nGroups), " Groups have more than one unit")
-)
-for (i in seq_len(nrow(validations))) {
-  ParallelLogger::logInfo(validations$result[i], ": ", validations$test[i], " - ", validations$message[i])
-}
-
 md <- c(
   "# targetTable stats",
   "",
@@ -152,28 +115,12 @@ md <- c(
   "Where the Group of a concept came from (`group_source`): `lab2clean` when lab2clean gives the concept that Group, `LOINC` for the other memberships.",
   "",
   mdTable(sourceRows),
-  "",
-  "# Validations",
-  "",
-  mdTable(validations),
-  if (nrow(groupUnits) > 0) {
-    c(
-      "",
-      "Groups with more than one `harmonised_unit` (units of the concepts that have one):",
-      "",
-      mdTable(dplyr::transmute(
-        groupUnits, group = .data$group_concept_code, `n concepts` = .data$n_concepts, units = .data$units
-      ))
-    )
-  }
+  ""
 )
 
 #
 # --- Output -------------------------------------------------------------
 #
-outFile <- file.path(outDir, "targetTable.md")
+outFile <- file.path(outDir, "targetTable.summary.md")
 writeLines(md, outFile)
 ParallelLogger::logInfo("Wrote ", outFile)
-if (any(validations$result == "ERROR")) {
-  stop("Validation failed, see ", outFile)
-}
