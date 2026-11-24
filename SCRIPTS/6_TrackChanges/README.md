@@ -30,7 +30,7 @@ After a commit that changes `evaluatedHarmonisedKantaAgregatedTable.tsv` (a `DAT
 `2_Harmonisation` or a rerun after a change of the code), the commit skill runs
 
 ```
-python3 .claude/skills/commit/logChanges.py <commit> [<issue_number>]
+python3 .claude/skills/commit/scripts/logChanges.py <commit> [<issue_number>]
 ```
 
 which adds the commit to the `changes` of every pair whose row differs from the parent commit in
