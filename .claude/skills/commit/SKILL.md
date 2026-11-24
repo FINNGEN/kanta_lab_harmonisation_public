@@ -75,8 +75,8 @@ Change Log column (see `SCRIPTS/6_TrackChanges/README.md`).
 
   Give the `<issue_number>` when the change was made for a GitHub issue (the user names it, or the work
   started from it): the entry is then `#<issue>:<hash>`, and the commit body mentions `#<issue>` too.
-- Commit the table and the dashboard as `DATA (TrackChanges): Log <hash> for <n> pairs`. This commit is
-  not logged itself (it changes no pair).
+- Commit the table as `DATA (TrackChanges): Log <hash> for <n> pairs` (the dashboard is gitignored; the
+  rerun only refreshes the local copy). This commit is not logged itself (it changes no pair).
 
 ## Commit message format
 

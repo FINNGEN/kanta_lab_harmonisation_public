@@ -23,3 +23,6 @@ ARCHIVE/
 # Run logs of the steps
 log.txt
 *.log.txt
+
+# The dashboard is rebuilt by 7_BuildDashboard
+DATA/7_BuildDashboard/dashboard.html
