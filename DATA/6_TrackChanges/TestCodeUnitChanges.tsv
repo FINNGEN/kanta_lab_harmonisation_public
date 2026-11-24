@@ -3,12 +3,29 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -ca15-3	u/ml	2a13d1d
 -ca19-9		2a13d1d
 -ca19-9	u/ml	2a13d1d
+-tffesat	%	8d4ce0c
+-trfe-sa	%	8d4ce0c
+-trfesat		8d4ce0c
+-trfesat	%	8d4ce0c
 ca12-5antigeeni		2a13d1d
 ca12-5antigeeni	u/ml	2a13d1d
 ca15-3antigeeni	u/ml	2a13d1d
 ca19-9antigeeni		2a13d1d
 ca19-9antigeeni	u/ml	2a13d1d
 ckd-epi-yhtälö	ml/min/173m2	ecfc5df
+fp-tffesat		8d4ce0c
+fp-tffesat	%	8d4ce0c
+fp-transferriininrautakyllästeisyys		8d4ce0c
+fp-transferriininrautakyllästeisyys	%	8d4ce0c
+fp-transferriininrautakyllästeisyys(pi)	%	8d4ce0c
+fp-trfe-sa		8d4ce0c
+fp-trfe-sa	%	8d4ce0c
+fp-trfesat		8d4ce0c
+fp-trfesat	%	8d4ce0c
+fs-tffesat	%	8d4ce0c
+fs-trfesat		8d4ce0c
+fs-trfesat	%	8d4ce0c
+fs-trfesat	osuus	8d4ce0c
 gfr-e-epi	ml/min/173m2	ecfc5df
 glom.suod.nopeusckd-epi	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimo	ml/min/173m2	ecfc5df
@@ -35,6 +52,9 @@ p-krea	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre-md	ml/min/173m2	ecfc5df
 p-krea+gfrviitasaar,pt-gfre	ml/min/173m2	ecfc5df
+p-tffesat		8d4ce0c
+p-tffesat	%	8d4ce0c
+p-transferriininrautakyllästeisyys	%	8d4ce0c
 pt-gfr-arv	ml/min/173m2	ecfc5df
 pt-gfre	ml/min/173m2	ecfc5df
 pt-gfre-3	ml/min/173m2	ecfc5df
@@ -74,6 +94,19 @@ s-ca19-9		2a13d1d
 s-ca19-9	u/ml	2a13d1d
 s-ca19-9v	u/ml	2a13d1d
 s-ca199ver	u/ml	2a13d1d
+tffesat		8d4ce0c
+tffesat	%	8d4ce0c
+transf-sat		8d4ce0c
+transf-sat	%	8d4ce0c
+transferiininrautakyllästeisyys,seerumista,paastotilassa		8d4ce0c
+transferriininrautakyllästeisyys		8d4ce0c
+transferriininrautakyllästeisyys	%	8d4ce0c
+transferriininrautakyllästeisyys(4606-trfesat)	%	8d4ce0c
+transferriininrautakyllästeisyys(fp-)		8d4ce0c
+transferriininrautakyllästeisyys(fp-)	%	8d4ce0c
+transferriininrautakyllästeisyys(fp-trfesat)	%	8d4ce0c
+transferriininrautakyllästeisyys(trfesat)	%	8d4ce0c
+trfesat	%	8d4ce0c
 u-ominp-h		31fc687
 u-suhteellinentiheys	kg/l	31fc687
 u-suhti	g/ml	31fc687
