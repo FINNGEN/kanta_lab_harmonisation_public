@@ -1,2 +1,9 @@
 concept_id	harmonised_unit	note
 3020891	°c	Body temperature not in lab2clean
+3002368	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 125 is reported in U/mL
+3037551	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 125 is reported in U/mL
+42529199	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 125 is reported in U/mL
+3006588	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 15-3 is reported in U/mL
+42529200	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 15-3 is reported in U/mL
+3022914	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 19-9 is reported in U/mL
+42529201	10*3.[arb'U]/L	lab2clean gives [arb'U] with no volume; Cancer Ag 19-9 is reported in U/mL
