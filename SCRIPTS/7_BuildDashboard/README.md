@@ -76,8 +76,9 @@ In `DATA/7_BuildDashboard/`:
     - Grey: `Unit change` (`MEASUREMENT_UNIT->UNIT`, only when the two differ and the pair is mapped),
       `TestCode[Unit]` (`TEST_NAME[UNIT]`, the unit after the fix; `TEST_NAME[MEASUREMENT_UNIT]` for a
       `MISSING` pair, which has no `UNIT`), `N records`, bars with the share of records by unit source and
-      by value source (hover a bar for a small table with `pRecords` and the approximate `nRecords`) and the
-      deciles of the measurement value.
+      by value source (hover a bar for a small table with `pRecords` and the approximate `nRecords`), the
+      deciles of the measurement value and the `reference_range` (one demographic bin per line, e.g.
+      `AF[117,155]`).
     - The value unit harmonisation (the conversion factor, and below it the harmonised unit only when
       `HARMONISED_UNIT` is not the `UNIT`), the harmonised deciles with the deciles of the reference below
       them (followed by the number of pairs they come from, e.g. `(36)`), `KS` with `KS_mlp` in brackets
