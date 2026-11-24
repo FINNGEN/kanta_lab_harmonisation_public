@@ -79,6 +79,22 @@ In `DATA/6_BuildDashboard/`:
 
 The number of subjects is not in the aggregated data, so it is not in the dashboard.
 
+## URL parameters
+
+The URL sets the starting view of the dashboard, e.g.
+`dashboard.html?tab=mappingtable&status=approved&testcodeunit=p-krea`:
+
+- `tab` — `inputdata`, `targetdata`, `mappingsummary` or `mappingtable` (also `input`, `target`,
+  `summary`, `table`). Without it the page opens on Mapping Summary.
+- one parameter per column of the Mapping Table, to filter it. The name is the column label or key without
+  spaces and symbols, in any case (`status`, `conceptid`, `conceptname`, `quantity`, `unitchange`,
+  `testcodeunit`, `nrecords`, `ks`, ...), and the value is what would be typed in the filter box of the column
+  (text matches anywhere; numeric columns take `>0.5`, `<=2`, `=0.3` or `0.2..0.5`; `status` is not case
+  sensitive). Several parameters combine.
+
+The URL is only read when the page opens; changing a tab or a filter in the page does not update it. The
+query string works when the file is opened from disk or from a web server that keeps it.
+
 ## Action
 
 `scripts/buildDashboard.R`:
