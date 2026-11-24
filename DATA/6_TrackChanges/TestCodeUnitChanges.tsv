@@ -3,6 +3,7 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -ca15-3	u/ml	2a13d1d
 -ca19-9		2a13d1d
 -ca19-9	u/ml	2a13d1d
+-cenp-b-ab(ib)		544af15
 -tffesat	%	8d4ce0c
 -trfe-sa	%	8d4ce0c
 -trfesat		8d4ce0c
@@ -16,6 +17,8 @@ ca19-9antigeeni		2a13d1d
 ca19-9antigeeni	u/ml	2a13d1d
 cb-hbo2sat		cf9102e
 cb-hbo2sat	%	cf9102e
+cenp-b-ab(ib)		544af15
+cenp-b-ib		544af15
 ckd-epi-yhtälö	ml/min/173m2	ecfc5df
 cu-a1migl		b8dbfc6
 cu-a1migl	ug/min	b8dbfc6
@@ -82,6 +85,8 @@ glomerulussuodosnopeus,estimoitu,ckd-epi-kaavalla	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,ckd-epi-tutkimuksenkaava	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	ecfc5df
 happamuusaste,virtsasta		b8dbfc6
+kudostransglutaminaasi,igg-vasta-aineet		544af15
+kudostransglutaminaasi,iggvasta-aineet		544af15
 multistix-,ph		b8dbfc6
 multistix-vieri,ph		b8dbfc6
 nu-osmol		b8dbfc6
@@ -102,6 +107,11 @@ p-ca19-9antigeeni		2a13d1d
 p-ca19-9antigeeni	u/ml	2a13d1d
 p-gfr-kre	ml/min/173m2	ecfc5df
 p-gfreepi	ml/min/173m2	ecfc5df
+p-kardabg		544af15
+p-kardabg	gpl	544af15
+p-kardabg	u/ml	544af15
+p-kardiolipiini,iggvasta-aineet		544af15
+p-kardiolipiini,iggvasta-aineet	u/ml	544af15
 p-krea	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre-md	ml/min/173m2	ecfc5df
@@ -135,6 +145,15 @@ pt-glomerulustensuodatusnopeus,estimoitu,mdrd-kaava	ml/min/173m2	ecfc5df
 pt-glumerulussuodosnopeus,estimoitu,cjd-epikaava	ml/min/173m2	ecfc5df
 pt-krea-cl	ml/min/173m2	ecfc5df
 pt-krea-cl	ml/s/173m2	ecfc5df
+ribonukleoproteiini,nukleaarinen,vasta-aineet(s-rnpab)		544af15
+ribonukleoproteiini,nukleaarinen,vasta-aineet(s-rnpab)	u/ml	544af15
+rnpab		544af15
+s-borabgjt		544af15
+s-borabgv	au/ml	544af15
+s-borrabg		544af15
+s-borrabg	au/ml	544af15
+s-borrabg	u/ml	544af15
+s-borrigg	u/ml	544af15
 s-ca12-5		2a13d1d
 s-ca12-5	u/ml	2a13d1d
 s-ca12-5antigeeni		2a13d1d
@@ -148,6 +167,44 @@ s-ca19-9		2a13d1d
 s-ca19-9	u/ml	2a13d1d
 s-ca19-9v	u/ml	2a13d1d
 s-ca199ver	u/ml	2a13d1d
+s-clteab		544af15
+s-clteab	iu/ml	544af15
+s-ebnaab	u/ml	544af15
+s-ebvabg		544af15
+s-ebvabg	eiu	544af15
+s-ebvabg	u/ml	544af15
+s-ebvabm		544af15
+s-ebvabm	u/ml	544af15
+s-ebvnabg		544af15
+s-ebvnabg	u/ml	544af15
+s-enaabse		544af15
+s-hepyaba		544af15
+s-hepyaba	u/ml	544af15
+s-hepyabg		544af15
+s-hepyabg	u/ml	544af15
+s-igd		544af15
+s-infaabg		544af15
+s-infaabg	u/ml	544af15
+s-kudostransglutaminaasi,iggva(keliakia)		544af15
+s-kudostransglutaminaasi,iggvasta-aineet		544af15
+s-psolab	u/ml	544af15
+s-ribonukleoproteiini,nukleaarinen,vasta-aineet		544af15
+s-ribonukleoproteiini,vasta-aineet		544af15
+s-ribonukleoproteiinit,nukleaarinen,vasta-ainee		544af15
+s-rnp-ab		544af15
+s-rnp-ab	u/ml	544af15
+s-rnpab		544af15
+s-rnpab	u/ml	544af15
+s-sentab		544af15
+s-sentab	u/ml	544af15
+s-sentbab		544af15
+s-sentbab	u/ml	544af15
+s-sentromeeri(cenp-b),vasta-aineet		544af15
+s-sentromeeri-b,vasta-aineet		544af15
+s-ttgabg		544af15
+s-ttgabg	eliau/ml	544af15
+s-ttgabg	u/ml	544af15
+sentromeeri(cnpb),vasta-aineet		544af15
 tffesat		8d4ce0c
 tffesat	%	8d4ce0c
 transf-sat		8d4ce0c
