@@ -39,16 +39,16 @@ kantaAgregatedTable <- readr::read_tsv(
   na = ""
 )
 # The unit of the Kanta table is the one that arrives after the preprocessing: the
-# PREPROCESED_UNIT of the harmonisation table.
+# MEASUREMENT_UNIT of the harmonisation table.
 kantaAgregatedTable <- kantaAgregatedTable |>
-  dplyr::rename(PREPROCESED_UNIT = MEASUREMENT_UNIT)
+  dplyr::rename(MEASUREMENT_UNIT = MEASUREMENT_UNIT)
 ParallelLogger::logInfo("Read ", nrow(kantaAgregatedTable), " rows from ", kantaAgregatedTableFile)
 
 harmonisationTable <- readr::read_tsv(
   harmonisationTableFile,
   col_types = readr::cols(
     TEST_NAME = readr::col_character(),
-    PREPROCESED_UNIT = readr::col_character(),
+    MEASUREMENT_UNIT = readr::col_character(),
     UNIT = readr::col_character(),
     unit_fix_reasoning = readr::col_character(),
     concept_id = readr::col_integer(),
@@ -77,19 +77,19 @@ ParallelLogger::logInfo("Read ", nrow(harmonisationTable), " rows from ", harmon
 # --- Action -------------------------------------------------------------
 #
 
-# 1. Join the harmonisation table on TEST_NAME + PREPROCESED_UNIT, the key of both tables. The
+# 1. Join the harmonisation table on TEST_NAME + MEASUREMENT_UNIT, the key of both tables. The
 #    table adds the UNIT (the unit after the fix) and the rest of its columns.
-stopifnot(!anyDuplicated(harmonisationTable[c("TEST_NAME", "PREPROCESED_UNIT")]))
+stopifnot(!anyDuplicated(harmonisationTable[c("TEST_NAME", "MEASUREMENT_UNIT")]))
 
 harmonised <- kantaAgregatedTable |>
-  dplyr::left_join(harmonisationTable, by = c("TEST_NAME", "PREPROCESED_UNIT")) |>
-  dplyr::relocate(UNIT, .after = PREPROCESED_UNIT) |>
+  dplyr::left_join(harmonisationTable, by = c("TEST_NAME", "MEASUREMENT_UNIT")) |>
+  dplyr::relocate(UNIT, .after = MEASUREMENT_UNIT) |>
   dplyr::mutate(mapping_status = dplyr::coalesce(mapping_status, "MISSING")) |>
   dplyr::relocate(mapping_status)
 
-pairs <- dplyr::distinct(harmonised, TEST_NAME, PREPROCESED_UNIT, concept_id)
+pairs <- dplyr::distinct(harmonised, TEST_NAME, MEASUREMENT_UNIT, concept_id)
 ParallelLogger::logInfo(
-  nrow(pairs), " TEST_NAME + PREPROCESED_UNIT pairs, ", sum(is.na(pairs$concept_id)),
+  nrow(pairs), " TEST_NAME + MEASUREMENT_UNIT pairs, ", sum(is.na(pairs$concept_id)),
   " not in the harmonisation table"
 )
 
@@ -130,7 +130,7 @@ ParallelLogger::logInfo(
 
 # 3. Sorted by n from largest to smallest; the rows of a pair stay together and in decile order.
 harmonised <- harmonised |>
-  dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, decile)
+  dplyr::arrange(dplyr::desc(n), TEST_NAME, MEASUREMENT_UNIT, decile)
 
 #
 # --- Output -------------------------------------------------------------

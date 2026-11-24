@@ -16,7 +16,8 @@ mappingFile <- args[2]
 unitHarmonisationFile <- args[3]
 targetTableFile <- args[4]
 unitOverwriteFile <- args[5]
-outDir <- args[6]
+kantaFile <- args[6]
+outDir <- args[7]
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -25,6 +26,7 @@ ParallelLogger::logInfo("  mappingFile = ", mappingFile)
 ParallelLogger::logInfo("  unitHarmonisationFile = ", unitHarmonisationFile)
 ParallelLogger::logInfo("  targetTableFile = ", targetTableFile)
 ParallelLogger::logInfo("  unitOverwriteFile = ", unitOverwriteFile)
+ParallelLogger::logInfo("  kantaFile = ", kantaFile)
 ParallelLogger::logInfo("  outDir = ", outDir)
 
 #
@@ -35,6 +37,12 @@ mapping <- readTable(mappingFile, tableSpecs$mapping)
 unitHarmonisation <- readTable(unitHarmonisationFile, tableSpecs$unitHarmonisation)
 targetTable <- readTable(targetTableFile, tableSpecs$targetTable)
 unitOverwrite <- readTable(unitOverwriteFile, tableSpecs$unitOverwrite)
+# The pairs of the Kanta data, only to tell the rows of mapping.tsv and unitFix.tsv that no pair uses.
+kantaPairs <- readr::read_tsv(
+  kantaFile, col_types = readr::cols(.default = readr::col_character()), na = "",
+  col_select = c("TEST_NAME", "MEASUREMENT_UNIT")
+) |>
+  dplyr::distinct()
 
 #
 # --- Action -------------------------------------------------------------
@@ -43,10 +51,10 @@ results <- list()
 
 # Shows the failing rows as examples. A test and its unit are written TEST_NAME[unit],
 # as in the Usagi sourceCode (an empty unit is TEST_NAME[]), and a chain of units
-# is joined with "->": TEST_NAME[PREPROCESED_UNIT->UNIT]. Any other column is shown
+# is joined with "->": TEST_NAME[MEASUREMENT_UNIT->UNIT]. Any other column is shown
 # as column=value. Never "|", which is the separator of a markdown table.
 formatExamples <- function(rows, what) {
-  unitCols <- intersect(what, c("PREPROCESED_UNIT", "UNIT", "HARMONISED_UNIT"))
+  unitCols <- intersect(what, c("MEASUREMENT_UNIT", "UNIT", "HARMONISED_UNIT"))
   otherCols <- setdiff(what, c("TEST_NAME", unitCols))
   text <- function(x) ifelse(is.na(x), "", as.character(x))
   units <- if (length(unitCols) > 0) {
@@ -135,19 +143,19 @@ conceptIds <- targetTable$concept_id
 # unitFix.tsv
 checkTypes("unitFix.tsv", unitFix)
 checkHaveValue("unitFix.tsv", unitFix, "TEST_NAME")
-checkUnique("unitFix.tsv", unitFix, c("TEST_NAME", "PREPROCESED_UNIT"))
+checkUnique("unitFix.tsv", unitFix, c("TEST_NAME", "MEASUREMENT_UNIT"))
 # A fix that does not change the unit does nothing.
 record(
-  "unitFix.tsv", "UNIT differs from PREPROCESED_UNIT",
-  bad = !is.na(unitFix$UNIT) & !is.na(unitFix$PREPROCESED_UNIT) & unitFix$UNIT == unitFix$PREPROCESED_UNIT,
-  df = unitFix, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT")
+  "unitFix.tsv", "UNIT differs from MEASUREMENT_UNIT",
+  bad = !is.na(unitFix$UNIT) & !is.na(unitFix$MEASUREMENT_UNIT) & unitFix$UNIT == unitFix$MEASUREMENT_UNIT,
+  df = unitFix, what = c("TEST_NAME", "MEASUREMENT_UNIT", "UNIT")
 )
 # The output is built from mapping.tsv (a left join of the fixes), so a fix for a pair that is
 # not there is not an error, only never used.
 record(
   "unitFix.tsv", "TEST_NAME + UNIT is used downstream (it is in mapping.tsv)",
   bad = !(paste(unitFix$TEST_NAME, unitFix$UNIT) %in% paste(mapping$TEST_NAME, mapping$UNIT)),
-  df = unitFix, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT"),
+  df = unitFix, what = c("TEST_NAME", "MEASUREMENT_UNIT", "UNIT"),
   extra = "not used downstream", level = "WARNING"
 )
 
@@ -156,16 +164,34 @@ record(
 # counts as a unit here.
 pairKey <- function(test, unit) paste(test, tidyr::replace_na(unit, ""), sep = "\r")
 record(
-  "unitFix.tsv", "TEST_NAME + PREPROCESED_UNIT must not appear in mapping.tsv",
-  bad = pairKey(unitFix$TEST_NAME, unitFix$PREPROCESED_UNIT) %in%
+  "unitFix.tsv", "TEST_NAME + MEASUREMENT_UNIT must not appear in mapping.tsv",
+  bad = pairKey(unitFix$TEST_NAME, unitFix$MEASUREMENT_UNIT) %in%
     pairKey(mapping$TEST_NAME, mapping$UNIT),
-  df = unitFix, what = c("TEST_NAME", "PREPROCESED_UNIT", "UNIT")
+  df = unitFix, what = c("TEST_NAME", "MEASUREMENT_UNIT", "UNIT")
+)
+
+# A fix whose TEST_NAME + MEASUREMENT_UNIT is not in the Kanta data fixes nothing.
+kantaKey <- pairKey(kantaPairs$TEST_NAME, kantaPairs$MEASUREMENT_UNIT)
+record(
+  "unitFix.tsv", "TEST_NAME + MEASUREMENT_UNIT is in the Kanta data (kantaAgregatedTable.tsv)",
+  bad = !(pairKey(unitFix$TEST_NAME, unitFix$MEASUREMENT_UNIT) %in% kantaKey),
+  df = unitFix, what = c("TEST_NAME", "MEASUREMENT_UNIT", "UNIT"),
+  extra = "not in the Kanta data", level = "WARNING"
 )
 
 # mapping.tsv
 checkTypes("mapping.tsv", mapping)
 checkHaveValue("mapping.tsv", mapping, c("TEST_NAME", "concept_id"))
 checkUnique("mapping.tsv", mapping, c("TEST_NAME", "UNIT"))
+# A mapping that no Kanta pair uses, neither directly (TEST_NAME + UNIT) nor through a fix of unitFix.tsv
+# (TEST_NAME + its MEASUREMENT_UNIT), maps nothing: a test that no longer comes in, or an old unit.
+usedThroughFix <- pairKey(unitFix$TEST_NAME, unitFix$UNIT)[pairKey(unitFix$TEST_NAME, unitFix$MEASUREMENT_UNIT) %in% kantaKey]
+record(
+  "mapping.tsv", "TEST_NAME + UNIT is in the Kanta data (kantaAgregatedTable.tsv), directly or through a fix of unitFix.tsv",
+  bad = !(pairKey(mapping$TEST_NAME, mapping$UNIT) %in% c(kantaKey, usedThroughFix)),
+  df = mapping, what = c("TEST_NAME", "UNIT"),
+  extra = "not in the Kanta data", level = "WARNING"
+)
 # APPROVED is always the text TRUE or FALSE (read as text, since a logical column also
 # accepts T, F, true and false).
 approvedText <- readr::read_tsv(
@@ -293,3 +319,9 @@ md <- c(
 outFile <- file.path(outDir, "harmonisationTable.validation.md")
 writeLines(md, outFile)
 ParallelLogger::logInfo("Wrote ", outFile)
+
+# The table is not built on broken input: any ERROR stops the step (as in 1_BuildKantaAgregatedTable and
+# 4_BuildTargetTable).
+if (nError > 0) {
+  stop(nError, " validation tests failed, see ", outFile)
+}

@@ -51,11 +51,12 @@ fi
 #
 UNIT_FIX_FILE="$DATA_DIR/2_Harmonisation/unitFix.tsv"
 MAPPING_FILE="$DATA_DIR/2_Harmonisation/mapping.tsv"
+KANTA_FILE="$DATA_DIR/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv"
 UNIT_HARMONISATION_FILE="$DATA_DIR/2_Harmonisation/unitHarmonisation.tsv"
 TARGET_TABLE_FILE="$DATA_DIR/3_Target/4_BuildTargetTable/targetTable.tsv"
 UNIT_OVERWRITE_FILE="$DATA_DIR/2_Harmonisation/harmonisedUnitOverwrite.tsv"
 
-for f in "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE"; do
+for f in "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$KANTA_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
     exit 1
@@ -69,9 +70,9 @@ fi
 #
 # --- Action -------------------------------------------------------------
 #
-# The input tables are validated first (the report does not stop the step).
+# The input tables are validated first; the step stops if a test is an ERROR.
 Rscript "$STEP_DIR/scripts/validateHarmonisationTable.R" \
-  "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$OUTDIR"
+  "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$KANTA_FILE" "$OUTDIR"
 
 Rscript "$STEP_DIR/scripts/buildHarmonisationTable.R" \
   "$UNIT_FIX_FILE" "$MAPPING_FILE" "$UNIT_HARMONISATION_FILE" "$TARGET_TABLE_FILE" "$UNIT_OVERWRITE_FILE" "$OUTDIR"

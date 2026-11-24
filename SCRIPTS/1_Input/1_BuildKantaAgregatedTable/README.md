@@ -22,7 +22,7 @@ From `DATA/1_Input/0_KantaAgregatedData/` (produced outside this repo by
 
 `summaryOutcomes.tsv` — `n_TEST_OUTCOME` per pair and `TEST_OUTCOME`; only validated, not used in the table.
 
-`upstreamSettings.yaml` — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, the numbers of values and of subjects from which a pair must have its deciles.
+`DATA/settings.yaml` (section `1_Input`) — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, the numbers of values and of subjects from which a pair must have its deciles.
 
 ## Outputs
 

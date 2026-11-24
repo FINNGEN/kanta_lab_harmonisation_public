@@ -14,21 +14,23 @@ outDir <- args[3]
 # A pair is only tested when its reference is made of at least this many other pairs.
 minReferencePairs <- 2
 # A pair with fewer non-missing values than this counts as having no values: it is neither tested
-# nor part of a reference. n_records_no_value_threshold and n_subjects_no_value_threshold of 1_Input/0_KantaAgregatedData/upstreamSettings.yaml.
-readSetting <- function(settingsFile, key) {
-  value <- yaml::read_yaml(settingsFile)[[key]]
-  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+# nor part of a reference. n_records_no_value_threshold and n_subjects_no_value_threshold of DATA/settings.yaml.
+# The settings of the repo (DATA/settings.yaml), one section per block or step.
+readSetting <- function(settingsFile, section, key) {
+  value <- yaml::read_yaml(settingsFile)[[section]][[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(section, ": ", key, " is missing or not a number in ", settingsFile)
   value
 }
-minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
-minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
+minValues <- readSetting(settingsFile, "1_Input", "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "1_Input", "n_subjects_no_value_threshold")
 # KS thresholds of harmonisation_values_status: AGREE under ksAgree, WARNING up to ksDisagree,
 # DISAGREE above.
-ksAgree <- 0.5
-ksDisagree <- 0.8
+ksAgree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_agree_threshold")
+ksDisagree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_disagree_threshold")
 
 pathToEvaluatedTSV <- file.path(outDir, "evaluatedHarmonisedKantaAgregatedTable.tsv")
-pairKey <- c("TEST_NAME", "PREPROCESED_UNIT")
+pathToKsWarningTSV <- file.path(outDir, "ks_test_warning.tsv")
+pairKey <- c("TEST_NAME", "MEASUREMENT_UNIT")
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -44,7 +46,7 @@ harmonised <- readr::read_tsv(
   harmonisedFile,
   col_types = readr::cols(
     TEST_NAME = readr::col_character(),
-    PREPROCESED_UNIT = readr::col_character(),
+    MEASUREMENT_UNIT = readr::col_character(),
     UNIT = readr::col_character(),
     n = readr::col_double(),
     n_subjects = readr::col_double(),
@@ -193,7 +195,7 @@ for (i in testable) {
 }
 
 ParallelLogger::logInfo(
-  nrow(pairs), " TEST_NAME + PREPROCESED_UNIT pairs, ", sum(hasDeciles), " with harmonised deciles, ",
+  nrow(pairs), " TEST_NAME + MEASUREMENT_UNIT pairs, ", sum(hasDeciles), " with harmonised deciles, ",
   sum(isReference), " approved reference pairs"
 )
 ParallelLogger::logInfo(
@@ -230,7 +232,7 @@ evaluated <- pairs |>
     reference_group_concept_id = referenceGroup,
     n_reference_pairs = nReferencePairs
   ) |>
-  dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, UNIT)
+  dplyr::arrange(dplyr::desc(n), TEST_NAME, MEASUREMENT_UNIT, UNIT)
 
 # 5. harmonisation_values_status: the row of the Harmonised Values table of the dashboard each pair
 #    falls in, the first that applies. Only APPROVED pairs are compared. A pair with fewer than
@@ -268,8 +270,39 @@ if (nUnexpected > 0) {
   stop(nUnexpected, " pairs have an unexpected status (no CONVERSION, or no deciles); see harmonisation_values_status")
 }
 
+# 6. ks_test_warning.tsv: one row per pair whose values are a WARNING or DISAGREE with its reference, with
+#    an `ignore` flag set to TRUE by hand when the difference was reviewed and accepted. The file is
+#    brought up to date, not rewritten: a new warning is added (ignore FALSE), a warning that is gone is
+#    removed, and a warning already there keeps its `ignore`. A warning is the pair plus its status, so a
+#    pair that goes from WARNING to DISAGREE (or back) is a new warning; its KS and log10_D5 are updated.
+ksWarnings <- evaluated |>
+  dplyr::filter(harmonisation_values_status %in% c("WARNING", "DISAGREE")) |>
+  dplyr::transmute(
+    TEST_NAME, MEASUREMENT_UNIT, harmonisation_values_status, KS, log10_D5,
+    reference = dplyr::if_else(reference_type %in% "LOINC Group", reference_group_concept_id, "concept_id"),
+    ignore = FALSE
+  ) |>
+  dplyr::arrange(TEST_NAME, MEASUREMENT_UNIT)
+ksKey <- c("TEST_NAME", "MEASUREMENT_UNIT", "harmonisation_values_status")
+if (file.exists(pathToKsWarningTSV)) {
+  previous <- readr::read_tsv(
+    pathToKsWarningTSV,
+    col_types = readr::cols(.default = readr::col_character(), ignore = readr::col_logical()), na = ""
+  )
+  ksWarnings <- ksWarnings |>
+    dplyr::left_join(dplyr::select(previous, dplyr::all_of(ksKey), previous_ignore = ignore), by = ksKey) |>
+    dplyr::mutate(ignore = dplyr::coalesce(previous_ignore, FALSE), previous_ignore = NULL)
+  ParallelLogger::logInfo(
+    nrow(dplyr::anti_join(ksWarnings, previous, by = ksKey)), " KS warnings added, ",
+    nrow(dplyr::anti_join(previous, ksWarnings, by = ksKey)), " removed"
+  )
+}
+ParallelLogger::logWarn(nrow(ksWarnings), " pairs with a KS WARNING or DISAGREE (", sum(ksWarnings$ignore), " ignored)")
+
 #
 # --- Output -------------------------------------------------------------
 #
 readr::write_tsv(evaluated, pathToEvaluatedTSV, na = "")
 ParallelLogger::logInfo("Wrote ", nrow(evaluated), " rows to ", pathToEvaluatedTSV)
+readr::write_tsv(ksWarnings, pathToKsWarningTSV, na = "")
+ParallelLogger::logInfo("Wrote ", nrow(ksWarnings), " rows to ", pathToKsWarningTSV)

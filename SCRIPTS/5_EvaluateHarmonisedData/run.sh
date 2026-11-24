@@ -51,7 +51,7 @@ fi
 #
 KANTA_FILE="$DATA_DIR/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv"
 HARMONISATION_TABLE_FILE="$DATA_DIR/4_BuildHarmonisationTable/harmonisationTable.tsv"
-SETTINGS_FILE="$DATA_DIR/1_Input/0_KantaAgregatedData/upstreamSettings.yaml"
+SETTINGS_FILE="$DATA_DIR/settings.yaml"
 for f in "$KANTA_FILE" "$HARMONISATION_TABLE_FILE" "$SETTINGS_FILE"; do
   if [[ ! -f "$f" ]]; then
     echo "Missing input file: $f" >&2
@@ -75,3 +75,4 @@ Rscript "$STEP_DIR/scripts/evaluateHarmonisedKantaAgregatedTable.R" "$OUTDIR/har
 #
 echo "Wrote $OUTDIR/harmonisedKantaAgregatedTable.tsv"
 echo "Wrote $OUTDIR/evaluatedHarmonisedKantaAgregatedTable.tsv"
+echo "Wrote $OUTDIR/ks_test_warning.tsv"

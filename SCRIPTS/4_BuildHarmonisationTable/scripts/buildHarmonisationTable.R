@@ -40,23 +40,30 @@ unitOverwrite <- readTable(unitOverwriteFile, tableSpecs$unitOverwrite)
 # --- Action -------------------------------------------------------------
 #
 
-# 1. Base: one row per TEST_NAME + UNIT with its concept_id, with the unit fix put
-#    first. unitFix is joined on TEST_NAME + UNIT; a pair that is not in it keeps its
-#    UNIT as the PREPROCESED_UNIT. A UNIT fixed from several PREPROCESED_UNITs takes
-#    one row per PREPROCESED_UNIT.
+# 1. Base: one row per TEST_NAME + MEASUREMENT_UNIT, the unit as it arrives in Kanta.
+#    - Every row of mapping.tsv gives the pair that arrives already in its UNIT:
+#      MEASUREMENT_UNIT = UNIT.
+#    - Every fix of unitFix.tsv whose TEST_NAME + UNIT is in mapping.tsv gives one more row, the
+#      pair that arrives in the wrong MEASUREMENT_UNIT, with the mapping of its fixed UNIT (joined on
+#      TEST_NAME + UNIT). A UNIT fixed from several MEASUREMENT_UNITs gets one row for each.
+#    So a fix adds a row next to the mapping row; it does not replace it. (A MEASUREMENT_UNIT of
+#    unitFix.tsv is never a UNIT of mapping.tsv, which the validation checks, so the rows stay unique.)
 unitFixNotUsed <- dplyr::anti_join(unitFix, mapping, by = c("TEST_NAME", "UNIT"))
 if (nrow(unitFixNotUsed) > 0) {
   ParallelLogger::logWarn(nrow(unitFixNotUsed), " unitFix rows have a TEST_NAME + UNIT that is not in the mapping")
 }
-result <- mapping |>
-  dplyr::left_join(
-    unitFix |> dplyr::transmute(TEST_NAME, PREPROCESED_UNIT, UNIT, unit_fix_reasoning, inUnitFix = TRUE),
+directRows <- mapping |>
+  dplyr::mutate(MEASUREMENT_UNIT = UNIT, unit_fix_reasoning = NA_character_)
+fixedRows <- mapping |>
+  dplyr::inner_join(
+    unitFix |> dplyr::select(TEST_NAME, MEASUREMENT_UNIT, UNIT, unit_fix_reasoning),
     by = c("TEST_NAME", "UNIT"),
     relationship = "one-to-many"
-  ) |>
-  # A fix can have an empty PREPROCESED_UNIT, so the fix is told by inUnitFix, not by a value.
-  dplyr::mutate(PREPROCESED_UNIT = dplyr::if_else(inUnitFix %in% TRUE, PREPROCESED_UNIT, UNIT)) |>
-  dplyr::select(-inUnitFix)
+  )
+result <- dplyr::bind_rows(directRows, fixedRows)
+ParallelLogger::logInfo(
+  nrow(directRows), " rows from mapping.tsv and ", nrow(fixedRows), " more from the fixes of unitFix.tsv"
+)
 
 # 2. Append the concept attributes and its harmonised unit by concept_id. The target table has
 #    a row per concept and Group, so the concept columns repeat on every row of a concept.
@@ -125,14 +132,14 @@ result <- result |>
   dplyr::left_join(conversionConcept, by = c("concept_id", "UNIT", "HARMONISED_UNIT")) |>
   dplyr::mutate(CONVERSION = dplyr::coalesce(CONVERSION_CONCEPT, CONVERSION)) |>
   dplyr::select(
-    TEST_NAME, PREPROCESED_UNIT, UNIT, unit_fix_reasoning,
+    TEST_NAME, MEASUREMENT_UNIT, UNIT, unit_fix_reasoning,
     concept_id, ignore_mapping_reason, APPROVED,
     concept_code, concept_name, vocabulary_id, is_panel,
     has_component, has_property,
     group_concept_id, group_concept_code, group_concept_name,
     target_unit, target_unit_source, HARMONISED_UNIT, CONVERSION
   ) |>
-  dplyr::arrange(TEST_NAME, PREPROCESED_UNIT, UNIT)
+  dplyr::arrange(TEST_NAME, MEASUREMENT_UNIT, UNIT)
 
 # 5. The warnings go to their own tables (written below), not into this table. Each has a
 #    message with the details and an `ignore` flag, set to TRUE by hand to accept the
@@ -361,18 +368,18 @@ ParallelLogger::logInfo(
   paste(names(table(result$mapping_status)), table(result$mapping_status), collapse = ", "), " (mapping_status)"
 )
 
-nPairs <- nrow(dplyr::distinct(result, TEST_NAME, PREPROCESED_UNIT, UNIT))
-ParallelLogger::logInfo(nPairs, " TEST_NAME/PREPROCESED_UNIT/UNIT pairs in ", nrow(result), " rows")
+nPairs <- nrow(dplyr::distinct(result, TEST_NAME, MEASUREMENT_UNIT, UNIT))
+ParallelLogger::logInfo(nPairs, " TEST_NAME/MEASUREMENT_UNIT/UNIT pairs in ", nrow(result), " rows")
 ParallelLogger::logInfo(
-  dplyr::n_distinct(result$TEST_NAME[is.na(result$concept_code)], result$PREPROCESED_UNIT[is.na(result$concept_code)], result$UNIT[is.na(result$concept_code)]),
+  dplyr::n_distinct(result$TEST_NAME[is.na(result$concept_code)], result$MEASUREMENT_UNIT[is.na(result$concept_code)], result$UNIT[is.na(result$concept_code)]),
   " pairs whose concept_id is not in the target table"
 )
 # A HARMONISED_UNIT without a CONVERSION cannot be applied, so it is set to missing.
-nNoConversion <- nrow(dplyr::distinct(result |> dplyr::filter(!is.na(HARMONISED_UNIT), is.na(CONVERSION)), TEST_NAME, PREPROCESED_UNIT, UNIT))
+nNoConversion <- nrow(dplyr::distinct(result |> dplyr::filter(!is.na(HARMONISED_UNIT), is.na(CONVERSION)), TEST_NAME, MEASUREMENT_UNIT, UNIT))
 ParallelLogger::logWarn(nNoConversion, " pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty")
 result <- result |>
   dplyr::mutate(HARMONISED_UNIT = dplyr::if_else(is.na(CONVERSION), NA_character_, HARMONISED_UNIT))
-nNoTarget <- nrow(dplyr::distinct(result |> dplyr::filter(is.na(HARMONISED_UNIT)), TEST_NAME, PREPROCESED_UNIT, UNIT))
+nNoTarget <- nrow(dplyr::distinct(result |> dplyr::filter(is.na(HARMONISED_UNIT)), TEST_NAME, MEASUREMENT_UNIT, UNIT))
 ParallelLogger::logWarn(nNoTarget, " pairs have no HARMONISED_UNIT")
 
 #

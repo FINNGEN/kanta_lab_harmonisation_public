@@ -16,26 +16,26 @@ loincGroupUnitMismatchWarningFile <- args[6]
 measurementFile <- args[7]
 targetFile <- args[8]
 settingsFile <- args[9]
-outDir <- args[10]
+ksWarningFile <- args[10]
+outDir <- args[11]
 
 # The scripts folder of this step, where the HTML template is.
 scriptDir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])))
 templateFile <- file.path(scriptDir, "dashboardTemplate.html")
 pathToDashboard <- file.path(outDir, "dashboard.html")
 
-# A pair whose values agree with the reference has a KS under ksAgree; above ksDisagree it
-# disagrees; in between it is a warning.
-ksAgree <- 0.5
-# A pair with fewer non-missing values than this counts as "No values": n_records_no_value_threshold and n_subjects_no_value_threshold of
-# 1_Input/0_KantaAgregatedData/upstreamSettings.yaml, as in 5_EvaluateHarmonisedData.
-readSetting <- function(settingsFile, key) {
-  value <- yaml::read_yaml(settingsFile)[[key]]
-  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+# The no-value thresholds (a pair under either has no values) and the KS thresholds (AGREE under
+# ksAgree, DISAGREE over ksDisagree, WARNING in between) come from DATA/settings.yaml, as in
+# 5_EvaluateHarmonisedData. The settings of the repo (DATA/settings.yaml), one section per block or step.
+readSetting <- function(settingsFile, section, key) {
+  value <- yaml::read_yaml(settingsFile)[[section]][[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(section, ": ", key, " is missing or not a number in ", settingsFile)
   value
 }
-minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
-minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
-ksDisagree <- 0.8
+minValues <- readSetting(settingsFile, "1_Input", "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "1_Input", "n_subjects_no_value_threshold")
+ksAgree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_agree_threshold")
+ksDisagree <- readSetting(settingsFile, "5_EvaluateHarmonisedData", "ks_disagree_threshold")
 
 ParallelLogger::clearLoggers()
 ParallelLogger::logInfo("Configuration:")
@@ -59,7 +59,7 @@ chr <- readr::col_character
 evaluated <- readr::read_tsv(
   evaluatedFile,
   col_types = readr::cols(
-    mapping_status = chr(), harmonisation_values_status = chr(), TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(),
+    mapping_status = chr(), harmonisation_values_status = chr(), TEST_NAME = chr(), MEASUREMENT_UNIT = chr(), UNIT = chr(),
     n = readr::col_double(),
     n_subjects = readr::col_double(),
     unit_source_injection_correction_na_p = chr(),
@@ -79,12 +79,13 @@ evaluated <- readr::read_tsv(
 )
 ParallelLogger::logInfo("Read ", nrow(evaluated), " rows from ", evaluatedFile)
 evaluated <- evaluated |>
-  dplyr::arrange(dplyr::desc(n), TEST_NAME, PREPROCESED_UNIT, UNIT)
+  dplyr::arrange(dplyr::desc(n), TEST_NAME, MEASUREMENT_UNIT, UNIT)
 unitFix <- readr::read_tsv(unitFixFile, col_types = readr::cols(.default = chr()), na = "")
 mismatchWarnings <- readr::read_tsv(mismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 sharedWarnings <- readr::read_tsv(sharedWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 contextUnitMissingWarnings <- readr::read_tsv(contextUnitMissingWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 loincGroupUnitMismatchWarnings <- readr::read_tsv(loincGroupUnitMismatchWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
+ksWarnings <- readr::read_tsv(ksWarningFile, col_types = readr::cols(.default = chr(), ignore = readr::col_logical()), na = "")
 measurement <- readr::read_tsv(measurementFile, col_types = readr::cols(.default = chr()), na = "")
 targetTable <- readr::read_tsv(targetFile, col_types = readr::cols(.default = chr()), na = "")
 template <- paste(readLines(templateFile, encoding = "UTF-8"), collapse = "\n")
@@ -113,7 +114,7 @@ htmlTable <- function(header, rows, numericFrom = 2, totalLast = TRUE, rowClasse
 }
 statusSpan <- function(status) paste0("<span class=\"st st-", sub(":.*", "", status), "\">", status, "</span>")
 
-# 1. Harmonised events: the pairs (TEST_NAME + PREPROCESED_UNIT), their records, and the pairs
+# 1. Harmonised events: the pairs (TEST_NAME + MEASUREMENT_UNIT), their records, and the pairs
 #    with a warning message, by mapping_status.
 # An ERROR carries its reason (ERROR:<reason>); this table counts them all as ERROR, the next one by reason.
 statusOrder <- c("APPROVED", "NOT-APPROVED", "IGNORE", "MISSING", "ERROR")
@@ -237,7 +238,7 @@ inputTable <- function(header, keys, counts) {
 # Name / unit / value coverage. The name is always X: the pairs without a TEST_NAME are dropped upstream.
 coverage <- evaluated |>
   dplyr::mutate(
-    hasUnit = !is.na(PREPROCESED_UNIT) & nzchar(PREPROCESED_UNIT),
+    hasUnit = !is.na(MEASUREMENT_UNIT) & nzchar(MEASUREMENT_UNIT),
     hasValue = is.na(value_missing_p) | value_missing_p < 100
   ) |>
   dplyr::summarise(n_rows = dplyr::n(), n_records = sum(n), .by = c(hasUnit, hasValue)) |>
@@ -277,7 +278,7 @@ refRangeHtml <- inputTable(
 )
 inputSections <- paste0(
   "<h2>Name Unit Value combinations</h2><div class=\"card\">", coverageHtml, "</div>",
-  "<p class=\"note\">Name / unit / value coverage of the Kanta aggregated table, one row per <code>TEST_NAME</code> + <code>PREPROCESED_UNIT</code> pair. An <code>X</code> under unit means the pair has a recorded unit; under value, that at least one of its records has a value.</p>",
+  "<p class=\"note\">Name / unit / value coverage of the Kanta aggregated table, one row per <code>TEST_NAME</code> + <code>MEASUREMENT_UNIT</code> pair. An <code>X</code> under unit means the pair has a recorded unit; under value, that at least one of its records has a value.</p>",
   "<h2>Units</h2><div class=\"card\">", unitSourceHtml, "</div>",
   "<p class=\"note\">Where the unit of the records came from. A pair counts in a source when some of its records come from it, so % rows does not add up to 100%. n records is approximate (shares are rounded). The empty source is the records with no unit source.</p>",
   "<h2>Reference Ranges</h2><div class=\"card\">", refRangeHtml, "</div>",
@@ -286,7 +287,7 @@ inputSections <- paste0(
   "<p class=\"note\">Where the value of the records came from. The empty source is the records with no value. Same counting as Units.</p>"
 )
 
-# Target data tab: the tables of 3_Target/4_BuildTargetTable/targetTable.md.
+# Target data tab: the tables of 3_Target/4_BuildTargetTable/targetTable.summary.md and targetTable.validation.md.
 concepts <- dplyr::distinct(targetTable, concept_id, is_panel, harmonised_unit, harmonised_unit_source)
 nConcepts <- nrow(concepts)
 nSource <- function(x) sum(concepts$harmonised_unit_source %in% x)
@@ -391,10 +392,10 @@ targetSections <- paste0(
   groupUnitsHtml
 )
 
-# 0. Fixed units: the pairs whose PREPROCESED_UNIT was changed to a different UNIT (only a mapped
+# 0. Fixed units: the pairs whose MEASUREMENT_UNIT was changed to a different UNIT (only a mapped
 #    pair has the fix applied), in one row.
 isUnitFixed <- evaluated$mapping_status != "MISSING" &
-  tidyr::replace_na(evaluated$PREPROCESED_UNIT, "") != tidyr::replace_na(evaluated$UNIT, "")
+  tidyr::replace_na(evaluated$MEASUREMENT_UNIT, "") != tidyr::replace_na(evaluated$UNIT, "")
 nFixes <- nrow(unitFix)
 fixedPairs <- sum(isUnitFixed)
 fixedRecords <- sum(evaluated$n[isUnitFixed])
@@ -429,11 +430,25 @@ valueRows <- tibble::tribble(
 # the `status` of valueRows (the KS thresholds must match that step).
 pairValueClass <- valueRows$valueClass[match(evaluated$harmonisation_values_status, valueRows$status)]
 stopifnot(!anyNA(pairValueClass))
-valueClass <- tibble::tibble(valueClass = pairValueClass, n = evaluated$n) |>
-  dplyr::summarise(pairs = dplyr::n(), records = sum(n), .by = valueClass)
+# The KS warnings of 5_EvaluateHarmonisedData (ks_test_warning.tsv): a pair has one when it is a
+# WARNING or DISAGREE; it is not ignored when its `ignore` is FALSE.
+ksHit <- dplyr::left_join(
+  dplyr::select(evaluated, TEST_NAME, MEASUREMENT_UNIT, harmonisation_values_status),
+  dplyr::select(ksWarnings, TEST_NAME, MEASUREMENT_UNIT, harmonisation_values_status, ignore),
+  by = c("TEST_NAME", "MEASUREMENT_UNIT", "harmonisation_values_status"), na_matches = "na"
+)
+valueClass <- tibble::tibble(
+  valueClass = pairValueClass, n = evaluated$n,
+  ksWarning = !is.na(ksHit$ignore), ksWarningNotIgnored = ksHit$ignore %in% FALSE
+) |>
+  dplyr::summarise(
+    pairs = dplyr::n(), records = sum(n),
+    warnings = sum(ksWarning), warnings_not_ignored = sum(ksWarningNotIgnored),
+    .by = valueClass
+  )
 valueRows <- valueRows |>
   dplyr::left_join(valueClass, by = "valueClass") |>
-  dplyr::mutate(dplyr::across(c(pairs, records), \(x) dplyr::coalesce(x, 0)))
+  dplyr::mutate(dplyr::across(c(pairs, records, warnings, warnings_not_ignored), \(x) dplyr::coalesce(x, 0)))
 stopifnot(sum(valueRows$records) == totalRecords)
 # The values status of each pair, shown under its mapping status in the Mapping Table: a short label
 # and its style (the colour of its row in the Harmonised Values table).
@@ -450,12 +465,18 @@ valueStatus <- tibble::tribble(
 )
 stopifnot(all(pairValueClass %in% valueStatus$valueClass))
 valuesTable <- htmlTable(
-  c("", "Number of codes", "Number of records", "Percentage of records"),
+  c("", "Warnings(total)", "Number of codes", "Number of records", "Percentage of records"),
   dplyr::bind_rows(
     valueRows |>
-      dplyr::transmute(label, fmtInt(pairs), fmtInt(records), fmtPct(100 * records / totalRecords)) |>
-      rlang::set_names(paste0("c", 1:4)),
-    tibble::tibble(c1 = "TOTAL", c2 = fmtInt(sum(valueRows$pairs)), c3 = fmtInt(totalRecords), c4 = "100.00%")
+      dplyr::transmute(
+        label, paste0(fmtInt(warnings_not_ignored), " (", fmtInt(warnings), ")"),
+        fmtInt(pairs), fmtInt(records), fmtPct(100 * records / totalRecords)
+      ) |>
+      rlang::set_names(paste0("c", 1:5)),
+    tibble::tibble(
+      c1 = "TOTAL", c2 = paste0(fmtInt(sum(valueRows$warnings_not_ignored)), " (", fmtInt(sum(valueRows$warnings)), ")"),
+      c3 = fmtInt(sum(valueRows$pairs)), c4 = fmtInt(totalRecords), c5 = "100.00%"
+    )
   ),
   rowClasses = valueRows$rowClass
 )
@@ -490,11 +511,11 @@ table <- tibble::tibble(
   quantity = evaluated$has_property,
   unit_change = dplyr::if_else(
     evaluated$mapping_status != "MISSING" &
-      tidyr::replace_na(evaluated$PREPROCESED_UNIT, "") != tidyr::replace_na(evaluated$UNIT, ""),
-    paste0(tidyr::replace_na(evaluated$PREPROCESED_UNIT, ""), "->", tidyr::replace_na(evaluated$UNIT, "")),
+      tidyr::replace_na(evaluated$MEASUREMENT_UNIT, "") != tidyr::replace_na(evaluated$UNIT, ""),
+    paste0(tidyr::replace_na(evaluated$MEASUREMENT_UNIT, ""), "->", tidyr::replace_na(evaluated$UNIT, "")),
     NA_character_
   ),
-  test = paste0(evaluated$TEST_NAME, "[", tidyr::replace_na(evaluated$PREPROCESED_UNIT, ""), "]"),
+  test = paste0(evaluated$TEST_NAME, "[", tidyr::replace_na(evaluated$MEASUREMENT_UNIT, ""), "]"),
   n = evaluated$n,
   value_source = evaluated$value_source_extracted_qcout_na_p,
   unit_source = evaluated$unit_source_injection_correction_na_p,

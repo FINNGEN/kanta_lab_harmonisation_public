@@ -1,7 +1,7 @@
 # 5_EvaluateHarmonisedData
 
 Harmonises the Kanta aggregated table, then tests whether the harmonised values of each
-`TEST_NAME` + `PREPROCESED_UNIT` pair agree with the other pairs of the same LOINC Group, comparing
+`TEST_NAME` + `MEASUREMENT_UNIT` pair agree with the other pairs of the same LOINC Group, comparing
 their deciles. Two scripts, run one after the other: first the harmonisation, then the evaluation.
 
 ## Inputs
@@ -10,27 +10,28 @@ From `DATA/`:
 
 - `1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv` — one row per `TEST_NAME` +
   `MEASUREMENT_UNIT` pair and decile (see `1_Input/1_BuildKantaAgregatedTable`). Its `MEASUREMENT_UNIT` is
-  read as the `PREPROCESED_UNIT` of the harmonisation table.
+  read as the `MEASUREMENT_UNIT` of the harmonisation table.
 - `4_BuildHarmonisationTable/harmonisationTable.tsv` — see `4_BuildHarmonisationTable`.
-- `1_Input/0_KantaAgregatedData/upstreamSettings.yaml` — `n_records_no_value_threshold` (1000) or `n_subjects_no_value_threshold` (60), under which a pair has no values.
+- `settings.yaml` — the no-value thresholds (section `1_Input`) and the KS thresholds `ks_agree_threshold` and
+  `ks_disagree_threshold` (section `5_EvaluateHarmonisedData`).
 
 ## Outputs
 
 In `DATA/5_EvaluateHarmonisedData/`:
 
 - `harmonisedKantaAgregatedTable.tsv` — `kantaAgregatedTable.tsv` (same rows, same columns, with
-  `MEASUREMENT_UNIT` called `PREPROCESED_UNIT`) followed by the columns of the harmonisation table.
+  `MEASUREMENT_UNIT` called `MEASUREMENT_UNIT`) followed by the columns of the harmonisation table.
   `mapping_status` is the first column. The others: `UNIT` (the unit after the fix, right after
-  `PREPROCESED_UNIT`), `unit_fix_reasoning`, `ignore_mapping_reason`, `concept_id`, the concept columns
+  `MEASUREMENT_UNIT`), `unit_fix_reasoning`, `ignore_mapping_reason`, `concept_id`, the concept columns
   (`concept_code`, `concept_name`, `vocabulary_id`, `is_panel`, `has_component`, `has_property`), the LOINC
   Groups, `HARMONISED_UNIT`, `CONVERSION` and `mapping_warning_messages`. The new column
   `decile_value_harmonised` sits right after `decile_value`. A pair that is not in the harmonisation table
   keeps its rows with `mapping_status` `MISSING` and the other harmonisation columns empty.
-- The rows are sorted by `n` from largest to smallest (then `TEST_NAME`, `PREPROCESED_UNIT` and
+- The rows are sorted by `n` from largest to smallest (then `TEST_NAME`, `MEASUREMENT_UNIT` and
   `decile`, so the rows of a pair stay together).
 
 - `evaluatedHarmonisedKantaAgregatedTable.tsv` — one row per `TEST_NAME` +
-  `PREPROCESED_UNIT` + `UNIT`, with the columns of `harmonisedKantaAgregatedTable.tsv`
+  `MEASUREMENT_UNIT` + `UNIT`, with the columns of `harmonisedKantaAgregatedTable.tsv`
   except `decile`, with `mapping_status` as the first column (`MISSING` for a pair that is not in the
   harmonisation table), and:
   - `decile_value`, `decile_value_harmonised` — the 9 deciles as text, e.g.
@@ -55,6 +56,12 @@ In `DATA/5_EvaluateHarmonisedData/`:
     for `concept_id`) and `n_reference_pairs` — where the reference came from and how many
     pairs it has.
 - The rows are sorted by `n` from largest to smallest.
+- `ks_test_warning.tsv` — one row per pair whose `harmonisation_values_status` is `WARNING` or `DISAGREE`:
+  `TEST_NAME`, `MEASUREMENT_UNIT`, `harmonisation_values_status`, `KS`, `log10_D5`, `reference` (the
+  `group_concept_id` of the reference, or `concept_id`) and `ignore`, set to `TRUE` by hand when the difference
+  was reviewed and accepted. The file is brought up to date, not rewritten: a new warning is added with
+  `ignore` = `FALSE`, a warning that is gone is removed, and a warning already there (same pair and status)
+  keeps its `ignore`.
 - `log.txt` — run log.
 
 ## Action
@@ -63,15 +70,15 @@ In `DATA/5_EvaluateHarmonisedData/`:
 
 `scripts/harmoniseKantaAgregatedTable.R`:
 
-1. Renames `MEASUREMENT_UNIT` to `PREPROCESED_UNIT` and left-joins the harmonisation table on
-   `TEST_NAME` + `PREPROCESED_UNIT`, the key of both tables (unique in the harmonisation table, so every
+1. Renames `MEASUREMENT_UNIT` to `MEASUREMENT_UNIT` and left-joins the harmonisation table on
+   `TEST_NAME` + `MEASUREMENT_UNIT`, the key of both tables (unique in the harmonisation table, so every
    pair joins once). Logs how many pairs are not in the table.
 2. Sets `decile_value_harmonised` to `decile_value` with the `CONVERSION` applied: a factor is multiplied, a
    formula in `X` (e.g. `0.703*X+0`) is evaluated with `X` the value. Only numbers, `X` and `+ - * / ( )`
    are evaluated. Without a `CONVERSION`, or without a `decile_value`, it is empty. The log counts the
    decile values harmonised and those left without a `CONVERSION`.
 
-A pair is joined on the unit as it arrives, `PREPROCESED_UNIT`, not on the fixed `UNIT`; a Kanta pair whose
+A pair is joined on the unit as it arrives, `MEASUREMENT_UNIT`, not on the fixed `UNIT`; a Kanta pair whose
 unit was already fixed upstream is not in the table by that key.
 
 ### 2. Evaluate: `scripts/evaluateHarmonisedKantaAgregatedTable.R`
@@ -85,7 +92,7 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
    `decile_value_harmonised` as columns.
 2. Builds the reference of each pair that has the 9 harmonised deciles and at least
    `n_records_no_value_threshold` values (`n` times the share of records with a value) and
-   `n_subjects_no_value_threshold` subjects (`upstreamSettings.yaml`). A pair with fewer values or subjects
+   `n_subjects_no_value_threshold` subjects (`DATA/settings.yaml`). A pair with fewer values or subjects
    counts as having no values: it is neither tested nor part of a reference. The reference is the LOINC
    Group of the concept: all the pairs in it. A concept can be in several Groups, tried
    in the order of `group_concept_id` (the most specific first): the first Group with at
@@ -109,7 +116,7 @@ The evaluation reads `harmonisedKantaAgregatedTable.tsv`, written by the first s
    there is no Group) have fewer than 2 other approved pairs, is not tested: `KS`, `KS_mlp` and `log10_D5` are empty.
    The log counts the pairs tested, by type of reference, and not tested.
 
-A pair is only tested if its `TEST_NAME` + `PREPROCESED_UNIT` is in the harmonisation
+A pair is only tested if its `TEST_NAME` + `MEASUREMENT_UNIT` is in the harmonisation
 table (the first script of this step).
 
 ## Env vars

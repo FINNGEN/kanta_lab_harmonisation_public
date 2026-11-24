@@ -30,14 +30,15 @@ pairKey <- c("TEST_NAME", "MEASUREMENT_UNIT")
 # Small counts are removed upstream: no row may have this many subjects or fewer.
 maxRemovedSubjects <- 5
 # A pair with at least this many records with a value must have its deciles: n_records_no_value_threshold and n_subjects_no_value_threshold of
-# upstreamSettings.yaml, under which a pair counts as having no values (the whole repo uses it).
-readSetting <- function(settingsFile, key) {
-  value <- yaml::read_yaml(settingsFile)[[key]]
-  if (!is.numeric(value) || length(value) != 1) stop(key, " is missing or not a number in ", settingsFile)
+# DATA/settings.yaml, under which a pair counts as having no values (the whole repo uses it).
+# The settings of the repo (DATA/settings.yaml), one section per block or step.
+readSetting <- function(settingsFile, section, key) {
+  value <- yaml::read_yaml(settingsFile)[[section]][[key]]
+  if (!is.numeric(value) || length(value) != 1) stop(section, ": ", key, " is missing or not a number in ", settingsFile)
   value
 }
-minValues <- readSetting(settingsFile, "n_records_no_value_threshold")
-minSubjects <- readSetting(settingsFile, "n_subjects_no_value_threshold")
+minValues <- readSetting(settingsFile, "1_Input", "n_records_no_value_threshold")
+minSubjects <- readSetting(settingsFile, "1_Input", "n_subjects_no_value_threshold")
 unitSources <- c("Source", "PrimaryInjection")
 valueSources <- c("Source", "Extracted", "QCOut")
 demographicsBins <- c("Adult-Female", "Adult-Male", "Minor-Female", "Minor-Male")

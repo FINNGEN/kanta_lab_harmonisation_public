@@ -10,12 +10,15 @@ an interactive table with one row per pair.
   `testname_property_shared_warning.tsv`, `test_unit_context_unit_missing_warning.tsv` and
   `test_unit_loinc_group_unit_mismatch_warning.tsv` — to tell the warnings that are marked `ignore`.
 - `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
-- `DATA/1_Input/0_KantaAgregatedData/upstreamSettings.yaml` — `n_records_no_value_threshold` and `n_subjects_no_value_threshold`, for the "No value" row.
+- `DATA/settings.yaml` — the no-value thresholds (section `1_Input`) and the KS thresholds (section
+  `5_EvaluateHarmonisedData`), for the Harmonised Values table.
+- `DATA/5_EvaluateHarmonisedData/ks_test_warning.tsv` — the KS warnings, for the `Warnings(total)` of the
+  Harmonised Values table.
 - `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
   and `DATA/3_Target/2_GetHarmonisedUnitFromLab2Clean/loincSiConventionalConversion.tsv` — for the Target Data tab.
 
 - `DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv` — one row
-  per `TEST_NAME` + `PREPROCESED_UNIT` + `UNIT` pair (see `5_EvaluateHarmonisedData`).
+  per `TEST_NAME` + `MEASUREMENT_UNIT` + `UNIT` pair (see `5_EvaluateHarmonisedData`).
 
 ## Outputs
 
@@ -25,12 +28,12 @@ In `DATA/6_BuildDashboard/`:
   the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
   - **Input Data**: the tables of `kantaAgregatedTable.summary.md` (Name Unit Value combinations,
     Units, Reference Ranges, Values), computed from the same pairs of the evaluated table.
-  - **Target Data**: the tables of `targetTable.md` (Concepts, Groups, Validations and the Groups with
+  - **Target Data**: the tables of `targetTable.summary.md` and `targetTable.validation.md` (Concepts, Groups, Validations and the Groups with
     more than one `harmonised_unit`), computed from `targetTable.tsv`.
   - **Mapping Summary**:
     - *Fixed Units* — one row: the number of test+unit fixes (rows of `unitFix.tsv`), the number of
       test+unit combinations (pairs) fixed, i.e. whose
-      `PREPROCESED_UNIT` was changed to a different `UNIT` (of the mapped pairs), the number of
+      `MEASUREMENT_UNIT` was changed to a different `UNIT` (of the mapped pairs), the number of
       records and the percentage of records.
     - *Harmonised test+unit* — by `mapping_status` (APPROVED, NOT-APPROVED, IGNORE, MISSING,
       ERROR, which counts every `ERROR:<reason>`): the warnings not ignored and, in brackets, the total (from the four warning tables of
@@ -41,7 +44,8 @@ In `DATA/6_BuildDashboard/`:
       `ERROR:PropertyUnitMismatch`, `ERROR:SharedProperty`, `ERROR:MissingConversion`,
       `ERROR:LoincGroupUnitsMissmatch`, those that occur), with the number of pairs and records, the percentage of
       all the records, and a total row.
-    - *Harmonised Values* — one row per `harmonisation_values_status` of
+    - *Harmonised Values* — the KS warnings not ignored and, in brackets, the total
+      (`ks_test_warning.tsv`), and one row per `harmonisation_values_status` of
       `evaluatedHarmonisedKantaAgregatedTable.tsv` (set by `5_EvaluateHarmonisedData`): the number of codes (pairs) and records, and the percentage of records,
       in this order (each pair in the first that applies, the rows add up to the total; only
       `APPROVED` pairs are compared):
@@ -57,8 +61,8 @@ In `DATA/6_BuildDashboard/`:
     harmonised values status of the pair (its row of the *Harmonised Values* table, with the same
     colour; a second filter under the Status header selects it), the OMOP concept (id, name with
     ` (panel)` added when the concept is a panel), *Harm. Unit* (the target unit of the concept, `target_unit` of
-    the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`; empty for a qualitative concept or a panel), the quantity (`has_property`), `Unit change` (`PREPROCESED_UNIT->UNIT`, only when the
-    two differ and the pair is mapped), `TEST_NAME[PREPROCESED_UNIT]`, the number of
+    the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`; empty for a qualitative concept or a panel), the quantity (`has_property`), `Unit change` (`MEASUREMENT_UNIT->UNIT`, only when the
+    two differ and the pair is mapped), `TEST_NAME[MEASUREMENT_UNIT]`, the number of
     records, bars with the share of records by value source and by unit source (hover a
     bar for a small table with `pRecords` and the approximate `nRecords`), the deciles,
     the value unit harmonisation (the conversion factor, and below it the harmonised unit

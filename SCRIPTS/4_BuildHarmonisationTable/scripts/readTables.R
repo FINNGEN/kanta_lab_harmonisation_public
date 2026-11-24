@@ -11,7 +11,7 @@ lgl <- readr::col_logical
 
 tableSpecs <- list(
   unitFix = readr::cols(
-    TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(),
+    TEST_NAME = chr(), MEASUREMENT_UNIT = chr(), UNIT = chr(),
     unit_fix_reasoning = chr(), INJECTION_NOTES = chr()
   ),
   mapping = readr::cols(
@@ -28,7 +28,7 @@ tableSpecs <- list(
     harmonised_unit = chr(), harmonised_unit_source = chr()
   ),
   harmonisationTable = readr::cols(
-    mapping_status = chr(), TEST_NAME = chr(), PREPROCESED_UNIT = chr(), UNIT = chr(), unit_fix_reasoning = chr(),
+    mapping_status = chr(), TEST_NAME = chr(), MEASUREMENT_UNIT = chr(), UNIT = chr(), unit_fix_reasoning = chr(),
     concept_id = int(), ignore_mapping_reason = chr(), concept_code = chr(), concept_name = chr(),
     vocabulary_id = chr(), is_panel = lgl(), has_component = chr(), has_property = chr(),
     group_concept_id = chr(), group_concept_code = chr(), group_concept_name = chr(),
