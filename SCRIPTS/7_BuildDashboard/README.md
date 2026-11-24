@@ -1,4 +1,4 @@
-# 6_BuildDashboard
+# 7_BuildDashboard
 
 Builds a self-contained HTML dashboard of the evaluated harmonised summary data: an
 overview of the mapping status and of how the values compare with their LOINC Group, and
@@ -11,7 +11,10 @@ an interactive table with one row per pair.
   `test_unit_loinc_group_unit_mismatch_warning.tsv` — to tell the warnings that are marked `ignore`.
 - `DATA/2_Harmonisation/unitFix.tsv` — only to count the fixes (its rows).
 - `DATA/settings.yaml` — the no-value thresholds (section `1_Input`) and the KS thresholds (section
-  `5_EvaluateHarmonisedData`), for the Harmonised Values table.
+  `5_EvaluateHarmonisedData`), for the Harmonised Values table; `github_url` (section `7_BuildDashboard`),
+  the repository the Change Log column links to.
+- `DATA/6_TrackChanges/TestCodeUnitChanges.tsv` — the commits that changed each pair, for the Change Log
+  column. The step stops if a `TEST_NAME` + `MEASUREMENT_UNIT` is repeated in it.
 - `DATA/5_EvaluateHarmonisedData/ks_test_warning.tsv` — the KS warnings, for the `Warnings(total)` of the
   Harmonised Values table.
 - `DATA/3_Target/4_BuildTargetTable/targetTable.tsv`, `DATA/3_Target/1_GetMeasurementOmopData/measurementOmopData.tsv`
@@ -22,7 +25,7 @@ an interactive table with one row per pair.
 
 ## Outputs
 
-In `DATA/6_BuildDashboard/`:
+In `DATA/7_BuildDashboard/`:
 
 - `dashboard.html` — one file with no external libraries or fonts: the data is inside
   the page, so it opens offline in a browser. Four tabs, in this order (Mapping Summary is the one shown when the page opens):
@@ -71,7 +74,9 @@ In `DATA/6_BuildDashboard/`:
     deciles of the reference below them (followed by the number of pairs they come from, e.g. `(36)`), `KS` with `KS_mlp` in brackets (green under
     0.5, yellow up to 0.8, red above), `log10_D5`, the reference (the name of the LOINC Group, or `Same concept`, and the number
     of other approved pairs in it), and `In reference` (yes when the pair is part of the
-    reference of the other pairs of its Groups) and the warning messages. The columns have fixed, narrow widths. Click a
+    reference of the other pairs of its Groups), the warning messages, and the Change Log (the commits that
+    changed the pair, from `TestCodeUnitChanges.tsv`, each a link to the commit on GitHub, and `#<issue>` a
+    link to the issue). The columns have fixed, narrow widths. Click a
     header to sort (the concept id too); every column has a filter: text matches
     anywhere (case insensitive), numeric columns take `>0.5`, `<=2`, `=0.3` or a range
     `0.2..0.5`, and the status is a list. The table starts sorted by `N records`, largest first, and shows 25 to 250 rows per page.
@@ -101,7 +106,7 @@ query string works when the file is opened from disk or from a web server that k
 
 1. Reads the evaluated table and `scripts/dashboardTemplate.html`.
 2. Builds the two summary tables as HTML. The KS thresholds `ksAgree` (0.5) and
-   `ksDisagree` (0.8) are set at the top of the script, and the same values colour the
+   `ksDisagree` (0.8) are read from `DATA/settings.yaml`, and the same values colour the
    `KS` of the table.
 3. Builds the data of the table: the columns of values as JSON (compact; the missing
    values are `null`).
@@ -115,5 +120,5 @@ None required.
 ## How to run
 
 ```
-./SCRIPTS/6_BuildDashboard/run.sh <PATH_TO_DATA> --env <ENV_NAME>
+./SCRIPTS/7_BuildDashboard/run.sh <PATH_TO_DATA> --env <ENV_NAME>
 ```

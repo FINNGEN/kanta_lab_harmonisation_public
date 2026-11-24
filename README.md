@@ -193,14 +193,15 @@ nothing needs to be done about them here (an unmapped test is handled by the **M
 
 ## Rerunning after an edit
 
-Rerun the step that reads the edited file and every step after it:
+Rerun the step that reads the edited file and every step after it (`6_TrackChanges` has nothing to run):
 
 | Edited | Rerun from |
 |---|---|
-| `DATA/1_Input/0_KantaAgregatedData/` (new summaries) or the `1_Input` section of `DATA/settings.yaml` | `1_Input/1_BuildKantaAgregatedTable`, then `4_BuildHarmonisationTable`, 5 and 6 |
-| a table of `2_Harmonisation`, or an `ignore` flag of a `_warning.tsv` of step 4 | `4_BuildHarmonisationTable`, then 5 and 6 |
-| the `5_EvaluateHarmonisedData` section of `DATA/settings.yaml`, or an `ignore` flag of `ks_test_warning.tsv` | `5_EvaluateHarmonisedData`, then 6 |
-| a new OMOP vocabulary or lab2clean version | the steps of `3_Target` in order, then 4, 5 and 6 |
+| `DATA/1_Input/0_KantaAgregatedData/` (new summaries) or the `1_Input` section of `DATA/settings.yaml` | `1_Input/1_BuildKantaAgregatedTable`, then `4_BuildHarmonisationTable`, 5 and 7 |
+| a table of `2_Harmonisation`, or an `ignore` flag of a `_warning.tsv` of step 4 | `4_BuildHarmonisationTable`, then 5 and 7 |
+| the `5_EvaluateHarmonisedData` section of `DATA/settings.yaml`, or an `ignore` flag of `ks_test_warning.tsv` | `5_EvaluateHarmonisedData`, then 7 |
+| a new OMOP vocabulary or lab2clean version | the steps of `3_Target` in order, then 4, 5 and 7 |
+| `DATA/6_TrackChanges/TestCodeUnitChanges.tsv` or the `7_BuildDashboard` section of `DATA/settings.yaml` | `7_BuildDashboard` |
 
 # Repo
 
@@ -252,6 +253,12 @@ and the warnings of each pair.
 Applies the conversion to the Kanta deciles and compares each pair with the other pairs of its LOINC
 Group (or concept) in the same unit (Kolmogorov-Smirnov, ratio of medians).
 
-## 6_BuildDashboard
+## 6_TrackChanges
 
-Shows the result as an HTML page to review the pairs.
+`TestCodeUnitChanges.tsv`: for every `TEST_NAME[MEASUREMENT_UNIT]` pair, the commits that changed its
+harmonisation (`#<issue>:<commit>` when made for a GitHub issue). The details of each change are in the body
+of its commit. It has nothing to run: the table is updated when committing (`.claude/skills/commit`).
+
+## 7_BuildDashboard
+
+Shows the result as an HTML page to review the pairs, with the Change Log of each pair linked to GitHub.
