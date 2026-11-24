@@ -104,6 +104,10 @@ When a mapping is missing or wrong:
   same stem in `mapping.tsv` (e.g. `p-krea`, `s-krea`, `u-krea`).
 - Prefer a concept of a LOINC Group already used by approved pairs of the same test, and a LOINC concept
   over a SNOMED one.
+- When `targetTable.tsv` gives no good candidate, or to check that no closer concept exists, search with
+  Hecate (semantic search of the OHDSI vocabulary, with how much each concept is used): read
+  `references/hecate.md` and use `scripts/hecate.py` (`similar <concept_id>`, `search "<LOINC name>"`,
+  `concept <concept_id>`).
 - Give 1 to 3 candidates with their `concept_id`, `concept_name`, axes and `harmonised_unit`, and say which
   you recommend and why.
 
