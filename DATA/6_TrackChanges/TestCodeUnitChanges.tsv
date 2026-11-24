@@ -13,6 +13,13 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -trfesat	%	8d4ce0c
 ab-hbo2sat	%	cf9102e
 ab-o2sat	%	cf9102e
+ab-ph		746ec0e
+ab-ph(t)		746ec0e
+ap-ph		746ec0e
+b-inr		746ec0e
+b-inr-pik		746ec0e
+b-inr-pt		746ec0e
+b-ph		746ec0e
 ca12-5antigeeni		2a13d1d
 ca12-5antigeeni	u/ml	2a13d1d
 ca15-3antigeeni	u/ml	2a13d1d
@@ -20,9 +27,17 @@ ca19-9antigeeni		2a13d1d
 ca19-9antigeeni	u/ml	2a13d1d
 cb-hbo2sat		cf9102e
 cb-hbo2sat	%	cf9102e
+cb-inr-hoi		746ec0e
+cb-inrc-c		746ec0e
+cb-inrpika		746ec0e
+cb-ph		746ec0e
+cb-phpika		746ec0e
+cb-tt-inr		746ec0e
+cb-tt-inrpika		746ec0e
 cenp-b-ab(ib)		544af15
 cenp-b-ib		544af15
 ckd-epi-yhtälö	ml/min/173m2	ecfc5df
+cp-ph		746ec0e
 cu-a1migl		b8dbfc6
 cu-a1migl	ug/min	b8dbfc6
 cu-a1miglo		b8dbfc6
@@ -66,6 +81,7 @@ du-tilavu		b8dbfc6
 du-tilavu	ml	b8dbfc6
 e-mch	pg/cell	c0f4ce7
 e-mchp	pg	c0f4ce7
+fp-ph		746ec0e
 fp-tffesat		8d4ce0c
 fp-tffesat	%	8d4ce0c
 fp-transferriininrautakyllästeisyys		8d4ce0c
@@ -75,6 +91,7 @@ fp-trfe-sa		8d4ce0c
 fp-trfe-sa	%	8d4ce0c
 fp-trfesat		8d4ce0c
 fp-trfesat	%	8d4ce0c
+fs-ph		746ec0e
 fs-tffesat	%	8d4ce0c
 fs-trfesat		8d4ce0c
 fs-trfesat	%	8d4ce0c
@@ -89,11 +106,16 @@ glomerulussuodosnopeus,estimoitu,ckd-epi-kaava	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,ckd-epi-kaavalla	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,ckd-epi-tutkimuksenkaava	ml/min/173m2	ecfc5df
 glomerulussuodosnopeus,estimoitu,kreatiniini-kystatiinic-kaava	ml/min/173m2	ecfc5df
-happamuusaste,virtsasta		b8dbfc6
+happamuusaste,virtsasta		b8dbfc6,746ec0e
+inr-pika		746ec0e
+inr-vieri		746ec0e
+inrpika		746ec0e
+inrvieri		746ec0e
+inrvieritesti		746ec0e
 kudostransglutaminaasi,igg-vasta-aineet		544af15
 kudostransglutaminaasi,iggvasta-aineet		544af15
-multistix-,ph		b8dbfc6
-multistix-vieri,ph		b8dbfc6
+multistix-,ph		b8dbfc6,746ec0e
+multistix-vieri,ph		b8dbfc6,746ec0e
 nu-osmol		b8dbfc6
 nu-osmol	mosm/kgh2o	b8dbfc6
 osmolaliteetti(laskennallinen)	mosm/kgh2o	b8dbfc6
@@ -110,8 +132,17 @@ p-ca19-9		2a13d1d
 p-ca19-9	u/ml	2a13d1d
 p-ca19-9antigeeni		2a13d1d
 p-ca19-9antigeeni	u/ml	2a13d1d
+p-einr		746ec0e
 p-gfr-kre	ml/min/173m2	ecfc5df
 p-gfreepi	ml/min/173m2	ecfc5df
+p-inr		746ec0e
+p-inr(pikamittari)		746ec0e
+p-inr-hy		746ec0e
+p-inr-pi		746ec0e
+p-inr-pik		746ec0e
+p-inr-pika		746ec0e
+p-inr-poc		746ec0e
+p-inr-vt		746ec0e
 p-kardabg		544af15
 p-kardabg	gpl	544af15
 p-kardabg	u/ml	544af15
@@ -121,9 +152,24 @@ p-krea	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre	ml/min/173m2	ecfc5df
 p-krea+gfr,pt-gfre-md	ml/min/173m2	ecfc5df
 p-krea+gfrviitasaar,pt-gfre	ml/min/173m2	ecfc5df
+p-ph		746ec0e
 p-tffesat		8d4ce0c
 p-tffesat	%	8d4ce0c
 p-transferriininrautakyllästeisyys	%	8d4ce0c
+p-tromboplastiiniaika,inr		746ec0e
+p-tromboplastiiniaika,inr,tt		746ec0e
+p-tromboplastiiniaika,inr-tulos		746ec0e
+p-tromboplastiiniaika,inr-tulostus		746ec0e
+p-tt-inr		746ec0e
+p-tt-inrp		746ec0e
+p-tt-inrqc		746ec0e
+p-ttinrsp		746ec0e
+paastoplasmanph		746ec0e
+paastoseeruminph		746ec0e
+pf-ph		746ec0e
+ph		746ec0e
+ph,seerumista,osatutk		746ec0e
+pikau-stix,u-ph		746ec0e
 pt-gfr-arv	ml/min/173m2	ecfc5df
 pt-gfre	ml/min/173m2	ecfc5df
 pt-gfre-3	ml/min/173m2	ecfc5df
@@ -192,6 +238,8 @@ s-infaabg		544af15
 s-infaabg	u/ml	544af15
 s-kudostransglutaminaasi,iggva(keliakia)		544af15
 s-kudostransglutaminaasi,iggvasta-aineet		544af15
+s-ph		746ec0e
+s-ph(akt)		746ec0e
 s-psolab	u/ml	544af15
 s-ribonukleoproteiini,nukleaarinen,vasta-aineet		544af15
 s-ribonukleoproteiini,vasta-aineet		544af15
@@ -210,6 +258,7 @@ s-ttgabg		544af15
 s-ttgabg	eliau/ml	544af15
 s-ttgabg	u/ml	544af15
 sentromeeri(cnpb),vasta-aineet		544af15
+snabb-inr		746ec0e
 tffesat		8d4ce0c
 tffesat	%	8d4ce0c
 transf-sat		8d4ce0c
@@ -223,6 +272,10 @@ transferriininrautakyllästeisyys(fp-)	%	8d4ce0c
 transferriininrautakyllästeisyys(fp-trfesat)	%	8d4ce0c
 transferriininrautakyllästeisyys(trfesat)	%	8d4ce0c
 trfesat	%	8d4ce0c
+tromboplastiiniaika,inr-tulos		746ec0e
+tromboplastiiniaika,inr-tulostus		746ec0e
+tromboplastiiniaika,inr-tulostus,plasma		746ec0e
+tromboplastiiniaika,inr-tulostus,plasmasta		746ec0e
 u-cakre		b8dbfc6
 u-cl		b8dbfc6
 u-cl	mmol/l	b8dbfc6
@@ -232,9 +285,12 @@ u-iglcl		b8dbfc6
 u-iglcl	g/l	b8dbfc6
 u-k		b8dbfc6
 u-k	mmol/l	b8dbfc6
+u-kemseul,ph		746ec0e
+u-kemseul,u-ph		746ec0e
+u-kemseula,u-ph		746ec0e
 u-na		b8dbfc6
 u-na	mmol/l	b8dbfc6
-u-ominp-h		31fc687
+u-ominp-h		31fc687,746ec0e
 u-osmest		b8dbfc6
 u-osmest	mosm/kgh2o	b8dbfc6
 u-osmoest		b8dbfc6
@@ -253,28 +309,48 @@ u-osmolaliteetti,virtsa	mosm/kgh2o	b8dbfc6
 u-osmolaliteettilaskennallinenosatutkuf1000	mosm/kgh2o	b8dbfc6
 u-osmole		b8dbfc6
 u-osmole	mosm/kgh2o	b8dbfc6
-u-ph		b8dbfc6
+u-ph		b8dbfc6,746ec0e
 u-ph	form	b8dbfc6
 u-ph	ph	b8dbfc6
-u-ph-huu		b8dbfc6
+u-ph-0		746ec0e
+u-ph-huu		b8dbfc6,746ec0e
+u-ph-hy		746ec0e
+u-ph-o		746ec0e
 u-ph-o	N	b8dbfc6
 u-ph-o	form	b8dbfc6
+u-ph.		746ec0e
+u-phv		746ec0e
 u-prot		b8dbfc6
 u-prot	g/l	b8dbfc6
 u-prot	mg/l	b8dbfc6
+u-suhteellinentiheys		746ec0e
 u-suhteellinentiheys	kg/l	31fc687
+u-suhti		746ec0e
 u-suhti	g/ml	31fc687
 u-suhti	kg/l	31fc687
-u-suhti-o		31fc687
-u-suhti.		31fc687
+u-suhti-o		31fc687,746ec0e
+u-suhti.		31fc687,746ec0e
+u-suhtih		746ec0e
 u-suhtih	kg/l	31fc687
-u-tutk-1,ph		b8dbfc6
+u-tutk-1,ph		b8dbfc6,746ec0e
+u-tutk-1,u-ph		746ec0e
+ua-ph		746ec0e
+uv-ph		746ec0e
+vb-happamuusaste		746ec0e
 vb-hbo2sat		cf9102e
 vb-hbo2sat	%	cf9102e
+vb-he-tase,vb-ph		746ec0e
 vb-o2sat		cf9102e
 vb-o2sat	%	cf9102e
+vb-ph		746ec0e
+vb-ph-vt		746ec0e
+vb-phpika		746ec0e
 vertca12-5	u/ml	2a13d1d
 vertca15-3	u/ml	2a13d1d
 vertca19-9	u/ml	2a13d1d
+vieri-inr		746ec0e
 virtsamäärä	ml	b8dbfc6
+vp-happamuusaste		746ec0e
+vp-ph		746ec0e
 zb-hbo2sat	%	cf9102e
+zb-ph		746ec0e
