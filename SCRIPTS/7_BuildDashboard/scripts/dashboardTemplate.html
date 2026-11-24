@@ -7,7 +7,7 @@
 <style>
 :root {
   --bg: #f6f7f9; --panel: #ffffff; --fg: #1f2933; --muted: #6b7280; --line: #e3e6ea;
-  --accent: #2b4c7e; --head: #f0f2f5;
+  --accent: #2b4c7e; --head: #f0f2f5; --col-grey: #eceef1; --col-grey-head: #e1e4e9;
   --approved: #3fae4a; --error: #d64545; --notapproved: #d99a2b; --ignore: #7b8794; --notfound: #b68b5a;
   --agree-bg: #d4f1d4; --warn-bg: #fdf3c4; --dis-bg: #f9d3d3; --none-bg: #e5e7eb;
   --bar-source: #2f5fd0; --bar-extracted: #d98a2b; --bar-qc: #d64545; --bar-na: #cfd4da;
@@ -15,7 +15,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14181d; --panel: #1c2128; --fg: #e4e8ec; --muted: #9aa4af; --line: #2d343c;
-    --accent: #7fa6e0; --head: #232a32;
+    --accent: #7fa6e0; --head: #232a32; --col-grey: #20262d; --col-grey-head: #2b333c;
     --agree-bg: #1f4a28; --warn-bg: #4d4318; --dis-bg: #5a2323; --none-bg: #3a4048;
     --bar-na: #444c55;
   }
@@ -71,6 +71,8 @@ table.data th input, table.data th select { width: 100%; min-width: 0; font: inh
 table.data th input.bad { border-color: var(--error); outline: 1px solid var(--error); }
 table.data td { padding: 4px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
 table.data tbody tr:hover td { background: var(--head); }
+table.data td.g { background: var(--col-grey); }
+table.data th.g { background: var(--col-grey-head); }
 table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
 table.data td.dec { font-size: 11px; }
 table.data td.msg { color: var(--muted); }
@@ -160,26 +162,26 @@ table.data .sub { color: var(--muted); }
   // ---- columns
   var VALUE_NAMES = ["Source", "Extracted", "QCOut", "Missing"];
   var UNIT_NAMES = ["Source", "PrimaryInjection", "SecondaryCorrection", "Missing"];
+  // grey: the column has a grey background, to tell the groups of columns apart
   var COLS = [
     { key: "status", label: "Status", type: "status", w: 86 },
-    { key: "concept_id", label: "OMOP concept ID", type: "num", plain: true, w: 70 },
-    { key: "concept_name", label: "OMOP name", type: "text", w: 135 },
+    { key: "group_id", keys: ["group_id", "group_pos"], label: "Group<br>Concept ID", html: true, type: "idpos", grey: true, w: 74 },
+    { key: "group_name", label: "Group Name", type: "text", grey: true, w: 130 },
+    { key: "concept_id", keys: ["concept_id", "concept_pos"], label: "OMOP<br>Concept", html: true, type: "idpos", w: 74 },
+    { key: "concept_name", label: "OMOP Name", type: "text", w: 135 },
     { key: "harm_unit", label: "Harm.<br>Unit", html: true, type: "text", w: 60 },
     { key: "quantity", label: "OMOP quantity", type: "text", w: 82 },
-    { key: "unit_change", label: "Unit change", type: "text", w: 74 },
-    { key: "test", label: "TestCode[Unit]", type: "text", w: 118 },
-    { key: "n", label: "N records", type: "num", w: 62 },
-    { key: "value_source", label: "Value source", type: "bar", names: VALUE_NAMES, w: 46 },
-    { key: "unit_source", label: "Unit source", type: "bar", names: UNIT_NAMES, w: 46 },
-    { key: "deciles", label: "Decile of measurement value", type: "text", cls: "dec", w: 130 },
+    { key: "unit_change", label: "Unit change", type: "text", grey: true, w: 74 },
+    { key: "test", label: "TestCode[Unit]", type: "text", grey: true, w: 118 },
+    { key: "n", label: "N records", type: "num", grey: true, w: 62 },
+    { key: "unit_source", label: "Unit<br>Source", html: true, type: "bar", names: UNIT_NAMES, grey: true, w: 46 },
+    { key: "value_source", label: "Value<br>Source", html: true, type: "bar", names: VALUE_NAMES, grey: true, w: 46 },
+    { key: "deciles", label: "Decile of measurement value", type: "text", cls: "dec", grey: true, w: 130 },
     { key: "conversion", keys: ["conversion", "conversion_unit"], label: "Value unit harmonisation", type: "conv", w: 84 },
     { key: "deciles_h", keys: ["deciles_h", "ref_deciles"], label: "Decile of harmonised value (top) and reference (below)", type: "stack", cls: "dec", w: 130 },
-    { key: "ks", label: "KS (-log10 p)", type: "ks", w: 70 },
-    { key: "log10_d5", label: "log10 D5", type: "num", w: 50 },
-    { key: "reference", label: "Reference group", type: "text", w: 110 },
-    { key: "in_reference", label: "In reference", type: "text", w: 52 },
-    { key: "message", label: "Warnings", type: "text", cls: "msg", w: 170 },
-    { key: "changes", label: "Change Log", type: "changes", w: 90 }
+    { key: "ks", label: "KS (-log10 p)<br>log10 D5", html: true, type: "ks", w: 78 },
+    { key: "message", label: "Warnings", type: "text", cls: "msg", grey: true, w: 170 },
+    { key: "changes", label: "Change Log", type: "changes", grey: true, w: 90 }
   ];
   COLS.forEach(function (c) { c.keys = c.keys || [c.key]; });
   var BAR_COLORS = ["var(--bar-source)", "var(--bar-extracted)", "var(--bar-qc)", "var(--bar-na)"];
@@ -192,7 +194,7 @@ table.data .sub { color: var(--muted); }
   var order = [];        // indexes after filter and sort
   var lower = {};        // lower-cased text per text column
   COLS.forEach(function (c) {
-    if (c.type === "text" || c.type === "stack" || c.type === "conv") {
+    if (c.type === "text" || c.type === "stack" || c.type === "conv" || c.type === "idpos") {
       lower[c.key] = D[c.key].map(function (v, i) {
         return c.keys.map(function (k) { var x = D[k][i]; return x == null ? "" : String(x); }).join(" ").toLowerCase();
       });
@@ -250,7 +252,7 @@ table.data .sub { color: var(--muted); }
         matchers[c.key] = f;
       } else if (c.type === "status") {
         matchers[c.key] = function (i) { return D.status[i] === text; };
-      } else if (c.type === "text" || c.type === "stack" || c.type === "conv") {
+      } else if (c.type === "text" || c.type === "stack" || c.type === "conv" || c.type === "idpos") {
         var needle = text.trim().toLowerCase(), arr = lower[c.key];
         matchers[c.key] = function (i) { return arr[i].indexOf(needle) !== -1; };
       }
@@ -276,7 +278,7 @@ table.data .sub { color: var(--muted); }
       var col = COLS.filter(function (c) { return c.key === sortKey; })[0];
       var v = D[sortKey];
       var rank = col.type === "status" ? function (x) { return CFG.statusOrder.indexOf(x); } : null;
-      var numeric = col.type === "num" || col.type === "ks";
+      var numeric = col.type === "num" || col.type === "ks" || col.type === "idpos";
       order.sort(function (a, b) {
         var x = v[a], y = v[b];
         if (x == null && y == null) return a - b;
@@ -293,23 +295,32 @@ table.data .sub { color: var(--muted); }
   }
 
   // ---- render
+  // a grey column adds the class g to its cells
   function cell(c, i) {
+    var html = cellHtml(c, i);
+    if (!c.grey) return html;
+    return /^<td class="/.test(html) ? html.replace('<td class="', '<td class="g ') : html.replace("<td", '<td class="g"');
+  }
+  function cellHtml(c, i) {
     var v = D[c.key][i];
     switch (c.type) {
       case "status":
         return '<td><span class="st st-' + esc(String(v).replace(/:.*/, "")) + '">' + esc(v) + "</span><br>" +
           '<span class="vs ' + esc(D.value_style[i]) + '">' + esc(D.value_status[i]) + "</span></td>";
       case "num":
-        return '<td class="num">' + (v == null ? "" : (c.plain || c.key === "log10_d5" ? v : v.toLocaleString("en-US"))) + "</td>";
+        return '<td class="num">' + (v == null ? "" : (c.plain ? v : v.toLocaleString("en-US"))) + "</td>";
       case "ks":
-        if (v == null && D.no_unit[i]) return '<td><span class="ks none">no unit</span></td>';
-        return "<td>" + (v == null ? "" : '<span class="ks ' + ksClass(v) + '">' + v + " <small>(" + D.ks_mlp[i] + ")</small></span>") + "</td>";
+        var d5 = D.log10_d5[i] == null ? "" : '<div class="sub">' + D.log10_d5[i] + "</div>";
+        if (v == null && D.no_unit[i]) return '<td><span class="ks none">no unit</span>' + d5 + "</td>";
+        return "<td>" + (v == null ? "" : '<span class="ks ' + ksClass(v) + '">' + v + " <small>(" + D.ks_mlp[i] + ")</small></span>") + d5 + "</td>";
       case "bar":
         var p = parseBar(v);
         if (!p) return "<td></td>";
         return '<td><div class="bar" data-tip="' + c.key + '" data-i="' + i + '">' + p.map(function (x, k) {
           return '<span style="width:' + x + "%;background:" + BAR_COLORS[k] + '"></span>';
         }).join("") + "</div></td>";
+      case "idpos":
+        return "<td>" + (v == null ? "" : "<div>" + esc(v) + '</div><div class="sub">' + esc(D[c.keys[1]][i] || "") + "</div>") + "</td>";
       case "conv":
       case "stack":
         var second = D[c.keys[1]][i];
@@ -339,7 +350,7 @@ table.data .sub { color: var(--muted); }
     var p = parseBar(D[key][i]);
     if (!p) return "";
     var n = D.n[i];
-    return "<table><thead><tr><th>" + esc(col.label) + '</th><th class="num">pRecords</th><th class="num">nRecords</th></tr></thead><tbody>' +
+    return "<table><thead><tr><th>" + esc(col.label.replace(/<[^>]*>/g, " ")) + '</th><th class="num">pRecords</th><th class="num">nRecords</th></tr></thead><tbody>' +
       col.names.map(function (name, k) {
         return '<tr class="' + (p[k] === 0 ? "zero" : "") + '"><td><i style="background:' + BAR_COLORS[k] + '"></i>' + name +
           '</td><td class="num">' + p[k] + '%</td><td class="num">' + Math.round(n * p[k] / 100).toLocaleString("en-US") + "</td></tr>";
@@ -400,7 +411,7 @@ table.data .sub { color: var(--muted); }
     } else {
       input = '<input data-key="' + c.key + '" type="text" autocomplete="off">';
     }
-    return '<th style="width:' + c.w + 'px"><span class="label" data-key="' + c.key + '">' + (c.html ? c.label : esc(c.label)) + '<span class="arrow" id="arrow-' + c.key + '"></span></span>' + input + "</th>";
+    return '<th' + (c.grey ? ' class="g"' : "") + ' style="width:' + c.w + 'px"><span class="label" data-key="' + c.key + '">' + (c.html ? c.label : esc(c.label)) + '<span class="arrow" id="arrow-' + c.key + '"></span></span>' + input + "</th>";
   }).join("") + "</tr>";
   document.querySelector("#grid thead").innerHTML = head;
 
@@ -443,7 +454,7 @@ table.data .sub { color: var(--muted); }
   if (wanted) showTab(wanted);
   params.forEach(function (value, name) {
     COLS.forEach(function (c) {
-      if (![plain(c.key), plain(c.label)].includes(plain(name))) return;
+      if (![plain(c.key), plain(c.label.replace(/<[^>]*>/g, " "))].includes(plain(name))) return;
       var el = document.querySelector('#grid thead [data-key="' + c.key + '"]:not(.label)');
       if (c.type === "status") {
         var status = CFG.statusOrder.filter(function (s) { return plain(s) === plain(value); })[0];

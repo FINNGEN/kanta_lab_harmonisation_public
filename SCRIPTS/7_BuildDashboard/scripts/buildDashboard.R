@@ -509,15 +509,41 @@ ParallelLogger::logInfo(paste0(valueRows$valueClass, " ", valueRows$pairs, colla
 # 3. The table of the second tab, one row per pair, as columns of values (compact). Missing
 #    values are null. The reference is shown by the name of its LOINC Group, or as the same
 #    concept when the concept is in no LOINC Group.
-referenceName <- purrr::pmap_chr(
+# The Group of a pair: its reference Group when it has one, else the first Group of its concept.
+pairGroup <- purrr::pmap(
   list(evaluated$reference_group_concept_id, evaluated$group_concept_id, evaluated$group_concept_name),
-  function(id, ids, names) {
-    if (is.na(id)) return(NA_character_)
+  function(refId, ids, names) {
+    if (is.na(ids)) return(list(id = NA_character_, name = NA_character_))
     ids <- strsplit(ids, ";", fixed = TRUE)[[1]]
     names <- strsplit(names, ";", fixed = TRUE)[[1]]
-    if (length(ids) == length(names) && id %in% ids) names[match(id, ids)] else id
+    k <- if (!is.na(refId) && refId %in% ids) match(refId, ids) else 1L
+    list(id = ids[k], name = if (length(names) == length(ids)) names[k] else NA_character_)
   }
 )
+groupId <- vapply(pairGroup, \(g) g$id, character(1))
+groupName <- vapply(pairGroup, \(g) g$name, character(1))
+# Only the approved pairs are counted. Group Concept ID: "(<number of concepts of the Group with an approved
+# pair>/<index of the concept>)", the concepts sorted by concept id. Concept: "(<number of approved pairs
+# mapped to it>/<index of the pair>)", in the order of the table (largest N records first). A pair that is not
+# approved has no position.
+approved <- evaluated$mapping_status == "APPROVED"
+groupConcepts <- tibble::tibble(group_concept_id = groupId, concept_id = evaluated$concept_id)[approved & !is.na(groupId), ] |>
+  dplyr::distinct() |>
+  dplyr::arrange(group_concept_id, concept_id) |>
+  dplyr::mutate(index = dplyr::row_number(), n = dplyr::n(), .by = group_concept_id)
+groupConceptPos <- tibble::tibble(group_concept_id = groupId, concept_id = evaluated$concept_id) |>
+  dplyr::left_join(groupConcepts, by = c("group_concept_id", "concept_id"), na_matches = "never")
+stopifnot(nrow(groupConceptPos) == nrow(evaluated))
+groupPos <- dplyr::if_else(
+  !approved | is.na(groupConceptPos$index), NA_character_, paste0("(", groupConceptPos$n, "/", groupConceptPos$index, ")")
+)
+positionIn <- function(key) {
+  key[!approved] <- NA
+  position <- stats::ave(seq_along(key), key, FUN = seq_along)
+  total <- stats::ave(seq_along(key), key, FUN = length)
+  dplyr::if_else(is.na(key), NA_character_, paste0("(", total, "/", position, ")"))
+}
+conceptKey <- dplyr::if_else(evaluated$concept_id %in% 0L, NA_integer_, evaluated$concept_id)
 isNumber <- !is.na(suppressWarnings(as.numeric(evaluated$CONVERSION)))
 # The conversion factor (or formula in X), and the harmonised unit only when it is not the UNIT.
 conversion <- dplyr::if_else(isNumber, paste0("\u00d7", evaluated$CONVERSION), evaluated$CONVERSION)
@@ -527,7 +553,11 @@ conversionUnit <- dplyr::if_else(
 )
 table <- tibble::tibble(
   status = evaluated$mapping_status,
+  group_id = suppressWarnings(as.integer(groupId)),
+  group_pos = groupPos,
+  group_name = groupName,
   concept_id = evaluated$concept_id,
+  concept_pos = positionIn(conceptKey),
   concept_name = dplyr::if_else(
     evaluated$is_panel %in% TRUE, paste0(evaluated$concept_name, " (panel)"), evaluated$concept_name
   ),
@@ -563,12 +593,6 @@ table <- tibble::tibble(
     paste0(evaluated$reference_decile_value_harmonised, "(", evaluated$n_reference_pairs, ")")
   ),
   log10_d5 = evaluated$log10_D5,
-  reference = dplyr::case_when(
-    evaluated$reference_type %in% "LOINC Group" ~ paste0(referenceName, " (", evaluated$n_reference_pairs, " other approved pairs)"),
-    evaluated$reference_type %in% "concept_id" ~ paste0("Same concept (", evaluated$n_reference_pairs, " other approved pairs)"),
-    TRUE ~ NA_character_
-  ),
-  in_reference = dplyr::if_else(evaluated$in_reference %in% TRUE, "yes", NA_character_),
   message = evaluated$mapping_warning_messages
 )
 # The Change Log of each pair: the commits (or #<issue>:<commit>) of TestCodeUnitChanges.tsv.
