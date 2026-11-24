@@ -277,9 +277,9 @@ NOT-APPROVED	ab-ph	kpa	kpa		3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	
 APPROVED	ab-ph	mmol/l	mmol/l		3035173		35747-5	Hydrogen ion [Moles/volume] in Arterial blood	LOINC	FALSE	Hydrogen ion	Substance Concentration	40653127	LG14767-4	Hydrogen ion|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	ab-ph	ph	ph		3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 NOT-APPROVED	ab-ph	°c	°c		3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			WrongProperty: has_property 'Log molar concentration' and UNIT '°c' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit '[pH]' for has_property 'Log molar concentration' or concept_id 3019977
-APPROVED	ab-ph				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	ab-ph				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	ab-ph(t)	ph	ph		3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	ab-ph(t)				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	ab-ph(t)				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 ERROR:PropertyUnitMismatch	ab-po2	%	%		3027801		2703-7	Oxygen [Partial pressure] in Arterial blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean			WrongProperty: has_property 'Partial pressure' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3027801
 NOT-APPROVED	ab-po2	g/l	g/l		3027801		2703-7	Oxygen [Partial pressure] in Arterial blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean			WrongProperty: has_property 'Partial pressure' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3027801
 APPROVED	ab-po2	kpa	kpa		3027801		2703-7	Oxygen [Partial pressure] in Arterial blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	
@@ -384,7 +384,7 @@ APPROVED	ap-na				3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC
 APPROVED	ap-natrium	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	ap-natrium				3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	ap-ph	ph	ph		3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	ap-ph				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	ap-ph				3019977		2744-1	pH of Arterial blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	ap-shco3	mmol/l	mmol/l		3014218		19230-2	Bicarbonate [Moles/volume] standard in Arterial blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration	40652702	LG6038-6	Bicarbonate^^standard|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	ap-shco3				3014218		19230-2	Bicarbonate [Moles/volume] standard in Arterial blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration	40652702	LG6038-6	Bicarbonate^^standard|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	as-ace	u/l	u/l		3039179		53581-5	Angiotensin converting enzyme [Enzymatic activity/volume] in Peritoneal fluid	LOINC	FALSE	Angiotensin converting enzyme	Catalytic Concentration				U/L	lab2clean	U/L	1	
@@ -430,7 +430,7 @@ APPROVED	asetoniaineet(kval)	estimate	estimate		3035350		2514-8	Ketones [Presenc
 APPROVED	aspartaattiaminotransferaasi	u/l	u/l		3013721		1920-8	Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Aspartate aminotransferase	Catalytic Concentration	40652640	LG6033-7	Aspartate aminotransferase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma	U/L	lab2clean	U/L	1	
 APPROVED	aspartaattiaminotransferaasi				3013721		1920-8	Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Aspartate aminotransferase	Catalytic Concentration	40652640	LG6033-7	Aspartate aminotransferase|Catalytic Concentration|Moment in time|Blood, Serum or Plasma	U/L	lab2clean			
 APPROVED	b-aivoinr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	b-aivoinr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	b-aivoinr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	b-angap	mmol/l	mmol/l		3039000		41276-7	Anion gap in Blood by calculation	LOINC	FALSE	Anion gap	Substance Concentration				mmol/L	lab2clean	mmol/L	1	
 APPROVED	b-angap				3039000		41276-7	Anion gap in Blood by calculation	LOINC	FALSE	Anion gap	Substance Concentration				mmol/L	lab2clean			
 APPROVED	b-anionivaje	mmol/l	mmol/l		3045716		33037-3	Anion gap in Serum or Plasma by calculation	LOINC	FALSE	Anion gap	Substance Concentration				mmol/L	lab2clean	mmol/L	1	
@@ -783,13 +783,12 @@ APPROVED	b-hladrld				3024932		13306-6	HLA-DR beta [Type]	LOINC	FALSE	HLA-DR bet
 APPROVED	b-hlakeli				3045683		45023-9	HLA typing for celiac disease panel - Blood or Tissue	LOINC	TRUE	HLA typing for celiac disease panel	-					panel			
 APPROVED	b-igh-d				3017312		21747-1	HC gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method	LOINC	FALSE	HC gene rearrangements	Arbitrary								
 APPROVED	b-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	b-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
-APPROVED	b-inr-pik	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	b-inr-pik		inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	b-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	b-inr-pik				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	b-inr-pt	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	b-inr-pt				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	b-inr-pt				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	b-inrpika	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	b-inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	b-inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	b-intem				3041678		52762-2	Intrinsic coagulation system thromboelastography panel - Blood	LOINC	TRUE	Intrinsic coagulation system thromboelastography panel	-					panel			
 APPROVED	b-jak2-d				21494670		80187-8	JAK2 gene exon 14 targeted mutation analysis in Blood or Tissue by Molecular genetics method	LOINC	FALSE	JAK2 gene exon 14 targeted mutation analysis	Finding								
 APPROVED	b-jcvab				42868647		70173-0	JC virus Ab [Presence] in Serum or Plasma by Immunoassay	LOINC	FALSE	JC virus Ab	Presence or Threshold					isQualitative			
@@ -982,7 +981,7 @@ APPROVED	b-peth	mg/l	mg/l		44816559		74661-0	Phosphatidylethanol [Mass/volume] i
 APPROVED	b-peth	umol/l	mg/l	#85	44816559		74661-0	Phosphatidylethanol [Mass/volume] in Blood	LOINC	FALSE	Phosphatidylethanol	Mass Concentration				ug/L	lab2clean	ug/L	703*X+0	
 APPROVED	b-peth				44816559		74661-0	Phosphatidylethanol [Mass/volume] in Blood	LOINC	FALSE	Phosphatidylethanol	Mass Concentration				ug/L	lab2clean			
 APPROVED	b-ph	ph	ph		3010421		11558-4	pH of Blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	b-ph				3010421		11558-4	pH of Blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	b-ph				3010421		11558-4	pH of Blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	b-pikacrp	mg/l	mg/l		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1	
 APPROVED	b-pikacrp				3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean			
 APPROVED	b-plas-o				3004446		32206-5	Plasmodium sp identified in Blood by Light microscopy	LOINC	FALSE	Plasmodium sp	Presence or Identity								
@@ -1332,10 +1331,9 @@ NOT-APPROVED	cb-he-tase,cb-pco2	kpa	kpa		3015235		1961-2	Bicarbonate [Moles/volu
 NOT-APPROVED	cb-he-tase,cb-po2	kpa	kpa		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			WrongProperty: has_property 'Substance Concentration' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3015235
 APPROVED	cb-het-ion				3022313		24337-8	Gas panel - Capillary blood	LOINC	TRUE	Gas panel	-					panel			
 APPROVED	cb-inr-hoi	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	cb-inr-hoi				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
-APPROVED	cb-inrc-c	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	cb-inrc-c		inr	No harmonized reference data in this OMOP ID	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	cb-inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	cb-inr-hoi				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	cb-inrc-c				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	cb-inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	cb-k	mmol/l	mmol/l		3040893		39790-1	Potassium [Moles/volume] in Capillary blood	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	cb-k				3040893		39790-1	Potassium [Moles/volume] in Capillary blood	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	cb-k-veka	mmol/l	mmol/l		3040893		39790-1	Potassium [Moles/volume] in Capillary blood	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -1367,9 +1365,9 @@ APPROVED	cb-o2sat				3022806		2715-1	Fractional oxyhemoglobin in Capillary blood
 APPROVED	cb-pco2	kpa	kpa		3023024		2020-6	Carbon dioxide [Partial pressure] in Capillary blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	cb-pco2				3023024		2020-6	Carbon dioxide [Partial pressure] in Capillary blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean			
 APPROVED	cb-ph	ph	ph		3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	cb-ph				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	cb-ph				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	cb-phpika	ph	ph		3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	cb-phpika				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	cb-phpika				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	cb-po2	kpa	kpa		3028626		2704-5	Oxygen [Partial pressure] in Capillary blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	cb-po2				3028626		2704-5	Oxygen [Partial pressure] in Capillary blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean			
 APPROVED	cb-shco3	mmol/l	mmol/l		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -1382,9 +1380,8 @@ APPROVED	cb-to2c	%	%		40767503		64799-0	Oxygen content in Capillary blood by cal
 APPROVED	cb-to2c	ml/dl	ml/dl		40767503		64799-0	Oxygen content in Capillary blood by calculation	LOINC	FALSE	Oxygen content	Volume Fraction				%	lab2clean	%	1	
 APPROVED	cb-to2c				40767503		64799-0	Oxygen content in Capillary blood by calculation	LOINC	FALSE	Oxygen content	Volume Fraction				%	lab2clean			
 APPROVED	cb-tt-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	cb-tt-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
-APPROVED	cb-tt-inrpika	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	cb-tt-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	cb-tt-inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	cb-vekaas				1616796		97535-9	Gas panel - Central venous blood	LOINC	TRUE	Gas panel	-					panel			
 APPROVED	cb-vekaas,chco3	mmol/l	mmol/l		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	cb-vekaas,chco3				3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
@@ -1439,7 +1436,7 @@ APPROVED	cp-laktaat				3028271		19239-3	Lactate [Moles/volume] in Capillary bloo
 APPROVED	cp-na	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	cp-na				3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	cp-ph	ph	ph		3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	cp-ph				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	cp-ph				3009343		2745-8	pH of Capillary blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	cp-shco3	mmol/l	mmol/l		3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	cp-shco3				3015235		1961-2	Bicarbonate [Moles/volume] in Capillary blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	crp	mg/l	mg/l		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1	
@@ -2092,7 +2089,7 @@ APPROVED	fp-parathormoni	pmol/l	pmol/l		3033670		15087-0	Parathyrin related prot
 APPROVED	fp-parathormoni,intakti	ng/l	ng/l		3037534		2729-2	Parathyrin related protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	Parathyrin related protein	Mass Concentration				ng/L	lab2clean	ng/L	1	
 APPROVED	fp-parathormoni,intakti				3037534		2729-2	Parathyrin related protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	Parathyrin related protein	Mass Concentration				ng/L	lab2clean			
 APPROVED	fp-ph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	fp-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	fp-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	fp-pi	mmol/l	mmol/l		3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	fp-pi				3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	fp-pth	ng/l	ng/l		3000067		2731-8	Parathyrin.intact [Mass/volume] in Serum or Plasma	LOINC	FALSE	Parathyrin.intact	Mass Concentration				ng/L	lab2clean	ng/L	1	
@@ -2259,7 +2256,7 @@ APPROVED	fs-ohbutyr				3003985		6873-4	Beta hydroxybutyrate [Moles/volume] in Se
 APPROVED	fs-pepsin1	ug/l	ug/l		3033888		2736-7	Pepsinogen I [Mass/volume] in Serum or Plasma	LOINC	FALSE	Pepsinogen I	Mass Concentration				ug/L	lab2clean	ug/L	1	
 APPROVED	fs-pepsin1				3033888		2736-7	Pepsinogen I [Mass/volume] in Serum or Plasma	LOINC	FALSE	Pepsinogen I	Mass Concentration				ug/L	lab2clean			
 APPROVED	fs-ph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	fs-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	fs-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	fs-pi	mmol/l	mmol/l		3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	fs-pi				3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	fs-pp	pmol/l	pmol/l		40758355		55226-5	Pancreatic polypeptide [Moles/volume] in Serum or Plasma	LOINC	FALSE	Pancreatic polypeptide	Substance Concentration				pmol/L	lab2clean	pmol/L	1	
@@ -2351,7 +2348,7 @@ APPROVED	gt.itse				3026910		2324-2	Gamma glutamyl transferase [Enzymatic activi
 IGNORE	gyn.notto				0	Sample collection/processing code														
 APPROVED	happamuusaste,seerumi	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	happamuusaste,virtsasta	ph	ph		3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
-APPROVED	happamuusaste,virtsasta				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
+APPROVED	happamuusaste,virtsasta				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	hb(hoitaja)	g/l	g/l		3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean	g/L	1	
 APPROVED	hb(hoitaja)				3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean			
 APPROVED	hb(nla)	g/l	g/l		3000963		718-7	Hemoglobin [Mass/volume] in Blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean	g/L	1	
@@ -2445,16 +2442,14 @@ APPROVED	immunoglobuliinig4				3024980		2469-5	IgG subclass 4 [Mass/volume] in S
 APPROVED	inanho				3044938		34487-9	Influenza virus A RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Influenza virus A RNA	Presence or Threshold					isQualitative			
 APPROVED	infanho				3044938		34487-9	Influenza virus A RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Influenza virus A RNA	Presence or Threshold					isQualitative			
 APPROVED	infbnho				46235759		76080-1	Influenza virus B RNA [Presence] in Nasopharynx by NAA with probe detection	LOINC	FALSE	Influenza virus B RNA	Presence or Threshold					isQualitative			
-APPROVED	inr-pika	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inr-pika		inr	No harmonized reference data in this OMOP ID	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inr-vieri	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inr-vieri		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	inr-pika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	inr-vieri				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	inrpika	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	inrpika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	inrvieri	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inrvieri				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	inrvieri				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	inrvieritesti	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	inrvieritesti				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	inrvieritesti				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	jo-1	u/ml	u/ml		3036086		35333-4	Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Jo-1 extractable nuclear Ab	Arbitrary Concentration	40653213	LG352-1	Jo-1 extractable nuclear Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean	10*3.[arb'U]/L	1	
 APPROVED	jo-1				3036086		35333-4	Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Jo-1 extractable nuclear Ab	Arbitrary Concentration	40653213	LG352-1	Jo-1 extractable nuclear Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean			
 APPROVED	jo-1(histidyl-trna-s12ta-aineet(s-jo1ab)				3036086		35333-4	Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunoassay	LOINC	FALSE	Jo-1 extractable nuclear Ab	Arbitrary Concentration	40653213	LG352-1	Jo-1 extractable nuclear Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean			
@@ -3175,8 +3170,8 @@ APPROVED	mrsa-nenä				3039355		52969-3	Methicillin resistant Staphylococcus aur
 APPROVED	mrsa-nielu				46235760		76081-9	Methicillin resistant Staphylococcus aureus [Presence] in Pharynx by Organism specific culture	LOINC	FALSE	Methicillin resistant Staphylococcus aureus	Presence or Threshold					isQualitative			
 APPROVED	mrsa-perin				3050898		53572-4	Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture	LOINC	FALSE	Methicillin resistant Staphylococcus aureus	Presence or Threshold					isQualitative			
 APPROVED	mrsaperin				3050898		53572-4	Methicillin resistant Staphylococcus aureus [Presence] in Genital specimen by Organism specific culture	LOINC	FALSE	Methicillin resistant Staphylococcus aureus	Presence or Threshold					isQualitative			
-APPROVED	multistix-,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
-APPROVED	multistix-vieri,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
+APPROVED	multistix-,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
+APPROVED	multistix-vieri,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	munanvalku	u/ml	u/ml		3014599		6106-9	Egg white IgE Ab [Units/volume] in Serum	LOINC	FALSE	Egg white IgE	Arbitrary Concentration				10*3.[iU]/L	lab2clean	10*3.[iU]/L	1	
 APPROVED	munanvalku				3014599		6106-9	Egg white IgE Ab [Units/volume] in Serum	LOINC	FALSE	Egg white IgE	Arbitrary Concentration				10*3.[iU]/L	lab2clean			
 IGNORE	muut	%	%		0	Non-test metadata/admin field														
@@ -3567,7 +3562,7 @@ APPROVED	p-ebvnh	iu/ml	iu/ml		3043849		43730-1	Epstein Barr virus DNA [Units/vol
 APPROVED	p-ebvnh	u/ml	u/ml		3043849		43730-1	Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	Epstein Barr virus DNA	Arbitrary Concentration				10*3.[iU]/L	lab2clean	10*3.[iU]/L	1	
 APPROVED	p-ebvnh				3043849		43730-1	Epstein Barr virus DNA [Units/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	Epstein Barr virus DNA	Arbitrary Concentration				10*3.[iU]/L	lab2clean			
 APPROVED	p-einr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-einr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-einr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-etoh	g/l	g/l		3012920		5643-2	Ethanol [Mass/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Mass Concentration	40652963	LG2036-4	Ethanol|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1000	
 APPROVED	p-etoh	mmol/l	mmol/l		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 ERROR:PropertyUnitMismatch	p-etoh	promille	promille		3020191		14719-9	Ethanol [Moles/volume] in Serum or Plasma	LOINC	FALSE	Ethanol	Substance Concentration	40652965	LG2335-0	Ethanol|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			WrongProperty: has_property 'Substance Concentration' and UNIT 'promille' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'promille' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3020191
@@ -3836,24 +3831,22 @@ APPROVED	p-immunoglobuliinig(pi)				3005719		2465-3	IgG [Mass/volume] in Serum o
 APPROVED	p-immunoglobuliinim(pi)	g/l	g/l		3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration	40653158	LG9802-2	IgM|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1000	
 APPROVED	p-immunoglobuliinim(pi)				3028026		2472-9	IgM [Mass/volume] in Serum or Plasma	LOINC	FALSE	IgM	Mass Concentration	40653158	LG9802-2	IgM|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean			
 APPROVED	p-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inr(pikamittari)	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr(pikamittari)				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
-APPROVED	p-inr-hy	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-hy		inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-pi	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-pi		inr	No harmonized reference data	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-inr(pikamittari)				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-inr-hy				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-inr-pi				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inr-pik	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-pik				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-inr-pik				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inr-pika	%	%		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	0.01	
 APPROVED	p-inr-pika	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-pika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-inr-pika				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inr-poc	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-poc				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-inr-poc				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inr-vt	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inr-vt		inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-inr-vt				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-inrviitasaari	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-inrviitasaari				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-inrviitasaari				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 NOT-APPROVED	p-jcvnh	u/ml	u/ml		3032185		49413-8	JC virus DNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	JC virus DNA	Number Concentration				10*3/L	lab2clean			WrongProperty: has_property 'Number Concentration' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit | MissingConversion: no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit '10*3/L' for has_property 'Number Concentration' or concept_id 3032185
 APPROVED	p-jcvnh				3032185		49413-8	JC virus DNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection	LOINC	FALSE	JC virus DNA	Number Concentration				10*3/L	lab2clean			
 APPROVED	p-k	mmol/l	mmol/l		3023103		2823-3	Potassium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -4105,7 +4098,7 @@ APPROVED	p-pctpika				3046279		33959-8	Procalcitonin [Mass/volume] in Serum or P
 APPROVED	p-pegtsh	mu/l	mu/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	lab2clean	10*-3.[iU]/L	1	
 APPROVED	p-pegtsh				3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	lab2clean			
 APPROVED	p-ph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	p-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	p-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	p-pi	mmol/l	mmol/l		3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	p-pi				3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	p-porf-o				3020123		14883-3	Porphyrins [Interpretation] in Serum or Plasma	LOINC	FALSE	Porphyrins	Impression/interpretation of study	40653592	LG2673-4	Porphyrins|Impression/interpretation of study|Moment in time|Blood, Serum or Plasma					
@@ -4310,15 +4303,14 @@ APPROVED	p-trijodityroniini,vapaa,plasmasta				3026989		14928-6	Triiodothyronine
 APPROVED	p-trombai	s	s		3036489		3243-3	Thrombin time	LOINC	FALSE	Thrombin time	Time (e.g. seconds)				s	lab2clean	s	1	
 APPROVED	p-trombai				3036489		3243-3	Thrombin time	LOINC	FALSE	Thrombin time	Time (e.g. seconds)				s	lab2clean			
 APPROVED	p-tromboplastiiniaika,inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tromboplastiiniaika,inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
-APPROVED	p-tromboplastiiniaika,inr,tt	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tromboplastiiniaika,inr,tt		inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-tromboplastiiniaika,inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	p-tromboplastiiniaika,inr,tt				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tromboplastiiniaika,inr-tulos	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tromboplastiiniaika,inr-tulos				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tromboplastiiniaika,inr-tulos				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tromboplastiiniaika,inr-tulostus	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tromboplastiiniaika,inr-tulostus				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tromboplastiiniaika,inr-tulostus				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tromboplastiiniaika,nycotest,pt,inr-tuloste	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tromboplastiiniaika,nycotest,pt,inr-tuloste				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tromboplastiiniaika,nycotest,pt,inr-tuloste				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-trombot				4195642		314089003	Thrombophilia screening test	SNOMED	FALSE										
 APPROVED	p-troponiinit	ng/l	ng/l		3019800		6598-7	Troponin T.cardiac [Mass/volume] in Serum or Plasma	LOINC	FALSE	Troponin T.cardiac	Mass Concentration	40653874	LG19584-8	Troponin T.cardiac|Mass Concentration|Moment in time|Blood, Serum or Plasma	ug/L	lab2clean	ug/L	0.001	
 APPROVED	p-tsh	miu/l	miu/l		3009201		3016-3	Thyrotropin [Units/volume] in Serum or Plasma	LOINC	FALSE	Thyrotropin	Arbitrary Concentration	40653836	LG11757-8	Thyrotropin|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*-3.[iU]/L	lab2clean	10*-3.[iU]/L	1	
@@ -4356,13 +4348,13 @@ APPROVED	p-tt-hus				3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	F
 APPROVED	p-tt-inr	%	%		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	0.01	
 APPROVED	p-tt-inr	form	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tt-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tt-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tt-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tt-inrp	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tt-inrp				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tt-inrp				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tt-inrq	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tt-inrq				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tt-inrq				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tt-inrqc	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-tt-inrqc				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-tt-inrqc				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-tt-spa	%	%		3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean	%	1	
 APPROVED	p-tt-spa				3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean			
 APPROVED	p-tt-spr	%	%		3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean	%	1	
@@ -4370,9 +4362,9 @@ APPROVED	p-tt-spr				3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	F
 APPROVED	p-tt.	%	%		3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean	%	1	
 APPROVED	p-tt.				3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean			
 APPROVED	p-ttinrsp	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-ttinrsp				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-ttinrsp				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-ttinrspr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	p-ttinrspr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	p-ttinrspr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	p-ttr	%	%		43055246		72281-9	Days in therapeutic INR range/Days INR result determined [Ratio]	LOINC	FALSE	Days in therapeutic INR range/Days INR result determined	Ratio				%	lab2clean	%	1	
 APPROVED	p-ttr				43055246		72281-9	Days in therapeutic INR range/Days INR result determined [Ratio]	LOINC	FALSE	Days in therapeutic INR range/Days INR result determined	Ratio				%	lab2clean			
 APPROVED	p-ttspr	%	%		3033658		5894-1	Prothrombin time (PT) actual/Normal	LOINC	FALSE	Coagulation tissue factor induced actual/Normal	Relative time				%	lab2clean	%	1	
@@ -4426,10 +4418,10 @@ APPROVED	p.-trombai	s	s		3036489		3243-3	Thrombin time	LOINC	FALSE	Thrombin time
 APPROVED	p.-trombai				3036489		3243-3	Thrombin time	LOINC	FALSE	Thrombin time	Time (e.g. seconds)				s	lab2clean			
 APPROVED	pa-amyl	u/l	u/l		3016417		1805-1	Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Amylase.pancreatic	Catalytic Concentration				U/L	lab2clean	U/L	1	
 APPROVED	pa-amyl				3016417		1805-1	Amylase.pancreatic [Enzymatic activity/volume] in Serum or Plasma	LOINC	FALSE	Amylase.pancreatic	Catalytic Concentration				U/L	lab2clean			
-APPROVED	paastoplasmanph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	paastoplasmanph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	paastoseeruminkalsium-ioni.aktuaali	mmol/l	mmol/l		3021347		1995-0	Calcium.ionized [Moles/volume] in Serum or Plasma	LOINC	FALSE	Calcium.ionized	Substance Concentration	40652743	LG655-7	Calcium.ionized|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	paastoseeruminph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	paastoseeruminph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	paastoseeruminph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 IGNORE	paino	kg	kg		3025315	Patient characteristic/vital sign	29463-7	Body weight	LOINC	FALSE	Body weight	Mass	40655805	LG34372-9	Body weight|Mass|Moment in time|^Patient					WrongProperty: has_property 'Mass' and UNIT 'kg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit
 IGNORE	paino				3013762	Patient characteristic/vital sign	3141-9	Body weight Measured	LOINC	FALSE	Body weight	Mass	40655805	LG34372-9	Body weight|Mass|Moment in time|^Patient					
 IGNORE	painonmitt	kg	kg		0	Patient characteristic/vital sign														
@@ -4584,7 +4576,7 @@ APPROVED	pf-muutsol				3028029		30431-1	Mesothelial cells/Leukocytes in Pleural 
 APPROVED	pf-neut	%	%		3000919		30455-0	Neutrophils/Leukocytes in Pleural fluid	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	lab2clean	%	1	
 APPROVED	pf-neut				3000919		30455-0	Neutrophils/Leukocytes in Pleural fluid	LOINC	FALSE	Neutrophils/leukocytes	Number Fraction				%	lab2clean			
 APPROVED	pf-ph	ph	ph		3035880		2750-8	pH of Pleural fluid	LOINC	FALSE	pH	Log molar concentration	40653535	LG11105-0	pH|Log Substance Concentration|Moment in time|Pleural fluid	[pH]	lab2clean	[pH]	1	
-APPROVED	pf-ph				3035880		2750-8	pH of Pleural fluid	LOINC	FALSE	pH	Log molar concentration	40653535	LG11105-0	pH|Log Substance Concentration|Moment in time|Pleural fluid	[pH]	lab2clean			
+APPROVED	pf-ph				3035880		2750-8	pH of Pleural fluid	LOINC	FALSE	pH	Log molar concentration	40653535	LG11105-0	pH|Log Substance Concentration|Moment in time|Pleural fluid	[pH]	lab2clean	[pH]	1	
 APPROVED	pf-pmn	%	%		3026051		26519-9	Granulocytes/Leukocytes in Pleural fluid	LOINC	FALSE	Granulocytes/leukocytes	Number Fraction				%	lab2clean	%	1	
 APPROVED	pf-pmn				3026051		26519-9	Granulocytes/Leukocytes in Pleural fluid	LOINC	FALSE	Granulocytes/leukocytes	Number Fraction				%	lab2clean			
 APPROVED	pf-polynuk	%	%		3026051		26519-9	Granulocytes/Leukocytes in Pleural fluid	LOINC	FALSE	Granulocytes/leukocytes	Number Fraction				%	lab2clean	%	1	
@@ -4605,10 +4597,10 @@ APPROVED	pf-unäkö-o				3014891		14620-9	Appearance of Pleural fluid	LOINC	FALS
 APPROVED	pf-yksit	%	%		3034459		26494-5	Mononuclear cells/Leukocytes in Pleural fluid	LOINC	FALSE	Mononuclear cells/leukocytes	Number Fraction				%	lab2clean	%	1	
 APPROVED	pf-yksit				3034459		26494-5	Mononuclear cells/Leukocytes in Pleural fluid	LOINC	FALSE	Mononuclear cells/leukocytes	Number Fraction				%	lab2clean			
 APPROVED	ph	ph	ph		3019225		17433-4	pH of Specimen	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
-APPROVED	ph				3019225		17433-4	pH of Specimen	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean			
+APPROVED	ph				3019225		17433-4	pH of Specimen	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
 APPROVED	ph(akt)	ph	ph		3010421		11558-4	pH of Blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	ph,seerumista,osatutk	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	ph,seerumista,osatutk				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	ph,seerumista,osatutk				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	phadiatop	u/ml	u/ml		3025443		7599-4	Phadiatop IgE Ab [Units/volume] in Serum	LOINC	FALSE	Phadiotop IgE	Arbitrary Concentration				10*3.[iU]/L	lab2clean	10*3.[iU]/L	1	
 APPROVED	phadiatop				3025443		7599-4	Phadiatop IgE Ab [Units/volume] in Serum	LOINC	FALSE	Phadiotop IgE	Arbitrary Concentration				10*3.[iU]/L	lab2clean			
 APPROVED	pika-crp	mg/l	mg/l		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1	
@@ -4642,7 +4634,7 @@ APPROVED	pikacrp				3020460		1988-5	C reactive protein [Mass/volume] in Serum or
 IGNORE	pikagluk				0	Point-of-care rapid test														
 APPROVED	pikatesti,c-reaktiivinenproteiini	mg/l	mg/l		3020460		1988-5	C reactive protein [Mass/volume] in Serum or Plasma	LOINC	FALSE	C reactive protein	Mass Concentration	40652733	LG6212-7	C reactive protein|Mass Concentration|Moment in time|Blood, Serum or Plasma	mg/L	lab2clean	mg/L	1	
 APPROVED	pikau-stix,u-ph	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	pikau-stix,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	pikau-stix,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	pin1nho				3025634		29908-1	Parainfluenza virus 1 RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Parainfluenza virus 1 RNA	Presence or Threshold					isQualitative			
 APPROVED	pin2nho				3012158		29909-9	Parainfluenza virus 2 RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Parainfluenza virus 2 RNA	Presence or Threshold					isQualitative			
 APPROVED	pin3nho				3006262		29910-7	Parainfluenza virus 3 RNA [Presence] in Specimen by NAA with probe detection	LOINC	FALSE	Parainfluenza virus 3 RNA	Presence or Threshold					isQualitative			
@@ -6204,9 +6196,9 @@ APPROVED	s-pespabg	mg/l	mg/l		44816697		74805-3	Penicillium sp IgG Ab [Mass/volu
 APPROVED	s-pespabg				44816697		74805-3	Penicillium sp IgG Ab [Mass/volume] in Serum or Plasma by Immunoassay	LOINC	FALSE	Penicillium sp IgG	Mass Concentration				mg/L	lab2clean			
 APPROVED	s-ph	1	ph	injection_script	3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	s-ph	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	s-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	s-ph				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	s-ph(akt)	ph	ph		3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	s-ph(akt)				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	s-ph(akt)				3018418		2753-2	pH of Serum or Plasma	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	s-pi	mmol/l	mmol/l		3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	s-pi				3003458		14879-1	Phosphate [Moles/volume] in Serum or Plasma	LOINC	FALSE	Phosphate	Substance Concentration	40653554	LG2670-0	Phosphate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	s-piiinp	u/ml	u/ml		40760866		57756-9	Procollagen type III.N-terminal propeptide [Units/volume] in Serum	LOINC	FALSE	Procollagen type III.N-terminal propeptide	Arbitrary Concentration				10*3.[arb'U]/L	lab2clean	10*3.[arb'U]/L	1	
@@ -6815,8 +6807,7 @@ APPROVED	sm(smith),vasta-aineet(s-smab)				3016921		11090-8	Smith extractable nu
 APPROVED	smab	u/ml	u/ml		3016921		11090-8	Smith extractable nuclear Ab [Units/volume] in Serum	LOINC	FALSE	Smith extractable nuclear Ab	Arbitrary Concentration	40653749	LG220-0	Smith extractable nuclear Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean	10*3.[arb'U]/L	1	
 APPROVED	smab				3016921		11090-8	Smith extractable nuclear Ab [Units/volume] in Serum	LOINC	FALSE	Smith extractable nuclear Ab	Arbitrary Concentration	40653749	LG220-0	Smith extractable nuclear Ab|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean			
 APPROVED	smpoabg				3049804		48404-8	Myeloperoxidase IgG Ab [Units/volume] in Serum	LOINC	FALSE	Myeloperoxidase IgG	Arbitrary Concentration	1621296	LG51150-7	Myeloperoxidase Ab.IgG|Arbitrary Concentration|Moment in time|Blood, Serum or Plasma	10*3.[arb'U]/L	lab2clean			
-APPROVED	snabb-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	snabb-inr		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
+APPROVED	snabb-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	soijae	u/ml	u/ml		3015076		6248-9	Soybean IgE Ab [Units/volume] in Serum	LOINC	FALSE	Soybean (Glycine max) IgE	Arbitrary Concentration				10*3.[iU]/L	lab2clean	10*3.[iU]/L	1	
 IGNORE	sprv-laus				0	Histology/pathology procedure														
 IGNORE	sprv-lelau				0	Histology/pathology procedure														
@@ -7040,15 +7031,15 @@ APPROVED	trijodityroniini,vapaa				3026989		14928-6	Triiodothyronine (T3) Free [
 APPROVED	trijodityroniini,vapaa(t3v)	pmol/l	pmol/l		3026989		14928-6	Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Triiodothyronine Free	Substance Concentration	40653866	LG2984-5	Triiodothyronine.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	lab2clean	pmol/L	1	
 APPROVED	trijodityroniini,vapaa(t3v)				3026989		14928-6	Triiodothyronine (T3) Free [Moles/volume] in Serum or Plasma	LOINC	FALSE	Triiodothyronine Free	Substance Concentration	40653866	LG2984-5	Triiodothyronine.free|Substance Concentration|Moment in time|Blood, Serum or Plasma	pmol/L	lab2clean			
 APPROVED	tromboplastiiniaika,inr-tulos	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	tromboplastiiniaika,inr-tulos				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	tromboplastiiniaika,inr-tulos				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	tromboplastiiniaika,inr-tulostus	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	tromboplastiiniaika,inr-tulostus				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	tromboplastiiniaika,inr-tulostus				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 NOT-APPROVED	tromboplastiiniaika,inr-tulostus,laaduntarkkailu	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	tromboplastiiniaika,inr-tulostus,laaduntarkkailu				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	tromboplastiiniaika,inr-tulostus,laaduntarkkailu				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	tromboplastiiniaika,inr-tulostus,plasma	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	tromboplastiiniaika,inr-tulostus,plasma				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	tromboplastiiniaika,inr-tulostus,plasma				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	tromboplastiiniaika,inr-tulostus,plasmasta	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	tromboplastiiniaika,inr-tulostus,plasmasta				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	tromboplastiiniaika,inr-tulostus,plasmasta				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	trombosyytit	e9/l	e9/l		3007461		26515-7	Platelets [#/volume] in Blood	LOINC	FALSE	Platelets	Number Concentration	40654106	LG32892-8	Platelets|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	lab2clean	10*9/L	1	
 APPROVED	trombosyytit				3007461		26515-7	Platelets [#/volume] in Blood	LOINC	FALSE	Platelets	Number Concentration	40654106	LG32892-8	Platelets|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	lab2clean			
 APPROVED	trombosyytit/pvk	e9/l	e9/l		3007461		26515-7	Platelets [#/volume] in Blood	LOINC	FALSE	Platelets	Number Concentration	40654106	LG32892-8	Platelets|Number Concentration (count/vol)|Moment in time|Blood	10*9/L	lab2clean	10*9/L	1	
@@ -7359,13 +7350,13 @@ APPROVED	u-kemseul,glu				3009261		25428-4	Glucose [Presence] in Urine by Test s
 APPROVED	u-kemseul,gluk				3009261		25428-4	Glucose [Presence] in Urine by Test strip	LOINC	FALSE	Glucose	Presence or Threshold	40656147	LG35248-0	Glucose|Presence or Threshold|Urine		isQualitative			
 APPROVED	u-kemseul,nitr				3006462		32030-9	Nitrate [Presence] in Urine	LOINC	FALSE	Nitrate	Presence or Threshold					isQualitative			
 APPROVED	u-kemseul,ph	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-kemseul,ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-kemseul,ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-kemseul,pro				3021601		5802-4	Nitrite [Presence] in Urine by Test strip	LOINC	FALSE	Nitrite	Presence or Threshold	40656325	LG35986-5	Nitrite|Presence or Threshold|Urine		isQualitative			
 APPROVED	u-kemseul,prot				4211845		57378007	Urine protein measurement	SNOMED	FALSE	Protein									
 APPROVED	u-kemseul,u-ph	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-kemseul,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-kemseul,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-kemseula,u-ph	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-kemseula,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-kemseula,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-keto				3035350		2514-8	Ketones [Presence] in Urine by Test strip	LOINC	FALSE	Ketones	Presence or Threshold	40656264;40653222	LG35342-1;LG8878-3	Ketones|Presence or Threshold|Urine;Ketones|Presence or Threshold|Moment in time|Any Urine specimen		isQualitative			
 APPROVED	u-keto-de				3035350		2514-8	Ketones [Presence] in Urine by Test strip	LOINC	FALSE	Ketones	Presence or Threshold	40656264;40653222	LG35342-1;LG8878-3	Ketones|Presence or Threshold|Urine;Ketones|Presence or Threshold|Moment in time|Any Urine specimen		isQualitative			
 APPROVED	u-keto-o	estimate	estimate		3035350		2514-8	Ketones [Presence] in Urine by Test strip	LOINC	FALSE	Ketones	Presence or Threshold	40656264;40653222	LG35342-1;LG8878-3	Ketones|Presence or Threshold|Urine;Ketones|Presence or Threshold|Moment in time|Any Urine specimen		isQualitative		1	
@@ -7481,8 +7472,7 @@ APPROVED	u-nitr-o.				3021601		5802-4	Nitrite [Presence] in Urine by Test strip	
 APPROVED	u-nitriitti(kval)	estimate	estimate		3021601		5802-4	Nitrite [Presence] in Urine by Test strip	LOINC	FALSE	Nitrite	Presence or Threshold	40656325	LG35986-5	Nitrite|Presence or Threshold|Urine		isQualitative		1	
 APPROVED	u-nitriitti(kval)				3021601		5802-4	Nitrite [Presence] in Urine by Test strip	LOINC	FALSE	Nitrite	Presence or Threshold	40656325	LG35986-5	Nitrite|Presence or Threshold|Urine		isQualitative			
 APPROVED	u-oligs-o				3013931		12239-0	Oligosaccharides [Presence] in Urine	LOINC	FALSE	Oligosaccharides	Presence or Threshold					isQualitative			
-APPROVED	u-ominp-h	kg/l	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-ominp-h		kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
+APPROVED	u-ominp-h				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-opiaa-o				3027008		3879-4	Opiates [Presence] in Urine	LOINC	FALSE	Opiates	Presence or Threshold	40656646;40653467	LG37546-5;LG7013-8	Opiates|Any Property|Any Time|Any System|Any Method;Opiates|Presence or Threshold|Moment in time|Any Urine specimen		isQualitative			
 APPROVED	u-orgah				3049233		48797-5	Organic acids panel - Urine	LOINC	TRUE	Organic acids panel	-					panel			
 APPROVED	u-osmest	mosm/kgh2o	mosm/kgh2o		3026782		2695-5	Osmolality of Urine	LOINC	FALSE	Observation	Osmolality	40656347;1472312	LG35626-7;LG51749-6	Observation|Osmolality|Urine;Observation|Osmolality|Moment in time|Any Urine specimen	mmol/kg	lab2clean	mmol/kg	1	
@@ -7510,21 +7500,21 @@ APPROVED	u-pb	umol/l	umol/l		3002480		14808-0	Lead [Moles/volume] in Urine	LOINC
 APPROVED	u-pb				3002480		14808-0	Lead [Moles/volume] in Urine	LOINC	FALSE	Lead	Substance Concentration				umol/L	lab2clean			
 APPROVED	u-ph	form	ph		3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph	ph	ph		3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
+APPROVED	u-ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-0	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph-0				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-ph-0				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-huu	ph	ph		3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph-huu				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
+APPROVED	u-ph-huu				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-hy	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph-hy				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-ph-hy				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-o	N	ph	injection_script	3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-o	form	ph	injection_script	3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph-o	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph-o				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-ph-o				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-ph.	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-ph.				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-ph.				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-phv	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-phv				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-phv				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-pi	mmol/l	mmol/l		3022229		13539-2	Phosphate [Moles/volume] in Urine	LOINC	FALSE	Phosphate	Substance Concentration	40653555;40656369	LG1779-0;LG34679-7	Phosphate|Substance Concentration|Moment in time|Any Urine specimen;Phosphate|Substance Concentration|Urine	mmol/L	lab2clean	mmol/L	1	
 APPROVED	u-pi				3022229		13539-2	Phosphate [Moles/volume] in Urine	LOINC	FALSE	Phosphate	Substance Concentration	40653555;40656369	LG1779-0;LG34679-7	Phosphate|Substance Concentration|Moment in time|Any Urine specimen;Phosphate|Substance Concentration|Urine	mmol/L	lab2clean			
 APPROVED	u-pien.ep	e6/l	e6/l		3030306		51485-1	Epithelial cells.non-squamous [#/volume] in Urine by Automated count	LOINC	FALSE	Epithelial cells.non-squamous	Number Concentration				10*6/L	lab2clean	10*6/L	1	
@@ -7559,28 +7549,26 @@ APPROVED	u-solut	e6/l	e6/l		3029287		50554-5	Urinalysis microscopic panel [#/vol
 APPROVED	u-solut				3029287		50554-5	Urinalysis microscopic panel [#/volume] - Urine by Automated count	LOINC	TRUE	Urinalysis microscopic panel	Number Concentration					panel			
 APPROVED	u-solutla				40761535		58434-2	Cells panel - Urine sediment	LOINC	TRUE	Cells panel	-					panel			
 APPROVED	u-suhteellinentiheys	kg/l	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhteellinentiheys				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean			
+APPROVED	u-suhteellinentiheys				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-suhti	g/ml	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-suhti	kg/l	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 NOT-APPROVED	u-suhti	ratio	ratio		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhti				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean			
-APPROVED	u-suhti-o	ratio	ratio		3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhti-o		ratio	Unitless ratio since it's a ratio of denities	3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhti.	ratio	ratio		3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhti.		ratio	Unitless ratio since it's a ratio of denities.N.B this is not suhti (kg/l!) OMOP ID	3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
+APPROVED	u-suhti				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
+APPROVED	u-suhti-o				3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
+APPROVED	u-suhti.				3000330		5811-5	Specific gravity of Urine by Test strip	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-suhtih	kg/l	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhtih				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean			
+APPROVED	u-suhtih				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-suhtivi	kg/l	kg/l		3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
-APPROVED	u-suhtivi				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean			
+APPROVED	u-suhtivi				3019150		5810-7	Specific gravity of Urine by Refractometry	LOINC	FALSE	Observation	Specific gravity	40656451	LG35800-8	Observation|SpGrav|Urine	1	lab2clean	1	1	
 APPROVED	u-syto				3049717		47525-1	Cytology report of Urine Cyto stain	LOINC	FALSE	Cytology report	Finding								
 APPROVED	u-syto-1				3049717		47525-1	Cytology report of Urine Cyto stain	LOINC	FALSE	Cytology report	Finding								
 APPROVED	u-tubulep	u/field	u/field		3043138		33221-3	Epithelial cells.renal [#/area] in Urine by Computer assisted method	LOINC	FALSE	Epithelial cells.renal	Number Areic (per area)				/[HPF]	lab2clean	/[HPF]	1	
 APPROVED	u-tubulep				3043138		33221-3	Epithelial cells.renal [#/area] in Urine by Computer assisted method	LOINC	FALSE	Epithelial cells.renal	Number Areic (per area)				/[HPF]	lab2clean			
 APPROVED	u-tutk-1				3037467		24357-6	Urinalysis macro (dipstick) panel - Urine	LOINC	TRUE	Urinalysis macro (dipstick) panel	-					panel			
 APPROVED	u-tutk-1,ph	ph	ph		3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
-APPROVED	u-tutk-1,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean			
+APPROVED	u-tutk-1,ph				3015736		2756-5	pH of Urine	LOINC	FALSE	pH	Log molar concentration	40656355;1472314	LG35753-9;LG51748-8	pH|Log Substance Concentration|Urine;pH|Log Substance Concentration|Moment in time|Any Urine specimen	[pH]	lab2clean	[pH]	1	
 APPROVED	u-tutk-1,u-ph	ph	ph		3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
-APPROVED	u-tutk-1,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean			
+APPROVED	u-tutk-1,u-ph				3022621		5803-2	pH of Urine by Test strip	LOINC	FALSE	pH	Log molar concentration	40656355	LG35753-9	pH|Log Substance Concentration|Urine	[pH]	lab2clean	[pH]	1	
 APPROVED	u-tutkesi				40761536		58435-9	Microorganisms panel - Urine sediment	LOINC	TRUE	Microorganisms panel	-					panel			
 APPROVED	u-uraat	mmol/l	mmol/l		3027874		14934-4	Urate [Moles/volume] in Urine	LOINC	FALSE	Urate	Substance Concentration	40656495	LG34842-1	Urate|Substance Concentration|Urine	umol/L	lab2clean	umol/L	1000	
 APPROVED	u-uraat	umol/l	umol/l		3027874		14934-4	Urate [Moles/volume] in Urine	LOINC	FALSE	Urate	Substance Concentration	40656495	LG34842-1	Urate|Substance Concentration|Urine	umol/L	lab2clean	umol/L	1	
@@ -7606,7 +7594,7 @@ APPROVED	ua-hco3-st				3041008		39460-1	Bicarbonate [Moles/volume] standard in A
 APPROVED	ua-pco2	kpa	kpa		3003932		28644-3	Carbon dioxide [Partial pressure] in Arterial cord blood	LOINC	FALSE	Carbon dioxide	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	ua-pco2				3003932		28644-3	Carbon dioxide [Partial pressure] in Arterial cord blood	LOINC	FALSE	Carbon dioxide	Partial pressure				mm[Hg]	lab2clean			
 APPROVED	ua-ph	ph	ph		3006598		28646-8	pH of Arterial cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
-APPROVED	ua-ph				3006598		28646-8	pH of Arterial cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean			
+APPROVED	ua-ph				3006598		28646-8	pH of Arterial cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
 APPROVED	ua-po2	kpa	kpa		3021706		28648-4	Oxygen [Partial pressure] in Arterial cord blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	ua-po2				3021706		28648-4	Oxygen [Partial pressure] in Arterial cord blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean			
 APPROVED	ua-shco3	mmol/l	mmol/l		3041008		39460-1	Bicarbonate [Moles/volume] standard in Arterial cord blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration				mmol/L	lab2clean	mmol/L	1	
@@ -7618,7 +7606,7 @@ APPROVED	ub-hkr				3012892		11151-8	Hematocrit [Volume Fraction] of Cord blood b
 APPROVED	ub-hkr-pu	%	%		3012892		11151-8	Hematocrit [Volume Fraction] of Cord blood by calculation	LOINC	FALSE	Erythrocyte/Specimen Volume	Volume Fraction				%	lab2clean	%	1	
 APPROVED	ub-hkr-pu				3012892		11151-8	Hematocrit [Volume Fraction] of Cord blood by calculation	LOINC	FALSE	Erythrocyte/Specimen Volume	Volume Fraction				%	lab2clean			
 APPROVED	ub-ph	ph	ph		3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
-APPROVED	ub-ph				3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean			
+APPROVED	ub-ph				3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
 APPROVED	ue-mch	pg	pg		3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean	pg	1	
 APPROVED	ue-mch				3035941		28539-5	MCH [Entitic mass]	LOINC	FALSE	Hemoglobin	Entitic mass				pg	lab2clean			
 APPROVED	ue-mchc	g/l	g/l		3003338		28540-3	MCHC [Entitic Mass/volume] in Red Blood Cells	LOINC	FALSE	Hemoglobin	Entitic Mass/volume				g/L	lab2clean	g/L	1	
@@ -7660,7 +7648,7 @@ APPROVED	uv-hbo2sat	%	%		3020093		30369-3	Fractional oxyhemoglobin in Venous cor
 APPROVED	uv-hbo2sat				3020093		30369-3	Fractional oxyhemoglobin in Venous cord blood	LOINC	FALSE	Oxyhemoglobin/Hemoglobin.total	Mass fraction				%	lab2clean			
 APPROVED	uv-hco3-st	mmol/l	mmol/l		3007628		19232-8	Bicarbonate [Moles/volume] standard in Venous blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration	40652702	LG6038-6	Bicarbonate^^standard|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	uv-ph	ph	ph		3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
-APPROVED	uv-ph				3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean			
+APPROVED	uv-ph				3022670		28647-6	pH of Venous cord blood	LOINC	FALSE	pH	Log molar concentration				[pH]	lab2clean	[pH]	1	
 APPROVED	uv-shco3	mmol/l	mmol/l		3007628		19232-8	Bicarbonate [Moles/volume] standard in Venous blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration	40652702	LG6038-6	Bicarbonate^^standard|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 IGNORE	valv.notto				0	Sample collection/processing code														
 APPROVED	vb-ahco3	mmol/l	mmol/l		3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -7680,7 +7668,7 @@ APPROVED	vb-emäsylimäärä	mmol/l	mmol/l		3002032		1927-3	Base excess in Venou
 APPROVED	vb-gluk	mmol/l	mmol/l		3038515		39480-9	Glucose [Moles/volume] in Venous blood	LOINC	FALSE	Glucose	Substance Concentration	40653087	LG2432-5	Glucose|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vb-gluk				3038515		39480-9	Glucose [Moles/volume] in Venous blood	LOINC	FALSE	Glucose	Substance Concentration	40653087	LG2432-5	Glucose|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vb-happamuusaste	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vb-happamuusaste				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vb-happamuusaste				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vb-hb	g/l	g/l		3004119		30350-3	Hemoglobin [Mass/volume] in Venous blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean	g/L	1	
 APPROVED	vb-hb	mg/l	mg/l		3004119		30350-3	Hemoglobin [Mass/volume] in Venous blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean	g/L	0.001	
 APPROVED	vb-hb				3004119		30350-3	Hemoglobin [Mass/volume] in Venous blood	LOINC	FALSE	Hemoglobin	Mass Concentration				g/L	lab2clean			
@@ -7710,7 +7698,7 @@ APPROVED	vb-he-tase,p-na				3019550		2951-2	Sodium [Moles/volume] in Serum or Pl
 APPROVED	vb-he-tase,vb-hco3	mmol/l	mmol/l		3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vb-he-tase,vb-hco3				3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vb-he-tase,vb-ph	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vb-he-tase,vb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vb-he-tase,vb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vb-he-tase-pika,p-k	mmol/l	mmol/l		3023103		2823-3	Potassium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vb-he-tase-pika,p-k				3023103		2823-3	Potassium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vb-he-tase-pika,p-na	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -7738,11 +7726,11 @@ APPROVED	vb-o2sat				3024928		2711-0	Oxygen saturation in Venous blood	LOINC	FAL
 APPROVED	vb-pco2	kpa	kpa		3021447		2021-4	Carbon dioxide [Partial pressure] in Venous blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	vb-pco2				3021447		2021-4	Carbon dioxide [Partial pressure] in Venous blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean			
 APPROVED	vb-ph	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vb-ph-vt	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vb-ph-vt				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vb-ph-vt				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vb-phpika	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vb-phpika				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vb-phpika				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vb-po2	kpa	kpa		3024354		2705-2	Oxygen [Partial pressure] in Venous blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	vb-po2				3024354		2705-2	Oxygen [Partial pressure] in Venous blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean			
 APPROVED	vb-sbc	mmol/l	mmol/l		3007628		19232-8	Bicarbonate [Moles/volume] standard in Venous blood	LOINC	FALSE	Bicarbonate^^standard	Substance Concentration	40652702	LG6038-6	Bicarbonate^^standard|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -7777,7 +7765,7 @@ IGNORE	vieri-crp				0	Point-of-care rapid test
 APPROVED	vieri-fidd	mg/l	mg/l		3051714		48065-7	Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma	LOINC	FALSE	Fibrin D-dimer	Mass Concentration				ug/L	lab2clean	ug/L	1000	
 APPROVED	vieri-fidd				3051714		48065-7	Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma	LOINC	FALSE	Fibrin D-dimer	Mass Concentration				ug/L	lab2clean			
 APPROVED	vieri-inr	inr	inr		3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
-APPROVED	vieri-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean			
+APPROVED	vieri-inr				3032080		34714-6	INR in Blood by Coagulation assay	LOINC	FALSE	INR	Relative time				1	lab2clean	1	1	
 APPROVED	virtsamäärä	ml	ml		3036603		28009-9	Volume of Urine	LOINC	FALSE	Specimen volume	Volume	40656452	LG34516-1	Specimen volume|Volume|Urine	mL	lab2clean	mL	1	
 APPROVED	virtsanosmolalitetti	mosm/kgh2o	mosm/kgh2o		3026782		2695-5	Osmolality of Urine	LOINC	FALSE	Observation	Osmolality	40656347;1472312	LG35626-7;LG51749-6	Observation|Osmolality|Urine;Observation|Osmolality|Moment in time|Any Urine specimen	mmol/kg	lab2clean	mmol/kg	1	
 APPROVED	virtsanosmolalitetti				3026782		2695-5	Osmolality of Urine	LOINC	FALSE	Observation	Osmolality	40656347;1472312	LG35626-7;LG51749-6	Observation|Osmolality|Urine;Observation|Osmolality|Moment in time|Any Urine specimen	mmol/kg	lab2clean			
@@ -7788,7 +7776,7 @@ APPROVED	vp-cl				3035285		41649-5	Chloride [Moles/volume] in Venous blood	LOINC
 APPROVED	vp-gluk	mmol/l	mmol/l		3038515		39480-9	Glucose [Moles/volume] in Venous blood	LOINC	FALSE	Glucose	Substance Concentration	40653087	LG2432-5	Glucose|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vp-gluk				3038515		39480-9	Glucose [Moles/volume] in Venous blood	LOINC	FALSE	Glucose	Substance Concentration	40653087	LG2432-5	Glucose|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vp-happamuusaste	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vp-happamuusaste				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vp-happamuusaste				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vp-hco3st	mmol/l	mmol/l		3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vp-hco3st				3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vp-k	mmol/l	mmol/l		3041354		39789-3	Potassium [Moles/volume] in Venous blood	LOINC	FALSE	Potassium	Substance Concentration	40653596	LG10990-6	Potassium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
@@ -7798,7 +7786,7 @@ APPROVED	vp-laktaat				3008037		2519-7	Lactate [Moles/volume] in Venous blood	LO
 APPROVED	vp-na	mmol/l	mmol/l		3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vp-na				3019550		2951-2	Sodium [Moles/volume] in Serum or Plasma	LOINC	FALSE	Sodium	Substance Concentration	40653762	LG11363-5	Sodium|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vp-ph	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	vp-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	vp-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	vp-shco3	mmol/l	mmol/l		3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean	mmol/L	1	
 APPROVED	vp-shco3				3027273		14627-4	Bicarbonate [Moles/volume] in Venous blood	LOINC	FALSE	Bicarbonate	Substance Concentration	40652704	LG2807-8	Bicarbonate|Substance Concentration|Moment in time|Blood, Serum or Plasma	mmol/L	lab2clean			
 APPROVED	vrevi				3014271		19000-9	Vancomycin [Susceptibility]	LOINC	FALSE	Vancomycin	Susceptibility (microorganisms)	40658078	LG41127-8	VancomycinSusc|Isolate					
@@ -7832,5 +7820,5 @@ APPROVED	zb-o2-vol	%	%		3034037		41655-2	Hematocrit [Volume Fraction] of Mixed v
 APPROVED	zb-pco2	kpa	kpa		3021513		19212-0	Carbon dioxide [Partial pressure] in Mixed venous blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean	mm[Hg]	7.500637554	
 APPROVED	zb-pco2				3021513		19212-0	Carbon dioxide [Partial pressure] in Mixed venous blood	LOINC	FALSE	Carbon dioxide	Partial pressure	40652759	LG344-8	Carbon dioxide|Pressure (partial)|Moment in time|Blood, Serum or Plasma	mm[Hg]	lab2clean			
 APPROVED	zb-ph	ph	ph		3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
-APPROVED	zb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean			
+APPROVED	zb-ph				3012544		2746-6	pH of Venous blood	LOINC	FALSE	pH	Log molar concentration	40653530	LG345-5	pH|Log Substance Concentration|Moment in time|Blood, Serum or Plasma	[pH]	lab2clean	[pH]	1	
 APPROVED	zb-po2	kpa	kpa		3038071		19211-2	Oxygen [Partial pressure] in Mixed venous blood	LOINC	FALSE	Oxygen	Partial pressure				mm[Hg]	lab2clean	mm[Hg]	7.500637554	

@@ -23,31 +23,19 @@ kol/hdlsuh		ratio		VALID
 kol/hdl-su		ratio		VALID
 kol/hdl		ratio		VALID
 kolesterolinjahdl-kolest.suhde		ratio		VALID
-u-ominp-h		kg/l		VALID
 non-hdl		mmol/l		VALID
-u-suhti-o		ratio	Unitless ratio since it's a ratio of denities	VALID
-u-suhti.		ratio	Unitless ratio since it's a ratio of denities.N.B this is not suhti (kg/l!) OMOP ID	VALID
 -h-ind		index	index	VALID
-p-inr-hy		inr		VALID
 pappakmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
 ntkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
 hcgbvkmom		ratio	This is a statistical value. It's a deviation from the median. ratio is the best we have	VALID
 -l-ind		index	No harmonized reference data in this OMOP ID	VALID
 -i-ind		index	No harmonized reference data in this OMOP ID	VALID
-inr-vieri		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	VALID
 oma-p-crp		mg/l		VALID
 b-hba1c,tk		mmol/mol	For this omop id values in range [40,60] are mmol/mol	VALID
-snabb-inr		inr	Distributions differ (KS >= 0.3) but it can only be INR. probably there's some issues with the harmonized data in the first place	VALID
 crp,tk		mg/l		VALID
-p-inr-vt		inr		VALID
 b-ghb-a1c,tk		%	For this omop id values in range [4,6] are %	VALID
-cb-tt-inrpika		inr	No harmonized reference data in this OMOP ID	VALID
-b-inr-pik		inr		VALID
-inr-pika		inr	No harmonized reference data in this OMOP ID	VALID
-cb-inrc-c		inr	No harmonized reference data in this OMOP ID	VALID
 cd4/cd8		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
 p-gluk,tk		mmol/l		VALID
-p-inr-pi		inr	No harmonized reference data	VALID
 ly-cd4/cd8		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
 s-apob/a1		ratio	No harmonized reference data	OBVIOUS (OMOP quantity allows only unit 'ratio')
 fp-kol-ind		mmol/l	Manually checked from thl	VALID
@@ -61,7 +49,6 @@ b-hkr(erytrosyytit,tilavuusosuus)	osuus	ratio		VALID
 s-tsh	mlu/l	mu/l		VALID
 kolesteroli/hdl-suhde		ratio		VALID
 fs-kalsium,ionisoitunut		mmol/l		VALID
-p-tromboplastiiniaika,inr,tt		inr		VALID
 -cdt		mg/l	injection_script	PASS,FAIL,PASS
 b-keto/pik		mmol/l	injection_script	FAIL,PASS,PASS
 b-ketoaineet		mmol/l	injection_script	FAIL,PASS,PASS

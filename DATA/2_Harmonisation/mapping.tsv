@@ -389,7 +389,7 @@ ps-infaag		3046524		TRUE
 ps-infbag		3043362		TRUE
 pt-klr-tje		4094501		TRUE
 s-ca19-9	u/ml	3022914		TRUE
-u-ominp-h	kg/l	3019150		TRUE
+u-ominp-h		3019150		TRUE
 lymängd	e9/l	3019198		TRUE
 u-baktjvi.		3026008		TRUE
 fp-nh4-ion	umol/l	3023183		TRUE
@@ -794,7 +794,7 @@ s-hevab		3006922		TRUE
 l-baso-m	%	3022096		TRUE
 s-dmklots	umol/l	3008832		TRUE
 p-gluveka	mmol/l	3013826		TRUE
-p-tromboplastiiniaika,inr,tt	inr	3032080		TRUE
+p-tromboplastiiniaika,inr,tt		3032080		TRUE
 ts-pad-ish		3049539		TRUE
 resvirnho		21493195		TRUE
 ps-strcult		3053028		TRUE
@@ -3167,7 +3167,7 @@ p-kalsium,ionisoitunutpika,hoitoyksiköt	mmol/l	3021347		TRUE
 testosteronivapaa,laskettu	pmol/l	36032269		TRUE
 s-normet	umol/l	3026179		TRUE
 bilirubiinikonjugaatit(bil-kj)	umol/l	3005772		TRUE
-b-inr-pik	inr	3032080		TRUE
+b-inr-pik		3032080		TRUE
 p-inrviitasaari	inr	3032080		TRUE
 s-codiab	spu/ml	3047161		FALSE
 s-aspeag	index	3008536		FALSE
@@ -7476,34 +7476,34 @@ potilaanlämpötila	°c	3020891		TRUE
 pt-lämpötila	°c	3020891		TRUE
 p-nfl	ng/l	3966310		FALSE
 u-prot-o	estimate	3014051		TRUE
-u-suhti-o	ratio	3000330		TRUE
+u-suhti-o		3000330		TRUE
 u-veri-o	estimate	3011397		TRUE
 -h-ind	index	3052851	Sample quality index, mixed scales and no unit in Kanta	FALSE
-p-inr-hy	inr	3032080		TRUE
+p-inr-hy		3032080		TRUE
 ntkmom	ratio	40763531		TRUE
 pappakmom	ratio	46235831		TRUE
 hcgbvkmom	ratio	3008714		TRUE
-u-suhti.	ratio	3000330		TRUE
+u-suhti.		3000330		TRUE
 -l-ind	index	3051611	Sample quality index, mixed scales and no unit in Kanta	FALSE
 s-mypnabm	estimate	3010521		TRUE
 crp,tk	mg/l	3020460		TRUE
 -i-ind	index	3051651	Sample quality index, mixed scales and no unit in Kanta	FALSE
 u-kemseul,ph	ph	3022621		TRUE
 u-gluk-0	estimate	3009261		TRUE
-inr-vieri	inr	3032080		TRUE
+inr-vieri		3032080		TRUE
 b-hba1c,tk	mmol/mol	3004410		TRUE
 p-gluk,tk	mmol/l	3013826		TRUE
-snabb-inr	inr	3032080		TRUE
+snabb-inr		3032080		TRUE
 cb-crp	mg/l	3051387		TRUE
 b-ghb-a1c,tk	%	3004410		TRUE
 fp-kol-ind	mmol/l	3019900		TRUE
 cd4/cd8	ratio	40757349		TRUE
 ly-cd4/cd8	ratio	3020073		TRUE
 fs-trfesat	ratio	3000185		TRUE
-cb-tt-inrpika	inr	3032080		TRUE
-cb-inrc-c	inr	3032080		TRUE
-inr-pika	inr	3032080		TRUE
-p-inr-pi	inr	3032080		TRUE
+cb-tt-inrpika		3032080		TRUE
+cb-inrc-c		3032080		TRUE
+inr-pika		3032080		TRUE
+p-inr-pi		3032080		TRUE
 s-apob/a1	ratio	3011831		TRUE
 u-tutk-1,ph	ph	3015736		TRUE
 p-tromboplastiiniaika,inr-tulos	inr	3032080		TRUE
@@ -7756,3 +7756,4 @@ vb-lämpöti	°c	0	Patient characteristic/vital sign	FALSE
 poikkeavalämpötila	°c	0	Patient characteristic/vital sign	FALSE
 vb-temp	°c	0	Patient characteristic/vital sign	FALSE
 e-mchp	pg	3035941		TRUE
+p-inr-vt		3032080		TRUE
