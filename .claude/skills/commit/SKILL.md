@@ -1,7 +1,7 @@
 ---
 name: commit
-description: Use whenever the user asks to commit changes (e.g. "commit", "commit this", "/commit"). Reviews the diff, groups it by area (Infra, SCRIPTS, Docs, DATA) and commits each area with an area-first message matching this repo's convention.
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Read, Edit(**/README.md)
+description: Use whenever the user asks to commit changes (e.g. "commit", "commit this", "/commit"). Reviews the diff, groups it by area (Infra, SCRIPTS, Docs, DATA), commits each area with an area-first message matching this repo's convention, and logs the commits that change pairs in DATA/6_TrackChanges/TestCodeUnitChanges.tsv.
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Bash(python3 .claude/skills/commit/logChanges.py:*), Bash(./SCRIPTS/7_BuildDashboard/run.sh:*), Read, Edit(**/README.md)
 ---
 
 ## Context
@@ -51,7 +51,32 @@ Before committing, check:
   **minimum** edits and commit them in the `Docs` commit.
 - **DATA**: when `SCRIPTS` or a hand-edited table changed, the outputs of the affected steps were
   rerun (see "Rerunning after an edit" in `README.md`): their files are in the diff. If they are not, stop
-  and tell the user which steps to rerun; do not run them from this skill.
+  and tell the user which steps to rerun; do not run them from this skill (the only step it runs is
+  `7_BuildDashboard`, after logging the changes, see below).
+
+## Log the changes of the pairs
+
+The git history is the log of the changes of the mapping: `DATA/6_TrackChanges/TestCodeUnitChanges.tsv`
+lists, for each `TEST_NAME[MEASUREMENT_UNIT]`, the commits that changed it, and the dashboard links them in its
+Change Log column (see `SCRIPTS/6_TrackChanges/README.md`).
+
+- **The body of a `DATA` commit that changes pairs** (it changes
+  `DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv`) is the record of the case:
+  the rows added or changed and why, what was checked (the evidence), what was decided, and the result
+  (the pairs and their status before and after, the change of the dashboard counts). When the change
+  comes from a `SCRIPTS` commit, name it in the body. Write it from the report of the work (see the
+  `fix-errors` skill).
+- **After that commit**, log it and rerun the dashboard:
+
+  ```
+  python3 .claude/skills/commit/logChanges.py <hash> [<issue_number>]
+  ./SCRIPTS/7_BuildDashboard/run.sh DATA --env build
+  ```
+
+  Give the `<issue_number>` when the change was made for a GitHub issue (the user names it, or the work
+  started from it): the entry is then `#<issue>:<hash>`, and the commit body mentions `#<issue>` too.
+- Commit the table and the dashboard as `DATA (TrackChanges): Log <hash> for <n> pairs`. This commit is
+  not logged itself (it changes no pair).
 
 ## Commit message format
 
@@ -77,7 +102,19 @@ Infra: Add AGENTS.md and the commit skill
 SCRIPTS (BuildDashboard): Show the fixed unit in TestCode[Unit]
 Docs (BuildKantaAgregatedTable): Describe test_outcome and the Test Outcomes section
 DATA (Harmonisation): Map p-krea[mmol/l] to umol/l
-DATA: Rerun steps 1, 4, 5 and 6
+DATA: Rerun steps 1, 4, 5 and 7
+DATA (TrackChanges): Log 3f2a1c9 for 24 pairs
+```
+
+```
+DATA (Harmonisation): Convert eGFR ml/min/173m2 to mL/min
+
+- unitHarmonisation.tsv: Volume Rate/Area ml/min/173m2 -> mL/min x1, ml/s/173m2 -> mL/min x60
+- Checked: deciles 39-107 and reference ranges AF[69.39,] are eGFR in mL/min/1.73 m2; lab2clean
+  names the unit of the Volume Rate/Area concepts mL/min, and ml/s -> mL/min was already a rule
+- Decided: a rule for the property, not a target-unit overwrite (one row per concept of the Group)
+- Result: 24 pairs ERROR:PropertyUnitMismatch -> APPROVED (6.15 M records); 12 AGREE, 4 WARNING
+  (pt-gfrekys, pt-gfre-3, pt-gfrekce, p-gfreepi), 8 too few values
 ```
 
 ```
@@ -91,7 +128,8 @@ SCRIPTS (BuildKantaAgregatedTable, BuildDashboard): Add test_outcome and a Test 
 
 Based on the context above, sort the changed files into the four areas, sync the docs and check the data
 (see above), then stage and commit each area as **one** commit, in the order Infra → SCRIPTS → Docs →
-DATA. If a rule blocks a commit, stop and explain why.
+DATA. If the `DATA` commit changed pairs, log it (see "Log the changes of the pairs") and commit the log.
+If a rule blocks a commit, stop and explain why.
 
 After committing, always list the commits in the chat, one line per commit, short hash + subject, in the
 order they were made, even when there is only one:

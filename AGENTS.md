@@ -54,14 +54,18 @@ Map Kanta codes and fix the errors the pipeline reports, by editing only these t
 
 How to work:
 
-1. Find the problem in `DATA/6_BuildDashboard/dashboard.html`, in a `*.validation.md`, or in
+1. Find the problem in `DATA/7_BuildDashboard/dashboard.html`, in a `*.validation.md`, or in
    `mapping_status` / `harmonisation_values_status` of the step 4 and 5 tables.
 2. Look up the error in `README.md` ("Errors along the process") and pick the Solution that fits. Do not
    set `ignore` to `TRUE` or `APPROVED` to `TRUE` without the user's confirmation: both are a decision that
    the mapping is right.
 3. Edit the table, rerun from `4_BuildHarmonisationTable` (see "Rerunning after an edit"), and check that
    the validation report has no ERROR and that the pair now has the expected status.
-4. Report what was changed, row by row, and its effect on the counts of the dashboard.
+4. Report what was changed, row by row, and its effect on the counts of the dashboard. This report becomes
+   the body of the commit, and the commit is logged against each changed pair in
+   `DATA/6_TrackChanges/TestCodeUnitChanges.tsv` (the Change Log of the dashboard).
+
+The `fix-errors` skill (`.claude/skills/fix-errors/SKILL.md`) holds the full procedure.
 
 A problem in the input data itself (`DATA/1_Input/0_KantaAgregatedData/`) or in the code is not solved in
 this mode: report it to the user.
@@ -73,5 +77,6 @@ the diff of what the agent did before it is committed. Finishing a task, or a st
 is not a request to commit.
 
 When the user asks to commit, use the `commit` skill (`.claude/skills/commit/SKILL.md`): it groups the
-changes by area (Infra, SCRIPTS, Docs, DATA) and writes the messages. Never push, and never amend a commit,
+changes by area (Infra, SCRIPTS, Docs, DATA), writes the messages, and logs the commits that change pairs in
+`DATA/6_TrackChanges/TestCodeUnitChanges.tsv`. Never push, and never amend a commit,
 unless the user asks.

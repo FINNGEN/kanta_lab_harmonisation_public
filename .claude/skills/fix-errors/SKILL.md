@@ -10,8 +10,11 @@ means, where it comes from and its possible solutions are defined only in `READM
 process": look the error up there by its label (e.g. `ERROR:MissingConversion`, **Values mismatch**) and do
 not copy the catalogue here.
 
-Status: draft. It is refined from real cases: after each case worked with the user, add what was actually
-checked and decided to "Lessons from cases" at the end.
+Each case is recorded in the body of the commit that fixes it, and the commit is listed against every pair
+it changed in `DATA/6_TrackChanges/TestCodeUnitChanges.tsv` (the Change Log of the dashboard). Read the
+commits of a pair (`git show <hash>`) before working on it again. This skill holds only general rules: when
+a case teaches one that changes how to work, add it as one line in the step it belongs to, with no case
+narrative.
 
 ## Guardrails
 
@@ -61,10 +64,10 @@ Synovial fluid, `f-` Stool.
 
 When showing the evidence, and again in the report after the rerun, offer the user a link to the dashboard
 filtered on the pairs of the case, so they can check them by eye. The URL parameters are described in
-`SCRIPTS/6_BuildDashboard/README.md`, "URL parameters":
+`SCRIPTS/7_BuildDashboard/README.md`, "URL parameters":
 
 ```
-file://<repo>/DATA/6_BuildDashboard/dashboard.html?tab=mappingtable&<column>=<filter>&...
+file://<repo>/DATA/7_BuildDashboard/dashboard.html?tab=mappingtable&<column>=<filter>&...
 ```
 
 - `tab=mappingtable`, then one parameter per column filter, written as in the filter box: `testcodeunit`,
@@ -101,6 +104,10 @@ Write the exact rows, in the format of each table (tab separated, `""` for missi
 | `unitHarmonisation.tsv` | `context`, `UNIT`, `HARMONISED_UNIT`, `CONVERSION`, `VALIDATION_MESSAGES` | `context` is a `has_property` (all its concepts) or a `concept_id` (only that one, wins); `HARMONISED_UNIT` written exactly as in `targetTable.tsv` (e.g. `g/L`); `CONVERSION` a number or a formula in `X` (e.g. `0.001`, `703*X+0`) |
 | `harmonisedUnitOverwrite.tsv` | `concept_id`, `harmonised_unit`, `note` | one row per concept; `note` says why; add the conversions to the new unit |
 
+- Before proposing a target-unit overwrite, look for the rules of the same property in
+  `unitHarmonisation.tsv`: the lab2clean unit may be a shortened label the repo already converts to (e.g.
+  `mL/min` for `Volume Rate/Area`), and an overwrite needs a row per concept of the Group.
+
 Show the effect you expect: the new `mapping_status`, the `HARMONISED_UNIT`, and for a unit fix the
 deciles after the conversion against the reference.
 
@@ -109,7 +116,7 @@ deciles after the conversion against the reference.
 After the user agrees:
 
 1. Edit the table(s).
-2. Rerun from step 4: `./SCRIPTS/4_BuildHarmonisationTable/run.sh DATA --env build`, then steps 5 and 6
+2. Rerun from step 4: `./SCRIPTS/4_BuildHarmonisationTable/run.sh DATA --env build`, then steps 5 and 7
    (see "Rerunning after an edit" in `README.md`).
 3. Check `harmonisationTable.validation.md` has no ERROR and no new WARNING about the edited rows.
 4. Check the pair's new `mapping_status` and `harmonisation_values_status`, and that no other pair of the
@@ -117,12 +124,13 @@ After the user agrees:
 
 ## 6. Report
 
+The report is also the draft of the body of the `DATA (Harmonisation)` commit (see the `commit` skill), so
+write it to stand alone:
+
 - The rows added or changed, table by table.
+- What was checked (the evidence) and what was decided, with the options left out and why.
 - The pair before and after: `mapping_status`, `harmonisation_values_status`, `KS`, `log10_D5`.
 - The change of the dashboard counts (Events and Harmonised Values tables), and any other pair that
   changed status.
 - What is left open, and anything the user should decide.
-
-## Lessons from cases
-
-(Empty: add here, per case, what was checked and decided, and turn repeated lessons into rules above.)
+- If the work came from a GitHub issue, its number, so the commit is logged as `#<issue>:<hash>`.
