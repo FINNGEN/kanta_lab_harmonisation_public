@@ -19,3 +19,7 @@ output_data/*
 .scratchpad
 # Archived previous version
 ARCHIVE/
+
+# Run logs of the steps
+log.txt
+*.log.txt
