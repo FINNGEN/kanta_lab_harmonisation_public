@@ -15,14 +15,16 @@ Configuration:
   unitHarmonisationFile = DATA/2_Harmonisation/unitHarmonisation.tsv
   targetTableFile = DATA/3_Target/4_BuildTargetTable/targetTable.tsv
   unitOverwriteFile = DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv
+  kantaFile = DATA/1_Input/1_BuildKantaAgregatedTable/kantaAgregatedTable.tsv
   outDir = DATA/4_BuildHarmonisationTable
 Read 79 rows from DATA/2_Harmonisation/unitFix.tsv
 Read 7756 rows from DATA/2_Harmonisation/mapping.tsv
 Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
 Read 103541 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 Read 1 rows from DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv
-25 tests: 24 SUCCESS, 1 WARNING, 0 ERROR
+27 tests: 25 SUCCESS, 2 WARNING, 0 ERROR
 unitFix.tsv: TEST_NAME + UNIT is used downstream (it is in mapping.tsv): 2 rows, not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate]
+mapping.tsv: TEST_NAME + UNIT is in the Kanta data (kantaAgregatedTable.tsv), directly or through a fix of unitFix.tsv: 1,406 rows, not in the Kanta data, e.g. ab-ph[mmol/l]; ab-po2[mmol/l]; ab-hbo2[mmol/l]
 Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.validation.md
 
 Attaching package: ‘dplyr’
@@ -48,6 +50,7 @@ Read 136 rows from DATA/2_Harmonisation/unitHarmonisation.tsv
 Read 103541 rows from DATA/3_Target/4_BuildTargetTable/targetTable.tsv
 Read 1 rows from DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv
 2 unitFix rows have a TEST_NAME + UNIT that is not in the mapping
+7756 rows from mapping.tsv and 77 more from the fixes of unitFix.tsv
 1 concepts take their target unit from DATA/2_Harmonisation/harmonisedUnitOverwrite.tsv
 133 conversion rules of a property, 3 conversion rules of a concept
 Read 337 rows from DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
@@ -61,12 +64,12 @@ Unchanged DATA/4_BuildHarmonisationTable/test_unit_context_unit_missing_warning.
 Read 104 rows from DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv
 Unchanged DATA/4_BuildHarmonisationTable/test_unit_loinc_group_unit_mismatch_warning.tsv (104 rows)
 358 TEST_NAME + UNIT with no conversion to the target unit (0 ignored), 104 TEST_NAME + UNIT in a LOINC Group with mixed units (0 ignored)
-APPROVED 6885, ERROR:LoincGroupUnitsMissmatch 92, ERROR:MissingConversion 85, ERROR:PropertyUnitMismatch 74, IGNORE 237, NOT-APPROVED 387 (mapping_status)
-7760 TEST_NAME/PREPROCESED_UNIT/UNIT pairs in 7760 rows
+APPROVED 6943, ERROR:LoincGroupUnitsMissmatch 97, ERROR:MissingConversion 87, ERROR:PropertyUnitMismatch 82, IGNORE 237, NOT-APPROVED 387 (mapping_status)
+7833 TEST_NAME/MEASUREMENT_UNIT/UNIT pairs in 7833 rows
 231 pairs whose concept_id is not in the target table
-3299 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
-4322 pairs have no HARMONISED_UNIT
-Wrote 7760 rows to DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
+3305 pairs have a HARMONISED_UNIT but no CONVERSION: HARMONISED_UNIT set to empty
+4336 pairs have no HARMONISED_UNIT
+Wrote 7833 rows to DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 Wrote DATA/4_BuildHarmonisationTable/harmonisationTable.tsv
 Wrote DATA/4_BuildHarmonisationTable/testname_unit_property_missmatch_warning.tsv
 Wrote DATA/4_BuildHarmonisationTable/testname_property_shared_warning.tsv

@@ -6,12 +6,12 @@ Validation of the input tables of `4_BuildHarmonisationTable`: the tables of `2_
 
 | table | SUCCESS | WARNING | ERROR |
 | --- | --- | --- | --- |
-| unitFix.tsv | 5 | 1 | 0 |
-| mapping.tsv | 6 | 0 | 0 |
+| unitFix.tsv | 6 | 1 | 0 |
+| mapping.tsv | 6 | 1 | 0 |
 | unitHarmonisation.tsv | 4 | 0 | 0 |
 | harmonisedUnitOverwrite.tsv | 6 | 0 | 0 |
 | targetTable.tsv | 3 | 0 | 0 |
-| ALL | 24 | 1 | 0 |
+| ALL | 25 | 2 | 0 |
 
 ## Tests
 
@@ -19,13 +19,15 @@ Validation of the input tables of `4_BuildHarmonisationTable`: the tables of `2_
 | --- | --- | --- | ---: | --- |
 | unitFix.tsv | SUCCESS | columns match their declared types |  |  |
 | unitFix.tsv | SUCCESS | TEST_NAME must have a value |  |  |
-| unitFix.tsv | SUCCESS | TEST_NAME + PREPROCESED_UNIT are unique |  |  |
-| unitFix.tsv | SUCCESS | UNIT differs from PREPROCESED_UNIT |  |  |
+| unitFix.tsv | SUCCESS | TEST_NAME + MEASUREMENT_UNIT are unique |  |  |
+| unitFix.tsv | SUCCESS | UNIT differs from MEASUREMENT_UNIT |  |  |
 | unitFix.tsv | WARNING | TEST_NAME + UNIT is used downstream (it is in mapping.tsv) | 2 | not used downstream, e.g. s-apob/apoa1-suhde[->ratio]; u-hb-o[form->estimate] |
-| unitFix.tsv | SUCCESS | TEST_NAME + PREPROCESED_UNIT must not appear in mapping.tsv |  |  |
+| unitFix.tsv | SUCCESS | TEST_NAME + MEASUREMENT_UNIT must not appear in mapping.tsv |  |  |
+| unitFix.tsv | SUCCESS | TEST_NAME + MEASUREMENT_UNIT is in the Kanta data (kantaAgregatedTable.tsv) |  |  |
 | mapping.tsv | SUCCESS | columns match their declared types |  |  |
 | mapping.tsv | SUCCESS | TEST_NAME, concept_id must have a value |  |  |
 | mapping.tsv | SUCCESS | TEST_NAME + UNIT are unique |  |  |
+| mapping.tsv | WARNING | TEST_NAME + UNIT is in the Kanta data (kantaAgregatedTable.tsv), directly or through a fix of unitFix.tsv | 1,406 | not in the Kanta data, e.g. ab-ph[mmol/l]; ab-po2[mmol/l]; ab-hbo2[mmol/l] |
 | mapping.tsv | SUCCESS | APPROVED must be TRUE or FALSE |  |  |
 | mapping.tsv | SUCCESS | concept_id must not be 0, unless there is an ignore_mapping_reason |  |  |
 | mapping.tsv | SUCCESS | concept_id is in targetTable.tsv, unless there is an ignore_mapping_reason |  |  |

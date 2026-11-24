@@ -23,10 +23,10 @@ Configuration:
   ksAgree = 0.5
   ksDisagree = 0.8
 Read 28772 rows from DATA/5_EvaluateHarmonisedData/evaluatedHarmonisedKantaAgregatedTable.tsv
-APPROVED 5649, NOT-APPROVED 262, IGNORE 234, MISSING 22418, ERROR 209 pairs; 280,959,762 records
-3 error reasons, 209 ERROR pairs
+APPROVED 5668, NOT-APPROVED 262, IGNORE 234, MISSING 22392, ERROR 216 pairs; 280,959,762 records
+3 error reasons, 216 ERROR pairs
 77 pairs with a fixed unit, 8,621,196 records
-AGREE 871, WARNING 43, DISAGREE 7, no_unit 27, no_reference 373, qualitative_panel 24, no_values 26809, not_approved 618 pairs
-28772 rows in the table, 6.55 MB of data
+AGREE 879, WARNING 43, DISAGREE 7, no_unit 27, no_reference 373, qualitative_panel 25, no_values 26809, not_approved 609 pairs
+28772 rows in the table, 6.56 MB of data
 Wrote DATA/6_BuildDashboard/dashboard.html (6.6 MB)
 Wrote DATA/6_BuildDashboard/dashboard.html

@@ -16,7 +16,7 @@ Configuration:
   summaryValues.tsv = DATA/1_Input/0_KantaAgregatedData/summaryValues.tsv
   summaryReference.tsv = DATA/1_Input/0_KantaAgregatedData/summaryReference.tsv
   summaryOutcomes.tsv = DATA/1_Input/0_KantaAgregatedData/summaryOutcomes.tsv
-  settingsFile = DATA/1_Input/0_KantaAgregatedData/upstreamSettings.yaml (n_records_no_value_threshold = 1000, n_subjects_no_value_threshold = 60)
+  settingsFile = DATA/settings.yaml (n_records_no_value_threshold = 1000, n_subjects_no_value_threshold = 60)
   outDir = DATA/1_Input/1_BuildKantaAgregatedTable
 Read 28802 rows from DATA/1_Input/0_KantaAgregatedData/summaryTest.tsv
 Read 10358 rows from DATA/1_Input/0_KantaAgregatedData/summaryUnitSource.tsv
