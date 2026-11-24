@@ -421,6 +421,30 @@ table.data .sub { color: var(--muted); }
     applyFilters();
   });
 
+  // ---- url parameters: ?tab=mappingtable&status=approved&testcodeunit=p-krea
+  // tab: inputdata, targetdata, mappingsummary or mappingtable. Every column of the Mapping Table
+  // can be filtered by its name (the label or the key without spaces and symbols, case insensitive),
+  // with the same text as its filter box.
+  var plain = function (x) { return String(x).toLowerCase().replace(/[^a-z0-9]/g, ""); };
+  var params = new URLSearchParams(window.location.search);
+  var tabNames = { inputdata: "input", input: "input", targetdata: "target", target: "target",
+    mappingsummary: "summary", summary: "summary", mappingtable: "table", table: "table" };
+  var wanted = tabNames[plain(params.get("tab") || "")];
+  if (wanted) showTab(wanted);
+  params.forEach(function (value, name) {
+    COLS.forEach(function (c) {
+      if (![plain(c.key), plain(c.label)].includes(plain(name))) return;
+      var el = document.querySelector('#grid thead [data-key="' + c.key + '"]:not(.label)');
+      if (c.type === "status") {
+        var status = CFG.statusOrder.filter(function (s) { return plain(s) === plain(value); })[0];
+        if (!status) return;
+        value = status;
+      }
+      filters[c.key] = value;
+      if (el) el.value = value;
+    });
+  });
+
   applyFilters();
 })();
 </script>
