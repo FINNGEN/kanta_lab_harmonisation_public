@@ -5,7 +5,7 @@
 # commit and its parent, or when it is new and mapped (not MISSING). A change of the KS alone (e.g. its
 # reference changed) is not logged.
 #
-# Usage: python3 .claude/skills/commit/logChanges.py <commit> [<issue_number>]
+# Usage: python3 .claude/skills/commit/scripts/logChanges.py <commit> [<issue_number>]
 #
 
 #

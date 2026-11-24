@@ -1,7 +1,7 @@
 ---
 name: commit
 description: Use whenever the user asks to commit changes (e.g. "commit", "commit this", "/commit"). Reviews the diff, groups it by area (Infra, SCRIPTS, Docs, DATA), commits each area with an area-first message matching this repo's convention, and logs the commits that change pairs in DATA/6_TrackChanges/TestCodeUnitChanges.tsv.
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Bash(python3 .claude/skills/commit/logChanges.py:*), Bash(./SCRIPTS/7_BuildDashboard/run.sh:*), Read, Edit(**/README.md)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git branch:*), Bash(git log:*), Bash(git add:*), Bash(git commit:*), Bash(python3 .claude/skills/commit/scripts/logChanges.py:*), Bash(./SCRIPTS/7_BuildDashboard/run.sh:*), Read, Edit(**/README.md)
 ---
 
 ## Context
@@ -69,7 +69,7 @@ Change Log column (see `SCRIPTS/6_TrackChanges/README.md`).
 - **After that commit**, log it and rerun the dashboard:
 
   ```
-  python3 .claude/skills/commit/logChanges.py <hash> [<issue_number>]
+  python3 .claude/skills/commit/scripts/logChanges.py <hash> [<issue_number>]
   ./SCRIPTS/7_BuildDashboard/run.sh DATA --env build
   ```
 
