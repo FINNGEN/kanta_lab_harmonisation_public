@@ -60,26 +60,35 @@ In `DATA/7_BuildDashboard/`:
       not mapped (`NOT-APPROVED`, `IGNORE`, `MISSING` or `ERROR`; grey row). A pair with no values is
       counted there first, whatever its status. In the KS column of the Mapping Table an approved pair
       whose concept has no target unit shows `no unit` in grey.
-  - **Mapping Table**: one row per pair, with `mapping_status` and, below it in the same cell, the
-    harmonised values status of the pair (its row of the *Harmonised Values* table, with the same
-    colour; a second filter under the Status header selects it), the OMOP concept (id, name with
-    ` (panel)` added when the concept is a panel), *Harm. Unit* (the target unit of the concept, `target_unit` of
-    the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`; empty for a qualitative concept or a panel), the quantity (`has_property`), `Unit change` (`MEASUREMENT_UNIT->UNIT`, only when the
-    two differ and the pair is mapped), `TestCode[Unit]` (`TEST_NAME[UNIT]`, the unit after the fix; `TEST_NAME[MEASUREMENT_UNIT]` for a `MISSING`
-    pair, which has no `UNIT`), the number of
-    records, bars with the share of records by value source and by unit source (hover a
-    bar for a small table with `pRecords` and the approximate `nRecords`), the deciles,
-    the value unit harmonisation (the conversion factor, and below it the harmonised unit
-    only when `HARMONISED_UNIT` is not the `UNIT`), the harmonised deciles with the
-    deciles of the reference below them (followed by the number of pairs they come from, e.g. `(36)`), `KS` with `KS_mlp` in brackets (green under
-    0.5, yellow up to 0.8, red above), `log10_D5`, the reference (the name of the LOINC Group, or `Same concept`, and the number
-    of other approved pairs in it), and `In reference` (yes when the pair is part of the
-    reference of the other pairs of its Groups), the warning messages, and the Change Log (the commits that
-    changed the pair, from `TestCodeUnitChanges.tsv`, each a link to the commit on GitHub, and `#<issue>` a
-    link to the issue). The columns have fixed, narrow widths. Click a
-    header to sort (the concept id too); every column has a filter: text matches
-    anywhere (case insensitive), numeric columns take `>0.5`, `<=2`, `=0.3` or a range
-    `0.2..0.5`, and the status is a list. The table starts sorted by `N records`, largest first, and shows 25 to 250 rows per page.
+  - **Mapping Table**: one row per pair, in this order. Columns in a grey background are grouped:
+    - `Status`: `mapping_status` and, below it in the same cell, the harmonised values status of the pair
+      (its row of the *Harmonised Values* table, with the same colour; a second filter under the header
+      selects it).
+    - Grey: `Group Concept ID` (the reference LOINC Group of the pair, or the first Group of its concept;
+      empty when the concept is in no Group) with `(<n>/<index>)` below it: the number of OMOP concepts of
+      the Group that have an `APPROVED` pair and the index of the concept of the pair among them (sorted by
+      concept id), and `Group Name`.
+    - `OMOP Concept` (id) with `(<n>/<index>)` below it: the number of `APPROVED` pairs mapped to that
+      concept and the index of the pair among them (in the order of the table, largest `N records` first),
+      `OMOP Name` (with ` (panel)` added when the concept is a panel), `Harm. Unit` (the target unit of the
+      concept, `target_unit` of the harmonisation table: `harmonisedUnitOverwrite.tsv` or `targetTable.tsv`;
+      empty for a qualitative concept or a panel) and the quantity (`has_property`).
+    - Grey: `Unit change` (`MEASUREMENT_UNIT->UNIT`, only when the two differ and the pair is mapped),
+      `TestCode[Unit]` (`TEST_NAME[UNIT]`, the unit after the fix; `TEST_NAME[MEASUREMENT_UNIT]` for a
+      `MISSING` pair, which has no `UNIT`), `N records`, bars with the share of records by unit source and
+      by value source (hover a bar for a small table with `pRecords` and the approximate `nRecords`) and the
+      deciles of the measurement value.
+    - The value unit harmonisation (the conversion factor, and below it the harmonised unit only when
+      `HARMONISED_UNIT` is not the `UNIT`), the harmonised deciles with the deciles of the reference below
+      them (followed by the number of pairs they come from, e.g. `(36)`), `KS` with `KS_mlp` in brackets
+      (green under 0.5, yellow up to 0.8, red above) and `log10_D5` below it, in one column (the filter and
+      the sort of the column are those of `KS`).
+    - Grey: the warning messages and the Change Log (the commits that changed the pair, from
+      `TestCodeUnitChanges.tsv`, each a link to the commit on GitHub, and `#<issue>` a link to the issue).
+
+    The columns have fixed, narrow widths. Click a header to sort; every column has a filter: text matches
+    anywhere (case insensitive), numeric columns take `>0.5`, `<=2`, `=0.3` or a range `0.2..0.5`, and the
+    status is a list. The table starts sorted by `N records`, largest first, and shows 25 to 250 rows per page.
 - `log.txt` — run log.
 
 The number of subjects is not in the aggregated data, so it is not in the dashboard.
@@ -92,7 +101,7 @@ The URL sets the starting view of the dashboard, e.g.
 - `tab` — `inputdata`, `targetdata`, `mappingsummary` or `mappingtable` (also `input`, `target`,
   `summary`, `table`). Without it the page opens on Mapping Summary.
 - one parameter per column of the Mapping Table, to filter it. The name is the column label or key without
-  spaces and symbols, in any case (`status`, `conceptid`, `conceptname`, `quantity`, `unitchange`,
+  spaces and symbols, in any case (`status`, `groupconceptid`, `groupname`, `omopconcept`, `omopname`, `quantity`, `unitchange`,
   `testcodeunit`, `nrecords`, `ks`, ...), and the value is what would be typed in the filter box of the column
   (text matches anywhere; numeric columns take `>0.5`, `<=2`, `=0.3` or `0.2..0.5`; `status` is not case
   sensitive). Several parameters combine.
