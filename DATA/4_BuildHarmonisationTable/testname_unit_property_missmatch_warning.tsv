@@ -26,7 +26,6 @@ ab-hbo2	°c	has_property 'Mass fraction' and UNIT '°c' are not in unitHarmonisa
 ab-hbo2sat	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-hbo2sat	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-hbo2sat	°c	has_property 'Mass fraction' and UNIT '°c' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-ab-o2-sis	%	has_property 'Substance Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-pco2	%	has_property 'Partial pressure' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-pco2	°c	has_property 'Partial pressure' and UNIT '°c' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-ph	%	has_property 'Log molar concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -284,5 +283,3 @@ u-intp	ratio	has_property 'Substance Concentration' and UNIT 'ratio' are not in 
 u-jcvnh	u/ml	has_property 'Number Concentration' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 u-leuk	u	has_property 'Number Concentration' and UNIT 'u' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 u-osmoest	e6/l	has_property 'Osmolality' and UNIT 'e6/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-vb-o2-sis	%	has_property 'Partial pressure' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-vb-o2-vol	%	has_property 'Substance Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE

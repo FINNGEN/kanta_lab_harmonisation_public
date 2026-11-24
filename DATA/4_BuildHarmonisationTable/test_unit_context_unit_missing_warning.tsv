@@ -23,7 +23,6 @@ ab-hbo2	°c	no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit 
 ab-hbo2sat	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3016502	FALSE
 ab-hbo2sat	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit '%' for has_property 'Mass fraction' or concept_id 3016502	FALSE
 ab-hbo2sat	°c	no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit '%' for has_property 'Mass fraction' or concept_id 3016502	FALSE
-ab-o2-sis	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mol/L' for has_property 'Substance Concentration' or concept_id 3017569	FALSE
 ab-pco2	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3027946	FALSE
 ab-pco2	°c	no rule in unitHarmonisation.tsv from UNIT '°c' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3027946	FALSE
 ab-ph	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '[pH]' for has_property 'Log molar concentration' or concept_id 3019977	FALSE
@@ -222,5 +221,3 @@ u-jcvnh	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target uni
 u-leuk	u	no rule in unitHarmonisation.tsv from UNIT 'u' to the target unit '10*6/L' for has_property 'Number Concentration' or concept_id 3018095	FALSE
 u-osmoest	e6/l	no rule in unitHarmonisation.tsv from UNIT 'e6/l' to the target unit 'mmol/kg' for has_property 'Osmolality' or concept_id 3026782	FALSE
 u-rakkoai	h	concept_id 4088671 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'h' cannot be converted	FALSE
-vb-o2-sis	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mm[Hg]' for has_property 'Partial pressure' or concept_id 3004529	FALSE
-vb-o2-vol	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'mol/L' for has_property 'Substance Concentration' or concept_id 3011648	FALSE

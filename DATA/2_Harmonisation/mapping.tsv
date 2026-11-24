@@ -118,7 +118,7 @@ pt-ekg-oma		3013512		TRUE
 fp-laktaat	mmol/l	3014111		TRUE
 -rsvnho		3043924		TRUE
 ab-hbo2sat	%	3016502		TRUE
-ab-o2-vol	%	40762366		TRUE
+ab-o2-vol	%	40762365		TRUE
 -chtrnho		3006093		TRUE
 cv19nho		706163		TRUE
 p-k+na		3045783		TRUE
@@ -830,7 +830,7 @@ u-leuk	u/field	3051014		TRUE
 eryt	e6/l	3002582		TRUE
 e-coomigg		40758897		TRUE
 e-coomc3d		40758895		TRUE
-vb-o2-sis	%	3004529		TRUE
+vb-o2-sis	%	40763791		TRUE
 s-hsvab		3028679		TRUE
 fp-kolesteroli,highdensitylipoproteiinit	mmol/l	3023602		TRUE
 u-leukbv	e6/l	3018095		TRUE
@@ -871,7 +871,7 @@ b-hb-vt	g/l	3006184		TRUE
 s-kisshie	u/ml	3023430		TRUE
 b-crp-poc	mg/l	3020460		TRUE
 fs-kolesteroli,lowdensitylipoproteiinit	mmol/l	3001308		TRUE
-vb-o2-vol	%	3011648		TRUE
+vb-o2-vol	%	40763791		TRUE
 li-vzvnho		3016894		TRUE
 fs-kolesteroli,highdensitylipoproteiinit	mmol/l	3023602		TRUE
 s-ebvabg	u/ml	3007080		TRUE
@@ -1092,7 +1092,7 @@ albumiini	g/l	3024561		TRUE
 b-pvk+t	g/l	40761511		FALSE
 s-d-25-32	nmol/l	40771025		TRUE
 fs-gh	ug/l	3023709		TRUE
-ab-o2-vol	vol%	40762366		TRUE
+ab-o2-vol	vol%	40762365		TRUE
 ts-breast		40768793		TRUE
 p-ige	u/ml	3005322		TRUE
 fp-kolhdl	mmol/l	3023602		TRUE
@@ -4369,7 +4369,7 @@ ab-hkr		3009542		TRUE
 ab-kalsium,ionisoitunut,ph7.4-korjattu		3016431		TRUE
 ab-kokonaishemoglobiini,verikaasuanalysaattorista		3000963		FALSE
 ab-laktaat		3018405		TRUE
-ab-o2-vol		40762366		TRUE
+ab-o2-vol		40762365		TRUE
 ab-o2hb		3014007		TRUE
 ab-o2sat		3016502		TRUE
 ab-ph(t)		3019977		TRUE
@@ -6991,8 +6991,8 @@ vb-hiilimonoksidi-hb		3010517		TRUE
 vb-hkr		3009542		TRUE
 vb-kokonaishemoglobiini,verikaasuanalysaattorista		3000963		FALSE
 vb-laktaat		3008037		TRUE
-vb-o2-sis		3004529		TRUE
-vb-o2-vol		3011648		TRUE
+vb-o2-sis		40763791		TRUE
+vb-o2-vol		40763791		TRUE
 vb-o2hb		3019230		TRUE
 vb-o2sat		3024928		TRUE
 vb-pco2		3021447		TRUE
@@ -7042,7 +7042,7 @@ ab-pco2(t)	kpa	3045156		TRUE
 zb-hbo2sat	%	3024928		TRUE
 u-tutk-1,ph		3015736		TRUE
 cbhco3pika	mmol/l	3015235		TRUE
-zb-o2-vol	%	3034037		TRUE
+zb-o2-vol	%	40767502		TRUE
 -liik.im	%	3014043		TRUE
 k-pika	mmol/l	3023103		TRUE
 zb-po2	kpa	3038071		TRUE
@@ -7091,7 +7091,7 @@ cbpo2pika	kpa	3028626		TRUE
 l-meta-m	%	3002179		TRUE
 kolesteroli	mmol/l	3019900		TRUE
 ab-ca++	mmol/l	3021347		TRUE
-ab-o2-sis	%	3017569		TRUE
+ab-o2-sis	%	40762365		TRUE
 kolesteroli,lowdensitylipoproteiinit	mmol/l	3001308		TRUE
 glukpika	mmol/l	3013826		TRUE
 b-neu	%	3018010		TRUE
