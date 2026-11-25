@@ -9,7 +9,6 @@ TEST_NAME	UNIT	message	ignore
 -liik.pr	%	has_property 'Number Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 -mono	%	has_property 'Number Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 -neut	%	has_property 'Number Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
--nt	mm	has_property 'Length' and UNIT 'mm' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 -tpoab	%	has_property 'Arbitrary Concentration' and UNIT '%' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-hb-co	g/l	has_property 'Mass fraction' and UNIT 'g/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 ab-hb-co	kpa	has_property 'Mass fraction' and UNIT 'kpa' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE

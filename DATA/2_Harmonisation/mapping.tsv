@@ -7480,7 +7480,7 @@ u-suhti-o		3000330		TRUE
 u-veri-o	estimate	3011397		TRUE
 -h-ind	index	3052851	Sample quality index, mixed scales and no unit in Kanta	FALSE
 p-inr-hy		3032080		TRUE
-ntkmom	ratio	40763531		TRUE
+ntkmom	ratio	3048559		TRUE
 pappakmom	ratio	46235831		TRUE
 hcgbvkmom	ratio	3008714		TRUE
 u-suhti.		3000330		TRUE
@@ -7757,3 +7757,5 @@ poikkeavalämpötila	°c	0	Patient characteristic/vital sign	FALSE
 vb-temp	°c	0	Patient characteristic/vital sign	FALSE
 e-mchp	pg	3035941		TRUE
 p-inr-vt		3032080		TRUE
+s-nt	mm	3005033		TRUE
+-niskaturvotus	mm	3005033		TRUE

@@ -6,7 +6,6 @@ TEST_NAME	UNIT	message	ignore
 -liik.pr	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 40761995	FALSE
 -mono	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3001604	FALSE
 -neut	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*9/L' for has_property 'Number Concentration' or concept_id 3017732	FALSE
--nt	mm	concept_id 3005033 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mm' cannot be converted	FALSE
 -tpoab	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3027238	FALSE
 ab-hb-co	g/l	no rule in unitHarmonisation.tsv from UNIT 'g/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3028653	FALSE
 ab-hb-co	kpa	no rule in unitHarmonisation.tsv from UNIT 'kpa' to the target unit '%' for has_property 'Mass fraction' or concept_id 3028653	FALSE
@@ -133,7 +132,6 @@ li-neutrof	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '
 li-vzvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 40761849	FALSE
 li-vzvabg	miu/ml	no rule in unitHarmonisation.tsv from UNIT 'miu/ml' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 40761849	FALSE
 ly-cd4/cd8	ratio	concept_id 3020073 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
-ntkmom	ratio	concept_id 40763531 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
 p-afos	umol/l	no rule in unitHarmonisation.tsv from UNIT 'umol/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3035995	FALSE
 p-alb	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit 'g/L' for has_property 'Mass Concentration' or concept_id 3024561	FALSE
 p-amyl	umol/l	no rule in unitHarmonisation.tsv from UNIT 'umol/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3016771	FALSE
