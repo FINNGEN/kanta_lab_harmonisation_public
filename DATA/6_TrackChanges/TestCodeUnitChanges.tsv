@@ -208,6 +208,9 @@ pt-krea-cl	ml/s/173m2	ecfc5df
 ribonukleoproteiini,nukleaarinen,vasta-aineet(s-rnpab)		544af15
 ribonukleoproteiini,nukleaarinen,vasta-aineet(s-rnpab)	u/ml	544af15
 rnpab		544af15
+s-afos	iu/l	80f14a9
+s-alat	iu/l	80f14a9
+s-asat	iu/l	80f14a9
 s-borabgjt		544af15
 s-borabgv	au/ml	544af15
 s-borrabg		544af15
@@ -238,6 +241,7 @@ s-ebvabm	u/ml	544af15
 s-ebvnabg		544af15
 s-ebvnabg	u/ml	544af15
 s-enaabse		544af15
+s-gt	iu/l	80f14a9
 s-hepyaba		544af15
 s-hepyaba	u/ml	544af15
 s-hepyabg		544af15
@@ -247,6 +251,8 @@ s-infaabg		544af15
 s-infaabg	u/ml	544af15
 s-kudostransglutaminaasi,iggva(keliakia)		544af15
 s-kudostransglutaminaasi,iggvasta-aineet		544af15
+s-ld		80f14a9
+s-ld	u/l	80f14a9
 s-nt	mm	129216a
 s-ph		746ec0e
 s-ph(akt)		746ec0e
