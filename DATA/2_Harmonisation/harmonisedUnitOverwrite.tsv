@@ -33,3 +33,4 @@ concept_id	harmonised_unit	note
 3013924	10*3.[iU]/L	lab2clean gives no unit; Clostridium tetani IgG Ab is reported in IU/mL
 3005033	mm	lab2clean gives no unit; fetal nuchal translucency is measured in mm
 3048559	1	lab2clean gives no unit; a multiple of the median has no unit
+3016436	U/L	lab2clean gives no unit; LD is reported in U/L like the other enzymes

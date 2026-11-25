@@ -199,15 +199,12 @@ pt-gluk-r1	mmol/l	has_property '-' and UNIT 'mmol/l' are not in unitHarmonisatio
 pt-paino	kg	has_property 'Mass' and UNIT 'kg' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 pt-pituus	cm	has_property 'Length' and UNIT 'cm' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 retikulosyytit	e9/l	has_property 'Arbitrary Concentration' and UNIT 'e9/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-s-afos	iu/l	has_property 'Catalytic Concentration' and UNIT 'iu/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-afosma	u/l	has_property 'Osmolality' and UNIT 'u/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-s-alat	iu/l	has_property 'Catalytic Concentration' and UNIT 'iu/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-allige	mm	has_property '-' and UNIT 'mm' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-ana-ty	u/ml	has_property 'Presence or Threshold' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-anaty-jt	u/ml	has_property '-' and UNIT 'u/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-apob/a1	ratio	has_property 'Percentile' and UNIT 'ratio' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-aqp4ab	titre	has_property 'Presence or Threshold' and UNIT 'titre' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-s-asat	iu/l	has_property 'Catalytic Concentration' and UNIT 'iu/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-aspeag	index	has_property 'Presence or Threshold' and UNIT 'index' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-b2gpabg	sgu	has_property 'Arbitrary Concentration' and UNIT 'sgu' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-cdt	u/l	has_property 'Mass fraction' and UNIT 'u/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
@@ -233,7 +230,6 @@ s-enaab	ratio	has_property 'Arbitrary Concentration' and UNIT 'ratio' are not in
 s-epo	pmol/l	has_property 'Arbitrary Concentration' and UNIT 'pmol/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-etoh	promille	has_property 'Substance Concentration' and UNIT 'promille' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-golimab	au/ml	has_property 'Mass Concentration' and UNIT 'au/ml' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
-s-gt	iu/l	has_property 'Catalytic Concentration' and UNIT 'iu/l' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-hepyabg	eiu	has_property 'Titer' and UNIT 'eiu' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-hepyabg	index	has_property 'Titer' and UNIT 'index' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE
 s-hsvabg	eiu	has_property 'Arbitrary Concentration' and UNIT 'eiu' are not in unitHarmonisation.tsv: the property of the concept does not agree with the unit	FALSE

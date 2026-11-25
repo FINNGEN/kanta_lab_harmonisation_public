@@ -28,6 +28,7 @@ Arbitrary Concentration	u/ml	10*6.[iU]/L	0.001
 Arbitrary Concentration	u/ml	[arb'U]/L	1000	
 Arbitrary Concentration	u/ml	[iU]/L	1000	
 Catalytic Concentration	u/l	U/L	1	
+Catalytic Concentration	iu/l	U/L	1	
 Catalytic Fraction	%	%	1	
 Catalytic Ratio	%	1	0.01	
 DistWidth	%	%	1	

@@ -167,12 +167,9 @@ pt-paino	kg	concept_id 3025315 has no target unit (not in lab2clean, no row in h
 pt-pituus	cm	concept_id 3035463 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'cm' cannot be converted	FALSE
 retikulosyytit	e9/l	no rule in unitHarmonisation.tsv from UNIT 'e9/l' to the target unit '10*3.[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3021584	FALSE
 s-aa	mg/l	concept_id 3003722 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mg/l' cannot be converted	FALSE
-s-afos	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3035995	FALSE
 s-afosma	u/l	no rule in unitHarmonisation.tsv from UNIT 'u/l' to the target unit 'mmol/kg' for has_property 'Osmolality' or concept_id 3008295	FALSE
-s-alat	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3006923	FALSE
 s-allige	mm	concept_id 36660136 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'mm' cannot be converted	FALSE
 s-apob/a1	ratio	concept_id 3011831 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'ratio' cannot be converted	FALSE
-s-asat	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3013721	FALSE
 s-b2gpabg	sgu	no rule in unitHarmonisation.tsv from UNIT 'sgu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018658	FALSE
 s-cdt	u/l	no rule in unitHarmonisation.tsv from UNIT 'u/l' to the target unit '%' for has_property 'Mass fraction' or concept_id 3003031	FALSE
 s-ch100cl	%	no rule in unitHarmonisation.tsv from UNIT '%' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018993	FALSE
@@ -186,13 +183,11 @@ s-ena,seu	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target
 s-enaab	ratio	no rule in unitHarmonisation.tsv from UNIT 'ratio' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3015171	FALSE
 s-epo	pmol/l	no rule in unitHarmonisation.tsv from UNIT 'pmol/l' to the target unit '[iU]/L' for has_property 'Arbitrary Concentration' or concept_id 3024172	FALSE
 s-etoh	promille	no rule in unitHarmonisation.tsv from UNIT 'promille' to the target unit 'mmol/L' for has_property 'Substance Concentration' or concept_id 3020191	FALSE
-s-gt	iu/l	no rule in unitHarmonisation.tsv from UNIT 'iu/l' to the target unit 'U/L' for has_property 'Catalytic Concentration' or concept_id 3026910	FALSE
 s-hepyabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Titer' or concept_id 3027696	FALSE
 s-hepyabg	index	no rule in unitHarmonisation.tsv from UNIT 'index' to the target unit '1' for has_property 'Titer' or concept_id 3027696	FALSE
 s-hsvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3041365	FALSE
 s-immfix	g/l	concept_id 3037756 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'g/l' cannot be converted	FALSE
 s-k/l-s-v	mg/l	no rule in unitHarmonisation.tsv from UNIT 'mg/l' to the target unit '1' for has_property 'Mass Ratio' or concept_id 3007778	FALSE
-s-ld	u/l	concept_id 3016436 has no target unit (not in lab2clean, no row in harmonisedUnitOverwrite.tsv), so UNIT 'u/l' cannot be converted	FALSE
 s-mypnabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '10*3.[arb'U]/L' for has_property 'Arbitrary Concentration' or concept_id 3018387	FALSE
 s-normet	u/ml	no rule in unitHarmonisation.tsv from UNIT 'u/ml' to the target unit 'nmol/L' for has_property 'Substance Concentration' or concept_id 3026179	FALSE
 s-parvabg	eiu	no rule in unitHarmonisation.tsv from UNIT 'eiu' to the target unit '1' for has_property 'Arbitrary Concentration' or concept_id 3006120	FALSE
