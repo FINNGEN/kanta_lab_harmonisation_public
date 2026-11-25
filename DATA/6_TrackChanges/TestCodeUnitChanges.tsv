@@ -7,6 +7,9 @@ TEST_NAME	MEASUREMENT_UNIT	changes
 -h-ind		2bac813
 -i-ind		2bac813
 -l-ind		2bac813
+-niskaturvotus	mm	129216a
+-nt		129216a
+-nt	mm	129216a
 -tffesat	%	8d4ce0c
 -trfe-sa	%	8d4ce0c
 -trfesat		8d4ce0c
@@ -121,6 +124,7 @@ kudostransglutaminaasi,igg-vasta-aineet		544af15
 kudostransglutaminaasi,iggvasta-aineet		544af15
 multistix-,ph		b8dbfc6,746ec0e
 multistix-vieri,ph		b8dbfc6,746ec0e
+ntkmom		129216a
 nu-osmol		b8dbfc6
 nu-osmol	mosm/kgh2o	b8dbfc6
 osmolaliteetti(laskennallinen)	mosm/kgh2o	b8dbfc6
@@ -243,6 +247,7 @@ s-infaabg		544af15
 s-infaabg	u/ml	544af15
 s-kudostransglutaminaasi,iggva(keliakia)		544af15
 s-kudostransglutaminaasi,iggvasta-aineet		544af15
+s-nt	mm	129216a
 s-ph		746ec0e
 s-ph(akt)		746ec0e
 s-psolab	u/ml	544af15
